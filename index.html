@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#091426">
+<meta name="description" content="Interactive vector components, dot product and cross product for NBF Physics Grade XI, aligned to FBISE SLOs P-11-B-01 and P-11-B-02. Offline ready.">
+<title>Vector Explorer 1.0 | Physics with Sir Najam</title>
+<style>
+:root{--bg:#081427;--bg2:#0d1c32;--card:#101f35;--panel:#142640;--edge:#2a405a;--muted:#adc1d5;--text:#f6f8fc;--cyan:#52d5ed;--yellow:#f4c86e;--pink:#fc8698;--green:#7ee3ad;--blue:#6da9ff;--shadow:0 24px 60px rgba(0,0,0,.21)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse 1100px 550px at 75% -90px,#15395f55,transparent),var(--bg);line-height:1.48;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}button:disabled{cursor:not-allowed;opacity:.45}.app{max-width:1460px;margin:0 auto;padding:19px 26px 45px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brandmark{width:47px;height:47px;flex-shrink:0;background:#132f51;display:grid;place-items:center;border:1px solid #41637c;border-radius:14px;color:var(--yellow);font-size:27px}.brand strong{display:block;font-size:19px;letter-spacing:-.4px}.brand span{display:block;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}.topactions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.btn{color:#f7faff;background:#182c47;border:1px solid #39506c;padding:10px 14px;min-height:42px;border-radius:11px;font-size:13px;font-weight:700;transition:background .15s,transform .15s}.btn:hover{background:#25415e}.btn:active{transform:translateY(1px)}.btn-accent{color:#08202a;background:var(--cyan);border-color:var(--cyan)}.btn-accent:hover{background:#8be4f3}.tag{display:inline-flex;align-items:center;padding:5px 11px;border-radius:30px;border:1px solid #37526d;color:#d6e8f6;background:#152942;font-size:12px;font-weight:700;letter-spacing:.3px}.hero{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:21px}.hero h1{font-size:clamp(32px,4.1vw,58px);letter-spacing:-2.1px;line-height:1.07;margin:11px 0 10px;font-weight:850}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{margin:0;max-width:800px;color:#bfcfe0;font-size:16px}.hero-side{text-align:right;flex-shrink:0}.hero-side strong{display:block;font-size:15px}.hero-side span{color:var(--muted);font-size:12px}.tabs{display:flex;gap:9px;margin:24px 0 17px;flex-wrap:wrap}.tab{border:1px solid #364f6a;background:#13233a;color:#c6d9e8;font-weight:800;border-radius:12px;padding:12px 18px;font-size:14px;min-height:48px}.tab[aria-selected="true"]{color:#061522;background:var(--yellow);border-color:var(--yellow)}.main{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(310px,.85fr);align-items:stretch;gap:18px}.scene,.controls,.lesson,.challenge,.quiz,.teacher{background:linear-gradient(155deg,#142740,#0d1b31);border:1px solid #30455e;box-shadow:var(--shadow);border-radius:20px}.scene{overflow:hidden}.scenehead{padding:17px 21px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}.scenehead h2{font-size:19px;letter-spacing:-.3px;margin:0}.sub{color:var(--muted);font-size:12px}.pill{border-radius:30px;background:#26465a;padding:6px 11px;color:#a2f1ee;font-size:12px;font-weight:800;white-space:nowrap}.canvas{padding:3px 11px 0}.canvas svg{width:100%;max-height:545px;display:block;touch-action:pan-y;user-select:none;-webkit-user-select:none}.scenefoot{margin:0 20px 19px;background:#101b2e;border:1px solid #28425a;padding:12px 14px;border-radius:11px;color:#d9e6f3;font-size:13px}.scenefoot strong{color:var(--yellow)}.controls{padding:21px;display:flex;flex-direction:column;gap:18px}.controls h2{margin:0;font-size:19px}.inputlabel{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:9px}.inputlabel span{font-weight:750;font-size:14px}.inputlabel output{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--yellow)}.range{-webkit-appearance:none;appearance:none;background:linear-gradient(90deg,#2b839e,#2a4762);width:100%;height:9px;border-radius:999px;cursor:pointer;margin:9px 0}.range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:25px;height:25px;border-radius:50%;border:4px solid #07192e;background:#68d7ec;box-shadow:0 0 0 1px #b4efff}.range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;border:4px solid #07192e;background:#68d7ec}.ends{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stat{min-width:0;background:#0a192c;border:1px solid #2a425b;padding:15px 13px;border-radius:14px}.stat small{display:block;color:#a4bcd1;font-size:12px;margin-bottom:4px}.stat strong{display:block;font-size:clamp(22px,2.5vw,30px);letter-spacing:-.8px;white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;line-height:1.2}.stat strong.cyan{color:var(--cyan)}.stat strong.yellow{color:var(--yellow)}.stat strong.pink{color:var(--pink)}.formula{background:#0c1a2d;border-left:3px solid var(--yellow);padding:13px 14px;color:#e7f2ff;border-radius:0 12px 12px 0;font-size:14px}.formula strong{display:block;margin-bottom:5px;color:var(--yellow)}.formula .math{font-family:"Cambria Math",Georgia,serif;font-size:clamp(16px,1.75vw,21px);line-height:1.7;overflow-wrap:anywhere}.hint{color:#a3bbce;font-size:12px}.micro{font-size:12px;color:var(--muted);margin:0}.lower{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.lower .challenge,.lower .quiz,.teacher{padding:21px}.sectiontitle{display:flex;justify-content:space-between;align-items:center;gap:14px}.sectiontitle h2{font-size:20px;margin:0}.challenge p,.quiz p{font-size:15px;color:#dceaf4;line-height:1.55}.question{font-size:18px;font-weight:760!important;color:#fff!important;margin:13px 0}.feedback{padding:12px 14px;border-radius:10px;background:#101e32;border:1px solid #354a62;color:#bcd2e0;font-size:13px;min-height:46px}.feedback.ok{border-color:#338e65;background:#133829;color:#b9ffda}.feedback.no{border-color:#987034;background:#302718;color:#ffe2ad}.buttonrow{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.questionoption{display:block;text-align:left;width:100%;margin-bottom:8px;padding:11px 13px;min-height:44px;background:#0c1e33;border:1px solid #39526e;border-radius:10px;color:#f1f6fc;font-size:13px;font-weight:650}.questionoption:hover{background:#193552}.questionoption.correct{border-color:#68c993;background:#16432c}.questionoption.incorrect{border-color:#d97977;background:#442028}.teacher{margin-top:18px}.teacher h2{font-size:19px;margin:0 0 10px}.teachercols{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}.teacher ul{margin:8px 0 0;padding-left:20px;color:#d3e2ee;font-size:14px}.teacher li{margin:5px 0}.teacher p{color:#d1e1ee;font-size:14px;margin:7px 0}.footer{margin:22px 0 0;text-align:center;font-size:12px;color:#90a6bb}.footer b{color:#eac276}#drag{cursor:grab;touch-action:none}#drag:active{cursor:grabbing}.svgsmall{font:14px system-ui,sans-serif;fill:#b9c9de}.svglabel{font:800 17px system-ui,sans-serif}.svgax{stroke:#92aac5;stroke-width:1.7}.print-page{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.main{grid-template-columns:1fr}.controls{display:grid;grid-template-columns:1fr 1fr;gap:18px}.controls h2{grid-column:1/-1}.formula{grid-column:1/-1}.scene .canvas svg{max-height:490px}.hero-side{display:none}}
+@media(max-width:680px){.app{padding:14px 12px 26px}.top{align-items:flex-start}.brand strong{font-size:15px}.brandmark{width:40px;height:40px;font-size:21px}.topactions .btn{font-size:11px;padding:8px 9px}.topactions{max-width:50%}.hero h1{letter-spacing:-1.1px}.hero p{font-size:14px}.hero{margin-top:8px}.tabs{gap:6px;margin-top:19px}.tab{flex:1;padding:11px 9px;font-size:12px}.scenehead{padding:15px 13px 0}.scenehead h2{font-size:17px}.canvas{padding:0 0}.scenefoot{margin:0 11px 13px;font-size:12px}.controls{display:flex;padding:17px;gap:15px}.stat strong{font-size:24px}.lower{grid-template-columns:1fr}.lower .challenge,.lower .quiz,.teacher{padding:17px}.teachercols{grid-template-columns:1fr}.pill{font-size:10px}.formula .math{font-size:17px}}
+body.projector{font-size:1.16rem}body.projector .app{max-width:none;padding:22px 35px}body.projector .hero{margin-bottom:15px}body.projector .hero h1{font-size:clamp(42px,4vw,70px)}body.projector .hero p{font-size:20px}body.projector .scenehead h2,body.projector .controls h2{font-size:25px}body.projector .scenefoot{font-size:17px}body.projector .stat strong{font-size:35px}body.projector .stat small,body.projector .inputlabel span{font-size:17px}body.projector .formula .math{font-size:23px}body.projector .canvas svg{max-height:min(57vh,670px)}body.projector .lower{display:none}body.projector .teacher{display:none}
+@media print{body{color:black!important;background:white!important}.top,.hero,.tabs,.main,.lower,.teacher,.footer{display:none!important}.app{padding:0}.print-page{display:block!important;padding:8mm 12mm}.print-page h1{font-size:26px}.print-page p,.print-page li{font-size:14px}.print-page li{margin:16px 0}.print-page .blank{border-bottom:1px solid #555;display:block;height:36px}.print-page .printhead{display:flex;justify-content:space-between}.print-page .printrow{display:flex;gap:20px}.print-page .printrow>div{flex:1}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="brandmark" aria-hidden="true">✦</div><div><strong>Physics with Sir Najam</strong><span>Interactive Learning Laboratory</span></div></div>
+  <div class="topactions"><button class="btn" id="reset">↻ Reset</button><button class="btn" id="print">Print worksheet</button><button class="btn" id="projector">▣ Projector mode</button></div>
+</header>
+<section class="hero"><div><span class="tag">GRADE XI / HSSC-I · UNIT 2 · VECTORS</span><h1>Explore vectors.<br><em>See the mathematics.</em></h1><p>Move the arrow or use the sliders. Watch the diagram, components, products and calculations change together—then test your predictions.</p></div><div class="hero-side"><strong>Aligned with FBISE</strong><span>SLOs P-11-B-01 &amp; P-11-B-02<br>NBF Physics 11 · Unit 2</span></div></section>
+<div class="tabs" role="tablist" aria-label="Choose vector topic">
+ <button class="tab" role="tab" id="tab-components" aria-selected="true" data-tab="components">01 · Components</button>
+ <button class="tab" role="tab" id="tab-dot" aria-selected="false" data-tab="dot">02 · Dot product</button>
+ <button class="tab" role="tab" id="tab-cross" aria-selected="false" data-tab="cross">03 · Cross product</button>
+</div>
+<main class="main">
+ <section class="scene" aria-label="Live vector diagram"><div class="scenehead"><div><h2 id="scene-title">Rectangular components</h2><span class="sub" id="scene-sub">Drag the glowing arrow tip or adjust the controls.</span></div><span class="pill" id="result-badge">LIVE DIAGRAM</span></div>
+ <div class="canvas"><svg id="graph" viewBox="0 0 720 505" role="img" aria-label="Interactive vectors on an x-y coordinate plane; use sliders or drag the glowing arrowhead"><defs>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 L 0 0 0 28" fill="none" stroke="#29415d" stroke-width="1" opacity=".65"/></pattern>
+  <marker id="tip-a" markerWidth="9" markerHeight="9" refX="6.7" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#55d7eb"/></marker>
+  <marker id="tip-b" markerWidth="9" markerHeight="9" refX="6.7" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#fac973"/></marker>
+  <marker id="tip-x" markerWidth="7" markerHeight="7" refX="6" refY="3.3" orient="auto"><path d="M0 0 L6 3.3 L0 6.6z" fill="#8dbfff"/></marker>
+  <marker id="tip-y" markerWidth="7" markerHeight="7" refX="6" refY="3.3" orient="auto"><path d="M0 0 L6 3.3 L0 6.6z" fill="#fc90a7"/></marker>
+  <filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="10" y="10" width="700" height="484" rx="16" fill="#0a1a2f"/><rect x="22" y="22" width="676" height="459" fill="url(#grid)"/>
+  <g id="ticks"></g>
+  <line x1="24" y1="255" x2="694" y2="255" class="svgax"/><line x1="360" y1="480" x2="360" y2="25" class="svgax"/>
+  <path d="M684 249 L696 255 L684 261" stroke="#92aac5" stroke-width="2" fill="none"/><path d="M354 37 L360 25 L366 37" stroke="#92aac5" stroke-width="2" fill="none"/>
+  <text x="684" y="278" class="svgsmall">+x</text><text x="605" y="278" class="svgsmall" id="mobile-x" visibility="hidden">+x</text><text x="370" y="33" class="svgsmall">+y</text><text x="368" y="277" class="svgsmall">O</text>
+  <g id="vectors"></g><g id="angle" aria-hidden="true"></g><g id="head"></g>
+  <g><rect id="note-bg" x="29" y="36" width="176" height="30" rx="8" fill="#162b44" opacity=".94"/><text x="41" y="56" fill="#c9def1" font-size="14" font-weight="600" id="graph-note">A = 10.0 N · θ = 35°</text></g>
+ </svg></div>
+ <div class="scenefoot"><strong>Observe:</strong> <span id="observation">The horizontal component is positive and the vertical component is positive.</span></div></section>
+ <aside class="controls"><h2>Control the experiment</h2><div id="controls-holder">
+  <div id="magnitude-a-wrap"><div class="inputlabel"><label for="mag-a">Magnitude of A</label><output id="mag-a-value">10.0 N</output></div><input class="range" type="range" min="0" max="20" step="0.5" value="10" id="mag-a"><div class="ends"><span>0</span><span>20 N</span></div></div>
+  <div id="magnitude-b-wrap" hidden><div class="inputlabel"><label for="mag-b">Magnitude of B</label><output id="mag-b-value">8.0 units</output></div><input class="range" type="range" min="0" max="20" step="0.5" value="8" id="mag-b"><div class="ends"><span>0</span><span>20 units</span></div></div>
+  <div id="angle-wrap"><div class="inputlabel"><label for="theta">Angle θ</label><output id="theta-value">35°</output></div><input class="range" type="range" min="0" max="360" step="1" value="35" id="theta"><div class="ends"><span>0°</span><span>90°</span><span>180°</span><span>270°</span><span>360°</span></div></div>
+ </div>
+ <div class="statgrid"><div class="stat"><small id="stat-a-name">Horizontal, Aₓ</small><strong class="cyan" id="stat-a">+8.19 N</strong></div><div class="stat"><small id="stat-b-name">Vertical, Aᵧ</small><strong class="pink" id="stat-b">+5.74 N</strong></div></div>
+ <div class="formula"><strong id="formula-title">The mathematics</strong><div class="math" id="formula-lines">Aₓ = A cos θ<br>Aᵧ = A sin θ</div><div class="hint" id="formula-note">Angle is measured anticlockwise from the positive x-axis.</div></div>
+ <p class="micro" id="tool-note">Drag the cyan arrowhead, including into negative x or y quadrants. The blue and pink arrows represent rectangular components.</p>
+ </aside>
+</main>
+<div class="lower">
+ <section class="challenge"><div class="sectiontitle"><h2>🧠 Predict &amp; discover</h2><span class="tag" id="challenge-count">Challenge 1/3</span></div><p class="question" id="challenge-prompt">Set the angle so that the horizontal component becomes zero.</p><p class="micro">Try adjusting the diagram before you check your answer.</p><div class="buttonrow"><button class="btn btn-accent" id="check">Check my setting</button><button class="btn" id="next-challenge">Next challenge →</button><button class="btn" id="hint">Show hint</button></div><div class="feedback" role="status" aria-live="polite" id="challenge-feedback">Ready when you are. Try a value and check it!</div></section>
+ <section class="quiz"><div class="sectiontitle"><h2>✅ FBISE concept check</h2><span class="tag" id="slo-tag">P-11-B-01</span></div><p class="question" id="quiz-question">A vector has magnitude 10 N and makes 30° with the +x-axis. What is Aₓ?</p><div id="quiz-choices"></div><div class="feedback" role="status" aria-live="polite" id="quiz-feedback">Select an option to check your reasoning.</div></section>
+</div>
+<section class="teacher"><h2>For Sir Najam's classroom and student website</h2><div class="teachercols"><div><p><b style="color:#f4c86e">Teacher projection routine (8–12 minutes)</b></p><ul><li>Ask students for a prediction <em>before</em> changing the angle.</li><li>Move the glowing arrow tip, pause at 90°, 180° and 270°, and discuss signs.</li><li>Use the dot/cross tabs to contrast products at 0°, 90° and 180°.</li><li>Let students solve one numerical independently before revealing the live result.</li></ul></div><div><p><b style="color:#f4c86e">Student self-study routine</b></p><ul><li>Experiment for two minutes and write down observations.</li><li>Complete the three prediction challenges in each tab.</li><li>Answer the concept-check question and explain the result.</li><li>Use the printable investigation sheet for written work.</li></ul></div></div></section>
+<footer class="footer">Physics with Sir Najam · NBF Grade XI Physics, Unit 2 · FBISE SLOs <b>P-11-B-01</b> &amp; <b>P-11-B-02</b> · Runs offline after saving this HTML file.</footer>
+<section class="print-page"><div class="printhead"><h1>VECTOR EXPLORER · Investigation Sheet</h1><div>Physics with Sir Najam<br>Grade XI · Unit 2</div></div><p><b>Name:</b> ________________________ <b>Class:</b> __________ <b>Date:</b> __________</p><p><b>Instructions:</b> Use the interactive Vector Explorer and show calculations with correct mathematical signs. Write your own explanation for each observation.</p><ol><li>Set A = 10 N and θ = 30°. Calculate Aₓ and Aᵧ using trigonometric functions. Then verify them on the screen.<div class="blank"></div></li><li>At which two angles from 0° to 360° is Aₓ = 0? Explain your reasoning.<div class="blank"></div></li><li>Set A = 10 units and B = 8 units. Find A·B at θ = 0°, 90° and 180°.<div class="blank"></div></li><li>With the same magnitudes, find A × B (z-component) at θ = 90° and 270°. State the direction in each case.<div class="blank"></div></li><li>Explain why A·B is a scalar but A × B is a vector, and give one property of each.<div class="blank"></div></li></ol><p><b>SLOs:</b> P-11-B-01, P-11-B-02. <b>Learning source:</b> NBF Physics Grade XI, Unit 2 (Vectors).</p></section>
+</div>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180;
+const deg = r => r*180/Math.PI;
+const O={x:360,y:255}, S=11.0;
+let tab='components', magA=10, magB=8, theta=35, challengeIdx={components:0,dot:0,cross:0};
+let dragActive=false, dragID=null, quizAnswered={};
+const challenges={
+ components:[
+  {prompt:'Set the angle so that the horizontal component Aₓ becomes zero.',hint:'For Aₓ = A cos θ, look for cos θ = 0.',check:()=>magA>0&&Math.abs(magA*Math.cos(rad(theta)))<0.10,yes:'Correct! At 90° or 270°, the vector has no horizontal component.'},
+  {prompt:'Place A in Quadrant II: make Aₓ negative and Aᵧ positive.',hint:'Quadrant II is between 90° and 180°.',check:()=>Math.cos(rad(theta))<-.001&&Math.sin(rad(theta))>.001,yes:'Excellent! In Quadrant II, cosine is negative and sine is positive.'},
+  {prompt:'Place A in Quadrant III: make both components negative.',hint:'Both sine and cosine are negative between 180° and 270°.',check:()=>Math.cos(rad(theta))<-.001&&Math.sin(rad(theta))<-.001,yes:'Exactly! Both rectangular components are negative in Quadrant III.'}
+ ],
+ dot:[
+  {prompt:'Make the scalar (dot) product exactly zero.',hint:'A·B = AB cos θ; choose an angle for which cosine is zero.',check:()=>magA>0&&magB>0&&Math.abs(Math.cos(rad(theta)))<1e-9,yes:'Correct! Non-zero perpendicular vectors have zero dot product.'},
+  {prompt:'Choose an angle that makes A·B negative.',hint:'The dot product is negative when the angle between the vectors is obtuse.',check:()=>magA>0&&magB>0&&Math.cos(rad(theta))<-.001,yes:'Well done. The cosine is negative, so the dot product is negative.'},
+  {prompt:'Find the maximum positive dot product for the current magnitudes.',hint:'Cos θ reaches +1 when the vectors are in the same direction.',check:()=>magA>0&&magB>0&&Math.abs(Math.cos(rad(theta))-1)<1e-9,yes:'Correct! A·B is maximized when the vectors are parallel and point in the same direction.'}
+ ],
+ cross:[
+  {prompt:'Find the largest positive z-component of A × B for the current magnitudes.',hint:'A × B has z-component AB sin θ. Where is sine +1?',check:()=>magA>0&&magB>0&&Math.abs(Math.sin(rad(theta))-1)<1e-9,yes:'Correct! At 90°, the cross product points out of the page (+z).'},
+  {prompt:'Find the most negative z-component of A × B for the current magnitudes.',hint:'Where does sin θ = −1?',check:()=>magA>0&&magB>0&&Math.abs(Math.sin(rad(theta))+1)<1e-9,yes:'Correct! At 270°, the cross product points into the page (−z).'},
+  {prompt:'Make the magnitude of A × B equal to zero using the angle.',hint:'A cross product is zero for non-zero parallel or antiparallel vectors.',check:()=>magA>0&&magB>0&&Math.abs(Math.sin(rad(theta)))<1e-9,yes:'Correct! The cross product vanishes when θ = 0°, 180° or 360°.'}
+ ]
+};
+const quizzes={
+ components:{q:'A vector has magnitude 10 N and makes 30° with the +x-axis. What is Aₓ?',choices:['5.00 N','8.66 N','10.00 N'],correct:1,explain:'Aₓ = 10 cos 30° = 8.66 N. Sine would give the y-component.'},
+ dot:{q:'Two non-zero perpendicular vectors A and B have which dot product?',choices:['AB','−AB','0'],correct:2,explain:'A·B = AB cos 90° = 0. This is true for perpendicular non-zero vectors.'},
+ cross:{q:'At which angle is the magnitude of the cross product of two fixed-length non-zero vectors greatest?',choices:['90°','0°','180°'],correct:0,explain:'|A × B| = AB |sin θ| is greatest at 90° (also 270° if a directed 0–360° angle is used).'}
+};
+const signed=(n,unit)=> `${Math.abs(n)<.005?'0.00':(n>0?'+':'−')+Math.abs(n).toFixed(2)}${unit?' '+unit:''}`;
+const clean=n=>Math.abs(n)<1e-10?0:n;
+const line=(x1,y1,x2,y2,stroke,width=3,dash='',marker='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${stroke}" stroke-width="${width}" ${dash?`stroke-dasharray="${dash}"`:''} ${marker?`marker-end="url(#${marker})"`:''} stroke-linecap="round"/>`;
+function arrowLabel(x,y,text,color){let bx=Math.max(27,Math.min(663,x+12));let by=Math.max(50,Math.min(462,y-12));return `<text x="${bx}" y="${by}" fill="${color}" font-size="19" font-weight="800">${text}</text>`}
+function circle(x,y,r,fill,stroke='',w=1){return `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" ${stroke?`stroke="${stroke}" stroke-width="${w}"`:''}/>`;}
+function addAngle(){if(theta===0||theta===360) return '';let r=44,x=O.x+r*Math.cos(rad(theta)),y=O.y-r*Math.sin(rad(theta));let large=theta>180?1:0;
+ let arc=`<path d="M ${O.x+r} ${O.y} A ${r} ${r} 0 ${large} 0 ${x} ${y}" fill="none" stroke="#e7dd9d" stroke-width="2.8"/>`;
+ let th=theta>180?Math.max(15,theta-35):theta/2;
+ let tx=O.x+65*Math.cos(rad(th)),ty=O.y-65*Math.sin(rad(th));
+ return arc+`<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" fill="#f7d788" font-size="17" font-weight="700">θ</text>`;}
+function update(){
+  const c=tab==='components', x=O.x, y=O.y, magnitude=c?magA:magB, a=rad(theta);
+  const ex=x+magnitude*S*Math.cos(a), ey=y-magnitude*S*Math.sin(a);
+  let stuff='',head='', note='';
+  if(c){
+    stuff+=line(x,y,ex,y,'#86b9ff',5,'','tip-x')+line(ex,y,ex,ey,'#fa8aa6',5,'','tip-y');
+    stuff+=line(x,y,ex,ey,'#52d5ed',5.8,'','tip-a');
+    if(Math.abs(ex-x)>8)stuff+=arrowLabel((x+ex)/2,(y+ey)/2+15,'A', '#a6f5ff');
+    if(Math.abs(ex-x)>50)stuff+=`<text x="${(x+ex)/2}" y="${y+24}" text-anchor="middle" fill="#a7cfff" font-size="17" font-weight="700">Aₓ</text>`;
+    if(Math.abs(ey-y)>45)stuff+=`<text x="${ex+9}" y="${(y+ey)/2}" fill="#ffb4c7" font-size="17" font-weight="700">Aᵧ</text>`;
+    note=`A = ${magA.toFixed(1)} N · θ = ${theta}°`;
+    $('scene-title').textContent='Rectangular components';
+    $('stat-a-name').textContent='Horizontal component, Aₓ';
+    $('stat-b-name').textContent='Vertical component, Aᵧ';
+    $('stat-a').textContent=signed(clean(magA*Math.cos(a)),'N');
+    $('stat-b').textContent=signed(clean(magA*Math.sin(a)),'N');
+    $('formula-title').textContent='Resolve a vector into components';
+    $('formula-lines').innerHTML=`Aₓ = A cos θ = ${signed(clean(magA*Math.cos(a)),'N')}<br>Aᵧ = A sin θ = ${signed(clean(magA*Math.sin(a)),'N')}`;
+    $('formula-note').textContent='θ is measured counterclockwise from the positive x-axis.';
+    $('observation').textContent=magA===0?'A zero vector has zero rectangular components.':`Aₓ is ${axisText(clean(magA*Math.cos(a)))}; Aᵧ is ${axisText(clean(magA*Math.sin(a)))}. Together they reconstruct A.`;
+    $('tool-note').textContent='Drag the glowing cyan arrow tip into any quadrant. Blue = x-component; pink = y-component.';
+  }else{
+    const ax=x+magA*S;
+    stuff+=line(x,y,ax,y,'#52d5ed',5.7,'','tip-a')+arrowLabel(ax,y-11,'A','#a6f5ff');
+    stuff+=line(x,y,ex,ey,'#fac973',5.7,'','tip-b');
+    stuff+=arrowLabel(ex,ey,'B','#ffe4a3');
+    note=`A = ${magA.toFixed(1)} · B = ${magB.toFixed(1)} · θ = ${theta}°`;
+    let dot=clean(magA*magB*Math.cos(a)),cross=clean(magA*magB*Math.sin(a));
+    if(tab==='dot'){
+      $('scene-title').textContent='Scalar (dot) product';
+      $('stat-a-name').textContent='Dot product, A · B';
+      $('stat-b-name').textContent='cos θ';
+      $('stat-a').textContent=signed(dot,'u²');
+      $('stat-b').textContent=signed(clean(Math.cos(a)),'');
+      $('formula-title').textContent='Dot product gives a scalar';
+      $('formula-lines').innerHTML=`A · B = AB cos θ<br>= ${magA.toFixed(1)} × ${magB.toFixed(1)} × cos ${theta}°<br>= ${signed(dot,'u²')}`;
+      $('formula-note').textContent='Angle between vectors is conventionally the smaller angle (0°–180°). Using 0°–360° gives the same cosine value.';
+      $('observation').textContent=dot===0?'The dot product is zero: the vectors are perpendicular (or a vector has zero magnitude).':dot>0?'The dot product is positive: the vectors have an acute smaller angle, or coincide.':'The dot product is negative: the smaller angle between the vectors is obtuse.';
+    }else{
+      $('scene-title').textContent='Vector (cross) product';
+      $('stat-a-name').textContent='Magnitude, |A × B|';
+      $('stat-b-name').textContent='z-component, (A × B)z';
+      $('stat-a').textContent=Math.abs(cross).toFixed(2)+' u²';
+      $('stat-b').textContent=signed(cross,'u²');
+      $('formula-title').textContent='Cross product gives a vector';
+      $('formula-lines').innerHTML=`|A × B| = AB |sin θ|<br>(A × B)z = AB sin θ<br>= ${signed(cross,'u²')}`;
+      $('formula-note').textContent='A points along +x. Positive z is out of the screen (⊙); negative z is into the screen (⊗).';
+      $('observation').textContent=cross===0?'The cross product is zero (one vector is zero or both vectors are parallel/antiparallel).':cross>0?'A × B points OUT of the screen (+z), according to the right-hand rule.':'A × B points INTO the screen (−z), according to the right-hand rule.';
+      stuff+=`<g transform="translate(565 95)">${circle(0,0,31,'#132943','#6688a4',2)}${circle(0,0,21,'none','#f4c86e',2.8)}${cross>0.0001?circle(0,0,5,'#f4c86e'):cross<-.0001?'<path d="M-13 -13 L13 13 M13 -13 L-13 13" stroke="#f4c86e" stroke-width="4"/>':'<text x="0" y="7" font-size="22" text-anchor="middle" fill="#f4c86e">0</text>'}<text x="0" y="51" text-anchor="middle" font-size="15" fill="#e0ebf6">${cross>0.0001?'out of page':cross<-.0001?'into page':'zero vector'}</text></g>`;
+    }
+    $('tool-note').textContent='In this 2D construction, A stays on +x while B rotates. Product values use matching arbitrary units (u²). Drag the yellow tip to vary both angle and B.';
+  }
+  // Render angle, drag handle and informative labels in named layers.
+  $('vectors').innerHTML=stuff;
+  $('angle').innerHTML=addAngle();
+  $('head').innerHTML=`${circle(ex,ey,18,'#51d7f0','',0).replace('fill="#51d7f0"','fill="#51d7f0" opacity="0.20"')}${circle(ex,ey,8,c?'#68edff':'#ffda93','#ffffff',2)}<circle id="drag" cx="${ex}" cy="${ey}" r="25" fill="transparent" role="button" tabindex="0" aria-label="Drag vector tip to change magnitude and angle"/>`;
+  $('graph-note').textContent=note;
+  $('mag-a-value').textContent=magA.toFixed(1)+(c?' N':' units');
+  $('mag-b-value').textContent=magB.toFixed(1)+' units';
+  $('theta-value').textContent=theta+'°';
+  $('mag-a').value=magA; $('mag-b').value=magB; $('theta').value=theta;
+  $('magnitude-b-wrap').hidden=c;
+  $('magnitude-a-wrap').querySelector('label').textContent=c?'Magnitude of A':'Magnitude of A (fixed direction)';
+  $('magnitude-a-wrap').querySelector('.ends span:last-child').textContent=c?'20 N':'20 units';
+  $('slo-tag').textContent=c?'P-11-B-01':'P-11-B-02';
+  $('scene-sub').textContent=c?'Drag the cyan arrow tip or adjust the controls.':'Drag the yellow arrow tip or use the sliders.';
+}
+function axisText(n){return n>1e-8?'positive':n< -1e-8?'negative':'zero';}
+function showChallenge(){let obj=challenges[tab][challengeIdx[tab]];$('challenge-count').textContent=`Challenge ${challengeIdx[tab]+1}/3`;$('challenge-prompt').textContent=obj.prompt;$('challenge-feedback').className='feedback';$('challenge-feedback').textContent='Ready when you are. Try a value and check it!';}
+function showQuiz(){let q=quizzes[tab];$('quiz-question').textContent=q.q; $('quiz-choices').innerHTML=q.choices.map((a,i)=>`<button class="questionoption" data-choice="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join('');$('quiz-feedback').className='feedback';$('quiz-feedback').textContent='Select an option to check your reasoning.';}
+function setTab(next){tab=next;document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)));showChallenge();showQuiz();update();}
+$('mag-a').addEventListener('input',e=>{magA=Number(e.target.value);update()});
+$('mag-b').addEventListener('input',e=>{magB=Number(e.target.value);update()});
+$('theta').addEventListener('input',e=>{theta=Number(e.target.value);update()});
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+$('check').addEventListener('click',()=>{let q=challenges[tab][challengeIdx[tab]],ok=q.check();$('challenge-feedback').className='feedback '+(ok?'ok':'no');$('challenge-feedback').textContent=ok?'✓ '+q.yes:'Not yet. Adjust the angle or vector magnitude and try again.';});
+$('next-challenge').addEventListener('click',()=>{challengeIdx[tab]=(challengeIdx[tab]+1)%3;showChallenge()});
+$('hint').addEventListener('click',()=>{$('challenge-feedback').className='feedback';$('challenge-feedback').textContent='Hint: '+challenges[tab][challengeIdx[tab]].hint;});
+$('quiz-choices').addEventListener('click',e=>{let btn=e.target.closest('button[data-choice]');if(!btn)return;let q=quizzes[tab],chosen=Number(btn.dataset.choice),ok=chosen===q.correct;document.querySelectorAll('#quiz-choices .questionoption').forEach(b=>{b.classList.toggle('correct',Number(b.dataset.choice)===q.correct);b.classList.toggle('incorrect',Number(b.dataset.choice)===chosen&&!ok)});$('quiz-feedback').className='feedback '+(ok?'ok':'no');$('quiz-feedback').textContent=(ok?'✓ Correct! ':'Not quite. ')+q.explain;});
+$('reset').addEventListener('click',()=>{magA=10;magB=8;theta=35;challengeIdx={components:0,dot:0,cross:0};setTab('components')});
+$('print').addEventListener('click',()=>window.print());
+$('projector').addEventListener('click',async()=>{document.body.classList.toggle('projector');let on=document.body.classList.contains('projector');$('projector').textContent=on?'▣ Exit projector':'▣ Projector mode';try{if(on&&!document.fullscreenElement){await document.documentElement.requestFullscreen?.()}else if(!on&&document.fullscreenElement){await document.exitFullscreen?.()}}catch(e){/* Some embedded contexts disallow fullscreen; large-type mode still works. */}});
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.body.classList.contains('projector')){document.body.classList.remove('projector');$('projector').textContent='▣ Projector mode'}});
+const graph=$('graph');
+function applyViewport(){
+ const mobile=window.innerWidth<=680;
+ graph.setAttribute('viewBox',mobile?'95 8 530 492':'0 0 720 505');
+ $('note-bg').setAttribute('x',mobile?'107':'29');
+ $('note-bg').setAttribute('width',mobile?'198':'176');
+ $('graph-note').setAttribute('x',mobile?'118':'41');
+ $('mobile-x').setAttribute('visibility',mobile?'visible':'hidden');
+}
+window.addEventListener('resize',applyViewport);
+applyViewport();
+function pointerAngle(ev){const rect=graph.getBoundingClientRect();let vb=graph.viewBox.baseVal,scale=Math.min(rect.width/vb.width,rect.height/vb.height),offX=(rect.width-vb.width*scale)/2,offY=(rect.height-vb.height*scale)/2;let px=(ev.clientX-rect.left-offX)/scale+vb.x,py=(ev.clientY-rect.top-offY)/scale+vb.y;let dx=px-O.x,dy=O.y-py;let m=Math.min(20,Math.hypot(dx,dy)/S);let a=((deg(Math.atan2(dy,dx))+360)%360);theta=Math.round(a);if(Math.abs(theta-360)<.4)theta=0;if(tab==='components')magA=Math.round(m*2)/2;else magB=Math.round(m*2)/2;update();}
+graph.addEventListener('pointerdown',e=>{if(e.target.id!=='drag')return;dragActive=true;dragID=e.pointerId;graph.setPointerCapture(e.pointerId);e.preventDefault();pointerAngle(e)});
+graph.addEventListener('pointermove',e=>{if(dragActive&&e.pointerId===dragID){e.preventDefault();pointerAngle(e)}});
+function stopDrag(e){if(dragActive&&e.pointerId===dragID){dragActive=false;dragID=null;try{graph.releasePointerCapture(e.pointerId)}catch(_){}}}
+graph.addEventListener('pointerup',stopDrag);graph.addEventListener('pointercancel',stopDrag);
+graph.addEventListener('keydown',e=>{if(e.target.id==='drag'){if(e.key==='ArrowLeft'){theta=Math.max(0,theta-1)}else if(e.key==='ArrowRight'){theta=Math.min(360,theta+1)}else if(e.key==='ArrowUp'){if(tab==='components')magA=Math.min(20,magA+.5);else magB=Math.min(20,magB+.5)}else if(e.key==='ArrowDown'){if(tab==='components')magA=Math.max(0,magA-.5);else magB=Math.max(0,magB-.5)}else return;e.preventDefault();update();}});
+update();showChallenge();showQuiz();
+</script>
+</body>
+</html>
