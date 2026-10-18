@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081427">
+<meta name="description" content="A standalone, offline-ready interactive vector addition laboratory for Grade XI, Physics with Sir Najam.">
+<title>Vector Addition Laboratory | Physics with Sir Najam</title>
+<style>
+:root{--bg:#081427;--panel:#101f35;--panel2:#142740;--edge:#2c425c;--text:#f4f8ff;--muted:#b3c8dc;--cyan:#5bd9ef;--amber:#ffd082;--green:#90edb4;--wrong:#ff9b9c;--blue:#7eaafa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 1000px 480px at 80% -190px,#265a9250,transparent),var(--bg);font:15px/1.52 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #75e0f3;outline-offset:3px}button:disabled{opacity:.42;cursor:not-allowed}.wrap{max-width:1410px;margin:auto;padding:20px 26px 42px}.top{display:flex;gap:15px;align-items:center;justify-content:space-between}.brand{display:flex;gap:11px;align-items:center}.mark{width:48px;height:48px;border:1px solid #345c7a;display:grid;place-items:center;background:#123354;color:#ffdb8f;font-size:27px;border-radius:14px}.brand b{font-size:19px;letter-spacing:-.4px}.brand span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}.actions,.segmented,.presets,.twobutton{display:flex;flex-wrap:wrap;gap:8px}.btn{padding:10px 14px;border:1px solid #3d5875;border-radius:11px;min-height:43px;color:#eff9ff;background:#182e4b;font-weight:750}.btn:hover{background:#274867}.btn.primary{border-color:#5bd9ef;background:#5bd9ef;color:#092137}.btn.primary:hover{background:#9cedf8}.btn.sm{font-size:13px;padding:8px 11px;min-height:40px}.hero{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:22px 0}.hero h1{font-size:clamp(31px,3.9vw,55px);line-height:1.09;letter-spacing:-1.5px;margin:9px 0}.hero h1 span{color:var(--cyan)}.hero p{margin:0;color:#c6d9e9;font-size:16px;max-width:780px}.tag{border:1px solid #45607c;display:inline-flex;border-radius:50px;background:#172e4c;padding:5px 11px;font-size:12px;font-weight:750;color:#c3e9f4}.heroAside{font-size:13px;color:#b4cce0;text-align:right}.heroAside strong{display:block;color:#f8dfae;font-size:16px}.main{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(330px,.86fr);gap:17px;align-items:stretch}.panel{background:linear-gradient(155deg,#142740,#0d1c31);border:1px solid #30455e;border-radius:20px;box-shadow:0 16px 46px #0002;min-width:0}.scene{overflow:hidden}.panehead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:17px 19px 0}.panehead h2{margin:0;font-size:20px}.pill{color:#adf6ea;background:#21445a;border-radius:18px;font-size:11px;padding:6px 10px;font-weight:800}.display{padding:5px 9px 0}.display svg{width:100%;height:auto;display:block;user-select:none;touch-action:none}.sceneFoot{font-size:13px;color:#ddedfc;background:#0c1a2f;border:1px solid #2c465f;border-radius:12px;padding:10px 12px;margin:0 17px 17px}.sceneFoot b{color:var(--amber)}.side{padding:18px;display:flex;flex-direction:column;gap:16px}.side h2{margin:0;font-size:20px}.field{background:#0c1a2e;border:1px solid #293f5b;border-radius:13px;padding:13px}.fieldHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.name{display:flex;align-items:center;gap:8px;font-weight:820}.dot{width:11px;height:11px;display:inline-block;border-radius:50%}.field output{color:#f5d48c;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums}.rangegroup{margin:11px 0 0}.rangegroup label{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#d7e7f4;font-weight:650}.rangegroup output{color:#f8dca4}.range{width:100%;accent-color:#6ddff4;cursor:pointer;height:29px}.smallrow{display:flex;justify-content:space-between;font-size:11px;color:#a4b7ca}.segmented button{flex:1;font-size:13px}.segmented button[aria-pressed=true]{background:#f4c86e;color:#0b1a2b;border-color:#f4c86e}.controlsHint{color:#a6bdd2;font-size:12px;margin:-3px 0 0}.results{margin-top:17px;padding:20px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:13px}.sectionhead h2{margin:0;font-size:20px}.statgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stat{background:#0a1a30;padding:13px;border:1px solid #2a425f;border-radius:12px;min-width:0}.stat small{display:block;color:#afc3d8;font-size:12px}.stat strong{font-variant-numeric:tabular-nums;font-size:clamp(19px,2vw,28px);display:block;line-height:1.25;margin:5px 0 0;overflow-wrap:anywhere}.stat strong.green{color:var(--green)}.stat strong.gold{color:var(--amber)}.formulaGrid{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:15px}.formula{border-left:3px solid var(--amber);background:#0a192e;padding:12px 15px;border-radius:0 10px 10px 0;min-width:0}.formula > b{color:#ffdf9b;display:block;margin-bottom:4px}.math{font-family:Cambria,"Cambria Math",Georgia,serif;font-size:clamp(16px,1.5vw,21px);line-height:1.6;overflow-wrap:anywhere}.formula .note{font-size:12px;color:#b4c9de;margin:8px 0 0}.lower{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:17px}.card{padding:20px}.card h2{font-size:20px;margin:0 0 6px}.card p{color:#d5e3f2;margin:6px 0 12px}.question{font-weight:760;font-size:17px;color:white!important}.response{min-height:54px;padding:10px 13px;background:#0c1c30;border:1px solid #3a5471;border-radius:10px;color:#bdd3e3;font-size:13px;margin-top:11px}.response.good{border-color:#388761;color:#b5f5d3;background:#0d3328}.response.bad{border-color:#a27b45;color:#ffe0a9;background:#34291d}.choice{display:block;width:100%;text-align:left;background:#0c1c31;border:1px solid #3a5471;color:#f3f8ff;font-weight:650;border-radius:9px;padding:11px;margin-top:8px;min-height:44px}.choice:hover{background:#1a3654}.choice.correct{border-color:#57bc8a;background:#15432f}.choice.wrong{border-color:#d97977;background:#462229}.teacher{padding:21px;margin-top:17px}.teacher h2{margin:0 0 9px;font-size:20px}.teacherGrid{display:grid;grid-template-columns:1.1fr 1fr;gap:17px}.teacher li{margin:6px 0;color:#d2e3f0}.teacher ul{margin:0;padding-left:20px}.teacher p{margin:0 0 8px;color:#c8daeb}.foot{font-size:12px;color:#95b0c9;text-align:center;margin:21px 0}.foot b{color:#f4c86e}.printSheet{display:none}.instructions{font-size:12px;color:#a6c2d6}.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.main{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;align-content:start}.side h2,.side .presets,.side .controlsHint,.side .segmented{grid-column:1/-1}.side .field{min-width:0}.heroAside{display:none}}
+@media(max-width:700px){.wrap{padding:13px 11px 24px}.brand b{font-size:15px}.mark{width:42px;height:42px}.brand span{font-size:9px}.actions{justify-content:flex-end}.actions button{font-size:11px;padding:8px;min-height:39px}.hero{margin:19px 0}.hero h1{font-size:34px}.hero p{font-size:14px}.side{display:flex}.panehead{padding:12px 12px 0}.panehead h2{font-size:17px}.sceneFoot{margin:0 10px 12px;font-size:12px}.display{padding:0}.statgrid{grid-template-columns:1fr 1fr}.formulaGrid,.lower,.teacherGrid{grid-template-columns:1fr}.stat strong{font-size:22px}.results,.card,.teacher{padding:15px}.pill{font-size:10px}}
+body.projector .wrap{max-width:none;padding:16px 32px}body.projector .hero{margin:12px 0}body.projector .hero h1{font-size:clamp(38px,3.3vw,58px)}body.projector .hero p{font-size:19px}body.projector .panehead h2,body.projector .side h2{font-size:26px}body.projector .main{grid-template-columns:minmax(0,1.6fr) minmax(360px,.75fr)}body.projector .stat strong{font-size:33px}body.projector .lower,body.projector .teacher{display:none}body.projector .sceneFoot,body.projector .fieldHead,body.projector .rangegroup label{font-size:17px}body.projector .scene svg{max-height:70vh}
+@media(max-width:950px){body.projector .main{grid-template-columns:1fr}}
+@media print{body{color:black!important;background:white!important}.wrap{padding:0}.top,.hero,.main,.results,.lower,.teacher,.foot{display:none!important}.printSheet{display:block;padding:7mm 10mm;font:14px/1.5 Arial,sans-serif}.printSheet h1{font-size:24px}.printSheet h2{font-size:17px;margin-top:23px}.printSheet .line{border-bottom:1px solid #333;height:31px}.printSheet p{margin:7px 0}.printSheet ol{padding-left:22px}.printSheet li{margin:14px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="mark" aria-hidden="true">↗</div><div><b>Physics with Sir Najam</b><span>Interactive Physics Laboratory</span></div></div>
+  <div class="actions"><button class="btn sm" id="projector" type="button">⛶ Projector mode</button><button class="btn sm" id="print" type="button">▤ Print worksheet</button></div>
+</header>
+<div class="hero"><div><span class="tag">GRADE XI · UNIT 2 · VECTORS</span><h1>Vector <span>Addition</span> Laboratory</h1><p>Change two vectors, observe their resultant, and discover why direction matters. Drag the arrow tips or use the sliders.</p></div><div class="heroAside"><strong>Interactive investigation</strong>Vector components • Addition • Resultants<br>FBISE support: P-11-B-01</div></div>
+<div class="main">
+  <section class="panel scene" aria-labelledby="sceneTitle">
+    <div class="panehead"><h2 id="sceneTitle">Two vectors, one resultant</h2><span class="pill">LIVE DIAGRAM</span></div>
+    <div class="display">
+      <svg id="diagram" viewBox="0 0 760 490" role="img" aria-label="Interactive coordinate plane showing vectors A and B and their resultant R. Drag the cyan or amber handles or use the accessible sliders below.">
+        <defs>
+          <marker id="ahead" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" viewBox="0 0 7 7"><path d="M0 0 L7 3.5 L0 7Z" fill="#5bd9ef"/></marker>
+          <marker id="bhead" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" viewBox="0 0 7 7"><path d="M0 0 L7 3.5 L0 7Z" fill="#ffd082"/></marker>
+          <marker id="rhead" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" viewBox="0 0 7 7"><path d="M0 0 L7 3.5 L0 7Z" fill="#90edb4"/></marker>
+        </defs>
+        <rect width="760" height="490" fill="#0c1b30" rx="8"/>
+        <g id="grid"></g><g id="geometry"></g><g id="labels"></g><g id="handles"></g>
+      </svg>
+    </div>
+    <div class="sceneFoot" id="sceneFoot" aria-live="polite">Change the vectors and compare both addition methods.</div>
+  </section>
+  <section class="panel side" aria-label="Vector controls">
+    <h2>Control the experiment</h2>
+    <div class="segmented" role="group" aria-label="Choose vector addition method"><button class="btn" type="button" data-mode="head" aria-pressed="true">Head-to-tail</button><button class="btn" type="button" data-mode="parallelogram" aria-pressed="false">Parallelogram</button></div>
+    <div class="field">
+      <div class="fieldHead"><div class="name"><span class="dot" style="background:var(--cyan)"></span> Vector A</div><output id="aSummary">6.0 N ∠ 30°</output></div>
+      <div class="rangegroup"><label for="aMag">Magnitude <output id="aMagVal">6.0 N</output></label><input class="range" id="aMag" type="range" min="0" max="8" step="0.1" value="6"/><div class="smallrow"><span>0 N</span><span>8 N</span></div></div>
+      <div class="rangegroup"><label for="aAngle">Direction <output id="aAngleVal">30°</output></label><input class="range" id="aAngle" type="range" min="0" max="360" step="1" value="30"/><div class="smallrow"><span>0°</span><span>360°</span></div></div>
+    </div>
+    <div class="field">
+      <div class="fieldHead"><div class="name"><span class="dot" style="background:var(--amber)"></span> Vector B</div><output id="bSummary">4.0 N ∠ 120°</output></div>
+      <div class="rangegroup"><label for="bMag">Magnitude <output id="bMagVal">4.0 N</output></label><input class="range" id="bMag" type="range" min="0" max="8" step="0.1" value="4"/><div class="smallrow"><span>0 N</span><span>8 N</span></div></div>
+      <div class="rangegroup"><label for="bAngle">Direction <output id="bAngleVal">120°</output></label><input class="range" id="bAngle" type="range" min="0" max="360" step="1" value="120"/><div class="smallrow"><span>0°</span><span>360°</span></div></div>
+    </div>
+    <div class="presets"><button type="button" class="btn sm" data-preset="parallel">Same direction</button><button type="button" class="btn sm" data-preset="perpendicular">Perpendicular</button><button type="button" class="btn sm" data-preset="opposite">Cancellation</button><button type="button" class="btn sm" data-preset="triangle">3–4–5 triangle</button><button type="button" class="btn sm" data-preset="reset">Reset all</button></div>
+    <p class="controlsHint">Angles are counterclockwise from the +x-axis. Vectors lie in one 2D plane. The diagram uses a fixed scale and supports touch, mouse and sliders.</p>
+  </section>
+</div>
+<section class="panel results" aria-labelledby="resultTitle">
+  <div class="sectionhead"><h2 id="resultTitle">Live calculations</h2><span class="tag">A + B = R</span></div>
+  <div class="statgrid">
+    <div class="stat"><small>Resultant magnitude</small><strong class="green" id="rMagnitude">—</strong></div>
+    <div class="stat"><small>Resultant direction</small><strong class="gold" id="rDirection">—</strong></div>
+    <div class="stat"><small>Horizontal component, Rₓ</small><strong id="rX">—</strong></div>
+    <div class="stat"><small>Vertical component, Rᵧ</small><strong id="rY">—</strong></div>
+  </div>
+  <div class="formulaGrid">
+    <div class="formula"><b>Resolve and add components</b><div class="math" id="componentWorking"></div><p class="note">Always retain component signs when adding.</p></div>
+    <div class="formula"><b>Magnitude and direction</b><div class="math" id="resultWorking"></div><p class="note" id="resultNote"></p></div>
+  </div>
+</section>
+<div class="lower">
+  <section class="panel card" aria-labelledby="challengeTitle">
+    <span class="tag">PREDICT → TEST → EXPLAIN</span><h2 id="challengeTitle">Student challenges</h2>
+    <p id="challengePrompt" class="question"></p>
+    <div class="twobutton"><button class="btn sm" id="checkChallenge" type="button">Check my setup</button><button class="btn sm" id="hint" type="button">Show hint</button><button class="btn sm" id="nextChallenge" type="button">Next challenge →</button></div>
+    <div class="response" id="challengeFeedback" role="status" aria-live="polite">Adjust the vectors, then select “Check my setup.”</div>
+  </section>
+  <section class="panel card" aria-labelledby="quizTitle">
+    <span class="tag">QUICK CONCEPT CHECK</span><h2 id="quizTitle">FBISE-style practice</h2>
+    <p id="quizQuestion" class="question"></p><div id="quizOptions"></div>
+    <div class="response" id="quizFeedback" aria-live="polite" role="status">Choose an answer to see an explanation.</div>
+    <div class="twobutton" style="margin-top:11px"><button class="btn sm" type="button" id="nextQuiz">Next question →</button></div>
+  </section>
+</div>
+<section class="panel teacher"><h2>Teacher notes • classroom and home</h2><div class="teacherGrid"><div><p><b>Projector discussion:</b> Ask students to predict the resultant before clicking one of the presets. Switch between head-to-tail and parallelogram to demonstrate that both methods produce the same resultant.</p><ul><li>Double the magnitudes of both vectors. What happens to |R|?</li><li>Rotate B until the resultant is smallest. Why?</li><li>Make a right triangle using 3 N and 4 N. Explain the 5 N resultant.</li></ul></div><div><p><b>Curriculum alignment:</b> P-11-B-01 (resolving 2D vectors into perpendicular components) is a summative outcome. Vector addition is presented here as a supporting conceptual extension; consult the textbook and current framework before assigning examination weight.</p><p><b>Access:</b> Runs offline, uses no student login, and stores no scores. Publish as a standalone HTML page and embed by URL in Google Sites.</p></div></div></section>
+<p class="foot"><b>Physics with Sir Najam</b> · Vector Addition Laboratory 1.0 · NBF Grade XI · Offline-ready · Designed for classroom projection and independent student practice</p>
+</div>
+<section class="printSheet" aria-label="Printable student worksheet"><h1>Physics with Sir Najam — Vector Addition Investigation</h1><p>Grade XI · Unit 2 · Name: ________________________ Date: ______________</p><p><b>Aim:</b> Investigate how two vectors combine using the component, head-to-tail and parallelogram methods.</p><h2>Experiment 1 — Observe and calculate</h2><ol><li>Set A = 6 N at 30°, and B = 4 N at 120°. Record Aₓ, Aᵧ, Bₓ and Bᵧ.<div class="line"></div><div class="line"></div></li><li>Calculate Rₓ, Rᵧ, magnitude of R and its angle. Compare with the app.<div class="line"></div><div class="line"></div></li><li>Change to the parallelogram method. Does the resultant change? Explain.<div class="line"></div></li></ol><h2>Experiment 2 — Predict before testing</h2><ol><li>Choose A = 3 N right and B = 4 N up. Predict the resultant magnitude and direction.<div class="line"></div></li><li>Make the vectors equal and opposite. Explain the resultant and what happens to its direction.<div class="line"></div></li><li>What common mistake occurs when students add only the two magnitudes?<div class="line"></div></li></ol><p><b>Reflection:</b> Explain in one sentence why vector direction is essential in addition.</p><div class="line"></div></section>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const DEG=Math.PI/180,OX=380,OY=245;let SCALE=20;
+const state={a:6,b:4,aa:30,ba:120,mode:'head'};
+const toXY=(m,ang)=>({x:m*Math.cos(ang*DEG),y:m*Math.sin(ang*DEG)});
+const norm=n=>Math.abs(n)<1e-9?0:n;
+const num=n=>norm(n).toFixed(2);
+const pt=p=>({x:OX+SCALE*p.x,y:OY-SCALE*p.y});
+const add=(p,q)=>({x:p.x+q.x,y:p.y+q.y});
+const subtract=(p,q)=>({x:p.x-q.x,y:p.y-q.y});
+const line=(x1,y1,x2,y2,col,width=3,dash='',arrow='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="${width}" stroke-linecap="round" ${dash?`stroke-dasharray="${dash}"`:''} ${arrow?`marker-end="url(#${arrow})"`:''}/>`;
+const circle=(x,y,r,fill,stroke='none',sw=1,attrs='')=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" ${attrs}/>`;
+const clip=(n,min,max)=>Math.max(min,Math.min(max,n));
+function drawGrid(){let h='';for(let i=-16;i<=16;i+=2){const x=OX+i*SCALE;h+=line(x,7,x,482,'#34506b',.65)}for(let i=-16;i<=16;i+=2){const y=OY+i*SCALE;h+=line(12,y,748,y,'#34506b',.65)}h+=line(14,OY,746,OY,'#7188a9',1.7)+line(OX,9,OX,482,'#7188a9',1.7);h+='<text x="738" y="236" fill="#bccde1" font-size="17">+x</text><text x="391" y="22" fill="#bccde1" font-size="17">+y</text><text x="390" y="265" fill="#c3d3e6" font-size="12">O</text>';$('grid').innerHTML=h;}
+function labState(){const a=toXY(state.a,state.aa),b=toXY(state.b,state.ba),r=add(a,b);return {a,b,r,am:pt(a),bm:pt(b),rm:pt(r),o:pt({x:0,y:0}),mag:Math.hypot(r.x,r.y)};}
+function label(x,y,value,col){return `<text x="${clip(x+10,14,721)}" y="${clip(y-13,23,477)}" font-size="19" font-weight="800" fill="${col}">${value}</text>`;}
+function update(){
+ const va=toXY(state.a,state.aa),vb=toXY(state.b,state.ba),vr=add(va,vb);
+ const maxX=Math.max(Math.abs(va.x),Math.abs(vb.x),Math.abs(vr.x),1), maxY=Math.max(Math.abs(va.y),Math.abs(vb.y),Math.abs(vr.y),1);
+ SCALE=Math.min(27,335/maxX,214/maxY); drawGrid();
+ const {a,b,r,am,bm,rm,o,mag}=labState();let geometry='',labels='',handles='';
+ const bBase=state.mode==='head'?am:o; const bTip=state.mode==='head'?rm:bm;
+ if(state.mode==='parallelogram'){
+  geometry+=line(am.x,am.y,rm.x,rm.y,'#ffd082',2,'6 6')+line(bm.x,bm.y,rm.x,rm.y,'#5bd9ef',2,'6 6');
+ }
+ if(mag>0.0000001) geometry+=line(o.x,o.y,rm.x,rm.y,'#90edb4',5.5,'','rhead');
+ if(state.a>0)geometry+=line(o.x,o.y,am.x,am.y,'#5bd9ef',4.8,'','ahead');
+ if(state.b>0)geometry+=line(bBase.x,bBase.y,bTip.x,bTip.y,'#ffd082',4.8,'','bhead');
+ labels+=label((o.x+am.x)/2,(o.y+am.y)/2,'A','#74e7f4');
+ labels+=label((bBase.x+bTip.x)/2,(bBase.y+bTip.y)/2,'B','#ffde9f');
+ if(mag>1e-8)labels+=label(rm.x,rm.y,'R','#adfac7');
+ geometry+=circle(o.x,o.y,4,'#fff');
+ // A/B handles are distinct movable endpoints, with large transparent targets for mouse and touch.
+ handles+=circle(am.x,am.y,18,'#5bd9ef','white',2.3,'opacity=".28"');
+ handles+=circle(am.x,am.y,7,'#5bd9ef','white',1.6);
+ handles+=circle(am.x,am.y,24,'transparent','transparent',0,'data-vector="a" style="cursor:grab" aria-label="Drag tip of vector A"');
+ handles+=circle(bTip.x,bTip.y,18,'#ffd082','white',2.3,'opacity=".25"');
+ handles+=circle(bTip.x,bTip.y,7,'#ffd082','white',1.6);
+ handles+=circle(bTip.x,bTip.y,24,'transparent','transparent',0,'data-vector="b" style="cursor:grab" aria-label="Drag tip of vector B"');
+ $('geometry').innerHTML=geometry;$('labels').innerHTML=labels;$('handles').innerHTML=handles;
+ for(const [key,val] of [['aMag',state.a],['bMag',state.b],['aAngle',state.aa],['bAngle',state.ba]])$(key).value=val;
+ for(const [key,val] of [['aMagVal',state.a.toFixed(1)+' N'],['bMagVal',state.b.toFixed(1)+' N'],['aAngleVal',state.aa+'°'],['bAngleVal',state.ba+'°'],['aSummary',state.a.toFixed(1)+' N ∠ '+state.aa+'°'],['bSummary',state.b.toFixed(1)+' N ∠ '+state.ba+'°']])$(key).textContent=val;
+ const angle=mag<1e-8?null:((Math.atan2(r.y,r.x)/DEG+360)%360);
+ $('rMagnitude').textContent=num(mag)+' N';
+ $('rDirection').textContent=angle===null?'Undefined':num(angle)+'°';
+ $('rX').textContent=num(r.x)+' N';$('rY').textContent=num(r.y)+' N';
+ $('componentWorking').innerHTML=`A<sub>x</sub> = ${state.a.toFixed(1)} cos ${state.aa}° = ${num(a.x)} N<br>A<sub>y</sub> = ${state.a.toFixed(1)} sin ${state.aa}° = ${num(a.y)} N<br>B<sub>x</sub> = ${state.b.toFixed(1)} cos ${state.ba}° = ${num(b.x)} N<br>B<sub>y</sub> = ${state.b.toFixed(1)} sin ${state.ba}° = ${num(b.y)} N<br>R<sub>x</sub> = ${num(a.x)} + (${num(b.x)}) = <b>${num(r.x)} N</b><br>R<sub>y</sub> = ${num(a.y)} + (${num(b.y)}) = <b>${num(r.y)} N</b>`;
+ $('resultWorking').innerHTML=`|R| = √(R<sub>x</sub>² + R<sub>y</sub>²)<br>= √((${num(r.x)})² + (${num(r.y)})²)<br>= <b>${num(mag)} N</b><br>θ<sub>R</sub> = ${angle===null?'undefined (zero vector)':num(angle)+'°'}`;
+ $('resultNote').textContent=angle===null?'A zero vector has no defined direction.':'The direction uses both component signs, so the correct quadrant is retained.';
+ $('sceneFoot').innerHTML=mag<1e-8?'<b>Zero resultant!</b> A and B cancel exactly. Direction is undefined.':`<b>${state.mode==='head'?'Head-to-tail':'Parallelogram'} method:</b> A + B = R = ${num(mag)} N at ${num(angle)}°. ${state.mode==='head'?'Vector B begins at the head of A.':'The resultant is the diagonal from the common tail.'}`;
+ document.querySelectorAll('[data-mode]').forEach(btn=>btn.setAttribute('aria-pressed',btn.dataset.mode===state.mode?'true':'false'));
+}
+function setState(next){Object.assign(state,next);update();}
+for(const key of ['aMag','aAngle','bMag','bAngle'])$(key).addEventListener('input',e=>{
+ const name={aMag:'a',bMag:'b',aAngle:'aa',bAngle:'ba'}[key];setState({[name]:Number(e.target.value)});
+});
+document.querySelectorAll('[data-mode]').forEach(el=>el.addEventListener('click',()=>setState({mode:el.dataset.mode})));
+const presets={parallel:{a:5,b:5,aa:0,ba:0},perpendicular:{a:5,b:5,aa:0,ba:90},opposite:{a:5,b:5,aa:0,ba:180},triangle:{a:3,b:4,aa:0,ba:90},reset:{a:6,b:4,aa:30,ba:120,mode:'head'}};
+document.querySelectorAll('[data-preset]').forEach(el=>el.addEventListener('click',()=>{setState(presets[el.dataset.preset]);clearChallengeFeedback();}));
+let dragging=null;const svg=$('diagram');
+function eventCoords(ev){const p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;const ctm=svg.getScreenCTM();if(!ctm)return null;const v=p.matrixTransform(ctm.inverse());return {x:(v.x-OX)/SCALE,y:(OY-v.y)/SCALE};}
+svg.addEventListener('pointerdown',ev=>{
+ const hit=ev.target.closest('[data-vector]');if(!hit)return;
+ dragging=hit.getAttribute('data-vector');svg.setPointerCapture(ev.pointerId);ev.preventDefault();
+});
+svg.addEventListener('pointermove',ev=>{
+ if(!dragging)return;
+ const p=eventCoords(ev);if(!p)return;
+ const {a}=labState();const delta=dragging==='b'&&state.mode==='head'?subtract(p,a):p;
+ const m=Math.hypot(delta.x,delta.y);
+ const mag=Math.round(clip(m,0,8)*10)/10;
+ const angle=m<0.00001?(dragging==='a'?state.aa:state.ba):Math.round((Math.atan2(delta.y,delta.x)/DEG+360)%360)%360;
+ setState(dragging==='a'?{a:mag,aa:angle}:{b:mag,ba:angle});
+});
+function finishDrag(){dragging=null;}svg.addEventListener('pointerup',finishDrag);svg.addEventListener('pointercancel',finishDrag);svg.addEventListener('lostpointercapture',finishDrag);
+$('projector').addEventListener('click',()=>{
+ const on=document.body.classList.toggle('projector');$('projector').textContent=on?'↙ Exit projector mode':'⛶ Projector mode';
+});
+$('print').addEventListener('click',()=>window.print());
+const tasks=[
+ {p:'Set A = 5 N toward +x and B = 5 N toward −x. Make the resultant zero.',h:'Try both magnitudes at 5 N, with the directions 180° apart.',test:()=>Math.abs(state.a-5)<.051&&Math.abs(state.b-5)<.051&&labState().mag<.06,yes:'Exactly! Two equal and opposite vectors cancel; the zero resultant has no direction.'},
+ {p:'Set A = 3 N along +x and B = 4 N along +y. Make the resultant 5 N.',h:'For A, use 0°. For B, use 90°. The components form a 3–4–5 right triangle.',test:()=>Math.abs(state.a-3)<.051&&Math.abs(state.b-4)<.051&&state.aa%360===0&&state.ba===90,yes:'Excellent! Rₓ = 3 N, Rᵧ = 4 N and |R| = 5 N.'},
+ {p:'Create two 5 N vectors pointing in the same direction so that |R| = 10 N.',h:'Set both magnitudes to 5 N and give both vectors the same angle.',test:()=>Math.abs(state.a-5)<.051&&Math.abs(state.b-5)<.051&&labState().mag>9.99,yes:'Correct! Parallel vectors pointing in the same direction add to 10 N.'},
+ {p:'Make a resultant that points into Quadrant II: Rₓ < 0 and Rᵧ > 0.',h:'The resultant must point left and up. Watch the signs of Rₓ and Rᵧ.',test:()=>labState().r.x<-.05&&labState().r.y>.05,yes:'Well done! Negative horizontal and positive vertical components put R in Quadrant II.'}
+];
+let taskIndex=0;function clearChallengeFeedback(){$('challengeFeedback').textContent='Adjust the vectors, then select “Check my setup.”';$('challengeFeedback').className='response';}
+function loadTask(){ $('challengePrompt').textContent=`Challenge ${taskIndex+1} of ${tasks.length}: ${tasks[taskIndex].p}`;clearChallengeFeedback();}
+$('checkChallenge').addEventListener('click',()=>{const ok=tasks[taskIndex].test();$('challengeFeedback').textContent=ok?tasks[taskIndex].yes:'Not quite yet. Compare the requested directions and magnitudes with the controls, then try again.';$('challengeFeedback').className='response '+(ok?'good':'bad');});
+$('hint').addEventListener('click',()=>{$('challengeFeedback').textContent=tasks[taskIndex].h;$('challengeFeedback').className='response';});
+$('nextChallenge').addEventListener('click',()=>{taskIndex=(taskIndex+1)%tasks.length;loadTask();});
+const questions=[
+ {q:'Two perpendicular vectors have magnitudes 3 N and 4 N. What is their resultant magnitude?',choices:['7 N','5 N','1 N','12 N'],answer:1,why:'The components form a right triangle: √(3² + 4²) = 5 N.'},
+ {q:'A = 6 N toward +x and B = 6 N toward −x. What is their resultant?',choices:['12 N toward +x','6 N upward','0 N','12 N toward −x'],answer:2,why:'Equal vectors in opposite directions cancel exactly.'},
+ {q:'A vector lies in Quadrant II. Which pair of component signs is correct?',choices:['Rₓ positive, Rᵧ positive','Rₓ positive, Rᵧ negative','Rₓ negative, Rᵧ negative','Rₓ negative, Rᵧ positive'],answer:3,why:'Quadrant II is left of the y-axis and above the x-axis.'},
+ {q:'If A and B are in exactly the same direction, what is |A + B|?',choices:['|A| + |B|','|A| − |B|','Always zero','√(|A|² + |B|²)'],answer:0,why:'Magnitudes add directly only when the vectors point in the same direction.'},
+ {q:'What is the direction of a zero resultant vector?',choices:['Always 0°','Always 180°','Undefined','Always 90°'],answer:2,why:'The zero vector has zero magnitude but no unique direction.'}
+];
+let questionIndex=0,answered=false;function loadQuiz(){const q=questions[questionIndex];$('quizQuestion').textContent=`Question ${questionIndex+1} of ${questions.length}: ${q.q}`;$('quizOptions').innerHTML=q.choices.map((s,i)=>`<button type="button" class="choice" data-choice="${i}">${String.fromCharCode(65+i)}. ${s}</button>`).join('');$('quizFeedback').textContent='Choose an answer to see an explanation.';$('quizFeedback').className='response';answered=false;}
+$('quizOptions').addEventListener('click',ev=>{const b=ev.target.closest('[data-choice]');if(!b||answered)return;answered=true;let picked=Number(b.dataset.choice),q=questions[questionIndex];$('quizOptions').querySelectorAll('[data-choice]').forEach(el=>{let n=Number(el.dataset.choice);el.disabled=true;if(n===q.answer)el.classList.add('correct');else if(n===picked)el.classList.add('wrong');});$('quizFeedback').textContent=(picked===q.answer?'Correct. ':'The correct option is '+String.fromCharCode(65+q.answer)+'. ')+q.why;$('quizFeedback').className='response '+(picked===q.answer?'good':'bad');});
+$('nextQuiz').addEventListener('click',()=>{questionIndex=(questionIndex+1)%questions.length;loadQuiz();});
+drawGrid();update();loadTask();loadQuiz();
+</script>
+</body>
+</html>
