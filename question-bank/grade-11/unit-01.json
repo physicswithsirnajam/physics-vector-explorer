@@ -1,20 +1,19 @@
 {
   "schemaVersion": 1,
   "bankId": "PSN-XI-UNIT-01",
-  "bankVersion": "pilot-v2-2026-10-25",
+  "bankVersion": "pilot-v3-math-stimulus-2026-10-25",
   "title": "Grade XI Physics – Unit 1: Physical Quantities and Measurements",
   "status": "practice-pilot",
   "sourceDocument": "6_11th_Unit 1_MCQs(1).docx",
   "sourceSection": "SLO-BASED MCQ BANK",
   "limitations": [
-    "Pilot currently contains 47 source-reviewed conceptual MCQs: 24 from the initial pilot and 23 new text-safe selections from a 275-question SLO source bank.",
-    "Of the 275 source MCQs, 200 contain Word equation objects. These are not yet imported; conversion and visual validation are required.",
-    "Stimulus question sets and text-only questions that require a preceding shared passage are not included.",
-    "Does not yet cover every summative theory SLO, application-level calculations, or the official FBISE full-paper blueprint.",
-    "All published SLO mappings are supporting classifications requiring detailed teacher review; boardEligible=false.",
-    "Printed textbook page numbers are still pending verification.",
-    "Source author Word answer keys have been preserved for the additional 23 items, without changing their wording.",
-    "Do not present this bank as an exact FBISE examination or an exhaustive Unit 1 assessment."
+    "Live practice pilot contains 86 of 275 original SLO-bank MCQs. New update adds 39, including 35 maths-capable non-stimulus MCQs and 4 with a shared precision/accuracy stimulus.",
+    "39 added questions preserve formulae as native MathML, displayed by browsers supporting MathML. Spot-check mathematical display and key scientific correctness on deployed Chrome before sharing broadly.",
+    "Four questions from stimulus set 201–204 show their full common passage as context. They currently randomize individually in learning practice; full FBISE mock grouped stimulus selection is not ready.",
+    "Several source MCQs still depend on additional stimulus passages or contain Word math not yet imported. Do not claim all 275 are live.",
+    "Original author answer keys and explanations preserved, with source IDs. SLO tags, cognitive levels and difficulty labels are supporting first-pass classifications and need final teacher/curriculum audit.",
+    "Textbook printed page references are pending confirmation and boardEligible remains false for all pilot questions.",
+    "Do not present practice bank as a certified FBISE-format paper, or as sufficient for summative exam preparation."
   ],
   "questions": [
     {
@@ -2178,6 +2177,2089 @@
       "status": "pilot-reviewed",
       "active": true,
       "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0101",
+      "sourceQuestionNumber": 101,
+      "type": "single_choice",
+      "stem": "From Newton’s law [F = \\frac{Gm_{1}m_{2}}{r^{2}}] , the dimensions of [G] are:",
+      "stemHtml": "<strong>From Newton’s law</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><mi>G</mi><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></mrow></semantics></math><strong>, the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>G</mi></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack ML^{3}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>3</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack M^{- 1}L^{3}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>L</mi><mn>3</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack M^{- 1}L^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack ML^{- 2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[G = Fr^{2}/\\left( m_{1}m_{2} \\right)] , giving [\\left\\lbrack M^{- 1}L^{3}T^{- 2} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>G</mi><mo>=</mo><mi>F</mi><msup><mi>r</mi><mn>2</mn></msup><mi>/</mi><mrow><mo stretchy=\"true\">(</mo><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub><mo stretchy=\"true\">)</mo></mrow></mrow></semantics></math>, giving <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>L</mi><mn>3</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 101
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0102",
+      "sourceQuestionNumber": 102,
+      "type": "single_choice",
+      "stem": "The dimensions of density are:",
+      "stemHtml": "<strong>The dimensions of density are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack ML^{- 3} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack ML^{3} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>3</mn></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack M^{- 1}L^{3} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>L</mi><mn>3</mn></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack ML^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Density = m/V, giving [ML⁻³].",
+      "explanationHtml": "Density = m/V, giving [ML⁻³].",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 102
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0103",
+      "sourceQuestionNumber": 103,
+      "type": "single_choice",
+      "stem": "A chemical process is expected to produce [250\\, g] of material but actually produces [240\\, g] . The percentage error relative to the expected value is:",
+      "stemHtml": "<strong>A chemical process is expected to produce</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>250</mn><mspace width=\"0.167em\"></mspace><mi>g</mi></mrow></semantics></math> <strong>of material but actually produces</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>240</mn><mspace width=\"0.167em\"></mspace><mi>g</mi></mrow></semantics></math><strong>. The percentage error relative to the expected value is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[2\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[4\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[10\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[25\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>25</mn><mi>%</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[(250 - 240)/250 \\times 100 = 4\\%] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo stretchy=\"true\">(</mo><mn>250</mn><mo>−</mo><mn>240</mn><mo stretchy=\"true\">)</mo></mrow><mi>/</mi><mn>250</mn><mo>×</mo><mn>100</mn><mo>=</mo><mn>4</mn><mi>%</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 103
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0104",
+      "sourceQuestionNumber": 104,
+      "type": "single_choice",
+      "stem": "Since Planck’s constant may be obtained from [E = hf] , its dimensions are:",
+      "stemHtml": "<strong>Since Planck’s constant may be obtained from</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>f</mi></mrow></semantics></math><strong>, its dimensions are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack MLT^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack M^{- 1}L^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "From [E = hf] , [\\lbrack h\\rbrack = \\lbrack E\\rbrack/\\lbrack f\\rbrack = \\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack] .",
+      "explanationHtml": "From <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>f</mi></mrow></semantics></math>, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>h</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mi>E</mi><mo stretchy=\"false\">]</mo><mi>/</mi><mo stretchy=\"false\">[</mo><mi>f</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 104
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0105",
+      "sourceQuestionNumber": 105,
+      "type": "single_choice",
+      "stem": "In the equation [s = ut + \\frac{1}{2}at^{n}] , dimensional homogeneity requires [n] to be:",
+      "stemHtml": "<strong>In the equation</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mi>u</mi><mi>t</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mi>n</mi></msup></mrow></semantics></math><strong>, dimensional homogeneity requires</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>n</mi></semantics></math> <strong>to be:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "0",
+          "html": "0"
+        },
+        {
+          "id": "B",
+          "text": "1",
+          "html": "1"
+        },
+        {
+          "id": "C",
+          "text": "2",
+          "html": "2"
+        },
+        {
+          "id": "D",
+          "text": "3",
+          "html": "3"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[at^{n}] must have dimension [L] , so [LT^{- 2}T^{n} = L] gives [n = 2] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><msup><mi>t</mi><mi>n</mi></msup></mrow></semantics></math> must have dimension <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>L</mi></semantics></math>, so <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>T</mi><mi>n</mi></msup><mo>=</mo><mi>L</mi></mrow></semantics></math> gives <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 105
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0106",
+      "sourceQuestionNumber": 106,
+      "type": "single_choice",
+      "stem": "In [v^{2} = u^{2} + 2as] , the dimensions of [as] are:",
+      "stemHtml": "<strong>In</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>s</mi></mrow></semantics></math><strong>, the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mi>s</mi></mrow></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack L^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack L^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[\\lbrack as\\rbrack = \\left\\lbrack LT^{- 2} \\right\\rbrack\\lbrack L\\rbrack = \\left\\lbrack L^{2}T^{- 2} \\right\\rbrack] , matching [v^{2}] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>a</mi><mi>s</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mo stretchy=\"false\">[</mo><mi>L</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>, matching <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><msup><mi>v</mi><mn>2</mn></msup></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 106
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0107",
+      "sourceQuestionNumber": 107,
+      "type": "single_choice",
+      "stem": "If [x = vt^{n}] where [x] is displacement and [v] is velocity, dimensional consistency requires:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mi>v</mi><msup><mi>t</mi><mi>n</mi></msup></mrow></semantics></math> <strong>where</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>x</mi></semantics></math> <strong>is displacement and</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>v</mi></semantics></math> <strong>is velocity, dimensional consistency requires:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[n = - 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[n = 0]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[n = 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[n = 2]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[\\left\\lbrack vt^{n} \\right\\rbrack = LT^{- 1}T^{n} = L] requires [n = 1] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow><mo stretchy=\"true\">[</mo><mi>v</mi><msup><mi>t</mi><mi>n</mi></msup><mo stretchy=\"true\">]</mo></mrow><mo>=</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mi>n</mi></msup><mo>=</mo><mi>L</mi></mrow></semantics></math> requires <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 107
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0108",
+      "sourceQuestionNumber": 108,
+      "type": "single_choice",
+      "stem": "If [F = mv^{a}t^{b}] , dimensional analysis gives the powers:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mi>m</mi><msup><mi>v</mi><mi>a</mi></msup><msup><mi>t</mi><mi>b</mi></msup></mrow></semantics></math><strong>, dimensional analysis gives the powers:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[a = 1,\\mspace{6mu} b = - 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mi>b</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[a = 2,\\mspace{6mu} b = - 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>2</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mi>b</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[a = 1,\\mspace{6mu} b = 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mi>b</mi><mo>=</mo><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[a = - 1,\\mspace{6mu} b = 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mi>b</mi><mo>=</mo><mn>1</mn></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "[mv/t] has dimensions [M\\left( LT^{- 1} \\right)T^{- 1} = MLT^{- 2}] , the dimensions of force.",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>m</mi><mi>v</mi><mi>/</mi><mi>t</mi></mrow></semantics></math> has dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>M</mi><mrow><mo stretchy=\"true\">(</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">)</mo></mrow><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mi>M</mi><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>, the dimensions of force.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 108
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0109",
+      "sourceQuestionNumber": 109,
+      "type": "single_choice",
+      "stem": "If the time period [T] depends upon length [l] and gravitational acceleration [g] as [T \\propto l^{a}g^{b}] , then [a] is:",
+      "stemHtml": "<strong>If the time period</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>T</mi></semantics></math> <strong>depends upon length</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>l</mi></semantics></math> <strong>and gravitational acceleration</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>g</mi></semantics></math> <strong>as</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>T</mi><mo>∝</mo><msup><mi>l</mi><mi>a</mi></msup><msup><mi>g</mi><mi>b</mi></msup></mrow></semantics></math><strong>, then</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>a</mi></semantics></math> <strong>is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[- 1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>−</mi><mn>1</mn></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[- \\frac{1}{2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>−</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\frac{1}{2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mfrac><mn>1</mn><mn>2</mn></mfrac></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[1]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mn>1</mn></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Pendulum dimensional analysis gives [T \\propto l^{1/2}g^{- 1/2}] .",
+      "explanationHtml": "Pendulum dimensional analysis gives <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>T</mi><mo>∝</mo><msup><mi>l</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msup><mi>g</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 109
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0152",
+      "sourceQuestionNumber": 152,
+      "type": "single_choice",
+      "stem": "In the equation [s = ut + \\frac{1}{2}at^{2}] , the dimensions of the term [ut] are:",
+      "stemHtml": "<strong>In the equation</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mi>u</mi><mi>t</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></semantics></math><strong>, the dimensions of the term</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>u</mi><mi>t</mi></mrow></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack LT^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\lbrack L\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>L</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack L^{2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[\\lbrack ut\\rbrack = \\left\\lbrack LT^{- 1} \\right\\rbrack\\lbrack T\\rbrack = \\lbrack L\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>u</mi><mi>t</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mo stretchy=\"false\">[</mo><mi>T</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mi>L</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 152
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0155",
+      "sourceQuestionNumber": 155,
+      "type": "single_choice",
+      "stem": "A quantity [Q] has dimensions [\\left\\lbrack ML^{- 1}T^{- 2} \\right\\rbrack] . It most likely represents:",
+      "stemHtml": "<strong>A quantity</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>Q</mi></semantics></math> <strong>has dimensions</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math><strong>. It most likely represents:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "force",
+          "html": "force"
+        },
+        {
+          "id": "B",
+          "text": "energy",
+          "html": "energy"
+        },
+        {
+          "id": "C",
+          "text": "pressure",
+          "html": "pressure"
+        },
+        {
+          "id": "D",
+          "text": "power",
+          "html": "power"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Pressure has dimensions [\\left\\lbrack ML^{- 1}T^{- 2} \\right\\rbrack] .",
+      "explanationHtml": "Pressure has dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 155
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0156",
+      "sourceQuestionNumber": 156,
+      "type": "single_choice",
+      "stem": "A quantity with dimensions [\\left\\lbrack ML^{2}T^{- 3} \\right\\rbrack] corresponds to:",
+      "stemHtml": "<strong>A quantity with dimensions</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math> <strong>corresponds to:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "power",
+          "html": "power"
+        },
+        {
+          "id": "B",
+          "text": "work",
+          "html": "work"
+        },
+        {
+          "id": "C",
+          "text": "force",
+          "html": "force"
+        },
+        {
+          "id": "D",
+          "text": "pressure",
+          "html": "pressure"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Power has dimensions [\\left\\lbrack ML^{2}T^{- 3} \\right\\rbrack] .",
+      "explanationHtml": "Power has dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 156
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0157",
+      "sourceQuestionNumber": 157,
+      "type": "single_choice",
+      "stem": "The speed [v] of a shallow-water wave is assumed to depend on gravitational acceleration [g] and water depth [h] . Which relation is dimensionally possible?",
+      "stemHtml": "<strong>The speed</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>v</mi></semantics></math> <strong>of a shallow-water wave is assumed to depend on gravitational acceleration</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>g</mi></semantics></math> <strong>and water depth</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>h</mi></semantics></math><strong>. Which relation is dimensionally possible?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[v = \\sqrt{gh}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><msqrt><mrow><mi>g</mi><mi>h</mi></mrow></msqrt></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[v = gh]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><mi>g</mi><mi>h</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[v = \\frac{g}{h}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mi>g</mi><mi>h</mi></mfrac></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[v = \\sqrt{\\frac{h}{g}}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><msqrt><mfrac><mi>h</mi><mi>g</mi></mfrac></msqrt></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "[\\sqrt{gh} = \\sqrt{\\left( LT^{- 2} \\right)(L)} = LT^{- 1}] , the dimensions of speed.",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msqrt><mrow><mi>g</mi><mi>h</mi></mrow></msqrt><mo>=</mo><msqrt><mrow><mrow><mo stretchy=\"true\">(</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">)</mo></mrow><mrow><mo stretchy=\"true\">(</mo><mi>L</mi><mo stretchy=\"true\">)</mo></mrow></mrow></msqrt><mo>=</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow></semantics></math>, the dimensions of speed.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 157
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0161",
+      "sourceQuestionNumber": 161,
+      "type": "single_choice",
+      "stem": "If [Q = \\frac{F}{A}] , then the dimensions of [Q] are:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><mfrac><mi>F</mi><mi>A</mi></mfrac></mrow></semantics></math><strong>, then the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>Q</mi></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack MLT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack ML^{- 1}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack M^{- 1}LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[F/A] gives [\\left\\lbrack ML^{- 1}T^{- 2} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mi>/</mi><mi>A</mi></mrow></semantics></math> gives <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 161
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0163",
+      "sourceQuestionNumber": 163,
+      "type": "single_choice",
+      "stem": "If [v = \\frac{s}{t}] , then the dimensions of [v^{2}] are:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><mfrac><mi>s</mi><mi>t</mi></mfrac></mrow></semantics></math><strong>, then the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><msup><mi>v</mi><mn>2</mn></msup></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack LT^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack L^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack L^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Squaring [\\left\\lbrack LT^{- 1} \\right\\rbrack] gives [\\left\\lbrack L^{2}T^{- 2} \\right\\rbrack] .",
+      "explanationHtml": "Squaring <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math> gives <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 163
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0164",
+      "sourceQuestionNumber": 164,
+      "type": "single_choice",
+      "stem": "If [E = mv^{2}] , then the dimensions of [E] are:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup></mrow></semantics></math><strong>, then the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>E</mi></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack MLT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack ML^{2}T^{- 3} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack M^{2}LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>M</mi><mn>2</mn></msup><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "[mv^{2}] gives [\\lbrack M\\rbrack\\left\\lbrack L^{2}T^{- 2} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup></mrow></semantics></math> gives <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>M</mi><mo stretchy=\"false\">]</mo><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 164
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0165",
+      "sourceQuestionNumber": 165,
+      "type": "single_choice",
+      "stem": "If [Q = x^{2}y] and [\\lbrack x\\rbrack = \\lbrack L\\rbrack] , [\\lbrack y\\rbrack = \\left\\lbrack T^{- 1} \\right\\rbrack] , then [\\lbrack Q\\rbrack] is:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></mrow></semantics></math> <strong>and</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>x</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mi>L</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math><strong>,</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>y</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math><strong>, then</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>Q</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math> <strong>is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack L^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack LT^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack L^{2}T \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><mi>T</mi><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack L^{- 2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "[\\lbrack L\\rbrack^{2}\\left\\lbrack T^{- 1} \\right\\rbrack = \\left\\lbrack L^{2}T^{- 1} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>L</mi><msup><mo stretchy=\"false\">]</mo><mn>2</mn></msup><mrow><mo stretchy=\"true\">[</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 165
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0169",
+      "sourceQuestionNumber": 169,
+      "type": "single_choice",
+      "stem": "If [z = x - y] , then the uncertainty in [z] is:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>z</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>y</mi></mrow></semantics></math><strong>, then the uncertainty in</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>z</mi></semantics></math> <strong>is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\Delta x - \\Delta y]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Δ</mi><mi>x</mi><mo>−</mo><mi>Δ</mi><mi>y</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\Delta x + \\Delta y]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Δ</mi><mi>x</mi><mo>+</mo><mi>Δ</mi><mi>y</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\Delta x\\Delta y]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Δ</mi><mi>x</mi><mi>Δ</mi><mi>y</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\Delta x/\\Delta y]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Δ</mi><mi>x</mi><mi>/</mi><mi>Δ</mi><mi>y</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Absolute uncertainties add even when measured values are subtracted.",
+      "explanationHtml": "Absolute uncertainties add even when measured values are subtracted.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 169
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0171",
+      "sourceQuestionNumber": 171,
+      "type": "single_choice",
+      "stem": "The expression [kg\\, m\\, s^{- 2}] represents the SI unit of:",
+      "stemHtml": "<strong>The expression</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math> <strong>represents the SI unit of:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "work",
+          "html": "work"
+        },
+        {
+          "id": "B",
+          "text": "force",
+          "html": "force"
+        },
+        {
+          "id": "C",
+          "text": "power",
+          "html": "power"
+        },
+        {
+          "id": "D",
+          "text": "pressure",
+          "html": "pressure"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[kg\\, m\\, s^{- 2}] is the base-unit form of the newton.",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math> is the base-unit form of the newton.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 171
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0172",
+      "sourceQuestionNumber": 172,
+      "type": "single_choice",
+      "stem": "Since [1J = 1N\\, m] , a joule expressed in base units is:",
+      "stemHtml": "<strong>Since</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mi>J</mi><mo>=</mo><mn>1</mn><mi>N</mi><mspace width=\"0.167em\"></mspace><mi>m</mi></mrow></semantics></math><strong>, a joule expressed in base units is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[kg\\, m\\, s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[kg\\, m^{2}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[kg\\, m^{2}s^{- 3}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[kg\\, m^{- 1}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[J = N\\, m = kg\\, m^{2}s^{- 2}] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>J</mi><mo>=</mo><mi>N</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mo>=</mo><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 172
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0173",
+      "sourceQuestionNumber": 173,
+      "type": "single_choice",
+      "stem": "The product [Pa\\, m^{2}] is equivalent to:",
+      "stemHtml": "<strong>The product</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>P</mi><mi>a</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup></mrow></semantics></math> <strong>is equivalent to:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[J]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>J</mi></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[W]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>W</mi></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[N]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>N</mi></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[C]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>C</mi></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Since [Pa = N/m^{2}] , [Pa\\, m^{2} = N] .",
+      "explanationHtml": "Since <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>P</mi><mi>a</mi><mo>=</mo><mi>N</mi><mi>/</mi><msup><mi>m</mi><mn>2</mn></msup></mrow></semantics></math>, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>P</mi><mi>a</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><mo>=</mo><mi>N</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 173
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0174",
+      "sourceQuestionNumber": 174,
+      "type": "single_choice",
+      "stem": "Since Q = It, the quantity C/s is equivalent to:",
+      "stemHtml": "<strong>Since Q = It, the quantity C/s is equivalent to:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[A]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>A</mi></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[N]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>N</mi></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[J]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>J</mi></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[Pa]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>P</mi><mi>a</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Since [C = A\\, s] , [C/s = A] .",
+      "explanationHtml": "Since <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi><mo>=</mo><mi>A</mi><mspace width=\"0.167em\"></mspace><mi>s</mi></mrow></semantics></math>, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>C</mi><mi>/</mi><mi>s</mi><mo>=</mo><mi>A</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 174
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0201",
+      "sourceQuestionNumber": 201,
+      "type": "single_choice",
+      "stem": "Which instrument gives readings that are both highly precise and accurate?",
+      "stemHtml": "<strong>Which instrument gives readings that are both highly precise and accurate?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "Instrument A",
+          "html": "Instrument A"
+        },
+        {
+          "id": "B",
+          "text": "Instrument B",
+          "html": "Instrument B"
+        },
+        {
+          "id": "C",
+          "text": "Instrument C",
+          "html": "Instrument C"
+        },
+        {
+          "id": "D",
+          "text": "B and C",
+          "html": "B and C"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A’s values cluster tightly around the accepted value [12.00\\, cm] .",
+      "explanationHtml": "A’s values cluster tightly around the accepted value <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Precision and accuracy",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 201
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)",
+      "stimulusSetId": "XI-U01-S201-204",
+      "stimulusTitle": "Precision and Accuracy — Three Instruments",
+      "stimulusHtml": "<p><strong>STIMULUS 1 — PRECISION AND ACCURACY</strong></p>\n<p>The accepted length of a standard metal rod is:</p>\n<p><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Three instruments give the following repeated readings:</p>\n<p>Instrument A: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>11.99</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument B: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>13.00</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>13.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.99</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument C: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11.5</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.0</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.5</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Use this information for Questions 201–204.</p>",
+      "stimulusText": "STIMULUS 1 — PRECISION AND ACCURACY The accepted length of a standard metal rod is: [12.00\\, cm] Three instruments give the following repeated readings: Instrument A: [12.01,\\mspace{6mu} 11.99,\\mspace{6mu} 12.00\\, cm] Instrument B: [13.00,\\mspace{6mu} 13.01,\\mspace{6mu} 12.99\\, cm] Instrument C: [11.5,\\mspace{6mu} 12.0,\\mspace{6mu} 12.5\\, cm] Use this information for Questions 201–204."
+    },
+    {
+      "id": "XI-U01-MCQ-0202",
+      "sourceQuestionNumber": 202,
+      "type": "single_choice",
+      "stem": "Which instrument gives highly precise but inaccurate readings?",
+      "stemHtml": "<strong>Which instrument gives highly precise but inaccurate readings?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "Instrument A",
+          "html": "Instrument A"
+        },
+        {
+          "id": "B",
+          "text": "Instrument B",
+          "html": "Instrument B"
+        },
+        {
+          "id": "C",
+          "text": "Instrument C",
+          "html": "Instrument C"
+        },
+        {
+          "id": "D",
+          "text": "None",
+          "html": "None"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "B’s readings are tightly grouped but consistently about [1\\, cm] too high.",
+      "explanationHtml": "B’s readings are tightly grouped but consistently about <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math> too high.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Precision and accuracy",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 202
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)",
+      "stimulusSetId": "XI-U01-S201-204",
+      "stimulusTitle": "Precision and Accuracy — Three Instruments",
+      "stimulusHtml": "<p><strong>STIMULUS 1 — PRECISION AND ACCURACY</strong></p>\n<p>The accepted length of a standard metal rod is:</p>\n<p><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Three instruments give the following repeated readings:</p>\n<p>Instrument A: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>11.99</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument B: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>13.00</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>13.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.99</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument C: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11.5</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.0</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.5</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Use this information for Questions 201–204.</p>",
+      "stimulusText": "STIMULUS 1 — PRECISION AND ACCURACY The accepted length of a standard metal rod is: [12.00\\, cm] Three instruments give the following repeated readings: Instrument A: [12.01,\\mspace{6mu} 11.99,\\mspace{6mu} 12.00\\, cm] Instrument B: [13.00,\\mspace{6mu} 13.01,\\mspace{6mu} 12.99\\, cm] Instrument C: [11.5,\\mspace{6mu} 12.0,\\mspace{6mu} 12.5\\, cm] Use this information for Questions 201–204."
+    },
+    {
+      "id": "XI-U01-MCQ-0203",
+      "sourceQuestionNumber": 203,
+      "type": "single_choice",
+      "stem": "Which instrument shows the greatest spread among repeated readings?",
+      "stemHtml": "<strong>Which instrument shows the greatest spread among repeated readings?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "Instrument A",
+          "html": "Instrument A"
+        },
+        {
+          "id": "B",
+          "text": "Instrument B",
+          "html": "Instrument B"
+        },
+        {
+          "id": "C",
+          "text": "Instrument C",
+          "html": "Instrument C"
+        },
+        {
+          "id": "D",
+          "text": "A and B equally",
+          "html": "A and B equally"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "C ranges from [11.5] to [12.5\\, cm] , giving the widest spread.",
+      "explanationHtml": "C ranges from <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mn>11.5</mn></semantics></math> to <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.5</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math>, giving the widest spread.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Precision and accuracy",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 203
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)",
+      "stimulusSetId": "XI-U01-S201-204",
+      "stimulusTitle": "Precision and Accuracy — Three Instruments",
+      "stimulusHtml": "<p><strong>STIMULUS 1 — PRECISION AND ACCURACY</strong></p>\n<p>The accepted length of a standard metal rod is:</p>\n<p><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Three instruments give the following repeated readings:</p>\n<p>Instrument A: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>11.99</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument B: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>13.00</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>13.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.99</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument C: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11.5</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.0</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.5</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Use this information for Questions 201–204.</p>",
+      "stimulusText": "STIMULUS 1 — PRECISION AND ACCURACY The accepted length of a standard metal rod is: [12.00\\, cm] Three instruments give the following repeated readings: Instrument A: [12.01,\\mspace{6mu} 11.99,\\mspace{6mu} 12.00\\, cm] Instrument B: [13.00,\\mspace{6mu} 13.01,\\mspace{6mu} 12.99\\, cm] Instrument C: [11.5,\\mspace{6mu} 12.0,\\mspace{6mu} 12.5\\, cm] Use this information for Questions 201–204."
+    },
+    {
+      "id": "XI-U01-MCQ-0204",
+      "sourceQuestionNumber": 204,
+      "type": "single_choice",
+      "stem": "Accuracy of the readings is primarily determined by comparing them with:",
+      "stemHtml": "<strong>Accuracy of the readings is primarily determined by comparing them with:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "one another",
+          "html": "one another"
+        },
+        {
+          "id": "B",
+          "text": "the accepted value [12.00\\, cm]",
+          "html": "the accepted value <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "their number of decimal places",
+          "html": "their number of decimal places"
+        },
+        {
+          "id": "D",
+          "text": "the number of observations",
+          "html": "the number of observations"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Accuracy is judged by closeness to the accepted or true value.",
+      "explanationHtml": "Accuracy is judged by closeness to the accepted or true value.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Precision and accuracy",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 204
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)",
+      "stimulusSetId": "XI-U01-S201-204",
+      "stimulusTitle": "Precision and Accuracy — Three Instruments",
+      "stimulusHtml": "<p><strong>STIMULUS 1 — PRECISION AND ACCURACY</strong></p>\n<p>The accepted length of a standard metal rod is:</p>\n<p><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Three instruments give the following repeated readings:</p>\n<p>Instrument A: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>11.99</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.00</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument B: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>13.00</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>13.01</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.99</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math><br>\nInstrument C: <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11.5</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.0</mn><mo>,</mo><mspace width=\"0.333em\"></mspace><mn>12.5</mn><mspace width=\"0.167em\"></mspace><mi>c</mi><mi>m</mi></mrow></semantics></math></p>\n<p>Use this information for Questions 201–204.</p>",
+      "stimulusText": "STIMULUS 1 — PRECISION AND ACCURACY The accepted length of a standard metal rod is: [12.00\\, cm] Three instruments give the following repeated readings: Instrument A: [12.01,\\mspace{6mu} 11.99,\\mspace{6mu} 12.00\\, cm] Instrument B: [13.00,\\mspace{6mu} 13.01,\\mspace{6mu} 12.99\\, cm] Instrument C: [11.5,\\mspace{6mu} 12.0,\\mspace{6mu} 12.5\\, cm] Use this information for Questions 201–204."
+    },
+    {
+      "id": "XI-U01-MCQ-0205",
+      "sourceQuestionNumber": 205,
+      "type": "single_choice",
+      "stem": "The SI base-unit expression of force is:",
+      "stemHtml": "<strong>The SI base-unit expression of force is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[kg\\, m\\, s^{- 1}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[kg\\, m\\, s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[kg\\, m^{2}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[kg\\, m^{- 1}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "From [F = ma] , [N = kg\\, m\\, s^{- 2}] .",
+      "explanationHtml": "From <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mi>m</mi><mi>a</mi></mrow></semantics></math>, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>N</mi><mo>=</mo><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 205
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0206",
+      "sourceQuestionNumber": 206,
+      "type": "single_choice",
+      "stem": "The SI base-unit expression of work is:",
+      "stemHtml": "<strong>The SI base-unit expression of work is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[kg\\, m^{2}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[kg\\, m\\, s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[kg\\, m^{2}s^{- 3}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[kg\\, m^{- 1}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Work = Fs, giving kg m² s⁻².",
+      "explanationHtml": "Work = Fs, giving kg m² s⁻².",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 206
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0207",
+      "sourceQuestionNumber": 207,
+      "type": "single_choice",
+      "stem": "The SI base-unit expression of power is:",
+      "stemHtml": "<strong>The SI base-unit expression of power is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[kg\\, m^{2}s^{- 1}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[kg\\, m^{2}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[kg\\, m^{2}s^{- 3}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[kg\\, m^{- 1}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Power = W/t, giving kg m² s⁻³.",
+      "explanationHtml": "Power = W/t, giving kg m² s⁻³.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 207
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0208",
+      "sourceQuestionNumber": 208,
+      "type": "single_choice",
+      "stem": "The SI base-unit expression of pressure is:",
+      "stemHtml": "<strong>The SI base-unit expression of pressure is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[kg\\, m^{- 1}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[kg\\, m\\, s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><mi>m</mi><mspace width=\"0.167em\"></mspace><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[kg\\, m^{2}s^{- 3}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mn>2</mn></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[kg\\, m^{- 2}s^{- 2}]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>k</mi><mi>g</mi><mspace width=\"0.167em\"></mspace><msup><mi>m</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><msup><mi>s</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Pressure = F/A, giving kg m⁻¹ s⁻².",
+      "explanationHtml": "Pressure = F/A, giving kg m⁻¹ s⁻².",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 208
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0261",
+      "sourceQuestionNumber": 261,
+      "type": "single_choice",
+      "stem": "A measured quantity is [x = (25.0 \\pm 0.5)] . Its fractional uncertainty is:",
+      "stemHtml": "<strong>A measured quantity is</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>=</mo><mrow><mo stretchy=\"true\">(</mo><mn>25.0</mn><mo>±</mo><mn>0.5</mn><mo stretchy=\"true\">)</mo></mrow></mrow></semantics></math><strong>. Its fractional uncertainty is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.002",
+          "html": "0.002"
+        },
+        {
+          "id": "B",
+          "text": "0.02",
+          "html": "0.02"
+        },
+        {
+          "id": "C",
+          "text": "0.2",
+          "html": "0.2"
+        },
+        {
+          "id": "D",
+          "text": "2.0",
+          "html": "2.0"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[0.5/25.0 = 0.02] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.5</mn><mi>/</mi><mn>25.0</mn><mo>=</mo><mn>0.02</mn></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 261
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0263",
+      "sourceQuestionNumber": 263,
+      "type": "single_choice",
+      "stem": "If [Q = x^{2}] and [x] has [2\\%] uncertainty, then [Q] has uncertainty:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></semantics></math> <strong>and</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>x</mi></semantics></math> <strong>has</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>%</mi></mrow></semantics></math> <strong>uncertainty, then</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>Q</mi></semantics></math> <strong>has uncertainty:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[1\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[2\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[4\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[8\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mi>%</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For [Q = x^{2}] , percentage uncertainty is [2(2\\%) = 4\\%] .",
+      "explanationHtml": "For <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></semantics></math>, percentage uncertainty is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mrow><mo stretchy=\"true\">(</mo><mn>2</mn><mi>%</mi><mo stretchy=\"true\">)</mo></mrow><mo>=</mo><mn>4</mn><mi>%</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 263
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0264",
+      "sourceQuestionNumber": 264,
+      "type": "single_choice",
+      "stem": "If [Q = \\frac{x^{2}y}{z}] and the percentage uncertainties in [x,y,z] are [2\\%,3\\%,1\\%] , respectively, the percentage uncertainty in [Q] is:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></mrow><mi>z</mi></mfrac></mrow></semantics></math> <strong>and the percentage uncertainties in</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi></mrow></semantics></math> <strong>are</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>%</mi><mo>,</mo><mn>3</mn><mi>%</mi><mo>,</mo><mn>1</mn><mi>%</mi></mrow></semantics></math><strong>, respectively, the percentage uncertainty in</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>Q</mi></semantics></math> <strong>is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[4\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[6\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[8\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[10\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10</mn><mi>%</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[2(2\\%) + 3\\% + 1\\% = 8\\%] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mrow><mo stretchy=\"true\">(</mo><mn>2</mn><mi>%</mi><mo stretchy=\"true\">)</mo></mrow><mo>+</mo><mn>3</mn><mi>%</mi><mo>+</mo><mn>1</mn><mi>%</mi><mo>=</mo><mn>8</mn><mi>%</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 264
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0265",
+      "sourceQuestionNumber": 265,
+      "type": "single_choice",
+      "stem": "If [Q = x^{1/2}] and [x] has [6\\%] uncertainty, then the percentage uncertainty in [Q] is:",
+      "stemHtml": "<strong>If</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow></semantics></math> <strong>and</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>x</mi></semantics></math> <strong>has</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mi>%</mi></mrow></semantics></math> <strong>uncertainty, then the percentage uncertainty in</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>Q</mi></semantics></math> <strong>is:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[2\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[3\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[6\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6</mn><mi>%</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[12\\%]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12</mn><mi>%</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "[\\frac{1}{2}(6\\%) = 3\\%] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo stretchy=\"true\">(</mo><mn>6</mn><mi>%</mi><mo stretchy=\"true\">)</mo></mrow><mo>=</mo><mn>3</mn><mi>%</mi></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty and error",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 265
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0266",
+      "sourceQuestionNumber": 266,
+      "type": "single_choice",
+      "stem": "A quantity has dimensions [\\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack] . Which of the following corresponds to these dimensions in the textbook discussion?",
+      "stemHtml": "<strong>A quantity has dimensions</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math><strong>. Which of the following corresponds to these dimensions in the textbook discussion?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "Planck’s constant",
+          "html": "Planck’s constant"
+        },
+        {
+          "id": "B",
+          "text": "force",
+          "html": "force"
+        },
+        {
+          "id": "C",
+          "text": "pressure",
+          "html": "pressure"
+        },
+        {
+          "id": "D",
+          "text": "power",
+          "html": "power"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Planck’s constant has dimensions [\\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack] .",
+      "explanationHtml": "Planck’s constant has dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 266
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0267",
+      "sourceQuestionNumber": 267,
+      "type": "single_choice",
+      "stem": "From [E = hf] , if [\\lbrack E\\rbrack = \\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack] and [\\lbrack f\\rbrack = \\left\\lbrack T^{- 1} \\right\\rbrack] , then the dimensions of [h] are:",
+      "stemHtml": "<strong>From</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>f</mi></mrow></semantics></math><strong>, if</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>E</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math> <strong>and</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>f</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math><strong>, then the dimensions of</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>h</mi></semantics></math> <strong>are:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[\\left\\lbrack ML^{2}T^{- 3} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[\\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[\\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[\\left\\lbrack MLT^{- 1} \\right\\rbrack]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[\\lbrack h\\rbrack = \\lbrack E\\rbrack/\\lbrack f\\rbrack = \\left\\lbrack ML^{2}T^{- 2} \\right\\rbrack/\\left\\lbrack T^{- 1} \\right\\rbrack = \\left\\lbrack ML^{2}T^{- 1} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>h</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mi>E</mi><mo stretchy=\"false\">]</mo><mi>/</mi><mo stretchy=\"false\">[</mo><mi>f</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mi>/</mi><mrow><mo stretchy=\"true\">[</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>M</mi><msup><mi>L</mi><mn>2</mn></msup><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Derived units and dimensions",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 267
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0268",
+      "sourceQuestionNumber": 268,
+      "type": "single_choice",
+      "stem": "An equation contains the sum [v + at] . This addition is dimensionally permissible because:",
+      "stemHtml": "<strong>An equation contains the sum</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>+</mo><mi>a</mi><mi>t</mi></mrow></semantics></math><strong>. This addition is dimensionally permissible because:</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "both terms have dimensions [\\left\\lbrack LT^{- 1} \\right\\rbrack]",
+          "html": "both terms have dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "both terms have dimensions [\\lbrack L\\rbrack]",
+          "html": "both terms have dimensions <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>L</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "both terms are dimensionless",
+          "html": "both terms are dimensionless"
+        },
+        {
+          "id": "D",
+          "text": "[a] and [t] have identical dimensions",
+          "html": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>a</mi></semantics></math> and <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>t</mi></semantics></math> have identical dimensions"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "[\\lbrack v\\rbrack = \\left\\lbrack LT^{- 1} \\right\\rbrack] and [\\lbrack at\\rbrack = \\left\\lbrack LT^{- 2} \\right\\rbrack\\lbrack T\\rbrack = \\left\\lbrack LT^{- 1} \\right\\rbrack] .",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>v</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math> and <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>a</mi><mi>t</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow><mo stretchy=\"false\">[</mo><mi>T</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mrow><mo stretchy=\"true\">[</mo><mi>L</mi><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy=\"true\">]</mo></mrow></mrow></semantics></math>.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 268
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0269",
+      "sourceQuestionNumber": 269,
+      "type": "single_choice",
+      "stem": "Which proposed equation is dimensionally inconsistent?",
+      "stemHtml": "<strong>Which proposed equation is dimensionally inconsistent?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "[s = vt]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mi>v</mi><mi>t</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "B",
+          "text": "[v = at]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>v</mi><mo>=</mo><mi>a</mi><mi>t</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "C",
+          "text": "[s = at]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>s</mi><mo>=</mo><mi>a</mi><mi>t</mi></mrow></semantics></math>"
+        },
+        {
+          "id": "D",
+          "text": "[F = ma]",
+          "html": "<math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mi>m</mi><mi>a</mi></mrow></semantics></math>"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "[at] has dimensions of velocity, not displacement; [at^{2}] would have dimensions of length.",
+      "explanationHtml": "<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mi>t</mi></mrow></semantics></math> has dimensions of velocity, not displacement; <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></semantics></math> would have dimensions of length.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 269
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
+    },
+    {
+      "id": "XI-U01-MCQ-0270",
+      "sourceQuestionNumber": 270,
+      "type": "single_choice",
+      "stem": "If dimensional analysis gives [Q = k\\frac{x}{y}] , which statement about [k] is most appropriate when [k] is a pure numerical factor?",
+      "stemHtml": "<strong>If dimensional analysis gives</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Q</mi><mo>=</mo><mi>k</mi><mfrac><mi>x</mi><mi>y</mi></mfrac></mrow></semantics></math><strong>, which statement about</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>k</mi></semantics></math> <strong>is most appropriate when</strong> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mi>k</mi></semantics></math> <strong>is a pure numerical factor?</strong>",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its dimensions must be [\\lbrack M\\rbrack] .",
+          "html": "Its dimensions must be <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>M</mi><mo stretchy=\"false\">]</mo></mrow></semantics></math>."
+        },
+        {
+          "id": "B",
+          "text": "Its value can always be obtained through dimensional analysis.",
+          "html": "Its value can always be obtained through dimensional analysis."
+        },
+        {
+          "id": "C",
+          "text": "It may remain undetermined by dimensional analysis.",
+          "html": "It may remain undetermined by dimensional analysis."
+        },
+        {
+          "id": "D",
+          "text": "It must equal unity.",
+          "html": "It must equal unity."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Dimensional analysis cannot generally determine a pure numerical dimensionless factor.",
+      "explanationHtml": "Dimensional analysis cannot generally determine a pure numerical dimensionless factor.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional analysis and homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 270
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false,
+      "conversionMethod": "Pandoc Word OMML → native MathML (math audited; source text preserved)"
     }
   ]
 }
