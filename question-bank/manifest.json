@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": "Physics with Sir Najam",
+  "status": "practice-pilot",
+  "updated": "2026-10-25",
+  "grades": [
+    {
+      "grade": 11,
+      "units": [
+        {
+          "unit": 1,
+          "name": "Physical Quantities and Measurements",
+          "path": "grade-11/unit-01.json",
+          "liveMcqCount": 24,
+          "sourceSloMcqCount": 275,
+          "formativePilotCount": 4,
+          "summativePilotCount": 20,
+          "status": "pilot",
+          "exactFbiseModeReady": false
+        }
+      ]
+    }
+  ]
+}

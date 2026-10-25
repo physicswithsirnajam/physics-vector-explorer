@@ -1,0 +1,1123 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-UNIT-01",
+  "bankVersion": "pilot-v1-2026-10-25",
+  "title": "Grade XI Physics – Unit 1: Physical Quantities and Measurements",
+  "status": "practice-pilot",
+  "sourceDocument": "6_11th_Unit 1_MCQs(1).docx",
+  "sourceSection": "SLO-BASED MCQ BANK",
+  "limitations": [
+    "Pilot includes 24 Word-text-safe conceptual questions selected from a 275-item SLO MCQ source bank.",
+    "Does not cover P-11-A-04 or application-level/diagram and mathematics-based questions.",
+    "Never generate a complete official/FBISE-style examination from this pilot.",
+    "Textbook printed page numbers still require source verification.",
+    "SLO mapping is initial instructor-reviewable metadata; review with official framework before extending to high-stakes use.",
+    "All pilot questions are tagged as supporting their mapped SLOs, not certified as directly assessing a summative examination SLO; boardEligible=false."
+  ],
+  "questions": [
+    {
+      "id": "XI-U01-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "An estimation of a physical quantity is best described as:",
+      "options": [
+        {
+          "id": "A",
+          "text": "an exact experimental result"
+        },
+        {
+          "id": "B",
+          "text": "a random numerical guess"
+        },
+        {
+          "id": "C",
+          "text": "a rough educated value based on experience and physical reasoning"
+        },
+        {
+          "id": "D",
+          "text": "a value having no physical unit"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Estimation is a reasoned approximate value based on experience and physical reasoning.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Estimation of physical quantities",
+      "sloCodes": [
+        "P-11-A-01"
+      ],
+      "assessmentClassification": "formative",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 1
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "Which statement about estimation is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It must always equal the exact measured value."
+        },
+        {
+          "id": "B",
+          "text": "It involves reasonable assumptions and physical reasoning."
+        },
+        {
+          "id": "C",
+          "text": "It does not require any knowledge of the situation."
+        },
+        {
+          "id": "D",
+          "text": "It is useful only for microscopic quantities."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A physical estimate uses reasonable assumptions rather than random guessing.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Estimation of physical quantities",
+      "sloCodes": [
+        "P-11-A-01"
+      ],
+      "assessmentClassification": "formative",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 2
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "A convenient method for estimating the thickness of one very thin sheet is to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "estimate only one sheet directly"
+        },
+        {
+          "id": "B",
+          "text": "measure the thickness of many sheets together and divide by their number"
+        },
+        {
+          "id": "C",
+          "text": "multiply the thickness of many sheets by their number"
+        },
+        {
+          "id": "D",
+          "text": "use density instead of thickness"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Combining many thin sheets makes the total thickness easier to determine and then divide.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Estimation of physical quantities",
+      "sloCodes": [
+        "P-11-A-01"
+      ],
+      "assessmentClassification": "formative",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 4
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "Which of the following is most important when judging whether an estimate is acceptable?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It contains many decimal places."
+        },
+        {
+          "id": "B",
+          "text": "It is physically reasonable."
+        },
+        {
+          "id": "C",
+          "text": "It is always greater than the actual value."
+        },
+        {
+          "id": "D",
+          "text": "It contains no units."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A useful estimate must have a physically reasonable magnitude.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Estimation of physical quantities",
+      "sloCodes": [
+        "P-11-A-01"
+      ],
+      "assessmentClassification": "formative",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 8
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "The SI unit watt is associated with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "force"
+        },
+        {
+          "id": "B",
+          "text": "pressure"
+        },
+        {
+          "id": "C",
+          "text": "power"
+        },
+        {
+          "id": "D",
+          "text": "electric charge"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Watt is the SI unit of power.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "SI units and derived quantities",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 14
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "Pressure is defined as force per unit:",
+      "options": [
+        {
+          "id": "A",
+          "text": "length"
+        },
+        {
+          "id": "B",
+          "text": "volume"
+        },
+        {
+          "id": "C",
+          "text": "mass"
+        },
+        {
+          "id": "D",
+          "text": "area"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Pressure is force divided by area.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "SI units and derived quantities",
+      "sloCodes": [
+        "P-11-A-02"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 16
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "According to the principle of homogeneity, a physically meaningful equation must have:",
+      "options": [
+        {
+          "id": "A",
+          "text": "equal numerical values on both sides"
+        },
+        {
+          "id": "B",
+          "text": "equal dimensions on both sides"
+        },
+        {
+          "id": "C",
+          "text": "equal coefficients on both sides"
+        },
+        {
+          "id": "D",
+          "text": "equal numbers of variables on both sides"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Homogeneity requires identical dimensions on both sides of an equation.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 31
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "Which statement is correct regarding quantities that are added or subtracted?",
+      "options": [
+        {
+          "id": "A",
+          "text": "They may have completely different dimensions."
+        },
+        {
+          "id": "B",
+          "text": "They must have the same dimensions."
+        },
+        {
+          "id": "C",
+          "text": "They must have the same numerical value."
+        },
+        {
+          "id": "D",
+          "text": "They must always be dimensionless."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Unlike quantities cannot be physically added or subtracted.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 33
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "Which method should be used first to test the dimensional homogeneity of an equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Compare the numerical values of all variables."
+        },
+        {
+          "id": "B",
+          "text": "Compare the dimensions of every term."
+        },
+        {
+          "id": "C",
+          "text": "Draw a graph of all variables."
+        },
+        {
+          "id": "D",
+          "text": "Replace variables by arbitrary numbers."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Homogeneity is checked by comparing dimensions of every term.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 36
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "Which statement about a dimensionally homogeneous equation is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It must always be physically correct."
+        },
+        {
+          "id": "B",
+          "text": "It can never contain a numerical constant."
+        },
+        {
+          "id": "C",
+          "text": "Dimensional homogeneity is necessary but does not guarantee complete physical correctness."
+        },
+        {
+          "id": "D",
+          "text": "It must contain only base quantities."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Dimensional correctness is necessary but is not proof of complete physical correctness.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Dimensional homogeneity",
+      "sloCodes": [
+        "P-11-A-03"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 40
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "Precision of a measurement refers to the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "closeness of measured value to the true value"
+        },
+        {
+          "id": "B",
+          "text": "closeness of repeated measured values to one another"
+        },
+        {
+          "id": "C",
+          "text": "number of instruments used"
+        },
+        {
+          "id": "D",
+          "text": "size of the measured object"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Precision means closeness of repeated measured values to one another.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Accuracy and precision",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 51
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "Accuracy of a measurement refers to the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "closeness of repeated measurements to one another"
+        },
+        {
+          "id": "B",
+          "text": "closeness of measured value to the true or standard value"
+        },
+        {
+          "id": "C",
+          "text": "number of decimal places only"
+        },
+        {
+          "id": "D",
+          "text": "least number of observations"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Accuracy means closeness of a measured value to the true or standard value.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Accuracy and precision",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 52
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "A set of repeated measurements can be highly precise but inaccurate when the readings are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "widely scattered around the true value"
+        },
+        {
+          "id": "B",
+          "text": "close to one another but far from the true value"
+        },
+        {
+          "id": "C",
+          "text": "far from one another and far from the true value"
+        },
+        {
+          "id": "D",
+          "text": "identical to the true value"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Closely grouped readings can still all be displaced from the true value.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Accuracy and precision",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 53
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "If repeated readings are close to one another and also close to the true value, they are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "precise but inaccurate"
+        },
+        {
+          "id": "B",
+          "text": "accurate but imprecise"
+        },
+        {
+          "id": "C",
+          "text": "both precise and accurate"
+        },
+        {
+          "id": "D",
+          "text": "neither precise nor accurate"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Close grouping indicates precision and closeness to the true value indicates accuracy.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Accuracy and precision",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 54
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "According to the textbook, decreasing the least count of a measuring instrument generally:",
+      "options": [
+        {
+          "id": "A",
+          "text": "decreases precision"
+        },
+        {
+          "id": "B",
+          "text": "increases precision"
+        },
+        {
+          "id": "C",
+          "text": "eliminates uncertainty completely"
+        },
+        {
+          "id": "D",
+          "text": "has no effect on precision"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The textbook relates a smaller least count to greater precision.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Accuracy and precision",
+      "sloCodes": [
+        "P-11-A-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 59
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "Uncertainty is best defined as:",
+      "options": [
+        {
+          "id": "A",
+          "text": "the exact difference between two instruments"
+        },
+        {
+          "id": "B",
+          "text": "the range of possible values within which the true value lies"
+        },
+        {
+          "id": "C",
+          "text": "an intentional mistake in calculation"
+        },
+        {
+          "id": "D",
+          "text": "the average of all measured values"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Uncertainty gives the range within which the true value is expected to lie.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty",
+      "sloCodes": [
+        "P-11-A-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 66
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "According to the textbook, all measurements contain some uncertainty mainly because of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "unlimited instrument resolution"
+        },
+        {
+          "id": "B",
+          "text": "limitations of instruments and experimenter skills"
+        },
+        {
+          "id": "C",
+          "text": "absence of SI units"
+        },
+        {
+          "id": "D",
+          "text": "use of formulas"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Practical measurements are limited by instrument resolution and experimental factors.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty",
+      "sloCodes": [
+        "P-11-A-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 70
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "If two measured quantities are added, their uncertainties are combined by adding their:",
+      "options": [
+        {
+          "id": "A",
+          "text": "absolute uncertainties"
+        },
+        {
+          "id": "B",
+          "text": "measured values only"
+        },
+        {
+          "id": "C",
+          "text": "powers"
+        },
+        {
+          "id": "D",
+          "text": "SI units"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Absolute uncertainties are added when quantities are added.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Uncertainty propagation",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 76
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "If two measured quantities are subtracted, their absolute uncertainties are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "subtracted"
+        },
+        {
+          "id": "B",
+          "text": "multiplied"
+        },
+        {
+          "id": "C",
+          "text": "added"
+        },
+        {
+          "id": "D",
+          "text": "divided"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Absolute uncertainties still add even when measured quantities are subtracted.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Uncertainty propagation",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 77
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "When two measured quantities are multiplied, their uncertainties are conveniently combined by adding their:",
+      "options": [
+        {
+          "id": "A",
+          "text": "absolute uncertainties only"
+        },
+        {
+          "id": "B",
+          "text": "percentage or fractional uncertainties"
+        },
+        {
+          "id": "C",
+          "text": "measured values"
+        },
+        {
+          "id": "D",
+          "text": "units"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Fractional or percentage uncertainties are added for products.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Uncertainty propagation",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 80
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0081",
+      "sourceQuestionNumber": 81,
+      "type": "single_choice",
+      "stem": "When one measured quantity is divided by another, their percentage uncertainties are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "subtracted"
+        },
+        {
+          "id": "B",
+          "text": "added"
+        },
+        {
+          "id": "C",
+          "text": "multiplied"
+        },
+        {
+          "id": "D",
+          "text": "ignored"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Percentage uncertainties add for division as well as multiplication.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Uncertainty propagation",
+      "sloCodes": [
+        "P-11-A-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 81
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0251",
+      "sourceQuestionNumber": 251,
+      "type": "single_choice",
+      "stem": "Why can no practical measurement normally be regarded as perfectly exact?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Physical quantities have no true values."
+        },
+        {
+          "id": "B",
+          "text": "Measuring instruments have finite resolution and measurements are subject to experimental limitations."
+        },
+        {
+          "id": "C",
+          "text": "SI units are approximate."
+        },
+        {
+          "id": "D",
+          "text": "Mathematical equations are always uncertain."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Practical measurements are limited by instrument resolution and experimental factors.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty",
+      "sloCodes": [
+        "P-11-A-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 251
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0253",
+      "sourceQuestionNumber": 253,
+      "type": "single_choice",
+      "stem": "Which statement best explains the role of instrument resolution in uncertainty?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An instrument can distinguish infinitely small changes."
+        },
+        {
+          "id": "B",
+          "text": "Every instrument has a finite smallest measurable interval."
+        },
+        {
+          "id": "C",
+          "text": "Resolution has no relation to measurement."
+        },
+        {
+          "id": "D",
+          "text": "Only digital instruments possess uncertainty."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Every real measuring instrument has finite resolution or a smallest measurable interval.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty",
+      "sloCodes": [
+        "P-11-A-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 253
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U01-MCQ-0255",
+      "sourceQuestionNumber": 255,
+      "type": "single_choice",
+      "stem": "Which statement about uncertainty is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Uncertainty occurs only when an experimenter is careless."
+        },
+        {
+          "id": "B",
+          "text": "Careful measurement can reduce uncertainty but does not make every measurement infinitely exact."
+        },
+        {
+          "id": "C",
+          "text": "Uncertainty exists only in derived quantities."
+        },
+        {
+          "id": "D",
+          "text": "Repeating an experiment makes uncertainty exactly zero."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Careful technique can reduce uncertainty, but practical measurements still have finite limitations.",
+      "grade": 11,
+      "unit": 1,
+      "topic": "Measurement uncertainty",
+      "sloCodes": [
+        "P-11-A-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "supporting",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "6_11th_Unit 1_MCQs(1).docx",
+        "section": "SLO-BASED MCQ BANK",
+        "questionNumber": 255
+      },
+      "textbookPage": null,
+      "pageStatus": "pending-textbook-verification",
+      "status": "pilot-reviewed",
+      "active": true,
+      "boardEligible": false
+    }
+  ]
+}
