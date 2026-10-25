@@ -101,6 +101,14 @@
     .summary-units strong { font-size:13px; }
     .pills { display:flex; gap:5px; flex-wrap:wrap; margin-top:9px; }
     .pill { border-radius:6px; padding:5px 7px; background:#e9f4f8; color:#17627a; font-size:11px; font-weight:750; }
+    .availability-preview { margin-top:16px; border-radius:13px; padding:14px; background:#e9f7fb; border:1px solid #b7e0e9; }
+    .availability-preview .availability-label { font-weight:750; font-size:13px; color:#164566; }
+    .availability-preview .availability-count { font-size:25px; line-height:1.2; font-weight:800; color:var(--navy); margin-top:5px; }
+    .availability-preview .availability-explainer { margin:5px 0 0; font-size:12px; line-height:1.5; color:#49617b; }
+    .availability-preview.is-warning { background:#fff7eb; border-color:#ecd19d; }
+    .availability-preview.is-warning .availability-count { color:#81521d; }
+    .availability-preview.is-error { background:#fff1f1; border-color:#edb3b3; }
+    .availability-preview.is-error .availability-count { color:#902e37; }
     .micro-note { font-size:12px; color:var(--muted); line-height:1.5; padding-top:15px; }
     .warning { color:#8c4821; background:#fff6ed; border:1px solid #f1cdb1; border-radius:9px; padding:10px; font-size:12px; margin-top:14px; }
     .success { color:#166b4a; background:#e9f8f0; border:1px solid #aedfcc; border-radius:9px; padding:10px; font-size:12px; margin-top:14px; }
@@ -179,12 +187,17 @@
         <div class="summary-line"><span>Scope</span><strong id="sum-scope">All learning outcomes</strong></div>
         <div class="summary-line"><span>Specific SLO</span><strong id="sum-slo">Any eligible SLO</strong></div>
         <div class="summary-units"><strong>Selected units</strong><div id="sum-units" class="pills"></div></div>
+        <div class="availability-preview" id="availabilityPreview" role="status" aria-live="polite" aria-atomic="true">
+          <div class="availability-label">Live MCQ availability</div>
+          <div class="availability-count" id="availabilityCount">Checking question bank…</div>
+          <p class="availability-explainer" id="availabilityNote">Available questions will update automatically with your selection of scope, SLO, difficulty, and cognitive level.</p>
+        </div>
         <div id="board-note" class="micro-note"></div>
         <div id="validation" role="status" aria-live="polite"></div>
         <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1 MCQ selections can now launch the Practice Engine below. More content is being prepared.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Unit 1 MCQ Practice Pilot</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Unit 1 MCQ Practice →</a></div></div>
       </aside>
     </div>
-    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder v1 • Unit 1 MCQ pilot</footer>
+    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder v1.1 • Unit 1 MCQ pilot</footer>
   </div>
   <script>
     'use strict';
@@ -204,10 +217,101 @@
     };
     let currentPlan = null;
     let lastMode = 'practice';
+    const liveBank={status:'loading',questions:[],error:''};
+    function isPilotConfiguration(p){
+      return (p.mode==='practice'||p.mode==='class') && p.units.length===1 && p.units[0]===1 &&
+        p.questionType==='mcq' && ['4','10','20','30','40','60'].includes(p.questionCount) && p.timeLimit!=='full';
+    }
+    function matchedQuestions(p){
+      // Keep these filters equivalent to validItems() in practice-engine/index.html.
+      const requestedSLOs=p.slo?p.slo.split(',').map(s=>s.trim().toUpperCase()).filter(Boolean):[];
+      return liveBank.questions.filter(q=>q.active===true && q.type==='single_choice' &&
+        (p.scope==='all'||q.assessmentClassification===(p.scope==='formative'?'formative':'summative-theory')) &&
+        (!p.cognitiveLevels.length||p.cognitiveLevels.includes(q.cognitiveLevel)) &&
+        (p.difficulty==='balanced'||String(q.difficulty||'').toLowerCase()===p.difficulty) &&
+        (!requestedSLOs.length||requestedSLOs.some(s=>(q.sloCodes||[]).includes(s))));
+    }
+    function renderAvailability(p){
+      const box=$('availabilityPreview'), count=$('availabilityCount'),note=$('availabilityNote');
+      box.classList.remove('is-warning','is-error');
+      if(!isPilotConfiguration(p)){
+        count.textContent='Not yet available for this mode';
+        note.textContent='Live availability currently covers Grade XI Unit 1 MCQs in Learn & Practise or Class Test. Other units and FBISE mock modes are under development.';
+        box.classList.add('is-warning'); return;
+      }
+      if(liveBank.status==='loading'){
+        count.textContent='Checking question bank…';
+        note.textContent='Loading the latest approved pilot questions for the selected filters.';return;
+      }
+      if(liveBank.status==='error'){
+        count.textContent='Availability temporarily unavailable';
+        note.textContent='Could not load the question-bank file. '+liveBank.error+' The Practice Engine will independently check availability if opened.';
+        box.classList.add('is-warning');return;
+      }
+      const available=matchedQuestions(p).length, requested=Number(p.questionCount);
+      count.textContent=`${available} eligible MCQ${available===1?'':'s'}`;
+      if(!Number.isFinite(requested)||requested>available){
+        box.classList.add('is-error');
+        const allowed=[4,10,20,30,40,60].filter(n=>n<=available);
+        note.textContent=allowed.length ?
+          `You requested ${p.questionCount}, but only ${available} match these filters. Choose ${allowed[allowed.length-1]} or fewer (where offered), or broaden your filters.` :
+          `You requested ${p.questionCount}, but only ${available} match these filters. Try different SLO, difficulty, assessment, or cognitive-level selections.`;
+      } else {
+        note.textContent=`Ready for ${requested} randomized MCQs. Count is based on currently active pilot questions and your selected filters; it is not an FBISE exam certification.`;
+      }
+    }
+    async function loadLiveBank(){
+      try {
+        const response=await fetch('question-bank/grade-11/unit-01.json',{cache:'no-store'});
+        if(!response.ok)throw new Error('Server returned '+response.status+'.');
+        const data=await response.json();
+        if(!data||!Array.isArray(data.questions))throw new Error('The question-bank format is invalid.');
+        liveBank.questions=data.questions;
+        liveBank.status='ready';
+      } catch(error){
+        liveBank.status='error';liveBank.error=error instanceof Error?error.message:'Please retry shortly.';
+      }
+      renderAvailability(currentPlan||buildPlan());
+      // If the test-plan review is already open, refresh launch eligibility too.
+      if($('plan-output').classList.contains('visible')) renderPilotLaunch(currentPlan||buildPlan());
+    }
+    function renderPilotLaunch(p){
+      const pilotLink=$('pilotStartLink'),pilotInfo=$('pilotAvailability');
+      const allowed=isPilotConfiguration(p);
+      if(!allowed){
+        pilotLink.style.display='none';
+        pilotInfo.textContent='For this pilot, select Grade XI Unit 1 only, MCQs, a supported count (4/10/20/30/40/60), and Learn & Practise or Class Test. Other units and full FBISE paper generation are not active yet.';
+        return;
+      }
+      const qs=new URLSearchParams({count:p.questionCount,scope:p.scope,feedback:p.feedback,
+        timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),
+        cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo});
+      pilotLink.href='practice-engine/index.html?'+qs.toString();
+      if(liveBank.status==='ready'){
+        const available=matchedQuestions(p).length,requested=Number(p.questionCount);
+        if(available<requested){
+          pilotLink.style.display='none';
+          pilotInfo.textContent=`Not enough eligible questions: ${available} available; ${requested} requested. Please change your count or filters above.`;
+          return;
+        }
+        pilotLink.style.display='inline-block';
+        pilotInfo.textContent=`Ready: ${available} eligible MCQs available and ${requested} requested. Questions and answer choices are randomized where appropriate.`;
+        return;
+      }
+      if(liveBank.status==='loading'){
+        pilotLink.style.display='none';
+        pilotInfo.textContent='Checking the current question-bank file before enabling the test…';
+        return;
+      }
+      // Graceful fallback if the preview counter cannot load; the Practice Engine checks again.
+      pilotLink.style.display='inline-block';
+      pilotInfo.textContent='The preview could not read the bank; the practice page will verify the count and filters before starting.';
+    }
+
     function setupUnits() {
       $('units').innerHTML = unitNames.map((name, i) => {
         const n = i + 1;
-        return `<label class="unit-option"><input type="checkbox" name="unit" value="${n}" ${[2,3,4].includes(n)?'checked':''}><span><span class="unit-n">Unit ${n}</span> — ${name}</span></label>`;
+        return `<label class="unit-option"><input type="checkbox" name="unit" value="${n}" ${n===1?'checked':''}><span><span class="unit-n">Unit ${n}</span> — ${name}</span></label>`;
       }).join('');
     }
     function getMode() { return document.querySelector('input[name="mode"]:checked').value; }
@@ -273,6 +377,7 @@
       const validation=$('validation');
       validation.className=errors.length?'warning':'success';
       validation.textContent=errors.length?errors.join(' '):'✓ Test settings are ready to review.';
+      renderAvailability(p);
       return errors;
     }
     function initBuilder(){
@@ -292,13 +397,7 @@
         const units=p.mode==='full'?'all Grade XI units':p.units.map(n=>'Unit '+n).join(', ');
         $('plan-description').textContent=`${names.mode[p.mode]} • ${units} • ${p.mode==='full'?'Full 80-mark FBISE blueprint':p.questionCount+' '+names.type[p.questionType].toLowerCase()+' questions'} • ${names.scope[p.scope]} • feedback: ${names.feedback[p.feedback]}.`;
         $('copy-status').textContent='';
-        const canLaunch=(p.mode==='practice'||p.mode==='class') && p.units.length===1 && p.units[0]===1 && p.questionType==='mcq' && ['4','10','20','30','40','60'].includes(p.questionCount) && p.timeLimit!=='full';
-        const pilotLink=$('pilotStartLink'),pilotInfo=$('pilotAvailability');
-        if(canLaunch){
-          const qs=new URLSearchParams({count:p.questionCount,scope:p.scope,feedback:p.feedback,timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo});
-          pilotLink.href='practice-engine/index.html?'+qs.toString();pilotLink.style.display='inline-block';
-          pilotInfo.textContent='A small source-checked Grade XI Unit 1 MCQ bank is available. Start a real randomized practice test. If you select filters with too few eligible questions, the practice page will explain the limitation.';
-        }else{pilotLink.style.display='none';pilotInfo.textContent='For our first working pilot, select only Unit 1, MCQs only, 4, 10, 20, 30, 40 or 60 questions, a supported time limit, and Learn & Practise or Class Test. The live bank will tell you if your other filters leave too few eligible questions. Other units and full FBISE paper generation will be activated after the verified bank grows.';}
+        renderPilotLaunch(p);
         $('plan-output').classList.add('visible');$('summary').scrollIntoView({behavior:'smooth',block:'start'});
       });
       $('copy').addEventListener('click',async()=>{
@@ -312,6 +411,7 @@
         const a=document.createElement('a');a.href=url;a.download='physics-test-plan.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
       });
       update();
+      loadLiveBank();
     }
     if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initBuilder); else initBuilder();
   </script>
