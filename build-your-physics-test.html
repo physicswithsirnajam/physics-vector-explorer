@@ -292,13 +292,13 @@
         const units=p.mode==='full'?'all Grade XI units':p.units.map(n=>'Unit '+n).join(', ');
         $('plan-description').textContent=`${names.mode[p.mode]} • ${units} • ${p.mode==='full'?'Full 80-mark FBISE blueprint':p.questionCount+' '+names.type[p.questionType].toLowerCase()+' questions'} • ${names.scope[p.scope]} • feedback: ${names.feedback[p.feedback]}.`;
         $('copy-status').textContent='';
-        const canLaunch=(p.mode==='practice'||p.mode==='class') && p.units.length===1 && p.units[0]===1 && p.questionType==='mcq' && ['4','10','20'].includes(p.questionCount) && p.timeLimit!=='full';
+        const canLaunch=(p.mode==='practice'||p.mode==='class') && p.units.length===1 && p.units[0]===1 && p.questionType==='mcq' && ['4','10','20','30','40','60'].includes(p.questionCount) && p.timeLimit!=='full';
         const pilotLink=$('pilotStartLink'),pilotInfo=$('pilotAvailability');
         if(canLaunch){
           const qs=new URLSearchParams({count:p.questionCount,scope:p.scope,feedback:p.feedback,timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo});
           pilotLink.href='practice-engine/index.html?'+qs.toString();pilotLink.style.display='inline-block';
           pilotInfo.textContent='A small source-checked Grade XI Unit 1 MCQ bank is available. Start a real randomized practice test. If you select filters with too few eligible questions, the practice page will explain the limitation.';
-        }else{pilotLink.style.display='none';pilotInfo.textContent='For our first working pilot, select only Unit 1, MCQs only, 4, 10 or 20 questions, a supported time limit, and Learn & Practise or Class Test. Other units and full FBISE paper generation will be activated after the verified bank grows.';}
+        }else{pilotLink.style.display='none';pilotInfo.textContent='For our first working pilot, select only Unit 1, MCQs only, 4, 10, 20, 30, 40 or 60 questions, a supported time limit, and Learn & Practise or Class Test. The live bank will tell you if your other filters leave too few eligible questions. Other units and full FBISE paper generation will be activated after the verified bank grows.';}
         $('plan-output').classList.add('visible');$('summary').scrollIntoView({behavior:'smooth',block:'start'});
       });
       $('copy').addEventListener('click',async()=>{
