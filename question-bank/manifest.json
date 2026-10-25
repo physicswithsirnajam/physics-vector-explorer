@@ -11,12 +11,13 @@
           "unit": 1,
           "name": "Physical Quantities and Measurements",
           "path": "grade-11/unit-01.json",
-          "liveMcqCount": 24,
+          "liveMcqCount": 47,
           "sourceSloMcqCount": 275,
           "formativePilotCount": 4,
-          "summativePilotCount": 20,
+          "summativePilotCount": 43,
           "status": "pilot",
-          "exactFbiseModeReady": false
+          "exactFbiseModeReady": false,
+          "bankVersion": "pilot-v2-2026-10-25"
         }
       ]
     }
