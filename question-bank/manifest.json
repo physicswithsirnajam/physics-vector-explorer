@@ -17,11 +17,11 @@
           "summativePilotCount": 266,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "pilot-v6-complete-source-import-2026-10-29"
+          "bankVersion": "pilot-v6.1-slo-metadata-corrections-2026-10-29"
         }
       ]
     }
   ],
-  "bankVersion": "pilot-v6-complete-source-import-2026-10-29",
+  "bankVersion": "pilot-v6.1-slo-metadata-corrections-2026-10-29",
   "lastUpdated": "2026-10-29"
 }
