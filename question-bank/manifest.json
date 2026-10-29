@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Physics with Sir Najam",
   "status": "practice-pilot",
-  "updated": "2026-10-25",
+  "updated": "2026-10-29",
   "grades": [
     {
       "grade": 11,
@@ -11,15 +11,17 @@
           "unit": 1,
           "name": "Physical Quantities and Measurements",
           "path": "grade-11/unit-01.json",
-          "liveMcqCount": 145,
+          "liveMcqCount": 275,
           "sourceSloMcqCount": 275,
-          "formativePilotCount": 8,
-          "summativePilotCount": 137,
+          "formativePilotCount": 9,
+          "summativePilotCount": 266,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "pilot-v5-expanded-math-2026-10-25"
+          "bankVersion": "pilot-v6-complete-source-import-2026-10-29"
         }
       ]
     }
-  ]
+  ],
+  "bankVersion": "pilot-v6-complete-source-import-2026-10-29",
+  "lastUpdated": "2026-10-29"
 }
