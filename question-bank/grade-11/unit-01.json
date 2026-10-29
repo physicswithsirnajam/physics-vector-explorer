@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "bankId": "PSN-XI-UNIT-01",
-  "bankVersion": "pilot-v6.1-slo-metadata-corrections-2026-10-29",
+  "bankVersion": "pilot-v6.2-residual-slo-and-topic-corrections-2026-10-29",
   "title": "Grade XI Physics – Unit 1: Physical Quantities and Measurements",
   "status": "practice-pilot",
   "sourceDocument": "6_11th_Unit 1_MCQs(1).docx",
@@ -10279,9 +10279,9 @@
       "explanationHtml": "The textbook associates smaller fractional/percentage uncertainty with greater accuracy.",
       "grade": 11,
       "unit": 1,
-      "topic": "Uncertainty propagation",
+      "topic": "Accuracy and precision",
       "sloCodes": [
-        "P-11-A-06"
+        "P-11-A-05"
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "provisional-supporting",
@@ -13501,9 +13501,9 @@
       "explanationHtml": "Small differences among repeated readings illustrate uncertainty in experimental measurement.",
       "grade": 11,
       "unit": 1,
-      "topic": "Precision and accuracy",
+      "topic": "Measurement uncertainty",
       "sloCodes": [
-        "P-11-A-05"
+        "P-11-A-07"
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "provisional-supporting",
