@@ -127,7 +127,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand"><div class="brand-mark"><img class="brand-logo" src="assets/branding/physics-with-sir-najam-logo.png" alt="Physics with Sir Najam logo"></div><div><div class="brand-title-row"><div class="brand-title">Physics with Sir Najam</div></div><div class="brand-sub">Interactive Practice &amp; Assessment Centre</div></div></div>
-      <span class="header-status"><span class="dot" aria-hidden="true"></span>Interface preview · Version 1</span>
+      <span class="header-status"><span class="dot" aria-hidden="true"></span>Practice Engine · Grouped Scenario V7</span>
     </div>
   </header>
   <div class="wrap">
@@ -163,6 +163,7 @@
           </div></div>
           <div class="two-col">
             <div class="field"><label class="label" for="type">Question format</label><select id="type"><option value="mixed">Mixed question types</option><option value="mcq">MCQs only</option><option value="numerical">Numericals only</option><option value="short">Short-response questions</option><option value="extended">Extended-response questions</option></select></div>
+            <div class="field"><label class="label" for="arrangement">MCQ arrangement</label><select id="arrangement"><option value="random">Ordinary random MCQs</option><option value="grouped">Mixed practice — keep scenario sets together</option><option value="scenario">Scenario sets only — complete sets</option></select><small class="help">In grouped modes, every selected experiment or situation stays with all its related MCQs. Existing source groups contain 3, 4, or 5 questions. This is practice, not an official FBISE mock-paper generator.</small></div>
             <div class="field"><label class="label" for="quantity">Number of questions</label><select id="quantity"><option value="4">4-question quick check</option><option value="10">10 questions</option><option value="20" selected>20 questions</option><option value="30">30 questions</option><option value="40">40 questions</option><option value="60">60 questions</option><option value="full">Full FBISE blueprint</option></select></div>
             <div class="field"><label class="label" for="difficulty">Difficulty</label><select id="difficulty"><option value="balanced">Balanced difficulty</option><option value="foundation">Foundation</option><option value="standard">Standard</option><option value="challenge">Challenge</option></select></div>
             <div class="field"><label class="label" for="timer">Time limit</label><select id="timer"><option value="none">Untimed</option><option value="10">10 minutes</option><option value="20">20 minutes</option><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option><option value="full">Official model-paper section times</option></select></div>
@@ -182,6 +183,7 @@
         <div class="summary-line"><span>Grade</span><strong>XI / HSSC-I</strong></div>
         <div class="summary-line"><span>Mode</span><strong id="sum-mode">Learn &amp; Practise</strong></div>
         <div class="summary-line"><span>Format</span><strong id="sum-type">Mixed</strong></div>
+        <div class="summary-line"><span>MCQ arrangement</span><strong id="sum-arrangement">Ordinary random MCQs</strong></div>
         <div class="summary-line"><span>Question count</span><strong id="sum-quantity">20</strong></div>
         <div class="summary-line"><span>Time</span><strong id="sum-time">Untimed</strong></div>
         <div class="summary-line"><span>Scope</span><strong id="sum-scope">All learning outcomes</strong></div>
@@ -194,10 +196,10 @@
         </div>
         <div id="board-note" class="micro-note"></div>
         <div id="validation" role="status" aria-live="polite"></div>
-        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1 MCQ selections can now launch the Practice Engine below. More content is being prepared.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Unit 1 MCQ Practice Pilot</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Unit 1 MCQ Practice →</a></div></div>
+        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1 MCQ selections can now launch the Practice Engine below. More content is being prepared.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Unit 1 MCQ Practice Engine</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Unit 1 MCQ Practice →</a></div></div>
       </aside>
     </div>
-    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder v1.1 • Unit 1 MCQ pilot</footer>
+    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder v7 • Unit 1 MCQ bank</footer>
   </div>
   <script>
     'use strict';
@@ -213,7 +215,8 @@
       scope: {all:'All learning outcomes',summative:'Summative theory only',formative:'Formative learning only'},
       type: {mixed:'Mixed',mcq:'MCQs',numerical:'Numericals',short:'Short-response',extended:'Extended-response'},
       feedback: {instant:'After each question',end:'At the end',hints:'Hints first'},
-      difficulty: {balanced:'Balanced',foundation:'Foundation',standard:'Standard',challenge:'Challenge'}
+      difficulty: {balanced:'Balanced',foundation:'Foundation',standard:'Standard',challenge:'Challenge'},
+      arrangement: {random:'Ordinary random MCQs',grouped:'Mixed — intact stimulus sets',scenario:'Complete scenario sets only'}
     };
     let currentPlan = null;
     let lastMode = 'practice';
@@ -231,6 +234,29 @@
         (p.difficulty==='balanced'||String(q.difficulty||'').toLowerCase()===p.difficulty) &&
         (!requestedSLOs.length||requestedSLOs.some(s=>(q.sloCodes||[]).includes(s))));
     }
+    function groupedSelection(all,eligible,arrangement,count,orderGroups){
+  const groupMap=new Map();
+  for(const q of all){if(q.stimulusSetId){if(!groupMap.has(q.stimulusSetId))groupMap.set(q.stimulusSetId,[]);groupMap.get(q.stimulusSetId).push(q)}}
+  const accepted=new Set(eligible.map(q=>q.id));
+  const completeGroups=[...groupMap.values()].filter(g=>g.length>1&&g.every(q=>accepted.has(q.id))).map(g=>g.slice().sort((a,b)=>a.sourceQuestionNumber-b.sourceQuestionNumber));
+  const singles=eligible.filter(q=>!q.stimulusSetId);
+  if(arrangement==='random')return {possible:eligible.length>=count,available:eligible.length,completeGroups,singles,chosen:[],groupQuestions:0};
+  const groups=orderGroups?orderGroups(completeGroups):completeGroups;
+  const available=(arrangement==='scenario'?0:singles.length)+completeGroups.reduce((n,g)=>n+g.length,0);
+  const ways=new Map([[0,[]]]);
+  for(const g of groups){
+    for(const [n,selection] of [...ways.entries()]){
+      const next=n+g.length;
+      if(next<=count&&!ways.has(next))ways.set(next,[...selection,g]);
+    }
+  }
+  const possibleSums=[...ways.keys()].filter(n=>n>0&&(arrangement==='scenario'?n===count:n<=count&&count-n<=singles.length));
+  const target=arrangement==='scenario'?count:count*0.30;
+  possibleSums.sort((a,b)=>Math.abs(a-target)-Math.abs(b-target)||a-b);
+  const chosen=possibleSums.length?ways.get(possibleSums[0]):[];
+  const groupQuestions=chosen.reduce((n,g)=>n+g.length,0);
+  return {possible:possibleSums.length>0,available,completeGroups,singles,chosen,groupQuestions};
+}
     function renderAvailability(p){
       const box=$('availabilityPreview'), count=$('availabilityCount'),note=$('availabilityNote');
       box.classList.remove('is-warning','is-error');
@@ -248,16 +274,21 @@
         note.textContent='Could not load the question-bank file. '+liveBank.error+' The Practice Engine will independently check availability if opened.';
         box.classList.add('is-warning');return;
       }
-      const available=matchedQuestions(p).length, requested=Number(p.questionCount);
+      const requested=Number(p.questionCount);
+      const plan=groupedSelection(liveBank.questions,matchedQuestions(p),p.arrangement,requested);
+      const available=plan.available;
       count.textContent=`${available} eligible MCQ${available===1?'':'s'}`;
-      if(!Number.isFinite(requested)||requested>available){
+      if(!plan.possible){
         box.classList.add('is-error');
-        const allowed=[4,10,20,30,40,60].filter(n=>n<=available);
-        note.textContent=allowed.length ?
-          `You requested ${p.questionCount}, but only ${available} match these filters. Choose ${allowed[allowed.length-1]} or fewer (where offered), or broaden your filters.` :
-          `You requested ${p.questionCount}, but only ${available} match these filters. Try different SLO, difficulty, assessment, or cognitive-level selections.`;
+        if(p.arrangement!=='random'){
+          note.textContent=`Cannot assemble exactly ${requested} MCQs under the selected arrangement and filters. There are ${plan.completeGroups.length} complete eligible stimulus sets (plus ${plan.singles.length} standalone MCQs). Try a different count, broader SLO/difficulty filters, or Ordinary random MCQs.`;
+        } else {
+          note.textContent=`You requested ${requested}, but only ${available} match these filters. Try a smaller count or broader filters.`;
+        }
       } else {
-        note.textContent=`Ready for ${requested} randomized MCQs. Count is based on currently active pilot questions and your selected filters; it is not an FBISE exam certification.`;
+        note.textContent=p.arrangement==='random'
+          ? `Ready for ${requested} randomized MCQs. This is practice, not an official FBISE exam certification.`
+          : `Ready for ${requested} questions: ${plan.groupQuestions} from ${plan.chosen.length} complete stimulus set(s)${p.arrangement==='grouped'?`, plus ${requested-plan.groupQuestions} independent MCQs`:''}. Each set will stay in sequence. This is not a full FBISE exam.`;
       }
     }
     async function loadLiveBank(){
@@ -283,19 +314,24 @@
         pilotInfo.textContent='For this pilot, select Grade XI Unit 1 only, MCQs, a supported count (4/10/20/30/40/60), and Learn & Practise or Class Test. Other units and full FBISE paper generation are not active yet.';
         return;
       }
-      const qs=new URLSearchParams({count:p.questionCount,scope:p.scope,feedback:p.feedback,
+      const qs=new URLSearchParams({count:p.questionCount,scope:p.scope,feedback:p.feedback,arrangement:p.arrangement,
         timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),
         cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo});
       pilotLink.href='practice-engine/index.html?'+qs.toString();
       if(liveBank.status==='ready'){
-        const available=matchedQuestions(p).length,requested=Number(p.questionCount);
-        if(available<requested){
+        const requested=Number(p.questionCount),plan=groupedSelection(liveBank.questions,matchedQuestions(p),p.arrangement,requested);
+        const available=plan.available;
+        if(!plan.possible){
           pilotLink.style.display='none';
-          pilotInfo.textContent=`Not enough eligible questions: ${available} available; ${requested} requested. Please change your count or filters above.`;
+          pilotInfo.textContent=p.arrangement==='random'
+            ? `Not enough eligible questions: ${available} available; ${requested} requested.`
+            : `Cannot build ${requested} questions from whole stimulus sets with these filters. ${plan.completeGroups.length} complete sets are eligible. Change the count or filters.`;
           return;
         }
         pilotLink.style.display='inline-block';
-        pilotInfo.textContent=`Ready: ${available} eligible MCQs available and ${requested} requested. Questions and answer choices are randomized where appropriate.`;
+        pilotInfo.textContent=p.arrangement==='random'
+          ? `Ready: ${available} eligible MCQs available; ${requested} requested.`
+          : `Ready: ${plan.chosen.length} complete stimulus sets (${plan.groupQuestions} questions)${p.arrangement==='grouped'?` and ${requested-plan.groupQuestions} independent MCQs`:''}. Each scenario remains together.`;
         return;
       }
       if(liveBank.status==='loading'){
@@ -328,6 +364,8 @@
         $('difficulty').value='balanced'; $('slo').value='';
         document.querySelectorAll('input[name="cognitive"]').forEach(el=>{el.checked=true;});
       }
+      if ($('type').value!=='mcq')$('arrangement').value='random';
+      $('arrangement').disabled=full || $('type').value!=='mcq';
       for (const id of ['scope','type','quantity','timer','difficulty','slo']) $(id).disabled=full || (id==='scope' && unit);
       $('feedback').disabled=full || unit;
       document.querySelectorAll('input[name="cognitive"]').forEach(el=>el.disabled=full);
@@ -351,6 +389,7 @@
         slo:full?'':$('slo').value.trim().toUpperCase(),
         questionType:full?'mixed':$('type').value,
         questionCount:full?'FBISE-full':$('quantity').value,
+        arrangement:(!full && $('type').value==='mcq')?$('arrangement').value:'random',
         difficulty:full?'balanced':$('difficulty').value,
         timeLimit:full?'FBISE-sections':$('timer').value,
         feedback:full?'end':$('feedback').value,
@@ -364,6 +403,7 @@
       const p=buildPlan(); currentPlan=p;
       $('sum-mode').textContent=names.mode[p.mode];
       $('sum-type').textContent=names.type[p.questionType];
+      $('sum-arrangement').textContent=names.arrangement[p.arrangement];
       $('sum-quantity').textContent=p.mode==='full'?'80 MCQs + 7 SRQs + 2 ERQs':p.questionCount;
       $('sum-time').textContent=p.mode==='full'?'1h 40m objective + 1h 20m descriptive':p.timeLimit==='none'?'Untimed':p.timeLimit+' minutes';
       $('sum-scope').textContent=names.scope[p.scope];
@@ -387,7 +427,7 @@
       $('allUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>el.checked=true);update();$('plan-output').classList.remove('visible');});
       $('clearUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>el.checked=false);update();$('plan-output').classList.remove('visible');});
       $('resetButton').addEventListener('click',()=>{
-        $('builderForm').reset();lastMode='practice';$('scope').value='all';$('quantity').value='20';$('timer').value='none';$('slo').value='';setupUnits();update();$('plan-output').classList.remove('visible');
+        $('builderForm').reset();lastMode='practice';$('scope').value='all';$('quantity').value='20';$('timer').value='none';$('slo').value='';$('arrangement').value='random';setupUnits();update();$('plan-output').classList.remove('visible');
       });
       $('builderForm').addEventListener('submit',(e)=>{
         e.preventDefault();
@@ -395,7 +435,7 @@
         if(errors.length){$('validation').scrollIntoView({behavior:'smooth',block:'center'});return;}
         const p=currentPlan;
         const units=p.mode==='full'?'all Grade XI units':p.units.map(n=>'Unit '+n).join(', ');
-        $('plan-description').textContent=`${names.mode[p.mode]} • ${units} • ${p.mode==='full'?'Full 80-mark FBISE blueprint':p.questionCount+' '+names.type[p.questionType].toLowerCase()+' questions'} • ${names.scope[p.scope]} • feedback: ${names.feedback[p.feedback]}.`;
+        $('plan-description').textContent=`${names.mode[p.mode]} • ${units} • ${p.mode==='full'?'Full 80-mark FBISE blueprint':p.questionCount+' '+names.type[p.questionType].toLowerCase()+' questions'} • ${names.arrangement[p.arrangement]} • ${names.scope[p.scope]} • feedback: ${names.feedback[p.feedback]}.`;
         $('copy-status').textContent='';
         renderPilotLaunch(p);
         $('plan-output').classList.add('visible');$('summary').scrollIntoView({behavior:'smooth',block:'start'});
