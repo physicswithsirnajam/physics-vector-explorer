@@ -16,16 +16,16 @@
 <h1>Physical Quantities and Measurements — MCQ Practice</h1>
 <div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> This bank contains 275 source MCQs, including 24 linked experimental or scenario sets. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. No student data is sent to a server.</div>
 <div id="loading" class="panel" role="status" aria-live="polite">Loading the Unit 1 question bank…</div>
-<section id="start" class="panel hidden"><h2>Ready to practise?</h2><p id="setupSummary"></p><p class="muted">Questions are randomized according to your selected arrangement. Complete stimulus sets stay in source order; answer options may be shuffled. A new attempt may reuse earlier questions.</p><div class="actions"><button class="primary" id="begin">Start MCQ Practice</button><a href="../build-your-physics-test.html">Change test settings</a></div></section>
+<section id="start" class="panel hidden"><h2>Ready to practise?</h2><p id="setupSummary"></p><p class="muted">Questions are selected according to your chosen method. Balanced selection aims to cover available SLOs, cognitive levels and difficulty bands, without promising an exact board-paper distribution. Complete scenarios remain together; attempts may repeat questions.</p><div class="actions"><button class="primary" id="begin">Start MCQ Practice</button><a href="../build-your-physics-test.html">Change test settings</a></div></section>
 <section id="quiz" class="panel hidden"><div class="progress-line"><strong id="qcounter">Question 1</strong><span id="timer" class="chip gold hidden" role="timer"></span><span id="answeredCount" class="muted"></span></div><div class="bar" aria-label="Question progress"><span id="progressFill"></span></div><div class="meta" id="tags"></div><section id="stimulusPanel" class="hint hidden" aria-label="Shared question scenario"></section><div id="question" class="qstem"></div><div id="choices" role="radiogroup" aria-label="MCQ answer choices"></div><div class="hint hidden" id="hintBox"></div><div id="feedbackBox" class="feedback hidden" role="status" aria-live="polite"></div><div class="actions"><button id="prev">← Previous</button><button id="showHint" class="hidden">Need a hint?</button><button id="check" class="hidden">Check Answer</button><span class="spacer"></span><button id="next">Next →</button><button class="primary" id="submit">Submit Test</button></div></section>
-<section id="result" class="panel hidden"><div class="eyebrow">Your Practice Report</div><h2>Assessment complete</h2><p class="muted" id="resultMeta"></p><div class="stat-grid" id="stats"></div><h3>Learning-outcome breakdown</h3><div class="slo-grid" id="sloStats"></div><h3 style="margin-top:22px">Question-by-question solutions</h3><div id="review"></div><div class="actions no-print"><button id="retry" class="primary">Try another random selection</button><button id="print">Print results</button><a href="../build-your-physics-test.html">Return to Test Builder</a></div></section>
+<section id="result" class="panel hidden"><div class="eyebrow">Your Practice Report</div><h2>Assessment complete</h2><p class="muted" id="resultMeta"></p><div class="stat-grid" id="stats"></div><h3>Learning-outcome breakdown</h3><div class="slo-grid" id="sloStats"></div><h3 style="margin-top:18px">Actual question mix</h3><div class="slo-grid" id="mixStats"></div><p class="muted" style="font-size:12px" id="mixNote"></p><h3 style="margin-top:22px">Question-by-question solutions</h3><div id="review"></div><div class="actions no-print"><button id="retry" class="primary">Try another random selection</button><button id="print">Print results</button><a href="../build-your-physics-test.html">Return to Test Builder</a></div></section>
 <div class="foot">Physics with Sir Najam · NBF Grade XI · Educational self-practice bank · Answers are drawn from instructor-prepared Word source material.</div>
 </main>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(window.location.search);
-const cfg={count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
+const cfg={count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
 let bank,eligible=[],test=[],answers={},checked={},index=0,secondsLeft=0,timerHandle=null,submitted=false;
 const safely=(node,value)=>{node.textContent=String(value);return node};
 
@@ -76,6 +76,100 @@ function groupedSelection(all,eligible,arrangement,count,orderGroups){
   const groupQuestions=chosen.reduce((n,g)=>n+g.length,0);
   return {possible:possibleSums.length>0,available,completeGroups,singles,chosen,groupQuestions};
 }
+// V8 practice-only intelligent selection. Existing bank records and keys are never altered.
+const RECENT_KEY='psn-physics-XI-u01-recent-v8';
+function readRecentAttempts(){
+ try {const a=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(a)?a.filter(x=>Array.isArray(x)).slice(0,4):[]}
+ catch{return []}
+}
+function storeRecentAttempt(ids){
+ try {localStorage.setItem(RECENT_KEY,JSON.stringify([ids,...readRecentAttempts()].slice(0,4)))}catch{} // Works without storage permission.
+}
+function hasIntactGroups(selected,eligible){
+ const full=new Map(),chosen=new Map();
+ for(const q of eligible){if(!q.stimulusSetId)continue;if(!full.has(q.stimulusSetId))full.set(q.stimulusSetId,[]);full.get(q.stimulusSetId).push(q.id)}
+ for(const q of selected){if(!q.stimulusSetId)continue;if(!chosen.has(q.stimulusSetId))chosen.set(q.stimulusSetId,new Set());chosen.get(q.stimulusSetId).add(q.id)}
+ return [...chosen].every(([id,set])=>set.size===(full.get(id)||[]).length);
+}
+function targetCounts(total, labels, weight, capacity){
+ const output=new Map(labels.map(k=>[k,0]));let remaining=total,open=labels.filter(k=>capacity.get(k)>0);
+ for(let guard=0;guard<20&&remaining>.0001&&open.length;guard++){
+  const weightTotal=open.reduce((s,k)=>s+(weight.get(k)||1),0);
+  const capped=[];for(const k of open){const wanted=remaining*(weight.get(k)||1)/weightTotal;const left=capacity.get(k)-output.get(k);if(wanted>=left-1e-8)capped.push(k)}
+  if(!capped.length){for(const k of open)output.set(k,output.get(k)+remaining*(weight.get(k)||1)/weightTotal);break}
+  for(const k of capped){const allocation=Math.max(0,capacity.get(k)-output.get(k));output.set(k,output.get(k)+allocation);remaining-=allocation}
+  open=open.filter(k=>!capped.includes(k));
+ }
+ return output;
+}
+function makeTargets(eligible,count){
+ const dims=[
+  {key:q=>q.sloCodes[0]||'Unmapped',weights:()=>1,importance:2.3},
+  {key:q=>q.cognitiveLevel,weights:k=>({Knowledge:0.30,Understanding:0.50,Application:0.20}[k]||.1),importance:1.8},
+  {key:q=>q.difficulty,weights:k=>({Foundation:0.40,Standard:0.60}[k]||.1),importance:.85}
+ ];
+ return dims.map(d=>{
+  const caps=new Map();for(const q of eligible){const k=d.key(q);caps.set(k,(caps.get(k)||0)+1)}
+  const labels=[...caps.keys()];const weights=new Map(labels.map(k=>[k,d.weights(k)]));
+  const targets=targetCounts(count,labels,weights,caps);
+  return {...d,targets};
+ });
+}
+function selectedScore(qs,targets,count,recent){
+ const total=qs.length;
+ let score=0;
+ for(const d of targets){
+  const actual=new Map();for(const q of qs){const k=d.key(q);actual.set(k,(actual.get(k)||0)+1)}
+  for(const [k,want] of d.targets){
+   const expected=want*total/count;
+   const delta=(actual.get(k)||0)-expected;
+   score+=d.importance*delta*delta/(1+expected);
+  }
+ }
+ if(recent.length){
+  const penalty=new Map();recent.forEach((ids,i)=>ids.forEach(id=>penalty.set(id,Math.max(penalty.get(id)||0,(recent.length-i)/(recent.length)))));
+  score+=qs.reduce((acc,q)=>acc+(penalty.get(q.id)||0)*1.6,0);
+ }
+ return score;
+}
+function fillBalancedSingles(initial,singles,need,targets,count,recent){
+ if(need===0)return initial;
+ let selected=initial.slice(),pool=shuffled(singles);
+ for(let n=0;n<need;n++){
+  if(!pool.length)return null;
+  let bestScore=Infinity,best=-1;
+  const sample=pool.length<=40?pool:shuffled(pool).slice(0,40);
+  for(const candidate of sample){
+   const score=selectedScore([...selected,candidate],targets,count,recent)+Math.random()*.008;
+   if(score<bestScore){bestScore=score;best=pool.indexOf(candidate)}
+  }
+  selected.push(pool.splice(best,1)[0]);
+ }
+ return selected;
+}
+function balancedBlocks(eligible,plan,arrangement,count,recent){
+ const targets=makeTargets(eligible,count);
+ if(arrangement==='random'){
+  const selected=fillBalancedSingles([],eligible,count,targets,count,recent);
+  return selected.map(q=>[q]);
+ }
+ // Retain complete sets. Probe multiple shuffled valid group combinations, then
+ // fill the remaining seats with independent MCQs based on current coverage gaps.
+ let best=null,bestScore=Infinity;
+ for(let trial=0;trial<(arrangement==='scenario'?24:12);trial++){
+  const trialPlan=groupedSelection(bank.questions,eligible,arrangement,count,shuffled);
+  if(!trialPlan.possible)continue;
+  const seed=trialPlan.chosen.flat();
+  const remain=count-seed.length;
+  if(remain<0||(arrangement==='scenario'&&remain!==0))continue;
+  const selected=fillBalancedSingles(seed,trialPlan.singles,remain,targets,count,recent);
+  if(!selected||selected.length!==count)continue;
+  const score=selectedScore(selected,targets,count,recent)+Math.random()*.01;
+  if(score<bestScore){bestScore=score;best=[...trialPlan.chosen,...selected.slice(seed.length).map(q=>[q])]}
+ }
+ return best||[];
+}
+
 function showError(msg){$('loading').classList.remove('hidden');$('loading').textContent=msg;$('loading').classList.add('notice','error')}
 function labelScope(){return cfg.scope==='all'?'All learning outcomes':cfg.scope==='summative'?'Summative theory SLOs':'Formative learning SLOs'}
 function setup(){
@@ -88,7 +182,7 @@ function setup(){
    showError(why+' Return to Build Your Physics Test, reduce the count, use Ordinary random MCQs, or broaden your SLO/difficulty/scope filters.');return;
  }
  const label=cfg.arrangement==='random'? 'ordinary randomized questions':cfg.arrangement==='grouped'?'mixed MCQs with intact stimulus sets':'only complete stimulus sets';
- $('setupSummary').textContent=`${cfg.count} MCQs • ${label} • ${labelScope()} • ${cfg.feedback==='end'?'answers after submission':cfg.feedback==='instant'?'feedback after checking each answer':'optional hints and per-question feedback'} • ${cfg.timer?cfg.timer+'-minute timer':'untimed'} • ${plan.available} eligible questions.`;
+ $('setupSummary').textContent=`${cfg.count} MCQs • ${label} • ${labelScope()} • ${cfg.feedback==='end'?'answers after submission':cfg.feedback==='instant'?'feedback after checking each answer':'optional hints and per-question feedback'} • ${cfg.timer?cfg.timer+'-minute timer':'untimed'} • ${plan.available} eligible questions • ${cfg.selection==='balanced'?'best-effort balanced selection':'fully random selection'}${cfg.preferUnseen?' • favors less-recently-seen questions':''}.`;
  $('start').classList.remove('hidden');
 }
 function chip(text){return node('span','chip',text)}
@@ -97,13 +191,18 @@ function prepare(){
  const plan=groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count,cfg.shuffle?shuffled:null);
  if(!plan.possible){showError('The selected filters do not provide enough complete scenario sets. Please return to the Test Builder.');return}
  let blocks=[];
- if(cfg.arrangement==='random'){
+ if(cfg.selection==='balanced'){
+   const recent=cfg.preferUnseen?readRecentAttempts():[];
+   blocks=balancedBlocks(eligible,plan,cfg.arrangement,cfg.count,recent);
+ }else if(cfg.arrangement==='random'){
    blocks=(cfg.shuffle?shuffled(eligible):eligible.slice()).slice(0,cfg.count).map(q=>[q]);
  }else{
    const singles=cfg.shuffle?shuffled(plan.singles):plan.singles.slice();
    blocks=[...plan.chosen,...singles.slice(0,cfg.count-plan.groupQuestions).map(q=>[q])];
-   if(cfg.shuffle)blocks=shuffled(blocks);
  }
+ if(cfg.shuffle)blocks=shuffled(blocks);
+ else blocks.sort((a,b)=>a[0].sourceQuestionNumber-b[0].sourceQuestionNumber);
+
  test=[];let groupOrdinal=0;
  for(const block of blocks){
    const isGroup=block.length>1&&Boolean(block[0].stimulusSetId);
@@ -112,7 +211,8 @@ function prepare(){
      const q=block[i];test.push({...q,groupOrdinal:isGroup?groupOrdinal:0,groupPosition:isGroup?i+1:0,groupSize:isGroup?block.length:0,displayOptions:cfg.shuffle?shuffled(q.options):q.options.slice()});
    }
  }
- if(test.length!==cfg.count||new Set(test.map(q=>q.id)).size!==test.length){showError('The practice selection failed a consistency check. No test has started.');return}
+ if(test.length!==cfg.count||new Set(test.map(q=>q.id)).size!==test.length || (cfg.arrangement!=='random'&&!hasIntactGroups(test,eligible))){showError('The practice selection failed a consistency check. No test has started.');return}
+ if(cfg.preferUnseen)storeRecentAttempt(test.map(q=>q.id));
  answers={};checked={};index=0;submitted=false;$('start').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');$('timer').classList.toggle('hidden',!cfg.timer);if(timerHandle)clearInterval(timerHandle);secondsLeft=cfg.timer*60;if(cfg.timer){setClock();timerHandle=setInterval(()=>{secondsLeft--;setClock();if(secondsLeft<=0){clearInterval(timerHandle);finish('Time expired — answers submitted automatically.')}},1000)}render()
 }
 function setClock(){const m=Math.floor(Math.max(0,secondsLeft)/60),s=Math.max(0,secondsLeft)%60;$('timer').textContent='Time left: '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
@@ -123,6 +223,9 @@ function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearI
  $('resultMeta').textContent=(msg?msg+' ':'')+'Self-assessment only • Not a full FBISE model paper • '+new Date().toLocaleDateString();
  const stats=[['Score',Math.round(100*right/test.length)+'%'],['Correct',right],['Incorrect',wrong],['Not answered',skipped]].map(([label,v])=>{const b=node('div','stat');b.append(node('strong','',v),node('span','',label));return b});$('stats').replaceChildren(...stats);
  const groups=new Map();test.forEach(q=>{for(const s of q.sloCodes){if(!groups.has(s))groups.set(s,{ok:0,total:0});const x=groups.get(s);x.total++;if(answers[q.id]===q.correctOptionId)x.ok++}});$('sloStats').replaceChildren(...Array.from(groups,([k,v])=>node('span','slo-chip',k+': '+v.ok+'/'+v.total+' correct')));
+ const mix=(key)=>[...new Set(test.map(q=>key(q)))].sort().map(tag=>tag+': '+test.filter(q=>key(q)===tag).length);
+ $('mixStats').replaceChildren(...[...mix(q=>q.cognitiveLevel),...mix(q=>q.difficulty)].map(s=>node('span','slo-chip',s)));
+ $('mixNote').textContent=cfg.selection==='balanced'?'Adaptive balancing reflects what the selected question pool contains. It is not a claim of exact FBISE cognitive percentages.':'This was a fully random selection of the eligible question pool.';
  const sections=test.map((q,i)=>{const p=node('div','review-item');const correct=q.displayOptions.find(o=>o.id===q.correctOptionId),my=q.displayOptions.find(o=>o.id===answers[q.id]);const qt=node('strong');qt.append(document.createTextNode((i+1)+'. '));const qbody=node('span');setRich(qbody,q.stemHtml,q.stem);qt.append(qbody);if(q.stimulusHtml){const st=node('div','hint');setRich(st,q.stimulusHtml,q.stimulusText||'');p.appendChild(st)}const user=node('p','review-user '+(!my?'wrong':my.id===correct.id?'':'wrong'));user.append(document.createTextNode('Your answer: '));const ut=node('span');if(my)setRich(ut,my.html,my.text);else ut.textContent='Not answered';user.appendChild(ut);const right=node('p','review-answer');right.append(document.createTextNode('Correct answer: '));const rightText=node('span');setRich(rightText,correct.html,correct.text);right.appendChild(rightText);const reason=node('p');setRich(reason,q.explanationHtml,q.explanation);p.append(qt,node('p','muted',`Source MCQ #${q.sourceQuestionNumber} · ${q.sloCodes.join(', ')} · ${q.topic}`),user,right,reason);return p});$('review').replaceChildren(...sections);window.scrollTo({top:0,behavior:'smooth'})}
 $('begin').addEventListener('click',prepare);$('prev').addEventListener('click',()=>{if(index>0){index--;render()}});$('next').addEventListener('click',()=>{if(index<test.length-1){index++;render()}});$('check').addEventListener('click',()=>{const q=test[index];if(!answers[q.id])return;checked[q.id]=true;render()});$('showHint').addEventListener('click',()=>{$('hintBox').textContent=hint(test[index]);$('hintBox').classList.remove('hidden')});$('submit').addEventListener('click',()=>{const n=test.filter(q=>!answers[q.id]).length;if(n&&!confirm(`You have ${n} unanswered question(s). Submit anyway?`))return;finish()});$('retry').addEventListener('click',()=>{$('start').classList.remove('hidden');$('result').classList.add('hidden');window.scrollTo({top:0})});$('print').addEventListener('click',()=>window.print());
 fetch('../question-bank/grade-11/unit-01.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Question bank was not found (HTTP '+r.status+').');return r.json()}).then(data=>{if(!Array.isArray(data.questions)||data.status!=='practice-pilot')throw Error('Question bank is not in the expected format.');bank=data;setup()}).catch(err=>showError('Unable to load the Unit 1 question bank: '+err.message+' Please verify that the question-bank folder was copied alongside the practice-engine folder and that the site is hosted through GitHub Pages.'));
