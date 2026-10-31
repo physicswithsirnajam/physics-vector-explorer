@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "project": "Physics with Sir Najam",
+  "kind": "assessment-blueprint-not-exam-generator",
+  "framework": "FBISE Grade XI Physics Assessment Framework and Model Question Paper, National Curriculum 2022-23, Inclusive Scheme of Studies 2024, 50 percent MCQs",
+  "sourcePages": {
+    "patternPdfPage": 28,
+    "cognitiveAndTosNotePdfPage": 51,
+    "note": "Page references are physical PDF page numbers (not printed pages); verify against the uploaded official framework."
+  },
+  "fullTheoryModel": {
+    "totalMarks": 80,
+    "sectionA": {"totalMarks": 40, "mcqs": 80, "marksPerMcq": 0.5, "straightMcqs": 56, "stimulusMcqs": 24, "stimulusSets": 6, "questionsPerStimulusSet": 4, "timeMinutes": 100},
+    "sectionB": {"totalMarks": 28, "questionsToAnswer": 7, "marksPerQuestion": 4, "internalOrPerQuestion": true, "totalQuestionOptionsRequired": 14},
+    "sectionC": {"totalMarks": 12, "questionsToAnswer": 2, "marksPerQuestion": 6, "internalOrPerQuestion": true, "totalQuestionOptionsRequired": 4},
+    "descriptiveCombinedTimeMinutes": 80,
+    "cognitiveTargetPercent": {"Knowledge": 30, "Understanding": 50, "Application": 20},
+    "cognitiveTolerancePercentagePoints": 5,
+    "rules": [
+      "Summative theory SLOs only; formative and PBA-only SLOs excluded",
+      "Balanced representation of all content domains; example ToS is particular to the model paper, not fixed unit-wise policy",
+      "Internal OR alternatives for each SRQ and ERQ should have the same difficulty and different SLOs",
+      "Full board format cannot be assembled until all required question types and domains are verified"
+    ]
+  },
+  "unit1ScaledPracticeExample": {
+    "status": "teacher-created-scaled-practice-not-official-full-board-format",
+    "totalMarks": 28,
+    "sectionA": {"totalMarks": 14, "mcqs": 28, "marksPerMcq": 0.5, "straightMcqs": 20, "stimulusMcqs": 8, "stimulusSets": 2, "questionsPerStimulusSet": 4},
+    "sectionB": {"totalMarks": 8, "questionsToAnswer": 2, "marksPerQuestion": 4, "internalOrPerQuestion": true},
+    "sectionC": {"totalMarks": 6, "questionsToAnswer": 1, "marksPerQuestion": 6, "internalOrPerQuestion": true}
+  }
+}
