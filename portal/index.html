@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101e37">
+  <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
+  <title>Student Portal | Physics with Sir Najam</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="https://sites.google.com/view/physics-with-sir-najam/" aria-label="Physics with Sir Najam home">
+      <span class="wordmark-top">PHYSICS WITH</span>
+      <span class="wordmark-main">SIR NAJAM</span>
+    </a>
+    <div class="header-right">
+      <span class="stage-label">STUDENT PORTAL · PILOT V1</span>
+      <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="auth-screen" class="auth-layout">
+      <div class="welcome-panel">
+        <span class="eyebrow">LEARN · EXPLORE · PRACTISE</span>
+        <h1>Your Physics journey,<br><em>all in one place.</em></h1>
+        <p class="welcome-copy">A personal home for learning resources, interactive simulations, assessment practice and—soon—your progress across topics and learning outcomes.</p>
+        <div class="value-items">
+          <div><span class="value-number">01</span><span><strong>Learn at your pace</strong><small>Accessible to independent learners worldwide</small></span></div>
+          <div><span class="value-number">02</span><span><strong>Build understanding</strong><small>Concept explanations, simulations and practice</small></span></div>
+          <div><span class="value-number">03</span><span><strong>Improve with evidence</strong><small>Personal SLO-level tracking is coming next</small></span></div>
+        </div>
+        <div class="public-demo"><span class="demo-dot"></span><p><strong>Just exploring?</strong> Visit our <a href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc">public learning hub</a> for a preview. Selected simulations will remain publicly accessible.</p></div>
+      </div>
+
+      <div class="auth-card">
+        <div id="setup-prompt" class="alert alert-warning" hidden role="status">Portal setup is incomplete. Configure <code>portal/firebase-config.js</code> using your Firebase Web App settings before trying to sign in.</div>
+        <div id="notice" class="alert" hidden role="status" aria-live="polite"></div>
+
+        <section id="panel-login" class="auth-panel">
+          <span class="card-eyebrow">WELCOME BACK</span>
+          <h2>Sign in to your portal</h2>
+          <p class="muted">Access your personal Physics learning space.</p>
+          <form id="login-form" class="form-stack">
+            <label for="login-email">Email address</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+            <div class="label-row"><label for="login-password">Password</label><button class="text-button" type="button" data-show="reset">Forgot password?</button></div>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Enter your password">
+            <button class="btn btn-primary" type="submit">Sign In <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="or-divider"><span>or</span></div>
+          <button id="google-signin" class="btn btn-google" type="button"><span class="google-g" aria-hidden="true">G</span> Continue with Google</button>
+          <p class="bottom-prompt">New to Physics with Sir Najam? <button class="text-button" data-show="signup" type="button">Create an account</button></p>
+        </section>
+
+        <section id="panel-signup" class="auth-panel" hidden>
+          <span class="card-eyebrow">START LEARNING</span>
+          <h2>Create your free account</h2>
+          <p class="muted">Every new account starts as an independent student. Teachers are appointed separately by the administrator.</p>
+          <form id="signup-form" class="form-stack">
+            <label for="signup-name">Name</label>
+            <input id="signup-name" name="displayName" autocomplete="name" required maxlength="80" placeholder="Your preferred name">
+            <label for="signup-email">Email address</label>
+            <input id="signup-email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+            <label for="signup-password">Password (at least 6 characters)</label>
+            <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="6" required placeholder="Choose a password">
+            <label for="signup-confirm">Confirm password</label>
+            <input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" minlength="6" required placeholder="Repeat your password">
+            <button class="btn btn-primary" type="submit">Create Student Account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="bottom-prompt">Already registered? <button class="text-button" data-show="login" type="button">Sign in</button></p>
+          <p class="fine-print">Pilot environment. Public enrollment of minors and live academic records require appropriate privacy information and consent arrangements before launch.</p>
+        </section>
+
+        <section id="panel-reset" class="auth-panel" hidden>
+          <span class="card-eyebrow">ACCOUNT RECOVERY</span>
+          <h2>Reset your password</h2>
+          <p class="muted">Enter your email address to request a password-reset link.</p>
+          <form id="reset-form" class="form-stack">
+            <label for="reset-email">Email address</label>
+            <input id="reset-email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+            <button class="btn btn-primary" type="submit">Request Reset Link</button>
+          </form>
+          <p class="bottom-prompt"><button class="text-button" data-show="login" type="button">Back to sign in</button></p>
+        </section>
+
+        <section id="panel-verify" class="auth-panel" hidden>
+          <span class="card-eyebrow">ONE MORE STEP</span>
+          <h2>Verify your email</h2>
+          <p class="muted">We sent a verification link to <strong id="verify-email">your email address</strong>. Open that email, click its link, and then return here.</p>
+          <div class="form-stack">
+            <button class="btn btn-primary" id="check-verification" type="button">I've Verified My Email</button>
+            <button class="btn btn-secondary" id="resend-verification" type="button">Resend Verification Email</button>
+            <button class="text-button center" id="verify-signout" type="button">Use another account</button>
+          </div>
+        </section>
+
+        <section id="panel-error" class="auth-panel" hidden>
+          <span class="card-eyebrow">SETUP CHECK</span>
+          <h2>Can't open your dashboard yet</h2>
+          <p class="muted" id="data-error">The profile database needs attention.</p>
+          <div class="form-stack">
+            <button class="btn btn-primary" id="retry-profile" type="button">Try Again</button>
+            <button class="btn btn-secondary" id="error-signout" type="button">Sign Out</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="dashboard-screen" class="dashboard" hidden>
+      <div class="dashboard-topline"><span class="eyebrow">MY LEARNING SPACE</span><button id="signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <h1>Welcome, <span id="student-name">Student</span><span class="gold-period">.</span></h1>
+      <p class="dashboard-subtitle">Your personal Physics learning space is ready. Select an activity below to get started.</p>
+      <div class="account-strip"><span class="account-dot"></span><span>Signed in as <strong id="student-email"></strong></span><span class="account-pill">Independent learner</span></div>
+      <h2 class="section-title">Continue learning</h2>
+      <div class="action-grid">
+        <a class="action-card" href="../build-your-physics-test.html"><span class="action-symbol">✦</span><span class="action-kicker">PRACTISE</span><strong>Build Your Physics Test</strong><span>Grade XI Unit 1 · MCQs and scenario-based practice</span><span class="card-arrow">Open existing practice engine ↗</span></a>
+        <a class="action-card" href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc"><span class="action-symbol">◉</span><span class="action-kicker">EXPLORE</span><strong>Physics Student Hub</strong><span>Interactive learning materials, concepts and simulations</span><span class="card-arrow">Visit student hub ↗</span></a>
+        <article class="action-card coming"><span class="action-symbol">▤</span><span class="action-kicker">COMING NEXT</span><strong>My Progress & Weak SLOs</strong><span>Your personal attempt history, performance trends and targeted revision</span><span class="card-arrow">In development</span></article>
+      </div>
+      <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice scores are <strong>not yet saved</strong> to your account. The linked resources are still publicly hosted until the secure content migration. Teacher accounts and class assignments are not enabled.</div>
+    </section>
+  </main>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal pilot · Access control and progress tracking in development</span></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
