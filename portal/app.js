@@ -1,9 +1,10 @@
-/* Physics with Sir Najam — Portal V3: student-owned practice history and V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V4: student learning analytics and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
    Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
+import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {
  getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
@@ -53,41 +54,64 @@ function progressDate(value){
  try{const date=value?.toDate?.();return date?date.toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Date unavailable';}catch{return 'Date unavailable';}
 }
 function renderProgress(records){
+ const analytics=analyzeAttempts(records);
  const stats=$('progress-content');stats.hidden=false;
- $('progress-attempts').textContent=String(records.length);
- const count=records.reduce((n,r)=>n+(Number.isInteger(r.questionCount)?r.questionCount:0),0);
- const right=records.reduce((n,r)=>n+(Number.isInteger(r.correctCount)?r.correctCount:0),0);
- $('progress-questions').textContent=String(count);
- $('progress-accuracy').textContent=count?Math.round(right/count*100)+'%':'—';
- const outcomes=new Map();
- for(const r of records){
-  if(!Array.isArray(r.questionResults))continue;
-  for(const item of r.questionResults){
-   if(!item||typeof item!=='object'||!Array.isArray(item.sloCodes))continue;
-   for(const code of item.sloCodes){
-    if(typeof code!=='string'||!/^P-11-A-\d\d$/.test(code))continue;
-    if(!outcomes.has(code))outcomes.set(code,{attempted:0,correct:0});
-    const x=outcomes.get(code);
-    if(item.answered===true){x.attempted++;if(item.correct===true)x.correct++;}
-   }
+ $('progress-attempts').textContent=String(analytics.attempts);
+ $('progress-questions').textContent=String(analytics.presented);
+ $('progress-accuracy').textContent=analytics.accuracy===null?'—':analytics.accuracy+'%';
+ $('progress-unique').textContent=String(analytics.uniqueQuestions);
+ $('progress-answered').textContent=String(analytics.answered);
+ $('progress-window').textContent=analytics.hasMoreThanWindow?'Latest 25 saved attempts are included; earlier attempts are excluded from these calculations.':'All currently saved attempts are included (up to 25).';
+
+ const sloContainer=$('progress-slos');sloContainer.replaceChildren();
+ if(!analytics.slos.length)sloContainer.textContent='No SLO data yet. Complete and save a test to begin tracking.';
+ for(const x of analytics.slos){
+  const row=document.createElement('div');row.className='progress-slo';row.dataset.state=x.status;
+  const head=document.createElement('div');head.className='progress-slo-top';
+  const heading=document.createElement('div');const name=document.createElement('strong');name.textContent=x.code;
+  const label=document.createElement('small');label.textContent=SLO_TOPICS[x.code]||'Learning outcome';heading.append(name,label);
+  const value=document.createElement('span');value.textContent=x.accuracy===null?'No answers yet':`${x.accuracy}% · ${x.correct}/${x.answered} answered correctly`;
+  head.append(heading,value);
+  const meter=document.createElement('div');meter.className='progress-meter';meter.setAttribute('role','img');meter.setAttribute('aria-label',`${x.code}: ${x.accuracy??0} percent accuracy among answered questions`);
+  const fill=document.createElement('span');fill.style.width=(x.accuracy??0)+'%';fill.dataset.weak=x.status==='focus'?'true':'false';meter.append(fill);
+  const note=document.createElement('p');note.className='progress-footnote';
+  const verdict=x.status==='focus'?'Suggested focus for revision':x.status==='strong'?'Strong recent practice accuracy':x.status==='developing'?'Continue guided practice':'More evidence needed before evaluating';
+  note.textContent=`${verdict} · ${x.unique} different questions · ${x.distinctAttempts} saved attempt(s)`;
+  row.append(head,meter,note);
+  const url=targetedPracticeUrl(x.code);
+  if(url){const link=document.createElement('a');link.className='slo-practice-link';link.href=url;link.textContent='Practise this SLO (4 MCQs) ↗';row.append(link);}
+  sloContainer.append(row);
+ }
+
+ const plan=$('revision-priorities');plan.replaceChildren();
+ const recommended=analytics.priority.length?analytics.priority:analytics.needsEvidence.slice(0,2);
+ if(!recommended.length){
+  const p=document.createElement('p');p.className='progress-footnote';p.textContent=analytics.attempts?'No specific revision priority is established from these records. Continue practising a variety of SLOs.':'Save an assessment to receive your first revision suggestions.';plan.append(p);
+ }
+ for(const [i,x] of recommended.entries()){
+  const card=document.createElement('div');card.className='revision-card';
+  const kicker=document.createElement('span');kicker.className='revision-kicker';kicker.textContent=analytics.priority.length?`REVISION PRIORITY ${i+1}`:'MORE PRACTICE DATA NEEDED';
+  const title=document.createElement('strong');title.textContent=`${x.code} · ${x.topic}`;
+  const why=document.createElement('p');why.textContent=x.status==='focus'?`${x.accuracy}% correct across ${x.answered} answered questions (${x.unique} unique). Review the concept and check your reasoning.`:`Only ${x.answered} answered questions across ${x.distinctAttempts} saved attempts. Try more questions before drawing a conclusion.`;
+  card.append(kicker,title,why);
+  const url=targetedPracticeUrl(x.code);if(url){const link=document.createElement('a');link.className='btn btn-secondary btn-small';link.href=url;link.textContent='Start 4-question practice ↗';card.append(link);}
+  plan.append(card);
+ }
+
+ const trend=$('accuracy-trend');trend.replaceChildren();
+ if(!analytics.timeline.length){trend.textContent='No saved test history yet.';}
+ else {
+  for(const [i,t] of analytics.timeline.entries()){
+   const item=document.createElement('div');item.className='trend-item';
+   const bar=document.createElement('div');bar.className='trend-bar';bar.setAttribute('role','img');
+   bar.setAttribute('aria-label',`Attempt ${i+1}: ${t.accuracy===null?'no answered questions':t.accuracy+' percent correct among answered questions'}`);
+   const fill=document.createElement('span');fill.style.height=(t.accuracy??0)+'%';bar.append(fill);
+   const value=document.createElement('strong');value.textContent=t.accuracy===null?'—':t.accuracy+'%';
+   const label=document.createElement('small');label.textContent=`#${i+1}`;
+   item.append(value,bar,label);trend.append(item);
   }
  }
- const sloContainer=$('progress-slos');sloContainer.replaceChildren();
- if(!outcomes.size){sloContainer.textContent='No SLO results yet. Complete and save a test to begin tracking.';}
- for(const [code,counts] of [...outcomes].sort(([a],[b])=>a.localeCompare(b))){
-  const pct=counts.attempted?Math.round(counts.correct/counts.attempted*100):0;
-  const weak=counts.attempted>=3&&pct<65;
-  const row=document.createElement('div');row.className='progress-slo';
-  const head=document.createElement('div');head.className='progress-slo-top';
-  const name=document.createElement('strong');name.textContent=code;
-  const value=document.createElement('span');value.textContent=counts.attempted?`${pct}% · ${counts.correct}/${counts.attempted} correct`:'No answered questions';
-  head.append(name,value);
-  const meter=document.createElement('div');meter.className='progress-meter';
-  const fill=document.createElement('span');fill.style.width=(counts.attempted?pct:0)+'%';fill.dataset.weak=weak?'true':'false';meter.append(fill);
-  const note=document.createElement('p');note.className='progress-footnote';
-  note.textContent=weak?'Revision suggested · practice this SLO again':counts.attempted<3?'Insufficient evidence yet':'Continue practising to confirm your progress';
-  row.append(head,meter,note);sloContainer.append(row);
- }
+
  const attemptList=$('progress-attempt-list');attemptList.replaceChildren();
  if(!records.length)attemptList.textContent='No saved attempts yet. Complete a test, then select Save to My Progress.';
  for(const r of records){
@@ -108,7 +132,7 @@ async function loadProgress(user){
   renderProgress(results.docs.map(doc=>doc.data()));
   progressStatus(results.empty?'No saved attempts yet. Your results will appear here after you save a completed practice test.':'Your most recent saved practice attempts are shown below.');
  }catch(error){
-  if(version===progressRequestToken && auth?.currentUser?.uid===user.uid){$('progress-content').hidden=true;progressStatus('Could not load progress. Make sure Portal V3 Firestore rules are published. '+authError(error),true);}
+  if(version===progressRequestToken && auth?.currentUser?.uid===user.uid){$('progress-content').hidden=true;progressStatus('Could not load progress. Check your existing V3 Firestore rules and internet connection. '+authError(error),true);}
  }
 }
 

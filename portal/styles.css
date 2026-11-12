@@ -14,3 +14,31 @@
 .progress-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}.progress-stat{border-radius:11px;background:#eef3f9;padding:20px;text-align:center}.progress-stat strong{display:block;font-size:29px;color:#152641}.progress-stat span{font-size:12px;color:#5b6b7d}
 .slo-progress-list,.attempt-list{display:grid;gap:10px}.progress-slo{border:1px solid #e2e8ee;border-radius:11px;padding:13px 16px}.progress-slo-top{display:flex;justify-content:space-between;gap:10px;font-size:13px;align-items:center}.progress-meter{height:8px;background:#e9eef4;border-radius:999px;overflow:hidden;margin-top:9px}.progress-meter span{height:100%;display:block;background:#327b96}.progress-meter span[data-weak="true"]{background:#bd6d47}.progress-footnote{font-size:11px;color:#69798b;margin:5px 0 0}.attempt-row{display:flex;gap:14px;align-items:center;justify-content:space-between;border:1px solid #e2e8ee;border-radius:11px;padding:13px 16px}.attempt-row strong{font-size:13px}.attempt-row small{display:block;color:#67788a;margin-top:4px}.attempt-score{font-size:18px;font-weight:800;color:#1b5d79;white-space:nowrap}
 @media(max-width:700px){.progress-section{padding:18px}.progress-stats{grid-template-columns:1fr;gap:8px}.progress-stat{padding:12px}.progress-section-head{align-items:stretch}.progress-section-head button{width:100%}.attempt-row{align-items:flex-start}.progress-slo-top{align-items:flex-start}}
+
+/* Portal V4 — cautious, responsive self-practice analytics */
+.progress-stats{grid-template-columns:repeat(5,minmax(0,1fr))}
+.progress-stat{padding:17px 9px}
+.progress-stat strong{font-size:27px}
+.progress-stat span{font-size:11px;line-height:1.45;display:block}
+.analytics-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:24px}
+.analytics-panel{border:1px solid var(--border);border-radius:14px;background:#fbfcfe;padding:18px;min-width:0}
+.analytics-panel h3{margin-top:0}
+.accuracy-trend{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));align-items:end;gap:7px;min-height:180px;padding:15px 4px 0}
+.trend-item{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.trend-item strong{font-size:10px;font-variant-numeric:tabular-nums;color:#294968}
+.trend-item small{font-size:10px;color:#738094}
+.trend-bar{background:#e9eef5;border-radius:5px 5px 1px 1px;height:115px;width:100%;max-width:34px;display:flex;align-items:end;overflow:hidden}
+.trend-bar span{width:100%;background:linear-gradient(180deg,#d2ab63,#345e87);border-radius:5px 5px 1px 1px;min-height:0}
+.revision-priorities{display:grid;gap:11px}
+.revision-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;background:#fff;border:1px solid #e3e8ee;padding:12px 13px;border-radius:10px}
+.revision-kicker{font-size:9px;font-weight:800;letter-spacing:.1em;color:#9a7439}
+.revision-card strong{font-size:13px;color:#172945}
+.revision-card p{font-size:11px;line-height:1.55;color:#607185;margin:0 0 3px}
+.revision-card a{min-height:34px;font-size:11px;padding:7px 12px}
+.progress-slo-top>div{display:flex;flex-direction:column;gap:3px}
+.progress-slo-top small{font-size:11px;font-weight:400;color:#6d7b8a}
+.progress-slo[data-state="focus"]{border-color:#d5a98b}
+.progress-slo[data-state="strong"]{border-color:#a9d3bf}
+.slo-practice-link{display:inline-block;font-size:11px;font-weight:700;color:#1d5675;margin-top:8px;text-underline-offset:3px}
+@media(max-width:950px){.progress-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-split{grid-template-columns:1fr}}
+@media(max-width:700px){.progress-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.accuracy-trend{gap:4px}.analytics-panel{padding:14px}.progress-slo-top{flex-direction:column}.progress-slo-top>span{align-self:flex-start}}
