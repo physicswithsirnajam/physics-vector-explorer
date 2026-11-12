@@ -1,7 +1,7 @@
-/* Physics with Sir Najam — Portal V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V3: student-owned practice history and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
-   Teacher/class/payments and assessment writes remain DISABLED.
+   Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
    Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
@@ -14,7 +14,7 @@ import {getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, o
 
 const $=id=>document.getElementById(id);
 const notice=$('notice');
-let auth=null, db=null, navigationToken=0, adminSessionUid=null;
+let auth=null, db=null, navigationToken=0, adminSessionUid=null, progressRequestToken=0;
 const ready=Object.values(firebaseConfig).every(v=>typeof v==='string' && v.trim() && !v.includes('REPLACE_'));
 
 function status(message='',kind='error'){
@@ -41,7 +41,77 @@ function showLearner(user,profile){
  $('student-name').textContent=profile.displayName||user.displayName||'Student';
  $('student-email').textContent=user.email||'your Google account';
  screen('dashboard');
+ loadProgress(user);
 }
+
+// V3: learner-owned practice records. No admin/teacher access to independent
+// students' attempts. All values are treated as user-entered/self-reported.
+function progressStatus(message='',error=false){
+ const el=$('progress-status');el.textContent=message;el.dataset.error=error?'true':'false';el.hidden=!message;
+}
+function progressDate(value){
+ try{const date=value?.toDate?.();return date?date.toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Date unavailable';}catch{return 'Date unavailable';}
+}
+function renderProgress(records){
+ const stats=$('progress-content');stats.hidden=false;
+ $('progress-attempts').textContent=String(records.length);
+ const count=records.reduce((n,r)=>n+(Number.isInteger(r.questionCount)?r.questionCount:0),0);
+ const right=records.reduce((n,r)=>n+(Number.isInteger(r.correctCount)?r.correctCount:0),0);
+ $('progress-questions').textContent=String(count);
+ $('progress-accuracy').textContent=count?Math.round(right/count*100)+'%':'—';
+ const outcomes=new Map();
+ for(const r of records){
+  if(!Array.isArray(r.questionResults))continue;
+  for(const item of r.questionResults){
+   if(!item||typeof item!=='object'||!Array.isArray(item.sloCodes))continue;
+   for(const code of item.sloCodes){
+    if(typeof code!=='string'||!/^P-11-A-\d\d$/.test(code))continue;
+    if(!outcomes.has(code))outcomes.set(code,{attempted:0,correct:0});
+    const x=outcomes.get(code);
+    if(item.answered===true){x.attempted++;if(item.correct===true)x.correct++;}
+   }
+  }
+ }
+ const sloContainer=$('progress-slos');sloContainer.replaceChildren();
+ if(!outcomes.size){sloContainer.textContent='No SLO results yet. Complete and save a test to begin tracking.';}
+ for(const [code,counts] of [...outcomes].sort(([a],[b])=>a.localeCompare(b))){
+  const pct=counts.attempted?Math.round(counts.correct/counts.attempted*100):0;
+  const weak=counts.attempted>=3&&pct<65;
+  const row=document.createElement('div');row.className='progress-slo';
+  const head=document.createElement('div');head.className='progress-slo-top';
+  const name=document.createElement('strong');name.textContent=code;
+  const value=document.createElement('span');value.textContent=counts.attempted?`${pct}% · ${counts.correct}/${counts.attempted} correct`:'No answered questions';
+  head.append(name,value);
+  const meter=document.createElement('div');meter.className='progress-meter';
+  const fill=document.createElement('span');fill.style.width=(counts.attempted?pct:0)+'%';fill.dataset.weak=weak?'true':'false';meter.append(fill);
+  const note=document.createElement('p');note.className='progress-footnote';
+  note.textContent=weak?'Revision suggested · practice this SLO again':counts.attempted<3?'Insufficient evidence yet':'Continue practising to confirm your progress';
+  row.append(head,meter,note);sloContainer.append(row);
+ }
+ const attemptList=$('progress-attempt-list');attemptList.replaceChildren();
+ if(!records.length)attemptList.textContent='No saved attempts yet. Complete a test, then select Save to My Progress.';
+ for(const r of records){
+  const row=document.createElement('div');row.className='attempt-row';
+  const left=document.createElement('div');const title=document.createElement('strong');title.textContent=`Grade XI · Unit 1 · ${r.questionCount||0} MCQs`;
+  const meta=document.createElement('small');meta.textContent=`${progressDate(r.createdAt)} · ${r.arrangement||'random'} · ${r.selection||'balanced'}`;
+  left.append(title,meta);const score=document.createElement('span');score.className='attempt-score';score.textContent=`${r.correctCount||0}/${r.questionCount||0}`;
+  row.append(left,score);attemptList.append(row);
+ }
+}
+async function loadProgress(user){
+ const version=++progressRequestToken;
+ $('progress-content').hidden=true;progressStatus('Loading your private self-practice records…');
+ if(!user || !db || !user.emailVerified){progressStatus('Sign in with a verified student account first.',true);return;}
+ try{
+  const results=await getDocs(query(collection(db,'users',user.uid,'attempts'),orderBy('createdAt','desc'),limit(25)));
+  if(version!==progressRequestToken||auth?.currentUser?.uid!==user.uid||$('dashboard-screen').hidden)return;
+  renderProgress(results.docs.map(doc=>doc.data()));
+  progressStatus(results.empty?'No saved attempts yet. Your results will appear here after you save a completed practice test.':'Your most recent saved practice attempts are shown below.');
+ }catch(error){
+  if(version===progressRequestToken && auth?.currentUser?.uid===user.uid){$('progress-content').hidden=true;progressStatus('Could not load progress. Make sure Portal V3 Firestore rules are published. '+authError(error),true);}
+ }
+}
+
 function showAdmin(user){
  adminSessionUid=user.uid;
  $('admin-email').textContent=user.email||'verified account';
@@ -116,7 +186,7 @@ async function profileFor(user){
 async function refreshView(user){
  const current=++navigationToken;
  adminSessionUid=null;
- if(!user){screen('auth');pane('login');return;}
+ if(!user){progressRequestToken++;screen('auth');pane('login');return;}
  screen('auth');
  if(!user.emailVerified){
   $('verify-email').textContent=user.email||'your email address';
@@ -208,6 +278,7 @@ $('admin-load-profiles').addEventListener('click',loadProfiles);
 $('admin-signout').addEventListener('click',logout);
 $('admin-refresh-role').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
 $('refresh-access').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
+$('reload-progress').addEventListener('click',()=>{if(auth?.currentUser)loadProgress(auth.currentUser);});
 $('admin-open-learning').addEventListener('click',async()=>{
  const user=auth?.currentUser;
  if(!user || !adminSessionUid || adminSessionUid!==user.uid)return;

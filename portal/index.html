@@ -15,7 +15,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V2 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V3 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -30,7 +30,7 @@
         <div class="value-items">
           <div><span class="value-number">01</span><span><strong>Learn at your pace</strong><small>Accessible to independent learners worldwide</small></span></div>
           <div><span class="value-number">02</span><span><strong>Build understanding</strong><small>Concept explanations, simulations and practice</small></span></div>
-          <div><span class="value-number">03</span><span><strong>Improve with evidence</strong><small>Personal SLO-level tracking is coming next</small></span></div>
+          <div><span class="value-number">03</span><span><strong>Improve with evidence</strong><small>Personal SLO-level tracking begins with your saved practice results</small></span></div>
         </div>
         <div class="public-demo"><span class="demo-dot"></span><p><strong>Just exploring?</strong> Visit our <a href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc">public learning hub</a> for a preview. Selected simulations will remain publicly accessible.</p></div>
       </div>
@@ -118,14 +118,25 @@
       <div class="action-grid">
         <a class="action-card" href="../build-your-physics-test.html"><span class="action-symbol">✦</span><span class="action-kicker">PRACTISE</span><strong>Build Your Physics Test</strong><span>Grade XI Unit 1 · MCQs and scenario-based practice</span><span class="card-arrow">Open existing practice engine ↗</span></a>
         <a class="action-card" href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc"><span class="action-symbol">◉</span><span class="action-kicker">EXPLORE</span><strong>Physics Student Hub</strong><span>Interactive learning materials, concepts and simulations</span><span class="card-arrow">Visit student hub ↗</span></a>
-        <article class="action-card coming"><span class="action-symbol">▤</span><span class="action-kicker">COMING NEXT</span><strong>My Progress & Weak SLOs</strong><span>Your personal attempt history, performance trends and targeted revision</span><span class="card-arrow">In development</span></article>
+        <a class="action-card" href="#my-progress"><span class="action-symbol">▤</span><span class="action-kicker">MY PROGRESS</span><strong>Saved MCQ Practice</strong><span>Review your own results, recent tests, and emerging weak SLOs</span><span class="card-arrow">See my progress ↓</span></a>
       </div>
+      <section class="progress-section" id="my-progress" aria-labelledby="progress-heading">
+        <div class="progress-section-head"><div><span class="eyebrow">YOUR PRIVATE RECORDS</span><h2 id="progress-heading">My Physics Progress</h2><p>Only practice attempts you explicitly save are recorded. Each test is linked to your current account.</p></div><button id="reload-progress" class="btn btn-secondary btn-small" type="button">Refresh my progress</button></div>
+        <div id="progress-status" class="progress-status" role="status" aria-live="polite">Loading your saved practice history…</div>
+        <div id="progress-content" hidden>
+          <div class="progress-stats"><div class="progress-stat"><strong id="progress-attempts">0</strong><span>Recent saved attempts</span></div><div class="progress-stat"><strong id="progress-questions">0</strong><span>Questions attempted</span></div><div class="progress-stat"><strong id="progress-accuracy">—</strong><span>Overall accuracy</span></div></div>
+          <h3>Learning-outcome performance</h3><p class="progress-caption">SLO accuracy uses answered questions from your saved practice records. Weak-area suggestions appear only after at least 3 attempted questions for an SLO; these indicators are provisional because the source question bank remains under academic review.</p>
+          <div class="slo-progress-list" id="progress-slos"></div>
+          <h3>Recent saved attempts</h3><div id="progress-attempt-list" class="attempt-list"></div>
+          <p class="progress-caption">Showing up to 25 most recent saved attempts. This is personal self-practice data, not verified examination grades. Earlier records are retained but are not yet included in these totals.</p>
+        </div>
+      </section>
       <div class="student-footer-actions"><button id="refresh-access" class="btn btn-secondary btn-small" type="button">Refresh account permissions</button></div>
-      <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice scores are <strong>not yet saved</strong> to your account. The linked resources are still publicly hosted until the secure content migration. Teacher accounts and class assignments are not enabled.</div>
+      <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice results are saved <strong>only when you select “Save to My Progress”</strong> after completing a test. The linked resources are still publicly hosted until the secure content migration. Teacher accounts and class assignments are not enabled.</div>
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
-      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V2</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V3</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <div class="admin-hero">
         <div>
           <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
@@ -150,10 +161,10 @@
         <div class="admin-feature"><strong>Membership and access</strong><span>Future plans, annual access, promotional codes and manual payment verification.</span><em>Not enabled</em></div>
       </div>
       <div class="admin-bottom-actions"><button id="admin-open-learning" class="btn btn-secondary" type="button">Open my learner dashboard</button><button id="admin-refresh-role" class="btn btn-secondary" type="button">Refresh role permissions</button></div>
-      <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, assessment-history, or membership management writes have been enabled. Existing learning resources are still public until separately migrated.</div>
+      <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, or membership management writes have been enabled. Self-practice attempts are private to their learner account; administrators do not receive blanket access to independent learners’ attempt history. Existing learning resources are still public until separately migrated.</div>
     </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V2 pilot · Administrator access foundation</span></footer>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V3 pilot · Saved practice history</span></footer>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
