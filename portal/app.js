@@ -1,7 +1,8 @@
-/* Physics with Sir Najam — Portal Pilot V1.
-   Frontend roles are intentionally not assignable. All signups are ordinary learners.
-   The first administrator must be granted privileges via a trusted backend in a future release.
-   Existing external learning resources remain public; this UI is NOT a content paywall. */
+/* Physics with Sir Najam — Portal V2 Admin Foundation.
+   Every self-registered learner remains unprivileged. Only Firebase trusted
+   custom claims determine admin status. Firestore rules enforce actual access.
+   Teacher/class/payments and assessment writes remain DISABLED.
+   Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {
@@ -9,11 +10,11 @@ import {
  signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail,
  onAuthStateChanged, signOut, updateProfile, reload
 } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
-import {getFirestore, doc, getDoc, setDoc, serverTimestamp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
+import {getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, orderBy, limit, getDocs} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
 
 const $=id=>document.getElementById(id);
 const notice=$('notice');
-let auth=null, db=null, navigationToken=0;
+let auth=null, db=null, navigationToken=0, adminSessionUid=null;
 const ready=Object.values(firebaseConfig).every(v=>typeof v==='string' && v.trim() && !v.includes('REPLACE_'));
 
 function status(message='',kind='error'){
@@ -28,6 +29,59 @@ function pane(name){
 function screen(name){
  $('auth-screen').hidden=name!=='auth';
  $('dashboard-screen').hidden=name!=='dashboard';
+ $('admin-screen').hidden=name!=='admin';
+}
+function adminStatus(message='',kind='error'){
+ const el=$('admin-notice');
+ el.textContent=message;
+ el.className='alert'+(kind==='success'?' alert-success':' alert-error');
+ el.hidden=!message;
+}
+function showLearner(user,profile){
+ $('student-name').textContent=profile.displayName||user.displayName||'Student';
+ $('student-email').textContent=user.email||'your Google account';
+ screen('dashboard');
+}
+function showAdmin(user){
+ adminSessionUid=user.uid;
+ $('admin-email').textContent=user.email||'verified account';
+ $('admin-loaded').textContent='Not loaded';
+ $('admin-directory').hidden=true;
+ $('admin-directory').replaceChildren();
+ $('admin-directory-empty').hidden=false;
+ adminStatus('');
+ screen('admin');
+}
+function readableDate(timestamp){
+ try{const date=timestamp?.toDate?.();return date?date.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'Not recorded';}
+ catch{return 'Not recorded';}
+}
+async function loadProfiles(){
+ const user=auth?.currentUser;
+ if(!user || adminSessionUid!==user.uid || $('admin-screen').hidden)return;
+ const button=$('admin-load-profiles');
+ button.disabled=true;adminStatus('');
+ try{
+   // Role is checked again by Firebase Firestore security rules, not merely by UI.
+   const results=await getDocs(query(collection(db,'users'),orderBy('createdAt','desc'),limit(25)));
+   if(auth?.currentUser?.uid!==user.uid || $('admin-screen').hidden || adminSessionUid!==user.uid)return;
+   const table=$('admin-directory');table.replaceChildren();
+   const head=document.createElement('div');head.className='directory-head';
+   for(const label of ['Display name','UID (short)','Profile created']){const e=document.createElement('span');e.textContent=label;head.append(e);}table.append(head);
+   for(const record of results.docs){
+     const data=record.data();const row=document.createElement('div');row.className='directory-row';
+     const items=[String(data.displayName||'Learner').slice(0,80),record.id.slice(0,9)+'…',readableDate(data.createdAt)];
+     for(const value of items){const el=document.createElement('span');el.textContent=value;row.append(el);}
+     table.append(row);
+   }
+   $('admin-loaded').textContent=String(results.size)+' loaded';
+   $('admin-directory-empty').hidden=results.size!==0;
+   $('admin-directory-empty').textContent=results.size?'':'No profiles found.';
+   table.hidden=results.size===0;
+   if(results.size)adminStatus('Recent profiles loaded. This is a limited list, not a complete student count.','success');
+ }catch(err){
+   if(auth?.currentUser?.uid===user.uid)adminStatus('Cannot load profile directory. Check that the V2 Firestore rules are published and your administrator claim has refreshed. '+authError(err));
+ }finally{button.disabled=false;}
 }
 function showBusy(form,busy){
  for (const button of form.querySelectorAll('button')) button.disabled=busy;
@@ -61,6 +115,7 @@ async function profileFor(user){
 }
 async function refreshView(user){
  const current=++navigationToken;
+ adminSessionUid=null;
  if(!user){screen('auth');pane('login');return;}
  screen('auth');
  if(!user.emailVerified){
@@ -68,12 +123,17 @@ async function refreshView(user){
   pane('verify');return;
  }
  try{
-  await user.getIdToken(true);
+  // Force-refresh after the administrator claim has been assigned.
+  // Display logic uses the trusted signed ID-token claims.
+  const token=await user.getIdTokenResult(true);
   const profile=await profileFor(user);
   if(current!==navigationToken||auth.currentUser?.uid!==user.uid) return;
-  $('student-name').textContent=profile.displayName||user.displayName||'Student';
-  $('student-email').textContent=user.email||'your Google account';
-  screen('dashboard');
+  if(token.claims.admin===true){
+    showAdmin(user);
+  }else{
+    showLearner(user,profile);
+    $('refresh-access').textContent='Refresh account permissions';
+  }
  }catch(err){
   if(current!==navigationToken) return;
   screen('auth');pane('error');
@@ -142,3 +202,21 @@ $('verify-signout').addEventListener('click',logout);
 $('error-signout').addEventListener('click',logout);
 $('signout').addEventListener('click',logout);
 $('retry-profile').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
+
+// Portal V2 — claim-controlled navigation and read-only administration.
+$('admin-load-profiles').addEventListener('click',loadProfiles);
+$('admin-signout').addEventListener('click',logout);
+$('admin-refresh-role').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
+$('refresh-access').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
+$('admin-open-learning').addEventListener('click',async()=>{
+ const user=auth?.currentUser;
+ if(!user || !adminSessionUid || adminSessionUid!==user.uid)return;
+ // A refreshed token is used before switching modes; never grant role from local state.
+ try{
+  const token=await user.getIdTokenResult(true);
+  if(token.claims.admin!==true){await refreshView(user);return;}
+  const profile=await profileFor(user);
+  showLearner(user,profile);
+  const returnButton=$('refresh-access');returnButton.textContent='Return to administrator console';
+ }catch(err){adminStatus(authError(err));}
+});

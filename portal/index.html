@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
-  <title>Student Portal | Physics with Sir Najam</title>
+  <title>Learning Portal | Physics with Sir Najam</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="wordmark" href="https://sites.google.com/view/physics-with-sir-najam/" aria-label="Physics with Sir Najam home">
-      <span class="wordmark-top">PHYSICS WITH</span>
-      <span class="wordmark-main">SIR NAJAM</span>
+    <a class="wordmark brand-with-logo" href="https://sites.google.com/view/physics-with-sir-najam/" aria-label="Physics with Sir Najam home">
+      <img class="brand-logo" src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo" width="62" height="62">
+      <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">STUDENT PORTAL · PILOT V1</span>
+      <span class="stage-label">LEARNING PORTAL · V2 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -23,6 +23,7 @@
   <main id="main">
     <section id="auth-screen" class="auth-layout">
       <div class="welcome-panel">
+        <img class="official-banner" src="./assets/physics-with-sir-najam-official-banner.png" alt="Physics with Sir Najam official banner" width="2048" height="757">
         <span class="eyebrow">LEARN · EXPLORE · PRACTISE</span>
         <h1>Your Physics journey,<br><em>all in one place.</em></h1>
         <p class="welcome-copy">A personal home for learning resources, interactive simulations, assessment practice and—soon—your progress across topics and learning outcomes.</p>
@@ -119,10 +120,40 @@
         <a class="action-card" href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc"><span class="action-symbol">◉</span><span class="action-kicker">EXPLORE</span><strong>Physics Student Hub</strong><span>Interactive learning materials, concepts and simulations</span><span class="card-arrow">Visit student hub ↗</span></a>
         <article class="action-card coming"><span class="action-symbol">▤</span><span class="action-kicker">COMING NEXT</span><strong>My Progress & Weak SLOs</strong><span>Your personal attempt history, performance trends and targeted revision</span><span class="card-arrow">In development</span></article>
       </div>
+      <div class="student-footer-actions"><button id="refresh-access" class="btn btn-secondary btn-small" type="button">Refresh account permissions</button></div>
       <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice scores are <strong>not yet saved</strong> to your account. The linked resources are still publicly hosted until the secure content migration. Teacher accounts and class assignments are not enabled.</div>
     </section>
+
+    <section id="admin-screen" class="dashboard admin-dashboard" hidden>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V2</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="admin-hero">
+        <div>
+          <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
+          <h1>Administrator Console<span class="gold-period">.</span></h1>
+          <p class="dashboard-subtitle">A private, read-only overview for the sole authorized administrator. Student registration stays independent and unrestricted by classes.</p>
+        </div>
+        <img class="admin-hero-logo" src="./assets/physics-with-sir-najam-official-logo.png" width="1254" height="1254" alt="Official Physics with Sir Najam logo">
+      </div>
+      <div class="account-strip"><span class="account-dot"></span><span>Signed in as <strong id="admin-email"></strong></span><span class="account-pill admin-pill">Firebase admin claim verified</span></div>
+      <div id="admin-notice" class="alert" hidden role="status" aria-live="polite"></div>
+      <div class="admin-cards">
+        <div class="admin-stat"><span class="admin-stat-label">ACCESS ROLE</span><strong>Administrator</strong><span>Based on your freshly verified Firebase ID token</span></div>
+        <div class="admin-stat"><span class="admin-stat-label">CURRENT ACCESS</span><strong>Read-only</strong><span>Profiles can be viewed; users and privileges cannot be modified here</span></div>
+        <div class="admin-stat"><span class="admin-stat-label">REGISTERED PROFILES</span><strong id="admin-loaded">Not loaded</strong><span>Latest profiles only; not the total number of users</span></div>
+      </div>
+      <div class="admin-toolbar"><div><h2>Recent learner profiles</h2><p>Up to 25 latest saved profiles. This list does not include students who registered but have not created a verified profile.</p></div><button id="admin-load-profiles" class="btn btn-primary btn-small" type="button">Load recent profiles</button></div>
+      <div class="directory-panel"><div id="admin-directory-empty" class="admin-empty">Click “Load recent profiles” to request an administrator-authorized view.</div><div id="admin-directory" hidden></div></div>
+      <h2 class="section-title">Administration roadmap</h2>
+      <div class="admin-feature-grid">
+        <div class="admin-feature"><strong>Teacher accounts</strong><span>Privileged creation and approval will be implemented through trusted backend operations, not browser forms.</span><em>Not enabled</em></div>
+        <div class="admin-feature"><strong>Class assignments</strong><span>Only the administrator will be able to enroll students in a teacher's private class.</span><em>Not enabled</em></div>
+        <div class="admin-feature"><strong>Membership and access</strong><span>Future plans, annual access, promotional codes and manual payment verification.</span><em>Not enabled</em></div>
+      </div>
+      <div class="admin-bottom-actions"><button id="admin-open-learning" class="btn btn-secondary" type="button">Open my learner dashboard</button><button id="admin-refresh-role" class="btn btn-secondary" type="button">Refresh role permissions</button></div>
+      <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, assessment-history, or membership management writes have been enabled. Existing learning resources are still public until separately migrated.</div>
+    </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal pilot · Access control and progress tracking in development</span></footer>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V2 pilot · Administrator access foundation</span></footer>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
