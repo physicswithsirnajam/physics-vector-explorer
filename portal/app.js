@@ -1,4 +1,4 @@
-/* Physics with Sir Najam — Portal V5.1: PDF-first reports, navigation, paged self-practice archive and learner analytics and V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V6: integrated learning hub, PDF-first reports, navigation, paged self-practice archive and learner analytics and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
@@ -6,6 +6,7 @@
 import {firebaseConfig} from './firebase-config.js';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {openProgressPdfReport} from './pdf-report.js';
+import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight} from './learning-hub.js';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {
  getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
@@ -47,6 +48,13 @@ function showLearner(user,profile){
  $('student-email').textContent=user.email||'your Google account';
  screen('dashboard');
  loadProgress(user);
+ portalAnchorScroll();
+}
+
+function portalAnchorScroll(){
+ const hash=location.hash;
+ if(hash!=='#learning-hub' && hash!=='#my-progress')return;
+ requestAnimationFrame(()=>document.getElementById(hash.slice(1))?.scrollIntoView({block:'start'}));
 }
 
 // V3: learner-owned practice records. No admin/teacher access to independent
@@ -59,6 +67,7 @@ function progressDate(value){
 }
 function renderProgress(records){
  const analytics=analyzeAttempts(records);
+ updateLearningHubInsight(analytics,progressHasOlder);
  const stats=$('progress-content');stats.hidden=false;
  $('progress-attempts').textContent=String(analytics.attempts);
  $('progress-questions').textContent=String(analytics.presented);
@@ -134,6 +143,7 @@ function clearProgressArchive(){
  progressRequestToken++;
  progressRecords=[];progressCursor=null;progressHasOlder=true;
  progressLoading=false;progressOwnerUid=null;
+ clearLearningHubInsight();
  const content=$('progress-content');if(content)content.hidden=true;
  updateArchiveActions();
 }
@@ -314,11 +324,11 @@ async function refreshView(user){
   const token=await user.getIdTokenResult(true);
   const profile=await profileFor(user);
   if(current!==navigationToken||auth.currentUser?.uid!==user.uid) return;
-  if(token.claims.admin===true){
+  if(token.claims.admin===true && !['#learning-hub','#my-progress'].includes(location.hash)){
     showAdmin(user);
   }else{
     showLearner(user,profile);
-    $('refresh-access').textContent='Refresh account permissions';
+    $('refresh-access').textContent=token.claims.admin===true?'Return to administrator console':'Refresh account permissions';
   }
  }catch(err){
   if(current!==navigationToken) return;
@@ -326,6 +336,8 @@ async function refreshView(user){
   $('data-error').textContent=authError(err);
  }
 }
+
+initLearningHub();
 
 for(const button of document.querySelectorAll('[data-show]')){
  button.addEventListener('click',()=>pane(button.dataset.show));
@@ -393,7 +405,10 @@ $('retry-profile').addEventListener('click',()=>{if(auth?.currentUser)refreshVie
 $('admin-load-profiles').addEventListener('click',loadProfiles);
 $('admin-signout').addEventListener('click',logout);
 $('admin-refresh-role').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
-$('refresh-access').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
+$('refresh-access').addEventListener('click',()=>{
+ if($('refresh-access').textContent.includes('Return to administrator'))history.replaceState(null,'',location.pathname+location.search);
+ if(auth?.currentUser)refreshView(auth.currentUser);
+});
 $('reload-progress').addEventListener('click',()=>{if(auth?.currentUser)loadProgress(auth.currentUser);});
 $('load-older-progress').addEventListener('click',()=>{if(auth?.currentUser)loadArchivePage(auth.currentUser);});
 $('download-practice-json').addEventListener('click',exportPracticeJson);
@@ -416,4 +431,12 @@ $('admin-open-learning').addEventListener('click',async()=>{
   showLearner(user,profile);
   const returnButton=$('refresh-access');returnButton.textContent='Return to administrator console';
  }catch(err){adminStatus(authError(err));}
+});
+
+// If the sole administrator chooses a learner anchor from the shared navigation,
+// show the learner dashboard while keeping role authority server-controlled.
+window.addEventListener('hashchange',()=>{
+ if(adminSessionUid && ['#learning-hub','#my-progress'].includes(location.hash) && auth?.currentUser){
+  refreshView(auth.currentUser);
+ }
 });

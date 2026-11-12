@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "pilot-v6-2026-11-12",
+  "accessNote": "Public links and provisional practice materials. Not a protected course library.",
+  "grades": [
+    {
+      "grade": 11,
+      "name": "Grade XI · HSSC-I",
+      "status": "pilot",
+      "units": [
+        {
+          "unit": 1,
+          "title": "Physical Quantities and Measurements",
+          "status": "available",
+          "summary": "Measurements, derived SI units, dimensions, accuracy, precision and uncertainty.",
+          "questionBankCount": 275,
+          "assessmentStatus": "provisional-self-practice",
+          "resourceIds": [
+            "study",
+            "explore",
+            "practice",
+            "blueprint",
+            "progress"
+          ]
+        }
+      ]
+    },
+    {
+      "grade": 9,
+      "name": "Grade IX · SSC-I",
+      "status": "planned",
+      "units": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "study",
+      "category": "STUDY",
+      "title": "Grade XI Student Hub",
+      "description": "Review available notes, explanations and learning resources on the current Google Sites student hub.",
+      "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
+      "public": true,
+      "external": true,
+      "action": "Browse learning resources ↗"
+    },
+    {
+      "id": "explore",
+      "category": "EXPLORE",
+      "title": "Interactive Physics Activities",
+      "description": "Open the current Grade XI hub to explore the simulations and interactive activities published there.",
+      "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
+      "public": true,
+      "external": true,
+      "action": "Explore available activities ↗"
+    },
+    {
+      "id": "practice",
+      "category": "PRACTISE",
+      "title": "Build Your Unit 1 MCQ Test",
+      "description": "Select question count, learning outcomes, difficulty, and ordinary or complete stimulus-set practice.",
+      "href": "../build-your-physics-test.html",
+      "public": true,
+      "external": false,
+      "action": "Open Test Builder ↗"
+    },
+    {
+      "id": "blueprint",
+      "category": "EXAM PREPARATION",
+      "title": "FBISE Assessment Blueprint",
+      "description": "Understand the Grade XI model-paper structure and our current question-bank readiness.",
+      "href": "../assessment-blueprint/",
+      "public": true,
+      "external": false,
+      "action": "View blueprint ↗"
+    },
+    {
+      "id": "progress",
+      "category": "REVIEW",
+      "title": "My Practice Progress",
+      "description": "Review saved attempts, provisional SLO insights and your printable PDF report.",
+      "href": "#my-progress",
+      "public": false,
+      "external": false,
+      "action": "Review progress ↓"
+    }
+  ]
+}

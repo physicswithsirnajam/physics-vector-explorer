@@ -9,7 +9,8 @@
     link('portal/','Dashboard','portal'),
     link('portal/#my-progress','My Progress','progress'),
     link('build-your-physics-test.html','Build a Test','builder'),
-    {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Learn & Explore',key:'learn'},
+    link('portal/#learning-hub','Learning Hub','learn'),
+    {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Simulations',key:'explore'},
     link('assessment-blueprint/','FBISE Blueprint','blueprint')
   ];
   const nav=document.createElement('nav');nav.id='psn-global-nav';nav.setAttribute('aria-label','Physics with Sir Najam main navigation');
