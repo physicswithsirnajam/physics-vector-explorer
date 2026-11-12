@@ -1,5 +1,5 @@
-/* Physics with Sir Najam — Portal V4 learner analytics.
- * Pure calculations on the latest 25 SELF-PRACTICE attempts only.
+/* Physics with Sir Najam — Portal V5 learner analytics.
+ * Pure calculations on the currently loaded SELF-PRACTICE archive.
  * No student-identifying data is stored here. None of these metrics is a
  * verified board result, clinical assessment, or certified SLO mastery. */
 
@@ -25,7 +25,7 @@ function msOf(timestamp){
 }
 function createSlo(code){return {code,topic:SLO_TOPICS[code]||'Learning outcome',answered:0,correct:0,skipped:0,uniqueIds:new Set(),attemptIds:new Set()};}
 export function analyzeAttempts(input){
-  const attempts=(Array.isArray(input)?input:[]).slice(0,25).map((r,i)=>({
+  const attempts=(Array.isArray(input)?input:[]).map((r,i)=>({
     ...r, _order:i, _ms:msOf(r.createdAt), _items:Array.isArray(r.questionResults)?r.questionResults:[]
   })).sort((a,b)=>b._ms-a._ms||a._order-b._order);
   const slos=new Map(),uniqueQuestions=new Set();
@@ -70,7 +70,7 @@ export function analyzeAttempts(input){
   return {
     attempts:attempts.length,presented,answered,correct,skipped,accuracy:pct(correct,answered),
     uniqueQuestions:uniqueQuestions.size,slos:allSlos,priority,needsEvidence,
-    timeline:timeline.slice(0,10).reverse(),hasMoreThanWindow:attempts.length===25
+    timeline:timeline.slice(0,10).reverse(),hasMoreThanWindow:false
   };
 }
 export function targetedPracticeUrl(code){

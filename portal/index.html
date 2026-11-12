@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=4">
+  <link rel="stylesheet" href="./styles.css?v=5">
 </head>
 <body>
   <header class="topbar">
@@ -15,7 +15,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V4 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V5 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -125,15 +125,27 @@
         <div id="progress-status" class="progress-status" role="status" aria-live="polite">Loading your saved practice history…</div>
         <div id="progress-content" hidden>
           <div class="progress-stats"><div class="progress-stat"><strong id="progress-attempts">0</strong><span>Saved attempts in view</span></div><div class="progress-stat"><strong id="progress-questions">0</strong><span>Questions presented</span></div><div class="progress-stat"><strong id="progress-answered">0</strong><span>Questions answered</span></div><div class="progress-stat"><strong id="progress-accuracy">—</strong><span>Accuracy on answered questions</span></div><div class="progress-stat"><strong id="progress-unique">0</strong><span>Different MCQs seen</span></div></div>
-          <p class="progress-caption" id="progress-window">The latest 25 saved attempts form the current analysis window.</p>
+          <p class="progress-caption" id="progress-window">Your analytics include the records loaded so far; older attempts can be retrieved in further pages.</p>
           <div class="analytics-split">
             <section class="analytics-panel" aria-labelledby="trend-heading"><h3 id="trend-heading">Your recent accuracy trend</h3><p class="progress-caption">Up to 10 latest saved attempts, ordered from earlier to later. Each bar shows correct answers divided by questions answered in that test. Tests may cover different SLOs and are not directly comparable.</p><div id="accuracy-trend" class="accuracy-trend"></div></section>
             <section class="analytics-panel" aria-labelledby="revision-heading"><h3 id="revision-heading">Your next revision steps</h3><p class="progress-caption">Suggestions consider accuracy, number of distinct questions and number of saved attempts. They're provisional, not a formal mastery diagnosis.</p><div id="revision-priorities" class="revision-priorities"></div></section>
           </div>
           <h3>Learning-outcome performance</h3><p class="progress-caption">SLO accuracy uses answered questions from your saved practice records. A weak-area suggestion requires at least 5 answered questions, 3 distinct MCQs and 2 saved attempts for an SLO; these indicators are provisional because the source question bank remains under academic review.</p>
           <div class="slo-progress-list" id="progress-slos"></div>
-          <h3>Recent saved attempts</h3><div id="progress-attempt-list" class="attempt-list"></div>
-          <p class="progress-caption">V4 analyzes at most 25 recent saved attempts. Results are personal browser-graded self-practice, not verified examination grades. Older records remain in Firestore but are not included in this view.</p>
+          <h3>My saved attempts</h3><p class="progress-caption">The most recent 50 attempts are listed below; the SLO statistics use every record you have loaded, including older pages.</p>
+          <div id="progress-attempt-list" class="attempt-list"></div>
+          <div class="archive-toolbar" aria-label="Practice history actions">
+            <button id="load-older-progress" class="btn btn-secondary btn-small" type="button" hidden>Load 25 older attempts</button>
+            <button id="download-practice-json" class="btn btn-secondary btn-small" type="button" disabled>Download loaded records (JSON)</button>
+            <button id="download-practice-csv" class="btn btn-secondary btn-small" type="button" disabled>Download score summary (CSV)</button>
+          </div>
+          <p class="progress-caption" id="archive-completeness">Loading archive information…</p>
+          <section class="privacy-explainer" aria-labelledby="privacy-heading">
+            <h3 id="privacy-heading">Your records &amp; privacy</h3>
+            <p>Only results you deliberately save are stored. Your personal attempts are accessible to your signed-in account, not automatically to teachers or other learners. Your downloads contain answers and may reveal your study habits—keep them private.</p>
+            <p><strong>Important:</strong> Export buttons download <em>only the records loaded on this screen</em>, not a guaranteed full-account archive until all older pages have been loaded. Deleting a Firebase login would not automatically remove its Firestore practice records; a verified deletion workflow is still planned, and is not offered by this pilot.</p>
+            <p>Accuracy and SLO recommendations are provisional, based on browser-graded self-practice and unverified curriculum metadata—not official examination grades.</p>
+          </section>
         </div>
       </section>
       <div class="student-footer-actions"><button id="refresh-access" class="btn btn-secondary btn-small" type="button">Refresh account permissions</button></div>
@@ -141,7 +153,7 @@
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
-      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V4</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V5</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <div class="admin-hero">
         <div>
           <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
@@ -169,7 +181,7 @@
       <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, or membership management writes have been enabled. Self-practice attempts are private to their learner account; administrators do not receive blanket access to independent learners’ attempt history. Existing learning resources are still public until separately migrated.</div>
     </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V4 pilot · Personalized learning analytics</span></footer>
-  <script type="module" src="./app.js?v=4"></script>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V5 pilot · Personal practice archive</span></footer>
+  <script type="module" src="./app.js?v=5"></script>
 </body>
 </html>

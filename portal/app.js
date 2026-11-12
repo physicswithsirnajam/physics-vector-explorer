@@ -1,4 +1,4 @@
-/* Physics with Sir Najam — Portal V4: student learning analytics and V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V5: paged self-practice archive and learner analytics and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
@@ -11,11 +11,14 @@ import {
  signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail,
  onAuthStateChanged, signOut, updateProfile, reload
 } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
-import {getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, orderBy, limit, getDocs} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
+import {getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, orderBy, limit, startAfter, getDocs} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
 
 const $=id=>document.getElementById(id);
 const notice=$('notice');
 let auth=null, db=null, navigationToken=0, adminSessionUid=null, progressRequestToken=0;
+// Archived attempts are paged under the existing V3 25-document query limit.
+const PROGRESS_PAGE=25;
+let progressRecords=[], progressCursor=null, progressHasOlder=true, progressLoading=false, progressOwnerUid=null;
 const ready=Object.values(firebaseConfig).every(v=>typeof v==='string' && v.trim() && !v.includes('REPLACE_'));
 
 function status(message='',kind='error'){
@@ -61,7 +64,9 @@ function renderProgress(records){
  $('progress-accuracy').textContent=analytics.accuracy===null?'—':analytics.accuracy+'%';
  $('progress-unique').textContent=String(analytics.uniqueQuestions);
  $('progress-answered').textContent=String(analytics.answered);
- $('progress-window').textContent=analytics.hasMoreThanWindow?'Latest 25 saved attempts are included; earlier attempts are excluded from these calculations.':'All currently saved attempts are included (up to 25).';
+ $('progress-window').textContent=progressHasOlder
+  ? `${records.length} most recent saved attempts included so far. Load older records to extend all the figures below.`
+  : `Complete saved practice history loaded: ${records.length} attempt(s). All of these records are included in the analytics.`;
 
  const sloContainer=$('progress-slos');sloContainer.replaceChildren();
  if(!analytics.slos.length)sloContainer.textContent='No SLO data yet. Complete and save a test to begin tracking.';
@@ -114,7 +119,7 @@ function renderProgress(records){
 
  const attemptList=$('progress-attempt-list');attemptList.replaceChildren();
  if(!records.length)attemptList.textContent='No saved attempts yet. Complete a test, then select Save to My Progress.';
- for(const r of records){
+ for(const r of records.slice(0,50)){
   const row=document.createElement('div');row.className='attempt-row';
   const left=document.createElement('div');const title=document.createElement('strong');title.textContent=`Grade XI · Unit 1 · ${r.questionCount||0} MCQs`;
   const meta=document.createElement('small');meta.textContent=`${progressDate(r.createdAt)} · ${r.arrangement||'random'} · ${r.selection||'balanced'}`;
@@ -122,21 +127,107 @@ function renderProgress(records){
   row.append(left,score);attemptList.append(row);
  }
 }
-async function loadProgress(user){
- const version=++progressRequestToken;
- $('progress-content').hidden=true;progressStatus('Loading your private self-practice records…');
- if(!user || !db || !user.emailVerified){progressStatus('Sign in with a verified student account first.',true);return;}
+// Reset in-memory history when a student signs out, changes accounts, or
+// switches to the administrator view. Data remains in that student's Firestore.
+function clearProgressArchive(){
+ progressRequestToken++;
+ progressRecords=[];progressCursor=null;progressHasOlder=true;
+ progressLoading=false;progressOwnerUid=null;
+ const content=$('progress-content');if(content)content.hidden=true;
+ updateArchiveActions();
+}
+function updateArchiveActions(){
+ const signedIn=auth?.currentUser && progressOwnerUid===auth.currentUser.uid && !$('dashboard-screen').hidden;
+ const more=$('load-older-progress'),json=$('download-practice-json'),csv=$('download-practice-csv');
+ more.hidden=!signedIn||!progressHasOlder||progressRecords.length===0;
+ more.disabled=progressLoading;
+ json.disabled=csv.disabled=!signedIn||!progressRecords.length||progressLoading;
+ if(!signedIn){$('archive-completeness').textContent='Sign in to review your own saved records.';return;}
+ $('archive-completeness').textContent=progressHasOlder
+  ? `${progressRecords.length} attempt(s) loaded. Older records may remain; the downloads and analysis are not yet necessarily your complete history.`
+  : `${progressRecords.length} attempt(s) loaded. No further saved attempts were found; the downloaded data covers your complete saved practice history at this time.`;
+}
+function progressDocData(snapshot){return {...snapshot.data(),_archiveDocumentId:snapshot.id};}
+async function loadArchivePage(user){
+ if(progressLoading||!user||!db||!user.emailVerified||progressOwnerUid!==user.uid||!progressHasOlder)return;
+ const version=progressRequestToken;
+ progressLoading=true;updateArchiveActions();
+ progressStatus(`Loading ${progressRecords.length?'older':'recent'} practice records…`);
  try{
-  const results=await getDocs(query(collection(db,'users',user.uid,'attempts'),orderBy('createdAt','desc'),limit(25)));
-  if(version!==progressRequestToken||auth?.currentUser?.uid!==user.uid||$('dashboard-screen').hidden)return;
-  renderProgress(results.docs.map(doc=>doc.data()));
-  progressStatus(results.empty?'No saved attempts yet. Your results will appear here after you save a completed practice test.':'Your most recent saved practice attempts are shown below.');
- }catch(error){
-  if(version===progressRequestToken && auth?.currentUser?.uid===user.uid){$('progress-content').hidden=true;progressStatus('Could not load progress. Check your existing V3 Firestore rules and internet connection. '+authError(error),true);}
+  const clauses=[orderBy('createdAt','desc')];
+  if(progressCursor)clauses.push(startAfter(progressCursor));
+  clauses.push(limit(PROGRESS_PAGE));
+  const results=await getDocs(query(collection(db,'users',user.uid,'attempts'),...clauses));
+  // Prevent a completed fetch from a prior account/session appearing in another account.
+  if(version!==progressRequestToken||auth?.currentUser?.uid!==user.uid||$('dashboard-screen').hidden||progressOwnerUid!==user.uid)return;
+  const existing=new Set(progressRecords.map(r=>r._archiveDocumentId));
+  for(const snap of results.docs){if(!existing.has(snap.id)){progressRecords.push(progressDocData(snap));existing.add(snap.id);}}
+  if(results.docs.length)progressCursor=results.docs[results.docs.length-1];
+  progressHasOlder=results.docs.length===PROGRESS_PAGE;
+  renderProgress(progressRecords);
+  progressStatus(progressHasOlder
+    ? `Loaded ${progressRecords.length} saved attempt(s). Choose “Load 25 older attempts” to extend your history.`
+    : `Loaded your full currently saved practice history: ${progressRecords.length} attempt(s).`);
+ }catch(err){
+  if(version===progressRequestToken && auth?.currentUser?.uid===user.uid){
+   progressStatus('Could not load this page. The previous loaded attempts remain available. '+authError(err),true);
+   if(!progressRecords.length)$('progress-content').hidden=true;
+  }
+ }finally{
+  if(version===progressRequestToken){progressLoading=false;updateArchiveActions();}
  }
+}
+async function loadProgress(user){
+ clearProgressArchive();
+ if(!user||!db||!user.emailVerified){progressStatus('Sign in with a verified student account first.',true);return;}
+ progressOwnerUid=user.uid;progressHasOlder=true;
+ await loadArchivePage(user);
+}
+function downloadAsFile(filename,content,mime){
+ const blob=new Blob([content],{type:mime});
+ const url=URL.createObjectURL(blob),anchor=document.createElement('a');
+ anchor.href=url;anchor.download=filename;document.body.append(anchor);anchor.click();anchor.remove();
+ // Revoke after the browser has had an opportunity to initiate the download.
+ setTimeout(()=>URL.revokeObjectURL(url),10000);
+}
+function exportableAttempt(record){
+ const { _archiveDocumentId,createdAt, ...rest}=record;
+ let date=null;try{date=createdAt?.toDate?.()?.toISOString?.()??null;}catch{}
+ return {recordId:_archiveDocumentId||null,createdAt:date,...rest};
+}
+function validExportSession(){
+ return auth?.currentUser && progressOwnerUid===auth.currentUser.uid &&
+   !$('dashboard-screen').hidden && !progressLoading && progressRecords.length>0;
+}
+function exportPracticeJson(){
+ if(!validExportSession())return;
+ const data={
+  format:'Physics with Sir Najam self-practice archive V5',
+  exportedAt:new Date().toISOString(),
+  isCompleteSavedHistory:!progressHasOlder,
+  loadedAttempts:progressRecords.length,
+  records:progressRecords.map(exportableAttempt)
+ };
+ downloadAsFile('physics-with-sir-najam-practice-records.json',JSON.stringify(data,null,2),'application/json;charset=utf-8');
+}
+function csvField(value){
+ let s=String(value??'');
+ // Avoid spreadsheet-formula execution if a user-supplied string begins with a special prefix.
+ if(/^[\s]*[=+@-]/.test(s))s="'"+s;
+ return '"'+s.replaceAll('"','""')+'"';
+}
+function exportPracticeCsv(){
+ if(!validExportSession())return;
+ const header=['Attempt','Date (UTC)','Grade','Unit','Questions','Correct','Skipped','Selection','Arrangement','Bank version'];
+ const rows=[header,...progressRecords.map((r,i)=>[
+  i+1,exportableAttempt(r).createdAt||'',r.grade||11,r.unit||1,r.questionCount||0,
+  r.correctCount||0,r.skippedCount||0,r.selection||'',r.arrangement||'',r.bankVersion||''
+ ])];
+ downloadAsFile('physics-with-sir-najam-practice-summary.csv',rows.map(r=>r.map(csvField).join(',')).join('\r\n'),'text/csv;charset=utf-8');
 }
 
 function showAdmin(user){
+ clearProgressArchive();
  adminSessionUid=user.uid;
  $('admin-email').textContent=user.email||'verified account';
  $('admin-loaded').textContent='Not loaded';
@@ -210,7 +301,7 @@ async function profileFor(user){
 async function refreshView(user){
  const current=++navigationToken;
  adminSessionUid=null;
- if(!user){progressRequestToken++;screen('auth');pane('login');return;}
+ if(!user){clearProgressArchive();screen('auth');pane('login');return;}
  screen('auth');
  if(!user.emailVerified){
   $('verify-email').textContent=user.email||'your email address';
@@ -303,6 +394,9 @@ $('admin-signout').addEventListener('click',logout);
 $('admin-refresh-role').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
 $('refresh-access').addEventListener('click',()=>{if(auth?.currentUser)refreshView(auth.currentUser);});
 $('reload-progress').addEventListener('click',()=>{if(auth?.currentUser)loadProgress(auth.currentUser);});
+$('load-older-progress').addEventListener('click',()=>{if(auth?.currentUser)loadArchivePage(auth.currentUser);});
+$('download-practice-json').addEventListener('click',exportPracticeJson);
+$('download-practice-csv').addEventListener('click',exportPracticeCsv);
 $('admin-open-learning').addEventListener('click',async()=>{
  const user=auth?.currentUser;
  if(!user || !adminSessionUid || adminSessionUid!==user.uid)return;

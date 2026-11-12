@@ -42,3 +42,11 @@
 .slo-practice-link{display:inline-block;font-size:11px;font-weight:700;color:#1d5675;margin-top:8px;text-underline-offset:3px}
 @media(max-width:950px){.progress-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.analytics-split{grid-template-columns:1fr}}
 @media(max-width:700px){.progress-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.accuracy-trend{gap:4px}.analytics-panel{padding:14px}.progress-slo-top{flex-direction:column}.progress-slo-top>span{align-self:flex-start}}
+
+/* Portal V5 — paginated archive and private self-service exports */
+.archive-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0 8px}
+.archive-toolbar .btn{margin:0;min-height:38px}
+.privacy-explainer{margin-top:25px;border:1px solid #dfd7c8;background:#f9f7f2;border-radius:13px;padding:20px 23px}
+.privacy-explainer h3{margin:0 0 10px;color:#233b59}
+.privacy-explainer p{font-size:12px;line-height:1.75;color:#51647a;margin:8px 0}
+@media(max-width:700px){.archive-toolbar{flex-direction:column;align-items:stretch}.archive-toolbar .btn{width:100%}.privacy-explainer{padding:16px}}
