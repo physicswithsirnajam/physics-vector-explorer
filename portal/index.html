@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=6">
+  <link rel="stylesheet" href="./styles.css?v=7">
   <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
 </head>
 <body>
@@ -16,7 +16,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V6 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V7 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -54,12 +54,14 @@
           <div class="or-divider"><span>or</span></div>
           <button id="google-signin" class="btn btn-google" type="button"><span class="google-g" aria-hidden="true">G</span> Continue with Google</button>
           <p class="bottom-prompt">New to Physics with Sir Najam? <button class="text-button" data-show="signup" type="button">Create an account</button></p>
+          <p class="privacy-inline-note">Before creating an account, read our <a href="./privacy.html" target="_blank" rel="noopener">pilot privacy information ↗</a>. This portal is still in controlled testing.</p>
         </section>
 
         <section id="panel-signup" class="auth-panel" hidden>
           <span class="card-eyebrow">START LEARNING</span>
           <h2>Create your free account</h2>
           <p class="muted">Every new account starts as an independent student. Teachers are appointed separately by the administrator.</p>
+          <p class="privacy-inline-note">Review <a href="./privacy.html" target="_blank" rel="noopener">what information we store and how to request deletion ↗</a> before registering.</p>
           <form id="signup-form" class="form-stack">
             <label for="signup-name">Name</label>
             <input id="signup-name" name="displayName" autocomplete="name" required maxlength="80" placeholder="Your preferred name">
@@ -192,12 +194,27 @@
           </section>
         </div>
       </section>
+      <section class="privacy-centre" id="privacy-centre" aria-labelledby="privacy-centre-title">
+        <div class="privacy-centre-head">
+          <div><span class="eyebrow">ACCOUNT &amp; DATA CONTROL</span><h2 id="privacy-centre-title">My Privacy &amp; Account Data</h2></div>
+          <a href="./privacy.html" target="_blank" rel="noopener" class="btn btn-secondary btn-small">Read privacy information ↗</a>
+        </div>
+        <p>Your profile and saved self-practice attempts are stored under your Firebase account. The PDF and archive exports above include <strong>only currently loaded attempts</strong>; use “Load 25 older attempts” until the archive says complete before making a full copy.</p>
+        <div class="privacy-options">
+          <div class="privacy-option"><h3>Keep a copy</h3><p>Return to <a href="#my-progress">My Physics Progress</a> to download the PDF report, or open Advanced export options for your detailed JSON records.</p></div>
+          <div class="privacy-option"><h3>Request account &amp; record deletion</h3><p>Submit a private request for administrator review. <strong>This does not delete your account immediately.</strong> We'll only mark the request as submitted; a verified administrator must process the associated Authentication and Firestore records.</p>
+            <button id="request-account-deletion" class="btn btn-secondary btn-small" type="button">Request deletion review</button>
+            <p id="deletion-request-status" class="privacy-request-status" role="status" aria-live="polite">Checking for a previous request…</p>
+          </div>
+        </div>
+        <p class="privacy-disclaimer"><strong>Controlled pilot:</strong> Don't send passwords or private keys in a deletion request. A request can be recorded here, but complete deletion and retention procedures are not yet automated or independently audited. We will not claim deletion until all applicable records have actually been removed.</p>
+      </section>
       <div class="student-footer-actions"><button id="refresh-access" class="btn btn-secondary btn-small" type="button">Refresh account permissions</button></div>
       <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice results are saved <strong>only when you select “Save to My Progress”</strong> after completing a test. The linked resources are still publicly hosted until the secure content migration. Teacher accounts and class assignments are not enabled.</div>
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
-      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V6</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V7</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <div class="admin-hero">
         <div>
           <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
@@ -215,6 +232,11 @@
       </div>
       <div class="admin-toolbar"><div><h2>Recent learner profiles</h2><p>Up to 25 latest saved profiles. This list does not include students who registered but have not created a verified profile.</p></div><button id="admin-load-profiles" class="btn btn-primary btn-small" type="button">Load recent profiles</button></div>
       <div class="directory-panel"><div id="admin-directory-empty" class="admin-empty">Click “Load recent profiles” to request an administrator-authorized view.</div><div id="admin-directory" hidden></div></div>
+      <section class="admin-privacy" aria-labelledby="admin-privacy-heading">
+        <div class="admin-toolbar"><div><h2 id="admin-privacy-heading">Account deletion requests</h2><p>Read-only queue of up to 25 recent requests. Reviewing a request does not delete anything; processing requires a separate trusted administrator procedure and identity verification.</p></div><button id="admin-load-deletion-requests" class="btn btn-secondary btn-small" type="button">Load requests</button></div>
+        <div id="admin-deletion-status" class="privacy-request-status" role="status" aria-live="polite">No requests loaded.</div>
+        <div id="admin-deletion-list" class="deletion-request-list" hidden></div>
+      </section>
       <h2 class="section-title">Administration roadmap</h2>
       <div class="admin-feature-grid">
         <div class="admin-feature"><strong>Teacher accounts</strong><span>Privileged creation and approval will be implemented through trusted backend operations, not browser forms.</span><em>Not enabled</em></div>
@@ -225,8 +247,8 @@
       <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, or membership management writes have been enabled. Self-practice attempts are private to their learner account; administrators do not receive blanket access to independent learners’ attempt history. Existing learning resources are still public until separately migrated.</div>
     </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V6 pilot · Student learning hub</span></footer>
-  <script type="module" src="./app.js?v=6"></script>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V7 pilot · Student privacy centre</span></footer>
+  <script type="module" src="./app.js?v=7"></script>
   <script src="../shared/navigation.js?v=6" defer></script>
 </body>
 </html>

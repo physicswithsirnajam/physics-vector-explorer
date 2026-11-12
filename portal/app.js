@@ -1,4 +1,4 @@
-/* Physics with Sir Najam — Portal V6: integrated learning hub, PDF-first reports, navigation, paged self-practice archive and learner analytics and V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V7: privacy controls and integrated learning hub, PDF-first reports, navigation, paged self-practice archive and learner analytics and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
@@ -48,6 +48,7 @@ function showLearner(user,profile){
  $('student-email').textContent=user.email||'your Google account';
  screen('dashboard');
  loadProgress(user);
+ refreshPrivacyRequest(user);
  portalAnchorScroll();
 }
 
@@ -238,6 +239,7 @@ function exportPracticeCsv(){
 }
 
 function showAdmin(user){
+ privacyRequestSequence++;
  clearProgressArchive();
  adminSessionUid=user.uid;
  $('admin-email').textContent=user.email||'verified account';
@@ -395,7 +397,7 @@ $('resend-verification').addEventListener('click',async()=>{
  if(!auth?.currentUser)return;
  try{await sendEmailVerification(auth.currentUser);status('Verification email sent again.','success');}catch(err){status(authError(err));}
 });
-async function logout(){if(auth){try{await signOut(auth);}catch(err){status(authError(err));}}}
+async function logout(){privacyRequestSequence++;if(auth){try{await signOut(auth);}catch(err){status(authError(err));}}}
 $('verify-signout').addEventListener('click',logout);
 $('error-signout').addEventListener('click',logout);
 $('signout').addEventListener('click',logout);
@@ -420,6 +422,78 @@ $('download-practice-pdf').addEventListener('click',()=>{
  const note=$('pdf-report-status');note.hidden=false;
  note.textContent=result?'Report opened. In the print dialog, choose Save as PDF.':'Your browser blocked the report window. Allow pop-ups for this site and try again.';
 });
+// V7 — privacy requests are deliberately non-destructive.
+// Requests are created once at /privacyRequests/{uid} and read using owner
+// or trusted administrator rules. No client can complete/cancel a request.
+let privacyRequestSequence=0;
+function privacyStatus(message,error=false){
+ const el=$('deletion-request-status');if(!el)return;
+ el.textContent=message;el.dataset.error=error?'true':'false';
+}
+async function refreshPrivacyRequest(user){
+ const sequence=++privacyRequestSequence;
+ const button=$('request-account-deletion');
+ if(!user || !db || !user.emailVerified){
+  button.disabled=true;privacyStatus('Sign in with a verified account to view requests.');return;
+ }
+ button.disabled=true;privacyStatus('Checking your request status…');
+ try{
+  const token=await user.getIdTokenResult();
+  if(sequence!==privacyRequestSequence||auth?.currentUser?.uid!==user.uid)return;
+  if(token.claims.admin===true){
+   privacyStatus('The sole administrator cannot request deletion from this student interface. Use the separate verified administrator recovery procedure.');return;
+  }
+  const snapshot=await getDoc(doc(db,'privacyRequests',user.uid));
+  if(sequence!==privacyRequestSequence||auth?.currentUser?.uid!==user.uid)return;
+  if(snapshot.exists()){
+   privacyStatus('Deletion review requested. No data has been deleted. Contact the platform administrator through the official website if you need to follow up.');
+  }else{
+   button.disabled=false;privacyStatus('No deletion request recorded for this account.');
+  }
+ }catch(error){
+  if(sequence!==privacyRequestSequence||auth?.currentUser?.uid!==user.uid)return;
+  privacyStatus('Unable to check requests. Please check the V7 Firestore security rules and try again. '+authError(error),true);
+ }
+}
+$('request-account-deletion').addEventListener('click',async()=>{
+ const user=auth?.currentUser,button=$('request-account-deletion');
+ if(!user || !db || !user.emailVerified || progressOwnerUid!==user.uid)return;
+ if(!window.confirm('Submit a request for administrator review of account and associated data deletion? This does not delete anything now, and may require identity verification.'))return;
+ button.disabled=true;privacyStatus('Submitting deletion review request…');
+ try{
+  // No email or personal narrative is saved; ownership is enforced by rules.
+  await setDoc(doc(db,'privacyRequests',user.uid),{
+   uid:user.uid,type:'account-deletion',status:'requested',requestedAt:serverTimestamp()
+  });
+  if(auth?.currentUser?.uid===user.uid)privacyStatus('Request submitted. Your account and learning records remain available pending verified administrator processing.');
+ }catch(error){
+  if(auth?.currentUser?.uid===user.uid){
+   privacyStatus('Request was not saved. '+authError(error),true);
+   await refreshPrivacyRequest(user);
+  }
+ }
+});
+async function loadDeletionRequests(){
+ const user=auth?.currentUser;
+ if(!user || adminSessionUid!==user.uid || $('admin-screen').hidden)return;
+ const button=$('admin-load-deletion-requests'),message=$('admin-deletion-status'),list=$('admin-deletion-list');
+ button.disabled=true;message.textContent='Loading recent requests…';list.hidden=true;list.replaceChildren();
+ try{
+  const results=await getDocs(query(collection(db,'privacyRequests'),orderBy('requestedAt','desc'),limit(25)));
+  if(auth?.currentUser?.uid!==user.uid||adminSessionUid!==user.uid||$('admin-screen').hidden)return;
+  message.textContent=results.empty?'No requests found.':`${results.size} request(s) loaded (at most 25). This list is read-only.`;
+  for(const r of results.docs){
+   const x=r.data(),row=document.createElement('div');row.className='deletion-request-row';
+   const id=document.createElement('code');id.textContent='UID: '+r.id;
+   const date=document.createElement('span');date.textContent='Requested: '+readableDate(x.requestedAt)+' · '+String(x.status||'unknown');
+   row.append(id,date);list.append(row);
+  }
+  list.hidden=results.empty;
+ }catch(error){if(auth?.currentUser?.uid===user.uid){message.textContent='Unable to load requests. '+authError(error);}}
+ finally{button.disabled=false;}
+}
+$('admin-load-deletion-requests').addEventListener('click',loadDeletionRequests);
+
 $('admin-open-learning').addEventListener('click',async()=>{
  const user=auth?.currentUser;
  if(!user || !adminSessionUid || adminSessionUid!==user.uid)return;

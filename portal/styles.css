@@ -110,3 +110,27 @@
 @media(max-width:700px){.learning-hub{padding:17px}.hub-head{flex-direction:column;gap:9px}.hub-head h2{font-size:25px}.hub-back{align-self:flex-start}.hub-steps{grid-template-columns:1fr 1fr}.hub-step{padding:12px 9px;gap:7px}.hub-step-number{width:25px;height:25px}.hub-step strong{font-size:12px}.hub-step small{font-size:10px}.hub-resources{grid-template-columns:1fr}.hub-slo-links{grid-template-columns:1fr 1fr}.hub-focus{align-items:stretch;flex-direction:column}.hub-focus .btn{align-self:stretch;text-align:center}.hub-unit-top{flex-direction:column;align-items:flex-start}.hub-small-title{margin-top:24px}}
 @media(max-width:360px){.hub-slo-links,.hub-steps{grid-template-columns:1fr}}
 @media print{.learning-hub{box-shadow:none}}
+
+
+/* Portal V7 — privacy/access pilot; no modification to master branding assets. */
+.privacy-inline-note{font-size:12px;line-height:1.65;color:#5d728a;margin:14px 0 5px}
+.privacy-inline-note a{color:#244f79;font-weight:750;text-underline-offset:3px}
+.privacy-centre{scroll-margin-top:94px;margin:32px 0;padding:28px;background:#fff;border:1px solid #dce5ef;border-radius:16px;box-shadow:0 8px 25px rgba(22,39,64,.05)}
+.privacy-centre-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.privacy-centre-head h2{font-family:Georgia,'Times New Roman',serif;font-size:27px;margin:8px 0 0;color:#192f4c}
+.privacy-centre>p{font-size:13px;line-height:1.8;color:#5d6f84;max-width:880px}
+.privacy-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.privacy-option{border:1px solid #e0e8f0;background:#f8fafc;border-radius:12px;padding:19px}
+.privacy-option h3{font-family:Georgia,'Times New Roman',serif;font-size:19px;color:#203957;margin:0 0 8px}
+.privacy-option p{font-size:12px;line-height:1.72;color:#607189}
+.privacy-option a{color:#24587c;font-weight:750}
+.privacy-request-status{font-size:12px;line-height:1.65;color:#4c657d;margin:13px 0 0}
+.privacy-request-status[data-error="true"]{color:#aa3946}
+.privacy-centre .privacy-disclaimer{background:#f8f2e7;border-left:3px solid #c3a067;padding:10px 13px;border-radius:6px;font-size:11px}
+.admin-privacy{margin-top:30px;border:1px solid #dce5ef;border-radius:14px;background:#fff;padding:19px}
+.admin-privacy .admin-toolbar{margin:0}
+.deletion-request-list{display:grid;gap:8px;margin-top:16px}
+.deletion-request-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;background:#f7f9fb;border:1px solid #e3e9f0;border-radius:9px;font-size:12px;word-break:break-word}
+.deletion-request-row code{overflow-wrap:anywhere}
+.deletion-request-row span{color:#63758a}
+@media(max-width:760px){.privacy-centre{padding:17px}.privacy-centre-head{flex-direction:column;align-items:flex-start}.privacy-centre-head h2{font-size:23px}.privacy-options{grid-template-columns:1fr}.deletion-request-row{align-items:flex-start;flex-direction:column}}
