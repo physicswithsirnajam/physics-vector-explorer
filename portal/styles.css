@@ -50,3 +50,17 @@
 .privacy-explainer h3{margin:0 0 10px;color:#233b59}
 .privacy-explainer p{font-size:12px;line-height:1.75;color:#51647a;margin:8px 0}
 @media(max-width:700px){.archive-toolbar{flex-direction:column;align-items:stretch}.archive-toolbar .btn{width:100%}.privacy-explainer{padding:16px}}
+
+/* V5.1 — primary student report and secondary advanced exports */
+.pdf-report-action{margin-top:23px;border:1px solid #dcc28a;background:linear-gradient(110deg,#fffaf0,#f3f7fd);border-radius:15px;padding:19px 22px}
+.pdf-report-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.pdf-report-heading h3{margin:3px 0!important;font-family:Georgia,"Times New Roman",serif;font-size:21px}
+.pdf-report-heading p{color:#516782;font-size:12px;margin:5px 0 14px;line-height:1.6}
+.pdf-report-icon{font-size:13px;letter-spacing:.08em;font-weight:900;color:#fff;background:#254f7d;border-radius:9px;padding:14px 11px}
+.pdf-report-button{width:100%;margin:4px 0 7px;min-height:48px}
+.pdf-report-action .progress-caption{margin:3px 0 0;max-width:none}
+.advanced-export{width:100%;background:#eef3f8;border:1px solid #d8e2ed;border-radius:12px;padding:10px 15px}
+.advanced-export summary{cursor:pointer;color:#284c70;font-size:13px;font-weight:740;padding:5px 0}
+.advanced-export-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid #d3dde9}
+.advanced-export-actions .btn{font-size:12px}
+@media(max-width:700px){.pdf-report-action{padding:15px}.advanced-export-actions{flex-direction:column}.advanced-export-actions .btn{width:100%}}

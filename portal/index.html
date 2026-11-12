@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=5">
+  <link rel="stylesheet" href="./styles.css?v=5.1">
+  <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
 </head>
 <body>
   <header class="topbar">
@@ -134,16 +135,26 @@
           <div class="slo-progress-list" id="progress-slos"></div>
           <h3>My saved attempts</h3><p class="progress-caption">The most recent 50 attempts are listed below; the SLO statistics use every record you have loaded, including older pages.</p>
           <div id="progress-attempt-list" class="attempt-list"></div>
+          <section class="pdf-report-action" aria-labelledby="pdf-report-heading">
+            <div class="pdf-report-heading"><div><span class="eyebrow">SIMPLE STUDENT REPORT</span><h3 id="pdf-report-heading">My Physics Progress Report</h3><p>Officially branded, easy to read, and printable. Save a PDF copy using your browser.</p></div><span class="pdf-report-icon" aria-hidden="true">PDF</span></div>
+            <button id="download-practice-pdf" class="btn btn-primary pdf-report-button" type="button" disabled>Save My Progress Report as PDF</button>
+            <p class="progress-caption">A report opens in a new tab. Select <strong>Save as PDF</strong> in your browser's print dialog. Data stays in your browser.</p>
+            <p id="pdf-report-status" class="progress-caption" role="status" aria-live="polite" hidden></p>
+          </section>
           <div class="archive-toolbar" aria-label="Practice history actions">
             <button id="load-older-progress" class="btn btn-secondary btn-small" type="button" hidden>Load 25 older attempts</button>
-            <button id="download-practice-json" class="btn btn-secondary btn-small" type="button" disabled>Download loaded records (JSON)</button>
-            <button id="download-practice-csv" class="btn btn-secondary btn-small" type="button" disabled>Download score summary (CSV)</button>
+            <details class="advanced-export" id="advanced-export"><summary>Advanced export options (CSV / JSON)</summary>
+              <div class="advanced-export-actions">
+                <button id="download-practice-csv" class="btn btn-secondary btn-small" type="button" disabled>Download CSV for Excel</button>
+                <button id="download-practice-json" class="btn btn-secondary btn-small" type="button" disabled>Download detailed JSON archive</button>
+              </div>
+            </details>
           </div>
           <p class="progress-caption" id="archive-completeness">Loading archive information…</p>
           <section class="privacy-explainer" aria-labelledby="privacy-heading">
             <h3 id="privacy-heading">Your records &amp; privacy</h3>
             <p>Only results you deliberately save are stored. Your personal attempts are accessible to your signed-in account, not automatically to teachers or other learners. Your downloads contain answers and may reveal your study habits—keep them private.</p>
-            <p><strong>Important:</strong> Export buttons download <em>only the records loaded on this screen</em>, not a guaranteed full-account archive until all older pages have been loaded. Deleting a Firebase login would not automatically remove its Firestore practice records; a verified deletion workflow is still planned, and is not offered by this pilot.</p>
+            <p><strong>Important:</strong> PDF and advanced exports include <em>only the records loaded on this screen</em>, not a guaranteed full-account archive until all older pages have been loaded. Deleting a Firebase login would not automatically remove its Firestore practice records; a verified deletion workflow is still planned, and is not offered by this pilot.</p>
             <p>Accuracy and SLO recommendations are provisional, based on browser-graded self-practice and unverified curriculum metadata—not official examination grades.</p>
           </section>
         </div>
@@ -153,7 +164,7 @@
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
-      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V5</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V5.1</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <div class="admin-hero">
         <div>
           <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
@@ -182,6 +193,7 @@
     </section>
   </main>
   <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V5 pilot · Personal practice archive</span></footer>
-  <script type="module" src="./app.js?v=5"></script>
+  <script type="module" src="./app.js?v=5.1"></script>
+  <script src="../shared/navigation.js?v=5.1" defer></script>
 </body>
 </html>

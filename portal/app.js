@@ -1,10 +1,11 @@
-/* Physics with Sir Najam — Portal V5: paged self-practice archive and learner analytics and V2 Admin Foundation.
+/* Physics with Sir Najam — Portal V5.1: PDF-first reports, navigation, paged self-practice archive and learner analytics and V2 Admin Foundation.
    Every self-registered learner remains unprivileged. Only Firebase trusted
    custom claims determine admin status. Firestore rules enforce actual access.
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
    Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
+import {openProgressPdfReport} from './pdf-report.js';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {
  getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
@@ -138,10 +139,10 @@ function clearProgressArchive(){
 }
 function updateArchiveActions(){
  const signedIn=auth?.currentUser && progressOwnerUid===auth.currentUser.uid && !$('dashboard-screen').hidden;
- const more=$('load-older-progress'),json=$('download-practice-json'),csv=$('download-practice-csv');
+ const more=$('load-older-progress'),json=$('download-practice-json'),csv=$('download-practice-csv'),pdf=$('download-practice-pdf');
  more.hidden=!signedIn||!progressHasOlder||progressRecords.length===0;
  more.disabled=progressLoading;
- json.disabled=csv.disabled=!signedIn||!progressRecords.length||progressLoading;
+ json.disabled=csv.disabled=pdf.disabled=!signedIn||!progressRecords.length||progressLoading;
  if(!signedIn){$('archive-completeness').textContent='Sign in to review your own saved records.';return;}
  $('archive-completeness').textContent=progressHasOlder
   ? `${progressRecords.length} attempt(s) loaded. Older records may remain; the downloads and analysis are not yet necessarily your complete history.`
@@ -397,6 +398,13 @@ $('reload-progress').addEventListener('click',()=>{if(auth?.currentUser)loadProg
 $('load-older-progress').addEventListener('click',()=>{if(auth?.currentUser)loadArchivePage(auth.currentUser);});
 $('download-practice-json').addEventListener('click',exportPracticeJson);
 $('download-practice-csv').addEventListener('click',exportPracticeCsv);
+$('download-practice-pdf').addEventListener('click',()=>{
+ if(!validExportSession())return;
+ const person=$('student-name').textContent||'Student';
+ const result=openProgressPdfReport({studentName:person,records:progressRecords,complete:!progressHasOlder,analytics:analyzeAttempts(progressRecords)});
+ const note=$('pdf-report-status');note.hidden=false;
+ note.textContent=result?'Report opened. In the print dialog, choose Save as PDF.':'Your browser blocked the report window. Allow pop-ups for this site and try again.';
+});
 $('admin-open-learning').addEventListener('click',async()=>{
  const user=auth?.currentUser;
  if(!user || !adminSessionUid || adminSessionUid!==user.uid)return;
