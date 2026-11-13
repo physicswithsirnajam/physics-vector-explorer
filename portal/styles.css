@@ -134,3 +134,26 @@
 .deletion-request-row code{overflow-wrap:anywhere}
 .deletion-request-row span{color:#63758a}
 @media(max-width:760px){.privacy-centre{padding:17px}.privacy-centre-head{flex-direction:column;align-items:flex-start}.privacy-centre-head h2{font-size:23px}.privacy-options{grid-template-columns:1fr}.deletion-request-row{align-items:flex-start;flex-direction:column}}
+
+/* Portal V10 enrollment gate — the official brand images remain unmodified. */
+#enrollment-gate[hidden],#enrolled-learner-content[hidden]{display:none!important}
+.enrollment-gate{margin:25px 0 30px;padding:clamp(20px,4vw,34px);border:1px solid #d7bd80;border-radius:19px;background:linear-gradient(155deg,#fcfaf4,#eff5fc);box-shadow:0 10px 30px #102e4c0d}
+.enrollment-heading h2{margin:8px 0 7px;color:#142b48;font-size:clamp(24px,3vw,32px)}
+.enrollment-heading p{color:#405978;max-width:65ch;line-height:1.6}
+.enrollment-form{display:grid;grid-template-columns:minmax(0,1fr);min-width:0;gap:9px;max-width:630px;margin-top:22px}
+.enrollment-form label{font-size:14px;font-weight:750;color:#233e60;margin-top:10px}
+.enrollment-form input,.enrollment-form select{min-height:47px;padding:12px 13px;border:1px solid #b5c6d7;border-radius:9px;background:white;color:#102b4d;font:inherit;max-width:100%}
+.enrollment-form input:focus-visible,.enrollment-form select:focus-visible{outline:3px solid #ddbc69;outline-offset:2px}
+.enrollment-form button{margin-top:11px;justify-self:start;white-space:normal;text-align:center}
+.enrollment-note{font-size:13px;line-height:1.6;color:#324e70;background:#ffffffb5;border-left:3px solid #cda55f;padding:12px 13px;margin-top:8px}
+.enrollment-status{font-size:13px;color:#305f43;line-height:1.5}
+.enrollment-status[data-error="true"]{color:#a02c2c}
+.enrollment-current{display:flex;flex-wrap:wrap;gap:8px 15px;align-items:center;background:#ebf3fd;border:1px solid #c7d8e9;color:#173958;border-radius:12px;padding:11px 16px;margin:23px 0}
+.enrollment-current>span{font-weight:800}
+.enrollment-current small{font-size:12px;color:#496784}
+.hub-grade-button:disabled{opacity:1;cursor:default}
+.hub-planned-label{font-size:13px;color:#536984;align-self:center}
+@media(max-width:580px){.enrollment-form button{width:100%}.enrollment-gate{padding:17px}}
+
+.enrollment-form>*,.enrollment-gate{min-width:0;box-sizing:border-box}
+.enrollment-form input,.enrollment-form select{width:100%;box-sizing:border-box}

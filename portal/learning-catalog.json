@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v9-protected-lesson-2026-11-13",
-  "accessNote": "Catalogue metadata and existing linked learning resources remain public. Only the new protected lesson is stored in Firestore and checked by server-side Firestore Security Rules.",
+  "catalogVersion": "pilot-v10-grade-enrollment-2026-11-13",
+  "accessNote": "Academic enrollment is stored privately in Firestore. The Learning Hub displays the enrolled grade only. Existing public linked files remain public; the pilot protected lesson additionally requires an active Grade XI FBISE enrollment.",
   "grades": [
     {
       "grade": 11,
@@ -24,13 +24,15 @@
             "progress"
           ]
         }
-      ]
+      ],
+      "enrollmentStatus": "open-free-pilot"
     },
     {
       "grade": 9,
       "name": "Grade IX · SSC-I",
       "status": "planned",
-      "units": []
+      "units": [],
+      "enrollmentStatus": "not-available"
     }
   ],
   "resources": [
@@ -88,7 +90,7 @@
       "id": "protected-lesson",
       "category": "REGISTERED LEARNERS",
       "title": "Protected Learning Resource — Access Test",
-      "description": "Pilot: this page retrieves its actual content from Firestore only after verifying your account; not yet an approved textbook lesson.",
+      "description": "Pilot: this Firestore lesson now requires verified login plus active Grade XI / FBISE enrollment.",
       "href": "./secure-lesson.html",
       "public": false,
       "external": false,

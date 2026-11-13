@@ -7,7 +7,7 @@ import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 const byId=id=>document.getElementById(id);
 const catalogUrl=new URL('./learning-catalog.json',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
-let selectedGrade='11';
+let selectedGrade='11'; // set only by the Firestore enrollment gate
 let catalogue=null;
 const fallbackBuilder='../build-your-physics-test.html';
 function safeHref(raw){
@@ -59,8 +59,8 @@ function renderGrade(){
  }
 }
 export function initLearningHub(){
- for(const btn of gradeButtons)btn.addEventListener('click',()=>{selectedGrade=btn.dataset.hubGrade;renderGrade();});
- byId('hub-back-to-xi')?.addEventListener('click',event=>{event.preventDefault();selectedGrade='11';renderGrade();byId('learning-hub').scrollIntoView({block:'start'});});
+ for(const btn of gradeButtons){btn.disabled=true;btn.title='Enrollment grade is controlled by your academic record';}
+ byId('hub-back-to-xi')?.addEventListener('click',event=>{event.preventDefault();byId('learning-hub').scrollIntoView({block:'start'});});
  const slos=byId('hub-slo-links');slos.replaceChildren();
  for(const [code,title] of Object.entries(SLO_TOPICS)){
   // A-01 is formative, but topic-level practice may still be useful. Display its status clearly.
@@ -102,3 +102,5 @@ export function updateLearningHubInsight(analytics,hasOlder){
   : `Based on all ${analytics.attempts} currently saved attempts. Recommendations are provisional self-practice insights.`;
 }
 export function clearLearningHubInsight(){updateLearningHubInsight(null,true);}
+
+export function setHubEnrollment(grade){selectedGrade=String(grade);renderGrade();}

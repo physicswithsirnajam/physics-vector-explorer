@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=7">
+  <link rel="stylesheet" href="./styles.css?v=10">
   <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
 </head>
 <body>
@@ -16,7 +16,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V7 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V10 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -27,7 +27,7 @@
         <img class="official-banner" src="./assets/physics-with-sir-najam-official-banner.png" alt="Physics with Sir Najam official banner" width="2048" height="757">
         <span class="eyebrow">LEARN · EXPLORE · PRACTISE</span>
         <h1>Your Physics journey,<br><em>all in one place.</em></h1>
-        <p class="welcome-copy">A personal home for learning resources, interactive simulations, assessment practice and—soon—your progress across topics and learning outcomes.</p>
+        <p class="welcome-copy">A personal home for learning resources, interactive simulations, assessment practice and your saved progress across topics and learning outcomes.</p>
         <div class="value-items">
           <div><span class="value-number">01</span><span><strong>Learn at your pace</strong><small>Accessible to independent learners worldwide</small></span></div>
           <div><span class="value-number">02</span><span><strong>Build understanding</strong><small>Concept explanations, simulations and practice</small></span></div>
@@ -115,8 +115,31 @@
     <section id="dashboard-screen" class="dashboard" hidden>
       <div class="dashboard-topline"><span class="eyebrow">MY LEARNING SPACE</span><button id="signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <h1>Welcome, <span id="student-name">Student</span><span class="gold-period">.</span></h1>
-      <p class="dashboard-subtitle">Your personal Physics learning space connects Unit 1 resources, activities, tests and targeted revision. Select your next step below.</p>
+      <p class="dashboard-subtitle">Your enrolled grade determines your learning resources. Continue studying, practising and reviewing your progress below.</p>
       <div class="account-strip"><span class="account-dot"></span><span>Signed in as <strong id="student-email"></strong></span><span class="account-pill">Independent learner</span></div>
+      <section class="enrollment-gate" id="enrollment-gate" aria-labelledby="enroll-heading" hidden>
+        <div class="enrollment-heading"><span class="eyebrow">ACADEMIC ENROLLMENT · FREE PILOT</span><h2 id="enroll-heading">Choose your Physics grade</h2><p>Enroll once to personalize your learning area. Your previous practice history stays with your account.</p></div>
+        <form id="enrollment-form" class="enrollment-form">
+          <label for="enrollment-grade">Grade / class</label>
+          <select id="enrollment-grade" required>
+            <option value="11">Grade XI — HSSC-I (available)</option>
+            <option value="9" disabled>Grade IX — coming later</option>
+            <option value="10" disabled>Grade X — coming later</option>
+            <option value="12" disabled>Grade XII — coming later</option>
+          </select>
+          <label for="enrollment-board">Board / curriculum</label>
+          <select id="enrollment-board" required>
+            <option value="fbise">FBISE — Federal Board (currently supported)</option>
+          </select>
+          <label for="enrollment-institution">School / college / institute (optional)</label>
+          <input id="enrollment-institution" type="text" maxlength="120" autocomplete="organization" placeholder="Optional — independent learners can leave this blank">
+          <div class="enrollment-note">Registration and current Grade XI practice access are <strong>free</strong>. No payment or code is needed. This does not enroll you in a teacher's class. Grade changes and promotions will use a separate administrator-controlled process.</div>
+          <button id="enrollment-submit" class="btn btn-primary" type="submit">Activate my Grade XI Learning Hub</button>
+          <p id="enrollment-status" class="enrollment-status" role="status" aria-live="polite">Checking academic enrollment…</p>
+        </form>
+      </section>
+      <div class="enrolled-learner-content" id="enrolled-learner-content" hidden>
+      <div class="enrollment-current"><span id="current-enrollment-label">Grade XI · FBISE</span> <small>Free independent learning · Grade changes require review</small></div>
       <h2 class="section-title" id="student-top">Your learning home</h2>
       <div class="action-grid">
         <a class="action-card" href="#learning-hub"><span class="action-symbol">◉</span><span class="action-kicker">LEARN & EXPLORE</span><strong>Open My Learning Hub</strong><span>Follow a simple path from concepts to simulations, practice and revision</span><span class="card-arrow">Explore Grade XI Unit 1 ↓</span></a>
@@ -128,9 +151,9 @@
           <div><span class="eyebrow">YOUR PERSONAL LEARNING CENTRE</span><h2 id="learning-hub-title">My Physics Learning Hub</h2><p>Study concepts, explore original simulations, practise exam-style questions, and revisit your progress—all from one place.</p></div>
           <a class="hub-back" href="#student-top">↑ Back to dashboard</a>
         </div>
-        <div class="hub-grade-switch" id="hub-grade-switch" role="group" aria-label="Choose your grade">
+        <div class="hub-grade-switch" id="hub-grade-switch" role="group" aria-label="Your enrolled grade">
           <button class="hub-grade-button" type="button" data-hub-grade="11" aria-pressed="true">Grade XI · HSSC-I</button>
-          <button class="hub-grade-button" type="button" data-hub-grade="9" aria-pressed="false">Grade IX · SSC-I <span class="hub-soon">Planned</span></button>
+          <span class="hub-planned-label">Other grades are coming later</span>
         </div>
         <div class="hub-availability" id="hub-availability" role="status">Loading the learning catalogue…</div>
         <div id="hub-main">
@@ -156,6 +179,7 @@
         </div>
         <div id="hub-upcoming" class="hub-upcoming" hidden><h3>Grade IX resources are planned</h3><p>We're preparing an organized Grade IX library. No Grade IX practice bank is connected to this portal yet, so there is no active Grade IX test link here.</p><a class="btn btn-secondary btn-small" href="#learning-hub" id="hub-back-to-xi">Explore available Grade XI resources</a></div>
       </section>
+      </div><!-- end enrolled-learner-content -->
       <section class="progress-section" id="my-progress" aria-labelledby="progress-heading">
         <div class="progress-section-head"><div><span class="eyebrow">YOUR PRIVATE RECORDS</span><h2 id="progress-heading">My Physics Progress</h2><p>Only practice attempts you explicitly save are recorded. Each test is linked to your current account.</p></div><button id="reload-progress" class="btn btn-secondary btn-small" type="button">Refresh my progress</button></div>
         <div id="progress-status" class="progress-status" role="status" aria-live="polite">Loading your saved practice history…</div>
@@ -199,7 +223,7 @@
           <div><span class="eyebrow">ACCOUNT &amp; DATA CONTROL</span><h2 id="privacy-centre-title">My Privacy &amp; Account Data</h2></div>
           <a href="./privacy.html" target="_blank" rel="noopener" class="btn btn-secondary btn-small">Read privacy information ↗</a>
         </div>
-        <p>Your profile and saved self-practice attempts are stored under your Firebase account. The PDF and archive exports above include <strong>only currently loaded attempts</strong>; use “Load 25 older attempts” until the archive says complete before making a full copy.</p>
+        <p>Your profile, current Grade XI academic enrollment, and saved self-practice attempts are stored under your Firebase account. The PDF and archive exports above include <strong>only currently loaded attempts</strong>; use “Load 25 older attempts” until the archive says complete before making a full copy.</p>
         <div class="privacy-options">
           <div class="privacy-option"><h3>Keep a copy</h3><p>Return to <a href="#my-progress">My Physics Progress</a> to download the PDF report, or open Advanced export options for your detailed JSON records.</p></div>
           <div class="privacy-option"><h3>Request account &amp; record deletion</h3><p>Submit a private request for administrator review. <strong>This does not delete your account immediately.</strong> We'll only mark the request as submitted; a verified administrator must process the associated Authentication and Firestore records.</p>
@@ -248,7 +272,7 @@
     </section>
   </main>
   <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V7 pilot · Student privacy centre</span></footer>
-  <script type="module" src="./app.js?v=7"></script>
+  <script type="module" src="./app.js?v=10"></script>
   <script src="../shared/navigation.js?v=6" defer></script>
 </body>
 </html>

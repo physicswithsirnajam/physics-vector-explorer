@@ -6,7 +6,8 @@
 import {firebaseConfig} from './firebase-config.js';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {openProgressPdfReport} from './pdf-report.js';
-import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight} from './learning-hub.js';
+import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight,setHubEnrollment} from './learning-hub.js?v=10';
+import {readEnrollment,createPilotEnrollment} from './academic-enrollment.js?v=10';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {
  getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword,
@@ -17,7 +18,7 @@ import {getFirestore, doc, getDoc, setDoc, serverTimestamp, collection, query, o
 
 const $=id=>document.getElementById(id);
 const notice=$('notice');
-let auth=null, db=null, navigationToken=0, adminSessionUid=null, progressRequestToken=0;
+let auth=null, db=null, navigationToken=0, adminSessionUid=null, progressRequestToken=0, enrollmentToken=0;
 // Archived attempts are paged under the existing V3 25-document query limit.
 const PROGRESS_PAGE=25;
 let progressRecords=[], progressCursor=null, progressHasOlder=true, progressLoading=false, progressOwnerUid=null;
@@ -43,13 +44,37 @@ function adminStatus(message='',kind='error'){
  el.className='alert'+(kind==='success'?' alert-success':' alert-error');
  el.hidden=!message;
 }
-function showLearner(user,profile){
+function enrollmentNotice(text,error=false){
+ const el=$('enrollment-status');el.textContent=text;el.dataset.error=error?'true':'false';
+}
+async function showLearner(user,profile){
+ const request=++enrollmentToken;
  $('student-name').textContent=profile.displayName||user.displayName||'Student';
  $('student-email').textContent=user.email||'your Google account';
+ $('enrolled-learner-content').hidden=true;
+ $('enrollment-gate').hidden=false;
+ enrollmentNotice('Checking your academic enrollment…');
  screen('dashboard');
+ // Privacy and old personal progress records remain available even for
+ // accounts created before V10; access to learning resources is gated.
  loadProgress(user);
  refreshPrivacyRequest(user);
- portalAnchorScroll();
+ try{
+  const record=await readEnrollment(db,user);
+  if(request!==enrollmentToken||auth?.currentUser?.uid!==user.uid)return;
+  if(record){
+   $('enrollment-gate').hidden=true;
+   $('enrolled-learner-content').hidden=false;
+   $('current-enrollment-label').textContent='Grade XI · FBISE';
+   setHubEnrollment(record.grade);
+   portalAnchorScroll();
+  }else{
+   enrollmentNotice('No current grade enrollment yet. Select Grade XI / FBISE to begin.');
+  }
+ }catch(error){
+  if(request!==enrollmentToken||auth?.currentUser?.uid!==user.uid)return;
+  enrollmentNotice('Unable to verify enrollment from Firebase. Please check the V10 Firestore rules and your connection, then choose Refresh account permissions. '+authError(error),true);
+ }
 }
 
 function portalAnchorScroll(){
@@ -314,7 +339,7 @@ async function profileFor(user){
 async function refreshView(user){
  const current=++navigationToken;
  adminSessionUid=null;
- if(!user){clearProgressArchive();screen('auth');pane('login');return;}
+ if(!user){enrollmentToken++;$('enrolled-learner-content').hidden=true;$('enrollment-gate').hidden=true;clearProgressArchive();screen('auth');pane('login');return;}
  screen('auth');
  if(!user.emailVerified){
   $('verify-email').textContent=user.email||'your email address';
@@ -327,7 +352,7 @@ async function refreshView(user){
   const profile=await profileFor(user);
   if(current!==navigationToken||auth.currentUser?.uid!==user.uid) return;
   if(token.claims.admin===true && !['#learning-hub','#my-progress'].includes(location.hash)){
-    showAdmin(user);
+    enrollmentToken++;$('enrolled-learner-content').hidden=true;showAdmin(user);
   }else{
     showLearner(user,profile);
     $('refresh-access').textContent=token.claims.admin===true?'Return to administrator console':'Refresh account permissions';
@@ -340,6 +365,28 @@ async function refreshView(user){
 }
 
 initLearningHub();
+$('enrollment-form').addEventListener('submit',async event=>{
+ event.preventDefault();
+ const user=auth?.currentUser;
+ if(!user||!user.emailVerified||!db)return;
+ const button=$('enrollment-submit');button.disabled=true;
+ enrollmentNotice('Activating your free Grade XI enrollment…');
+ try{
+  await createPilotEnrollment(db,user,{
+   grade:$('enrollment-grade').value,board:$('enrollment-board').value,
+   institution:$('enrollment-institution').value
+  });
+  if(auth?.currentUser?.uid===user.uid){
+   // Keep the sole administrator in learner mode after enrolling their own
+   // optional academic record. Ordinary students are unaffected.
+   if(adminSessionUid===user.uid)history.replaceState(null,'',location.pathname+location.search+'#learning-hub');
+   await refreshView(user);
+  }
+ }catch(error){
+  if(auth?.currentUser?.uid===user.uid)
+   enrollmentNotice('Enrollment could not be created. If you already enrolled, select Refresh account permissions. '+authError(error),true);
+ }finally{button.disabled=false;}
+});
 
 for(const button of document.querySelectorAll('[data-show]')){
  button.addEventListener('click',()=>pane(button.dataset.show));
@@ -502,7 +549,7 @@ $('admin-open-learning').addEventListener('click',async()=>{
   const token=await user.getIdTokenResult(true);
   if(token.claims.admin!==true){await refreshView(user);return;}
   const profile=await profileFor(user);
-  showLearner(user,profile);
+  await showLearner(user,profile);
   const returnButton=$('refresh-access');returnButton.textContent='Return to administrator console';
  }catch(err){adminStatus(authError(err));}
 });

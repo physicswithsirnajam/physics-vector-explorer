@@ -37,7 +37,7 @@ async function verifyAndLoad(user){
   const run=++sequence;
   clearContent();
   if(!user){state('Sign in required','Open the Student Portal, sign in, and return through My Learning Hub.',{login:true});return;}
-  state('Checking verified access','Confirming your email verification and resource permission…',{logout:true});
+  state('Checking enrolled learner access','Confirming your email verification and resource permission…',{logout:true});
   try{
     // Ensures a recently verified email is reflected in the current user object.
     if(!user.emailVerified)await reload(user);
@@ -58,14 +58,14 @@ async function verifyAndLoad(user){
       state('Lesson unavailable','This resource is not currently published for the pilot.',{logout:true});return;
     }
     renderLesson(data);
-    state('Access granted','Your verified account was permitted to retrieve this Firestore resource.',{retry:true,logout:true});
+    state('Access granted','Your verified Grade XI enrollment was permitted to retrieve this Firestore resource.',{retry:true,logout:true});
   }catch(err){
     if(run!==sequence)return;
     clearContent();
     const denied=err?.code==='permission-denied';
     const offline=err?.code==='unavailable';
     const message=denied
-      ? 'Firestore denied the read. Check your email verification, the V9 rules, and the lesson document status. No access was granted.'
+      ? 'Firestore denied the read. Check your email verification, active Grade XI enrollment, the V10 rules, and the lesson document status. No access was granted.'
       : offline?'The Firebase server is unavailable. Check your connection and try again.'
       :'This resource could not be loaded. Check Firebase configuration and V9 setup instructions.';
     state(denied?'Access denied':'Unable to open lesson',message,{retry:true,logout:true});
