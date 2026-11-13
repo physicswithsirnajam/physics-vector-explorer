@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101e37">
+  <meta name="description" content="Verified-account protected learning resource pilot for Physics with Sir Najam.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Protected Learning Resource | Physics with Sir Najam</title>
+  <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+  <link rel="stylesheet" href="./secure-lesson.css?v=9">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./#learning-hub" aria-label="Physics with Sir Najam Learning Hub">
+      <img src="./assets/physics-with-sir-najam-official-logo.png" width="58" height="58" alt="Official Physics with Sir Najam logo" />
+      <span>Physics with <strong>Sir Najam</strong></span>
+    </a>
+    <span class="pilot-tag">PROTECTED RESOURCE PILOT · V9</span>
+  </header>
+
+  <main>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="./#learning-hub">Learning Hub</a><span aria-hidden="true">/</span><span>Protected Resource</span>
+    </nav>
+    <div class="hero">
+      <img class="official-banner" src="./assets/physics-with-sir-najam-official-banner.png" width="2048" height="757" alt="Physics with Sir Najam official banner">
+      <p class="eyebrow">ACCESS CONTROL · FIRESTORE SECURITY RULES</p>
+      <h1>Registered Learner Resource</h1>
+      <p class="lead">This pilot demonstrates that a verified account can read a learning resource whose actual contents are <strong>not embedded in our public GitHub Pages files.</strong></p>
+    </div>
+
+    <section class="card" aria-live="polite" aria-atomic="false">
+      <div class="card-head"><span class="access-icon" aria-hidden="true">◈</span><div><h2 id="state-heading">Checking access…</h2><p id="state-message">Connecting to Firebase Authentication.</p></div></div>
+      <div id="resource" hidden>
+        <div class="lesson-label">PRIVATE FIRESTORE DOCUMENT · VERIFIED ACCOUNT ONLY</div>
+        <h3 id="lesson-title"></h3>
+        <p id="lesson-summary" class="summary"></p>
+        <div id="lesson-body" class="lesson-body"></div>
+        <div class="resource-note">Controlled pilot: this is a demonstration of access rules, not yet a verified NBF/FBISE textbook lesson or a paywalled membership feature. Signed-in students can read and copy content that their accounts are authorized to retrieve.</div>
+      </div>
+      <div id="actions" class="actions">
+        <a class="btn primary" id="login-link" href="./#learning-hub" hidden>Sign in through the Portal</a>
+        <button class="btn secondary" id="retry-button" type="button" hidden>Try Again</button>
+        <button class="btn secondary" id="signout-button" type="button" hidden>Sign Out</button>
+      </div>
+    </section>
+    <div class="followups">
+      <a href="./#learning-hub">← Back to Learning Hub</a>
+      <a href="./#my-progress">My Physics Progress</a>
+      <a href="../build-your-physics-test.html">Build a Test</a>
+    </div>
+    <div class="security-note"><strong>Security scope:</strong> The page HTML, scripts, and catalogue link are public. Only the Firestore document itself is access-controlled. Existing GitHub Pages question banks and linked Google Sites resources remain public until separately migrated. No billing or payment features are enabled.</div>
+  </main>
+  <footer>© Physics with Sir Najam · Controlled Student Portal Pilot · V9</footer>
+  <script type="module" src="./secure-lesson.js?v=9"></script>
+  <script src="../shared/navigation.js?v=6" defer></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v6-2026-11-12",
-  "accessNote": "Public links and provisional practice materials. Not a protected course library.",
+  "catalogVersion": "pilot-v9-protected-lesson-2026-11-13",
+  "accessNote": "Catalogue metadata and existing linked learning resources remain public. Only the new protected lesson is stored in Firestore and checked by server-side Firestore Security Rules.",
   "grades": [
     {
       "grade": 11,
@@ -17,6 +17,7 @@
           "assessmentStatus": "provisional-self-practice",
           "resourceIds": [
             "study",
+            "protected-lesson",
             "explore",
             "practice",
             "blueprint",
@@ -82,6 +83,16 @@
       "public": false,
       "external": false,
       "action": "Review progress ↓"
+    },
+    {
+      "id": "protected-lesson",
+      "category": "REGISTERED LEARNERS",
+      "title": "Protected Learning Resource — Access Test",
+      "description": "Pilot: this page retrieves its actual content from Firestore only after verifying your account; not yet an approved textbook lesson.",
+      "href": "./secure-lesson.html",
+      "public": false,
+      "external": false,
+      "action": "Open protected pilot lesson ↗"
     }
   ]
 }
