@@ -157,3 +157,30 @@
 
 .enrollment-form>*,.enrollment-gate{min-width:0;box-sizing:border-box}
 .enrollment-form input,.enrollment-form select{width:100%;box-sizing:border-box}
+
+/* Portal V11 — Course availability and resource navigation; official images unchanged */
+.hub-readiness{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 19px}
+.hub-readiness-stat{display:flex;flex-direction:column;gap:3px;padding:16px;background:#f4f8fc;border:1px solid #dde6f1;border-radius:12px;min-width:0}
+.hub-readiness-stat strong{color:#173452;font-size:25px;line-height:1.1}
+.hub-readiness-stat span{font-size:11px;color:#61758a;line-height:1.5}
+.hub-unit-note{margin:12px 0 0!important;padding:10px 12px;background:#fff7e8;border-left:3px solid #cb9e48;border-radius:6px;color:#655137!important}
+.hub-upcoming-list{margin:15px 0;border:1px solid #dce6f0;border-radius:12px;background:#fafcff}
+.hub-upcoming-list summary{cursor:pointer;padding:14px 17px;font-weight:750;color:#21405f;list-style-position:inside}
+.hub-upcoming-list summary:focus-visible{outline:3px solid #d5ae65;outline-offset:2px}
+.hub-planned-units{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 13px 13px}
+.hub-planned-unit{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:9px;background:#eef3f8;min-width:0}
+.hub-planned-unit span{font-size:12px;font-weight:800;color:#4a627b}
+.hub-planned-unit small{font-size:10px;color:#75869b;line-height:1.35}
+.hub-small-help{font-size:11px;color:#75869b}
+.hub-resource-controls{display:grid;grid-template-columns:auto minmax(130px,0.7fr) auto minmax(170px,1fr);align-items:center;gap:10px;margin:9px 0 14px}
+.hub-filter-label{font-size:12px;color:#3e5871;font-weight:750}
+.hub-resource-controls select,.hub-resource-controls input{font:inherit;width:100%;min-width:0;padding:10px 12px;border:1px solid #c7d5e4;border-radius:9px;background:#fff;color:#193553}
+.hub-resource-controls select:focus-visible,.hub-resource-controls input:focus-visible{outline:3px solid #d5ae65;outline-offset:2px}
+.hub-resource .hub-access-pill{display:inline-flex;align-self:start;font-size:10px;font-weight:800;letter-spacing:0;text-transform:none;color:#406178;background:#eaf0f5;border-radius:999px;padding:5px 9px;margin:3px 0}
+.hub-resource .hub-access-pill[data-access="enrolled-protected"]{color:#19644e;background:#e1f2e8}
+.hub-resource .hub-access-pill[data-access="account-private"]{color:#5b4582;background:#eee8f9}
+.hub-resource .hub-access-detail{color:#647890;font-size:11px;line-height:1.55}
+.hub-access-legend{font-size:11px;line-height:1.75;color:#60758b;background:#f4f7fa;border-radius:9px;padding:12px;margin-top:14px}
+.hub-access-legend span{font-weight:800;color:#24476a}
+@media(max-width:800px){.hub-planned-units{grid-template-columns:repeat(2,minmax(0,1fr))}.hub-resource-controls{grid-template-columns:1fr 1fr}.hub-resource-controls .hub-filter-label{grid-column:1/-1;margin-bottom:-5px}.hub-resource-controls select,.hub-resource-controls input{grid-column:1/-1}}
+@media(max-width:480px){.hub-readiness{grid-template-columns:1fr}.hub-readiness-stat{padding:11px 14px;flex-direction:row;align-items:center;gap:14px}.hub-readiness-stat strong{font-size:22px}.hub-planned-units{grid-template-columns:1fr}.hub-section-heading{align-items:flex-start;flex-direction:column}}

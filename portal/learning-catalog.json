@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v10-grade-enrollment-2026-11-13",
-  "accessNote": "Academic enrollment is stored privately in Firestore. The Learning Hub displays the enrolled grade only. Existing public linked files remain public; the pilot protected lesson additionally requires an active Grade XI FBISE enrollment.",
+  "catalogVersion": "pilot-v11-grade-xi-course-roadmap-2026-11-13",
+  "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
   "grades": [
     {
       "grade": 11,
@@ -22,7 +22,140 @@
             "practice",
             "blueprint",
             "progress"
-          ]
+          ],
+          "qualityStatus": "academic-audit-pending",
+          "resourceAccess": "mixed-public-and-pilot-protected",
+          "studentNotice": "Unit 1 is a self-practice pilot. Textbook-page mapping, independent scientific review and exact FBISE readiness remain incomplete."
+        },
+        {
+          "unit": 2,
+          "title": "Unit 2 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 3,
+          "title": "Unit 3 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 4,
+          "title": "Unit 4 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 5,
+          "title": "Unit 5 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 6,
+          "title": "Unit 6 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 7,
+          "title": "Unit 7 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 8,
+          "title": "Unit 8 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 9,
+          "title": "Unit 9 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 10,
+          "title": "Unit 10 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 11,
+          "title": "Unit 11 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 12,
+          "title": "Unit 12 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 13,
+          "title": "Unit 13 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
+        },
+        {
+          "unit": 14,
+          "title": "Unit 14 — Content in preparation",
+          "status": "planned",
+          "summary": "No verified portal resources have been released for this unit.",
+          "questionBankCount": 0,
+          "assessmentStatus": "not-published",
+          "resourceIds": [],
+          "qualityStatus": "not-reviewed"
         }
       ],
       "enrollmentStatus": "open-free-pilot"
@@ -44,7 +177,10 @@
       "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
       "public": true,
       "external": true,
-      "action": "Browse learning resources ↗"
+      "action": "Browse learning resources ↗",
+      "access": "public-link",
+      "contentStatus": "public-resource",
+      "accessDescription": "Public Google Sites resource; accessible without portal login."
     },
     {
       "id": "explore",
@@ -54,7 +190,10 @@
       "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
       "public": true,
       "external": true,
-      "action": "Explore available activities ↗"
+      "action": "Explore available activities ↗",
+      "access": "public-link",
+      "contentStatus": "public-resource",
+      "accessDescription": "Public Google Sites resource; accessible without portal login."
     },
     {
       "id": "practice",
@@ -64,7 +203,10 @@
       "href": "../build-your-physics-test.html",
       "public": true,
       "external": false,
-      "action": "Open Test Builder ↗"
+      "action": "Open Test Builder ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-self-practice",
+      "accessDescription": "Public GitHub Pages MCQ practice; answer keys are not protected. Source bank under review."
     },
     {
       "id": "blueprint",
@@ -74,7 +216,10 @@
       "href": "../assessment-blueprint/",
       "public": true,
       "external": false,
-      "action": "View blueprint ↗"
+      "action": "View blueprint ↗",
+      "access": "public-link",
+      "contentStatus": "assessment-guidance",
+      "accessDescription": "Public blueprint information, not a board-certified assessment."
     },
     {
       "id": "progress",
@@ -84,7 +229,10 @@
       "href": "#my-progress",
       "public": false,
       "external": false,
-      "action": "Review progress ↓"
+      "action": "Review progress ↓",
+      "access": "account-private",
+      "contentStatus": "personal-records",
+      "accessDescription": "Private progress displayed for the signed-in owner, via Firestore rules."
     },
     {
       "id": "protected-lesson",
@@ -94,7 +242,10 @@
       "href": "./secure-lesson.html",
       "public": false,
       "external": false,
-      "action": "Open protected pilot lesson ↗"
+      "action": "Open protected pilot lesson ↗",
+      "access": "enrolled-protected",
+      "contentStatus": "pilot-only",
+      "accessDescription": "Firestore content read requires verified login and active Grade XI/FBISE enrollment."
     }
   ]
 }

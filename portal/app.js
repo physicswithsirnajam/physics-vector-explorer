@@ -6,7 +6,7 @@
 import {firebaseConfig} from './firebase-config.js';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {openProgressPdfReport} from './pdf-report.js';
-import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight,setHubEnrollment} from './learning-hub.js?v=10';
+import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight,setHubEnrollment} from './learning-hub.js?v=11';
 import {readEnrollment,createPilotEnrollment} from './academic-enrollment.js?v=10';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {

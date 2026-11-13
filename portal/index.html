@@ -164,10 +164,33 @@
             <div class="hub-step"><span class="hub-step-number">03</span><div><strong>Practise</strong><small>Try MCQs and stimulus-based questions</small></div></div>
             <div class="hub-step"><span class="hub-step-number">04</span><div><strong>Review</strong><small>Save attempts and revisit SLOs</small></div></div>
           </div>
-          <div class="hub-section-heading"><h3>Available learning unit</h3><span class="hub-live-label">Grade XI · Unit 1</span></div>
+          <div class="hub-section-heading"><h3>My Grade XI course map</h3><span class="hub-live-label">Pilot course catalogue</span></div>
+          <p class="hub-explanation">Your current enrollment is Grade XI / FBISE. The course map shows what is linked today and what is still in development. Upcoming units cannot be opened or assessed yet.</p>
+          <div class="hub-readiness" aria-label="Grade XI course availability">
+            <div class="hub-readiness-stat"><strong id="hub-total-units">14</strong><span>Course units mapped</span></div>
+            <div class="hub-readiness-stat"><strong id="hub-linked-units">1</strong><span>Units with current practice</span></div>
+            <div class="hub-readiness-stat"><strong id="hub-awaiting-units">13</strong><span>Units awaiting release</span></div>
+          </div>
           <div id="hub-units" class="hub-units" aria-live="polite"></div>
-          <h3 class="hub-small-title">Learning resources & activities</h3>
+          <details class="hub-upcoming-list"><summary>View upcoming Grade XI units <span id="hub-upcoming-count">(13)</span></summary><div id="hub-planned-units" class="hub-planned-units"></div></details>
+          <div class="hub-section-heading"><h3>Learning resources & activities</h3><span class="hub-small-help">Select a resource for your current unit</span></div>
+          <div class="hub-resource-controls">
+            <label class="hub-filter-label" for="hub-resource-filter">Filter resources</label>
+            <select id="hub-resource-filter" aria-controls="hub-resources">
+              <option value="all">All resources</option>
+              <option value="STUDY">Study</option>
+              <option value="EXPLORE">Explore</option>
+              <option value="PRACTISE">Practise</option>
+              <option value="EXAM PREPARATION">Exam preparation</option>
+              <option value="REVIEW">My progress</option>
+              <option value="REGISTERED LEARNERS">Protected lessons</option>
+            </select>
+            <label class="hub-filter-label" for="hub-resource-search">Search</label>
+            <input id="hub-resource-search" type="search" placeholder="Search resources or topics" autocomplete="off" aria-controls="hub-resources">
+          </div>
+          <p id="hub-resource-feedback" class="hub-explanation" role="status" aria-live="polite">Loading resources…</p>
           <div id="hub-resources" class="hub-resources"></div>
+          <p class="hub-access-legend"><strong>Access labels:</strong> <span>Public link</span> can be opened without login · <span>Enrolled learner</span> is checked by Firestore · <span>My private progress</span> is visible only to its account owner. Public links are not paywalled.</p>
           <div class="hub-focus" aria-labelledby="hub-focus-heading">
             <div class="hub-focus-copy"><span class="eyebrow">PERSONALIZED NEXT STEP</span><h3 id="hub-focus-heading">What should I practise next?</h3><p id="hub-focus-message">When you save your first MCQ practice attempt, we can suggest an SLO for further practice.</p><small id="hub-focus-evidence">Practice suggestions are provisional and are based only on the attempts currently loaded.</small></div>
             <a id="hub-focus-link" class="btn btn-primary btn-small" href="../build-your-physics-test.html">Build a Unit 1 practice test ↗</a>
@@ -272,7 +295,7 @@
     </section>
   </main>
   <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V7 pilot · Student privacy centre</span></footer>
-  <script type="module" src="./app.js?v=10"></script>
+  <script type="module" src="./app.js?v=11"></script>
   <script src="../shared/navigation.js?v=6" defer></script>
 </body>
 </html>
