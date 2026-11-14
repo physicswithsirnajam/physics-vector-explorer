@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v24-unit2-numericals-descriptive-formulas-2026-11-14",
+  "catalogVersion": "pilot-v25-unit2-complete-stage5-numericals-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -52,7 +52,7 @@
           ],
           "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
           "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
-          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, 13 public worked numerical examples, 9 short and 4 comprehensive model answers, and a public formula sheet. The public educational materials are not secure FBISE assessment items.",
+          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, all 30 Stage 5 numerical examples, 9 short and 4 comprehensive public model answers, and a public formula sheet. Independent scientific verification remains ongoing.",
           "landingHref": "./unit-02.html"
         },
         {
@@ -399,7 +399,7 @@
       "id": "unit2-numericals",
       "category": "PRACTISE",
       "title": "Unit 2 — Worked Numericals & Applications",
-      "description": "Thirteen source-labelled worked numerical problems with independent-practice solution reveals, steps, final answers, and print view.",
+      "description": "Complete Stage 5 source-based numerical set: five textbook-labelled problems plus 25 additional SLO applications, each with revealable steps, final answer, examiner tip, and print view.",
       "href": "./unit-02-numericals.html",
       "public": true,
       "external": false,
