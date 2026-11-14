@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0d1a36"><title>Unit 1 MCQ Practice | Physics with Sir Najam</title>
+<meta name="theme-color" content="#0d1a36"><title>Grade XI MCQ Practice | Physics with Sir Najam</title>
 <link rel="icon" type="image/png" href="../assets/branding/physics-with-sir-najam-logo.png">
 <style>
 :root{--navy:#0d1a36;--dark:#142a50;--gold:#f2c16b;--teal:#087c99;--surface:#f5f8fc;--ink:#10213e;--muted:#53647d;--border:#d7e1ed;--good:#177347;--bad:#bb323f}
@@ -14,10 +14,10 @@
 <body>
 <header class="top"><div class="top-inner"><div class="brand"><img class="logo" src="../portal/assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo"><div><strong>Physics with Sir Najam</strong><small>Interactive Physics Practice &amp; Assessment</small></div></div><a href="../build-your-physics-test.html">← Back to Test Builder</a> <a href="../portal/" style="margin-left:12px">My Dashboard ↗</a></div></header>
 <main class="wrap">
-<div class="eyebrow">Grade XI · NBF Unit 1 · 275-Question Practice Bank</div>
-<h1>Physical Quantities and Measurements — MCQ Practice</h1>
-<div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> This bank contains 275 source MCQs, including 24 linked experimental or scenario sets. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. When signed in, you can choose to save completed self-practice results privately to your portal account. Scores are calculated in your browser, not by a trusted examination server.</div>
-<div id="loading" class="panel" role="status" aria-live="polite">Loading the Unit 1 question bank…</div>
+<div id="unitEyebrow" class="eyebrow">Grade XI · Loading unit</div>
+<h1 id="unitTitle">Grade XI — MCQ Practice</h1>
+<div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> Select Unit 1 or Unit 2 through the Test Builder. Each unit uses its own source MCQs and complete stimulus sets. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. When signed in, you can choose to save completed self-practice results privately to your portal account. Scores are calculated in your browser, not by a trusted examination server.</div>
+<div id="loading" class="panel" role="status" aria-live="polite">Loading the selected unit question bank…</div>
 <section id="start" class="panel hidden"><h2>Ready to practise?</h2><p id="setupSummary"></p><p class="muted">Questions are selected according to your chosen method. Balanced selection aims to cover available SLOs, cognitive levels and difficulty bands, without promising an exact board-paper distribution. Complete scenarios remain together; attempts may repeat questions.</p><div class="actions"><button class="primary" id="begin">Start MCQ Practice</button><a href="../build-your-physics-test.html">Change test settings</a></div></section>
 <section id="quiz" class="panel hidden"><div class="progress-line"><strong id="qcounter">Question 1</strong><span id="timer" class="chip gold hidden" role="timer"></span><span id="answeredCount" class="muted"></span></div><div class="bar" aria-label="Question progress"><span id="progressFill"></span></div><div class="meta" id="tags"></div><section id="stimulusPanel" class="hint hidden" aria-label="Shared question scenario"></section><div id="question" class="qstem"></div><div id="choices" role="radiogroup" aria-label="MCQ answer choices"></div><div class="hint hidden" id="hintBox"></div><div id="feedbackBox" class="feedback hidden" role="status" aria-live="polite"></div><div class="actions"><button id="prev">← Previous</button><button id="showHint" class="hidden">Need a hint?</button><button id="check" class="hidden">Check Answer</button><span class="spacer"></span><button id="next">Next →</button><button class="primary" id="submit">Submit Test</button></div></section>
 <section id="result" class="panel hidden"><div class="eyebrow">Your Practice Report</div><h2>Assessment complete</h2><p class="muted" id="resultMeta"></p><div class="stat-grid" id="stats"></div>
@@ -32,7 +32,7 @@
 'use strict';
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(window.location.search);
-const cfg={count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
+const cfg={unit:params.get('unit')==='2'?2:1,count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
 let bank,eligible=[],test=[],answers={},checked={},index=0,secondsLeft=0,timerHandle=null,submitted=false;
 const safely=(node,value)=>{node.textContent=String(value);return node};
 
@@ -84,7 +84,7 @@ function groupedSelection(all,eligible,arrangement,count,orderGroups){
   return {possible:possibleSums.length>0,available,completeGroups,singles,chosen,groupQuestions};
 }
 // V8 practice-only intelligent selection. Existing bank records and keys are never altered.
-const RECENT_KEY='psn-physics-XI-u01-recent-v8';
+const RECENT_KEY=`psn-physics-XI-u0${cfg.unit}-recent-v8`;
 function readRecentAttempts(){
  try {const a=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(a)?a.filter(x=>Array.isArray(x)).slice(0,4):[]}
  catch{return []}
@@ -193,7 +193,7 @@ function setup(){
  $('start').classList.remove('hidden');
 }
 function chip(text){return node('span','chip',text)}
-function hint(q){return q.topic==='Estimation of physical quantities'?'Consider how a scientifically useful approximation is obtained.':q.topic==='SI units and derived quantities'?'Relate the named quantity to the physical operation it represents.':q.topic==='Dimensional homogeneity'?'Think about the dimensions of terms in physical equations.':q.topic==='Accuracy and precision'?'Distinguish agreement between readings from agreement with a reference value.':q.topic==='Uncertainty propagation'?'Think about which type of uncertainty is appropriate for the mathematical operation.':'Think about practical limitations of measuring and reporting physical quantities.'}
+function hint(q){if(cfg.unit===2)return q.sloCodes?.includes('P-11-B-01')?'Resolve the vector into its horizontal and vertical components, then check direction and signs.':'For dot products think cosine and scalar projection; for cross products think sine, order and right-hand rule.';return q.topic==='Estimation of physical quantities'?'Consider how a scientifically useful approximation is obtained.':q.topic==='SI units and derived quantities'?'Relate the named quantity to the physical operation it represents.':q.topic==='Dimensional homogeneity'?'Think about the dimensions of terms in physical equations.':q.topic==='Accuracy and precision'?'Distinguish agreement between readings from agreement with a reference value.':q.topic==='Uncertainty propagation'?'Think about which type of uncertainty is appropriate for the mathematical operation.':'Think about practical limitations of measuring and reporting physical quantities.'}
 function prepare(){
  const plan=groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count,cfg.shuffle?shuffled:null);
  if(!plan.possible){showError('The selected filters do not provide enough complete scenario sets. Please return to the Test Builder.');return}
@@ -234,7 +234,7 @@ function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearI
  $('mixStats').replaceChildren(...[...mix(q=>q.cognitiveLevel),...mix(q=>q.difficulty)].map(s=>node('span','slo-chip',s)));
  $('mixNote').textContent=cfg.selection==='balanced'?'Adaptive balancing reflects what the selected question pool contains. It is not a claim of exact FBISE cognitive percentages.':'This was a fully random selection of the eligible question pool.';
  const sections=test.map((q,i)=>{const p=node('div','review-item');const correct=q.displayOptions.find(o=>o.id===q.correctOptionId),my=q.displayOptions.find(o=>o.id===answers[q.id]);const qt=node('strong');qt.append(document.createTextNode((i+1)+'. '));const qbody=node('span');setRich(qbody,q.stemHtml,q.stem);qt.append(qbody);if(q.stimulusHtml){const st=node('div','hint');setRich(st,q.stimulusHtml,q.stimulusText||'');p.appendChild(st)}const user=node('p','review-user '+(!my?'wrong':my.id===correct.id?'':'wrong'));user.append(document.createTextNode('Your answer: '));const ut=node('span');if(my)setRich(ut,my.html,my.text);else ut.textContent='Not answered';user.appendChild(ut);const right=node('p','review-answer');right.append(document.createTextNode('Correct answer: '));const rightText=node('span');setRich(rightText,correct.html,correct.text);right.appendChild(rightText);const reason=node('p');setRich(reason,q.explanationHtml,q.explanation);p.append(qt,node('p','muted',`Source MCQ #${q.sourceQuestionNumber} · ${q.sloCodes.join(', ')} · ${q.topic}`),user,right,reason);return p});$('review').replaceChildren(...sections);window.dispatchEvent(new CustomEvent('psn:practice-finished',{detail:{
-  schemaVersion:1,kind:'self-practice',grade:11,unit:1,
+  schemaVersion:1,kind:'self-practice',grade:11,unit:cfg.unit,
   bankVersion:String(bank.bankVersion||'unknown').slice(0,120),
   questionCount:test.length,correctCount:right,skippedCount:skipped,
   arrangement:cfg.arrangement,selection:cfg.selection,scope:cfg.scope,
@@ -242,7 +242,7 @@ function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearI
  }}));
  window.scrollTo({top:0,behavior:'smooth'})}
 $('begin').addEventListener('click',prepare);$('prev').addEventListener('click',()=>{if(index>0){index--;render()}});$('next').addEventListener('click',()=>{if(index<test.length-1){index++;render()}});$('check').addEventListener('click',()=>{const q=test[index];if(!answers[q.id])return;checked[q.id]=true;render()});$('showHint').addEventListener('click',()=>{$('hintBox').textContent=hint(test[index]);$('hintBox').classList.remove('hidden')});$('submit').addEventListener('click',()=>{const n=test.filter(q=>!answers[q.id]).length;if(n&&!confirm(`You have ${n} unanswered question(s). Submit anyway?`))return;finish()});$('retry').addEventListener('click',()=>{$('start').classList.remove('hidden');$('result').classList.add('hidden');window.scrollTo({top:0})});$('print').addEventListener('click',()=>window.print());
-fetch('../question-bank/grade-11/unit-01.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Question bank was not found (HTTP '+r.status+').');return r.json()}).then(data=>{if(!Array.isArray(data.questions)||data.status!=='practice-pilot')throw Error('Question bank is not in the expected format.');bank=data;setup()}).catch(err=>showError('Unable to load the Unit 1 question bank: '+err.message+' Please verify that the question-bank folder was copied alongside the practice-engine folder and that the site is hosted through GitHub Pages.'));
+fetch(`../question-bank/grade-11/unit-0${cfg.unit}.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Question bank was not found (HTTP '+r.status+').');return r.json()}).then(data=>{if(!Array.isArray(data.questions)||data.status!=='practice-pilot'||!data.questions.length||data.questions.some(q=>q.grade!==11||q.unit!==cfg.unit))throw Error('Question bank does not match the selected Grade XI unit.');bank=data;const count=data.questions.length;document.title=`Unit ${cfg.unit} MCQ Practice | Physics with Sir Najam`;$('unitEyebrow').textContent=`Grade XI · NBF Unit ${cfg.unit} · ${count} Source MCQs`;$('unitTitle').textContent=(cfg.unit===2?'Vectors':'Physical Quantities and Measurements')+' — MCQ Practice';setup()}).catch(err=>showError('Unable to load the selected Unit '+cfg.unit+' question bank: '+err.message+' Please verify that the question-bank folder was copied alongside the practice-engine folder and that the site is hosted through GitHub Pages.'));
 </script>
 <script type="module" src="../portal/attempt-sync.js"></script>
   <script src="../shared/navigation.js?v=5.1" defer></script>

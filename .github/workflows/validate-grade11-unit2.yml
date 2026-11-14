@@ -1,0 +1,25 @@
+name: Validate Grade XI Unit 2 MCQ Bank
+on:
+  pull_request:
+    paths:
+      - "question-bank/**"
+      - "scripts/validate_unit02_bank.py"
+      - ".github/workflows/validate-grade11-unit2.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/**"
+      - "scripts/validate_unit02_bank.py"
+jobs:
+  verify-unit2:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate edited JavaScript syntax
+        run: python3 scripts/check_v18_syntax.py
+      - name: Validate source-preserved Unit 2 question bank
+        run: python3 scripts/validate_unit02_bank.py

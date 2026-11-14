@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v17-grade-xi-unit-02-enrolled-lessons-2026-11-14",
+  "catalogVersion": "pilot-v18-grade-xi-unit-02-mcq-bank-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect the V9 pilot and V16/V17 courseLessons. Public HTML notes, the simulations, and the provisional Unit 1 MCQ bank remain publicly accessible. Unit 2 enrolled lesson content is stored in Firestore. Unit 2 MCQs are not yet imported.",
   "grades": [
     {
@@ -39,16 +39,17 @@
           "title": "Vectors",
           "status": "available",
           "summary": "Vector resolution, rectangular components, scalar/dot products and vector/cross products.",
-          "questionBankCount": 0,
-          "assessmentStatus": "study-only-no-mcq-import",
+          "questionBankCount": 206,
+          "assessmentStatus": "provisional-self-practice",
           "resourceIds": [
             "unit2-desk",
             "unit2-b01",
-            "unit2-b02"
+            "unit2-b02",
+            "unit2-practice"
           ],
-          "qualityStatus": "teacher-materials-final-qc;portal-lessons-reviewed",
+          "qualityStatus": "teacher-source-final-QC; digital-import-and-browser-validation-pending",
           "resourceAccess": "mixed-public-index-and-enrolled-protected",
-          "studentNotice": "Two enrolled Grade XI vector lessons are available; Unit 2 MCQ bank has NOT been imported. Two public vector simulations are linked from the unit desk.",
+          "studentNotice": "Unit 2 has two protected lessons and 206 source-QC MCQs for provisional public self-practice (6 textbook + 140 straight + 60 scenario). The online bank still needs final launch and scoring checks.",
           "landingHref": "./unit-02.html"
         },
         {
@@ -343,13 +344,13 @@
       "id": "unit2-desk",
       "category": "STUDY",
       "title": "Unit 2 — Vectors Learning Desk",
-      "description": "Browse two enrolled vector lessons and two public interactive vector simulations. No Unit 2 MCQ assessment is active yet.",
+      "description": "Browse two enrolled vector lessons, two interactive vector simulations and the Unit 2 public MCQ practice bank.",
       "href": "./unit-02.html",
       "public": true,
       "external": false,
       "action": "Open Unit 2 Learning Desk ↗",
       "access": "public-link",
-      "contentStatus": "available-study-only",
+      "contentStatus": "published-student-resources",
       "accessDescription": "The directory page is public; actual V17 lesson bodies require Grade XI enrollment."
     },
     {
@@ -377,6 +378,19 @@
       "access": "enrolled-protected",
       "contentStatus": "v17-firestore-document-required",
       "accessDescription": "Lesson body is read from Firestore only after verified sign-in and active Grade XI/FBISE enrollment."
+    },
+    {
+      "id": "unit2-practice",
+      "category": "PRACTISE",
+      "title": "Unit 2 — Vectors MCQ Practice (206)",
+      "description": "206 Stage 6 source-QC MCQs: 6 textbook exercise, 140 additional straight and 60 in 15 complete stimulus groups. Choose this unit in Test Builder; browser-graded self-practice only.",
+      "href": "../build-your-physics-test.html?unit=2",
+      "public": true,
+      "external": false,
+      "action": "Build a Unit 2 MCQ test ↗",
+      "access": "public-link",
+      "contentStatus": "requires-v18-bank-upload-and-validation",
+      "accessDescription": "Public self-practice with answer key in GitHub Pages; no enrollment restriction or secure examination scoring."
     }
   ]
 }

@@ -10,9 +10,11 @@ export const SLO_TOPICS = Object.freeze({
   'P-11-A-04': 'Dimensional derivation',
   'P-11-A-05': 'Accuracy and precision',
   'P-11-A-06': 'Propagation of uncertainty',
-  'P-11-A-07': 'Measurement uncertainty'
+  'P-11-A-07': 'Measurement uncertainty',
+  'P-11-B-01': 'Rectangular components of vectors',
+  'P-11-B-02': 'Dot and cross products'
 });
-const CODE_RE=/^P-11-A-\d{2}$/;
+const CODE_RE=/^P-11-[AB]-\d{2}$/;
 const integer=x=>Number.isInteger(x)&&x>=0?x:0;
 const pct=(right,total)=>total?Math.round(100*right/total):null;
 function msOf(timestamp){
@@ -75,8 +77,9 @@ export function analyzeAttempts(input){
 }
 export function targetedPracticeUrl(code){
   if(!CODE_RE.test(code))return null;
-  // Every mapped Unit 1 SLO has at least 9 active MCQs in the V6.2 bank.
-  // Use a conservative 4-item sample; the engine revalidates on launch.
-  const params=new URLSearchParams({count:'4',scope:'all',slo:code,arrangement:'random',selection:'balanced',unseen:'true',feedback:'end',shuffle:'true'});
+  // Target the source unit for each official SLO; the practice engine revalidates availability on launch.
+  // Use a conservative 4-item sample.
+  const unit=code.startsWith('P-11-B-')?'2':'1';
+  const params=new URLSearchParams({unit,count:'4',scope:'all',slo:code,arrangement:'random',selection:'balanced',unseen:'true',feedback:'end',shuffle:'true'});
   return '../practice-engine/index.html?'+params.toString();
 }
