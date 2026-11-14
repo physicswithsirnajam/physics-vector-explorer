@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v15-unit-01-numericals-descriptive-2026-11-14",
+  "catalogVersion": "pilot-v16-enrolled-course-lessons-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
   "grades": [
     {
@@ -20,6 +20,7 @@
             "unit1-study-guide",
             "unit1-numericals",
             "unit1-descriptive",
+            "unit1-enrolled-workshop",
             "study",
             "protected-lesson",
             "explore",
@@ -316,6 +317,19 @@
       "access": "public-link",
       "contentStatus": "original-study-resource",
       "accessDescription": "Public original model answers; not an officially graded FBISE assessment or a verbatim textbook solution set."
+    },
+    {
+      "id": "unit1-enrolled-workshop",
+      "category": "REGISTERED LEARNERS",
+      "title": "Unit 1 — Enrolled Uncertainty Workshop",
+      "description": "An additional worked lesson retrieved securely from Firestore after verified login and active Grade XI enrollment. Includes introductory uncertainty exercises.",
+      "href": "./course-lesson.html?id=g11-u01-uncertainty-workshop-01",
+      "public": false,
+      "external": false,
+      "action": "Open enrolled workshop ↗",
+      "access": "enrolled-protected",
+      "contentStatus": "requires-v16-firestore-setup",
+      "accessDescription": "Lesson text is stored in Firestore, not public GitHub files. V16 rules and lesson document must be installed before this link works."
     }
   ]
 }
