@@ -1,0 +1,1872 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-UNIT-03-STAGE-1",
+  "bankVersion": "v20-unit03-summative-practice-stage1-2026-11-14",
+  "title": "Grade XI Physics – Unit 3 Translatory Motion: Summative MCQ Practice",
+  "status": "practice-pilot",
+  "sourceDocument": "NBF Grade XI Physics Unit 3 (textbook pp. 33–52) and FBISE Physics HSSC-I 50% model paper / assessment framework",
+  "sourceSection": "28 straight MCQs, 12 original scenario MCQs in 3 four-question situations; 5 adapted from Unit 3 textbook exercise; 35 original SLO-based practice items",
+  "limitations": "Educational practice only. Provisional original questions, answers and explanations subject to final teacher/scientific review; not an official FBISE model paper, secure assessment or complete 80-item examination. Only summative theory SLOs P-11-B-04/05/06/12/13 included. Formative B-03 and B-11 intentionally excluded.",
+  "structure": {
+    "straight": 28,
+    "scenario": 12,
+    "scenarioSets": 3,
+    "scenarioQuestionsPerSet": 4,
+    "modeledAfter": "FBISE HSSC-I Section A (56 straight + 24 scenario in full 80-MCQ pattern), scaled to 40-question unit-only practice"
+  },
+  "questions": [
+    {
+      "id": "XI-U03-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "A ball is dropped from rest and falls for 3.0 s. Neglect air resistance and use g = 9.8 m/s². Its downward displacement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "29.4 m"
+        },
+        {
+          "id": "B",
+          "text": "14.7 m"
+        },
+        {
+          "id": "C",
+          "text": "44.1 m"
+        },
+        {
+          "id": "D",
+          "text": "88.2 m"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "s = ½gt² = ½(9.8)(3²) = 44.1 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 37,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "A vehicle starts with velocity 5 m/s and accelerates uniformly at 3 m/s² for 4 s. Its final velocity is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 m/s"
+        },
+        {
+          "id": "B",
+          "text": "12 m/s"
+        },
+        {
+          "id": "C",
+          "text": "20 m/s"
+        },
+        {
+          "id": "D",
+          "text": "14 m/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v = u + at = 5 + (3)(4) = 17 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "A body starts from rest and reaches 24 m/s in 6 s under constant acceleration. Its acceleration is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 m/s²"
+        },
+        {
+          "id": "B",
+          "text": "8 m/s²"
+        },
+        {
+          "id": "C",
+          "text": "2 m/s²"
+        },
+        {
+          "id": "D",
+          "text": "4 m/s²"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "a = (v − u)/t = (24 − 0)/6 = 4 m/s².",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "A car moving at 20 m/s slows uniformly to rest in 5 s. Its displacement during braking is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 m"
+        },
+        {
+          "id": "B",
+          "text": "50 m"
+        },
+        {
+          "id": "C",
+          "text": "100 m"
+        },
+        {
+          "id": "D",
+          "text": "40 m"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "s = ½(u + v)t = ½(20 + 0)(5) = 50 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 35,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "A ball is projected vertically upward with initial velocity 19.6 m/s. Taking upward as positive, its velocity after 1 s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "−9.8 m/s"
+        },
+        {
+          "id": "B",
+          "text": "+9.8 m/s"
+        },
+        {
+          "id": "C",
+          "text": "0 m/s"
+        },
+        {
+          "id": "D",
+          "text": "+19.6 m/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v = u − gt = 19.6 − 9.8(1) = +9.8 m/s, still upward.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 37,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "A particle has initial velocity −4 m/s and acceleration +2 m/s² along a straight line. Its velocity after 3 s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "−10 m/s"
+        },
+        {
+          "id": "B",
+          "text": "−2 m/s"
+        },
+        {
+          "id": "C",
+          "text": "+6 m/s"
+        },
+        {
+          "id": "D",
+          "text": "+2 m/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v = −4 + (2)(3) = +2 m/s; a positive sign indicates motion in the chosen positive direction.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 35,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-TEXT-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "In ideal projectile motion, the velocity and acceleration vectors are perpendicular at:",
+      "options": [
+        {
+          "id": "A",
+          "text": "The highest point"
+        },
+        {
+          "id": "B",
+          "text": "The launch point, always"
+        },
+        {
+          "id": "C",
+          "text": "The landing point, always"
+        },
+        {
+          "id": "D",
+          "text": "No point during the flight"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "At the highest point, vertical velocity is zero and velocity is horizontal; acceleration remains vertically downward.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 textbook exercise MCQs",
+        "textbookPage": 49,
+        "sourceType": "textbook-adapted",
+        "exerciseQuestionNumber": 1
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-TEXT-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "Which description best represents projectile motion after launch, in the absence of air resistance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An object moving entirely independently of gravity"
+        },
+        {
+          "id": "B",
+          "text": "Only an object projected exactly vertically upward"
+        },
+        {
+          "id": "C",
+          "text": "An object moving under gravity after being projected into the air"
+        },
+        {
+          "id": "D",
+          "text": "Only horizontal motion without any gravitational force"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "After launch, gravity acts on the projectile; the horizontal and vertical components of motion evolve independently.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 textbook exercise MCQs",
+        "textbookPage": 50,
+        "sourceType": "textbook-adapted",
+        "exerciseQuestionNumber": 4
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-TEXT-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "At which location is the magnitude of an ideal projectile's vertical velocity component the smallest?",
+      "options": [
+        {
+          "id": "A",
+          "text": "At launch"
+        },
+        {
+          "id": "B",
+          "text": "At landing at the launch height"
+        },
+        {
+          "id": "C",
+          "text": "At one-quarter of the flight time"
+        },
+        {
+          "id": "D",
+          "text": "At the highest point"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "At the top, vᵧ = 0, the minimum possible magnitude.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 textbook exercise MCQs",
+        "textbookPage": 50,
+        "sourceType": "textbook-adapted",
+        "exerciseQuestionNumber": 5
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-TEXT-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "After an ideal projectile has been released, the only force acting on it (neglecting air resistance) is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A continuously acting launching force"
+        },
+        {
+          "id": "B",
+          "text": "A forward contact force"
+        },
+        {
+          "id": "C",
+          "text": "Its weight due to gravity"
+        },
+        {
+          "id": "D",
+          "text": "A magnetic force due to its motion"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Once the launching contact ends, the ideal projectile experiences its gravitational force (weight) only.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 textbook exercise MCQs",
+        "textbookPage": 50,
+        "sourceType": "textbook-adapted",
+        "exerciseQuestionNumber": 8
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-TEXT-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "For a fixed launch speed onto level ground, and no air resistance, the maximum projectile range is obtained at:",
+      "options": [
+        {
+          "id": "A",
+          "text": "30°"
+        },
+        {
+          "id": "B",
+          "text": "45°"
+        },
+        {
+          "id": "C",
+          "text": "60°"
+        },
+        {
+          "id": "D",
+          "text": "90°"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "R = (u²/g)sin(2θ), maximized when sin(2θ)=1, so θ = 45°.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 textbook exercise MCQs",
+        "textbookPage": 50,
+        "sourceType": "textbook-adapted",
+        "exerciseQuestionNumber": 9
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "A projectile is launched at 20 m/s and 30° above level ground. With g = 9.8 m/s² and no air resistance, its flight time is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.04 s"
+        },
+        {
+          "id": "B",
+          "text": "1.02 s"
+        },
+        {
+          "id": "C",
+          "text": "3.54 s"
+        },
+        {
+          "id": "D",
+          "text": "4.08 s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "T = 2u sinθ/g = 2(20)(0.5)/9.8 ≈ 2.04 s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 42,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "An ideal projectile is launched at 20 m/s at 60° above horizontal. Its horizontal velocity at the highest point is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0 m/s"
+        },
+        {
+          "id": "B",
+          "text": "17.3 m/s"
+        },
+        {
+          "id": "C",
+          "text": "10 m/s"
+        },
+        {
+          "id": "D",
+          "text": "20 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Horizontal velocity remains constant: uₓ = u cos60° = 10 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 39,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "During forward flight through still air, the horizontal velocity component of a projectile experiencing air resistance generally:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remains strictly constant"
+        },
+        {
+          "id": "B",
+          "text": "Decreases"
+        },
+        {
+          "id": "C",
+          "text": "Increases continuously"
+        },
+        {
+          "id": "D",
+          "text": "Reverses direction at the highest point"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Air drag acts opposite the forward motion; its horizontal component reduces horizontal speed.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Qualitative Air Resistance",
+      "sloCodes": [
+        "P-11-B-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 42,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "While a projectile is ascending, the vertical component of air resistance normally acts:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Upward"
+        },
+        {
+          "id": "B",
+          "text": "Exactly horizontal"
+        },
+        {
+          "id": "C",
+          "text": "In the same direction as its velocity"
+        },
+        {
+          "id": "D",
+          "text": "Downward"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Drag opposes velocity; during ascent its vertical component acts downward, along with gravity.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Qualitative Air Resistance",
+      "sloCodes": [
+        "P-11-B-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 42,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "Compared with an otherwise identical ideal launch, air resistance generally makes the projectile's horizontal range:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Shorter"
+        },
+        {
+          "id": "B",
+          "text": "Longer in all cases"
+        },
+        {
+          "id": "C",
+          "text": "Exactly unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Independent of launch speed"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Air drag reduces the projectile's forward motion; for otherwise identical conditions, its range is generally reduced.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Qualitative Air Resistance",
+      "sloCodes": [
+        "P-11-B-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 42,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "Two ideal projectiles at complementary launch angles have equal range at fixed speed and equal heights. With air resistance this equality:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always remains exactly true"
+        },
+        {
+          "id": "B",
+          "text": "Is not generally guaranteed"
+        },
+        {
+          "id": "C",
+          "text": "Becomes true only at 90°"
+        },
+        {
+          "id": "D",
+          "text": "Requires gravity to become zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "R(θ)=R(90°−θ) follows from the ideal no-drag range formula; drag generally destroys the symmetry.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Qualitative Air Resistance",
+      "sloCodes": [
+        "P-11-B-06"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 42,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "In an ideal isolated elastic collision, which two total physical quantities are conserved?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Momentum and speed of each body"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic energy and the velocity of each body"
+        },
+        {
+          "id": "C",
+          "text": "Momentum and kinetic energy"
+        },
+        {
+          "id": "D",
+          "text": "Momentum and the direction of motion of each body"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Elastic collisions conserve total momentum and total kinetic energy of the isolated system.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "Two identical masses collide elastically head-on. The second is initially at rest. Their velocities after collision:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Are exchanged"
+        },
+        {
+          "id": "B",
+          "text": "Are both zero"
+        },
+        {
+          "id": "C",
+          "text": "Become equal to their mean"
+        },
+        {
+          "id": "D",
+          "text": "Both increase in magnitude"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For equal masses in a 1-D elastic collision, the moving body stops and the initially stationary target takes its velocity.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 48,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "A 5 kg body moving at 10 m/s strikes a 10 kg body moving at 5 m/s in the same direction in a one-dimensional elastic collision. The first body's final velocity is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8.33 m/s"
+        },
+        {
+          "id": "B",
+          "text": "6.67 m/s"
+        },
+        {
+          "id": "C",
+          "text": "−3.33 m/s"
+        },
+        {
+          "id": "D",
+          "text": "3.33 m/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂) = (−50 + 100)/15 ≈ 3.33 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 48,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "For the same one-dimensional elastic collision (5 kg at 10 m/s and 10 kg at 5 m/s), the second body's final velocity is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.33 m/s"
+        },
+        {
+          "id": "B",
+          "text": "6.67 m/s"
+        },
+        {
+          "id": "C",
+          "text": "8.33 m/s"
+        },
+        {
+          "id": "D",
+          "text": "5.00 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v₂ = [2m₁u₁+(m₂−m₁)u₂]/(m₁+m₂) = (100+25)/15 ≈ 8.33 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 48,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "In an ideal head-on elastic collision, if the relative speed of approach is 6 m/s, the relative speed of separation is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 m/s"
+        },
+        {
+          "id": "B",
+          "text": "12 m/s"
+        },
+        {
+          "id": "C",
+          "text": "3 m/s"
+        },
+        {
+          "id": "D",
+          "text": "0 m/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Relative speed of separation equals relative speed of approach for an ideal elastic collision.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 47,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "If total kinetic energy before an isolated elastic collision is 80 J, the total kinetic energy afterward is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "40 J"
+        },
+        {
+          "id": "B",
+          "text": "80 J"
+        },
+        {
+          "id": "C",
+          "text": "160 J"
+        },
+        {
+          "id": "D",
+          "text": "0 J"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Total kinetic energy is conserved in an isolated elastic collision, so it remains 80 J.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "Which statement is correct for an isolated system during an inelastic collision?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Both momentum and kinetic energy must always increase"
+        },
+        {
+          "id": "B",
+          "text": "Total momentum is destroyed when deformation occurs"
+        },
+        {
+          "id": "C",
+          "text": "Each object's momentum remains individually unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Total momentum is conserved even though total kinetic energy may decrease"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The isolated system conserves total momentum, but some kinetic energy can transform into heat, sound or deformation.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Momentum and Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-13"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "In an inelastic collision, part of the initial kinetic energy may be transferred into:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Additional total momentum"
+        },
+        {
+          "id": "B",
+          "text": "Negative mass"
+        },
+        {
+          "id": "C",
+          "text": "An increase in the system's external impulse"
+        },
+        {
+          "id": "D",
+          "text": "Sound, thermal energy and deformation"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Kinetic energy can change form in an inelastic collision; this does not violate overall energy conservation.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Momentum and Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-13"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "Two objects stick together after a head-on collision. Their final velocities must:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Be equal in magnitude but opposite in direction"
+        },
+        {
+          "id": "B",
+          "text": "Be equal"
+        },
+        {
+          "id": "C",
+          "text": "Always be zero"
+        },
+        {
+          "id": "D",
+          "text": "Equal their respective initial velocities"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Sticking is the perfectly inelastic special case: both objects move together with one common final velocity.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Momentum and Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-13"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "A 4 kg body moving at 3 m/s collides with a stationary 2 kg body and they stick together. Their final shared velocity is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 m/s"
+        },
+        {
+          "id": "B",
+          "text": "3 m/s"
+        },
+        {
+          "id": "C",
+          "text": "2 m/s"
+        },
+        {
+          "id": "D",
+          "text": "6 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Momentum before = (4)(3)+(2)(0)=12 kg·m/s; shared v = 12/(4+2)=2 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Momentum and Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-13"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "Which conclusion best explains a decrease in total kinetic energy after an isolated collision?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Some kinetic energy has changed form, although total momentum is conserved"
+        },
+        {
+          "id": "B",
+          "text": "Total momentum must decrease by the same percentage"
+        },
+        {
+          "id": "C",
+          "text": "The law of conservation of energy has been violated"
+        },
+        {
+          "id": "D",
+          "text": "The mass of both objects must become zero"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Some mechanical kinetic energy converts into other forms; total momentum remains conserved in an isolated interaction.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Momentum and Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-13"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 46,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U03-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "Its velocity at the end of 6 s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 m/s"
+        },
+        {
+          "id": "B",
+          "text": "16 m/s"
+        },
+        {
+          "id": "C",
+          "text": "10 m/s"
+        },
+        {
+          "id": "D",
+          "text": "24 m/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v = 4 + 2(6)=16 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S01",
+      "scenarioIndex": 1,
+      "scenarioTitle": "Uniformly accelerated bus",
+      "stimulusText": "A bus moves along a straight road with initial velocity 4 m/s and constant acceleration 2 m/s² for 6 s. Take the forward direction as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "Its displacement in the 6 s interval is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "48 m"
+        },
+        {
+          "id": "B",
+          "text": "36 m"
+        },
+        {
+          "id": "C",
+          "text": "72 m"
+        },
+        {
+          "id": "D",
+          "text": "60 m"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "s = (4)(6)+½(2)(6²)=24+36=60 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S01",
+      "scenarioIndex": 2,
+      "scenarioTitle": "Uniformly accelerated bus",
+      "stimulusText": "A bus moves along a straight road with initial velocity 4 m/s and constant acceleration 2 m/s² for 6 s. Take the forward direction as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "Its average velocity over the 6 s interval is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 m/s"
+        },
+        {
+          "id": "B",
+          "text": "12 m/s"
+        },
+        {
+          "id": "C",
+          "text": "10 m/s"
+        },
+        {
+          "id": "D",
+          "text": "16 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For constant acceleration, v̅=(u+v)/2=(4+16)/2=10 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S01",
+      "scenarioIndex": 3,
+      "scenarioTitle": "Uniformly accelerated bus",
+      "stimulusText": "A bus moves along a straight road with initial velocity 4 m/s and constant acceleration 2 m/s² for 6 s. Take the forward direction as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "The displacement during the first 2 s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 m"
+        },
+        {
+          "id": "B",
+          "text": "8 m"
+        },
+        {
+          "id": "C",
+          "text": "16 m"
+        },
+        {
+          "id": "D",
+          "text": "20 m"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "s = (4)(2)+½(2)(2²)=8+4=12 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Uniformly Accelerated Motion",
+      "sloCodes": [
+        "P-11-B-04"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 34,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S01",
+      "scenarioIndex": 4,
+      "scenarioTitle": "Uniformly accelerated bus",
+      "stimulusText": "A bus moves along a straight road with initial velocity 4 m/s and constant acceleration 2 m/s² for 6 s. Take the forward direction as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "Its constant horizontal velocity is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 m/s"
+        },
+        {
+          "id": "B",
+          "text": "20 m/s"
+        },
+        {
+          "id": "C",
+          "text": "0 m/s"
+        },
+        {
+          "id": "D",
+          "text": "17.3 m/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "uₓ = 20 cos30° ≈ 20(0.866)=17.32 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 41,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S02",
+      "scenarioIndex": 1,
+      "scenarioTitle": "Projectile from level ground",
+      "stimulusText": "A projectile is launched at 20 m/s at 30° above the horizontal and lands at its launch height. Assume no air resistance and g = 10 m/s². Use sin 30° = 0.5 and cos 30° ≈ 0.866."
+    },
+    {
+      "id": "XI-U03-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "Its total flight time is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 s"
+        },
+        {
+          "id": "B",
+          "text": "1 s"
+        },
+        {
+          "id": "C",
+          "text": "4 s"
+        },
+        {
+          "id": "D",
+          "text": "3.46 s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "T=2u sinθ/g = 2(20)(0.5)/10=2 s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 41,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S02",
+      "scenarioIndex": 2,
+      "scenarioTitle": "Projectile from level ground",
+      "stimulusText": "A projectile is launched at 20 m/s at 30° above the horizontal and lands at its launch height. Assume no air resistance and g = 10 m/s². Use sin 30° = 0.5 and cos 30° ≈ 0.866."
+    },
+    {
+      "id": "XI-U03-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "Its maximum height above launch is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 m"
+        },
+        {
+          "id": "B",
+          "text": "5 m"
+        },
+        {
+          "id": "C",
+          "text": "20 m"
+        },
+        {
+          "id": "D",
+          "text": "2.5 m"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "uᵧ=20 sin30°=10 m/s; H=uᵧ²/(2g)=100/20=5 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 41,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S02",
+      "scenarioIndex": 3,
+      "scenarioTitle": "Projectile from level ground",
+      "stimulusText": "A projectile is launched at 20 m/s at 30° above the horizontal and lands at its launch height. Assume no air resistance and g = 10 m/s². Use sin 30° = 0.5 and cos 30° ≈ 0.866."
+    },
+    {
+      "id": "XI-U03-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "Its horizontal range is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "17.3 m"
+        },
+        {
+          "id": "B",
+          "text": "20.0 m"
+        },
+        {
+          "id": "C",
+          "text": "34.6 m"
+        },
+        {
+          "id": "D",
+          "text": "40.0 m"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "R=uₓT≈17.32(2)=34.64 m.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Ideal Projectile Motion",
+      "sloCodes": [
+        "P-11-B-05"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 41,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S02",
+      "scenarioIndex": 4,
+      "scenarioTitle": "Projectile from level ground",
+      "stimulusText": "A projectile is launched at 20 m/s at 30° above the horizontal and lands at its launch height. Assume no air resistance and g = 10 m/s². Use sin 30° = 0.5 and cos 30° ≈ 0.866."
+    },
+    {
+      "id": "XI-U03-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "The final velocity of the 2 kg body is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "+1.2 m/s"
+        },
+        {
+          "id": "B",
+          "text": "0 m/s"
+        },
+        {
+          "id": "C",
+          "text": "−1.2 m/s"
+        },
+        {
+          "id": "D",
+          "text": "+6 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v₁=[(2−3)(6)+2(3)(0)]/(2+3)=−6/5=−1.2 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 47,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S03",
+      "scenarioIndex": 1,
+      "scenarioTitle": "Ideal elastic collision",
+      "stimulusText": "In an isolated one-dimensional head-on elastic collision, a 2 kg body moving right at 6 m/s collides with a stationary 3 kg body. Take rightward as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "The final velocity of the 3 kg body is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "+2.4 m/s"
+        },
+        {
+          "id": "B",
+          "text": "+4.8 m/s"
+        },
+        {
+          "id": "C",
+          "text": "+6 m/s"
+        },
+        {
+          "id": "D",
+          "text": "−4.8 m/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v₂=[2(2)(6)+(3−2)(0)]/(2+3)=24/5=4.8 m/s.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 47,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S03",
+      "scenarioIndex": 2,
+      "scenarioTitle": "Ideal elastic collision",
+      "stimulusText": "In an isolated one-dimensional head-on elastic collision, a 2 kg body moving right at 6 m/s collides with a stationary 3 kg body. Take rightward as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "The system's total momentum after the collision is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "+12 kg·m/s"
+        },
+        {
+          "id": "B",
+          "text": "+6 kg·m/s"
+        },
+        {
+          "id": "C",
+          "text": "0 kg·m/s"
+        },
+        {
+          "id": "D",
+          "text": "−12 kg·m/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Before p=(2)(6)+(3)(0)=+12 kg·m/s, so after p remains +12.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 47,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S03",
+      "scenarioIndex": 3,
+      "scenarioTitle": "Ideal elastic collision",
+      "stimulusText": "In an isolated one-dimensional head-on elastic collision, a 2 kg body moving right at 6 m/s collides with a stationary 3 kg body. Take rightward as positive."
+    },
+    {
+      "id": "XI-U03-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "The system's total kinetic energy after the collision is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 J"
+        },
+        {
+          "id": "B",
+          "text": "72 J"
+        },
+        {
+          "id": "C",
+          "text": "0 J"
+        },
+        {
+          "id": "D",
+          "text": "36 J"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Elastic collision conserves total kinetic energy; before K=½(2)(6²)=36 J.",
+      "grade": 11,
+      "unit": 3,
+      "topic": "Elastic Collisions",
+      "sloCodes": [
+        "P-11-B-12"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "NCP 2022–23, FBISE HSSC-I Grade XI Assessment Framework; source-grounded but provisional educational practice",
+      "cognitiveLevel": "Application",
+      "difficulty": "Challenge",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "Unit 3 topic-based original self-practice",
+        "textbookPage": 47,
+        "sourceType": "original-scenario-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false,
+      "scenarioSetId": "U03-S03",
+      "scenarioIndex": 4,
+      "scenarioTitle": "Ideal elastic collision",
+      "stimulusText": "In an isolated one-dimensional head-on elastic collision, a 2 kg body moving right at 6 m/s collides with a stationary 3 kg body. Take rightward as positive."
+    }
+  ]
+}
