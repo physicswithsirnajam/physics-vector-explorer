@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "version": "v13-2026-11-14",
+  "title": "Physics with Sir Najam — Original Interactive Simulations",
+  "disclaimer": "All links are public GitHub Pages demonstrations, not authenticated lessons. Topic tags are browsing categories, not verified NBF/FBISE unit or SLO mapping. Explore classroom applicability with teacher guidance.",
+  "simulations": [
+    {
+      "file": "index.html",
+      "title": "Vector Explorer",
+      "topic": "Vectors",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "vector-addition.html",
+      "title": "Vector Addition Laboratory",
+      "topic": "Vectors",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "motion-graphs.html",
+      "title": "Motion Graph Explorer",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "projectile-motion.html",
+      "title": "Projectile Motion",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "free-fall.html",
+      "title": "Free Fall",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "circular-motion.html",
+      "title": "Circular Motion",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "torque-angular-momentum.html",
+      "title": "Torque and Angular Momentum",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "weightlessness-artificial-gravity.html",
+      "title": "Weightlessness and Artificial Gravity",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "collisions-lab.html",
+      "title": "Collisions Laboratory",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "work-energy.html",
+      "title": "Work and Energy",
+      "topic": "Mechanics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "archimedes-flotation.html",
+      "title": "Archimedes and Flotation",
+      "topic": "Fluids",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "bernoulli-venturi.html",
+      "title": "Bernoulli and Venturi",
+      "topic": "Fluids",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "continuity-fluid-flow.html",
+      "title": "Continuity and Fluid Flow",
+      "topic": "Fluids",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "centrifuge-applications.html",
+      "title": "Centrifuge Applications",
+      "topic": "Fluids",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "viscosity-terminal-velocity.html",
+      "title": "Viscosity and Terminal Velocity",
+      "topic": "Fluids",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "first-law-pv-work.html",
+      "title": "First Law and P-V Work",
+      "topic": "Thermal physics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "ideal-gas-kinetic-theory.html",
+      "title": "Ideal Gas and Kinetic Theory",
+      "topic": "Thermal physics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "heat-engine-carnot.html",
+      "title": "Heat Engines and Carnot Cycle",
+      "topic": "Thermal physics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "second-law-entropy-refrigerator.html",
+      "title": "Second Law, Entropy and Refrigeration",
+      "topic": "Thermal physics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "stress-strain-young-modulus.html",
+      "title": "Stress, Strain and Young's Modulus",
+      "topic": "Materials",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "crystal-structure-explorer.html",
+      "title": "Crystal Structure Explorer",
+      "topic": "Materials",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "superfluidity-explorer.html",
+      "title": "Superfluidity Explorer",
+      "topic": "Materials",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "stationary-waves-harmonics.html",
+      "title": "Stationary Waves and Harmonics",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "diffraction-ripple-tank.html",
+      "title": "Diffraction Ripple Tank",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "doppler-effect-laboratory.html",
+      "title": "Doppler Effect Laboratory",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "wave-superposition-interference.html",
+      "title": "Wave Superposition and Interference",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "wave-intensity-energy.html",
+      "title": "Wave Intensity and Energy",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "polarization-malus-law.html",
+      "title": "Polarization and Malus' Law",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "electric-field-particle-lab.html",
+      "title": "Electric Field Particle Laboratory",
+      "topic": "Electricity",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "coulomb-vector-lab.html",
+      "title": "Coulomb Force Vector Laboratory",
+      "topic": "Electricity",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    },
+    {
+      "file": "gravitational-waves-interferometer.html",
+      "title": "Gravitational Waves and Interferometer",
+      "topic": "Waves and optics",
+      "access": "public",
+      "reviewStatus": "interactive-demonstration-not-curriculum-certified"
+    }
+  ]
+}
