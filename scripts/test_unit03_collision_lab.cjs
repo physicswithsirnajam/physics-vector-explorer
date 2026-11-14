@@ -81,8 +81,10 @@ assert.ok(guide.includes("41.67 J"));
 assert.ok(guide.includes("the textbook's original elastic Example 3.7"));
 for(const pair of [["P-11-B-06","Summative"],["P-11-B-11","Formative"],
  ["P-11-B-12","Summative"],["P-11-B-13","Summative"]]){
- const i=guide.indexOf(pair[0]);
- assert.ok(i>=0 && guide.slice(i,i+470).includes(pair[1]),"Wrong framework label for "+pair[0]);
+ const pattern="<tr><td><strong>"+pair[0]+"</strong></td>";
+ const i=guide.indexOf(pattern);
+ const end=i<0?-1:guide.indexOf("</tr>",i);
+ assert.ok(i>=0 && end>i && guide.slice(i,end).includes(pair[1]),"Wrong framework label for "+pair[0]);
 }
 for(const url of ["./unit-03-collision-study.html","./unit-03-collision-lab.html",
  "./unit-03-study-guide.html","./unit-03-motion-lab.html"]){
