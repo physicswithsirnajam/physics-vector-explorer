@@ -6,6 +6,7 @@ from pathlib import Path
 from collections import Counter
 import hashlib
 import json
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,6 +71,40 @@ def main():
             if not q.get("stimulusHtml") or not q.get("stimulusText") or q.get("groupSize") != 4:
                 fail("Missing stimulus passage/size for " + qid)
             groups.setdefault(sid, []).append(q.get("groupPosition"))
+    # Catch obvious references to missing preceding-question context in randomized tests.
+    # This is a conservative heuristic, not a substitute for academic review.
+    dependent_stem = re.compile(
+        r"(?:\\bthe (?:x|y)-component of (?:the same vector|that force)\\b"
+        r"|^its (?:x|y)-component\\b"
+        r"|\\bif the same vectors\\b"
+        r"|\\b(?:according to|shown in|from) the (?:above|previous) (?:diagram|graph|table|figure)\\b)",
+        re.IGNORECASE,
+    )
+    source_index = {
+        (q.get("source", {}).get("section"), q.get("sourceQuestionNumber")): q
+        for q in questions
+    }
+    contextual_count = 0
+    for q in questions:
+        qid = q["id"]
+        companion = q.get("contextSourceQuestionNumber")
+        if companion is not None:
+            contextual_count += 1
+            if not isinstance(companion, int) or isinstance(companion, bool) or companion <= 0:
+                fail("Invalid companion source question number for " + qid)
+            if (q.get("source", {}).get("section"), companion) not in source_index:
+                fail("Companion source question not found for " + qid)
+            if q.get("stimulusSetId"):
+                fail("Standalone companion context must not overwrite a full stimulus set: " + qid)
+            if not (isinstance(q.get("stimulusText"), str) and q["stimulusText"].strip()
+                    and isinstance(q.get("stimulusHtml"), str) and q["stimulusHtml"].strip()):
+                fail("Missing standalone companion stimulus for " + qid)
+        if dependent_stem.search(q["stem"]) and not (
+            isinstance(q.get("stimulusText"), str) and q["stimulusText"].strip()
+            and isinstance(q.get("stimulusHtml"), str) and q["stimulusHtml"].strip()
+        ):
+            fail("Possible dependent MCQ without its scenario: " + qid)
+    print("PASS — Source-dependent MCQ context present; %d companion references checked." % contextual_count)
     if source_counts != {"textbook": 6, "additional": 200}:
         fail("Unexpected source split: " + repr(source_counts))
     if len(groups) != 15 or any(sorted(g) != [1, 2, 3, 4] for g in groups.values()):
