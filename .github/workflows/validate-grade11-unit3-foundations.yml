@@ -1,0 +1,40 @@
+name: Validate Grade XI Unit 3 Motion Foundations
+on:
+  pull_request:
+    paths:
+      - "portal/unit-03.html"
+      - "portal/unit-03-study-guide.html"
+      - "portal/unit-03-motion-lab.html"
+      - "portal/unit-03-motion-engine.js"
+      - "portal/unit-03-motion-ui.js"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_motion_foundations.cjs"
+      - ".github/workflows/validate-grade11-unit3-foundations.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-03.html"
+      - "portal/unit-03-study-guide.html"
+      - "portal/unit-03-motion-lab.html"
+      - "portal/unit-03-motion-engine.js"
+      - "portal/unit-03-motion-ui.js"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_motion_foundations.cjs"
+      - ".github/workflows/validate-grade11-unit3-foundations.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit3-motion-foundations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check JavaScript syntax
+        run: |
+          node --check portal/unit-03-motion-engine.js
+          node --check portal/unit-03-motion-ui.js
+          node --check scripts/test_unit03_motion_foundations.cjs
+      - name: Test motion equations, projectile numericals, SLO status and privacy
+        run: node scripts/test_unit03_motion_foundations.cjs

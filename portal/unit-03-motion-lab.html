@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10233d">
+<meta name="description" content="Interactive Grade XI Unit 3 Translatory Motion lab: simulate constant acceleration, velocity-time and displacement-time graphs, and ideal projectile motion using NBF Physics XI.">
+<title>Unit 3 Translatory Motion Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e4bf70;--ink:#192b44;--muted:#50657d;--line:#d7e2ee;--soft:#f4f7fb;--teal:#117b94;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:#145c85}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d09b37;outline-offset:3px}
+header{background:var(--navy);color:white}
+.bar{max-width:1160px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:800}.brand img{width:50px;height:50px;object-fit:contain}
+header nav{display:flex;flex-wrap:wrap;gap:15px}header nav a{color:var(--gold);font-size:14px}
+main{max-width:1160px;margin:auto;padding:28px 18px 80px}.eyebrow{text-transform:uppercase;letter-spacing:.1em;color:#805c1e;font-size:12px;font-weight:800}
+h1{font-size:clamp(29px,4.5vw,42px);line-height:1.14;margin:7px 0 13px}h2{font-size:23px;line-height:1.25;margin:0 0 11px}h3{font-size:17px;margin:0 0 10px}
+.lead{max-width:880px;color:var(--muted)}.notice{margin:20px 0;padding:14px 16px;border-radius:10px;border-left:4px solid #d2a455;background:#fff9ec;font-size:14px}
+.card{padding:22px;border-radius:16px;background:white;border:1px solid var(--line);margin-top:20px;box-shadow:0 6px 20px #10233d0a}
+.cols{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr);gap:20px;align-items:start}
+label{display:block;font-weight:750;font-size:14px;margin:12px 0 4px}
+input[type=range]{width:100%;accent-color:var(--teal);cursor:pointer}
+fieldset{border:0;padding:0;margin:0}.slo{display:inline-block;font-size:12px;font-weight:800;color:#14627c;background:#e5f5f9;border-radius:20px;padding:4px 9px;margin-bottom:9px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}.presets button,button{padding:9px 12px;border:1px solid #b7c8d9;background:white;border-radius:9px;font:inherit;font-weight:750;color:var(--navy);cursor:pointer}.presets button{font-size:13px}
+button:hover{background:#eef7fb}.primary{background:var(--navy);color:white;border-color:var(--navy)}.primary:hover{background:#274464}
+.readouts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+.metric{background:#eef5fa;padding:10px 12px;border:1px solid #dfebf4;border-radius:10px}.metric strong{display:block;font-size:21px;font-variant-numeric:tabular-nums;line-height:1.3}.metric span{display:block;color:#425a72;font-size:12px}
+.graphs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.plot{width:100%;height:auto;background:#fbfdff;border:1px solid var(--line);border-radius:12px}
+.graph-caption{font-size:12px;color:var(--muted);margin:5px 0 0}
+.rule{padding:12px 14px;border-left:3px solid var(--teal);background:#f2f8fc;border-radius:6px;margin-top:15px;font-size:14px}
+.formula{display:block;font-weight:780;padding:8px 10px;margin:7px 0;background:#f3f7fc;border-radius:6px;overflow-wrap:anywhere}
+.quiz{background:#fff9ec;border:1px solid #eee0b8;padding:13px 15px;border-radius:11px;margin-top:14px}
+.quiz p{margin:7px 0}.small{font-size:13px;color:var(--muted)}.text-links{display:flex;gap:17px;flex-wrap:wrap;margin:20px 0 0}
+.time-control{margin-top:15px}.time-control output,.slider-output{font-weight:800;color:#125f85}
+.status{font-weight:730;font-size:13px;padding:9px;border-radius:7px;background:#edf3fa}
+footer{background:var(--navy);color:#cedae8;font-size:13px;padding:20px;text-align:center}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.graphs{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.graphs,.readouts{grid-template-columns:1fr}.card{padding:16px}.bar{align-items:flex-start}}
+@media print{header nav,.presets,button,.text-links,.notice,.time-control{display:none!important}.card{box-shadow:none;break-inside:avoid}main{max-width:100%;padding:0}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-03-motion-engine.js" defer></script>
+<script src="./unit-03-motion-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a><nav aria-label="Site navigation"><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-03-study-guide.html">Unit 3 Study Guide</a><a href="./unit-02.html">Unit 2</a></nav></div></header>
+<main>
+<div class="eyebrow">Grade XI · Unit 03 · Translatory Motion</div>
+<h1>Interactive Motion Laboratory</h1>
+<p class="lead">Change the conditions of motion and observe how velocity, displacement and projectile trajectories respond. Each model is grounded in the equations and illustrations on NBF Physics XI Unit 3 textbook pages 33–43.</p>
+<div class="notice"><strong>Learning versus examination:</strong> deriving equations of motion (P-11-B-03) is <strong>formative</strong>, while numerical application (P-11-B-04) and projectile analysis (P-11-B-05) are <strong>summative</strong> under the supplied FBISE Grade XI Assessment Framework. This is an original public <em>self-learning simulation</em>, not an official examination or verified student grade. It does not require sign-in or save activity to your account.</div>
+
+<section id="straight-motion" class="card" aria-labelledby="motion-heading">
+<span class="slo">P-11-B-03 · Formative explanation &nbsp;|&nbsp; P-11-B-04 · Summative application</span>
+<h2 id="motion-heading">1. Motion along a straight line</h2>
+<p class="small">Assume constant acceleration along a chosen positive axis. The velocity–time graph’s <strong>slope</strong> is acceleration, while its signed area gives <strong>displacement</strong>, not necessarily distance travelled.</p>
+<div class="cols">
+<div>
+<fieldset>
+<legend class="small">Experiment controls</legend>
+<label for="uRange">Initial velocity u: <output id="uLabel" for="uRange">10 m/s</output></label>
+<input id="uRange" type="range" min="-20" max="20" step="1" value="10">
+<label for="aRange">Acceleration a: <output id="aLabel" for="aRange">2 m/s²</output></label>
+<input id="aRange" type="range" min="-10" max="10" step="1" value="2">
+<label for="tRange">Observation duration: <output id="tLabel" for="tRange">5 s</output></label>
+<input id="tRange" type="range" min="1" max="15" step="1" value="5">
+</fieldset>
+<div class="presets" role="group" aria-label="Select a worked motion example">
+<button type="button" data-motion="textbook-3.1">Textbook 3.1</button>
+<button type="button" data-motion="textbook-3.2">Textbook 3.2</button>
+<button type="button" data-motion="deceleration">Slowing down</button>
+<button type="button" data-motion="reversal">Direction reversal</button>
+</div>
+<div class="time-control">
+<label for="motionTime">Inspect motion at time: <output for="motionTime" id="motionTimeLabel">5 s</output></label>
+<input id="motionTime" type="range" min="0" max="5" value="5" step=".01">
+</div>
+<div class="readouts" aria-live="polite">
+<div class="metric"><span>Velocity v(t)</span><strong id="motionV">—</strong></div>
+<div class="metric"><span>Signed displacement s(t)</span><strong id="motionS">—</strong></div>
+<div class="metric"><span>Total distance travelled</span><strong id="motionD">—</strong></div>
+<div class="metric"><span>Constant acceleration</span><strong id="motionA">—</strong></div>
+</div>
+<p id="motionInsight" class="status" aria-live="polite">Change a control to explore motion.</p>
+</div>
+<div>
+<div class="graphs">
+<div><svg id="velocityGraph" class="plot" viewBox="0 0 370 240" role="img" aria-label="Velocity time graph"></svg><p class="graph-caption">Velocity–time: gradient = a; signed area = s</p></div>
+<div><svg id="positionGraph" class="plot" viewBox="0 0 370 240" role="img" aria-label="Displacement time graph"></svg><p class="graph-caption">Displacement–time: gradient = v</p></div>
+</div>
+<div class="rule"><strong>Textbook equations (uniform a):</strong>
+<span class="formula">v = u + at</span>
+<span class="formula">s = ut + ½at²</span>
+<span class="formula">v² = u² + 2as</span>
+<p class="small">These hold for signed straight-line motion under constant acceleration, even if the object reverses direction. Do not confuse a signed displacement with total distance.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projectile" class="card" aria-labelledby="projectile-heading">
+<span class="slo">P-11-B-05 · Summative application</span>
+<h2 id="projectile-heading">2. Projectile motion with no air resistance</h2>
+<p class="small">Launch and land at the <strong>same height</strong>, with constant downward g = 9.8 m/s². The horizontal velocity remains constant, while the vertical velocity changes with time. Air resistance and cliff launches are outside this first simulator.</p>
+<div class="cols">
+<div>
+<fieldset>
+<legend class="small">Launch controls</legend>
+<label for="speedRange">Initial speed: <output id="speedLabel" for="speedRange">20 m/s</output></label>
+<input id="speedRange" type="range" min="5" max="200" step="1" value="20">
+<label for="angleRange">Launch angle: <output id="angleLabel" for="angleRange">45°</output></label>
+<input id="angleRange" type="range" min="5" max="85" step="1" value="45">
+</fieldset>
+<div class="presets" role="group" aria-label="Select a projectile example">
+<button type="button" data-projectile="range-45">45° launch</button>
+<button type="button" data-projectile="complement-30">30° launch</button>
+<button type="button" data-projectile="complement-60">60° launch</button>
+<button type="button" data-projectile="textbook-3.5">Textbook 3.5</button>
+</div>
+<div class="time-control"><label for="projectileTime">Scrub flight time: <output id="projectileTimeLabel" for="projectileTime">0 s</output></label>
+<input id="projectileTime" type="range" min="0" max="2.89" step=".01" value="0">
+<div class="presets"><button type="button" id="projectilePlay" class="primary">Play trajectory</button><button type="button" id="projectileReset">Restart flight</button></div></div>
+<div class="readouts" aria-live="polite">
+<div class="metric"><span>Time of flight T</span><strong id="projectileT">—</strong></div>
+<div class="metric"><span>Maximum height H</span><strong id="projectileH">—</strong></div>
+<div class="metric"><span>Horizontal range R</span><strong id="projectileR">—</strong></div>
+<div class="metric"><span>Position at selected time</span><strong id="projectileXY">—</strong></div>
+<div class="metric"><span>Horizontal velocity vₓ</span><strong id="projectileVX">—</strong></div>
+<div class="metric"><span>Vertical velocity vᵧ</span><strong id="projectileVY">—</strong></div>
+</div>
+<p id="projectileInsight" class="status" aria-live="polite">Use the presets to compare the range at 30° and 60°.</p>
+</div>
+<div>
+<svg id="projectilePlot" class="plot" viewBox="0 0 520 345" role="img" aria-label="Parabolic projectile path with current position and velocity components"></svg>
+<p class="graph-caption">The graph rescales to show the full trajectory. Distance units remain metres; drawn x/y scales may differ to make tall or shallow trajectories visible.</p>
+<div class="rule"><strong>Textbook projectile relationships:</strong>
+<span class="formula">uₓ = u cos θ; uᵧ = u sin θ</span>
+<span class="formula">x = (u cos θ)t; y = (u sin θ)t − ½gt²</span>
+<span class="formula">vₓ = u cos θ; vᵧ = u sin θ − gt</span>
+<span class="formula">T = 2u sin θ/g; H = u²sin²θ/(2g)</span>
+<span class="formula">R = u²sin(2θ)/g</span>
+<p class="small">For equal launch/landing heights without air drag, complementary launch angles give the same range, and 45° maximizes range at fixed speed.</p></div>
+</div>
+</div>
+</section>
+<section class="card" aria-labelledby="future">
+<h2 id="future">3. What we will add next</h2>
+<p>The Unit 3 chapter also covers horizontal launches, qualitative effects of air resistance, conservation of momentum, collisions and applications. This first lab intentionally models the assumptions shown above; it does not claim that the whole chapter or all exam SLOs are already published.</p>
+<div class="text-links"><a href="./unit-03-study-guide.html">Source-based study guide</a><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-02.html">Return to Unit 2</a></div>
+</section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Original educational simulation</footer>
+</body>
+</html>
