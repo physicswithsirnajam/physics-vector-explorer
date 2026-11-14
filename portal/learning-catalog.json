@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v13-grade-xi-content-and-simulation-index-2026-11-14",
+  "catalogVersion": "pilot-v14-original-unit-01-study-guide-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
   "grades": [
     {
@@ -17,6 +17,7 @@
           "assessmentStatus": "provisional-self-practice",
           "resourceIds": [
             "unit1-desk",
+            "unit1-study-guide",
             "study",
             "protected-lesson",
             "explore",
@@ -274,6 +275,19 @@
       "access": "public-link",
       "contentStatus": "public-interactive-demonstrations",
       "accessDescription": "All simulation HTML files are publicly hosted on GitHub Pages; access does not require login."
+    },
+    {
+      "id": "unit1-study-guide",
+      "category": "STUDY",
+      "title": "Unit 1 — Original Study Guide",
+      "description": "Read original step-by-step notes on estimates, SI units, dimensions, homogeneity, accuracy, precision and measurement uncertainty. Includes worked examples, ten self-check questions and a printable version.",
+      "href": "./unit-01-study-guide.html",
+      "public": true,
+      "external": false,
+      "action": "Read and print study guide ↗",
+      "access": "public-link",
+      "contentStatus": "original-study-resource",
+      "accessDescription": "Public original study material grounded in supplied Grade XI Unit 1 and official FBISE framework; separate from provisional 275-question bank."
     }
   ]
 }
