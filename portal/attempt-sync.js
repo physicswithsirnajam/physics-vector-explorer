@@ -35,13 +35,14 @@ button.addEventListener('click',async()=>{
  try{
   // Explicit allowlist ensures no UI or privileged profile attributes are sent.
   const payload={
-   schemaVersion:1,kind:'self-practice',grade:11,unit:1,
+   schemaVersion:1,kind:'self-practice',grade:11,unit:record.unit,
    bankVersion:String(record.bankVersion||'unknown').slice(0,120),
    createdAt:serverTimestamp(),
    questionCount:record.questionCount,correctCount:record.correctCount,skippedCount:record.skippedCount,
    arrangement:record.arrangement,selection:record.selection,scope:record.scope,
    questionResults:record.questionResults
   };
+  if(![1,2].includes(payload.unit)||record.grade!==11)throw Error('Unexpected practice unit. This result was not saved.');
   if(payload.questionResults.length!==payload.questionCount)throw Error('Question record count mismatch');
   // Rules check the authenticated UID in the document path.
   await addDoc(collection(db,'users',user.uid,'attempts'),payload);
