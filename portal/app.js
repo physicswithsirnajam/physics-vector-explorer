@@ -157,7 +157,7 @@ function renderProgress(records){
  if(!records.length)attemptList.textContent='No saved attempts yet. Complete a test, then select Save to My Progress.';
  for(const r of records.slice(0,50)){
   const row=document.createElement('div');row.className='attempt-row';
-  const left=document.createElement('div');const title=document.createElement('strong');title.textContent=`Grade XI · Unit 1 · ${r.questionCount||0} MCQs`;
+  const left=document.createElement('div');const title=document.createElement('strong');const reportUnit=[1,2].includes(Number(r.unit))?Number(r.unit):1;title.textContent=`Grade XI · Unit ${reportUnit} · ${r.questionCount||0} MCQs`;
   const meta=document.createElement('small');meta.textContent=`${progressDate(r.createdAt)} · ${r.arrangement||'random'} · ${r.selection||'balanced'}`;
   left.append(title,meta);const score=document.createElement('span');score.className='attempt-score';score.textContent=`${r.correctCount||0}/${r.questionCount||0}`;
   row.append(left,score);attemptList.append(row);
