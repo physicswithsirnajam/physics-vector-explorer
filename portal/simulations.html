@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore 31 original, publicly available interactive Physics simulations by Physics with Sir Najam.">
+<title>Interactive Physics Simulations | Physics with Sir Najam</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1528;--card:#152743;--line:#344d70;--gold:#e9c879;--text:#f6f8ff;--muted:#c4d3e9}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#081425,#142644 65%,#0c1a30);color:var(--text);line-height:1.5}
+a{color:var(--gold)}a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{border-bottom:1px solid var(--line);background:#0a1729;padding:12px max(18px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700}.brand img{width:52px;height:52px;object-fit:contain}nav{display:flex;gap:16px;flex-wrap:wrap}
+main{max-width:1120px;padding:26px 18px 72px;margin:auto}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;font-weight:750}
+h1{font-size:clamp(2rem,4vw,3rem);margin:.35em 0}.intro{max-width:850px;color:var(--muted)}.notice{border:1px solid var(--line);border-left:4px solid var(--gold);padding:13px 16px;border-radius:10px;background:var(--card);margin:22px 0}
+.controls{display:grid;grid-template-columns:minmax(200px,2fr) minmax(160px,1fr);gap:12px;margin:22px 0}label{display:block;font-weight:650;margin-bottom:5px}input,select{width:100%;border:1px solid #6c83a2;border-radius:9px;padding:13px;font:inherit;background:#0e1d33;color:var(--text)}
+#results{color:var(--muted);margin-bottom:15px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;min-height:190px}
+.card h2{font-size:1.16rem;margin:7px 0}.topic{font-size:.82rem;color:var(--gold);font-weight:750}.card p{color:var(--muted);margin:4px 0 18px}.go{display:inline-block;margin-top:auto;color:#07182a;background:var(--gold);border-radius:8px;padding:10px 14px;text-decoration:none;font-weight:750;align-self:flex-start}
+footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:.9rem}
+@media(max-width:620px){.controls{grid-template-columns:1fr}header{padding:12px 18px}}
+</style></head><body>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam original official logo">Physics with Sir Najam</a>
+<nav aria-label="Main links"><a href="./">Student Portal</a><a href="./unit-01.html">Unit 1</a><a href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc">Student Hub</a></nav></header>
+<main><p class="eyebrow">Explore · Public interactive activities</p><h1>Interactive Physics Simulations</h1>
+<p class="intro">Explore our existing original interactive physics demonstrations, organized by topic. Use search and topic filters to find a model, then open it in a new tab.</p>
+<div class="notice"><strong>Access & academic notice:</strong> These simulations are currently public GitHub Pages activities; opening the Student Portal is not required to view them. Topic labels are browsing aids, not verified NBF/FBISE unit mappings. They are learning demonstrations, not official assessments.</div>
+<section aria-label="Find simulations"><div class="controls">
+<div><label for="search">Search by name or topic</label><input id="search" type="search" placeholder="e.g., vectors, waves, energy" autocomplete="off"></div>
+<div><label for="topic">Physics topic</label><select id="topic"><option value="">All topics</option></select></div>
+</div><p id="results" role="status" aria-live="polite">Loading available simulations…</p><div class="cards" id="cards"></div></section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Public interactive resource directory</footer>
+<script>
+'use strict';
+const cards=document.getElementById('cards'),search=document.getElementById('search'),topic=document.getElementById('topic'),results=document.getElementById('results');
+let simulations=[];
+function render(){
+ const q=search.value.trim().toLowerCase(), t=topic.value;
+ const filtered=simulations.filter(s=>(!t||s.topic===t)&&(!q||(s.title+' '+s.topic).toLowerCase().includes(q)));
+ cards.replaceChildren();results.textContent=filtered.length+' of '+simulations.length+' simulations shown';
+ for(const s of filtered){
+  const item=document.createElement('article');item.className='card';
+  const badge=document.createElement('span');badge.className='topic';badge.textContent=s.topic;
+  const title=document.createElement('h2');title.textContent=s.title;
+  const note=document.createElement('p');note.textContent='Interactive public demonstration · Opens a separate simulation page.';
+  const link=document.createElement('a');link.className='go';link.textContent='Open simulation ↗';
+  // Only allow a simple filename with a .html suffix in this same GitHub Pages repository.
+  if(!/^[a-z0-9-]+\.html$/.test(s.file))continue;
+  link.href=new URL('../'+s.file,location.href).href;link.target='_blank';link.rel='noopener noreferrer';
+  item.append(badge,title,note,link);cards.append(item);
+ }
+ if(!filtered.length)results.textContent='No matching simulations. Clear search or choose All topics.';
+}
+Promise.resolve().then(async()=>{
+ const response=await fetch('./simulation-catalog.json',{cache:'no-store'});if(!response.ok)throw Error('Catalog request failed');
+ const data=await response.json();if(!Array.isArray(data.simulations))throw Error('Invalid catalogue');
+ simulations=data.simulations.filter(s=>s&&typeof s.file==='string'&&typeof s.title==='string'&&typeof s.topic==='string'&&/^[a-z0-9-]+\.html$/.test(s.file));
+ [...new Set(simulations.map(s=>s.topic))].sort().forEach(t=>{const opt=document.createElement('option');opt.value=t;opt.textContent=t;topic.append(opt)});
+ render();
+}).catch(()=>{results.textContent='The simulation list is temporarily unavailable. Return to the main Student Hub to browse activities.';});
+search.addEventListener('input',render);topic.addEventListener('change',render);
+</script></body></html>
