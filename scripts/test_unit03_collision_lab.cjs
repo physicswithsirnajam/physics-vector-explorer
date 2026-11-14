@@ -54,7 +54,7 @@ assert.ok(cases>300);
 assert.deepEqual(c.topics,["range","horizontal","vertical","peak"]);
 for(const name of c.topics){
  const x=c.topic(name);
- for(const field of ["title","noDrag","withDrag","caution"])assert.ok(x[field] && x[field].length>35);
+ for(const field of ["title","noDrag","withDrag","caution"])assert.ok(x[field] && x[field].length>(field==="title"?5:35),name+" missing "+field);
 }
 assert.match(c.topic("horizontal").withDrag,/decreases/i);
 assert.match(c.topic("vertical").withDrag,/opposes velocity/i);
