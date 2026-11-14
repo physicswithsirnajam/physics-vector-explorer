@@ -272,9 +272,9 @@ function makeMcqIssueReport(q,issue,notes){
   'Question: '+q.stem,
   'Options as displayed during practice:',
   ...q.displayOptions.map((opt,i)=>String.fromCharCode(65+i)+'. '+opt.text),
-  'Report generated locally. It does not include a student's identity, chosen answers, or result.'
+  'Report generated locally. No account identity, chosen answers, or result included.'
  ];
- return lines.join('\\n');
+ return lines.join('\n');
 }
 async function copyMcqIssue(){
  const q=test[index];if(!q||submitted)return;
