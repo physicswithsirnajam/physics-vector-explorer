@@ -1,0 +1,25 @@
+name: Validate Grade XI MCQ Context
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-*.json"
+      - "scripts/check_grade11_mcq_context.py"
+      - ".github/workflows/validate-grade11-mcq-context.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-*.json"
+      - "scripts/check_grade11_mcq_context.py"
+      - ".github/workflows/validate-grade11-mcq-context.yml"
+  workflow_dispatch:
+jobs:
+  verify-grade11-context:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Validate MCQ contexts and complete stimulus sets
+        run: python3 scripts/check_grade11_mcq_context.py
