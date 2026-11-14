@@ -69,7 +69,7 @@ def check_inline_js(src, filename):
             die(f"{filename}: inline JavaScript {index} invalid: {process.stderr}")
 
 
-def inspect(filename):
+def inspect(filename, require_desk_return=True):
     path = PORTAL / filename
     if not path.is_file():
         die("Missing resource: " + filename)
@@ -78,7 +78,7 @@ def inspect(filename):
     parser.feed(html)
     if not parser.logo:
         die(f"{filename}: canonical logo asset is not referenced")
-    if "unit-02.html" not in " ".join(parser.links):
+    if require_desk_return and "unit-02.html" not in " ".join(parser.links):
         die(f"{filename}: missing Unit 2 Learning Desk return link")
     check_inline_js(html, filename)
     return html, parser
@@ -109,7 +109,7 @@ def main():
     if form_ins.formula_cards != 20:
         die("Formula sheet: expected twenty formula cards")
 
-    desk, desk_ins = inspect("unit-02.html")
+    desk, desk_ins = inspect("unit-02.html", require_desk_return=False)
     catalog_path = PORTAL / "learning-catalog.json"
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     units = [u for g in catalog.get("grades", []) if g.get("grade") == 11 for u in g.get("units", []) if u.get("unit") == 2]
