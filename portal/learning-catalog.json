@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v18-grade-xi-unit-02-mcq-bank-2026-11-14",
-  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect the V9 pilot and V16/V17 courseLessons. Public HTML notes, the simulations, and the provisional Unit 1 MCQ bank remain publicly accessible. Unit 2 enrolled lesson content is stored in Firestore. Unit 2 MCQs are not yet imported.",
+  "catalogVersion": "pilot-v24-unit2-numericals-descriptive-formulas-2026-11-14",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
       "grade": 11,
@@ -45,11 +45,14 @@
             "unit2-desk",
             "unit2-b01",
             "unit2-b02",
-            "unit2-practice"
+            "unit2-practice",
+            "unit2-numericals",
+            "unit2-descriptive",
+            "unit2-formula-sheet"
           ],
-          "qualityStatus": "teacher-source-final-QC; digital-import-and-browser-validation-pending",
-          "resourceAccess": "mixed-public-index-and-enrolled-protected",
-          "studentNotice": "Unit 2 has two protected lessons and 206 source-QC MCQs for provisional public self-practice (6 textbook + 140 straight + 60 scenario). The online bank still needs final launch and scoring checks.",
+          "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
+          "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
+          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, 13 public worked numerical examples, 9 short and 4 comprehensive model answers, and a public formula sheet. The public educational materials are not secure FBISE assessment items.",
           "landingHref": "./unit-02.html"
         },
         {
@@ -344,14 +347,14 @@
       "id": "unit2-desk",
       "category": "STUDY",
       "title": "Unit 2 — Vectors Learning Desk",
-      "description": "Browse two enrolled vector lessons, two interactive vector simulations and the Unit 2 public MCQ practice bank.",
+      "description": "Browse two protected Grade XI lessons plus public Unit 2 numericals, descriptive answers, formula revision, simulations and 206-MCQ practice.",
       "href": "./unit-02.html",
       "public": true,
       "external": false,
       "action": "Open Unit 2 Learning Desk ↗",
       "access": "public-link",
       "contentStatus": "published-student-resources",
-      "accessDescription": "The directory page is public; actual V17 lesson bodies require Grade XI enrollment."
+      "accessDescription": "Public resource directory; protected lesson bodies still require verified enrollment."
     },
     {
       "id": "unit2-b01",
@@ -383,14 +386,53 @@
       "id": "unit2-practice",
       "category": "PRACTISE",
       "title": "Unit 2 — Vectors MCQ Practice (206)",
-      "description": "206 Stage 6 source-QC MCQs: 6 textbook exercise, 140 additional straight and 60 in 15 complete stimulus groups. Choose this unit in Test Builder; browser-graded self-practice only.",
+      "description": "206 public provisional Unit 2 MCQs (6 textbook, 140 straight, 60 stimulus questions) with student issue reporting, source-review integrity checks and optional private saving of completed attempts.",
       "href": "../build-your-physics-test.html?unit=2",
       "public": true,
       "external": false,
       "action": "Build a Unit 2 MCQ test ↗",
       "access": "public-link",
-      "contentStatus": "requires-v18-bank-upload-and-validation",
+      "contentStatus": "live-provisional-self-practice-source-and-automated-QC",
       "accessDescription": "Public self-practice with answer key in GitHub Pages; no enrollment restriction or secure examination scoring."
+    },
+    {
+      "id": "unit2-numericals",
+      "category": "PRACTISE",
+      "title": "Unit 2 — Worked Numericals & Applications",
+      "description": "Thirteen source-labelled worked numerical problems with independent-practice solution reveals, steps, final answers, and print view.",
+      "href": "./unit-02-numericals.html",
+      "public": true,
+      "external": false,
+      "action": "Study worked numericals ↗",
+      "access": "public-link",
+      "contentStatus": "public-source-based-worked-examples",
+      "accessDescription": "Public educational HTML with solutions; no authentication required."
+    },
+    {
+      "id": "unit2-descriptive",
+      "category": "STUDY",
+      "title": "Unit 2 — Short & Comprehensive Model Answers",
+      "description": "Nine textbook-labelled short responses and four comprehensive model answers, with a source-grounded vector-product area illustration and print view.",
+      "href": "./unit-02-descriptive.html",
+      "public": true,
+      "external": false,
+      "action": "Study model answers ↗",
+      "access": "public-link",
+      "contentStatus": "public-source-based-descriptive-study",
+      "accessDescription": "Public model answers, not an official examiner marking scheme."
+    },
+    {
+      "id": "unit2-formula-sheet",
+      "category": "REVISION",
+      "title": "Unit 2 — Vector Formula Sheet",
+      "description": "Twenty formula reference cards for vector resolution, dot and cross products, physical applications, quadrant signs and common examiner traps.",
+      "href": "./unit-02-formula-sheet.html",
+      "public": true,
+      "external": false,
+      "action": "Open formula sheet ↗",
+      "access": "public-link",
+      "contentStatus": "public-formula-revision",
+      "accessDescription": "Public revision support, not an official examination formula insert."
     }
   ]
 }
