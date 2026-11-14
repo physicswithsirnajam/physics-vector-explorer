@@ -88,7 +88,7 @@ for(const [n,answer] of [
  [14,"Decreases"],[15,"Downward"],[16,"Shorter"],[17,"Is not generally guaranteed"],
  [18,"Momentum and kinetic energy"],[19,"Are exchanged"],[20,"3.33 m/s"],[21,"8.33 m/s"],
  [22,"6 m/s"],[23,"80 J"],[24,"Total momentum is conserved even though total kinetic energy may decrease"],
- [25,"Sound, thermal energy and deformation"],[26,"Be equal"],[27,"2 m/s"],
+ [25,"Sound, thermal energy and deformation"],[26,"Lower because some kinetic energy is converted into other forms"],[27,"6 J"],
  [28,"Some kinetic energy has changed form, although total momentum is conserved"],
  [29,"16 m/s"],[30,"60 m"],[31,"10 m/s"],[32,"12 m"],
  [33,"17.3 m/s"],[34,"2 s"],[35,"5 m"],[36,"34.6 m"],
@@ -106,6 +106,14 @@ assert.ok(Math.abs(ux-17.32)<0.01);
 assert.ok(Math.abs(flight-2)<1e-10);
 assert.ok(Math.abs(uy**2/(2*g)-5)<1e-10);
 assert.ok(Math.abs(ux*flight-34.64)<0.02);
+// B-13 requires explicit kinetic-energy comparison, not B-11 momentum alone.
+const stickVelocity=(4*3+2*0)/(4+2);
+const initialK=0.5*4*3**2;
+const finalK=0.5*(4+2)*stickVelocity**2;
+assert.equal(stickVelocity,2);
+assert.equal(initialK,18);
+assert.equal(finalK,12);
+assert.equal(initialK-finalK,6);
 const m1=2,m2=3,initial1=6,initial2=0;
 const final1=((m1-m2)*initial1+2*m2*initial2)/(m1+m2);
 const final2=(2*m1*initial1+(m2-m1)*initial2)/(m1+m2);
