@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "bankId": "PSN-XI-UNIT-02",
-  "bankVersion": "v18-source-preserved-2026-11-14",
+  "bankVersion": "v19-dependent-question-context-review-2026-11-14",
   "title": "Grade XI Physics – Unit 2: Vectors",
   "status": "practice-pilot",
   "sourceDocument": "6_11th_Unit_2_STAGE_6_MCQs_FBISE_Format_Print_Ready.docx",
@@ -13,7 +13,8 @@
     "Original Stage 6 final QC applies to its source document, but this digital import needs live display/scoring and spot academic verification before broad student rollout.",
     "Cognitive/difficulty labels are provisional automated practice aids; do not treat them as official FBISE per-item classifications.",
     "All questions are summative-aligned by the verified Unit 2 B-01/B-02 source grouping; exact individual SLO mappings and textbook pages of additional questions still need review.",
-    "All questions boardEligible=false; this is PUBLIC self-practice with answers, not a secure board examination or premium-only bank."
+    "All questions boardEligible=false; this is PUBLIC self-practice with answers, not a secure board examination or premium-only bank.",
+    "Four additional MCQs (#4, #13, #15 and #153) depend on a preceding question in the source; the required contextual data is now repeated as a standalone stimulus so random practice remains answerable. Original stems, choices, answers and explanations are unchanged."
   ],
   "questions": [
     {
@@ -474,7 +475,10 @@
       "pageStatus": "source-page-mapping-pending",
       "status": "unit-2-stage-6-source-QC",
       "active": true,
-      "boardEligible": false
+      "boardEligible": false,
+      "stimulusText": "A vector A makes an angle θ with the positive x-axis.",
+      "stimulusHtml": "<p>A vector A makes an angle θ with the positive x-axis.</p>",
+      "contextSourceQuestionNumber": 3
     },
     {
       "id": "XI-U02-MCQ-0005",
@@ -888,7 +892,10 @@
       "pageStatus": "source-page-mapping-pending",
       "status": "unit-2-stage-6-source-QC",
       "active": true,
-      "boardEligible": false
+      "boardEligible": false,
+      "stimulusText": "A force of 10 N acts at 30° to the positive x-axis.",
+      "stimulusHtml": "<p>A force of 10 N acts at 30° to the positive x-axis.</p>",
+      "contextSourceQuestionNumber": 12
     },
     {
       "id": "XI-U02-MCQ-0014",
@@ -980,7 +987,10 @@
       "pageStatus": "source-page-mapping-pending",
       "status": "unit-2-stage-6-source-QC",
       "active": true,
-      "boardEligible": false
+      "boardEligible": false,
+      "stimulusText": "A 20 N vector acts at 60° to the positive x-axis.",
+      "stimulusHtml": "<p>A 20 N vector acts at 60° to the positive x-axis.</p>",
+      "contextSourceQuestionNumber": 14
     },
     {
       "id": "XI-U02-MCQ-0016",
@@ -7448,7 +7458,10 @@
       "pageStatus": "source-page-mapping-pending",
       "status": "unit-2-stage-6-source-QC",
       "active": true,
-      "boardEligible": false
+      "boardEligible": false,
+      "stimulusText": "Two vectors have magnitudes 6 and 8. For this question, the angle between them is 90° (perpendicular vectors).",
+      "stimulusHtml": "<p>Two vectors have magnitudes 6 and 8. For this question, the angle between them is 90° (perpendicular vectors).</p>",
+      "contextSourceQuestionNumber": 152
     },
     {
       "id": "XI-U02-MCQ-0154",
