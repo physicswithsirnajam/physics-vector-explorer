@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v27-unit2-interactive-mastery-lab-2026-11-14",
+  "catalogVersion": "pilot-v28-unit3-translatory-motion-part1-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -58,13 +58,20 @@
         },
         {
           "unit": 3,
-          "title": "Unit 3 — Content in preparation",
-          "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "title": "Translatory Motion",
+          "status": "available",
+          "summary": "First source-based learning release: constant acceleration, free fall and ideal projectile motion. Further momentum/collision teaching materials are in preparation.",
           "questionBankCount": 0,
-          "assessmentStatus": "not-published",
-          "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "assessmentStatus": "no-mcq-bank-published",
+          "resourceIds": [
+            "unit3-desk",
+            "unit3-study-guide",
+            "unit3-motion-lab"
+          ],
+          "qualityStatus": "partial-textbook-source-review; FBISE P-11-B-03 formative, P-11-B-04/B-05/B-06 summative; no official digital exam bank",
+          "resourceAccess": "public-learning-resources",
+          "studentNotice": "Unit 3 Part 1 offers a public source-based study guide and original interactive straight-line/projectile motion lab. This is partial chapter coverage; no Unit 3 MCQ bank or enrolled lesson has yet been published.",
+          "landingHref": "./unit-03.html"
         },
         {
           "unit": 4,
@@ -447,6 +454,45 @@
       "access": "public-link",
       "contentStatus": "public-local-guided-self-check",
       "accessDescription": "Public original self-check; no authentication required, no scores sent or saved to account, not a secure FBISE assessment."
+    },
+    {
+      "id": "unit3-desk",
+      "category": "STUDY",
+      "title": "Unit 3 — Translatory Motion Learning Desk",
+      "description": "Launch Unit 3 Part 1, including a textbook-source study guide and two original interactive motion experiments; later momentum and collision modules are in development.",
+      "href": "./unit-03.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 3 Learning Desk ↗",
+      "access": "public-link",
+      "contentStatus": "part1-public-source-based-foundations",
+      "accessDescription": "Public resources; no Unit 3 enrolled lesson or digital assessment bank published yet."
+    },
+    {
+      "id": "unit3-study-guide",
+      "category": "STUDY",
+      "title": "Unit 3 — Equations of Motion & Projectiles",
+      "description": "Source-based first study guide from NBF Physics XI pp. 33–43. Uniform acceleration, free fall, ideal projectile motion, textbook examples and FBISE formative/summative SLO labels.",
+      "href": "./unit-03-study-guide.html",
+      "public": true,
+      "external": false,
+      "action": "Read Unit 3 Study Guide ↗",
+      "access": "public-link",
+      "contentStatus": "source-based-part1-study-guide",
+      "accessDescription": "Public reference, not complete Unit 3 material or an official marking scheme."
+    },
+    {
+      "id": "unit3-motion-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 3 — Interactive Motion Laboratory",
+      "description": "Manipulate constant acceleration, inspect signed velocity–time/displacement–time graphs, and animate ideal projectile flight with adjustable speed, angle and time.",
+      "href": "./unit-03-motion-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Explore Motion Laboratory ↗",
+      "access": "public-link",
+      "contentStatus": "original-part1-interactive-model",
+      "accessDescription": "Public original no-drag simulator; no authentication, saved grades or private progress record."
     }
   ]
 }
