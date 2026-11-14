@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Authenticated Physics with Sir Najam Grade XI learning resource. The lesson body is served from Firestore only after enrollment is verified.">
+<title>Enrolled Student Lesson | Physics with Sir Najam</title>
+<style>
+:root{color-scheme:light;--navy:#11233e;--gold:#caab63;--ink:#1c2a40;--muted:#546579;--edge:#d5dfeb;--bg:#f3f6fa}
+*{box-sizing:border-box}body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:#185c99}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{background:var(--navy);color:#fff;padding:12px max(18px,calc((100% - 1040px)/2));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;color:white;text-decoration:none;font-weight:750}.brand img{width:54px;height:54px;object-fit:contain}nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:#f2d898}
+main{max-width:980px;margin:auto;padding:30px 18px 70px}
+header+main .eyebrow{color:#80622c;text-transform:uppercase;letter-spacing:.1em;font-size:.83rem;font-weight:800}
+h1{font-size:clamp(1.8rem,4vw,2.65rem);margin:8px 0 10px;line-height:1.2}.lead{color:var(--muted);max-width:750px}
+.card{background:#fff;border:1px solid var(--edge);border-radius:16px;padding:28px;box-shadow:0 10px 28px #16314d0e;margin:22px 0}
+.status{border-radius:10px;border:1px solid var(--edge);padding:14px 17px;background:#f4f8fd;margin:14px 0 18px}.status h2{font-size:1.08rem;margin:0 0 4px}.status p{margin:0;color:var(--muted)}
+.resource-label{display:inline-block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#7b5f24;background:#fbf2dc;padding:5px 8px;border-radius:6px;font-weight:750}
+#resource-title{font-size:1.65rem;color:#173657;margin:12px 0 6px}#resource-summary{color:var(--muted)}.lesson-body{white-space:normal;max-width:75ch}.lesson-body p{margin:16px 0}.lesson-body h3{color:#15365a;font-size:1.13rem;margin:24px 0 10px}.lesson-body hr{border:0;border-top:1px solid var(--edge);margin:23px 0}
+.meta{margin:16px 0;font-size:.9rem;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:10px}.btn{display:inline-block;border-radius:9px;border:1px solid #20496f;padding:10px 14px;background:#14395e;color:#fff;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}.btn.secondary{color:#173657;background:#fff}.notice{border-left:4px solid var(--gold);background:#fff8e9;border-radius:8px;padding:13px 16px;margin:20px 0;color:#604a20}
+footer{background:var(--navy);color:#dae7f4;text-align:center;padding:22px;font-size:.9rem}
+[hidden]{display:none!important}
+@media(max-width:560px){.card{padding:18px}.actions>*{flex:1;text-align:center}}
+@page{size:A4;margin:14mm}
+@media print{header,footer,.actions,.status,.notice,.lead,.eyebrow{display:none!important}body{background:#fff;color:#000;font-size:10.5pt}main{padding:0}.card{border:0;box-shadow:none;padding:0;margin:0}.lesson-body h3{break-after:avoid}.lesson-body p{orphans:3;widows:3}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Official Physics with Sir Najam logo — unchanged"><span>Physics with Sir Najam</span></a>
+<nav aria-label="Navigation"><a href="./#learning-hub">My Learning Hub</a><a href="./unit-01.html">Unit 1</a></nav>
+</header>
+<main>
+<div class="eyebrow">Enrolled learning · Grade XI / FBISE</div>
+<h1>My Protected Physics Lesson</h1>
+<p class="lead">This page is publicly reachable, but its lesson text is not embedded in GitHub Pages. Firebase Firestore checks your verified account and active Grade XI enrollment before returning the content.</p>
+<div class="card">
+<div class="status" aria-live="polite"><h2 id="state-heading">Checking sign-in…</h2><p id="state-message">Connecting securely to Firebase.</p></div>
+<article id="resource" hidden>
+<span class="resource-label">Enrolled learner resource · Firestore</span>
+<h2 id="resource-title"></h2>
+<p id="resource-summary"></p>
+<p id="resource-meta" class="meta"></p>
+<div id="resource-body" class="lesson-body"></div>
+</article>
+<div class="actions">
+<a id="login" class="btn" href="./#learning-hub" hidden>Sign in or enroll through Portal</a>
+<button id="retry" class="btn secondary" type="button" hidden>Try again</button>
+<button id="print" class="btn secondary" type="button" hidden>Print / Save as PDF</button>
+<button id="signout" class="btn secondary" type="button" hidden>Sign out</button>
+<a class="btn secondary" href="./#learning-hub">Back to Learning Hub</a>
+</div></div>
+<div class="notice"><strong>Important distinction:</strong> Existing V14/V15 HTML notes, simulations, and the public MCQ engine are still public. This page protects only lesson text actually stored in the authorized Firestore collection. It is not a paywall or a secure examination.</div>
+</main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers · Protected lessons pilot</footer>
+<script type="module" src="./course-lesson.js?v=16"></script>
+</body></html>
