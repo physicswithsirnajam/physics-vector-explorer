@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Grade XI Physics Unit 3 Translatory Motion source-based teaching guide: constant-acceleration equations, free fall, projectile equations, model answers and FBISE summative/formative distinctions.">
+<title>Unit 3 Translatory Motion Study Guide | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e5c278;--ink:#182e49;--muted:#4c6078;--line:#d8e3ee;--teal:#126f86;--soft:#f5f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.67 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:white}.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:13px;max-width:1050px;margin:auto;padding:11px 18px}
+.brand{display:flex;gap:10px;align-items:center;color:#fff;text-decoration:none;font-weight:800}.brand img{width:52px;height:52px;object-fit:contain}
+nav{display:flex;flex-wrap:wrap;gap:16px}nav a{color:var(--gold)}a{color:#135d83}a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid #be8f36;outline-offset:3px}
+main{max-width:1050px;margin:auto;padding:30px 18px 70px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;color:#83621d;text-transform:uppercase}
+h1{font-size:clamp(27px,4vw,38px);line-height:1.16;margin:8px 0}h2{font-size:23px;line-height:1.3}h3{font-size:17px;margin:10px 0}
+.lead{max-width:850px;color:var(--muted)}.card{border:1px solid var(--line);border-radius:15px;background:white;padding:22px;margin:20px 0;box-shadow:0 6px 18px #10233d08}
+.notice{background:#fff6e6;padding:14px 17px;border-left:4px solid #cfa44e;border-radius:10px;margin:18px 0;font-size:14px}.status{display:inline-block;border-radius:16px;padding:3px 8px;font-weight:800;font-size:12px;background:#e7f2fb;color:#174c73}
+table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid var(--line);text-align:left;padding:10px 11px;vertical-align:top}th{background:#edf4fa}
+.formula{font-size:17px;font-weight:700;background:#f1f5f9;padding:9px 12px;border-radius:8px;margin:7px 0;overflow-wrap:anywhere}
+.examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px}.example{border:1px solid #cfdfeb;background:#f7fbfe;padding:17px;border-radius:12px}.example p{font-size:14px}.example strong{color:#1b4f74}
+details{border:1px solid var(--line);border-radius:10px;margin:12px 0;overflow:hidden}summary{cursor:pointer;padding:10px 15px;background:#eaf3f8;font-weight:800}.answer{padding:11px 15px}
+.topic{color:var(--muted);font-size:13px}.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px}footer{background:var(--navy);color:#c9d8e8;padding:21px;text-align:center;font-size:13px}
+@media(max-width:600px){.card{padding:15px}table{font-size:13px}th,td{padding:7px}}
+@media print{body{background:#fff}nav,.links,footer,.notice{display:none!important}.card{box-shadow:none;break-inside:avoid}main{max-width:100%;padding:0}details .answer{display:block}summary{background:#fff}}
+</style><link rel="stylesheet" href="../shared/navigation.css?v=5.1"><script src="../shared/navigation.js?v=6" defer></script></head>
+<body><header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Original unchanged Physics with Sir Najam logo">Physics with Sir Najam</a><nav><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-03-motion-lab.html">Interactive Motion Lab</a><a href="./unit-02.html">Unit 2</a></nav></div></header>
+<main>
+<div class="eyebrow">Grade XI / HSSC-I · Unit 03 · Source-based learning</div>
+<h1>Translatory Motion — Study Guide, Part 1</h1>
+<p class="lead">The first Unit 3 teaching module covers uniformly accelerated motion, free fall and ideal projectile motion. It follows NBF Physics XI printed textbook pages 33–43 and keeps the official FBISE formative/summative distinction visible.</p>
+<div class="notice"><strong>Scope:</strong> This is a <strong>partial chapter study guide</strong>, not the full Unit 3 notes or an official marking scheme. Later parts covering conservation of momentum, collisions and other chapter applications are planned separately. The corresponding digital MCQ bank has not been prepared or released.</div>
+<section class="card" id="slo">
+<h2>1. How FBISE assesses these topics</h2>
+<table><thead><tr><th>Official SLO</th><th>What the student should achieve</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td><strong>P-11-B-03</strong></td><td>Derive equations of motion from definitions and graphs for uniform acceleration.</td><td><span class="status">Formative</span> — teach and practise; not a final-theory summative item.</td></tr>
+<tr><td><strong>P-11-B-04</strong></td><td>Solve straight-line constant-acceleration problems, including ideal free fall and component applications.</td><td><span class="status">Summative</span> — numerical application.</td></tr>
+<tr><td><strong>P-11-B-05</strong></td><td>Calculate and analyse ideal projectile motion without air resistance.</td><td><span class="status">Summative</span> — application.</td></tr>
+<tr><td><strong>P-11-B-06</strong></td><td>Predict qualitatively how air resistance changes projectile motion and range.</td><td><span class="status">Summative</span> — understanding and application. Will be developed in the next resource.</td></tr>
+</tbody></table>
+<p class="topic">Classification source: supplied FBISE Grade XI Physics Assessment Framework (National Curriculum 2022–23, Scheme of Studies 2024), framework page 2, PDF page 8. The textbook learning-outcome list is broader than the framework’s summative requirements.</p>
+</section>
+<section class="card" id="equations">
+<h2>2. Uniform acceleration in a straight line</h2>
+<p>Choose a positive direction. Let <strong>u</strong> be initial velocity, <strong>v</strong> final velocity, <strong>a</strong> constant signed acceleration, <strong>t</strong> time and <strong>s</strong> signed displacement.</p>
+<div class="formula">v = u + at</div>
+<div class="formula">s = ut + ½at²</div>
+<div class="formula">v² = u² + 2as</div>
+<p>The velocity–time graph is a straight line when acceleration is constant. Its gradient gives <strong>a</strong>; the signed area below the graph gives <strong>s</strong>. The graph explains the equations as a formative derivation (P-11-B-03). In summative numerical problems (P-11-B-04), identify the known and unknown quantities, choose a suitable equation, substitute and interpret the sign.</p>
+<h3>Formative derivation from the graph</h3>
+<details><summary>Show the reasoning (P-11-B-03 · formative)</summary><div class="answer">
+<p>From the slope of a velocity–time line: a = (v−u)/t. Rearranging gives v = u + at.</p>
+<p>The trapezoid area for signed displacement is s = ½(u+v)t. Substituting v = u + at gives s = ut + ½at².</p>
+<p>Eliminating t between v = u + at and s = ½(u+v)t gives v² = u² + 2as.</p>
+<p><strong>Exam distinction:</strong> learn the reasoning to understand motion, but the framework lists this derivation as formative, not summative theory.</p>
+</div></details>
+<h3>Numerical practice from the textbook</h3>
+<div class="examples">
+<article class="example"><strong>Textbook Example 3.1 (p. 35)</strong><p>A bus has u = 10 m/s, constant a = 2 m/s² and t = 5 s. Find its final velocity.</p>
+<details><summary>Reveal step-by-step solution</summary><div class="answer"><p>v = u + at = 10 + (2)(5) = <strong>20 m/s</strong>.</p><p>Check: velocity increases because acceleration is positive.</p></div></details></article>
+<article class="example"><strong>Textbook Example 3.2 (p. 36)</strong><p>A car has u = 4 m/s, a = 1 m/s² and t = 10 s. Calculate the distance travelled in the stated constant-acceleration motion.</p>
+<details><summary>Reveal step-by-step solution</summary><div class="answer"><p>s = ut + ½at² = (4)(10) + ½(1)(10²) = 40 + 50 = <strong>90 m</strong>.</p><p>Because velocity remains positive throughout, distance equals displacement here.</p></div></details></article>
+</div>
+<p class="topic">NBF printed pp. 33–36, sections 3.1.1–3.1.3, Examples 3.1 and 3.2.</p>
+</section>
+<section class="card" id="freefall">
+<h2>3. Free fall and sign conventions</h2>
+<p>For ideal free fall without air resistance, acceleration has constant magnitude <strong>g = 9.8 m/s²</strong> near Earth’s surface. The sign depends on your chosen axis: upward-positive implies a = −g, while downward-positive implies a = +g.</p>
+<div class="formula">With upward-positive: vᵧ = uᵧ − gt; &nbsp; y = uᵧt − ½gt²</div>
+<p>For an object simply released from rest, uᵧ = 0. For an object thrown upward, velocity decreases to zero at the highest point, then becomes negative on descent.</p>
+<p class="topic">Textbook section 3.1.4, printed pp. 36–37. The ideal model neglects drag.</p>
+</section>
+<section class="card" id="projectiles">
+<h2>4. Projectile motion without air resistance</h2>
+<p>For a projectile launched at speed <strong>u</strong> at angle <strong>θ</strong> above the horizontal, its components evolve independently: horizontal acceleration is zero while vertical acceleration is −g.</p>
+<div class="formula">uₓ = u cos θ; &nbsp; uᵧ = u sin θ</div>
+<div class="formula">x = (u cos θ)t; &nbsp; y = (u sin θ)t − ½gt²</div>
+<div class="formula">vₓ = u cos θ; &nbsp; vᵧ = u sin θ − gt</div>
+<p>For launch and landing at the <strong>same level</strong>:</p>
+<div class="formula">Time of flight T = 2u sin θ/g</div>
+<div class="formula">Maximum height H = u²sin²θ/(2g)</div>
+<div class="formula">Horizontal range R = u²sin(2θ)/g</div>
+<p>At fixed u and g, the greatest same-level range occurs at 45°. Complementary angles θ and (90°−θ) produce the same range without air resistance. A horizontal launch from a cliff needs a different flight-time equation and is not covered by the equal-height shortcut above.</p>
+<div class="examples">
+<article class="example"><strong>Textbook Example 3.5 (p. 43)</strong><p>A projectile is launched with initial speed 200 m/s at 30° above horizontal; neglect air resistance and assume equal start/end levels. Determine T, H and R.</p>
+<details><summary>Reveal textbook-source calculation</summary><div class="answer">
+<p>Vertical initial velocity: uᵧ = 200 sin 30° = 100 m/s.</p>
+<p>Flight time: T = 2(100)/9.8 = <strong>20.41 s</strong>.</p>
+<p>Maximum height: H = 100²/(2×9.8) = <strong>510.2 m</strong>.</p>
+<p>Range: R = (200² sin 60°)/9.8 ≈ <strong>3534.8 m</strong> (rounding may differ slightly by trig approximation).</p>
+</div></details></article>
+<article class="example"><strong>Original complement-angle practice</strong><p>Keeping u and g fixed, compare launching at 30° and 60°. Does the range change?</p>
+<details><summary>Reveal reasoning</summary><div class="answer"><p>R = u²sin(2θ)/g. At 30°: sin 60°. At 60°: sin 120° = sin 60°.</p><p><strong>The ranges are equal</strong>, but flight time and maximum height are not generally equal.</p></div></details></article>
+</div>
+<p class="topic">Textbook sections 3.2.1–3.2.2, printed pp. 37–43. Exercise treatment of air resistance belongs to summative SLO P-11-B-06, not to this no-drag simulator.</p>
+</section>
+<section class="card" id="next">
+<h2>5. Practice and next chapter sections</h2>
+<p>Use the Interactive Motion Laboratory to explore signed acceleration, velocity–time graph gradients, projectile components and complementary launch angles. Continue to the chapter’s later conservation-of-momentum and collision applications after completing this foundation.</p>
+<div class="links"><a href="./unit-03-motion-lab.html">Open interactive simulations</a><a href="./unit-03.html">Return to Unit 3 Learning Desk</a><a href="./unit-02.html">Unit 2 resources</a></div>
+</section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Source-based student study guide, Part 1</footer>
+</body></html>
