@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v25-unit2-complete-stage5-numericals-2026-11-14",
+  "catalogVersion": "pilot-v26-unit2-full-stage3-4-descriptive-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -52,7 +52,7 @@
           ],
           "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
           "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
-          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, all 30 Stage 5 numerical examples, 9 short and 4 comprehensive public model answers, and a public formula sheet. Independent scientific verification remains ongoing.",
+          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, all 30 Stage 5 worked numericals, all 35 Stage 3 short responses, all 15 Stage 4 comprehensive model answers, and a public formula sheet. Academic source and page-level verification remains a separate review.",
           "landingHref": "./unit-02.html"
         },
         {
@@ -412,7 +412,7 @@
       "id": "unit2-descriptive",
       "category": "STUDY",
       "title": "Unit 2 — Short & Comprehensive Model Answers",
-      "description": "Nine textbook-labelled short responses and four comprehensive model answers, with a source-grounded vector-product area illustration and print view.",
+      "description": "Complete Unit 2 Stage 3 and 4 teacher-source question sets: 35 short responses and 15 comprehensive model answers, including right-hand-rule and vector-product diagrams, original question numbers, and print view.",
       "href": "./unit-02-descriptive.html",
       "public": true,
       "external": false,
