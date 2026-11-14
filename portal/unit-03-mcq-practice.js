@@ -1,5 +1,5 @@
 /* Physics with Sir Najam — Grade XI Unit 3 public summative MCQ self-practice.
- * 40 source-labelled provisional questions. No Firebase, login or saved results.
+ * 40 source-labelled provisional questions. No account SDK, sign-in or saved results.
  */
 (function(){
 "use strict";
