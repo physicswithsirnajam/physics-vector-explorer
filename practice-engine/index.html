@@ -7,6 +7,16 @@
 <style>
 :root{--navy:#0d1a36;--dark:#142a50;--gold:#f2c16b;--teal:#087c99;--surface:#f5f8fc;--ink:#10213e;--muted:#53647d;--border:#d7e1ed;--good:#177347;--bad:#bb323f}
 *{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}a{color:#006c89}button{cursor:pointer;border-radius:10px;padding:10px 15px;font-weight:700;border:1px solid #cbd6e5;background:white;color:var(--navy)}button:hover:not(:disabled){filter:brightness(.96)}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #3aaad0;outline-offset:3px}button:disabled{opacity:.48;cursor:not-allowed}.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.top{background:var(--navy);color:#fff}.top-inner{max-width:1060px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:58px;height:58px;object-fit:contain;border-radius:100%;border:2px solid var(--gold)}.brand strong{font-size:17px;line-height:1.1}.brand small{display:block;color:#bcd2ed}.top a{color:#fff;font-size:13px}.wrap{max-width:1060px;margin:25px auto;padding:0 18px 45px}.eyebrow{font-size:11px;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;font-weight:800}h1{font-size:clamp(24px,4vw,34px);line-height:1.2;margin:8px 0 12px}h2{font-size:19px;margin:0 0 7px}h3{font-size:16px;margin:0 0 6px}.muted{color:var(--muted)}.panel{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 36px rgba(13,26,54,.055);margin-top:16px}.notice{padding:12px 15px;background:#fff8e9;border:1px solid #f1dbaa;border-radius:11px;font-size:13px;color:#6f531f}.error{background:#ffeff1;border-color:#efb3be;color:#8e2736}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.chip{background:#e9f2f8;color:#244f6b;border-radius:20px;font-size:12px;font-weight:700;padding:4px 9px}.chip.gold{background:#fff4db;color:#84611b}.bar{height:9px;background:#e9edf4;border-radius:10px;overflow:hidden;margin:16px 0}.bar span{display:block;height:100%;width:0;background:var(--teal);transition:width .25s}.progress-line{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.qstem math,.option math,.review-item math,#stimulusPanel math{font-size:1.06em}.qstem{font-size:20px;line-height:1.45;font-weight:720;white-space:pre-wrap;margin:16px 0}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #cbd7e5;padding:12px 14px;border-radius:12px;margin:9px 0;cursor:pointer}.option:hover{background:#f5faff}.option:has(input:checked){border-color:#19849b;background:#eaf7f9}.option input{accent-color:var(--teal);margin-top:5px}.option-letter{font-weight:800;min-width:25px}.option-txt{flex:1}.option.locked{cursor:default}.option.correct{background:#e9f8ef;border-color:#77cba4}.option.wrong{background:#fff0f1;border-color:#e99ba8}.feedback{border-radius:12px;padding:12px 14px;margin:14px 0;background:#e7f6ee;color:#125e3d;border:1px solid #a8dabb}.feedback.bad{background:#fff1f1;color:#902d36;border-color:#edb5bb}.actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:18px}.actions .spacer{flex:1}.hidden{display:none!important}.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:15px 0}.stat{padding:15px;text-align:center;border-radius:12px;background:#eef4f9}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}.review-item{border-top:1px solid var(--border);padding:16px 0}.review-item p{margin:6px 0}.review-item strong{font-weight:730}.review-answer{color:var(--good)}.review-user.wrong{color:var(--bad)}.slo-grid{display:flex;flex-wrap:wrap;gap:8px}.slo-chip{padding:7px 10px;border-radius:9px;background:#f0f5f8;font-size:12px}.scenario-cue{font-size:13px;font-weight:800;letter-spacing:.02em;color:#0b5375;padding:5px 0 9px;border-bottom:1px solid #b7ddeb;margin-bottom:12px}.hint{background:#ecf7ff;border:1px solid #b7ddeb;border-radius:12px;padding:12px;margin:13px 0}.foot{font-size:12px;color:var(--muted);text-align:center;padding-top:25px}@media(max-width:590px){.top-inner{padding:11px}.logo{width:45px;height:45px}.brand strong{font-size:14px}.wrap{padding:0 12px 28px}.panel{padding:16px}.stat-grid{grid-template-columns:repeat(2,1fr)}.qstem math,.option math,.review-item math,#stimulusPanel math{font-size:1.06em}.qstem{font-size:18px}.actions button{flex:1}}.save-result-box{margin:20px 0;padding:16px 19px;border:1px solid #b8cde0;border-radius:13px;background:#f2f7fc}.save-result-box p{margin:5px 0;color:#4c6178;font-size:13px}.save-result-box small{color:#66798d;font-size:11px}.save-result-box .actions{margin:11px 0 7px}
+.question-ref{font-size:12px;margin-top:-6px}
+.mcq-report{margin-top:18px;padding:12px 15px;border:1px solid var(--border);border-radius:12px;background:#f8fafc}
+.mcq-report summary{font-size:13px;font-weight:700;cursor:pointer;color:#075e78}
+.mcq-report summary:focus-visible{outline:3px solid #3aaad0;outline-offset:4px}
+.mcq-report p{font-size:12px;margin:9px 0}
+.mcq-report label{display:block;margin:10px 0 3px;font-size:12px;font-weight:700}
+.mcq-report select,.mcq-report textarea{width:100%;border:1px solid #b9c8d8;border-radius:8px;padding:10px;background:white;color:var(--ink);font:inherit}
+.mcq-report textarea{resize:vertical;font-size:13px;line-height:1.4}
+.mcq-report select:focus-visible,.mcq-report textarea:focus-visible{outline:3px solid #3aaad0;outline-offset:2px}
+.mcq-report .actions{margin-top:10px}
 @media print{.top,.actions,.notice,.foot,.no-print{display:none!important}body{background:white}.panel{box-shadow:none;border:0;padding:0}.review-item{break-inside:avoid}}
 </style>
   <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
@@ -19,7 +29,26 @@
 <div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> Select Unit 1 or Unit 2 through the Test Builder. Each unit uses its own source MCQs and complete stimulus sets. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. When signed in, you can choose to save completed self-practice results privately to your portal account. Scores are calculated in your browser, not by a trusted examination server.</div>
 <div id="loading" class="panel" role="status" aria-live="polite">Loading the selected unit question bank…</div>
 <section id="start" class="panel hidden"><h2>Ready to practise?</h2><p id="setupSummary"></p><p class="muted">Questions are selected according to your chosen method. Balanced selection aims to cover available SLOs, cognitive levels and difficulty bands, without promising an exact board-paper distribution. Complete scenarios remain together; attempts may repeat questions.</p><div class="actions"><button class="primary" id="begin">Start MCQ Practice</button><a href="../build-your-physics-test.html">Change test settings</a></div></section>
-<section id="quiz" class="panel hidden"><div class="progress-line"><strong id="qcounter">Question 1</strong><span id="timer" class="chip gold hidden" role="timer"></span><span id="answeredCount" class="muted"></span></div><div class="bar" aria-label="Question progress"><span id="progressFill"></span></div><div class="meta" id="tags"></div><section id="stimulusPanel" class="hint hidden" aria-label="Shared question scenario"></section><div id="question" class="qstem"></div><div id="choices" role="radiogroup" aria-label="MCQ answer choices"></div><div class="hint hidden" id="hintBox"></div><div id="feedbackBox" class="feedback hidden" role="status" aria-live="polite"></div><div class="actions"><button id="prev">← Previous</button><button id="showHint" class="hidden">Need a hint?</button><button id="check" class="hidden">Check Answer</button><span class="spacer"></span><button id="next">Next →</button><button class="primary" id="submit">Submit Test</button></div></section>
+<section id="quiz" class="panel hidden"><div class="progress-line"><strong id="qcounter">Question 1</strong><span id="timer" class="chip gold hidden" role="timer"></span><span id="answeredCount" class="muted"></span></div><div class="bar" aria-label="Question progress"><span id="progressFill"></span></div><div class="meta" id="tags"></div><div class="question-ref muted" id="question-reference"></div><section id="stimulusPanel" class="hint hidden" aria-label="Shared question scenario"></section><div id="question" class="qstem"></div><div id="choices" role="radiogroup" aria-label="MCQ answer choices"></div><div class="hint hidden" id="hintBox"></div><div id="feedbackBox" class="feedback hidden" role="status" aria-live="polite"></div>
+<details id="mcq-report-details" class="mcq-report no-print">
+  <summary>Found an issue with this MCQ? Prepare a report</summary>
+  <p class="muted">Choose a problem and copy its question reference to share with your teacher. This does not send anything automatically or include your account details, answers, or test score.</p>
+  <label for="mcq-report-type">Type of problem</label>
+  <select id="mcq-report-type">
+    <option value="">Select a problem</option>
+    <option value="missing-context">Missing scenario, graph, diagram or information</option>
+    <option value="incorrect-key">Possible incorrect answer or explanation</option>
+    <option value="unclear-wording">Unclear or incomplete wording</option>
+    <option value="formula-display">Formula, symbol or formatting problem</option>
+    <option value="other">Other issue</option>
+  </select>
+  <label for="mcq-report-notes">Extra details (optional)</label>
+  <textarea id="mcq-report-notes" rows="2" maxlength="1200" placeholder="What should we review? Avoid entering private information."></textarea>
+  <div class="actions"><button id="copy-mcq-report" type="button">Copy issue report</button></div>
+  <p id="mcq-report-status" class="muted" role="status" aria-live="polite"></p>
+  <textarea id="mcq-report-fallback" class="hidden" rows="8" readonly aria-label="Copyable MCQ issue report"></textarea>
+</details>
+<div class="actions"><button id="prev">← Previous</button><button id="showHint" class="hidden">Need a hint?</button><button id="check" class="hidden">Check Answer</button><span class="spacer"></span><button id="next">Next →</button><button class="primary" id="submit">Submit Test</button></div></section>
 <section id="result" class="panel hidden"><div class="eyebrow">Your Practice Report</div><h2>Assessment complete</h2><p class="muted" id="resultMeta"></p><div class="stat-grid" id="stats"></div>
 <div class="save-result-box no-print" aria-label="Save personal practice result">
 <strong>Save to My Physics Progress</strong><p id="save-result-status" role="status" aria-live="polite">Checking account sign-in…</p>
@@ -33,7 +62,7 @@
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(window.location.search);
 const cfg={unit:params.get('unit')==='2'?2:1,count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
-let bank,eligible=[],test=[],answers={},checked={},index=0,secondsLeft=0,timerHandle=null,submitted=false;
+let bank,eligible=[],test=[],answers={},checked={},index=0,secondsLeft=0,timerHandle=null,submitted=false,lastReportQuestionId=null;
 const safely=(node,value)=>{node.textContent=String(value);return node};
 
 const mathNamespace='http://www.w3.org/1998/Math/MathML';
@@ -220,10 +249,51 @@ function prepare(){
  }
  if(test.length!==cfg.count||new Set(test.map(q=>q.id)).size!==test.length || (cfg.arrangement!=='random'&&!hasIntactGroups(test,eligible))){showError('The practice selection failed a consistency check. No test has started.');return}
  if(cfg.preferUnseen)storeRecentAttempt(test.map(q=>q.id));
- answers={};checked={};index=0;submitted=false;$('start').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');$('timer').classList.toggle('hidden',!cfg.timer);if(timerHandle)clearInterval(timerHandle);secondsLeft=cfg.timer*60;if(cfg.timer){setClock();timerHandle=setInterval(()=>{secondsLeft--;setClock();if(secondsLeft<=0){clearInterval(timerHandle);finish('Time expired — answers submitted automatically.')}},1000)}render()
+ answers={};checked={};index=0;submitted=false;lastReportQuestionId=null;$('start').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');$('timer').classList.toggle('hidden',!cfg.timer);if(timerHandle)clearInterval(timerHandle);secondsLeft=cfg.timer*60;if(cfg.timer){setClock();timerHandle=setInterval(()=>{secondsLeft--;setClock();if(secondsLeft<=0){clearInterval(timerHandle);finish('Time expired — answers submitted automatically.')}},1000)}render()
+}
+const issueKinds={
+ 'missing-context':'Missing scenario, graph, diagram or information',
+ 'incorrect-key':'Possible incorrect answer or explanation',
+ 'unclear-wording':'Unclear or incomplete wording',
+ 'formula-display':'Formula, symbol or formatting problem',
+ 'other':'Other issue'
+};
+function makeMcqIssueReport(q,issue,notes){
+ const lines=[
+  'PHYSICS WITH SIR NAJAM — MCQ REVIEW REQUEST',
+  'Grade: XI',
+  'Unit: '+cfg.unit,
+  'Question ID: '+q.id,
+  'Original source question number: '+q.sourceQuestionNumber,
+  'Bank version: '+String(bank?.bankVersion||'unknown'),
+  'Issue: '+issueKinds[issue],
+  'Student note: '+(notes.trim()||'(none)'),
+  'Shared scenario or extra context: '+(q.stimulusText||'(none shown)'),
+  'Question: '+q.stem,
+  'Options as displayed during practice:',
+  ...q.displayOptions.map((opt,i)=>String.fromCharCode(65+i)+'. '+opt.text),
+  'Report generated locally. It does not include a student's identity, chosen answers, or result.'
+ ];
+ return lines.join('\\n');
+}
+async function copyMcqIssue(){
+ const q=test[index];if(!q||submitted)return;
+ const issue=$('mcq-report-type').value,status=$('mcq-report-status');
+ if(!Object.prototype.hasOwnProperty.call(issueKinds,issue)){status.textContent='Please select a problem type first.';return}
+ const text=makeMcqIssueReport(q,issue,$('mcq-report-notes').value);
+ try{
+  if(!navigator.clipboard?.writeText)throw Error('Clipboard API unavailable');
+  await navigator.clipboard.writeText(text);
+  status.textContent='Copied. Paste the report into your preferred message to your teacher.';
+  $('mcq-report-fallback').classList.add('hidden');
+ }catch{
+  const input=$('mcq-report-fallback');
+  input.value=text;input.classList.remove('hidden');input.focus();input.select();
+  status.textContent='Automatic copying was blocked. Select the report text below and press Ctrl+C (or Cmd+C on Mac).';
+ }
 }
 function setClock(){const m=Math.floor(Math.max(0,secondsLeft)/60),s=Math.max(0,secondsLeft)%60;$('timer').textContent='Time left: '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
-function render(){const q=test[index];$('qcounter').textContent=`Question ${index+1} of ${test.length}`+(q.groupSize?` · Scenario ${q.groupOrdinal} (${q.groupPosition}/${q.groupSize})`:'');$('answeredCount').textContent=`${Object.keys(answers).length} answered / ${test.length}`;$('progressFill').style.width=`${((index+1)/test.length)*100}%`;$('tags').replaceChildren(chip(q.topic),chip(q.sloCodes.join(', ')),chip(q.assessmentClassification==='formative'?'Formative':'Summative theory'),chip(q.cognitiveLevel));const sp=$('stimulusPanel');sp.classList.toggle('hidden',!q.stimulusHtml);if(q.stimulusHtml){setRich(sp,q.stimulusHtml,q.stimulusText||'');if(q.groupSize){const marker=node('div','scenario-cue',`Scenario ${q.groupOrdinal} · question ${q.groupPosition} of ${q.groupSize} in this set`);sp.prepend(marker)}}setRich($('question'),q.stemHtml,q.stem);const items=[];q.displayOptions.forEach((opt,i)=>{let l=node('label','option');let radio=node('input');radio.type='radio';radio.name='answer';radio.value=opt.id;radio.checked=answers[q.id]===opt.id;radio.disabled=!!checked[q.id];radio.addEventListener('change',()=>{answers[q.id]=opt.id;render()});l.append(radio,node('span','option-letter',String.fromCharCode(65+i)+'.'),(()=>{const el=node('span','option-txt');setRich(el,opt.html,opt.text);return el})());if(checked[q.id]){l.classList.add('locked');if(opt.id===q.correctOptionId)l.classList.add('correct');else if(answers[q.id]===opt.id)l.classList.add('wrong')}items.push(l)});$('choices').replaceChildren(...items);
+function render(){const q=test[index];if(lastReportQuestionId!==q.id){$('mcq-report-details').open=false;$('mcq-report-type').value='';$('mcq-report-notes').value='';$('mcq-report-status').textContent='';$('mcq-report-fallback').value='';$('mcq-report-fallback').classList.add('hidden');lastReportQuestionId=q.id;}$('question-reference').textContent='Question reference: '+q.id;$('qcounter').textContent=`Question ${index+1} of ${test.length}`+(q.groupSize?` · Scenario ${q.groupOrdinal} (${q.groupPosition}/${q.groupSize})`:'');$('answeredCount').textContent=`${Object.keys(answers).length} answered / ${test.length}`;$('progressFill').style.width=`${((index+1)/test.length)*100}%`;$('tags').replaceChildren(chip(q.topic),chip(q.sloCodes.join(', ')),chip(q.assessmentClassification==='formative'?'Formative':'Summative theory'),chip(q.cognitiveLevel));const sp=$('stimulusPanel');sp.classList.toggle('hidden',!q.stimulusHtml);if(q.stimulusHtml){setRich(sp,q.stimulusHtml,q.stimulusText||'');if(q.groupSize){const marker=node('div','scenario-cue',`Scenario ${q.groupOrdinal} · question ${q.groupPosition} of ${q.groupSize} in this set`);sp.prepend(marker)}}setRich($('question'),q.stemHtml,q.stem);const items=[];q.displayOptions.forEach((opt,i)=>{let l=node('label','option');let radio=node('input');radio.type='radio';radio.name='answer';radio.value=opt.id;radio.checked=answers[q.id]===opt.id;radio.disabled=!!checked[q.id];radio.addEventListener('change',()=>{answers[q.id]=opt.id;render()});l.append(radio,node('span','option-letter',String.fromCharCode(65+i)+'.'),(()=>{const el=node('span','option-txt');setRich(el,opt.html,opt.text);return el})());if(checked[q.id]){l.classList.add('locked');if(opt.id===q.correctOptionId)l.classList.add('correct');else if(answers[q.id]===opt.id)l.classList.add('wrong')}items.push(l)});$('choices').replaceChildren(...items);
  $('feedbackBox').classList.toggle('hidden',!checked[q.id]);if(checked[q.id]){const correct=answers[q.id]===q.correctOptionId;$('feedbackBox').classList.toggle('bad',!correct);$('feedbackBox').replaceChildren(document.createTextNode(correct?'✓ Correct. ':'✗ Not quite. '));const e=node('span');setRich(e,q.explanationHtml,q.explanation);$('feedbackBox').appendChild(e)}
  $('prev').disabled=index===0;$('next').disabled=index===test.length-1;$('showHint').classList.toggle('hidden',cfg.feedback!=='hints'||!!checked[q.id]);$('check').classList.toggle('hidden',cfg.feedback==='end'||!!checked[q.id]);$('check').disabled=!answers[q.id];$('hintBox').classList.add('hidden');$('hintBox').textContent=''}
 function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearInterval(timerHandle);$('quiz').classList.add('hidden');$('result').classList.remove('hidden');const right=test.filter(q=>answers[q.id]===q.correctOptionId).length,skipped=test.filter(q=>!answers[q.id]).length,wrong=test.length-right-skipped;
@@ -241,7 +311,7 @@ function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearI
   questionResults:test.map(q=>({id:q.id,sloCodes:q.sloCodes.slice(0,6),answered:!!answers[q.id],correct:answers[q.id]===q.correctOptionId}))
  }}));
  window.scrollTo({top:0,behavior:'smooth'})}
-$('begin').addEventListener('click',prepare);$('prev').addEventListener('click',()=>{if(index>0){index--;render()}});$('next').addEventListener('click',()=>{if(index<test.length-1){index++;render()}});$('check').addEventListener('click',()=>{const q=test[index];if(!answers[q.id])return;checked[q.id]=true;render()});$('showHint').addEventListener('click',()=>{$('hintBox').textContent=hint(test[index]);$('hintBox').classList.remove('hidden')});$('submit').addEventListener('click',()=>{const n=test.filter(q=>!answers[q.id]).length;if(n&&!confirm(`You have ${n} unanswered question(s). Submit anyway?`))return;finish()});$('retry').addEventListener('click',()=>{$('start').classList.remove('hidden');$('result').classList.add('hidden');window.scrollTo({top:0})});$('print').addEventListener('click',()=>window.print());
+$('copy-mcq-report').addEventListener('click',copyMcqIssue);$('begin').addEventListener('click',prepare);$('prev').addEventListener('click',()=>{if(index>0){index--;render()}});$('next').addEventListener('click',()=>{if(index<test.length-1){index++;render()}});$('check').addEventListener('click',()=>{const q=test[index];if(!answers[q.id])return;checked[q.id]=true;render()});$('showHint').addEventListener('click',()=>{$('hintBox').textContent=hint(test[index]);$('hintBox').classList.remove('hidden')});$('submit').addEventListener('click',()=>{const n=test.filter(q=>!answers[q.id]).length;if(n&&!confirm(`You have ${n} unanswered question(s). Submit anyway?`))return;finish()});$('retry').addEventListener('click',()=>{$('start').classList.remove('hidden');$('result').classList.add('hidden');window.scrollTo({top:0})});$('print').addEventListener('click',()=>window.print());
 fetch(`../question-bank/grade-11/unit-0${cfg.unit}.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Question bank was not found (HTTP '+r.status+').');return r.json()}).then(data=>{if(!Array.isArray(data.questions)||data.status!=='practice-pilot'||!data.questions.length||data.questions.some(q=>q.grade!==11||q.unit!==cfg.unit))throw Error('Question bank does not match the selected Grade XI unit.');bank=data;const count=data.questions.length;document.title=`Unit ${cfg.unit} MCQ Practice | Physics with Sir Najam`;$('unitEyebrow').textContent=`Grade XI · NBF Unit ${cfg.unit} · ${count} Source MCQs`;$('unitTitle').textContent=(cfg.unit===2?'Vectors':'Physical Quantities and Measurements')+' — MCQ Practice';setup()}).catch(err=>showError('Unable to load the selected Unit '+cfg.unit+' question bank: '+err.message+' Please verify that the question-bank folder was copied alongside the practice-engine folder and that the site is hosted through GitHub Pages.'));
 </script>
 <script type="module" src="../portal/attempt-sync.js"></script>
