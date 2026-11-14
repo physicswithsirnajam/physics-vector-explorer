@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10233d">
+  <meta name="description" content="Interactive Grade XI Unit 2 Vectors mastery lab: answer rectangular-component, quadrant, and dot/cross-product challenges, check worked solutions, and explore angle effects.">
+  <title>Unit 2 Interactive Vector Mastery Lab | Physics with Sir Najam</title>
+  <style>
+    :root{--navy:#10233d;--gold:#edcb83;--ink:#192d47;--teal:#087e93;--muted:#52657e;--line:#d7e2ef;--soft:#f4f7fb;--ok:#17774b;--warn:#a33b39;--paper:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.6 system-ui,"Segoe UI",Arial,sans-serif}
+    a{color:#125f80}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #bd8742;outline-offset:3px}
+    header{background:var(--navy);color:white}.topbar{max-width:1080px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+    .brand{display:flex;gap:11px;align-items:center;color:white;text-decoration:none;font-weight:800}.brand img{width:54px;height:54px;object-fit:contain}
+    nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--gold);font-size:14px}
+    main{max-width:1080px;margin:auto;padding:28px 18px 70px}.eyebrow{color:#865d15;font-size:12px;text-transform:uppercase;letter-spacing:.11em;font-weight:800}
+    h1{font-size:clamp(27px,4.4vw,40px);line-height:1.17;margin:7px 0 10px}h2{font-size:22px;margin:0 0 10px}h3{font-size:17px;margin:0 0 6px}p{margin:8px 0}.lead{max-width:890px;color:var(--muted)}
+    .notice{margin:17px 0;padding:13px 16px;background:#fff7e6;border-left:4px solid #d1a14d;border-radius:10px;font-size:14px}
+    .panel{padding:22px;background:var(--paper);border:1px solid var(--line);border-radius:17px;box-shadow:0 9px 25px #10233d0a;margin-top:18px}
+    .badge{display:inline-block;font-size:12px;font-weight:750;background:#e4f3f7;padding:5px 9px;border-radius:25px;color:#21526c}
+    label{display:block;font-weight:750;font-size:14px;margin:10px 0 4px}select,input:not([type=range]){width:100%;border:1px solid #abc1d4;border-radius:9px;padding:10px 12px;background:white;color:var(--ink);font:inherit}
+    button{cursor:pointer;background:white;color:var(--navy);border:1px solid #b5c8dc;padding:10px 14px;border-radius:10px;font:inherit;font-weight:750}button:hover{background:#f2f8fa}.primary{background:var(--navy);border-color:var(--navy);color:white}.primary:hover{background:#213957}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+    .challenge-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(260px,.92fr);gap:18px;align-items:start}.prompt{font-size:18px;font-weight:700;margin:14px 0;line-height:1.5}
+    .field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.units{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+    .question-tag{color:#2c6884;font-size:12px;font-weight:800}.diagram{width:100%;height:auto;background:#f9fbff;border:1px solid var(--line);border-radius:12px}
+    .hint,.solution{margin-top:14px;border:1px solid #b7d4e7;background:#eff7fc;border-radius:11px;padding:13px 15px}.solution ol{margin:7px 0 0;padding-left:23px}.solution li{margin:8px 0}.hint p,.solution p{font-size:14px}
+    .status{font-weight:720;border-radius:9px;padding:10px 12px;margin:14px 0 0;background:#edf2f6}.status.ok{color:var(--ok);background:#eaf7ef}.status.bad{color:var(--warn);background:#fff0ef}.status.wait{color:#6e531f;background:#fff7e4}
+    .stat-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:12px}.stat-row strong{font-size:14px}.small{font-size:12px;color:var(--muted)}
+    .explorer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}.slider{width:100%;accent-color:var(--teal)}.presets{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}.presets button{padding:7px 13px;font-size:13px}
+    .values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.value{background:#f0f6fa;padding:13px;border-radius:10px}.value strong{display:block;font-size:22px;font-variant-numeric:tabular-nums}.value span{font-size:12px;color:var(--muted)}
+    .tip-list{padding-left:21px}.tip-list li{margin:8px 0}.links{display:flex;flex-wrap:wrap;gap:15px;margin:18px 0}
+    footer{background:var(--navy);padding:20px;text-align:center;color:#cbd6e5;font-size:13px}
+    .hidden{display:none!important}
+    @media(max-width:730px){.challenge-grid,.explorer-grid{grid-template-columns:1fr}.panel{padding:16px}.topbar{align-items:flex-start}h2{font-size:20px}}
+    @media(max-width:410px){.field-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}}
+    @media print{body{background:white}.topbar nav,.actions,.presets,.links,.notice,.no-print,footer{display:none!important}.panel{box-shadow:none;break-inside:avoid}.solution,.hint{display:block!important}}
+  </style>
+  <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+  <script src="./unit-02-concept-engine.js" defer></script>
+  <script src="./unit-02-concept-ui.js" defer></script>
+  <script src="../shared/navigation.js?v=6" defer></script>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo, unchanged">Physics with Sir Najam</a>
+      <nav aria-label="Learning navigation"><a href="./unit-02.html">Unit 2 Learning Desk</a><a href="./unit-02-numericals.html">Worked Numericals</a><a href="./unit-02-formula-sheet.html">Formula Sheet</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="eyebrow">Grade XI / HSSC-I · Unit 02 · SLO P-11-B-01 &amp; P-11-B-02</div>
+    <h1>Interactive Vector Mastery Lab</h1>
+    <p class="lead">Practise actual calculations rather than guessing an MCQ option. Choose a skill, calculate both required answers, check your attempt and reveal the full method only when needed. Use the graph to connect mathematical signs with vector directions.</p>
+    <div class="notice"><strong>Practice access and privacy:</strong> This is a public, original self-check activity based on Unit 2 vector concepts—not a secure FBISE examination, textbook exercise reproduction or formal graded assessment. Results stay within this page and are <strong>not saved to your My Physics Progress account</strong>. You do not need to log in.</div>
+
+    <section class="panel" aria-labelledby="challengeHeading">
+      <h2 id="challengeHeading">1. Practise a vector skill</h2>
+      <div class="stat-row"><label for="mode">Choose an activity</label><span id="score" class="badge" aria-live="polite">First-try correct: 0 / 0</span></div>
+      <select id="mode">
+        <option value="components">P-11-B-01 · Resolve a force into x and y</option>
+        <option value="direction">P-11-B-01 · Reconstruct magnitude and quadrant</option>
+        <option value="products">P-11-B-02 · Calculate dot and cross products</option>
+      </select>
+      <div class="challenge-grid">
+        <div>
+          <p id="questionRef" class="question-tag">Loading practice question…</p>
+          <p id="questionText" class="prompt"></p>
+          <form id="challengeForm" novalidate>
+            <div id="answerFields" class="field-grid"></div>
+            <p class="small">Enter numbers only. Use a minus sign for negative components. Answers may be rounded to one decimal place.</p>
+            <div class="actions">
+              <button class="primary" type="submit" id="checkAnswer">Check my answers</button>
+              <button type="button" id="newTask">Next challenge</button>
+              <button type="button" id="showHint">Show hint</button>
+              <button type="button" id="showSolution">Show worked solution</button>
+            </div>
+          </form>
+          <p id="feedback" class="status hidden" role="status" aria-live="polite"></p>
+          <div id="hint" class="hint hidden"><strong>Method hint</strong><p id="hintText"></p></div>
+          <div id="solution" class="solution hidden"><strong>Worked solution</strong><ol id="solutionSteps"></ol></div>
+        </div>
+        <div>
+          <h3>Vector diagram</h3>
+          <svg id="vectorPlot" class="diagram" viewBox="0 0 420 300" role="img" aria-label="Vector diagram drawn on x and y axes"></svg>
+          <p class="small">The diagram displays the question's vector(s). It illustrates direction and signs; use equations for exact values.</p>
+        </div>
+      </div>
+      <p class="small">First-try score counts each valid first submission once. Students can retry an incorrect question for learning; this score does not claim formal mastery or affect their portal records.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="explorerHeading">
+      <h2 id="explorerHeading">2. Explore what the angle changes</h2>
+      <p class="lead">For two non-zero vectors with magnitudes A = 5 and B = 4, explore how the angle θ changes their dot product and cross-product <em>magnitude</em>. This is a concept demonstration, not part of your score.</p>
+      <div class="explorer-grid">
+        <div>
+          <label for="angleRange">Angle between the vectors: <output for="angleRange" id="angleLabel">45°</output></label>
+          <input class="slider" type="range" id="angleRange" min="0" max="180" step="1" value="45">
+          <div class="presets" role="group" aria-label="Angle examples">
+            <button type="button" data-angle="0">0°</button><button type="button" data-angle="45">45°</button>
+            <button type="button" data-angle="90">90°</button><button type="button" data-angle="135">135°</button>
+            <button type="button" data-angle="180">180°</button>
+          </div>
+          <div class="values">
+            <div class="value"><span>Dot product · (signed scalar)</span><strong id="dotValue">—</strong></div>
+            <div class="value"><span>Cross product × (magnitude)</span><strong id="crossValue">—</strong></div>
+          </div>
+          <p id="angleInsight" class="small" aria-live="polite"></p>
+        </div>
+        <svg id="anglePlot" class="diagram" viewBox="0 0 420 300" role="img" aria-label="Fixed vector A and rotated vector B illustrating their included angle"></svg>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="strategyHeading">
+      <h2 id="strategyHeading">3. Strategy for exam-quality answers</h2>
+      <ul class="tip-list">
+        <li><strong>State the relationship:</strong> components use cosine and sine, scalar products use cosine, and cross-product magnitudes use sine.</li>
+        <li><strong>Use signs:</strong> a vector in Quadrant II, III or IV may have negative components; the signed k̂ cross-product coefficient also carries direction information.</li>
+        <li><strong>Check angles:</strong> 135° is obtuse. A dot product can be negative even though cross-product magnitude is positive.</li>
+        <li><strong>Show full working:</strong> compare with the Unit 2 worked numericals and descriptive model answers before finalizing a written response.</li>
+      </ul>
+      <div class="links"><a href="./unit-02-numericals.html">Worked Numericals</a><a href="./unit-02-descriptive.html">Descriptive Answers</a><a href="./unit-02-formula-sheet.html">Formula Sheet</a><a href="../build-your-physics-test.html?unit=2">Unit 2 MCQ Test Builder</a></div>
+    </section>
+  </main>
+  <footer>Physics with Sir Najam · From Fundamentals to Frontiers · Public learning activity · Original official logo</footer>
+</body>
+</html>

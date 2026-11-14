@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v26-unit2-full-stage3-4-descriptive-2026-11-14",
+  "catalogVersion": "pilot-v27-unit2-interactive-mastery-lab-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -48,11 +48,12 @@
             "unit2-practice",
             "unit2-numericals",
             "unit2-descriptive",
-            "unit2-formula-sheet"
+            "unit2-formula-sheet",
+            "unit2-concept-lab"
           ],
           "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
           "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
-          "studentNotice": "Unit 2 offers 2 enrolled lessons, 206 provisional public self-practice MCQs, all 30 Stage 5 worked numericals, all 35 Stage 3 short responses, all 15 Stage 4 comprehensive model answers, and a public formula sheet. Academic source and page-level verification remains a separate review.",
+          "studentNotice": "Unit 2 offers protected lessons, 206 provisional public MCQs, all 30 Stage 5 worked numericals, all 35 Stage 3 short responses, all 15 Stage 4 comprehensive answers, a formula sheet and a new public local interactive self-check lab. The lab does not save grades to My Physics Progress.",
           "landingHref": "./unit-02.html"
         },
         {
@@ -433,6 +434,19 @@
       "access": "public-link",
       "contentStatus": "public-formula-revision",
       "accessDescription": "Public revision support, not an official examination formula insert."
+    },
+    {
+      "id": "unit2-concept-lab",
+      "category": "PRACTISE",
+      "title": "Unit 2 — Interactive Vector Mastery Lab",
+      "description": "Three interactive skill modes with 36 original calculation challenges, two-value checking, hints, worked methods, vector diagrams and dot/cross angle exploration. Self-practice is local and does not save grades.",
+      "href": "./unit-02-concept-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Open interactive revision lab ↗",
+      "access": "public-link",
+      "contentStatus": "public-local-guided-self-check",
+      "accessDescription": "Public original self-check; no authentication required, no scores sent or saved to account, not a secure FBISE assessment."
     }
   ]
 }

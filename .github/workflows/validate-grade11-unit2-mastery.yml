@@ -1,0 +1,38 @@
+name: Validate Grade XI Unit 2 Interactive Mastery Lab
+on:
+  pull_request:
+    paths:
+      - "portal/unit-02-concept-lab.html"
+      - "portal/unit-02-concept-engine.js"
+      - "portal/unit-02-concept-ui.js"
+      - "portal/unit-02.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit2_mastery_lab.cjs"
+      - ".github/workflows/validate-grade11-unit2-mastery.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-02-concept-lab.html"
+      - "portal/unit-02-concept-engine.js"
+      - "portal/unit-02-concept-ui.js"
+      - "portal/unit-02.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit2_mastery_lab.cjs"
+      - ".github/workflows/validate-grade11-unit2-mastery.yml"
+  workflow_dispatch:
+jobs:
+  verify-mastery:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check vector practice JavaScript syntax
+        run: |
+          node --check portal/unit-02-concept-engine.js
+          node --check portal/unit-02-concept-ui.js
+          node --check scripts/test_unit2_mastery_lab.cjs
+      - name: Verify vector maths, source SLO labels, quiz structure and privacy
+        run: node scripts/test_unit2_mastery_lab.cjs
