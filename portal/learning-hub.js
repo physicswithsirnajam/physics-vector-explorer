@@ -6,9 +6,10 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=11',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=17',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
+let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
 let catalogue=null;
 const fallbackBuilder='../build-your-physics-test.html';
 const ACCESS_LABELS={
@@ -33,7 +34,8 @@ function chip(text,kind){
 }
 function renderResourceList(grade,active){
  const wrap=resetChildren('hub-resources');
- const ids=[...new Set(active.flatMap(u=>u.resourceIds||[]))];
+ const visibleUnits=selectedUnit==='all'?active:active.filter(u=>String(u.unit)===selectedUnit);
+ const ids=[...new Set(visibleUnits.flatMap(u=>u.resourceIds||[]))];
  const filter=byId('hub-resource-filter')?.value||'all';
  const term=(byId('hub-resource-search')?.value||'').trim().toLowerCase();
  let found=0;
@@ -70,6 +72,14 @@ function renderGrade(){
  const active=grade.units.filter(u=>u.status==='available');
  const planned=grade.units.filter(u=>u.status!=='available');
  const total=grade.units.length;
+ const unitFilter=byId('hub-unit-filter');
+ if(unitFilter){
+   const old=selectedUnit;
+   unitFilter.replaceChildren();
+   const all=document.createElement('option');all.value='all';all.textContent='All released units';unitFilter.append(all);
+   for(const u of active){const option=document.createElement('option');option.value=String(u.unit);option.textContent=`Unit ${u.unit} — ${u.title}`;unitFilter.append(option);}
+   selectedUnit=active.some(u=>String(u.unit)===old)?old:'all';unitFilter.value=selectedUnit;
+ }
  byId('hub-total-units').textContent=String(total);
  byId('hub-linked-units').textContent=String(active.length);
  byId('hub-awaiting-units').textContent=String(planned.length);
@@ -80,13 +90,17 @@ function renderGrade(){
   const card=document.createElement('article');card.className='hub-unit';
   const top=document.createElement('div');top.className='hub-unit-top';
   const title=document.createElement('strong');title.textContent=`Unit ${u.unit} — ${u.title}`;
-  top.append(title,chip('Pilot practice available','true'));
+  const hasBank=Number(u.questionBankCount)>0;
+  top.append(title,chip(hasBank?'Pilot MCQ practice':'Enrolled study lessons','true'));
   const desc=document.createElement('p');desc.textContent=u.summary||'';
   const meta=document.createElement('div');meta.className='hub-unit-meta';
-  meta.append(chip(`${u.questionBankCount||0} imported MCQs`),chip('Academic review pending'));
+  meta.append(chip(hasBank?`${u.questionBankCount} imported MCQs`:'Unit MCQs not yet imported'),chip(hasBank?'MCQ academic review pending':'Unit source package QC passed'));
   const note=document.createElement('p');note.className='hub-unit-note';
   note.textContent=u.studentNotice||'Available for exploratory self-practice; academic approval remains in progress.';
-  card.append(top,desc,meta,note);list.append(card);
+  card.append(top,desc,meta,note);
+  const unitHref=u.landingHref?safeHref(u.landingHref):null;
+  if(unitHref){const link=document.createElement('a');link.href=unitHref;link.className='btn btn-secondary btn-small';link.textContent=`Open Unit ${u.unit} Learning Desk ↗`;card.append(link);}
+  list.append(card);
  }
  const upcoming=resetChildren('hub-planned-units');
  for(const u of planned){
@@ -100,9 +114,12 @@ function renderGrade(){
 export function initLearningHub(){
  for(const btn of gradeButtons){btn.disabled=true;btn.title='Enrollment grade is controlled by your academic record';}
  byId('hub-back-to-xi')?.addEventListener('click',event=>{event.preventDefault();byId('learning-hub').scrollIntoView({block:'start'});});
- for(const id of ['hub-resource-filter','hub-resource-search']){
+ for(const id of ['hub-unit-filter','hub-resource-filter','hub-resource-search']){
   const input=byId(id);if(!input)continue;
-  input.addEventListener(id==='hub-resource-filter'?'change':'input',()=>{if(catalogue&&selectedGrade==='11')renderGrade();});
+  input.addEventListener(id==='hub-resource-search'?'input':'change',()=>{
+    if(id==='hub-unit-filter')selectedUnit=input.value;
+    if(catalogue&&selectedGrade==='11')renderGrade();
+  });
  }
  const slos=resetChildren('hub-slo-links');
  for(const [code,title] of Object.entries(SLO_TOPICS)){
