@@ -133,7 +133,7 @@ def main():
         if id_ not in desk:
             die("Protected course-lesson link removed: " + id_)
     for name, (html, _) in pages.items():
-        if "beforeprint" not in html and name != "unit-02-formula-sheet":
+        if "beforeprint" not in html and name != "unit-02-formula-sheet.html":
             die(name + ": answers must be expanded for print")
     print("PASS — Unit 2: 13 worked numericals (5 textbook-labelled, 8 additional), 13 model answers and 20 formula cards.")
     print("PASS — Links, full-catalogue listings, unchanged protected lesson references, source constants and inline JS syntax.")
