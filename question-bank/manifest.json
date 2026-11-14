@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Physics with Sir Najam",
   "status": "practice-pilot",
-  "updated": "2026-10-29",
+  "updated": "2026-11-14",
   "grades": [
     {
       "grade": 11,
@@ -18,10 +18,27 @@
           "status": "pilot",
           "exactFbiseModeReady": false,
           "bankVersion": "pilot-v6.2-residual-slo-and-topic-corrections-2026-10-29"
+        },
+        {
+          "unit": 2,
+          "name": "Vectors",
+          "path": "grade-11/unit-02.json",
+          "liveMcqCount": 206,
+          "sourceSloMcqCount": 206,
+          "formativePilotCount": 0,
+          "summativePilotCount": 206,
+          "textbookExerciseCount": 6,
+          "additionalStraightCount": 140,
+          "additionalStimulusCount": 60,
+          "scenarioGroupCount": 15,
+          "status": "pilot",
+          "exactFbiseModeReady": false,
+          "bankVersion": "v18-source-preserved-2026-11-14",
+          "importNote": "Requires adding the prepared unit-02.json file to this PR branch before merge. These are browser-graded self-practice questions, not secure examination items."
         }
       ]
     }
   ],
-  "bankVersion": "pilot-v6.2-residual-slo-and-topic-corrections-2026-10-29",
-  "lastUpdated": "2026-10-29"
+  "bankVersion": "unit-01-v6.2-and-unit-02-v18-source-preserved",
+  "lastUpdated": "2026-11-14"
 }
