@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v16-enrolled-course-lessons-2026-11-14",
-  "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
+  "catalogVersion": "pilot-v17-grade-xi-unit-02-enrolled-lessons-2026-11-14",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect the V9 pilot and V16/V17 courseLessons. Public HTML notes, the simulations, and the provisional Unit 1 MCQ bank remain publicly accessible. Unit 2 enrolled lesson content is stored in Firestore. Unit 2 MCQs are not yet imported.",
   "grades": [
     {
       "grade": 11,
@@ -31,17 +31,25 @@
           ],
           "qualityStatus": "academic-audit-pending",
           "resourceAccess": "mixed-public-and-pilot-protected",
-          "studentNotice": "Unit 1 is a self-practice pilot. Textbook-page mapping, independent scientific review and exact FBISE readiness remain incomplete."
+          "studentNotice": "Unit 1 is a self-practice pilot. Textbook-page mapping, independent scientific review and exact FBISE readiness remain incomplete.",
+          "landingHref": "./unit-01.html"
         },
         {
           "unit": 2,
-          "title": "Unit 2 — Content in preparation",
-          "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "title": "Vectors",
+          "status": "available",
+          "summary": "Vector resolution, rectangular components, scalar/dot products and vector/cross products.",
           "questionBankCount": 0,
-          "assessmentStatus": "not-published",
-          "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "assessmentStatus": "study-only-no-mcq-import",
+          "resourceIds": [
+            "unit2-desk",
+            "unit2-b01",
+            "unit2-b02"
+          ],
+          "qualityStatus": "teacher-materials-final-qc;portal-lessons-reviewed",
+          "resourceAccess": "mixed-public-index-and-enrolled-protected",
+          "studentNotice": "Two enrolled Grade XI vector lessons are available; Unit 2 MCQ bank has NOT been imported. Two public vector simulations are linked from the unit desk.",
+          "landingHref": "./unit-02.html"
         },
         {
           "unit": 3,
@@ -330,6 +338,45 @@
       "access": "enrolled-protected",
       "contentStatus": "requires-v16-firestore-setup",
       "accessDescription": "Lesson text is stored in Firestore, not public GitHub files. V16 rules and lesson document must be installed before this link works."
+    },
+    {
+      "id": "unit2-desk",
+      "category": "STUDY",
+      "title": "Unit 2 — Vectors Learning Desk",
+      "description": "Browse two enrolled vector lessons and two public interactive vector simulations. No Unit 2 MCQ assessment is active yet.",
+      "href": "./unit-02.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 2 Learning Desk ↗",
+      "access": "public-link",
+      "contentStatus": "available-study-only",
+      "accessDescription": "The directory page is public; actual V17 lesson bodies require Grade XI enrollment."
+    },
+    {
+      "id": "unit2-b01",
+      "category": "REGISTERED LEARNERS",
+      "title": "Unit 2 — Rectangular Vector Components",
+      "description": "Summative SLO P-11-B-01: components, signed directions, magnitudes, quadrant checks and worked examples.",
+      "href": "./course-lesson.html?id=g11-u02-vector-components-01",
+      "public": false,
+      "external": false,
+      "action": "Open enrolled lesson ↗",
+      "access": "enrolled-protected",
+      "contentStatus": "v17-firestore-document-required",
+      "accessDescription": "Lesson body is read from Firestore only after verified sign-in and active Grade XI/FBISE enrollment."
+    },
+    {
+      "id": "unit2-b02",
+      "category": "REGISTERED LEARNERS",
+      "title": "Unit 2 — Dot and Cross Products",
+      "description": "Summative SLO P-11-B-02: scalar and vector products, projections, right-hand rule, cross-product direction and area.",
+      "href": "./course-lesson.html?id=g11-u02-vector-products-02",
+      "public": false,
+      "external": false,
+      "action": "Open enrolled lesson ↗",
+      "access": "enrolled-protected",
+      "contentStatus": "v17-firestore-document-required",
+      "accessDescription": "Lesson body is read from Firestore only after verified sign-in and active Grade XI/FBISE enrollment."
     }
   ]
 }
