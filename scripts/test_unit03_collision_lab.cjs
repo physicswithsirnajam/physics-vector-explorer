@@ -92,8 +92,9 @@ for(const url of ["./unit-03-collision-study.html","./unit-03-collision-lab.html
 }
 assert.ok(desk.includes("not yet published"));
 const unit3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(unit3.questionBankCount,0);assert.equal(unit3.assessmentStatus,"no-mcq-bank-published");
-assert.equal(unit3.resourceIds.length,5);
+assert.equal(unit3.questionBankCount,40);assert.equal(unit3.assessmentStatus,"provisional-unit-only-summative-self-practice");
+assert.equal(unit3.resourceIds.length,6);
+assert.ok(unit3.resourceIds.includes("unit3-mcq-stage1"));
 for(const [id,href] of [["unit3-collision-study","./unit-03-collision-study.html"],
  ["unit3-collision-lab","./unit-03-collision-lab.html"]]){
  assert.ok(unit3.resourceIds.includes(id));
