@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Grade XI Unit 3 translatory motion Part 2 textbook-grounded notes: qualitative air resistance, momentum conservation, elastic and inelastic collisions with FBISE formative/summative classifications.">
+<title>Unit 3 Part 2 — Air Resistance, Momentum &amp; Collisions | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e4c178;--ink:#1d3049;--muted:#52647a;--line:#d5e1ed;--soft:#f5f7fb;--teal:#137e96}
+*{box-sizing:border-box}body{margin:0;font:16px/1.68 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--soft);color:var(--ink)}
+header{background:var(--navy);color:#fff}.bar{max-width:1060px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800}.brand img{width:52px;height:52px;object-fit:contain}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#145e84}a:focus-visible,summary:focus-visible{outline:3px solid #c2943d;outline-offset:3px}
+main{max-width:1060px;padding:30px 18px 70px;margin:auto}.eyebrow{color:#8e6820;font-weight:800;letter-spacing:.09em;font-size:12px;text-transform:uppercase}
+h1{font-size:clamp(28px,4.3vw,40px);line-height:1.17;margin:8px 0 14px}h2{font-size:23px;line-height:1.25;margin:0 0 12px}h3{font-size:18px;margin:17px 0 8px}
+.lead{max-width:850px;color:var(--muted)}.card{border-radius:15px;border:1px solid var(--line);padding:22px;background:#fff;margin:20px 0;box-shadow:0 8px 24px #10233d08}
+.notice{background:#fff9eb;border-radius:10px;border-left:4px solid #dab05b;margin:17px 0;padding:13px 16px;font-size:14px}.slo{background:#e5f3f8;color:#195d75;font-size:12px;font-weight:800;display:inline-block;border-radius:20px;padding:4px 10px;margin-bottom:10px}
+.formula{display:block;background:#f1f6fa;padding:9px 12px;font-weight:750;border-radius:8px;overflow-wrap:anywhere;margin:8px 0}
+table{border-collapse:collapse;width:100%;margin:15px 0}th,td{border:1px solid var(--line);padding:10px 11px;text-align:left;vertical-align:top}th{background:#ecf4fa}
+details{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:13px 0}summary{background:#eaf4f8;cursor:pointer;font-weight:800;padding:11px 14px}.answer{padding:12px 16px}.answer p{margin:7px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:14px}.example{padding:16px;border:1px solid #ccdeeb;border-radius:11px;background:#f7fbfd}
+.small{font-size:13px;color:var(--muted)}ul{padding-left:23px}li{margin:7px 0}.links{display:flex;gap:16px;flex-wrap:wrap;margin:21px 0}
+footer{background:var(--navy);padding:20px;color:#ccdae8;text-align:center;font-size:13px}
+@media(max-width:550px){.card{padding:16px}table{font-size:13px}th,td{padding:7px}}
+@media print{body{background:white}nav,.links,footer,.notice{display:none!important}.card{box-shadow:none;break-inside:avoid}main{padding:0;max-width:100%}details{break-inside:avoid}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1"><script src="../shared/navigation.js?v=6" defer></script></head>
+<body><header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Original unchanged Physics with Sir Najam logo">Physics with Sir Najam</a><nav><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-03-collision-lab.html">Interactive Collision Lab</a><a href="./unit-03-motion-lab.html">Motion Lab</a></nav></div></header>
+<main><div class="eyebrow">Grade XI / HSSC-I · Unit 3 · Part 2</div>
+<h1>Air Resistance, Momentum &amp; Collisions</h1>
+<p class="lead">Textbook-based study notes for qualitative drag effects and one-dimensional collision analysis, with clear attention to momentum conservation, kinetic energy and the FBISE learning-outcome classification.</p>
+<div class="notice"><strong>Source and scope:</strong> NBF Physics Grade XI, Unit 3, printed pages 42–49; FBISE Grade XI Physics Assessment Framework, P-11-B-06 and P-11-B-11 through P-11-B-13. This guide is an educational adaptation, not an official marking scheme. The head-on perfectly inelastic example is an additional idealized illustration of the broader inelastic concept.</div>
+<section class="card" id="classification">
+<h2>1. Official theory SLO classification</h2>
+<table><thead><tr><th>SLO</th><th>Required learning</th><th>Classification</th></tr></thead><tbody>
+<tr><td><strong>P-11-B-06</strong></td><td>Predict qualitatively how air resistance affects projectile velocity components and range.</td><td><span class="slo">Summative</span></td></tr>
+<tr><td><strong>P-11-B-11</strong></td><td>Apply conservation of momentum to simple one- and two-dimensional interactions.</td><td><span class="slo">Formative</span></td></tr>
+<tr><td><strong>P-11-B-12</strong></td><td>Predict and analyse elastic collisions using conservation of kinetic energy and equality of relative speeds.</td><td><span class="slo">Summative</span></td></tr>
+<tr><td><strong>P-11-B-13</strong></td><td>Explain why momentum may remain conserved while kinetic energy changes.</td><td><span class="slo">Summative</span></td></tr>
+</tbody></table>
+<p class="small">Formative work remains essential teaching/practice material, but the supplied FBISE framework does not list P-11-B-11 as a final-theory summative question.</p>
+</section>
+<section class="card" id="drag">
+<span class="slo">P-11-B-06 · Summative</span><h2>2. Effect of air resistance on projectiles</h2>
+<p>In an ideal projectile model, there is no horizontal acceleration and the vertical acceleration is g downward. Actual air resistance acts opposite the instantaneous velocity, changes both component motions and generally shortens the range and maximum height relative to otherwise identical no-drag conditions.</p>
+<table><thead><tr><th>Feature</th><th>No air resistance</th><th>With air resistance</th></tr></thead><tbody>
+<tr><td>Horizontal velocity</td><td>Remains constant</td><td>Generally decreases while the projectile travels forward</td></tr>
+<tr><td>Vertical motion</td><td>Acceleration always −g if upward is positive</td><td>Drag acts downward on ascent and upward on descent; acceleration depends on motion</td></tr>
+<tr><td>Maximum height</td><td>H = u²sin²θ/(2g) for launch from a level surface</td><td>Generally smaller for the same launch conditions</td></tr>
+<tr><td>Range</td><td>R = u²sin(2θ)/g for same-height landing</td><td>Generally shorter; the ideal formula does not apply</td></tr>
+<tr><td>Trajectory</td><td>Ideal parabola</td><td>Not an exact parabola; depends on drag conditions</td></tr>
+</tbody></table>
+<details><summary>Explain why the horizontal velocity changes (student self-check)</summary><div class="answer"><p>The resistive force is opposite the direction of movement. Therefore the horizontal component of net force is no longer zero when the projectile moves forward, so horizontal velocity is not constant.</p></div></details>
+<details><summary>Do complementary launch angles necessarily have equal ranges with air drag?</summary><div class="answer"><p>No. The equal-range property R(θ)=R(90°−θ) follows from the ideal no-drag, equal-launch-and-landing-height formula. Real drag changes the trajectory and does not generally preserve that symmetry.</p></div></details>
+<p class="small">Source: NBF Physics XI Figure 3.6(b), printed page 42. Our companion interactive diagram is qualitative; it does not calculate drag numerically.</p>
+</section>
+<section class="card" id="momentum">
+<span class="slo">P-11-B-11 · Formative</span><h2>3. The law of conservation of momentum</h2>
+<p>Momentum is a vector: p⃗ = m v⃗. For an isolated system with no external resultant impulse, total momentum before and after an interaction is the same.</p>
+<span class="formula">Σp⃗ before = Σp⃗ after</span>
+<span class="formula">For a straight-line two-body interaction: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</span>
+<p>A signed velocity convention is essential. Motion in the negative direction contributes negative momentum. The textbook discusses recoil, explosions, ball-and-bat interactions and rocket thrust to explain conservation of momentum.</p>
+<p><strong>Important teaching distinction:</strong> P-11-B-11 is classified formative by the FBISE framework. Learn and practise conservation of momentum; it is also a foundation for the summative collision-analysis SLOs below.</p>
+</section>
+<section class="card" id="elastic">
+<span class="slo">P-11-B-12 · Summative</span><h2>4. Elastic collisions</h2>
+<p>For an elastic collision in an isolated system, both <strong>total momentum</strong> and <strong>total kinetic energy</strong> are conserved.</p>
+<span class="formula">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</span>
+<span class="formula">½m₁u₁² + ½m₂u₂² = ½m₁v₁² + ½m₂v₂²</span>
+<p>For an ideal head-on elastic collision in one dimension where object 1 approaches object 2, the relative speed of approach equals the relative speed of separation:</p>
+<span class="formula">u₁ − u₂ = v₂ − v₁</span>
+<p>This follows from combining the momentum and kinetic-energy equations for the elastic interaction (where the relative speeds are nonzero).</p>
+<span class="formula">v₁ = [(m₁−m₂)u₁ + 2m₂u₂] / (m₁+m₂)</span>
+<span class="formula">v₂ = [2m₁u₁ + (m₂−m₁)u₂] / (m₁+m₂)</span>
+<div class="example">
+<h3>Textbook Example 3.7 — printed pages 48–49</h3>
+<p>A 5 kg body travels at 10 m/s and collides with a 10 kg body moving in the same direction at 5 m/s. If the collision is one-dimensional and elastic, find their final velocities.</p>
+<details><summary>Reveal the complete calculation</summary><div class="answer">
+<p><strong>Given:</strong> m₁ = 5 kg, m₂ = 10 kg, u₁ = 10 m/s, u₂ = 5 m/s.</p>
+<p>v₁ = [(5−10)(10) + 2(10)(5)] / (5+10) = (−50+100)/15 = <strong>3.33 m/s</strong>.</p>
+<p>v₂ = [2(5)(10) + (10−5)(5)] / (5+10) = (100+25)/15 = <strong>8.33 m/s</strong>.</p>
+<p><strong>Momentum check:</strong> Before = 5(10)+10(5)=100 kg·m/s; after = 5(3.333…)+10(8.333…)=100 kg·m/s.</p>
+<p><strong>Kinetic energy check:</strong> Before = ½(5)(10²)+½(10)(5²)=375 J; after = 375 J (before rounding the final velocities).</p>
+<p><strong>Relative speed check:</strong> Approach = 10−5=5 m/s; separation = 8.333…−3.333…=5 m/s.</p>
+</div></details>
+</div>
+<p class="small">The two bodies remain distinct after the elastic interaction; their velocities are not necessarily equal. Rounding displayed final velocities can create tiny apparent differences in momentum or energy checks.</p>
+</section>
+<section class="card" id="inelastic">
+<span class="slo">P-11-B-13 · Summative</span><h2>5. Inelastic collisions and kinetic-energy change</h2>
+<p>Momentum remains conserved for an isolated system during an inelastic collision, but total kinetic energy is not generally conserved. Some kinetic energy is transformed into deformation, thermal energy, sound or other energy forms.</p>
+<p><strong>Perfectly inelastic</strong> is a special case: the bodies stick together and move with the same final velocity. This extra instructional model is useful for comparing energy before and after the collision.</p>
+<span class="formula">v₁ = v₂ = v = (m₁u₁+m₂u₂)/(m₁+m₂)</span>
+<div class="example">
+<h3>Additional worked illustration — bodies stick together</h3>
+<p>Use the same initial values as textbook Example 3.7 (m₁=5 kg, m₂=10 kg, u₁=10 m/s, u₂=5 m/s), but now suppose they stick together. This is <strong>not</strong> the textbook's original elastic Example 3.7.</p>
+<details><summary>Show momentum and energy calculations</summary><div class="answer">
+<p>Common final speed: v = [5(10)+10(5)]/(5+10) = 100/15 = <strong>6.67 m/s</strong>.</p>
+<p>Momentum: 100 kg·m/s before and after.</p>
+<p>Kinetic energy before: ½(5)(10²)+½(10)(5²) = <strong>375 J</strong>.</p>
+<p>Kinetic energy after: ½(15)(100/15)² = <strong>333.33 J</strong>.</p>
+<p><strong>Decrease:</strong> 375−333.33 = <strong>41.67 J</strong>. Energy is transformed into other forms, not destroyed.</p>
+</div></details>
+</div>
+<details><summary>Why is total momentum conserved even when kinetic energy decreases?</summary><div class="answer"><p>Momentum conservation follows from negligible net external impulse on the isolated system. Kinetic energy can be transferred into deformation, heat or sound during an inelastic interaction, so it need not be conserved as kinetic energy even though total energy remains conserved.</p></div></details>
+<p class="small">Source: NBF Physics XI pp. 44–49, sections 3.3–3.4. The one-dimensional stick-together example is separately identified as an instructional extension.</p>
+</section>
+<section class="card" id="practice">
+<h2>6. Classroom / examination preparation</h2>
+<ul>
+<li>Explain how resistance affects the horizontal and vertical components of a projectile qualitatively (summative B-06).</li>
+<li>For elastic collisions, calculate and verify final velocities, momentum, kinetic energy and relative speed (summative B-12).</li>
+<li>Contrast an elastic collision with an inelastic one to explain kinetic-energy change (summative B-13).</li>
+<li>Practise momentum applications as valuable formative learning (B-11), without mislabelling this individual SLO as summative theory.</li>
+</ul>
+<div class="links"><a href="./unit-03-collision-lab.html">Launch interactive collision laboratory</a><a href="./unit-03.html">Return to Unit 3 Learning Desk</a><a href="./unit-03-study-guide.html">Part 1 study guide</a></div>
+</section></main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers · Source-based Grade XI Unit 3 Part 2 study resource</footer></body></html>
