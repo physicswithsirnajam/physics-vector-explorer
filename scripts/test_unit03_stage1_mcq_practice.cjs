@@ -119,8 +119,8 @@ const final1=((m1-m2)*initial1+2*m2*initial2)/(m1+m2);
 const final2=(2*m1*initial1+(m2-m1)*initial2)/(m1+m2);
 assert.ok(Math.abs(final1+1.2)<1e-10);
 assert.ok(Math.abs(final2-4.8)<1e-10);
-assert.equal(m1*initial1+m2*initial2,m1*final1+m2*final2);
-assert.equal(0.5*m1*initial1**2,0.5*m1*final1**2+0.5*m2*final2**2);
+assert.ok(Math.abs((m1*initial1+m2*initial2)-(m1*final1+m2*final2))<1e-9);
+assert.ok(Math.abs(0.5*m1*initial1**2-(0.5*m1*final1**2+0.5*m2*final2**2))<1e-9);
 const htmlIds=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 assert.equal(new Set(htmlIds).size,htmlIds.length);
 for(const id of ["bankStatus","check","showKey","reset","printQuestions","printKey","questionArea","answerKey","solutionList","result"]){
