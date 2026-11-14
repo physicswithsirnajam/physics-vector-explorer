@@ -168,13 +168,15 @@
           <p class="hub-explanation">Your current enrollment is Grade XI / FBISE. The course map shows what is linked today and what is still in development. Upcoming units cannot be opened or assessed yet.</p>
           <div class="hub-readiness" aria-label="Grade XI course availability">
             <div class="hub-readiness-stat"><strong id="hub-total-units">14</strong><span>Course units mapped</span></div>
-            <div class="hub-readiness-stat"><strong id="hub-linked-units">1</strong><span>Units with current practice</span></div>
-            <div class="hub-readiness-stat"><strong id="hub-awaiting-units">13</strong><span>Units awaiting release</span></div>
+            <div class="hub-readiness-stat"><strong id="hub-linked-units">2</strong><span>Units with available resources</span></div>
+            <div class="hub-readiness-stat"><strong id="hub-awaiting-units">12</strong><span>Units awaiting release</span></div>
           </div>
           <div id="hub-units" class="hub-units" aria-live="polite"></div>
-          <details class="hub-upcoming-list"><summary>View upcoming Grade XI units <span id="hub-upcoming-count">(13)</span></summary><div id="hub-planned-units" class="hub-planned-units"></div></details>
-          <div class="hub-section-heading"><h3>Learning resources & activities</h3><span class="hub-small-help">Select a resource for your current unit</span></div>
+          <details class="hub-upcoming-list"><summary>View upcoming Grade XI units <span id="hub-upcoming-count">(12)</span></summary><div id="hub-planned-units" class="hub-planned-units"></div></details>
+          <div class="hub-section-heading"><h3>Learning resources & activities</h3><span class="hub-small-help">Choose a resource from Unit 1 or Unit 2</span></div>
           <div class="hub-resource-controls">
+            <label class="hub-filter-label" for="hub-unit-filter">Unit</label>
+            <select id="hub-unit-filter" aria-controls="hub-resources"><option value="all">All released units</option></select>
             <label class="hub-filter-label" for="hub-resource-filter">Filter resources</label>
             <select id="hub-resource-filter" aria-controls="hub-resources">
               <option value="all">All resources</option>
