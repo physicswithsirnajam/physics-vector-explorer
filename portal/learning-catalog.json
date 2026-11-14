@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v14-original-unit-01-study-guide-2026-11-14",
+  "catalogVersion": "pilot-v15-unit-01-numericals-descriptive-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
   "grades": [
     {
@@ -18,6 +18,8 @@
           "resourceIds": [
             "unit1-desk",
             "unit1-study-guide",
+            "unit1-numericals",
+            "unit1-descriptive",
             "study",
             "protected-lesson",
             "explore",
@@ -288,6 +290,32 @@
       "access": "public-link",
       "contentStatus": "original-study-resource",
       "accessDescription": "Public original study material grounded in supplied Grade XI Unit 1 and official FBISE framework; separate from provisional 275-question bank."
+    },
+    {
+      "id": "unit1-numericals",
+      "category": "PRACTISE",
+      "title": "Unit 1 — Worked Numericals (10 Problems)",
+      "description": "Step-by-step numerical solutions with formulas, calculations, units, uncertainty propagation and source notes. Includes selected textbook exercise guidance and original reinforcement.",
+      "href": "./unit-01-numericals.html",
+      "public": true,
+      "external": false,
+      "action": "Study worked solutions ↗",
+      "access": "public-link",
+      "contentStatus": "original-study-resource",
+      "accessDescription": "Public original worked examples; not a secure test or a final certification of the 275-MCQ bank."
+    },
+    {
+      "id": "unit1-descriptive",
+      "category": "EXAM PREPARATION",
+      "title": "Unit 1 — Short & Comprehensive Answers",
+      "description": "Ten short-response and four comprehensive-response model answers, with FBISE SLOs and answer-writing guidance.",
+      "href": "./unit-01-descriptive.html",
+      "public": true,
+      "external": false,
+      "action": "Read model answers ↗",
+      "access": "public-link",
+      "contentStatus": "original-study-resource",
+      "accessDescription": "Public original model answers; not an officially graded FBISE assessment or a verbatim textbook solution set."
     }
   ]
 }
