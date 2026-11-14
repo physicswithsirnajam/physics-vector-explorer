@@ -90,12 +90,15 @@ def main():
     desc, desc_ins = pages["unit-02-descriptive.html"]
     formulas, form_ins = pages["unit-02-formula-sheet.html"]
 
-    if num_ins.problem_cards != 13:
-        die("Worked numericals: expected exactly 13 problem cards")
+    if num_ins.problem_cards != 30:
+        die("Worked numericals: expected exactly 30 problem cards")
     if len(re.findall(r"Textbook numerical 2\.[1-5]", num)) != 5:
         die("Worked numericals: five original textbook-labelled items not present")
-    if len(re.findall(r"Additional SLO practice", num)) != 8:
-        die("Worked numericals: expected eight additional applications")
+    if len(re.findall(r"Additional SLO practice [0-9]+ ·", num)) != 25:
+        die("Worked numericals: expected all 25 additional Stage 5 applications")
+    for index in (7, 9, 11, 12, 13, 14, 15, 17, 19, 20, 21, 23, 24, 26, 27, 28, 29):
+        if f'id="a{index}"' not in num or f'href="#a{index}"' not in num:
+            die(f"New Stage 5 numerical {index} missing or unlinked")
     if "4.3 m" not in num or "23.1 N" not in num or "173.2 N" not in num:
         die("Worked numericals: critical source values absent")
     if desc_ins.problem_cards != 13:
@@ -135,7 +138,7 @@ def main():
     for name, (html, _) in pages.items():
         if "beforeprint" not in html and name != "unit-02-formula-sheet.html":
             die(name + ": answers must be expanded for print")
-    print("PASS — Unit 2: 13 worked numericals (5 textbook-labelled, 8 additional), 13 model answers and 20 formula cards.")
+    print("PASS — Unit 2: 30 worked numericals (5 textbook-labelled, 25 additional), 13 model answers and 20 formula cards.")
     print("PASS — Links, full-catalogue listings, unchanged protected lesson references, source constants and inline JS syntax.")
     print("NOTE — Educational/source-based content; this is not independent scientific or FBISE certification.")
 
