@@ -33,13 +33,13 @@
           "scenarioGroupCount": 15,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v18-source-preserved-2026-11-14",
-          "importNote": "Requires adding the prepared unit-02.json file to this PR branch before merge. These are browser-graded self-practice questions, not secure examination items.",
-          "sha256": "467b2335b70ace16cfa0f7f89ca6f8ca093bb9e1ff954b3b6127f13db0c12dea"
+          "bankVersion": "v19-dependent-question-context-review-2026-11-14",
+          "importNote": "V19 adds standalone source-adjacent context to four dependent MCQs (additional #4, #13, #15, #153) for randomized practice. The 206 original stems, options, answer keys, explanations and all 15 complete stimulus sets remain unchanged. Browser-graded self-practice only; not secure examination items.",
+          "sha256": "04ca0256cfa1ad3739f883aad5fbbdda249a12f25592158411dac86e9aa69203"
         }
       ]
     }
   ],
-  "bankVersion": "unit-01-v6.2-and-unit-02-v18-source-preserved",
+  "bankVersion": "unit-01-v6.2-and-unit-02-v19-context-reviewed",
   "lastUpdated": "2026-11-14"
 }
