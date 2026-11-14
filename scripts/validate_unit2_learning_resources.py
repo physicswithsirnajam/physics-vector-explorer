@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PORTAL = ROOT / "portal"
 EXPECTED = {
     "unit-02-numericals.html": 13,
-    "unit-02-descriptive.html": 13,
+    "unit-02-descriptive.html": 50,
     "unit-02-formula-sheet.html": 20,
 }
 
@@ -101,12 +101,28 @@ def main():
             die(f"New Stage 5 numerical {index} missing or unlinked")
     if "4.3 m" not in num or "23.1 N" not in num or "173.2 N" not in num:
         die("Worked numericals: critical source values absent")
-    if desc_ins.problem_cards != 13:
-        die("Model answers: expected exactly 13 questions")
+    if desc_ins.problem_cards != 50:
+        die("Model answers: expected exactly 50 questions (35 short + 15 comprehensive)")
     if len(re.findall(r"TEXTBOOK SHORT QUESTION [1-9]", desc)) != 9:
         die("Model answers: expected nine short response items")
     if len(re.findall(r"TEXTBOOK COMPREHENSIVE QUESTION [1-4]", desc)) != 4:
         die("Model answers: expected four comprehensive items")
+    if len(re.findall(r"ADDITIONAL SLO SHORT QUESTION [0-9]+", desc)) != 26:
+        die("Model answers: expected all 26 additional Stage 3 short questions")
+    if len(re.findall(r"ADDITIONAL SLO COMPREHENSIVE QUESTION [0-9]+", desc)) != 11:
+        die("Model answers: expected all 11 additional Stage 4 comprehensive questions")
+    for n in range(1, 36):
+        if f'id="s{n}"' not in desc or f'href="#s{n}"' not in desc:
+            die(f"Short question {n} missing or unlinked")
+    for n in range(1, 16):
+        if f'id="l{n}"' not in desc or f'href="#l{n}"' not in desc:
+            die(f"Comprehensive question {n} missing or unlinked")
+    if len(re.findall(r'<details class="solution"', desc)) != 50:
+        die("Every descriptive problem must have a solution reveal")
+    if "QC-05" not in desc or "135°" not in desc or "45°" not in desc:
+        die("Essential source 45°/135° absolute-value nuance was lost")
+    if 'id="rh-arrow"' not in desc:
+        die("Additional comprehensive right-hand rule schematic missing")
     if "id=\"vec-geometry-caption\"" not in desc or "<svg " not in desc:
         die("Cross-product area answer must display its instructional diagram")
     if form_ins.formula_cards != 20:
@@ -138,7 +154,7 @@ def main():
     for name, (html, _) in pages.items():
         if "beforeprint" not in html and name != "unit-02-formula-sheet.html":
             die(name + ": answers must be expanded for print")
-    print("PASS — Unit 2: 30 worked numericals (5 textbook-labelled, 25 additional), 13 model answers and 20 formula cards.")
+    print("PASS — Unit 2: 30 worked numericals (5 textbook-labelled, 25 additional), 50 model answers (35 short, 15 comprehensive), and 20 formula cards.")
     print("PASS — Links, full-catalogue listings, unchanged protected lesson references, source constants and inline JS syntax.")
     print("NOTE — Educational/source-based content; this is not independent scientific or FBISE certification.")
 
