@@ -74,10 +74,10 @@ def main():
     # Catch obvious references to missing preceding-question context in randomized tests.
     # This is a conservative heuristic, not a substitute for academic review.
     dependent_stem = re.compile(
-        r"(?:\\bthe (?:x|y)-component of (?:the same vector|that force)\\b"
-        r"|^its (?:x|y)-component\\b"
-        r"|\\bif the same vectors\\b"
-        r"|\\b(?:according to|shown in|from) the (?:above|previous) (?:diagram|graph|table|figure)\\b)",
+        r"(?:\bthe (?:x|y)-component of (?:the same vector|that force)\b"
+        r"|^its (?:x|y)-component\b"
+        r"|\bif the same vectors\b"
+        r"|\b(?:according to|shown in|from) the (?:above|previous) (?:diagram|graph|table|figure)\b)",
         re.IGNORECASE,
     )
     source_index = {
