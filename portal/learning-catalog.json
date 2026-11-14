@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v11-grade-xi-course-roadmap-2026-11-13",
+  "catalogVersion": "pilot-v13-grade-xi-content-and-simulation-index-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, not an authorization mechanism. Firebase-verified enrollment protects only protectedLessons/unit-01-access-pilot. Existing GitHub Pages test applications and Google Sites resources remain public. Practice and cognitive labels are provisional pending academic review.",
   "grades": [
     {
@@ -16,9 +16,11 @@
           "questionBankCount": 275,
           "assessmentStatus": "provisional-self-practice",
           "resourceIds": [
+            "unit1-desk",
             "study",
             "protected-lesson",
             "explore",
+            "simulation-library",
             "practice",
             "blueprint",
             "progress"
@@ -246,6 +248,32 @@
       "access": "enrolled-protected",
       "contentStatus": "pilot-only",
       "accessDescription": "Firestore content read requires verified login and active Grade XI/FBISE enrollment."
+    },
+    {
+      "id": "unit1-desk",
+      "category": "STUDY",
+      "title": "Unit 1 Learning Desk",
+      "description": "Your starting point for Grade XI Unit 1: available study links, 275 provisional practice MCQs, simulations, blueprint and personal progress.",
+      "href": "./unit-01.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 1 Learning Desk ↗",
+      "access": "public-link",
+      "contentStatus": "published-resource-index",
+      "accessDescription": "Public directory. MCQs are provisional; dedicated notes and worked solutions are not yet published here."
+    },
+    {
+      "id": "simulation-library",
+      "category": "EXPLORE",
+      "title": "Browse 31 Original Physics Simulations",
+      "description": "Search and filter the existing original interactive activities by physics topic. Topic groupings are not yet verified textbook-unit assignments.",
+      "href": "./simulations.html",
+      "public": true,
+      "external": false,
+      "action": "Browse simulation library ↗",
+      "access": "public-link",
+      "contentStatus": "public-interactive-demonstrations",
+      "accessDescription": "All simulation HTML files are publicly hosted on GitHub Pages; access does not require login."
     }
   ]
 }
