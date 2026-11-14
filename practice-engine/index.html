@@ -17,6 +17,8 @@
 .mcq-report textarea{resize:vertical;font-size:13px;line-height:1.4}
 .mcq-report select:focus-visible,.mcq-report textarea:focus-visible{outline:3px solid #3aaad0;outline-offset:2px}
 .mcq-report .actions{margin-top:10px}
+.review-issue-button{font-size:12px;padding:7px 11px;margin-top:10px}
+.review-issue-fallback{width:100%;max-width:100%;min-height:110px;border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px}
 @media print{.top,.actions,.notice,.foot,.no-print{display:none!important}body{background:white}.panel{box-shadow:none;border:0;padding:0}.review-item{break-inside:avoid}}
 </style>
   <link rel="stylesheet" href="../shared/navigation.css?v=5.1">
@@ -276,21 +278,23 @@ function makeMcqIssueReport(q,issue,notes){
  ];
  return lines.join('\n');
 }
+async function writeIssueReport(text,status,input){
+ try{
+  if(!navigator.clipboard?.writeText)throw Error('Clipboard API unavailable');
+  await navigator.clipboard.writeText(text);
+  input.classList.add('hidden');
+  status.textContent='Copied. Paste the report into a message to your teacher; no report has been sent automatically.';
+ }catch{
+  input.value=text;input.classList.remove('hidden');input.focus();input.select();
+  status.textContent='Automatic copying was blocked. Select the report below and press Ctrl+C (or Cmd+C on Mac).';
+ }
+}
 async function copyMcqIssue(){
  const q=test[index];if(!q||submitted)return;
  const issue=$('mcq-report-type').value,status=$('mcq-report-status');
  if(!Object.prototype.hasOwnProperty.call(issueKinds,issue)){status.textContent='Please select a problem type first.';return}
  const text=makeMcqIssueReport(q,issue,$('mcq-report-notes').value);
- try{
-  if(!navigator.clipboard?.writeText)throw Error('Clipboard API unavailable');
-  await navigator.clipboard.writeText(text);
-  status.textContent='Copied. Paste the report into your preferred message to your teacher.';
-  $('mcq-report-fallback').classList.add('hidden');
- }catch{
-  const input=$('mcq-report-fallback');
-  input.value=text;input.classList.remove('hidden');input.focus();input.select();
-  status.textContent='Automatic copying was blocked. Select the report text below and press Ctrl+C (or Cmd+C on Mac).';
- }
+ await writeIssueReport(text,status,$('mcq-report-fallback'));
 }
 function setClock(){const m=Math.floor(Math.max(0,secondsLeft)/60),s=Math.max(0,secondsLeft)%60;$('timer').textContent='Time left: '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
 function render(){const q=test[index];if(lastReportQuestionId!==q.id){$('mcq-report-details').open=false;$('mcq-report-type').value='';$('mcq-report-notes').value='';$('mcq-report-status').textContent='';$('mcq-report-fallback').value='';$('mcq-report-fallback').classList.add('hidden');lastReportQuestionId=q.id;}$('question-reference').textContent='Question reference: '+q.id;$('qcounter').textContent=`Question ${index+1} of ${test.length}`+(q.groupSize?` · Scenario ${q.groupOrdinal} (${q.groupPosition}/${q.groupSize})`:'');$('answeredCount').textContent=`${Object.keys(answers).length} answered / ${test.length}`;$('progressFill').style.width=`${((index+1)/test.length)*100}%`;$('tags').replaceChildren(chip(q.topic),chip(q.sloCodes.join(', ')),chip(q.assessmentClassification==='formative'?'Formative':'Summative theory'),chip(q.cognitiveLevel));const sp=$('stimulusPanel');sp.classList.toggle('hidden',!q.stimulusHtml);if(q.stimulusHtml){setRich(sp,q.stimulusHtml,q.stimulusText||'');if(q.groupSize){const marker=node('div','scenario-cue',`Scenario ${q.groupOrdinal} · question ${q.groupPosition} of ${q.groupSize} in this set`);sp.prepend(marker)}}setRich($('question'),q.stemHtml,q.stem);const items=[];q.displayOptions.forEach((opt,i)=>{let l=node('label','option');let radio=node('input');radio.type='radio';radio.name='answer';radio.value=opt.id;radio.checked=answers[q.id]===opt.id;radio.disabled=!!checked[q.id];radio.addEventListener('change',()=>{answers[q.id]=opt.id;render()});l.append(radio,node('span','option-letter',String.fromCharCode(65+i)+'.'),(()=>{const el=node('span','option-txt');setRich(el,opt.html,opt.text);return el})());if(checked[q.id]){l.classList.add('locked');if(opt.id===q.correctOptionId)l.classList.add('correct');else if(answers[q.id]===opt.id)l.classList.add('wrong')}items.push(l)});$('choices').replaceChildren(...items);
@@ -303,7 +307,12 @@ function finish(msg=''){if(submitted)return;submitted=true;if(timerHandle)clearI
  const mix=(key)=>[...new Set(test.map(q=>key(q)))].sort().map(tag=>tag+': '+test.filter(q=>key(q)===tag).length);
  $('mixStats').replaceChildren(...[...mix(q=>q.cognitiveLevel),...mix(q=>q.difficulty)].map(s=>node('span','slo-chip',s)));
  $('mixNote').textContent=cfg.selection==='balanced'?'Adaptive balancing reflects what the selected question pool contains. It is not a claim of exact FBISE cognitive percentages.':'This was a fully random selection of the eligible question pool.';
- const sections=test.map((q,i)=>{const p=node('div','review-item');const correct=q.displayOptions.find(o=>o.id===q.correctOptionId),my=q.displayOptions.find(o=>o.id===answers[q.id]);const qt=node('strong');qt.append(document.createTextNode((i+1)+'. '));const qbody=node('span');setRich(qbody,q.stemHtml,q.stem);qt.append(qbody);if(q.stimulusHtml){const st=node('div','hint');setRich(st,q.stimulusHtml,q.stimulusText||'');p.appendChild(st)}const user=node('p','review-user '+(!my?'wrong':my.id===correct.id?'':'wrong'));user.append(document.createTextNode('Your answer: '));const ut=node('span');if(my)setRich(ut,my.html,my.text);else ut.textContent='Not answered';user.appendChild(ut);const right=node('p','review-answer');right.append(document.createTextNode('Correct answer: '));const rightText=node('span');setRich(rightText,correct.html,correct.text);right.appendChild(rightText);const reason=node('p');setRich(reason,q.explanationHtml,q.explanation);p.append(qt,node('p','muted',`Source MCQ #${q.sourceQuestionNumber} · ${q.sloCodes.join(', ')} · ${q.topic}`),user,right,reason);return p});$('review').replaceChildren(...sections);window.dispatchEvent(new CustomEvent('psn:practice-finished',{detail:{
+ const sections=test.map((q,i)=>{const p=node('div','review-item');const correct=q.displayOptions.find(o=>o.id===q.correctOptionId),my=q.displayOptions.find(o=>o.id===answers[q.id]);const qt=node('strong');qt.append(document.createTextNode((i+1)+'. '));const qbody=node('span');setRich(qbody,q.stemHtml,q.stem);qt.append(qbody);if(q.stimulusHtml){const st=node('div','hint');setRich(st,q.stimulusHtml,q.stimulusText||'');p.appendChild(st)}const user=node('p','review-user '+(!my?'wrong':my.id===correct.id?'':'wrong'));user.append(document.createTextNode('Your answer: '));const ut=node('span');if(my)setRich(ut,my.html,my.text);else ut.textContent='Not answered';user.appendChild(ut);const right=node('p','review-answer');right.append(document.createTextNode('Correct answer: '));const rightText=node('span');setRich(rightText,correct.html,correct.text);right.appendChild(rightText);const reason=node('p');setRich(reason,q.explanationHtml,q.explanation);
+ const issueBtn=node('button','review-issue-button no-print','Copy this MCQ for teacher review');issueBtn.type='button';
+ const issueStatus=node('p','muted no-print');issueStatus.setAttribute('role','status');issueStatus.setAttribute('aria-live','polite');
+ const issueFallback=node('textarea','review-issue-fallback hidden no-print');issueFallback.readOnly=true;issueFallback.rows=7;issueFallback.setAttribute('aria-label','Copyable MCQ issue report');
+ issueBtn.addEventListener('click',()=>writeIssueReport(makeMcqIssueReport(q,'other','Please review this MCQ after the completed test.'),issueStatus,issueFallback));
+ p.append(qt,node('p','muted',`Source MCQ #${q.sourceQuestionNumber} · Ref: ${q.id} · ${q.sloCodes.join(', ')} · ${q.topic}`),user,right,reason,issueBtn,issueStatus,issueFallback);return p});$('review').replaceChildren(...sections);window.dispatchEvent(new CustomEvent('psn:practice-finished',{detail:{
   schemaVersion:1,kind:'self-practice',grade:11,unit:cfg.unit,
   bankVersion:String(bank.bankVersion||'unknown').slice(0,120),
   questionCount:test.length,correctCount:right,skippedCount:skipped,
