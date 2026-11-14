@@ -1,0 +1,40 @@
+name: Validate Grade XI Unit 3 Drag and Collisions
+on:
+  pull_request:
+    paths:
+      - "portal/unit-03-collision-engine.js"
+      - "portal/unit-03-collision-ui.js"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_collision_lab.cjs"
+      - ".github/workflows/validate-grade11-unit3-collisions.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-03-collision-engine.js"
+      - "portal/unit-03-collision-ui.js"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_collision_lab.cjs"
+      - ".github/workflows/validate-grade11-unit3-collisions.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit3-drag-collisions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Validate JavaScript syntax
+        run: |
+          node --check portal/unit-03-collision-engine.js
+          node --check portal/unit-03-collision-ui.js
+          node --check scripts/test_unit03_collision_lab.cjs
+      - name: Check collision physics, qualitative drag, SLOs and privacy
+        run: node scripts/test_unit03_collision_lab.cjs

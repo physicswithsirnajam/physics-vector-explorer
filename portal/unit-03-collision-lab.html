@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Grade XI Unit 3 interactive air-resistance concept comparison and head-on elastic versus perfectly inelastic collision explorer, with FBISE SLO labels.">
+<meta name="theme-color" content="#10233d">
+<title>Unit 3 Air Resistance &amp; Collision Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e7c482;--ink:#1b2f47;--muted:#4c6178;--teal:#11778e;--rust:#be6e36;--line:#d7e2ed;--soft:#f5f8fc}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:white}.bar{max-width:1120px;padding:12px 19px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;font-weight:800}.brand img{width:52px;height:52px;object-fit:contain}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--gold);font-size:14px}a{color:#125c7d}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bc8c35;outline-offset:3px}
+main{max-width:1120px;margin:auto;padding:28px 19px 78px}h1{font-size:clamp(28px,4.5vw,42px);line-height:1.16;margin:8px 0}h2{font-size:23px;margin:0 0 12px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#886017}.lead{max-width:880px;color:var(--muted)}
+.card{border:1px solid var(--line);background:white;border-radius:15px;padding:21px;margin-top:19px;box-shadow:0 7px 23px #10233d0b}
+.slo{display:inline-block;background:#e8f5f9;color:#185e79;border-radius:18px;font-size:12px;font-weight:800;padding:4px 10px;margin-bottom:9px}
+.notice{background:#fff8e9;border-left:4px solid #d9a84b;border-radius:10px;padding:13px 16px;margin:18px 0;font-size:14px}
+.cols{display:grid;grid-template-columns:minmax(265px,.85fr) minmax(0,1.15fr);gap:21px;align-items:start}.plot{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:#fafdff}
+.focus-buttons{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.focus-buttons button{border:1px solid #b4cbdc;background:#fff;font-size:13px}
+button,select{font:inherit;cursor:pointer;border:1px solid #afc2d5;border-radius:9px;padding:9px 12px;background:#fff;color:var(--ink);font-weight:700}button[aria-pressed=true]{background:#143a5c;color:white}
+.info{background:#eff6fa;border-radius:11px;border:1px solid #d5e8f0;padding:14px 16px;margin-top:13px}.info p{margin:7px 0;font-size:14px}.fine{font-size:12px;color:var(--muted)}.tag{font-size:12px;font-weight:800;color:#276f88}
+label{display:block;margin:12px 0 4px;font-weight:730;font-size:14px}input[type=range]{width:100%;accent-color:var(--teal)}select{width:100%}.presets{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.presets button{font-size:12px}
+.outputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.metric{background:#eef5fa;border:1px solid #dce7ee;border-radius:9px;padding:10px 13px}.metric strong{display:block;font-size:20px;line-height:1.35;font-variant-numeric:tabular-nums}.metric span{display:block;color:var(--muted);font-size:12px}
+.alert{padding:11px 13px;border-radius:9px;background:#eaf7f0;border:1px solid #b7dbc3;font-weight:750;font-size:14px}.alert.error{background:#fff2ed;border-color:#e4b6a8;color:#923d2a}
+.formula{display:block;background:#f2f6fa;padding:8px 11px;border-radius:7px;margin:7px 0;font-weight:750;overflow-wrap:anywhere}.links{display:flex;gap:17px;flex-wrap:wrap;margin-top:17px}
+footer{background:var(--navy);color:#cdd8e6;padding:18px;text-align:center;font-size:13px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}.card{padding:16px}}
+@media(max-width:430px){.outputs{grid-template-columns:1fr}}
+@media print{body{background:white}.focus-buttons,.presets,nav,.links,footer{display:none!important}.card{box-shadow:none;break-inside:avoid}main{max-width:100%;padding:0}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-03-collision-engine.js" defer></script>
+<script src="./unit-03-collision-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head>
+<body><header><div class="bar">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged Physics with Sir Najam official logo">Physics with Sir Najam</a>
+<nav aria-label="Navigation"><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-03-collision-study.html">Part 2 Study Guide</a><a href="./unit-03-motion-lab.html">Motion Lab</a></nav>
+</div></header>
+<main><div class="eyebrow">Grade XI · Translatory Motion · Interactive Part 2</div><h1>Air Resistance &amp; Collision Explorer</h1>
+<p class="lead">Compare an ideal projectile with one affected by air resistance, then investigate how masses and velocities change the outcome of a head-on collision. The lab emphasizes the distinction between conserved momentum and possibly changing kinetic energy.</p>
+<div class="notice"><strong>Learning boundaries:</strong> Air resistance is shown with a <strong>qualitative schematic, not a calculated drag trajectory</strong>. Collisions are modelled as one-dimensional and isolated. The perfectly inelastic option means the bodies stick together, which is one special case of an inelastic collision. This public activity neither grades students nor saves results to their accounts.</div>
+<section class="card" id="air" aria-labelledby="airHeading">
+<span class="slo">P-11-B-06 · Summative qualitative understanding/application</span>
+<h2 id="airHeading">1. How air resistance changes projectile motion</h2>
+<div class="cols"><div>
+<p>In the absence of air resistance, only gravity acts after launch. Air resistance acts <strong>opposite to the projectile’s instantaneous velocity</strong> and generally reduces range and maximum height for otherwise identical conditions.</p>
+<p class="fine">Choose what to investigate:</p>
+<div class="focus-buttons" role="group" aria-label="Select drag effect">
+<button type="button" data-focus="range" aria-pressed="true">Range</button>
+<button type="button" data-focus="horizontal" aria-pressed="false">Horizontal speed</button>
+<button type="button" data-focus="vertical" aria-pressed="false">Vertical motion</button>
+<button type="button" data-focus="peak" aria-pressed="false">Maximum height</button>
+</div>
+<div class="info"><strong id="dragTitle">Range generally decreases</strong>
+<p><strong>No air resistance:</strong> <span id="idealExplanation"></span></p>
+<p><strong>With air resistance:</strong> <span id="dragExplanation"></span></p>
+<p class="fine" id="dragCaution"></p></div>
+</div><div>
+<svg id="dragPlot" class="plot" viewBox="0 0 460 305" role="img" aria-label="Illustrative no-drag trajectory compared with shorter lower flight under air resistance">
+<title>Illustrative trajectories from the same launch: a taller and longer no-drag parabola, and a shorter, lower air-resistance curve. Not to scale.</title>
+<line x1="36" y1="235" x2="444" y2="235" stroke="#7289a0" stroke-width="2"/>
+<line x1="45" y1="257" x2="45" y2="21" stroke="#7289a0" stroke-width="2"/>
+<text x="415" y="255" fill="#43586f" font-size="12">x</text><text x="51" y="25" fill="#43586f" font-size="12">y</text>
+<path id="idealPath" d="M45 235 Q220 -27.5 395 235" fill="none" stroke="#127d98" stroke-width="4" stroke-linecap="round"/>
+<path id="dragPath" d="M45 235 Q162.5 58.75 280 235" fill="none" stroke="#bb6d36" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
+<circle cx="45" cy="235" r="5" fill="#172f49"/><text x="54" y="252" fill="#233e55" font-size="12">Launch</text>
+<text x="250" y="106" fill="#127d98" font-size="13" font-weight="700">No drag</text>
+<text x="173" y="161" fill="#a96135" font-size="13" font-weight="700">With drag</text>
+<text x="291" y="281" fill="#485f79" font-size="11">Qualitative shapes only</text>
+</svg>
+<p class="fine">Both curves share the same initial tangent in this sketch, representing the same initial launch direction. Curve heights and ranges are illustrative, not predictions from a drag equation.</p>
+</div></div>
+</section>
+<section class="card" id="collisions" aria-labelledby="collisionHeading">
+<span class="slo">P-11-B-11 · Formative momentum applications &nbsp;|&nbsp; P-11-B-12 / B-13 · Summative collision analysis</span>
+<h2 id="collisionHeading">2. Momentum and collision laboratory</h2>
+<p>Two bodies move on a straight line. Take <strong>rightward as positive</strong> and imagine object 1 to the left of object 2 before contact. For a collision in this setup, object 1 must approach object 2 (<strong>u₁ &gt; u₂</strong>).</p>
+<div class="cols">
+<div>
+<label for="collisionType">Select the collision model</label>
+<select id="collisionType">
+<option value="elastic">Elastic — momentum and kinetic energy conserved</option>
+<option value="stick">Perfectly inelastic — bodies stick together</option>
+</select>
+<div class="presets" role="group" aria-label="Collision teaching examples">
+<button type="button" data-preset="textbook-3.7">Textbook 3.7</button>
+<button type="button" data-preset="equal-masses">Equal masses</button>
+<button type="button" data-preset="opposing">Opposing motion</button>
+<button type="button" data-preset="stick">Stick together</button>
+</div>
+<label for="m1">Mass of object 1: <output id="m1Label" for="m1">5 kg</output></label>
+<input id="m1" type="range" min="1" max="20" step=".5" value="5">
+<label for="m2">Mass of object 2: <output id="m2Label" for="m2">10 kg</output></label>
+<input id="m2" type="range" min="1" max="20" step=".5" value="10">
+<label for="u1">Initial velocity of object 1: <output id="u1Label" for="u1">10 m/s</output></label>
+<input id="u1" type="range" min="-15" max="15" step=".5" value="10">
+<label for="u2">Initial velocity of object 2: <output id="u2Label" for="u2">5 m/s</output></label>
+<input id="u2" type="range" min="-15" max="15" step=".5" value="5">
+<p id="collisionStatus" class="alert" role="status" aria-live="polite">Select a collision example or adjust the sliders.</p>
+<div class="outputs" aria-live="polite">
+<div class="metric"><span>Final velocity v₁</span><strong id="v1Value">—</strong></div>
+<div class="metric"><span>Final velocity v₂</span><strong id="v2Value">—</strong></div>
+<div class="metric"><span>Total momentum before / after</span><strong id="momentumValue">—</strong></div>
+<div class="metric"><span>Total kinetic energy before / after</span><strong id="kineticValue">—</strong></div>
+<div class="metric"><span>Decrease in kinetic energy</span><strong id="lossValue">—</strong></div>
+<div class="metric"><span>Relative approach / separation speeds</span><strong id="relativeValue">—</strong></div>
+</div>
+</div>
+<div>
+<svg id="collisionPlot" class="plot" viewBox="0 0 540 315" role="img" aria-label="Signed velocities of two objects before and after a head-on collision"></svg>
+<p class="fine">Arrows to the right indicate positive velocity; arrows to the left indicate negative velocity. The length of each arrow is proportional to the signed speed at the selected settings.</p>
+<div class="info">
+<strong>Compare the laws</strong>
+<span class="formula">Momentum: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</span>
+<span class="formula">Kinetic energy: K = ½mv²</span>
+<span class="formula">Elastic: u₁ − u₂ = v₂ − v₁ (relative speed rule)</span>
+<span class="formula">Stick-together model: v₁ = v₂ = (m₁u₁+m₂u₂)/(m₁+m₂)</span>
+<p id="conclusion">Change a control to investigate the results.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="card">
+<h2>3. What this does and does not model</h2>
+<p><strong>Source coverage:</strong> NBF Physics XI Unit 3 pp. 42–49 (air resistance, conservation of momentum and collisions), and FBISE Grade XI Physics Assessment Framework SLOs P-11-B-06 and P-11-B-11 through P-11-B-13.</p>
+<p>This laboratory does not calculate numerical air drag, off-centre collisions or two-dimensional momentum. Only ideal instantaneous head-on collision cases are calculated. The source textbook’s general description of inelastic collisions does not imply all inelastic bodies must stick; the “stick” option is explicitly a special case added for teaching.</p>
+<div class="links"><a href="./unit-03-collision-study.html">Read Part 2 Study Guide</a><a href="./unit-03.html">Unit 3 Learning Desk</a><a href="./unit-03-motion-lab.html">Part 1 Motion Lab</a></div>
+</section></main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 3 Part 2 original educational simulation</footer>
+</body></html>

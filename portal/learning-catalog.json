@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v28-unit3-translatory-motion-part1-2026-11-14",
+  "catalogVersion": "pilot-v29-unit3-air-resistance-collisions-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -60,17 +60,19 @@
           "unit": 3,
           "title": "Translatory Motion",
           "status": "available",
-          "summary": "First source-based learning release: constant acceleration, free fall and ideal projectile motion. Further momentum/collision teaching materials are in preparation.",
+          "summary": "Two public source-based learning modules cover textbook pp. 33–49: equations of motion/projectiles and qualitative air resistance/momentum/collision concepts. A Unit 3 MCQ bank is not published.",
           "questionBankCount": 0,
           "assessmentStatus": "no-mcq-bank-published",
           "resourceIds": [
             "unit3-desk",
             "unit3-study-guide",
-            "unit3-motion-lab"
+            "unit3-motion-lab",
+            "unit3-collision-study",
+            "unit3-collision-lab"
           ],
-          "qualityStatus": "partial-textbook-source-review; FBISE P-11-B-03 formative, P-11-B-04/B-05/B-06 summative; no official digital exam bank",
+          "qualityStatus": "partial chapter source review p33–49, correct FBISE P-11-B-03/B-11 formative, B-04/B-05/B-06/B-12/B-13 summative; no Unit 3 bank or saved grades",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 3 Part 1 offers a public source-based study guide and original interactive straight-line/projectile motion lab. This is partial chapter coverage; no Unit 3 MCQ bank or enrolled lesson has yet been published.",
+          "studentNotice": "Unit 3 Parts 1–2 provide two public study guides and two interactive labs, including no-drag projectile calculations, qualitative air-resistance effects and ideal 1D collision calculations. No Unit 3 MCQ bank or enrolled lesson is yet published; interactive activities do not save results.",
           "landingHref": "./unit-03.html"
         },
         {
@@ -459,7 +461,7 @@
       "id": "unit3-desk",
       "category": "STUDY",
       "title": "Unit 3 — Translatory Motion Learning Desk",
-      "description": "Launch Unit 3 Part 1, including a textbook-source study guide and two original interactive motion experiments; later momentum and collision modules are in development.",
+      "description": "Unit 3 Parts 1 and 2: textbook-based motion, air-resistance, momentum and collision guides plus interactive no-drag projectile and 1D collision laboratories.",
       "href": "./unit-03.html",
       "public": true,
       "external": false,
@@ -493,6 +495,32 @@
       "access": "public-link",
       "contentStatus": "original-part1-interactive-model",
       "accessDescription": "Public original no-drag simulator; no authentication, saved grades or private progress record."
+    },
+    {
+      "id": "unit3-collision-study",
+      "category": "STUDY",
+      "title": "Unit 3 Part 2 — Air Resistance, Momentum & Collisions",
+      "description": "NBF Physics XI pp. 42–49 study guide: qualitative projectile drag, conservation of momentum, elastic collisions and inelastic energy changes with accurate FBISE formative/summative labels.",
+      "href": "./unit-03-collision-study.html",
+      "public": true,
+      "external": false,
+      "action": "Read Unit 3 Part 2 Study Guide ↗",
+      "access": "public-link",
+      "contentStatus": "source-based-part2-study-guide",
+      "accessDescription": "Public educational source-based guide; not an official marking scheme and not an enrolled lesson."
+    },
+    {
+      "id": "unit3-collision-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 3 Part 2 — Air Resistance & Collision Explorer",
+      "description": "Qualitative air-drag comparison and adjustable, signed one-dimensional ideal head-on elastic / perfectly inelastic collision model with momentum, kinetic-energy and relative-speed readouts.",
+      "href": "./unit-03-collision-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Explore Unit 3 Collision Lab ↗",
+      "access": "public-link",
+      "contentStatus": "original-part2-interactive-model",
+      "accessDescription": "Public qualitative drag and ideal 1D collision education; no authentication, tracking or saved grades."
     }
   ]
 }
