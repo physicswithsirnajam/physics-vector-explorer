@@ -1,0 +1,33 @@
+name: Validate Grade XI Unit 2 Learning Resources
+on:
+  pull_request:
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/unit-02-descriptive.html"
+      - "portal/unit-02-formula-sheet.html"
+      - "portal/learning-catalog.json"
+      - "scripts/validate_unit2_learning_resources.py"
+      - ".github/workflows/validate-grade11-unit2-resources.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/unit-02-descriptive.html"
+      - "portal/unit-02-formula-sheet.html"
+      - "portal/learning-catalog.json"
+      - "scripts/validate_unit2_learning_resources.py"
+      - ".github/workflows/validate-grade11-unit2-resources.yml"
+  workflow_dispatch:
+jobs:
+  check-unit2-resources:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check static resources and links
+        run: python3 scripts/validate_unit2_learning_resources.py
