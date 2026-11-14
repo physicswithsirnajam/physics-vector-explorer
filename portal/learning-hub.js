@@ -6,7 +6,7 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=17',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=18',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
@@ -145,7 +145,7 @@ export function updateLearningHubInsight(analytics,hasOlder){
  const needs=analytics?.needsEvidence?.[0];
  const target=focus||needs;
  if(!analytics?.attempts){
-  message.textContent='Start with a short Unit 1 MCQ test. Save your result to begin building a personal revision history.';
+  message.textContent='Start with a short MCQ test from Unit 1 or Unit 2. Save your result to begin building a personal revision history.';
   note.textContent='No saved practice results have been loaded yet.';
   link.href=fallbackBuilder;link.textContent='Build my first test ↗';return;
  }
@@ -156,7 +156,7 @@ export function updateLearningHubInsight(analytics,hasOlder){
   link.href=targetedPracticeUrl(target.code)||fallbackBuilder;
   link.textContent=focus?'Practise suggested SLO ↗':'Collect more SLO practice ↗';
  }else{
-  message.textContent='No specific revision priority is established from the currently loaded attempts. Continue practising different Unit 1 outcomes.';
+  message.textContent='No specific revision priority is established from the currently loaded attempts. Continue practising different Unit 1 and Unit 2 outcomes.';
   link.href=fallbackBuilder;link.textContent='Choose another practice test ↗';
  }
  note.textContent=hasOlder
