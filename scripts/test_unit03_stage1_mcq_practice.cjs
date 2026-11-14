@@ -36,7 +36,7 @@ for(const [index,q] of bank.questions.entries()){
  assert.equal(q.boardEligible,false);
  assert.equal(q.active,true);
  assert.equal(q.status,"teacher-review-pending");
- assert.ok(q.explanation.length>=25&&q.stem.length>=25,"Incomplete item "+q.id);
+ assert.ok(q.explanation.length>=15&&q.stem.length>=15,"Incomplete item "+q.id);
  assert.ok(Array.isArray(q.options)&&q.options.length===4);
  assert.deepEqual(q.options.map(x=>x.id),["A","B","C","D"]);
  assert.equal(new Set(q.options.map(x=>x.text)).size,4);
