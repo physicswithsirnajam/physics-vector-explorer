@@ -34,7 +34,8 @@
           "status": "pilot",
           "exactFbiseModeReady": false,
           "bankVersion": "v18-source-preserved-2026-11-14",
-          "importNote": "Requires adding the prepared unit-02.json file to this PR branch before merge. These are browser-graded self-practice questions, not secure examination items."
+          "importNote": "Requires adding the prepared unit-02.json file to this PR branch before merge. These are browser-graded self-practice questions, not secure examination items.",
+          "sha256": "467b2335b70ace16cfa0f7f89ca6f8ca093bb9e1ff954b3b6127f13db0c12dea"
         }
       ]
     }
