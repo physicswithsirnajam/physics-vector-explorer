@@ -1149,27 +1149,27 @@
       "id": "XI-U03-MCQ-0026",
       "sourceQuestionNumber": 26,
       "type": "single_choice",
-      "stem": "Two objects stick together after a head-on collision. Their final velocities must:",
+      "stem": "Two approaching objects stick together in an isolated collision. Compared with an elastic collision having the same initial conditions, the total kinetic energy after this collision is:",
       "options": [
         {
           "id": "A",
-          "text": "Be equal in magnitude but opposite in direction"
+          "text": "Unchanged because total momentum is conserved"
         },
         {
           "id": "B",
-          "text": "Be equal"
+          "text": "Lower because some kinetic energy is converted into other forms"
         },
         {
           "id": "C",
-          "text": "Always be zero"
+          "text": "Greater because the bodies share a common velocity"
         },
         {
           "id": "D",
-          "text": "Equal their respective initial velocities"
+          "text": "Always zero regardless of the initial velocities"
         }
       ],
       "correctOptionId": "B",
-      "explanation": "Sticking is the perfectly inelastic special case: both objects move together with one common final velocity.",
+      "explanation": "In a non-trivial perfectly inelastic collision, momentum remains conserved, but some initial kinetic energy converts to heat, sound or deformation. An otherwise identical elastic collision conserves kinetic energy.",
       "grade": 11,
       "unit": 3,
       "topic": "Momentum and Kinetic Energy",
@@ -1194,27 +1194,27 @@
       "id": "XI-U03-MCQ-0027",
       "sourceQuestionNumber": 27,
       "type": "single_choice",
-      "stem": "A 4 kg body moving at 3 m/s collides with a stationary 2 kg body and they stick together. Their final shared velocity is:",
+      "stem": "A 4 kg body moving at 3 m/s hits a stationary 2 kg body and they stick together. What is the decrease in total kinetic energy?",
       "options": [
         {
           "id": "A",
-          "text": "1 m/s"
+          "text": "12 J"
         },
         {
           "id": "B",
-          "text": "3 m/s"
+          "text": "18 J"
         },
         {
           "id": "C",
-          "text": "2 m/s"
+          "text": "6 J"
         },
         {
           "id": "D",
-          "text": "6 m/s"
+          "text": "0 J"
         }
       ],
       "correctOptionId": "C",
-      "explanation": "Momentum before = (4)(3)+(2)(0)=12 kg·m/s; shared v = 12/(4+2)=2 m/s.",
+      "explanation": "Momentum: (4)(3) + (2)(0) = 12 kg·m/s, so common speed = 12/6 = 2 m/s. K before = ½(4)(3²) = 18 J; K after = ½(6)(2²) = 12 J. Kinetic energy decreases by 6 J, while momentum remains conserved.",
       "grade": 11,
       "unit": 3,
       "topic": "Momentum and Kinetic Energy",
