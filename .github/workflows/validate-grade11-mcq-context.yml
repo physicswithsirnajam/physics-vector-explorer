@@ -5,6 +5,8 @@ on:
       - "question-bank/grade-11/unit-*.json"
       - "scripts/check_grade11_mcq_context.py"
       - "scripts/audit_grade11_mcq_quality.py"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_mcq_issue_report.py"
       - ".github/workflows/validate-grade11-mcq-context.yml"
   push:
     branches:
@@ -13,6 +15,8 @@ on:
       - "question-bank/grade-11/unit-*.json"
       - "scripts/check_grade11_mcq_context.py"
       - "scripts/audit_grade11_mcq_quality.py"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_mcq_issue_report.py"
       - ".github/workflows/validate-grade11-mcq-context.yml"
   workflow_dispatch:
 jobs:
@@ -25,6 +29,10 @@ jobs:
         uses: actions/checkout@v5
       - name: Validate MCQ contexts and complete stimulus sets
         run: python3 scripts/check_grade11_mcq_context.py
+      - name: Validate practice engine JavaScript syntax
+        run: python3 scripts/check_v18_syntax.py
+      - name: Test student MCQ issue report safety
+        run: python3 scripts/test_grade11_mcq_issue_report.py
       - name: Generate Grade XI teacher QC review report
         run: python3 scripts/audit_grade11_mcq_quality.py --markdown reports/grade11-mcq-qc.md --json reports/grade11-mcq-qc.json
       - name: Show teacher QC findings in the GitHub Actions summary
