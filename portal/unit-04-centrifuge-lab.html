@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10233d">
+<meta name="description" content="Interactive Grade XI Unit 4 centrifugation conceptual demonstration: see sample tubes turn, dense particles collect outward, change rotor rpm/radius and calculate a=ω²r; source-grounded FBISE B-21.">
+<title>Unit 4 — Interactive Centrifuge Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#ebcc86;--ink:#1b334e;--muted:#53687e;--line:#d1dfeb;--soft:#f5f8fc;--accent:#14758d;--warm:#bd8047}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:white}.bar{max-width:1160px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:13px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800}.brand img{width:51px;height:51px;object-fit:contain}
+nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#176985}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c69e4c;outline-offset:3px}
+main{max-width:1160px;margin:auto;padding:26px 18px 72px}.eyebrow{font-size:12px;font-weight:850;color:#866021;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:clamp(28px,4.5vw,42px);line-height:1.16;margin:8px 0 12px}h2{font-size:24px;margin:0 0 12px}h3{font-size:18px;margin:12px 0 8px}
+.lead{color:var(--muted);max-width:900px}.notice{background:#fff7e6;border-left:4px solid #caa15a;border-radius:9px;padding:12px 16px;margin:18px 0;font-size:14px}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;box-shadow:0 7px 20px #10233d0b}
+.tag{display:inline-block;padding:5px 10px;border-radius:20px;background:#e3f1f9;color:#165e76;font-size:12px;font-weight:850;margin-bottom:9px}
+.cols{display:grid;grid-template-columns:minmax(300px,.84fr) minmax(0,1.16fr);gap:22px}
+label{display:block;font-size:14px;font-weight:800;margin:13px 0 4px}output{color:#146b84;font-weight:850}
+input[type=range]{width:100%;min-height:27px;accent-color:#16768b;cursor:pointer}
+select{border:1px solid #adc2d1;border-radius:9px;background:#fff;color:var(--ink);padding:9px;width:100%;font:inherit}
+button{font:inherit;font-size:14px;font-weight:760;border:1px solid #a9bfd0;border-radius:9px;color:var(--ink);background:#fff;padding:9px 12px;cursor:pointer}
+button:hover{background:#eaf4f8}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.primary:hover{background:#294665}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}.plot{width:100%;height:auto;background:#f9fcff;border:1px solid #cedde9;border-radius:11px}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:17px 0}
+.metric{border:1px solid #d5e5ec;background:#edf5f9;border-radius:9px;padding:10px 12px}.metric span{display:block;font-size:12px;color:#566c80}.metric strong{display:block;font-size:18px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.formula{background:#edf5fa;border-radius:9px;font-size:17px;font-weight:800;padding:11px 13px;margin:11px 0}
+.result{border-left:3px solid #c4964c;background:#fff8e8;padding:11px 13px;border-radius:8px;margin:13px 0;font-size:14px}
+.note{border-left:3px solid #237c94;background:#edf6fa;padding:10px 13px;border-radius:8px;margin:13px 0;font-size:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:#53677e;margin:9px 0}
+.dot{height:12px;width:12px;display:inline-block;vertical-align:middle;margin-right:5px;border-radius:50%}
+.info{font-size:13px;color:var(--muted)}.links{display:flex;gap:17px;flex-wrap:wrap;margin:18px 0 0}
+footer{background:var(--navy);color:#c8d7e6;text-align:center;padding:19px;font-size:13px}
+@media(max-width:840px){.cols{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.card{padding:14px}.metric strong{font-size:16px}}
+@media print{header,footer,.toolbar{display:none!important}.card{box-shadow:none;break-inside:avoid}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-04-centrifuge-engine.js" defer></script>
+<script src="./unit-04-centrifuge-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head><body><header><div class="bar">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 4 links"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-centrifuge-study.html">B-21 Guide</a><a href="./unit-04-slo-audit.html">SLO Audit</a></nav></div></header>
+<main><div class="eyebrow">NBF Grade XI · Unit 4 · B-21 Summative (Application)</div>
+<h1>Centrifugation — Interactive Concept Lab</h1>
+<p class="lead">Spin a schematic set of sample tubes and compare a mixed sample with a <strong>qualitative separation outcome</strong>. Change the rotation rate and radius to calculate the required inward acceleration. Then explain why denser suspended material can accumulate at the outer ends of the tubes.</p>
+<div class="notice"><strong>Educational model, not a real separation prediction:</strong> The diagram's “Show conceptual separation” option illustrates a possible <strong>after-spinning arrangement</strong>, not a time-evolving physical sedimentation simulation. Real results depend on density contrast, buoyancy, drag, duration, fluid and equipment. Drawn tube size and animation speed are deliberately schematic; all numerical accelerations use the <strong>actual selected rpm and radius</strong>. No medical, sample-processing or machine-safety recommendation is made.</div>
+<section class="card" aria-labelledby="labHeading"><span class="tag">P-11-B-21 · SUMMATIVE</span><h2 id="labHeading">1. Spin the sample and inspect the separated fractions</h2>
+<div class="cols"><div>
+<label for="rpm">Rotor rate: <output id="rpmValue" for="rpm">600 rpm</output></label>
+<input id="rpm" type="range" min="0" max="3000" step="50" value="600">
+<label for="radius">Effective radius of the sample: <output id="radiusValue" for="radius">0.100 m</output></label>
+<input id="radius" type="range" min="0.05" max="0.25" step="0.005" value="0.10">
+<label for="mass">Illustrative co-rotating particle mass: <output id="massValue" for="mass">2.0 g</output></label>
+<input id="mass" type="range" min="0.5" max="10" step="0.5" value="2">
+<label for="useCase">Textbook application</label>
+<select id="useCase" aria-label="Choose textbook centrifugation application">
+<option value="suspension">Suspended particles in a test tube</option>
+<option value="cream">Cream separator — milk fractions</option>
+<option value="laundry">Washing-machine spin dryer</option>
+</select>
+<div class="toolbar" role="group" aria-label="Centrifuge controls">
+<button id="spin" class="primary" type="button">Play schematic rotation</button>
+<button id="mix" type="button">Show mixed sample</button>
+<button id="separate" type="button">Show conceptual separation</button>
+</div>
+<p class="result" id="status" role="status">Choose a rotor speed and compare mixed versus separated samples.</p>
+<div class="note" id="caseExplanation">The textbook describes small, denser particles collecting at the outer-end bottom of a spinning test tube.</div>
+</div><div>
+<svg id="centrifugePlot" class="plot" viewBox="0 0 535 384" role="img" aria-label="Top-down conceptual centrifuge with four radial test tubes; lighter particles remain nearer axis and dense particles can settle at outer ends after spinning">
+<title>Schematic rotating tubes — centre at O; outer end is farther from the axis</title>
+<circle cx="260" cy="188" r="155" fill="none" stroke="#d1dfeb" stroke-width="2" stroke-dasharray="7 6"/>
+<g id="rotorGroup">
+<circle cx="260" cy="188" r="85" fill="#eaf2f7" stroke="#91adbf" stroke-width="4"/>
+<circle cx="260" cy="188" r="25" fill="#d1e2ed" stroke="#66849b" stroke-width="3"/>
+<g transform="rotate(0 260 188)">
+<line x1="260" y1="188" x2="315" y2="188" stroke="#6b90a9" stroke-width="9"/>
+<rect x="314" y="169" width="97" height="38" rx="12" fill="#d9eef6" stroke="#4e7895" stroke-width="3"/>
+<circle class="dense" cx="345" cy="179" r="6" fill="#bc7940"/><circle class="dense" cx="370" cy="195" r="6" fill="#bc7940"/>
+<circle class="light" cx="350" cy="196" r="5" fill="#2d9cb1"/><circle class="light" cx="387" cy="179" r="5" fill="#2d9cb1"/>
+</g>
+<g transform="rotate(90 260 188)">
+<line x1="260" y1="188" x2="315" y2="188" stroke="#6b90a9" stroke-width="9"/>
+<rect x="314" y="169" width="97" height="38" rx="12" fill="#d9eef6" stroke="#4e7895" stroke-width="3"/>
+<circle class="dense" cx="345" cy="179" r="6" fill="#bc7940"/><circle class="dense" cx="370" cy="195" r="6" fill="#bc7940"/>
+<circle class="light" cx="350" cy="196" r="5" fill="#2d9cb1"/><circle class="light" cx="387" cy="179" r="5" fill="#2d9cb1"/>
+</g>
+<g transform="rotate(180 260 188)">
+<line x1="260" y1="188" x2="315" y2="188" stroke="#6b90a9" stroke-width="9"/>
+<rect x="314" y="169" width="97" height="38" rx="12" fill="#d9eef6" stroke="#4e7895" stroke-width="3"/>
+<circle class="dense" cx="345" cy="179" r="6" fill="#bc7940"/><circle class="dense" cx="370" cy="195" r="6" fill="#bc7940"/>
+<circle class="light" cx="350" cy="196" r="5" fill="#2d9cb1"/><circle class="light" cx="387" cy="179" r="5" fill="#2d9cb1"/>
+</g>
+<g transform="rotate(270 260 188)">
+<line x1="260" y1="188" x2="315" y2="188" stroke="#6b90a9" stroke-width="9"/>
+<rect x="314" y="169" width="97" height="38" rx="12" fill="#d9eef6" stroke="#4e7895" stroke-width="3"/>
+<circle class="dense" cx="345" cy="179" r="6" fill="#bc7940"/><circle class="dense" cx="370" cy="195" r="6" fill="#bc7940"/>
+<circle class="light" cx="350" cy="196" r="5" fill="#2d9cb1"/><circle class="light" cx="387" cy="179" r="5" fill="#2d9cb1"/>
+</g>
+</g>
+<circle cx="260" cy="188" r="5" fill="#254969"/>
+<text x="267" y="211" fill="#315572" font-size="14" font-weight="800">Axis O</text>
+<text x="260" y="20" fill="#305675" font-size="14" font-weight="850" text-anchor="middle">Four tubes around a rotation axis (top view)</text>
+<text id="diagramState" x="260" y="370" fill="#315572" font-size="14" font-weight="800" text-anchor="middle">Mixed particles — schematic</text>
+</svg>
+<div class="legend"><span><i class="dot" style="background:#bc7940"></i>Denser suspended fraction</span><span><i class="dot" style="background:#2d9cb1"></i>Less dense / lighter fraction</span></div>
+<p class="info">The test-tube sample diagram specifically illustrates suspended particles in liquid. Milk cream separation and washing-machine water removal are related but not identical processes.</p>
+</div></div>
+<div class="metrics">
+<div class="metric"><span>Angular speed ω</span><strong id="omega">—</strong></div>
+<div class="metric"><span>Radial acceleration demand a<sub>c</sub></span><strong id="ac">—</strong></div>
+<div class="metric"><span>Acceleration compared with g</span><strong id="gRatio">—</strong></div>
+<div class="metric"><span>Inward force for selected mass</span><strong id="force">—</strong></div>
+<div class="metric"><span>Revolutions per second</span><strong id="frequency">—</strong></div>
+<div class="metric"><span>Rotation period</span><strong id="period">—</strong></div>
+</div>
+<div class="formula">ω = 2π × rpm / 60 &nbsp; | &nbsp; a<sub>c</sub> = ω²r &nbsp; | &nbsp; F<sub>c</sub> = mω²r</div>
+<p class="note">The displayed force is the <strong>required inward force for the selected mass to co-rotate</strong>. It is not an outward separating force or a direct prediction of material movement.</p>
+</section>
+<section class="card" aria-labelledby="compareHeading"><span class="tag">ANALYSE THE QUADRATIC RELATIONSHIP</span>
+<h2 id="compareHeading">2. How does changing rpm affect the acceleration requirement?</h2>
+<svg id="scalingGraph" class="plot" viewBox="0 0 540 295" role="img" aria-label="Comparison bars for selected rpm, twice the rotation rate, and twice the radius, showing relative centripetal acceleration">
+<title>At a fixed radius, doubling rpm gives four times required centripetal acceleration; doubling radius gives twice at fixed rpm</title></svg>
+<p id="comparisonText" class="note">Doubling rpm quadruples a<sub>c</sub> at fixed radius; doubling radius doubles a<sub>c</sub> at fixed rpm. Neither relation directly predicts the separation time of a sample.</p>
+<h3>Think like an FBISE student</h3><p>To justify separation, describe <strong>the spinning tube</strong>, the <strong>inward force required to follow a circular path</strong>, the <strong>different responses of components</strong>, and the <strong>collection of denser suspended material toward the outer tube end</strong>. Do not confuse the rotating-frame apparent centrifugal effect with an independent applied force in the laboratory frame.</p>
+<div class="links"><a href="./unit-04-centrifuge-study.html">Read detailed B-21 centrifuge explanation</a><a href="./unit-04-slo-audit.html">Check Unit 4 SLO coverage</a><a href="./unit-04.html">Unit 4 Learning Desk</a></div>
+</section></main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Grade XI Unit 4 centrifuge concept lab</footer></body></html>
