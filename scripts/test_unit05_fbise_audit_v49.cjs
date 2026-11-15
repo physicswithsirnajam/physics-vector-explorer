@@ -37,7 +37,7 @@ const expected=[
 ];
 function sourceContract(){
  assert.equal(audit.grade,11);assert.equal(audit.unit,5);assert.equal(audit.unitTitle,"Work and Energy");
- assert.equal(audit.status,"official-summative-SLO-verified-32-mcq-two-pilot-sets");
+ assert.equal(audit.status,"official-SLO-verified-32-mcq-two-pilot-sets-and-40-mark-descriptive-practice");
  assert.equal(audit.officialFrameworkVerified,true);
  assert.equal(audit.officialFBISEFrameworkIndependentVerification,"verified-against-user-uploaded-official-FBISE-HSSC-I-framework-PDF-page-11");
  assert.equal(audit.officialFrameworkSourceFile,"11_Physics_HSSC_I_model_paper_50_percent(9).pdf");
@@ -81,12 +81,12 @@ function sourceContract(){
  assert.ok(audit.assessmentPublicationGate.length>=5);
  assert.deepEqual(audit.chapterExerciseEvidence.textbookPrintedPages,[85,86,87]);
  // The Unit 5 directory may contain only the explicit provisional V50 student and public teaching-key JSONs.
- assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")).sort(),["unit-05-v50-16-student.json","unit-05-v50-16-teacher-key.json","unit-05-v51-16-student-b.json","unit-05-v51-16-teacher-key-b.json"]);
+ assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")).sort(),["unit-05-v50-16-student.json","unit-05-v50-16-teacher-key.json","unit-05-v51-16-student-b.json","unit-05-v51-16-teacher-key-b.json","unit-05-v52-descriptive-student.json","unit-05-v52-descriptive-teacher-key.json"]);
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
  assert.equal(u5.status,"available");
- assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-practice-sets-teacher-review-pending");
+ assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice");
  assert.equal(u5.questionBankCount,32);
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key"]);
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key"]);
  for(const id of u5.resourceIds){
   const resources=catalog.resources.filter(r=>r.id===id);
   assert.equal(resources.length,1);
@@ -170,7 +170,7 @@ async function browser(){
   const state=await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}));
   assert.deepEqual(state,{local:0,session:0});
   console.log("PASS V49: exact supplied FBISE official framework PDF p.11 Unit 5 SLO B-29/30/31/32 classification A/A/U/A preserved.");
-  console.log("PASS V49: full-grade 80-mark structure, PBA caution, 32 provisional Unit 5 MCQs across two sets, 8 public resources and no formal exam.");
+  console.log("PASS V49: full-grade 80-mark structure, PBA caution, 32 provisional Unit 5 MCQs across two sets, 10 public resources and no formal exam.");
   console.log("PASS V49: browser-rendered teacher-facing table, mobile 390px, no errors or grade writes; official file is provenance, not re-read by CI.");
  }finally{await engine.close();}
 }

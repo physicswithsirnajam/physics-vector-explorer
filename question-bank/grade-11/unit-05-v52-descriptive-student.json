@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "paperId": "unit05-v52-descriptive-40-practice",
+  "grade": 11,
+  "unit": 5,
+  "unitTitle": "Work and Energy",
+  "status": "provisional-teacher-review-pending",
+  "publication": "source-mapped-single-unit-40-mark-descriptive-classroom-practice",
+  "officialBoardPaper": false,
+  "disclaimer": "Original provisional Unit 5-only 40-mark descriptive practice, not a full FBISE HSSC-I theory paper or an examiner-approved school examination. Every question has internal OR. Student JSON has no model answers or marking steps. This is ungraded and stores no student details.",
+  "verifiedFramework": {
+    "file": "User-uploaded official FBISE HSSC-I Physics Assessment Framework / Model Paper (scheme 2024)",
+    "pdfPage": 11,
+    "officialTheorySloCodes": [
+      "P-11-B-29",
+      "P-11-B-30",
+      "P-11-B-31",
+      "P-11-B-32"
+    ],
+    "cognitiveLevels": [
+      "Application",
+      "Application",
+      "Understanding",
+      "Application"
+    ]
+  },
+  "sourceTextbook": {
+    "name": "NBF Grade XI Physics, Unit 5 Work and Energy",
+    "printedPages": "77–87",
+    "keySections": "§5.1 pp.79–80, §5.2 p.81, §5.3 p.82, §5.4.1 p.83"
+  },
+  "pattern": {
+    "totalMarks": 40,
+    "unitOnly": true,
+    "fullSyllabusPaper": false,
+    "sectionB": {
+      "questionCount": 7,
+      "marksEach": 4,
+      "totalMarks": 28,
+      "internalOr": true
+    },
+    "sectionC": {
+      "questionCount": 2,
+      "marksEach": 6,
+      "totalMarks": 12,
+      "internalOr": true
+    },
+    "alternatives": 18
+  },
+  "sectionB": [
+    {
+      "number": 1,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-1-A",
+          "label": "A",
+          "kind": "derivation",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "Starting from Newton's second law and the equation v² − u² = 2ad, derive the expression for the change in kinetic energy when a body of mass m changes speed from u to v."
+        },
+        {
+          "id": "B-1-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "A 3.0 kg body speeds up from 2.0 m/s to 8.0 m/s. Calculate its initial kinetic energy, final kinetic energy and the net work done on it. Show the kinetic-energy formula."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-2-A",
+          "label": "A",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-30",
+          "cognitiveLevel": "Application",
+          "sourcePage": 80,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 80",
+          "prompt": "The component of force along displacement increases linearly from +4 N at x = 0 m to +12 N at x = 6.0 m. Explain the graph-area method and determine the work done during the 6.0 m displacement."
+        },
+        {
+          "id": "B-2-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-30",
+          "cognitiveLevel": "Application",
+          "sourcePage": 80,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 80",
+          "prompt": "The parallel force decreases linearly from +8 N at x = 0 m to −4 N at x = 6.0 m. Find the displacement at which it crosses zero, both signed triangular areas and the total work."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-3-A",
+          "label": "A",
+          "kind": "conceptual",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-31",
+          "cognitiveLevel": "Understanding",
+          "sourcePage": 81,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 81",
+          "prompt": "State four distinguishing features of a conservative force: its work between fixed endpoints, work around a closed path, the associated energy change, and one example."
+        },
+        {
+          "id": "B-3-B",
+          "label": "B",
+          "kind": "conceptual",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-31",
+          "cognitiveLevel": "Understanding",
+          "sourcePage": 81,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 81",
+          "prompt": "Explain four characteristics of non-conservative resistance, referring to path dependence, sign of frictional work during motion, energy transformations and a named force."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-4-A",
+          "label": "A",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-32",
+          "cognitiveLevel": "Application",
+          "sourcePage": 83,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 83",
+          "prompt": "A 4.0 kg object initially moves at 3.0 m/s. A constant 20 N force acts along the motion and an 8.0 N resistive force acts against it over 4.0 m. Calculate initial kinetic energy, net work, final kinetic energy and final speed."
+        },
+        {
+          "id": "B-4-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-32",
+          "cognitiveLevel": "Application",
+          "sourcePage": 83,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 83",
+          "prompt": "A 2.0 kg object initially moves at 6.0 m/s with no applied driving force. Constant resistance of 9.0 N opposes its motion. Can it travel 5.0 m? Calculate its initial kinetic energy, the work resistance would perform over 5.0 m and the stopping distance, then explain physical reachability."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-5-A",
+          "label": "A",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "A 3.0 kg trolley starts from rest and moves 6.0 m under a constant net forward force of 9.0 N. Use the work–kinetic-energy relation to find the net work, kinetic energy at 6.0 m and final speed."
+        },
+        {
+          "id": "B-5-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "A 2.0 kg object travels at 5.0 m/s. Calculate its kinetic energy. If its speed becomes 10.0 m/s while its mass stays constant, calculate its new kinetic energy and the ratio of new to original kinetic energy."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-6-A",
+          "label": "A",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-30",
+          "cognitiveLevel": "Application",
+          "sourcePage": 80,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 80",
+          "prompt": "A force–displacement graph shows F∥ = +10 N for x = 0–3 m, followed by F∥ = −5 N for x = 3–7 m. Calculate the positive signed area, negative signed area, total work and state the physical meaning of its sign."
+        },
+        {
+          "id": "B-6-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-30",
+          "cognitiveLevel": "Application",
+          "sourcePage": 80,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 80",
+          "prompt": "A parallel-force graph joins (0 m, 0 N), (2 m, 8 N), (5 m, 8 N) and (7 m, 0 N) with straight segments. Calculate the three individual signed areas and the total work over 7 m."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "marks": 4,
+      "section": "B",
+      "choices": [
+        {
+          "id": "B-7-A",
+          "label": "A",
+          "kind": "conceptual",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-31",
+          "cognitiveLevel": "Understanding",
+          "sourcePage": 81,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 81",
+          "prompt": "A parcel is carried between the same two heights by a staircase and by a long ramp. Explain how gravity's work compares, whether gravitational work depends on the route, what happens on a closed round trip, and why this makes gravity conservative."
+        },
+        {
+          "id": "B-7-B",
+          "label": "B",
+          "kind": "conceptual",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-31",
+          "cognitiveLevel": "Understanding",
+          "sourcePage": 81,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 81",
+          "prompt": "A sliding body moves around a closed horizontal route on a rough surface. Explain the work done by kinetic friction, how longer routes affect it, what happens to mechanical energy, and why friction differs from a conservative force."
+        }
+      ]
+    }
+  ],
+  "sectionC": [
+    {
+      "number": 8,
+      "marks": 6,
+      "section": "C",
+      "choices": [
+        {
+          "id": "C-8-A",
+          "label": "A",
+          "kind": "derivation",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "Derive K = ½mv² for a body starting from rest under a constant net force using Newton's second law and the equation of motion. Generalise your result to a body changing speed from u to v, showing the work–energy relation."
+        },
+        {
+          "id": "C-8-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-29",
+          "cognitiveLevel": "Application",
+          "sourcePage": 82,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 82",
+          "prompt": "A 2.0 kg body starts from rest. A constant net force of 8.0 N moves it 5.0 m along a straight track. It then experiences a constant net retarding force of 4.0 N over another 3.0 m. Use the work–energy theorem to find the work and kinetic energy after stage 1, its speed then, the signed work in stage 2, and the final kinetic energy and speed."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "marks": 6,
+      "section": "C",
+      "choices": [
+        {
+          "id": "C-9-A",
+          "label": "A",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-32",
+          "cognitiveLevel": "Application",
+          "sourcePage": 83,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 83",
+          "prompt": "A 5.0 kg object initially moves at 2.0 m/s. Over 4.0 m, a constant 30 N applied force acts forward while a constant 12 N resistive force acts backward. Calculate the initial kinetic energy, applied work, work done by resistance, net work, final kinetic energy and final speed."
+        },
+        {
+          "id": "C-9-B",
+          "label": "B",
+          "kind": "numerical",
+          "assessment": "summative-theory",
+          "sloCode": "P-11-B-32",
+          "cognitiveLevel": "Application",
+          "sourcePage": 83,
+          "sourceRef": "NBF Grade XI Physics Unit 5 Work and Energy, printed p. 83",
+          "prompt": "A 3.0 kg body initially moves at 8.0 m/s. A constant forward force of 5.0 N acts while an opposing resistive force of 17 N acts. A 10.0 m displacement is proposed. Calculate the initial kinetic energy, net force, hypothetical net work and final kinetic energy for that displacement; then find the actual stopping distance and state whether the 10.0 m destination is reachable under these constant forces."
+        }
+      ]
+    }
+  ]
+}

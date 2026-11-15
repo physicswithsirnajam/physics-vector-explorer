@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "keyId": "unit05-v52-descriptive-worked-teacher-key",
+  "companionStudentBank": "unit-05-v52-descriptive-student.json",
+  "grade": 11,
+  "unit": 5,
+  "status": "provisional-teacher-review-pending",
+  "publicResource": true,
+  "notSecured": true,
+  "officialFBISEKey": false,
+  "teacherUse": "This is a PUBLIC post-practice solution resource, not teacher-login-secured or an official FBISE marking scheme. Review after collecting student work. Do not treat full-grade blueprint as a Unit 5 quota.",
+  "totalChoices": 18,
+  "totalOrPairs": 9,
+  "sectionBMarks": 28,
+  "sectionCMarks": 12,
+  "totalPaperMarks": 40,
+  "markingPolicy": "For each question answer either A or B; award marks only for the chosen option (4 for Section B, 6 for Section C). Accept equivalent scientifically correct method, correct units/rounding and clearly justified reasoning. Never sum both OR choices.",
+  "academicStatus": "Independent numerical and formula consistency checks are included in CI. Physics teacher must still independently check all wordings, graph assumptions, alternate correct approaches and marks before formal examination use.",
+  "answers": [
+    {
+      "choiceId": "B-1-A",
+      "marking": [
+        {
+          "text": "Newton's second law gives the net force Fnet = ma for constant acceleration.",
+          "marks": 1
+        },
+        {
+          "text": "Use the motion equation v² − u² = 2ad, hence ad = (v² − u²)/2.",
+          "marks": 1
+        },
+        {
+          "text": "Net work Wnet = Fnet d = mad = ½m(v² − u²).",
+          "marks": 1
+        },
+        {
+          "text": "Identify Ki = ½mu² and Kf = ½mv²; therefore Wnet = Kf − Ki = ΔK.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Assess derivation of ΔK from constant-force motion, not rote recall alone."
+    },
+    {
+      "choiceId": "B-1-B",
+      "marking": [
+        {
+          "text": "State the formula K = ½mv² and Wnet = Kf − Ki.",
+          "marks": 1
+        },
+        {
+          "text": "Initial kinetic energy Ki = ½(3.0)(2.0²) = 6.0 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final kinetic energy Kf = ½(3.0)(8.0²) = 96 J.",
+          "marks": 1
+        },
+        {
+          "text": "Net work Wnet = 96 − 6 = +90 J.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Accept +90 J; a sign explanation may be included with the subtraction."
+    },
+    {
+      "choiceId": "B-2-A",
+      "marking": [
+        {
+          "text": "For force component parallel to displacement, work is the signed area under the F∥–x graph.",
+          "marks": 1
+        },
+        {
+          "text": "The force varies linearly; mean force = (4 + 12)/2 = 8 N.",
+          "marks": 1
+        },
+        {
+          "text": "Signed trapezoid area W = mean force × distance = 8 × 6.",
+          "marks": 1
+        },
+        {
+          "text": "Work W = +48 J, positive because the force component stays above the axis.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "The force is explicitly the parallel component, so no extra cosine factor."
+    },
+    {
+      "choiceId": "B-2-B",
+      "marking": [
+        {
+          "text": "For linear F∥(x), zero crossing occurs at x = 6 × 8/(8 + 4) = 4.0 m.",
+          "marks": 1
+        },
+        {
+          "text": "Positive triangular area = ½ × 4.0 m × 8 N = +16 J.",
+          "marks": 1
+        },
+        {
+          "text": "Negative triangular area = −½ × 2.0 m × 4 N = −4.0 J.",
+          "marks": 1
+        },
+        {
+          "text": "Total signed work = 16 − 4 = +12 J (not 20 J of unsigned area).",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Credit separate signed areas; adding unsigned areas gives the wrong result."
+    },
+    {
+      "choiceId": "B-3-A",
+      "marking": [
+        {
+          "text": "A conservative force does the same work between fixed endpoints regardless of the path taken.",
+          "marks": 1
+        },
+        {
+          "text": "Its net work around any closed path is zero.",
+          "marks": 1
+        },
+        {
+          "text": "Conservative work can be expressed as Wconservative = −ΔU for its potential energy.",
+          "marks": 1
+        },
+        {
+          "text": "A correct example is gravity (also ideal spring or electrostatic force).",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "One mark per distinct property; potential-energy sign must be correct."
+    },
+    {
+      "choiceId": "B-3-B",
+      "marking": [
+        {
+          "text": "A non-conservative resistive force generally does path-dependent work between the same endpoints.",
+          "marks": 1
+        },
+        {
+          "text": "Kinetic friction opposes displacement, so its work during sliding is negative.",
+          "marks": 1
+        },
+        {
+          "text": "It transfers mechanical energy into other forms, commonly thermal/internal energy.",
+          "marks": 1
+        },
+        {
+          "text": "Kinetic friction or viscous air resistance is a named non-conservative example.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Friction opposes actual displacement; kinetic energy dissipates into thermal/internal forms."
+    },
+    {
+      "choiceId": "B-4-A",
+      "marking": [
+        {
+          "text": "Initial kinetic energy Ki = ½(4.0)(3.0²) = 18 J.",
+          "marks": 1
+        },
+        {
+          "text": "Net work Wnet = (20 − 8) × 4.0 = +48 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final kinetic energy Kf = Ki + Wnet = 18 + 48 = 66 J.",
+          "marks": 1
+        },
+        {
+          "text": "From Kf = ½mv², final speed v = √(2×66/4) = √33 ≈ 5.74 m/s.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Exact answer √33 m/s or 5.74 m/s at appropriate rounding."
+    },
+    {
+      "choiceId": "B-4-B",
+      "marking": [
+        {
+          "text": "Initial kinetic energy Ki = ½(2.0)(6.0²) = 36 J.",
+          "marks": 1
+        },
+        {
+          "text": "Over the proposed 5.0 m, resistance would do Wres = −9.0×5.0 = −45 J; naive target K would be −9 J.",
+          "marks": 1
+        },
+        {
+          "text": "Actual stopping distance is dstop = Ki/9.0 = 36/9 = 4.0 m.",
+          "marks": 1
+        },
+        {
+          "text": "Since dstop < 5.0 m, the body stops after 4.0 m; the proposed 5.0 m is unreachable under the assumptions.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "A negative target K is a reachability warning; do not treat it as an actual final energy."
+    },
+    {
+      "choiceId": "B-5-A",
+      "marking": [
+        {
+          "text": "Net work over the straight path: Wnet = Fnet d = 9.0×6.0 = 54 J.",
+          "marks": 1
+        },
+        {
+          "text": "The trolley starts from rest, so its initial kinetic energy is Ki = 0 J.",
+          "marks": 1
+        },
+        {
+          "text": "Work–energy theorem gives final kinetic energy Kf = Ki + Wnet = 54 J.",
+          "marks": 1
+        },
+        {
+          "text": "Solve ½(3.0)v² = 54, yielding v² = 36 and v = 6.0 m/s.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "No extra marks for repeating the same calculation; include rest condition."
+    },
+    {
+      "choiceId": "B-5-B",
+      "marking": [
+        {
+          "text": "Kinetic energy is K = ½mv²; its dependence on speed is quadratic.",
+          "marks": 1
+        },
+        {
+          "text": "At 5.0 m/s, Ki = ½(2.0)(5.0²) = 25 J.",
+          "marks": 1
+        },
+        {
+          "text": "At 10.0 m/s, Kf = ½(2.0)(10.0²) = 100 J.",
+          "marks": 1
+        },
+        {
+          "text": "The ratio Kf/Ki = 100/25 = 4: doubling speed quadruples kinetic energy.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Speed doubling results in a fourfold energy ratio for fixed mass."
+    },
+    {
+      "choiceId": "B-6-A",
+      "marking": [
+        {
+          "text": "Positive rectangular area from 0 to 3 m = (+10 N)(3 m) = +30 J.",
+          "marks": 1
+        },
+        {
+          "text": "Negative rectangular area from 3 to 7 m = (−5 N)(4 m) = −20 J.",
+          "marks": 1
+        },
+        {
+          "text": "Net signed work is +30 − 20 = +10 J.",
+          "marks": 1
+        },
+        {
+          "text": "The positive net sign means the specified force does overall positive mechanical work.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "The area below axis contributes negative work; total +10 J."
+    },
+    {
+      "choiceId": "B-6-B",
+      "marking": [
+        {
+          "text": "First triangle, 0 to 2 m: W1 = ½×2×8 = +8 J.",
+          "marks": 1
+        },
+        {
+          "text": "Rectangle, 2 to 5 m: W2 = 3×8 = +24 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final triangle, 5 to 7 m: W3 = ½×2×8 = +8 J.",
+          "marks": 1
+        },
+        {
+          "text": "Total work is W = 8 + 24 + 8 = +40 J, all above the displacement axis.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Students may use decomposition into two triangles and one rectangle."
+    },
+    {
+      "choiceId": "B-7-A",
+      "marking": [
+        {
+          "text": "Gravitational work between the same two heights is equal for ramp and staircase routes.",
+          "marks": 1
+        },
+        {
+          "text": "Near Earth's surface Wg = mg(hstart − hend): height difference, not path length, sets the work.",
+          "marks": 1
+        },
+        {
+          "text": "Over a full closed round trip to the starting height, gravity's total work is 0 J.",
+          "marks": 1
+        },
+        {
+          "text": "Path-independent endpoint work and zero closed-loop work define gravity as conservative.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Distinguish work by gravity from extra applied effort due to friction on different routes."
+    },
+    {
+      "choiceId": "B-7-B",
+      "marking": [
+        {
+          "text": "Kinetic friction acts opposite sliding displacement and generally performs negative work.",
+          "marks": 1
+        },
+        {
+          "text": "With constant friction magnitude, Wf = −fkL, so a longer path increases the magnitude of energy loss.",
+          "marks": 1
+        },
+        {
+          "text": "Work by friction converts some mechanical energy to internal/thermal energy.",
+          "marks": 1
+        },
+        {
+          "text": "On a closed rough route friction generally does nonzero negative work; it is non-conservative.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Closed-path negative friction work is generally nonzero; do not confuse with gravity."
+    },
+    {
+      "choiceId": "C-8-A",
+      "marking": [
+        {
+          "text": "Newton's second law for constant net acceleration is Fnet = ma.",
+          "marks": 1
+        },
+        {
+          "text": "The straight-line equation of motion is v² − u² = 2ad.",
+          "marks": 1
+        },
+        {
+          "text": "Rearrange: ad = (v² − u²)/2.",
+          "marks": 1
+        },
+        {
+          "text": "Net work Wnet = Fnet d = mad.",
+          "marks": 1
+        },
+        {
+          "text": "Substituting ad gives Wnet = ½mv² − ½mu² = ΔK.",
+          "marks": 1
+        },
+        {
+          "text": "For motion starting from rest, u=0 so kinetic energy K = ½mv²; this generalises to Wnet=Kf−Ki.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Any equivalent algebraic sequence with physical assumptions earns marks."
+    },
+    {
+      "choiceId": "C-8-B",
+      "marking": [
+        {
+          "text": "First stage net work W1 = F1d1 = 8.0×5.0 = +40 J.",
+          "marks": 1
+        },
+        {
+          "text": "Starting from rest, K1 = 0 + 40 = 40 J.",
+          "marks": 1
+        },
+        {
+          "text": "Speed after stage 1: v1 = √(2K1/m) = √(80/2) = √40 ≈ 6.32 m/s.",
+          "marks": 1
+        },
+        {
+          "text": "Second-stage retarding work W2 = −(4.0)(3.0) = −12 J.",
+          "marks": 1
+        },
+        {
+          "text": "After stage 2, final kinetic energy K2 = 40 − 12 = 28 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final speed v2 = √(2K2/m) = √(56/2) = √28 ≈ 5.29 m/s.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Two phases: the retarding force does negative work but the body remains moving through 3m."
+    },
+    {
+      "choiceId": "C-9-A",
+      "marking": [
+        {
+          "text": "Initial kinetic energy Ki = ½(5.0)(2.0²) = 10 J.",
+          "marks": 1
+        },
+        {
+          "text": "Work done by the applied forward force Wa = (+30)(4.0) = +120 J.",
+          "marks": 1
+        },
+        {
+          "text": "Work done by opposing resistance Wr = (−12)(4.0) = −48 J.",
+          "marks": 1
+        },
+        {
+          "text": "Net work Wnet = Wa + Wr = 120 − 48 = +72 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final kinetic energy Kf = Ki + Wnet = 10 + 72 = 82 J.",
+          "marks": 1
+        },
+        {
+          "text": "Final speed v = √(2Kf/m) = √(164/5) = √32.8 ≈ 5.73 m/s.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "Resistance work is negative; work done against resistance would be positive +48 J."
+    },
+    {
+      "choiceId": "C-9-B",
+      "marking": [
+        {
+          "text": "Initial kinetic energy Ki = ½(3.0)(8.0²) = 96 J.",
+          "marks": 1
+        },
+        {
+          "text": "Net forward force Fnet = 5.0 − 17 = −12 N.",
+          "marks": 1
+        },
+        {
+          "text": "Hypothetical work over 10.0 m: Wnet = (−12)(10) = −120 J.",
+          "marks": 1
+        },
+        {
+          "text": "Naively computed Ktarget = 96 − 120 = −24 J, which is not physically possible.",
+          "marks": 1
+        },
+        {
+          "text": "With a 12 N net stopping force, dstop = Ki/12 = 96/12 = 8.0 m.",
+          "marks": 1
+        },
+        {
+          "text": "The body stops at 8.0 m with K = 0; it cannot reach 10.0 m under the assumed constant forces.",
+          "marks": 1
+        }
+      ],
+      "teacherNotes": "The 10m target is unreachable; final physical energy is zero at the earlier 8m stop."
+    }
+  ]
+}
