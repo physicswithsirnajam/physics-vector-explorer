@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v45-unit4-projector-practice-2026-11-15",
+  "catalogVersion": "pilot-v46-unit4-discussion-slides-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,7 +84,7 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Five source-grounded study/lab stages, all 12 summative SLOs, 80 original MCQs (56 independent + 24 contextual), 40-mark descriptive OR practice, plus a consolidated Unit 4 80-mark teaching pack with blank/teacher-marked OMR-style sheets, all solved choices, and an OR-aware SLO/marks audit. Projector-ready timed 80-MCQ teacher-led slides with 50-second default timer, adaptive pacing, teacher navigation and full shared scenarios are available.",
+          "summary": "Five source-grounded study/lab stages, all 12 summative SLOs, 80 original MCQs (56 independent + 24 contextual), 40-mark descriptive OR practice, plus a consolidated Unit 4 80-mark teaching pack with blank/teacher-marked OMR-style sheets, all solved choices, and an OR-aware SLO/marks audit. Projector-ready timed 80-MCQ teacher-led slides with 50-second default timer, adaptive pacing, teacher navigation and full shared scenarios are available. Separate untimed teacher-led question/solution slides are available for post-test discussion, with explicit reveal and original SLO/cognitive/source metadata.",
           "questionBankCount": 80,
           "assessmentStatus": "provisional-unit4-integrated-80-mark-classroom-practice",
           "resourceIds": [
@@ -103,11 +103,12 @@
             "unit4-mcq-full80",
             "unit4-descriptive-practice",
             "unit4-assessment-pack",
-            "unit4-projector-practice"
+            "unit4-projector-practice",
+            "unit4-discussion-slides"
           ],
-          "qualityStatus": "Public provisional Unit 4-only assessment practice: 80 MCQs, 40 descriptive marks, manual practice OMR sheets, explained teacher key and source-calculated SLO/marks distributions. Teacher content and browser/print sign-off still pending. Not an official FBISE key, scannable OMR or recorded exam. The public timed projector mode shows only questions and options; no assessment login, official answer release or grade capture.",
+          "qualityStatus": "Public provisional Unit 4-only assessment practice: 80 MCQs, 40 descriptive marks, manual practice OMR sheets, explained teacher key and source-calculated SLO/marks distributions. Teacher content and browser/print sign-off still pending. Not an official FBISE key, scannable OMR or recorded exam. The public timed projector mode shows only questions and options; no assessment login, official answer release or grade capture. Public, separate V46 discussion page reveals the provisional answer and reasoning only on explicit teacher command; this is not secured or examiner certified.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual), a 40-mark descriptive OR practice and a combined 80-mark classroom assessment pack with manual OMR-style response sheets are available. No protected Unit 4 tests or saved scores are published. This is not an official full-syllabus FBISE paper; teacher review remains pending. Teacher-led 50-second timed Unit 4 projector questions are available separately with full shared scenarios; slide answers remain hidden and the timer does not save scores.",
+          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual), a 40-mark descriptive OR practice and a combined 80-mark classroom assessment pack with manual OMR-style response sheets are available. No protected Unit 4 tests or saved scores are published. This is not an official full-syllabus FBISE paper; teacher review remains pending. Teacher-led 50-second timed Unit 4 projector questions are available separately with full shared scenarios; slide answers remain hidden and the timer does not save scores. Post-practice discussion slides are a separate PUBLIC teacher-led page: the source-keyed answers only appear there after explicit reveal, not on the student timed projector. No answers or scores are stored.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -819,6 +820,19 @@
       "access": "public-link",
       "contentStatus": "provisional-unit4-classroom-projector-practice-teacher-review-pending",
       "accessDescription": "Public ungraded classroom questions only; answer keys and student responses never appear in the projector interface, and scores are not saved. Not a secure or official FBISE test."
+    },
+    {
+      "id": "unit4-discussion-slides",
+      "category": "PRACTISE",
+      "title": "Unit 4 — Teacher-Led 80-MCQ Solution Discussion Slides",
+      "description": "Separate untimed public post-test presentation: 80 question-only views + 80 explicitly revealed keyed solution views, each with the correct option, original explanation/calculation, SLO, cognitive level, topic and NBF printed page. Full contextual scenarios retained, no account or grade writes.",
+      "href": "./unit-04-discussion-slides.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 4 Discussion Slides ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-public-teacher-led-post-practice-solutions-teacher-review-pending",
+      "accessDescription": "Public and not access-restricted: teacher must open only after assessment. No automatic answers in timed student projector; no protected exam, no score capture or official FBISE marking key."
     }
   ]
 }
