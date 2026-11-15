@@ -1,0 +1,46 @@
+name: Validate Grade XI Unit 4 Integrated Assessment Pack (V42)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-assessment-pack.*"
+      - "question-bank/grade-11/unit-04-*.json"
+      - "portal/unit-04.html"
+      - "portal/unit-04-slo-audit.*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - ".github/workflows/validate-grade11-unit4-assessment-pack-v42.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-04-assessment-pack.*"
+      - "question-bank/grade-11/unit-04-*.json"
+      - "portal/unit-04.html"
+      - "portal/unit-04-slo-audit.*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - ".github/workflows/validate-grade11-unit4-assessment-pack-v42.yml"
+  workflow_dispatch:
+jobs:
+  integrated-unit4-omr-key-slo-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Check JavaScript and test syntax
+        run: |
+          node --check portal/unit-04-assessment-pack.js
+          node --check scripts/test_unit04_assessment_pack_v42.cjs
+      - name: Validate integrated Unit 4 pack and no student data writes
+        run: node scripts/test_unit04_assessment_pack_v42.cjs
+      - name: Re-run all existing Unit 4 teaching, MCQ and descriptive checks
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs

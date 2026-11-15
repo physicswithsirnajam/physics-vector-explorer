@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v39-unit4-fbise80-mcq-2026-11-15",
+  "catalogVersion": "pilot-v42-unit4-integrated-80mark-pack-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,9 +84,9 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Five source-based Unit 4 study/lab stages, a full 12-summative-SLO audit, 80 provisional Unit 4-only FBISE-style MCQs (56 independent + 24 scenario), and a 40-mark Section B/C OR descriptive practice with 18 solved alternatives. No protected grades are published.",
+          "summary": "Five source-grounded study/lab stages, all 12 summative SLOs, 80 original MCQs (56 independent + 24 contextual), 40-mark descriptive OR practice, plus a consolidated Unit 4 80-mark teaching pack with blank/teacher-marked OMR-style sheets, all solved choices, and an OR-aware SLO/marks audit.",
           "questionBankCount": 80,
-          "assessmentStatus": "provisional-unit4-public-mcq-and-descriptive-practice",
+          "assessmentStatus": "provisional-unit4-integrated-80-mark-classroom-practice",
           "resourceIds": [
             "unit4-desk",
             "unit4-rotation-study",
@@ -101,11 +101,12 @@
             "unit4-centrifuge-lab",
             "unit4-slo-audit",
             "unit4-mcq-full80",
-            "unit4-descriptive-practice"
+            "unit4-descriptive-practice",
+            "unit4-assessment-pack"
           ],
-          "qualityStatus": "80 provisional source-grounded MCQs and 40-mark descriptive practice with stepwise model answers and SLO mapping across OR alternatives. Teacher academic and browser/print review remain pending; not an official FBISE marking key or saved grade.",
+          "qualityStatus": "Public provisional Unit 4-only assessment practice: 80 MCQs, 40 descriptive marks, manual practice OMR sheets, explained teacher key and source-calculated SLO/marks distributions. Teacher content and browser/print sign-off still pending. Not an official FBISE key, scannable OMR or recorded exam.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual) and a 40-mark descriptive practice with 9 internal-OR pairs are now available. No protected Unit 4 tests or saved scores are published. These unit-only exercises are not official full-syllabus FBISE papers; teacher review remains pending.",
+          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual), a 40-mark descriptive OR practice and a combined 80-mark classroom assessment pack with manual OMR-style response sheets are available. No protected Unit 4 tests or saved scores are published. This is not an official full-syllabus FBISE paper; teacher review remains pending.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -791,6 +792,19 @@
       "access": "public-link",
       "contentStatus": "provisional-unit4-descriptive-self-practice-teacher-review-pending",
       "accessDescription": "Unit 4-only public practice with model answers, not an official board marking scheme or saved grade."
+    },
+    {
+      "id": "unit4-assessment-pack",
+      "category": "PRACTISE",
+      "title": "Unit 4 — Integrated 80-Mark Assessment Pack",
+      "description": "Connect 80 original Section A MCQs and 40 descriptive Section B/C marks; blank and marked OMR-style practice, teacher solutions for all 80 MCQs and 18 OR alternatives, plus source-derived 12-SLO/marks audit.",
+      "href": "./unit-04-assessment-pack.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 4 80-Mark Assessment Pack ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-unit4-integrated-practice-omr-teacher-review-pending",
+      "accessDescription": "Public unit-only practice and manual OMR-style response sheets, not official FBISE examination/scanner OMR or a protected graded test; student work is never saved by this pack."
     }
   ]
 }

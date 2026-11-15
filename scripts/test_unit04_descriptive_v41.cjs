@@ -63,10 +63,10 @@ assert.equal(audit.publishedDescriptiveBankFile,"question-bank/grade-11/unit-04-
 assert.equal(audit.publishedDescriptivePage,"./unit-04-descriptive-practice.html");
 assert.ok(audit.proposedPracticeOnly.descriptiveStatus.includes("teacher-review-pending"));
 const u4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
-assert.equal(u4.questionBankCount,80);assert.equal(u4.resourceIds.length,14);
-assert.equal(new Set(u4.resourceIds).size,14);
+assert.equal(u4.questionBankCount,80);assert.equal(u4.resourceIds.length,15);
+assert.equal(new Set(u4.resourceIds).size,15);
 assert.ok(u4.resourceIds.includes("unit4-descriptive-practice"));
-assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-and-descriptive-practice");
+assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 const r=catalog.resources.filter(v=>v.id==="unit4-descriptive-practice");
 assert.equal(r.length,1);assert.equal(r[0].href,"./unit-04-descriptive-practice.html");
 assert.equal(r[0].public,true);
