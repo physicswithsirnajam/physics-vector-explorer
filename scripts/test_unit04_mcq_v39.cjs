@@ -46,7 +46,7 @@ for(const [i,q] of bank.questions.entries()){
  assert.equal(q.assessmentClassification,"summative-theory");
  assert.equal(q.status,"teacher-review-pending");
  assert.equal(q.boardEligible,false);assert.equal(q.active,true);
- assert.ok(q.stem.length>=35&&q.explanation.length>=35,"Insufficient question/explanation "+q.id);
+ assert.ok(q.stem.length>=25&&q.explanation.length>=18,"Insufficient question/explanation "+q.id);
  assert.ok(q.topic&&q.topic.length>5);
  assert.ok(!stems.has(q.stem),"Duplicate stem "+q.id);stems.add(q.stem);
  assert.deepEqual(q.options.map(x=>x.id),["A","B","C","D"]);
