@@ -1,0 +1,187 @@
+{
+  "auditVersion": "v48-unit05-source-grounded-teaching-pilot",
+  "grade": 11,
+  "unit": 5,
+  "unitTitle": "Work and Energy",
+  "status": "source-grounded-teaching-pilot",
+  "sourceDocuments": [
+    {
+      "name": "NBF Grade XI Physics textbook (user-provided 11 Physics Book(7).pdf)",
+      "role": "primary textbook",
+      "printedPages": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "verifiedVisualPages": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "note": "Original scanned pages were visually inspected for chapter SLOs, work graphs, conservative fields, kinetic energy and resistive-medium theorem; exercises continue in remainder of chapter."
+    },
+    {
+      "name": "Grade11_Physics_Unit5_Student_Notes_and_Practice.pdf",
+      "role": "prior user-prepared secondary teaching notes",
+      "printedBookPages": [
+        77,
+        87
+      ],
+      "note": "Used to cross-map provisional FBISE SLO codes, cognitive labels and pedagogical sections; not substituted for independently verifying the official framework."
+    }
+  ],
+  "sourcePageMap": [
+    {
+      "section": "5.1",
+      "topic": "Work, sign, angle, variable force and force–displacement graphs",
+      "printedPages": [
+        78,
+        79,
+        80,
+        81
+      ],
+      "guide": "unit5-work-study",
+      "lab": "unit5-work-energy-lab"
+    },
+    {
+      "section": "5.2",
+      "topic": "Conservative and non-conservative force fields",
+      "printedPages": [
+        81
+      ],
+      "guide": "unit5-work-study",
+      "lab": "unit5-work-energy-lab"
+    },
+    {
+      "section": "5.3",
+      "topic": "Kinetic energy and its derivation",
+      "printedPages": [
+        81,
+        82
+      ],
+      "guide": "unit5-work-study",
+      "lab": "unit5-work-energy-lab"
+    },
+    {
+      "section": "5.4",
+      "topic": "Work–energy theorem, resistive medium and device efficiency",
+      "printedPages": [
+        82,
+        83,
+        84
+      ],
+      "guide": "unit5-work-study",
+      "lab": "unit5-work-energy-lab"
+    }
+  ],
+  "summativeTheorySLOs": [
+    {
+      "code": "P-11-B-29",
+      "sourceOutcome": "Derive the formula for kinetic energy using equations of motion.",
+      "provisionalCognitiveLevel": "Application",
+      "printedPages": [
+        81,
+        82
+      ],
+      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
+      "teachingStatus": "guide-and-interactive-derivation-available"
+    },
+    {
+      "code": "P-11-B-30",
+      "sourceOutcome": "Deduce work done from a force–displacement graph.",
+      "provisionalCognitiveLevel": "Application",
+      "printedPages": [
+        79,
+        80
+      ],
+      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
+      "teachingStatus": "signed-linear-graph-lab-and-guide-available"
+    },
+    {
+      "code": "P-11-B-31",
+      "sourceOutcome": "Differentiate between conservative and non-conservative forces.",
+      "provisionalCognitiveLevel": "Understanding",
+      "printedPages": [
+        81
+      ],
+      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
+      "teachingStatus": "path-comparison-lab-and-guide-available"
+    },
+    {
+      "code": "P-11-B-32",
+      "sourceOutcome": "Use the work–energy theorem in a resistive medium to solve problems.",
+      "provisionalCognitiveLevel": "Application",
+      "printedPages": [
+        82,
+        83
+      ],
+      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
+      "teachingStatus": "resistive-work-energy-lab-and-guide-available"
+    }
+  ],
+  "supportingTeaching": [
+    {
+      "topic": "Constant force and sign of work",
+      "printedPages": [
+        78,
+        79
+      ],
+      "relationship": "W = F d cos(θ)"
+    },
+    {
+      "topic": "Variable-force graphical method",
+      "printedPages": [
+        79,
+        80
+      ],
+      "relationship": "Signed area under F_parallel–d curve equals work"
+    },
+    {
+      "topic": "Kinetic energy",
+      "printedPages": [
+        81,
+        82
+      ],
+      "relationship": "K = 1/2 m v²"
+    },
+    {
+      "topic": "Conservative forces",
+      "printedPages": [
+        81
+      ],
+      "relationship": "Gravity work depends on vertical height difference, not path length"
+    },
+    {
+      "topic": "Resistive medium",
+      "printedPages": [
+        83
+      ],
+      "relationship": "W_applied = ΔK + W_against_resistance"
+    }
+  ],
+  "studentQuestionBankPublished": false,
+  "studentQuestionBankStatus": "not-published-independent-academic-QC-required",
+  "questionBankCount": 0,
+  "formativeTheorySLOsVerifiedSeparately": false,
+  "officialFBISEFrameworkIndependentVerification": "pending-primary-framework-page-check",
+  "descriptivePaperPublished": false,
+  "omrPublished": false,
+  "protectedOrGradedAssessmentPublished": false,
+  "studentGradesRecorded": false,
+  "academicRisk": "Teaching calculations and original interactives are pedagogical demonstrations. Before a formal unit MCQ bank/paper, verify official framework classifications and independently proof every question and explanation.",
+  "sourceBoundary": "Only printed pages 77–87 of the original NBF Unit 5 are in scope; do not use Unit 4 questions or claim an official comprehensive board assessment."
+}

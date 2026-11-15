@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10233d">
+<meta name="description" content="Interactive NBF Grade XI Unit 5 Work and Energy exploratory physics lab: force-displacement signed work graphs, KE from motion, conservative vs resistive paths, and work-energy theorem.">
+<title>Unit 5 — Interactive Work–Energy Explorer | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e7c788;--ink:#1a344e;--muted:#526980;--line:#ccdae7;--soft:#f4f8fc;--blue:#177a96;--warn:#ac5c40}
+*{box-sizing:border-box}
+body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.54 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:#fff}.bar{max-width:1190px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{color:#fff;text-decoration:none;display:flex;align-items:center;gap:11px;font-weight:840}.brand img{height:50px;width:50px;object-fit:contain}
+nav{display:flex;gap:15px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#146785}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #cea04d;outline-offset:3px}
+main{max-width:1190px;margin:auto;padding:24px 18px 60px}.eyebrow{font-weight:850;font-size:12px;color:#89652b;letter-spacing:.09em;text-transform:uppercase}
+h1{font-size:clamp(26px,4.2vw,40px);line-height:1.17;margin:10px 0}h2{font-size:clamp(20px,2.8vw,25px);margin:0 0 12px}h3{font-size:18px}
+.lead{color:var(--muted);max-width:960px}
+.notice{background:#fff6e3;border-left:4px solid #c89d57;border-radius:9px;padding:12px 15px;margin:16px 0;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tabs button{font:inherit;background:#fff;border:1px solid #95acc1;color:#18445d;padding:10px 13px;border-radius:9px;cursor:pointer;font-weight:760}
+.tabs button[aria-selected="true"]{background:var(--navy);color:white;border-color:var(--navy)}
+.panel{padding:21px;border:1px solid var(--line);background:white;border-radius:13px;box-shadow:0 6px 22px #142f4909}
+.panel[hidden]{display:none!important}
+.tag{display:inline-block;font-size:12px;font-weight:850;letter-spacing:.03em;background:#e8f4fa;color:#175d7c;border-radius:19px;padding:5px 10px;margin-bottom:9px}
+.cols{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:23px;margin-top:17px}
+label{font-size:14px;font-weight:760;display:flex;justify-content:space-between;gap:10px;align-items:center;margin:13px 0 5px}
+output{font-weight:860;color:#126f89;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;min-height:26px;accent-color:var(--blue);cursor:pointer}
+.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0}
+.metric{background:#eaf4f8;border:1px solid #d1e3ed;border-radius:9px;padding:11px 12px}
+.metric span{display:block;color:#4a6377;font-size:12px}.metric strong{display:block;color:#1b5166;font-size:clamp(17px,2.4vw,23px);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.explain{background:#f7fafc;padding:11px 14px;border-left:3px solid #91afc2;border-radius:7px;font-size:14px}
+.plot{width:100%;height:auto;border-radius:11px;border:1px solid #d4e2eb;background:#fcfeff}
+.diagram{width:100%;height:auto;border:1px solid #d4e2eb;background:#f8fbfd;border-radius:11px}
+.note{font-size:13px;color:var(--muted);margin-top:11px}.formula{font-weight:820;color:#175670;background:#edf6fa;padding:10px 12px;border-radius:8px;margin:10px 0;overflow-wrap:anywhere}
+.warning{color:#953f2c;background:#fff1e9;border:1px solid #efc5b4;padding:10px;border-radius:8px;font-weight:720}
+.warning[hidden]{display:none!important}
+.mini-title{font-size:14px;font-weight:830;margin:13px 0 5px}
+footer{text-align:center;background:var(--navy);color:#d5e2f0;padding:17px;font-size:13px}
+@media(max-width:880px){.cols{grid-template-columns:1fr}.panel{padding:16px}}
+@media(max-width:460px){main{padding:16px 11px 40px}.bar{padding:10px}.metric-grid{grid-template-columns:1fr}.tabs button{flex:1 1 46%;padding:9px}.panel{padding:13px}}
+@media print{header,footer,#psn-global-nav,.tabs{display:none!important}.panel[hidden]{display:none!important}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=6">
+<script src="./unit-05-work-energy-lab.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head><body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unaltered Physics with Sir Najam official logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 5 resources"><a href="./unit-05.html">Unit 5 Desk</a><a href="./unit-05-work-study.html">Study Guide</a><a href="./unit-04.html">Unit 4</a></nav></div></header>
+<main><div class="eyebrow">Grade XI · Unit 5 · Work and Energy · Interactive teaching pilot</div>
+<h1>Work–Energy Explorer</h1>
+<p class="lead">Explore textbook work graphs, kinetic energy, conservative fields and energy changes against resistance. Each station displays its equations, units and assumptions while you adjust the parameters.</p>
+<div class="notice"><strong>Source boundary:</strong> NBF Grade XI Physics Unit 5, printed pp.77–87; four summative SLOs from the textbook chapter list and previous FBISE-aligned student notes. This is a <strong>learning simulation, not an official graded exam</strong>. No student results, accounts or progress are saved.</div>
+<div class="tabs" role="tablist" aria-label="Choose Unit 5 experiment">
+<button role="tab" aria-selected="true" aria-controls="workPanel" id="workTab" data-mode="work">5.1 · Signed Work &amp; Graph</button>
+<button role="tab" aria-selected="false" aria-controls="kineticPanel" id="kineticTab" data-mode="kinetic">5.3 · Kinetic Energy</button>
+<button role="tab" aria-selected="false" aria-controls="fieldsPanel" id="fieldsTab" data-mode="fields">5.2 · Force Fields</button>
+<button role="tab" aria-selected="false" aria-controls="resistivePanel" id="resistiveTab" data-mode="resistive">5.4 · Resistance</button>
+</div>
+<section class="panel" role="tabpanel" aria-labelledby="workTab" id="workPanel">
+<span class="tag">P-11-B-30 · NBF pp.78–80 · Application</span>
+<h2>Work from a force–displacement graph</h2>
+<p>The area under a graph of the <strong>force component along the displacement</strong>, F<sub>∥</sub>, gives <strong>signed work</strong>. Above the axis: positive; below the axis: negative. The model force changes linearly from F<sub>0</sub> to F<sub>1</sub>.</p>
+<div class="cols">
+<div>
+<label for="fStart">Initial parallel force F<sub>0</sub> <output id="fStartLabel" for="fStart"></output></label><input id="fStart" type="range" min="-30" max="60" step="5" value="0">
+<label for="fEnd">Final parallel force F<sub>1</sub> <output id="fEndLabel" for="fEnd"></output></label><input id="fEnd" type="range" min="-30" max="60" step="5" value="20">
+<label for="graphDistance">Displacement d <output id="graphDistanceLabel" for="graphDistance"></output></label><input id="graphDistance" type="range" min="1" max="12" step="1" value="6">
+<div class="metric-grid"><div class="metric"><span>Net signed work (area)</span><strong id="graphWork"></strong></div><div class="metric"><span>Average parallel force</span><strong id="graphAvg"></strong></div></div>
+<div class="formula">W = ½(F<sub>0</sub> + F<sub>1</sub>)d</div>
+<p id="graphExplain" class="explain" aria-live="polite"></p>
+</div>
+<div>
+<svg id="forcePlot" class="plot" viewBox="0 0 720 340" role="img" aria-label="Interactive linear force component versus displacement, signed area graph"><title>Signed area under the force–displacement graph</title><g id="forceGrid"></g><g id="forceArea"></g><g id="forceLine"></g><g id="forceLabels"></g></svg>
+<p class="note">Horizontal axis: displacement, d (m). Vertical axis: the <em>parallel component</em> of force, F<sub>∥</sub> (N). Shaded regions represent signed work (N·m = J). This is an idealised linearly varying force, not measured laboratory data.</p>
+</div></div>
+<h3>Supporting concept — constant force at an angle</h3>
+<div class="cols"><div>
+<label for="forceAngle">Applied force <output id="forceAngleLabel" for="forceAngle"></output></label><input id="forceAngle" type="range" min="0" max="50" step=".1" value="16.8">
+<label for="angleDistance">Displacement <output id="angleDistanceLabel" for="angleDistance"></output></label><input id="angleDistance" type="range" min=".5" max="12" step=".1" value="4.9">
+<label for="theta">Angle between force and displacement <output id="thetaLabel" for="theta"></output></label><input id="theta" type="range" min="0" max="180" step="5" value="30">
+<div class="formula">W = Fd cos θ</div></div><div class="metric-grid"><div class="metric"><span>Work by applied force</span><strong id="angleWork"></strong></div><div class="metric"><span>Component along motion</span><strong id="angleComponent"></strong></div></div></div>
+</section>
+<section class="panel" role="tabpanel" aria-labelledby="kineticTab" id="kineticPanel" hidden>
+<span class="tag">P-11-B-29 · NBF pp.81–82 · Application</span>
+<h2>Derive kinetic energy from motion</h2>
+<p>For a constant net force along straight-line motion, F<sub>net</sub> = ma and v² − u² = 2ad. Net work F<sub>net</sub>d = mad = ½m(v² − u²).</p>
+<div class="cols"><div>
+<label for="keMass">Mass <output id="keMassLabel" for="keMass"></output></label><input id="keMass" type="range" min=".5" max="20" step=".5" value="5">
+<label for="keInitial">Initial speed u <output id="keInitialLabel" for="keInitial"></output></label><input id="keInitial" type="range" min="0" max="25" step=".5" value="2">
+<label for="keFinal">Final speed v <output id="keFinalLabel" for="keFinal"></output></label><input id="keFinal" type="range" min="0" max="25" step=".5" value="6">
+<div class="formula">K = ½mv² &nbsp; | &nbsp; W<sub>net</sub> = ΔK</div>
+<div id="keExplain" class="explain" aria-live="polite"></div>
+</div><div><div class="metric-grid">
+<div class="metric"><span>Initial kinetic energy K₀</span><strong id="keStart"></strong></div>
+<div class="metric"><span>Final kinetic energy K₁</span><strong id="keEnd"></strong></div>
+<div class="metric"><span>Net work ΔK</span><strong id="keDelta"></strong></div>
+<div class="metric"><span>Speed ratio v/u</span><strong id="keRatio"></strong></div>
+</div>
+<div class="explain"><strong>Why v²?</strong> Because the work equation contains the change in squared speed, not just the change in speed. If u = 0, the net work needed to reach speed v is K = ½mv². A speed ratio is undefined when u = 0, but each kinetic energy remains well-defined.</div></div></div>
+</section>
+<section class="panel" role="tabpanel" aria-labelledby="fieldsTab" id="fieldsPanel" hidden>
+<span class="tag">P-11-B-31 · NBF p.81 · Understanding</span>
+<h2>Conservative gravity vs path-dependent resistance</h2>
+<p>Compare two routes between the <strong>same endpoints</strong>, from h = 10 m to h = 4 m. For gravity, work depends on vertical drop only. For a constant opposing resistive force, work depends on the total distance travelled.</p>
+<div class="cols"><div>
+<label for="fieldMass">Object mass <output id="fieldMassLabel" for="fieldMass"></output></label><input id="fieldMass" type="range" min="1" max="20" step="1" value="5">
+<label for="fieldResistance">Ideal constant resisting force <output id="fieldResistanceLabel" for="fieldResistance"></output></label><input id="fieldResistance" type="range" min="0" max="15" step="1" value="5">
+<p class="note">Assumptions: near-Earth g = 9.8 m/s²; endpoints and height change fixed; two idealised paths with lengths 10 m and 18 m; resisting force magnitude constant and opposite motion along each path. Not a geometric-to-scale drawing.</p>
+</div><div>
+<svg class="diagram" viewBox="0 0 680 255" role="img" aria-label="Two distinct routes connect the same initial high point to the same final low point">
+<path d="M82 54 L575 194" stroke="#1981a1" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M82 54 C145 230 235 25 330 195 S470 25 575 194" stroke="#b9734c" stroke-width="5" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
+<circle cx="82" cy="54" r="11" fill="#132c4a"/><circle cx="575" cy="194" r="11" fill="#132c4a"/>
+<g fill="#183b56" font-size="21" font-weight="700"><text x="100" y="41">A · 10 m high</text><text x="405" y="229">B · 4 m high</text></g>
+<g font-size="18" fill="#12738e"><text x="267" y="83">Route 1 · 10 m</text></g>
+<g font-size="18" fill="#ad6138"><text x="242" y="243">Route 2 · 18 m</text></g></svg>
+<div class="metric-grid"><div class="metric"><span>Gravity work · either route</span><strong id="gravityWork"></strong></div>
+<div class="metric"><span>Resistive work · 10 m route</span><strong id="resistShort"></strong></div>
+<div class="metric"><span>Resistive work · 18 m route</span><strong id="resistLong"></strong></div>
+<div class="metric"><span>Additional loss on long route</span><strong id="resistExtra"></strong></div></div></div></div>
+</section>
+<section class="panel" role="tabpanel" aria-labelledby="resistiveTab" id="resistivePanel" hidden>
+<span class="tag">P-11-B-32 · NBF pp.82–83 · Application</span>
+<h2>Work–energy theorem in a resistive medium</h2>
+<p>For forward applied force F<sub>a</sub> and opposing constant resistance F<sub>r</sub> over displacement d, ΔK = (F<sub>a</sub> − F<sub>r</sub>)d. The work done <em>against</em> resistance is a positive energy requirement; work done <em>by</em> resistance is negative.</p>
+<div class="cols"><div>
+<label for="resMass">Mass <output id="resMassLabel" for="resMass"></output></label><input id="resMass" type="range" min="1" max="20" step="1" value="5">
+<label for="resInitial">Initial speed <output id="resInitialLabel" for="resInitial"></output></label><input id="resInitial" type="range" min="0" max="20" step=".5" value="2">
+<label for="resApplied">Forward applied force <output id="resAppliedLabel" for="resApplied"></output></label><input id="resApplied" type="range" min="0" max="50" step="1" value="30">
+<label for="resOppose">Opposing resistive force <output id="resOpposeLabel" for="resOppose"></output></label><input id="resOppose" type="range" min="0" max="60" step="1" value="12">
+<label for="resDistance">Requested displacement <output id="resDistanceLabel" for="resDistance"></output></label><input id="resDistance" type="range" min=".5" max="12" step=".5" value="4">
+<div class="formula">K<sub>target</sub> = ½mu² + (F<sub>a</sub> − F<sub>r</sub>)d</div>
+</div><div>
+<div class="metric-grid">
+<div class="metric"><span>Initial kinetic energy</span><strong id="resInitialKE"></strong></div>
+<div class="metric"><span>Applied work</span><strong id="resAppliedWork"></strong></div>
+<div class="metric"><span>Work by resistance (negative)</span><strong id="resResistanceWork"></strong></div>
+<div class="metric"><span>Net work / change in K</span><strong id="resNetWork"></strong></div>
+<div class="metric"><span>Target final K if reachable</span><strong id="resFinalKE"></strong></div>
+<div class="metric"><span>Target final speed if reachable</span><strong id="resFinalSpeed"></strong></div>
+</div>
+<div id="resReachWarning" class="warning" role="status" hidden></div>
+<p id="resExplain" class="explain" aria-live="polite"></p>
+</div></div></section>
+<p class="note">All calculations are continuous idealised models for classroom intuition. See <a href="./unit-05-work-study.html">the source-mapped derivations and NBF page references</a>. For official examinations, teacher/assessment-framework review remains necessary.</p>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Grade XI Unit 5 teaching-only interactive</footer>
+</body></html>

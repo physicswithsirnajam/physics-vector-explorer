@@ -1,0 +1,66 @@
+name: Validate Grade XI Unit 5 Work and Energy Foundations (V48)
+
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_work_energy_v48.cjs"
+      - "quality/grade11-unit05-foundations-v48.md"
+      - ".github/workflows/validate-grade11-unit5-foundations-v48.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_work_energy_v48.cjs"
+      - "quality/grade11-unit05-foundations-v48.md"
+      - ".github/workflows/validate-grade11-unit5-foundations-v48.yml"
+  workflow_dispatch:
+
+jobs:
+  unit5-sourced-work-energy-chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax checking
+        run: |
+          node --check portal/unit-05-work-energy-lab.js
+          node --check scripts/test_unit05_work_energy_v48.cjs
+          node -e "const j=require('./portal/unit-05-slo-audit.json'); if(j.unit!==5||j.studentQuestionBankPublished) process.exit(1)"
+      - name: Install pinned browser dependencies on CI only
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Source mapping and real browser numerical physics QA
+        run: node scripts/test_unit05_work_energy_v48.cjs
+      - name: Preserve classroom preview screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit05-v48-work-energy-teaching-preview
+          path: qa-artifacts/unit05-v48/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Prevent regressions in existing Unit 4 source and SLO teaching
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_assessment_pack_v42.cjs
+          node scripts/test_unit04_projector_v45.cjs
+          node scripts/test_unit04_discussion_v46.cjs
+          node scripts/test_unit04_slo_focus_v47.cjs
