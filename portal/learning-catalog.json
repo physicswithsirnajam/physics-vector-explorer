@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v32-unit3-descriptive-and-textbook-numericals-2026-11-15",
+  "catalogVersion": "pilot-v33-unit3-consolidated-assessment-pack-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -60,7 +60,7 @@
           "unit": 3,
           "title": "Translatory Motion",
           "status": "available",
-          "summary": "Unit 3 source-based lessons and simulations, separate 40/80-MCQ summative practice editions, all eight textbook numerical exercises solved, and a 40-mark Section B/C descriptive practice paper with internal OR and teacher marking guide.",
+          "summary": "Unit 3 source-based study, labs, original 40/80-MCQ practice, all eight worked textbook numericals, 40-mark descriptive OR paper, and consolidated 80-mark classroom assessment pack with blank/marked OMR-style sheets, teacher key and SLO mapping.",
           "questionBankCount": 80,
           "assessmentStatus": "two-provisional-unit-only-summative-self-practice-editions",
           "resourceIds": [
@@ -72,11 +72,12 @@
             "unit3-mcq-stage1",
             "unit3-mcq-full80",
             "unit3-textbook-numericals",
-            "unit3-descriptive-practice"
+            "unit3-descriptive-practice",
+            "unit3-assessment-pack"
           ],
-          "qualityStatus": "provisional source-based Unit 3 resources, 80-MCQ self-practice, 8 textbook solved numericals and descriptive Section B/C practice; teacher verification of formulas, SLO classifications and marking advice still required",
+          "qualityStatus": "provisional Unit 3-only learning and practice: 80 MCQs plus 40 descriptive marks; source-based answer keys and OR-sensitive SLO mapping; final teacher scientific review and manual print/browser QA still required",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "New: all eight NBF Unit 3 numericals 3.1–3.8 are fully worked (six summative aligned; 3.6 formative; 3.8 supplementary formative), plus a 40-mark Unit 3-only Section B/C descriptive practice with OR choices, model answers and suggested marks. These provisional public resources do not save scores or replace a full-syllabus FBISE exam.",
+          "studentNotice": "Unit 3 Assessment Pack combines the existing 80-MCQ Section A and 40-mark Section B/C descriptive practice, providing printable blank and marked OMR-style responses, a teacher key, and a source-calculated Table of Specifications. This is Unit 3 practice only, not an official full-syllabus FBISE examination or scanner-approved OMR. No new login or student grade storage.",
           "landingHref": "./unit-03.html"
         },
         {
@@ -577,6 +578,19 @@
       "access": "public-link",
       "contentStatus": "provisional-unit3-descriptive-self-practice",
       "accessDescription": "Provisional teacher review pending; Unit 3 practice only, not an official full-syllabus FBISE paper; no grading or student data persistence."
+    },
+    {
+      "id": "unit3-assessment-pack",
+      "category": "PRACTISE",
+      "title": "Unit 3 — Integrated 80-Mark Assessment Pack",
+      "description": "Combine existing 80-MCQ and 40-mark descriptive Unit 3 practice with printable blank OMR-style sheet, teacher-shaded OMR key, all answer explanations, stepwise marking and source-derived SLO/marks table. No saved scores.",
+      "href": "./unit-03-assessment-pack.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 3 Assessment Pack ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-source-derived-unit3-classroom-assessment-pack",
+      "accessDescription": "Public teaching pack for manual practice/marking. Not official FBISE full-syllabus examination or scanner-approved OMR; no account login or grade tracking."
     }
   ]
 }
