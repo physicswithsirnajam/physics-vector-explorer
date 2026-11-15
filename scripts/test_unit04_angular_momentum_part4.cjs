@@ -178,11 +178,11 @@ assert.ok(part3lab.includes('href="./unit-04-angular-momentum-lab.html"'));
 assert.ok(part2.includes('href="./unit-04-angular-momentum-study.html"'));
 const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
 assert.equal(unit4.status,"available");
-assert.equal(unit4.questionBankCount,0);
-assert.equal(unit4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
-assert.equal(unit4.resourceIds.length,12);
-assert.equal(new Set(unit4.resourceIds).size,12);
-assert.ok(unit4.studentNotice.includes("No Unit 4 MCQ bank"));
+assert.equal(unit4.questionBankCount,80);
+assert.equal(unit4.assessmentStatus,"provisional-unit4-public-mcq-self-practice");
+assert.equal(unit4.resourceIds.length,13);
+assert.equal(new Set(unit4.resourceIds).size,13);
+assert.ok(unit4.studentNotice.includes("80 provisional public self-practice MCQs"));
 assert.ok(unit4.studentNotice.includes("P-11-B-21"));
 for(const [id,href] of [
  ["unit4-angular-momentum-study","./unit-04-angular-momentum-study.html"],
@@ -199,6 +199,6 @@ assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — NBF Example 4.3: I=0.17298 kg m², ω≈120.4rad/s, L≈20.83 kg m²/s, stopping τ≈−2.67 N m.");
 console.log("PASS — "+rotorCases+" rotor combinations with L impulse/torque identity, + "+skaterCases+" L-conserving skater combinations.");
-console.log("PASS — B-18/B-19/B-20 source coverage, gyroscope/skater/flywheel notes, B-21 held for dedicated audit.");
+console.log("PASS — B-18/B-19/B-20 source coverage, gyroscope/skater/flywheel notes, B-21 centrifuge audit kept separate and mapped.");
 console.log("PASS — Classroom controls, book presets, original logo, previous Unit 4 labs, unchanged Unit 3 catalogue and no student storage.");
 console.log("NOTE — Source-aligned practice model, not an official board exam; live browser/projector checks still required.");
