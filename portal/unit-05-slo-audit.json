@@ -1,9 +1,9 @@
 {
-  "auditVersion": "v49-unit05-official-fbise-2024-framework-crosscheck",
+  "auditVersion": "v50-unit05-official-slo-and-provisional-16-mcq-practice",
   "grade": 11,
   "unit": 5,
   "unitTitle": "Work and Energy",
-  "status": "source-and-fbise-slo-classification-verified-teaching-only",
+  "status": "official-summative-SLO-verified-16-mcq-provisional-practice",
   "sourceDocuments": [
     {
       "name": "NBF Grade XI Physics textbook (user-provided 11 Physics Book(7).pdf)",
@@ -34,7 +34,7 @@
         86,
         87
       ],
-      "note": "Original user-supplied NBF Grade XI Unit 5 scanned chapter pages 77–87 visually inspected; pp.86–87 include end-of-unit MCQs, short/comprehensive questions and numericals. No new portal assessment question bank has been published."
+      "note": "Original scanned NBF Grade XI Unit 5 chapter pages 77–87 visually reviewed, including printed exercises. V50 adds 16 newly authored original classroom practice MCQs, not verbatim textbook exercises or a full examination."
     },
     {
       "name": "Grade11_Physics_Unit5_Student_Notes_and_Practice.pdf",
@@ -213,16 +213,16 @@
       "relationship": "W_applied = ΔK + W_against_resistance"
     }
   ],
-  "studentQuestionBankPublished": false,
-  "studentQuestionBankStatus": "not-published-independent-academic-QC-required",
-  "questionBankCount": 0,
+  "studentQuestionBankPublished": true,
+  "studentQuestionBankStatus": "original-source-mapped-16-mcq-ungraded-mini-practice-teacher-academic-review-pending",
+  "questionBankCount": 16,
   "formativeTheorySLOsVerifiedSeparately": true,
   "officialFBISEFrameworkIndependentVerification": "verified-against-user-uploaded-official-FBISE-HSSC-I-framework-PDF-page-11",
   "descriptivePaperPublished": false,
   "omrPublished": false,
   "protectedOrGradedAssessmentPublished": false,
   "studentGradesRecorded": false,
-  "academicRisk": "Official SLO theory classification verified from supplied FBISE document; correctness and examiner-worthiness of future questions/keys, latest online revision and separate practical/PBA assessment list are not independently approved. Existing Unit 5 materials remain a teaching pilot.",
+  "academicRisk": "Original 16-question mini-practice is a provisional classroom resource: source alignment and key arithmetic are checked automatically, but a physics teacher must review every stem, keyed option, distractor, scenario and working before formal examination use. Official full-grade paper, auto-graded exam and scannable OMR remain unpublished. Separate PBA list/newer web revision not checked.",
   "sourceBoundary": "NBF Grade XI Unit 5 Work and Energy printed pp.77–87; unit-specific summative theory outcomes B-29 through B-32 only. Neither official full-syllabus exam quotas nor unknown PBA eligibility should be assigned to this single unit.",
   "officialFrameworkVerified": true,
   "officialFrameworkEdition": "National Curriculum 2022–23 / Inclusive Scheme of Studies 2024",
@@ -276,7 +276,7 @@
       86,
       87
     ],
-    "scope": "Original NBF chapter MCQs, short/comprehensive questions and numericals present; independently inspect and solve before adding any bank; not yet reproduced on portal."
+    "scope": "Textbook chapter exercises on printed pp.85–87 were visually inspected. V50 practice MCQs are newly authored, source-mapped questions, not assertions of exact textbook exercise reproduction."
   },
   "assessmentPublicationGate": [
     "Use only B-29/B-30/B-31/B-32 for Unit 5 written summative theory selection; preserve cognitive A/A/U/A from official SLO table.",
@@ -284,6 +284,45 @@
     "Independently solve and peer-review each candidate MCQ option and solution; avoid predictable key positions and source text errors.",
     "Keep student-only question view separate from teacher answer/marking view; protect existing account/grade features.",
     "For full-grade FBISE-style papers preserve the official boxed MCQ presentation and 50%/50% global structure; do not impose an 80-MCQ quota on a single unit.",
-    "Complete teacher academic and projector/mobile/print sign-off; verify separately issued PBA list where practical questions are involved."
-  ]
+    "Complete teacher academic and projector/mobile/print sign-off; verify separately issued PBA list where practical questions are involved.",
+    "For V50, keep original 16-question classroom practice clearly labelled provisional and ungraded, with answers fetched only by a separately accessed public teacher key; do not present a 16-MCQ paper as a full FBISE 80-MCQ examination."
+  ],
+  "teacherAnswerKeyPublished": true,
+  "teacherAnswerKeyStatus": "public-post-practice-16-worked-solutions-not-access-restricted-not-board-certified",
+  "teacherAnswerKeyPage": "./unit-05-mcq-key.html",
+  "studentPracticePage": "./unit-05-mcq-practice.html",
+  "studentPracticeBank": "../question-bank/grade-11/unit-05-v50-16-student.json",
+  "teacherKeyBank": "../question-bank/grade-11/unit-05-v50-16-teacher-key.json",
+  "provisionalPractice": {
+    "questions": 16,
+    "marksEach": 0.5,
+    "practiceMarks": 8,
+    "independentQuestions": 12,
+    "scenarioQuestions": 4,
+    "scenarioSets": 1,
+    "scenarioQuestionsPerSet": 4,
+    "perSummativeSlo": 4,
+    "verifiedSloCodes": [
+      "P-11-B-29",
+      "P-11-B-30",
+      "P-11-B-31",
+      "P-11-B-32"
+    ],
+    "sourceEdition": "NBF Grade XI Unit 5 printed pp.77–87; official supplied FBISE 2024-scheme framework PDF p.11",
+    "keyBalance": {
+      "A": 4,
+      "B": 4,
+      "C": 4,
+      "D": 4
+    },
+    "studentOnlyOptionsAndBlankBubbles": true,
+    "teacherOnlyAfterPracticeResource": true,
+    "teacherPagePublicNotSecured": true,
+    "savedAnswersOrGrades": false,
+    "formalBoardPaper": false,
+    "signoff": "automated answer-consistency, numerical and browser-QC; independent human teacher paper/key approval still pending"
+  },
+  "officialFullPaperPublished": false,
+  "scannableOmrPublished": false,
+  "practiceResponseGridPublished": true
 }

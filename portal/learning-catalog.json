@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v49-unit5-fbise-verified-theory-audit-2026-11-15",
+  "catalogVersion": "pilot-v50-unit5-summative-16-mcq-classroom-practice-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -116,18 +116,20 @@
           "unit": 5,
           "title": "Work and Energy",
           "status": "available",
-          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no Unit 5 MCQ bank or board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked.",
-          "questionBankCount": 0,
-          "assessmentStatus": "not-published",
+          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no formal Unit 5 board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked. V50 publishes sixteen newly authored original, provisional summative theory MCQs (four per verified SLO), twelve standalone and four contextual, in boxed FBISE-style paper format with a separate public post-practice worked key.",
+          "questionBankCount": 16,
+          "assessmentStatus": "provisional-ungraded-16-mcq-mini-practice-teacher-review-pending",
           "resourceIds": [
             "unit5-desk",
             "unit5-work-study",
             "unit5-work-energy-lab",
-            "unit5-fbise-audit"
+            "unit5-fbise-audit",
+            "unit5-mcq-practice",
+            "unit5-mcq-worked-key"
           ],
-          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. No Unit 5 question bank or marking scheme released. Teacher academic item QC remains pending.",
+          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. Sixteen provisional Unit 5 classroom MCQs and a separate public worked key released; numerics and bank-key consistency tested automatically. Human item-by-item academic review still required. Official full-grade exam paper, scannable OMR and recorded grading remain unpublished.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 5 Work and Energy source-based learning resources and official-framework SLO audit are published. All four Unit 5 theory SLOs are verified summative; this does not certify a practical/PBA list or any future question bank. No new Unit 5 assessment paper, OMR, keyed exam, or saved grades.",
+          "studentNotice": "Unit 5 offers four source/teaching resources plus an original 16-MCQ provisional practice set and a separate public post-practice worked key. Four verified summative SLOs each have four MCQs. This is not an official 80-question FBISE examination, not scannable OMR and not graded; no answers or student results are stored. Do not open the publicly accessible worked key before practice ends.",
           "landingHref": "./unit-05.html"
         },
         {
@@ -907,6 +909,32 @@
       "access": "public-link",
       "contentStatus": "unit5-v49-official-user-supplied-framework-theory-classification-verified",
       "accessDescription": "Public teacher/student curriculum guidance, not a published Unit 5 exam. Separate PBA list and any revised online edition not checked; no new student grades or keyed assessment bank."
+    },
+    {
+      "id": "unit5-mcq-practice",
+      "category": "PRACTISE",
+      "title": "Unit 5 — 16 Boxed MCQs Student Mini-Practice",
+      "description": "Original NBF Work and Energy 16-question practice (4 each for verified summative B-29–B-32), 12 independent + 4 one-scenario questions, boxed A/B/C/D options and blank interactive/print bubbles, 8 practice marks. Student page does not load the worked key or store grades.",
+      "href": "./unit-05-mcq-practice.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 5 Boxed 16-MCQ Mini-Practice ↗",
+      "access": "public-link",
+      "contentStatus": "original-v50-16-MCQ-provisional-summative-theory-ungraded-teacher-QC-pending",
+      "accessDescription": "Public original 16-question ungraded practice. NOT an official whole-syllabus 80-question FBISE exam or a protected/scored student test. No answers loaded on student page."
+    },
+    {
+      "id": "unit5-mcq-worked-key",
+      "category": "STUDY",
+      "title": "Unit 5 — Public Post-Practice 16-MCQ Worked Teacher Key",
+      "description": "Separate publicly accessible teacher review: each of the same 16 original Unit 5 questions and key options, three-step explanations, official SLO and cognitive level, NBF page, explicit reveal/hide, and print.",
+      "href": "./unit-05-mcq-key.html",
+      "public": true,
+      "external": false,
+      "action": "Review Unit 5 Worked Solutions After Practice ↗",
+      "access": "public-link",
+      "contentStatus": "original-v50-16-mcq-teacher-worked-key-public-provisional-human-review-pending",
+      "accessDescription": "This teacher key is PUBLIC, not password-protected. Correct options are hidden until explicitly revealed, but JSON is downloadable. Open only AFTER students finish; no official examiner certification."
     }
   ]
 }

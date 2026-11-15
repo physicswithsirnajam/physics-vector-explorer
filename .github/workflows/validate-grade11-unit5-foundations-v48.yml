@@ -35,7 +35,7 @@ jobs:
         run: |
           node --check portal/unit-05-work-energy-lab.js
           node --check scripts/test_unit05_work_energy_v48.cjs
-          node -e "const j=require('./portal/unit-05-slo-audit.json'); if(j.unit!==5||j.studentQuestionBankPublished) process.exit(1)"
+          node -e "const j=require('./portal/unit-05-slo-audit.json'); if(j.unit!==5||j.officialFullPaperPublished===true||j.protectedOrGradedAssessmentPublished||j.studentGradesRecorded) process.exit(1)"
       - name: Install pinned browser dependencies on CI only
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
