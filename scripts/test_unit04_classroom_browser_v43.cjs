@@ -101,6 +101,17 @@ async function main(){
   // 3. Mobile viewport: no page-level horizontal overflow (tables may scroll within their own wrappers).
   await page.setViewportSize({width:390,height:844});
   const overflow=await page.evaluate(()=>({screen:document.documentElement.clientWidth,content:document.documentElement.scrollWidth}));
+  if(overflow.content>overflow.screen+2){
+    const suspects=await page.evaluate(()=>[...document.querySelectorAll("body *")].filter(el=>{
+      const style=getComputedStyle(el),r=el.getBoundingClientRect();
+      return style.display!=="none"&&r.width>0&&r.right>innerWidth+4&&r.left>=0&&el.getClientRects().length;
+    }).sort((a,b)=>b.getBoundingClientRect().right-a.getBoundingClientRect().right).slice(0,12).map(el=>{
+      const r=el.getBoundingClientRect(),style=getComputedStyle(el);
+      return {tag:el.tagName,id:el.id,className:typeof el.className==="string"?el.className:"",left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width),overflowX:style.overflowX,text:el.textContent.slice(0,65)};
+    }));
+    console.error("Mobile overflow suspects:",JSON.stringify(suspects));
+    await screenshot(page,"05-mobile-overflow-debug.png");
+  }
   assert.ok(overflow.content<=overflow.screen+2,"Integrated pack horizontal overflow: "+JSON.stringify(overflow));
   assert.equal(await page.locator("#blankStraight .omr-row").count(),56);
   await screenshot(page,"05-integrated-mobile.png");
