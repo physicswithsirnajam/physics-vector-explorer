@@ -180,8 +180,8 @@ const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
 assert.equal(unit4.status,"available");
 assert.equal(unit4.questionBankCount,0);
 assert.equal(unit4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
-assert.equal(unit4.resourceIds.length,9);
-assert.equal(new Set(unit4.resourceIds).size,9);
+assert.equal(unit4.resourceIds.length,12);
+assert.equal(new Set(unit4.resourceIds).size,12);
 assert.ok(unit4.studentNotice.includes("No Unit 4 MCQ bank"));
 assert.ok(unit4.studentNotice.includes("P-11-B-21"));
 for(const [id,href] of [

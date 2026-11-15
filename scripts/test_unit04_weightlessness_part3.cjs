@@ -165,7 +165,7 @@ assert.equal(u4.questionBankCount,0);
 assert.equal(u4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
 assert.deepEqual(u4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab",
  "unit4-centripetal-study","unit4-centripetal-lab",
- "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab"]);
+ "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"]);
 assert.ok(u4.studentNotice.includes("No Unit 4 MCQ bank"));
 for(const [id,href] of [
  ["unit4-desk","./unit-04.html"],["unit4-rotation-study","./unit-04-rotation-study.html"],

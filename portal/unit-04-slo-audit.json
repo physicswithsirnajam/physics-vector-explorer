@@ -1,0 +1,303 @@
+{
+  "auditVersion": "unit4-summative-teaching-audit-v38-2026-11-15",
+  "grade": 11,
+  "unit": 4,
+  "unitTitle": "Rotational and Circular Motion",
+  "sources": {
+    "textbook": "NBF Grade XI Physics Unit 4, printed pp.53–76 (content pp.54–74, exercises pp.74–76)",
+    "framework": "User-supplied FBISE HSSC-I Physics Assessment Framework, NCP SLO tables printed framework pp.3–4 (model PDF pp.9–10)",
+    "exercisePages": [
+      74,
+      75,
+      76
+    ],
+    "verification": "Cross-checked against the original source pages and existing public learning resources; final teacher pedagogical review remains required."
+  },
+  "teachingAuditStatus": "all-12-unit4-summative-slos-have-source-mapped-study-and-lab;teacher-review-pending",
+  "studentQuestionBankPublished": false,
+  "descriptivePaperPublished": false,
+  "scopeNote": "Teaching coverage is not equal to reviewed assessment item coverage. This is a Unit 4-only learning audit, not a full Grade XI FBISE syllabus audit.",
+  "allSummativeSLOs": [
+    {
+      "code": "P-11-B-07",
+      "form": "Summative",
+      "cognitive": [
+        "Knowledge",
+        "Understanding"
+      ],
+      "sourceOutcome": "Express angles in radians.",
+      "printedTextbookPages": [
+        55
+      ],
+      "teachingStage": 1,
+      "guideResourceId": "unit4-rotation-study",
+      "labResourceId": "unit4-rotation-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 6
+    },
+    {
+      "code": "P-11-B-08",
+      "form": "Summative",
+      "cognitive": [
+        "Knowledge",
+        "Understanding",
+        "Application"
+      ],
+      "sourceOutcome": "Define and calculate angular displacement, angular velocity and angular acceleration, including relations between linear and angular quantities.",
+      "printedTextbookPages": [
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "teachingStage": 1,
+      "guideResourceId": "unit4-rotation-study",
+      "labResourceId": "unit4-rotation-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-09",
+      "form": "Summative",
+      "cognitive": [
+        "Application"
+      ],
+      "sourceOutcome": "Use equations of angular motion to solve problems involving rotational motion.",
+      "printedTextbookPages": [
+        58,
+        59
+      ],
+      "teachingStage": 1,
+      "guideResourceId": "unit4-rotation-study",
+      "labResourceId": "unit4-rotation-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-10",
+      "form": "Summative",
+      "cognitive": [
+        "Understanding",
+        "Application"
+      ],
+      "sourceOutcome": "Analyse qualitatively motion in a curved path due to a perpendicular force.",
+      "printedTextbookPages": [
+        59,
+        60
+      ],
+      "teachingStage": 2,
+      "guideResourceId": "unit4-centripetal-study",
+      "labResourceId": "unit4-centripetal-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 5
+    },
+    {
+      "code": "P-11-B-14",
+      "form": "Summative",
+      "cognitive": [
+        "Knowledge",
+        "Application"
+      ],
+      "sourceOutcome": "Define and calculate centripetal force using the permitted rotational and linear expressions.",
+      "printedTextbookPages": [
+        60,
+        61
+      ],
+      "teachingStage": 2,
+      "guideResourceId": "unit4-centripetal-study",
+      "labResourceId": "unit4-centripetal-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-15",
+      "form": "Summative",
+      "cognitive": [
+        "Application"
+      ],
+      "sourceOutcome": "Analyse circular-motion situations where centripetal force is provided by tension, friction, gravitation or normal force.",
+      "printedTextbookPages": [
+        61,
+        62,
+        63
+      ],
+      "teachingStage": 2,
+      "guideResourceId": "unit4-centripetal-study",
+      "labResourceId": "unit4-centripetal-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-16",
+      "form": "Summative",
+      "cognitive": [
+        "Understanding"
+      ],
+      "sourceOutcome": "Explain why occupants of orbiting satellites appear weightless.",
+      "printedTextbookPages": [
+        71,
+        72
+      ],
+      "teachingStage": 3,
+      "guideResourceId": "unit4-artificial-gravity-study",
+      "labResourceId": "unit4-artificial-gravity-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 5
+    },
+    {
+      "code": "P-11-B-17",
+      "form": "Summative",
+      "cognitive": [
+        "Understanding"
+      ],
+      "sourceOutcome": "Describe how artificial gravity can be created to counter weightlessness.",
+      "printedTextbookPages": [
+        72,
+        73,
+        74
+      ],
+      "teachingStage": 3,
+      "guideResourceId": "unit4-artificial-gravity-study",
+      "labResourceId": "unit4-artificial-gravity-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 6
+    },
+    {
+      "code": "P-11-B-18",
+      "form": "Summative",
+      "cognitive": [
+        "Application"
+      ],
+      "sourceOutcome": "Define and calculate moment of inertia about an axis and angular momentum.",
+      "printedTextbookPages": [
+        64,
+        65,
+        66
+      ],
+      "teachingStage": 4,
+      "guideResourceId": "unit4-angular-momentum-study",
+      "labResourceId": "unit4-angular-momentum-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-19",
+      "form": "Summative",
+      "cognitive": [
+        "Application"
+      ],
+      "sourceOutcome": "Derive and apply the relation between net torque, moment of inertia and angular acceleration.",
+      "printedTextbookPages": [
+        66,
+        67,
+        70,
+        71
+      ],
+      "teachingStage": 4,
+      "guideResourceId": "unit4-angular-momentum-study",
+      "labResourceId": "unit4-angular-momentum-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 6
+    },
+    {
+      "code": "P-11-B-20",
+      "form": "Summative",
+      "cognitive": [
+        "Knowledge",
+        "Understanding",
+        "Application"
+      ],
+      "sourceOutcome": "State and apply conservation of angular momentum; illustrate applications including flywheels, gyroscopes and skaters.",
+      "printedTextbookPages": [
+        67,
+        68,
+        69
+      ],
+      "teachingStage": 4,
+      "guideResourceId": "unit4-angular-momentum-study",
+      "labResourceId": "unit4-angular-momentum-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 8
+    },
+    {
+      "code": "P-11-B-21",
+      "form": "Summative",
+      "cognitive": [
+        "Application"
+      ],
+      "sourceOutcome": "Justify how a centrifuge is used to separate materials using centripetal force.",
+      "printedTextbookPages": [
+        61,
+        63,
+        74,
+        75,
+        76
+      ],
+      "teachingStage": 5,
+      "guideResourceId": "unit4-centrifuge-study",
+      "labResourceId": "unit4-centrifuge-lab",
+      "teachingStatus": "available-source-based",
+      "assessmentStatus": "not-yet-published",
+      "proposedMCQs": 4
+    }
+  ],
+  "excludedAdjacentFrameworkSLOs": [
+    {
+      "code": "P-11-B-11",
+      "form": "Formative",
+      "reason": "Conservation of linear momentum and simple collisions; no final written theory-question requirement according to the framework. Not a Unit 4 rotational SLO."
+    },
+    {
+      "code": "P-11-B-12",
+      "form": "Summative",
+      "reason": "Elastic collisions and kinetic-energy/momentum implications; belongs to earlier linear-momentum teaching, not Unit 4 rotational/circular motion."
+    },
+    {
+      "code": "P-11-B-13",
+      "form": "Summative",
+      "reason": "Conservation of momentum of a closed system and energy loss; belongs to earlier momentum/collision teaching, not Unit 4."
+    }
+  ],
+  "proposedPracticeOnly": {
+    "objective": {
+      "totalQuestions": 80,
+      "marksPerQuestion": 0.5,
+      "totalMarks": 40,
+      "independentMCQs": 56,
+      "stimulusMCQs": 24,
+      "stimulusSets": 6,
+      "questionsPerStimulus": 4
+    },
+    "descriptive": {
+      "sectionBSRQs": 7,
+      "marksPerSRQ": 4,
+      "sectionBTotal": 28,
+      "sectionCERQs": 2,
+      "marksPerERQ": 6,
+      "sectionCTotal": 12,
+      "internalOr": "both alternatives proposed for each descriptive question; attempt one"
+    },
+    "fullPracticeMarks": 80,
+    "warning": "PROPOSED UNIT-ONLY teaching/practice proportions; this is NOT the official full-syllabus paper's SLO-specific allocation or a published question set. No assessment questions or grades are added in V38.",
+    "editorialChecklist": [
+      "Only 12 mapped summative theory SLOs; omit formative B-11 and unrelated collision B-12/B-13",
+      "Ground each item in NBF Unit 4 pp.53–76, verify all options and calculations independently",
+      "Stimulus-based questions must be self-contained if shuffled or separated from their set",
+      "Maintain the official boxed FBISE MCQ option and A/B/C/D bubble layout in the eventual print edition",
+      "Ensure balanced, non-patterned correct A/B/C/D positions, no duplicate items",
+      "Preserve independent Unit 1–3 banks, protected login and saved student records"
+    ]
+  }
+}
