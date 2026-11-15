@@ -164,7 +164,7 @@ assert.equal(u4.questionBankCount,80);
 assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 assert.deepEqual(u4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab",
  "unit4-centripetal-study","unit4-centripetal-lab",
- "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80","unit4-descriptive-practice","unit4-assessment-pack","unit4-projector-practice"]);
+ "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80","unit4-descriptive-practice","unit4-assessment-pack","unit4-projector-practice","unit4-discussion-slides"]);
 assert.ok(u4.studentNotice.includes("80 provisional public self-practice MCQs"));
 for(const [id,href] of [
  ["unit4-desk","./unit-04.html"],["unit4-rotation-study","./unit-04-rotation-study.html"],
