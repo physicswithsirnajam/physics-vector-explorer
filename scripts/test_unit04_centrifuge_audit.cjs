@@ -173,8 +173,8 @@ for(const content of [engine,ui,lab]){
 const u4=cat.grades.find(x=>x.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.questionBankCount,80);
 assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
-assert.equal(u4.resourceIds.length,16);
-assert.equal(new Set(u4.resourceIds).size,16);
+assert.equal(u4.resourceIds.length,17);
+assert.equal(new Set(u4.resourceIds).size,17);
 for(const id of ["unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"])
  assert.ok(u4.resourceIds.includes(id),"New audit resource missing "+id);
 assert.ok(u4.studentNotice.includes("80 provisional public self-practice MCQs"));
@@ -190,5 +190,5 @@ console.log("PASS — 60 centrifuge rpm/radius/mass cases: ω=2πrpm/60, a=ω²r
 console.log("PASS — Original NBF centrifuge p.63, real inward vs apparent outward conceptual explanation, cream separator and dryer.");
 console.log("PASS — All 12 summative Unit 4 SLOs (B07–B10/B14–B21) mapped to book, cognitive levels, existing public lessons and labs.");
 console.log("PASS — Formative B11 and unrelated collision B12/B13 correctly excluded from Unit 4; public 80 MCQs are provisional only.");
-console.log("PASS — 16 public Unit 4 resources including integrated provisional assessment pack, zero graded assessments/browser saved data, prior Unit 3 80-MCQ assessment unchanged.");
+console.log("PASS — 17 public Unit 4 resources including integrated provisional assessment pack, zero graded assessments/browser saved data, prior Unit 3 80-MCQ assessment unchanged.");
 console.log("NOTE — Source-aligned public 80-MCQ bank is teacher-review pending; no approved official FBISE paper; browser/projector QA required.");
