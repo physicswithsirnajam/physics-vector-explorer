@@ -1,0 +1,39 @@
+name: Validate Grade XI Unit 3 Assessment Pack
+on:
+  pull_request:
+    paths:
+      - "portal/unit-03-assessment-pack.html"
+      - "portal/unit-03-assessment-pack.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "scripts/test_unit03_assessment_pack.cjs"
+      - ".github/workflows/validate-grade11-unit3-assessment-pack.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-03-assessment-pack.html"
+      - "portal/unit-03-assessment-pack.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "scripts/test_unit03_assessment_pack.cjs"
+      - ".github/workflows/validate-grade11-unit3-assessment-pack.yml"
+  workflow_dispatch:
+jobs:
+  verify-assessment-pack:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Check assessment pack JavaScript syntax
+        run: |
+          node --check portal/unit-03-assessment-pack.js
+          node --check scripts/test_unit03_assessment_pack.cjs
+      - name: Verify 80-mark totals, six scenarios, printable OMR and teacher answer key
+        run: node scripts/test_unit03_assessment_pack.cjs

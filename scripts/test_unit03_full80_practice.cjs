@@ -169,7 +169,8 @@ const grade11=catalog.grades.find(g=>g.grade===11);
 const unit3=grade11.units.find(u=>u.unit===3);
 assert.equal(unit3.questionBankCount,80);
 assert.ok(unit3.assessmentStatus.includes("provisional"));
-assert.equal(unit3.resourceIds.length,9);
+assert.equal(unit3.resourceIds.length,10);
+assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
 assert.ok(unit3.resourceIds.includes("unit3-textbook-numericals"));
 assert.ok(unit3.resourceIds.includes("unit3-descriptive-practice"));
 for(const [id,href] of [["unit3-mcq-stage1","./unit-03-mcq-practice.html"],["unit3-mcq-full80","./unit-03-mcq-full80.html"]]){
