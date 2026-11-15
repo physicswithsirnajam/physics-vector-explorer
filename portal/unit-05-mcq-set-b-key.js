@@ -102,7 +102,7 @@ $("printKey").addEventListener("click",()=>{if(visible)window.print();});
 function fetchJson(path){
  return fetch(base+path,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status+": "+path);return r.json();});
 }
-Promise.all([fetchJson("unit-05-v50-16-student.json"),fetchJson("unit-05-v51-16-teacher-key-b.json")]).then(([s,t])=>{
+Promise.all([fetchJson("unit-05-v51-16-student-b.json"),fetchJson("unit-05-v51-16-teacher-key-b.json")]).then(([s,t])=>{
  check(s,t);bank=s;key=t;
  $("teacherStatus").textContent="Ready · Set B · 16 source-mapped provisional questions and worked-key entries loaded · Answers are hidden until explicit reveal";
  $("revealAll").disabled=false;
