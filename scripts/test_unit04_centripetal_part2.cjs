@@ -164,7 +164,7 @@ assert.equal(u4.questionBankCount,0);
 assert.equal(u4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
 assert.deepEqual(u4.resourceIds,
  ["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab"]);
-assert.ok(u4.studentNotice.includes("No saved scores"));
+assert.ok(u4.studentNotice.includes("saved scores"),"Unit 4 public labs must not imply saved grades or scores");
 for(const [id,href] of [
  ["unit4-desk","./unit-04.html"],["unit4-rotation-study","./unit-04-rotation-study.html"],
  ["unit4-rotation-lab","./unit-04-rotation-lab.html"],
