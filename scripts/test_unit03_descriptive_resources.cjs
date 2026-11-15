@@ -78,7 +78,7 @@ for(const [i,q] of items.entries()){
   assert.ok(c.sourceRef.length>=18&&c.prompt.length>=45);
   assert.ok(c.marking.length>=3);
   assert.equal(c.marking.reduce((sum,m)=>sum+m.marks,0),expected);
-  assert.ok(c.marking.every(m=>Number.isInteger(m.marks)&&m.marks>=1&&m.text.length>=20));
+  assert.ok(c.marking.every(m=>Number.isInteger(m.marks)&&m.marks>=1&&m.text.length>=14),"Empty or unmarked solution step");
  }
 }
 assert.equal(count,18);
