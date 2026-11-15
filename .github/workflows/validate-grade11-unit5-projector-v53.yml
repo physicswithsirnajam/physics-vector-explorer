@@ -1,0 +1,63 @@
+name: Validate Grade XI Unit 5 Projector Teacher Discussion (V53)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_*.cjs"
+      - "question-bank/grade-11/unit-05*"
+      - "quality/grade11-unit05-projector-v53.md"
+      - ".github/workflows/validate-grade11-unit5-projector-v53.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_*.cjs"
+      - "question-bank/grade-11/unit-05*"
+      - "quality/grade11-unit05-projector-v53.md"
+      - ".github/workflows/validate-grade11-unit5-projector-v53.yml"
+  workflow_dispatch:
+
+jobs:
+  teacher-discussion-source-and-real-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v5
+      - name: Configure Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify syntax and unchanged V52 original source structure
+        run: |
+          node --check portal/unit-05-projector-discussion-v53.js
+          node --check scripts/test_unit05_projector_discussion_v53.cjs
+          node -e "const s=require('./question-bank/grade-11/unit-05-v52-descriptive-student.json');const k=require('./question-bank/grade-11/unit-05-v52-descriptive-teacher-key.json');if(s.sectionB.length!==7||s.sectionC.length!==2||k.answers.length!==18||k.answers.reduce((n,a)=>n+a.marking.length,0)!==80)process.exit(1)"
+      - name: Install pinned Chromium for automated browser testing
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test staged projector discussions and source mapping in actual Chromium
+        run: node scripts/test_unit05_projector_discussion_v53.cjs
+      - name: Preserve V52 question-only student paper and public teacher marking key
+        run: node scripts/test_unit05_descriptive_v52.cjs
+      - name: Preserve V51 and V50 independent MCQ practice sets
+        run: |
+          node scripts/test_unit05_mcq_set_b_v51.cjs
+          node scripts/test_unit05_mcq_v50.cjs
+      - name: Preserve V49 official theory SLO and V48 numerical explorer
+        run: |
+          node scripts/test_unit05_fbise_audit_v49.cjs
+          node scripts/test_unit05_work_energy_v48.cjs
+      - name: Attach independent projector/browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit05-v53-projector-discussion-chromium
+          path: qa-artifacts/unit05-v53/*.png
+          if-no-files-found: warn
+          retention-days: 7
