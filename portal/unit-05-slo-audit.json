@@ -1,9 +1,9 @@
 {
-  "auditVersion": "v50-unit05-official-slo-and-provisional-16-mcq-practice",
+  "auditVersion": "v51-unit05-two-16-item-provisional-classroom-MCQ-sets",
   "grade": 11,
   "unit": 5,
   "unitTitle": "Work and Energy",
-  "status": "official-summative-SLO-verified-16-mcq-provisional-practice",
+  "status": "official-summative-SLO-verified-32-mcq-two-pilot-sets",
   "sourceDocuments": [
     {
       "name": "NBF Grade XI Physics textbook (user-provided 11 Physics Book(7).pdf)",
@@ -214,15 +214,15 @@
     }
   ],
   "studentQuestionBankPublished": true,
-  "studentQuestionBankStatus": "original-source-mapped-16-mcq-ungraded-mini-practice-teacher-academic-review-pending",
-  "questionBankCount": 16,
+  "studentQuestionBankStatus": "two-separate-original-16-MCQ-pilot-sets-A-and-B-source-mapped-ungraded-teacher-review-pending",
+  "questionBankCount": 32,
   "formativeTheorySLOsVerifiedSeparately": true,
   "officialFBISEFrameworkIndependentVerification": "verified-against-user-uploaded-official-FBISE-HSSC-I-framework-PDF-page-11",
   "descriptivePaperPublished": false,
   "omrPublished": false,
   "protectedOrGradedAssessmentPublished": false,
   "studentGradesRecorded": false,
-  "academicRisk": "Original 16-question mini-practice is a provisional classroom resource: source alignment and key arithmetic are checked automatically, but a physics teacher must review every stem, keyed option, distractor, scenario and working before formal examination use. Official full-grade paper, auto-graded exam and scannable OMR remain unpublished. Separate PBA list/newer web revision not checked.",
+  "academicRisk": "V51 has 32 newly authored original Unit 5 classroom MCQs across Set A and Set B. Independent numerical key calculations, bank/option coherence, browser separation and print/mobile behavior are programmatically tested, but independent teacher review of all stems, distractors and worked answers is still required before formal assessment use. Public worked key pages are not access-restricted. No FBISE full-grade paper, protected grading, PBA certificate, scannable OMR or stored student grades are published.",
   "sourceBoundary": "NBF Grade XI Unit 5 Work and Energy printed pp.77–87; unit-specific summative theory outcomes B-29 through B-32 only. Neither official full-syllabus exam quotas nor unknown PBA eligibility should be assigned to this single unit.",
   "officialFrameworkVerified": true,
   "officialFrameworkEdition": "National Curriculum 2022–23 / Inclusive Scheme of Studies 2024",
@@ -276,7 +276,7 @@
       86,
       87
     ],
-    "scope": "Textbook chapter exercises on printed pp.85–87 were visually inspected. V50 practice MCQs are newly authored, source-mapped questions, not assertions of exact textbook exercise reproduction."
+    "scope": "NBF original Unit 5 pp.85–87 exercises visually inspected for scope. Both Set A and Set B are newly authored source-mapped MCQ practice, not quoted textbook question copies."
   },
   "assessmentPublicationGate": [
     "Use only B-29/B-30/B-31/B-32 for Unit 5 written summative theory selection; preserve cognitive A/A/U/A from official SLO table.",
@@ -285,10 +285,11 @@
     "Keep student-only question view separate from teacher answer/marking view; protect existing account/grade features.",
     "For full-grade FBISE-style papers preserve the official boxed MCQ presentation and 50%/50% global structure; do not impose an 80-MCQ quota on a single unit.",
     "Complete teacher academic and projector/mobile/print sign-off; verify separately issued PBA list where practical questions are involved.",
-    "For V50, keep original 16-question classroom practice clearly labelled provisional and ungraded, with answers fetched only by a separately accessed public teacher key; do not present a 16-MCQ paper as a full FBISE 80-MCQ examination."
+    "For V50, keep original 16-question classroom practice clearly labelled provisional and ungraded, with answers fetched only by a separately accessed public teacher key; do not present a 16-MCQ paper as a full FBISE 80-MCQ examination.",
+    "Review Set B's zero-crossing signed-work graph, mixed applied and resistive forces, and variable-force trolley stimulus before approving any teacher key as a formal marking scheme."
   ],
   "teacherAnswerKeyPublished": true,
-  "teacherAnswerKeyStatus": "public-post-practice-16-worked-solutions-not-access-restricted-not-board-certified",
+  "teacherAnswerKeyStatus": "two-public-16-MCQ-after-practice-worked-keys-not-access-restricted-not-official",
   "teacherAnswerKeyPage": "./unit-05-mcq-key.html",
   "studentPracticePage": "./unit-05-mcq-practice.html",
   "studentPracticeBank": "../question-bank/grade-11/unit-05-v50-16-student.json",
@@ -324,5 +325,53 @@
   },
   "officialFullPaperPublished": false,
   "scannableOmrPublished": false,
-  "practiceResponseGridPublished": true
+  "practiceResponseGridPublished": true,
+  "totalPublicPracticeMCQs": 32,
+  "studentPracticePageB": "./unit-05-mcq-set-b.html",
+  "teacherAnswerKeyPageB": "./unit-05-mcq-set-b-key.html",
+  "studentPracticeBankB": "../question-bank/grade-11/unit-05-v51-16-student-b.json",
+  "teacherKeyBankB": "../question-bank/grade-11/unit-05-v51-16-teacher-key-b.json",
+  "studentPracticePages": [
+    "./unit-05-mcq-practice.html",
+    "./unit-05-mcq-set-b.html"
+  ],
+  "teacherAnswerKeyPages": [
+    "./unit-05-mcq-key.html",
+    "./unit-05-mcq-set-b-key.html"
+  ],
+  "provisionalPracticeSetB": {
+    "set": "B",
+    "questions": 16,
+    "marksEach": 0.5,
+    "practiceMarks": 8,
+    "independentQuestions": 12,
+    "scenarioQuestions": 4,
+    "scenarioSets": 1,
+    "scenarioQuestionsPerSet": 4,
+    "perSummativeSlo": 4,
+    "verifiedSloCodes": [
+      "P-11-B-29",
+      "P-11-B-30",
+      "P-11-B-31",
+      "P-11-B-32"
+    ],
+    "sourceEdition": "NBF Grade XI Unit 5 printed pp.77–87, official supplied FBISE framework PDF p.11",
+    "keyBalance": {
+      "A": 4,
+      "B": 4,
+      "C": 4,
+      "D": 4
+    },
+    "studentOnlyOptionsAndBlankBubbles": true,
+    "teacherPagePublicNotSecured": true,
+    "savedGrades": false,
+    "formalBoardPaper": false,
+    "teacherAcademicSignoff": "pending"
+  },
+  "combinedPublicPracticeSloCounts": {
+    "P-11-B-29": 8,
+    "P-11-B-30": 8,
+    "P-11-B-31": 8,
+    "P-11-B-32": 8
+  }
 }
