@@ -140,22 +140,22 @@ button:hover{background:#edf5f8}.primary{background:var(--navy);border-color:var
 <text x="247" y="321" text-anchor="middle" font-size="12" fill="#48647c">Two identical hand masses; body inertia stays fixed</text>
 </svg>
 <div class="bar-grid">
-<div class="bar-item"><strong>Inertia ratio Iբ / Iᵢ</strong><div class="bar-track"><div id="inertiaBar" class="bar-fill"></div></div><p id="inertiaBarText" class="info">—</p></div>
-<div class="bar-item"><strong>Speed ratio ωբ / ωᵢ</strong><div class="bar-track"><div id="speedBar" class="bar-fill"></div></div><p id="speedBarText" class="info">—</p></div>
+<div class="bar-item"><strong>Inertia ratio I<sub>f</sub> / Iᵢ</strong><div class="bar-track"><div id="inertiaBar" class="bar-fill"></div></div><p id="inertiaBarText" class="info">—</p></div>
+<div class="bar-item"><strong>Speed ratio ω<sub>f</sub> / ωᵢ</strong><div class="bar-track"><div id="speedBar" class="bar-fill"></div></div><p id="speedBarText" class="info">—</p></div>
 </div>
 <p class="info">Bar fills compare relative changes and cap visually at 2×; their written ratios display the exact unrounded physics.</p>
 </div></div>
 <div class="metrics">
 <div class="metric"><span>Initial total Iᵢ</span><strong id="skaterI0">—</strong></div>
-<div class="metric"><span>Final total Iբ</span><strong id="skaterIf">—</strong></div>
+<div class="metric"><span>Final total I<sub>f</sub></span><strong id="skaterIf">—</strong></div>
 <div class="metric"><span>Initial ωᵢ</span><strong id="skaterOmega0">—</strong></div>
-<div class="metric"><span>Final ωբ</span><strong id="skaterOmegaf">—</strong></div>
+<div class="metric"><span>Final ω<sub>f</sub></span><strong id="skaterOmegaf">—</strong></div>
 <div class="metric"><span>Angular momentum L</span><strong id="skaterL">—</strong></div>
 <div class="metric"><span>Initial kinetic energy</span><strong id="skaterK0">—</strong></div>
 <div class="metric"><span>Final kinetic energy</span><strong id="skaterKf">—</strong></div>
 <div class="metric"><span>L conservation check</span><strong id="skaterCheck">—</strong></div>
 </div>
-<div class="formula">Iᵢωᵢ = Iբωբ &nbsp; | &nbsp; I = I<sub>core</sub> + 2mr² &nbsp; | &nbsp; K = ½Iω²</div>
+<div class="formula">Iᵢωᵢ = I<sub>f</sub>ω<sub>f</sub> &nbsp; | &nbsp; I = I<sub>core</sub> + 2mr² &nbsp; | &nbsp; K = ½Iω²</div>
 <div class="correct"><strong>Critical distinction:</strong> This ideal skater model conserves <strong>angular momentum</strong>, not necessarily <strong>rotational kinetic energy</strong>. Moving masses inward requires work; the graph and numerical energy values reflect that.</div>
 </section>
 <section class="card" id="source">
