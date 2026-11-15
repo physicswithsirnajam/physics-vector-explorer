@@ -228,7 +228,7 @@
         "frameworkCode": "P-11-B-30"
       },
       "topic": "Signed work from force–displacement graphs",
-      "stem": "A constant 10 N force makes an angle of 120° with a 3.0 m displacement. What work does this force do?",
+      "stem": "An applied 10 N force makes an angle of 120° with a 3.0 m displacement. The force component along the displacement remains constant, so its F∥–d graph is horizontal at F∥ = F cos120°. What is the signed area under this graph?",
       "options": [
         {
           "id": "A",
