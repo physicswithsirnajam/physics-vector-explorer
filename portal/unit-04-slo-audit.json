@@ -1,5 +1,5 @@
 {
-  "auditVersion": "unit4-teaching-mcq-and-descriptive-audit-v41-2026-11-15",
+  "auditVersion": "unit4-teaching-mcq-descriptive-and-integrated-pack-audit-v42-2026-11-15",
   "grade": 11,
   "unit": 4,
   "unitTitle": "Rotational and Circular Motion",
@@ -16,7 +16,7 @@
   "teachingAuditStatus": "all-12-unit4-summative-slos-have-source-mapped-study-and-lab;teacher-review-pending",
   "studentQuestionBankPublished": true,
   "descriptivePaperPublished": true,
-  "scopeNote": "All 12 Unit 4 summative SLOs have mapped study/lab resources, 80 provisional MCQs and a separate 40-mark descriptive paper (18 OR alternatives; 7×4+2×6). A student's one-choice-per-question paper covers a subset of SLOs. Neither publication is an official FBISE question/key or a protected graded exam. This is not full Grade XI syllabus coverage.",
+  "scopeNote": "All 12 Unit 4 summative SLOs have mapped study/lab resources, 80 provisional MCQs and a separate 40-mark descriptive paper (18 OR alternatives; 7×4+2×6). A student's one-choice-per-question paper covers a subset of SLOs. Neither publication is an official FBISE question/key or a protected graded exam. This is not full Grade XI syllabus coverage. The public combined 80-mark practice hub links the two provisional banks, shows manually printable OMR-style response and teacher answer sheets, and computes separate all-A and all-B OR allocations; it is not a graded test or official examiner scheme.",
   "allSummativeSLOs": [
     {
       "code": "P-11-B-07",
@@ -304,7 +304,7 @@
       "description": "7 internal-OR four-mark SRQs and 2 internal-OR six-mark ERQs; 18 model answers and suggested marking; 12 SLOs represented across both alternatives, not necessarily one student's chosen nine."
     },
     "fullPracticeMarks": 80,
-    "warning": "UNIT 4-ONLY 80-mark combined practice components are NOW PUBLIC separately (40 MCQ and 40 descriptive), both provisional and awaiting teacher/browser/print quality review; this is not an official full-syllabus paper, examiner key or recorded grade.",
+    "warning": "Unit 4-only 40-mark MCQ and 40-mark descriptive components, plus their combined 80-mark practice hub, are public but PROVISIONAL pending teacher and browser/print QC. Printed OMR bubbles are for manual practice only, NOT scanner-approved. No official full-syllabus paper, certified key, authenticated test or grade records.",
     "editorialChecklist": [
       "Only 12 mapped summative theory SLOs; omit formative B-11 and unrelated collision B-12/B-13",
       "Ground each item in NBF Unit 4 pp.53–76, verify all options and calculations independently",
@@ -314,7 +314,8 @@
       "Preserve independent Unit 1–3 banks, protected login and saved student records"
     ],
     "objectiveStatus": "published-as-provisional-80-mcq-self-practice-pending-teacher-QC",
-    "descriptiveStatus": "published-provisional-public-teacher-review-pending"
+    "descriptiveStatus": "published-provisional-public-teacher-review-pending",
+    "integratedPackStatus": "public-provisional-integrated-80-mark-practice-with-manual-omr-key-and-slo-audit"
   },
   "studentQuestionBankStatus": "provisional-public-self-practice-teacher-academic-review-pending",
   "publishedPracticeBankFile": "question-bank/grade-11/unit-04-v39-80-practice.json",
@@ -323,5 +324,8 @@
   "studentGradesRecorded": false,
   "publishedDescriptiveBankFile": "question-bank/grade-11/unit-04-descriptive-practice.json",
   "publishedDescriptivePage": "./unit-04-descriptive-practice.html",
-  "descriptivePaperStatus": "provisional-public-descriptive-practice-teacher-review-pending"
+  "descriptivePaperStatus": "provisional-public-descriptive-practice-teacher-review-pending",
+  "integratedClassroomAssessmentPackPublished": true,
+  "integratedPracticePackPage": "./unit-04-assessment-pack.html",
+  "integratedPracticePackStatus": "provisional-public-unit4-only-omr-manual-practice-teacher-review-pending"
 }
