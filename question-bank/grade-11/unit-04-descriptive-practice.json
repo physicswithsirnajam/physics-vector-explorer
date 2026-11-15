@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "id": "PSN-XI-U04-DESCRIPTIVE-PRACTICE",
+  "version": "v41-unit04-descriptive-model-and-marking-2026-11-15",
+  "title": "Grade XI Physics — Unit 4 Rotational and Circular Motion — FBISE-Style Descriptive Practice",
+  "status": "teacher-review-pending",
+  "scope": "Unit 4 only; 40-mark descriptive classroom practice based on the official FBISE HSSC-I Section B/C question structure, not an official full-syllabus board examination.",
+  "source": "NBF Grade XI Physics, Unit 4 original printed pp.53–76; user-provided FBISE HSSC-I Physics Assessment Framework pp.3–4 and model question paper PDF pp.40–41; Unit 4 SLO audit V38/V39.",
+  "assessmentPolicy": "All 12 NBF Unit 4 summative theory SLOs B-07–B-10 and B-14–B-21 are covered across the full alternatives, not necessarily in every individual student OR path. Excludes formative B-11 and adjacent collision topics B-12/B-13. Step allocations are suggested by the author and require teacher review, not official FBISE marking instructions.",
+  "pattern": {
+    "sectionB": {
+      "questions": 7,
+      "marksEach": 4,
+      "total": 28,
+      "internalOr": true
+    },
+    "sectionC": {
+      "questions": 2,
+      "marksEach": 6,
+      "total": 12,
+      "internalOr": true
+    },
+    "totalMarks": 40
+  },
+  "teacherInstructions": "For each of nine question numbers students attempt exactly one alternative, A or B. A and B each carry the full 4 or 6 marks. Award marks for method and physical explanation even when an arithmetic slip occurs; allow equivalent valid derivations. Do not award both alternatives of a pair. Question choices collectively cover all 12 Unit 4 summative theory SLOs; a particular student's path will cover fewer.",
+  "sectionB": [
+    {
+      "number": 1,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-07",
+          "assessment": "summative-theory",
+          "sourcePage": 55,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, radian definition and degree conversions (printed p.55); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "Define one radian using arc length and radius. Express an angular displacement of 225° in radians, showing the conversion.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "A radian is the central angle subtended when arc length equals the circle's radius."
+            },
+            {
+              "marks": 1,
+              "text": "General angular relation θ = s/r for an arc, with θ in radians."
+            },
+            {
+              "marks": 1,
+              "text": "Convert using θ(rad) = θ(deg) × π/180."
+            },
+            {
+              "marks": 1,
+              "text": "225 × π/180 = 5π/4 rad (approximately 3.927 rad)."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-08",
+          "assessment": "summative-theory",
+          "sourcePage": 57,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, linear/angular quantities and radial acceleration (printed p.57); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A point on the rim of a steadily rotating wheel is 0.40 m from its axis and has angular speed 10 rad/s. For a 0.50 s interval, calculate (i) its angular displacement, (ii) arc length, (iii) tangential speed and (iv) centripetal acceleration.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "θ = ωt = 10 × 0.50 = 5.0 rad."
+            },
+            {
+              "marks": 1,
+              "text": "s = rθ = 0.40 × 5.0 = 2.0 m."
+            },
+            {
+              "marks": 1,
+              "text": "v = rω = 0.40 × 10 = 4.0 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "aₙ = rω² = 0.40 × 100 = 40 m/s², inward."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-09",
+          "assessment": "summative-theory",
+          "sourcePage": 58,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, constant angular acceleration (printed p.58); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A rotor starts with angular velocity +4 rad/s and accelerates uniformly at +3 rad/s² for 4.0 s. Find its final angular velocity and its angular displacement, showing the equations and substitutions.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Identify ω₀=+4 rad/s, α=+3 rad/s², t=4.0 s."
+            },
+            {
+              "marks": 1,
+              "text": "Use ω=ω₀+αt to find ω=4+3×4=+16 rad/s."
+            },
+            {
+              "marks": 1,
+              "text": "Use Δθ=ω₀t+½αt²."
+            },
+            {
+              "marks": 1,
+              "text": "Δθ=4×4+½×3×(4²)=16+24=+40 rad."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-09",
+          "assessment": "summative-theory",
+          "sourcePage": 59,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, uniform angular deceleration (printed p.59); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A wheel initially rotates at +30 rad/s. A constant angular acceleration brings it to rest in 6.0 s. Calculate its signed angular acceleration and angular displacement before stopping.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Identify ω₀=+30 rad/s, ω=0 and t=6.0 s."
+            },
+            {
+              "marks": 1,
+              "text": "α=(ω−ω₀)/t=(0−30)/6=−5.0 rad/s²."
+            },
+            {
+              "marks": 1,
+              "text": "Use Δθ=(ω₀+ω)t/2 under constant angular acceleration."
+            },
+            {
+              "marks": 1,
+              "text": "Δθ=(30+0)×6/2=+90 rad; positive displacement despite deceleration."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-10",
+          "assessment": "summative-theory",
+          "sourcePage": 60,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, perpendicular-force curved motion (printed p.60); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A small ball moves at constant speed in a horizontal circle on a taut string. Explain (i) its instantaneous velocity direction, (ii) its acceleration direction, (iii) why it is accelerated at constant speed, and (iv) its direction immediately after the string breaks, neglecting other horizontal forces.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Instantaneous velocity points along the tangent to the circular path."
+            },
+            {
+              "marks": 1,
+              "text": "Centripetal acceleration and net horizontal force point toward the circle's centre."
+            },
+            {
+              "marks": 1,
+              "text": "Velocity changes direction even while the speed stays constant, so acceleration is nonzero."
+            },
+            {
+              "marks": 1,
+              "text": "On release it moves initially along the tangent, not along a radial outward line."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-14",
+          "assessment": "summative-theory",
+          "sourcePage": 61,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, centripetal force (printed p.61); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A 3.0 kg body follows a circular path of radius 2.0 m at speed 4.0 m/s. State the centripetal-force formula, calculate the inward net force, and determine the new required force if the speed doubles while mass and radius stay fixed.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Use Fₙ=mv²/r for inward net force."
+            },
+            {
+              "marks": 1,
+              "text": "Substitute Fₙ=3×(4²)/2."
+            },
+            {
+              "marks": 1,
+              "text": "Fₙ=24 N toward the centre."
+            },
+            {
+              "marks": 1,
+              "text": "For v'=8 m/s, F'ₙ=3×(8²)/2=96 N (four times the original)."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-15",
+          "assessment": "summative-theory",
+          "sourcePage": 61,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, tyre–road static friction on unbanked turns (printed p.61); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A 1000 kg car travels at 10 m/s round a level, unbanked bend of radius 50 m without slipping. Identify the force providing the inward resultant, calculate its required magnitude, and explain the consequence if the available tyre–road friction is insufficient.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Static tyre–road friction supplies the horizontal inward net force."
+            },
+            {
+              "marks": 1,
+              "text": "Use Fₙ=mv²/r, with m=1000 kg, v=10 m/s and r=50 m."
+            },
+            {
+              "marks": 1,
+              "text": "Fₙ=1000×100/50=2000 N directed inward."
+            },
+            {
+              "marks": 1,
+              "text": "If available static friction is below 2000 N, the car cannot maintain this circular trajectory at the stated speed and radius; it tends to skid outward relative to the bend."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-15",
+          "assessment": "summative-theory",
+          "sourcePage": 62,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, frictionless banked roads (printed p.62); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A frictionless banked curve has radius 50 m, design speed 14 m/s and g=9.8 m/s². Write the two component equations for the normal reaction and calculate the bank angle.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "With no vertical acceleration, N cosθ = mg."
+            },
+            {
+              "marks": 1,
+              "text": "The inward component supplies N sinθ = mv²/r."
+            },
+            {
+              "marks": 1,
+              "text": "Divide to obtain tanθ = v²/(rg) = 14²/(50×9.8) = 0.400."
+            },
+            {
+              "marks": 1,
+              "text": "θ = arctan(0.400) ≈ 21.8°; the car's mass cancels."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-16",
+          "assessment": "summative-theory",
+          "sourcePage": 71,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, orbital weightlessness (printed p.71); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "An astronaut floats freely beside a scale inside a spacecraft in circular orbit around Earth. Explain why the scale would read approximately zero although Earth still attracts the astronaut. Contrast apparent weight with gravitational force.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Earth's gravitational attraction is not zero; it provides the inward acceleration needed for orbit."
+            },
+            {
+              "marks": 1,
+              "text": "The astronaut and spacecraft are falling freely together, with nearly the same acceleration."
+            },
+            {
+              "marks": 1,
+              "text": "The astronaut experiences little or no supporting normal force from the scale/floor."
+            },
+            {
+              "marks": 1,
+              "text": "The scale measures apparent weight/contact support, not the gravitational force itself; mass remains unchanged."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-17",
+          "assessment": "summative-theory",
+          "sourcePage": 72,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, artificial gravity in rotating space stations (printed p.72); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "Explain how an ideal rotating ring-shaped space station can provide a gravity-like experience to someone standing at its outer rim. Include the direction and source of the real force, the role of rotation, and the relevant acceleration relation.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "An occupant co-rotates at radius R with the station at angular speed ω."
+            },
+            {
+              "marks": 1,
+              "text": "The floor supplies a real normal force directed inward toward the rotation axis."
+            },
+            {
+              "marks": 1,
+              "text": "This inward force provides centripetal acceleration a = ω²R, so the occupant experiences floor-supported apparent weight."
+            },
+            {
+              "marks": 1,
+              "text": "The apparent outward 'centrifugal' effect is described in the rotating frame; it is not an extra outward real force in the inertial frame."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-18",
+          "assessment": "summative-theory",
+          "sourcePage": 64,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, moment of inertia and angular momentum (printed p.64); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "Two identical point masses of 1.5 kg are fixed at opposite ends of a light rod, each 0.50 m from a central rotation axis. The rod rotates at 8.0 rad/s. Find the total moment of inertia and angular momentum magnitude about that axis.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "For one point mass, I=mr²=1.5×(0.50)²=0.375 kg m²."
+            },
+            {
+              "marks": 1,
+              "text": "Total I=2×0.375=0.750 kg m² (the rod's inertia is negligible)."
+            },
+            {
+              "marks": 1,
+              "text": "For rotation about the fixed principal axis, L=Iω."
+            },
+            {
+              "marks": 1,
+              "text": "L=0.750×8.0=6.0 kg m²/s."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-19",
+          "assessment": "summative-theory",
+          "sourcePage": 71,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, net torque and angular acceleration (printed p.71); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A rigid wheel with a constant moment of inertia of 2.0 kg m² experiences a net axial torque +6.0 N m. It initially spins at +2.0 rad/s. Calculate its angular acceleration and angular velocity after 4.0 s.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Use Στ=Iα for a rigid body about a fixed axis with constant I."
+            },
+            {
+              "marks": 1,
+              "text": "α=Στ/I=+6.0/2.0=+3.0 rad/s²."
+            },
+            {
+              "marks": 1,
+              "text": "Use ω=ω₀+αt, with ω₀=+2.0 rad/s and t=4.0 s."
+            },
+            {
+              "marks": 1,
+              "text": "ω=2.0+3.0×4.0=+14 rad/s."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-21",
+          "assessment": "summative-theory",
+          "sourcePage": 63,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, centrifugation and density-dependent separation (printed p.63); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A centrifuge spins a test tube containing fine dense solid particles suspended in a lighter liquid. Explain how separation becomes possible, where the denser particles tend to accumulate, and distinguish the actual inward force from an apparent outward effect.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Rapid rotation requires inward centripetal acceleration for material following the circular path."
+            },
+            {
+              "marks": 1,
+              "text": "Because fractions differ in density, they can move relative to one another in the spinning mixture."
+            },
+            {
+              "marks": 1,
+              "text": "Under suitable operating conditions the denser suspended particles concentrate toward the outer/bottom end of the tube."
+            },
+            {
+              "marks": 1,
+              "text": "The actual net force needed for circular motion is inward; outward centrifugal effect is a useful description in the co-rotating frame, not a second outward contact force."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-20",
+          "assessment": "summative-theory",
+          "sourcePage": 69,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, real-world angular-momentum applications (printed p.69); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "State the condition for conservation of angular momentum about a fixed axis and explain how (i) a flywheel and (ii) a gyroscope use rotational motion in practical applications.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Angular momentum about an axis is conserved when net external torque about that axis is zero."
+            },
+            {
+              "marks": 1,
+              "text": "A flywheel stores rotational kinetic energy in its spinning mass."
+            },
+            {
+              "marks": 1,
+              "text": "A flywheel can reduce variations in speed as it absorbs/releases rotational energy (external torques may still act)."
+            },
+            {
+              "marks": 1,
+              "text": "A spinning gyroscope's angular momentum and response to applied torque help maintain/indicate orientation for navigation."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    }
+  ],
+  "sectionC": [
+    {
+      "number": 8,
+      "marks": 6,
+      "choices": [
+        {
+          "slo": "P-11-B-19",
+          "assessment": "summative-theory",
+          "sourcePage": 70,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, rotational equation of motion (printed p.70); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "Starting with the angular-momentum relation L=Iω for a rigid body rotating about a fixed axis, derive Στ=Iα for constant moment of inertia. A wheel of moment of inertia 0.60 kg m² has angular acceleration +4.0 rad/s²; calculate the net torque and interpret its sign.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "State the axial angular-momentum relation L=Iω for the fixed axis."
+            },
+            {
+              "marks": 1,
+              "text": "Use Στ_ext=dL/dt for the net external torque component about that axis."
+            },
+            {
+              "marks": 1,
+              "text": "With I constant, d(Iω)/dt=I(dω/dt)."
+            },
+            {
+              "marks": 1,
+              "text": "Recognize α=dω/dt, giving Στ_ext=Iα."
+            },
+            {
+              "marks": 1,
+              "text": "Substitute Στ_ext=0.60×(+4.0)=+2.4 N m."
+            },
+            {
+              "marks": 1,
+              "text": "The positive torque accelerates rotation in the defined positive direction; specify constant I/fixed axis assumptions."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-20",
+          "assessment": "summative-theory",
+          "sourcePage": 68,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, conservation of angular momentum and energy (printed p.68); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "An ice skater rotates about a fixed axis with moment of inertia 4.0 kg m² and angular velocity 3.0 rad/s. By drawing their arms inward, the skater reduces moment of inertia to 2.0 kg m² while external axial torque is negligible. Calculate the final angular speed and initial/final rotational kinetic energies; explain why the energies differ.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "With negligible external torque, angular momentum is conserved: I₁ω₁=I₂ω₂."
+            },
+            {
+              "marks": 1,
+              "text": "Find ω₂=(4.0×3.0)/2.0=6.0 rad/s."
+            },
+            {
+              "marks": 1,
+              "text": "Initial energy K₁=½I₁ω₁²=½×4.0×9=18 J."
+            },
+            {
+              "marks": 1,
+              "text": "Final energy K₂=½I₂ω₂²=½×2.0×36=36 J."
+            },
+            {
+              "marks": 1,
+              "text": "The rotational energy increases by +18 J, even though L remains constant."
+            },
+            {
+              "marks": 1,
+              "text": "The skater does internal work while drawing the arms inward; conservation of angular momentum does not imply constant rotational energy."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "marks": 6,
+      "choices": [
+        {
+          "slo": "P-11-B-14",
+          "assessment": "summative-theory",
+          "sourcePage": 61,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, centripetal force and squared-speed scaling (printed p.61); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A 1200 kg vehicle moves around a constant-radius circular bend of radius 80 m. First it travels at 20 m/s and later at 30 m/s. Calculate the centripetal acceleration and required net inward force at each speed. Determine the ratio of the two forces and explain the result.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "At 20 m/s, a₁=v₁²/r=400/80=5.0 m/s² inward."
+            },
+            {
+              "marks": 1,
+              "text": "At 20 m/s, F₁=ma₁=1200×5.0=6000 N inward."
+            },
+            {
+              "marks": 1,
+              "text": "At 30 m/s, a₂=v₂²/r=900/80=11.25 m/s² inward."
+            },
+            {
+              "marks": 1,
+              "text": "At 30 m/s, F₂=ma₂=1200×11.25=13,500 N inward."
+            },
+            {
+              "marks": 1,
+              "text": "Ratio F₂/F₁=13,500/6000=2.25."
+            },
+            {
+              "marks": 1,
+              "text": "At fixed mass and radius F∝v², so (30/20)²=2.25; the inward force source must supply this larger resultant."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        },
+        {
+          "slo": "P-11-B-18",
+          "assessment": "summative-theory",
+          "sourcePage": 66,
+          "sourceRef": "Original summative-theory question based on NBF Grade XI Unit 4, axial moment of inertia and angular momentum (printed p.66); cross-mapped to FBISE HSSC-I Physics Assessment Framework",
+          "prompt": "A uniform solid disc and a thin hoop each have mass 2.0 kg and radius 0.50 m. Both rotate about their central symmetry axes at 10 rad/s. Using I_disc=½MR² and I_hoop=MR², calculate each moment of inertia and angular momentum. Compare them and explain why the values differ.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "For the solid disc, I_disc=½MR²=½×2×0.50²=0.25 kg m²."
+            },
+            {
+              "marks": 1,
+              "text": "For the thin hoop, I_hoop=MR²=2×0.50²=0.50 kg m²."
+            },
+            {
+              "marks": 1,
+              "text": "Disc angular momentum L_disc=I_discω=0.25×10=2.5 kg m²/s."
+            },
+            {
+              "marks": 1,
+              "text": "Hoop angular momentum L_hoop=I_hoopω=0.50×10=5.0 kg m²/s."
+            },
+            {
+              "marks": 1,
+              "text": "Thus I_hoop/I_disc=2 and L_hoop/L_disc=2 at equal angular speed."
+            },
+            {
+              "marks": 1,
+              "text": "The hoop has its mass concentrated farther from the axis, whereas the disc's mass is distributed over radii 0 to R."
+            }
+          ],
+          "notes": "Award equivalent correct scientific reasoning and alternative valid methods; accept consistent rounding, valid units and clearly defined directions. These mark splits are teaching suggestions, not an official FBISE marking scheme."
+        }
+      ]
+    }
+  ]
+}
