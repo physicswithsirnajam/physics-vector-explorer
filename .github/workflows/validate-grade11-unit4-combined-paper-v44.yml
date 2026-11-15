@@ -1,0 +1,59 @@
+name: Validate Grade XI Unit 4 Combined Student Paper (V44)
+
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-combined-student-paper.*"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_combined_paper_v44.cjs"
+      - "quality/grade11-unit04-combined-print-v44.md"
+      - ".github/workflows/validate-grade11-unit4-combined-paper-v44.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-04-combined-student-paper.*"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_combined_paper_v44.cjs"
+      - "quality/grade11-unit04-combined-print-v44.md"
+      - ".github/workflows/validate-grade11-unit4-combined-paper-v44.yml"
+  workflow_dispatch:
+
+jobs:
+  validate-combined-unit4-student-paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate student page JavaScript
+        run: |
+          node --check portal/unit-04-combined-student-paper.js
+          node --check scripts/test_unit04_combined_paper_v44.cjs
+      - name: Install pinned Chromium only on the CI runner
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test full 80-mark student-only paper in Chromium
+        run: node scripts/test_unit04_combined_paper_v44.cjs
+      - name: Upload QA preview screenshots for teacher review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit04-v44-combined-student-paper-previews
+          path: qa-artifacts/unit04-v44/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Preserve old Unit 4 academic and source-bank regressions
+        run: |
+          node scripts/test_unit04_assessment_pack_v42.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
