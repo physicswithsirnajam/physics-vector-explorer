@@ -147,9 +147,9 @@ assert.equal(audit.publishedPracticeBankFile,"question-bank/grade-11/unit-04-v39
 assert.equal(audit.publishedPracticePage,"./unit-04-mcq-full80.html");
 const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(unit4.questionBankCount,80);
-assert.equal(unit4.assessmentStatus,"provisional-unit4-public-mcq-and-descriptive-practice");
-assert.equal(unit4.resourceIds.length,14);
-assert.equal(new Set(unit4.resourceIds).size,14);
+assert.equal(unit4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
+assert.equal(unit4.resourceIds.length,15);
+assert.equal(new Set(unit4.resourceIds).size,15);
 assert.ok(unit4.studentNotice.includes("No protected Unit 4 tests"));
 assert.ok(unit4.studentNotice.includes("saved scores"));
 assert.ok(unit4.resourceIds.includes("unit4-mcq-full80"));
