@@ -12,6 +12,8 @@ const SLO=new Set(["P-11-B-07","P-11-B-08","P-11-B-09","P-11-B-10",
  "P-11-B-14","P-11-B-15","P-11-B-16","P-11-B-17","P-11-B-18",
  "P-11-B-19","P-11-B-20","P-11-B-21"]);
 let questions=null,groups=null,index=-1;
+const selectedSlo=new URLSearchParams(location.search).get("slo");
+const focused=selectedSlo!==null;
 let running=false,started=false,completed=false;
 let duration=50,remaining=50,deadline=0,intervalId=null;
 function node(tag,cls,value){
@@ -76,16 +78,19 @@ function updateTime(){
 function updateControls(){
  $("prevBtn").disabled=!started||index<=0;
  $("nextBtn").disabled=!started||completed;
- $("nextBtn").textContent=index===79?"Finish presentation":"Next →";
+ $("nextBtn").textContent=questions&&index===questions.length-1?"Finish presentation":"Next →";
  $("pauseBtn").disabled=!started||completed||(!running&&remaining<=0);
  $("pauseBtn").textContent=running?"Pause timer":"Resume timer";
  $("resetBtn").disabled=!started;
- $("startBtn").textContent=started?"Restart at Q1":"Start presentation";
+ $("startBtn").textContent=started?(focused?"Restart focused practice":"Restart at Q1"):"Start presentation";
  $("jumpBtn").disabled=!started;
  $("jumpInput").disabled=!started;
 }
 function paintSlide(q){
- $("slideIndex").textContent="Q "+q.sourceQuestionNumber+" / 80";
+ $("slideIndex").textContent="Q "+q.sourceQuestionNumber+" / 80"+(focused?" · focus "+(index+1)+" / "+questions.length:"");
+ const focusBadge=$("focusBadge");
+ focusBadge.hidden=!focused;
+ focusBadge.textContent=focused?selectedSlo+" · "+questions.length+" MCQs":"";
  $("questionType").textContent=q.scenarioSetId?"Scenario MCQ":"Independent MCQ";
  $("sloLabel").textContent=q.sloCodes[0];
  const pane=$("scenarioPane"),lab=$("scenarioLabel");
@@ -111,19 +116,19 @@ function paintSlide(q){
  $("jumpInput").value=String(q.sourceQuestionNumber);
 }
 function showSlide(nextIndex,autoPlay){
- if(!questions||nextIndex<0||nextIndex>=80)return;
+ if(!questions||nextIndex<0||nextIndex>=questions.length)return;
  stopClock();
  index=nextIndex;completed=false;started=true;
  const q=questions[index];
  duration=questionDuration(q);remaining=duration;
  paintSlide(q);updateTime();updateControls();
  if(autoPlay)play();
- else note("Paused on question "+(index+1)+". Press Resume timer when ready.");
+ else note("Paused on original question "+q.sourceQuestionNumber+". Press Resume timer when ready.");
 }
 function finish(){
  stopClock();completed=true;remaining=0;
  updateTime();updateControls();
- note("Presentation complete — all 80 Unit 4 questions shown. Use the separate teacher key for discussion.");
+ note("Presentation complete — all "+questions.length+" selected Unit 4 questions shown. Use the separate teacher key for discussion.");
 }
 function tick(){
  if(!running)return;
@@ -133,10 +138,10 @@ function tick(){
  if(left<=0){
   stopClock();remaining=0;updateTime();
   if($("autoAdvance").checked){
-   if(index===79)finish();
+   if(index===questions.length-1)finish();
    else showSlide(index+1,true);
   }else{
-   note("Time is up on Q"+(index+1)+". Press Next → when the class is ready.");
+   note("Time is up on Q"+questions[index].sourceQuestionNumber+". Press Next → when the class is ready.");
    updateControls();
   }
  }
@@ -159,7 +164,7 @@ function pause(message){
 function move(delta){
  if(!started)return;
  const n=index+delta;
- if(n>=80){finish();return;}
+ if(n>=questions.length){finish();return;}
  if(n<0)return;
  const continueTimer=running;
  showSlide(n,continueTimer);
@@ -176,8 +181,13 @@ function jump(){
   note("Enter a whole-number question from 1 to 80.");
   return;
  }
+ const targetIndex=questions.findIndex(q=>q.sourceQuestionNumber===number);
+ if(targetIndex===-1){
+  note("Q"+number+" is outside the selected SLO. Choose one of this lesson’s original question numbers.");
+  return;
+ }
  const continueTimer=running;
- showSlide(number-1,continueTimer);
+ showSlide(targetIndex,continueTimer);
 }
 async function fullscreen(){
  try{
@@ -229,11 +239,16 @@ fetch(source,{cache:"no-store"}).then(response=>{
  if(!response.ok)throw Error("HTTP "+response.status);
  return response.json();
 }).then(data=>{
- groups=verify(data);questions=data.questions;
+ groups=verify(data);
+ if(focused&&!SLO.has(selectedSlo))throw Error("Invalid summative Unit 4 SLO requested");
+ questions=focused?data.questions.filter(q=>q.sloCodes[0]===selectedSlo):data.questions;
+ if(!questions.length)throw Error("No provisional MCQs map to this SLO");
  duration=50;remaining=50;updateTime();
  $("startBtn").disabled=false;
  $("fullscreenBtn").disabled=false;
- $("loadStatus").textContent="Ready · 80 source-verified MCQs · 56 independent + 24 scenario · 12 summative SLOs";
+ $("loadStatus").textContent=focused?
+  "Ready · "+selectedSlo+" · "+questions.length+" matching original MCQs · SLO-focused, ungraded practice":
+  "Ready · 80 source-verified MCQs · 56 independent + 24 scenario · 12 summative SLOs";
 }).catch(error=>{
  $("loadStatus").textContent="Unable to load this provisional question bank: "+error.message;
  note("Presentation disabled until source bank passes validation.");
