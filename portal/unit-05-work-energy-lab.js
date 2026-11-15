@@ -97,12 +97,17 @@ function updateResistive(){
  metric("resInitialKE",K0,"J");metric("resAppliedWork",applied,"J");
  metric("resResistanceWork",resWork,"J");metric("resNetWork",delta,"J");
  const warning=$("resReachWarning"),exp=$("resExplain");
- if(targetK< -1e-9){
-  const stopping=K0/(fr-fa);
+ if(targetK< -1e-9||(K0===0&&fa<=fr)){
   warning.hidden=false;
-  warning.textContent="The object cannot reach "+fmt(d)+" m under the stated constant forces. "+
-    "It stops after "+fmt(stopping)+" m (using K₀/(Fᵣ−Fₐ)). "+
-    "A negative target kinetic energy is a reachability warning, not a physical final energy.";
+  if(K0===0&&fa<=fr){
+   warning.textContent="The object starts from rest and has no positive net forward force. "+
+     "It cannot begin travelling the requested "+fmt(d)+" m under these constant-force assumptions.";
+  }else{
+   const stopping=K0/(fr-fa);
+   warning.textContent="The object cannot reach "+fmt(d)+" m under the stated constant forces. "+
+     "It stops after "+fmt(stopping)+" m (using K₀/(Fᵣ−Fₐ)). "+
+     "A negative target kinetic energy is a reachability warning, not a physical final energy.";
+  }
   $("resFinalKE").dataset.value="";
   $("resFinalKE").textContent="Not reachable";
   $("resFinalSpeed").dataset.value="";
