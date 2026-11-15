@@ -60,7 +60,7 @@ function sourceContract(){
   assert.equal(slo.officialFrameworkPdfPage,11);
   assert.equal(slo.assessmentStatus,"official-FBISE-framework-verified-summative-theory-slo");
   assert.ok(!("provisionalCognitiveLevel" in slo));
-  assert.ok(slo.classificationEvidence.includes("framework PDF page 11"));
+  assert.match(slo.classificationEvidence,/framework PDF page 11/i);
  }
  assert.equal(audit.unit5FormativeTheorySLOs.length,0);
  assert.equal(audit.formativeTheorySLOsVerifiedSeparately,true);
