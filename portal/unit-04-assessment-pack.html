@@ -34,7 +34,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid 
 .omr-row:last-child{border-bottom:0}
 .qnum{font-weight:800;font-variant-numeric:tabular-nums;font-size:12px;text-align:right;padding-right:4px}
 .bubble{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;line-height:17px;font-size:10px;border:1.5px solid #4b5864;border-radius:50%;font-family:Arial,sans-serif;font-weight:700;color:#4b5864;margin:0 auto}
-.bubble.correct{background:#182d46;color:#fff;border-color:#182d46}
+.bubble.correct{background:#182d46;color:#fff;border-color:#182d46;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .scenario-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .scenario-box{border:1px solid #9bb4c6;padding:8px;border-radius:7px;break-inside:avoid}
 .scenario-box h4{font-size:11px;margin:0 0 5px}.response-intro{font-size:12px;color:var(--muted);margin-bottom:10px}
@@ -61,6 +61,7 @@ body.print-omr #omrSection,body.print-key #teacherSection,body.print-tos #tosSec
 .omr-box h4{font-size:8pt;margin:0 0 2px}
 .omr-row{min-height:21px;padding:1px 0;grid-template-columns:22px repeat(4,1fr)}
 .qnum{font-size:8pt}.bubble{width:15px;height:15px;font-size:7pt;line-height:13px;border:1px solid #333}
+body.print-key .bubble.correct{background:#111!important;color:#fff!important;border:1.5px solid #111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .scenario-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
 .scenario-box{padding:5px;border-radius:0}.scenario-box h4{font-size:8pt;margin:0}
 .sheet-title{font-size:10pt;margin:9px 0 5px;padding-top:5px}
