@@ -179,9 +179,9 @@ assert.ok(part2.includes('href="./unit-04-angular-momentum-study.html"'));
 const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
 assert.equal(unit4.status,"available");
 assert.equal(unit4.questionBankCount,80);
-assert.equal(unit4.assessmentStatus,"provisional-unit4-public-mcq-and-descriptive-practice");
-assert.equal(unit4.resourceIds.length,14);
-assert.equal(new Set(unit4.resourceIds).size,14);
+assert.equal(unit4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
+assert.equal(unit4.resourceIds.length,15);
+assert.equal(new Set(unit4.resourceIds).size,15);
 assert.ok(unit4.studentNotice.includes("80 provisional public self-practice MCQs"));
 assert.ok(unit4.studentNotice.includes("P-11-B-21"));
 for(const [id,href] of [
