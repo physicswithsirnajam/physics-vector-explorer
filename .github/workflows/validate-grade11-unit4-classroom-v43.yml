@@ -7,6 +7,7 @@ on:
       - "portal/unit-04-mcq-full80.*"
       - "portal/unit-04-descriptive-practice.*"
       - "scripts/test_unit04_classroom_browser_v43.cjs"
+      - "shared/navigation.css"
       - "quality/grade11-unit04-classroom-readiness-v43.md"
       - ".github/workflows/validate-grade11-unit4-classroom-v43.yml"
   push:
@@ -16,6 +17,7 @@ on:
       - "portal/unit-04-mcq-full80.*"
       - "portal/unit-04-descriptive-practice.*"
       - "scripts/test_unit04_classroom_browser_v43.cjs"
+      - "shared/navigation.css"
       - "quality/grade11-unit04-classroom-readiness-v43.md"
       - ".github/workflows/validate-grade11-unit4-classroom-v43.yml"
   workflow_dispatch:
