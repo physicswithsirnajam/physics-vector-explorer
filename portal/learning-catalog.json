@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v48-unit5-work-energy-foundations-2026-11-15",
+  "catalogVersion": "pilot-v49-unit5-fbise-verified-theory-audit-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -116,17 +116,18 @@
           "unit": 5,
           "title": "Work and Energy",
           "status": "available",
-          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no Unit 5 MCQ bank or board exam released.",
+          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no Unit 5 MCQ bank or board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [
             "unit5-desk",
             "unit5-work-study",
-            "unit5-work-energy-lab"
+            "unit5-work-energy-lab",
+            "unit5-fbise-audit"
           ],
-          "qualityStatus": "Teaching pilot based on original NBF Unit 5 chapter pages (printed pp.77–85 visually checked, chapter through p.87) and provisional FBISE SLO B-29–B-32 mapping from prior user-prepared notes. Official FBISE theory/formative/PBA classification requires independent primary-framework verification before assessment publication. Teacher content QC still pending.",
+          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. No Unit 5 question bank or marking scheme released. Teacher academic item QC remains pending.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 5 Work and Energy study guide and four interactive teaching demonstrations are available. Unit 5 question banks, official-style examinations, recorded scores and teacher-approved marking keys are NOT published; content is not an official full-syllabus board paper.",
+          "studentNotice": "Unit 5 Work and Energy source-based learning resources and official-framework SLO audit are published. All four Unit 5 theory SLOs are verified summative; this does not certify a practical/PBA list or any future question bank. No new Unit 5 assessment paper, OMR, keyed exam, or saved grades.",
           "landingHref": "./unit-05.html"
         },
         {
@@ -859,14 +860,14 @@
       "id": "unit5-desk",
       "category": "STUDY",
       "title": "Unit 5 — Work and Energy Learning Desk",
-      "description": "Source-mapped NBF Grade XI Unit 5 Work and Energy (pp.77–87): four provisional summative theory SLOs and transparent teaching-only release status, with links to the study guide and four-station work–energy laboratory.",
+      "description": "NBF Grade XI Unit 5 Work and Energy (pp.77–87): four theory SLO classifications and A/A/U/A cognitive levels verified in supplied official FBISE HSSC-I framework PDF p.11; source-backed study, four-station interactive lab, and official audit.",
       "href": "./unit-05.html",
       "public": true,
       "external": false,
       "action": "Open Unit 5 Learning Desk ↗",
       "access": "public-link",
-      "contentStatus": "unit5-v48-source-grounded-teaching-pilot-ffbse-framework-crosscheck-pending",
-      "accessDescription": "Public educational teaching foundation. No Unit 5 MCQ bank, official exam, marking key or stored grades; official framework SLO classification and teacher sign-off remain pending."
+      "contentStatus": "unit5-v49-source-and-official-fbise-theory-slo-verified-teaching-only",
+      "accessDescription": "Public source-grounded learning resources with verified FBISE theory SLO mapping. No released Unit 5 examination bank, marking key or saved grades. Separate PBA practical list unverified."
     },
     {
       "id": "unit5-work-study",
@@ -893,6 +894,19 @@
       "access": "public-link",
       "contentStatus": "unit5-v48-interactive-physics-four-SLO-teaching-pilot",
       "accessDescription": "Browser-only projector/mobile educational lab; no account login, student grade storage or official exam submission."
+    },
+    {
+      "id": "unit5-fbise-audit",
+      "category": "STUDY",
+      "title": "Unit 5 — Verified FBISE Theory SLO and Assessment Scope Audit",
+      "description": "Source-referenced NBF Unit 5 and supplied official FBISE HSSC-I assessment framework confirmation for B-29–B-32 (all Summative; cognitive A/A/U/A), full-grade 80-mark pattern, PBA caution and checks before formal assessment publication.",
+      "href": "./unit-05-fbise-audit.html",
+      "public": true,
+      "external": false,
+      "action": "Read Unit 5 Official FBISE SLO Audit ↗",
+      "access": "public-link",
+      "contentStatus": "unit5-v49-official-user-supplied-framework-theory-classification-verified",
+      "accessDescription": "Public teacher/student curriculum guidance, not a published Unit 5 exam. Separate PBA list and any revised online edition not checked; no new student grades or keyed assessment bank."
     }
   ]
 }
