@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v34-unit4-rotational-kinematics-part1-2026-11-15",
+  "catalogVersion": "pilot-v35-unit4-centripetal-motion-part2-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,17 +84,19 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "First source-based release: radians, signed angular displacement, angular velocity/acceleration, linear/angular relations and constant-angular-acceleration calculations. Centripetal motion and later topics remain for the next phases.",
+          "summary": "Public Unit 4 Part 1 rotational kinematics (pp.54–59) and Part 2 centripetal motion and force (pp.59–64), with source-based guides and separate interactive labs. Satellite weightlessness, artificial gravity, torque, inertia and angular momentum are still pending.",
           "questionBankCount": 0,
           "assessmentStatus": "no-unit4-mcq-or-descriptive-bank-published",
           "resourceIds": [
             "unit4-desk",
             "unit4-rotation-study",
-            "unit4-rotation-lab"
+            "unit4-rotation-lab",
+            "unit4-centripetal-study",
+            "unit4-centripetal-lab"
           ],
-          "qualityStatus": "Unit 4 Part 1 pp.53–59 source-reviewed; summative FBISE B-07/B-08/B-09; no Unit 4 question bank, graded result or full chapter coverage",
+          "qualityStatus": "Unit 4 Parts 1–2 source-reviewed against NBF pp.53–64 and summative FBISE B-07/08/09/10/14/15; no question bank or graded lesson, final scientific teacher review and browser QA pending",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 Part 1 offers a public textbook-based study guide and original interactive rotation/radian laboratory. The simulation does not grade or save attempts. Remaining centripetal/torque/angular momentum topics and a complete Unit 4 MCQ assessment bank are not yet published.",
+          "studentNotice": "Unit 4 now has Part 1 rotational kinematics and Part 2 centripetal force learning resources. The force lab includes a real inward-force vector, squared-speed graph, ideal banked turn and NBF Example 4.2. No saved scores, MCQ bank or protected Unit 4 tests have been published. Later SLOs B-16 onward are pending.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -637,6 +639,32 @@
       "access": "public-link",
       "contentStatus": "original-part1-rotational-simulation",
       "accessDescription": "Public educational original SVG simulation, no sign-in, stored grades or user tracking."
+    },
+    {
+      "id": "unit4-centripetal-study",
+      "category": "STUDY",
+      "title": "Unit 4 Part 2 — Centripetal Acceleration & Force Study Guide",
+      "description": "NBF Grade XI Unit 4 printed pp.59–64, FBISE summative B-10/B-14/B-15, inward acceleration and net force, tension, friction, banked road, gravitational context, centrifuge and worked textbook Example 4.2.",
+      "href": "./unit-04-centripetal-study.html",
+      "public": true,
+      "external": false,
+      "action": "Read Unit 4 Part 2 Guide ↗",
+      "access": "public-link",
+      "contentStatus": "source-based-unit4-part2-centripetal-study",
+      "accessDescription": "Public source-based educational guide, not a complete Unit 4 syllabus, teacher-certified marking scheme or graded student resource."
+    },
+    {
+      "id": "unit4-centripetal-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 4 — Interactive Centripetal Force Laboratory",
+      "description": "Adjust mass, tangential speed and radius; view velocity tangent to the circle and net force inward, compare force scaling, calculate friction-free bank angle, choose actual force mechanisms and reproduce NBF Example 4.2.",
+      "href": "./unit-04-centripetal-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Launch Centripetal Force Lab ↗",
+      "access": "public-link",
+      "contentStatus": "original-unit4-part2-uniform-circle-simulation",
+      "accessDescription": "Public independent SVG educational simulation, 30% real-time angular animation for legibility; no login, grades, account storage or student tracking."
     }
   ]
 }
