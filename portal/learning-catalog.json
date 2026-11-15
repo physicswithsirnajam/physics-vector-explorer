@@ -84,9 +84,9 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Five source-based Unit 4 study/lab stages and a complete 12-summative-SLO audit, plus 80 public provisional Unit 4-only FBISE-style self-practice MCQs (56 independent, 24 scenario). No protected graded or descriptive assessment is published.",
+          "summary": "Five source-based Unit 4 study/lab stages, a full 12-summative-SLO audit, 80 provisional Unit 4-only FBISE-style MCQs (56 independent + 24 scenario), and a 40-mark Section B/C OR descriptive practice with 18 solved alternatives. No protected grades are published.",
           "questionBankCount": 80,
-          "assessmentStatus": "provisional-unit4-public-mcq-self-practice",
+          "assessmentStatus": "provisional-unit4-public-mcq-and-descriptive-practice",
           "resourceIds": [
             "unit4-desk",
             "unit4-rotation-study",
@@ -100,11 +100,12 @@
             "unit4-centrifuge-study",
             "unit4-centrifuge-lab",
             "unit4-slo-audit",
-            "unit4-mcq-full80"
+            "unit4-mcq-full80",
+            "unit4-descriptive-practice"
           ],
-          "qualityStatus": "80 original source-grounded Unit 4 MCQs with explained key, 20 correct answers per A/B/C/D, 12-SLO audit allocation; provisional teacher-review-pending and live print/browser QA needed. No official FBISE key, authenticated test, descriptive bank or saved grade.",
+          "qualityStatus": "80 provisional source-grounded MCQs and 40-mark descriptive practice with stepwise model answers and SLO mapping across OR alternatives. Teacher academic and browser/print review remain pending; not an official FBISE marking key or saved grade.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual) are now available. No protected Unit 4 tests, descriptive paper or saved scores are published. This Unit-only practice set is not an official full-syllabus FBISE paper; teacher review remains pending.",
+          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual) and a 40-mark descriptive practice with 9 internal-OR pairs are now available. No protected Unit 4 tests or saved scores are published. These unit-only exercises are not official full-syllabus FBISE papers; teacher review remains pending.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -777,6 +778,19 @@
       "access": "public-link",
       "contentStatus": "unit4-v39-provisional-80-original-MCQ-teacher-review-pending",
       "accessDescription": "Public nonpersistent client-side self-practice and printable teacher/explanation key; not a protected graded exam, official FBISE assessment or approved key."
+    },
+    {
+      "id": "unit4-descriptive-practice",
+      "category": "PRACTISE",
+      "title": "Unit 4 — Descriptive Practice Sections B & C (40 Marks)",
+      "description": "Seven four-mark short responses and two six-mark extended responses, with balanced internal OR alternatives, 18 source-labelled model solutions and suggested marking, and student/teacher print modes.",
+      "href": "./unit-04-descriptive-practice.html",
+      "public": true,
+      "external": false,
+      "action": "Practise Unit 4 Descriptive Answers ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-unit4-descriptive-self-practice-teacher-review-pending",
+      "accessDescription": "Unit 4-only public practice with model answers, not an official board marking scheme or saved grade."
     }
   ]
 }
