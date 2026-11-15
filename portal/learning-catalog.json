@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v38-unit4-centrifuge-slo-audit-2026-11-15",
+  "catalogVersion": "pilot-v39-unit4-fbise80-mcq-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,9 +84,9 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Five public Unit 4 stages: rotational kinematics, centripetal motion, weightlessness/artificial gravity, inertia/torque/angular momentum, and centrifugation. A 12-SLO source-mapped audit is available. No Unit 4 assessment bank is published.",
-          "questionBankCount": 0,
-          "assessmentStatus": "no-unit4-mcq-or-descriptive-bank-published",
+          "summary": "Five source-based Unit 4 study/lab stages and a complete 12-summative-SLO audit, plus 80 public provisional Unit 4-only FBISE-style self-practice MCQs (56 independent, 24 scenario). No protected graded or descriptive assessment is published.",
+          "questionBankCount": 80,
+          "assessmentStatus": "provisional-unit4-public-mcq-self-practice",
           "resourceIds": [
             "unit4-desk",
             "unit4-rotation-study",
@@ -99,11 +99,12 @@
             "unit4-angular-momentum-lab",
             "unit4-centrifuge-study",
             "unit4-centrifuge-lab",
-            "unit4-slo-audit"
+            "unit4-slo-audit",
+            "unit4-mcq-full80"
           ],
-          "qualityStatus": "Source-mapped teaching covers 12 summative Unit 4 SLOs B07–B10 and B14–B21 from NBF printed pp.53–76. B11 formative; B12 and B13 are collision/momentum topics outside Unit 4. No reviewed Unit 4 exam bank; browser and teacher QC pending.",
+          "qualityStatus": "80 original source-grounded Unit 4 MCQs with explained key, 20 correct answers per A/B/C/D, 12-SLO audit allocation; provisional teacher-review-pending and live print/browser QA needed. No official FBISE key, authenticated test, descriptive bank or saved grade.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Five public source-based learning stages and 12-SLO Unit 4 teaching audit include P-11-B-21 centrifugation. No Unit 4 MCQ bank, protected tests or saved scores are published. Proposed 80-MCQ Unit-only practice distribution is not an official full-syllabus question allocation.",
+          "studentNotice": "Unit 4 covers all 12 summative SLOs including P-11-B-21. 80 provisional public self-practice MCQs (56 independent + 24 contextual) are now available. No protected Unit 4 tests, descriptive paper or saved scores are published. This Unit-only practice set is not an official full-syllabus FBISE paper; teacher review remains pending.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -763,6 +764,19 @@
       "access": "public-link",
       "contentStatus": "source-verified-unit4-teaching-map-assessment-pending",
       "accessDescription": "Public teaching audit only; not a full-syllabus official examination or a published question bank."
+    },
+    {
+      "id": "unit4-mcq-full80",
+      "category": "PRACTISE",
+      "title": "Unit 4 — Full 80-MCQ FBISE-Style Summative Self-Practice",
+      "description": "80 source-grounded provisional MCQs across all 12 Grade XI Unit 4 summative SLOs; 56 independent plus 24 contextual in six four-item scenarios. Boxed FBISE layout, A/B/C/D response bubbles, one-line explained key, printing and in-page marking; no saved grades.",
+      "href": "./unit-04-mcq-full80.html",
+      "public": true,
+      "external": false,
+      "action": "Practise 80 Unit 4 MCQs ↗",
+      "access": "public-link",
+      "contentStatus": "unit4-v39-provisional-80-original-MCQ-teacher-review-pending",
+      "accessDescription": "Public nonpersistent client-side self-practice and printable teacher/explanation key; not a protected graded exam, official FBISE assessment or approved key."
     }
   ]
 }
