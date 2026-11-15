@@ -12,7 +12,8 @@
     "Includes 12 Unit 4 summative theory SLOs only: B-07–B-10 and B-14–B-21; formative B-11 and collision B-12/B-13 are excluded from this chapter.",
     "Options are deliberately balanced to exactly 20 correct answers each for A/B/C/D, with deterministic non-sequential layouts, and explanations for every item.",
     "The 80×0.5=40 mark count is Unit-4-only practice based on the full Section A count. It is not the official board's topic-specific unit allocation.",
-    "Public practice is client-side and does not authenticate, write grades, or modify existing student attempts; protected assessments need a separate rollout and permission audit."
+    "Public practice is client-side and does not authenticate, write grades, or modify existing student attempts; protected assessments need a separate rollout and permission audit.",
+    "Item cognitive tags track the official SLO-level FBISE cognitive categories; a few numerical exercises may need expert teacher classification review before use in formal assessments."
   ],
   "structure": {
     "straight": 56,
@@ -105,8 +106,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -240,8 +241,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1095,8 +1096,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1230,8 +1231,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1275,8 +1276,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1320,8 +1321,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1365,8 +1366,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1471,27 +1472,27 @@
       "id": "XI-U04-MCQ-0033",
       "sourceQuestionNumber": 33,
       "type": "single_choice",
-      "stem": "In a near-circular Earth orbit, the gravitational force on an astronaut points approximately:",
+      "stem": "An astronaut appears weightless in an Earth-orbiting spacecraft. Which statement about the gravitational force is still correct?",
       "options": [
         {
           "id": "A",
-          "text": "Nowhere because gravitational force is zero"
+          "text": "It points away from Earth"
         },
         {
           "id": "B",
-          "text": "Toward Earth's centre"
+          "text": "It points toward Earth's centre"
         },
         {
           "id": "C",
-          "text": "Always along the tangent to the orbit"
+          "text": "It is tangential to the orbit at every point"
         },
         {
           "id": "D",
-          "text": "Away from Earth"
+          "text": "It becomes exactly zero"
         }
       ],
       "correctOptionId": "B",
-      "explanation": "Earth's gravitational attraction acts inward toward Earth and provides orbital centripetal acceleration.",
+      "explanation": "The apparent weight is small because contact support is nearly absent; gravity continues to act toward Earth's centre.",
       "grade": 11,
       "unit": 4,
       "topic": "Orbital Gravity",
@@ -1500,8 +1501,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Knowledge",
-      "difficulty": "Foundation",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1680,8 +1681,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1725,8 +1726,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -1860,8 +1861,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2056,27 +2057,27 @@
       "id": "XI-U04-MCQ-0046",
       "sourceQuestionNumber": 46,
       "type": "single_choice",
-      "stem": "The net external torque on a system about a chosen axis equals the:",
+      "stem": "A wheel's angular momentum about its axis falls from +20 to +8 kg m²/s in 4 s. The average net external torque is:",
       "options": [
         {
           "id": "A",
-          "text": "Total angular momentum itself"
+          "text": "+3 N m"
         },
         {
           "id": "B",
-          "text": "Angular speed for all bodies regardless of inertia"
+          "text": "−5 N m"
         },
         {
           "id": "C",
-          "text": "Time rate of change of mass"
+          "text": "−12 N m"
         },
         {
           "id": "D",
-          "text": "Time rate of change of angular momentum about that axis"
+          "text": "−3 N m"
         }
       ],
       "correctOptionId": "D",
-      "explanation": "The torque–angular momentum relation is Στext = dL/dt about the chosen origin or axis.",
+      "explanation": "Average net torque = ΔL/Δt = (8−20)/4 = −3 N m.",
       "grade": 11,
       "unit": 4,
       "topic": "Torque and Angular Momentum",
@@ -2085,8 +2086,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2130,8 +2131,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2371,27 +2372,27 @@
       "id": "XI-U04-MCQ-0053",
       "sourceQuestionNumber": 53,
       "type": "single_choice",
-      "stem": "The word centrifugation in the textbook's Unit 4 MCQ exercise refers to:",
+      "stem": "A school laboratory has dense suspended particles mixed with a lighter liquid. Which centrifuge action best helps separate the dense fraction?",
       "options": [
         {
           "id": "A",
-          "text": "Separation by evaporation only"
+          "text": "Warm the stationary sample until gravity disappears"
         },
         {
           "id": "B",
-          "text": "Separation by spinning"
+          "text": "Spin the mixture so denser particles collect toward the outer tube end"
         },
         {
           "id": "C",
-          "text": "Removal of gravity from a substance"
+          "text": "Hold the sample still so its centripetal acceleration grows"
         },
         {
           "id": "D",
-          "text": "Separation by raising temperature alone"
+          "text": "Apply only a tangential force to keep every particle at the axis"
         }
       ],
       "correctOptionId": "B",
-      "explanation": "NBF Unit 4 exercise MCQ 1 defines centrifugation in the context of separation through spinning.",
+      "explanation": "Spinning a sample creates the conditions for density-dependent relative movement; denser suspended particles can concentrate toward the outer end of the tube.",
       "grade": 11,
       "unit": 4,
       "topic": "Meaning of Centrifugation",
@@ -2400,12 +2401,12 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Knowledge",
-      "difficulty": "Foundation",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
-        "textbookPage": 74,
+        "textbookPage": 63,
         "sourceType": "original-slo-practice"
       },
       "status": "teacher-review-pending",
@@ -2416,27 +2417,27 @@
       "id": "XI-U04-MCQ-0054",
       "sourceQuestionNumber": 54,
       "type": "single_choice",
-      "stem": "During centrifugation of a suspension, denser solid particles generally collect:",
+      "stem": "A centrifuge spins a test tube of liquid containing denser solid particles. Where is the denser deposit most likely to collect after suitable spinning?",
       "options": [
         {
           "id": "A",
-          "text": "Only in the direction of the instantaneous tangent"
+          "text": "At the rotation axis regardless of density"
         },
         {
           "id": "B",
-          "text": "Toward the outer end (bottom) of the spinning tube"
+          "text": "Toward the outer end (bottom) of the tube"
         },
         {
           "id": "C",
-          "text": "At the axis regardless of density"
+          "text": "Uniformly throughout the liquid indefinitely"
         },
         {
           "id": "D",
-          "text": "Uniformly throughout forever"
+          "text": "Only along the instantaneous tangent away from the tube"
         }
       ],
       "correctOptionId": "B",
-      "explanation": "Under suitable conditions, denser suspended particles can accumulate toward the outer-end bottom of the rotating sample tube.",
+      "explanation": "Under suitable conditions the denser solids move relative to the liquid and accumulate at the outer end of the rotating tube.",
       "grade": 11,
       "unit": 4,
       "topic": "Centrifuge Tube Separation",
@@ -2445,8 +2446,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2461,27 +2462,27 @@
       "id": "XI-U04-MCQ-0055",
       "sourceQuestionNumber": 55,
       "type": "single_choice",
-      "stem": "A cream separator mentioned in the textbook is used to separate:",
+      "stem": "A dairy cream separator spins whole milk. Which explanation of the two resulting fractions is consistent with centrifugal separation?",
       "options": [
         {
           "id": "A",
-          "text": "Dissolved sugar from water by boiling"
+          "text": "Cream and skimmed milk necessarily have identical density"
         },
         {
           "id": "B",
-          "text": "Petrol and diesel through combustion"
+          "text": "Rotation produces new milk fat from nothing"
         },
         {
           "id": "C",
-          "text": "Pure water into hydrogen and oxygen"
+          "text": "The device separates them only by raising the milk's temperature"
         },
         {
           "id": "D",
-          "text": "Cream and skimmed milk"
+          "text": "Denser skim-milk fractions tend farther outward while lighter cream is collected separately"
         }
       ],
       "correctOptionId": "D",
-      "explanation": "The textbook specifically identifies the cream separator as separating milk into cream and skimmed milk.",
+      "explanation": "The spinning separator exploits differences in density; the less dense cream fraction separates from denser skimmed milk.",
       "grade": 11,
       "unit": 4,
       "topic": "Cream Separator",
@@ -2490,8 +2491,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2535,8 +2536,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
@@ -2923,8 +2924,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; source-based practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Physics Unit 4 Example 4.2",
@@ -3021,8 +3022,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; source-based practice, independent teacher QC pending",
-      "cognitiveLevel": "Understanding",
-      "difficulty": "Standard",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Physics Unit 4 section 4.2.1 banked-road application",
@@ -3413,8 +3414,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; source-based practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Physics Unit 4 sections 4.6–4.7 and Example 4.4",
@@ -3462,8 +3463,8 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; source-based practice, independent teacher QC pending",
-      "cognitiveLevel": "Application",
-      "difficulty": "Application",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
       "source": {
         "file": "11 Physics Book(10).pdf",
         "section": "NBF Grade XI Physics Unit 4 sections 4.6–4.7 and Example 4.4",
