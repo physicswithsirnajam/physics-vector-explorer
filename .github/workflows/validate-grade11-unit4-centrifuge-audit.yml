@@ -1,0 +1,44 @@
+name: Validate Grade XI Unit 4 Centrifugation SLO Audit
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-centrifuge-study.html"
+      - "portal/unit-04-centrifuge-lab.html"
+      - "portal/unit-04-centrifuge-engine.js"
+      - "portal/unit-04-centrifuge-ui.js"
+      - "portal/unit-04-slo-audit.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/unit-04.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_centrifuge_audit.cjs"
+      - ".github/workflows/validate-grade11-unit4-centrifuge-audit.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-04-centrifuge-study.html"
+      - "portal/unit-04-centrifuge-lab.html"
+      - "portal/unit-04-centrifuge-engine.js"
+      - "portal/unit-04-centrifuge-ui.js"
+      - "portal/unit-04-slo-audit.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/unit-04.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_centrifuge_audit.cjs"
+      - ".github/workflows/validate-grade11-unit4-centrifuge-audit.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit4-slo-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Verify JavaScript syntax
+        run: |
+          node --check portal/unit-04-centrifuge-engine.js
+          node --check portal/unit-04-centrifuge-ui.js
+          node --check scripts/test_unit04_centrifuge_audit.cjs
+      - name: Check B21 physics, textbook sources, all twelve SLO links and practice draft boundaries
+        run: node scripts/test_unit04_centrifuge_audit.cjs
