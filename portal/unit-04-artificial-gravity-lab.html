@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10233d"><meta name="description" content="Interactive Grade XI Physics Unit 4 weightlessness and artificial gravity lab: visualize satellite free fall, rotate a ring station, adjust radius and rpm, and calculate station acceleration, normal force, period, frequency and textbook Example 4.4.">
+<title>Unit 4 — Weightlessness &amp; Artificial Gravity Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e6c786;--ink:#20344c;--muted:#566a7e;--line:#d3e0ed;--soft:#f4f8fc;--teal:#16748c;--warm:#bd7842}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:#fff}.bar{max-width:1160px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800}.brand img{width:51px;height:51px;object-fit:contain}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#166c88}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #c59c48;outline-offset:3px}
+main{max-width:1160px;margin:auto;padding:26px 18px 74px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#85601f}
+h1{font-size:clamp(28px,4.5vw,42px);line-height:1.16;margin:8px 0 11px}h2{font-size:23px;margin:0 0 12px}h3{font-size:17px;margin:10px 0 7px}
+.lead{color:var(--muted);max-width:950px}.notice{background:#fff8e9;border-left:4px solid #cba15c;border-radius:9px;padding:12px 16px;margin:15px 0;font-size:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;box-shadow:0 7px 18px #10233d0b}
+.tag{display:inline-block;font-weight:850;font-size:12px;padding:5px 10px;border-radius:19px;color:#135a73;background:#e5f3f8;margin-bottom:9px}
+.cols{display:grid;grid-template-columns:minmax(280px,.86fr) minmax(0,1.14fr);gap:20px}
+.plot{width:100%;height:auto;max-height:440px;border:1px solid #ccdae8;border-radius:11px;background:#f9fcff}
+label{display:block;font-size:14px;font-weight:790;margin:13px 0 4px}output{font-weight:850;color:#145f78}
+input[type=range]{width:100%;min-height:26px;accent-color:#15738b;cursor:pointer}
+button{font:inherit;font-size:14px;font-weight:780;border:1px solid #a9bece;background:white;color:var(--ink);border-radius:9px;padding:9px 12px;cursor:pointer}
+button:hover{background:#e8f3f9}.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.primary:hover{background:#2b4665}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}
+.metric{border:1px solid #d4e5ee;background:#edf5f9;border-radius:9px;padding:10px}.metric span{display:block;font-size:12px;color:var(--muted)}
+.metric strong{display:block;font-size:19px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.formula{padding:10px 13px;background:#eaf3f8;border-radius:9px;font-weight:800;margin:11px 0;font-size:17px;overflow-wrap:anywhere}
+.result{background:#fff7e7;border-left:3px solid #c29558;padding:11px 13px;border-radius:8px;margin:13px 0;font-size:14px}
+.correct{background:#eaf6f0;border-left:3px solid #2b9171;padding:10px 13px;border-radius:8px;margin:11px 0}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:15px}.info{font-size:13px;color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:#526579}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:middle;margin-right:5px}
+.barline{background:#d9e5ee;height:16px;border-radius:12px;overflow:hidden;border:1px solid #bdcede}.barfill{height:100%;width:0;background:linear-gradient(90deg,#1c8b97,#e3b869)}
+.links{display:flex;flex-wrap:wrap;gap:17px;margin-top:18px}footer{background:var(--navy);color:#cbd8e6;text-align:center;padding:20px;font-size:13px}
+@media(max-width:850px){.cols,.twocol{grid-template-columns:1fr}}@media(max-width:530px){.card{padding:14px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric strong{font-size:17px}}
+@media print{header,footer,.toolbar{display:none!important}.card{break-inside:avoid;box-shadow:none}}
+</style><link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-04-artificial-gravity-engine.js" defer></script>
+<script src="./unit-04-artificial-gravity-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head><body><header><div class="bar">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a>
+<nav aria-label="Learning navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-artificial-gravity-study.html">Part 3 Study Guide</a><a href="./unit-04-centripetal-lab.html">Part 2 Lab</a></nav>
+</div></header>
+<main><div class="eyebrow">Grade XI · Unit 4 Part 3 · Source-based interactive physics</div>
+<h1>Weightlessness &amp; Artificial Gravity Laboratory</h1>
+<p class="lead">Compare apparent weightlessness during orbital free fall with the gravity-like sensation of standing at the outer rim of a rotating station. Adjust radius and rpm to investigate how much supporting force a rotating floor would provide.</p>
+<div class="notice"><strong>Teaching model only:</strong> Orbital motion is a qualitative free-fall illustration, <strong>not to spatial scale</strong>. The rotating habitat is an <strong>ideal rigid ring</strong> with no external gravitational field. Rotation animation is deliberately time-scaled for projector visibility; numerical values reflect the selected <strong>actual</strong> rpm. This does not predict station structural safety, human comfort, Coriolis effects or orbital trajectories, and it saves no student data.</div>
+<section class="card" id="freefall" aria-labelledby="freefallHeading">
+<span class="tag">P-11-B-16 · SUMMATIVE</span><h2 id="freefallHeading">1. Astronaut and satellite: why do they float?</h2>
+<div class="cols"><div>
+<p>Gravity does not vanish in an orbit. In the simplified circular-orbit model, Earth pulls both the satellite and the astronaut inward while they fall together around Earth.</p>
+<div class="correct"><strong>Gravitational force:</strong> Present and directed toward Earth's centre.</div>
+<div class="correct"><strong>Apparent weight:</strong> Approximately zero for a freely floating astronaut, because the normal support force from the cabin floor is approximately zero.</div>
+<p>This is <strong>free fall</strong>, not a cancellation of gravity by a real outward force. A floating astronaut is still being accelerated by gravity.</p>
+<p class="info">Illustration only; relative sizes, orbit altitude and orbital period are not physical predictions.</p>
+</div><div>
+<svg class="plot" viewBox="0 0 520 350" role="img" aria-label="Earth and a satellite on a schematic circular orbit, with an arrow for gravity toward Earth; astronaut floats inside without floor support.">
+<title>Weightlessness is free fall while gravity points toward Earth</title>
+<defs><marker id="earthArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#b87941"/></marker></defs>
+<circle cx="186" cy="175" r="98" fill="none" stroke="#9cb2c5" stroke-width="2" stroke-dasharray="7 6"/>
+<circle cx="186" cy="175" r="48" fill="#2a709c" stroke="#195677" stroke-width="3"/>
+<path d="M168 151 l18 -13 16 10 8 23 -16 8 -5 22 -19 -13 -6 -18 Z" fill="#84bb89" opacity=".9"/>
+<text x="186" y="236" text-anchor="middle" fill="#2a5875" font-size="13" font-weight="800">Earth (schematic)</text>
+<g transform="translate(284 175)">
+<rect x="-25" y="-18" width="50" height="36" rx="7" fill="#eef5fb" stroke="#55718e" stroke-width="3"/>
+<rect x="-45" y="-10" width="18" height="20" fill="#bbd2e2" stroke="#55718e"/>
+<rect x="27" y="-10" width="18" height="20" fill="#bbd2e2" stroke="#55718e"/>
+<circle cx="0" cy="0" r="8" fill="#cc944b"/><path d="M0 7 v8 m0 -3 l-9 5 m9 -5 l9 5" stroke="#986b42" stroke-width="2" fill="none"/>
+</g>
+<line x1="270" y1="174" x2="226" y2="174" stroke="#b87941" stroke-width="4" marker-end="url(#earthArrow)"/>
+<text x="280" y="139" text-anchor="middle" font-size="13" fill="#b17036" font-weight="800">Gravity inward</text>
+<text x="270" y="215" text-anchor="middle" font-size="12" fill="#355a74">Free-falling together</text>
+<text x="258" y="299" text-anchor="middle" fill="#49667f" font-size="13">Floor support N ≈ 0 for freely floating crew</text>
+</svg></div></div>
+</section>
+<section class="card" id="ring" aria-labelledby="stationHeading">
+<span class="tag">P-11-B-17 · SUMMATIVE</span><h2 id="stationHeading">2. Spin a ring to create a gravity-like sensation</h2>
+<p>The station floor provides a <strong>real inward normal force</strong> on a co-rotating person; the person experiences a weight-like sensation toward the outer rim. No extra real outward force is added in an inertial frame.</p>
+<div class="toolbar" role="group" aria-label="Choose a textbook or exploratory rotation preset">
+<button type="button" data-preset="example44">NBF Example 4.4</button>
+<button type="button" data-preset="assignment44">NBF Assignment 4.4</button>
+<button type="button" data-preset="small">Small ring, Earth-like target</button>
+<button type="button" id="earthTarget" class="primary">Match Earth-like 9.8 m/s²</button>
+</div>
+<div class="cols"><div>
+<label for="stationRadius">Station radius: <output id="stationRadiusValue" for="stationRadius">1500 m</output></label>
+<input id="stationRadius" type="range" min="1" max="2000" step="any" value="1500">
+<label for="stationRPM">Rotation rate: <output id="stationRPMValue" for="stationRPM">0.77 rpm</output></label>
+<input id="stationRPM" type="range" min="0" max="30" step="any" value=".772">
+<label for="personMass">Person mass: <output id="personMassValue" for="personMass">70 kg</output></label>
+<input id="personMass" type="range" min="40" max="120" step="1" value="70">
+<div class="toolbar"><button id="spin" class="primary" type="button">Play station rotation</button><button id="resetSpin" type="button">Reset marker position</button></div>
+<p id="stationStatus" class="result" role="status">Choose a preset or adjust the sliders.</p>
+</div><div>
+<svg id="ringPlot" class="plot" viewBox="0 0 520 362" role="img" aria-label="Ideal rotating ring station viewed from above, occupant at outer rim, with normal contact force pointing inward toward axis">
+<title>Artificial gravity: inward floor normal is the real centripetal force</title>
+<defs><marker id="normalArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#bd7842"/></marker></defs>
+<circle cx="247" cy="178" r="124" fill="none" stroke="#557c97" stroke-width="19"/>
+<circle cx="247" cy="178" r="103" fill="#f0f7fa" stroke="#90aec1" stroke-dasharray="5 6" stroke-width="2"/>
+<circle cx="247" cy="178" r="6" fill="#254e6c"/>
+<g id="rotatingGroup">
+<line x1="247" y1="178" x2="361" y2="178" stroke="#9db5c6" stroke-dasharray="5 5" stroke-width="2"/>
+<circle cx="358" cy="178" r="11" fill="#e3b475" stroke="#80633e" stroke-width="2"/>
+</g>
+<line id="floorNormalArrow" x1="358" y1="178" x2="288" y2="178" stroke="#bd7842" stroke-width="4" marker-end="url(#normalArrow)"/>
+<text id="normalLabel" x="286" y="155" fill="#ac6d36" font-size="14" font-weight="800">Floor normal (inward)</text>
+<text x="247" y="24" text-anchor="middle" fill="#2a556e" font-size="14" font-weight="800">View along the rotation axis</text>
+<text x="247" y="329" text-anchor="middle" fill="#4b6781" font-size="12">Schematic ring, NOT drawn to its selected metre radius</text>
+</svg>
+<div class="legend"><span><i class="dot" style="background:#bd7842"></i>Inward floor normal force</span><span><i class="dot" style="background:#557c97"></i>Rotating outer floor</span></div>
+</div></div>
+<div class="metrics">
+<div class="metric"><span>Artificial acceleration at rim</span><strong id="artificialAcceleration">—</strong></div>
+<div class="metric"><span>Acceleration relative to Earth g</span><strong id="gRatio">—</strong></div>
+<div class="metric"><span>Angular velocity ω</span><strong id="omega">—</strong></div>
+<div class="metric"><span>Rim tangential speed</span><strong id="rimSpeed">—</strong></div>
+<div class="metric"><span>One-revolution period T</span><strong id="period">—</strong></div>
+<div class="metric"><span>Frequency f</span><strong id="frequency">—</strong></div>
+<div class="metric"><span>Floor normal on person</span><strong id="normalForce">—</strong></div>
+</div>
+<div class="formula">ω = rpm × (2π/60) &nbsp; | &nbsp; a = ω²R &nbsp; | &nbsp; N = ma &nbsp; | &nbsp; T = 60/rpm</div>
+<h3>Compare with Earth gravity</h3><p class="info">Bar shows artificial acceleration as a proportion of 2g. The fill caps at 2g for readability, while numeric values show the full result.</p>
+<div class="barline" role="img" id="gravityBar" aria-label="Artificial gravity ratio bar"><div class="barfill" id="gravityFill"></div></div>
+<p class="result" id="gravityExplanation">At the rim, floor contact creates an apparent weight. This does not replace real gravity outside the station.</p>
+</section>
+<section class="card" id="comparison"><span class="tag">NBF EXAMPLE 4.4 AND ASSIGNMENT 4.4</span><h2>3. Check the textbook calculations</h2>
+<div class="twocol"><div><h3>Example 4.4 — radius 1500 m</h3>
+<p>Earth-like target 9.8 m/s²: ω ≈ <strong>0.0808 rad/s</strong>, T ≈ <strong>77.73 s</strong>, f ≈ <strong>0.013 Hz</strong>, rpm ≈ <strong>0.772</strong>. The textbook rounds ω to 0.08 rad/s.</p>
+</div><div><h3>Assignment 4.4 — 20 rpm, 8 m diameter</h3>
+<p>The radius is <strong>4 m</strong>; ω ≈ <strong>2.094 rad/s</strong>. The artificial acceleration is ≈ <strong>17.55 m/s²</strong>, or <strong>1.79 g</strong>. This is a mathematical exercise, not an engineering recommendation.</p></div></div>
+<p class="info">Primary source: NBF Grade XI Physics Unit 4 §4.6–4.7, printed pp.71–73, Example 4.4 p.73; supplementary Assignment 4.4 p.74. P-11-B-16 and B-17 are summative in the supplied FBISE HSSC-I framework.</p>
+<div class="links"><a href="./unit-04-artificial-gravity-study.html">Read complete Part 3 study guide</a><a href="./unit-04.html">Return to Unit 4 Learning Desk</a><a href="./unit-04-centripetal-lab.html">Review Part 2 force lab</a></div>
+</section></main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 Part 3</footer>
+</body></html>
