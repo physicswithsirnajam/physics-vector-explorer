@@ -140,10 +140,10 @@ approx((1-3)*4/(1+3),-2);
 // Validate full 80-MCQ page without mutating the original 40-MCQ page/script.
 assert.ok(stage1Page.includes('src="./unit-03-mcq-practice.js"'));
 assert.ok(stage1UI.includes('unit-03-stage1-practice.json'));
-const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
-assert.equal(ids.length,new Set(ids).size,"Repeated HTML controls");
+const htmlIds=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
+assert.equal(htmlIds.length,new Set(htmlIds).size,"Repeated HTML controls");
 for(const id of ["bankStatus","check","showKey","reset","printQuestions","printKey","questionArea","answerKey","solutionList","result"]){
- assert.ok(ids.includes(id),"Missing control "+id);
+ assert.ok(htmlIds.includes(id),"Missing control "+id);
 }
 assert.ok(ui.includes('source="../question-bank/grade-11/unit-03-stage2-80-practice.json"'));
 assert.ok(ui.includes("data.questions.length!==80"));
