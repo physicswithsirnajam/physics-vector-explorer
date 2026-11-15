@@ -39,7 +39,7 @@ h3{font-size:18px;margin:10px 0}
 .response-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 13px}
 .response-item{background:#fff;border:1px solid #d4e0ea;padding:7px 8px;border-radius:7px;font-size:12px}
 .response-item strong{margin-right:5px}
-.response-item .dots{white-space:nowrap;letter-spacing:2px;color:#254d67}
+.response-item .dots{white-space:normal;overflow-wrap:anywhere;letter-spacing:1px;color:#254d67}
 .key-summary{border-collapse:collapse;width:100%;margin:12px 0}
 .key-summary td,.key-summary th{border:1px solid #aac0d1;padding:8px;text-align:left}
 .key-summary th{background:#e8f2f9}
