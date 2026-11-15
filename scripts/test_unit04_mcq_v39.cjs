@@ -109,13 +109,13 @@ const answer=n=>{
  return q.options.find(o=>o.id===q.correctOptionId).text;
 };
 const key={
- 1:"π rad",2:"π/2 rad",3:"One complete revolution",6:"3.0 m",7:"2 rad/s",
+ 1:"π rad",2:"π/2 rad",3:"Three-quarters of a revolution",6:"3.0 m",7:"2 rad/s",
  8:"10 m/s",9:"2 rad/s²",10:"π rad/s",11:"2.0 m/s²",12:"16 rad/s",
  13:"6 rad/s",14:"16 rad",15:"6 rad/s",16:"5 s",17:"15 rad",18:"25 rad",
- 22:"16 N",23:"1000 N",24:"9",25:"24 N",38:"77.7 s",
+ 22:"16 N",23:"1000 N",24:"9",25:"24 N",38:"62.8 s",
  39:"18 kg m²",40:"0.50 kg m²",42:"2.0 kg m²/s",
  44:"10 N m",45:"3 rad/s²",46:"−3 N m",
- 57:"2π rad",58:"20.54 rad/s",59:"−0.94 rad/s²",60:"About 22 s",
+ 57:"3π rad",58:"20.54 rad/s",59:"−0.94 rad/s²",60:"About 22 s",
  62:"17 m",63:"8.47 m/s²",65:"2592 N",67:"16.4°",
  69:"0.17298 kg m²",70:"20.83 kg m²/s",71:"−2.67 N m",
  72:"−15.44 rad/s²",74:"0.0808 rad/s",75:"77.7 s",
@@ -133,6 +133,7 @@ near(L,20.83,.01);
 near(-L/7.8,-2.67,.01);
 near(-w/7.8,-15.44,.01);
 near(2*Math.PI*Math.sqrt(1500/9.8),77.73,.01);
+near(2*Math.PI*Math.sqrt(980/9.8),62.83,.01);
 near((3+4*1.2**2)/(3+4*.3**2)*30,78.2,.1);
 near(Math.pow(6.8/.331,2)/(-2*74.8/.331),-.934,.002);
 // 12 SLOs are Unit 4; do not contaminate with formative B11 or collision B12/B13.

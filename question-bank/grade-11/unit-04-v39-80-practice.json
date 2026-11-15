@@ -122,7 +122,7 @@
       "id": "XI-U04-MCQ-0003",
       "sourceQuestionNumber": 3,
       "type": "single_choice",
-      "stem": "An angle of 2π radians represents:",
+      "stem": "An angular displacement of 3π/2 radians is equivalent to:",
       "options": [
         {
           "id": "A",
@@ -130,11 +130,11 @@
         },
         {
           "id": "B",
-          "text": "One complete revolution"
+          "text": "Three-quarters of a revolution"
         },
         {
           "id": "C",
-          "text": "One quarter revolution"
+          "text": "One-quarter of a revolution"
         },
         {
           "id": "D",
@@ -142,7 +142,7 @@
         }
       ],
       "correctOptionId": "B",
-      "explanation": "A full turn corresponds to 360° = 2π rad.",
+      "explanation": "One complete revolution is 2π rad, so (3π/2)/(2π) = 3/4 of a revolution, or 270°.",
       "grade": 11,
       "unit": 4,
       "topic": "Angles in Radians",
@@ -151,7 +151,7 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
-      "cognitiveLevel": "Knowledge",
+      "cognitiveLevel": "Understanding",
       "difficulty": "Foundation",
       "source": {
         "file": "11 Physics Book(10).pdf",
@@ -1202,27 +1202,27 @@
       "id": "XI-U04-MCQ-0027",
       "sourceQuestionNumber": 27,
       "type": "single_choice",
-      "stem": "On a level, unbanked road, a car rounds a bend without slipping. Which force supplies the required horizontal inward resultant?",
+      "stem": "A car on a level, unbanked bend doubles its speed while its mass and turning radius stay unchanged. What happens to the required inward tyre–road friction?",
       "options": [
         {
           "id": "A",
-          "text": "A horizontal part of the road's vertical normal force"
+          "text": "It stays unchanged because the bend radius is fixed"
         },
         {
           "id": "B",
-          "text": "Air buoyancy"
+          "text": "It is halved because the turning time is shorter"
         },
         {
           "id": "C",
-          "text": "The car's weight"
+          "text": "It doubles in proportion to speed"
         },
         {
           "id": "D",
-          "text": "Static tyre–road friction"
+          "text": "It becomes four times as large; limited grip may cause slipping"
         }
       ],
       "correctOptionId": "D",
-      "explanation": "Static friction can provide the lateral inward force while a car follows an unbanked turn.",
+      "explanation": "On a level unbanked road, static tyre–road friction supplies the inward resultant F = mv²/r. Doubling v at fixed m and r requires four times the frictional force; if that exceeds available static friction, the car cannot follow the bend.",
       "grade": 11,
       "unit": 4,
       "topic": "Flat-Road Turning",
@@ -1247,27 +1247,27 @@
       "id": "XI-U04-MCQ-0028",
       "sourceQuestionNumber": 28,
       "type": "single_choice",
-      "stem": "On an ideally frictionless banked bend, which contact-force component provides inward centripetal force?",
+      "stem": "On an ideal frictionless banked bend with a nonzero bank angle θ, why is the normal reaction N larger than the car's weight mg?",
       "options": [
         {
           "id": "A",
-          "text": "Air resistance alone"
+          "text": "The normal reaction acts horizontally and cannot support weight"
         },
         {
           "id": "B",
-          "text": "The horizontal component of weight"
+          "text": "The horizontal component of N balances the car's weight"
         },
         {
           "id": "C",
-          "text": "The horizontal component of the normal reaction"
+          "text": "Only N cosθ balances mg; N sinθ provides inward force"
         },
         {
           "id": "D",
-          "text": "The vertical component of normal reaction"
+          "text": "N always equals mg on a banked road"
         }
       ],
       "correctOptionId": "C",
-      "explanation": "The bank's normal force is tilted; its horizontal component supplies inward force while its vertical component balances weight.",
+      "explanation": "With no vertical acceleration, N cosθ = mg. The normal is tilted, so N = mg/cosθ > mg for a nonzero bank angle; N sinθ supplies the inward centripetal force.",
       "grade": 11,
       "unit": 4,
       "topic": "Banked Roads",
@@ -1697,7 +1697,7 @@
       "id": "XI-U04-MCQ-0038",
       "sourceQuestionNumber": 38,
       "type": "single_choice",
-      "stem": "An ideal ring station of radius 1500 m provides artificial acceleration 9.8 m/s². Its rotation period is approximately:",
+      "stem": "An ideal ring-shaped station of radius 980 m is designed for an artificial acceleration of 9.8 m/s² at its rim. Its rotation period is approximately:",
       "options": [
         {
           "id": "A",
@@ -1705,7 +1705,7 @@
         },
         {
           "id": "B",
-          "text": "77.7 s"
+          "text": "62.8 s"
         },
         {
           "id": "C",
@@ -1717,7 +1717,7 @@
         }
       ],
       "correctOptionId": "B",
-      "explanation": "T = 2π√(R/g) = 2π√(1500/9.8) ≈ 77.7 s.",
+      "explanation": "For an ideal rotating ring, T = 2π√(R/a) = 2π√(980/9.8) = 20π ≈ 62.8 s.",
       "grade": 11,
       "unit": 4,
       "topic": "Artificial Gravity Period",
@@ -2122,7 +2122,7 @@
         }
       ],
       "correctOptionId": "A",
-      "explanation": "For fixed I, α = τ/I, so twice the inertia gives half the angular acceleration.",
+      "explanation": "For a rigid rotor about a fixed axis, α = τ/I. Holding the same net torque while doubling the moment of inertia reduces the angular acceleration to one half.",
       "grade": 11,
       "unit": 4,
       "topic": "Torque and Inertia Scaling",
@@ -2552,7 +2552,7 @@
       "id": "XI-U04-MCQ-0057",
       "sourceQuestionNumber": 57,
       "type": "single_choice",
-      "stem": "The angular displacement corresponding to one complete revolution of this bicycle tyre is:",
+      "stem": "If the bicycle tyre turns through 1.5 complete revolutions, what is its angular displacement in radians?",
       "options": [
         {
           "id": "A",
@@ -2560,7 +2560,7 @@
         },
         {
           "id": "B",
-          "text": "2π rad"
+          "text": "3π rad"
         },
         {
           "id": "C",
@@ -2568,11 +2568,11 @@
         },
         {
           "id": "D",
-          "text": "1 rad"
+          "text": "π/2 rad"
         }
       ],
       "correctOptionId": "B",
-      "explanation": "One complete revolution always subtends 360° = 2π rad.",
+      "explanation": "Each complete revolution is 2π rad; 1.5 revolutions correspond to 1.5 × 2π = 3π rad.",
       "grade": 11,
       "unit": 4,
       "topic": "Radians and Revolutions",
@@ -2581,7 +2581,7 @@
       ],
       "assessmentClassification": "summative-theory",
       "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; source-based practice, independent teacher QC pending",
-      "cognitiveLevel": "Knowledge",
+      "cognitiveLevel": "Understanding",
       "difficulty": "Foundation",
       "source": {
         "file": "11 Physics Book(10).pdf",
@@ -2719,7 +2719,7 @@
         }
       ],
       "correctOptionId": "D",
-      "explanation": "At uniform deceleration, time = 2s/v₀ = (2×74.8)/6.80 = 22.0 s; the textbook reports about 21.9 s using rounded intermediate values.",
+      "explanation": "For uniform deceleration from 6.80 m/s to rest, the average forward speed is 3.40 m/s. Hence t = s/vavg = 74.8/3.40 = 22.0 s (about 22 s).",
       "grade": 11,
       "unit": 4,
       "topic": "Rotational Stopping Time",
@@ -3336,27 +3336,27 @@
       "id": "XI-U04-MCQ-0073",
       "sourceQuestionNumber": 73,
       "type": "single_choice",
-      "stem": "Why is the astronaut freely floating inside the orbiting spacecraft?",
+      "stem": "For the freely floating astronaut inside the orbiting spacecraft, which force is approximately zero in the ideal free-fall model?",
       "options": [
         {
           "id": "A",
-          "text": "Astronaut and spacecraft are falling together with nearly no normal support"
+          "text": "The supporting normal contact force from the spacecraft floor"
         },
         {
           "id": "B",
-          "text": "Earth's gravitational attraction is completely absent"
+          "text": "Earth's gravitational force on the astronaut"
         },
         {
           "id": "C",
-          "text": "The astronaut has no mass"
+          "text": "The total inward gravitational force required for the orbit"
         },
         {
           "id": "D",
-          "text": "The astronaut has no inward acceleration"
+          "text": "All forces on the astronaut, including gravity"
         }
       ],
       "correctOptionId": "A",
-      "explanation": "In ideal orbital free fall, gravity acts on both astronaut and spacecraft, while contact support is nearly zero.",
+      "explanation": "Astronaut and spacecraft accelerate together under gravity. With essentially no supporting contact, the floor's normal force is approximately zero even though Earth's gravity is not.",
       "grade": 11,
       "unit": 4,
       "topic": "Apparent Weightlessness",
