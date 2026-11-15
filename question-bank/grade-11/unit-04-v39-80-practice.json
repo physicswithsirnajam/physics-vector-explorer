@@ -1,0 +1,2545 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-UNIT-04-V39",
+  "bankVersion": "v39-unit04-80-fbise-provisional-2026-11-15",
+  "title": "Grade XI Physics – Unit 4: Rotational and Circular Motion — Full 80-MCQ Summative Practice",
+  "status": "draft-incomplete",
+  "sourceDocument": "NBF Grade XI Physics, Unit 4 pp.53–76; FBISE Physics HSSC-I Assessment Framework pp.3–4; Unit 4 SLO audit V38",
+  "sourceSection": "Draft original 56 independent source-grounded practice MCQs, pending addition of six four-question scenarios",
+  "limitations": [
+    "Source-adapted practice only, teacher scientific review and browser/print QC pending; not an official FBISE exam.",
+    "Only the 12 Unit 4 summative SLOs are included; B-11 is formative and B-12/B-13 are collision SLOs outside Unit 4.",
+    "No student results stored or Firestore grades written by this public practice."
+  ],
+  "structure": {
+    "straight": 56,
+    "scenario": 24,
+    "scenarioSets": 6,
+    "scenarioQuestionsPerSet": 4,
+    "marksPerQuestion": 0.5,
+    "totalPracticeMarks": 40,
+    "modeledAfter": "FBISE HSSC-I Section A boxed MCQ 56+24 practice, but content is Unit 4 only"
+  },
+  "questions": [
+    {
+      "id": "XI-U04-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "An angular displacement of 180° is equal to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "π rad"
+        },
+        {
+          "id": "B",
+          "text": "2π rad"
+        },
+        {
+          "id": "C",
+          "text": "π/2 rad"
+        },
+        {
+          "id": "D",
+          "text": "π/4 rad"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A half-turn is π radians because 360° = 2π rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angles in Radians",
+      "sloCodes": [
+        "P-11-B-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "Convert an angle of 90° into radians.",
+      "options": [
+        {
+          "id": "A",
+          "text": "π/2 rad"
+        },
+        {
+          "id": "B",
+          "text": "π rad"
+        },
+        {
+          "id": "C",
+          "text": "2π rad"
+        },
+        {
+          "id": "D",
+          "text": "π/3 rad"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "θ(rad) = θ(degrees)×π/180 = 90π/180 = π/2.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angles in Radians",
+      "sloCodes": [
+        "P-11-B-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "An angle of 2π radians represents:",
+      "options": [
+        {
+          "id": "A",
+          "text": "One complete revolution"
+        },
+        {
+          "id": "B",
+          "text": "Half a revolution"
+        },
+        {
+          "id": "C",
+          "text": "One quarter revolution"
+        },
+        {
+          "id": "D",
+          "text": "Two complete revolutions"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A full turn corresponds to 360° = 2π rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angles in Radians",
+      "sloCodes": [
+        "P-11-B-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "One radian is the angle at a circle's centre subtended by an arc whose length is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Equal to the radius"
+        },
+        {
+          "id": "B",
+          "text": "Twice the radius"
+        },
+        {
+          "id": "C",
+          "text": "Equal to the diameter times π"
+        },
+        {
+          "id": "D",
+          "text": "Half the radius"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Since θ = s/r, an arc s = r subtends θ = 1 rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angles in Radians",
+      "sloCodes": [
+        "P-11-B-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "An angle of 3.0 radians is approximately how many degrees?",
+      "options": [
+        {
+          "id": "A",
+          "text": "172°"
+        },
+        {
+          "id": "B",
+          "text": "57.3°"
+        },
+        {
+          "id": "C",
+          "text": "270°"
+        },
+        {
+          "id": "D",
+          "text": "108°"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "3×180/π ≈ 171.9°, rounded to 172°.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angles in Radians",
+      "sloCodes": [
+        "P-11-B-07"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "A point moves through 1.5 rad on a circle of radius 2.0 m. Its arc displacement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.0 m"
+        },
+        {
+          "id": "B",
+          "text": "2.0 m"
+        },
+        {
+          "id": "C",
+          "text": "4.0 m"
+        },
+        {
+          "id": "D",
+          "text": "0.75 m"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "s = rθ = 2.0×1.5 = 3.0 m.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Displacement",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 57,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "A wheel turns through 8 rad in 4 s at a constant angular velocity. The angular velocity is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 rad/s"
+        },
+        {
+          "id": "B",
+          "text": "0.5 rad/s"
+        },
+        {
+          "id": "C",
+          "text": "4 rad/s"
+        },
+        {
+          "id": "D",
+          "text": "32 rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ω = Δθ/Δt = 8/4 = 2 rad/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Velocity",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "A rim point is 2.0 m from an axis and has angular speed 5 rad/s. Its tangential speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 m/s"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m/s"
+        },
+        {
+          "id": "C",
+          "text": "7 m/s"
+        },
+        {
+          "id": "D",
+          "text": "20 m/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v = rω = 2×5 = 10 m/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Linear and Angular Velocity",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 57,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "A fan's angular speed rises uniformly from 6 to 14 rad/s in 4 s. Its angular acceleration is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 rad/s²"
+        },
+        {
+          "id": "B",
+          "text": "5 rad/s²"
+        },
+        {
+          "id": "C",
+          "text": "3.5 rad/s²"
+        },
+        {
+          "id": "D",
+          "text": "8 rad/s²"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "α = (14−6)/4 = 2 rad/s².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Acceleration",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 56,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "A rotating object completes one revolution in 2.0 s. Its angular speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "π rad/s"
+        },
+        {
+          "id": "B",
+          "text": "2π rad/s"
+        },
+        {
+          "id": "C",
+          "text": "π/2 rad/s"
+        },
+        {
+          "id": "D",
+          "text": "4π rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ω = 2π/T = 2π/2 = π rad/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Period and Angular Velocity",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 55,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "A point at radius 0.40 m has angular acceleration 5.0 rad/s². Its tangential acceleration magnitude is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 m/s²"
+        },
+        {
+          "id": "B",
+          "text": "0.08 m/s²"
+        },
+        {
+          "id": "C",
+          "text": "12.5 m/s²"
+        },
+        {
+          "id": "D",
+          "text": "5.4 m/s²"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "aₜ = rα = 0.40×5.0 = 2.0 m/s².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Tangential Acceleration",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "A point on a rotating rim has tangential speed 8.0 m/s at radius 0.50 m. The angular speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 rad/s"
+        },
+        {
+          "id": "B",
+          "text": "4 rad/s"
+        },
+        {
+          "id": "C",
+          "text": "8 rad/s"
+        },
+        {
+          "id": "D",
+          "text": "0.0625 rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ω = v/r = 8.0/0.50 = 16 rad/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Linear and Angular Velocity",
+      "sloCodes": [
+        "P-11-B-08"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 57,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "A wheel starts from rest and accelerates uniformly at 2 rad/s² for 3 s. Its final angular speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 rad/s"
+        },
+        {
+          "id": "B",
+          "text": "3 rad/s"
+        },
+        {
+          "id": "C",
+          "text": "1.5 rad/s"
+        },
+        {
+          "id": "D",
+          "text": "12 rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ω = ω₀ + αt = 0 + 2×3 = 6 rad/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Uniform Angular Acceleration",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "A rotor has initial angular speed 2 rad/s and constant angular acceleration 1 rad/s² for 4 s. Its angular displacement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 rad"
+        },
+        {
+          "id": "B",
+          "text": "8 rad"
+        },
+        {
+          "id": "C",
+          "text": "12 rad"
+        },
+        {
+          "id": "D",
+          "text": "24 rad"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "θ = ω₀t + ½αt² = 2×4 + ½×1×16 = 16 rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Displacement Equations",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "A wheel starts from rest with α = 3 rad/s² and turns through 6 rad. Its final angular speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 rad/s"
+        },
+        {
+          "id": "B",
+          "text": "18 rad/s"
+        },
+        {
+          "id": "C",
+          "text": "3 rad/s"
+        },
+        {
+          "id": "D",
+          "text": "9 rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ω² = ω₀² + 2αθ = 0 + 2×3×6 = 36; ω = 6 rad/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Velocity Equations",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "A motor initially turns at 20 rad/s and has constant angular acceleration −4 rad/s². The time to stop is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 s"
+        },
+        {
+          "id": "B",
+          "text": "4 s"
+        },
+        {
+          "id": "C",
+          "text": "6 s"
+        },
+        {
+          "id": "D",
+          "text": "80 s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "0 = 20 − 4t, so t = 5 s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Stopping Rotation",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "A wheel rotates steadily at 3 rad/s for 5 s. Its angular displacement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 rad"
+        },
+        {
+          "id": "B",
+          "text": "8 rad"
+        },
+        {
+          "id": "C",
+          "text": "0.6 rad"
+        },
+        {
+          "id": "D",
+          "text": "20 rad"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "At constant angular speed, θ = ωt = 3×5 = 15 rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Uniform Angular Velocity",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "A rotor slows from 10 rad/s to rest at a constant angular acceleration of −2 rad/s². Its angular displacement before stopping is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "25 rad"
+        },
+        {
+          "id": "B",
+          "text": "50 rad"
+        },
+        {
+          "id": "C",
+          "text": "10 rad"
+        },
+        {
+          "id": "D",
+          "text": "20 rad"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "0² = 10² + 2(−2)θ, so θ = 25 rad.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Braking Displacement",
+      "sloCodes": [
+        "P-11-B-09"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 58,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "A particle moves around a circle at constant speed. Why is its acceleration not zero?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its velocity direction changes continuously"
+        },
+        {
+          "id": "B",
+          "text": "Its speed must be increasing"
+        },
+        {
+          "id": "C",
+          "text": "Its mass increases as it turns"
+        },
+        {
+          "id": "D",
+          "text": "Its angular speed must always decrease"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Acceleration is the rate of change of velocity; velocity changes direction even when speed stays constant.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Curved Motion",
+      "sloCodes": [
+        "P-11-B-10"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 59,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "A net force always perpendicular to the instantaneous velocity can change the particle's:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Direction of motion without necessarily changing speed"
+        },
+        {
+          "id": "B",
+          "text": "Mass but not momentum"
+        },
+        {
+          "id": "C",
+          "text": "Speed only, without changing direction"
+        },
+        {
+          "id": "D",
+          "text": "Gravitational constant"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A perpendicular inward net force redirects the velocity; it does no instantaneous work on the particle in uniform circular motion.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Perpendicular Force",
+      "sloCodes": [
+        "P-11-B-10"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 60,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "A stone moves in a horizontal circle on a string. If the string breaks, its instantaneous direction immediately after release is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Along the tangent to the circle"
+        },
+        {
+          "id": "B",
+          "text": "Directly toward the centre"
+        },
+        {
+          "id": "C",
+          "text": "Directly outward along the radius"
+        },
+        {
+          "id": "D",
+          "text": "Along the same circular path without a force"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The released stone retains its instantaneous tangential velocity when the required inward tension disappears.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Tangential Release",
+      "sloCodes": [
+        "P-11-B-10"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 62,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "A 2 kg body moves in a circle at 4 m/s with radius 2 m. Its required inward net force is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 N"
+        },
+        {
+          "id": "B",
+          "text": "8 N"
+        },
+        {
+          "id": "C",
+          "text": "32 N"
+        },
+        {
+          "id": "D",
+          "text": "4 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F = mv²/r = 2×16/2 = 16 N.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Centripetal Force",
+      "sloCodes": [
+        "P-11-B-14"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "A 500 kg object follows a curve of radius 50 m at 10 m/s. The required centripetal force is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1000 N"
+        },
+        {
+          "id": "B",
+          "text": "500 N"
+        },
+        {
+          "id": "C",
+          "text": "5000 N"
+        },
+        {
+          "id": "D",
+          "text": "100 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F = mv²/r = 500×100/50 = 1000 N.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Centripetal Force",
+      "sloCodes": [
+        "P-11-B-14"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "For the same mass and turning radius, tripling tangential speed changes the required centripetal force by a factor of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1/3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F ∝ v² at fixed m and r; a factor of 3 in speed produces 3² = 9 times the force.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Speed-Squared Dependence",
+      "sloCodes": [
+        "P-11-B-14"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "A 2 kg object rotates at angular speed 2 rad/s, radius 3 m. Its required inward net force is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "24 N"
+        },
+        {
+          "id": "B",
+          "text": "12 N"
+        },
+        {
+          "id": "C",
+          "text": "6 N"
+        },
+        {
+          "id": "D",
+          "text": "48 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F = mrω² = 2×3×(2²) = 24 N.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular-Form Centripetal Force",
+      "sloCodes": [
+        "P-11-B-14"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "The SI unit of centripetal force is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "newton (N)"
+        },
+        {
+          "id": "B",
+          "text": "kg m²"
+        },
+        {
+          "id": "C",
+          "text": "rad/s²"
+        },
+        {
+          "id": "D",
+          "text": "newton metre (N m)"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Centripetal force is a resultant force and is measured in newtons.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Centripetal Force",
+      "sloCodes": [
+        "P-11-B-14"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "On a level, unbanked road, a car rounds a bend without slipping. Which force supplies the required horizontal inward resultant?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Static tyre–road friction"
+        },
+        {
+          "id": "B",
+          "text": "The car's weight"
+        },
+        {
+          "id": "C",
+          "text": "Air buoyancy"
+        },
+        {
+          "id": "D",
+          "text": "A horizontal part of the road's vertical normal force"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Static friction can provide the lateral inward force while a car follows an unbanked turn.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Flat-Road Turning",
+      "sloCodes": [
+        "P-11-B-15"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 61,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "On an ideally frictionless banked bend, which contact-force component provides inward centripetal force?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The horizontal component of the normal reaction"
+        },
+        {
+          "id": "B",
+          "text": "The horizontal component of weight"
+        },
+        {
+          "id": "C",
+          "text": "The vertical component of normal reaction"
+        },
+        {
+          "id": "D",
+          "text": "Air resistance alone"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The bank's normal force is tilted; its horizontal component supplies inward force while its vertical component balances weight.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Banked Roads",
+      "sloCodes": [
+        "P-11-B-15"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 62,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "An object whirled horizontally on a taut string has tension as its only horizontal force. The centripetal resultant is provided by:",
+      "options": [
+        {
+          "id": "A",
+          "text": "String tension toward the centre"
+        },
+        {
+          "id": "B",
+          "text": "An independent outward centrifugal contact force"
+        },
+        {
+          "id": "C",
+          "text": "Buoyancy away from the centre"
+        },
+        {
+          "id": "D",
+          "text": "Air pressure alone"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The inward tension supplies mv²/r; centripetal force is the role of the net force, not an additional force.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "String Tension",
+      "sloCodes": [
+        "P-11-B-15"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 62,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "For a satellite in a circular orbit around Earth, the principal force supplying centripetal acceleration is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Earth's gravitational attraction"
+        },
+        {
+          "id": "B",
+          "text": "Static friction with space"
+        },
+        {
+          "id": "C",
+          "text": "A normal contact force from Earth"
+        },
+        {
+          "id": "D",
+          "text": "A tangential thrust that must act continuously"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Gravity provides the inward force that continually changes the direction of satellite motion.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Gravity and Orbit",
+      "sloCodes": [
+        "P-11-B-15"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 63,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "For an ideally friction-free banked turn of radius r and design speed v, the required bank angle θ satisfies:",
+      "options": [
+        {
+          "id": "A",
+          "text": "tanθ = v²/(rg)"
+        },
+        {
+          "id": "B",
+          "text": "tanθ = v/(rg)"
+        },
+        {
+          "id": "C",
+          "text": "tanθ = rg/v²"
+        },
+        {
+          "id": "D",
+          "text": "tanθ = mv²/r"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Resolve the normal reaction: Nsinθ = mv²/r and Ncosθ = mg; dividing gives tanθ = v²/(rg).",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Ideal Bank Angle",
+      "sloCodes": [
+        "P-11-B-15"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 62,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "An astronaut freely floating inside an orbiting spacecraft appears weightless because:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Astronaut and spacecraft are in free fall together"
+        },
+        {
+          "id": "B",
+          "text": "Earth's gravitational field is exactly zero"
+        },
+        {
+          "id": "C",
+          "text": "The astronaut has lost all mass"
+        },
+        {
+          "id": "D",
+          "text": "The astronaut has no acceleration of any kind"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Both astronaut and craft accelerate under gravity, so the floor gives little or no supporting normal force.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Orbital Weightlessness",
+      "sloCodes": [
+        "P-11-B-16"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 71,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "In a near-circular Earth orbit, the gravitational force on an astronaut points approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Toward Earth's centre"
+        },
+        {
+          "id": "B",
+          "text": "Away from Earth"
+        },
+        {
+          "id": "C",
+          "text": "Always along the tangent to the orbit"
+        },
+        {
+          "id": "D",
+          "text": "Nowhere because gravitational force is zero"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Earth's gravitational attraction acts inward toward Earth and provides orbital centripetal acceleration.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Orbital Gravity",
+      "sloCodes": [
+        "P-11-B-16"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 71,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "A scale fixed to the floor of an ideal freely falling spacecraft supports an astronaut standing lightly on it. The scale's reading tends toward:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero"
+        },
+        {
+          "id": "B",
+          "text": "The astronaut's usual Earth weight"
+        },
+        {
+          "id": "C",
+          "text": "Twice the astronaut's Earth weight"
+        },
+        {
+          "id": "D",
+          "text": "A value independent of contact force"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The scale measures normal support; free fall makes the supporting force approximately zero.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Apparent Weight",
+      "sloCodes": [
+        "P-11-B-16"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 71,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "When an astronaut experiences apparent weightlessness in orbit, their mass:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remains essentially unchanged"
+        },
+        {
+          "id": "B",
+          "text": "Becomes zero"
+        },
+        {
+          "id": "C",
+          "text": "Must double"
+        },
+        {
+          "id": "D",
+          "text": "Becomes equal to their apparent weight in newtons"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Mass is an intrinsic property and is not eliminated by the absence of a supporting force.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Mass in Microgravity",
+      "sloCodes": [
+        "P-11-B-16"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 72,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "In an ideal rotating ring-shaped space station, the actual floor force on an occupant standing at the outer rim points:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Toward the rotation axis"
+        },
+        {
+          "id": "B",
+          "text": "Away from the axis as an additional real force"
+        },
+        {
+          "id": "C",
+          "text": "Along the tangent only"
+        },
+        {
+          "id": "D",
+          "text": "Nowhere because the floor force vanishes"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The floor's inward normal reaction supplies the centripetal acceleration needed for co-rotation.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Rotating-Habitat Floor Force",
+      "sloCodes": [
+        "P-11-B-17"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 72,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "A person at a rotating station's outer rim has radius R and angular speed ω. The apparent gravity magnitude is based on the acceleration:",
+      "options": [
+        {
+          "id": "A",
+          "text": "a = ω²R"
+        },
+        {
+          "id": "B",
+          "text": "a = ω/R"
+        },
+        {
+          "id": "C",
+          "text": "a = R/ω²"
+        },
+        {
+          "id": "D",
+          "text": "a = ωR"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For steady rim motion, inward acceleration is ω²R; the person experiences a gravity-like sensation due to floor contact.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Artificial Gravity Acceleration",
+      "sloCodes": [
+        "P-11-B-17"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 72,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "An ideal ring station of radius 1500 m provides artificial acceleration 9.8 m/s². Its rotation period is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "77.7 s"
+        },
+        {
+          "id": "B",
+          "text": "12.2 s"
+        },
+        {
+          "id": "C",
+          "text": "150 s"
+        },
+        {
+          "id": "D",
+          "text": "6.28 s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "T = 2π√(R/g) = 2π√(1500/9.8) ≈ 77.7 s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Artificial Gravity Period",
+      "sloCodes": [
+        "P-11-B-17"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 73,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "A point mass of 2 kg is 3 m from the selected rotation axis. Its moment of inertia is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 kg m²"
+        },
+        {
+          "id": "B",
+          "text": "6 kg m²"
+        },
+        {
+          "id": "C",
+          "text": "12 kg m²"
+        },
+        {
+          "id": "D",
+          "text": "36 kg m²"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "I = mr² = 2×3² = 18 kg m².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Moment of Inertia",
+      "sloCodes": [
+        "P-11-B-18"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 64,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "A uniform solid disc of mass 4 kg and radius 0.50 m rotates about its symmetry axis. Its moment of inertia is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.50 kg m²"
+        },
+        {
+          "id": "B",
+          "text": "1.0 kg m²"
+        },
+        {
+          "id": "C",
+          "text": "2.0 kg m²"
+        },
+        {
+          "id": "D",
+          "text": "0.25 kg m²"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "I = ½MR² = ½×4×(0.5)² = 0.50 kg m².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Uniform Disc Inertia",
+      "sloCodes": [
+        "P-11-B-18"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 64,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "A thin hoop and a uniform disc have the same mass, radius and central rotation axis. The hoop's moment of inertia is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Twice the disc's moment of inertia"
+        },
+        {
+          "id": "B",
+          "text": "Equal to the disc's moment of inertia"
+        },
+        {
+          "id": "C",
+          "text": "Half the disc's moment of inertia"
+        },
+        {
+          "id": "D",
+          "text": "Four times the disc's moment of inertia"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Ihoop = MR², while Idisc = ½MR², so Ihoop/Idisc = 2.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Axis and Distribution",
+      "sloCodes": [
+        "P-11-B-18"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 64,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "A rigid rotor has moment of inertia 0.40 kg m² and axial angular speed 5 rad/s. Its angular momentum magnitude is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 kg m²/s"
+        },
+        {
+          "id": "B",
+          "text": "0.08 kg m²/s"
+        },
+        {
+          "id": "C",
+          "text": "5.4 kg m²/s"
+        },
+        {
+          "id": "D",
+          "text": "12.5 kg m²/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "L = Iω = 0.40×5 = 2.0 kg m²/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Momentum",
+      "sloCodes": [
+        "P-11-B-18"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 66,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "Which is the SI unit of angular momentum?",
+      "options": [
+        {
+          "id": "A",
+          "text": "kg m²/s"
+        },
+        {
+          "id": "B",
+          "text": "newton (N)"
+        },
+        {
+          "id": "C",
+          "text": "kg m/s"
+        },
+        {
+          "id": "D",
+          "text": "rad/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Angular momentum L = Iω; (kg m²)(s⁻¹) = kg m²/s.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Momentum Units",
+      "sloCodes": [
+        "P-11-B-18"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 65,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "A 5 N tangential force acts 2.0 m from a fixed axis. Its torque magnitude about the axis is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 N m"
+        },
+        {
+          "id": "B",
+          "text": "2.5 N m"
+        },
+        {
+          "id": "C",
+          "text": "7 N m"
+        },
+        {
+          "id": "D",
+          "text": "20 N m"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "τ = rFsin90° = 2.0×5 = 10 N m.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Torque Magnitude",
+      "sloCodes": [
+        "P-11-B-19"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 70,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "A rigid body with fixed axial moment of inertia 2 kg m² experiences a net torque 6 N m about that axis. Its angular acceleration is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 rad/s²"
+        },
+        {
+          "id": "B",
+          "text": "12 rad/s²"
+        },
+        {
+          "id": "C",
+          "text": "4 rad/s²"
+        },
+        {
+          "id": "D",
+          "text": "8 rad/s²"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "α = τ/I = 6/2 = 3 rad/s².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Torque and Angular Acceleration",
+      "sloCodes": [
+        "P-11-B-19"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Application",
+      "difficulty": "Application",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 71,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "The net external torque on a system about a chosen axis equals the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Time rate of change of angular momentum about that axis"
+        },
+        {
+          "id": "B",
+          "text": "Total angular momentum itself"
+        },
+        {
+          "id": "C",
+          "text": "Time rate of change of mass"
+        },
+        {
+          "id": "D",
+          "text": "Angular speed for all bodies regardless of inertia"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The torque–angular momentum relation is Στext = dL/dt about the chosen origin or axis.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Torque and Angular Momentum",
+      "sloCodes": [
+        "P-11-B-19"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 67,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "With the same constant net torque acting on a rigid rotor, doubling its moment of inertia changes its angular acceleration to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "One half of its original value"
+        },
+        {
+          "id": "B",
+          "text": "Twice its original value"
+        },
+        {
+          "id": "C",
+          "text": "Four times its original value"
+        },
+        {
+          "id": "D",
+          "text": "The same value"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For fixed I, α = τ/I, so twice the inertia gives half the angular acceleration.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Torque and Inertia Scaling",
+      "sloCodes": [
+        "P-11-B-19"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 71,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "A skater spins without significant external torque and draws their arms inward. Which changes occur?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Moment of inertia decreases; angular speed increases"
+        },
+        {
+          "id": "B",
+          "text": "Both moment of inertia and angular speed increase"
+        },
+        {
+          "id": "C",
+          "text": "Moment of inertia increases; angular speed decreases"
+        },
+        {
+          "id": "D",
+          "text": "Both moment of inertia and angular speed become zero"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "With conserved L = Iω, reducing I requires larger ω.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Spinning Skater",
+      "sloCodes": [
+        "P-11-B-20"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 67,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "Angular momentum about a fixed axis is conserved if the net external torque about that axis is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero"
+        },
+        {
+          "id": "B",
+          "text": "Equal to the body's mass"
+        },
+        {
+          "id": "C",
+          "text": "Always increasing"
+        },
+        {
+          "id": "D",
+          "text": "Equal to its rotational kinetic energy"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Στext = dL/dt; zero net external torque implies constant angular momentum.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Angular Momentum Conservation",
+      "sloCodes": [
+        "P-11-B-20"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 67,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "When a spinning skater pulls their arms inward with negligible external torque, their rotational kinetic energy:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Can increase because the skater does internal work"
+        },
+        {
+          "id": "B",
+          "text": "Must remain exactly constant whenever angular momentum is constant"
+        },
+        {
+          "id": "C",
+          "text": "Must become zero"
+        },
+        {
+          "id": "D",
+          "text": "Decreases because angular momentum increases"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "L can remain constant while internal work changes K = ½Iω².",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Skater Kinetic Energy",
+      "sloCodes": [
+        "P-11-B-20"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 68,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "The textbook describes a flywheel primarily as a device that can:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Store rotational kinetic energy and smooth speed variations"
+        },
+        {
+          "id": "B",
+          "text": "Store electrical charge only"
+        },
+        {
+          "id": "C",
+          "text": "Eliminate the need for external energy indefinitely"
+        },
+        {
+          "id": "D",
+          "text": "Convert all friction into useful energy"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A flywheel stores mechanical rotational kinetic energy and can help regulate machinery speed.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Flywheel Function",
+      "sloCodes": [
+        "P-11-B-20"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 69,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "A gyroscope's usefulness in navigation is associated mainly with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its angular momentum and response to applied torque"
+        },
+        {
+          "id": "B",
+          "text": "The disappearance of gravity"
+        },
+        {
+          "id": "C",
+          "text": "A permanent increase of its moment of inertia"
+        },
+        {
+          "id": "D",
+          "text": "Its ability to eliminate friction everywhere"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The angular momentum of a spinning rotor and its response to torque underlie gyroscopic orientation behavior.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Gyroscope Application",
+      "sloCodes": [
+        "P-11-B-20"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 68,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "The word centrifugation in the textbook's Unit 4 MCQ exercise refers to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Separation by spinning"
+        },
+        {
+          "id": "B",
+          "text": "Separation by raising temperature alone"
+        },
+        {
+          "id": "C",
+          "text": "Separation by evaporation only"
+        },
+        {
+          "id": "D",
+          "text": "Removal of gravity from a substance"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "NBF Unit 4 exercise MCQ 1 defines centrifugation in the context of separation through spinning.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Meaning of Centrifugation",
+      "sloCodes": [
+        "P-11-B-21"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Knowledge",
+      "difficulty": "Foundation",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 74,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "During centrifugation of a suspension, denser solid particles generally collect:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Toward the outer end (bottom) of the spinning tube"
+        },
+        {
+          "id": "B",
+          "text": "At the axis regardless of density"
+        },
+        {
+          "id": "C",
+          "text": "Uniformly throughout forever"
+        },
+        {
+          "id": "D",
+          "text": "Only in the direction of the instantaneous tangent"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Under suitable conditions, denser suspended particles can accumulate toward the outer-end bottom of the rotating sample tube.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Centrifuge Tube Separation",
+      "sloCodes": [
+        "P-11-B-21"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 63,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "A cream separator mentioned in the textbook is used to separate:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cream and skimmed milk"
+        },
+        {
+          "id": "B",
+          "text": "Petrol and diesel through combustion"
+        },
+        {
+          "id": "C",
+          "text": "Dissolved sugar from water by boiling"
+        },
+        {
+          "id": "D",
+          "text": "Pure water into hydrogen and oxygen"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The textbook specifically identifies the cream separator as separating milk into cream and skimmed milk.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Cream Separator",
+      "sloCodes": [
+        "P-11-B-21"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 63,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    },
+    {
+      "id": "XI-U04-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "Why does water leave a perforated spinning washing-machine drum?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Water can pass through openings when not held in circular motion by sufficient inward constraint"
+        },
+        {
+          "id": "B",
+          "text": "The drum has no holes and water passes through solid metal"
+        },
+        {
+          "id": "C",
+          "text": "Earth's gravity stops acting during the spin cycle"
+        },
+        {
+          "id": "D",
+          "text": "Water gains mass until it is too heavy to remain inside"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The rotating drum keeps clothes moving in a circle; water not constrained to follow the circular path can pass through its holes.",
+      "grade": 11,
+      "unit": 4,
+      "topic": "Spin-Dryer Example",
+      "sloCodes": [
+        "P-11-B-21"
+      ],
+      "assessmentClassification": "summative-theory",
+      "sloAlignment": "FBISE HSSC-I NCP 2022–23 summative theory; educational practice, independent teacher QC pending",
+      "cognitiveLevel": "Understanding",
+      "difficulty": "Standard",
+      "source": {
+        "file": "11 Physics Book(10).pdf",
+        "section": "NBF Grade XI Unit 4 original source-adapted MCQ practice",
+        "textbookPage": 63,
+        "sourceType": "original-slo-practice"
+      },
+      "status": "teacher-review-pending",
+      "active": true,
+      "boardEligible": false
+    }
+  ]
+}
