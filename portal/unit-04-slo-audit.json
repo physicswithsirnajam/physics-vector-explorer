@@ -1,5 +1,5 @@
 {
-  "auditVersion": "unit4-summative-teaching-audit-v38-2026-11-15",
+  "auditVersion": "unit4-summative-teaching-and-provisional-mcq-audit-v39-2026-11-15",
   "grade": 11,
   "unit": 4,
   "unitTitle": "Rotational and Circular Motion",
@@ -14,9 +14,9 @@
     "verification": "Cross-checked against the original source pages and existing public learning resources; final teacher pedagogical review remains required."
   },
   "teachingAuditStatus": "all-12-unit4-summative-slos-have-source-mapped-study-and-lab;teacher-review-pending",
-  "studentQuestionBankPublished": false,
+  "studentQuestionBankPublished": true,
   "descriptivePaperPublished": false,
-  "scopeNote": "Teaching coverage is not equal to reviewed assessment item coverage. This is a Unit 4-only learning audit, not a full Grade XI FBISE syllabus audit.",
+  "scopeNote": "All 12 Unit 4 summative SLOs have source-mapped public study/lab resources and 80 provisional public self-practice MCQs. This does NOT certify an official FBISE key, a protected graded test, a descriptive practice paper or full Grade XI syllabus coverage.",
   "allSummativeSLOs": [
     {
       "code": "P-11-B-07",
@@ -33,8 +33,9 @@
       "guideResourceId": "unit4-rotation-study",
       "labResourceId": "unit4-rotation-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 6
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 6,
+      "publishedProvisionalMCQs": 6
     },
     {
       "code": "P-11-B-08",
@@ -56,8 +57,9 @@
       "guideResourceId": "unit4-rotation-study",
       "labResourceId": "unit4-rotation-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-09",
@@ -74,8 +76,9 @@
       "guideResourceId": "unit4-rotation-study",
       "labResourceId": "unit4-rotation-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-10",
@@ -93,8 +96,9 @@
       "guideResourceId": "unit4-centripetal-study",
       "labResourceId": "unit4-centripetal-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 5
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 5,
+      "publishedProvisionalMCQs": 5
     },
     {
       "code": "P-11-B-14",
@@ -112,8 +116,9 @@
       "guideResourceId": "unit4-centripetal-study",
       "labResourceId": "unit4-centripetal-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-15",
@@ -131,8 +136,9 @@
       "guideResourceId": "unit4-centripetal-study",
       "labResourceId": "unit4-centripetal-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-16",
@@ -149,8 +155,9 @@
       "guideResourceId": "unit4-artificial-gravity-study",
       "labResourceId": "unit4-artificial-gravity-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 5
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 5,
+      "publishedProvisionalMCQs": 5
     },
     {
       "code": "P-11-B-17",
@@ -168,8 +175,9 @@
       "guideResourceId": "unit4-artificial-gravity-study",
       "labResourceId": "unit4-artificial-gravity-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 6
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 6,
+      "publishedProvisionalMCQs": 6
     },
     {
       "code": "P-11-B-18",
@@ -187,8 +195,9 @@
       "guideResourceId": "unit4-angular-momentum-study",
       "labResourceId": "unit4-angular-momentum-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-19",
@@ -207,8 +216,9 @@
       "guideResourceId": "unit4-angular-momentum-study",
       "labResourceId": "unit4-angular-momentum-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 6
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 6,
+      "publishedProvisionalMCQs": 6
     },
     {
       "code": "P-11-B-20",
@@ -228,8 +238,9 @@
       "guideResourceId": "unit4-angular-momentum-study",
       "labResourceId": "unit4-angular-momentum-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 8
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 8,
+      "publishedProvisionalMCQs": 8
     },
     {
       "code": "P-11-B-21",
@@ -249,8 +260,9 @@
       "guideResourceId": "unit4-centrifuge-study",
       "labResourceId": "unit4-centrifuge-lab",
       "teachingStatus": "available-source-based",
-      "assessmentStatus": "not-yet-published",
-      "proposedMCQs": 4
+      "assessmentStatus": "provisional-public-self-practice-teacher-review-pending",
+      "proposedMCQs": 4,
+      "publishedProvisionalMCQs": 4
     }
   ],
   "excludedAdjacentFrameworkSLOs": [
@@ -290,7 +302,7 @@
       "internalOr": "both alternatives proposed for each descriptive question; attempt one"
     },
     "fullPracticeMarks": 80,
-    "warning": "PROPOSED UNIT-ONLY teaching/practice proportions; this is NOT the official full-syllabus paper's SLO-specific allocation or a published question set. No assessment questions or grades are added in V38.",
+    "warning": "PROPOSED UNIT-ONLY descriptive practice proportions; the 80 MCQ self-practice items are NOW PUBLIC but PROVISIONAL pending teacher and browser QC. This is NOT the official full-syllabus paper's unit-specific allocation, an examiner-approved answer key or a recorded student grade.",
     "editorialChecklist": [
       "Only 12 mapped summative theory SLOs; omit formative B-11 and unrelated collision B-12/B-13",
       "Ground each item in NBF Unit 4 pp.53–76, verify all options and calculations independently",
@@ -298,6 +310,13 @@
       "Maintain the official boxed FBISE MCQ option and A/B/C/D bubble layout in the eventual print edition",
       "Ensure balanced, non-patterned correct A/B/C/D positions, no duplicate items",
       "Preserve independent Unit 1–3 banks, protected login and saved student records"
-    ]
-  }
+    ],
+    "objectiveStatus": "published-as-provisional-80-mcq-self-practice-pending-teacher-QC",
+    "descriptiveStatus": "proposed-not-published"
+  },
+  "studentQuestionBankStatus": "provisional-public-self-practice-teacher-academic-review-pending",
+  "publishedPracticeBankFile": "question-bank/grade-11/unit-04-v39-80-practice.json",
+  "publishedPracticePage": "./unit-04-mcq-full80.html",
+  "protectedOrGradedAssessmentPublished": false,
+  "studentGradesRecorded": false
 }
