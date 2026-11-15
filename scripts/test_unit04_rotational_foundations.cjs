@@ -159,7 +159,7 @@ assert.equal(unit4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published"
 assert.deepEqual(unit4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab"]);
 assert.ok(desk.includes('href="./unit-04-centripetal-study.html"'));
 assert.ok(desk.includes('href="./unit-04-centripetal-lab.html"'));
-assert.ok(unit4.studentNotice.includes("no")||unit4.studentNotice.includes("not yet"));
+assert.ok(unit4.studentNotice.includes("No Unit 4 MCQ bank"),"Unit 4 must not claim an unpublished question bank");
 for(const [id,url] of [["unit4-desk","./unit-04.html"],
  ["unit4-rotation-study","./unit-04-rotation-study.html"],
  ["unit4-rotation-lab","./unit-04-rotation-lab.html"]]){
