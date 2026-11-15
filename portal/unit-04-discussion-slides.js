@@ -11,6 +11,8 @@ const url="../question-bank/grade-11/unit-04-v39-80-practice.json";
 const SLO=new Set(["P-11-B-07","P-11-B-08","P-11-B-09","P-11-B-10","P-11-B-14","P-11-B-15","P-11-B-16","P-11-B-17","P-11-B-18","P-11-B-19","P-11-B-20","P-11-B-21"]);
 const levels=new Set(["Knowledge","Understanding","Application"]);
 let questions=null,groups=null,index=-1,phase="question";
+const selectedSlo=new URLSearchParams(location.search).get("slo");
+const focused=selectedSlo!==null;
 function make(tag,cls,text){
  const e=document.createElement(tag);
  if(cls)e.className=cls;
@@ -90,8 +92,10 @@ function paintOptions(q,showAnswer){
 function paint(){
  if(index<0||!questions)return;
  const q=questions[index],reveal=phase==="solution";
- $("stepIndex").textContent="Discussion "+(index*2+(reveal?2:1))+" / 160";
- $("questionIndex").textContent="Q "+(index+1)+" / 80";
+ $("stepIndex").textContent="Discussion "+(index*2+(reveal?2:1))+" / "+(questions.length*2);
+ $("questionIndex").textContent="Q "+q.sourceQuestionNumber+" / 80"+(focused?" · focus "+(index+1)+" / "+questions.length:"");
+ $("focusBadge").hidden=!focused;
+ $("focusBadge").textContent=focused?selectedSlo+" · "+questions.length+" MCQs":"";
  $("phaseLabel").textContent=reveal?"Worked solution":"Question only";
  $("questionText").textContent=q.stem;
  context(q);paintOptions(q,reveal);
@@ -111,19 +115,19 @@ function paint(){
   $("discussionPrompt").textContent="";
   $("teacherNotice").textContent="Question-only view — select Reveal worked solution when ready.";
  }
- $("progressLabel").textContent=reveal?"Worked solution "+(index+1)+" / 80":"Question "+(index+1)+" / 80";
- $("jumpInput").value=String(index+1);
+ $("progressLabel").textContent=reveal?"Worked solution "+(index+1)+" / "+questions.length:"Question "+(index+1)+" / "+questions.length;
+ $("jumpInput").value=String(q.sourceQuestionNumber);
  $("prevBtn").disabled=index===0&&!reveal;
  $("revealBtn").disabled=reveal;
  $("hideBtn").disabled=!reveal;
- $("nextBtn").disabled=!reveal||index>=79;
- $("nextBtn").textContent=index===79?"Discussion complete":"Next question";
+ $("nextBtn").disabled=!reveal||index>=questions.length-1;
+ $("nextBtn").textContent=index===questions.length-1?"Discussion complete":"Next question";
  $("jumpInput").disabled=false;
  $("jumpBtn").disabled=false;
- $("startBtn").textContent="Restart at Q1";
+ $("startBtn").textContent=focused?"Restart focused discussion":"Restart at Q1";
 }
 function openQuestion(newIndex){
- if(!questions||newIndex<0||newIndex>=80)return;
+ if(!questions||newIndex<0||newIndex>=questions.length)return;
  index=newIndex;phase="question";paint();
 }
 function showSolution(){
@@ -136,8 +140,8 @@ function hideSolution(){
 }
 function nextQuestion(){
  if(index<0||phase!=="solution")return;
- if(index>=79){
-  $("teacherNotice").textContent="All 80 question/solution pairs completed; close this public teacher discussion page before another assessment.";
+ if(index>=questions.length-1){
+  $("teacherNotice").textContent="All "+questions.length+" selected question/solution pairs completed; close this public teacher discussion page before another assessment.";
   return;
  }
  openQuestion(index+1);
@@ -154,7 +158,12 @@ function jump(){
   $("teacherNotice").textContent="Enter a whole-number question between 1 and 80.";
   return;
  }
- openQuestion(number-1); // Always hide the answer on a jump.
+ const targetIndex=questions.findIndex(q=>q.sourceQuestionNumber===number);
+ if(targetIndex===-1){
+  $("teacherNotice").textContent="Q"+number+" is outside this SLO-focused discussion. Choose a listed original question number.";
+  return;
+ }
+ openQuestion(targetIndex); // Always hide the answer on a jump.
 }
 async function fullscreen(){
  try{
@@ -191,10 +200,15 @@ fetch(url,{cache:"no-store"}).then(response=>{
  if(!response.ok)throw Error("HTTP "+response.status);
  return response.json();
 }).then(data=>{
- groups=validate(data);questions=data.questions;
+ groups=validate(data);
+ if(focused&&!SLO.has(selectedSlo))throw Error("Invalid summative Unit 4 SLO requested");
+ questions=focused?data.questions.filter(q=>q.sloCodes[0]===selectedSlo):data.questions;
+ if(!questions.length)throw Error("No provisional MCQs map to this SLO");
  $("startBtn").disabled=false;
  $("fullscreenBtn").disabled=false;
- $("loadStatus").textContent="Ready · 80 question/solution pairs · 160 deliberate steps · teacher discussion only";
+ $("loadStatus").textContent=focused?
+  "Ready · "+selectedSlo+" · "+questions.length+" question/solution pairs · "+(questions.length*2)+" deliberate steps · public discussion":
+  "Ready · 80 question/solution pairs · 160 deliberate steps · teacher discussion only";
 }).catch(error=>{
  $("loadStatus").textContent="Unable to load discussion bank: "+error.message;
  $("teacherNotice").textContent="Solutions cannot be shown until the original source bank passes validation.";

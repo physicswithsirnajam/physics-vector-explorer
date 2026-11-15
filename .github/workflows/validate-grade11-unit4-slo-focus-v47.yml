@@ -1,0 +1,80 @@
+name: Validate Grade XI Unit 4 SLO-Focused Classroom (V47)
+
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-slo-focus.*"
+      - "portal/unit-04-projector-practice.*"
+      - "portal/unit-04-discussion-slides.*"
+      - "portal/unit-04.html"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - "quality/grade11-unit04-slo-focus-v47.md"
+      - ".github/workflows/validate-grade11-unit4-slo-focus-v47.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-04-slo-focus.*"
+      - "portal/unit-04-projector-practice.*"
+      - "portal/unit-04-discussion-slides.*"
+      - "portal/unit-04.html"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - "quality/grade11-unit04-slo-focus-v47.md"
+      - ".github/workflows/validate-grade11-unit4-slo-focus-v47.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-slo-focus-12-objectives:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify JavaScript syntax
+        run: |
+          node --check portal/unit-04-slo-focus.js
+          node --check portal/unit-04-projector-practice.js
+          node --check portal/unit-04-discussion-slides.js
+          node --check scripts/test_unit04_slo_focus_v47.cjs
+      - name: Install pinned Playwright and Chromium on CI runner only
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test all 12 SLO playlists and teacher/student navigation
+        run: node scripts/test_unit04_slo_focus_v47.cjs
+      - name: Upload desktop/mobile focused lesson screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit04-v47-slo-focused-classroom-previews
+          path: qa-artifacts/unit04-v47/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Re-run unchanged full-bank student and teacher browser modes
+        run: |
+          node scripts/test_unit04_projector_v45.cjs
+          node scripts/test_unit04_discussion_v46.cjs
+          node scripts/test_unit04_combined_paper_v44.cjs
+          node scripts/test_unit04_classroom_browser_v43.cjs
+      - name: Re-run Unit 4 original source, all 18 resources and SLO checks
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_assessment_pack_v42.cjs
