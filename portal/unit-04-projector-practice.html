@@ -22,7 +22,7 @@ h1{font-size:clamp(25px,4vw,39px);margin:8px 0 10px;line-height:1.17}
 .notice{border-left:4px solid #c69644;background:#fff9e8;border-radius:9px;padding:11px 15px;margin:13px 0 18px;font-size:14px}
 .settings{display:flex;align-items:center;gap:13px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:17px 0}
 .settings label{font-weight:750;font-size:13px}
-.settings select{padding:8px 11px;border:1px solid #91a5b9;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
+.settings select{padding:8px 11px;min-width:0;max-width:100%;border:1px solid #91a5b9;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
 .settings .check{display:flex;align-items:center;gap:7px}
 .settings .check input{width:17px;height:17px;accent-color:#10325a}
 .status{font-size:13px;color:#1b5c70;font-weight:800;flex:1 1 220px}
@@ -62,7 +62,7 @@ h1{font-size:clamp(25px,4vw,39px);margin:8px 0 10px;line-height:1.17}
 .helper a{color:#126c91}
 footer{background:var(--navy);color:#d7e4f0;padding:17px;text-align:center;font-size:13px}
 @media(max-width:800px){.options{grid-template-columns:1fr}.stage{min-height:560px}.stage-top{padding:12px 15px}.stage-content{padding:16px}.stage-bottom{padding:12px 14px}.controls .jump{margin-left:0}.question{font-size:clamp(18px,4vw,28px)}.option-text{font-size:clamp(16px,2.9vw,23px)}}
-@media(max-width:450px){.bar{padding:10px}.stage{min-height:620px}.stage-top .tags{gap:5px}.tag{font-size:11px;padding:4px 7px}.stage-content{gap:11px}.letter{min-width:30px;height:30px;font-size:14px}.controls button{padding:8px}.status{flex-basis:100%}}
+@media(max-width:450px){.settings{align-items:stretch}.settings label[for="paceSelect"]{width:100%}.settings select{width:100%;max-width:100%}.settings .check{width:100%}.bar{padding:10px}.stage{min-height:620px}.stage-top .tags{gap:5px}.tag{font-size:11px;padding:4px 7px}.stage-content{gap:11px}.letter{min-width:30px;height:30px;font-size:14px}.controls button{padding:8px}.status{flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){.progress-bar{transition:none}}
 @media print{#psn-global-nav,header,footer,.settings,.controls{display:none!important}body{background:#fff}.stage{color:#000;background:#fff;border:0;box-shadow:none}}
 </style>
