@@ -86,7 +86,7 @@ function sourceChecks(){
  }
  const u4=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
  assert.equal(u4.questionBankCount,80);
- assert.equal(u4.resourceIds.length,17);assert.equal(new Set(u4.resourceIds).size,17);
+ assert.equal(u4.resourceIds.length,18);assert.equal(new Set(u4.resourceIds).size,18);
  assert.ok(u4.resourceIds.includes("unit4-discussion-slides"));
  assert.ok(u4.resourceIds.includes("unit4-projector-practice"));
  assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
