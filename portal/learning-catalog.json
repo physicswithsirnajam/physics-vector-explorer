@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v31-unit3-full80-sectionA-count-2026-11-15",
+  "catalogVersion": "pilot-v32-unit3-descriptive-and-textbook-numericals-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -60,7 +60,7 @@
           "unit": 3,
           "title": "Translatory Motion",
           "status": "available",
-          "summary": "NBF Grade XI Unit 3 study and interactive labs, a preserved 40-MCQ pilot, and an 80-MCQ unit-only FBISE-style Section A-count practice edition (56 straight + 24 scenario questions); neither is an official board exam.",
+          "summary": "Unit 3 source-based lessons and simulations, separate 40/80-MCQ summative practice editions, all eight textbook numerical exercises solved, and a 40-mark Section B/C descriptive practice paper with internal OR and teacher marking guide.",
           "questionBankCount": 80,
           "assessmentStatus": "two-provisional-unit-only-summative-self-practice-editions",
           "resourceIds": [
@@ -70,11 +70,13 @@
             "unit3-collision-study",
             "unit3-collision-lab",
             "unit3-mcq-stage1",
-            "unit3-mcq-full80"
+            "unit3-mcq-full80",
+            "unit3-textbook-numericals",
+            "unit3-descriptive-practice"
           ],
-          "qualityStatus": "provisional source-based 80-item Unit 3-only MCQ self-practice (56 straight + 24 scenario; 6 complete sets); board eligibility false; formative B-03/B-11 excluded; independent teacher and scientific audit pending",
+          "qualityStatus": "provisional source-based Unit 3 resources, 80-MCQ self-practice, 8 textbook solved numericals and descriptive Section B/C practice; teacher verification of formulas, SLO classifications and marking advice still required",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 3 offers two public study guides, two interactive labs, a preserved 40-question summative MCQ pilot and a new provisional full-length 80-question Unit 3 practice edition. The 80-item edition mirrors FBISE Section A count and scenario grouping but NOT full-syllabus coverage; scores are local and not saved to My Physics Progress.",
+          "studentNotice": "New: all eight NBF Unit 3 numericals 3.1–3.8 are fully worked (six summative aligned; 3.6 formative; 3.8 supplementary formative), plus a 40-mark Unit 3-only Section B/C descriptive practice with OR choices, model answers and suggested marks. These provisional public resources do not save scores or replace a full-syllabus FBISE exam.",
           "landingHref": "./unit-03.html"
         },
         {
@@ -549,6 +551,32 @@
       "access": "public-link",
       "contentStatus": "provisional-unit3-full80-sectionA-count-practice",
       "accessDescription": "Public original/adapted Unit 3-only educational bank; does not log in users, transmit attempts, persist grades or claim official FBISE assessment."
+    },
+    {
+      "id": "unit3-textbook-numericals",
+      "category": "STUDY",
+      "title": "Unit 3 — All Textbook Numericals 3.1–3.8 (Worked)",
+      "description": "NBF textbook Unit 3 pp.51–52, eight numericals with detailed calculations, source answers and suggested step marks; six summative-aligned and two clearly formative/supplementary.",
+      "href": "./unit-03-numericals.html",
+      "public": true,
+      "external": false,
+      "action": "Explore Worked Unit 3 Numericals ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-source-adapted-worked-numericals",
+      "accessDescription": "Source-adapted educational solutions, not an official marking scheme; no account login or stored attempts."
+    },
+    {
+      "id": "unit3-descriptive-practice",
+      "category": "PRACTISE",
+      "title": "Unit 3 — Descriptive Practice Sections B & C (40 Marks)",
+      "description": "Seven internal-OR short-response questions worth 4 marks each, and two internal-OR extended questions worth 6 marks each; summative SLOs only, with question-only and teacher marking guide print views.",
+      "href": "./unit-03-descriptive-practice.html",
+      "public": true,
+      "external": false,
+      "action": "Practise Unit 3 Descriptive Answers ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-unit3-descriptive-self-practice",
+      "accessDescription": "Provisional teacher review pending; Unit 3 practice only, not an official full-syllabus FBISE paper; no grading or student data persistence."
     }
   ]
 }
