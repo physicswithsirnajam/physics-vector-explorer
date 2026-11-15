@@ -109,10 +109,11 @@ for(const link of ["./unit-03-numericals.html","./unit-03-descriptive-practice.h
  "./unit-03-mcq-full80.html","./unit-03-mcq-practice.html",
  "./unit-03-motion-lab.html","./unit-03-collision-lab.html"])
  assert.ok(desk.includes('href="'+link+'"'),"Missing Unit 3 desk link "+link);
-assert.equal(catalog.catalogVersion,"pilot-v32-unit3-descriptive-and-textbook-numericals-2026-11-15");
+assert.equal(catalog.catalogVersion,"pilot-v33-unit3-consolidated-assessment-pack-2026-11-15");
 const unit=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===3);
 assert.equal(unit.questionBankCount,80);
-assert.equal(unit.resourceIds.length,9);
+assert.equal(unit.resourceIds.length,10);
+assert.ok(unit.resourceIds.includes("unit3-assessment-pack"));
 for(const [id,href] of [["unit3-textbook-numericals","./unit-03-numericals.html"],
  ["unit3-descriptive-practice","./unit-03-descriptive-practice.html"]]){
  assert.ok(unit.resourceIds.includes(id));
