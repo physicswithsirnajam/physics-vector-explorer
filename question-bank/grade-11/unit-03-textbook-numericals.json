@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "id": "PSN-XI-U03-NUMERICALS",
+  "title": "Grade XI Unit 3 — NBF textbook Numerical Exercises 3.1–3.8 (adapted & solved)",
+  "status": "teacher-review-pending",
+  "source": "NBF Grade XI Physics, Unit 3, textbook pp. 51–52",
+  "policy": "Six exercises are summative-aligned applications (B-04/05/12); 3.6 is formative B-11; 3.8 is supplementary formative/cross-topic. Suggested marking steps are teacher study guidance, NOT official FBISE marking scheme.",
+  "numericals": [
+    {
+      "id": "XI-U03-N-3.1",
+      "sourceExercise": "Numerical 3.1",
+      "sourcePage": 51,
+      "slo": "P-11-B-04",
+      "assessment": "summative",
+      "practiceMarks": 4,
+      "question": "Compare the stopping distances of a car travelling at 30 m/s when its uniform deceleration is 7.00 m/s² on dry concrete and 5.00 m/s² on wet concrete.",
+      "given": "u = +30 m/s; v = 0; a(dry) = −7.00 m/s²; a(wet) = −5.00 m/s².",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "Use the constant-acceleration relation v² = u² + 2as and take the direction of travel as positive."
+        },
+        {
+          "marks": 1,
+          "text": "Dry: s = (0² − 30²) / [2(−7.00)] = 900/14 = 64.3 m."
+        },
+        {
+          "marks": 1,
+          "text": "Wet: s = (0² − 30²) / [2(−5.00)] = 900/10 = 90.0 m."
+        },
+        {
+          "marks": 1,
+          "text": "The wet-road stopping distance exceeds the dry-road distance by 25.7 m (about 40% longer)."
+        }
+      ],
+      "answer": "Dry: 64.3 m; wet: 90.0 m (wet is 25.7 m longer).",
+      "sourceAnswer": "64.3 m / 90.0 m",
+      "note": "Assumes the stated decelerations are constant; does not include driver reaction distance."
+    },
+    {
+      "id": "XI-U03-N-3.2",
+      "sourceExercise": "Numerical 3.2",
+      "sourcePage": 51,
+      "slo": "P-11-B-05",
+      "assessment": "summative",
+      "practiceMarks": 4,
+      "question": "For an ideal projectile launched and landing at the same level, find the projection angle at which its maximum height equals its horizontal range.",
+      "given": "H = R; same launch and landing level; no air resistance; 0° < θ < 90°.",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "For the ideal same-level projectile, H = u²sin²θ/(2g) and R = u²sin(2θ)/g."
+        },
+        {
+          "marks": 1,
+          "text": "Set H = R, cancel u²/g, and obtain sin²θ/2 = sin(2θ) = 2sinθ cosθ."
+        },
+        {
+          "marks": 1,
+          "text": "For a nonzero launch angle, sinθ = 4cosθ, so tanθ = 4."
+        },
+        {
+          "marks": 1,
+          "text": "θ = tan⁻¹(4) = 75.96° ≈ 76°."
+        }
+      ],
+      "answer": "θ ≈ 76°.",
+      "sourceAnswer": "76°",
+      "note": "The result relies on ideal flight with equal launch and landing heights."
+    },
+    {
+      "id": "XI-U03-N-3.3",
+      "sourceExercise": "Numerical 3.3",
+      "sourcePage": 51,
+      "slo": "P-11-B-04",
+      "assessment": "summative",
+      "practiceMarks": 4,
+      "question": "A landing jet has speed 100 m/s and can decelerate uniformly at 5.0 m/s². Determine its minimum stopping time and distance. Could it stop on a runway 0.8 km long?",
+      "given": "u = +100 m/s; v = 0; a = −5.0 m/s²; runway = 0.8 km = 800 m.",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "From v = u + at: 0 = 100 − 5t, so stopping time t = 20 s."
+        },
+        {
+          "marks": 1,
+          "text": "Use v² = u² + 2as: 0 = 100² + 2(−5)s."
+        },
+        {
+          "marks": 1,
+          "text": "Minimum stopping distance s = 10000/10 = 1000 m = 1.0 km."
+        },
+        {
+          "marks": 1,
+          "text": "No; 800 m is 200 m shorter than the calculated 1000 m required."
+        }
+      ],
+      "answer": "20 s; 1000 m; cannot stop within an 800 m runway.",
+      "sourceAnswer": "20 s; cannot; runway at least 1 km",
+      "note": "Uses the textbook's stated uniform braking deceleration, not additional reverse thrust."
+    },
+    {
+      "id": "XI-U03-N-3.4",
+      "sourceExercise": "Numerical 3.4",
+      "sourcePage": 52,
+      "slo": "P-11-B-05",
+      "assessment": "summative",
+      "practiceMarks": 6,
+      "question": "An ideal projectile is launched at 21.8 m/s at 35° above horizontal and lands at its launch level. Calculate (a) flight time, (b) maximum height, and (c) horizontal displacement. Use g = 9.8 m/s².",
+      "given": "u = 21.8 m/s; θ = 35°; g = 9.8 m/s²; same-level landing.",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "Vertical launch speed: uᵧ = u sinθ = 21.8 sin35° ≈ 12.50 m/s."
+        },
+        {
+          "marks": 1,
+          "text": "Time of flight: T = 2uᵧ/g = 2(21.8 sin35°)/9.8 ≈ 2.55 s."
+        },
+        {
+          "marks": 1,
+          "text": "Maximum height relationship: H = uᵧ²/(2g)."
+        },
+        {
+          "marks": 1,
+          "text": "H = (21.8 sin35°)²/(19.6) ≈ 7.98 m."
+        },
+        {
+          "marks": 1,
+          "text": "Range relationship: R = (u cosθ)T = u²sin(2θ)/g."
+        },
+        {
+          "marks": 1,
+          "text": "R = (21.8² sin70°)/9.8 ≈ 45.6 m."
+        }
+      ],
+      "answer": "(a) T ≈ 2.55 s; (b) H ≈ 7.98 m; (c) R ≈ 45.6 m.",
+      "sourceAnswer": "2.55 s; 7.98 m; 45.6 m",
+      "note": "Retain sensible rounding; equivalent correct substitutions receive credit."
+    },
+    {
+      "id": "XI-U03-N-3.5",
+      "sourceExercise": "Numerical 3.5",
+      "sourcePage": 52,
+      "slo": "P-11-B-05",
+      "assessment": "summative",
+      "practiceMarks": 4,
+      "question": "A projectile is launched horizontally from a cliff 45.2 m high and lands 17.6 m from the base. Find its launch speed, neglecting air resistance. Use g = 9.8 m/s².",
+      "given": "h = 45.2 m; horizontal displacement x = 17.6 m; initial vertical speed = 0; g = 9.8 m/s².",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "Vertical fall: h = ½gt², so t = √(2h/g)."
+        },
+        {
+          "marks": 1,
+          "text": "t = √[2(45.2)/9.8] ≈ 3.04 s."
+        },
+        {
+          "marks": 1,
+          "text": "Horizontal motion has constant vₓ, so vₓ = x/t."
+        },
+        {
+          "marks": 1,
+          "text": "vₓ = 17.6/3.04 ≈ 5.79 m/s (approximately 5.8 m/s)."
+        }
+      ],
+      "answer": "Initial horizontal launch speed ≈ 5.79 m/s.",
+      "sourceAnswer": "5.79 m/s",
+      "note": "The height and horizontal displacement refer to the same flight; do not use equal-height angled-range shortcuts."
+    },
+    {
+      "id": "XI-U03-N-3.6",
+      "sourceExercise": "Numerical 3.6",
+      "sourcePage": 52,
+      "slo": "P-11-B-11",
+      "assessment": "formative",
+      "practiceMarks": 4,
+      "question": "Two equal-mass carts move toward one another on a level low-friction track. Cart 1 travels right at 2 m/s and cart 2 left at 1 m/s. They collide and roll together. Find their common final velocity.",
+      "given": "m₁ = m₂ = m; u₁ = +2 m/s; u₂ = −1 m/s; carts stick together.",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "Choose rightward positive; use isolated-system momentum conservation."
+        },
+        {
+          "marks": 1,
+          "text": "Before: p = m(+2) + m(−1) = m."
+        },
+        {
+          "marks": 1,
+          "text": "After: p = (2m)v, so 2mv = m."
+        },
+        {
+          "marks": 1,
+          "text": "v = +0.50 m/s: the joined carts move rightward."
+        }
+      ],
+      "answer": "Common final velocity +0.50 m/s (rightward).",
+      "sourceAnswer": "0.5 m/s",
+      "note": "Formative P-11-B-11. Useful teaching problem; not included as a standalone summative paper question."
+    },
+    {
+      "id": "XI-U03-N-3.7",
+      "sourceExercise": "Numerical 3.7",
+      "sourcePage": 52,
+      "slo": "P-11-B-12",
+      "assessment": "summative",
+      "practiceMarks": 6,
+      "question": "A 0.5 kg ball moving right at +4 m/s collides elastically head-on with a stationary 3.5 kg ball. Find the two final velocities.",
+      "given": "m₁ = 0.5 kg; m₂ = 3.5 kg; u₁ = +4 m/s; u₂ = 0; isolated head-on elastic collision.",
+      "steps": [
+        {
+          "marks": 1,
+          "text": "Use both total momentum and kinetic-energy conservation for a head-on elastic collision."
+        },
+        {
+          "marks": 1,
+          "text": "v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂)."
+        },
+        {
+          "marks": 1,
+          "text": "v₁ = [(0.5−3.5)(4) + 0]/4.0 = −3.0 m/s."
+        },
+        {
+          "marks": 1,
+          "text": "v₂ = [2m₁u₁ + (m₂−m₁)u₂]/(m₁+m₂)."
+        },
+        {
+          "marks": 1,
+          "text": "v₂ = [2(0.5)(4)]/4.0 = +1.0 m/s."
+        },
+        {
+          "marks": 1,
+          "text": "Check: initial p=2.0 kg·m/s; final p=(0.5)(−3)+(3.5)(1)=2.0 kg·m/s. Total kinetic energy before and after is 4.0 J."
+        }
+      ],
+      "answer": "v₁ = −3.0 m/s (left); v₂ = +1.0 m/s (right).",
+      "sourceAnswer": "−3.0 m/s; +1.0 m/s",
+      "note": "A negative velocity indicates rebound relative to the chosen rightward-positive axis."
+    },
+    {
+      "id": "XI-U03-N-3.8",
+      "sourceExercise": "Numerical 3.8",
+      "sourcePage": 52,
+      "slo": null,
+      "assessment": "supplementary-formative",
+      "practiceMarks": 8,
+      "question": "A 17.5 g bullet leaves an 8.0 kg gun at 582 m/s after moving through a 75.0 cm barrel. Assuming uniform acceleration from rest, calculate (a) barrel-travel time, (b) average barrel force, (c) impulse, and (d) bullet momentum at exit.",
+      "given": "m = 0.0175 kg; v = 582 m/s; u = 0; barrel length s = 0.750 m; gun mass given but not required for the four requested quantities.",
+      "steps": [
+        {
+          "marks": 2,
+          "text": "From v² = u² + 2as, a = 582²/[2(0.750)] = 225816 m/s², and t = (v−u)/a ≈ 0.00258 s."
+        },
+        {
+          "marks": 2,
+          "text": "Average barrel force on bullet F = ma = (0.0175)(225816) ≈ 3950 N."
+        },
+        {
+          "marks": 2,
+          "text": "Impulse J = Δp = m(v−u) = (0.0175)(582) ≈ 10.2 N·s."
+        },
+        {
+          "marks": 2,
+          "text": "Bullet momentum at exit p = mv = (0.0175)(582) ≈ 10.2 kg·m/s."
+        }
+      ],
+      "answer": "(a) 0.00258 s; (b) ≈3950 N; (c) ≈10.2 N·s; (d) ≈10.2 kg·m/s.",
+      "sourceAnswer": "0.00258 s; 3950 N; 10.2 N·s; 10.2 kg·m/s (printed source uses corresponding momentum units)",
+      "note": "Supplementary formative/cross-topic recoil and impulse calculation; omitted from the summative practice paper. Source gun mass is unnecessary for parts a–d; do not invent a fifth part."
+    }
+  ]
+}
