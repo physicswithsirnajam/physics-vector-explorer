@@ -83,7 +83,7 @@ function checkFiles(){
  assert.equal(teacher.officialFBISEKey,false);
  assert.equal(teacher.status,"provisional-teacher-review-pending");
  assert.ok(teacher.usageBoundary.includes("Public"));
- assert.equal(teacher.companionStudentBank,"unit-05-v50-16-student.json");
+ assert.equal(teacher.companionStudentBank,"unit-05-v51-16-student-b.json");
  assert.ok(!/"correctOptionId"|"workedSteps"|"answerKeys"|"explanation"/.test(JSON.stringify(student)),"Student bank must not carry key fields");
  const counts={A:0,B:0,C:0,D:0},sloCounts={};
  for(const [i,q] of student.questions.entries()){
@@ -224,7 +224,7 @@ async function browser(){
   res=await teacherPage.goto(base+"unit-05-mcq-set-b-key.html",{waitUntil:"networkidle"});
   assert.equal(res.status(),200);
   await teacherPage.waitForFunction(()=>document.getElementById("teacherStatus").textContent.includes("Ready"));
-  assert.ok(keyRequests.some(url=>url.includes("teacher-key.json")));
+  assert.ok(keyRequests.some(url=>url.includes("teacher-key-b.json")));
   assert.equal(await teacherPage.locator("#solutionCards .solution-card").count(),0);
   assert.equal(await teacherPage.locator("#keyRows tr").count(),0);
   assert.equal(await teacherPage.locator("#keyBody").isVisible(),false);
