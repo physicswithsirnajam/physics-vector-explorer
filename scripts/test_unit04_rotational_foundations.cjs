@@ -170,7 +170,7 @@ const unit3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
 assert.equal(unit3.questionBankCount,80);
 assert.equal(unit3.resourceIds.length,10);
 assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
-console.log("PASS — Radians and signed arc length, angle/velocity/acceleration, 625 independent rotation identities, reversal vs distance.");
+console.log("PASS — Radians and signed arc length, angle/velocity/acceleration, 375 independently checked rotation combinations, reversal vs distance.");
 console.log("PASS — NBF Example 4.1 bicycle wheel: ω₀≈20.54rad/s, N≈35.96, α≈−0.934rad/s², t≈22s (published intermediate rounding disclosed).");
 console.log("PASS — Source SLO B-07/B-08/B-09, lab controls, fixed axis/direction convention, no login/storage, and all Unit 3 resources unchanged.");
 console.log("NOTE — Automated physics and structure checks are not a live projector/mobile browser test or full textbook academic certification.");
