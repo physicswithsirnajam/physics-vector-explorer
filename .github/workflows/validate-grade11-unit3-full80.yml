@@ -1,0 +1,39 @@
+name: Validate Grade XI Unit 3 Full 80-MCQ Practice
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "portal/unit-03-mcq-full80.html"
+      - "portal/unit-03-mcq-full80.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_full80_practice.cjs"
+      - ".github/workflows/validate-grade11-unit3-full80.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "portal/unit-03-mcq-full80.html"
+      - "portal/unit-03-mcq-full80.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_full80_practice.cjs"
+      - ".github/workflows/validate-grade11-unit3-full80.yml"
+  workflow_dispatch:
+jobs:
+  verify-full80:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check JavaScript syntax
+        run: |
+          node --check portal/unit-03-mcq-full80.js
+          node --check scripts/test_unit03_full80_practice.cjs
+      - name: Validate complete bank, all answers, scenario sets, version compatibility and privacy
+        run: node scripts/test_unit03_full80_practice.cjs

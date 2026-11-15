@@ -79,12 +79,13 @@ assert.ok(study.includes("90 m") && study.includes("20 m/s"));
 assert.ok(study.includes("3534.8"));
 assert.ok(desk.includes('href="./unit-03-motion-lab.html"'));
 assert.ok(desk.includes('href="./unit-03-study-guide.html"'));
-assert.ok(desk.includes("no Unit 3")||desk.includes("not yet published"));
+assert.ok(desk.includes("not an official full-syllabus FBISE examination"),"Full 80-MCQ unit-only practice must not imply official board coverage");
 const u3=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===3);
 assert.equal(u3.status,"available");
-assert.equal(u3.questionBankCount,40,"Unit 3 has 40 provisional unit-only summative MCQs, not a full board-scale bank");
-assert.equal(u3.assessmentStatus,"provisional-unit-only-summative-self-practice");
+assert.equal(u3.questionBankCount,80,"Unit 3 now has a separate provisional 80-MCQ Unit 3-only practice set, not a full-syllabus bank");
+assert.equal(u3.assessmentStatus,"two-provisional-unit-only-summative-self-practice-editions");
 assert.ok(u3.resourceIds.includes("unit3-mcq-stage1"));
+assert.ok(u3.resourceIds.includes("unit3-mcq-full80"));
 for(const [id,target] of [["unit3-desk","./unit-03.html"],["unit3-study-guide","./unit-03-study-guide.html"],["unit3-motion-lab","./unit-03-motion-lab.html"]]){
  assert.ok(u3.resourceIds.includes(id));
  const r=catalog.resources.filter(r=>r.id===id);assert.equal(r.length,1);

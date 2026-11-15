@@ -147,7 +147,7 @@ for(const link of ["./unit-03-study-guide.html","./unit-03-motion-lab.html",
  assert.ok(desk.includes('href="'+link+'"'));
 }
 const u3=catalogue.grades.find(x=>x.grade===11).units.find(x=>x.unit===3);
-assert.equal(u3.questionBankCount,40);
+assert.equal(u3.questionBankCount,80);
 assert.ok(u3.resourceIds.includes("unit3-mcq-stage1"));
 assert.ok(u3.assessmentStatus.includes("provisional"));
 const resource=catalogue.resources.filter(x=>x.id==="unit3-mcq-stage1");
