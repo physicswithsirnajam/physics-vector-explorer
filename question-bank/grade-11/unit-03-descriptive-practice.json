@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "id": "PSN-XI-U03-DESCRIPTIVE-PRACTICE",
+  "version": "v32-unit03-descriptive-model-and-marking-2026-11-15",
+  "title": "Grade XI Physics — Unit 3 Translatory Motion — FBISE-Style Descriptive Practice",
+  "status": "teacher-review-pending",
+  "scope": "Unit 3 only; 40-mark descriptive practice, not an official full-syllabus FBISE examination",
+  "source": "NBF Grade XI Physics Unit 3 pp.33–52; supplied FBISE HSSC-I Physics Assessment Framework and 50% model paper, Sections B and C",
+  "assessmentPolicy": "Summative theory SLOs P-11-B-04, B-05, B-06, B-12, B-13 only; exclude formative P-11-B-03 and B-11. Internal OR alternatives are both assigned their complete mark allocation. Suggested markings are author-created teaching guidance, not official board examiner allocations.",
+  "pattern": {
+    "sectionB": {
+      "questions": 7,
+      "marksEach": 4,
+      "total": 28,
+      "internalOr": true
+    },
+    "sectionC": {
+      "questions": 2,
+      "marksEach": 6,
+      "total": 12,
+      "internalOr": true
+    },
+    "totalMarks": 40
+  },
+  "teacherInstructions": "Credit equivalent correct scientific reasoning, alternative valid derivations, coherent signs and units. Marks are awarded for demonstrated steps; do not double award. These step allocations are suggestions requiring teacher approval.",
+  "sectionB": [
+    {
+      "number": 1,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-04",
+          "assessment": "summative-theory",
+          "sourcePage": 37,
+          "sourceRef": "Adapted from textbook Short Question 3.2; free fall pp. 36–37",
+          "prompt": "A ball is thrown vertically upward. With upward chosen positive, state its velocity and acceleration at the highest point and explain why the acceleration is not zero.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "At the highest point the instantaneous vertical velocity is zero."
+            },
+            {
+              "marks": 1,
+              "text": "Gravity continues acting downward, so acceleration has magnitude g ≈ 9.8 m/s²."
+            },
+            {
+              "marks": 1,
+              "text": "With upward positive, a = −g = −9.8 m/s²."
+            },
+            {
+              "marks": 1,
+              "text": "Changing velocity rather than nonzero velocity is what acceleration describes; the ball begins descending after the instant at the top."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-04",
+          "assessment": "summative-theory",
+          "sourcePage": 35,
+          "sourceRef": "Original constant-acceleration summative application; concept pp. 33–36",
+          "prompt": "A car slows uniformly from 20 m/s to rest in 5 s. Calculate its signed acceleration and the displacement while braking, taking forward as positive.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Given u = +20 m/s, v = 0, t = 5 s."
+            },
+            {
+              "marks": 1,
+              "text": "a = (v−u)/t = (0−20)/5 = −4.0 m/s²."
+            },
+            {
+              "marks": 1,
+              "text": "Use s = (u+v)t/2 or s = ut + ½at²."
+            },
+            {
+              "marks": 1,
+              "text": "s = (20+0)(5)/2 = +50 m. The negative acceleration is deceleration, not negative displacement."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 38,
+          "sourceRef": "Adapted from textbook Short Question 3.4(a); horizontal-launch pp. 38–39",
+          "prompt": "An object is launched horizontally from a height with no air resistance. Describe the horizontal and vertical components of its initial velocity and acceleration, and write the position equations after time t (take downward positive).",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Initial horizontal component vₓ(0) = u; initial vertical component vᵧ(0) = 0."
+            },
+            {
+              "marks": 1,
+              "text": "Horizontal acceleration aₓ = 0 and vertical acceleration aᵧ = +g (downward-positive)."
+            },
+            {
+              "marks": 1,
+              "text": "Horizontal displacement x = ut."
+            },
+            {
+              "marks": 1,
+              "text": "Downward vertical displacement y = ½gt²; the components develop independently."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 41,
+          "sourceRef": "Adapted from textbook equal-range discussion pp. 40–42",
+          "prompt": "For a projectile launched and landing at equal height with no air resistance, explain why launch angles 30° and 60° produce the same range at fixed launch speed, and state one property that differs.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "For equal launch/landing heights, range R = u²sin(2θ)/g."
+            },
+            {
+              "marks": 1,
+              "text": "At θ = 30°, the range factor is sin60°."
+            },
+            {
+              "marks": 1,
+              "text": "At θ = 60°, sin120° = sin60°, giving equal ranges."
+            },
+            {
+              "marks": 1,
+              "text": "Time of flight and maximum height are generally different (60° gives greater values than 30°)."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 41,
+          "sourceRef": "Original example based on textbook range equation p.41",
+          "prompt": "A projectile leaves ground at 20 m/s at 45° and lands at its starting height. Neglect air resistance and use g = 10 m/s². Calculate its range and time of flight.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Identify u = 20 m/s, θ = 45°, g = 10 m/s², equal start/end level."
+            },
+            {
+              "marks": 1,
+              "text": "R = u²sin(2θ)/g."
+            },
+            {
+              "marks": 1,
+              "text": "R = 20²sin90°/10 = 40 m."
+            },
+            {
+              "marks": 1,
+              "text": "T = 2u sinθ/g = 2(20)(sin45°)/10 ≈ 2.83 s."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 39,
+          "sourceRef": "Adapted from textbook Short Question 3.4(b); angled launch pp.39–41",
+          "prompt": "At three positions of an ideal projectile launched upward at an angle—ascending, highest point, and descending—describe the directions of velocity and acceleration. Explain the horizontal component of velocity.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Ascending: velocity points upward and forward; acceleration is downward due to gravity."
+            },
+            {
+              "marks": 1,
+              "text": "At highest point: vertical velocity is zero but horizontal velocity is nonzero; acceleration is downward."
+            },
+            {
+              "marks": 1,
+              "text": "Descending: velocity points downward and forward; acceleration remains downward."
+            },
+            {
+              "marks": 1,
+              "text": "With no air resistance, horizontal velocity is constant because aₓ = 0."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-06",
+          "assessment": "summative-theory",
+          "sourcePage": 42,
+          "sourceRef": "Adapted from textbook Short Question 3.6 and Figure 3.6(b), p.42",
+          "prompt": "Explain four qualitative ways air resistance alters a projectile's motion compared with an otherwise identical ideal launch.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Air resistance opposes the instantaneous velocity; it is not a constant downward force."
+            },
+            {
+              "marks": 1,
+              "text": "It generally decreases the forward horizontal velocity, whereas ideal vₓ is constant."
+            },
+            {
+              "marks": 1,
+              "text": "It changes vertical acceleration: drag acts downward during ascent and upward during descent."
+            },
+            {
+              "marks": 1,
+              "text": "Maximum height and horizontal range are generally smaller than in the no-drag model."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-06",
+          "assessment": "summative-theory",
+          "sourcePage": 42,
+          "sourceRef": "Original summative qualitative scenario based on textbook Figure 3.6(b), p.42",
+          "prompt": "A projectile travels through still air. Explain the direction of air resistance during ascent and descent, and why the ideal equal-range property for complementary angles need not hold.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Resistive drag acts opposite the instantaneous velocity."
+            },
+            {
+              "marks": 1,
+              "text": "During ascent, the vertical drag component points downward, adding to gravity."
+            },
+            {
+              "marks": 1,
+              "text": "During descent, the vertical drag component points upward, opposing gravity."
+            },
+            {
+              "marks": 1,
+              "text": "The symmetry R(θ) = R(90°−θ) assumes no drag; drag changes component motions and does not generally preserve the equal-range result."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-12",
+          "assessment": "summative-theory",
+          "sourcePage": 47,
+          "sourceRef": "Adapted from textbook Comprehensive Question 3.3 / Section 3.4.1 p.47",
+          "prompt": "For an isolated head-on elastic collision, state the two conservation laws and the relation between the relative speeds of approach and separation.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Total linear momentum is conserved: m₁u₁+m₂u₂=m₁v₁+m₂v₂."
+            },
+            {
+              "marks": 1,
+              "text": "Total kinetic energy is conserved: ½m₁u₁²+½m₂u₂²=½m₁v₁²+½m₂v₂²."
+            },
+            {
+              "marks": 1,
+              "text": "Relative approach speed = u₁−u₂ (for approaching configuration and signed velocities)."
+            },
+            {
+              "marks": 1,
+              "text": "Relative separation speed = v₂−v₁, so u₁−u₂ = v₂−v₁ for the ideal elastic collision."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-12",
+          "assessment": "summative-theory",
+          "sourcePage": 48,
+          "sourceRef": "Adapted from equal-mass collision special case, textbook p.48",
+          "prompt": "Two equal-mass balls collide elastically head-on. Ball 1 moves at +6 m/s while ball 2 is initially at rest. Determine their final velocities and explain the result.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Set m₁=m₂=m, u₁=+6 m/s, u₂=0."
+            },
+            {
+              "marks": 1,
+              "text": "In a 1D head-on elastic collision of equal masses, the bodies exchange their velocities."
+            },
+            {
+              "marks": 1,
+              "text": "Thus v₁ = 0 m/s and v₂ = +6 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Momentum and kinetic energy remain conserved; an explicit valid check or explanation earns credit."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-12",
+          "assessment": "summative-theory",
+          "sourcePage": 48,
+          "sourceRef": "Adapted from textbook worked Example 3.7 pp.48–49",
+          "prompt": "A 5 kg body moving at +10 m/s elastically catches a 10 kg body moving at +5 m/s in the same direction. Calculate their final velocities for a 1D head-on collision.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Use the standard 1D elastic collision formulas (or simultaneous momentum and relative-speed equations)."
+            },
+            {
+              "marks": 1,
+              "text": "v₁ = [(5−10)(10)+2(10)(5)]/15 = 50/15 = +3.33 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "v₂ = [2(5)(10)+(10−5)(5)]/15 = 125/15 = +8.33 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Correct directions and a valid conservation/relative-speed check or clear units."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-12",
+          "assessment": "summative-theory",
+          "sourcePage": 52,
+          "sourceRef": "Adapted from textbook Numerical 3.7, p.52",
+          "prompt": "A 0.5 kg ball travelling to the right at +4 m/s collides elastically head-on with a stationary 3.5 kg ball. Find both final velocities.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Given m₁=0.5 kg, m₂=3.5 kg, u₁=+4 m/s, u₂=0; use isolated 1D elastic collision formulas."
+            },
+            {
+              "marks": 1,
+              "text": "v₁ = [(0.5−3.5)(4)]/(4.0) = −3.0 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "v₂ = [2(0.5)(4)]/(4.0) = +1.0 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Interpret v₁ negative as rebound and include the correct signs/units or conservation check."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "marks": 4,
+      "choices": [
+        {
+          "slo": "P-11-B-13",
+          "assessment": "summative-theory",
+          "sourcePage": 46,
+          "sourceRef": "Adapted from textbook Comprehensive Question 3.6 / inelastic collisions p.46",
+          "prompt": "Explain why total momentum may stay conserved in an isolated inelastic collision even though total kinetic energy decreases. Give examples of forms receiving the lost kinetic energy.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "In an isolated system the net external impulse is zero, so total momentum is conserved."
+            },
+            {
+              "marks": 1,
+              "text": "An inelastic collision does not conserve total kinetic energy as kinetic energy."
+            },
+            {
+              "marks": 1,
+              "text": "Some initial kinetic energy converts into deformation, internal/thermal energy and/or sound."
+            },
+            {
+              "marks": 1,
+              "text": "Total energy is not destroyed; distinguish conversion from loss of total energy (or provide a correct example)."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-13",
+          "assessment": "summative-theory",
+          "sourcePage": 46,
+          "sourceRef": "Original inelastic collision numerical application based on p.46",
+          "prompt": "A 4 kg object travelling at +3 m/s sticks to a stationary 2 kg object. Determine the common velocity and the reduction in total kinetic energy of the isolated pair.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Momentum: p = 4(3)+2(0) =12 kg·m/s, giving shared v =12/(4+2)=+2 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Initial K = ½(4)(3²) = 18 J."
+            },
+            {
+              "marks": 1,
+              "text": "Final K = ½(6)(2²) =12 J."
+            },
+            {
+              "marks": 1,
+              "text": "Decrease in kinetic energy =18−12=6 J, transferred into other forms."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    }
+  ],
+  "sectionC": [
+    {
+      "number": 8,
+      "marks": 6,
+      "choices": [
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 40,
+          "sourceRef": "Adapted from textbook Comprehensive Question 3.5, pp.40–41",
+          "prompt": "For an ideal projectile launched at speed u and angle θ above level ground and landing at the same height, derive formulas for maximum height, time of flight and horizontal range.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Resolve initial velocity: uₓ=u cosθ, uᵧ=u sinθ; horizontal acceleration is zero, vertical acceleration −g."
+            },
+            {
+              "marks": 1,
+              "text": "At highest point vᵧ=0: 0=(u sinθ)²−2gH."
+            },
+            {
+              "marks": 1,
+              "text": "Hence maximum height H=u²sin²θ/(2g)."
+            },
+            {
+              "marks": 1,
+              "text": "For return to original level: 0=(u sinθ)T−½gT²; nonzero T=2u sinθ/g."
+            },
+            {
+              "marks": 1,
+              "text": "Horizontal range R=(u cosθ)T."
+            },
+            {
+              "marks": 1,
+              "text": "Substitute T and use sin2θ=2sinθcosθ to give R=u²sin(2θ)/g."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-05",
+          "assessment": "summative-theory",
+          "sourcePage": 38,
+          "sourceRef": "Adapted from horizontal-launch description pp.38–39 and end Numerical 3.5, p.52",
+          "prompt": "A ball rolls horizontally off a cliff of height 45.2 m and lands 17.6 m from its base. Neglect air resistance. Calculate (a) time to land, (b) initial horizontal speed and (c) final downward vertical speed. Use g=9.8 m/s².",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Set downward positive: uᵧ=0, h=45.2 m and h=½gt²."
+            },
+            {
+              "marks": 1,
+              "text": "t=√(2×45.2/9.8)≈3.04 s."
+            },
+            {
+              "marks": 1,
+              "text": "Horizontal x=uₓt with constant uₓ."
+            },
+            {
+              "marks": 1,
+              "text": "uₓ=17.6/3.04≈5.79 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Vertical speed at landing vᵧ=gt."
+            },
+            {
+              "marks": 1,
+              "text": "vᵧ≈9.8×3.04≈29.8 m/s downward."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "marks": 6,
+      "choices": [
+        {
+          "slo": "P-11-B-12",
+          "assessment": "summative-theory",
+          "sourcePage": 47,
+          "sourceRef": "Adapted from textbook Comprehensive Question 3.3 and elastic-collision section p.47",
+          "prompt": "Show from conservation of momentum and kinetic energy that, in a nontrivial isolated one-dimensional elastic collision, relative speed of approach equals relative speed of separation.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Write momentum conservation m₁u₁+m₂u₂=m₁v₁+m₂v₂."
+            },
+            {
+              "marks": 1,
+              "text": "Rearrange to m₁(u₁−v₁)=m₂(v₂−u₂)."
+            },
+            {
+              "marks": 1,
+              "text": "Write kinetic energy conservation m₁u₁²+m₂u₂²=m₁v₁²+m₂v₂²."
+            },
+            {
+              "marks": 1,
+              "text": "Factor to obtain m₁(u₁−v₁)(u₁+v₁)=m₂(v₂−u₂)(v₂+u₂)."
+            },
+            {
+              "marks": 1,
+              "text": "Divide by the nonzero momentum-factor equation: u₁+v₁=v₂+u₂."
+            },
+            {
+              "marks": 1,
+              "text": "Therefore u₁−u₂=v₂−v₁, which equates relative approach and separation speeds for the head-on elastic collision."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        },
+        {
+          "slo": "P-11-B-13",
+          "assessment": "summative-theory",
+          "sourcePage": 46,
+          "sourceRef": "Original comparison extension based on inelastic collision section p.46 and textbook Example 3.7 pp.48–49",
+          "prompt": "A 5 kg body travelling at +10 m/s collides with a 10 kg body travelling at +5 m/s. Compare total momentum and total kinetic energy before impact with the result if the bodies stick together. Explain why this differs from an elastic collision.",
+          "marking": [
+            {
+              "marks": 1,
+              "text": "Initial total momentum p=5(10)+10(5)=100 kg·m/s."
+            },
+            {
+              "marks": 1,
+              "text": "For sticking, common v=100/(5+10)=+6.67 m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Initial kinetic energy Kᵢ=½(5)(10²)+½(10)(5²)=375 J."
+            },
+            {
+              "marks": 1,
+              "text": "After sticking, K𝒇=½(15)(100/15)²≈333.33 J."
+            },
+            {
+              "marks": 1,
+              "text": "Kinetic-energy reduction =375−333.33≈41.67 J; isolated-system momentum remains 100 kg·m/s."
+            },
+            {
+              "marks": 1,
+              "text": "Elastic collisions conserve both momentum and kinetic energy; in sticking collisions some kinetic energy becomes deformation, heat or sound."
+            }
+          ],
+          "notes": "Accept equivalent correct physics, equations, signs, units and mathematically consistent rounding."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+name: Validate Grade XI Unit 3 Descriptive Resources
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-03-textbook-numericals.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "portal/unit-03-numericals.html"
+      - "portal/unit-03-numericals.js"
+      - "portal/unit-03-descriptive-practice.html"
+      - "portal/unit-03-descriptive-practice.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_descriptive_resources.cjs"
+      - ".github/workflows/validate-grade11-unit3-descriptive.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-03-textbook-numericals.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "portal/unit-03-numericals.html"
+      - "portal/unit-03-numericals.js"
+      - "portal/unit-03-descriptive-practice.html"
+      - "portal/unit-03-descriptive-practice.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_descriptive_resources.cjs"
+      - ".github/workflows/validate-grade11-unit3-descriptive.yml"
+  workflow_dispatch:
+jobs:
+  verify-descriptive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Validate practice page JavaScript
+        run: |
+          node --check portal/unit-03-numericals.js
+          node --check portal/unit-03-descriptive-practice.js
+          node --check scripts/test_unit03_descriptive_resources.cjs
+      - name: Verify textbook numerical calculations, formative split, and full marking pattern
+        run: node scripts/test_unit03_descriptive_resources.cjs
