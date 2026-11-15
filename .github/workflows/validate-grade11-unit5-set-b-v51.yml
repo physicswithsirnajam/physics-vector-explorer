@@ -1,0 +1,71 @@
+name: Validate Grade XI Unit 5 Set B MCQ Pilot (V51)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "question-bank/grade-11/unit-05*"
+      - "scripts/test_unit05_*.cjs"
+      - "quality/grade11-unit05-set-b-v51.md"
+      - ".github/workflows/validate-grade11-unit5-set-b-v51.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "question-bank/grade-11/unit-05*"
+      - "scripts/test_unit05_*.cjs"
+      - "quality/grade11-unit05-set-b-v51.md"
+      - ".github/workflows/validate-grade11-unit5-set-b-v51.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-unit5-set-b-boxed-mcqs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check student, teacher and browser tests
+        run: |
+          node --check portal/unit-05-mcq-set-b.js
+          node --check portal/unit-05-mcq-set-b-key.js
+          node --check scripts/test_unit05_mcq_set_b_v51.cjs
+          node --check scripts/test_unit05_mcq_v50.cjs
+      - name: Install pinned Playwright Chromium (CI only)
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Validate Set B all 16 source items, three-step keys, browser/print/mobile
+        run: node scripts/test_unit05_mcq_set_b_v51.cjs
+      - name: Recheck unchanged Set A questions and separate key (V50)
+        run: node scripts/test_unit05_mcq_v50.cjs
+      - name: Recheck official SLO source audit (V49)
+        run: node scripts/test_unit05_fbise_audit_v49.cjs
+      - name: Recheck original Unit 5 numerical Explorer (V48)
+        run: node scripts/test_unit05_work_energy_v48.cjs
+      - name: Retain student/teacher Set B classroom previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit05-v51-set-b-boxed-student-and-key-previews
+          path: qa-artifacts/unit05-v51/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Protect Grade XI Unit 4 source and assessment regressions
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_assessment_pack_v42.cjs
