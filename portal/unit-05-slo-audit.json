@@ -1,9 +1,9 @@
 {
-  "auditVersion": "v48-unit05-source-grounded-teaching-pilot",
+  "auditVersion": "v49-unit05-official-fbise-2024-framework-crosscheck",
   "grade": 11,
   "unit": 5,
   "unitTitle": "Work and Energy",
-  "status": "source-grounded-teaching-pilot",
+  "status": "source-and-fbise-slo-classification-verified-teaching-only",
   "sourceDocuments": [
     {
       "name": "NBF Grade XI Physics textbook (user-provided 11 Physics Book(7).pdf)",
@@ -30,9 +30,11 @@
         82,
         83,
         84,
-        85
+        85,
+        86,
+        87
       ],
-      "note": "Original scanned pages were visually inspected for chapter SLOs, work graphs, conservative fields, kinetic energy and resistive-medium theorem; exercises continue in remainder of chapter."
+      "note": "Original user-supplied NBF Grade XI Unit 5 scanned chapter pages 77–87 visually inspected; pp.86–87 include end-of-unit MCQs, short/comprehensive questions and numericals. No new portal assessment question bank has been published."
     },
     {
       "name": "Grade11_Physics_Unit5_Student_Notes_and_Practice.pdf",
@@ -41,7 +43,25 @@
         77,
         87
       ],
-      "note": "Used to cross-map provisional FBISE SLO codes, cognitive labels and pedagogical sections; not substituted for independently verifying the official framework."
+      "note": "Historical user-prepared study notes for teaching detail and initial SLO mapping; not the authority for final FBISE SLO classification, which was re-verified from the official user-uploaded FBISE assessment framework."
+    },
+    {
+      "name": "11_Physics_HSSC_I_model_paper_50_percent(9).pdf",
+      "role": "user-uploaded official FBISE HSSC-I Physics Assessment Framework and Model Question Paper",
+      "curriculum": "National Curriculum 2022–23 / Inclusive Scheme of Studies 2024",
+      "verifiedPdfPages": [
+        4,
+        11,
+        27,
+        28,
+        30,
+        40,
+        42,
+        43
+      ],
+      "officialSloTablePdfPage": 11,
+      "officialSloTablePrintedPage": 5,
+      "note": "Page 11 explicitly lists P-11-B-29–32 as Summative with Application, Application, Understanding and Application cognitive levels; PDF page 27 says separate PBA summative practicum list will be supplied, so this audit does NOT certify Unit 5 practical/PBA coverage. Printed model paper mechanics questions demonstrate some Unit 5 outcomes (MCQ A13 B31, A14 B32, A17 B30); MCQ sample cognitive label may differ from the SLO-wide framework label."
     }
   ],
   "sourcePageMap": [
@@ -92,45 +112,65 @@
     {
       "code": "P-11-B-29",
       "sourceOutcome": "Derive the formula for kinetic energy using equations of motion.",
-      "provisionalCognitiveLevel": "Application",
       "printedPages": [
         81,
         82
       ],
-      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
-      "teachingStatus": "guide-and-interactive-derivation-available"
+      "assessmentStatus": "official-FBISE-framework-verified-summative-theory-slo",
+      "teachingStatus": "guide-and-interactive-derivation-available",
+      "cognitiveLevel": "Application",
+      "formOfAssessment": "Summative",
+      "theoryExamEligible": true,
+      "officialFrameworkPdfPage": 11,
+      "officialFrameworkPrintedPage": 5,
+      "classificationEvidence": "User-uploaded official HSSC-I Physics Assessment Framework PDF page 11, table page 5, Grade XI Mechanics Domain B; printed form 'Summative' and cognitive level 'Application'."
     },
     {
       "code": "P-11-B-30",
       "sourceOutcome": "Deduce work done from a force–displacement graph.",
-      "provisionalCognitiveLevel": "Application",
       "printedPages": [
         79,
         80
       ],
-      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
-      "teachingStatus": "signed-linear-graph-lab-and-guide-available"
+      "assessmentStatus": "official-FBISE-framework-verified-summative-theory-slo",
+      "teachingStatus": "signed-linear-graph-lab-and-guide-available",
+      "cognitiveLevel": "Application",
+      "formOfAssessment": "Summative",
+      "theoryExamEligible": true,
+      "officialFrameworkPdfPage": 11,
+      "officialFrameworkPrintedPage": 5,
+      "classificationEvidence": "User-uploaded official HSSC-I Physics Assessment Framework PDF page 11, table page 5, Grade XI Mechanics Domain B; printed form 'Summative' and cognitive level 'Application'."
     },
     {
       "code": "P-11-B-31",
       "sourceOutcome": "Differentiate between conservative and non-conservative forces.",
-      "provisionalCognitiveLevel": "Understanding",
       "printedPages": [
         81
       ],
-      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
-      "teachingStatus": "path-comparison-lab-and-guide-available"
+      "assessmentStatus": "official-FBISE-framework-verified-summative-theory-slo",
+      "teachingStatus": "path-comparison-lab-and-guide-available",
+      "cognitiveLevel": "Understanding",
+      "formOfAssessment": "Summative",
+      "theoryExamEligible": true,
+      "officialFrameworkPdfPage": 11,
+      "officialFrameworkPrintedPage": 5,
+      "classificationEvidence": "User-uploaded official HSSC-I Physics Assessment Framework PDF page 11, table page 5, Grade XI Mechanics Domain B; printed form 'Summative' and cognitive level 'Understanding'."
     },
     {
       "code": "P-11-B-32",
       "sourceOutcome": "Use the work–energy theorem in a resistive medium to solve problems.",
-      "provisionalCognitiveLevel": "Application",
       "printedPages": [
         82,
         83
       ],
-      "assessmentStatus": "summative-theory-according-to-existing-user-prepared-FBISE-mapping",
-      "teachingStatus": "resistive-work-energy-lab-and-guide-available"
+      "assessmentStatus": "official-FBISE-framework-verified-summative-theory-slo",
+      "teachingStatus": "resistive-work-energy-lab-and-guide-available",
+      "cognitiveLevel": "Application",
+      "formOfAssessment": "Summative",
+      "theoryExamEligible": true,
+      "officialFrameworkPdfPage": 11,
+      "officialFrameworkPrintedPage": 5,
+      "classificationEvidence": "User-uploaded official HSSC-I Physics Assessment Framework PDF page 11, table page 5, Grade XI Mechanics Domain B; printed form 'Summative' and cognitive level 'Application'."
     }
   ],
   "supportingTeaching": [
@@ -176,12 +216,74 @@
   "studentQuestionBankPublished": false,
   "studentQuestionBankStatus": "not-published-independent-academic-QC-required",
   "questionBankCount": 0,
-  "formativeTheorySLOsVerifiedSeparately": false,
-  "officialFBISEFrameworkIndependentVerification": "pending-primary-framework-page-check",
+  "formativeTheorySLOsVerifiedSeparately": true,
+  "officialFBISEFrameworkIndependentVerification": "verified-against-user-uploaded-official-FBISE-HSSC-I-framework-PDF-page-11",
   "descriptivePaperPublished": false,
   "omrPublished": false,
   "protectedOrGradedAssessmentPublished": false,
   "studentGradesRecorded": false,
-  "academicRisk": "Teaching calculations and original interactives are pedagogical demonstrations. Before a formal unit MCQ bank/paper, verify official framework classifications and independently proof every question and explanation.",
-  "sourceBoundary": "Only printed pages 77–87 of the original NBF Unit 5 are in scope; do not use Unit 4 questions or claim an official comprehensive board assessment."
+  "academicRisk": "Official SLO theory classification verified from supplied FBISE document; correctness and examiner-worthiness of future questions/keys, latest online revision and separate practical/PBA assessment list are not independently approved. Existing Unit 5 materials remain a teaching pilot.",
+  "sourceBoundary": "NBF Grade XI Unit 5 Work and Energy printed pp.77–87; unit-specific summative theory outcomes B-29 through B-32 only. Neither official full-syllabus exam quotas nor unknown PBA eligibility should be assigned to this single unit.",
+  "officialFrameworkVerified": true,
+  "officialFrameworkEdition": "National Curriculum 2022–23 / Inclusive Scheme of Studies 2024",
+  "officialFrameworkSourceFile": "11_Physics_HSSC_I_model_paper_50_percent(9).pdf",
+  "officialFrameworkSLOTablePdfPage": 11,
+  "officialFrameworkSLOTablePrintedPage": 5,
+  "latestOnlineFrameworkRevisionChecked": false,
+  "verifiedSourceDate": "2026-11-15",
+  "officialFrameworkRulePage": 4,
+  "officialFrameworkPbaCautionPage": 27,
+  "officialModelPaperFormatPage": 28,
+  "officialModelPaperBoxedMcqPage": 30,
+  "officialModelPaperSloAlignmentPages": [
+    42,
+    43
+  ],
+  "unit5FormativeTheorySLOs": [],
+  "formativeFinding": "The supplied official FBISE Grade XI framework lists Unit 5's four chapter outcomes B-29–B-32 as Summative. No separate formative theory SLO is listed among these four; do not treat adjacent Unit 4 B-28 or Unit 6 B-33 as Unit 5.",
+  "practicalPbaDetermination": "not-established-by-this-source",
+  "pbaSourceCaution": "Official framework PDF page 27 states that summative PBA practical SLOs are not identified in the document and a separate practical list will be shared. This does NOT establish that Unit 5 has no practicals/PBA; check the relevant separate PBA list before making practical-assessment claims.",
+  "fullPaperStructure": {
+    "applicability": "full-grade-XI-HSSC-I-theory-model-paper-only-not-a-single-unit-5-quota",
+    "totalMarks": 80,
+    "sectionA": {
+      "mcqs": 80,
+      "marksEach": 0.5,
+      "totalMarks": 40,
+      "straight": 56,
+      "contextual": 24,
+      "scenarioSets": 6
+    },
+    "sectionB": {
+      "shortQuestions": 7,
+      "marksEach": 4,
+      "totalMarks": 28,
+      "internalChoice": true
+    },
+    "sectionC": {
+      "extendedQuestions": 2,
+      "marksEach": 6,
+      "totalMarks": 12,
+      "internalChoice": true
+    },
+    "primaryFrameworkPdfPage": 28,
+    "modelMCQTablePdfPage": 30,
+    "caution": "Model paper is full-grade, covers many content domains; do not infer 80 MCQs or 7+2 descriptive questions from Unit 5 alone."
+  },
+  "chapterExerciseEvidence": {
+    "textbookPrintedPages": [
+      85,
+      86,
+      87
+    ],
+    "scope": "Original NBF chapter MCQs, short/comprehensive questions and numericals present; independently inspect and solve before adding any bank; not yet reproduced on portal."
+  },
+  "assessmentPublicationGate": [
+    "Use only B-29/B-30/B-31/B-32 for Unit 5 written summative theory selection; preserve cognitive A/A/U/A from official SLO table.",
+    "Check proposed questions against the NBF Unit 5 textbook (pp.77–87) and reject unsupported/out-of-unit content.",
+    "Independently solve and peer-review each candidate MCQ option and solution; avoid predictable key positions and source text errors.",
+    "Keep student-only question view separate from teacher answer/marking view; protect existing account/grade features.",
+    "For full-grade FBISE-style papers preserve the official boxed MCQ presentation and 50%/50% global structure; do not impose an 80-MCQ quota on a single unit.",
+    "Complete teacher academic and projector/mobile/print sign-off; verify separately issued PBA list where practical questions are involved."
+  ]
 }
