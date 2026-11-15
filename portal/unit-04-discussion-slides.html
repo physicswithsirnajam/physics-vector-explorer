@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08182f">
+<meta name="description" content="Grade XI Physics Unit 4: separate, untimed teacher-led MCQ discussion slides. Each of 80 original questions is followed by an explicitly revealed worked key with SLO, cognitive level and textbook source.">
+<title>Unit 4 — Teacher MCQ Discussion Slides | Physics with Sir Najam</title>
+<style>
+:root{--deep:#08182f;--navy:#102643;--blue:#1e4367;--gold:#f0d18f;--paper:#eef3fa;--ink:#1c3450;--muted:#536c84;--line:#adc2d8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);font:16px/1.48 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+header{background:var(--deep);color:#fff}
+.topbar{max-width:1250px;margin:0 auto;padding:11px 18px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{color:white;display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:850}
+.brand img{height:49px;width:49px;object-fit:contain}
+nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:var(--gold)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #e0aa4f;outline-offset:3px}
+main{max-width:1250px;margin:auto;padding:24px 18px 50px}
+h1{font-size:clamp(26px,4vw,38px);margin:5px 0 9px;line-height:1.2}
+.eyebrow{font-size:12px;color:#8c6829;text-transform:uppercase;letter-spacing:.08em;font-weight:850}
+.lead{max-width:900px;color:var(--muted);margin:0 0 12px}
+.notice{border-left:4px solid #c18d3b;border-radius:9px;background:#fff6e2;padding:12px 15px;margin:13px 0;font-size:14px}
+.load{font-size:13px;font-weight:800;color:#226078;padding:8px 0}
+.stage{border-radius:16px;border:2px solid #587394;background:linear-gradient(140deg,#193958 0%,#08192e 82%);color:#f3f8ff;box-shadow:0 10px 26px #09182c22;overflow:hidden;display:flex;flex-direction:column;min-height:min(73vh,695px)}
+.stage:fullscreen{border:0;border-radius:0;width:100vw;height:100vh;min-height:100vh}
+.stage-head{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:8px;border-bottom:1px solid #567393;padding:14px 23px}
+.stage-head strong{font-size:clamp(15px,1.7vw,21px);color:var(--gold)}
+.tags{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:clamp(11px,1.3vw,14px);border:1px solid #7794b2;color:#f4faff;border-radius:15px;padding:4px 9px;font-weight:760}
+.tag.phase{background:#254d71;color:#fff}
+.stage-main{padding:clamp(16px,2.6vw,35px);flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(11px,1.5vw,20px);overflow-y:auto}
+.context{background:#224762;border-left:5px solid var(--gold);padding:clamp(10px,1.35vw,17px);border-radius:7px}
+.context strong{color:var(--gold);display:block;margin-bottom:6px;font-size:clamp(14px,1.55vw,18px)}
+.context p{margin:0;font-size:clamp(14px,1.65vw,20px)}
+.context[hidden]{display:none!important}
+.question{font-size:clamp(21px,2.55vw,34px);font-weight:790;line-height:1.28;margin:0;overflow-wrap:anywhere}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(9px,1.25vw,15px)}
+.option{display:flex;align-items:flex-start;gap:12px;background:#244766;border:1px solid #6487a7;border-radius:10px;padding:clamp(10px,1.3vw,16px);min-width:0}
+.option .letter{font-size:17px;min-width:36px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--gold);border-radius:50%;color:#ffe7b2;font-weight:900;flex-shrink:0}
+.option .option-text{align-self:center;line-height:1.36;font-size:clamp(16px,1.72vw,24px);overflow-wrap:anywhere}
+.option.correct{background:#214f45;border-color:#9bd7b6}
+.option.correct .letter{background:#a4ddbd;color:#133a2d;border-color:#a4ddbd}
+.option .correct-label{font-size:13px;color:#b9f3ce;font-weight:780;margin-left:auto;align-self:center}
+.solution{border:1px solid #6f95ac;background:#edf6ff;color:#1b344e;border-radius:11px;padding:clamp(11px,1.8vw,19px)}
+.solution[hidden]{display:none!important}
+.solution h3{font-size:clamp(18px,2vw,25px);margin:0 0 7px;color:#174963}
+.solution p{margin:6px 0;line-height:1.46;font-size:clamp(15px,1.6vw,20px);overflow-wrap:anywhere}
+.solution .source{font-size:clamp(12px,1.25vw,16px);color:#405e73}
+.solution .teacher-prompt{font-size:clamp(13px,1.4vw,17px);border-top:1px solid #b2d0df;margin-top:10px;padding-top:9px}
+.stage-foot{background:#07182c;border-top:1px solid #526f8c;padding:12px 22px}
+.status-line{display:flex;gap:15px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:13px;color:#e4f0fc;margin-bottom:9px}
+.status-line strong{color:var(--gold)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.controls button{background:#24425e;border:1px solid #7594b1;border-radius:8px;padding:9px 13px;cursor:pointer;color:#fff;font:inherit;font-weight:750}
+.controls button.reveal{background:#e9c886;border-color:#e9c886;color:#0b2e4f}
+.controls button:disabled{opacity:.43;cursor:not-allowed}
+.controls button:not(:disabled):hover{filter:brightness(1.08)}
+.controls .jump{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.controls .jump label{font-size:13px;color:#e1ecf7}
+.controls input{min-width:0;width:70px;padding:8px;border:1px solid #8fa6bb;border-radius:7px;font:inherit}
+.help{font-size:13px;color:var(--muted);margin-top:14px}
+.help a{color:#0e668e}
+footer{text-align:center;background:var(--deep);color:#c7d9e9;padding:17px;font-size:13px}
+@media(max-width:850px){.options{grid-template-columns:1fr}.stage-main{padding:16px}.question{font-size:clamp(18px,3.9vw,27px)}.option .option-text{font-size:clamp(16px,3vw,22px)}.stage-head,.stage-foot{padding:12px}.controls .jump{margin-left:0}.stage{min-height:580px}}
+@media(max-width:450px){main{padding:14px 10px 35px}.topbar{padding:10px}.option .letter{min-width:30px;width:30px;height:30px;font-size:14px}.controls button{padding:8px 10px}.controls .jump{width:100%}.stage-main{gap:10px}.tags{gap:5px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media print{#psn-global-nav,header,footer,.controls{display:none!important}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=6">
+<script src="./unit-04-discussion-slides.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head>
+<body>
+<header><div class="topbar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unaltered official Physics with Sir Najam logo">Physics with Sir Najam</a><nav aria-label="Unit 4 navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-projector-practice.html">Student countdown slides</a><a href="./unit-04-assessment-pack.html">Teacher answer key</a></nav></div></header>
+<main>
+<div class="eyebrow">HSSC-I · Grade XI · Unit 4 · After-test classroom discussion</div>
+<h1>Teacher-Led MCQ Solutions &amp; Discussion Slides</h1>
+<p class="lead">Review all 80 original Unit 4 MCQs in two clear stages per question: first the unmarked question, then its worked-answer and SLO discussion slide. There is no countdown or automatic advance.</p>
+<div class="notice"><strong>Important:</strong> This is a <strong>public teaching resource, not access-restricted</strong>. Only open it on the projector <strong>after students finish their timed practice</strong>. Answers are hidden until the teacher explicitly selects <em>Reveal solution</em>, but this is not a secure exam environment. Explanations come from the provisional source question bank and still require teacher academic review. Nothing records grades, answers or student activity.</div>
+<div id="loadStatus" class="load" role="status" aria-live="polite">Loading Unit 4 teaching bank…</div>
+<section id="stageShell" class="stage" aria-label="Untimed question and teaching solution presentation">
+<div class="stage-head"><strong id="stepIndex">Discussion — / 160</strong><div class="tags"><span id="questionIndex" class="tag">Q — / 80</span><span id="phaseLabel" class="tag phase">Question</span><span id="scenarioBadge" class="tag" hidden></span></div></div>
+<div class="stage-main">
+<div id="contextPane" class="context" hidden><strong id="contextHeading">Shared situation</strong><p id="contextText"></p></div>
+<h2 id="questionText" class="question">Select Start discussion after the question bank loads.</h2>
+<div id="optionGrid" class="options" aria-label="Original four answer options"></div>
+<div id="solutionPanel" class="solution" hidden aria-live="polite">
+<h3 id="solutionHeading">Correct answer</h3>
+<p id="solutionExplanation"></p>
+<p id="solutionMeta" class="source"></p>
+<p id="discussionPrompt" class="teacher-prompt"></p>
+</div>
+</div>
+<div class="stage-foot">
+<div class="status-line"><span id="teacherNotice" role="status" aria-live="polite">Start on Question 1; use Reveal solution only when ready to discuss the answer.</span><strong id="progressLabel">Not started</strong></div>
+<div class="controls" aria-label="Teacher controls">
+<button id="startBtn" type="button" class="reveal" disabled>Start discussion</button>
+<button id="prevBtn" type="button" disabled>Previous question</button>
+<button id="revealBtn" type="button" class="reveal" disabled>Reveal worked solution</button>
+<button id="hideBtn" type="button" disabled>Return to question</button>
+<button id="nextBtn" type="button" disabled>Next question</button>
+<button id="fullscreenBtn" type="button" disabled>Fullscreen</button>
+<div class="jump"><label for="jumpInput">Go to Q</label><input id="jumpInput" type="number" min="1" max="80" step="1" value="1" disabled><button id="jumpBtn" type="button" disabled>Go</button></div>
+</div>
+</div></section>
+<p class="help">The sequence is <strong>Question 1 → Reveal solution 1 → Question 2 → Reveal solution 2</strong>, continuing to Question 80. Reveal is always a deliberate button action, and jumping to another question hides its answer. Keyboard: <strong>←</strong> previous question/return from solution, <strong>→</strong> next question <em>only after revealing</em>, and <strong>F</strong> fullscreen (away from input fields). Keep the separate <a href="./unit-04-projector-practice.html">student countdown presentation</a> open during assessment; use this public discussion page only afterward.</p>
+</main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers · Teacher-led, provisional Unit 4 solution discussions · No scores saved</footer>
+</body></html>
