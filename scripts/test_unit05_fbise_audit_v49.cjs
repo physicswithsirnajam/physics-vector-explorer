@@ -37,7 +37,7 @@ const expected=[
 ];
 function sourceContract(){
  assert.equal(audit.grade,11);assert.equal(audit.unit,5);assert.equal(audit.unitTitle,"Work and Energy");
- assert.equal(audit.status,"source-and-fbise-slo-classification-verified-teaching-only");
+ assert.equal(audit.status,"official-summative-SLO-verified-16-mcq-provisional-practice");
  assert.equal(audit.officialFrameworkVerified,true);
  assert.equal(audit.officialFBISEFrameworkIndependentVerification,"verified-against-user-uploaded-official-FBISE-HSSC-I-framework-PDF-page-11");
  assert.equal(audit.officialFrameworkSourceFile,"11_Physics_HSSC_I_model_paper_50_percent(9).pdf");
@@ -72,21 +72,21 @@ function sourceContract(){
  assert.deepEqual(full.sectionA,{mcqs:80,marksEach:.5,totalMarks:40,straight:56,contextual:24,scenarioSets:6});
  assert.deepEqual(full.sectionB,{shortQuestions:7,marksEach:4,totalMarks:28,internalChoice:true});
  assert.deepEqual(full.sectionC,{extendedQuestions:2,marksEach:6,totalMarks:12,internalChoice:true});
- assert.equal(audit.studentQuestionBankPublished,false);
- assert.equal(audit.questionBankCount,0);
+ assert.equal(audit.studentQuestionBankPublished,true);
+ assert.equal(audit.questionBankCount,16);
  assert.equal(audit.descriptivePaperPublished,false);
  assert.equal(audit.omrPublished,false);
  assert.equal(audit.protectedOrGradedAssessmentPublished,false);
  assert.equal(audit.studentGradesRecorded,false);
  assert.ok(audit.assessmentPublicationGate.length>=5);
  assert.deepEqual(audit.chapterExerciseEvidence.textbookPrintedPages,[85,86,87]);
- // The Unit 5 JSON question bank does not exist: do not publish one by accident.
- assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")),[]);
+ // The Unit 5 directory may contain only the explicit provisional V50 student and public teaching-key JSONs.
+ assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")).sort(),["unit-05-v50-16-student.json","unit-05-v50-16-teacher-key.json"]);
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
  assert.equal(u5.status,"available");
- assert.equal(u5.assessmentStatus,"not-published");
- assert.equal(u5.questionBankCount,0);
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit"]);
+ assert.equal(u5.assessmentStatus,"provisional-ungraded-16-mcq-mini-practice-teacher-review-pending");
+ assert.equal(u5.questionBankCount,16);
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key"]);
  for(const id of u5.resourceIds){
   const resources=catalog.resources.filter(r=>r.id===id);
   assert.equal(resources.length,1);
@@ -140,7 +140,7 @@ async function browser(){
   }
   assert.ok((await page.locator("#pba").textContent()).includes("separate list"));
   assert.ok((await page.locator("#exam-model").textContent()).includes("whole syllabus"));
-  assert.ok((await page.locator("#publication-gates").textContent()).includes("0"));
+  assert.ok((await page.locator("#publication-gates").textContent()).includes("16 original"));
   await page.screenshot({path:path.join(out,"01-official-audit-desktop.png"),fullPage:false});
   await page.setViewportSize({width:390,height:844});
   const geom=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
@@ -170,7 +170,7 @@ async function browser(){
   const state=await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}));
   assert.deepEqual(state,{local:0,session:0});
   console.log("PASS V49: exact supplied FBISE official framework PDF p.11 Unit 5 SLO B-29/30/31/32 classification A/A/U/A preserved.");
-  console.log("PASS V49: full-grade 80-mark structure, PBA source caution, zero Unit 5 bank, 4 public Unit 5 teaching/audit resources.");
+  console.log("PASS V49: full-grade 80-mark structure, PBA caution, exactly 16 provisional Unit 5 MCQs, 6 public resources and no formal exam.");
   console.log("PASS V49: browser-rendered teacher-facing table, mobile 390px, no errors or grade writes; official file is provenance, not re-read by CI.");
  }finally{await engine.close();}
 }
