@@ -144,6 +144,17 @@ async function browser(){
   await page.screenshot({path:path.join(out,"01-official-audit-desktop.png"),fullPage:false});
   await page.setViewportSize({width:390,height:844});
   const geom=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  if(geom.scroll>geom.client+2){
+   const suspects=await page.evaluate(()=>[...document.querySelectorAll("body *")].filter(el=>{
+    const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+    return cs.display!=="none"&&r.width>0&&r.right>innerWidth+2&&r.left>=0&&el.getClientRects().length;
+   }).sort((a,b)=>b.getBoundingClientRect().right-a.getBoundingClientRect().right).slice(0,12).map(el=>{
+    const r=el.getBoundingClientRect();
+    return {tag:el.tagName,id:el.id,cls:typeof el.className==="string"?el.className:"",
+      left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width),text:el.textContent.trim().slice(0,65)};
+   }));
+   console.error("V49 mobile offending DOM elements:",JSON.stringify(suspects));
+  }
   assert.ok(geom.scroll<=geom.client+2,"Mobile viewport overflow "+JSON.stringify(geom));
   await page.screenshot({path:path.join(out,"02-official-audit-mobile.png"),fullPage:false});
   // The wide detailed table must scroll LOCALLY, not push the entire phone page.
