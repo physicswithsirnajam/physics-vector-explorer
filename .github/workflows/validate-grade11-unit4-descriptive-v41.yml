@@ -1,0 +1,48 @@
+name: Validate Grade XI Unit 4 Descriptive OR Practice (V41)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "portal/unit-04-descriptive-practice.html"
+      - "portal/unit-04-descriptive-practice.js"
+      - "portal/unit-04.html"
+      - "portal/unit-04-slo-audit.*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - ".github/workflows/validate-grade11-unit4-descriptive-v41.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "portal/unit-04-descriptive-practice.html"
+      - "portal/unit-04-descriptive-practice.js"
+      - "portal/unit-04.html"
+      - "portal/unit-04-slo-audit.*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - ".github/workflows/validate-grade11-unit4-descriptive-v41.yml"
+  workflow_dispatch:
+jobs:
+  unit04-descriptive-and-regressions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Validate new descriptive renderer and regression syntax
+        run: |
+          node --check portal/unit-04-descriptive-practice.js
+          node --check scripts/test_unit04_descriptive_v41.cjs
+      - name: V41 descriptive paper, SLO, numeric, print and privacy checks
+        run: node scripts/test_unit04_descriptive_v41.cjs
+      - name: All existing Unit 4 content, MCQ and quality regressions
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
