@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10233d">
+<meta name="description" content="Interactive Grade XI Unit 4 centripetal acceleration and force lab: v²/r, mv²/r, inward force vectors, banked curves, string tension, friction and textbook Example 4.2.">
+<title>Unit 4 — Interactive Centripetal Force Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e8c780;--ink:#1b314a;--muted:#51657b;--soft:#f5f8fc;--line:#d3e0ec;--accent:#127992;--warm:#bb7841}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:#fff}.bar{max-width:1170px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:13px;flex-wrap:wrap;align-items:center}
+.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;font-weight:800}.brand img{width:50px;height:50px;object-fit:contain}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#146984}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #cc9f49;outline-offset:3px}
+main{max-width:1170px;margin:auto;padding:27px 18px 73px}.eyebrow{font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.1em;color:#886322}
+h1{font-size:clamp(29px,4.5vw,41px);line-height:1.17;margin:8px 0 12px}h2{font-size:23px;margin:0 0 11px}h3{font-size:17px;margin:10px 0 8px}
+.lead{color:var(--muted);max-width:970px}.notice{background:#fff7e6;border-left:4px solid #cba05c;border-radius:10px;padding:13px 16px;margin:16px 0;font-size:14px}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;box-shadow:0 6px 22px #10233d0b}
+.tag{display:inline-block;background:#e5f2f8;color:#175d76;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:850;margin-bottom:10px}
+.cols{display:grid;grid-template-columns:minmax(275px,.83fr) minmax(0,1.17fr);gap:21px}
+label{font-size:14px;font-weight:790;display:block;margin:13px 0 4px}output{color:#145f79;font-weight:850}
+input[type=range]{width:100%;min-height:27px;accent-color:#166e87;cursor:pointer}
+select{width:100%;font:inherit;border:1px solid #a7bccc;border-radius:9px;padding:9px;background:#fff;color:var(--ink)}
+button{font:inherit;font-size:14px;border:1px solid #adbfce;background:#fff;color:var(--ink);padding:9px 12px;border-radius:9px;font-weight:780;cursor:pointer}
+button:hover{background:#e8f3fa}.primary{background:var(--navy);border-color:var(--navy);color:white}.primary:hover{background:#294460}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.plot{width:100%;height:auto;background:#f9fcff;border:1px solid #c7d7e6;border-radius:11px}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}
+.metric{background:#ebf4f8;border:1px solid #d6e6f0;border-radius:9px;padding:11px 12px}
+.metric span{display:block;font-size:12px;color:#50667b}.metric strong{display:block;font-size:19px;line-height:1.34;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.formula{background:#ecf5f9;border-radius:8px;padding:11px 13px;font-weight:800;font-size:17px;margin:13px 0;overflow-wrap:anywhere}
+.result{padding:12px 14px;background:#fff8e9;border-left:3px solid #c49455;border-radius:8px;font-size:14px;margin:12px 0}
+.callout{background:#eaf5f1;border-left:3px solid #2b9675;padding:11px 12px;border-radius:9px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:#4d6275;margin:8px 0}
+.swatch{width:14px;height:4px;display:inline-block;vertical-align:middle;margin-right:5px;border-radius:8px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.figure-source{font-size:12px;color:var(--muted)}.links{display:flex;gap:17px;flex-wrap:wrap;margin-top:17px}
+footer{background:var(--navy);padding:20px;text-align:center;font-size:13px;color:#cbd8e7}
+@media(max-width:860px){.cols,.two{grid-template-columns:1fr}}@media(max-width:520px){.card{padding:14px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric strong{font-size:17px}}
+@media print{header,footer,.controls{display:none!important}.card{box-shadow:none;break-inside:avoid}}
+</style><link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-04-centripetal-engine.js" defer></script><script src="./unit-04-centripetal-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head><body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Original unchanged Physics with Sir Najam official logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 4 navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-centripetal-study.html">Part 2 Study Guide</a><a href="./unit-04-rotation-lab.html">Part 1 Rotation Lab</a></nav></div></header>
+<main><div class="eyebrow">Grade XI · NBF Unit 4 Part 2 · Interactive model</div>
+<h1>Centripetal Acceleration &amp; Force Explorer</h1>
+<p class="lead">Adjust mass, speed and turn radius. Observe the instantaneous tangent velocity and inward force, predict what happens if speed doubles, and work through real mechanisms such as tyre friction, string tension and a banked road.</p>
+<div class="notice"><strong>Model boundaries:</strong> This is an ideal <strong>constant-speed circular-motion</strong> model. Tangential acceleration equals zero, but inward centripetal acceleration generally does not. The net inward force is supplied by existing physical forces; it is <strong>not</strong> a separate extra force. The wheel animation is deliberately in <strong>slow motion (30% real-time angular rate)</strong> for projector visibility; all numeric equations use the unscaled physical values. No student scores or accounts are accessed.</div>
+<section class="card" aria-labelledby="forcesHeading"><span class="tag">P-11-B-10, P-11-B-14, P-11-B-15 · SUMMATIVE</span>
+<h2 id="forcesHeading">1. Follow the tangent, measure the inward force</h2>
+<div class="controls" role="group" aria-label="Learning presets">
+<button type="button" data-preset="example-4.2">NBF Example 4.2</button>
+<button type="button" data-preset="flat-road">Car on flat road</button>
+<button type="button" data-preset="string">Ball on a string</button>
+<button type="button" data-preset="banked">Friction-free banked turn</button>
+</div>
+<div class="cols"><div>
+<label for="mass">Mass: <output id="massValue" for="mass">856 kg</output></label>
+<input id="mass" type="range" min="50" max="1500" step="any" value="856">
+<label for="speed">Tangential speed: <output id="speedValue" for="speed">12.0 m/s</output></label>
+<input id="speed" type="range" min="0" max="30" step="any" value="12">
+<label for="radius">Path radius: <output id="radiusValue" for="radius">17.00 m</output></label>
+<input id="radius" type="range" min="5" max="120" step="any" value="17">
+<label for="mechanism">What provides the radial force?</label>
+<select id="mechanism" aria-label="Centripetal-force source">
+<option value="friction">Static friction — car on a flat turn</option>
+<option value="tension">String tension — object in a horizontal circle</option>
+<option value="normal">Normal-force component — friction-free banked road</option>
+<option value="gravity">Gravity — circular orbital-motion context</option>
+</select>
+<div class="controls"><button class="primary" id="play" type="button">Play motion</button><button id="resetPosition" type="button">Reset marker position</button></div>
+<p id="mechanismText" class="result" role="status">The inward net force must come from actual forces present in this situation.</p>
+</div><div>
+<svg id="circlePlot" class="plot" viewBox="0 0 520 378" role="img" aria-label="Circular path and object with tangent velocity and net inward force vectors">
+<title>Uniform circular motion: blue velocity tangent to the circle, amber net force inward</title>
+<defs>
+<marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#147a94"/></marker>
+<marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#b47438"/></marker></defs>
+<circle cx="244" cy="187" r="126" fill="none" stroke="#95afc1" stroke-width="3" stroke-dasharray="8 7"/>
+<circle cx="244" cy="187" r="4.5" fill="#233b52"/>
+<text x="254" y="205" font-size="13" fill="#38526b">Centre O</text>
+<line id="radiusRay" x1="244" y1="187" x2="366" y2="187" stroke="#abbcca" stroke-width="2" stroke-dasharray="5 5"/>
+<line id="velocityArrow" x1="366" y1="187" x2="366" y2="112" stroke="#147a94" stroke-width="4" marker-end="url(#arrowBlue)"/>
+<line id="forceArrow" x1="366" y1="187" x2="291" y2="187" stroke="#b47438" stroke-width="4" marker-end="url(#arrowGold)"/>
+<circle id="bodyPoint" cx="370" cy="187" r="10" fill="#1b4f70" stroke="#fff" stroke-width="2"/>
+<text id="velocityLabel" x="366" y="98" fill="#13758d" font-size="14" font-weight="800">v (tangent)</text>
+<text id="forceLabel" x="290" y="169" fill="#a96e2f" font-size="14" font-weight="800">Fnet, ac (inward)</text>
+<text id="circleDirection" x="260" y="28" text-anchor="middle" fill="#264b69" font-size="14" font-weight="800">Counterclockwise</text>
+<text x="20" y="353" fill="#506880" font-size="12">Schematic: circular path, velocity tangent, net acceleration/force inward</text>
+</svg>
+<div class="legend"><span><i class="swatch" style="background:#147a94"></i> Tangential velocity v</span><span><i class="swatch" style="background:#b47438"></i> Inward net F and a<sub>c</sub></span></div>
+<p class="figure-source">The drawing's circle size is fixed for legibility; the radius slider changes the physical radius used by the equations.</p>
+</div></div>
+<div class="metrics">
+<div class="metric"><span>Centripetal acceleration a<sub>c</sub></span><strong id="ac">—</strong></div>
+<div class="metric"><span>Required inward force F<sub>c</sub></span><strong id="fc">—</strong></div>
+<div class="metric"><span>Angular speed ω = v/r</span><strong id="omega">—</strong></div>
+<div class="metric"><span>Tangential acceleration</span><strong id="at">0 m/s²</strong></div>
+<div class="metric"><span>Double speed → inward force</span><strong id="doubleSpeed">—</strong></div>
+<div class="metric"><span>Double radius → inward force</span><strong id="doubleRadius">—</strong></div>
+</div>
+<div class="formula">a<sub>c</sub> = v²/r = rω² &nbsp;&nbsp; | &nbsp;&nbsp; F<sub>c</sub> = ma<sub>c</sub> = mv²/r = mrω²</div>
+</section>
+<section class="card" aria-labelledby="patternsHeading"><span class="tag">P-11-B-14 · SQUARED-SPEED RELATION</span>
+<h2 id="patternsHeading">2. Graph the relationship F<sub>c</sub> ∝ v²</h2>
+<div class="two"><div>
+<svg id="forceGraph" class="plot" viewBox="0 0 520 290" role="img" aria-label="Centripetal force versus speed graph with the selected case marked">
+<title>Centripetal net force increases with the square of tangential speed at fixed mass and radius</title></svg>
+<p class="figure-source">Horizontal axis: speed from 0 to 30 m/s. Vertical axis: F<sub>c</sub> in N. Mass and radius stay at the selected values.</p>
+</div><div>
+<div class="callout" id="scalingText">When speed doubles at fixed mass and radius, the required inward force quadruples. Doubling the radius halves the force.</div>
+<h3>Physics behind the curve</h3>
+<p>The horizontal coordinate is speed v, but the vertical value follows the square: F<sub>c</sub> = (m/r)v². Doubling mass gives twice the inward force. For zero speed, the required centripetal force is zero.</p>
+<p>Challenge: compare a turn at 10 m/s and 20 m/s without changing the other sliders. Notice that the force is four times greater.</p>
+</div></div>
+</section>
+<section class="card" aria-labelledby="bankHeading"><span class="tag">P-11-B-15 · IDEAL BANKED-ROAD APPLICATION</span>
+<h2 id="bankHeading">3. Friction-free banked road: required angle</h2>
+<p>For a road banked through angle θ to the horizontal, the horizontal component of the normal reaction supplies the inward force, while its vertical component balances weight. This applies <strong>only at the ideal design speed</strong>, without friction or vertical acceleration.</p>
+<div class="formula">N cosθ = mg &nbsp;&nbsp; | &nbsp;&nbsp; N sinθ = mv²/r &nbsp;&nbsp; ⇒ &nbsp;&nbsp; tanθ = v²/(rg)</div>
+<div class="metrics">
+<div class="metric"><span>Ideal bank angle θ</span><strong id="bankAngle">—</strong></div>
+<div class="metric"><span>tanθ = v²/(rg)</span><strong id="bankTangent">—</strong></div>
+<div class="metric"><span>Normal force magnitude N</span><strong id="normal">—</strong></div>
+</div>
+<p class="result" id="bankExplanation">Mass cancels in the bank-angle relation. This model does not calculate maximum tyre friction or safe speeds away from the ideal design value.</p>
+</section>
+<section class="card" aria-labelledby="ex42Heading"><span class="tag">NBF WORKED EXAMPLE 4.2 · TEXTBOOK PP.63–64</span><h2 id="ex42Heading">4. Verify the worked example</h2>
+<p>The textbook gives a car with <strong>m = 856 kg</strong>, <strong>v = 12.0 m/s</strong>, and required inward force <strong>F<sub>c</sub> = 7250 N</strong>. Rearrange F<sub>c</sub> = mv²/r:</p>
+<div class="formula">r = mv²/F<sub>c</sub> = (856 × 12.0²)/7250 ≈ 17.0 m</div>
+<p>Select <strong>NBF Example 4.2</strong> above to load the unrounded radius and confirm that the computed force returns 7250 N. The textbook rounds radius to <strong>17 m</strong>.</p>
+<p class="figure-source">Source: NBF Grade XI Physics Unit 4 Example 4.2, printed p.63 with answer on p.64. For conceptual force origins see textbook Figures 4.10(a)–(d), pp.61–63.</p>
+<div class="links"><a href="./unit-04-centripetal-study.html">Read the Part 2 guide</a><a href="./unit-04.html">Return to Unit 4 Learning Desk</a><a href="./unit-04-rotation-lab.html">Review rotational kinematics Part 1</a></div>
+</section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 Part 2, centripetal motion</footer>
+</body></html>
