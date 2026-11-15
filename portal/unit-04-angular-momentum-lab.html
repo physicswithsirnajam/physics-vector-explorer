@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10233d">
+<meta name="description" content="Interactive NBF Grade XI Unit 4 torque and moment of inertia lab: rigid-body model, braking textbook Example 4.3, signed L and angular acceleration, skater conservation with changeable arm radius.">
+<title>Unit 4 — Torque, Inertia &amp; Angular Momentum Lab | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e9c988;--ink:#1c324c;--muted:#56697c;--soft:#f4f8fc;--line:#d1dfed;--teal:#147f96;--warm:#ba7b43}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:white}.bar{max-width:1180px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;font-weight:850}.brand img{width:52px;height:52px;object-fit:contain}
+nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#126e89}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #cca451;outline-offset:3px}
+main{max-width:1180px;margin:auto;padding:26px 18px 72px}.eyebrow{font-size:12px;font-weight:850;color:#87611d;text-transform:uppercase;letter-spacing:.09em}
+h1{font-size:clamp(28px,4.6vw,41px);line-height:1.16;margin:8px 0 12px}h2{font-size:24px;margin:0 0 10px}h3{font-size:18px;margin:12px 0 8px}
+.lead{color:var(--muted);max-width:980px}.notice{background:#fff8e8;border-left:4px solid #cba15d;border-radius:9px;padding:12px 16px;margin:16px 0;font-size:14px}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0;box-shadow:0 7px 21px #10233d0b}
+.tag{display:inline-block;background:#e5f3f9;color:#175c76;padding:5px 10px;border-radius:20px;font-weight:850;font-size:12px;margin-bottom:9px}
+.cols{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:22px}
+label{display:block;font-size:14px;font-weight:800;margin:12px 0 4px}output{color:#146981;font-weight:850}
+input[type=range]{width:100%;min-height:28px;accent-color:#176e85;cursor:pointer}
+select{width:100%;border:1px solid #b3c8d7;border-radius:9px;padding:8px 10px;font:inherit;background:#fff;color:var(--ink)}
+button{font:inherit;font-size:14px;font-weight:780;padding:9px 12px;border:1px solid #acc0d0;border-radius:9px;background:#fff;color:var(--ink);cursor:pointer}
+button:hover{background:#edf5f8}.primary{background:var(--navy);border-color:var(--navy);color:white}.primary:hover{background:#294362}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.plot{width:100%;height:auto;max-height:440px;background:#f9fcff;border:1px solid #d1deea;border-radius:11px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:17px 0}
+.metric{border:1px solid #d4e5ed;background:#eef6fa;border-radius:9px;padding:10px 11px}
+.metric span{display:block;font-size:12px;color:#51687f}.metric strong{display:block;font-size:18px;line-height:1.33;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.formula{background:#eaf4f9;padding:10px 13px;border-radius:9px;font-size:17px;font-weight:800;margin:12px 0;overflow-wrap:anywhere}
+.result{border-left:3px solid #c19654;background:#fff8e9;padding:11px 13px;border-radius:9px;font-size:14px;margin:13px 0}
+.correct{border-left:3px solid #278e75;background:#eaf6f1;padding:10px 13px;border-radius:9px;font-size:14px;margin:12px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:17px}.legend{font-size:13px;color:var(--muted);margin-top:9px}
+.info{font-size:13px;color:var(--muted)}.bar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.bar-item{padding:13px;border:1px solid #d1e0ed;border-radius:9px;background:#f6fafc}
+.bar-item strong{display:block;font-size:13px;margin-bottom:7px}
+.bar-track{height:18px;background:#dce8f1;border-radius:11px;overflow:hidden}
+.bar-fill{height:100%;width:0;background:linear-gradient(90deg,#147e94,#dbb66e)}
+.links{display:flex;gap:17px;flex-wrap:wrap;margin-top:16px}footer{background:var(--navy);color:#c9d9e7;text-align:center;padding:19px;font-size:13px}
+@media(max-width:880px){.cols,.two{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px){.card{padding:14px}.metrics{gap:7px}.metric strong{font-size:16px}}
+@media print{body{background:white;color:#000}header,footer,.toolbar{display:none!important}.card{break-inside:avoid;border:0;box-shadow:none;padding:10px 0}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1">
+<script src="./unit-04-angular-momentum-engine.js" defer></script>
+<script src="./unit-04-angular-momentum-ui.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head><body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 4 navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-angular-momentum-study.html">Part 4 Study Guide</a><a href="./unit-04-artificial-gravity-lab.html">Part 3 Lab</a></nav></div></header>
+<main>
+<div class="eyebrow">NBF Grade XI · Unit 4 Part 4 · Interactive physics</div>
+<h1>Moment of Inertia, Torque &amp; Angular Momentum Lab</h1>
+<p class="lead">Compare rotating objects with different mass distributions, brake a spinning grinding wheel using net torque, and discover angular-momentum conservation when an ice skater draws weighted arms inward.</p>
+<div class="notice"><strong>Physical model:</strong> Lab 1 uses a <strong>rigid body rotating about a fixed central axis with constant moment of inertia and net external torque</strong>. Lab 2 models a central skater inertia and two equal point masses moving radially in/out under <strong>negligible external torque</strong>. Rotational kinetic energy need not be conserved in Lab 2. Animation speed is deliberately adjusted for display; <strong>computed values use unscaled physics inputs</strong>. No grades or student data are recorded.</div>
+<section class="card" id="rotorLab" aria-labelledby="rotorHeading"><span class="tag">P-11-B-18 &amp; P-11-B-19 · SUMMATIVE</span>
+<h2 id="rotorHeading">1. Rotor lab — mass distribution, torque and angular momentum</h2>
+<div class="toolbar" role="group" aria-label="Rotor presets"><button id="grinderPreset" type="button" class="primary">NBF Example 4.3 — grinding wheel</button><button id="compareHoop" type="button">Compare thin hoop</button><button id="compareSphere" type="button">Compare solid sphere</button><button id="zeroTorque" type="button">Zero external torque</button></div>
+<div class="cols"><div>
+<label for="shape">Mass distribution / body model</label>
+<select id="shape" aria-label="Rotating body with central axis">
+<option value="disk">Uniform solid disc — I = ½MR²</option>
+<option value="hoop">Thin hoop — I = MR²</option>
+<option value="sphere">Uniform solid sphere — I = ⅖MR²</option>
+<option value="shell">Thin hollow sphere — I = ⅔MR²</option>
+<option value="point">Single point mass — I = MR²</option>
+</select>
+<label for="rotorMass">Mass M: <output id="rotorMassValue" for="rotorMass">3.6 kg</output></label>
+<input type="range" id="rotorMass" min="0.2" max="10" step="any" value="3.6">
+<label for="rotorRadius">Radius R: <output id="rotorRadiusValue" for="rotorRadius">0.31 m</output></label>
+<input type="range" id="rotorRadius" min="0.10" max="1.50" step="any" value="0.31">
+<label for="rotorRPM">Initial speed: <output id="rotorRPMValue" for="rotorRPM">1150 rpm</output></label>
+<input type="range" id="rotorRPM" min="0" max="1500" step="any" value="1150">
+<label for="rotorTorque">Signed net axial torque: <output id="rotorTorqueValue" for="rotorTorque">−2.67 N m</output></label>
+<input type="range" id="rotorTorque" min="-20" max="20" step="any" value="-2.67">
+<label for="rotorTime">Observation time: <output id="rotorTimeValue" for="rotorTime">7.8 s</output></label>
+<input type="range" id="rotorTime" min="0" max="15" step="any" value="7.8">
+<div class="toolbar"><button type="button" id="rotorPlay" class="primary">Play rotor</button><button type="button" id="rotorReset">Reset time to zero</button></div>
+<div class="result" role="status" id="rotorStatus">The net torque changes angular momentum over time.</div>
+</div><div>
+<svg id="rotorPlot" class="plot" viewBox="0 0 500 340" role="img" aria-label="Schematic disc with rotating highlighted spoke, selected rotational mass distribution and instantaneous angular direction">
+<title>Schematic rotating body, central axis and angular displacement</title>
+<circle cx="243" cy="164" r="114" fill="#eef5fa" stroke="#7e9cb2" stroke-width="3" id="rotorOuter"/>
+<circle cx="243" cy="164" r="91" fill="none" stroke="#aec4d5" stroke-width="2" stroke-dasharray="8 7"/>
+<g id="rotorGroup">
+<line x1="243" y1="164" x2="357" y2="164" stroke="#d2a24b" stroke-width="7" stroke-linecap="round"/>
+<circle cx="355" cy="164" r="9" fill="#d2a24b"/>
+<line x1="243" y1="164" x2="129" y2="164" stroke="#b8cbd9" stroke-width="3"/>
+<line x1="243" y1="164" x2="243" y2="50" stroke="#b8cbd9" stroke-width="3"/>
+<line x1="243" y1="164" x2="243" y2="278" stroke="#b8cbd9" stroke-width="3"/>
+</g>
+<circle cx="243" cy="164" r="11" fill="#254b67"/>
+<text id="rotorDirection" x="243" y="26" text-anchor="middle" font-size="14" fill="#2e5675" font-weight="800">Anticlockwise (+)</text>
+<text id="rotorShapeLabel" x="243" y="311" text-anchor="middle" font-size="13" fill="#345a75">Uniform disc · fixed centre axis</text>
+</svg>
+<div class="legend">Gold spoke indicates angular position. Circle size is schematic, not proportional to the selected physical radius.</div>
+<div class="formula">I = kMR² &nbsp; | &nbsp; L = Iω &nbsp; | &nbsp; τ = ΔL/Δt = Iα</div>
+</div></div>
+<div class="metrics">
+<div class="metric"><span>Moment of inertia I</span><strong id="moment">—</strong></div>
+<div class="metric"><span>Initial angular speed ω₀</span><strong id="omega0">—</strong></div>
+<div class="metric"><span>Angular acceleration α</span><strong id="alpha">—</strong></div>
+<div class="metric"><span>Final signed ω</span><strong id="omegaFinal">—</strong></div>
+<div class="metric"><span>Initial angular momentum L₀</span><strong id="initialL">—</strong></div>
+<div class="metric"><span>Final angular momentum L</span><strong id="finalL">—</strong></div>
+<div class="metric"><span>Applied torque impulse τΔt</span><strong id="torqueImpulse">—</strong></div>
+<div class="metric"><span>ΔL − τΔt consistency</span><strong id="torqueCheck">—</strong></div>
+</div>
+<svg id="omegaChart" class="plot" viewBox="0 0 540 260" role="img" aria-label="Angular velocity versus time for constant external net torque and fixed moment of inertia">
+<title>Angular velocity versus time for a constant external torque</title></svg>
+<p class="info">Signed ω may pass through zero and reverse. The simulated stopping torque corresponds to the chosen negative direction; a constant negative torque applied beyond the stopping time would reverse the wheel, not hold it at rest. Textbook braking concerns only the specified stopping interval.</p>
+</section>
+<section class="card" id="skaterLab" aria-labelledby="skaterHeading"><span class="tag">P-11-B-20 · SUMMATIVE</span>
+<h2 id="skaterHeading">2. Conservation lab — a skater draws in weighted arms</h2>
+<p>If the net <strong>external</strong> torque is negligible, angular momentum is constant. The skater changes mass distribution using internal effort, so the moment of inertia and angular speed can change even when total L does not.</p>
+<div class="toolbar"><button type="button" id="skaterIn" class="primary">Draw arms inward</button><button type="button" id="skaterOut">Extend arms outward</button><button type="button" id="skaterReset">Reset skater example</button></div>
+<div class="cols"><div>
+<label for="handMass">Mass held in each hand: <output id="handMassValue" for="handMass">2.0 kg</output></label>
+<input id="handMass" type="range" min="0.5" max="8" step="any" value="2">
+<label for="coreMoment">Skater core moment of inertia: <output id="coreMomentValue" for="coreMoment">3.0 kg m²</output></label>
+<input id="coreMoment" type="range" min="1" max="10" step="any" value="3">
+<label for="initialArmRadius">Initial arm mass radius: <output id="initialArmRadiusValue" for="initialArmRadius">1.20 m</output></label>
+<input id="initialArmRadius" type="range" min="0.20" max="1.40" step="any" value="1.20">
+<label for="finalArmRadius">Final arm mass radius: <output id="finalArmRadiusValue" for="finalArmRadius">0.30 m</output></label>
+<input id="finalArmRadius" type="range" min="0.20" max="1.40" step="any" value="0.30">
+<label for="initialSkaterRPM">Initial angular speed: <output id="initialSkaterRPMValue" for="initialSkaterRPM">30 rpm</output></label>
+<input id="initialSkaterRPM" type="range" min="0" max="120" step="any" value="30">
+<div class="toolbar"><button id="skaterPlay" type="button" class="primary">Play skater</button><button id="skaterResetAngle" type="button">Reset marker</button></div>
+<div class="result" id="skaterStatus" role="status">Drawing arms in reduces I and raises angular speed while L remains constant.</div>
+</div><div>
+<svg id="skaterPlot" class="plot" viewBox="0 0 500 345" role="img" aria-label="Schematic top view of skater with two hand masses at adjustable radius, showing changing mass distribution">
+<title>Top-down two-hand-mass model of a spinning skater</title>
+<circle cx="247" cy="159" r="118" fill="none" stroke="#bbcad8" stroke-dasharray="8 6" stroke-width="2"/>
+<circle cx="247" cy="159" r="42" fill="#d4e5f1" stroke="#537b97" stroke-width="3"/>
+<g id="skaterGroup">
+<line id="skaterArm" x1="110" y1="159" x2="384" y2="159" stroke="#4686a1" stroke-width="9" stroke-linecap="round"/>
+<circle id="skaterHandLeft" cx="110" cy="159" r="13" fill="#d7a554" stroke="#8f6a3b" stroke-width="2"/>
+<circle id="skaterHandRight" cx="384" cy="159" r="13" fill="#d7a554" stroke="#8f6a3b" stroke-width="2"/>
+</g>
+<circle cx="247" cy="159" r="10" fill="#315d7a"/>
+<text id="skaterDirection" x="247" y="23" text-anchor="middle" font-size="14" font-weight="800" fill="#285576">Angular momentum conserved</text>
+<text x="247" y="321" text-anchor="middle" font-size="12" fill="#48647c">Two identical hand masses; body inertia stays fixed</text>
+</svg>
+<div class="bar-grid">
+<div class="bar-item"><strong>Inertia ratio I<sub>f</sub> / Iᵢ</strong><div class="bar-track"><div id="inertiaBar" class="bar-fill"></div></div><p id="inertiaBarText" class="info">—</p></div>
+<div class="bar-item"><strong>Speed ratio ω<sub>f</sub> / ωᵢ</strong><div class="bar-track"><div id="speedBar" class="bar-fill"></div></div><p id="speedBarText" class="info">—</p></div>
+</div>
+<p class="info">Bar fills compare relative changes and cap visually at 2×; their written ratios display the exact unrounded physics.</p>
+</div></div>
+<div class="metrics">
+<div class="metric"><span>Initial total Iᵢ</span><strong id="skaterI0">—</strong></div>
+<div class="metric"><span>Final total I<sub>f</sub></span><strong id="skaterIf">—</strong></div>
+<div class="metric"><span>Initial ωᵢ</span><strong id="skaterOmega0">—</strong></div>
+<div class="metric"><span>Final ω<sub>f</sub></span><strong id="skaterOmegaf">—</strong></div>
+<div class="metric"><span>Angular momentum L</span><strong id="skaterL">—</strong></div>
+<div class="metric"><span>Initial kinetic energy</span><strong id="skaterK0">—</strong></div>
+<div class="metric"><span>Final kinetic energy</span><strong id="skaterKf">—</strong></div>
+<div class="metric"><span>L conservation check</span><strong id="skaterCheck">—</strong></div>
+</div>
+<div class="formula">Iᵢωᵢ = I<sub>f</sub>ω<sub>f</sub> &nbsp; | &nbsp; I = I<sub>core</sub> + 2mr² &nbsp; | &nbsp; K = ½Iω²</div>
+<div class="correct"><strong>Critical distinction:</strong> This ideal skater model conserves <strong>angular momentum</strong>, not necessarily <strong>rotational kinetic energy</strong>. Moving masses inward requires work; the graph and numerical energy values reflect that.</div>
+</section>
+<section class="card" id="source">
+<h2>3. Verified source boundaries</h2>
+<p>Source: NBF Grade XI Physics Unit 4 §§4.3–4.5 printed pp.64–71; Example 4.3 p.70. The supplied FBISE HSSC-I Physics framework marks <strong>P-11-B-18, P-11-B-19 and P-11-B-20 summative</strong>. Gyroscope and flywheel are discussed qualitatively in the study guide, not falsely simulated by this simple single-axis model. The separate centrifuge-separation SLO <strong>P-11-B-21</strong> and complete Unit 4 question-bank audit remain for the next stage.</p>
+<div class="links"><a href="./unit-04-angular-momentum-study.html">Read Part 4 Study Guide</a><a href="./unit-04.html">Return to Unit 4 Learning Desk</a><a href="./unit-04-artificial-gravity-lab.html">Review Part 3 Lab</a></div>
+</section></main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 Part 4 original interactive teaching</footer>
+</body></html>

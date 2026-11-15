@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10233d">
+<meta name="description" content="NBF Grade XI Physics Unit 4 Part 4 study: moment of inertia, torque, angular momentum and conservation; worked Example 4.3 and FBISE summative B-18/B-19/B-20.">
+<title>Unit 4 Part 4 — Moment of Inertia, Torque &amp; Angular Momentum | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#ebc985;--ink:#1c3048;--muted:#52677b;--line:#d2e0ed;--soft:#f5f8fc;--accent:#146c86}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.64 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:white}.bar{max-width:1100px;margin:auto;padding:12px 18px;display:flex;justify-content:space-between;gap:13px;align-items:center;flex-wrap:wrap}
+.brand{display:flex;gap:11px;align-items:center;color:#fff;text-decoration:none;font-weight:800}.brand img{width:52px;height:52px;object-fit:contain}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:var(--accent)}a:focus-visible,summary:focus-visible{outline:3px solid #cda34a;outline-offset:3px}
+main{max-width:1100px;margin:auto;padding:28px 18px 73px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#886322}
+h1{font-size:clamp(29px,4.6vw,42px);line-height:1.16;margin:8px 0 13px}h2{font-size:24px;margin:0 0 11px}h3{font-size:18px;margin:14px 0 7px}
+.lead{max-width:950px;color:var(--muted)}.notice{background:#fff7e7;border-left:4px solid #cda65d;border-radius:9px;padding:12px 16px;margin:17px 0;font-size:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 7px 18px #0a26440b}
+.tag{display:inline-block;padding:5px 10px;border-radius:18px;background:#e3f3f9;color:#145f78;font-size:12px;font-weight:850;margin-bottom:9px}
+.formula{display:block;background:#ebf4fa;border-radius:9px;padding:11px 13px;font-size:18px;font-weight:800;margin:10px 0;overflow-wrap:anywhere}
+.box{background:#eef6fa;border-left:3px solid #20849a;padding:10px 13px;border-radius:8px;margin:12px 0}
+ol,ul{padding-left:23px}li{margin:8px 0}table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+th,td{border:1px solid #c4d6e4;padding:10px;text-align:left;vertical-align:top}th{background:#e8f2f8}
+.table-wrap{overflow-x:auto}
+details{border:1px solid #c9dfec;border-radius:9px;overflow:hidden;margin:12px 0;background:#f7fbfd}summary{cursor:pointer;background:#e7f2f8;font-weight:800;padding:10px 13px}
+.answer{padding:12px 15px}.answer p{margin:7px 0}
+.source{font-size:12px;color:var(--muted);margin-top:12px}
+.links{display:flex;gap:17px;flex-wrap:wrap;margin-top:18px}footer{background:var(--navy);color:#cbd9e8;text-align:center;padding:20px;font-size:13px}
+@media(max-width:650px){.card{padding:14px}.formula{font-size:16px}.table-wrap{overflow-x:auto}}
+@media print{body{background:white;color:black;font:11pt/1.4 Georgia,"Times New Roman",serif}header,footer,.links{display:none}.card{border:0;box-shadow:none;padding:9px 0;break-inside:avoid}main{padding:0}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1"><script src="../shared/navigation.js?v=6" defer></script>
+</head><body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Exact, unchanged Physics with Sir Najam official logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 4 learning navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-angular-momentum-lab.html">Part 4 Lab</a><a href="./unit-04-artificial-gravity-study.html">Part 3</a></nav></div></header>
+<main><div class="eyebrow">NBF Grade XI · Unit 4 Part 4 · Original source-adapted guide</div>
+<h1>Moment of Inertia, Torque &amp; Angular Momentum</h1>
+<p class="lead">Rotating objects resist changes to their rotation, just as mass measures resistance to changes in straight-line motion. Learn which quantity describes that resistance, how torque changes angular momentum, and why a skater spins faster with arms drawn inward.</p>
+<div class="notice"><strong>Source and FBISE scope:</strong> NBF Grade XI Physics, Unit 4 printed <strong>pp.64–71</strong> (§§4.3–4.5), including <strong>Example 4.3 on p.70</strong>. Summative theory SLOs <strong>P-11-B-18, P-11-B-19 and P-11-B-20</strong> are addressed here. The separate centrifuge-separation application <strong>P-11-B-21</strong> is not claimed as fully assessed in this Part 4 guide. Source-adapted teacher/student material; not an official FBISE marking scheme.</div>
+<section class="card" id="inertia"><span class="tag">P-11-B-18 · SUMMATIVE</span><h2>1. Moment of inertia about a specified axis</h2>
+<p>Moment of inertia <strong>I</strong> measures the rotational resistance to a change in angular velocity about a particular axis. Unlike ordinary mass, it depends on <strong>where the mass lies relative to that axis</strong>. More mass farther from the rotation axis means larger I.</p>
+<span class="formula">Point mass: I = mr² &nbsp;&nbsp; | &nbsp;&nbsp; Rigid body: I = Σmᵢrᵢ²</span>
+<p>The SI unit is <strong>kg m²</strong>. For a body's moment of inertia, the axis and its mass distribution must be specified. The following NBF models use symmetry axes through their centres:</p>
+<div class="table-wrap"><table><thead><tr><th>Body and rotation axis</th><th>Moment of inertia</th><th>Relative value at same mass M and radius R</th></tr></thead><tbody>
+<tr><td>Single point mass, distance R from axis</td><td>I = MR²</td><td>1.00 MR²</td></tr>
+<tr><td>Thin hoop, central symmetry axis</td><td>I = MR²</td><td>1.00 MR²</td></tr>
+<tr><td>Uniform solid disc or cylinder, central symmetry axis</td><td>I = ½MR²</td><td>0.50 MR²</td></tr>
+<tr><td>Uniform solid sphere, diameter as axis</td><td>I = ⅖MR²</td><td>0.40 MR²</td></tr>
+<tr><td>Thin hollow spherical shell, diameter as axis</td><td>I = ⅔MR²</td><td>≈0.667 MR²</td></tr>
+</tbody></table></div>
+<p>These coefficients are not interchangeable. For example, a uniform disc and a thin hoop of the same mass and radius have different I because the disc's material is not all located at the outer radius.</p>
+<details><summary>Practice: A uniform solid disc has mass 2.0 kg and radius 0.50 m. Find I about its central axis.</summary>
+<div class="answer"><p>I = ½MR² = ½(2.0)(0.50)² = <strong>0.25 kg m²</strong>. For a thin hoop with the same mass and radius, I would instead be 0.50 kg m².</p></div></details>
+<p class="source">NBF §4.3, printed p.64, equations (4.24–4.25), Figures 4.12–4.13.</p></section>
+<section class="card" id="angularmomentum"><span class="tag">P-11-B-18 · SUMMATIVE</span><h2>2. Angular momentum</h2>
+<p>For a particle, angular momentum relative to an origin is the <strong>vector cross product</strong> of its position and linear momentum:</p>
+<span class="formula">L⃗ = r⃗ × p⃗ &nbsp;&nbsp; | &nbsp;&nbsp; magnitude L = rp sinθ</span>
+<p>Here θ is the angle between position r⃗ and linear momentum p⃗. For a particle moving tangentially to a circle, θ = 90°, so <strong>L = rp = mr²ω</strong>. For a rigid body rotating about a fixed principal axis:</p>
+<span class="formula">L = Iω &nbsp;&nbsp; (signed component along the chosen rotation axis)</span>
+<p>The SI unit of angular momentum is <strong>kg m²/s</strong> (equivalent to J s). The direction follows the right-hand rule. We must distinguish angular momentum <em>about the chosen rotation axis</em> from unrelated motions or axes.</p>
+<details><summary>Practice: The solid disc above rotates at 4 rad/s. What is its axial angular momentum?</summary>
+<div class="answer"><p>I = 0.25 kg m², so L = Iω = 0.25×4 = <strong>1.0 kg m²/s</strong> along the chosen positive axis.</p></div></details>
+<p class="source">NBF §4.4 and §§4.4.1–4.4.2, printed pp.65–66, equations (4.26–4.37).</p></section>
+<section class="card" id="torque"><span class="tag">P-11-B-19 · SUMMATIVE</span><h2>3. Torque and angular acceleration</h2>
+<p>Torque is the turning effect of a force relative to a chosen axis or point. Its vector expression and magnitude are:</p>
+<span class="formula">τ⃗ = r⃗ × F⃗ &nbsp;&nbsp; | &nbsp;&nbsp; |τ| = rF sinθ</span>
+<p>θ is the angle between the position vector and applied force. With a force applied tangentially (θ = 90°), |τ| = rF. The SI torque unit is <strong>N m</strong>.</p>
+<p>The <strong>net external torque</strong> changes angular momentum:</p>
+<span class="formula">Στ<sub>ext</sub> = dL/dt &nbsp;&nbsp; | &nbsp;&nbsp; average Στ<sub>ext</sub> = ΔL/Δt</span>
+<p>For a rigid body with <strong>fixed moment of inertia</strong> about the selected axis, L = Iω and therefore:</p>
+<span class="formula">Στ<sub>ext</sub> = Iα &nbsp;&nbsp; (constant I, fixed rotation axis)</span>
+<div class="box"><strong>Important limit:</strong> Do not apply τ = Iα without qualification when I changes during the motion. More generally, d(Iω)/dt also contains a contribution from changing I. A skater changing arm position is treated separately using conservation of angular momentum.</div>
+<details><summary>Practice: A body has I = 2.0 kg m² and is subjected to a +6.0 N m net axial torque. Find angular acceleration.</summary>
+<div class="answer"><p>α = τ/I = +6.0/2.0 = <strong>+3.0 rad/s²</strong>. Positive torque is defined in the chosen positive axis direction.</p></div></details>
+<p class="source">NBF §4.4.3 printed pp.66–67, equations (4.38–4.42); §4.5 and §4.5.1 printed pp.70–71, equations (4.44–4.50).</p></section>
+<section class="card" id="example43"><span class="tag">NBF EXAMPLE 4.3 · PRINTED P.70</span><h2>4. Textbook numerical — grinding wheel brought to rest</h2>
+<p>A uniform cylindrical grinding wheel has mass <strong>M = 3.6 kg</strong>, radius <strong>R = 31 cm = 0.31 m</strong>, and spins at <strong>1150 rpm</strong>. Find the initial angular momentum and the torque needed to stop it in <strong>7.8 s</strong>, treating the stopping torque as constant.</p>
+<ol>
+<li><strong>Convert rpm to rad/s:</strong> ω₀ = 1150×(2π/60) ≈ <strong>120.4 rad/s</strong>.</li>
+<li><strong>Disc moment of inertia:</strong> I = ½MR² = ½(3.6)(0.31)² ≈ <strong>0.17298 kg m²</strong>.</li>
+<li><strong>Initial angular momentum:</strong> L₀ = Iω₀ ≈ <strong>20.83 kg m²/s</strong>.</li>
+<li><strong>Stopping torque:</strong> τ = (L<sub>final</sub>−L₀)/Δt = (0−20.83)/7.8 ≈ <strong>−2.67 N m</strong>.</li>
+</ol>
+<p>The negative sign means the torque acts <strong>opposite the selected initial direction of rotation</strong>; the torque magnitude is approximately 2.67 N m. The wheel is assumed to stop at the stated time without reversing during the braking interval.</p>
+<p>The <a href="./unit-04-angular-momentum-lab.html">Part 4 interactive laboratory</a> includes the textbook values as a preset and computes the unrounded result directly.</p>
+<p class="source">NBF Example 4.3, printed p.70; the source text also gives I = ½MR², angular speed ≈120.4 rad/s, L≈20.83 J s and τ≈−2.67 N m.</p></section>
+<section class="card" id="conservation"><span class="tag">P-11-B-20 · SUMMATIVE</span><h2>5. Conservation of angular momentum</h2>
+<p>If the <strong>net external torque about the chosen axis is zero</strong>, angular momentum about that axis remains constant:</p>
+<span class="formula">Στ<sub>ext</sub> = 0 &nbsp;&nbsp; ⇒ &nbsp;&nbsp; L<sub>initial</sub> = L<sub>final</sub></span>
+<span class="formula">Iᵢωᵢ = I<sub>f</sub>ω<sub>f</sub> &nbsp;&nbsp; (same rotation axis)</span>
+<p>A spinning ice skater pulling their arms inward has a smaller moment of inertia, so their angular speed increases if external torque is negligible. Extending the arms has the opposite effect.</p>
+<div class="box"><strong>Angular momentum ≠ rotational kinetic energy.</strong> For a skater changing arm position, L can remain constant while rotational kinetic energy changes, because the skater does internal work when moving the arms.</div>
+<h3>Textbook situations</h3>
+<ul>
+<li><strong>Ice skater:</strong> Drawing in arms reduces I and increases ω; extending arms increases I and decreases ω.</li>
+<li><strong>Diving athlete:</strong> Changing body shape during a dive changes rotational inertia and angular speed under small external torque.</li>
+<li><strong>Gyroscope:</strong> The textbook discusses gyroscopic effects and precession under an applied gravitational torque. Gyroscopic precession is not modeled by the single-axis skater slider.</li>
+<li><strong>Flywheel:</strong> A rotating flywheel stores kinetic energy and can help smooth variations in shaft speed. A flywheel is not a perpetual-motion or energy-creating device.</li>
+</ul>
+<details><summary>Practice: If a skater reduces moment of inertia from 6 to 3 kg m² and initially spins at 2 rad/s, what is the final angular speed?</summary>
+<div class="answer"><p>Using Iᵢωᵢ = I<sub>f</sub>ω<sub>f</sub>: (6)(2) = (3)ω<sub>f</sub>, therefore <strong>ω<sub>f</sub> = 4 rad/s</strong>. Rotational kinetic energy can increase because the skater performs internal work; the conservation law applies to angular momentum, not necessarily kinetic energy.</p></div></details>
+<p class="source">NBF §4.4.4, printed pp.67–69; ice skater Figure 4.16, diving example Figure 4.17, gyroscope Figure 4.18 and flywheel Figure 4.19.</p></section>
+<section class="card" id="scope"><h2>6. Unit 4 coverage boundary</h2>
+<p>This Part 4 guide covers the above FBISE summative SLOs but does not yet publish a scored Unit 4 examination or a complete MCQ bank. The separately listed summative <strong>P-11-B-21</strong> asks students to justify centrifugation for separating materials. The textbook's centrifuge description is on <strong>printed p.63</strong>; the Part 2 guide mentions it, but a dedicated question-bank and full-coverage audit is still needed. We will address that in the subsequent Unit 4 assessment-planning stage.</p>
+<div class="links"><a href="./unit-04-angular-momentum-lab.html">Launch moment of inertia and skater laboratory</a><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-artificial-gravity-study.html">Review Part 3</a></div></section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 Part 4 academic practice</footer></body></html>
