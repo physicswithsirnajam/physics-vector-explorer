@@ -76,7 +76,7 @@ assert.ok(audit.sources.framework.includes("pp.3–4"));
 assert.equal(audit.studentQuestionBankPublished,true);
 assert.equal(audit.studentQuestionBankStatus,"provisional-public-self-practice-teacher-academic-review-pending");
 assert.equal(audit.protectedOrGradedAssessmentPublished,false);
-assert.equal(audit.descriptivePaperPublished,false);
+assert.equal(audit.descriptivePaperPublished,true);
 assert.ok(audit.scopeNote.includes("full Grade XI syllabus coverage"));
 const identifiers=new Set(),allowedCognitive=new Set(["Knowledge","Understanding","Application"]);
 const urls={
@@ -172,9 +172,9 @@ for(const content of [engine,ui,lab]){
 }
 const u4=cat.grades.find(x=>x.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.questionBankCount,80);
-assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-self-practice");
-assert.equal(u4.resourceIds.length,13);
-assert.equal(new Set(u4.resourceIds).size,13);
+assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-and-descriptive-practice");
+assert.equal(u4.resourceIds.length,14);
+assert.equal(new Set(u4.resourceIds).size,14);
 for(const id of ["unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"])
  assert.ok(u4.resourceIds.includes(id),"New audit resource missing "+id);
 assert.ok(u4.studentNotice.includes("80 provisional public self-practice MCQs"));
