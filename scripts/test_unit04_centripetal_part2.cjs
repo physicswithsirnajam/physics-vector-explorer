@@ -121,7 +121,7 @@ assert.ok(study.includes("string"));
 assert.ok(study.toLowerCase().includes("gravitational"),"Source must include gravity as a centripetal mechanism");
 assert.ok(study.includes("not</em> a new or additional")||study.includes("not</em> a new"));
 assert.ok(study.includes("tangential acceleration is zero"));
-assert.ok(study.includes("not</strong> published a Unit 4 MCQ bank"));
+assert.ok(study.includes('href="./unit-04-mcq-full80.html"'),"Part 2 study links to provisional MCQ practice");
 assert.ok(lab.includes('src="./unit-04-centripetal-engine.js"'));
 assert.ok(lab.includes('src="./unit-04-centripetal-ui.js"'));
 assert.ok(lab.includes("slow motion (30% real-time angular rate)"));
@@ -160,10 +160,10 @@ assert.ok(part1.includes('href="./unit-04-centripetal-study.html"'));
 assert.ok(part1Lab.includes('href="./unit-04-centripetal-lab.html"'));
 const u4=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.status,"available");
-assert.equal(u4.questionBankCount,0);
-assert.equal(u4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
+assert.equal(u4.questionBankCount,80);
+assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-self-practice");
 assert.deepEqual(u4.resourceIds,
- ["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"]);
+ ["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80"]);
 assert.ok(u4.studentNotice.includes("saved scores"),"Unit 4 public labs must not imply saved grades or scores");
 for(const [id,href] of [
  ["unit4-desk","./unit-04.html"],["unit4-rotation-study","./unit-04-rotation-study.html"],
@@ -181,5 +181,5 @@ assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — Unit 4 centripetal a=v²/r, net F=mv²/r, exact NBF Example 4.2 (17 m), mass-independent frictionless bank angle.");
 console.log("PASS — 120 speed/mass/radius combinations and speed-squared/force-scaling checks; inward/tangent orthogonal vectors.");
 console.log("PASS — Correct B-10/B-14/B-15 source scope; public guide and full interactive control/preset links; existing Unit 4 Part 1 and Unit 3 preserved.");
-console.log("PASS — No live student grade, account, remote data, local storage or unpublished Unit 4 MCQ claim.");
+console.log("PASS — No live student grade, account, remote data, local storage or false claim of approved Unit 4 MCQ bank.");
 console.log("NOTE — Source-based mathematics and DOM checks do not replace live browser or academic teacher-review checks.");
