@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v47-unit4-slo-focused-classroom-2026-11-15",
+  "catalogVersion": "pilot-v48-unit5-work-energy-foundations-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -114,13 +114,20 @@
         },
         {
           "unit": 5,
-          "title": "Unit 5 — Content in preparation",
-          "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "title": "Work and Energy",
+          "status": "available",
+          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no Unit 5 MCQ bank or board exam released.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
-          "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "resourceIds": [
+            "unit5-desk",
+            "unit5-work-study",
+            "unit5-work-energy-lab"
+          ],
+          "qualityStatus": "Teaching pilot based on original NBF Unit 5 chapter pages (printed pp.77–85 visually checked, chapter through p.87) and provisional FBISE SLO B-29–B-32 mapping from prior user-prepared notes. Official FBISE theory/formative/PBA classification requires independent primary-framework verification before assessment publication. Teacher content QC still pending.",
+          "resourceAccess": "public-learning-resources",
+          "studentNotice": "Unit 5 Work and Energy study guide and four interactive teaching demonstrations are available. Unit 5 question banks, official-style examinations, recorded scores and teacher-approved marking keys are NOT published; content is not an official full-syllabus board paper.",
+          "landingHref": "./unit-05.html"
         },
         {
           "unit": 6,
@@ -847,6 +854,45 @@
       "access": "public-link",
       "contentStatus": "provisional-public-slo-filtered-unit4-mcq-practice-teacher-review-pending",
       "accessDescription": "Public, ungraded and not an official FBISE assessment or examiner-approved question key. Teacher discussion links are separately public and show source-keyed answers only on explicit reveal."
+    },
+    {
+      "id": "unit5-desk",
+      "category": "STUDY",
+      "title": "Unit 5 — Work and Energy Learning Desk",
+      "description": "Source-mapped NBF Grade XI Unit 5 Work and Energy (pp.77–87): four provisional summative theory SLOs and transparent teaching-only release status, with links to the study guide and four-station work–energy laboratory.",
+      "href": "./unit-05.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 5 Learning Desk ↗",
+      "access": "public-link",
+      "contentStatus": "unit5-v48-source-grounded-teaching-pilot-ffbse-framework-crosscheck-pending",
+      "accessDescription": "Public educational teaching foundation. No Unit 5 MCQ bank, official exam, marking key or stored grades; official framework SLO classification and teacher sign-off remain pending."
+    },
+    {
+      "id": "unit5-work-study",
+      "category": "STUDY",
+      "title": "Unit 5 — Work and Energy Source-Mapped Study Guide",
+      "description": "Textbook-grounded work sign and signed F–d area, conservative versus non-conservative forces, step-by-step kinetic-energy derivation, and resistive-medium work–energy example with printed textbook page references.",
+      "href": "./unit-05-work-study.html",
+      "public": true,
+      "external": false,
+      "action": "Read Unit 5 Work and Energy Study Guide ↗",
+      "access": "public-link",
+      "contentStatus": "unit5-v48-original-source-based-ungraded-study-teacher-review-pending",
+      "accessDescription": "Original source-aligned teaching material only; no protected exam or official FBISE content certification."
+    },
+    {
+      "id": "unit5-work-energy-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 5 — Interactive Work–Energy Explorer",
+      "description": "Live signed-area force–displacement SVG graph, W=Fd cosθ angle slider, kinetic energy derivation/energy changes, conservative gravity vs constant path-dependent resistance, and resistive-medium stopping/reachability logic.",
+      "href": "./unit-05-work-energy-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Launch Unit 5 Work–Energy Explorer ↗",
+      "access": "public-link",
+      "contentStatus": "unit5-v48-interactive-physics-four-SLO-teaching-pilot",
+      "accessDescription": "Browser-only projector/mobile educational lab; no account login, student grade storage or official exam submission."
     }
   ]
 }
