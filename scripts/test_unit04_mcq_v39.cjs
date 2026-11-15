@@ -172,7 +172,7 @@ for(const id of ["bankStatus","questionArea","check","showKey","reset","printQue
  "printKey","result","answerKey","solutionList"])
  assert.ok(html.includes('id="'+id+'"'),"Missing practice page control "+id);
 for(const k of ['"Sr #","Question","(A)","(B)","(C)","(D)","A","B","C","D"',
- '"unit-04-v39-80-practice.json"', // Relative bank path
+ '"../question-bank/grade-11/unit-04-v39-80-practice.json"', // Exact relative bank path
  'q.unit!==4','data.questions.length!==80','q.stimulusText',
  'renderQuestions()','renderKey()','printQuestions','printKey',
  'cache:"no-store"','Correct: ','Explanation: ']){
