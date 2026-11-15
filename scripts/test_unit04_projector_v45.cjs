@@ -189,6 +189,19 @@ async function browserChecks(){
   // Mobile: page must not widen; options should stack and timer remain readable.
   await page.setViewportSize({width:390,height:844});
   const width=await page.evaluate(()=>({page:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  if(width.scroll>width.page+2){
+    const suspects=await page.evaluate(()=>[...document.querySelectorAll("body *")].filter(el=>{
+      const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+      return cs.display!=="none"&&r.width>0&&r.right>innerWidth+3&&r.left>=0&&el.getClientRects().length;
+    }).sort((a,b)=>b.getBoundingClientRect().right-a.getBoundingClientRect().right).slice(0,12).map(el=>{
+      const r=el.getBoundingClientRect(),cs=getComputedStyle(el);
+      return {tag:el.tagName,id:el.id,cls:typeof el.className==="string"?el.className:"",
+        left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width),
+        overflowX:cs.overflowX,content:el.textContent.trim().slice(0,55)};
+    }));
+    console.error("V45 mobile overflow suspects:",JSON.stringify(suspects));
+    await page.screenshot({path:path.join(out,"03-mobile-overflow-diagnostic.png"),fullPage:false});
+  }
   assert.ok(width.scroll<=width.page+2,"Projector mobile overflow "+JSON.stringify(width));
   const cols=await page.locator("#answersGrid").evaluate(el=>getComputedStyle(el).gridTemplateColumns);
   assert.equal(cols.trim().split(/\s+/).length,1,"Phone view should stack answer options");
