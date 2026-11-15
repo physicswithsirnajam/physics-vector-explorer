@@ -1,0 +1,46 @@
+name: Validate Grade XI Unit 4 Angular Momentum Part 4
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/unit-04-angular-momentum-lab.html"
+      - "portal/unit-04-angular-momentum-engine.js"
+      - "portal/unit-04-angular-momentum-ui.js"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_angular_momentum_part4.cjs"
+      - ".github/workflows/validate-grade11-unit4-angular-momentum.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/unit-04-angular-momentum-lab.html"
+      - "portal/unit-04-angular-momentum-engine.js"
+      - "portal/unit-04-angular-momentum-ui.js"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_angular_momentum_part4.cjs"
+      - ".github/workflows/validate-grade11-unit4-angular-momentum.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit4-angular-momentum:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check model, UI and validator JavaScript syntax
+        run: |
+          node --check portal/unit-04-angular-momentum-engine.js
+          node --check portal/unit-04-angular-momentum-ui.js
+          node --check scripts/test_unit04_angular_momentum_part4.cjs
+      - name: Test angular inertia, torque, momentum, skater conservation and NBF Example 4.3
+        run: node scripts/test_unit04_angular_momentum_part4.cjs
