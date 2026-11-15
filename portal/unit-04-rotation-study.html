@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10233d">
+<meta name="description" content="Source-based NBF Grade XI Unit 4 Rotational and Circular Motion Part 1 guide: radians, angular displacement, velocity, acceleration, linear/angular relations, constant angular acceleration and Example 4.1.">
+<title>Grade XI Unit 4 — Rotational Kinematics Study Guide | Physics with Sir Najam</title>
+<style>
+:root{--navy:#10233d;--gold:#e8c783;--ink:#1b3049;--muted:#4b627b;--line:#d5e1ed;--soft:#f5f8fc;--accent:#176a86}
+*{box-sizing:border-box}body{margin:0;background:var(--soft);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+header{background:var(--navy);color:white}.bar{max-width:1100px;margin:auto;padding:12px 18px;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;font-weight:800}.brand img{width:50px;height:50px;object-fit:contain}nav{display:flex;gap:17px;flex-wrap:wrap}nav a{color:var(--gold)}a{color:#185e82}
+a:focus-visible,summary:focus-visible{outline:3px solid #cda047;outline-offset:3px}
+main{max-width:1100px;margin:auto;padding:28px 18px 75px}.eyebrow{color:#8a6627;letter-spacing:.08em;font-weight:800;text-transform:uppercase;font-size:12px}h1{font-size:clamp(28px,4.4vw,40px);line-height:1.2;margin:7px 0 13px}h2{font-size:24px;margin:0 0 13px}h3{font-size:18px;margin:14px 0 8px}.lead{color:var(--muted);max-width:890px}
+.notice{padding:13px 16px;background:#fff7e6;border-left:4px solid #c9a15a;border-radius:10px;margin:18px 0;font-size:14px}
+.card{background:white;border:1px solid var(--line);border-radius:13px;padding:22px;margin:18px 0;box-shadow:0 6px 21px #10233d0b}
+.formula{display:block;background:#edf5f9;border-radius:8px;padding:11px 13px;margin:10px 0;font-size:17px;font-weight:770;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px;margin:13px 0}td,th{border:1px solid #bfcedc;padding:10px;text-align:left;vertical-align:top}th{background:#eaf2f8}
+.tag{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:20px;color:#1b5d75;background:#e4f3f9;margin-bottom:10px}
+ol,ul{padding-left:22px}li{margin:9px 0}details{border:1px solid #cee0ea;border-radius:9px;overflow:hidden;margin:12px 0;background:#f7fbfd}
+summary{padding:10px 13px;background:#e7f2f8;font-weight:790;cursor:pointer}.answer{padding:12px 15px}.answer p{margin:7px 0}
+.refs{font-size:12px;color:var(--muted);margin:10px 0}.links{display:flex;flex-wrap:wrap;gap:17px;margin:20px 0}
+footer{text-align:center;background:var(--navy);color:#cbd7e6;padding:20px;font-size:13px}
+@media(max-width:650px){.card{padding:15px}.formula{font-size:16px}}
+@media print{body{background:white;color:black;font:11pt/1.45 Georgia,"Times New Roman",serif}header,footer,.links,.notice{display:none}.card{border:0;box-shadow:none;padding:6px 0;break-inside:avoid}main{padding:0}details{break-inside:avoid}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=5.1"><script src="../shared/navigation.js?v=6" defer></script></head>
+<body><header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a>
+<nav aria-label="Student navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-rotation-lab.html">Rotational Lab</a><a href="./unit-03.html">Unit 3</a></nav></div></header>
+<main><div class="eyebrow">Grade XI · Unit 04 · Rotational and Circular Motion · Part 1</div>
+<h1>Rotational Kinematics — Study Guide</h1>
+<p class="lead">Learn how angle, angular velocity and angular acceleration describe a rigid body rotating about a fixed axis. Connect the angular quantities to linear motion at the rim using your NBF textbook's first worked example.</p>
+<div class="notice"><strong>Source and assessment scope:</strong> NBF Grade XI Physics, Unit 4, printed pages <strong>53–59</strong> (detailed teaching material on pp.54–59). The supplied FBISE HSSC-I Assessment Framework labels <strong>P-11-B-07, B-08 and B-09 summative</strong>. P-11-B-10 (qualitative curved-path motion) and P-11-B-14 onward (centripetal force, satellites, torque and angular momentum) are not taught as complete units in this Part 1 guide. This is a source-based educational adaptation, not an official examiner marking scheme.</div>
+<section class="card" id="radian"><span class="tag">P-11-B-07 · SUMMATIVE</span><h2>1. Angles in radians</h2>
+<p>The <strong>radian</strong> is defined through an angle's arc: one radian subtends an arc whose length equals the radius. For a circle of radius r and arc length s:</p>
+<span class="formula">θ (rad) = s / r &nbsp;&nbsp; ⇒ &nbsp;&nbsp; s = rθ</span>
+<p>The angle θ must be in <strong>radians</strong> when using s = rθ. One complete revolution corresponds to 2π radians, or 360°.</p>
+<span class="formula">θ(rad) = θ(°) × π/180 &nbsp;&nbsp; | &nbsp;&nbsp; 1 rad ≈ 57.3°</span>
+<div class="table-wrap"><table><thead><tr><th>Angle</th><th>Radians</th><th>Fraction of a revolution</th></tr></thead><tbody>
+<tr><td>45°</td><td>π/4</td><td>1/8</td></tr><tr><td>90°</td><td>π/2</td><td>1/4</td></tr>
+<tr><td>180°</td><td>π</td><td>1/2</td></tr><tr><td>360°</td><td>2π</td><td>1</td></tr>
+</tbody></table></div>
+<details><summary>Practice: a wheel has radius 0.40 m and turns 90°. What rim arc length corresponds to this turn?</summary>
+<div class="answer"><p>θ = 90°×π/180 = π/2 rad. The magnitude of arc displacement is s = rθ = 0.40×π/2 ≈ <strong>0.628 m</strong>.</p></div></details>
+<p class="refs">NBF §4.1.2, printed p.55, Figure 4.4.</p></section>
+<section class="card" id="quantities"><span class="tag">P-11-B-08 · SUMMATIVE</span><h2>2. Angular position, displacement, velocity and acceleration</h2>
+<p>Use a reference ray through the centre of a rotating body. <strong>Angular position θ</strong> describes the direction of a radius; <strong>angular displacement Δθ</strong> is the change in angular position. For a fixed rotation axis, take <strong>anticlockwise as positive</strong> and clockwise as negative.</p>
+<span class="formula">Δθ = θ₂ − θ₁ &nbsp;&nbsp; (rad)</span>
+<span class="formula">Average angular velocity: ω̄ = Δθ / Δt &nbsp;&nbsp; (rad/s)</span>
+<span class="formula">Instantaneous angular velocity: ω = dθ/dt</span>
+<span class="formula">Average angular acceleration: ᾱ = Δω / Δt &nbsp;&nbsp; (rad/s²)</span>
+<span class="formula">Instantaneous angular acceleration: α = dω/dt</span>
+<p>Angular velocity and acceleration have an axis direction specified by the <strong>right-hand rule</strong>: curling the fingers with the rotation gives the direction of the thumb. Their scalar signed components can be positive or negative under the chosen direction convention.</p>
+<h3>Relations between linear and angular quantities</h3>
+<span class="formula">Arc displacement s = rθ &nbsp;&nbsp; | &nbsp;&nbsp; Signed tangential speed vₜ = rω</span>
+<span class="formula">Tangential acceleration aₜ = rα</span>
+<p>Here r is the fixed radius. The tangential component aₜ is <strong>not</strong> automatically the entire acceleration: in curved motion a <em>radial</em> component may also be present (covered in the centripetal stage).</p>
+<details><summary>Practice: a disc of radius 0.25 m rotates at +8 rad/s. Find the tangential speed at the rim.</summary>
+<div class="answer"><p>vₜ = rω = (0.25)(+8) = <strong>+2.0 m/s</strong> along the positive tangential direction at the chosen point. Its speed magnitude is 2.0 m/s.</p></div></details>
+<p class="refs">NBF §§4.1.1–4.1.5, printed pp.54–58, Figures 4.2–4.8.</p></section>
+<section class="card" id="equations"><span class="tag">P-11-B-09 · SUMMATIVE</span><h2>3. Equations of rotational motion at constant angular acceleration</h2>
+<p>When angular acceleration α is constant, rotational motion is governed by equations analogous to the familiar straight-line kinematic equations. With angular displacement measured relative to the start of the selected interval:</p>
+<span class="formula">ω = ω₀ + αt</span>
+<span class="formula">Δθ = ω₀t + ½αt²</span>
+<span class="formula">ω² = ω₀² + 2αΔθ</span>
+<span class="formula">Δθ = ½(ω₀ + ω)t</span>
+<p>These relations use signed quantities. <strong>Angular displacement</strong> and <strong>total angular distance</strong> are not necessarily equal if the body stops and reverses direction.</p>
+<details><summary>Practice: a wheel begins at +6 rad/s, slows at −2 rad/s², and is observed 4 s later. Find its final angular velocity, signed angular displacement, and total angle travelled.</summary>
+<div class="answer"><p>ω = 6−2(4) = <strong>−2 rad/s</strong>. Δθ = 6(4)+½(−2)(4²) = <strong>+8 rad</strong>. It first stops at t=3 s after turning +9 rad, then reverses and turns −1 rad; the <strong>total angular distance is 10 rad</strong>, although displacement is +8 rad.</p></div></details>
+<p class="refs">NBF Table 4.1, printed p.58.</p></section>
+<section class="card" id="example"><span class="tag">NBF WORKED EXAMPLE 4.1 · PRINTED PP.58–59</span><h2>4. Bicycle tyre slowing to rest</h2>
+<p>A bicycle tyre of radius <strong>33.1 cm (0.331 m)</strong> rolls at initial linear velocity <strong>6.80 m/s</strong> and travels <strong>74.8 m</strong> before coming to rest. Assume no slipping and uniform angular deceleration.</p>
+<ol>
+<li><strong>Initial angular velocity:</strong> ω₀ = v/r = 6.80/0.331 ≈ <strong>20.54 rad/s</strong>.</li>
+<li><strong>Angle and revolutions:</strong> Δθ = s/r = 74.8/0.331 ≈ 226 rad, so N = Δθ/(2π) ≈ <strong>35.97 rev</strong> using full input precision.</li>
+<li><strong>Angular acceleration:</strong> 0 = ω₀² + 2αΔθ, so α = −ω₀²/(2Δθ) ≈ <strong>−0.934 rad/s²</strong>.</li>
+<li><strong>Time to stop:</strong> 0 = ω₀ + αt, so t = −ω₀/α ≈ <strong>22.0 s</strong>.</li>
+</ol>
+<div class="notice"><strong>Textbook rounding:</strong> The printed solution reports approximately <strong>35.9 revolutions, −0.94 rad/s² and 21.9 seconds</strong>. Small differences from the unrounded calculations above arise because the textbook rounds intermediate values. Both representations describe the same stopping process.</div>
+<p>The <a href="./unit-04-rotation-lab.html">interactive rotation laboratory</a> includes this exact textbook problem as a preset so students can observe decreasing angular velocity and angle travelled.</p>
+<p class="refs">NBF Example 4.1, printed pp.58–59.</p></section>
+<section class="card" id="boundaries"><h2>5. What comes next?</h2>
+<p>This is intentionally <strong>Part 1</strong>. The next Unit 4 release will examine turning motion and the inward acceleration needed to curve a trajectory, then connect that to centripetal force and more advanced rotational concepts. Those later SLOs are not presented here as already completed, and no Unit 4 MCQ bank, graded assessment or login-protected lesson has been published yet.</p>
+<div class="links"><a href="./unit-04-rotation-lab.html">Open interactive rotational laboratory</a><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-03.html">Review Unit 3</a></div></section>
+</main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 rotational kinematics foundations</footer></body></html>

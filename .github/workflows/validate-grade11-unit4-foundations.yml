@@ -1,0 +1,40 @@
+name: Validate Grade XI Unit 4 Rotational Foundations
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-rotational-engine.js"
+      - "portal/unit-04-rotation-ui.js"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_rotational_foundations.cjs"
+      - ".github/workflows/validate-grade11-unit4-foundations.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-rotational-engine.js"
+      - "portal/unit-04-rotation-ui.js"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_rotational_foundations.cjs"
+      - ".github/workflows/validate-grade11-unit4-foundations.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit4-foundations:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check JavaScript syntax
+        run: |
+          node --check portal/unit-04-rotational-engine.js
+          node --check portal/unit-04-rotation-ui.js
+          node --check scripts/test_unit04_rotational_foundations.cjs
+      - name: Test radians, textbook bicycle example, reversals, SLO status, routes and privacy
+        run: node scripts/test_unit04_rotational_foundations.cjs
