@@ -1,0 +1,73 @@
+name: Validate Grade XI Unit 4 Teacher Discussion Slides (V46)
+
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-discussion-slides.*"
+      - "portal/unit-04.html"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - "quality/grade11-unit04-teacher-discussion-v46.md"
+      - ".github/workflows/validate-grade11-unit4-discussion-v46.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-04-discussion-slides.*"
+      - "portal/unit-04.html"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_*.cjs"
+      - "quality/grade11-unit04-teacher-discussion-v46.md"
+      - ".github/workflows/validate-grade11-unit4-discussion-v46.yml"
+  workflow_dispatch:
+
+jobs:
+  teacher-discussion-160-step-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify new JavaScript syntax
+        run: |
+          node --check portal/unit-04-discussion-slides.js
+          node --check scripts/test_unit04_discussion_v46.cjs
+      - name: Install pinned Playwright Chromium on CI runner only
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Validate all 80 question and explicit-solution pairs in Chromium
+        run: node scripts/test_unit04_discussion_v46.cjs
+      - name: Upload example question and solution screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit04-v46-teacher-discussion-browser-previews
+          path: qa-artifacts/unit04-v46/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Recheck prior timed student projector and 80-mark paper browser safety
+        run: |
+          node scripts/test_unit04_projector_v45.cjs
+          node scripts/test_unit04_combined_paper_v44.cjs
+          node scripts/test_unit04_classroom_browser_v43.cjs
+      - name: Re-run complete Unit 4 academic and catalogue regression checks
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_assessment_pack_v42.cjs
