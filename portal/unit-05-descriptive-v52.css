@@ -48,6 +48,7 @@ button.secondary{background:white;color:var(--navy);border-color:#a6c0d2}button:
  .sectionhead{break-after:avoid;page-break-after:avoid}
  .solution-grid{grid-template-columns:1fr;gap:8px}.solution-card{break-inside:avoid;padding:10px}
  .solution-card .teacherNote{background:#eee;color:#222}.summary-table th{background:#eee!important}
+ #teacherContent .notice{display:block!important;background:#fff;color:#000;border:1px solid #888;box-shadow:none}
  .tablewrap{overflow:visible}.summary-table{min-width:0;width:100%}
  .steps li{margin:3px 0}.points{color:#222}
 }
