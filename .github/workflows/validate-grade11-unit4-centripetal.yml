@@ -1,0 +1,44 @@
+name: Validate Grade XI Unit 4 Centripetal Part 2
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/unit-04-centripetal-lab.html"
+      - "portal/unit-04-centripetal-engine.js"
+      - "portal/unit-04-centripetal-ui.js"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_centripetal_part2.cjs"
+      - ".github/workflows/validate-grade11-unit4-centripetal.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/unit-04-centripetal-lab.html"
+      - "portal/unit-04-centripetal-engine.js"
+      - "portal/unit-04-centripetal-ui.js"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_centripetal_part2.cjs"
+      - ".github/workflows/validate-grade11-unit4-centripetal.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit4-centripetal:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check centripetal model, UI and validator JavaScript
+        run: |
+          node --check portal/unit-04-centripetal-engine.js
+          node --check portal/unit-04-centripetal-ui.js
+          node --check scripts/test_unit04_centripetal_part2.cjs
+      - name: Verify textbook math, SLOs, force vectors, banked curves and site integration
+        run: node scripts/test_unit04_centripetal_part2.cjs
