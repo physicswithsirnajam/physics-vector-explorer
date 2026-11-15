@@ -53,8 +53,8 @@ function sourceChecks(){
  assert.equal(u5.title,"Work and Energy");
  assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice");
  assert.equal(u5.questionBankCount,32);
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key"]);
- const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html","./unit-05-fbise-audit.html","./unit-05-mcq-practice.html","./unit-05-mcq-key.html","./unit-05-mcq-set-b.html","./unit-05-mcq-set-b-key.html","./unit-05-descriptive-student.html","./unit-05-descriptive-teacher.html"];
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key","unit5-projector-discussion"]);
+ const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html","./unit-05-fbise-audit.html","./unit-05-mcq-practice.html","./unit-05-mcq-key.html","./unit-05-mcq-set-b.html","./unit-05-mcq-set-b-key.html","./unit-05-descriptive-student.html","./unit-05-descriptive-teacher.html","./unit-05-projector-discussion.html"];
  for(const [i,id] of u5.resourceIds.entries()){
   const matches=catalog.resources.filter(r=>r.id===id);
   assert.equal(matches.length,1);
