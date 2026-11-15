@@ -1,9 +1,9 @@
 {
-  "auditVersion": "v51-unit05-two-16-item-provisional-classroom-MCQ-sets",
+  "auditVersion": "v52-unit05-provisional-descriptive-numerical-40-mark-practice",
   "grade": 11,
   "unit": 5,
   "unitTitle": "Work and Energy",
-  "status": "official-summative-SLO-verified-32-mcq-two-pilot-sets",
+  "status": "official-SLO-verified-32-mcq-two-pilot-sets-and-40-mark-descriptive-practice",
   "sourceDocuments": [
     {
       "name": "NBF Grade XI Physics textbook (user-provided 11 Physics Book(7).pdf)",
@@ -222,7 +222,7 @@
   "omrPublished": false,
   "protectedOrGradedAssessmentPublished": false,
   "studentGradesRecorded": false,
-  "academicRisk": "V51 has 32 newly authored original Unit 5 classroom MCQs across Set A and Set B. Independent numerical key calculations, bank/option coherence, browser separation and print/mobile behavior are programmatically tested, but independent teacher review of all stems, distractors and worked answers is still required before formal assessment use. Public worked key pages are not access-restricted. No FBISE full-grade paper, protected grading, PBA certificate, scannable OMR or stored student grades are published.",
+  "academicRisk": "Unit 5 has two provisional 16-MCQ mini-practice sets plus one separate original 40-mark descriptive/numerical Unit 5-only practice supplement with 18 A/B alternatives and a PUBLIC after-practice teacher marking key. Math checks/browser/source consistency do not substitute for human teacher academic examination of wording, cognitive classification, methods, units, significant figures, distractors or fairness. No formal FBISE full-syllabus exam, scannable OMR, grade storage, protected teacher access or PBA source certification.",
   "sourceBoundary": "NBF Grade XI Unit 5 Work and Energy printed pp.77–87; unit-specific summative theory outcomes B-29 through B-32 only. Neither official full-syllabus exam quotas nor unknown PBA eligibility should be assigned to this single unit.",
   "officialFrameworkVerified": true,
   "officialFrameworkEdition": "National Curriculum 2022–23 / Inclusive Scheme of Studies 2024",
@@ -286,7 +286,8 @@
     "For full-grade FBISE-style papers preserve the official boxed MCQ presentation and 50%/50% global structure; do not impose an 80-MCQ quota on a single unit.",
     "Complete teacher academic and projector/mobile/print sign-off; verify separately issued PBA list where practical questions are involved.",
     "For V50, keep original 16-question classroom practice clearly labelled provisional and ungraded, with answers fetched only by a separately accessed public teacher key; do not present a 16-MCQ paper as a full FBISE 80-MCQ examination.",
-    "Review Set B's zero-crossing signed-work graph, mixed applied and resistive forces, and variable-force trolley stimulus before approving any teacher key as a formal marking scheme."
+    "Review Set B's zero-crossing signed-work graph, mixed applied and resistive forces, and variable-force trolley stimulus before approving any teacher key as a formal marking scheme.",
+    "V52 descriptive and numerical alternatives are UNGRADED Unit 5-only practice despite using a familiar seven-SRQ/two-ERQ 40-mark layout. Evaluate only one answer from A OR B for each question, with equivalent physically correct reasoning awarded appropriate marks."
   ],
   "teacherAnswerKeyPublished": true,
   "teacherAnswerKeyStatus": "two-public-16-MCQ-after-practice-worked-keys-not-access-restricted-not-official",
@@ -373,5 +374,46 @@
     "P-11-B-30": 8,
     "P-11-B-31": 8,
     "P-11-B-32": 8
+  },
+  "descriptivePracticePublished": true,
+  "descriptivePracticeStudentPage": "./unit-05-descriptive-student.html",
+  "descriptivePracticeTeacherPage": "./unit-05-descriptive-teacher.html",
+  "descriptivePracticeStudentBank": "../question-bank/grade-11/unit-05-v52-descriptive-student.json",
+  "descriptivePracticeTeacherKey": "../question-bank/grade-11/unit-05-v52-descriptive-teacher-key.json",
+  "descriptivePractice": {
+    "status": "provisional-original-ungraded-teacher-review-pending",
+    "totalPracticeMarks": 40,
+    "sectionB": {
+      "questionPairs": 7,
+      "marksEach": 4,
+      "subtotal": 28,
+      "internalOr": true
+    },
+    "sectionC": {
+      "questionPairs": 2,
+      "marksEach": 6,
+      "subtotal": 12,
+      "internalOr": true
+    },
+    "fullGradeExam": false,
+    "singleUnitOnly": true,
+    "alternatives": 18,
+    "questions": 9,
+    "teacherKeyPublicNotSecured": true,
+    "answerMarksPerQuestionRespectOr": true,
+    "noStudentResponsesOrGradesSaved": true,
+    "officialSummativeSloCodes": [
+      "P-11-B-29",
+      "P-11-B-30",
+      "P-11-B-31",
+      "P-11-B-32"
+    ],
+    "sourcePages": [
+      80,
+      81,
+      82,
+      83
+    ],
+    "notes": "The 7+2 and 28+12 structure mirrors the descriptive portion of the official whole-grade model for familiar practice; all nine practice questions deliberately concern Unit 5 only, so this is not the official full Grade XI examination. Each A/B option has point-level 4- or 6-mark guidance and independent teacher review is still pending."
   }
 }
