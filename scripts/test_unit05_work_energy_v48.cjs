@@ -32,7 +32,7 @@ const eq=(got,expected,epsilon=1e-8,msg="")=>assert.ok(Math.abs(got-expected)<=e
  msg+" expected "+expected+" received "+got);
 function sourceChecks(){
  assert.equal(audit.unit,5);assert.equal(audit.unitTitle,"Work and Energy");
- assert.equal(audit.status,"official-summative-SLO-verified-16-mcq-provisional-practice");
+ assert.equal(audit.status,"official-summative-SLO-verified-32-mcq-two-pilot-sets");
  assert.equal(audit.summativeTheorySLOs.length,4);
  assert.equal(audit.officialFrameworkVerified,true);
  assert.equal(audit.officialFrameworkSLOTablePdfPage,11);
@@ -42,7 +42,7 @@ function sourceChecks(){
  assert.equal(audit.sourceDocuments[0].role,"primary textbook");
  assert.deepEqual(audit.sourceDocuments[0].verifiedVisualPages,[77,78,79,80,81,82,83,84,85,86,87]);
  assert.equal(audit.studentQuestionBankPublished,true);
- assert.equal(audit.questionBankCount,16);
+ assert.equal(audit.questionBankCount,32);
  assert.equal(audit.descriptivePaperPublished,false);
  assert.equal(audit.omrPublished,false);
  assert.equal(audit.protectedOrGradedAssessmentPublished,false);
@@ -51,10 +51,10 @@ function sourceChecks(){
  const u5=grade.units.find(u=>u.unit===5);
  assert.equal(u5.status,"available");
  assert.equal(u5.title,"Work and Energy");
- assert.equal(u5.assessmentStatus,"provisional-ungraded-16-mcq-mini-practice-teacher-review-pending");
- assert.equal(u5.questionBankCount,16);
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key"]);
- const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html","./unit-05-fbise-audit.html","./unit-05-mcq-practice.html","./unit-05-mcq-key.html"];
+ assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-practice-sets-teacher-review-pending");
+ assert.equal(u5.questionBankCount,32);
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key"]);
+ const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html","./unit-05-fbise-audit.html","./unit-05-mcq-practice.html","./unit-05-mcq-key.html","./unit-05-mcq-set-b.html","./unit-05-mcq-set-b-key.html"];
  for(const [i,id] of u5.resourceIds.entries()){
   const matches=catalog.resources.filter(r=>r.id===id);
   assert.equal(matches.length,1);
@@ -196,7 +196,7 @@ async function browsers(){
   assert.deepEqual(notFound,[],"All required resources load");
   const session=await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}));
   assert.deepEqual(session,{local:0,session:0});
-  console.log("PASS V48: catalog includes six public Unit 5 resources, 16 provisional MCQs and no graded/full-exam release.");
+  console.log("PASS V48: catalog includes eight public Unit 5 resources, 32 provisional MCQs and no graded/full-exam release.");
   console.log("PASS V48: work-angle sign, graph linear signed area including axis crossing, KE derivation/scaling, gravity vs resistance route, resistive stopping distance and impossible rest-force cases.");
   console.log("PASS V48: real Chromium/mobile 390px, source/provenance visible, no 404/JS error, no grades/response writes; previous Unit 4 resources intact.");
  }finally{await browser.close();}

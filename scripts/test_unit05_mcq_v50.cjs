@@ -107,9 +107,9 @@ function checkFiles(){
  assert.ok(student.scenarios[0].stimulus.includes("10 N"));
  assert.ok(student.scenarios[0].stimulus.includes("3.0 N"));
  const grade=catalog.grades.find(x=>x.grade===11),u5=grade.units.find(x=>x.unit===5);
- assert.equal(u5.questionBankCount,16);
- assert.equal(u5.assessmentStatus,"provisional-ungraded-16-mcq-mini-practice-teacher-review-pending");
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key"]);
+ assert.equal(u5.questionBankCount,32);
+ assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-practice-sets-teacher-review-pending");
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key"]);
  for(const id of u5.resourceIds){
   const matches=catalog.resources.filter(r=>r.id===id);
   assert.equal(matches.length,1);
@@ -119,13 +119,13 @@ function checkFiles(){
  assert.equal(grade.units.find(x=>x.unit===4).resourceIds.length,18);
  assert.equal(grade.units.find(x=>x.unit===4).questionBankCount,80);
  assert.equal(grade.units.find(x=>x.unit===3).resourceIds.length,10);
- assert.equal(audit.status,"official-summative-SLO-verified-16-mcq-provisional-practice");
+ assert.equal(audit.status,"official-summative-SLO-verified-32-mcq-two-pilot-sets");
  assert.equal(audit.officialFrameworkVerified,true);
  assert.equal(audit.officialFrameworkSLOTablePdfPage,11);
  assert.deepEqual(audit.summativeTheorySLOs.map(x=>x.cognitiveLevel),["Application","Application","Understanding","Application"]);
  assert.equal(audit.studentQuestionBankPublished,true);
  assert.equal(audit.teacherAnswerKeyPublished,true);
- assert.equal(audit.questionBankCount,16);
+ assert.equal(audit.questionBankCount,32);
  assert.deepEqual(audit.provisionalPractice.keyBalance,counts);
  assert.equal(audit.provisionalPractice.questions,16);
  assert.equal(audit.provisionalPractice.practiceMarks,8);

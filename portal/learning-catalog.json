@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v50-unit5-summative-16-mcq-classroom-practice-2026-11-15",
+  "catalogVersion": "pilot-v51-unit5-two-source-mapped-16-mcq-sets-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -116,20 +116,22 @@
           "unit": 5,
           "title": "Work and Energy",
           "status": "available",
-          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no formal Unit 5 board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked. V50 publishes sixteen newly authored original, provisional summative theory MCQs (four per verified SLO), twelve standalone and four contextual, in boxed FBISE-style paper format with a separate public post-practice worked key.",
-          "questionBankCount": 16,
-          "assessmentStatus": "provisional-ungraded-16-mcq-mini-practice-teacher-review-pending",
+          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no formal Unit 5 board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked. V50 publishes sixteen newly authored original, provisional summative theory MCQs (four per verified SLO), twelve standalone and four contextual, in boxed FBISE-style paper format with a separate public post-practice worked key. V51 adds a separate 16-question Set B, also 4 items per B-29–B-32, for 32 original pilot MCQs in two distinct 8-mark mini-practice papers; each has a separate public worked key.",
+          "questionBankCount": 32,
+          "assessmentStatus": "provisional-ungraded-two-16-mcq-practice-sets-teacher-review-pending",
           "resourceIds": [
             "unit5-desk",
             "unit5-work-study",
             "unit5-work-energy-lab",
             "unit5-fbise-audit",
             "unit5-mcq-practice",
-            "unit5-mcq-worked-key"
+            "unit5-mcq-worked-key",
+            "unit5-mcq-set-b-practice",
+            "unit5-mcq-set-b-key"
           ],
-          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. Sixteen provisional Unit 5 classroom MCQs and a separate public worked key released; numerics and bank-key consistency tested automatically. Human item-by-item academic review still required. Official full-grade exam paper, scannable OMR and recorded grading remain unpublished.",
+          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. Sixteen provisional Unit 5 classroom MCQs and a separate public worked key released; numerics and bank-key consistency tested automatically. Human item-by-item academic review still required. Official full-grade exam paper, scannable OMR and recorded grading remain unpublished. V51 Set B adds 16 independently calculated, source-mapped provisional questions, balanced answer letters, and a separate public post-practice three-step worked key. Sets A and B remain separate student papers, not an official full-grade paper. Human scientific review still pending.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 5 offers four source/teaching resources plus an original 16-MCQ provisional practice set and a separate public post-practice worked key. Four verified summative SLOs each have four MCQs. This is not an official 80-question FBISE examination, not scannable OMR and not graded; no answers or student results are stored. Do not open the publicly accessible worked key before practice ends.",
+          "studentNotice": "Unit 5 now offers 32 provisional MCQs in independent Set A and Set B (16 questions, 8 practice marks per set), plus two public post-practice worked keys. All four summative theory SLOs have 8 questions across both sets. This is not an official 80-MCQ FBISE examination, not a scored online exam or scannable OMR. Student answers are not saved; worked keys are not access-restricted.",
           "landingHref": "./unit-05.html"
         },
         {
@@ -935,6 +937,32 @@
       "access": "public-link",
       "contentStatus": "original-v50-16-mcq-teacher-worked-key-public-provisional-human-review-pending",
       "accessDescription": "This teacher key is PUBLIC, not password-protected. Correct options are hidden until explicitly revealed, but JSON is downloadable. Open only AFTER students finish; no official examiner certification."
+    },
+    {
+      "id": "unit5-mcq-set-b-practice",
+      "category": "PRACTISE",
+      "title": "Unit 5 — Set B: 16 Additional Boxed MCQs",
+      "description": "A second original 16-question Unit 5 Work and Energy mini-practice: four MCQs for each verified summative B-29–B-32, 12 independent plus one new four-item changing-force trolley scenario, boxed A/B/C/D columns and 64 blank bubbles, A4 landscape print, no saved answers or keys.",
+      "href": "./unit-05-mcq-set-b.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 5 Set B 16-MCQ Practice ↗",
+      "access": "public-link",
+      "contentStatus": "v51-original-16-mcq-second-pilot-set-ungraded-teacher-academic-QC-pending",
+      "accessDescription": "Public 8-mark ungraded classroom mini-practice, separately from Set A. No correct-option data loaded in student page and no student results stored."
+    },
+    {
+      "id": "unit5-mcq-set-b-key",
+      "category": "STUDY",
+      "title": "Unit 5 — Set B: Public Post-Practice Worked Key",
+      "description": "Set B's separate public teacher review, source-matched 16 question/answer pairs with three-step worked reasoning, verified theory SLO/cognitive and NBF page. Explicit reveal/hide and printable key; no secure teacher authentication.",
+      "href": "./unit-05-mcq-set-b-key.html",
+      "public": true,
+      "external": false,
+      "action": "Review Unit 5 Set B Worked Key After Practice ↗",
+      "access": "public-link",
+      "contentStatus": "v51-public-provisional-set-b-three-step-key-no-human-signoff",
+      "accessDescription": "Public (not password-restricted) teacher solutions. Only open after Set B has ended; this is not an official FBISE key, grade recording or access-controlled exam."
     }
   ]
 }
