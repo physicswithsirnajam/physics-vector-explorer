@@ -65,7 +65,7 @@ function sourceContract(){
  assert.equal(audit.unit5FormativeTheorySLOs.length,0);
  assert.equal(audit.formativeTheorySLOsVerifiedSeparately,true);
  assert.equal(audit.practicalPbaDetermination,"not-established-by-this-source");
- assert.ok(audit.pbaSourceCaution.includes("separate list"));
+ assert.match(audit.pbaSourceCaution,/separate (?:practical )?list/i);
  const full=audit.fullPaperStructure;
  assert.equal(full.applicability,"full-grade-XI-HSSC-I-theory-model-paper-only-not-a-single-unit-5-quota");
  assert.equal(full.totalMarks,80);
