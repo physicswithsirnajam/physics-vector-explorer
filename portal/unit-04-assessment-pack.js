@@ -88,6 +88,7 @@ function scenarioGrid(target,groups,mark){
  $(target).replaceChildren(...boxes);
 }
 function explanations(){
+ const seenScenarios=new Set();
  const rows=mcq.questions.map(q=>{
   const r=make("tr");
   const option=q.options.find(o=>o.id===q.correctOptionId);
