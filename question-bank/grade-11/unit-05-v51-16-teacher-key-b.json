@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "keyId": "unit05-v51-16-teacher-key-set-b",
+  "companionStudentBank": "unit-05-v51-16-student-b.json",
+  "grade": 11,
+  "unit": 5,
+  "practiceSet": "B",
+  "status": "provisional-teacher-review-pending",
+  "publicResource": true,
+  "notSecured": true,
+  "officialFBISEKey": false,
+  "usageBoundary": "Public post-practice Set B teacher key. Do not open until students finish; page and JSON are not access restricted. No student scores or responses saved.",
+  "academicStatus": "All 16 Set B keyed solutions include three reasoning steps and separate independent numeric QC. A human physics teacher must inspect source fidelity, distractors and solutions before formal examination use.",
+  "correctLetterDistribution": {
+    "A": 4,
+    "B": 4,
+    "C": 4,
+    "D": 4
+  },
+  "answerKeys": [
+    {
+      "id": "U05B-MCQ-01",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "For constant net force along displacement, Wnet = ΔK = ½m(v²−u²).",
+        "Use m=4 kg, initial speed 3 m/s, final speed 5 m/s: ½×4×(25−9).",
+        "Net work is +32 J and the body's kinetic energy increases."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-02",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Kinetic energy is given by K=½mv².",
+        "For a mass of 3 kg moving at 4 m/s, evaluate ½×3×4².",
+        "The answer is 24 J; velocity must be squared."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-03",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "For motion from rest under constant force, the net work Fd=½mv².",
+        "At the same mass and displacement, doubling force doubles work and final kinetic energy.",
+        "Therefore v_new²=2v² and v_new=√2 v."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-04",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "For a linear force–displacement graph use signed trapezoid area ½(F0+F1)d.",
+        "Insert (+12 N, −4 N) across 8 m: ½(12−4)×8.",
+        "Positive area +36 J minus negative area 4 J gives +32 J."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-05",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Graphical work equals the signed area under the parallel-force graph.",
+        "The triangle has a 6 m base and 9 N height above the axis.",
+        "Thus ½×6×9=+27 J of work."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-06",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Use the scalar-product relation W=Fd cosθ.",
+        "Here cos120°=−0.5, with F=10 N and d=3 m.",
+        "W=10×3×(−0.5)=−15 J, because the forward component is negative."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-07",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Gravity is conservative and work depends only on endpoint height difference.",
+        "Reversing the endpoints reverses the height difference and hence the work's sign.",
+        "Wgravity for B→A is −40 J when A→B gives +40 J."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-08",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "Near Earth gravitational work is mg(hstart−hend), independent of route length.",
+        "Kinetic friction does approximately −fk L, depending on total distance L.",
+        "Gravity is conservative, while friction is generally path-dependent."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-09",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "A conservative force performs equal work on different paths between the same endpoints.",
+        "The recorded work differs, +14 J on one route but +9 J on another.",
+        "That path dependence establishes a non-conservative force."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-10",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Initial kinetic energy is K0=½×3×4²=24 J.",
+        "Net work is (5−8)×3=−9 J, so target energy Kf=15 J stays positive.",
+        "Solve ½(3)v²=15 to get v=√10≈3.16 m/s."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-11",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "Initial kinetic energy K0=½×5×4²=40 J.",
+        "An opposing force of 10 N removes 10 joules per metre of motion.",
+        "Stopping distance is 40 J÷10 N=4.0 m."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-12",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Work done BY the resisting force is negative: Wres=−Frd.",
+        "Here Wres=−5×2=−10 J; this is the frictional loss.",
+        "Work supplied AGAINST resistance is the positive magnitude +10 J."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-13",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "The given initial mass is 3.0 kg and initial speed is 4.0 m/s.",
+        "Initial kinetic energy is ½mu²=½×3×4².",
+        "K0=24 J before the interval's net work is done."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-14",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "The applied parallel force falls linearly from 10 N to 2 N over 5 m.",
+        "Applied work is signed trapezoid area: ½(10+2)×5.",
+        "Wapplied=+30 J; the separate resistive work is not included here."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-15",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Resistance does negative work Wres=−FrL along a travelled path.",
+        "Changing the path length L generally changes this dissipation for the same endpoints.",
+        "This route-dependent work identifies a non-conservative force."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    },
+    {
+      "id": "U05B-MCQ-16",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Initial kinetic energy is ½×3×4²=24 J.",
+        "Applied work is +30 J and opposing resistance does −2×5=−10 J: ΔK=+20 J.",
+        "Kfinal=44 J, giving v=√(2×44/3)=√(88/3)≈5.42 m/s."
+      ],
+      "reviewStatus": "independent-numeric-source-clarity-QC-teacher-signoff-pending"
+    }
+  ]
+}
