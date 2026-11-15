@@ -16,7 +16,7 @@
   "teachingAuditStatus": "all-12-unit4-summative-slos-have-source-mapped-study-and-lab;teacher-review-pending",
   "studentQuestionBankPublished": true,
   "descriptivePaperPublished": true,
-  "scopeNote": "All 12 Unit 4 summative SLOs have mapped study/lab resources, 80 provisional MCQs and a separate 40-mark descriptive paper (18 OR alternatives; 7×4+2×6). A student's one-choice-per-question paper covers a subset of SLOs. Neither publication is an official FBISE question/key or a protected graded exam. This is not full Grade XI syllabus coverage. The public combined 80-mark practice hub links the two provisional banks, shows manually printable OMR-style response and teacher answer sheets, and computes separate all-A and all-B OR allocations; it is not a graded test or official examiner scheme.",
+  "scopeNote": "All 12 Unit 4 summative SLOs have mapped study/lab resources, 80 provisional MCQs and a separate 40-mark descriptive paper (18 OR alternatives; 7×4+2×6). A student's one-choice-per-question paper covers a subset of SLOs. Neither publication is an official FBISE question/key or a protected graded exam. This is not full Grade XI syllabus coverage. The public combined 80-mark practice hub links the two provisional banks, shows manually printable OMR-style response and teacher answer sheets, and computes separate all-A and all-B OR allocations; it is not a graded test or official examiner scheme. An optional 80-question teacher-paced projector interface reads the same provisional MCQ bank and shows questions and options only, with no grade-saving.",
   "allSummativeSLOs": [
     {
       "code": "P-11-B-07",
@@ -327,5 +327,8 @@
   "descriptivePaperStatus": "provisional-public-descriptive-practice-teacher-review-pending",
   "integratedClassroomAssessmentPackPublished": true,
   "integratedPracticePackPage": "./unit-04-assessment-pack.html",
-  "integratedPracticePackStatus": "provisional-public-unit4-only-omr-manual-practice-teacher-review-pending"
+  "integratedPracticePackStatus": "provisional-public-unit4-only-omr-manual-practice-teacher-review-pending",
+  "projectorClassroomPracticePublished": true,
+  "projectorPracticePage": "./unit-04-projector-practice.html",
+  "projectorPracticeStatus": "public-provisional-unit4-timed-student-facing-no-answers-no-saved-grades"
 }
