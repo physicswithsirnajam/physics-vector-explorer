@@ -76,7 +76,7 @@ for(const [set,items] of scenarios){
 }
 assert.equal(sourceTypeCounts["textbook-adapted"],5);
 assert.equal(sourceTypeCounts["textbook-numerical-adapted"],1);
-assert.equal(sourceTypeCounts["original-slo-practice"],28);
+assert.equal(sourceTypeCounts["original-slo-practice"],50);
 assert.equal(sourceTypeCounts["original-scenario-practice"],24);
 const adapted=bank.questions.find(q=>q.source.sourceType==="textbook-numerical-adapted");
 assert.equal(adapted.source.textbookPage,52);
