@@ -157,12 +157,12 @@ function sourceChecks(){
  assert.equal(audit.descriptivePractice.fullGradeExam,false);
  assert.equal(audit.descriptivePractice.teacherKeyPublicNotSecured,true);
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
- assert.equal(u5.resourceIds.length,10);
+ assert.equal(u5.resourceIds.length,11);
  assert.equal(u5.questionBankCount,32);
  assert.equal(u5.descriptivePracticeMarks,40);
  assert.equal(u5.descriptivePracticePairs,9);
  assert.equal(u5.descriptivePracticeAlternatives,18);
- assert.deepEqual(u5.resourceIds.slice(-2),["unit5-descriptive-student","unit5-descriptive-worked-key"]);
+ assert.deepEqual(u5.resourceIds.slice(-3),["unit5-descriptive-student","unit5-descriptive-worked-key","unit5-projector-discussion"]);
  for(const id of u5.resourceIds){
   const resources=catalog.resources.filter(x=>x.id===id);
   assert.equal(resources.length,1);assert.equal(resources[0].public,true);
