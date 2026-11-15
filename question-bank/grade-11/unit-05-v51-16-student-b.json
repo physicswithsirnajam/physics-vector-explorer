@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 1,
+  "bankId": "unit05-v51-set-b-16-summative-mini-practice",
+  "grade": 11,
+  "unit": 5,
+  "unitTitle": "Work and Energy",
+  "practiceSet": "B",
+  "status": "provisional-teacher-review-pending",
+  "publication": "original-16-item-summative-theory-classroom-practice-set-b",
+  "officialBoardPaper": false,
+  "disclaimer": "Original additional 16-question Set B, not a complete 80-MCQ HSSC-I board paper or a graded exam. Student bank contains no worked key. No student answers are saved.",
+  "sourceBasis": {
+    "textbook": "User-supplied NBF Grade XI Physics Unit 5, printed pp.77–87",
+    "framework": "Official supplied FBISE HSSC-I Physics Assessment Framework, National Curriculum 2022–23 / Inclusive Scheme 2024",
+    "frameworkPdfPage": 11,
+    "frameworkPrintedPage": 5,
+    "verifiedSummativeTheorySLOs": [
+      "P-11-B-29",
+      "P-11-B-30",
+      "P-11-B-31",
+      "P-11-B-32"
+    ]
+  },
+  "structure": {
+    "straight": 12,
+    "scenario": 4,
+    "scenarioSets": 1,
+    "scenarioQuestionsPerSet": 4,
+    "questions": 16,
+    "marksEach": 0.5,
+    "practiceMarks": 8
+  },
+  "scenarios": [
+    {
+      "id": "U05B-S1",
+      "title": "Variable pulling force and constant resistance",
+      "stimulus": "A 3.0 kg trolley is already moving at 4.0 m/s along a horizontal track. It travels another 5.0 m while an applied force parallel to the track decreases linearly from +10 N at the start of that interval to +2 N at its end. A constant 2.0 N resistive force acts opposite to motion throughout. Vertical forces balance and no other forces perform work. The trolley completes the entire 5.0 m interval."
+    }
+  ],
+  "questions": [
+    {
+      "id": "U05B-MCQ-01",
+      "sourceQuestionNumber": 1,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-29",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 82,
+        "frameworkCode": "P-11-B-29"
+      },
+      "topic": "Kinetic energy and work derivation",
+      "stem": "A 4.0 kg object moves along a straight line and its speed changes from 3.0 m/s to 5.0 m/s. According to the work–energy theorem, what net work is done on it?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 J"
+        },
+        {
+          "id": "B",
+          "text": "32 J"
+        },
+        {
+          "id": "C",
+          "text": "64 J"
+        },
+        {
+          "id": "D",
+          "text": "100 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-02",
+      "sourceQuestionNumber": 2,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-29",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 82,
+        "frameworkCode": "P-11-B-29"
+      },
+      "topic": "Kinetic energy and work derivation",
+      "stem": "What is the kinetic energy of a 3.0 kg object moving at a speed of 4.0 m/s?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 J"
+        },
+        {
+          "id": "B",
+          "text": "48 J"
+        },
+        {
+          "id": "C",
+          "text": "6 J"
+        },
+        {
+          "id": "D",
+          "text": "24 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-03",
+      "sourceQuestionNumber": 3,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-29",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 82,
+        "frameworkCode": "P-11-B-29"
+      },
+      "topic": "Kinetic energy and work derivation",
+      "stem": "A trolley of mass m starts from rest and reaches speed v under a constant net force over displacement d. If a second run starts from rest with the same m and d but twice the net force, what is the new final speed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "√2 v"
+        },
+        {
+          "id": "B",
+          "text": "2v"
+        },
+        {
+          "id": "C",
+          "text": "v/2"
+        },
+        {
+          "id": "D",
+          "text": "4v"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-04",
+      "sourceQuestionNumber": 4,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-30",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 80,
+        "frameworkCode": "P-11-B-30"
+      },
+      "topic": "Signed work from force–displacement graphs",
+      "stem": "The force component parallel to a displacement decreases linearly from +12 N at x = 0 to −4 N at x = 8 m. What is the total signed work from x = 0 to x = 8 m?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48 J"
+        },
+        {
+          "id": "B",
+          "text": "−32 J"
+        },
+        {
+          "id": "C",
+          "text": "32 J"
+        },
+        {
+          "id": "D",
+          "text": "64 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-05",
+      "sourceQuestionNumber": 5,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-30",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 80,
+        "frameworkCode": "P-11-B-30"
+      },
+      "topic": "Signed work from force–displacement graphs",
+      "stem": "A parallel-force versus displacement graph forms a triangle with vertices at (0 m, 0 N), (3 m, 9 N) and (6 m, 0 N). What work does this force perform over 6 m?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27 J"
+        },
+        {
+          "id": "B",
+          "text": "54 J"
+        },
+        {
+          "id": "C",
+          "text": "9 J"
+        },
+        {
+          "id": "D",
+          "text": "18 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-06",
+      "sourceQuestionNumber": 6,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-30",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 80,
+        "frameworkCode": "P-11-B-30"
+      },
+      "topic": "Signed work from force–displacement graphs",
+      "stem": "A constant 10 N force makes an angle of 120° with a 3.0 m displacement. What work does this force do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 J"
+        },
+        {
+          "id": "B",
+          "text": "−15 J"
+        },
+        {
+          "id": "C",
+          "text": "−30 J"
+        },
+        {
+          "id": "D",
+          "text": "0 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-07",
+      "sourceQuestionNumber": 7,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-31",
+      "cognitiveLevel": "Understanding",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 81,
+        "frameworkCode": "P-11-B-31"
+      },
+      "topic": "Conservative vs non-conservative field work",
+      "stem": "Gravity does +40 J of work as a body moves from A to B. If the body returns from B to A, what work does gravity do on the return journey, regardless of the route?",
+      "options": [
+        {
+          "id": "A",
+          "text": "+40 J"
+        },
+        {
+          "id": "B",
+          "text": "0 J"
+        },
+        {
+          "id": "C",
+          "text": "+80 J"
+        },
+        {
+          "id": "D",
+          "text": "−40 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-08",
+      "sourceQuestionNumber": 8,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-31",
+      "cognitiveLevel": "Understanding",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 81,
+        "frameworkCode": "P-11-B-31"
+      },
+      "topic": "Conservative vs non-conservative field work",
+      "stem": "Which statement correctly distinguishes conservative gravitational work from the work of kinetic friction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Both gravity and kinetic friction do zero work around every closed path."
+        },
+        {
+          "id": "B",
+          "text": "Gravity's work depends on the exact route, while friction's work depends only on endpoints."
+        },
+        {
+          "id": "C",
+          "text": "Gravity's work depends only on the endpoints, whereas kinetic friction generally depends on path length."
+        },
+        {
+          "id": "D",
+          "text": "Both gravity and kinetic friction always do positive work."
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-09",
+      "sourceQuestionNumber": 9,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-31",
+      "cognitiveLevel": "Understanding",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 81,
+        "frameworkCode": "P-11-B-31"
+      },
+      "topic": "Conservative vs non-conservative field work",
+      "stem": "The same force does +14 J of work between points A and B along one route but +9 J along another. Which classification is justified?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conservative, because both routes have the same endpoints."
+        },
+        {
+          "id": "B",
+          "text": "Non-conservative, because the work depends on the route."
+        },
+        {
+          "id": "C",
+          "text": "Conservative, because both work values are positive."
+        },
+        {
+          "id": "D",
+          "text": "Conservative, because work must be zero on every open path."
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-10",
+      "sourceQuestionNumber": 10,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-32",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 83,
+        "frameworkCode": "P-11-B-32"
+      },
+      "topic": "Work–energy theorem in a resistive medium",
+      "stem": "A 3.0 kg object moves at 4.0 m/s. Over the next 3.0 m, a constant 5.0 N force acts forward and an 8.0 N resistive force acts backward. What is its speed after 3.0 m, assuming the object does not stop before then?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.16 m/s"
+        },
+        {
+          "id": "B",
+          "text": "4.00 m/s"
+        },
+        {
+          "id": "C",
+          "text": "5.10 m/s"
+        },
+        {
+          "id": "D",
+          "text": "0 m/s"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-11",
+      "sourceQuestionNumber": 11,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-32",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 83,
+        "frameworkCode": "P-11-B-32"
+      },
+      "topic": "Work–energy theorem in a resistive medium",
+      "stem": "A 5.0 kg body initially moves at 4.0 m/s. A constant 10 N resistive force acts opposite its motion, with no applied driving force. How far does it move before stopping?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 m"
+        },
+        {
+          "id": "B",
+          "text": "8.0 m"
+        },
+        {
+          "id": "C",
+          "text": "4.0 m"
+        },
+        {
+          "id": "D",
+          "text": "0.4 m"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-12",
+      "sourceQuestionNumber": 12,
+      "type": "straight",
+      "scenarioSetId": null,
+      "scenarioIndex": null,
+      "sloCode": "P-11-B-32",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 83,
+        "frameworkCode": "P-11-B-32"
+      },
+      "topic": "Work–energy theorem in a resistive medium",
+      "stem": "A 3.0 kg body starts from rest and moves 2.0 m under a constant 20 N applied force while a 5.0 N resistive force opposes the motion. How much positive work must be supplied specifically against resistance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "−10 J"
+        },
+        {
+          "id": "B",
+          "text": "30 J"
+        },
+        {
+          "id": "C",
+          "text": "40 J"
+        },
+        {
+          "id": "D",
+          "text": "10 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-13",
+      "sourceQuestionNumber": 13,
+      "type": "scenario",
+      "scenarioSetId": "U05B-S1",
+      "scenarioIndex": 1,
+      "sloCode": "P-11-B-29",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 82,
+        "frameworkCode": "P-11-B-29"
+      },
+      "topic": "Kinetic energy and work derivation",
+      "stem": "What is the trolley's initial kinetic energy at the beginning of the 5.0 m interval?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 J"
+        },
+        {
+          "id": "B",
+          "text": "48 J"
+        },
+        {
+          "id": "C",
+          "text": "24 J"
+        },
+        {
+          "id": "D",
+          "text": "36 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-14",
+      "sourceQuestionNumber": 14,
+      "type": "scenario",
+      "scenarioSetId": "U05B-S1",
+      "scenarioIndex": 2,
+      "sloCode": "P-11-B-30",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 80,
+        "frameworkCode": "P-11-B-30"
+      },
+      "topic": "Signed work from force–displacement graphs",
+      "stem": "What is the work done by the variable applied force over the 5.0 m interval (the area under its force–displacement graph)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60 J"
+        },
+        {
+          "id": "B",
+          "text": "20 J"
+        },
+        {
+          "id": "C",
+          "text": "15 J"
+        },
+        {
+          "id": "D",
+          "text": "30 J"
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-15",
+      "sourceQuestionNumber": 15,
+      "type": "scenario",
+      "scenarioSetId": "U05B-S1",
+      "scenarioIndex": 3,
+      "sloCode": "P-11-B-31",
+      "cognitiveLevel": "Understanding",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 81,
+        "frameworkCode": "P-11-B-31"
+      },
+      "topic": "Conservative vs non-conservative field work",
+      "stem": "Why is the trolley's 2.0 N resistive force classified as non-conservative?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its work depends on the distance travelled and dissipates mechanical energy."
+        },
+        {
+          "id": "B",
+          "text": "Its work is identical for every route connecting fixed endpoints."
+        },
+        {
+          "id": "C",
+          "text": "It always increases the trolley's kinetic energy."
+        },
+        {
+          "id": "D",
+          "text": "It is perpendicular to the trolley's displacement."
+        }
+      ]
+    },
+    {
+      "id": "U05B-MCQ-16",
+      "sourceQuestionNumber": 16,
+      "type": "scenario",
+      "scenarioSetId": "U05B-S1",
+      "scenarioIndex": 4,
+      "sloCode": "P-11-B-32",
+      "cognitiveLevel": "Application",
+      "source": {
+        "textbook": "NBF Grade XI Physics",
+        "unit": 5,
+        "printedPage": 83,
+        "frameworkCode": "P-11-B-32"
+      },
+      "topic": "Work–energy theorem in a resistive medium",
+      "stem": "Using the work–energy theorem, what is the trolley's speed at the end of the 5.0 m interval?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4.00 m/s"
+        },
+        {
+          "id": "B",
+          "text": "5.42 m/s"
+        },
+        {
+          "id": "C",
+          "text": "6.00 m/s"
+        },
+        {
+          "id": "D",
+          "text": "7.33 m/s"
+        }
+      ]
+    }
+  ]
+}
