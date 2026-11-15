@@ -113,12 +113,18 @@ async function main(){
     await screenshot(page,"05-mobile-overflow-debug.png");
   }
   assert.ok(overflow.content<=overflow.screen+2,"Integrated pack horizontal overflow: "+JSON.stringify(overflow));
+  const navWidth=await page.locator("#psn-global-nav .psn-nav-inner").evaluate(el=>Math.ceil(el.getBoundingClientRect().width));
+  assert.ok(navWidth<=390,"Mobile global navigation must not force horizontal page width: "+navWidth);
   assert.equal(await page.locator("#blankStraight .omr-row").count(),56);
   await screenshot(page,"05-integrated-mobile.png");
   // 4. Descriptive: nine A/OR/B pairs, key isolation in student print, teacher print restored.
   await page.setViewportSize({width:1100,height:850});
   await page.goto(base+"unit-04-descriptive-practice.html",{waitUntil:"networkidle"});
   await ready(page,"loadStatus","9 OR pairs ready");
+  await page.setViewportSize({width:390,height:844});
+  const descOverflow=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  assert.ok(descOverflow.scroll<=descOverflow.width+2,"Descriptive page-level horizontal overflow: "+JSON.stringify(descOverflow));
+  await page.setViewportSize({width:1100,height:850});
   assert.equal(await page.locator("#shortQuestions .qa").count(),7);
   assert.equal(await page.locator("#longQuestions .qa").count(),2);
   assert.equal(await page.locator("#sectionB details,#sectionC details").count(),18);
@@ -143,6 +149,11 @@ async function main(){
   // 5. Boxed FBISE MCQs and self-check/reset; no save operation.
   await page.goto(base+"unit-04-mcq-full80.html",{waitUntil:"networkidle"});
   await ready(page,"bankStatus","80 questions");
+  await page.setViewportSize({width:390,height:844});
+  const mcqOverflow=await page.evaluate(()=>({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  assert.ok(mcqOverflow.scroll<=mcqOverflow.width+2,"MCQ page-level horizontal overflow: "+JSON.stringify(mcqOverflow));
+  assert.ok(await page.locator("#questionArea .table-scroll").first().evaluate(e=>e.scrollWidth>e.clientWidth),"MCQ boxes should scroll inside the table, not widen the phone page");
+  await page.setViewportSize({width:1100,height:850});
   assert.equal(await page.locator("#questionArea .mcq tbody tr").count(),80);
   assert.equal(await page.locator("#questionArea .stimulus").count(),6);
   assert.equal(await page.locator("#questionArea .mcq tbody tr input[type=radio]").count(),320);
