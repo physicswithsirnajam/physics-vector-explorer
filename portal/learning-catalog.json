@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v29-unit3-air-resistance-collisions-2026-11-14",
+  "catalogVersion": "pilot-v30-unit3-40-summative-mcq-stage1-2026-11-14",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -60,19 +60,20 @@
           "unit": 3,
           "title": "Translatory Motion",
           "status": "available",
-          "summary": "Two public source-based learning modules cover textbook pp. 33–49: equations of motion/projectiles and qualitative air resistance/momentum/collision concepts. A Unit 3 MCQ bank is not published.",
-          "questionBankCount": 0,
-          "assessmentStatus": "no-mcq-bank-published",
+          "summary": "Source-based Unit 3 study and interactive labs plus a new provisional 40-MCQ summative self-practice set (28 straight, 12 scenario); full 80-item FBISE blueprint is not yet published.",
+          "questionBankCount": 40,
+          "assessmentStatus": "provisional-unit-only-summative-self-practice",
           "resourceIds": [
             "unit3-desk",
             "unit3-study-guide",
             "unit3-motion-lab",
             "unit3-collision-study",
-            "unit3-collision-lab"
+            "unit3-collision-lab",
+            "unit3-mcq-stage1"
           ],
-          "qualityStatus": "partial chapter source review p33–49, correct FBISE P-11-B-03/B-11 formative, B-04/B-05/B-06/B-12/B-13 summative; no Unit 3 bank or saved grades",
+          "qualityStatus": "provisional 40-item Unit 3 MCQ self-practice; board eligibility false; formative B-03/B-11 excluded from practice; independent teacher and scientific audit pending",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 3 Parts 1–2 provide two public study guides and two interactive labs, including no-drag projectile calculations, qualitative air-resistance effects and ideal 1D collision calculations. No Unit 3 MCQ bank or enrolled lesson is yet published; interactive activities do not save results.",
+          "studentNotice": "Unit 3 offers two public study guides, two interactive labs and a provisional 40-question summative MCQ self-practice set (5 textbook-adapted, 35 original, 3 complete scenario sets). This is not an official FBISE examination or full board-scale 80-question bank; MCQ results remain local and are not saved to My Physics Progress.",
           "landingHref": "./unit-03.html"
         },
         {
@@ -521,6 +522,19 @@
       "access": "public-link",
       "contentStatus": "original-part2-interactive-model",
       "accessDescription": "Public qualitative drag and ideal 1D collision education; no authentication, tracking or saved grades."
+    },
+    {
+      "id": "unit3-mcq-stage1",
+      "category": "PRACTISE",
+      "title": "Unit 3 — Summative MCQ Practice (40 Questions)",
+      "description": "FBISE-style boxed MCQ table, A/B/C/D bubbles and explained solutions: 28 straight plus 12 scenario questions across five summative theory SLOs. Provisional and not part of stored assessment history.",
+      "href": "./unit-03-mcq-practice.html",
+      "public": true,
+      "external": false,
+      "action": "Practise 40 Unit 3 MCQs ↗",
+      "access": "public-link",
+      "contentStatus": "provisional-source-grounded-local-mcq-self-practice",
+      "accessDescription": "Public 40-question practice, printable question/answer editions; no authentication, account tracking or saved grade; not full official 80-item model examination."
     }
   ]
 }

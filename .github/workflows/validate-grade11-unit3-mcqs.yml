@@ -1,0 +1,37 @@
+name: Validate Grade XI Unit 3 Summative MCQ Practice
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "portal/unit-03-mcq-practice.html"
+      - "portal/unit-03-mcq-practice.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_stage1_mcq_practice.cjs"
+      - ".github/workflows/validate-grade11-unit3-mcqs.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "portal/unit-03-mcq-practice.html"
+      - "portal/unit-03-mcq-practice.js"
+      - "portal/unit-03.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit03_stage1_mcq_practice.cjs"
+      - ".github/workflows/validate-grade11-unit3-mcqs.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit3-summative-mcqs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check practice JavaScript and test syntax
+        run: |
+          node --check portal/unit-03-mcq-practice.js
+          node --check scripts/test_unit03_stage1_mcq_practice.cjs
+      - name: Check source SLOs, options, maths, scenarios, layout and privacy
+        run: node scripts/test_unit03_stage1_mcq_practice.cjs

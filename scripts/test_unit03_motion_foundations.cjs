@@ -82,8 +82,9 @@ assert.ok(desk.includes('href="./unit-03-study-guide.html"'));
 assert.ok(desk.includes("no Unit 3")||desk.includes("not yet published"));
 const u3=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===3);
 assert.equal(u3.status,"available");
-assert.equal(u3.questionBankCount,0,"No Unit 3 MCQ bank was created");
-assert.equal(u3.assessmentStatus,"no-mcq-bank-published");
+assert.equal(u3.questionBankCount,40,"Unit 3 has 40 provisional unit-only summative MCQs, not a full board-scale bank");
+assert.equal(u3.assessmentStatus,"provisional-unit-only-summative-self-practice");
+assert.ok(u3.resourceIds.includes("unit3-mcq-stage1"));
 for(const [id,target] of [["unit3-desk","./unit-03.html"],["unit3-study-guide","./unit-03-study-guide.html"],["unit3-motion-lab","./unit-03-motion-lab.html"]]){
  assert.ok(u3.resourceIds.includes(id));
  const r=catalog.resources.filter(r=>r.id===id);assert.equal(r.length,1);
