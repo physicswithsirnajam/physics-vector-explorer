@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1a31">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 4: projector-ready, 80 original FBISE-style MCQs, one per slide, visible countdown, teacher controls and full scenarios. No answers or grades shown.">
+<title>Unit 4 — Timed Projector MCQ Practice | Physics with Sir Najam</title>
+<style>
+:root{--navy:#101f38;--deep:#07162b;--gold:#e7c782;--ink:#18324c;--muted:#61778d;--light:#f1f6fb;--line:#c8d6e3;--bright:#f9fbff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--light);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+header{background:var(--deep);color:white}
+.bar{max-width:1250px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:850}
+.brand img{width:49px;height:49px;object-fit:contain}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--gold);text-decoration:underline}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffcb6c;outline-offset:3px}
+main{max-width:1250px;margin:auto;padding:23px 18px 55px}
+.eyebrow{color:#806122;text-transform:uppercase;font-size:12px;letter-spacing:.085em;font-weight:850}
+h1{font-size:clamp(25px,4vw,39px);margin:8px 0 10px;line-height:1.17}
+.lead{max-width:930px;color:var(--muted);margin:0 0 16px}
+.notice{border-left:4px solid #c69644;background:#fff9e8;border-radius:9px;padding:11px 15px;margin:13px 0 18px;font-size:14px}
+.settings{display:flex;align-items:center;gap:13px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:17px 0}
+.settings label{font-weight:750;font-size:13px}
+.settings select{padding:8px 11px;min-width:0;max-width:100%;border:1px solid #91a5b9;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
+.settings .check{display:flex;align-items:center;gap:7px}
+.settings .check input{width:17px;height:17px;accent-color:#10325a}
+.status{font-size:13px;color:#1b5c70;font-weight:800;flex:1 1 220px}
+.stage{background:linear-gradient(145deg,#152c4c 0%,#09182e 75%);color:var(--bright);border:2px solid #354e6b;border-radius:17px;min-height:min(72vh,670px);display:flex;flex-direction:column;box-shadow:0 11px 30px #07152a21;overflow:hidden}
+.stage:fullscreen{height:100vh;width:100vw;min-height:100vh;border:0;border-radius:0}
+.stage-top{display:flex;gap:11px;justify-content:space-between;align-items:center;flex-wrap:wrap;border-bottom:1px solid #54708f;padding:15px 24px}
+.stage-top strong{color:var(--gold);font-size:clamp(14px,1.8vw,21px)}
+.stage-top .tags{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.tag{border:1px solid #6885a6;padding:5px 10px;border-radius:18px;color:#f0f6ff;font-size:clamp(11px,1.15vw,14px);font-weight:700}
+.stage-content{flex:1;min-height:0;padding:clamp(16px,2.5vw,34px);display:flex;flex-direction:column;justify-content:center;gap:clamp(13px,2vw,25px);overflow-y:auto}
+.scenario{background:#1d3b5a;border-left:5px solid var(--gold);padding:clamp(12px,1.5vw,20px);border-radius:8px}
+.scenario strong{color:var(--gold);display:block;margin-bottom:7px;font-size:clamp(13px,1.4vw,18px)}
+.scenario p{margin:0;font-size:clamp(14px,1.65vw,21px);line-height:1.42}
+.scenario[hidden]{display:none!important}
+.question{font-size:clamp(20px,2.65vw,38px);line-height:1.32;letter-spacing:-.012em;margin:0;font-weight:780;overflow-wrap:anywhere}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.5vw,19px)}
+.option{background:#203b5b;border:1px solid #5a7999;border-radius:11px;display:flex;gap:clamp(10px,1.25vw,18px);padding:clamp(11px,1.35vw,19px);align-items:flex-start;min-width:0}
+.letter{border:2px solid #e4c37c;color:#ffe5ad;min-width:37px;height:37px;border-radius:100%;display:inline-flex;justify-content:center;align-items:center;font-size:17px;font-weight:900;flex-shrink:0}
+.option-text{font-size:clamp(17px,1.85vw,27px);line-height:1.35;overflow-wrap:anywhere;align-self:center}
+.stage-bottom{border-top:1px solid #54708f;background:#07182d;padding:13px 22px 16px}
+.timer-row{display:flex;align-items:center;gap:15px;flex-wrap:wrap;justify-content:space-between}
+.timer{display:flex;gap:12px;align-items:center}
+.timer-big{font-size:clamp(34px,4.5vw,60px);font-weight:900;min-width:2.7ch;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.timer small{display:block;color:#d8e7f7;font-size:12px}
+.timer-note{font-size:clamp(12px,1.3vw,16px);color:#d0ddeb;max-width:420px}
+.progress{height:9px;border-radius:10px;background:#344c66;overflow:hidden;margin:11px 0}
+.progress-bar{height:100%;background:var(--gold);width:100%;transition:width .15s linear}
+.controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.controls button{border:1px solid #799ab9;background:#203a59;color:white;padding:10px 13px;border-radius:9px;font:inherit;font-weight:760;cursor:pointer}
+.controls button.primary{background:#e7c782;border-color:#e7c782;color:#0e2947}
+.controls button:disabled{opacity:.48;cursor:not-allowed}
+.controls button:not(:disabled):hover{filter:brightness(1.1)}
+.controls .jump{display:flex;gap:6px;align-items:center;margin-left:auto}
+.controls .jump label{color:#e0eafa;font-size:13px}
+.controls input{width:72px;padding:9px 6px;background:#fff;border:1px solid #819db8;border-radius:7px;font-size:15px;color:#112840}
+.helper{margin-top:13px;font-size:13px;color:var(--muted)}
+.helper a{color:#126c91}
+footer{background:var(--navy);color:#d7e4f0;padding:17px;text-align:center;font-size:13px}
+@media(max-width:800px){.options{grid-template-columns:1fr}.stage{min-height:560px}.stage-top{padding:12px 15px}.stage-content{padding:16px}.stage-bottom{padding:12px 14px}.controls .jump{margin-left:0}.question{font-size:clamp(18px,4vw,28px)}.option-text{font-size:clamp(16px,2.9vw,23px)}}
+@media(max-width:450px){.settings{align-items:stretch}.settings label[for="paceSelect"]{width:100%}.settings select{width:100%;max-width:100%}.settings .check{width:100%}.bar{padding:10px}.stage{min-height:620px}.stage-top .tags{gap:5px}.tag{font-size:11px;padding:4px 7px}.stage-content{gap:11px}.letter{min-width:30px;height:30px;font-size:14px}.controls button{padding:8px}.status{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.progress-bar{transition:none}}
+@media print{#psn-global-nav,header,footer,.settings,.controls{display:none!important}body{background:#fff}.stage{color:#000;background:#fff;border:0;box-shadow:none}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=6">
+<script src="./unit-04-projector-practice.js" defer></script>
+<script src="../shared/navigation.js?v=6" defer></script>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Unchanged official Physics with Sir Najam logo">Physics with Sir Najam</a>
+<nav aria-label="Unit 4 resource navigation"><a href="./unit-04.html">Unit 4 Learning Desk</a><a href="./unit-04-assessment-pack.html">OMR and teacher key</a><a href="./unit-04-combined-student-paper.html">Student paper</a></nav></div></header>
+<main>
+<div class="eyebrow">Grade XI · HSSC-I · Unit 4 · Timed projector practice</div>
+<h1>80-MCQ Projector Presentation</h1>
+<p class="lead">One original, summative-SLO-aligned multiple-choice question per screen, with clear options and a large visible countdown. All six situation-based groups keep their complete stimulus on every relevant slide.</p>
+<div class="notice"><strong>Teacher-led, public classroom practice only.</strong> This is the provisional <strong>Unit 4-only</strong> question bank, not an official FBISE paper or a secured graded assessment. Correct options, explanations, student responses and grades are <strong>not</strong> displayed or saved here. Students can answer on the separate <a href="./unit-04-assessment-pack.html">blank OMR-style practice sheet</a>. Teacher review of academic answers remains necessary.</div>
+<div class="settings" aria-label="Presentation timing settings">
+<label for="paceSelect">Seconds per question</label>
+<select id="paceSelect" aria-label="Question duration">
+<option value="40">40 seconds</option>
+<option value="50" selected>50 seconds (default)</option>
+<option value="60">60 seconds</option>
+<option value="75">75 seconds</option>
+<option value="90">90 seconds</option>
+<option value="adaptive">Adaptive 45–90 seconds (based on text length)</option>
+</select>
+<label class="check" for="autoAdvance"><input id="autoAdvance" type="checkbox" checked>Automatically advance when time runs out</label>
+<span class="status" id="loadStatus" role="status" aria-live="polite">Loading and checking 80 source questions…</span>
+</div>
+<section id="stageShell" class="stage" aria-label="Projector question slide">
+<div class="stage-top"><strong id="slideIndex">Q — / 80</strong><div class="tags"><span id="questionType" class="tag">Summative theory</span><span id="sloLabel" class="tag">Unit 4</span><span id="scenarioLabel" class="tag" hidden></span></div></div>
+<div class="stage-content">
+<div id="scenarioPane" class="scenario" hidden><strong id="scenarioHeading">Shared scenario</strong><p id="scenarioText"></p></div>
+<h2 id="questionText" class="question">Press Start presentation to show the first question.</h2>
+<div id="answersGrid" class="options" aria-label="Four question options, no answers revealed"></div>
+</div>
+<div class="stage-bottom">
+<div class="timer-row"><div class="timer"><span id="secondsRemaining" class="timer-big" aria-label="Seconds remaining">50</span><span><strong>seconds</strong><small id="timePreset">50-second question</small></span></div><div id="timerState" class="timer-note" role="status" aria-live="polite">Ready to start — answer on your printed OMR practice sheet.</div></div>
+<div class="progress" role="progressbar" aria-label="Remaining question time" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="progress"><div id="progressBar" class="progress-bar"></div></div>
+<div class="controls" aria-label="Presentation controls">
+<button id="startBtn" class="primary" type="button" disabled>Start presentation</button>
+<button id="prevBtn" type="button" disabled>← Previous</button>
+<button id="pauseBtn" type="button" disabled>Pause timer</button>
+<button id="nextBtn" type="button" disabled>Next →</button>
+<button id="resetBtn" type="button" disabled>Reset current timer</button>
+<button id="fullscreenBtn" type="button" disabled>Fullscreen</button>
+<div class="jump"><label for="jumpInput">Go to Q</label><input id="jumpInput" type="number" min="1" max="80" step="1" value="1" disabled><button id="jumpBtn" type="button" disabled>Go</button></div>
+</div>
+</div></section>
+<p class="helper">Keyboard: <strong>→</strong> next, <strong>←</strong> previous, <strong>Space</strong> pause/resume, <strong>F</strong> fullscreen (when not editing a field). Opening another tab pauses the timer to avoid skipping questions. Answer explanations remain in the <a href="./unit-04-assessment-pack.html">separate public teacher key</a>; do not open that page while projecting questions to students.</p>
+</main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers · Unit 4 projector practice · No grades saved</footer>
+</body></html>
