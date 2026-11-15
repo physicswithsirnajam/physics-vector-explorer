@@ -155,8 +155,8 @@ for(const source of [lab,ui,engine]){
 const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
 assert.equal(unit4.status,"available");
 assert.equal(unit4.questionBankCount,80,"Provisional Unit 4 bank must have all 80 public practice items");
-assert.equal(unit4.assessmentStatus,"provisional-unit4-public-mcq-and-descriptive-practice");
-assert.deepEqual(unit4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80","unit4-descriptive-practice"]);
+assert.equal(unit4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
+assert.deepEqual(unit4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80","unit4-descriptive-practice","unit4-assessment-pack"]);
 assert.ok(desk.includes('href="./unit-04-centripetal-study.html"'));
 assert.ok(desk.includes('href="./unit-04-centripetal-lab.html"'));
 assert.ok(unit4.studentNotice.includes("80 provisional public self-practice MCQs"),"Unit 4 must not claim an unpublished question bank");
