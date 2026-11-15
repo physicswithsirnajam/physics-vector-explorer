@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "keyId": "unit05-v50-16-teacher-key",
+  "companionStudentBank": "unit-05-v50-16-student.json",
+  "grade": 11,
+  "unit": 5,
+  "status": "provisional-teacher-review-pending",
+  "publicResource": true,
+  "notSecured": true,
+  "officialFBISEKey": false,
+  "usageBoundary": "Public post-practice teacher key. Use separately AFTER collecting/completing student papers. This public URL and JSON do not enforce teacher permissions. No student responses, scores or grades are recorded.",
+  "academicStatus": "All 16 keys supplied with worked reasoning; numerical checks and consistency enforced by V50 regression. A human physics teacher must still review every stem, distractor, numerical and solution before formal use.",
+  "correctLetterDistribution": {
+    "A": 4,
+    "B": 4,
+    "C": 4,
+    "D": 4
+  },
+  "answerKeys": [
+    {
+      "id": "U05-MCQ-01",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "Apply the constant-force work definition: Wnet = Fnet d = mad.",
+        "The motion equation gives v² − u² = 2ad, hence ad = (v² − u²)/2.",
+        "Substitute to obtain Wnet = ½m(v² − u²) = ΔK."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-02",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Kinetic-energy theorem: Wnet = ½m(v² − u²).",
+        "Insert m = 2.0 kg, u = 0 and v = 6.0 m/s.",
+        "Wnet = ½ × 2.0 × (36 − 0) = 36 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-03",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Begin with v² − u² = 2ad.",
+        "Divide both sides by 2 to isolate ad.",
+        "Therefore ad = (v² − u²)/2, so mad = ½m(v² − u²)."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-04",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Work is the signed trapezoid area under the parallel-force versus displacement graph.",
+        "The mean force is (2 + 10)/2 = 6 N across 4 m.",
+        "W = 6 × 4 = 24 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-05",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "A force graph below the displacement axis yields negative work.",
+        "The signed rectangular area equals F∥ × Δx.",
+        "W = (−3 N)(5 m) = −15 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-06",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Add signed areas separately; do not add absolute magnitudes.",
+        "First interval: (+8 N)(2 m) = +16 J.",
+        "Second interval: (−4 N)(3 m) = −12 J; total = 16 − 12 = 4 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-07",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Gravity is a conservative force: its work between fixed endpoints depends on the change in gravitational potential energy, not the route.",
+        "For a near-Earth field, Wg = mg(hA − hB).",
+        "Both routes connect the same A and B, so gravitational work is equal."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-08",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Kinetic friction opposes motion, hence its work is negative.",
+        "For the 2 m route: Wf = −(3 N)(2 m) = −6 J.",
+        "For the 5 m route: Wf = −(3 N)(5 m) = −15 J, demonstrating path dependence."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-09",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "The work by gravity depends only on the initial and final heights: Wg = mg(hstart − hend).",
+        "The body returns to its original height on the closed path.",
+        "Thus hstart = hend and Wg = 0 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-10",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "The forces act in opposite directions along the displacement.",
+        "Fnet = 18 − 5 = 13 N, so Wnet = 13 × 3 = 39 J.",
+        "By the work–energy theorem, ΔK = Wnet = 39 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-11",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Find the work done by the net forward force: Wnet = (12 − 2) × 5 = 50 J.",
+        "Starting from rest, Kfinal = 50 J = ½(2.0 kg)v².",
+        "Thus v² = 50 m²/s² and v = √50 = 7.07 m/s (three significant figures)."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-12",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Initial energy: K0 = ½(4.0 kg)(2.0 m/s)² = 8.0 J.",
+        "At constant 8 N resistance and zero driving force, 8.0 J is exhausted after dstop = K0/8 N = 1.0 m.",
+        "Because 1.0 m is less than 3.0 m, the target is unreachable; a negative target kinetic energy is not physical."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-13",
+      "correctOptionId": "B",
+      "workedSteps": [
+        "Read the scenario: m = 2.0 kg and u = 2.0 m/s.",
+        "K0 = ½mu² = ½(2.0)(2.0²).",
+        "K0 = 4.0 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-14",
+      "correctOptionId": "D",
+      "workedSteps": [
+        "Both horizontal forces are constant, so their net forward component is 10 − 3 = 7 N.",
+        "The net-force graph is a horizontal line at +7 N over 4.0 m.",
+        "Signed area Wnet = (7 N)(4.0 m) = 28 J."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-15",
+      "correctOptionId": "C",
+      "workedSteps": [
+        "A resistive force does negative work, transferring mechanical energy into other forms (such as thermal energy).",
+        "When the resistance magnitude is constant and opposes travel, Wres = −Fr L, with L the distance travelled.",
+        "Its work therefore depends on route length; that is the non-conservative feature."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    },
+    {
+      "id": "U05-MCQ-16",
+      "correctOptionId": "A",
+      "workedSteps": [
+        "Start with K0 = ½(2.0)(2.0²) = 4.0 J.",
+        "Net work over 4.0 m: Wnet = (10 − 3) × 4.0 = 28 J.",
+        "Kfinal = 4.0 + 28 = 32 J, so ½(2.0)v² = 32 and v = √32 = 5.66 m/s."
+      ],
+      "reviewStatus": "numeric-or-algebraic-QC-complete-teacher-academic-signoff-pending"
+    }
+  ]
+}
