@@ -11,7 +11,7 @@
       75,
       76
     ],
-    "verification": "Cross-checked against the original source pages and existing public learning resources; final teacher pedagogical review remains required."
+    "verification": "SLO cognitive values compared with the supplied official framework pp.3–4; B-18 explicitly includes Knowledge + Application. Unit 4 public MCQ cognitive tags are provisional, pending teacher review."
   },
   "teachingAuditStatus": "all-12-unit4-summative-slos-have-source-mapped-study-and-lab;teacher-review-pending",
   "studentQuestionBankPublished": true,
@@ -183,6 +183,7 @@
       "code": "P-11-B-18",
       "form": "Summative",
       "cognitive": [
+        "Knowledge",
         "Application"
       ],
       "sourceOutcome": "Define and calculate moment of inertia about an axis and angular momentum.",
