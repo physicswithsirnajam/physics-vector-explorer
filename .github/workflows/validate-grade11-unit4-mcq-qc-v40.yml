@@ -1,0 +1,36 @@
+name: Validate Grade XI Unit 4 V40 Academic MCQ QC
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "scripts/test_unit04_mcq_v39.cjs"
+      - "scripts/test_unit04_qc_v40.cjs"
+      - "quality/grade11-unit04-mcq-qc-v40.md"
+      - ".github/workflows/validate-grade11-unit4-mcq-qc-v40.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "scripts/test_unit04_mcq_v39.cjs"
+      - "scripts/test_unit04_qc_v40.cjs"
+      - "quality/grade11-unit04-mcq-qc-v40.md"
+      - ".github/workflows/validate-grade11-unit4-mcq-qc-v40.yml"
+  workflow_dispatch:
+jobs:
+  qc-unit4-mcq-v40:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Validate both test scripts and unchanged public practice JavaScript
+        run: |
+          node --check scripts/test_unit04_mcq_v39.cjs
+          node --check scripts/test_unit04_qc_v40.cjs
+          node --check portal/unit-04-mcq-full80.js
+      - name: Full original V39 MCQ and source/mapping regressions
+        run: node scripts/test_unit04_mcq_v39.cjs
+      - name: V40 academic clarity and numerical regressions
+        run: node scripts/test_unit04_qc_v40.cjs
