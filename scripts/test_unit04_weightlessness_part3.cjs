@@ -122,8 +122,7 @@ assert.ok(guide.includes("NBF ASSIGNMENT 4.4"));
 assert.ok(guide.includes("17.55 m/s²"));
 assert.ok(guide.includes("1.79"));
 assert.ok(guide.includes("P-11-B-18"));
-assert.ok(guide.includes("not</strong> published a Unit 4 MCQ bank")||
- guide.includes("No Unit 4 MCQ bank"));
+assert.ok(guide.includes('href="./unit-04-mcq-full80.html"'),"Part3 study links to provisional MCQ practice");
 for(const href of ["./unit-04-artificial-gravity-study.html","./unit-04-artificial-gravity-lab.html"]){
  assert.ok(desk.includes('href="'+href+'"'),"Missing Unit4 desk link "+href);
 }
@@ -161,12 +160,12 @@ for(const source of [engine,ui,lab]){
 }
 const u4=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.status,"available");
-assert.equal(u4.questionBankCount,0);
-assert.equal(u4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
+assert.equal(u4.questionBankCount,80);
+assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-self-practice");
 assert.deepEqual(u4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab",
  "unit4-centripetal-study","unit4-centripetal-lab",
- "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"]);
-assert.ok(u4.studentNotice.includes("No Unit 4 MCQ bank"));
+ "unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80"]);
+assert.ok(u4.studentNotice.includes("80 provisional public self-practice MCQs"));
 for(const [id,href] of [
  ["unit4-desk","./unit-04.html"],["unit4-rotation-study","./unit-04-rotation-study.html"],
  ["unit4-rotation-lab","./unit-04-rotation-lab.html"],
@@ -185,5 +184,5 @@ assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — NBF Example 4.4 radius 1500m, g=9.8, ω≈0.08083, T≈77.73s, f≈0.013 Hz.");
 console.log("PASS — NBF Assignment 4.4 radius 4m, 20rpm, a≈17.55m/s²; 60 cases and acceleration/normal-force scaling verified.");
-console.log("PASS — Summative B-16/B-17, proper gravity/apparent-weight distinction, safe local time-scaled SVG, seven unit resources and prior unit data.");
+console.log("PASS — Summative B-16/B-17, proper gravity/apparent-weight distinction, safe local time-scaled SVG, prior unit data and source-based Unit 4 practices.");
 console.log("NOTE — Provisional education software; no official FBISE marking certification or human-rated station design; live browser inspection required.");

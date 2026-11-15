@@ -73,9 +73,11 @@ assert.equal(entries.length,12);
 assert.deepEqual(entries.map(x=>x.code),expected);
 assert.ok(audit.sources.textbook.includes("53–76"));
 assert.ok(audit.sources.framework.includes("pp.3–4"));
-assert.equal(audit.studentQuestionBankPublished,false);
+assert.equal(audit.studentQuestionBankPublished,true);
+assert.equal(audit.studentQuestionBankStatus,"provisional-public-self-practice-teacher-academic-review-pending");
+assert.equal(audit.protectedOrGradedAssessmentPublished,false);
 assert.equal(audit.descriptivePaperPublished,false);
-assert.ok(audit.scopeNote.includes("not a full Grade XI"));
+assert.ok(audit.scopeNote.includes("full Grade XI syllabus coverage"));
 const identifiers=new Set(),allowedCognitive=new Set(["Knowledge","Understanding","Application"]);
 const urls={
  "unit4-rotation-study":"unit-04-rotation-study.html",
@@ -94,7 +96,8 @@ for(const x of entries){
  assert.ok(!identifiers.has(x.code));identifiers.add(x.code);
  assert.equal(x.form,"Summative");
  assert.equal(x.teachingStatus,"available-source-based");
- assert.equal(x.assessmentStatus,"not-yet-published");
+ assert.equal(x.assessmentStatus,"provisional-public-self-practice-teacher-review-pending");
+ assert.equal(x.publishedProvisionalMCQs,x.proposedMCQs);
  assert.ok(x.sourceOutcome.length>12);
  assert.ok(x.cognitive.length>=1);
  for(const k of x.cognitive)assert.ok(allowedCognitive.has(k),"Unexpected cognitive level "+k);
@@ -168,14 +171,14 @@ for(const content of [engine,ui,lab]){
  }
 }
 const u4=cat.grades.find(x=>x.grade===11)?.units.find(x=>x.unit===4);
-assert.equal(u4.questionBankCount,0);
-assert.equal(u4.assessmentStatus,"no-unit4-mcq-or-descriptive-bank-published");
-assert.equal(u4.resourceIds.length,12);
-assert.equal(new Set(u4.resourceIds).size,12);
+assert.equal(u4.questionBankCount,80);
+assert.equal(u4.assessmentStatus,"provisional-unit4-public-mcq-self-practice");
+assert.equal(u4.resourceIds.length,13);
+assert.equal(new Set(u4.resourceIds).size,13);
 for(const id of ["unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit"])
  assert.ok(u4.resourceIds.includes(id),"New audit resource missing "+id);
-assert.ok(u4.studentNotice.includes("No Unit 4 MCQ bank"));
-assert.ok(u4.studentNotice.includes("12-SLO"));
+assert.ok(u4.studentNotice.includes("80 provisional public self-practice MCQs"));
+assert.ok(u4.studentNotice.includes("12 summative SLOs"));
 for(const href of ["./unit-04-centrifuge-study.html","./unit-04-centrifuge-lab.html",
  "./unit-04-slo-audit.html"])
  assert.ok(desk.includes('href="'+href+'"'),"Learning Desk lacks "+href);
@@ -186,6 +189,6 @@ assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — 60 centrifuge rpm/radius/mass cases: ω=2πrpm/60, a=ω²r, F=ma; 600rpm, .1m≈394.8m/s².");
 console.log("PASS — Original NBF centrifuge p.63, real inward vs apparent outward conceptual explanation, cream separator and dryer.");
 console.log("PASS — All 12 summative Unit 4 SLOs (B07–B10/B14–B21) mapped to book, cognitive levels, existing public lessons and labs.");
-console.log("PASS — Formative B11 and unrelated collision B12/B13 correctly excluded from Unit 4; 80-MCQ proposal not represented as published.");
-console.log("PASS — 12 public Unit 4 resources, no student grades/browser data, prior Unit 3 80-MCQ assessment unchanged.");
-console.log("NOTE — Teaching audit complete; no reviewed Unit 4 bank or official FBISE paper created; browser/projector QA pending.");
+console.log("PASS — Formative B11 and unrelated collision B12/B13 correctly excluded from Unit 4; public 80 MCQs are provisional only.");
+console.log("PASS — 13 public Unit 4 resources, zero graded assessments/browser saved data, prior Unit 3 80-MCQ assessment unchanged.");
+console.log("NOTE — Source-aligned public 80-MCQ bank is teacher-review pending; no approved official FBISE paper; browser/projector QA required.");

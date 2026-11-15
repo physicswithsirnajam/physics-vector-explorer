@@ -1,0 +1,41 @@
+name: Validate Grade XI Unit 4 Full 80-MCQ Practice
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "portal/unit-04-mcq-full80.html"
+      - "portal/unit-04-mcq-full80.js"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/unit-04-slo-audit.html"
+      - "portal/unit-04.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_mcq_v39.cjs"
+      - ".github/workflows/validate-grade11-unit4-mcq-v39.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "portal/unit-04-mcq-full80.html"
+      - "portal/unit-04-mcq-full80.js"
+      - "portal/unit-04-slo-audit.json"
+      - "portal/unit-04-slo-audit.html"
+      - "portal/unit-04.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_mcq_v39.cjs"
+      - ".github/workflows/validate-grade11-unit4-mcq-v39.yml"
+  workflow_dispatch:
+jobs:
+  validate-unit4-80-mcqs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Validate practice JavaScript and QC script syntax
+        run: |
+          node --check portal/unit-04-mcq-full80.js
+          node --check scripts/test_unit04_mcq_v39.cjs
+      - name: Verify 80 MCQs, all 12 SLOs, answer key, scenario context and preserved student data
+        run: node scripts/test_unit04_mcq_v39.cjs
