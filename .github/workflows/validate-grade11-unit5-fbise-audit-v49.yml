@@ -1,0 +1,63 @@
+name: Validate Grade XI Unit 5 Official FBISE Theory SLO Audit (V49)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_*.cjs"
+      - "quality/grade11-unit05-fbise-audit-v49.md"
+      - ".github/workflows/validate-grade11-unit5-fbise-audit-v49.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05*"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit05_*.cjs"
+      - "quality/grade11-unit05-fbise-audit-v49.md"
+      - ".github/workflows/validate-grade11-unit5-fbise-audit-v49.yml"
+  workflow_dispatch:
+jobs:
+  unit5-official-framework-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check V49 source and existing physics lab
+        run: |
+          node --check scripts/test_unit05_fbise_audit_v49.cjs
+          node --check scripts/test_unit05_work_energy_v48.cjs
+          node --check portal/unit-05-work-energy-lab.js
+      - name: Install pinned Chromium runner dependencies only
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify official supplied-framework SLO contract and accessible audit UI
+        run: node scripts/test_unit05_fbise_audit_v49.cjs
+      - name: Preserve original V48 live work-energy numerical regression
+        run: node scripts/test_unit05_work_energy_v48.cjs
+      - name: Upload classroom source-audit previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit05-v49-official-fbise-audit-previews
+          path: qa-artifacts/unit05-v49/*.png
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Protect Unit 4 published summative questions and assessment metadata
+        run: |
+          node scripts/test_unit04_rotational_foundations.cjs
+          node scripts/test_unit04_centripetal_part2.cjs
+          node scripts/test_unit04_weightlessness_part3.cjs
+          node scripts/test_unit04_angular_momentum_part4.cjs
+          node scripts/test_unit04_centrifuge_audit.cjs
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_unit04_qc_v40.cjs
+          node scripts/test_unit04_descriptive_v41.cjs
+          node scripts/test_unit04_assessment_pack_v42.cjs

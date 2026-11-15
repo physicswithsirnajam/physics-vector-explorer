@@ -32,13 +32,15 @@ const eq=(got,expected,epsilon=1e-8,msg="")=>assert.ok(Math.abs(got-expected)<=e
  msg+" expected "+expected+" received "+got);
 function sourceChecks(){
  assert.equal(audit.unit,5);assert.equal(audit.unitTitle,"Work and Energy");
- assert.equal(audit.status,"source-grounded-teaching-pilot");
+ assert.equal(audit.status,"source-and-fbise-slo-classification-verified-teaching-only");
  assert.equal(audit.summativeTheorySLOs.length,4);
+ assert.equal(audit.officialFrameworkVerified,true);
+ assert.equal(audit.officialFrameworkSLOTablePdfPage,11);
  assert.deepEqual(audit.summativeTheorySLOs.map(x=>x.code),["P-11-B-29","P-11-B-30","P-11-B-31","P-11-B-32"]);
- assert.deepEqual(audit.summativeTheorySLOs.map(x=>x.provisionalCognitiveLevel),["Application","Application","Understanding","Application"]);
+ assert.deepEqual(audit.summativeTheorySLOs.map(x=>x.cognitiveLevel),["Application","Application","Understanding","Application"]);
  assert.deepEqual(audit.sourcePageMap.map(x=>x.section),["5.1","5.2","5.3","5.4"]);
  assert.equal(audit.sourceDocuments[0].role,"primary textbook");
- assert.deepEqual(audit.sourceDocuments[0].verifiedVisualPages,[77,78,79,80,81,82,83,84,85]);
+ assert.deepEqual(audit.sourceDocuments[0].verifiedVisualPages,[77,78,79,80,81,82,83,84,85,86,87]);
  assert.equal(audit.studentQuestionBankPublished,false);
  assert.equal(audit.questionBankCount,0);
  assert.equal(audit.descriptivePaperPublished,false);
@@ -51,8 +53,8 @@ function sourceChecks(){
  assert.equal(u5.title,"Work and Energy");
  assert.equal(u5.assessmentStatus,"not-published");
  assert.equal(u5.questionBankCount,0);
- assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab"]);
- const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html"];
+ assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit"]);
+ const expected=["./unit-05.html","./unit-05-work-study.html","./unit-05-work-energy-lab.html","./unit-05-fbise-audit.html"];
  for(const [i,id] of u5.resourceIds.entries()){
   const matches=catalog.resources.filter(r=>r.id===id);
   assert.equal(matches.length,1);
