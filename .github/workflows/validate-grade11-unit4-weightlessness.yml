@@ -1,0 +1,46 @@
+name: Validate Grade XI Unit 4 Weightlessness Part 3
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-artificial-gravity-engine.js"
+      - "portal/unit-04-artificial-gravity-ui.js"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_weightlessness_part3.cjs"
+      - ".github/workflows/validate-grade11-unit4-weightlessness.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "portal/unit-04.html"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-artificial-gravity-engine.js"
+      - "portal/unit-04-artificial-gravity-ui.js"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit04_weightlessness_part3.cjs"
+      - ".github/workflows/validate-grade11-unit4-weightlessness.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit4-weightlessness:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Check model, interface and validator JavaScript syntax
+        run: |
+          node --check portal/unit-04-artificial-gravity-engine.js
+          node --check portal/unit-04-artificial-gravity-ui.js
+          node --check scripts/test_unit04_weightlessness_part3.cjs
+      - name: Test orbital free fall, artificial gravity equations, NBF examples and safe integration
+        run: node scripts/test_unit04_weightlessness_part3.cjs
