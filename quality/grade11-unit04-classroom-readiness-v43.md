@@ -27,7 +27,7 @@ The workflow `.github/workflows/validate-grade11-unit4-classroom-v43.yml` tempor
 - [ ] Real Chromium print stylesheet isolates blank OMR, teacher key and SLO/marks table as **three distinct views**.
 - [ ] Descriptive student-print view hides worked answers; teacher-print view reveals 18 marked alternatives; viewing/printing restores the original answer visibility.
 - [ ] Boxed FBISE MCQ UI shows 80 × 4 selectable options, supports check and reset without any recorded student grade.
-- [ ] 390-pixel mobile viewport does not create page-level horizontal overflow. No unhandled browser JavaScript errors occur.
+- [ ] 390-pixel mobile viewport does not create page-level horizontal overflow on **any of the three Unit 4 practice pages**. Shared navigation links remain internally scrollable without stretching the page; FBISE MCQ boxes scroll inside their own table wrapper. No unhandled browser JavaScript errors occur.
 - [ ] Review screenshot artifact **`unit04-v43-browser-and-print-reference-screenshots`** in the successful workflow run (retained seven days). Screenshots are technical references, not a substitute for physically printing A4 sheets.
 
 ## Tier 3: teacher sign-off — mandatory manual review
@@ -48,4 +48,5 @@ These checks cannot be certified by source-level scripts or headless browser sna
 
 - New browser test and CI only; no change to MCQ or descriptive JSON banks, student scores, previous Units 1–3, study/lab engines or official logo.
 - Correct a **compulsory terminology mistake** on the Unit 4 descriptive page: the board stage for Grade XI must read **HSSC-I**, not **SSC-I**.
+- Fix a **real Chromium-discovered mobile defect** in `shared/navigation.css`: the global navigation forced a 694px page width in a 390px phone viewport. Its flex links now have `min-width:0` and scroll inside the constrained viewport; verify in the browser workflow across Unit 4 MCQs, descriptive and integrated pack.
 - Successful CI provides browser evidence. Any remaining physical-print or academic discrepancies must be resolved as follow-up PRs; CI success alone does not equal teacher sign-off.
