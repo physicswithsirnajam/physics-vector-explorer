@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v35-unit4-centripetal-motion-part2-2026-11-15",
+  "catalogVersion": "pilot-v36-unit4-weightlessness-artificial-gravity-part3-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,7 +84,7 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Public Unit 4 Part 1 rotational kinematics (pp.54–59) and Part 2 centripetal motion and force (pp.59–64), with source-based guides and separate interactive labs. Satellite weightlessness, artificial gravity, torque, inertia and angular momentum are still pending.",
+          "summary": "Three public Unit 4 source-based stages: rotational kinematics (pp.54–59), centripetal force (pp.59–64), and weightlessness/artificial gravity (pp.71–74), each with a study guide and interactive lab. Moment of inertia, torque and angular momentum are still pending.",
           "questionBankCount": 0,
           "assessmentStatus": "no-unit4-mcq-or-descriptive-bank-published",
           "resourceIds": [
@@ -92,11 +92,13 @@
             "unit4-rotation-study",
             "unit4-rotation-lab",
             "unit4-centripetal-study",
-            "unit4-centripetal-lab"
+            "unit4-centripetal-lab",
+            "unit4-artificial-gravity-study",
+            "unit4-artificial-gravity-lab"
           ],
-          "qualityStatus": "Unit 4 Parts 1–2 source-reviewed against NBF pp.53–64 and summative FBISE B-07/08/09/10/14/15; no question bank or graded lesson, final scientific teacher review and browser QA pending",
+          "qualityStatus": "Unit 4 Parts 1–3 source-adapted from NBF pp.53–74 and FBISE summative B-07/08/09/10/14/15/16/17; no Unit 4 question bank or graded lesson; final teacher review and browser QA pending",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 now has Part 1 rotational kinematics and Part 2 centripetal force learning resources. The force lab includes a real inward-force vector, squared-speed graph, ideal banked turn and NBF Example 4.2. No saved scores, MCQ bank or protected Unit 4 tests have been published. Later SLOs B-16 onward are pending.",
+          "studentNotice": "Unit 4 includes three public learning stages: angular motion; centripetal force; and weightlessness with rotating-station artificial gravity. The new simulator has NBF Example 4.4 and Assignment 4.4 presets. No Unit 4 MCQ bank, protected tests or saved scores exist. The remaining SLOs B-18 onward will follow.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -665,6 +667,32 @@
       "access": "public-link",
       "contentStatus": "original-unit4-part2-uniform-circle-simulation",
       "accessDescription": "Public independent SVG educational simulation, 30% real-time angular animation for legibility; no login, grades, account storage or student tracking."
+    },
+    {
+      "id": "unit4-artificial-gravity-study",
+      "category": "STUDY",
+      "title": "Unit 4 Part 3 — Weightlessness & Artificial Gravity Study Guide",
+      "description": "NBF XI Physics printed pp.71–74, FBISE summative B-16/B-17: microgravity/free fall, apparent weight, actual inward floor normal in rotating station, equations and solved textbook Example 4.4 plus Assignment 4.4.",
+      "href": "./unit-04-artificial-gravity-study.html",
+      "public": true,
+      "external": false,
+      "action": "Read Part 3 Study Guide ↗",
+      "access": "public-link",
+      "contentStatus": "source-based-unit4-part3-artificial-gravity-guide",
+      "accessDescription": "Public teaching guide distinguishing reference frames; not complete Unit 4 coverage, a graded assessment or official examiner key."
+    },
+    {
+      "id": "unit4-artificial-gravity-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 4 — Weightlessness & Artificial Gravity Interactive Lab",
+      "description": "Schematic satellite free fall plus ideal rotating-ring station; vary radius, rpm and person mass, calculate floor normal, acceleration, rpm, period and frequency; includes NBF Example 4.4 and Assignment 4.4 presets.",
+      "href": "./unit-04-artificial-gravity-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Launch Artificial Gravity Lab ↗",
+      "access": "public-link",
+      "contentStatus": "original-unit4-part3-rotating-habitat-laboratory",
+      "accessDescription": "Public idealized educational simulation, time-scaled ring animation, no student account, score or persistent data."
     }
   ]
 }
