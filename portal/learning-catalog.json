@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v37-unit4-inertia-torque-angular-momentum-part4-2026-11-15",
+  "catalogVersion": "pilot-v38-unit4-centrifuge-slo-audit-2026-11-15",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -84,7 +84,7 @@
           "unit": 4,
           "title": "Rotational and Circular Motion",
           "status": "available",
-          "summary": "Four public Grade XI Unit 4 source-grounded learning stages: rotational kinematics, centripetal force, satellite weightlessness and artificial gravity, and moment of inertia/torque/angular momentum with interactive labs. Centrifugation B-21 and full assessment bank audit remain pending.",
+          "summary": "Five public Unit 4 stages: rotational kinematics, centripetal motion, weightlessness/artificial gravity, inertia/torque/angular momentum, and centrifugation. A 12-SLO source-mapped audit is available. No Unit 4 assessment bank is published.",
           "questionBankCount": 0,
           "assessmentStatus": "no-unit4-mcq-or-descriptive-bank-published",
           "resourceIds": [
@@ -96,11 +96,14 @@
             "unit4-artificial-gravity-study",
             "unit4-artificial-gravity-lab",
             "unit4-angular-momentum-study",
-            "unit4-angular-momentum-lab"
+            "unit4-angular-momentum-lab",
+            "unit4-centrifuge-study",
+            "unit4-centrifuge-lab",
+            "unit4-slo-audit"
           ],
-          "qualityStatus": "Unit 4 Parts 1–4 use NBF pp.53–74 for summative B-07/08/09/10/14/15/16/17/18/19/20; independent unit-only practice and B-21 centrifuge theory coverage still need review; no question bank or graded scores; teacher/browser QA pending",
+          "qualityStatus": "Source-mapped teaching covers 12 summative Unit 4 SLOs B07–B10 and B14–B21 from NBF printed pp.53–76. B11 formative; B12 and B13 are collision/momentum topics outside Unit 4. No reviewed Unit 4 exam bank; browser and teacher QC pending.",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 4 now offers four public source-based stages and interactive labs, including NBF grinding-wheel Example 4.3 and angular momentum conservation. No Unit 4 MCQ bank, protected tests or saved scores have been published. Summative centrifuge SLO P-11-B-21 and full assessment coverage require separate audit.",
+          "studentNotice": "Five public source-based learning stages and 12-SLO Unit 4 teaching audit include B-21 centrifugation. No Unit 4 MCQ bank, protected tests or saved scores are published. Proposed 80-MCQ Unit-only practice distribution is not an official full-syllabus question allocation.",
           "landingHref": "./unit-04.html"
         },
         {
@@ -721,6 +724,45 @@
       "access": "public-link",
       "contentStatus": "unit4-part4-original-rotational-lab",
       "accessDescription": "Public two-model interactive SVG lab, independent of accounts; not a complete Unit 4 test, official board simulator or exam key."
+    },
+    {
+      "id": "unit4-centrifuge-study",
+      "category": "STUDY",
+      "title": "Unit 4 Part 5 — Centrifugation and Centripetal Separation",
+      "description": "NBF XI Unit 4 p.63, exercises pp.74–76 and summative B21: rotating sample separation, cream separators, spin dryers, reference-frame concepts and checks.",
+      "href": "./unit-04-centrifuge-study.html",
+      "public": true,
+      "external": false,
+      "action": "Read Centrifuge Guide ↗",
+      "access": "public-link",
+      "contentStatus": "source-based-unit4-B21-teaching",
+      "accessDescription": "Public conceptual classroom guide, not official exam key or validated sample-processing instructions."
+    },
+    {
+      "id": "unit4-centrifuge-lab",
+      "category": "SIMULATIONS",
+      "title": "Unit 4 Part 5 — Interactive Centrifuge Concept Lab",
+      "description": "Schematic spinning sample tubes, mixed versus conceptual separation, angular speed and radial acceleration demand with speed-squared scaling; not a sedimentation rate model.",
+      "href": "./unit-04-centrifuge-lab.html",
+      "public": true,
+      "external": false,
+      "action": "Launch Centrifuge Lab ↗",
+      "access": "public-link",
+      "contentStatus": "original-unit4-B21-concept-illustration",
+      "accessDescription": "Public non-clinical conceptual visualisation; no sample processing, student grades or data storage."
+    },
+    {
+      "id": "unit4-slo-audit",
+      "category": "STUDY",
+      "title": "Unit 4 — FBISE Summative SLO Coverage Audit",
+      "description": "Complete 12-summative-SLO textbook page, cognitive classification and guide/lab audit; proposed 80-MCQ Unit 4 practice blueprint explicitly separate from published exams.",
+      "href": "./unit-04-slo-audit.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 4 SLO Audit ↗",
+      "access": "public-link",
+      "contentStatus": "source-verified-unit4-teaching-map-assessment-pending",
+      "accessDescription": "Public teaching audit only; not a full-syllabus official examination or a published question bank."
     }
   ]
 }
