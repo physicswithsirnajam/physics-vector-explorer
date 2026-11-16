@@ -100,7 +100,7 @@ async function adapterCheck(d){
  for(let i=0;i<160;i++){
   const q=added[i],r=d.rows[i];
   assert.equal(q.stem,r[2]);
-  assert.deepEqual(q.options.map(o=>o.text),r[3]);
+  assert.deepEqual(JSON.parse(JSON.stringify(q.options.map(o=>o.text))),r[3]);
   assert.equal(q.correctOptionId,r[4]);
   assert.equal(q.explanation,r[5]);
   assert.equal(q.sourceQuestionNumber,r[1]);
