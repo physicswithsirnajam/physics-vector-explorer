@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:240,5:349};
+const expected={1:275,2:206,3:220,4:395,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -43,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?18:26;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?29:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -224,6 +224,78 @@ function adaptMasterFour(master,old){
  return questions;
 }
 
+/* V62: source-preserving corrected Unit 4 Topic 4.3/4.4 bank.
+ * Word run-level superscripts/subscripts are already serialized exactly in
+ * this PUBLIC, auditable source archive. Never auto-correct source answers.
+ * Figure 4.13 Question 38 and dependent Scenario 4 (Q69-72) are withheld.
+ */
+const fourthNextMasterFiles=['unit04-v62-part1.b64','unit04-v62-part2.b64','unit04-v62-part3.b64'];
+async function loadMasterFourV62(basePath){
+ const parts=await Promise.all(fourthNextMasterFiles.map(async file=>{
+  const r=await fetch(basePath+file,{cache:'no-store'});
+  if(!r.ok)throw Error('Missing Unit 4 corrected topic archive '+file+' (HTTP '+r.status+')');
+  return r.text();
+ }));
+ const encoded=parts.join('').trim();
+ need(encoded.length===13684,'Unit 4 Topic 4.3/4.4 archive is missing or truncated');
+ let fnv=2166136261;
+ for(let i=0;i<encoded.length;i++)fnv=Math.imul(fnv^encoded.charCodeAt(i),16777619)>>>0;
+ need(fnv===0x55b60683,'Unit 4 Topic 4.3/4.4 source transfer checksum mismatch');
+ need(typeof DecompressionStream==='function','Current browser cannot decompress the source topic bank. Update the browser.');
+ const bytes=Uint8Array.from(atob(encoded),char=>char.charCodeAt(0));
+ const json=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ return JSON.parse(json);
+}
+function adaptMasterFourV62(master,existing){
+ need(master?.version===1&&master.source==='Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx'&&
+  master.sourceSha256==='925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777'&&
+  master.rows?.length===155&&Object.keys(master.scenarios||{}).length===11,
+  'unexpected corrected Unit 4 Topic 4.3/4.4 source');
+ need(JSON.stringify(master.held)==='{"4.3":[38,69,70,71,72],"4.4":[]}',
+  'Figure 4.13 dependent questions must remain held');
+ need(master.formatMethod==='original Word run-level superscript/subscript restored before source compression',
+  'original Word equation typography not verified');
+ const slos={43:['P-11-B-18'],44:['P-11-B-18','P-11-B-20']};
+ const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+'|'+
+  q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+ const ids=new Set(existing.map(q=>q.id)),fingerprints=new Set(existing.map(canon)),
+  groups=new Map(),counts={43:0,44:0};
+ const rows=master.rows.map(row=>{
+  need(Array.isArray(row)&&row.length===6,'malformed corrected Topic 4.3/4.4 record');
+  const [topic,n,stem,options,answer,explanation]=row;
+  const id='g11-u04-master-t'+topic+'-q'+String(n).padStart(3,'0');
+  need(Object.hasOwn(slos,topic)&&Number.isInteger(n)&&n>=1&&n<=80 &&
+    !(topic===43&&[38,69,70,71,72].includes(n)) && !ids.has(id),
+    'repeated or held Unit 4 source question '+id);
+  need(typeof stem==='string'&&stem.trim()&&Array.isArray(options)&&options.length===4&&
+   options.every(v=>typeof v==='string'&&v.trim())&&'ABCD'.includes(answer)&&
+   typeof explanation==='string'&&explanation.trim(),'bad source option/key/explanation '+id);
+  const group=n>=57?'u04-v61-t'+topic+'-s'+(1+Math.floor((n-57)/4)):null;
+  const html=group?master.scenarios[group]:null;
+  need(!group||(typeof html==='string'&&html.startsWith('<p>')&&html.length>40),
+   'source scenario missing or truncated '+id);
+  const q={id,grade:11,unit:4,active:true,type:'single_choice',
+   status:'teacher-review-pending',boardEligible:false,
+   stem,options:options.map((text,i)=>({id:'ABCD'[i],text})),
+   correctOptionId:answer,explanation,
+   sloCodes:slos[topic],assessmentClassification:'summative-theory',
+   difficulty:'Unspecified',cognitiveLevel:'Unspecified',
+   sloAlignment:'Topic-level provisional SLO candidate; item-level teacher academic review pending',
+   sourceQuestionNumber:n,topic:topic===43?'4.3 — Moment of Inertia':'4.4 — Angular Momentum',
+   source:{document:master.source,sourceSha256:master.sourceSha256,
+    topic:'4.'+(topic-40),itemNumber:n,review:'academic-review-pending; source key only'},
+   stimulusSetId:group,stimulusHtml:html||null};
+  need(!fingerprints.has(canon(q)),'duplicate old/new Unit 4 question text '+id);
+  ids.add(id);fingerprints.add(canon(q));counts[topic]++;
+  if(group){if(!groups.has(group))groups.set(group,[]);groups.get(group).push(q);}
+  return q;
+ });
+ need(counts[43]===75&&counts[44]===80&&groups.size===11&&
+  [...groups.values()].every(g=>g.length===4&&g.every(q=>q.stimulusHtml===g[0].stimulusHtml)) &&
+  !groups.has('u04-v61-t43-s4'),'Unit 4 source scenario integrity or figure hold changed');
+ return rows;
+}
+
 function adaptUnitFive(student,key,setLabel){
   need(student?.grade===11&&student.unit===5&&student.officialBoardPaper===false&&student.questions?.length===16,'bad Unit 5 Set '+setLabel+' student source');
   need(key?.grade===11&&key.unit===5&&key.publicResource===true&&key.notSecured===true&&key.officialFBISEKey===false,'Unit 5 key must be labelled publicly accessible and non-official');
@@ -321,13 +393,13 @@ async function loadBank(unit,basePath){
       ...adaptUnitFive(data[2],data[3],'B')
     ])
   ];
-  else if(unit===4){const old=adaptLegacy(4,data[0]);questions=[...old,...adaptMasterFour(await loadMasterFour(basePath),old)];}
+  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];questions=[...existing,...adaptMasterFourV62(await loadMasterFourV62(basePath),existing)];}
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v61-original-80-plus-corrected-topics41-42-160':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v62-original80-plus-corrected-topics41-44-315':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
