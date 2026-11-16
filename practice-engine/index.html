@@ -311,7 +311,7 @@ function makeMcqIssueReport(q,issue,notes){
  const lines=[
   'PHYSICS WITH SIR NAJAM — MCQ REVIEW REQUEST',
   'Grade: XI',
-  'Unit: '+q.unit,
+  'Unit: '+(Number.isInteger(q.unit)?q.unit:cfg.unit),
   'Question ID: '+q.id,
   'Original source question number: '+q.sourceQuestionNumber,
   'Bank version: '+String(bank?.bankVersion||'unknown'),
