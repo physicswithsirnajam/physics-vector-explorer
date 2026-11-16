@@ -9,7 +9,7 @@ fs.mkdirSync(out,{recursive:true});
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
 const fileAt="question-bank/grade-11/";
 const title=["","Physical Quantities and Measurements","Vectors","Translatory Motion","Rotational and Circular Motion","Work and Energy"];
-const totals={1:275,2:206,3:220,4:80,5:349};
+const totals={1:275,2:206,3:220,4:240,5:349};
 const mime={".html":"text/html; charset=utf-8",".js":"application/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml"};
 const server=http.createServer((req,res)=>{
  try{
@@ -104,7 +104,7 @@ async function assertAdapters(){
    }
     console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
  }
- assert.equal(allIds.size,1130,"all 1130 original and imported questions must have unique IDs");
+ assert.equal(allIds.size,1290,"all 1290 original and imported questions must have unique IDs");
  await assert.rejects(adapter.loadBank(6,fileAt));
  await assert.rejects(adapter.loadBank(5,"https://untrusted.test/"),/unexpected question bank folder/);
 }
