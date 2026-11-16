@@ -82,5 +82,5 @@ assert.ok(ui.includes("afterprint"));assert.ok(ui.includes("textContent=String(v
 assert.ok(!/firebase|firestore|localStorage|sessionStorage|auth\.|indexedDB|setDoc|updateDoc|addDoc|sendBeacon|XMLHttpRequest/i.test(ui));
 assert.ok(!/unit-03|Translatory Motion/.test(page+ui));
 const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,80);
+assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,220);
 console.log("PASS V41: 7x4+2x6=40, nine OR pairs, 18 choices, 12 summative SLOs, physics checks, A4 print, no grade writes.");
