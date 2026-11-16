@@ -51,7 +51,7 @@ jobs:
           node --check scripts/test_unit03_master_v60.cjs
           node --check scripts/test_builder_five_units_v55.cjs
           node --check scripts/test_builder_multiunit_v56.cjs
-          node -e "const m=require('./question-bank/manifest.json'),g=m.grades.find(x=>x.grade===11);if(g.units.find(x=>x.unit===3).liveMcqCount!==220||g.units.reduce((s,x)=>s+x.liveMcqCount,0)!==1290)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json'),g=m.grades.find(x=>x.grade===11);if(g.units.find(x=>x.unit===3).liveMcqCount!==220||g.units.reduce((s,x)=>s+x.liveMcqCount,0)!==1445)process.exit(1)"
       - name: Install real Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
