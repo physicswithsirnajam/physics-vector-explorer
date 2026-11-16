@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:80,4:80,5:32};
+const expected={1:275,2:206,3:80,4:80,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -16,7 +16,8 @@ const files={
   4:['unit-04-v39-80-practice.json'],
   5:[
     'unit-05-v50-16-student.json','unit-05-v50-16-teacher-key.json',
-    'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json'
+    'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json',
+    'unit-05-master-topic-v59-317.json'
   ]
 };
 function need(condition,reason){if(!condition)throw Error('Grade XI MCQ source validation: '+reason);}
@@ -42,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?6:unit===4?6:2;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?6:unit===4?6:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -93,6 +94,52 @@ function adaptUnitFive(student,key,setLabel){
   need(answerMap.size===mapped.length&&mapped.every(q=>answerMap.has(q.id)),'unmatched Unit 5 key records');
   return mapped;
 }
+function adaptMasterFive(master,older){
+  need(master?.grade===11&&master.unit===5&&master.status==='practice-pilot'&&master.secureExam===false,
+    'invalid teacher-supplied Unit 5 master bank');
+  need(master.sourceDocument==='Grade11_Physics_Unit5_Student_Master_Pack.docx' &&
+    master.sourceQuestionCount===320 && master.questionCount===317 &&
+    master.questions?.length===317 && master.excludedPendingFigureReview?.length===3,
+    'source/provisional import manifest mismatch for Unit 5');
+  const held=new Set(master.excludedPendingFigureReview.map(x=>x.id));
+  need(held.size===3 && [...held].every(id=>!master.questions.some(q=>q.id===id)),
+    'figure-dependent questions must remain excluded');
+  const expectedTopic={'5.1':79,'5.2':78,'5.3':80,'5.4':80};
+  const expectedSlo={'5.1':'P-11-B-30','5.2':'P-11-B-31',
+    '5.3':'P-11-B-29','5.4':'P-11-B-32'};
+  const expectedLevel={'5.1':'Application','5.2':'Understanding',
+    '5.3':'Application','5.4':'Application'};
+  const topicCount=Object.fromEntries(Object.keys(expectedTopic).map(t=>[t,0]));
+  const groups=new Map(),existingIds=new Set(older.map(x=>x.id));
+  const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+'|'+q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+  const previous=new Set(older.map(canon));
+  for(const q of master.questions){
+    const t=q.source?.topic;
+    need(Object.hasOwn(expectedTopic,t),'unexpected source topic in '+q.id);
+    need(q.source.document===master.sourceDocument &&
+      q.source.itemNumber===q.sourceQuestionNumber &&
+      q.id==='g11-u05-master-t'+t.replace('.','')+'-q'+String(q.sourceQuestionNumber).padStart(3,'0'),
+      'source traceability mismatch in '+q.id);
+    need(q.sloCodes?.length===1&&q.sloCodes[0]===expectedSlo[t] &&
+      q.cognitiveLevel===expectedLevel[t] &&
+      q.assessmentClassification==='summative-theory'&&q.boardEligible===false &&
+      q.difficulty==='Unspecified' && q.status==='teacher-review-pending',
+      'SLO, source status or cognitive mapping mismatch '+q.id);
+    need(!existingIds.has(q.id)&&!previous.has(canon(q)),'duplicated original Unit 5 MCQ '+q.id);
+    topicCount[t]++;
+    if(q.stimulusSetId){
+      if(!groups.has(q.stimulusSetId))groups.set(q.stimulusSetId,[]);
+      groups.get(q.stimulusSetId).push(q);
+    }
+  }
+  for(const t of Object.keys(expectedTopic))
+    need(topicCount[t]===expectedTopic[t],'unexpected imported source count '+t);
+  need(groups.size===24&&[...groups.values()].every(g=>g.length===4),
+    'Unit 5 master must retain 24 intact four-question scenario groups');
+  need(master.questions.filter(q=>q.stimulusSetId).length===96,
+    'Unit 5 source scenario-question count mismatch');
+  return master.questions;
+}
 async function loadBank(unit,basePath){
   need(Number.isInteger(unit)&&Object.hasOwn(files,unit),'unit not available');
   need(typeof basePath==='string'&&/^(?:\.\.\/)?question-bank\/grade-11\/$/.test(basePath),'unexpected question bank folder');
@@ -104,14 +151,18 @@ async function loadBank(unit,basePath){
   let questions;
   if(unit===5)questions=[
     ...adaptUnitFive(data[0],data[1],'A'),
-    ...adaptUnitFive(data[2],data[3],'B')
+    ...adaptUnitFive(data[2],data[3],'B'),
+    ...adaptMasterFive(data[4],[
+      ...adaptUnitFive(data[0],data[1],'A'),
+      ...adaptUnitFive(data[2],data[3],'B')
+    ])
   ];
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===5?'v55-adapter-original-v50-and-v51':data[0].bankVersion,
+    bankVersion:unit===5?'v59-original-v50-v51-plus-source-master-317':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
