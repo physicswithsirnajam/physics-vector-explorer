@@ -54,7 +54,7 @@ function adaptLegacy(unit,data){
   need(data?.status==='practice-pilot'&&Array.isArray(data.questions),'invalid original Unit '+unit+' bank');
   return data.questions.map(q=>({
     ...q,
-    stimulusHtml:q.stimulusText?'<p>'+escapeHTML(q.stimulusText)+'</p>':q.stimulusHtml||''
+    stimulusHtml:q.stimulusHtml|| (q.stimulusText?'<p>'+escapeHTML(q.stimulusText)+'</p>':'')
   }));
 }
 function adaptUnitFive(student,key,setLabel){
