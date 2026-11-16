@@ -85,7 +85,7 @@ function sourceContract(){
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
  assert.equal(u5.status,"available");
  assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice");
- assert.equal(u5.questionBankCount,32);
+ assert.equal(u5.questionBankCount,349);
  assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key","unit5-projector-discussion"]);
  for(const id of u5.resourceIds){
   const resources=catalog.resources.filter(r=>r.id===id);
