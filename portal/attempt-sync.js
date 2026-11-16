@@ -11,7 +11,9 @@ let auth=null,db=null,record=null,saved=false,uploading=false,lastSaveError='';
 function say(s){status.textContent=s;}
 function updateButton(){
  const user=auth?.currentUser;
- button.disabled=!record||saved||uploading||!user||!user.emailVerified;
+ const supported=!record||[1,2].includes(record.unit);
+ button.disabled=!record||!supported||saved||uploading||!user||!user.emailVerified;
+ if(record&&!supported){say('Private cloud saving is coming later for Units 3–5. You can still print or save the completed self-practice results as a PDF.');return;}
  if(!record)return;
  if(saved){say('Saved successfully. Open your portal to see My Physics Progress.');return;}
  if(lastSaveError){say(lastSaveError);return;}
