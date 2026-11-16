@@ -43,7 +43,7 @@ jobs:
           node --check scripts/test_builder_five_units_v55.cjs
           node --check scripts/test_builder_single_unit_v54.cjs
           node --check portal/attempt-sync.js
-          node -e "const m=require('./question-bank/manifest.json'); if(m.grades[0].units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1290)process.exit(1);"
+          node -e "const m=require('./question-bank/manifest.json'); if(m.grades[0].units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1445)process.exit(1);"
       - name: Install Chromium for actual browser test
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

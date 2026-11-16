@@ -140,7 +140,7 @@ assert.equal(audit.integratedPracticePackPage,"./unit-04-assessment-pack.html");
 assert.equal(audit.protectedOrGradedAssessmentPublished,false);
 assert.equal(audit.studentGradesRecorded,false);
 const u4=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
-assert.equal(u4.questionBankCount,240);
+assert.equal(u4.questionBankCount,395);
 assert.equal(u4.resourceIds.length,18);
 assert.equal(new Set(u4.resourceIds).size,18);
 assert.ok(u4.resourceIds.includes("unit4-assessment-pack"));

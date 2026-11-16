@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Physics with Sir Najam",
   "status": "practice-pilot",
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "grades": [
     {
       "grade": 11,
@@ -66,26 +66,31 @@
           "unit": 4,
           "name": "Rotational and Circular Motion",
           "path": "grade-11/unit-04-v39-80-practice.json",
-          "liveMcqCount": 240,
-          "sourceSloMcqCount": 240,
-          "summativePilotCount": 240,
-          "scenarioGroupCount": 18,
+          "liveMcqCount": 395,
+          "sourceSloMcqCount": 395,
+          "summativePilotCount": 395,
+          "scenarioGroupCount": 29,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v61-original-v39-80-plus-corrected-topics41-42-160",
-          "importNote": "V61 retains the original V39 80-MCQ classroom source bank, separate 80-question paper/projector/OMR and all prior keys unchanged. The central public Test Builder additionally imports 160 MCQs from corrected 8 Oct Unit 4 Student Notes Topics 4.1 and 4.2 (112 straight + 48 in 12 intact four-question scenarios). Source option/key/explanation rows are structurally matched; individual new SLO tags are provisional TOPIC-LEVEL arrays, NOT item-level certified classification. Original 12 summative theory SLO teaching audit remains unchanged. Full corrected master has 560 original topic MCQs; Topics 4.3–4.7 (400, including figure-dependent Topic 4.3 Q38) remain held for later review/import. No secure examination or cloud save for Unit 4. Independent scientific and curricular teacher QC pending.",
-          "newMasterImportedCount": 160,
+          "bankVersion": "v62-original80-plus-corrected-topics41-44-315",
+          "importNote": "V62 preserves original V39 80-MCQ classroom paper, keys, projector, OMR and descriptive practice unchanged. Central public builder now has 395 Unit4 items: original80 + corrected topic4.1/4.2 160 + corrected topic4.3 75 and topic4.4 80. Five Topic4.3 source questions are HELD: Figure4.13 dependent Q38 and the four MCQs Q69-72 from a complete scenario that describes an axis shown in that figure. Original Word superscript/subscript formatting in every new source question and explanation preserved. The 11 new scenarios remain four-question units. Unimported: 240 Topics4.5-4.7 plus 5 held. New question SLO codes are TOPIC-LEVEL provisional, not individually verified; all source answer keys require independent subject review. No protected test, official FBISE certification or Unit4 cloud saving.",
+          "newMasterImportedCount": 315,
           "masterSourceTopicCount": 560,
           "masterTopicsImported": {
             "4.1": 80,
-            "4.2": 80
+            "4.2": 80,
+            "4.3": 75,
+            "4.4": 80
           },
           "originalClassroomPaperCount": 80,
           "sourceFiles": [
             "grade-11/unit-04-v39-80-practice.json",
             "grade-11/unit04-v61-part1.b64",
             "grade-11/unit04-v61-part2.b64",
-            "grade-11/unit04-v61-part3.b64"
+            "grade-11/unit04-v61-part3.b64",
+            "grade-11/unit04-v62-part1.b64",
+            "grade-11/unit04-v62-part2.b64",
+            "grade-11/unit04-v62-part3.b64"
           ]
         },
         {
@@ -122,6 +127,6 @@
       ]
     }
   ],
-  "bankVersion": "v61-five-unit-central-1290-source-mcqs",
-  "lastUpdated": "2026-11-16"
+  "bankVersion": "v62-five-unit-central-1445-source-mcqs",
+  "lastUpdated": "2026-11-17"
 }
