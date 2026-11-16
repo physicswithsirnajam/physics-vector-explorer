@@ -1,0 +1,62 @@
+name: Validate Grade XI Five-Unit Student Guide and Hub (V57)
+on:
+  pull_request:
+    paths:
+      - "student-guide.html"
+      - "portal/index.html"
+      - "portal/learning-hub.js"
+      - "portal/learning-catalog.json"
+      - "build-your-physics-test.html"
+      - "question-bank/manifest.json"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "quality/five-unit-milestone-v57.md"
+      - ".github/workflows/validate-grade11-student-guide-v57.yml"
+  push:
+    branches: [main]
+    paths:
+      - "student-guide.html"
+      - "portal/index.html"
+      - "portal/learning-hub.js"
+      - "portal/learning-catalog.json"
+      - "build-your-physics-test.html"
+      - "question-bank/manifest.json"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "quality/five-unit-milestone-v57.md"
+      - ".github/workflows/validate-grade11-student-guide-v57.yml"
+  workflow_dispatch:
+jobs:
+  five-unit-student-onboarding-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify guide audit and learning catalogue syntax
+        run: |
+          node --check scripts/test_five_unit_student_guide_v57.cjs
+          node --check portal/learning-hub.js
+          node -e "const d=require('./portal/learning-catalog.json'); if(d.grades.find(g=>g.grade===11).units.filter(u=>u.status==='available').length!==5)process.exit(1)"
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Run five-unit catalogue and first-use browser QA
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Rerun five-unit mixed MCQ Test Builder regression
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Upload student guide screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-guide-v57-desktop-mobile-and-mixed-test
+          path: |
+            qa-artifacts/guide-v57/*.png
+            qa-artifacts/builder-v56/*.png
+          retention-days: 7
+          if-no-files-found: warn
