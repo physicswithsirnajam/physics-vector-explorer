@@ -167,7 +167,7 @@ assert.ok(desk.includes('href="./unit-03-mcq-full80.html"'));
 assert.ok(desk.includes("not an official full-syllabus FBISE examination"));
 const grade11=catalog.grades.find(g=>g.grade===11);
 const unit3=grade11.units.find(u=>u.unit===3);
-assert.equal(unit3.questionBankCount,80);
+assert.equal(unit3.questionBankCount,220);
 assert.ok(unit3.assessmentStatus.includes("provisional"));
 assert.equal(unit3.resourceIds.length,10);
 assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
