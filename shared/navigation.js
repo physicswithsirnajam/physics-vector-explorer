@@ -207,7 +207,8 @@
       group.append(summary,linksBox);body.append(group);
     }
     panel.append(body);
-    panel.open=/\/unit-0([1-5])(?:[.-]|\/)/.test(here)&&Number(RegExp.$1)===unit.unit;
+    const activeUnit=here.match(/\/unit-0([1-5])(?:[.-]|\/)/);
+    panel.open=Boolean(activeUnit&&Number(activeUnit[1])===unit.unit);
     if(panel.open){
       const active=[...body.querySelectorAll('.psn-drawer-category')];
       for(const group of active){
