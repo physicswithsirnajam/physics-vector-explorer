@@ -1,0 +1,67 @@
+name: Validate Grade XI Collapsible Resource Drawer (V58)
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/**"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "assessment-blueprint/index.html"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - "quality/grade11-resource-navigation-v58.md"
+      - ".github/workflows/validate-grade11-navigation-v58.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/**"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "assessment-blueprint/index.html"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - "quality/grade11-resource-navigation-v58.md"
+      - ".github/workflows/validate-grade11-navigation-v58.yml"
+  workflow_dispatch:
+jobs:
+  grade11-resource-menu-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify navigation and test syntax
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_resource_drawer_v58.cjs
+          node -e "const c=require('./portal/learning-catalog.json');const u=c.grades.find(g=>g.grade===11).units.filter(x=>x.status==='available');if(u.length!==5||c.resources.length!==59)process.exit(1)"
+      - name: Install pinned browser runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Validate 59 published resource links and drawer in Chromium
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Regression — Verify five-unit mixed Test Builder remains working
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — Verify first-use student guide remains working
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload responsive and navigation screenshot artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v58-sidebar-desktop-phone-and-quiz-protection
+          path: |
+            qa-artifacts/drawer-v58/*.png
+            qa-artifacts/builder-v56/*.png
+            qa-artifacts/guide-v57/*.png
+          retention-days: 7
+          if-no-files-found: warn
