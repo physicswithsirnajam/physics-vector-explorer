@@ -360,11 +360,11 @@
     }
 
     function setupUnits() {
-      $('units').innerHTML = unitNames.map((name, i) => {
-        const n = i + 1;
-        const preset=new URLSearchParams(location.search).get('unit');
-        const defaultUnit=preset==='2'?2:1;
-        return `<label class="unit-option"><input type="checkbox" name="unit" value="${n}" ${n===defaultUnit?'checked':''}><span><span class="unit-n">Unit ${n}</span> — ${name}</span></label>`;
+      $('units').innerHTML=unitNames.map((name,i)=>{
+        const n=i+1,live=n<=2,preset=new URLSearchParams(location.search).get('unit');
+        const chosen=preset==='2'?2:1;
+        const note=live?'Ready for MCQ practice':n<=5?'Separate Learning Desk available':'Unit in preparation';
+        return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&n===chosen?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
       }).join('');
     }
     function getMode() { return document.querySelector('input[name="mode"]:checked').value; }
@@ -394,6 +394,7 @@
       if (!full && lastMode==='full') {
         if ($('quantity').value==='full') $('quantity').value='20';
         if ($('timer').value==='full') $('timer').value='none';
+        document.querySelectorAll('input[name="unit"]').forEach(el=>{el.checked=el.value==='1';});
       }
       lastMode=mode;
     }
@@ -447,7 +448,13 @@
     }
     function initBuilder(){
       setupUnits();
-      $('builderForm').addEventListener('change',()=>{update();$('plan-output').classList.remove('visible');});
+      $('builderForm').addEventListener('change',event=>{
+        // During the single-unit phase, selecting Unit 2 replaces Unit 1 and vice versa.
+        if(event.target.matches('input[name="unit"]')&&event.target.checked){
+          document.querySelectorAll('input[name="unit"]').forEach(el=>{if(el!==event.target)el.checked=false;});
+        }
+        update();$('plan-output').classList.remove('visible');
+      });
       $('slo').addEventListener('input',()=>{update();$('plan-output').classList.remove('visible');});
       // Combined-unit selection is disabled until multi-bank validation is ready.
       $('clearUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>el.checked=false);update();$('plan-output').classList.remove('visible');});
