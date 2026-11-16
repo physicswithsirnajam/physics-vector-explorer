@@ -15,6 +15,7 @@
 ## Verified transfer
 - Three compressed source text assets in question-bank/grade-11/ named unit04-v61-part1.b64 (6000 chars), unit04-v61-part2.b64 (6000 chars), unit04-v61-part3.b64 (1600 chars). Concatenated length: 13600. FNV32 transfer checksum: 20d5cb2e.
 - A source-aware shared read-only adapter enforces source identity, expected topic counts and original question answer letters, full scenario text, 240 total item IDs, original school paper preservation and no identical normalized stem/options overlaps with existing Unit4 source.
+- **Original Word math-formatting integrity**: In Topic4.2 the plain-text extraction flattens superscript runs (for example mv²/r to mv2/r, m s⁻² to m s-2). A strictly topic-scoped formatter restores mathematical powers and inverse tangent from the source Word's run properties; independent reconstruction matched **720/720 cells** of the corrected Topic4.2 MCQ and answer-key tables. Explicit V61 test cases check T=mv²/r, (12.0²), and tan⁻¹. No general-purpose guess is applied to other units.
 - Browser capability DecompressionStream is used as it already is for Unit3 source supplements. Missing assets or mismatched sources fail closed.
 - No account, Firestore permissions, original questions, student-grade history, external access, or logo changes in this PR.
 
