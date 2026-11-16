@@ -13,7 +13,12 @@ function updateButton(){
  const user=auth?.currentUser;
  const supported=!record||[1,2].includes(record.unit);
  button.disabled=!record||!supported||saved||uploading||!user||!user.emailVerified;
- if(record&&!supported){say('Private cloud saving is coming later for Units 3–5. You can still print or save the completed self-practice results as a PDF.');return;}
+ if(record&&!supported){
+  const message=Array.isArray(record.units)&&record.units.length>1
+   ?'Cloud saving for combined-unit practice is not active yet. You can print or save your completed self-practice report as a PDF.'
+   :'Private cloud saving for Units 3–5 is coming later. You can print or save this self-practice report as a PDF.';
+  say(message);return;
+ }
  if(!record)return;
  if(saved){say('Saved successfully. Open your portal to see My Physics Progress.');return;}
  if(lastSaveError){say(lastSaveError);return;}
