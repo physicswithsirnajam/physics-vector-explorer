@@ -387,7 +387,7 @@
       $('preferUnseen').disabled=full || $('type').value!=='mcq';
       $('feedback').disabled=full || unit;
       document.querySelectorAll('input[name="cognitive"]').forEach(el=>el.disabled=full);
-      document.querySelectorAll('input[name="unit"]').forEach(el=>el.disabled=full);
+      document.querySelectorAll('input[name="unit"]').forEach(el=>el.disabled=full||Number(el.value)>2);
       $('allUnits').disabled=true; $('clearUnits').disabled=full;
       if (unit) $('scope').value='summative';
       if (full) $('scope').value='summative';
