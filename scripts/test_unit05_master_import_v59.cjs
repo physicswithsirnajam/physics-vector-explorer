@@ -55,7 +55,7 @@ function sourceCheck(){
  assert.equal(unit5.liveMcqCount,349);
  assert.equal(unit5.scenarioGroupCount,26);
  assert.equal(unit5.newMasterImportedCount,317);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((s,u)=>s+u.liveMcqCount,0),990);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((s,u)=>s+u.liveMcqCount,0),1130);
  assert.equal(read('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===5).questionBankCount,349);
  console.log('PASS V59 static: 317 validated imported MCQs (221 straight + 96 scenario), 24 source scenario groups, 3 diagram questions held.');
 }
@@ -131,15 +131,15 @@ async function browserTest(){
   assert.match(await page.locator('#resultMeta').textContent(),/Self-assessment only/);
   await page.screenshot({path:path.join(shots,'03-u05-provisional-report.png'),fullPage:false});
   await page.goto(base+'build-your-physics-test.html?units=1,3,5',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount')?.textContent.includes('704 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount')?.textContent.includes('844 eligible MCQ'));
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='990');
+  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='1130');
   await page.setViewportSize({width:390,height:844});
   const dim=await page.evaluate(()=>({view:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(dim.scroll<=dim.view+2,'390px horizontal overflow '+JSON.stringify(dim));
   assert.deepEqual(errors,[]);
-  console.log('PASS V59 Chromium: 349 Unit 5 MCQs, 20/40/60-size availability, 40-question intact scenarios, printable ungraded result, 704 three-unit selection and 390px guide.');
+  console.log('PASS V59/V60 Chromium: 349 Unit 5 MCQs, 20/40/60-size availability, 40-question intact scenarios, printable ungraded result, 704 three-unit selection and 390px guide.');
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok));}
 }
 (async()=>{sourceCheck();await checkAdapter();await browserTest()})().catch(e=>{console.error('FAIL V59',e);server.close();process.exitCode=1;});
