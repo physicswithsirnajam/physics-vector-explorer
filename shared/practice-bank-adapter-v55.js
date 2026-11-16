@@ -54,6 +54,9 @@ function adaptLegacy(unit,data){
   need(data?.status==='practice-pilot'&&Array.isArray(data.questions),'invalid original Unit '+unit+' bank');
   return data.questions.map(q=>({
     ...q,
+    // Unit 3/4 source calls its original group 'scenarioSetId', while the central
+    // engine uses 'stimulusSetId'. Preserve both source fields without rewriting.
+    stimulusSetId:q.stimulusSetId||q.scenarioSetId||null,
     stimulusHtml:q.stimulusHtml|| (q.stimulusText?'<p>'+escapeHTML(q.stimulusText)+'</p>':'')
   }));
 }
