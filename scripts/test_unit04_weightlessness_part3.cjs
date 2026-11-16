@@ -179,7 +179,7 @@ for(const [id,href] of [
  assert.equal(results[0].public,true);
 }
 const u3=catalog.grades.find(g=>g.grade===11).units.find(x=>x.unit===3);
-assert.equal(u3.questionBankCount,80);
+assert.equal(u3.questionBankCount,220);
 assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — NBF Example 4.4 radius 1500m, g=9.8, ω≈0.08083, T≈77.73s, f≈0.013 Hz.");

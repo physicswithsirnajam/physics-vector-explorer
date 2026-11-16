@@ -111,7 +111,7 @@ for(const link of ["./unit-03-numericals.html","./unit-03-descriptive-practice.h
  assert.ok(desk.includes('href="'+link+'"'),"Missing Unit 3 desk link "+link);
 assert.ok(typeof catalog.catalogVersion==="string"&&/^pilot-v\d+-/.test(catalog.catalogVersion),"Catalog must retain a versioned pilot release tag");
 const unit=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===3);
-assert.equal(unit.questionBankCount,80);
+assert.equal(unit.questionBankCount,220);
 assert.equal(unit.resourceIds.length,10);
 assert.ok(unit.resourceIds.includes("unit3-assessment-pack"));
 for(const [id,href] of [["unit3-textbook-numericals","./unit-03-numericals.html"],

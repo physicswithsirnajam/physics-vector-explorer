@@ -1,0 +1,81 @@
+name: Validate Grade XI Unit 3 Source-Matched Momentum/Collision Bank (V60)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/unit03-v60-part*.b64"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "portal/unit-03.html"
+      - "student-guide.html"
+      - "scripts/test_unit03_master_v60.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - ".github/workflows/validate-grade11-unit03-master-v60.yml"
+      - "quality/grade11-unit03-master-import-v60.md"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/unit03-v60-part*.b64"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "portal/unit-03.html"
+      - "student-guide.html"
+      - "scripts/test_unit03_master_v60.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - ".github/workflows/validate-grade11-unit03-master-v60.yml"
+      - "quality/grade11-unit03-master-import-v60.md"
+  workflow_dispatch:
+jobs:
+  grade11-unit3-source-to-browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JS and source manifest
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check scripts/test_unit03_master_v60.cjs
+          node --check scripts/test_builder_five_units_v55.cjs
+          node --check scripts/test_builder_multiunit_v56.cjs
+          node -e "const m=require('./question-bank/manifest.json'),g=m.grades.find(x=>x.grade===11);if(g.units.find(x=>x.unit===3).liveMcqCount!==220||g.units.reduce((s,x)=>s+x.liveMcqCount,0)!==1130)process.exit(1)"
+      - name: Install real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify source-matched 140 and launch 220 Unit 3 browser questions
+        run: node scripts/test_unit03_master_v60.cjs
+      - name: Regression - verify five original and expanded banks
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Regression - cross-unit mixed practice and scenarios
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression - Unit 5 349 source MCQs unchanged
+        run: node scripts/test_unit05_master_import_v59.cjs
+      - name: Regression - student guide and catalogue links
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload browser QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit3-v60-master-source-and-five-unit-browser-qa
+          path: |
+            qa-artifacts/u03-master-v60/*.png
+            qa-artifacts/builder-v55/*.png
+            qa-artifacts/builder-v56/*.png
+            qa-artifacts/u05-master-v59/*.png
+            qa-artifacts/guide-v57/*.png
+          retention-days: 7
+          if-no-files-found: warn

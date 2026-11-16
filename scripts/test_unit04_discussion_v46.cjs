@@ -101,7 +101,7 @@ function sourceChecks(){
  assert.equal(audit.protectedOrGradedAssessmentPublished,false);
  assert.equal(audit.studentGradesRecorded,false);
  const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
- assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,80);
+ assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,220);
 }
 async function runBrowser(){
  await new Promise((resolve,reject)=>server.once("error",reject).listen(0,"127.0.0.1",resolve));

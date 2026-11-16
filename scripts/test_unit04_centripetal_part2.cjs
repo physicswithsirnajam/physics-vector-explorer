@@ -176,7 +176,7 @@ for(const [id,href] of [
  assert.equal(resources[0].public,true);
 }
 const u3=catalog.grades.find(g=>g.grade===11).units.find(x=>x.unit===3);
-assert.equal(u3.questionBankCount,80);assert.equal(u3.resourceIds.length,10);
+assert.equal(u3.questionBankCount,220);assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — Unit 4 centripetal a=v²/r, net F=mv²/r, exact NBF Example 4.2 (17 m), mass-independent frictionless bank angle.");
 console.log("PASS — 120 speed/mass/radius combinations and speed-squared/force-scaling checks; inward/tangent orthogonal vectors.");

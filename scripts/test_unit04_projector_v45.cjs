@@ -81,7 +81,7 @@ function sourceChecks(){
  const item=catalog.resources.filter(r=>r.id==="unit4-projector-practice");
  assert.equal(item.length,1);assert.equal(item[0].href,"./unit-04-projector-practice.html");assert.equal(item[0].public,true);
  const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
- assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,80);
+ assert.equal(u3.resourceIds.length,10);assert.equal(u3.questionBankCount,220);
  assert.equal(audit.projectorClassroomPracticePublished,true);
  assert.equal(audit.projectorPracticePage,"./unit-04-projector-practice.html");
  assert.equal(audit.protectedOrGradedAssessmentPublished,false);

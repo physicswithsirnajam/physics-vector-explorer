@@ -82,7 +82,7 @@ assert.ok(desk.includes('href="./unit-03-study-guide.html"'));
 assert.ok(desk.includes("not an official full-syllabus FBISE examination"),"Full 80-MCQ unit-only practice must not imply official board coverage");
 const u3=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===3);
 assert.equal(u3.status,"available");
-assert.equal(u3.questionBankCount,80,"Unit 3 now has a separate provisional 80-MCQ Unit 3-only practice set, not a full-syllabus bank");
+assert.equal(u3.questionBankCount,220,"The central Unit 3 bank has 220 MCQs while the separate unchanged printable 80-MCQ paper remains Unit 3-only");
 assert.equal(u3.assessmentStatus,"two-provisional-unit-only-summative-self-practice-editions");
 assert.ok(u3.resourceIds.includes("unit3-mcq-stage1"));
 assert.ok(u3.resourceIds.includes("unit3-mcq-full80"));

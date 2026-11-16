@@ -92,7 +92,7 @@ for(const url of ["./unit-03-collision-study.html","./unit-03-collision-lab.html
 }
 assert.ok(desk.includes("not an official full-syllabus FBISE examination"),"Unit 3 practice must not imply an official full-syllabus board paper");
 const unit3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(unit3.questionBankCount,80);assert.equal(unit3.assessmentStatus,"two-provisional-unit-only-summative-self-practice-editions");
+assert.equal(unit3.questionBankCount,220);assert.equal(unit3.assessmentStatus,"two-provisional-unit-only-summative-self-practice-editions");
 assert.equal(unit3.resourceIds.length,10);
 assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
 assert.ok(unit3.resourceIds.includes("unit3-textbook-numericals"));

@@ -9,7 +9,7 @@ fs.mkdirSync(out,{recursive:true});
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
 const fileAt="question-bank/grade-11/";
 const title=["","Physical Quantities and Measurements","Vectors","Translatory Motion","Rotational and Circular Motion","Work and Energy"];
-const totals={1:275,2:206,3:80,4:80,5:349};
+const totals={1:275,2:206,3:220,4:80,5:349};
 const mime={".html":"text/html; charset=utf-8",".js":"application/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml"};
 const server=http.createServer((req,res)=>{
  try{
@@ -22,12 +22,13 @@ const server=http.createServer((req,res)=>{
 });
 async function assertAdapters(){
  const context={
+  DecompressionStream,Blob,Response,atob,
   fetch:async url=>{
    const name=String(url);
    assert.ok(name.startsWith(fileAt),"adapter may only use known local question-bank files");
    const p=path.resolve(root,name);
    assert.ok(p.startsWith(path.join(root,fileAt)),"unsafe path");
-   return {ok:true,json:async()=>read(name)};
+   return {ok:true,json:async()=>read(name),text:async()=>fs.readFileSync(path.join(root,name),"utf8")};
   }
  };
  vm.createContext(context);
@@ -51,7 +52,7 @@ async function assertAdapters(){
    const q=data.questions[i];
    assert.equal(q.grade,11);assert.equal(q.unit,u);
    assert.ok(!allIds.has(q.id),"globally repeated question ID "+q.id);allIds.add(q.id);
-   if(u<=4){
+   if(u<=4&&i<original[u-1].length){
     const source=original[u-1][i];
     for(const field of ["id","stem","correctOptionId","explanation","sourceQuestionNumber"]){
      assert.equal(q[field],source[field],"altered original "+field+" in "+q.id);
@@ -103,7 +104,7 @@ async function assertAdapters(){
    }
     console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
  }
- assert.equal(allIds.size,990,"all 990 original and imported questions must have unique IDs");
+ assert.equal(allIds.size,1130,"all 1130 original and imported questions must have unique IDs");
  await assert.rejects(adapter.loadBank(6,fileAt));
  await assert.rejects(adapter.loadBank(5,"https://untrusted.test/"),/unexpected question bank folder/);
 }
@@ -182,7 +183,7 @@ async function assertBrowser(){
   assert.ok(w[1]<=w[0]+2,"mobile builder should not overflow");
   await page.screenshot({path:path.join(out,"05-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errors,[],"no uncaught browser exceptions");
-  console.log("PASS V59+V55 regression: 990 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
+  console.log("PASS V60+V55 regression: 1130 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{await assertAdapters();await assertBrowser();})().catch(err=>{console.error("FAIL V55",err);server.close();process.exitCode=1;});

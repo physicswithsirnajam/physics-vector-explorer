@@ -183,7 +183,7 @@ for(const href of ["./unit-04-centrifuge-study.html","./unit-04-centrifuge-lab.h
  "./unit-04-slo-audit.html"])
  assert.ok(desk.includes('href="'+href+'"'),"Learning Desk lacks "+href);
 const u3=cat.grades.find(g=>g.grade===11).units.find(x=>x.unit===3);
-assert.equal(u3.questionBankCount,80);
+assert.equal(u3.questionBankCount,220);
 assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — 60 centrifuge rpm/radius/mass cases: ω=2πrpm/60, a=ω²r, F=ma; 600rpm, .1m≈394.8m/s².");
