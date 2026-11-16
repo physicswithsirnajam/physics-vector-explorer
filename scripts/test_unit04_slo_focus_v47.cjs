@@ -56,7 +56,7 @@ function verifySource(){
  assert.equal(audit.protectedOrGradedAssessmentPublished,false);
  assert.equal(audit.studentGradesRecorded,false);
  const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
- assert.equal(u3.questionBankCount,80);assert.equal(u3.resourceIds.length,10);
+ assert.equal(u3.questionBankCount,220);assert.equal(u3.resourceIds.length,10);
  for(const p of ["portal/unit-04.html","portal/unit-04-assessment-pack.html"]){
   assert.ok(read(p).includes('href="./unit-04-slo-focus.html"'),"Missing Unit 4 discovery link: "+p);
  }
