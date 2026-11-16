@@ -125,7 +125,7 @@ function adaptMasterThree(master,older){
     revisionNote:topic===33&&(n===34||n===44)?
      '61.6 m/s correct full-precision source QC report correction to earlier 60.9 m/s option':null
    },
-   stimulusSetId:group,stimulusHtml:group?'<p>'+stimulus+'</p>':null
+   stimulusSetId:group,stimulusHtml:group?'<p>'+escapeHTML(stimulus)+'</p>':null
   };
   need(!earlier.has(canon(q)),'duplicate old Unit 3 stem/options '+id);
   topicCount[topic]++;
