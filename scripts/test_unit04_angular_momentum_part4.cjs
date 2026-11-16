@@ -194,7 +194,7 @@ for(const [id,href] of [
  assert.equal(records[0].public,true);
 }
 const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(u3.questionBankCount,80);
+assert.equal(u3.questionBankCount,220);
 assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — NBF Example 4.3: I=0.17298 kg m², ω≈120.4rad/s, L≈20.83 kg m²/s, stopping τ≈−2.67 N m.");
