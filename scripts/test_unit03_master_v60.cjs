@@ -144,7 +144,7 @@ async function browserAudit(){
   const width=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
   assert.ok(width[1]<=width[0]+2,'student guide horizontal overflow '+width);
   assert.deepEqual(errors,[]);
-  console.log('PASS V60 Chromium: Unit 3 220 all / 60 formative / 160 summative; complete scenario-only 40-MCQ quiz; mixed 844; student guide 1130 and 390px.');
+  console.log('PASS V60 Chromium: Unit 3 220 all / 60 formative / 160 summative; complete scenario-only 40-MCQ quiz; mixed 844; student guide 1290 and 390px.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{await staticAudit();await browserAudit()})().catch(e=>{console.error('FAIL V60',e);server.close();process.exitCode=1;});
