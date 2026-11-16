@@ -1,0 +1,85 @@
+name: Validate Grade XI Unit 5 Master MCQ Import (V59)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-05-master-topic-v59-317.json"
+      - "question-bank/manifest.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/learning-catalog.json"
+      - "portal/unit-05.html"
+      - "build-your-physics-test.html"
+      - "student-guide.html"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - ".github/workflows/validate-grade11-unit5-master-v59.yml"
+      - "quality/grade11-unit05-master-import-v59.md"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-05-master-topic-v59-317.json"
+      - "question-bank/manifest.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/learning-catalog.json"
+      - "portal/unit-05.html"
+      - "build-your-physics-test.html"
+      - "student-guide.html"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - ".github/workflows/validate-grade11-unit5-master-v59.yml"
+      - "quality/grade11-unit05-master-import-v59.md"
+  workflow_dispatch:
+jobs:
+  unit5-master-source-and-five-unit-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static source, file and script syntax checks
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check scripts/test_unit05_master_import_v59.cjs
+          node --check scripts/test_builder_five_units_v55.cjs
+          node --check scripts/test_builder_multiunit_v56.cjs
+          node --check scripts/test_five_unit_student_guide_v57.cjs
+          node --check scripts/test_grade11_resource_drawer_v58.cjs
+          node -e "const a=require('./question-bank/grade-11/unit-05-master-topic-v59-317.json'),m=require('./question-bank/manifest.json');if(a.questions.length!==317||a.scenarioGroups!==24||m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0)!==990)process.exit(1)"
+      - name: Install Chromium browser for actual practice regression
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify Unit 5 317-item import and live browser quiz
+        run: node scripts/test_unit05_master_import_v59.cjs
+      - name: Regression — retained original 32, new 317 and all five-unit individual tests
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Regression — multi-unit scenario allocation and score reporting
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — student guide and 59 source catalogue resources
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Regression — mobile drawer and unfinished-quiz navigation
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload real-browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v59-u05-master-and-five-unit-regression
+          path: |
+            qa-artifacts/u05-master-v59/*.png
+            qa-artifacts/builder-v55/*.png
+            qa-artifacts/builder-v56/*.png
+            qa-artifacts/guide-v57/*.png
+            qa-artifacts/drawer-v58/*.png
+          retention-days: 7
+          if-no-files-found: warn
