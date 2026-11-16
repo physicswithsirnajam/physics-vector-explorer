@@ -150,7 +150,7 @@ assert.equal(items.length,1);
 assert.equal(items[0].href,"./unit-04-assessment-pack.html");
 assert.equal(items[0].public,true);
 const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(u3.questionBankCount,80);
+assert.equal(u3.questionBankCount,220);
 assert.equal(u3.resourceIds.length,10);
 assert.ok(u3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS V42: 56+24 MCQs, six complete scenarios, A/B/C/D 20 each, 12 SLO source counts.");
