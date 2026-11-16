@@ -142,6 +142,7 @@ async function assertBrowser(){
   await page.waitForFunction(()=>!document.getElementById("start").classList.contains("hidden"));
   await page.locator("#begin").click();
   await page.locator('#choices input[type="radio"]').first().check();
+  page.once("dialog",dialog=>dialog.accept());
   await page.locator("#submit").click();
   await page.waitForFunction(()=>!document.getElementById("result").classList.contains("hidden"));
   assert.ok((await page.locator("#review").textContent()).includes("Correct answer:"));
