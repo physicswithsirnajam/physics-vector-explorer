@@ -217,26 +217,54 @@ function balancedBlocks(eligible,plan,arrangement,count,recent){
 
 function showError(msg){$('loading').classList.remove('hidden');$('loading').textContent=msg;$('loading').classList.add('notice','error')}
 function labelScope(){return cfg.scope==='all'?'All learning outcomes':cfg.scope==='summative'?'Summative theory SLOs':'Formative learning SLOs'}
+function selectionPlan(orderGroups){
+ return cfg.units.length===1?
+  groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count,orderGroups):
+  PSNMultiUnitV56.plan(bank.questions,eligible,cfg.units,cfg.arrangement,cfg.count,orderGroups);
+}
 function setup(){
  eligible=validItems();$('loading').classList.add('hidden');
- const plan=groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count);
+ const plan=selectionPlan();
  if(!plan.possible){
-   const why=cfg.arrangement==='random'
-     ? `You requested ${cfg.count} MCQs but only ${eligible.length} match these filters.`
-     : `Cannot assemble ${cfg.count} MCQs using complete stimulus sets. ${plan.completeGroups.length} whole set(s) are eligible, together with ${plan.singles.length} independent question(s).`;
-   showError(why+' Return to Build Your Physics Test, reduce the count, use Ordinary random MCQs, or broaden your SLO/difficulty/scope filters.');return;
+   const why=plan.reason||(
+     cfg.arrangement==='random'?
+     'You requested '+cfg.count+' MCQs but only '+eligible.length+' match these filters.':
+     'Cannot assemble '+cfg.count+' MCQs using complete stimulus sets.'
+   );
+   showError(why+' Return to Build Your Physics Test, reduce the count, change the arrangement, or broaden your filters.');return;
  }
- const label=cfg.arrangement==='random'? 'ordinary randomized questions':cfg.arrangement==='grouped'?'mixed MCQs with intact stimulus sets':'only complete stimulus sets';
- $('setupSummary').textContent=`${cfg.count} MCQs • ${label} • ${labelScope()} • ${cfg.feedback==='end'?'answers after submission':cfg.feedback==='instant'?'feedback after checking each answer':'optional hints and per-question feedback'} • ${cfg.timer?cfg.timer+'-minute timer':'untimed'} • ${plan.available} eligible questions • ${cfg.selection==='balanced'?'best-effort balanced selection':'fully random selection'}${cfg.preferUnseen?' • favors less-recently-seen questions':''}.`;
+ const label=cfg.arrangement==='random'?'ordinary randomized questions':cfg.arrangement==='grouped'?'mixed MCQs with intact stimulus sets':'only complete stimulus sets';
+ const unitsLabel=cfg.units.map(n=>'Unit '+n).join(', ');
+ const allocation=cfg.units.length>1?' • '+cfg.units.map(u=>'Unit '+u+': '+plan.unitCounts[String(u)]).join(' / '):'';
+ $('setupSummary').textContent=cfg.count+' MCQs • '+unitsLabel+allocation+' • '+label+' • '+labelScope()+' • '+
+   (cfg.feedback==='end'?'answers after submission':cfg.feedback==='instant'?'feedback after checking each answer':'optional hints and per-question feedback')+
+   ' • '+(cfg.timer?cfg.timer+'-minute timer':'untimed')+' • '+plan.available+' eligible questions • '+
+   (cfg.selection==='balanced'?'best-effort balanced selection':'random questions within fair per-unit allocations')+
+   (cfg.preferUnseen?' • favors less-recently-seen questions':'')+'.';
  $('start').classList.remove('hidden');
 }
 function chip(text){return node('span','chip',text)}
 function hint(q){if(q.unit>=3)return 'Read the complete situation and identify the relevant relationship, direction, units and signs before choosing an option.';if(q.unit===2)return q.sloCodes?.includes('P-11-B-01')?'Resolve the vector into its horizontal and vertical components, then check direction and signs.':'For dot products think cosine and scalar projection; for cross products think sine, order and right-hand rule.';return q.topic==='Estimation of physical quantities'?'Consider how a scientifically useful approximation is obtained.':q.topic==='SI units and derived quantities'?'Relate the named quantity to the physical operation it represents.':q.topic==='Dimensional homogeneity'?'Think about the dimensions of terms in physical equations.':q.topic==='Accuracy and precision'?'Distinguish agreement between readings from agreement with a reference value.':q.topic==='Uncertainty propagation'?'Think about which type of uncertainty is appropriate for the mathematical operation.':'Think about practical limitations of measuring and reporting physical quantities.'}
 function prepare(){
- const plan=groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count,cfg.shuffle?shuffled:null);
- if(!plan.possible){showError('The selected filters do not provide enough complete scenario sets. Please return to the Test Builder.');return}
+ const plan=selectionPlan(cfg.shuffle?shuffled:null);
+ if(!plan.possible){showError(plan.reason||'The selected filters cannot provide a valid test. Please revise the Test Builder settings.');return;}
  let blocks=[];
- if(cfg.selection==='balanced'){
+ if(cfg.units.length>1){
+   const recent=cfg.preferUnseen?readRecentAttempts():[];
+   for(const allocation of plan.allocations){
+     const pool=eligible.filter(q=>q.unit===allocation.unit);
+     const groups=allocation.groups||[],seed=groups.flat();
+     const singles=cfg.arrangement==='random'?pool:pool.filter(q=>!q.stimulusSetId);
+     const remaining=allocation.count-seed.length;
+     let added;
+     if(cfg.selection==='balanced'){
+       const chosen=fillBalancedSingles(seed,singles,remaining,makeTargets(pool,allocation.count),allocation.count,recent);
+       added=chosen?chosen.slice(seed.length):null;
+     }else added=(cfg.shuffle?shuffled(singles):singles.slice()).slice(0,remaining);
+     if(!added||added.length!==remaining){showError('Unable to fill every selected unit without reusing or omitting a question. Change the settings and retry.');return;}
+     blocks.push(...groups,...added.map(q=>[q]));
+   }
+ }else if(cfg.selection==='balanced'){
    const recent=cfg.preferUnseen?readRecentAttempts():[];
    blocks=balancedBlocks(eligible,plan,cfg.arrangement,cfg.count,recent);
  }else if(cfg.arrangement==='random'){
@@ -246,19 +274,31 @@ function prepare(){
    blocks=[...plan.chosen,...singles.slice(0,cfg.count-plan.groupQuestions).map(q=>[q])];
  }
  if(cfg.shuffle)blocks=shuffled(blocks);
- else blocks.sort((a,b)=>a[0].sourceQuestionNumber-b[0].sourceQuestionNumber);
+ else blocks.sort((a,b)=>a[0].unit-b[0].unit||a[0].sourceQuestionNumber-b[0].sourceQuestionNumber);
 
  test=[];let groupOrdinal=0;
  for(const block of blocks){
    const isGroup=block.length>1&&Boolean(block[0].stimulusSetId);
    if(isGroup)groupOrdinal++;
    for(let i=0;i<block.length;i++){
-     const q=block[i];test.push({...q,groupOrdinal:isGroup?groupOrdinal:0,groupPosition:isGroup?i+1:0,groupSize:isGroup?block.length:0,displayOptions:cfg.shuffle?shuffled(q.options):q.options.slice()});
+     const q=block[i];
+     test.push({...q,groupOrdinal:isGroup?groupOrdinal:0,groupPosition:isGroup?i+1:0,
+       groupSize:isGroup?block.length:0,displayOptions:cfg.shuffle?shuffled(q.options):q.options.slice()});
    }
  }
- if(test.length!==cfg.count||new Set(test.map(q=>q.id)).size!==test.length || (cfg.arrangement!=='random'&&!hasIntactGroups(test,eligible))){showError('The practice selection failed a consistency check. No test has started.');return}
+ if(test.length!==cfg.count||new Set(test.map(q=>q.id)).size!==test.length||
+    !cfg.units.every(u=>test.some(q=>q.unit===u))||
+    (cfg.arrangement!=='random'&&!hasIntactGroups(test,eligible))){
+   showError('The multi-unit practice selection failed a consistency check. No test has started.');return;
+ }
  if(cfg.preferUnseen)storeRecentAttempt(test.map(q=>q.id));
- answers={};checked={};index=0;submitted=false;lastReportQuestionId=null;$('start').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');$('timer').classList.toggle('hidden',!cfg.timer);if(timerHandle)clearInterval(timerHandle);secondsLeft=cfg.timer*60;if(cfg.timer){setClock();timerHandle=setInterval(()=>{secondsLeft--;setClock();if(secondsLeft<=0){clearInterval(timerHandle);finish('Time expired — answers submitted automatically.')}},1000)}render()
+ answers={};checked={};index=0;submitted=false;lastReportQuestionId=null;
+ $('start').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');
+ $('timer').classList.toggle('hidden',!cfg.timer);
+ if(timerHandle)clearInterval(timerHandle);
+ secondsLeft=cfg.timer*60;
+ if(cfg.timer){setClock();timerHandle=setInterval(()=>{secondsLeft--;setClock();if(secondsLeft<=0){clearInterval(timerHandle);finish('Time expired — answers submitted automatically.')}},1000)}
+ render();
 }
 const issueKinds={
  'missing-context':'Missing scenario, graph, diagram or information',
