@@ -107,7 +107,7 @@ function checkFiles(){
  assert.ok(student.scenarios[0].stimulus.includes("10 N"));
  assert.ok(student.scenarios[0].stimulus.includes("3.0 N"));
  const grade=catalog.grades.find(x=>x.grade===11),u5=grade.units.find(x=>x.unit===5);
- assert.equal(u5.questionBankCount,32);
+ assert.equal(u5.questionBankCount,349);
  assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice");
  assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key","unit5-projector-discussion"]);
  for(const id of u5.resourceIds){
