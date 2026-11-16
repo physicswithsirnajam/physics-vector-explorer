@@ -169,7 +169,7 @@ for(const [id,url] of [["unit4-desk","./unit-04.html"],
  assert.equal(rs[0].public,true);
 }
 const unit3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(unit3.questionBankCount,80);
+assert.equal(unit3.questionBankCount,220);
 assert.equal(unit3.resourceIds.length,10);
 assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — Radians and signed arc length, angle/velocity/acceleration, 375 independently checked rotation combinations, reversal vs distance.");
