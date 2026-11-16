@@ -41,7 +41,8 @@ async function main(){
   assert.equal(await page.locator("#type").inputValue(),"mcq","MCQ mode must be first-run default");
   assert.equal(await page.locator('input[name="unit"][value="1"]').isChecked(),true);
   assert.equal(await page.locator('input[name="unit"][value="2"]').isChecked(),false);
-  for(const n of [3,4,5,6,14])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),true,"Unit "+n+" must not falsely claim builder readiness");
+  for(const n of [3,4,5])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),false,"Unit "+n+" is now test-ready in V55");
+  for(const n of [6,14])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),true,"Unit "+n+" must not claim builder readiness");
   assert.equal(await page.locator("#allUnits").isDisabled(),true);
   assert.equal(await page.locator("#quickStartLink").isVisible(),true,"Default quick start must be visible");
   assert.match(await page.locator("#quickStartLink").getAttribute("href"),/unit=1/);
@@ -85,7 +86,8 @@ async function main(){
   await page.locator("#mode-practice").check();
   assert.equal(await page.locator('input[name="unit"]:checked').count(),1);
   assert.equal(await page.locator('input[name="unit"][value="1"]').isChecked(),true);
-  assert.equal(await page.locator('input[name="unit"][value="5"]').isDisabled(),true);
+  assert.equal(await page.locator('input[name="unit"][value="5"]').isDisabled(),false);
+  assert.equal(await page.locator('input[name="unit"][value="14"]').isDisabled(),true);
   await page.locator("#resetButton").click();
   assert.equal(await page.locator("#type").inputValue(),"mcq");
   await page.setViewportSize({width:390,height:844});
@@ -94,7 +96,7 @@ async function main(){
   await page.screenshot({path:path.join(out,"04-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errs,[],"No uncaught builder/practice engine browser exceptions");
   console.log("PASS V54: default 275 Unit 1 / 206 Unit 2 pilot records, visible quick launch, valid MCQ selection.");
-  console.log("PASS V54: Unit 2 switch, real 20-question quiz starts, unavailable units fail closed, filters and reset.");
+  console.log("PASS V54 regression on V55: Unit 2 switch, real 20-question quiz starts, future units fail closed, filters and reset.");
   console.log("PASS V54: full-preview return, 390px mobile, no uncaught browser errors.");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
