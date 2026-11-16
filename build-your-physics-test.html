@@ -137,11 +137,11 @@
     <section class="hero" aria-labelledby="page-title">
       <div class="eyebrow">Learn • Practise • Assess • Improve</div>
       <h1 id="page-title">Build Your Physics Test</h1>
-      <p>Choose your Physics practice settings. All five published Grade XI units now support individual MCQ self-practice. You will soon be able to mix questions from any combination of units.</p>
+      <p>Build MCQ practice tests from <strong>any combination of Units 1–5</strong>, or select one unit. Every selected unit contributes questions, with complete scenarios kept together when requested.</p>
       <div class="tags"><span class="tag">NBF textbook aligned</span><span class="tag">SLO focused</span><span class="tag">FBISE assessment aware</span><span class="tag">Mobile friendly</span></div>
       <p style="margin-top:16px"><a href="assessment-blueprint/" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">Explore the official Grade XI FBISE Blueprint &amp; Bank Readiness →</a></p>
     </section>
-    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Units 1–5 now have test-ready MCQ banks.</strong> Select ONE unit for provisional self-practice. Unit 5 has 32 questions, so choose an eligible count. Combining multiple units is our next milestone.</span></div>
+    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Single-unit and mixed-unit MCQ practice are available.</strong> Select any combination of published Units 1–5 and a question count. The test automatically checks each selected unit and will not start if an eligible combination cannot be assembled.</span></div>
     <div class="layout">
       <form id="builderForm" class="stack" novalidate>
         <section class="panel" aria-labelledby="scope-title">
@@ -151,9 +151,9 @@
             <div class="field"><label class="label" for="scope">Assessment coverage</label><select id="scope"><option value="all">All learning outcomes (practice)</option><option value="summative">Summative theory SLOs only</option><option value="formative">Formative learning SLOs only</option></select></div>
           </div>
           <div class="field">
-            <div class="unit-toolbar"><span class="label">Choose one test-ready unit</span><div class="inline-actions"><button type="button" class="text-button" id="allUnits" disabled title="Combined-unit practice is coming in a later release">Combined-unit soon</button><button type="button" class="text-button" id="clearUnits">Clear</button></div></div>
+            <div class="unit-toolbar"><span class="label">Choose one or more published units</span><div class="inline-actions"><button type="button" class="text-button" id="allUnits">Select all five</button><button type="button" class="text-button" id="clearUnits">Clear</button></div></div>
             <div id="units" class="units" role="group" aria-label="Grade XI Physics units"></div>
-            <small class="help">All five published units are test-ready individually. Unit 5 has 32 original MCQs across two sets. Mixed-unit practice will be introduced separately.</small>
+            <small class="help">Select one, several, or all five units. Default balanced selection aims to share the questions fairly between selected units. The Start link appears only if every selected unit contributes at least one question. Unit 5 has 32 original MCQs.</small>
           </div>
           <div class="field"><label class="label" for="slo">Specific SLO code (optional)</label><input type="text" id="slo" maxlength="40" placeholder="Example: P-11-B-05" spellcheck="false"><small class="help">Leave blank for all eligible SLOs in the selected unit. Source-mapped SLO filters work for the five published banks.</small></div>
         </section>
@@ -181,7 +181,7 @@
           <div class="field"><div class="ticks"><label><input type="checkbox" id="shuffle" checked>Shuffle question order (where appropriate)</label></div></div>
           <div class="field"><div class="ticks"><label><input type="checkbox" id="preferUnseen" checked>Prefer questions not used in recent attempts on this browser</label></div><small class="help">Saves only recent question IDs in this browser when enabled. No account or cloud tracking. Does not guarantee zero repeats.</small></div>
           <div class="buttons"><button class="primary" type="submit">Review My Test Plan →</button><button class="secondary" type="button" id="resetButton">Reset selections</button></div>
-          <p class="help">You can start an eligible Unit 1–5 test directly from the Quick Start link in Your Test Plan; reviewing the plan is optional.</p>
+          <p class="help">An eligible single- or multiple-unit MCQ test can start directly using Quick Start. Review My Test Plan is optional.</p>
         </section>
       </form>
       <aside class="panel summary" id="summary" aria-labelledby="summary-title">
@@ -204,12 +204,13 @@
         <div class="buttons" style="margin-top:12px"><a id="quickStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start MCQ Practice →</a></div>
         <div id="board-note" class="micro-note"></div>
         <div id="validation" role="status" aria-live="polite"></div>
-        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1–5 individual MCQ selections can launch the Practice Engine below. Combined-unit practice will follow.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Grade XI Unit 1–5 MCQ Practice Engine</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Selected Unit MCQ Practice →</a></div></div>
+        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Select any combination of Units 1–5; the bank and scenario availability are checked before Start is enabled.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Grade XI Single- and Mixed-Unit MCQ Practice</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Selected Unit MCQ Practice →</a></div></div>
       </aside>
     </div>
-    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V55 · Individual Units 1–5 self-practice · Combined-unit and full exam modes planned</footer>
+    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V56 · Any combination of Units 1–5 MCQ self-practice · Full official exam mode not yet active</footer>
   </div>
   <script src="shared/practice-bank-adapter-v55.js"></script>
+  <script src="shared/multi-unit-planner-v56.js"></script>
   <script>
     'use strict';
     const unitNames = [
@@ -231,20 +232,33 @@
     let currentPlan = null;
     let lastMode = 'practice';
     const liveBanks=Object.fromEntries([1,2,3,4,5].map(unit=>[unit,{status:'loading',questions:[],error:''}]));
-    const bankFor=p=>p.units.length===1 && [1,2,3,4,5].includes(p.units[0])?liveBanks[p.units[0]]:null;
+    function bankFor(p){
+      if(!p.units.length||p.units.some(u=>!liveBanks[u]))return {status:'unavailable',questions:[],error:'Select only available Units 1–5.'};
+      const banks=p.units.map(u=>liveBanks[u]);
+      const failed=banks.find(b=>b.status==='error');
+      if(failed)return {status:'error',questions:[],error:failed.error};
+      if(banks.some(b=>b.status==='loading'))return {status:'loading',questions:[],error:''};
+      return {status:'ready',questions:banks.flatMap(b=>b.questions),error:''};
+    }
     function isPilotConfiguration(p){
-      return (p.mode==='practice'||p.mode==='class') && p.units.length===1 && [1,2,3,4,5].includes(p.units[0]) &&
+      return (p.mode==='practice'||p.mode==='class') &&
+        p.units.length>=1 && p.units.length<=5 && p.units.every(u=>u>=1&&u<=5) &&
         p.questionType==='mcq' && ['4','10','20','30','40','60'].includes(p.questionCount) && p.timeLimit!=='full';
     }
     function matchedQuestions(p){
       const liveBank=bankFor(p);
-      // Keep these filters equivalent to validItems() in practice-engine/index.html.
+      if(liveBank.status!=='ready')return [];
       const requestedSLOs=p.slo?p.slo.split(',').map(s=>s.trim().toUpperCase()).filter(Boolean):[];
       return liveBank.questions.filter(q=>q.active===true && q.type==='single_choice' &&
         (p.scope==='all'||q.assessmentClassification===(p.scope==='formative'?'formative':'summative-theory')) &&
         (!p.cognitiveLevels.length||p.cognitiveLevels.includes(q.cognitiveLevel)) &&
         (p.difficulty==='balanced'||String(q.difficulty||'').toLowerCase()===p.difficulty) &&
         (!requestedSLOs.length||requestedSLOs.some(s=>(q.sloCodes||[]).includes(s))));
+    }
+    function selectionPlan(p,bank,matched){
+      const requested=Number(p.questionCount);
+      if(p.units.length===1)return groupedSelection(bank.questions,matched,p.arrangement,requested);
+      return PSNMultiUnitV56.plan(bank.questions,matched,p.units,p.arrangement,requested);
     }
     function groupedSelection(all,eligible,arrangement,count,orderGroups){
   const groupMap=new Map();
@@ -271,38 +285,37 @@
 }
     function renderAvailability(p){
       const liveBank=bankFor(p);
-      const box=$('availabilityPreview'), count=$('availabilityCount'),note=$('availabilityNote');
+      const box=$('availabilityPreview'),count=$('availabilityCount'),note=$('availabilityNote');
       box.classList.remove('is-warning','is-error');
       if(!isPilotConfiguration(p)){
-        count.textContent='Not yet available for this mode';
-        note.textContent='Live availability covers any ONE Grade XI Unit 1–5 MCQ bank in Learn & Practise or Class Test. Combined-unit and full FBISE mock modes are not yet available.';
-        box.classList.add('is-warning'); return;
-      }
-      if(liveBank.status==='loading'){
-        count.textContent='Checking question bank…';
-        note.textContent='Loading the published provisional questions for the selected filters.';return;
-      }
-      if(liveBank.status==='error'){
-        count.textContent='Availability temporarily unavailable';
-        note.textContent='Could not load the question-bank file. '+liveBank.error+' The Practice Engine will independently check availability if opened.';
+        count.textContent='Choose an available MCQ practice configuration';
+        note.textContent='Select one or more published Units 1–5, an eligible MCQ count and Learn & Practise or Class Test. Official full-board and descriptive automatic tests are not yet active.';
         box.classList.add('is-warning');return;
       }
-      const requested=Number(p.questionCount);
-      const plan=groupedSelection(liveBank.questions,matchedQuestions(p),p.arrangement,requested);
-      const available=plan.available;
-      count.textContent=`${available} eligible MCQ${available===1?'':'s'}`;
+      if(liveBank.status==='loading'){
+        count.textContent='Checking selected question banks…';
+        note.textContent='Only verified published unit banks can participate in this test.';return;
+      }
+      if(liveBank.status!=='ready'){
+        count.textContent='Availability temporarily unavailable';
+        note.textContent=liveBank.error||'One or more selected question banks could not be loaded.';
+        box.classList.add('is-warning');return;
+      }
+      const matched=matchedQuestions(p);
+      const plan=selectionPlan(p,liveBank,matched);
+      count.textContent=plan.available+' eligible MCQ'+(plan.available===1?'':'s')+' across '+p.units.length+' selected unit'+(p.units.length===1?'':'s');
       if(!plan.possible){
         box.classList.add('is-error');
-        if(p.arrangement!=='random'){
-          note.textContent=`Cannot assemble exactly ${requested} MCQs under the selected arrangement and filters. There are ${plan.completeGroups.length} complete eligible stimulus sets (plus ${plan.singles.length} standalone MCQs). Try a different count, broader SLO/difficulty filters, or Ordinary random MCQs.`;
-        } else {
-          note.textContent=`You requested ${requested}, but only ${available} match these filters. Try a smaller count or broader filters.`;
-        }
-      } else {
-        note.textContent=p.arrangement==='random'
-          ? `Ready for ${requested} randomized MCQs. Selection balances available tags as best it can; it is not an official FBISE paper.`
-          : `Ready for ${requested} questions: ${plan.groupQuestions} from ${plan.chosen.length} complete stimulus set(s)${p.arrangement==='grouped'?`, plus ${requested-plan.groupQuestions} independent MCQs`:''}. Each set will stay in sequence. This is not a full FBISE exam.`;
+        note.textContent=plan.reason||'Not enough eligible MCQs or complete stimulus sets for this request. Try fewer questions or broader filters.';
+        return;
       }
+      const coverage=p.units.length>1
+        ?'Every selected unit is represented. Planned allocation: '+p.units.map(u=>'Unit '+u+': '+plan.unitCounts[String(u)]).join(' · ')+'. '
+        :'';
+      note.textContent=coverage+(p.arrangement==='random'
+        ?'Ready for randomized practice. A scenario question will display its full original situation when selected.'
+        :'Ready with '+(plan.groupCount||plan.chosen?.length||0)+' complete scenario set(s), kept intact alongside any eligible independent MCQs.')+
+        ' This is provisional self-practice, not an official FBISE paper.';
     }
     async function loadLiveBanks(){
       await Promise.all([1,2,3,4,5].map(async unit=>{
@@ -318,50 +331,48 @@
       update();
     }
     function renderPilotLaunch(p){
-      const liveBank=bankFor(p);
-      const pilotLink=$('pilotStartLink'),pilotInfo=$('pilotAvailability');
-      const allowed=isPilotConfiguration(p);
-      if(!allowed){
-        pilotLink.style.display='none';
-        pilotInfo.textContent='Select exactly ONE of Grade XI Units 1–5, MCQs, an eligible count (4/10/20/30/40/60), and Learn & Practise or Class Test. Combined-unit and full FBISE paper modes are not active yet.';
-        return;
-      }
-      const qs=new URLSearchParams({unit:String(p.units[0]),count:p.questionCount,scope:p.scope,feedback:p.feedback,arrangement:p.arrangement,selection:p.selection,unseen:p.preferUnseen?'true':'false',
-        timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),
-        cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo});
-      pilotLink.href='practice-engine/index.html?'+qs.toString();
-      if(liveBank.status==='ready'){
-        const requested=Number(p.questionCount),plan=groupedSelection(liveBank.questions,matchedQuestions(p),p.arrangement,requested);
-        const available=plan.available;
-        if(!plan.possible){
-          pilotLink.style.display='none';
-          pilotInfo.textContent=p.arrangement==='random'
-            ? `Not enough eligible questions: ${available} available; ${requested} requested.`
-            : `Cannot build ${requested} questions from whole stimulus sets with these filters. ${plan.completeGroups.length} complete sets are eligible. Change the count or filters.`;
-          return;
-        }
-        pilotLink.style.display='inline-block';
-        pilotInfo.textContent=p.arrangement==='random'
-          ? `Ready: ${available} eligible MCQs available; ${requested} requested.`
-          : `Ready: ${plan.chosen.length} complete stimulus sets (${plan.groupQuestions} questions)${p.arrangement==='grouped'?` and ${requested-plan.groupQuestions} independent MCQs`:''}. Each scenario remains together.`;
-        return;
-      }
-      if(liveBank.status==='loading'){
-        pilotLink.style.display='none';
-        pilotInfo.textContent='Checking the current question-bank file before enabling the test…';
-        return;
-      }
-      // Do not launch missing or invalid source banks; fail closed.
+      const liveBank=bankFor(p),pilotLink=$('pilotStartLink'),pilotInfo=$('pilotAvailability');
       pilotLink.style.display='none';
-      pilotInfo.textContent='The selected Unit MCQ bank is not available. Check that the correct JSON file is published and retry.';
+      if(!isPilotConfiguration(p)){
+        pilotInfo.textContent='Select one or more published Units 1–5, MCQs, a supported count, and Learn & Practise or Class Test. Full-board generation is not yet active.';
+        return;
+      }
+      const qs=new URLSearchParams({
+        count:p.questionCount,scope:p.scope,feedback:p.feedback,
+        arrangement:p.arrangement,selection:p.selection,unseen:p.preferUnseen?'true':'false',
+        timer:p.timeLimit==='none'?'0':p.timeLimit,shuffle:String(p.shuffle),
+        cognitive:p.cognitiveLevels.join(','),difficulty:p.difficulty,slo:p.slo
+      });
+      if(p.units.length===1)qs.set('unit',String(p.units[0]));
+      else qs.set('units',p.units.join(','));
+      pilotLink.href='practice-engine/index.html?'+qs.toString();
+      if(liveBank.status==='loading'){
+        pilotInfo.textContent='Checking every selected published unit bank before enabling the test…';
+        return;
+      }
+      if(liveBank.status!=='ready'){
+        pilotInfo.textContent='One or more selected banks could not be loaded: '+(liveBank.error||'Please retry.');
+        return;
+      }
+      const matched=matchedQuestions(p),plan=selectionPlan(p,liveBank,matched);
+      if(!plan.possible){
+        pilotInfo.textContent=plan.reason||'Insufficient questions from the selected units and filters.';
+        return;
+      }
+      pilotLink.style.display='inline-block';
+      pilotInfo.textContent='Ready: '+p.questionCount+' MCQs from '+p.units.map(n=>'Unit '+n).join(', ')+
+        (p.units.length>1?' · '+p.units.map(u=>'U'+u+': '+plan.unitCounts[String(u)]).join(' / '):'')+
+        '. Complete source scenario groups remain together in grouped modes.';
     }
 
     function setupUnits() {
+      const params=new URLSearchParams(location.search),raw=params.get('units');
+      const selected=raw===null?[/^[1-5]$/.test(params.get('unit')||'')?Number(params.get('unit')):1]:
+        raw.split(',').map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=5);
+      const checked=new Set(selected);
       $('units').innerHTML=unitNames.map((name,i)=>{
-        const n=i+1,live=n<=5,preset=new URLSearchParams(location.search).get('unit');
-        const chosen=/^[1-5]$/.test(preset||'')?Number(preset):1;
-        const note=live?'Ready for individual MCQ practice':'Unit in preparation';
-        return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&n===chosen?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
+        const n=i+1,live=n<=5,note=live?'Available for MCQ tests':'Unit in preparation';
+        return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&checked.has(n)?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
       }).join('');
     }
     function getMode() { return document.querySelector('input[name="mode"]:checked').value; }
@@ -385,7 +396,7 @@
       $('feedback').disabled=full || unit;
       document.querySelectorAll('input[name="cognitive"]').forEach(el=>el.disabled=full);
       document.querySelectorAll('input[name="unit"]').forEach(el=>el.disabled=full||Number(el.value)>5);
-      $('allUnits').disabled=true; $('clearUnits').disabled=full;
+      $('allUnits').disabled=full; $('clearUnits').disabled=full;
       if (unit) $('scope').value='summative';
       if (full) $('scope').value='summative';
       if (!full && lastMode==='full') {
@@ -428,7 +439,7 @@
       $('sum-scope').textContent=names.scope[p.scope];
       $('sum-slo').textContent=p.slo || 'Any eligible SLO';
       $('sum-units').replaceChildren(...p.units.map(n=>{const tag=document.createElement('span');tag.className='pill';tag.textContent='Unit '+n;return tag;}));
-      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 have 275, 206, 80, 80 and 32 provisional MCQs respectively. Choose any one for self-practice; mixed-unit testing is coming next.';
+      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 have 275, 206, 80, 80 and 32 provisional MCQs respectively. Mixed-unit self-practice distributes questions across the selected units; choose complete scenarios where preferred.';
       const errors=[];
       if (!p.units.length) errors.push('Select at least one textbook unit.');
       if (!p.cognitiveLevels.length) errors.push('Select at least one cognitive level.');
@@ -445,15 +456,9 @@
     }
     function initBuilder(){
       setupUnits();
-      $('builderForm').addEventListener('change',event=>{
-        // During the single-unit phase, selecting another unit replaces the previous selection.
-        if(event.target.matches('input[name="unit"]')&&event.target.checked){
-          document.querySelectorAll('input[name="unit"]').forEach(el=>{if(el!==event.target)el.checked=false;});
-        }
-        update();$('plan-output').classList.remove('visible');
-      });
+      $('builderForm').addEventListener('change',()=>{update();$('plan-output').classList.remove('visible');});
       $('slo').addEventListener('input',()=>{update();$('plan-output').classList.remove('visible');});
-      // Combined-unit selection remains disabled until cross-unit selection and reports are verified.
+      $('allUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>{el.checked=Number(el.value)<=5;});update();$('plan-output').classList.remove('visible');});
       $('clearUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>el.checked=false);update();$('plan-output').classList.remove('visible');});
       $('resetButton').addEventListener('click',()=>{
         $('builderForm').reset();lastMode='practice';$('type').value='mcq';$('scope').value='all';$('quantity').value='20';$('timer').value='none';$('slo').value='';$('arrangement').value='random';$('selection').value='balanced';$('preferUnseen').checked=true;setupUnits();update();$('plan-output').classList.remove('visible');
