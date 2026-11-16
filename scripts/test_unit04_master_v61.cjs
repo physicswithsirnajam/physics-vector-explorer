@@ -126,6 +126,9 @@ async function adapterCheck(d){
  }
  assert.equal(groups.size,12);
  assert.ok([...groups.values()].every(a=>a.length===4&&a.every(q=>q.stimulusHtml===a[0].stimulusHtml)));
+ assert.equal(added.find(q=>q.id==='g11-u04-master-t42-q029').options[0].text,'T=mv²/r');
+ assert.ok(added.find(q=>q.id==='g11-u04-master-t42-q048').explanation.includes('12.0²'));
+ assert.ok(added.find(q=>q.id==='g11-u04-master-t42-q062').explanation.includes('tan⁻¹'));
  assert.equal(questions.filter(q=>q.stimulusSetId).length,72,'original24+new48 scenario MCQs');
  await assert.rejects(ctx.PSNPracticeBankV55.loadBank(4,'https://external.invalid/'),/unexpected question bank folder/);
  console.log('PASS V61 adapter: 240 original+supplement without changed keys/stems, 18 complete source scenarios, no duplicate IDs/stem-options.');
