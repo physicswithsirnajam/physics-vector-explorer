@@ -40,7 +40,7 @@ async function staticAudit(){
  assert.equal(unit3.summativePilotCount,160);
  assert.equal(unit3.formativePilotCount,60);
  assert.equal(unit3.scenarioGroupCount,17);
- assert.equal(m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1130);
+ assert.equal(m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1290);
  assert.equal(c.grades.find(g=>g.grade===11).units.find(u=>u.unit===3).questionBankCount,220);
  const original=read(fileAt+'unit-03-stage2-80-practice.json').questions;
  assert.equal(original.length,80);
@@ -138,7 +138,7 @@ async function browserAudit(){
   await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('844 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),3);
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1130');
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1290');
   assert.match(await page.locator('[data-unit="3"] .count').textContent(),/220 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const width=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
