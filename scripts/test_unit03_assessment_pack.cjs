@@ -137,7 +137,7 @@ for(const link of ["unit-03-mcq-full80.html","unit-03-mcq-practice.html",
  assert.ok(desk.includes('href="./'+link+'"'),"Existing resource link removed "+link);
 }
 const u=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===3);
-assert.equal(u.questionBankCount,80);
+assert.equal(u.questionBankCount,220);
 assert.equal(u.resourceIds.length,10);
 assert.ok(u.resourceIds.includes("unit3-assessment-pack"));
 const resources=catalog.resources.filter(x=>x.id==="unit3-assessment-pack");
