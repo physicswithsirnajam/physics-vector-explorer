@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 "use strict";
-/* V55 source integrity regression after V59: 990 source-backed public MCQs. */
+/* V55 source integrity regression for the expanded 1290-question five-unit public bank. */
 const assert=require("node:assert/strict");
 const fs=require("node:fs"),path=require("node:path"),http=require("node:http"),vm=require("node:vm");
 const {chromium}=require("playwright");
@@ -183,7 +183,7 @@ async function assertBrowser(){
   assert.ok(w[1]<=w[0]+2,"mobile builder should not overflow");
   await page.screenshot({path:path.join(out,"05-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errors,[],"no uncaught browser exceptions");
-  console.log("PASS V60+V55 regression: 1130 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
+  console.log("PASS V61+V55 regression: 1290 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{await assertAdapters();await assertBrowser();})().catch(err=>{console.error("FAIL V55",err);server.close();process.exitCode=1;});
