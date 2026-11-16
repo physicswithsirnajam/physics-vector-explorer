@@ -97,7 +97,7 @@ function sourceContract(){
   assert.ok(fs.existsSync(path.join(root,"portal",resources[0].href.slice(2))));
  }
  const u4=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
- assert.equal(u4.resourceIds.length,18);assert.equal(u4.questionBankCount,80);
+ assert.equal(u4.resourceIds.length,18);assert.equal(u4.questionBankCount,240);
  const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
  assert.equal(u3.resourceIds.length,10);
  for(const page of ["portal/unit-05.html","portal/unit-05-work-study.html","portal/unit-05-work-energy-lab.html"]){
