@@ -43,15 +43,17 @@ async function main(){
   assert.equal(await page.locator('input[name="unit"][value="2"]').isChecked(),false);
   for(const n of [3,4,5])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),false,"Unit "+n+" is now test-ready in V55");
   for(const n of [6,14])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),true,"Unit "+n+" must not claim builder readiness");
-  assert.equal(await page.locator("#allUnits").isDisabled(),true);
+  assert.equal(await page.locator("#allUnits").isDisabled(),false,"V56 enables all five published units");
   assert.equal(await page.locator("#quickStartLink").isVisible(),true,"Default quick start must be visible");
   assert.match(await page.locator("#quickStartLink").getAttribute("href"),/unit=1/);
   await page.screenshot({path:path.join(out,"01-unit1-ready.png"),fullPage:false});
 
-  // Switching from Unit 1 to Unit 2 does not leave both selected.
+  // V56 permits both units; deselect Unit 1 to verify Unit 2 still works alone.
   await page.locator('input[name="unit"][value="2"]').check();
+  await page.waitForFunction(()=>document.getElementById("availabilityCount").textContent.includes("481 eligible MCQ"));
+  assert.equal(await page.locator('input[name="unit"][value="1"]').isChecked(),true);
+  await page.locator('input[name="unit"][value="1"]').uncheck();
   await page.waitForFunction(()=>document.getElementById("availabilityCount").textContent.includes("206 eligible MCQ"));
-  assert.equal(await page.locator('input[name="unit"][value="1"]').isChecked(),false);
   assert.equal(await page.locator('input[name="unit"][value="2"]').isChecked(),true);
   assert.match(await page.locator("#quickStartLink").getAttribute("href"),/unit=2/);
   await page.screenshot({path:path.join(out,"02-unit2-ready.png"),fullPage:false});
@@ -96,7 +98,7 @@ async function main(){
   await page.screenshot({path:path.join(out,"04-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errs,[],"No uncaught builder/practice engine browser exceptions");
   console.log("PASS V54: default 275 Unit 1 / 206 Unit 2 pilot records, visible quick launch, valid MCQ selection.");
-  console.log("PASS V54 regression on V55: Unit 2 switch, real 20-question quiz starts, future units fail closed, filters and reset.");
+  console.log("PASS V54 regression on V56: Unit 2 remains available alone and in mixed selection; future units fail closed, filters and reset.");
   console.log("PASS V54: full-preview return, 390px mobile, no uncaught browser errors.");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }

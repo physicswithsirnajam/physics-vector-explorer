@@ -1,0 +1,66 @@
+name: Validate Grade XI Multi-Unit Test Builder and Scenarios (V56)
+on:
+  pull_request:
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/multi-unit-planner-v56.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/attempt-sync.js"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - ".github/workflows/validate-grade11-builder-v56.yml"
+      - "quality/builder-v56-multiunit.md"
+  push:
+    branches: [main]
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/multi-unit-planner-v56.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/attempt-sync.js"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - ".github/workflows/validate-grade11-builder-v56.yml"
+      - "quality/builder-v56-multiunit.md"
+  workflow_dispatch:
+jobs:
+  verify-mixed-units-and-source-scenarios:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Install Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify new JavaScript syntax and original bank manifest totals
+        run: |
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_builder_multiunit_v56.cjs
+          node --check scripts/test_builder_single_unit_v54.cjs
+          node -e "const m=require('./question-bank/manifest.json');const a=m.grades.find(g=>g.grade===11).units.slice(0,5);if(a.length!==5||a.reduce((n,u)=>n+u.liveMcqCount,0)!==673)process.exit(1)"
+      - name: Install real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test cross-unit quotas, complete source stimuli, results, filtering and phone display
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — V55 original five-unit source and individual practice browser tests
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Regression — V54 original individual Unit 1/2 browser tests
+        run: node scripts/test_builder_single_unit_v54.cjs
+      - name: Upload browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: builder-v56-five-unit-mixing-and-regression-qa
+          path: |
+            qa-artifacts/builder-v56/*.png
+            qa-artifacts/builder-v55/*.png
+            qa-artifacts/builder-v54/*.png
+          retention-days: 7
+          if-no-files-found: warn
