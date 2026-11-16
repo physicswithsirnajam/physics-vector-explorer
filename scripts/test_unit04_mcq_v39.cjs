@@ -192,7 +192,7 @@ for(const content of [html,ui]){
  }
 }
 const unit3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
-assert.equal(unit3.questionBankCount,80);
+assert.equal(unit3.questionBankCount,220);
 assert.equal(unit3.resourceIds.length,10);
 assert.ok(unit3.resourceIds.includes("unit3-assessment-pack"));
 console.log("PASS — 80 unique Unit 4 source-grounded MCQs with complete options/keys/explanations and 56+24/6×4 grouping.");
