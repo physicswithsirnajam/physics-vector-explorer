@@ -69,24 +69,34 @@
           "path": "grade-11/unit-05-v50-16-student.json",
           "sourceFiles": [
             "grade-11/unit-05-v50-16-student.json",
-            "grade-11/unit-05-v51-16-student-b.json"
+            "grade-11/unit-05-v51-16-student-b.json",
+            "grade-11/unit-05-master-topic-v59-317.json"
           ],
           "publicTeacherKeyFiles": [
             "grade-11/unit-05-v50-16-teacher-key.json",
             "grade-11/unit-05-v51-16-teacher-key-b.json"
           ],
-          "liveMcqCount": 32,
-          "sourceSloMcqCount": 32,
-          "summativePilotCount": 32,
-          "scenarioGroupCount": 2,
+          "liveMcqCount": 349,
+          "sourceSloMcqCount": 349,
+          "summativePilotCount": 349,
+          "scenarioGroupCount": 26,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v55-adapter-original-v50-and-v51",
-          "importNote": "V55 runtime adapter joins original 16-item student Sets A and B against matching separate PUBLIC teacher keys, validates ID/key correspondence and preserves 3-step worked answers. These are PUBLIC self-practice answer keys, not secured exam keys. Original Unit 5 source difficulty remains UNSPECIFIED and independent teacher scientific approval is still pending."
+          "bankVersion": "v59-original32-plus-master317-source-provisional",
+          "importNote": "V59 preserves the 32 original V50/V51 public practice MCQs and adds 317 questions extracted from the user-owned Grade XI Unit 5 Student Master Pack (4 topic banks of 80 each); 3 source-figure-dependent questions remain held. 24 new intact 4-question scenario groups, making 26 total. Answer options/explanations are structurally matched to the master source; independent scientific and curriculum signoff remains pending. This is public self-practice only; cloud save for Unit 5 is not enabled.",
+          "masterSourceQuestionCount": 320,
+          "newMasterImportedCount": 317,
+          "masterHeldForSourceFigures": 3,
+          "masterTopicPublishedCounts": {
+            "5.1": 79,
+            "5.2": 78,
+            "5.3": 80,
+            "5.4": 80
+          }
         }
       ]
     }
   ],
-  "bankVersion": "v55-units01-05-central-readonly-adapter",
+  "bankVersion": "v59-five-unit-central-990-source-mcqs",
   "lastUpdated": "2026-11-16"
 }

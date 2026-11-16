@@ -80,12 +80,12 @@ function sourceContract(){
  assert.equal(audit.studentGradesRecorded,false);
  assert.ok(audit.assessmentPublicationGate.length>=5);
  assert.deepEqual(audit.chapterExerciseEvidence.textbookPrintedPages,[85,86,87]);
- // The Unit 5 directory may contain only the explicit provisional V50 student and public teaching-key JSONs.
- assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")).sort(),["unit-05-v50-16-student.json","unit-05-v50-16-teacher-key.json","unit-05-v51-16-student-b.json","unit-05-v51-16-teacher-key-b.json","unit-05-v52-descriptive-student.json","unit-05-v52-descriptive-teacher-key.json"]);
+ // The original V50/V51 student/teacher keys and V52 descriptive sources remain unchanged; V59 adds a separately source-audited topic bank.
+ assert.deepEqual(fs.readdirSync(bankDir).filter(x=>x.startsWith("unit-05")).sort(),["unit-05-master-topic-v59-317.json","unit-05-v50-16-student.json","unit-05-v50-16-teacher-key.json","unit-05-v51-16-student-b.json","unit-05-v51-16-teacher-key-b.json","unit-05-v52-descriptive-student.json","unit-05-v52-descriptive-teacher-key.json"]);
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
  assert.equal(u5.status,"available");
  assert.equal(u5.assessmentStatus,"provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice");
- assert.equal(u5.questionBankCount,32);
+ assert.equal(u5.questionBankCount,349);
  assert.deepEqual(u5.resourceIds,["unit5-desk","unit5-work-study","unit5-work-energy-lab","unit5-fbise-audit","unit5-mcq-practice","unit5-mcq-worked-key","unit5-mcq-set-b-practice","unit5-mcq-set-b-key","unit5-descriptive-student","unit5-descriptive-worked-key","unit5-projector-discussion"]);
  for(const id of u5.resourceIds){
   const resources=catalog.resources.filter(r=>r.id===id);

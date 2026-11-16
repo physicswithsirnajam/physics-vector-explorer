@@ -43,7 +43,7 @@ function scienceAndCatalog(){
  }
  assert.equal(ids.size,18);
  const u=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
- assert.equal(u.questionBankCount,32);
+ assert.equal(u.questionBankCount,349);
  assert.equal(u.descriptivePracticeMarks,40);
  assert.equal(u.resourceIds.length,11);
  assert.equal(u.resourceIds.at(-1),"unit5-projector-discussion");

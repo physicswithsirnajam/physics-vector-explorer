@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 "use strict";
-/* V55 source integrity and Chromium end-to-end tests for all 673 original MCQs. */
+/* V55 source integrity regression after V59: 990 source-backed public MCQs. */
 const assert=require("node:assert/strict");
 const fs=require("node:fs"),path=require("node:path"),http=require("node:http"),vm=require("node:vm");
 const {chromium}=require("playwright");
@@ -9,7 +9,7 @@ fs.mkdirSync(out,{recursive:true});
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
 const fileAt="question-bank/grade-11/";
 const title=["","Physical Quantities and Measurements","Vectors","Translatory Motion","Rotational and Circular Motion","Work and Energy"];
-const totals={1:275,2:206,3:80,4:80,5:32};
+const totals={1:275,2:206,3:80,4:80,5:349};
 const mime={".html":"text/html; charset=utf-8",".js":"application/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml"};
 const server=http.createServer((req,res)=>{
  try{
@@ -62,24 +62,48 @@ async function assertAdapters(){
    }
   }
   if(u===5){
-   const original5=[...a5.questions,...b5.questions],answers=[...ka.answerKeys,...kb.answerKeys];
-   const keys=new Map(answers.map(q=>[q.id,q]));
-   assert.equal(keys.size,32);
-   assert.equal(new Set(data.questions.map(q=>q.id)).size,32);
-   for(const [i,q] of data.questions.entries()){
-    assert.equal(q.stem,original5[i].stem);
-    assert.deepEqual(JSON.parse(JSON.stringify(q.options)),original5[i].options);
-    assert.equal(q.correctOptionId,keys.get(q.id).correctOptionId);
-    assert.equal(q.explanation,keys.get(q.id).workedSteps.join(" "));
-    assert.equal(q.sloCodes[0],original5[i].sloCode);
-    assert.equal(q.difficulty,"Unspecified","do not invent source difficulty");
-    assert.equal(q.sourceSet,i<16?"A":"B");
-    if(q.scenarioSetId)assert.ok(q.stimulusHtml.includes(i<16?a5.scenarios[0].stimulus:b5.scenarios[0].stimulus));
+    const original5=[...a5.questions,...b5.questions],answers=[...ka.answerKeys,...kb.answerKeys];
+    const keys=new Map(answers.map(q=>[q.id,q]));
+    assert.equal(keys.size,32);
+    assert.equal(new Set(data.questions.map(q=>q.id)).size,349);
+    for(const [i,q] of data.questions.slice(0,32).entries()){
+     assert.equal(q.stem,original5[i].stem);
+     assert.deepEqual(JSON.parse(JSON.stringify(q.options)),original5[i].options);
+     assert.equal(q.correctOptionId,keys.get(q.id).correctOptionId);
+     assert.equal(q.explanation,keys.get(q.id).workedSteps.join(" "));
+     assert.equal(q.sloCodes[0],original5[i].sloCode);
+     assert.equal(q.difficulty,"Unspecified","do not invent source difficulty");
+     assert.equal(q.sourceSet,i<16?"A":"B");
+     if(q.scenarioSetId)assert.ok(q.stimulusHtml.includes(i<16?a5.scenarios[0].stimulus:b5.scenarios[0].stimulus));
+    }
+    const master=read(fileAt+"unit-05-master-topic-v59-317.json");
+    assert.equal(master.sourceQuestionCount,320);
+    assert.equal(master.questions.length,317);
+    assert.equal(master.excludedPendingFigureReview.length,3);
+    const held=new Set(master.excludedPendingFigureReview.map(q=>q.id));
+    const added=data.questions.slice(32);
+    assert.equal(added.length,317);
+    const groups=new Map();
+    for(const [i,q] of added.entries()){
+     const source=master.questions[i];
+     assert.ok(!held.has(q.id),"Missing-figure question must not be student-facing");
+     for(const field of ["id","stem","correctOptionId","explanation","sourceQuestionNumber"])
+       assert.equal(q[field],source[field],"Changed source field "+field+" in "+q.id);
+     assert.deepEqual(JSON.parse(JSON.stringify(q.options)),source.options);
+     assert.equal(q.sloCodes[0],source.sloCodes[0]);
+     assert.equal(q.difficulty,"Unspecified");
+     if(q.stimulusSetId){
+       assert.equal(q.stimulusHtml,source.stimulusHtml);
+       if(!groups.has(q.stimulusSetId))groups.set(q.stimulusSetId,[]);
+       groups.get(q.stimulusSetId).push(q.id);
+     }
+    }
+    assert.equal(groups.size,24,"All new scenario introductions must be preserved");
+    assert.ok([...groups.values()].every(items=>items.length===4));
    }
-  }
-  console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
+    console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
  }
- assert.equal(allIds.size,673,"the full original 673 should remain unique");
+ assert.equal(allIds.size,990,"all 990 original and imported questions must have unique IDs");
  await assert.rejects(adapter.loadBank(6,fileAt));
  await assert.rejects(adapter.loadBank(5,"https://untrusted.test/"),/unexpected question bank folder/);
 }
@@ -128,13 +152,17 @@ async function assertBrowser(){
    console.log("PASS browser: Unit "+u+" full 4-question scenario preserved");
   }
   await page.goto(base+"build-your-physics-test.html?unit=5",{waitUntil:"networkidle"});
-  await page.waitForFunction(()=>document.getElementById("availabilityCount")?.textContent.includes("32 eligible MCQ"));
+  await page.waitForFunction(()=>document.getElementById("availabilityCount")?.textContent.includes("349 eligible MCQ"));
   await page.locator("#quantity").selectOption("40");
-  assert.equal(await page.locator("#quickStartLink").isVisible(),false,"Unit 5 must not silently repeat questions to create 40");
+  assert.equal(await page.locator("#quickStartLink").isVisible(),true,"Unit 5 should now support 40 source-backed MCQs");
   await page.locator("#quantity").selectOption("20");
   await page.locator("#slo").fill("P-11-B-29");
-  await page.waitForFunction(()=>document.getElementById("availabilityCount")?.textContent.includes("8 eligible MCQ"));
+  await page.waitForFunction(()=>document.getElementById("availabilityCount")?.textContent.includes("88 eligible MCQ"));
+  assert.equal(await page.locator("#quickStartLink").isVisible(),true);
+  await page.locator("#slo").fill("P-11-B-99");
+  await page.waitForFunction(()=>document.getElementById("availabilityCount")?.textContent.includes("0 eligible MCQ"));
   assert.equal(await page.locator("#quickStartLink").isVisible(),false);
+  await page.locator("#slo").fill("P-11-B-29");
   await page.locator("#quantity").selectOption("4");
   assert.equal(await page.locator("#quickStartLink").isVisible(),true);
   await page.locator("#slo").fill("");
@@ -154,7 +182,7 @@ async function assertBrowser(){
   assert.ok(w[1]<=w[0]+2,"mobile builder should not overflow");
   await page.screenshot({path:path.join(out,"05-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errors,[],"no uncaught browser exceptions");
-  console.log("PASS V55: 673 original MCQs, U5 key joins, 5 real quiz launches, complete scenario groups, SLO filter and mobile");
+  console.log("PASS V59+V55 regression: 990 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{await assertAdapters();await assertBrowser();})().catch(err=>{console.error("FAIL V55",err);server.close();process.exitCode=1;});

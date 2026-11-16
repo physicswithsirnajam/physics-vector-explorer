@@ -158,7 +158,7 @@ function sourceChecks(){
  assert.equal(audit.descriptivePractice.teacherKeyPublicNotSecured,true);
  const u5=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===5);
  assert.equal(u5.resourceIds.length,11);
- assert.equal(u5.questionBankCount,32);
+ assert.equal(u5.questionBankCount,349);
  assert.equal(u5.descriptivePracticeMarks,40);
  assert.equal(u5.descriptivePracticePairs,9);
  assert.equal(u5.descriptivePracticeAlternatives,18);
