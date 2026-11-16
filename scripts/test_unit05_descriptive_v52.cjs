@@ -170,7 +170,7 @@ function sourceChecks(){
  }
  const grade=catalog.grades.find(g=>g.grade===11);
  assert.equal(grade.units.find(u=>u.unit===4).resourceIds.length,18);
- assert.equal(grade.units.find(u=>u.unit===4).questionBankCount,80);
+ assert.equal(grade.units.find(u=>u.unit===4).questionBankCount,240);
  assert.equal(grade.units.find(u=>u.unit===3).resourceIds.length,10);
  const studentJs=read("portal/unit-05-descriptive-student.js");
  const studentHtml=read("portal/unit-05-descriptive-student.html");

@@ -125,7 +125,7 @@ function checkFiles(){
   assert.ok(fs.existsSync(path.join(root,"portal",matches[0].href.slice(2))));
  }
  assert.equal(grade.units.find(x=>x.unit===4).resourceIds.length,18);
- assert.equal(grade.units.find(x=>x.unit===4).questionBankCount,80);
+ assert.equal(grade.units.find(x=>x.unit===4).questionBankCount,240);
  assert.equal(grade.units.find(x=>x.unit===3).resourceIds.length,10);
  assert.equal(audit.status,"official-SLO-verified-32-mcq-two-pilot-sets-and-40-mark-descriptive-practice");
  assert.equal(audit.officialFrameworkVerified,true);

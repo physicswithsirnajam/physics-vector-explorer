@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:80,5:349};
+const expected={1:275,2:206,3:220,4:240,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -43,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?6:26;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?18:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -140,6 +140,90 @@ function adaptMasterThree(master,older){
    'Unit 3 supplementary scenarios not complete');
  return questions;
 }
+
+/* V61: original corrected Oct-08 Unit 4 notes; first two of seven master
+ * topic banks, 160 PUBLIC self-practice questions. Source option letters
+ * and worked key are kept as provided; no secure exam is created. */
+const fourthMasterFiles=['unit04-v61-part1.b64','unit04-v61-part2.b64','unit04-v61-part3.b64'];
+async function loadMasterFour(basePath){
+ const parts=await Promise.all(fourthMasterFiles.map(async file=>{
+  const r=await fetch(basePath+file,{cache:'no-store'});
+  if(!r.ok)throw Error('Missing Unit 4 source '+file+' (HTTP '+r.status+')');
+  return r.text();
+ }));
+ const encoded=parts.join('').trim();
+ need(encoded.length===13600,'Unit 4 archive missing or truncated');
+ let fnv=2166136261;
+ for(let i=0;i<encoded.length;i++)fnv=Math.imul(fnv^encoded.charCodeAt(i),16777619)>>>0;
+ need(fnv===0x20d5cb2e,'Unit 4 corrected master checksum mismatch');
+ need(typeof DecompressionStream==='function','Supplementary Unit 4 bank needs a browser supporting gzip DecompressionStream.');
+ const raw=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+ const json=await new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ return JSON.parse(json);
+}
+/* Word's run-level superscripts were flattened by the plain-text extractor.
+ * Confirmed against every original text cell in corrected Topic 4.2 tables:
+ * 720/720 reconstructed cells match the visual Word superscript content.
+ * Restrict these restorations to that one topic; do not guess in other banks.
+ */
+function restoreCorrectedUnitFourMath(value,topic,n){
+ if(topic!==42)return value;
+ let correct=String(value)
+  .replace(/([vωrm])2\b/g,'$1²')
+  .replace(/s-1\b/g,'s⁻¹').replace(/s-2\b/g,'s⁻²')
+  .replace(/tan-1\(/g,'tan⁻¹(');
+ if(n===48)correct=correct.replace(/12\.02\b/g,'12.0²');
+ return correct;
+}
+function adaptMasterFour(master,old){
+ const topics={41:['P-11-B-07','P-11-B-08','P-11-B-09'],
+   42:['P-11-B-10','P-11-B-14','P-11-B-15','P-11-B-21']};
+ need(master?.version===1&&master.rows?.length===160&&Object.keys(master.scenarios||{}).length===12,
+  'invalid Unit 4 master source inventory');
+ need(master.source==='Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx'&&
+  master.sourceSha256==='925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777',
+  'wrong original corrected Unit 4 edition');
+ const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+
+   '|'+q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+ const seen=new Set(old.map(q=>q.id)),content=new Set(old.map(canon)),groups=new Map(),counts={41:0,42:0};
+ const questions=master.rows.map(r=>{
+  need(Array.isArray(r)&&r.length===6,'bad source record');
+  const [topic,n,stem,options,answer,explanation]=r;
+  const id='g11-u04-master-t'+topic+'-q'+String(n).padStart(3,'0');
+  need(Object.hasOwn(topics,topic)&&Number.isInteger(n)&&n>=1&&n<=80&&!seen.has(id),
+   'invalid/repeated source record '+id);
+  need(typeof stem==='string'&&stem.trim()&&Array.isArray(options)&&options.length===4&&
+   options.every(x=>typeof x==='string'&&x.trim())&&'ABCD'.includes(answer)&&
+   typeof explanation==='string'&&explanation.trim(),'missing source question/key/explanation '+id);
+  const stimulusSetId=n>=57?'u04-v61-t'+topic+'-s'+(1+Math.floor((n-57)/4)):null;
+  const stimulusHtml=stimulusSetId?master.scenarios[stimulusSetId]:null;
+  need(!stimulusSetId||typeof stimulusHtml==='string'&&stimulusHtml.startsWith('<p>')&&stimulusHtml.length>35,
+   'missing original scenario '+id);
+  const q={id,grade:11,unit:4,active:true,type:'single_choice',
+   status:'teacher-review-pending',boardEligible:false,
+   stem:restoreCorrectedUnitFourMath(stem,topic,n),
+   options:options.map((text,i)=>({id:'ABCD'[i],text:restoreCorrectedUnitFourMath(text,topic,n)})),
+   correctOptionId:answer,explanation:restoreCorrectedUnitFourMath(explanation,topic,n),
+   sloCodes:topics[topic],
+   assessmentClassification:'summative-theory',difficulty:'Unspecified',
+   cognitiveLevel:'Unspecified',
+   sloAlignment:'Topic-level provisional source SLO mapping; item-level teacher review pending',
+   sourceQuestionNumber:n,topic:topic===41?'4.1 — Rotational Kinematics':'4.2 — Centripetal Acceleration and Force',
+   source:{document:master.source,sourceSha256:master.sourceSha256,
+    topic:'4.'+(topic-40),itemNumber:n,
+    sloPrecision:'topic-level; teacher-review-pending'},
+   stimulusSetId,stimulusHtml:stimulusHtml||null};
+  need(!content.has(canon(q)),'duplicate original or supplemental Unit 4 question '+id);
+  seen.add(id);content.add(canon(q));counts[topic]++;
+  if(stimulusSetId){if(!groups.has(stimulusSetId))groups.set(stimulusSetId,[]);groups.get(stimulusSetId).push(q);}
+  return q;
+ });
+ need(counts[41]===80&&counts[42]===80&&groups.size===12&&
+  [...groups.values()].every(group=>group.length===4&&group.every(q=>q.stimulusHtml===group[0].stimulusHtml)),
+  'Unit 4 new scenarios or topic counts changed');
+ return questions;
+}
+
 function adaptUnitFive(student,key,setLabel){
   need(student?.grade===11&&student.unit===5&&student.officialBoardPaper===false&&student.questions?.length===16,'bad Unit 5 Set '+setLabel+' student source');
   need(key?.grade===11&&key.unit===5&&key.publicResource===true&&key.notSecured===true&&key.officialFBISEKey===false,'Unit 5 key must be labelled publicly accessible and non-official');
@@ -237,12 +321,13 @@ async function loadBank(unit,basePath){
       ...adaptUnitFive(data[2],data[3],'B')
     ])
   ];
+  else if(unit===4){const old=adaptLegacy(4,data[0]);questions=[...old,...adaptMasterFour(await loadMasterFour(basePath),old)];}
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v61-original-80-plus-corrected-topics41-42-160':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
