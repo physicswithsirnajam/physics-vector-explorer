@@ -125,7 +125,7 @@ async function main(){
   // Existing unfinished-quiz navigation confirmation must still work.
   await page.setViewportSize({width:1320,height:900});
   await page.goto(base+'build-your-physics-test.html?units=1,3,5',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('704 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('844 eligible MCQ'));
   await page.locator('#quickStartLink').click();
   await page.waitForFunction(()=>!document.getElementById('start').classList.contains('hidden'));
   await page.locator('#begin').click();
