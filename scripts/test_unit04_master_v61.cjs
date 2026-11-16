@@ -133,6 +133,15 @@ async function adapterCheck(d){
  await assert.rejects(ctx.PSNPracticeBankV55.loadBank(4,'https://external.invalid/'),/unexpected question bank folder/);
  console.log('PASS V61 adapter: 240 original+supplement without changed keys/stems, 18 complete source scenarios, no duplicate IDs/stem-options.');
 }
+async function verifyAvailability(page, expected){
+ await page.waitForFunction(text=>{
+  const v=document.getElementById('availabilityCount')?.textContent||'';
+  return v.includes(text)||v.includes('Availability temporarily unavailable');
+ },expected,{timeout:25000});
+ const count=await page.locator('#availabilityCount').textContent();
+ if(!count.includes(expected))throw Error('Test Builder expected '+expected+' but reported '+count+': '+
+  await page.locator('#availabilityNote').textContent()+'. '+await page.locator('#pilotAvailability').textContent());
+}
 async function browser(){
  await new Promise((resolve,reject)=>server.listen(0,'127.0.0.1',err=>err?reject(err):resolve()));
  let b;
@@ -142,13 +151,14 @@ async function browser(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'build-your-physics-test.html?unit=4',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('240 eligible MCQ'));
+  await verifyAvailability(page,'240 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
+  assert.equal(await page.locator('input[name="cognitive"][value="Unspecified"]').isChecked(),true,'New source MCQs must be included by default');
   await page.screenshot({path:path.join(shots,'01-unit4-240-available.png'),fullPage:false});
   await page.locator('#scope').selectOption('formative');
   assert.equal(await page.locator('#quickStartLink').isVisible(),false);
   await page.locator('#scope').selectOption('summative');
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('240 eligible MCQ'));
+  await verifyAvailability(page,'240 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quantity').selectOption('60');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
@@ -161,7 +171,7 @@ async function browser(){
   console.log('PASS V61 Chromium Unit 4: 240 available, 0 formative, 240 summative; 60-item self-practice actually launches.');
 
   await page.goto(base+'build-your-physics-test.html?unit=4',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('240 eligible MCQ'));
+  await verifyAvailability(page,'240 eligible MCQ');
   await page.locator('#quantity').selectOption('40');
   await page.locator('#arrangement').selectOption('scenario');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
@@ -174,7 +184,7 @@ async function browser(){
   await page.screenshot({path:path.join(shots,'02-unit4-intact-scenario.png'),fullPage:false});
 
   await page.goto(base+'build-your-physics-test.html?units=2,4',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('446 eligible MCQ'));
+  await verifyAvailability(page,'446 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
   await page.waitForFunction(()=>!document.getElementById('start').classList.contains('hidden'));
