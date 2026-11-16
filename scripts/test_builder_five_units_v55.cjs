@@ -101,7 +101,6 @@ async function assertAdapters(){
     assert.equal(groups.size,24,"All new scenario introductions must be preserved");
     assert.ok([...groups.values()].every(items=>items.length===4));
    }
-  }
     console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
  }
  assert.equal(allIds.size,990,"all 990 original and imported questions must have unique IDs");
