@@ -1,0 +1,53 @@
+name: Validate Grade XI Test Builder Single-Unit Quick Start (V54)
+on:
+  pull_request:
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - "question-bank/grade-11/unit-01.json"
+      - "question-bank/grade-11/unit-02.json"
+      - "quality/builder-v54-single-unit-launch.md"
+      - ".github/workflows/validate-grade11-builder-v54.yml"
+  push:
+    branches: [main]
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - "question-bank/grade-11/unit-01.json"
+      - "question-bank/grade-11/unit-02.json"
+      - "quality/builder-v54-single-unit-launch.md"
+      - ".github/workflows/validate-grade11-builder-v54.yml"
+  workflow_dispatch:
+jobs:
+  builder-single-unit-actual-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify test runner syntax and unchanged pilot counts
+        run: |
+          node --check scripts/test_builder_single_unit_v54.cjs
+          node -e "const a=require('./question-bank/grade-11/unit-01.json'),b=require('./question-bank/grade-11/unit-02.json');if(a.questions.length!==275||b.questions.length!==206||a.status!=='practice-pilot'||b.status!=='practice-pilot')process.exit(1)"
+      - name: Install pinned Chromium for actual browser tests
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify default, Unit 2 switch and 20-MCQ practice launch
+        run: node scripts/test_builder_single_unit_v54.cjs
+      - name: Upload responsive and quiz-start screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: builder-v54-single-unit-first-run-chromium
+          path: qa-artifacts/builder-v54/*.png
+          retention-days: 7
+          if-no-files-found: warn
