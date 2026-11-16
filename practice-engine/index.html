@@ -28,8 +28,8 @@
 <main class="wrap">
 <div id="unitEyebrow" class="eyebrow">Grade XI · Loading public MCQ bank</div>
 <h1 id="unitTitle">Grade XI — MCQ Practice</h1>
-<div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> Select any one of Units 1–5 through the Test Builder. Each unit uses its own original public source MCQs, worked key and intact scenario context. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. When signed in, you can choose to save completed self-practice results privately to your portal account. Scores are calculated in your browser, not by a trusted examination server.</div>
-<div id="loading" class="panel" role="status" aria-live="polite">Loading the selected unit question bank…</div>
+<div class="notice" id="pilotNotice"><strong>Practice pilot:</strong> Select one, several, or all five published Grade XI units through the Test Builder. Each selected unit contributes original public source MCQs and complete scenario context. Use the Test Builder to choose ordinary randomized questions, intact mixed sets, or scenario-only practice. The bank is still undergoing independent scientific and SLO review and is <strong>not</strong> a certified FBISE mock examination. Cloud saving is currently available only for a single Unit 1 or 2 test; other practice sessions have a printable, local report. Scores are calculated in your browser, not by a trusted examination server.</div>
+<div id="loading" class="panel" role="status" aria-live="polite">Loading the selected Grade XI question banks…</div>
 <section id="start" class="panel hidden"><h2>Ready to practise?</h2><p id="setupSummary"></p><p class="muted">Questions are selected according to your chosen method. Balanced selection aims to cover available SLOs, cognitive levels and difficulty bands, without promising an exact board-paper distribution. Complete scenarios remain together; attempts may repeat questions.</p><div class="actions"><button class="primary" id="begin">Start MCQ Practice</button><a href="../build-your-physics-test.html">Change test settings</a></div></section>
 <section id="quiz" class="panel hidden"><div class="progress-line"><strong id="qcounter">Question 1</strong><span id="timer" class="chip gold hidden" role="timer"></span><span id="answeredCount" class="muted"></span></div><div class="bar" aria-label="Question progress"><span id="progressFill"></span></div><div class="meta" id="tags"></div><div class="question-ref muted" id="question-reference"></div><section id="stimulusPanel" class="hint hidden" aria-label="Shared question scenario"></section><div id="question" class="qstem"></div><div id="choices" role="radiogroup" aria-label="MCQ answer choices"></div><div class="hint hidden" id="hintBox"></div><div id="feedbackBox" class="feedback hidden" role="status" aria-live="polite"></div>
 <details id="mcq-report-details" class="mcq-report no-print">
@@ -56,15 +56,21 @@
 <strong>Save to My Physics Progress</strong><p id="save-result-status" role="status" aria-live="polite">Checking account sign-in…</p>
 <div class="actions"><button id="save-result" class="primary" type="button" disabled>Save this practice result</button><a href="../portal/">Sign in / View My Progress</a></div>
 <small>Optional: only saves when you click. Results are self-reported practice history, not verified examination grades.</small></div>
-<h3>Learning-outcome breakdown</h3><div class="slo-grid" id="sloStats"></div><h3 style="margin-top:18px">Actual question mix</h3><div class="slo-grid" id="mixStats"></div><p class="muted" style="font-size:12px" id="mixNote"></p><h3 style="margin-top:22px">Question-by-question solutions</h3><div id="review"></div><div class="actions no-print"><button id="retry" class="primary">Try another random selection</button><button id="print">Print / Save Results as PDF</button><a href="../build-your-physics-test.html">Return to Test Builder</a><a href="../portal/#my-progress">My Dashboard &amp; Progress</a></div></section>
+<h3>Performance by Unit</h3><div class="slo-grid" id="unitStats"></div><h3>Learning-outcome breakdown</h3><div class="slo-grid" id="sloStats"></div><h3 style="margin-top:18px">Actual question mix</h3><div class="slo-grid" id="mixStats"></div><p class="muted" style="font-size:12px" id="mixNote"></p><h3 style="margin-top:22px">Question-by-question solutions</h3><div id="review"></div><div class="actions no-print"><button id="retry" class="primary">Try another random selection</button><button id="print">Print / Save Results as PDF</button><a href="../build-your-physics-test.html">Return to Test Builder</a><a href="../portal/#my-progress">My Dashboard &amp; Progress</a></div></section>
 <div class="foot">Physics with Sir Najam · NBF Grade XI · Educational self-practice bank · Questions and worked answers are sourced from provisional teacher-prepared public learning banks; no secure examination keys.</div>
 </main>
 <script src="../shared/practice-bank-adapter-v55.js"></script>
+<script src="../shared/multi-unit-planner-v56.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(window.location.search);
-const cfg={unit:params.get('unit')===null?1:/^[1-5]$/.test(params.get('unit'))?Number(params.get('unit')):0,count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
+const rawUnits=params.get('units');
+const parsedUnits=rawUnits===null?
+ (params.get('unit')===null?[1]:[/^[1-5]$/.test(params.get('unit'))?Number(params.get('unit')):0]):
+ rawUnits.split(',').map(x=>/^\d+$/.test(x)?Number(x):0);
+const requestUnits=PSNMultiUnitV56.isValidUnits(parsedUnits)?parsedUnits.slice().sort((a,b)=>a-b):[];
+const cfg={units:requestUnits,unit:requestUnits.length===1?requestUnits[0]:null,count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
 let bank,eligible=[],test=[],answers={},checked={},index=0,secondsLeft=0,timerHandle=null,submitted=false,lastReportQuestionId=null;
 const safely=(node,value)=>{node.textContent=String(value);return node};
 
@@ -116,7 +122,7 @@ function groupedSelection(all,eligible,arrangement,count,orderGroups){
   return {possible:possibleSums.length>0,available,completeGroups,singles,chosen,groupQuestions};
 }
 // V8 practice-only intelligent selection. Existing bank records and keys are never altered.
-const RECENT_KEY=`psn-physics-XI-u0${cfg.unit}-recent-v8`;
+const RECENT_KEY=`psn-physics-XI-u0${cfg.units.join('-')}-recent-v8`;
 function readRecentAttempts(){
  try {const a=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]');return Array.isArray(a)?a.filter(x=>Array.isArray(x)).slice(0,4):[]}
  catch{return []}
@@ -125,9 +131,9 @@ function storeRecentAttempt(ids){
  try {localStorage.setItem(RECENT_KEY,JSON.stringify([ids,...readRecentAttempts()].slice(0,4)))}catch{} // Works without storage permission.
 }
 function hasIntactGroups(selected,eligible){
- const full=new Map(),chosen=new Map();
- for(const q of eligible){if(!q.stimulusSetId)continue;if(!full.has(q.stimulusSetId))full.set(q.stimulusSetId,[]);full.get(q.stimulusSetId).push(q.id)}
- for(const q of selected){if(!q.stimulusSetId)continue;if(!chosen.has(q.stimulusSetId))chosen.set(q.stimulusSetId,new Set());chosen.get(q.stimulusSetId).add(q.id)}
+ const full=new Map(),chosen=new Map(),key=q=>q.unit+':'+q.stimulusSetId;
+ for(const q of eligible){if(!q.stimulusSetId)continue;const k=key(q);if(!full.has(k))full.set(k,[]);full.get(k).push(q.id)}
+ for(const q of selected){if(!q.stimulusSetId)continue;const k=key(q);if(!chosen.has(k))chosen.set(k,new Set());chosen.get(k).add(q.id)}
  return [...chosen].every(([id,set])=>set.size===(full.get(id)||[]).length);
 }
 function targetCounts(total, labels, weight, capacity){
@@ -225,7 +231,7 @@ function setup(){
  $('start').classList.remove('hidden');
 }
 function chip(text){return node('span','chip',text)}
-function hint(q){if(cfg.unit>=3)return 'Read the complete situation and identify the relevant relationship, direction, units and signs before choosing an option.';if(cfg.unit===2)return q.sloCodes?.includes('P-11-B-01')?'Resolve the vector into its horizontal and vertical components, then check direction and signs.':'For dot products think cosine and scalar projection; for cross products think sine, order and right-hand rule.';return q.topic==='Estimation of physical quantities'?'Consider how a scientifically useful approximation is obtained.':q.topic==='SI units and derived quantities'?'Relate the named quantity to the physical operation it represents.':q.topic==='Dimensional homogeneity'?'Think about the dimensions of terms in physical equations.':q.topic==='Accuracy and precision'?'Distinguish agreement between readings from agreement with a reference value.':q.topic==='Uncertainty propagation'?'Think about which type of uncertainty is appropriate for the mathematical operation.':'Think about practical limitations of measuring and reporting physical quantities.'}
+function hint(q){if(q.unit>=3)return 'Read the complete situation and identify the relevant relationship, direction, units and signs before choosing an option.';if(q.unit===2)return q.sloCodes?.includes('P-11-B-01')?'Resolve the vector into its horizontal and vertical components, then check direction and signs.':'For dot products think cosine and scalar projection; for cross products think sine, order and right-hand rule.';return q.topic==='Estimation of physical quantities'?'Consider how a scientifically useful approximation is obtained.':q.topic==='SI units and derived quantities'?'Relate the named quantity to the physical operation it represents.':q.topic==='Dimensional homogeneity'?'Think about the dimensions of terms in physical equations.':q.topic==='Accuracy and precision'?'Distinguish agreement between readings from agreement with a reference value.':q.topic==='Uncertainty propagation'?'Think about which type of uncertainty is appropriate for the mathematical operation.':'Think about practical limitations of measuring and reporting physical quantities.'}
 function prepare(){
  const plan=groupedSelection(bank.questions,eligible,cfg.arrangement,cfg.count,cfg.shuffle?shuffled:null);
  if(!plan.possible){showError('The selected filters do not provide enough complete scenario sets. Please return to the Test Builder.');return}
