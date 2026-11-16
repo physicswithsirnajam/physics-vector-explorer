@@ -1,0 +1,64 @@
+name: Validate Grade XI Five-Unit Central MCQ Banks (V55)
+on:
+  pull_request:
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/attempt-sync.js"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/**"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - ".github/workflows/validate-grade11-builder-v55.yml"
+  push:
+    branches: [main]
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/attempt-sync.js"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/**"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_single_unit_v54.cjs"
+      - ".github/workflows/validate-grade11-builder-v55.yml"
+  workflow_dispatch:
+jobs:
+  five-unit-source-and-browser-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify script and source syntax
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check scripts/test_builder_five_units_v55.cjs
+          node --check scripts/test_builder_single_unit_v54.cjs
+          node --check portal/attempt-sync.js
+          node -e "const m=require('./question-bank/manifest.json'); if(m.grades[0].units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==673)process.exit(1);"
+      - name: Install Chromium for actual browser test
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test bank adapters and student browser journeys
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Confirm V54 Unit 1 and Unit 2 flows remain working
+        run: node scripts/test_builder_single_unit_v54.cjs
+      - name: Upload real-browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: builder-v55-five-units-source-and-browser-qa
+          path: |
+            qa-artifacts/builder-v55/*.png
+            qa-artifacts/builder-v54/*.png
+          retention-days: 7
+          if-no-files-found: warn

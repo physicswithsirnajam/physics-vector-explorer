@@ -130,18 +130,18 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand"><div class="brand-mark"><img class="brand-logo" src="assets/branding/physics-with-sir-najam-logo.png" alt="Physics with Sir Najam logo"></div><div><div class="brand-title-row"><div class="brand-title">Physics with Sir Najam</div></div><div class="brand-sub">Interactive Practice &amp; Assessment Centre</div></div></div>
-      <span class="header-status"><span class="dot" aria-hidden="true"></span>Practice Engine · Grouped Scenario V7</span>
+      <span class="header-status"><span class="dot" aria-hidden="true"></span>Unit 1–5 MCQ Practice · V55</span>
     </div>
   </header>
   <div class="wrap">
     <section class="hero" aria-labelledby="page-title">
       <div class="eyebrow">Learn • Practise • Assess • Improve</div>
       <h1 id="page-title">Build Your Physics Test</h1>
-      <p>Choose your Physics practice settings. Unit 1 and Unit 2 MCQ practice is live. Other published units will be connected to the central Test Builder in the next stage.</p>
+      <p>Choose your Physics practice settings. All five published Grade XI units now support individual MCQ self-practice. You will soon be able to mix questions from any combination of units.</p>
       <div class="tags"><span class="tag">NBF textbook aligned</span><span class="tag">SLO focused</span><span class="tag">FBISE assessment aware</span><span class="tag">Mobile friendly</span></div>
       <p style="margin-top:16px"><a href="assessment-blueprint/" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">Explore the official Grade XI FBISE Blueprint &amp; Bank Readiness →</a></p>
     </section>
-    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Unit 1 and Unit 2 MCQ practice is ready.</strong> Choose one unit and launch an ungraded 4–60 question test. Combined-unit practice and other published banks are being integrated in following releases.</span></div>
+    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Units 1–5 now have test-ready MCQ banks.</strong> Select ONE unit for provisional self-practice. Unit 5 has 32 questions, so choose an eligible count. Combining multiple units is our next milestone.</span></div>
     <div class="layout">
       <form id="builderForm" class="stack" novalidate>
         <section class="panel" aria-labelledby="scope-title">
@@ -153,9 +153,9 @@
           <div class="field">
             <div class="unit-toolbar"><span class="label">Choose one test-ready unit</span><div class="inline-actions"><button type="button" class="text-button" id="allUnits" disabled title="Combined-unit practice is coming in a later release">Combined-unit soon</button><button type="button" class="text-button" id="clearUnits">Clear</button></div></div>
             <div id="units" class="units" role="group" aria-label="Grade XI Physics units"></div>
-            <small class="help">Unit 1 or Unit 2 is test-ready here. Units 3–5 already have separate practice resources in their Learning Desks; central Test Builder integration is next.</small>
+            <small class="help">All five published units are test-ready individually. Unit 5 has 32 original MCQs across two sets. Mixed-unit practice will be introduced separately.</small>
           </div>
-          <div class="field"><label class="label" for="slo">Specific SLO code (optional)</label><input type="text" id="slo" maxlength="40" placeholder="Example: P-11-B-05" spellcheck="false"><small class="help">Leave blank for all eligible SLOs in the selected units. The Unit 1 pilot supports filtering by mapped SLO codes; other unit SLOs will be added later.</small></div>
+          <div class="field"><label class="label" for="slo">Specific SLO code (optional)</label><input type="text" id="slo" maxlength="40" placeholder="Example: P-11-B-05" spellcheck="false"><small class="help">Leave blank for all eligible SLOs in the selected unit. Source-mapped SLO filters work for the five published banks.</small></div>
         </section>
         <section class="panel" aria-labelledby="mode-title">
           <div class="panel-heading"><div class="step">02</div><div><h2 id="mode-title">Choose your test style</h2><p>Learn at your own pace or prepare under examination-style conditions.</p></div></div>
@@ -181,7 +181,7 @@
           <div class="field"><div class="ticks"><label><input type="checkbox" id="shuffle" checked>Shuffle question order (where appropriate)</label></div></div>
           <div class="field"><div class="ticks"><label><input type="checkbox" id="preferUnseen" checked>Prefer questions not used in recent attempts on this browser</label></div><small class="help">Saves only recent question IDs in this browser when enabled. No account or cloud tracking. Does not guarantee zero repeats.</small></div>
           <div class="buttons"><button class="primary" type="submit">Review My Test Plan →</button><button class="secondary" type="button" id="resetButton">Reset selections</button></div>
-          <p class="help">You can start an eligible Unit 1 or Unit 2 test directly from the Quick Start link in Your Test Plan; reviewing the plan is optional.</p>
+          <p class="help">You can start an eligible Unit 1–5 test directly from the Quick Start link in Your Test Plan; reviewing the plan is optional.</p>
         </section>
       </form>
       <aside class="panel summary" id="summary" aria-labelledby="summary-title">
@@ -204,11 +204,12 @@
         <div class="buttons" style="margin-top:12px"><a id="quickStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start MCQ Practice →</a></div>
         <div id="board-note" class="micro-note"></div>
         <div id="validation" role="status" aria-live="polite"></div>
-        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1 or 2 MCQ selections can launch the Practice Engine below. More units will follow.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Unit 1 or Unit 2 MCQ Practice Engine</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Selected Unit MCQ Practice →</a></div></div>
+        <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Supported Grade XI Unit 1–5 individual MCQ selections can launch the Practice Engine below. Combined-unit practice will follow.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Grade XI Unit 1–5 MCQ Practice Engine</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start Selected Unit MCQ Practice →</a></div></div>
       </aside>
     </div>
-    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V54 · Unit 1 or Unit 2 self-practice · Combined-unit and full exam modes planned</footer>
+    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V55 · Individual Units 1–5 self-practice · Combined-unit and full exam modes planned</footer>
   </div>
+  <script src="shared/practice-bank-adapter-v55.js"></script>
   <script>
     'use strict';
     const unitNames = [
@@ -229,10 +230,10 @@
     };
     let currentPlan = null;
     let lastMode = 'practice';
-    const liveBanks={1:{status:'loading',questions:[],error:''},2:{status:'loading',questions:[],error:''}};
-    const bankFor=p=>p.units.length===1 && [1,2].includes(p.units[0])?liveBanks[p.units[0]]:null;
+    const liveBanks=Object.fromEntries([1,2,3,4,5].map(unit=>[unit,{status:'loading',questions:[],error:''}]));
+    const bankFor=p=>p.units.length===1 && [1,2,3,4,5].includes(p.units[0])?liveBanks[p.units[0]]:null;
     function isPilotConfiguration(p){
-      return (p.mode==='practice'||p.mode==='class') && p.units.length===1 && [1,2].includes(p.units[0]) &&
+      return (p.mode==='practice'||p.mode==='class') && p.units.length===1 && [1,2,3,4,5].includes(p.units[0]) &&
         p.questionType==='mcq' && ['4','10','20','30','40','60'].includes(p.questionCount) && p.timeLimit!=='full';
     }
     function matchedQuestions(p){
@@ -274,7 +275,7 @@
       box.classList.remove('is-warning','is-error');
       if(!isPilotConfiguration(p)){
         count.textContent='Not yet available for this mode';
-        note.textContent='Live availability currently covers Grade XI Unit 1 or Unit 2 MCQs separately in Learn & Practise or Class Test. Combined-unit and full FBISE mock modes are not yet available.';
+        note.textContent='Live availability covers any ONE Grade XI Unit 1–5 MCQ bank in Learn & Practise or Class Test. Combined-unit and full FBISE mock modes are not yet available.';
         box.classList.add('is-warning'); return;
       }
       if(liveBank.status==='loading'){
@@ -304,16 +305,12 @@
       }
     }
     async function loadLiveBanks(){
-      await Promise.all([1,2].map(async unit=>{
+      await Promise.all([1,2,3,4,5].map(async unit=>{
         const liveBank=liveBanks[unit];
         try{
-          const response=await fetch(`question-bank/grade-11/unit-0${unit}.json`,{cache:'no-store'});
-          if(!response.ok)throw new Error('Server returned '+response.status+'.');
-          const data=await response.json();
-          if(!data||!Array.isArray(data.questions)||data.status!=='practice-pilot'||!data.questions.length||data.questions.some(q=>q.grade!==11||q.unit!==unit)){
-            throw new Error('Bank format or unit does not match');
-          }
+          const data=await PSNPracticeBankV55.loadBank(unit,'question-bank/grade-11/');
           liveBank.questions=data.questions;liveBank.status='ready';liveBank.error='';
+          update();
         }catch(error){
           liveBank.status='error';liveBank.error=error instanceof Error?error.message:'Please retry shortly.';
         }
@@ -326,7 +323,7 @@
       const allowed=isPilotConfiguration(p);
       if(!allowed){
         pilotLink.style.display='none';
-        pilotInfo.textContent='For this pilot, select exactly one of Grade XI Unit 1 or Unit 2, MCQs, a supported count (4/10/20/30/40/60), and Learn & Practise or Class Test. Combined-unit and full FBISE paper modes are not active yet.';
+        pilotInfo.textContent='Select exactly ONE of Grade XI Units 1–5, MCQs, an eligible count (4/10/20/30/40/60), and Learn & Practise or Class Test. Combined-unit and full FBISE paper modes are not active yet.';
         return;
       }
       const qs=new URLSearchParams({unit:String(p.units[0]),count:p.questionCount,scope:p.scope,feedback:p.feedback,arrangement:p.arrangement,selection:p.selection,unseen:p.preferUnseen?'true':'false',
@@ -354,16 +351,16 @@
         pilotInfo.textContent='Checking the current question-bank file before enabling the test…';
         return;
       }
-      // Do not launch missing banks: the Unit 2 JSON must be installed before enabling tests.
+      // Do not launch missing or invalid source banks; fail closed.
       pilotLink.style.display='none';
       pilotInfo.textContent='The selected Unit MCQ bank is not available. Check that the correct JSON file is published and retry.';
     }
 
     function setupUnits() {
       $('units').innerHTML=unitNames.map((name,i)=>{
-        const n=i+1,live=n<=2,preset=new URLSearchParams(location.search).get('unit');
-        const chosen=preset==='2'?2:1;
-        const note=live?'Ready for MCQ practice':n<=5?'Separate Learning Desk available':'Unit in preparation';
+        const n=i+1,live=n<=5,preset=new URLSearchParams(location.search).get('unit');
+        const chosen=/^[1-5]$/.test(preset||'')?Number(preset):1;
+        const note=live?'Ready for individual MCQ practice':'Unit in preparation';
         return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&n===chosen?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
       }).join('');
     }
@@ -387,7 +384,7 @@
       $('preferUnseen').disabled=full || $('type').value!=='mcq';
       $('feedback').disabled=full || unit;
       document.querySelectorAll('input[name="cognitive"]').forEach(el=>el.disabled=full);
-      document.querySelectorAll('input[name="unit"]').forEach(el=>el.disabled=full||Number(el.value)>2);
+      document.querySelectorAll('input[name="unit"]').forEach(el=>el.disabled=full||Number(el.value)>5);
       $('allUnits').disabled=true; $('clearUnits').disabled=full;
       if (unit) $('scope').value='summative';
       if (full) $('scope').value='summative';
@@ -431,7 +428,7 @@
       $('sum-scope').textContent=names.scope[p.scope];
       $('sum-slo').textContent=p.slo || 'Any eligible SLO';
       $('sum-units').replaceChildren(...p.units.map(n=>{const tag=document.createElement('span');tag.className='pill';tag.textContent='Unit '+n;return tag;}));
-      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Unit 1 has 275 provisional MCQs and Unit 2 has 206. Choose either unit for self-practice; Units 3–5 remain available separately until integrated here.';
+      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 have 275, 206, 80, 80 and 32 provisional MCQs respectively. Choose any one for self-practice; mixed-unit testing is coming next.';
       const errors=[];
       if (!p.units.length) errors.push('Select at least one textbook unit.');
       if (!p.cognitiveLevels.length) errors.push('Select at least one cognitive level.');
@@ -449,14 +446,14 @@
     function initBuilder(){
       setupUnits();
       $('builderForm').addEventListener('change',event=>{
-        // During the single-unit phase, selecting Unit 2 replaces Unit 1 and vice versa.
+        // During the single-unit phase, selecting another unit replaces the previous selection.
         if(event.target.matches('input[name="unit"]')&&event.target.checked){
           document.querySelectorAll('input[name="unit"]').forEach(el=>{if(el!==event.target)el.checked=false;});
         }
         update();$('plan-output').classList.remove('visible');
       });
       $('slo').addEventListener('input',()=>{update();$('plan-output').classList.remove('visible');});
-      // Combined-unit selection is disabled until multi-bank validation is ready.
+      // Combined-unit selection remains disabled until cross-unit selection and reports are verified.
       $('clearUnits').addEventListener('click',()=>{document.querySelectorAll('input[name="unit"]').forEach(el=>el.checked=false);update();$('plan-output').classList.remove('visible');});
       $('resetButton').addEventListener('click',()=>{
         $('builderForm').reset();lastMode='practice';$('type').value='mcq';$('scope').value='all';$('quantity').value='20';$('timer').value='none';$('slo').value='';$('arrangement').value='random';$('selection').value='balanced';$('preferUnseen').checked=true;setupUnits();update();$('plan-output').classList.remove('visible');
