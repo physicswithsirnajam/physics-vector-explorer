@@ -75,6 +75,15 @@ function source(){
  console.log('PASS V61 source: 160 original corrected Topic 4.1/4.2 MCQs; 112 straight/48 scenario, 12 intact groups; 80 original unchanged.');
  return d;
 }
+/* Restores Word run-level superscript text (720/720 checked Topic4.2 cells). */
+function correctedWordText(value,topic,n){
+ if(topic!==42)return value;
+ let out=String(value).replace(/([vωrm])2\b/g,'$1²')
+  .replace(/s-1\b/g,'s⁻¹').replace(/s-2\b/g,'s⁻²')
+  .replace(/tan-1\(/g,'tan⁻¹(');
+ if(n===48)out=out.replace(/12\.02\b/g,'12.0²');
+ return out;
+}
 async function adapterCheck(d){
  const ctx={
   DecompressionStream,Blob,Response,atob,
@@ -99,10 +108,10 @@ async function adapterCheck(d){
  const added=questions.slice(80),groups=new Map();
  for(let i=0;i<160;i++){
   const q=added[i],r=d.rows[i];
-  assert.equal(q.stem,r[2]);
-  assert.deepEqual(JSON.parse(JSON.stringify(q.options.map(o=>o.text))),r[3]);
+  assert.equal(q.stem,correctedWordText(r[2],r[0],r[1]));
+  assert.deepEqual(JSON.parse(JSON.stringify(q.options.map(o=>o.text))),r[3].map(x=>correctedWordText(x,r[0],r[1])));
   assert.equal(q.correctOptionId,r[4]);
-  assert.equal(q.explanation,r[5]);
+  assert.equal(q.explanation,correctedWordText(r[5],r[0],r[1]));
   assert.equal(q.sourceQuestionNumber,r[1]);
   assert.equal(q.status,'teacher-review-pending');
   assert.equal(q.boardEligible,false);
