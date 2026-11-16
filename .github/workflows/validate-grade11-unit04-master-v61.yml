@@ -1,0 +1,86 @@
+name: Validate Grade XI Unit 4 Corrected Master MCQs (V61)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit04-v61-*.b64"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_master_v61.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "scripts/test_unit03_master_v60.cjs"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "quality/grade11-unit04-master-import-v61.md"
+      - ".github/workflows/validate-grade11-unit04-master-v61.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit04-v61-*.b64"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_master_v61.cjs"
+      - "scripts/test_builder_five_units_v55.cjs"
+      - "scripts/test_builder_multiunit_v56.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "scripts/test_unit03_master_v60.cjs"
+      - "scripts/test_unit05_master_import_v59.cjs"
+      - "quality/grade11-unit04-master-import-v61.md"
+      - ".github/workflows/validate-grade11-unit04-master-v61.yml"
+  workflow_dispatch:
+jobs:
+  unit04-corrected-master-source-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source script syntax and manifest inventory
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check scripts/test_unit04_master_v61.cjs
+          node -e "const m=require('./question-bank/manifest.json');const a=m.grades.find(g=>g.grade===11).units; if(a.length!==5||a.reduce((x,u)=>x+u.liveMcqCount,0)!==1290||a.find(u=>u.unit===4).liveMcqCount!==240)process.exit(1)"
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify corrected source, 160 added MCQs and actual quiz starts
+        run: node scripts/test_unit04_master_v61.cjs
+      - name: Regression — original 5 banks and Unit 5 master source
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Regression — mixed-unit student Test Builder
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — existing Unit 5 master import
+        run: node scripts/test_unit05_master_import_v59.cjs
+      - name: Regression — existing Unit 3 source import
+        run: node scripts/test_unit03_master_v60.cjs
+      - name: Regression — student start guide
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload Chromium screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit04-v61-source-and-browser-regressions
+          path: |
+            qa-artifacts/unit04-v61/*.png
+            qa-artifacts/builder-v55/*.png
+            qa-artifacts/builder-v56/*.png
+            qa-artifacts/guide-v57/*.png
+          retention-days: 7
+          if-no-files-found: warn
