@@ -10,3 +10,153 @@
 #psn-global-nav .psn-nav-links a[aria-current="page"] { background:#e5bc6e; color:#172a42; }
 @media(max-width:820px){#psn-global-nav .psn-nav-inner{padding:7px 10px; gap:5px;}#psn-global-nav .psn-nav-title span{display:none;}#psn-global-nav .psn-nav-links a{padding:8px 9px;font-size:12px;} }
 @media print{#psn-global-nav {display:none!important;}}
+
+
+/* V58: keyboard-friendly collapsible Grade XI resource drawer. */
+#psn-global-nav .psn-nav-menu-button {
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;
+  padding:9px 12px;min-height:40px;border:1px solid #6d819e;
+  border-radius:10px;background:#1f3a5d;color:#fff;
+  font:700 12px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  cursor:pointer;white-space:nowrap;
+}
+#psn-global-nav .psn-nav-menu-button:hover,
+#psn-global-nav .psn-nav-menu-button:focus-visible {
+  background:#385577;border-color:#dbbd82;
+}
+#psn-global-nav .psn-nav-menu-icon{font-size:17px;line-height:1}
+#psn-global-nav .psn-nav-menu-button:focus-visible,
+#psn-resource-drawer a:focus-visible,
+#psn-resource-drawer summary:focus-visible,
+#psn-resource-drawer button:focus-visible{
+  outline:3px solid #e7c383;outline-offset:3px;
+}
+#psn-nav-backdrop{
+  position:fixed;inset:0;background:rgba(4,14,28,.66);
+  z-index:900;cursor:pointer;
+}
+#psn-resource-drawer{
+  position:fixed;z-index:901;left:0;top:0;bottom:0;
+  width:min(390px,94vw);max-width:100%;overflow-y:auto;
+  overscroll-behavior:contain;background:#0b1b32;color:#f4f7ff;
+  box-shadow:18px 0 45px rgba(0,0,0,.38);
+  border-right:1px solid #506d92;
+  padding:16px 16px 25px;
+  font:400 14px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;
+}
+#psn-nav-backdrop[hidden],#psn-resource-drawer[hidden]{display:none!important}
+#psn-resource-drawer *,#psn-resource-drawer *::before,#psn-resource-drawer *::after{box-sizing:border-box}
+#psn-resource-drawer .psn-drawer-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;padding:5px 1px 14px;border-bottom:1px solid #3b506b;
+}
+#psn-resource-drawer .psn-drawer-eyebrow{
+  display:block;color:#e8ca88;font-size:11px;font-weight:800;letter-spacing:.1em;
+}
+#psn-resource-drawer .psn-drawer-header h2{
+  font:700 25px/1.25 Georgia,"Times New Roman",serif;
+  color:#f4f7ff;margin:5px 0 0;
+}
+#psn-resource-drawer .psn-drawer-close{
+  display:inline-flex;align-items:center;justify-content:center;
+  flex:none;border:1px solid #8298b4;border-radius:9px;
+  color:#fff;background:#1f3754;width:39px;height:39px;
+  font-size:28px;line-height:1;cursor:pointer;
+}
+#psn-resource-drawer .psn-drawer-quick{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;margin:15px 0 12px;width:100%;
+}
+#psn-resource-drawer .psn-drawer-quick a{
+  display:flex;align-items:center;justify-content:center;min-width:0;
+  text-align:center;min-height:44px;padding:9px;
+  text-decoration:none;background:#1b385a;border:1px solid #567392;
+  border-radius:9px;color:#f7fafc;font-weight:750;font-size:12px;
+  line-height:1.35;
+}
+#psn-resource-drawer .psn-drawer-quick a:hover{background:#31557d}
+#psn-resource-drawer .psn-drawer-hint{
+  margin:9px 0;color:#c3d2e6;font-size:12px;line-height:1.65;
+}
+#psn-resource-drawer .psn-drawer-loading{
+  margin:10px 0;color:#e7c581;font-weight:650;font-size:12px;
+}
+#psn-resource-drawer .psn-drawer-content{
+  display:block;width:100%;min-width:0;max-width:none;
+  background:none;border:0;padding:0;margin:0;
+}
+#psn-resource-drawer .psn-drawer-unit{
+  display:block;min-width:0;border:1px solid #466282;
+  background:#112b49;border-radius:10px;margin:9px 0;
+}
+#psn-resource-drawer .psn-drawer-unit-summary{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;cursor:pointer;list-style:none;min-height:48px;
+  padding:12px;color:#f4f8ff;
+}
+#psn-resource-drawer summary::-webkit-details-marker{display:none}
+#psn-resource-drawer .psn-drawer-unit-summary strong{
+  font-size:13px;font-weight:760;line-height:1.5;min-width:0;overflow-wrap:anywhere;
+}
+#psn-resource-drawer .psn-drawer-chevron{
+  display:inline-block;flex:none;color:#dcbf84;font-size:10px;letter-spacing:.02em;
+}
+#psn-resource-drawer .psn-drawer-unit[open] .psn-drawer-chevron{font-size:0}
+#psn-resource-drawer .psn-drawer-unit[open] .psn-drawer-chevron::before{
+  content:"Collapse";font-size:10px;
+}
+#psn-resource-drawer .psn-drawer-unit-body{
+  padding:5px 11px 13px;border-top:1px solid #496180;
+}
+#psn-resource-drawer .psn-drawer-resource-link{
+  display:flex;align-items:flex-start;flex-direction:column;gap:3px;
+  width:100%;min-width:0;overflow-wrap:anywhere;
+  padding:10px 10px;margin:4px 0;text-decoration:none;
+  color:#f2f6ff;font-size:12px;font-weight:600;line-height:1.5;
+  background:#1d3b5e;border:1px solid transparent;border-radius:8px;
+}
+#psn-resource-drawer .psn-drawer-resource-link:hover,
+#psn-resource-drawer .psn-drawer-resource-link:focus-visible{background:#315579;border-color:#9eb6d0}
+#psn-resource-drawer .psn-drawer-resource-link[aria-current="page"]{border-color:#e6c582}
+#psn-resource-drawer .psn-drawer-resource-link small{
+  color:#eccb8f;font-weight:700;font-size:10px;
+}
+#psn-resource-drawer .psn-drawer-category{
+  display:block;margin:8px 0 2px;border:1px solid #466283;border-radius:8px;
+  background:#152f4e;min-width:0;
+}
+#psn-resource-drawer .psn-drawer-category summary{
+  display:block;cursor:pointer;padding:11px 10px;
+  font-size:12px;font-weight:750;color:#e6cc92;line-height:1.5;
+}
+#psn-resource-drawer .psn-drawer-category summary::before{
+  content:"▸";display:inline-block;margin-right:7px;color:#eccb8c;
+}
+#psn-resource-drawer .psn-drawer-category[open] summary::before{content:"▾"}
+#psn-resource-drawer .psn-drawer-category-links{
+  padding:1px 7px 7px;
+}
+#psn-resource-drawer .psn-drawer-category-links a{
+  padding:10px;background:#203d60;
+}
+#psn-resource-drawer .psn-drawer-access{
+  margin:15px 2px 0;padding:12px;border:1px solid #57718c;
+  border-radius:9px;color:#d3e0ef;font-size:11px;line-height:1.7;
+}
+#psn-resource-drawer .psn-drawer-fallback p{
+  padding:12px;color:#dce8f8;font-size:12px;line-height:1.6;
+}
+@media(max-width:820px){
+  #psn-global-nav .psn-nav-menu-button{padding:8px 10px}
+  #psn-global-nav .psn-nav-menu-text{display:none}
+  #psn-resource-drawer{width:min(385px,95vw);padding:14px}
+}
+@media(max-width:420px){
+  #psn-resource-drawer .psn-drawer-header h2{font-size:23px}
+  #psn-resource-drawer .psn-drawer-unit-summary{min-height:50px}
+}
+@media print{
+  #psn-resource-drawer,#psn-nav-backdrop{display:none!important}
+  #psn-global-nav .psn-nav-menu-button{display:none!important}
+}
