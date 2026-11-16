@@ -59,7 +59,7 @@ async function sourceIntegrity(){
  const restricted=all.filter(q=>q.unit!==5||q.sloCodes.includes('P-11-B-29'));
  assert.equal(p.plan(all,restricted,[5],'random',20).possible,true,'Unit 5 now has 88 source-backed P-11-B-29 MCQs');
  assert.equal(restricted.filter(q=>q.unit===5).length,88);
- console.log('PASS V60+V56 planner: 1130 unique records, five-unit 4+4+4+4+4, mixed groups, exact scenario coverage and fail-closed filtering.');
+ console.log('PASS V61+V56 planner: 1290 unique records, five-unit 4+4+4+4+4, mixed groups, exact scenario coverage and fail-closed filtering.');
 }
 async function actualBrowser(){
  await new Promise((resolve,reject)=>server.listen(0,'127.0.0.1',err=>err?reject(err):resolve()));
