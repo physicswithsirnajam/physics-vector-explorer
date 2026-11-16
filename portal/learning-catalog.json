@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v53-unit5-projector-teacher-staged-solutions-2026-11-15",
+  "catalogVersion": "pilot-v59-unit5-master-349-central-mcqs-2026-11-16",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
   "grades": [
     {
@@ -116,8 +116,8 @@
           "unit": 5,
           "title": "Work and Energy",
           "status": "available",
-          "summary": "Source-grounded NBF Unit 5 teaching pilot: signed work and force–displacement graphs, conservative versus non-conservative force fields, kinetic energy derivation, and the work–energy theorem in a resistive medium. Public learning desk, study guide and four-station interactive explorer; no formal Unit 5 board exam released. The user-uploaded official FBISE HSSC-I 2024-scheme assessment framework has been checked directly: B-29–B-32 are all summative theory with A/A/U/A cognitive classification. Separate PBA list and any newer online edition have not been checked. V50 publishes sixteen newly authored original, provisional summative theory MCQs (four per verified SLO), twelve standalone and four contextual, in boxed FBISE-style paper format with a separate public post-practice worked key. V51 adds a separate 16-question Set B, also 4 items per B-29–B-32, for 32 original pilot MCQs in two distinct 8-mark mini-practice papers; each has a separate public worked key. V52 adds a separate ungraded 40-mark Unit 5 descriptive/numerical practice supplement: seven 4-mark short questions and two 6-mark extended questions, each with equal-marks internal OR, original source-mapped prompts and a distinct public after-practice worked teacher marking key. V53 adds teacher-led projector discussion of the existing 9 descriptive OR pairs (18 original alternatives), with one-mark reasoning steps revealed one at a time; no new exam questions or marks.",
-          "questionBankCount": 32,
+          "summary": "Unit 5 source-mapped study, interactive Work–Energy Explorer, 349 provisional central MCQs (32 original + 317 teacher-master topic MCQs), 26 four-question scenario groups, 40-mark descriptive practice, and projector discussion.",
+          "questionBankCount": 349,
           "assessmentStatus": "provisional-ungraded-two-16-mcq-sets-plus-unit5-40-mark-descriptive-practice",
           "resourceIds": [
             "unit5-desk",
@@ -132,9 +132,9 @@
             "unit5-descriptive-worked-key",
             "unit5-projector-discussion"
           ],
-          "qualityStatus": "Unit 5 NBF printed pp.77–87 visually checked. Supplied official FBISE HSSC-I Physics Assessment Framework PDF page 11 (framework printed p.5) verifies B-29, B-30, B-31 and B-32 as Summative theory SLOs (Application, Application, Understanding, Application). Official full-grade paper pattern verified from PDF pp.28,30; PBA summative practicals expressly require separate source per PDF p.27. Sixteen provisional Unit 5 classroom MCQs and a separate public worked key released; numerics and bank-key consistency tested automatically. Human item-by-item academic review still required. Official full-grade exam paper, scannable OMR and recorded grading remain unpublished. V51 Set B adds 16 independently calculated, source-mapped provisional questions, balanced answer letters, and a separate public post-practice three-step worked key. Sets A and B remain separate student papers, not an official full-grade paper. Human scientific review still pending. V52 adds 18 internally OR paired descriptive alternatives (seven 4-mark and two 6-mark question pairs). Every alternative has an independently source-mapped four- or six-point mark allocation. Student/teacher source separation, browser/print responsiveness, and numerical arithmetic are regression-tested. Final independent teacher examiner signoff remains pending. V53 adds a source-driven public teacher projector viewer that reuses the unchanged V52 student/teacher data and explicitly reveals one marking step at a time. Browser QA and final independent teacher academic signoff are required.",
+          "qualityStatus": "V59 master-topic import source counts, options, explanation keys and scenario grouping verified structurally; independent item-by-item scientific and book figure audit pending",
           "resourceAccess": "public-learning-resources",
-          "studentNotice": "Unit 5 offers 32 original provisional MCQs across Set A/B and now a separate 40-mark unit-only descriptive/numerical practice supplement (7 four-mark short and 2 six-mark extended questions, each with internal OR). These are NOT full-syllabus official FBISE papers. All three worked answer keys are publicly accessible after practice; no student answers, scores or grades are collected or saved. A public ungraded teacher-led projector discussion is provided separately for use after student practice; its answers are not access-restricted.",
+          "studentNotice": "The central Unit 5 Test Builder contains 349 provisional MCQs: the 32 original V50/V51 items plus 317 newly imported source-master topic items (221 straight + 96 scenario), with 3 master questions held pending required textbook figures. The new topic items and source answer keys are structurally checked, not independently examiner-approved. Public ungraded practice only; cloud saving for Unit 5 remains disabled.",
           "landingHref": "./unit-05.html",
           "descriptivePracticeStatus": "provisional-unit-5-only-40-mark-seven-srq-two-erq-internal-OR-teacher-review-pending",
           "descriptivePracticeMarks": 40,
