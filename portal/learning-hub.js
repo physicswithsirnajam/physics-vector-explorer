@@ -6,7 +6,7 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=18',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=57',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
@@ -100,6 +100,10 @@ function renderGrade(){
   card.append(top,desc,meta,note);
   const unitHref=u.landingHref?safeHref(u.landingHref):null;
   if(unitHref){const link=document.createElement('a');link.href=unitHref;link.className='btn btn-secondary btn-small';link.textContent=`Open Unit ${u.unit} Learning Desk ↗`;card.append(link);}
+  if(hasBank&&Number.isInteger(u.unit)&&u.unit>=1&&u.unit<=5){
+    const practiceHref=safeHref('../build-your-physics-test.html?unit='+u.unit);
+    if(practiceHref){const practice=document.createElement('a');practice.href=practiceHref;practice.className='btn btn-primary btn-small';practice.textContent=`Practise Unit ${u.unit} MCQs ↗`;card.append(practice);}
+  }
   list.append(card);
  }
  const upcoming=resetChildren('hub-planned-units');
@@ -145,7 +149,7 @@ export function updateLearningHubInsight(analytics,hasOlder){
  const needs=analytics?.needsEvidence?.[0];
  const target=focus||needs;
  if(!analytics?.attempts){
-  message.textContent='Start with a short MCQ test from Unit 1 or Unit 2. Save your result to begin building a personal revision history.';
+  message.textContent='Practise MCQs from any published Grade XI Unit 1–5, or combine units. To build a private saved history, start with an individual Unit 1 or Unit 2 test and choose Save after submitting.';
   note.textContent='No saved practice results have been loaded yet.';
   link.href=fallbackBuilder;link.textContent='Build my first test ↗';return;
  }
@@ -156,7 +160,7 @@ export function updateLearningHubInsight(analytics,hasOlder){
   link.href=targetedPracticeUrl(target.code)||fallbackBuilder;
   link.textContent=focus?'Practise suggested SLO ↗':'Collect more SLO practice ↗';
  }else{
-  message.textContent='No specific revision priority is established from the currently loaded attempts. Continue practising different Unit 1 and Unit 2 outcomes.';
+  message.textContent='No specific revision priority is established from your currently saved Unit 1/2 attempts. You can practise any of Units 1–5; combined-unit results can be printed but are not saved to your account yet.';
   link.href=fallbackBuilder;link.textContent='Choose another practice test ↗';
  }
  note.textContent=hasOlder
