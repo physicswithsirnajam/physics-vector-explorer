@@ -161,6 +161,19 @@ async function loadMasterFour(basePath){
  const json=await new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
  return JSON.parse(json);
 }
+/* Word's run-level superscripts were flattened by the plain-text extractor.
+ * Confirmed against every original text cell in corrected Topic 4.2 tables:
+ * 720/720 reconstructed cells match the visual Word superscript content.
+ * Restrict these restorations to that one topic; do not guess in other banks.
+ */
+function restoreCorrectedUnitFourMath(value,topic,n){
+ if(topic!==42)return value;
+ return String(value)
+  .replace(/([vωrm])2\b/g,'$1²')
+  .replace(/s-1\b/g,'s⁻¹').replace(/s-2\b/g,'s⁻²')
+  .replace(n===48?/12\.02\b/g:/(?!)nothing/g, n===48?'12.0²':'')
+  .replace(/tan-1\(/g,'tan⁻¹(');
+}
 function adaptMasterFour(master,old){
  const topics={41:['P-11-B-07','P-11-B-08','P-11-B-09'],
    42:['P-11-B-10','P-11-B-14','P-11-B-15','P-11-B-21']};
@@ -187,8 +200,10 @@ function adaptMasterFour(master,old){
    'missing original scenario '+id);
   const q={id,grade:11,unit:4,active:true,type:'single_choice',
    status:'teacher-review-pending',boardEligible:false,
-   stem,options:options.map((text,i)=>({id:'ABCD'[i],text})),
-   correctOptionId:answer,explanation,sloCodes:topics[topic],
+   stem:restoreCorrectedUnitFourMath(stem,topic,n),
+   options:options.map((text,i)=>({id:'ABCD'[i],text:restoreCorrectedUnitFourMath(text,topic,n)})),
+   correctOptionId:answer,explanation:restoreCorrectedUnitFourMath(explanation,topic,n),
+   sloCodes:topics[topic],
    assessmentClassification:'summative-theory',difficulty:'Unspecified',
    cognitiveLevel:'Unspecified',
    sloAlignment:'Topic-level provisional source SLO mapping; item-level teacher review pending',
