@@ -168,11 +168,12 @@ async function loadMasterFour(basePath){
  */
 function restoreCorrectedUnitFourMath(value,topic,n){
  if(topic!==42)return value;
- return String(value)
+ let correct=String(value)
   .replace(/([vωrm])2\b/g,'$1²')
   .replace(/s-1\b/g,'s⁻¹').replace(/s-2\b/g,'s⁻²')
-  .replace(n===48?/12\.02\b/g:/(?!)nothing/g, n===48?'12.0²':'')
   .replace(/tan-1\(/g,'tan⁻¹(');
+ if(n===48)correct=correct.replace(/12\.02\b/g,'12.0²');
+ return correct;
 }
 function adaptMasterFour(master,old){
  const topics={41:['P-11-B-07','P-11-B-08','P-11-B-09'],
