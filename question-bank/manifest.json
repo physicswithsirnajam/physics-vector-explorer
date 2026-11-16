@@ -66,14 +66,27 @@
           "unit": 4,
           "name": "Rotational and Circular Motion",
           "path": "grade-11/unit-04-v39-80-practice.json",
-          "liveMcqCount": 80,
-          "sourceSloMcqCount": 80,
-          "summativePilotCount": 80,
-          "scenarioGroupCount": 6,
+          "liveMcqCount": 240,
+          "sourceSloMcqCount": 240,
+          "summativePilotCount": 240,
+          "scenarioGroupCount": 18,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v39-unit04-80-fbise-provisional-2026-11-15",
-          "importNote": "V55 central runtime adapter retains the original V39 80 provisional items; 6 complete four-question scenarios, original keys and explanations preserved. Human teacher review pending."
+          "bankVersion": "v61-original-v39-80-plus-corrected-topics41-42-160",
+          "importNote": "V61 retains the original V39 80-MCQ classroom source bank, separate 80-question paper/projector/OMR and all prior keys unchanged. The central public Test Builder additionally imports 160 MCQs from corrected 8 Oct Unit 4 Student Notes Topics 4.1 and 4.2 (112 straight + 48 in 12 intact four-question scenarios). Source option/key/explanation rows are structurally matched; individual new SLO tags are provisional TOPIC-LEVEL arrays, NOT item-level certified classification. Original 12 summative theory SLO teaching audit remains unchanged. Full corrected master has 560 original topic MCQs; Topics 4.3–4.7 (400, including figure-dependent Topic 4.3 Q38) remain held for later review/import. No secure examination or cloud save for Unit 4. Independent scientific and curricular teacher QC pending.",
+          "newMasterImportedCount": 160,
+          "masterSourceTopicCount": 560,
+          "masterTopicsImported": {
+            "4.1": 80,
+            "4.2": 80
+          },
+          "originalClassroomPaperCount": 80,
+          "sourceFiles": [
+            "grade-11/unit-04-v39-80-practice.json",
+            "grade-11/unit04-v61-part1.b64",
+            "grade-11/unit04-v61-part2.b64",
+            "grade-11/unit04-v61-part3.b64"
+          ]
         },
         {
           "unit": 5,
@@ -109,6 +122,6 @@
       ]
     }
   ],
-  "bankVersion": "v60-five-unit-central-1130-source-mcqs",
+  "bankVersion": "v61-five-unit-central-1290-source-mcqs",
   "lastUpdated": "2026-11-16"
 }
