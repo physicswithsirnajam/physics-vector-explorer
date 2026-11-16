@@ -34,8 +34,8 @@ async function sourceIntegrity(){
  assert.equal(p.isValidUnits([]),false);
  const banks=await Promise.all([1,2,3,4,5].map(u=>a.loadBank(u,'question-bank/grade-11/')));
  const all=banks.flatMap(b=>b.questions);
- assert.equal(all.length,1130);
- assert.equal(new Set(all.map(q=>q.id)).size,1130);
+ assert.equal(all.length,1290);
+ assert.equal(new Set(all.map(q=>q.id)).size,1290);
  const standard=p.plan(all,all,[5,3,1,2,4],'random',20);
  assert.equal(standard.possible,true);assert.equal(standard.allocations.length,5);
  assert.equal(standard.allocations.reduce((n,a)=>n+a.count,0),20);
@@ -98,7 +98,7 @@ async function actualBrowser(){
 
   await page.goto(base+'build-your-physics-test.html',{waitUntil:'networkidle'});
   await page.locator('#allUnits').click();
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1130 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1290 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),5);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quantity').selectOption('4');
@@ -135,7 +135,7 @@ async function actualBrowser(){
   console.log('PASS V56 browser: five-unit scenario-only 20-question test includes five complete, consecutively ordered 4-item scenarios.');
 
   await page.goto(base+'build-your-physics-test.html?units=2,4',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('286 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('446 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
