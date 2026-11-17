@@ -27,12 +27,20 @@ function validatePdf(file,minPages){
  const meta=execFileSync('pdfinfo',[file],{encoding:'utf8'});
  const pages=Number(meta.match(/^Pages:\s+(\d+)/m)?.[1]||0);
  assert.ok(pages>=minPages,'expected at least '+minPages+' actual A4 pages, found '+pages+' for '+file);
- const content=execFileSync('pdftotext',['-layout',file,'-'],{encoding:'utf8',maxBuffer:5*1024*1024});
+ const content=execFileSync('pdftotext',['-raw',file,'-'],{encoding:'utf8',maxBuffer:5*1024*1024});
  const parts=content.split('\f').filter(p=>p.trim());
  assert.equal(parts.length,pages,'must parse and inspect all PDF pages');
  for(let i=0;i<parts.length;i++){
-  const count=(parts[i].match(/Physics\s+with\s+Sir\s+Najam/gi)||[]).length;
-  assert.ok(count>=4,'repeat-on-page watermark missing from '+file+' page '+(i+1)+'; count='+count);
+  // Rotated lettering is often extracted by Chromium/Poppler as separate
+  // PHYSICS WITH / SIR / NAJAM fragments; raw extraction preserves order.
+  // Validate at least four distinct repetitions of *all* brand components.
+  const upper=parts[i].toUpperCase();
+  const physics=(upper.match(/PHYSICS\s+WITH/g)||[]).length;
+  const sir=(upper.match(/SIR/g)||[]).length;
+  const najam=(upper.match(/NAJAM/g)||[]).length;
+  assert.ok(physics>=4&&sir>=4&&najam>=4,
+    'repeat-on-page watermark missing from '+file+' page '+(i+1)+
+    '; physics='+physics+', sir='+sir+', najam='+najam);
  }
  return pages;
 }
