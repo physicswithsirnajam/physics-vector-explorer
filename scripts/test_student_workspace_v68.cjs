@@ -152,7 +152,7 @@ async function main(){
   const tab=page.locator('#psn-workspace-nav a[href="#my-profile"]');
   assert.equal(await tab.getAttribute('aria-current'),'page');
   await page.screenshot({path:path.join(out,'read-only-profile-mobile.png'),fullPage:false});
-  await page.goto(base+'portal/#my-progress',{waitUntil:'networkidle'});
+  await page.goto(base+'portal/?fresh=1#my-progress',{waitUntil:'networkidle'});
   await page.waitForFunction(()=>window.PSNWorkspaceTabs?.current()==='progress');
   // The auth-only outer dashboard remains hidden until a verified login.
   assert.equal(await page.locator('#dashboard-screen').isHidden(),true);
