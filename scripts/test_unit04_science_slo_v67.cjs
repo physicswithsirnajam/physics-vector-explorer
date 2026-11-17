@@ -90,7 +90,7 @@ async function audit(){
   assert.equal(q.assessmentClassification,'summative-theory','non-summative labelled Unit4 question '+q.id);
   assert.equal(q.status,'teacher-review-pending');
   assert.equal(q.boardEligible,false);
-  assert.equal(q.options.length,4);assert.deepEqual(q.options.map(o=>o.id),['A','B','C','D']);
+  assert.equal(q.options.length,4);assert.deepEqual(JSON.parse(JSON.stringify(q.options.map(o=>o.id))),['A','B','C','D']);
   const distinct=new Set(q.options.map(o=>normalize(o.text)));
   assert.equal(distinct.size,4,'duplicate distractor option inside original question '+q.id);
   assert.ok(q.options.some(o=>o.id===q.correctOptionId));
