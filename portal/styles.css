@@ -195,6 +195,11 @@
 #admin-learner-section,#admin-privacy-section,#admin-future-work{scroll-margin-top:130px}
 @media(max-width:550px){.admin-section-tabs{display:grid;grid-template-columns:1fr 1fr}.admin-section-tabs a{padding:11px}}
 
+/* V73 — original, explicitly public external PDF and concept-video page links. */
+.hub-source-reference-shortcut{display:inline-flex;align-items:center;margin-top:8px;padding:8px 11px;max-width:100%;border:1px solid #ccceac;border-radius:8px;background:#f8f4e8;color:#695122;text-decoration:none;font-size:11px;font-weight:750;line-height:1.4;overflow-wrap:anywhere}
+.hub-source-reference-shortcut:hover{background:#f3e8cb;text-decoration:underline}
+.hub-source-reference-shortcut:focus-visible{outline:3px solid #cb9b45;outline-offset:2px}
+.hub-planned-unit .hub-source-reference-shortcut{font-size:10px}
 /* V72 — gentle simulation shortcuts in active and not-yet-released unit cards. */
 .hub-sim-shortcut{display:inline-flex;align-items:center;gap:5px;max-width:100%;width:max-content;margin-top:8px;padding:7px 10px;border:1px solid #bed4dd;border-radius:8px;background:#e8f4f4;color:#174c5e;text-decoration:none;font-size:11px;font-weight:750;line-height:1.45;overflow-wrap:anywhere}
 .hub-sim-shortcut:hover{background:#d8eff0;border-color:#89b4c2;text-decoration:underline}
