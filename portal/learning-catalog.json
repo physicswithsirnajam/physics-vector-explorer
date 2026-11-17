@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v71-internal-study-and-simulations-2026-11-17",
+  "catalogVersion": "pilot-v72-unit-simulation-index-no-legacy-audit-2026-11-17",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 have 1,690 provisional MCQs across the public Test Builder, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -32,7 +32,10 @@
           "qualityStatus": "academic-audit-pending",
           "resourceAccess": "mixed-public-and-pilot-protected",
           "studentNotice": "Unit 1 is a self-practice pilot. Textbook-page mapping, independent scientific review and exact FBISE readiness remain incomplete.",
-          "landingHref": "./unit-01.html"
+          "landingHref": "./unit-01.html",
+          "simulationCount": 0,
+          "simulationHref": "./simulations.html?unit=1",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 2,
@@ -54,7 +57,10 @@
           "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
           "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
           "studentNotice": "Unit 2 offers protected lessons, 206 provisional public MCQs, all 30 Stage 5 worked numericals, all 35 Stage 3 short responses, all 15 Stage 4 comprehensive answers, a formula sheet and a new public local interactive self-check lab. The lab does not save grades to My Physics Progress.",
-          "landingHref": "./unit-02.html"
+          "landingHref": "./unit-02.html",
+          "simulationCount": 2,
+          "simulationHref": "./simulations.html?unit=2",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 3,
@@ -78,7 +84,10 @@
           "qualityStatus": "Provisional public Unit 3 practice: original 80 summative MCQs plus 80 master collision summative and 60 master momentum formative MCQs (17 intact 4-question scenarios), 40 descriptive marks in separate original papers. Later Topic 3.1/3.2 revised keys disagree with earlier saved student edition and are withheld; independent teacher scientific QC remains pending.",
           "resourceAccess": "public-learning-resources",
           "studentNotice": "Central Test Builder now has 220 Unit 3 MCQs: 160 summative theory and 60 FORMATIVE momentum learning questions; use the Summative scope filter for final-exam theory SLO practice. The original independent 40-MCQ and 80-MCQ Unit 3 paper pages remain unchanged. New source Topic 3.3/3.4 questions retain 11 full 4-question scenarios; source corrections and key QC are provisional. Student Grade XI Unit 3 cloud score saving is not enabled.",
-          "landingHref": "./unit-03.html"
+          "landingHref": "./unit-03.html",
+          "simulationCount": 4,
+          "simulationHref": "./simulations.html?unit=3",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 4,
@@ -110,7 +119,10 @@
           "qualityStatus": "Public provisional Unit 4-only assessment practice: 80 MCQs, 40 descriptive marks, manual practice OMR sheets, explained teacher key and source-calculated SLO/marks distributions. Teacher content and browser/print sign-off still pending. Not an official FBISE key, scannable OMR or recorded exam. The public timed projector mode shows only questions and options; no assessment login, official answer release or grade capture. Public, separate V46 discussion page reveals the provisional answer and reasoning only on explicit teacher command; this is not secured or examiner certified. V47 per-SLO subset counts and cognitive-level mix are calculated live from the provisional original bank, not hand-certified as official exam distributions. V61 supplements central MCQ bank from corrected 8 October source with 160 original 4.1/4.2 items; the 12 new groups and all keys are source-checked structurally. Item-level SLO and independent scientific review remain pending. Original separate classroom80 unchanged. V62 supplemented 155 source-key-matched MCQs from corrected topics 4.3 and 4.4, preserving Word superscript formatting. Five figure-referencing topic 4.3 questions held. Public ungraded practice only; independent academic sign-off pending. V63 added 80 Word source-matched Topic4.5 items and six full scenarios to PUBLIC central practice; independent item-level Physics and FBISE validation remain pending. V64 added original corrected Topic4.6 80 source-key-matched MCQs with six intact scenarios and Word superscripts to PUBLIC ungraded central practice; subject-level review remains pending. V65 completed corrected seven-topic master import except five Figure4.13-dependent Topic4.3 original MCQs. 80 original corrected Topic4.7 Artificial Gravity MCQs added from the source with six intact scenarios. Public practice only, no protected assessment or academic certification. V66 recovered NBF Grade XI textbook Fig4.13 (printed p64), confirmed rectangular-plate perpendicular centre/corner formulas, imported five matching source-key/option items as one independent and one complete 4-item stimulus group, and displays an accessible original figure reference. Complete source inventory 560/560, not independently teacher/FBISE certified.",
           "resourceAccess": "public-learning-resources",
           "studentNotice": "Unit 4 central Test Builder offers 640 provisional PUBLIC MCQs: 80 provisional public self-practice MCQs retained from original classroom source plus all 560 original corrected source MCQs across Topics4.1–4.7. Its 48 complete four-question scenario groups include the original Figure4.13-linked Q69–72 scenario; Q38 is standalone. The separate original 80-question classroom paper, projector, teacher discussion, manual OMR and descriptive OR materials remain unchanged and cover 12 summative SLOs including P-11-B-21. No protected Unit 4 tests or cloud-saved scores are offered; saved scores for Units 1/2 remain subject to existing rules. The original learning schematic is based on the NBF textbook Fig4.13, printed p64, not a scan. Keys are source-matched, not official FBISE-certified; individual SLO mapping and Physics correctness require teacher review.",
-          "landingHref": "./unit-04.html"
+          "landingHref": "./unit-04.html",
+          "simulationCount": 4,
+          "simulationHref": "./simulations.html?unit=4",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 5,
@@ -139,57 +151,80 @@
           "descriptivePracticeStatus": "provisional-unit-5-only-40-mark-seven-srq-two-erq-internal-OR-teacher-review-pending",
           "descriptivePracticeMarks": 40,
           "descriptivePracticePairs": 9,
-          "descriptivePracticeAlternatives": 18
+          "descriptivePracticeAlternatives": 18,
+          "simulationCount": 1,
+          "simulationHref": "./simulations.html?unit=5",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 6,
-          "title": "Unit 6 — Content in preparation",
+          "title": "Fluid Mechanics",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "simulationCount": 5,
+          "simulationHref": "./simulations.html?unit=6",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 7,
-          "title": "Unit 7 — Content in preparation",
+          "title": "Physics of Solids",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "simulationCount": 2,
+          "simulationHref": "./simulations.html?unit=7",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 8,
-          "title": "Unit 8 — Content in preparation",
+          "title": "Heat and Thermodynamics",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "simulationCount": 4,
+          "simulationHref": "./simulations.html?unit=8",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 9,
-          "title": "Unit 9 — Content in preparation",
+          "title": "Waves",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "simulationCount": 7,
+          "simulationHref": "./simulations.html?unit=9",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 10,
-          "title": "Unit 10 — Content in preparation",
+          "title": "Electrostatics",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "simulationCount": 2,
+          "simulationHref": "./simulations.html?unit=10",
+          "simulationMapStatus": "provisional-topic-navigation"
         },
         {
           "unit": 11,
