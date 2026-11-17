@@ -14,6 +14,7 @@
 | Unit concept videos | **15 links** on HSSC-I index pp. 2–14 | All 15 exact existing Google Sites video **subpage** links recovered; **original YouTube/video-host URLs and embedded player availability were not inspectable**. Do not claim videos have been copied/hosted |
 | General-interest video pages | **2 links** on HSSC-I index p. 14 | Exact Google Sites subpage URLs recovered and indexed, original video host not verified |
 | Original Drive PDF study files | **17 PDFs** in Grade XI folder (7 Unit1, 7 Unit2, 1 each Units3/4/5) | All 17 exact Drive links/filenames recorded; permissions were **Anyone with the link: Reader** at audit. These links continue to open original Drive, **NOT portal-private downloads** |
+| Other old Google Sites lesson/exercise subpages | **17 further clickable subpages** on index pp. 2–6 (7 Unit1, 7 Unit2, 1 classroom-lecture page each Units3/4/5) | Exact original URLs preserved in manifest for next content-body audit; NOT asserted replaced/migrated. Headings for later units without printed hyperlinks are not counted. |
 | Additional external Unit 7 reading | Lumen Learning crystal-lattice article, p. 8, exact original URL | Source URL preserved and visibly attributed to its original publisher |
 | Unit1 simulations | PDF p. 2 contains 'Simulations' heading but no linked individual model | No original Unit1 sim added/invented |
 | Unit11–14 simulations/notes | PDF pp. 12–14 show headings with no linked simulation pages/handouts | No original models/notes invented; videos indexed; units remain planned |
@@ -72,6 +73,7 @@ The total unit video pages (15) plus general-interest pages (2) equals 17 refere
 - All original source Drive PDFs stay **unchanged and unwatermarked**. Downloads depend on Drive viewer and existing owner permissions. These are **NOT** uploaded as PDFs to GitHub and **NOT** protected by Firebase login.
 - Active and planned unit cards in the signed-in Grade XI learning hub show their source handout/video link count and a shortcut to the appropriate unit in this index. The existing 31+9 simulation library is unchanged.
 - Original 1,690 MCQs, Grade XI units6–14 course-release statuses, registration, auth, reporting, student data, Grade 9 pages, Google Sites sharing and Firebase security configuration are unchanged.
+- As a lossless reference, the source manifest also stores 17 other old **Google Sites lecture/notes/exercise subpage URLs** and the original old Test Builder subpage URL. Their actual page bodies are not accessible and **they are NOT marked migrated** merely because their old links are archived.
 
 ## 5. Follow-up steps before saying "everything was moved"
 
