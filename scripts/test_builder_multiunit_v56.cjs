@@ -135,7 +135,7 @@ async function actualBrowser(){
   console.log('PASS V56 browser: five-unit scenario-only 20-question test includes five complete, consecutively ordered 4-item scenarios.');
 
   await page.goto(base+'build-your-physics-test.html?units=2,4',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('601 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('681 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
