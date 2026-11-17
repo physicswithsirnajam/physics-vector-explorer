@@ -6,7 +6,7 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=71',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=72',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
@@ -104,14 +104,29 @@ function renderGrade(){
     const practiceHref=safeHref('../build-your-physics-test.html?unit='+u.unit);
     if(practiceHref){const practice=document.createElement('a');practice.href=practiceHref;practice.className='btn btn-primary btn-small';practice.textContent=`Practise Unit ${u.unit} MCQs ↗`;card.append(practice);}
   }
+  if(u.simulationCount>0&&u.simulationHref){
+    const simulationHref=safeHref(u.simulationHref);
+    if(simulationHref){const explore=document.createElement('a');explore.href=simulationHref;
+      explore.className='hub-sim-shortcut';explore.textContent='Explore '+u.simulationCount+' original simulation'+(u.simulationCount===1?'':'s')+' ↗';
+      card.append(explore);}
+  }
   list.append(card);
  }
  const upcoming=resetChildren('hub-planned-units');
  for(const u of planned){
   const card=document.createElement('div');card.className='hub-planned-unit';
-  const label=document.createElement('span');label.textContent=`Unit ${u.unit}`;
-  const note=document.createElement('small');note.textContent='Content in preparation — not yet available';
-  card.append(label,note);upcoming.append(card);
+  const label=document.createElement('span');label.textContent='Unit '+u.unit+' · '+(u.title||'Physics');
+  const note=document.createElement('small');
+  note.textContent=u.simulationCount>0
+    ?'Full unit notes and MCQs in preparation; original interactive labs can already be explored.'
+    :'Unit lessons and MCQs in preparation';
+  card.append(label,note);
+  if(u.simulationCount>0&&u.simulationHref){
+    const link=safeHref(u.simulationHref);
+    if(link){const explore=document.createElement('a');explore.href=link;
+      explore.className='hub-sim-shortcut';explore.textContent='Explore '+u.simulationCount+' original lab'+(u.simulationCount===1?'':'s')+' ↗';card.append(explore);}
+  }
+  upcoming.append(card);
  }
  renderResourceList(grade,active);
 }
