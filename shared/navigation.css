@@ -160,3 +160,15 @@
   #psn-resource-drawer,#psn-nav-backdrop{display:none!important}
   #psn-global-nav .psn-nav-menu-button{display:none!important}
 }
+
+
+/* Portal V69 sign-in-first: VISUAL ROUTING ONLY, not access control. */
+body.psn-portal-auth-gated:not(.psn-portal-access-approved) #psn-global-nav,
+body.psn-portal-auth-gated:not(.psn-portal-access-approved) #psn-resource-drawer,
+body.psn-portal-auth-gated:not(.psn-portal-access-approved) #psn-nav-backdrop,
+body.psn-portal-auth-gated:not(.psn-portal-access-approved) .topbar .header-link,
+body.psn-portal-auth-gated:not(.psn-portal-access-approved) .public-demo{
+ display:none!important;
+}
+#psn-global-nav[hidden]{display:none!important;}
+@media print{body.psn-portal-auth-gated #psn-global-nav{display:none!important}}
