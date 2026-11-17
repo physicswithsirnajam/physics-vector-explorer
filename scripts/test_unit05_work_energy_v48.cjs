@@ -65,7 +65,7 @@ function sourceChecks(){
  }
  const u4=grade.units.find(u=>u.unit===4);
  assert.equal(u4.resourceIds.length,18);
- assert.equal(u4.questionBankCount,395);
+ assert.equal(u4.questionBankCount,475);
  const u3=grade.units.find(u=>u.unit===3);
  assert.equal(u3.resourceIds.length,10);
  for(const [p,s] of Object.entries(texts)){
