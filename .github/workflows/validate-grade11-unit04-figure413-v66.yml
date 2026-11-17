@@ -1,0 +1,102 @@
+name: Validate Grade XI Unit 4 Figure 4.13 Source Completion (V66)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit04-v66-figure413-five-source.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "practice-engine/index.html"
+      - "assets/illustrations/unit4-figure413-axis-reference.svg"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_figure413_v66.cjs"
+      - "scripts/test_unit04_master_v65.cjs"
+      - "scripts/test_unit04_master_v64.cjs"
+      - "scripts/test_unit04_master_v63.cjs"
+      - "scripts/test_unit04_master_v62.cjs"
+      - "scripts/test_unit04_master_v61.cjs"
+      - ".github/workflows/validate-grade11-unit04-figure413-v66.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit04-v66-figure413-five-source.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "practice-engine/index.html"
+      - "assets/illustrations/unit4-figure413-axis-reference.svg"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "portal/unit-04.html"
+      - "scripts/test_unit04_figure413_v66.cjs"
+      - "scripts/test_unit04_master_v65.cjs"
+      - "scripts/test_unit04_master_v62.cjs"
+      - "scripts/test_unit04_master_v61.cjs"
+      - ".github/workflows/validate-grade11-unit04-figure413-v66.yml"
+  workflow_dispatch:
+jobs:
+  unit04-figure413-source-qa-and-live-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source and portal code
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify JavaScript, original archive and five-unit counts
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check scripts/test_unit04_figure413_v66.cjs
+          node --check scripts/test_unit04_master_v65.cjs
+          node --check scripts/test_unit04_master_v64.cjs
+          node --check scripts/test_unit04_master_v63.cjs
+          node --check scripts/test_unit04_master_v62.cjs
+          node --check scripts/test_unit04_master_v61.cjs
+          node -e "const g=require('./question-bank/manifest.json').grades.find(x=>x.grade===11),u=g.units.find(x=>x.unit===4);if(u.liveMcqCount!==640||u.scenarioGroupCount!==48||u.newMasterImportedCount!==560||g.units.reduce((s,x)=>s+x.liveMcqCount,0)!==1690)process.exit(1)"
+      - name: Install pinned Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Figure4.13 exact source records and forced-item real Chromium test
+        run: node scripts/test_unit04_figure413_v66.cjs
+      - name: Regression — V65 original corrected Topic 4.7 80 MCQs
+        run: node scripts/test_unit04_master_v65.cjs
+      - name: Regression — V64 Topic 4.6 original corrected 80 MCQs
+        run: node scripts/test_unit04_master_v64.cjs
+      - name: Regression — V63 Topic 4.5 original corrected 80 MCQs
+        run: node scripts/test_unit04_master_v63.cjs
+      - name: Regression — V62 original corrected Topics 4.3 / 4.4 and historic held-figure source
+        run: node scripts/test_unit04_master_v62.cjs
+      - name: Regression — V61 Topics 4.1 / 4.2 and original classroom 80
+        run: node scripts/test_unit04_master_v61.cjs
+      - name: Regression — original five-unit source integrity
+        run: node scripts/test_builder_five_units_v55.cjs
+      - name: Regression — mixed-unit builder
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — student guide
+        run: node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Regression — Unit 3 and Unit 5 source checks
+        run: |
+          node scripts/test_unit03_master_v60.cjs
+          node scripts/test_unit05_master_import_v59.cjs
+      - name: Regression — original separate Unit 4 classroom paper
+        run: node scripts/test_unit04_mcq_v39.cjs
+      - name: Upload screenshots for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v66-unit4-figure413-browser-review
+          path: |
+            qa-artifacts/unit04-v66/*.png
+            qa-artifacts/unit04-v65/*.png
+            qa-artifacts/unit04-v64/*.png
+            qa-artifacts/unit04-v63/*.png
+            qa-artifacts/unit04-v62/*.png
+          retention-days: 7
+          if-no-files-found: warn
