@@ -9,7 +9,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),zlib
 const root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8'),json=p=>JSON.parse(read(p));
 const folder='question-bank/grade-11/';
-const normalize=s=>String(s).normalize('NFKC').toLowerCase().replace(/\s+/gu,'').replace(/[×·]/gu,'*').replace(/[−–—]/gu,'-').replace(/[⁄÷]/gu,'/');
+const normalize=s=>String(s).normalize('NFKC').toLowerCase().replace(/\s+/gu,'').replace(/×/gu,'cross').replace(/·/gu,'dot').replace(/[−–—]/gu,'-').replace(/[⁄÷]/gu,'/');
 const eq=(actual,expected,tolerance=1e-9)=>assert.ok(Math.abs(actual-expected)<=tolerance,'independent calculation mismatch '+actual+' vs '+expected);
 function readArchive(files){
  const encoded=files.map(f=>read(folder+f).trim()).join('');
