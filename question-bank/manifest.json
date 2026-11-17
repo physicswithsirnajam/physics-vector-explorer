@@ -66,21 +66,22 @@
           "unit": 4,
           "name": "Rotational and Circular Motion",
           "path": "grade-11/unit-04-v39-80-practice.json",
-          "liveMcqCount": 395,
-          "sourceSloMcqCount": 395,
-          "summativePilotCount": 395,
-          "scenarioGroupCount": 29,
+          "liveMcqCount": 475,
+          "sourceSloMcqCount": 475,
+          "summativePilotCount": 475,
+          "scenarioGroupCount": 35,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v62-original80-plus-corrected-topics41-44-315",
-          "importNote": "V62 preserves original V39 80-MCQ classroom paper, keys, projector, OMR and descriptive practice unchanged. Central public builder now has 395 Unit4 items: original80 + corrected topic4.1/4.2 160 + corrected topic4.3 75 and topic4.4 80. Five Topic4.3 source questions are HELD: Figure4.13 dependent Q38 and the four MCQs Q69-72 from a complete scenario that describes an axis shown in that figure. Original Word superscript/subscript formatting in every new source question and explanation preserved. The 11 new scenarios remain four-question units. Unimported: 240 Topics4.5-4.7 plus 5 held. New question SLO codes are TOPIC-LEVEL provisional, not individually verified; all source answer keys require independent subject review. No protected test, official FBISE certification or Unit4 cloud saving.",
-          "newMasterImportedCount": 315,
+          "bankVersion": "v63-original80-plus-corrected-topics41-45-395",
+          "importNote": "V63 preserves the separate original V39 classroom80 paper, OMR, projector, descriptive and discussion pages unchanged. Central PUBLIC Test Builder now has 475 Unit4 MCQs: original80 + Topic4.1 80 + Topic4.2 80 + Topic4.3 75 + Topic4.4 80 + Topic4.5 80, in 35 complete scenario groups. V63 original corrected Topic4.5 source preserves Word mathematical superscripts/subscripts and 80 source options/keys/explanations; 56 straight and 24 in six intact original scenarios. Five Figure4.13-dependent Topic4.3 questions remain held: Q38 and scenario Q69-72. Remaining master topics 4.6 and 4.7: 160 original MCQs. New source-key and item-level SLO accuracy await independent academic teacher review, and none is official FBISE certified. No secure school assessment, authenticated grade or cloud save is added.",
+          "newMasterImportedCount": 395,
           "masterSourceTopicCount": 560,
           "masterTopicsImported": {
             "4.1": 80,
             "4.2": 80,
             "4.3": 75,
-            "4.4": 80
+            "4.4": 80,
+            "4.5": 80
           },
           "originalClassroomPaperCount": 80,
           "sourceFiles": [
@@ -90,7 +91,8 @@
             "grade-11/unit04-v61-part3.b64",
             "grade-11/unit04-v62-part1.b64",
             "grade-11/unit04-v62-part2.b64",
-            "grade-11/unit04-v62-part3.b64"
+            "grade-11/unit04-v62-part3.b64",
+            "grade-11/unit04-v63-topic45.b64"
           ]
         },
         {
@@ -127,6 +129,6 @@
       ]
     }
   ],
-  "bankVersion": "v62-five-unit-central-1445-source-mcqs",
+  "bankVersion": "v63-five-unit-central-1525-source-mcqs",
   "lastUpdated": "2026-11-17"
 }

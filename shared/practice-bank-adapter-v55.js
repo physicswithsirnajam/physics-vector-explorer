@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:395,5:349};
+const expected={1:275,2:206,3:220,4:475,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -43,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?29:26;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?35:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -296,6 +296,69 @@ function adaptMasterFourV62(master,existing){
  return rows;
 }
 
+
+/* V63: original corrected Unit 4 Topic 4.5 Torque and Angular Acceleration,
+ * 80 PUBLIC self-practice items, with Word run-level math typesetting
+ * preserved. Source keys are provisional, not independently certified. */
+async function loadMasterFourV63(basePath){
+ const filename='unit04-v63-topic45.b64';
+ const response=await fetch(basePath+filename,{cache:'no-store'});
+ if(!response.ok)throw Error('Missing corrected Unit4 Topic4.5 source (HTTP '+response.status+')');
+ const encoded=(await response.text()).trim();
+ need(encoded.length===7416,'Topic4.5 compressed source missing or truncated');
+ let fnv=2166136261;
+ for(let i=0;i<encoded.length;i++)fnv=Math.imul(fnv^encoded.charCodeAt(i),16777619)>>>0;
+ need(fnv===0xb70ebe63,'Topic4.5 corrected source archive checksum mismatch');
+ need(typeof DecompressionStream==='function','Topic4.5 requires browser gzip DecompressionStream support.');
+ const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+ const raw=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ return JSON.parse(raw);
+}
+function adaptMasterFourV63(master,existing){
+ need(master?.version===1&&master.source==='Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx'&&
+  master.sourceSha256==='925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777'&&
+  master.formatMethod==='original Word run-level superscript/subscript restored before source compression'&&
+  master.rows?.length===80&&Object.keys(master.scenarios||{}).length===6&&
+  JSON.stringify(master.topics)==='["4.5"]'&&Object.keys(master.held||{}).length===0,
+  'wrong corrected Topic4.5 master source inventory');
+ const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+'|'+
+  q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+ const ids=new Set(existing.map(q=>q.id)),fingerprints=new Set(existing.map(canon)),groups=new Map(),
+   letters={A:0,B:0,C:0,D:0};
+ const questions=master.rows.map((r,index)=>{
+  need(Array.isArray(r)&&r.length===6,'malformed Topic4.5 source record');
+  const [topic,n,stem,options,answer,explanation]=r;
+  const id='g11-u04-master-t45-q'+String(n).padStart(3,'0');
+  need(topic===45&&n===index+1&&!ids.has(id),'Topic4.5 source order/repeat '+id);
+  need(typeof stem==='string'&&stem.trim()&&Array.isArray(options)&&options.length===4&&
+    options.every(v=>typeof v==='string'&&v.trim())&&['A','B','C','D'].includes(answer)&&
+    typeof explanation==='string'&&explanation.trim(),'missing source option/key '+id);
+  letters[answer]++;
+  const group=n>=57?'u04-v61-t45-s'+(1+Math.floor((n-57)/4)):null;
+  const stimulus=group?master.scenarios[group]:null;
+  need(!group||(typeof stimulus==='string'&&stimulus.startsWith('<p>')&&stimulus.length>40),
+    'missing source scenario '+id);
+  const q={id,grade:11,unit:4,active:true,type:'single_choice',
+    status:'teacher-review-pending',boardEligible:false,stem,
+    options:options.map((text,i)=>({id:'ABCD'[i],text})),
+    correctOptionId:answer,explanation,sloCodes:['P-11-B-19'],
+    assessmentClassification:'summative-theory',difficulty:'Unspecified',
+    cognitiveLevel:'Unspecified',sloAlignment:'Topic-level provisional SLO candidate; item-level teacher review pending',
+    sourceQuestionNumber:n,topic:'4.5 — Torque and Angular Acceleration',
+    source:{document:master.source,sourceSha256:master.sourceSha256,
+      topic:'4.5',itemNumber:n,review:'academic-review-pending; source key only'},
+    stimulusSetId:group,stimulusHtml:stimulus||null};
+  need(!fingerprints.has(canon(q)),'duplicate original/new Unit4 question '+id);
+  ids.add(id);fingerprints.add(canon(q));
+  if(group){if(!groups.has(group))groups.set(group,[]);groups.get(group).push(q);}
+  return q;
+ });
+ need(Object.values(letters).every(n=>n===20)&&groups.size===6&&
+   [...groups.values()].every(g=>g.length===4&&g.every(q=>q.stimulusHtml===g[0].stimulusHtml)),
+   'Topic4.5 answer distribution or scenario integrity mismatch');
+ return questions;
+}
+
 function adaptUnitFive(student,key,setLabel){
   need(student?.grade===11&&student.unit===5&&student.officialBoardPaper===false&&student.questions?.length===16,'bad Unit 5 Set '+setLabel+' student source');
   need(key?.grade===11&&key.unit===5&&key.publicResource===true&&key.notSecured===true&&key.officialFBISEKey===false,'Unit 5 key must be labelled publicly accessible and non-official');
@@ -393,13 +456,13 @@ async function loadBank(unit,basePath){
       ...adaptUnitFive(data[2],data[3],'B')
     ])
   ];
-  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];questions=[...existing,...adaptMasterFourV62(await loadMasterFourV62(basePath),existing)];}
+  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];questions=[...prior,...adaptMasterFourV63(await loadMasterFourV63(basePath),prior)];}
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v62-original80-plus-corrected-topics41-44-315':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v63-original80-plus-corrected-topics41-45-395':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'

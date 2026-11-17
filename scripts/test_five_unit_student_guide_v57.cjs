@@ -10,7 +10,7 @@ const root=path.resolve(__dirname,'..'),qa=path.join(root,'qa-artifacts','guide-
 fs.mkdirSync(qa,{recursive:true});
 const load=(p)=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const read=(p)=>fs.readFileSync(path.join(root,p),'utf8');
-const known={1:275,2:206,3:220,4:395,5:349};
+const known={1:275,2:206,3:220,4:475,5:349};
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml'};
 const server=http.createServer((req,res)=>{
  try{
@@ -76,7 +76,7 @@ function validateCatalog(){
  assert.ok(read('build-your-physics-test.html').includes('href="student-guide.html"'),'guide link must exist in public Test Builder');
  assert.ok(fs.existsSync(path.join(root,'portal/assets/physics-with-sir-najam-official-logo.png')));
  assert.ok(fs.existsSync(path.join(root,'student-guide.html')));
- console.log('PASS V59+V57 catalogue: five published units; 1445 MCQs; 59 unique valid resources and local landing paths; all resource category filters covered.');
+ console.log('PASS V59+V57 catalogue: five published units; 1525 MCQs; 59 unique valid resources and local landing paths; all resource category filters covered.');
 }
 async function verifyBrowser(){
  await new Promise((resolve,reject)=>server.listen(0,'127.0.0.1',err=>err?reject(err):resolve()));
@@ -89,12 +89,12 @@ async function verifyBrowser(){
   page.on('response',r=>{if(r.url().includes('127.0.0.1')&&r.status()>=400)missing.push(r.url()+' status '+r.status())});
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1445');
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1525');
   assert.equal(await page.locator('.unit').count(),5);
   assert.equal(await page.locator('.unit .links a[href^="build-your-physics-test.html?unit="]').count(),5);
   assert.equal(await page.locator('#psn-global-nav').count(),1);
   assert.equal(await page.locator('.hero .brand img').evaluate(img=>img.complete&&img.naturalWidth>0),true,'unchanged official logo must load');
-  assert.equal(await page.locator('.unit .count').allTextContents().then(x=>x.join('|')),'275 MCQs|206 MCQs|220 MCQs|395 MCQs|349 MCQs');
+  assert.equal(await page.locator('.unit .count').allTextContents().then(x=>x.join('|')),'275 MCQs|206 MCQs|220 MCQs|475 MCQs|349 MCQs');
   await page.screenshot({path:path.join(qa,'01-student-guide-desktop.png'),fullPage:true});
   const expectedLinks=[
    'portal/unit-01.html','portal/unit-02.html','portal/unit-03.html',
