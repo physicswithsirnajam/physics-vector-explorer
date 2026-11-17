@@ -47,9 +47,9 @@ function audit(){
  assert.ok(css.includes('position:fixed!important')&&css.includes('transform:rotate'));
  assert.ok(read('portal/pdf-report.js').includes("href+'?v=71'"));
  assert.ok(read('practice-engine/index.html').includes('print-watermark-v70.css?v=71'));
- assert.ok(read('portal/learning-hub.js').includes("learning-catalog.json?v=71"));
- assert.ok(read('portal/app.js').includes("learning-hub.js?v=71"));
- assert.ok(read('portal/index.html').includes('app.js?v=71'));
+ assert.ok(read('portal/learning-hub.js').includes("learning-catalog.json?v=72"));
+ assert.ok(read('portal/app.js').includes("learning-hub.js?v=72"));
+ assert.ok(read('portal/index.html').includes('app.js?v=72'));
  assert.ok(read('quality/grade11-v71-google-sites-migration-unit06-10-intake.md')
   .includes('Grade11_Unit6_COMPLETE_MASTER_ALL.pdf'));
  console.log('PASS V71 catalog: 59 unchanged entries, Study/Explore native, 31 simulations, 1,690 MCQs, Units6–10 unpublished and Times watermarks');
