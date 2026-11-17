@@ -85,7 +85,7 @@ function sourceChecks(){
   assert.ok(ids.includes(id),"Missing UI element "+id);
  }
  const u4=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
- assert.equal(u4.questionBankCount,475);
+ assert.equal(u4.questionBankCount,555);
  assert.equal(u4.resourceIds.length,18);assert.equal(new Set(u4.resourceIds).size,18);
  assert.ok(u4.resourceIds.includes("unit4-discussion-slides"));
  assert.ok(u4.resourceIds.includes("unit4-projector-practice"));
