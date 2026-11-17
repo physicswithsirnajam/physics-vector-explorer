@@ -1,0 +1,78 @@
+name: Validate Grade XI Unit 4 Academic Source, Science and SLO QA (V67)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit04-v67-fbise-framework.json"
+      - "quality/grade11-unit04-academic-audit-v67.md"
+      - "scripts/test_unit04_science_slo_v67.cjs"
+      - "scripts/test_unit04_slo_ui_v67.cjs"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "practice-engine/index.html"
+      - "build-your-physics-test.html"
+      - "student-guide.html"
+      - ".github/workflows/validate-grade11-unit04-academic-v67.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit04-v67-fbise-framework.json"
+      - "quality/grade11-unit04-academic-audit-v67.md"
+      - "scripts/test_unit04_science_slo_v67.cjs"
+      - "scripts/test_unit04_slo_ui_v67.cjs"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "practice-engine/index.html"
+      - "build-your-physics-test.html"
+      - "student-guide.html"
+      - ".github/workflows/validate-grade11-unit04-academic-v67.yml"
+  workflow_dispatch:
+jobs:
+  original-source-science-and-slo-precision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout completed source banks and framework
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify every new quality-audit script parses
+        run: |
+          node --check scripts/test_unit04_science_slo_v67.cjs
+          node --check scripts/test_unit04_slo_ui_v67.cjs
+          node --check shared/practice-bank-adapter-v55.js
+      - name: Audit all 640 source keys, 12 official summative SLOs, 48 scenarios and 19 physics anchors
+        run: node scripts/test_unit04_science_slo_v67.cjs
+      - name: Install pinned real Chromium for student-facing disclosure tests
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify provisional topic-level SLO warning in real question and results screens
+        run: node scripts/test_unit04_slo_ui_v67.cjs
+      - name: Regression — all 560 original Topic4.1–4.7 MCQs and Figure4.13 diagrams
+        run: node scripts/test_unit04_figure413_v66.cjs
+      - name: Regression — source-matched Topic4.7, 4.6, 4.5 and 4.3/4.4
+        run: |
+          node scripts/test_unit04_master_v65.cjs
+          node scripts/test_unit04_master_v64.cjs
+          node scripts/test_unit04_master_v63.cjs
+          node scripts/test_unit04_master_v62.cjs
+      - name: Regression — original 80-question classroom bank and five-unit planner
+        run: |
+          node scripts/test_unit04_mcq_v39.cjs
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Upload V67 browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit4-v67-candidate-slo-disclosure
+          path: |
+            qa-artifacts/unit04-v67/*.png
+          retention-days: 7
+          if-no-files-found: warn

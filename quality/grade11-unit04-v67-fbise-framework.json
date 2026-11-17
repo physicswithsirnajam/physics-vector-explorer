@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "document": "Physics_HSSC_I_model_paper_50_percent.pdf",
+  "documentTitle": "National Curriculum of Pakistan 2022-2023 — Assessment Framework Physics Grade XI (HSSC-I)",
+  "verifiedSource": "User-supplied official FBISE framework, printed framework pages 3–4, uploaded PDF pages 9–10",
+  "scope": "Unit 4 (Rotational and Circular Motion), 12 summative theory SLOs",
+  "disclaimer": "These are official SLO descriptions and permitted cognitive levels, not certification of question-level mappings, answers or distractors.",
+  "slos": [
+    {
+      "code": "P-11-B-07",
+      "classification": "summative-theory",
+      "levels": [
+        "Knowledge",
+        "Understanding"
+      ],
+      "description": "Express angles in radians."
+    },
+    {
+      "code": "P-11-B-08",
+      "classification": "summative-theory",
+      "levels": [
+        "Knowledge",
+        "Understanding",
+        "Application"
+      ],
+      "description": "Define and calculate angular displacement, angular velocity and angular acceleration, including linear-to-angular motion relations."
+    },
+    {
+      "code": "P-11-B-09",
+      "classification": "summative-theory",
+      "levels": [
+        "Application"
+      ],
+      "description": "Use equations of angular motion to solve rotational-motion problems."
+    },
+    {
+      "code": "P-11-B-10",
+      "classification": "summative-theory",
+      "levels": [
+        "Understanding",
+        "Application"
+      ],
+      "description": "Analyze qualitatively motion in a curved path due to a perpendicular force."
+    },
+    {
+      "code": "P-11-B-14",
+      "classification": "summative-theory",
+      "levels": [
+        "Knowledge",
+        "Application"
+      ],
+      "description": "Define and calculate centripetal force using F = mrω² and F = mv²/r."
+    },
+    {
+      "code": "P-11-B-15",
+      "classification": "summative-theory",
+      "levels": [
+        "Application"
+      ],
+      "description": "Analyze circular-motion situations where tension, friction, gravity or normal force supplies centripetal force."
+    },
+    {
+      "code": "P-11-B-16",
+      "classification": "summative-theory",
+      "levels": [
+        "Understanding"
+      ],
+      "description": "Explain apparent weightlessness of objects in orbiting satellites."
+    },
+    {
+      "code": "P-11-B-17",
+      "classification": "summative-theory",
+      "levels": [
+        "Understanding"
+      ],
+      "description": "Describe how artificial gravity is created to counter weightlessness."
+    },
+    {
+      "code": "P-11-B-18",
+      "classification": "summative-theory",
+      "levels": [
+        "Knowledge",
+        "Application"
+      ],
+      "description": "Define and calculate moment of inertia of a body and angular momentum."
+    },
+    {
+      "code": "P-11-B-19",
+      "classification": "summative-theory",
+      "levels": [
+        "Application"
+      ],
+      "description": "Derive and apply the relation between torque, moment of inertia and angular acceleration."
+    },
+    {
+      "code": "P-11-B-20",
+      "classification": "summative-theory",
+      "levels": [
+        "Knowledge",
+        "Understanding",
+        "Application"
+      ],
+      "description": "State and apply conservation of angular momentum, with flywheel, gyroscope and skater examples."
+    },
+    {
+      "code": "P-11-B-21",
+      "classification": "summative-theory",
+      "levels": [
+        "Application"
+      ],
+      "description": "Justify how a centrifuge separates materials using centripetal force."
+    }
+  ],
+  "topicCandidateCodes": {
+    "4.1": [
+      "P-11-B-07",
+      "P-11-B-08",
+      "P-11-B-09"
+    ],
+    "4.2": [
+      "P-11-B-10",
+      "P-11-B-14",
+      "P-11-B-15",
+      "P-11-B-21"
+    ],
+    "4.3": [
+      "P-11-B-18"
+    ],
+    "4.4": [
+      "P-11-B-18",
+      "P-11-B-20"
+    ],
+    "4.5": [
+      "P-11-B-19"
+    ],
+    "4.6": [
+      "P-11-B-16"
+    ],
+    "4.7": [
+      "P-11-B-17"
+    ]
+  },
+  "notes": [
+    "Unit 4 MCQs are currently source-matched and teacher-review-pending; most supplemental codes are assigned at topic level rather than individually mapped.",
+    "No topic-level code array or provisional cognitive label should be described as an independently verified individual-question FBISE alignment.",
+    "The original separate classroom 80-question bank has per-question SLO codes but remains teacher-prepared/provisional, not an official FBISE-certified question paper."
+  ]
+}
