@@ -39,7 +39,7 @@
     const id=String(location.hash||'').replace(/^#/,'');
     const requested=id?document.getElementById(id):null;
     const targetEl=requested&&!requested.hidden&&requested.getClientRects().length?requested:navigation;
-    targetEl.scrollIntoView({block:'start',behavior:'instant'});
+    targetEl.scrollIntoView({block:'start',behavior:'auto'});
    });
   }
  }
