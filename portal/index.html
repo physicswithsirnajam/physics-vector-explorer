@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=68">
+  <link rel="stylesheet" href="./styles.css?v=70">
   <link rel="stylesheet" href="./workspace-tabs.css?v=68">
   <link rel="stylesheet" href="../shared/navigation.css?v=69">
 </head>
@@ -17,7 +17,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V69 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V70 PILOT</span>
       <a class="header-link" href="./simulations.html">Simulation Library <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -297,7 +297,7 @@
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
-      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V7</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
+      <div class="dashboard-topline"><span class="eyebrow">SECURE ADMINISTRATOR AREA · PORTAL V70</span><button id="admin-signout" class="btn btn-secondary btn-small" type="button">Sign out</button></div>
       <div class="admin-hero">
         <div>
           <div class="admin-kicker"><span aria-hidden="true">◆</span> Verified account permissions</div>
@@ -308,31 +308,40 @@
       </div>
       <div class="account-strip"><span class="account-dot"></span><span>Signed in as <strong id="admin-email"></strong></span><span class="account-pill admin-pill">Firebase admin claim verified</span></div>
       <div id="admin-notice" class="alert" hidden role="status" aria-live="polite"></div>
+      <nav class="admin-section-tabs" aria-label="Administrator workspace">
+        <a href="#admin-learner-section">Learner directory <small>Read-only</small></a>
+        <a href="#admin-privacy-section">Privacy requests <small>Read-only</small></a>
+        <a href="#admin-future-work">Access &amp; roles <small>Planned</small></a>
+      </nav>
       <div class="admin-cards">
         <div class="admin-stat"><span class="admin-stat-label">ACCESS ROLE</span><strong>Administrator</strong><span>Based on your freshly verified Firebase ID token</span></div>
         <div class="admin-stat"><span class="admin-stat-label">CURRENT ACCESS</span><strong>Read-only</strong><span>Profiles can be viewed; users and privileges cannot be modified here</span></div>
         <div class="admin-stat"><span class="admin-stat-label">REGISTERED PROFILES</span><strong id="admin-loaded">Not loaded</strong><span>Latest profiles only; not the total number of users</span></div>
       </div>
-      <div class="admin-toolbar"><div><h2>Recent learner profiles</h2><p>Up to 25 latest saved profiles. This list does not include students who registered but have not created a verified profile.</p></div><button id="admin-load-profiles" class="btn btn-primary btn-small" type="button">Load recent profiles</button></div>
+      <div class="admin-toolbar" id="admin-learner-section"><div><h2>Recent learner profiles</h2><p>Up to 25 latest saved profiles. This list does not include students who registered but have not created a verified profile.</p></div><button id="admin-load-profiles" class="btn btn-primary btn-small" type="button">Load recent profiles</button></div>
       <div class="directory-panel"><div id="admin-directory-empty" class="admin-empty">Click “Load recent profiles” to request an administrator-authorized view.</div><div id="admin-directory" hidden></div></div>
-      <section class="admin-privacy" aria-labelledby="admin-privacy-heading">
+      <section class="admin-privacy" id="admin-privacy-section" aria-labelledby="admin-privacy-heading">
         <div class="admin-toolbar"><div><h2 id="admin-privacy-heading">Account deletion requests</h2><p>Read-only queue of up to 25 recent requests. Reviewing a request does not delete anything; processing requires a separate trusted administrator procedure and identity verification.</p></div><button id="admin-load-deletion-requests" class="btn btn-secondary btn-small" type="button">Load requests</button></div>
         <div id="admin-deletion-status" class="privacy-request-status" role="status" aria-live="polite">No requests loaded.</div>
         <div id="admin-deletion-list" class="deletion-request-list" hidden></div>
       </section>
-      <h2 class="section-title">Administration roadmap</h2>
+      <h2 class="section-title" id="admin-future-work">Access, scholarships &amp; institutions roadmap</h2>
+      <p class="admin-roadmap-explainer">The controls below are <strong>planning previews, not active permissions</strong>. Real approvals, role assignments, payments, and account changes must be enforced by a trusted backend and fully tested security rules.</p>
       <div class="admin-feature-grid">
-        <div class="admin-feature"><strong>Teacher accounts</strong><span>Privileged creation and approval will be implemented through trusted backend operations, not browser forms.</span><em>Not enabled</em></div>
-        <div class="admin-feature"><strong>Class assignments</strong><span>Only the administrator will be able to enroll students in a teacher's private class.</span><em>Not enabled</em></div>
-        <div class="admin-feature"><strong>Membership and access</strong><span>Future plans, annual access, promotional codes and manual payment verification.</span><em>Not enabled</em></div>
+        <div class="admin-feature"><strong>Enrollment applications</strong><span>Review course requests, approve or decline them, and safely migrate existing free-pilot students.</span><em>Backend required</em></div>
+        <div class="admin-feature"><strong>Scholarships &amp; complimentary seats</strong><span>Grant named learners course-specific access with a documented reason, start/end date and revocation audit.</span><em>Backend required</em></div>
+        <div class="admin-feature"><strong>Teacher roles &amp; assignments</strong><span>Approve instructors for specific classes or courses, without exposing unrelated student profiles, personal practice or billing.</span><em>Backend required</em></div>
+        <div class="admin-feature"><strong>Institutional accounts</strong><span>Manage institution plans, sponsored seats, teacher assignments and class rosters using restricted scopes.</span><em>Backend required</em></div>
+        <div class="admin-feature"><strong>Plans &amp; subscriptions</strong><span>Define transparent plan prices, seats, validity, renewal and payment status; verified server-side settlement is required before activation.</span><em>Backend required</em></div>
+        <div class="admin-feature"><strong>Security &amp; audit history</strong><span>Record which administrator granted, changed, revoked or expired access; add tightly permissioned exports and issue review.</span><em>Backend required</em></div>
       </div>
       <div class="admin-bottom-actions"><button id="admin-open-learning" class="btn btn-secondary" type="button">Open my learner dashboard</button><button id="admin-refresh-role" class="btn btn-secondary" type="button">Refresh role permissions</button></div>
       <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, or membership management writes have been enabled. Self-practice attempts are private to their learner account; administrators do not receive blanket access to independent learners’ attempt history. Existing learning resources are still public until separately migrated.</div>
     </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V69 pilot · Student privacy centre</span></footer>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V70 pilot · Student privacy centre</span></footer>
   <script src="./workspace-tabs.js?v=68" defer></script>
-  <script type="module" src="./app.js?v=69"></script>
+  <script type="module" src="./app.js?v=70"></script>
   <script src="../shared/navigation.js?v=69" defer></script>
 </body>
 </html>

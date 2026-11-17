@@ -1,0 +1,71 @@
+name: Validate Branded PDF Watermarks and Admin Roadmap (V70)
+on:
+  pull_request:
+    paths:
+      - "shared/print-watermark-v70.css"
+      - "portal/pdf-report.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "practice-engine/index.html"
+      - "scripts/test_export_watermarks_v70.cjs"
+      - "quality/grade11-v70-watermark-admin-and-cost-deferred-roadmap.md"
+      - ".github/workflows/validate-grade11-watermark-admin-v70.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/print-watermark-v70.css"
+      - "portal/pdf-report.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "practice-engine/index.html"
+      - "scripts/test_export_watermarks_v70.cjs"
+      - "quality/grade11-v70-watermark-admin-and-cost-deferred-roadmap.md"
+      - ".github/workflows/validate-grade11-watermark-admin-v70.yml"
+  workflow_dispatch:
+jobs:
+  printable-pdf-and-data-export-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Configure Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify JS syntax and existing source totals
+        run: |
+          node --check portal/pdf-report.js
+          node --check portal/app.js
+          node --check scripts/test_export_watermarks_v70.cjs
+          node --check scripts/test_portal_signin_first_v69.cjs
+          node -e "const m=require('./question-bank/manifest.json');const u=m.grades.find(x=>x.grade===11).units;if(u.reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
+      - name: Install real Chromium and PDF inspection tools
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          if ! command -v pdftotext >/dev/null || ! command -v pdfinfo >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils; fi
+      - name: Verify repeat-on-every-page watermarks by generating physical A4 PDF files
+        run: node scripts/test_export_watermarks_v70.cjs
+      - name: Regression — V69 anonymous sign-in and unchanged access boundary
+        run: node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — V68 navigation and private workspace
+        run: node scripts/test_student_workspace_v68.cjs
+      - name: Regression — Grade XI MCQ report/test builder
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload only synthetic printed PDFs and layout previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v70-synthetic-watermarked-progress-and-practice-pdfs
+          path: |
+            qa-artifacts/watermark-v70/*.pdf
+            qa-artifacts/portal-v69/*.png
+          retention-days: 7
+          if-no-files-found: warn
