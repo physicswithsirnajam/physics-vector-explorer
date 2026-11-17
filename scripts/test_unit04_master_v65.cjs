@@ -55,12 +55,12 @@ function checkSource(){
   }
  }
  assert.deepEqual(letters,{A:20,B:20,C:20,D:20});
- assert.ok(src.rows.some(r=>r[3].some(x=>x.includes('v²/R'))),'Word subscript lost');
+ assert.ok(src.rows.some(r=>r[3].some(x=>x.includes('v²/R'))),'Original scenario wording lost');
  assert.ok(Object.values(src.scenarios).some(s=>s.includes('1.5 km')),'Word superscript lost');
  const m=json('question-bank/manifest.json'),g=m.grades.find(x=>x.grade===11);
  const u=g.units.find(x=>x.unit===4);
  assert.equal(u.liveMcqCount,635);assert.equal(u.scenarioGroupCount,47);
- assert.equal(u.newMasterImportedCount,475);assert.equal(u.masterTopicsImported['4.7'],80);
+ assert.equal(u.newMasterImportedCount,555);assert.equal(u.masterTopicsImported['4.7'],80);
  assert.equal(g.units.reduce((n,x)=>n+x.liveMcqCount,0),1685);
  assert.equal(json('portal/learning-catalog.json').grades.find(x=>x.grade===11).units.find(x=>x.unit===4).questionBankCount,635);
  console.log('PASS V65 source: original corrected Topic4.7 80 keys/options/steps, 56 straight + six intact four-question scenarios, Word math, expected metadata');
