@@ -36,6 +36,18 @@ function staticAudit(){
  assert.equal(sources.generalVideos.length,2,'2 general concept-video pages');
  assert.equal(sources.pdfHandouts.length,17,'17 pre-existing Drive files');
  assert.equal(sources.extraReading.length,1,'1 original Unit 7 external reading');
+ assert.equal(sources.legacyCoursePages.length,17,'original 17 old lecture/notes/exercises subpages must be preserved for later review');
+ const pageUrls=new Set();
+ for(const legacy of sources.legacyCoursePages){
+  assert.ok([1,2,3,4,5].includes(legacy.unit));
+  assert.equal(legacy.migratedContentVerified,false,'do not claim old nested pages migrated');
+  assert.equal(legacy.sourcePageBodyInspected,false,'old pages are not yet source inspected');
+  assert.equal(new URL(legacy.pageUrl).origin,'https://sites.google.com');
+  assert.ok(!pageUrls.has(legacy.pageUrl),'duplicate original legacy course subpage');
+  pageUrls.add(legacy.pageUrl);
+ }
+ assert.ok(sources.oldTestBuilderPage.url.includes('/physics-practice-assessment/build-your-physics-test'));
+ assert.equal(sources.oldTestBuilderPage.equivalence.includes('old nested page body not inspected'),true);
  assert.equal(crosswalk.links.length,31);
  assert.equal(sims.simulations.length,31);
  assert.equal(JSON.parse(read('portal/learning-labs-v72.json')).labs.length,9);
