@@ -60,12 +60,12 @@ function auditSource(){
  assert.equal(json('question-bank/grade-11/unit-04-v39-80-practice.json').questions.length,80);
  const manifest=json('question-bank/manifest.json');
  const u4=manifest.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
- assert.equal(u4.liveMcqCount,635);assert.equal(u4.scenarioGroupCount,47);
- assert.equal(u4.newMasterImportedCount,555);
+ assert.equal(u4.liveMcqCount,640);assert.equal(u4.scenarioGroupCount,48);
+ assert.equal(u4.newMasterImportedCount,560);
  assert.equal(u4.masterTopicsImported['4.3'],75);
  assert.equal(u4.masterTopicsImported['4.4'],80);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1685);
- assert.equal(json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,635);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1690);
+ assert.equal(json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,640);
  console.log('PASS V62 source: 155 original corrected items, 11 complete scenarios, 5 source-figure holds, exact Word equation typography and original classroom80.');
  return src;
 }
@@ -87,9 +87,9 @@ async function checkAdapter(src){
  vm.runInContext(text('shared/practice-bank-adapter-v55.js'),ctx);
  const bank=await ctx.PSNPracticeBankV55.loadBank(4,folder);
  const rows=bank.questions;
- assert.equal(rows.length,635);
- assert.equal(new Set(rows.map(q=>q.id)).size,635);
- assert.equal(new Set(rows.map(canonical)).size,635);
+ assert.equal(rows.length,640);
+ assert.equal(new Set(rows.map(q=>q.id)).size,640);
+ assert.equal(new Set(rows.map(canonical)).size,640);
  const originals=json(folder+'unit-04-v39-80-practice.json').questions;
  for(let i=0;i<80;i++){
   for(const f of ['id','stem','correctOptionId','explanation'])
@@ -114,12 +114,12 @@ async function checkAdapter(src){
  }
  assert.equal(groups.size,11);
  assert.ok([...groups.values()].every(g=>g.length===4&&g.every(q=>q.stimulusHtml===g[0].stimulusHtml)));
- assert.equal(rows.filter(q=>q.stimulusSetId).length,188,'72 existing scenario MCQs + 44 from V62 + 24 from V63');
+ assert.equal(rows.filter(q=>q.stimulusSetId).length,192,'original scenarios + all subsequent source scenario imports + Figure4.13 scenario');
  for(const n of [38,69,70,71,72])
-  assert.ok(!rows.some(q=>q.id==='g11-u04-master-t43-q'+String(n).padStart(3,'0')),'held figure item leaked into student bank');
+  assert.ok(rows.some(q=>q.id==='g11-u04-master-t43-q'+String(n).padStart(3,'0')),'source-verified Figure4.13 supplement missing');
  assert.ok(more.some(q=>q.stem.includes('kg m²')||q.options.some(o=>o.text.includes('kg m²'))),'source Word superscripts missing');
  assert.ok(more.some(q=>q.options.some(o=>o.text.includes('s⁻¹'))),'source Word inverse second units missing');
- console.log('PASS V62 adapter: 635 unique items, untouched original80 and V61 first160, complete source-key/explanation match and 41 scenarios overall.');
+ console.log('PASS V62 adapter: 640 unique items, untouched original80 and V61 first160, complete source-key/explanation match and 41 scenarios overall.');
 }
 async function waitCount(page,count){
  await page.waitForFunction(expected=>{
@@ -138,7 +138,7 @@ async function testBrowser(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'build-your-physics-test.html?unit=4',{waitUntil:'networkidle'});
-  await waitCount(page,'635 eligible MCQ');
+  await waitCount(page,'640 eligible MCQ');
   assert.equal(await page.locator('input[name="cognitive"][value="Unspecified"]').isChecked(),true);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.screenshot({path:path.join(shots,'01-unit4-555-available.png')});
@@ -153,7 +153,7 @@ async function testBrowser(){
   assert.equal(await page.locator('#stimulusPanel').isVisible(),true);
   await page.screenshot({path:path.join(shots,'02-unit4-source-scenarios.png')});
   await page.goto(base+'build-your-physics-test.html?units=3,4',{waitUntil:'networkidle'});
-  await waitCount(page,'855 eligible MCQ');
+  await waitCount(page,'860 eligible MCQ');
   assert.equal(await page.locator('input[name="unit"]:checked').count(),2);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
@@ -168,14 +168,14 @@ async function testBrowser(){
   assert.equal(await page.locator('#save-result').isDisabled(),true);
   await page.screenshot({path:path.join(shots,'03-mixed-unit3-4-results.png')});
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1685');
-  assert.match(await page.locator('[data-unit="4"] .count').textContent(),/635 MCQs/);
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1690');
+  assert.match(await page.locator('[data-unit="4"] .count').textContent(),/640 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const size=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
   assert.ok(size[1]<=size[0]+2,'390px mobile page overflow '+JSON.stringify(size));
   assert.deepEqual(errors,[]);
   await page.screenshot({path:path.join(shots,'04-five-unit-guide-mobile.png')});
-  console.log('PASS V62 browser: Unit4 555 available, complete scenario quiz, mixed Unit3+4 = 855, per-unit report, cloud-save restriction, mobile guide 1685.');
+  console.log('PASS V62 browser: Unit4 555 available, complete scenario quiz, mixed Unit3+4 = 860, per-unit report, cloud-save restriction, mobile guide 1690.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{const src=auditSource();await checkAdapter(src);await testBrowser()})().catch(err=>{console.error('FAIL V62',err);server.close();process.exitCode=1;});
