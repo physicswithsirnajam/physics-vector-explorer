@@ -34,8 +34,8 @@ async function sourceIntegrity(){
  assert.equal(p.isValidUnits([]),false);
  const banks=await Promise.all([1,2,3,4,5].map(u=>a.loadBank(u,'question-bank/grade-11/')));
  const all=banks.flatMap(b=>b.questions);
- assert.equal(all.length,1445);
- assert.equal(new Set(all.map(q=>q.id)).size,1445);
+ assert.equal(all.length,1525);
+ assert.equal(new Set(all.map(q=>q.id)).size,1525);
  const standard=p.plan(all,all,[5,3,1,2,4],'random',20);
  assert.equal(standard.possible,true);assert.equal(standard.allocations.length,5);
  assert.equal(standard.allocations.reduce((n,a)=>n+a.count,0),20);
@@ -59,7 +59,7 @@ async function sourceIntegrity(){
  const restricted=all.filter(q=>q.unit!==5||q.sloCodes.includes('P-11-B-29'));
  assert.equal(p.plan(all,restricted,[5],'random',20).possible,true,'Unit 5 now has 88 source-backed P-11-B-29 MCQs');
  assert.equal(restricted.filter(q=>q.unit===5).length,88);
- console.log('PASS V62+V56 planner: 1445 unique records, five-unit 4+4+4+4+4, mixed groups, exact scenario coverage and fail-closed filtering.');
+ console.log('PASS V62+V56 planner: 1525 unique records, five-unit 4+4+4+4+4, mixed groups, exact scenario coverage and fail-closed filtering.');
 }
 async function actualBrowser(){
  await new Promise((resolve,reject)=>server.listen(0,'127.0.0.1',err=>err?reject(err):resolve()));
@@ -98,7 +98,7 @@ async function actualBrowser(){
 
   await page.goto(base+'build-your-physics-test.html',{waitUntil:'networkidle'});
   await page.locator('#allUnits').click();
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1445 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1525 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),5);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quantity').selectOption('4');
