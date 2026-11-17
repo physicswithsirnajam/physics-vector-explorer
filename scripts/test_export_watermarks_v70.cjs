@@ -54,7 +54,8 @@ function staticAudit(){
  }
  assert.ok(pdf.includes("new URL('../shared/print-watermark-v70.css',import.meta.url)"));
  assert.ok(pdf.includes('psn-print-watermark')&&pdf.includes('watermarkLines'));
- assert.ok(practice.includes('print-watermark-v70.css?v=70')&&practice.includes('psn-print-watermark'));
+ assert.ok(practice.includes('print-watermark-v70.css?v=71')&&practice.includes('psn-print-watermark'));
+ assert.match(css,/font-family:\s*"Times New Roman",Times,"Liberation Serif",Georgia,serif!important/);
  assert.ok(practice.includes('Print / Save Results as PDF'));
  assert.ok(app.includes("publisher:'Physics with Sir Najam'")&&app.includes("documentBranding:"));
  assert.ok(app.includes("'Exported by'")&&app.includes("r.bankVersion||'','Physics with Sir Najam'"));
@@ -108,10 +109,12 @@ async function main(){
   const computed=await popup.locator('.psn-print-watermark').evaluate(e=>({
    display:getComputedStyle(e).display,
    position:getComputedStyle(e).position,
-   transform:getComputedStyle(e).transform
+   transform:getComputedStyle(e).transform,
+   fontFamily:getComputedStyle(e).fontFamily
   }));
   assert.equal(computed.display,'flex');assert.equal(computed.position,'fixed');
   assert.notEqual(computed.transform,'none');
+  assert.match(computed.fontFamily,/Times New Roman/);
   const progress=path.join(out,'synthetic-progress-watermarked.pdf');
   fs.writeFileSync(progress,await popup.pdf({format:'A4',printBackground:true,preferCSSPageSize:true}));
   const progressPages=validatePdf(progress,2);

@@ -17,7 +17,7 @@ export function openProgressPdfReport({studentName,records,complete,analytics}){
  try{win.opener=null;}catch{}
  try{
  const logo=new URL('./assets/physics-with-sir-najam-official-logo.png',import.meta.url).href;
- const watermarkCss=new URL('../shared/print-watermark-v70.css',import.meta.url).href;
+ const watermarkCss=new URL('../shared/print-watermark-v70.css',import.meta.url).href+'?v=71';
  const watermarkLines=Array.from({length:8},()=>'<span>Physics with Sir Najam</span>').join('');
  const slos=analytics.slos||[];
  const rows=slos.map(x=>`<tr><td>${escapeHtml(x.code)}</td><td>${escapeHtml(x.answered)}</td><td>${escapeHtml(x.correct)}</td><td>${percent(x.accuracy)}</td><td>${escapeHtml(x.status==='focus'?'Revision suggested':x.status==='strong'?'Strong practice':x.status==='developing'?'Keep practising':'More evidence needed')}</td></tr>`).join('');

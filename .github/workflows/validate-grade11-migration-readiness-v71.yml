@@ -1,0 +1,80 @@
+name: Validate V71 Native Learning Links and Times Serif Report Watermarks
+on:
+  pull_request:
+    paths:
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "shared/print-watermark-v70.css"
+      - "portal/pdf-report.js"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_migration_navigation_v71.cjs"
+      - "scripts/test_export_watermarks_v70.cjs"
+      - "quality/grade11-v71-google-sites-migration-unit06-10-intake.md"
+      - ".github/workflows/validate-grade11-migration-readiness-v71.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "shared/print-watermark-v70.css"
+      - "portal/pdf-report.js"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_migration_navigation_v71.cjs"
+      - "scripts/test_export_watermarks_v70.cjs"
+      - "quality/grade11-v71-google-sites-migration-unit06-10-intake.md"
+      - ".github/workflows/validate-grade11-migration-readiness-v71.yml"
+  workflow_dispatch:
+jobs:
+  native-navigation-serif-and-source-readiness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify all new and original JS syntax
+        run: |
+          node --check scripts/test_grade11_migration_navigation_v71.cjs
+          node --check scripts/test_export_watermarks_v70.cjs
+          node --check portal/app.js
+          node --check portal/learning-hub.js
+          node --check portal/pdf-report.js
+          node --check shared/navigation.js
+          node -e "const j=require('./portal/learning-catalog.json');if(j.resources.length!==59)process.exit(1)"
+      - name: Install Chromium and PDF-inspection tools
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          if ! command -v pdftotext >/dev/null || ! command -v pdfinfo >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils; fi
+      - name: Validate live local drawer Study/Explore links and print serif in Chromium
+        run: node scripts/test_grade11_migration_navigation_v71.cjs
+      - name: Ensure every page of printed progress and MCQ solution PDFs stays branded
+        run: node scripts/test_export_watermarks_v70.cjs
+      - name: Regression — 59 resources, simulated verified student workspace, anonymous portal
+        run: |
+          node scripts/test_grade11_resource_drawer_v58.cjs
+          node scripts/test_student_workspace_v68.cjs
+          node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — five-unit test builder and student guide
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload synthetic QA visuals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v71-safe-local-study-simulation-links-and-serif-watermarks
+          path: |
+            qa-artifacts/unit-intake-v71/*.png
+            qa-artifacts/watermark-v70/*.pdf
+          retention-days: 7
+          if-no-files-found: warn
