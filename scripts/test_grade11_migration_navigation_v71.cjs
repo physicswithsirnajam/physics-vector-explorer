@@ -49,9 +49,9 @@ function audit(){
  assert.ok(read('practice-engine/index.html').includes('print-watermark-v70.css?v=71'));
  // The three dependent imports must stay on the SAME current version.
  // The V71 regression must not pin V72 after intentionally published releases.
- const hubVersion=Number(read('portal/learning-hub.js').match(/learning-catalog\\.json\\?v=(\\d+)/)?.[1]||0);
- const appVersion=Number(read('portal/app.js').match(/learning-hub\\.js\\?v=(\\d+)/)?.[1]||0);
- const shellVersion=Number(read('portal/index.html').match(/app\\.js\\?v=(\\d+)/)?.[1]||0);
+ const hubVersion=Number(read('portal/learning-hub.js').match(/learning-catalog[.]json[?]v=([0-9]+)/)?.[1]||0);
+ const appVersion=Number(read('portal/app.js').match(/learning-hub[.]js[?]v=([0-9]+)/)?.[1]||0);
+ const shellVersion=Number(read('portal/index.html').match(/app[.]js[?]v=([0-9]+)/)?.[1]||0);
  assert.ok(hubVersion>=72,'linked Learning Hub catalog must not revert to stale pre-V72 cache');
  assert.equal(appVersion,hubVersion,'app imports current learning-hub version');
  assert.equal(shellVersion,appVersion,'portal shell imports current app version');
