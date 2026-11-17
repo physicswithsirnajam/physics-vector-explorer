@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "version": "v72-existing-advanced-unit-labs",
+  "title": "Existing Unit-Specific Interactive Learning Laboratories",
+  "disclaimer": "Nine existing public unit-specific laboratory pages in this GitHub portal; these are not independently verified as Google Sites embeds, and neither their provenance nor assessment/SLO mapping is asserted.",
+  "labs": [
+    {
+      "id": "unit2-concept-lab",
+      "title": "Unit 2 — Interactive Vector Mastery Lab",
+      "unit": 2,
+      "topic": "Vectors",
+      "file": "unit-02-concept-lab.html",
+      "description": "Three interactive skill modes with 36 original calculation challenges, two-value checking, hints, worked methods, vector diagrams and dot/cross angle exploration. Self-practice is local and does not save grades.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit3-motion-lab",
+      "title": "Unit 3 — Interactive Motion Laboratory",
+      "unit": 3,
+      "topic": "Mechanics",
+      "file": "unit-03-motion-lab.html",
+      "description": "Manipulate constant acceleration, inspect signed velocity–time/displacement–time graphs, and animate ideal projectile flight with adjustable speed, angle and time.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit3-collision-lab",
+      "title": "Unit 3 Part 2 — Air Resistance & Collision Explorer",
+      "unit": 3,
+      "topic": "Mechanics",
+      "file": "unit-03-collision-lab.html",
+      "description": "Qualitative air-drag comparison and adjustable, signed one-dimensional ideal head-on elastic / perfectly inelastic collision model with momentum, kinetic-energy and relative-speed readouts.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit4-rotation-lab",
+      "title": "Unit 4 — Interactive Radian & Rotation Laboratory",
+      "unit": 4,
+      "topic": "Mechanics",
+      "file": "unit-04-rotation-lab.html",
+      "description": "Adjust signed degrees and radius, see the arc/radian relation, model a spinning wheel with angular velocity/acceleration, reversal/distance distinction, displacement and velocity graphs; includes textbook Example 4.1.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit4-centripetal-lab",
+      "title": "Unit 4 — Interactive Centripetal Force Laboratory",
+      "unit": 4,
+      "topic": "Mechanics",
+      "file": "unit-04-centripetal-lab.html",
+      "description": "Adjust mass, tangential speed and radius; view velocity tangent to the circle and net force inward, compare force scaling, calculate friction-free bank angle, choose actual force mechanisms and reproduce NBF Example 4.2.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit4-artificial-gravity-lab",
+      "title": "Unit 4 — Weightlessness & Artificial Gravity Interactive Lab",
+      "unit": 4,
+      "topic": "Mechanics",
+      "file": "unit-04-artificial-gravity-lab.html",
+      "description": "Schematic satellite free fall plus ideal rotating-ring station; vary radius, rpm and person mass, calculate floor normal, acceleration, rpm, period and frequency; includes NBF Example 4.4 and Assignment 4.4 presets.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit4-angular-momentum-lab",
+      "title": "Unit 4 — Torque, Inertia & Angular Momentum Interactive Laboratory",
+      "unit": 4,
+      "topic": "Mechanics",
+      "file": "unit-04-angular-momentum-lab.html",
+      "description": "Model mass-dependent inertia of point mass, hoop, disc or sphere; apply net external torque and read momentum, angular acceleration and speed graph, including NBF Example 4.3. Explore an ideal skater who conserves L while changing I, ω and kinetic energy.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit4-centrifuge-lab",
+      "title": "Unit 4 Part 5 — Interactive Centrifuge Concept Lab",
+      "unit": 4,
+      "topic": "Mechanics",
+      "file": "unit-04-centrifuge-lab.html",
+      "description": "Schematic spinning sample tubes, mixed versus conceptual separation, angular speed and radial acceleration demand with speed-squared scaling; not a sedimentation rate model.",
+      "source": "existing-published-portal-lab"
+    },
+    {
+      "id": "unit5-work-energy-lab",
+      "title": "Unit 5 — Interactive Work–Energy Explorer",
+      "unit": 5,
+      "topic": "Mechanics",
+      "file": "unit-05-work-energy-lab.html",
+      "description": "Live signed-area force–displacement SVG graph, W=Fd cosθ angle slider, kinetic energy derivation/energy changes, conservative gravity vs constant path-dependent resistance, and resistive-medium stopping/reachability logic.",
+      "source": "existing-published-portal-lab"
+    }
+  ]
+}
