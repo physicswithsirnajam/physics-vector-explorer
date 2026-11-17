@@ -1,0 +1,78 @@
+name: Validate Grade XI 40-Activity Unit Inventory (V72)
+on:
+  pull_request:
+    paths:
+      - "portal/simulation-catalog.json"
+      - "portal/learning-labs-v72.json"
+      - "portal/simulations.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "scripts/test_grade11_simulation_migration_v72.cjs"
+      - "scripts/test_grade11_migration_navigation_v71.cjs"
+      - "quality/grade11-google-sites-v72-lossless-migration-inventory.md"
+      - ".github/workflows/validate-grade11-legacy-simulation-v72.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/simulation-catalog.json"
+      - "portal/learning-labs-v72.json"
+      - "portal/simulations.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "scripts/test_grade11_simulation_migration_v72.cjs"
+      - "scripts/test_grade11_migration_navigation_v71.cjs"
+      - "quality/grade11-google-sites-v72-lossless-migration-inventory.md"
+      - ".github/workflows/validate-grade11-legacy-simulation-v72.yml"
+  workflow_dispatch:
+jobs:
+  verify-all-existing-simulations-and-unit-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check script syntax and JSON
+        run: |
+          node --check scripts/test_grade11_simulation_migration_v72.cjs
+          node --check scripts/test_grade11_migration_navigation_v71.cjs
+          node --check portal/app.js
+          node --check portal/learning-hub.js
+          node -e "const a=require('./portal/simulation-catalog.json'),b=require('./portal/learning-labs-v72.json'); if(a.simulations.length!==31||b.labs.length!==9)process.exit(1)"
+      - name: Install tested Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify 40 local activities, Units 1–10 filters, unit links, mobile, and audit honesty
+        run: node scripts/test_grade11_simulation_migration_v72.cjs
+      - name: Regression — 59 resource links and quiz departure warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Regression — new student workspace and 31 original simulations
+        run: node scripts/test_student_workspace_v68.cjs
+      - name: Regression — unit navigation, Times-family watermark and sign-in
+        run: |
+          node scripts/test_grade11_migration_navigation_v71.cjs
+          node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — five unit MCQ builder
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload synthetic/public UI screenshots only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v72-original-and-enhanced-lab-coverage
+          path: qa-artifacts/portal-v72/*.png
+          retention-days: 7
+          if-no-files-found: warn

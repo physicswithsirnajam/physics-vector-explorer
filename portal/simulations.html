@@ -10,50 +10,95 @@ header{border-bottom:1px solid var(--line);background:#0a1729;padding:12px max(1
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700}.brand img{width:52px;height:52px;object-fit:contain}nav{display:flex;gap:16px;flex-wrap:wrap}
 main{max-width:1120px;padding:26px 18px 72px;margin:auto}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;font-weight:750}
 h1{font-size:clamp(2rem,4vw,3rem);margin:.35em 0}.intro{max-width:850px;color:var(--muted)}.notice{border:1px solid var(--line);border-left:4px solid var(--gold);padding:13px 16px;border-radius:10px;background:var(--card);margin:22px 0}
-.controls{display:grid;grid-template-columns:minmax(200px,2fr) minmax(160px,1fr);gap:12px;margin:22px 0}label{display:block;font-weight:650;margin-bottom:5px}input,select{width:100%;border:1px solid #6c83a2;border-radius:9px;padding:13px;font:inherit;background:#0e1d33;color:var(--text)}
-#results{color:var(--muted);margin-bottom:15px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:15px}
+.controls{display:grid;grid-template-columns:minmax(200px,2fr) repeat(2,minmax(160px,1fr));gap:12px;margin:22px 0}label{display:block;font-weight:650;margin-bottom:5px}input,select{width:100%;border:1px solid #6c83a2;border-radius:9px;padding:13px;font:inherit;background:#0e1d33;color:var(--text)}
+#results,#lab-results{color:var(--muted);margin-bottom:15px}.lab-section{margin:38px 0 0;border-top:1px solid var(--line);padding-top:24px}.lab-section h2{margin:6px 0;font-size:clamp(1.3rem,2.5vw,1.8rem)}.lab-note{color:var(--muted);max-width:80ch}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:15px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;min-height:190px}
-.card h2{font-size:1.16rem;margin:7px 0}.topic{font-size:.82rem;color:var(--gold);font-weight:750}.card p{color:var(--muted);margin:4px 0 18px}.go{display:inline-block;margin-top:auto;color:#07182a;background:var(--gold);border-radius:8px;padding:10px 14px;text-decoration:none;font-weight:750;align-self:flex-start}
+.card h2{font-size:1.16rem;margin:7px 0}.topic{font-size:.82rem;color:var(--gold);font-weight:750}.unit-label{display:block;margin-top:4px;color:#cbd9ee;font-size:.75rem;font-weight:700}.enrichment{margin-top:7px;color:#e9c879;font-size:.73rem;font-weight:700}.card p{color:var(--muted);margin:4px 0 18px}.go{display:inline-block;margin-top:auto;color:#07182a;background:var(--gold);border-radius:8px;padding:10px 14px;text-decoration:none;font-weight:750;align-self:flex-start}
 footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted);font-size:.9rem}
-@media(max-width:620px){.controls{grid-template-columns:1fr}header{padding:12px 18px}}
+@media(max-width:850px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.controls>div:first-child{grid-column:1/-1}}@media(max-width:620px){.controls{grid-template-columns:1fr}.controls>div:first-child{grid-column:auto}header{padding:12px 18px}}
 </style><link rel="stylesheet" href="../shared/navigation.css?v=58"></head><body>
 <header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam original official logo">Physics with Sir Najam</a>
 <nav aria-label="Main links"><a href="./">Student Portal</a><a href="./unit-01.html">Unit 1</a><a href="https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc" target="_blank" rel="noopener noreferrer">Google Sites Hub (external) ↗</a></nav></header>
 <main><p class="eyebrow">Explore · Public interactive activities</p><h1>Interactive Physics Simulations</h1>
-<p class="intro">Explore our existing original interactive physics demonstrations, organized by topic. Use search and topic filters to find a model, then open it in a new tab.</p>
-<div class="notice"><strong>Access & academic notice:</strong> These simulations are currently public GitHub Pages activities; opening the Student Portal is not required to view them. Topic labels are browsing aids, not verified NBF/FBISE unit mappings. They are learning demonstrations, not official assessments.</div>
+<p class="intro">Browse 31 original standalone models and 9 enhanced unit-specific learning labs already in this portal. Choose an NBF Grade XI unit (1–10), a broad topic, or a keyword. Concept videos, Google Sites embeds and additional external resources are being inventoried separately.</p>
+<div class="notice"><strong>Access & academic notice:</strong> These simulations are currently public GitHub Pages activities; opening the Student Portal is not required to view them. Unit and topic labels are provisional learning-navigation suggestions, not verified former Google Sites placements or independently confirmed FBISE/SLO mappings. These models are public demonstrations, not official assessments.</div>
 <section aria-label="Find simulations"><div class="controls">
 <div><label for="search">Search by name or topic</label><input id="search" type="search" placeholder="e.g., vectors, waves, energy" autocomplete="off"></div>
 <div><label for="topic">Physics topic</label><select id="topic"><option value="">All topics</option></select></div>
+<div><label for="unit">Grade XI unit</label><select id="unit"><option value="">All units (31)</option></select></div>
 </div><p id="results" role="status" aria-live="polite">Loading available simulations…</p><div class="cards" id="cards"></div></section>
+<section class="lab-section" aria-label="Unit-specific interactive learning laboratories">
+  <h2>Enhanced Unit Learning Labs</h2>
+  <p class="lab-note">Nine additional interactive labs already exist in our lesson desks for Units 2–5. These are separate from the 31 original standalone simulations. They follow the same unit and topic filters.</p>
+  <p id="lab-results" role="status" aria-live="polite">Loading unit-specific learning labs…</p>
+  <div class="cards" id="specialized-labs"></div>
+</section>
 </main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Public interactive resource directory</footer>
 <script>
 'use strict';
-const cards=document.getElementById('cards'),search=document.getElementById('search'),topic=document.getElementById('topic'),results=document.getElementById('results');
-let simulations=[];
+const cards=document.getElementById('cards'),specializedLabs=document.getElementById('specialized-labs'),labResults=document.getElementById('lab-results'),search=document.getElementById('search'),topic=document.getElementById('topic'),unit=document.getElementById('unit'),results=document.getElementById('results');
+let simulations=[],labs=[],unitLabels={};
 function render(){
- const q=search.value.trim().toLowerCase(), t=topic.value;
- const filtered=simulations.filter(s=>(!t||s.topic===t)&&(!q||(s.title+' '+s.topic).toLowerCase().includes(q)));
+ const q=search.value.trim().toLowerCase(), t=topic.value, u=unit.value;
+ const filtered=simulations.filter(s=>(!t||s.topic===t)&&(!u||(u==='additional'?s.additional:s.unit===Number(u)))&&(!q||(s.title+' '+s.topic+' Unit '+s.unit+' '+(unitLabels[s.unit]||'')).toLowerCase().includes(q)));
  cards.replaceChildren();results.textContent=filtered.length+' of '+simulations.length+' simulations shown';
  for(const s of filtered){
   const item=document.createElement('article');item.className='card';
   const badge=document.createElement('span');badge.className='topic';badge.textContent=s.topic;
+  item.dataset.unit=String(s.unit);
+  const ulabel=document.createElement('span');ulabel.className='unit-label';ulabel.textContent='Unit '+s.unit+' · '+(unitLabels[s.unit]||'Physics');
   const title=document.createElement('h2');title.textContent=s.title;
   const note=document.createElement('p');note.textContent='Interactive public demonstration · Opens a separate simulation page.';
   const link=document.createElement('a');link.className='go';link.textContent='Open simulation ↗';
   // Only allow a simple filename with a .html suffix in this same GitHub Pages repository.
   if(!/^[a-z0-9-]+\.html$/.test(s.file))continue;
   link.href=new URL('../'+s.file,location.href).href;link.target='_blank';link.rel='noopener noreferrer';
-  item.append(badge,title,note,link);cards.append(item);
+  item.append(badge,ulabel,title,note);
+  if(s.additional){const extra=document.createElement('span');extra.className='enrichment';extra.textContent='Additional enrichment activity';item.append(extra);}
+  item.append(link);cards.append(item);
  }
- if(!filtered.length)results.textContent='No matching simulations. Clear search or choose All topics.';
+ if(!filtered.length)results.textContent=u==='1'?'No original simulation is currently mapped to Unit 1. Open the Unit 1 Learning Desk for study notes and worked examples.':'No matching simulations. Clear search and filters or choose All units.';
+ const matchingLabs=labs.filter(l=>(!t||l.topic===t)&&(!u||(u!=='additional'&&l.unit===Number(u)))&&(!q||(l.title+' '+l.topic+' Unit '+l.unit+' '+(unitLabels[l.unit]||'')+' '+l.description).toLowerCase().includes(q)));
+ specializedLabs.replaceChildren();labResults.textContent=matchingLabs.length+' of '+labs.length+' unit-specific labs shown';
+ for(const lab of matchingLabs){
+  if(!/^unit-0[2-5]-[a-z0-9-]+-lab\.html$/.test(lab.file))continue;
+  const item=document.createElement('article');item.className='card';item.dataset.unit=String(lab.unit);
+  const badge=document.createElement('span');badge.className='topic';badge.textContent='Enhanced learning lab';
+  const unitName=document.createElement('span');unitName.className='unit-label';unitName.textContent='Unit '+lab.unit+' · '+(unitLabels[lab.unit]||'Physics');
+  const title=document.createElement('h2');title.textContent=lab.title;
+  const note=document.createElement('p');note.textContent=lab.description||'Interactive unit laboratory';
+  const link=document.createElement('a');link.className='go';link.href=new URL(lab.file,location.href).href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open learning lab ↗';
+  item.append(badge,unitName,title,note,link);specializedLabs.append(item);
+ }
+ if(!matchingLabs.length)labResults.textContent='No unit-specific labs match these filters.';
 }
 Promise.resolve().then(async()=>{
- const response=await fetch('./simulation-catalog.json',{cache:'no-store'});if(!response.ok)throw Error('Catalog request failed');
- const data=await response.json();if(!Array.isArray(data.simulations))throw Error('Invalid catalogue');
- simulations=data.simulations.filter(s=>s&&typeof s.file==='string'&&typeof s.title==='string'&&typeof s.topic==='string'&&/^[a-z0-9-]+\.html$/.test(s.file));
+ const responses=await Promise.all([
+  fetch('./simulation-catalog.json',{cache:'no-store'}),
+  fetch('./learning-labs-v72.json',{cache:'no-store'})
+ ]);
+ if(responses.some(response=>!response.ok))throw Error('Activity catalogs unavailable');
+ const [data,labsData]=await Promise.all(responses.map(response=>response.json()));
+ if(!Array.isArray(data.simulations)||!Array.isArray(labsData.labs))throw Error('Invalid activities catalogue');
+ simulations=data.simulations.filter(s=>s&&typeof s.file==='string'&&typeof s.title==='string'&&typeof s.topic==='string'&&Number.isInteger(s.unit)&&s.unit>=1&&s.unit<=10&&/^[a-z0-9-]+\.html$/.test(s.file));
+ unitLabels=data.unitLabels||{};
+ labs=labsData.labs.filter(l=>l&&Number.isInteger(l.unit)&&l.unit>=2&&l.unit<=5&&typeof l.file==='string'&&/^unit-0[2-5]-[a-z0-9-]+-lab\.html$/.test(l.file));
+ for(let n=1;n<=10;n++){
+  const option=document.createElement('option');option.value=String(n);
+  const models=simulations.filter(s=>s.unit===n).length,extensions=labs.filter(l=>l.unit===n).length;
+  option.textContent='Unit '+n+' · '+(unitLabels[n]||'Physics')+' ('+(models+extensions)+' activities)';unit.append(option);
+ }
+ const additional=simulations.filter(s=>s.additional).length;
+ if(additional){const option=document.createElement('option');option.value='additional';option.textContent='Additional enrichment ('+additional+')';unit.append(option);}
+ const requested=new URLSearchParams(location.search).get('unit');if([...unit.options].some(option=>option.value===requested))unit.value=requested;
  [...new Set(simulations.map(s=>s.topic))].sort().forEach(t=>{const opt=document.createElement('option');opt.value=t;opt.textContent=t;topic.append(opt)});
  render();
-}).catch(()=>{results.textContent='The simulation list is temporarily unavailable. Return to the main Student Hub to browse activities.';});
+}).catch(()=>{results.textContent='The activity directory is temporarily unavailable. Return to the Student Portal to browse learning resources.';});
 search.addEventListener('input',render);topic.addEventListener('change',render);
+unit.addEventListener('change',()=>{
+ const address=new URL(location.href);
+ if(unit.value)address.searchParams.set('unit',unit.value);else address.searchParams.delete('unit');
+ history.replaceState(null,'',address.pathname+address.search+address.hash);
+ render();
+});
 </script><script src="../shared/navigation.js?v=68" defer></script></body></html>
