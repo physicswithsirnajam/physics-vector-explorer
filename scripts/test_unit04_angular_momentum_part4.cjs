@@ -178,7 +178,7 @@ assert.ok(part3lab.includes('href="./unit-04-angular-momentum-lab.html"'));
 assert.ok(part2.includes('href="./unit-04-angular-momentum-study.html"'));
 const unit4=catalog.grades.find(g=>g.grade===11)?.units.find(u=>u.unit===4);
 assert.equal(unit4.status,"available");
-assert.equal(unit4.questionBankCount,555);
+assert.equal(unit4.questionBankCount,635);
 assert.equal(unit4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 assert.equal(unit4.resourceIds.length,18);
 assert.equal(new Set(unit4.resourceIds).size,18);
