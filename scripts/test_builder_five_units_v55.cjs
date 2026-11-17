@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 "use strict";
-/* V55 source integrity regression for the expanded 1605-question five-unit public bank. */
+/* V55 source integrity regression for the expanded 1685-question five-unit public bank. */
 const assert=require("node:assert/strict");
 const fs=require("node:fs"),path=require("node:path"),http=require("node:http"),vm=require("node:vm");
 const {chromium}=require("playwright");
@@ -9,7 +9,7 @@ fs.mkdirSync(out,{recursive:true});
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
 const fileAt="question-bank/grade-11/";
 const title=["","Physical Quantities and Measurements","Vectors","Translatory Motion","Rotational and Circular Motion","Work and Energy"];
-const totals={1:275,2:206,3:220,4:555,5:349};
+const totals={1:275,2:206,3:220,4:635,5:349};
 const mime={".html":"text/html; charset=utf-8",".js":"application/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml"};
 const server=http.createServer((req,res)=>{
  try{
@@ -104,7 +104,7 @@ async function assertAdapters(){
    }
     console.log("PASS source adapter Unit "+u+": "+data.questions.length+" original records, normalized and keys verified");
  }
- assert.equal(allIds.size,1605,"all 1605 original and imported questions must have unique IDs");
+ assert.equal(allIds.size,1685,"all 1685 original and imported questions must have unique IDs");
  await assert.rejects(adapter.loadBank(6,fileAt));
  await assert.rejects(adapter.loadBank(5,"https://untrusted.test/"),/unexpected question bank folder/);
 }
@@ -183,7 +183,7 @@ async function assertBrowser(){
   assert.ok(w[1]<=w[0]+2,"mobile builder should not overflow");
   await page.screenshot({path:path.join(out,"05-builder-mobile.png"),fullPage:false});
   assert.deepEqual(errors,[],"no uncaught browser exceptions");
-  console.log("PASS V62+V55 regression: 1605 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
+  console.log("PASS V62+V55 regression: 1685 source-backed MCQs, original 32 retained, 317 new Unit 5 source questions, 26 Unit 5 scenarios and mobile");
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{await assertAdapters();await assertBrowser();})().catch(err=>{console.error("FAIL V55",err);server.close();process.exitCode=1;});
