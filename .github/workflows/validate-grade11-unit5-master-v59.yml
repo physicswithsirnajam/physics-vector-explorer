@@ -55,7 +55,7 @@ jobs:
           node --check scripts/test_builder_multiunit_v56.cjs
           node --check scripts/test_five_unit_student_guide_v57.cjs
           node --check scripts/test_grade11_resource_drawer_v58.cjs
-          node -e "const a=require('./question-bank/grade-11/unit-05-master-topic-v59-317.json'),m=require('./question-bank/manifest.json');if(a.questions.length!==317||a.scenarioGroups!==24||m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0)!==1605)process.exit(1)"
+          node -e "const a=require('./question-bank/grade-11/unit-05-master-topic-v59-317.json'),m=require('./question-bank/manifest.json');if(a.questions.length!==317||a.scenarioGroups!==24||m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0)!==1685)process.exit(1)"
       - name: Install Chromium browser for actual practice regression
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

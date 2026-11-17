@@ -66,15 +66,15 @@
           "unit": 4,
           "name": "Rotational and Circular Motion",
           "path": "grade-11/unit-04-v39-80-practice.json",
-          "liveMcqCount": 555,
-          "sourceSloMcqCount": 555,
-          "summativePilotCount": 555,
-          "scenarioGroupCount": 41,
+          "liveMcqCount": 635,
+          "sourceSloMcqCount": 635,
+          "summativePilotCount": 635,
+          "scenarioGroupCount": 47,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v64-original80-plus-corrected-topics41-46-475",
-          "importNote": "V64 preserves separate original V39 classroom80 MCQ paper, keys, OMR, projector, discussion and descriptive assessments unchanged. Central PUBLIC practice bank has 555 Unit4 questions: original80 + 475 corrected MCQs from Topics4.1–4.6 (80+80+75+80+80+80). V64 imported all original Topic4.6 Weightlessness in Satellites questions, 56 straight and 24 in six intact four-item scenario groups, keeping printed answer letters, explanations and Word run-level superscript/subscript text. Unit4 now has 41 complete scenario groups and 164 scenario MCQs. Five Figure4.13 dependent Topic4.3 original MCQs remain held (Q38 and Q69–72 as one whole scenario); 80 Topic4.7 source questions remain unimported. New keys and individual SLO accuracy require independent Physics/teacher validation; topic SLO P-11-B-16 is candidate only. This is public provisional self-practice, not official FBISE exam, protected graded test or authenticated school record. No cloud score-saving for Unit4.",
-          "newMasterImportedCount": 475,
+          "bankVersion": "v65-original80-plus-corrected-topics41-47-555",
+          "importNote": "V65 completes the corrected master source import for all seven Unit4 topics: 555 of 560 available source MCQs (Topic4.1 80, 4.2 80, 4.3 75, 4.4 80, 4.5 80, 4.6 80, 4.7 80), alongside the untouched separate V39 original classroom 80. Central PUBLIC Test Builder has 635 Unit4 MCQs with 47 intact four-item scenarios (188 contextual questions). The final Topic4.7 Artificial Gravity adds 56 straight and 24 in six original scenarios, preserving original option letters, explanations and Word formatting; candidate topic SLO P-11-B-17 only. The five Figure4.13-dependent Topic4.3 questions remain excluded (Q38 and whole Q69–72 scenario); do not assert 560/560 master coverage. All new MCQs remain provisional teacher-review-pending, not official FBISE-certified questions or keys. Original OMR/projector/classroom/teacher discussion/descriptive materials, Firebase, cloud-saving rules and student history unchanged.",
+          "newMasterImportedCount": 555,
           "masterSourceTopicCount": 560,
           "masterTopicsImported": {
             "4.1": 80,
@@ -82,7 +82,8 @@
             "4.3": 75,
             "4.4": 80,
             "4.5": 80,
-            "4.6": 80
+            "4.6": 80,
+            "4.7": 80
           },
           "originalClassroomPaperCount": 80,
           "sourceFiles": [
@@ -94,7 +95,8 @@
             "grade-11/unit04-v62-part2.b64",
             "grade-11/unit04-v62-part3.b64",
             "grade-11/unit04-v63-topic45.b64",
-            "grade-11/unit04-v64-topic46.b64"
+            "grade-11/unit04-v64-topic46.b64",
+            "grade-11/unit04-v65-topic47.b64"
           ]
         },
         {
@@ -131,6 +133,6 @@
       ]
     }
   ],
-  "bankVersion": "v64-five-unit-central-1605-source-mcqs",
+  "bankVersion": "v65-five-unit-central-1685-source-mcqs",
   "lastUpdated": "2026-11-17"
 }

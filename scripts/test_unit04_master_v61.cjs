@@ -65,12 +65,12 @@ function source(){
  }
  assert.equal(groups.size,12);assert.ok([...groups.values()].every(n=>n===4));
  const unit=manifest.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
- assert.equal(unit.liveMcqCount,555);
- assert.equal(unit.newMasterImportedCount,475);
- assert.equal(unit.scenarioGroupCount,41);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1605);
- assert.equal(catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,555);
- assert.ok(text('portal/unit-04.html').includes('555 provisional Unit 4 MCQs'));
+ assert.equal(unit.liveMcqCount,635);
+ assert.equal(unit.newMasterImportedCount,555);
+ assert.equal(unit.scenarioGroupCount,47);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1685);
+ assert.equal(catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,635);
+ assert.ok(text('portal/unit-04.html').includes('635 provisional Unit 4 MCQs'));
  assert.equal(read(folder+'unit-04-v39-80-practice.json').questions.length,80,'unchanged 80-item classroom bank');
  console.log('PASS V61 source: 160 original corrected Topic 4.1/4.2 MCQs; 112 straight/48 scenario, 12 intact groups; 80 original unchanged.');
  return d;
@@ -97,9 +97,9 @@ async function adapterCheck(d){
  vm.createContext(ctx);
  vm.runInContext(text('shared/practice-bank-adapter-v55.js'),ctx);
  const questions=(await ctx.PSNPracticeBankV55.loadBank(4,folder)).questions;
- assert.equal(questions.length,555);
- assert.equal(new Set(questions.map(q=>q.id)).size,555);
- assert.equal(new Set(questions.map(canon)).size,555,'no exact same stem/options');
+ assert.equal(questions.length,635);
+ assert.equal(new Set(questions.map(q=>q.id)).size,635);
+ assert.equal(new Set(questions.map(canon)).size,635,'no exact same stem/options');
  for(let i=0;i<80;i++){
   const o=old[i],q=questions[i];
   for(const field of ['id','stem','correctOptionId','explanation','sourceQuestionNumber'])assert.equal(q[field],o[field]);
@@ -151,14 +151,14 @@ async function browser(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'build-your-physics-test.html?unit=4',{waitUntil:'networkidle'});
-  await verifyAvailability(page,'555 eligible MCQ');
+  await verifyAvailability(page,'635 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   assert.equal(await page.locator('input[name="cognitive"][value="Unspecified"]').isChecked(),true,'New source MCQs must be included by default');
   await page.screenshot({path:path.join(shots,'01-unit4-240-available.png'),fullPage:false});
   await page.locator('#scope').selectOption('formative');
   assert.equal(await page.locator('#quickStartLink').isVisible(),false);
   await page.locator('#scope').selectOption('summative');
-  await verifyAvailability(page,'555 eligible MCQ');
+  await verifyAvailability(page,'635 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quantity').selectOption('60');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
@@ -168,10 +168,10 @@ async function browser(){
   await page.locator('#begin').click();
   await page.waitForFunction(()=>!document.getElementById('quiz').classList.contains('hidden'));
   assert.equal(await page.locator('#choices label').count(),4);
-  console.log('PASS V61 Chromium Unit 4: 555 available, 0 formative, 555 summative; 60-item self-practice actually launches.');
+  console.log('PASS V61 Chromium Unit 4: 635 available, 0 formative, 635 summative; 60-item self-practice actually launches.');
 
   await page.goto(base+'build-your-physics-test.html?unit=4',{waitUntil:'networkidle'});
-  await verifyAvailability(page,'555 eligible MCQ');
+  await verifyAvailability(page,'635 eligible MCQ');
   await page.locator('#quantity').selectOption('40');
   await page.locator('#arrangement').selectOption('scenario');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
@@ -184,7 +184,7 @@ async function browser(){
   await page.screenshot({path:path.join(shots,'02-unit4-intact-scenario.png'),fullPage:false});
 
   await page.goto(base+'build-your-physics-test.html?units=2,4',{waitUntil:'networkidle'});
-  await verifyAvailability(page,'761 eligible MCQ');
+  await verifyAvailability(page,'841 eligible MCQ');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
   await page.waitForFunction(()=>!document.getElementById('start').classList.contains('hidden'));
@@ -199,14 +199,14 @@ async function browser(){
   await page.screenshot({path:path.join(shots,'03-mixed-units-2-4-report.png'),fullPage:false});
 
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1605');
-  assert.match(await page.locator('[data-unit="4"] .count').textContent(),/555 MCQs/);
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1685');
+  assert.match(await page.locator('[data-unit="4"] .count').textContent(),/635 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const dim=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
   assert.ok(dim[1]<=dim[0]+2,'390px student guide must not overflow');
   assert.deepEqual(errors,[]);
   await page.screenshot({path:path.join(shots,'04-guide-mobile.png'),fullPage:false});
-  console.log('PASS V61 Chromium: scenarios, 761 mixed U2+U4, per-unit results, disabled cloud-save, 1605 guide, phone display.');
+  console.log('PASS V61 Chromium: scenarios, 841 mixed U2+U4, per-unit results, disabled cloud-save, 1685 guide, phone display.');
  }finally{if(b)await b.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{const d=source();await adapterCheck(d);await browser();})().catch(err=>{console.error('FAIL V61',err);server.close();process.exitCode=1;});
