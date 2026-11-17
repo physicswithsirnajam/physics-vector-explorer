@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "source": "Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx",
+  "sourceSha256": "925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777",
+  "textbook": "NBF Physics Grade XI, Unit 4, printed page 64, Figure 4.13",
+  "formatMethod": "original Word run-level superscript/subscript restored",
+  "topic": "4.3",
+  "figureRef": "4.13",
+  "rows": [
+    [
+      43,
+      38,
+      "For the rectangular plate axis shown through a corner perpendicular to the plate, Figure 4.13 gives:",
+      [
+        "I=(1/3)M(a²+b²)",
+        "I=M(a²+b²)",
+        "I=(1/6)M(a²+b²)",
+        "I=(1/12)M(a²+b²)"
+      ],
+      "A",
+      "The listed corner-axis value is I=(1/3)M(a²+b²)."
+    ],
+    [
+      43,
+      69,
+      "For this plate, a²+b² equals:",
+      [
+        "0.49 m²",
+        "0.16 m²",
+        "0.25 m²",
+        "0.07 m²"
+      ],
+      "C",
+      "0.40²+0.30²=0.16+0.09=0.25 m²."
+    ],
+    [
+      43,
+      70,
+      "About the central axis, I is:",
+      [
+        "0.25 kg m²",
+        "0.125 kg m²",
+        "0.50 kg m²",
+        "1.50 kg m²"
+      ],
+      "B",
+      "I=(1/12)(6)(0.25)=0.125 kg m²."
+    ],
+    [
+      43,
+      71,
+      "About the corner axis, I is:",
+      [
+        "1.00 kg m²",
+        "0.25 kg m²",
+        "0.50 kg m²",
+        "0.125 kg m²"
+      ],
+      "C",
+      "I=(1/3)(6)(0.25)=0.50 kg m²."
+    ],
+    [
+      43,
+      72,
+      "The corner-axis I is larger mainly because:",
+      [
+        "the formula loses the squared lengths",
+        "mass elements are farther from that axis on average",
+        "the mass changes",
+        "the plate area changes"
+      ],
+      "B",
+      "A greater average squared distance from the axis increases I."
+    ]
+  ],
+  "scenarios": {
+    "u04-v61-t43-s4": "Scenario 4 for MCQs 69-72: A uniform rectangular plate has mass 6.0 kg with sides a = 0.40 m and b = 0.30 m. Compare a central perpendicular axis with the corner perpendicular axis shown in the source figure."
+  },
+  "teacherReview": "source-match only; independent physics/SLO validation pending"
+}

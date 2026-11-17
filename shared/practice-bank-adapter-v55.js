@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:635,5:349};
+const expected={1:275,2:206,3:220,4:640,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -43,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?47:26;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?48:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -489,6 +489,67 @@ function adaptMasterFourV65(master,previous){
 }
 
 
+
+/* V66: the five corrected 4.3 source MCQs previously held until verifying
+ * textbook Figure 4.13, now checked against the actual NBF page 64 image.
+ * A local ORIGINAL schematic displays the axis distinction during practice;
+ * the source question and its original key/explanation are not rewritten. */
+async function loadMasterFourFigureV66(basePath){
+ const response=await fetch(basePath+'unit04-v66-figure413-five-source.json',{cache:'no-store'});
+ if(!response.ok)throw Error('The Figure 4.13 five-question source is missing (HTTP '+response.status+')');
+ return response.json();
+}
+function adaptMasterFourFigureV66(source,previous){
+ need(source?.version===1&&source.source==='Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx'&&
+   source.sourceSha256==='925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777'&&
+   source.textbook==='NBF Physics Grade XI, Unit 4, printed page 64, Figure 4.13'&&
+   source.formatMethod==='original Word run-level superscript/subscript restored'&&
+   source.topic==='4.3'&&source.figureRef==='4.13'&&source.rows?.length===5&&
+   Object.keys(source.scenarios||{}).join(',')==='u04-v61-t43-s4',
+   'Figure 4.13 exact original five-item source missing or altered');
+ const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+'|'+
+   q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+ const fingerprints=new Set(previous.map(canon));
+ const ids=new Set(previous.map(q=>q.id));
+ const expectedNumbers=[38,69,70,71,72],expectedLetters=['A','C','B','C','B'];
+ const originalScenario=source.scenarios['u04-v61-t43-s4'];
+ need(typeof originalScenario==='string'&&originalScenario.startsWith('Scenario 4 for MCQs 69-72:')&&originalScenario.includes('6.0 kg')&&
+   originalScenario.includes('corner perpendicular axis'),
+   'original figure-referencing four-item scenario context was altered');
+ const items=source.rows.map((r,index)=>{
+  need(Array.isArray(r)&&r.length===6,'bad Figure 4.13 original question row');
+  const [topic,n,stem,optionTexts,answer,explanation]=r;
+  const id='g11-u04-master-t43-q'+String(n).padStart(3,'0');
+  need(topic===43&&n===expectedNumbers[index]&&answer===expectedLetters[index]&&!ids.has(id),
+    'Figure 4.13 original source numbering/key changed '+id);
+  need(typeof stem==='string'&&stem.length>10&&Array.isArray(optionTexts)&&optionTexts.length===4&&
+    optionTexts.every(o=>typeof o==='string'&&o.trim())&&
+    typeof explanation==='string'&&explanation.trim(),'source option/explanation missing '+id);
+  const group=n===38?null:'u04-v61-t43-s4';
+  const stimulus=group?'<p>'+escapeHTML(originalScenario)+'</p>':
+    '<p>Reference: NBF Grade XI Physics, Figure 4.13 (printed page 64). Compare the same uniform rectangular plate around the centre and corner perpendicular axes.</p>';
+  const q={id,grade:11,unit:4,active:true,type:'single_choice',
+    status:'teacher-review-pending',boardEligible:false,
+    stem,options:optionTexts.map((text,i)=>({id:'ABCD'[i],text})),
+    correctOptionId:answer,explanation,sloCodes:['P-11-B-18'],
+    assessmentClassification:'summative-theory',
+    difficulty:'Unspecified',cognitiveLevel:'Unspecified',
+    sloAlignment:'Original Topic 4.3 figure/axis source verified; individual academic review pending',
+    sourceQuestionNumber:n,topic:'4.3 — Moment of Inertia',
+    source:{document:source.source,sourceSha256:source.sourceSha256,
+      textbook:source.textbook,figureRef:'4.13',itemNumber:n,review:'source figure and original key checked; independent teacher review pending'},
+    stimulusSetId:group,stimulusHtml:stimulus,referenceFigureId:'unit4-figure413-axis-reference'};
+  need(!fingerprints.has(canon(q)),'duplicate previously published Unit4 question '+id);
+  ids.add(id);fingerprints.add(canon(q));
+  return q;
+ });
+ need(items.filter(q=>q.stimulusSetId).length===4&&
+   items.filter(q=>q.stimulusSetId).every(q=>q.stimulusHtml===items[1].stimulusHtml)&&
+   items[0].stimulusSetId===null,
+   'Figure 4.13 source scenario must remain one intact four-question group plus independent Q38');
+ return items;
+}
+
 function adaptUnitFive(student,key,setLabel){
   need(student?.grade===11&&student.unit===5&&student.officialBoardPaper===false&&student.questions?.length===16,'bad Unit 5 Set '+setLabel+' student source');
   need(key?.grade===11&&key.unit===5&&key.publicResource===true&&key.notSecured===true&&key.officialFBISEKey===false,'Unit 5 key must be labelled publicly accessible and non-official');
@@ -586,13 +647,13 @@ async function loadBank(unit,basePath){
       ...adaptUnitFive(data[2],data[3],'B')
     ])
   ];
-  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];questions=[...beforeV65,...adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65)];}
+  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v65-original80-plus-corrected-topics41-47-555':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'

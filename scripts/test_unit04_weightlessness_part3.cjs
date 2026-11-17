@@ -160,7 +160,7 @@ for(const source of [engine,ui,lab]){
 }
 const u4=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.status,"available");
-assert.equal(u4.questionBankCount,635);
+assert.equal(u4.questionBankCount,640);
 assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 assert.deepEqual(u4.resourceIds,["unit4-desk","unit4-rotation-study","unit4-rotation-lab",
  "unit4-centripetal-study","unit4-centripetal-lab",

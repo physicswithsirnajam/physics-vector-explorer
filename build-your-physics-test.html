@@ -210,7 +210,7 @@
     </div>
     <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V62 · Any combination of Units 1–5 MCQ self-practice · Full official exam mode not yet active</footer>
   </div>
-  <script src="shared/practice-bank-adapter-v55.js?v=62"></script>
+  <script src="shared/practice-bank-adapter-v55.js?v=66"></script>
   <script src="shared/multi-unit-planner-v56.js"></script>
   <script>
     'use strict';
@@ -440,7 +440,7 @@
       $('sum-scope').textContent=names.scope[p.scope];
       $('sum-slo').textContent=p.slo || 'Any eligible SLO';
       $('sum-units').replaceChildren(...p.units.map(n=>{const tag=document.createElement('span');tag.className='pill';tag.textContent='Unit '+n;return tag;}));
-      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 have 275, 206, 220, 635 and 349 provisional MCQs respectively. Mixed-unit self-practice distributes questions across the selected units; choose complete scenarios where preferred.';
+      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 have 275, 206, 220, 640 and 349 provisional MCQs respectively. Mixed-unit self-practice distributes questions across the selected units; choose complete scenarios where preferred.';
       const errors=[];
       if (!p.units.length) errors.push('Select at least one textbook unit.');
       if (!p.cognitiveLevels.length) errors.push('Select at least one cognitive level.');
