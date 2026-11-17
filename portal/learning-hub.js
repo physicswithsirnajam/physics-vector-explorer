@@ -6,7 +6,7 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=57',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=71',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
