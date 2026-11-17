@@ -1,0 +1,76 @@
+name: Validate Source-Verified HSSC-I PDF and Video Index (V73)
+on:
+  pull_request:
+    paths:
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/simulations.html"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "quality/hssc-v73-31-simulation-link-crosswalk.json"
+      - "quality/hssc-v73-index-pdf-verified-resources-audit.md"
+      - ".github/workflows/validate-hssc-original-source-index-v73.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/simulations.html"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "quality/hssc-v73-31-simulation-link-crosswalk.json"
+      - "quality/hssc-v73-index-pdf-verified-resources-audit.md"
+      - ".github/workflows/validate-hssc-original-source-index-v73.yml"
+  workflow_dispatch:
+jobs:
+  validate-no-loss-hssc-resource-transfer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate JS syntax, JSON and counts
+        run: |
+          node --check scripts/test_hssc_legacy_resources_v73.cjs
+          node --check portal/learning-hub.js
+          node --check portal/app.js
+          node -e "const m=require('./portal/legacy-hssc-resources-v73.json'),c=require('./quality/hssc-v73-31-simulation-link-crosswalk.json');if(m.videoPages.length!==15||m.generalVideos.length!==2||m.pdfHandouts.length!==17||m.extraReading.length!==1||c.links.length!==31)process.exit(1)"
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Original link extraction and 14-unit directory correctness
+        run: node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Regression — all 40 original and enhanced simulations
+        run: node scripts/test_grade11_simulation_migration_v72.cjs
+      - name: Regression — resource drawer, lessons, and account privacy
+        run: |
+          node scripts/test_grade11_resource_drawer_v58.cjs
+          node scripts/test_student_workspace_v68.cjs
+          node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — original five-unit MCQ builder and student guide
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload only synthetic screenshots and source-preview UI
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hssc-v73-source-linked-original-pdf-video-directory-preview
+          path: qa-artifacts/hssc-source-v73/*.png
+          retention-days: 7
+          if-no-files-found: warn
