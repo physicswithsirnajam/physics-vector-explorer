@@ -257,6 +257,8 @@ function exportPracticeJson(){
  if(!validExportSession())return;
  const data={
   format:'Physics with Sir Najam self-practice archive V5',
+  publisher:'Physics with Sir Najam',
+  documentBranding:'Personal self-practice records. Keep private.',
   exportedAt:new Date().toISOString(),
   isCompleteSavedHistory:!progressHasOlder,
   loadedAttempts:progressRecords.length,
@@ -272,10 +274,10 @@ function csvField(value){
 }
 function exportPracticeCsv(){
  if(!validExportSession())return;
- const header=['Attempt','Date (UTC)','Grade','Unit','Questions','Correct','Skipped','Selection','Arrangement','Bank version'];
+ const header=['Attempt','Date (UTC)','Grade','Unit','Questions','Correct','Skipped','Selection','Arrangement','Bank version','Exported by'];
  const rows=[header,...progressRecords.map((r,i)=>[
   i+1,exportableAttempt(r).createdAt||'',r.grade||11,r.unit||1,r.questionCount||0,
-  r.correctCount||0,r.skippedCount||0,r.selection||'',r.arrangement||'',r.bankVersion||''
+  r.correctCount||0,r.skippedCount||0,r.selection||'',r.arrangement||'',r.bankVersion||'','Physics with Sir Najam'
  ])];
  downloadAsFile('physics-with-sir-najam-practice-summary.csv',rows.map(r=>r.map(csvField).join(',')).join('\r\n'),'text/csv;charset=utf-8');
 }
