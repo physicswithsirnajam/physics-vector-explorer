@@ -62,7 +62,7 @@ function auditSource(){
  const u4=manifest.grades.find(g=>g.grade===11).units.find(u=>u.unit===4);
  assert.equal(u4.liveMcqCount,640);assert.equal(u4.scenarioGroupCount,48);
  assert.equal(u4.newMasterImportedCount,560);
- assert.equal(u4.masterTopicsImported['4.3'],75);
+ assert.equal(u4.masterTopicsImported['4.3'],80);
  assert.equal(u4.masterTopicsImported['4.4'],80);
  assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1690);
  assert.equal(json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,640);
