@@ -122,7 +122,7 @@ async function main(){
   // Static source practice app: display fake long solution set without touching real MCQs.
   const practice=await context.newPage();
   await practice.goto(base+'practice-engine/index.html?unit=1',{waitUntil:'domcontentloaded'});
-  await practice.waitForSelector('.psn-print-watermark');
+  await practice.waitForSelector('.psn-print-watermark',{state:'attached'});
   await practice.evaluate(()=>{
    const quiz=document.getElementById('quiz'),start=document.getElementById('start');
    if(quiz)quiz.classList.add('hidden');if(start)start.classList.add('hidden');
