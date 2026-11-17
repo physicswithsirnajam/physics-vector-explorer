@@ -171,7 +171,7 @@ for(const content of [engine,ui,lab]){
  }
 }
 const u4=cat.grades.find(x=>x.grade===11)?.units.find(x=>x.unit===4);
-assert.equal(u4.questionBankCount,395);
+assert.equal(u4.questionBankCount,475);
 assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 assert.equal(u4.resourceIds.length,18);
 assert.equal(new Set(u4.resourceIds).size,18);
