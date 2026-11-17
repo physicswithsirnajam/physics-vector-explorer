@@ -66,22 +66,23 @@
           "unit": 4,
           "name": "Rotational and Circular Motion",
           "path": "grade-11/unit-04-v39-80-practice.json",
-          "liveMcqCount": 475,
-          "sourceSloMcqCount": 475,
-          "summativePilotCount": 475,
-          "scenarioGroupCount": 35,
+          "liveMcqCount": 555,
+          "sourceSloMcqCount": 555,
+          "summativePilotCount": 555,
+          "scenarioGroupCount": 41,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v63-original80-plus-corrected-topics41-45-395",
-          "importNote": "V63 preserves the separate original V39 classroom80 paper, OMR, projector, descriptive and discussion pages unchanged. Central PUBLIC Test Builder now has 475 Unit4 MCQs: original80 + Topic4.1 80 + Topic4.2 80 + Topic4.3 75 + Topic4.4 80 + Topic4.5 80, in 35 complete scenario groups. V63 original corrected Topic4.5 source preserves Word mathematical superscripts/subscripts and 80 source options/keys/explanations; 56 straight and 24 in six intact original scenarios. Five Figure4.13-dependent Topic4.3 questions remain held: Q38 and scenario Q69-72. Remaining master topics 4.6 and 4.7: 160 original MCQs. New source-key and item-level SLO accuracy await independent academic teacher review, and none is official FBISE certified. No secure school assessment, authenticated grade or cloud save is added.",
-          "newMasterImportedCount": 395,
+          "bankVersion": "v64-original80-plus-corrected-topics41-46-475",
+          "importNote": "V64 preserves separate original V39 classroom80 MCQ paper, keys, OMR, projector, discussion and descriptive assessments unchanged. Central PUBLIC practice bank has 555 Unit4 questions: original80 + 475 corrected MCQs from Topics4.1–4.6 (80+80+75+80+80+80). V64 imported all original Topic4.6 Weightlessness in Satellites questions, 56 straight and 24 in six intact four-item scenario groups, keeping printed answer letters, explanations and Word run-level superscript/subscript text. Unit4 now has 41 complete scenario groups and 164 scenario MCQs. Five Figure4.13 dependent Topic4.3 original MCQs remain held (Q38 and Q69–72 as one whole scenario); 80 Topic4.7 source questions remain unimported. New keys and individual SLO accuracy require independent Physics/teacher validation; topic SLO P-11-B-16 is candidate only. This is public provisional self-practice, not official FBISE exam, protected graded test or authenticated school record. No cloud score-saving for Unit4.",
+          "newMasterImportedCount": 475,
           "masterSourceTopicCount": 560,
           "masterTopicsImported": {
             "4.1": 80,
             "4.2": 80,
             "4.3": 75,
             "4.4": 80,
-            "4.5": 80
+            "4.5": 80,
+            "4.6": 80
           },
           "originalClassroomPaperCount": 80,
           "sourceFiles": [
@@ -92,7 +93,8 @@
             "grade-11/unit04-v62-part1.b64",
             "grade-11/unit04-v62-part2.b64",
             "grade-11/unit04-v62-part3.b64",
-            "grade-11/unit04-v63-topic45.b64"
+            "grade-11/unit04-v63-topic45.b64",
+            "grade-11/unit04-v64-topic46.b64"
           ]
         },
         {
@@ -129,6 +131,6 @@
       ]
     }
   ],
-  "bankVersion": "v63-five-unit-central-1525-source-mcqs",
+  "bankVersion": "v64-five-unit-central-1605-source-mcqs",
   "lastUpdated": "2026-11-17"
 }

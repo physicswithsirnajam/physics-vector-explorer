@@ -54,7 +54,7 @@ jobs:
           node --check shared/practice-bank-adapter-v55.js
           node --check scripts/test_unit04_master_v62.cjs
           node --check scripts/test_unit04_master_v61.cjs
-          node -e "const m=require('./question-bank/manifest.json');const u=m.grades.find(g=>g.grade===11).units;if(u.find(x=>x.unit===4).liveMcqCount!==475||u.reduce((n,x)=>n+x.liveMcqCount,0)!==1525)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json');const u=m.grades.find(g=>g.grade===11).units;if(u.find(x=>x.unit===4).liveMcqCount!==555||u.reduce((n,x)=>n+x.liveMcqCount,0)!==1605)process.exit(1)"
       - name: Install pinned Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

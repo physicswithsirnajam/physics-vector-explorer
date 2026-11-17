@@ -160,7 +160,7 @@ assert.ok(part1.includes('href="./unit-04-centripetal-study.html"'));
 assert.ok(part1Lab.includes('href="./unit-04-centripetal-lab.html"'));
 const u4=catalog.grades.find(g=>g.grade===11)?.units.find(x=>x.unit===4);
 assert.equal(u4.status,"available");
-assert.equal(u4.questionBankCount,475);
+assert.equal(u4.questionBankCount,555);
 assert.equal(u4.assessmentStatus,"provisional-unit4-integrated-80-mark-classroom-practice");
 assert.deepEqual(u4.resourceIds,
  ["unit4-desk","unit4-rotation-study","unit4-rotation-lab","unit4-centripetal-study","unit4-centripetal-lab","unit4-artificial-gravity-study","unit4-artificial-gravity-lab","unit4-angular-momentum-study","unit4-angular-momentum-lab","unit4-centrifuge-study","unit4-centrifuge-lab","unit4-slo-audit","unit4-mcq-full80","unit4-descriptive-practice","unit4-assessment-pack","unit4-projector-practice","unit4-discussion-slides","unit4-slo-focus"]);
