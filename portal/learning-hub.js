@@ -6,7 +6,7 @@
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
 const byId=id=>document.getElementById(id);
-const catalogUrl=new URL('./learning-catalog.json?v=72',import.meta.url);
+const catalogUrl=new URL('./learning-catalog.json?v=73',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
@@ -59,6 +59,21 @@ function renderResourceList(grade,active){
    ? `${found} resource${found===1?'':'s'} shown · Access labels describe how each resource is currently delivered.`
    : 'No matching resources are currently linked for this unit. Clear the filter or search to see available items.';
 }
+function appendSourceReferences(card,unit){
+ const count=(unit.legacyVideoPageCount||0)+(unit.originalPdfCount||0)+(unit.originalExternalReadingCount||0);
+ if(!count||!unit.originalReferenceHref)return;
+ const url=safeHref(unit.originalReferenceHref);
+ if(!url)return;
+ const link=document.createElement('a');
+ link.href=url;link.className='hub-source-reference-shortcut';
+ const pieces=[];
+ if(unit.originalPdfCount)pieces.push(unit.originalPdfCount+' original PDF'+(unit.originalPdfCount===1?'':'s'));
+ if(unit.legacyVideoPageCount)pieces.push(unit.legacyVideoPageCount+' concept-video page'+(unit.legacyVideoPageCount===1?'':'s'));
+ if(unit.originalExternalReadingCount)pieces.push(unit.originalExternalReadingCount+' external reading');
+ link.textContent='Original sources: '+pieces.join(' + ')+' ↗';
+ link.title='External public links — not private portal-protected downloads or hosted videos';
+ card.append(link);
+}
 function renderGrade(){
  const xi=selectedGrade==='11';
  byId('hub-main').hidden=!xi;
@@ -110,6 +125,7 @@ function renderGrade(){
       explore.className='hub-sim-shortcut';explore.textContent='Explore '+u.simulationCount+' original simulation'+(u.simulationCount===1?'':'s')+' ↗';
       card.append(explore);}
   }
+  appendSourceReferences(card,u);
   list.append(card);
  }
  const upcoming=resetChildren('hub-planned-units');
@@ -126,6 +142,7 @@ function renderGrade(){
     if(link){const explore=document.createElement('a');explore.href=link;
       explore.className='hub-sim-shortcut';explore.textContent='Explore '+u.simulationCount+' original lab'+(u.simulationCount===1?'':'s')+' ↗';card.append(explore);}
   }
+  appendSourceReferences(card,u);
   upcoming.append(card);
  }
  renderResourceList(grade,active);

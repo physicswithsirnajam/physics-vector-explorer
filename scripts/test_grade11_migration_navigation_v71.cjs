@@ -47,9 +47,14 @@ function audit(){
  assert.ok(css.includes('position:fixed!important')&&css.includes('transform:rotate'));
  assert.ok(read('portal/pdf-report.js').includes("href+'?v=71'"));
  assert.ok(read('practice-engine/index.html').includes('print-watermark-v70.css?v=71'));
- assert.ok(read('portal/learning-hub.js').includes("learning-catalog.json?v=72"));
- assert.ok(read('portal/app.js').includes("learning-hub.js?v=72"));
- assert.ok(read('portal/index.html').includes('app.js?v=72'));
+ // The three dependent imports must stay on the SAME current version.
+ // The V71 regression must not pin V72 after intentionally published releases.
+ const hubVersion=Number(read('portal/learning-hub.js').match(/learning-catalog[.]json[?]v=([0-9]+)/)?.[1]||0);
+ const appVersion=Number(read('portal/app.js').match(/learning-hub[.]js[?]v=([0-9]+)/)?.[1]||0);
+ const shellVersion=Number(read('portal/index.html').match(/app[.]js[?]v=([0-9]+)/)?.[1]||0);
+ assert.ok(hubVersion>=72,'linked Learning Hub catalog must not revert to stale pre-V72 cache');
+ assert.equal(appVersion,hubVersion,'app imports current learning-hub version');
+ assert.equal(shellVersion,appVersion,'portal shell imports current app version');
  assert.ok(read('quality/grade11-v71-google-sites-migration-unit06-10-intake.md')
   .includes('Grade11_Unit6_COMPLETE_MASTER_ALL.pdf'));
  console.log('PASS V71 catalog: 59 unchanged entries, Study/Explore native, 31 simulations, 1,690 MCQs, Units6–10 unpublished and Times watermarks');

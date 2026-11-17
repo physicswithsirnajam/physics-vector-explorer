@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "version": "v73-exact-pdf-link-crosswalk",
+  "source": "User-supplied Physics with Sir Najam - 1st Year (HSSC).pdf, physical pages 3–11, extracted hyperlink targets",
+  "sourceExactLegacyPagesAreNotDirectOriginalEmbedTargets": true,
+  "all31ExistingRepositoryFilesVerifiedV72": true,
+  "matched": 31,
+  "matchingBasis": "Printed old-site activity names match topics and names of 31 original GitHub simulations; original embedded-code equivalence not independently checked",
+  "links": [
+    {
+      "unit": 2,
+      "legacyTitle": "Vector Explorer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-2-vectors/vector-explorer",
+      "repositoryFile": "index.html",
+      "sourcePdfPage": 3,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 2,
+      "legacyTitle": "Vector Addition",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-2-vectors/vector-addition",
+      "repositoryFile": "vector-addition.html",
+      "sourcePdfPage": 3,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 3,
+      "legacyTitle": "Projectile Motion Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-3-translatory-motion/projectile-motion-laboratory",
+      "repositoryFile": "projectile-motion.html",
+      "sourcePdfPage": 4,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 3,
+      "legacyTitle": "Motion Graph Explorer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-3-translatory-motion/motion-graph-explorer",
+      "repositoryFile": "motion-graphs.html",
+      "sourcePdfPage": 4,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 3,
+      "legacyTitle": "Free Fall & Vertical Motion",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-3-translatory-motion/free-fall-vertical-motion",
+      "repositoryFile": "free-fall.html",
+      "sourcePdfPage": 4,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 3,
+      "legacyTitle": "Collisions Lab",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-3-translatory-motion/collisions-lab",
+      "repositoryFile": "collisions-lab.html",
+      "sourcePdfPage": 4,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 4,
+      "legacyTitle": "Circular Motion Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-4-rotational-and-circular-motion/circular-motion-laboratory",
+      "repositoryFile": "circular-motion.html",
+      "sourcePdfPage": 5,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 4,
+      "legacyTitle": "Torque, Inertia & Angular Momentum",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-4-rotational-and-circular-motion/torque-inertia-angular-momentum",
+      "repositoryFile": "torque-angular-momentum.html",
+      "sourcePdfPage": 5,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 4,
+      "legacyTitle": "Weightlessness & Artificial Gravity Lab",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-4-rotational-and-circular-motion/weightlessness-artificial-gravity-lab",
+      "repositoryFile": "weightlessness-artificial-gravity.html",
+      "sourcePdfPage": 5,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 4,
+      "legacyTitle": "Centrifuge Applications Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-4-rotational-and-circular-motion/centrifuge-applications-laboratory",
+      "repositoryFile": "centrifuge-applications.html",
+      "sourcePdfPage": 5,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 5,
+      "legacyTitle": "Work Energy Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-5-work-and-energy/work-energy-laboratory",
+      "repositoryFile": "work-energy.html",
+      "sourcePdfPage": 6,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 6,
+      "legacyTitle": "Archimedes' Principle & Flotation",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-6-fluid-mechanics/archimedes-principle-flotation",
+      "repositoryFile": "archimedes-flotation.html",
+      "sourcePdfPage": 7,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 6,
+      "legacyTitle": "Continuity Equation & Fluid Flow",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-6-fluid-mechanics/continuity-equation-fluid-flow",
+      "repositoryFile": "continuity-fluid-flow.html",
+      "sourcePdfPage": 7,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 6,
+      "legacyTitle": "Bernoulli's Equation & Venturi Effect",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-6-fluid-mechanics/bernoullis-equation-venturi-effect",
+      "repositoryFile": "bernoulli-venturi.html",
+      "sourcePdfPage": 7,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 6,
+      "legacyTitle": "Viscosity, Drag & Terminal Velocity",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-6-fluid-mechanics/viscosity-drag-terminal-velocity",
+      "repositoryFile": "viscosity-terminal-velocity.html",
+      "sourcePdfPage": 7,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 6,
+      "legacyTitle": "Superfluidity & Fluid Behaviour",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-6-fluid-mechanics/superfluidity-fluid-behaviour",
+      "repositoryFile": "superfluidity-explorer.html",
+      "sourcePdfPage": 7,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 7,
+      "legacyTitle": "Crystal Structure & 3D Lattice Explorer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-7-physics-of-solids/crystal-structure-3d-lattice-explorer",
+      "repositoryFile": "crystal-structure-explorer.html",
+      "sourcePdfPage": 8,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 7,
+      "legacyTitle": "Stress–Strain & Young's Modulus",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-7-physics-of-solids/stress-strain-youngs-modulus",
+      "repositoryFile": "stress-strain-young-modulus.html",
+      "sourcePdfPage": 8,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 8,
+      "legacyTitle": "Ideal Gas & Kinetic Theory Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-8-heat-and-thermodynamics/ideal-gas-kinetic-theory-laboratory",
+      "repositoryFile": "ideal-gas-kinetic-theory.html",
+      "sourcePdfPage": 9,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 8,
+      "legacyTitle": "First Law of Thermodynamics & P–V Work",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-8-heat-and-thermodynamics/first-law-of-thermodynamics-p-v-work",
+      "repositoryFile": "first-law-pv-work.html",
+      "sourcePdfPage": 9,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 8,
+      "legacyTitle": "Heat Engines, Carnot Cycle & Efficiency",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-8-heat-and-thermodynamics/heat-engines-carnot-cycle-efficiency",
+      "repositoryFile": "heat-engine-carnot.html",
+      "sourcePdfPage": 9,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 8,
+      "legacyTitle": "Second Law, Entropy & Refrigerator Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-8-heat-and-thermodynamics/second-law-entropy-refrigerator-laboratory",
+      "repositoryFile": "second-law-entropy-refrigerator.html",
+      "sourcePdfPage": 9,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Superposition, Interference & Noise-Cancellation Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/superposition-interference-noise-cancellation-laboratory",
+      "repositoryFile": "wave-superposition-interference.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Stationary Waves & Harmonics Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/stationary-waves-harmonics-laboratory",
+      "repositoryFile": "stationary-waves-harmonics.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Diffraction & Ripple Tank Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/diffraction-ripple-tank-laboratory",
+      "repositoryFile": "diffraction-ripple-tank.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Doppler Effect & Moving Sound Source",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/doppler-effect-moving-sound-source",
+      "repositoryFile": "doppler-effect-laboratory.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Polarization & Malus's Law Laboratory",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/polarization-maluss-law-laboratory",
+      "repositoryFile": "polarization-malus-law.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Gravitational Waves & Interferometer Explorer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/gravitational-waves-interferometer-explorer",
+      "repositoryFile": "gravitational-waves-interferometer.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 9,
+      "legacyTitle": "Wave Intensity, Amplitude & Energy Transfer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-9-waves/wave-intensity-amplitude-energy-transfer",
+      "repositoryFile": "wave-intensity-energy.html",
+      "sourcePdfPage": 10,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 10,
+      "legacyTitle": "Electric Field & Charged Particle Explorer",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-10-electrostatics/electric-fields-charged-particle-motion",
+      "repositoryFile": "electric-field-particle-lab.html",
+      "sourcePdfPage": 11,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    },
+    {
+      "unit": 10,
+      "legacyTitle": "Coulomb's Law & Electric Force Vectors",
+      "legacyPageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/simulations/unit-10-electrostatics/coulombs-law-electric-force-vectors",
+      "repositoryFile": "coulomb-vector-lab.html",
+      "sourcePdfPage": 11,
+      "comparisonMethod": "legacy-title-to-existing-original-topic-and-file-match",
+      "originalLegacyEmbedInspected": false
+    }
+  ]
+}

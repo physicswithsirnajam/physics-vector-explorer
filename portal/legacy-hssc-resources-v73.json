@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "version": "v73-2026-11-17-pdf-link-annotations-drive-readonly",
+  "title": "Grade XI — Source-linked Original PDFs and Concept Videos",
+  "auditStatus": "PDF index verified; original video hosting pages/embeds not independently inspected",
+  "sourcePdf": "Physics with Sir Najam - 1st Year (HSSC).pdf (14 pages, user supplied 2026-11-17)",
+  "sourceLinksAreIndexOnly": true,
+  "noneOfTheseLinksArePortalProtected": true,
+  "noGoogleFilesChanged": true,
+  "noWatermarksAddedToOriginalNotes": true,
+  "unitTitles": {
+    "1": "Physical Quantities and Measurements",
+    "2": "Vectors",
+    "3": "Translatory Motion",
+    "4": "Rotational and Circular Motion",
+    "5": "Work and Energy",
+    "6": "Fluid Mechanics",
+    "7": "Physics of Solids",
+    "8": "Heat and Thermodynamics",
+    "9": "Waves",
+    "10": "Electrostatics",
+    "11": "Electricity",
+    "12": "Electromagnetism",
+    "13": "Relativity",
+    "14": "Particle Physics"
+  },
+  "videoPages": [
+    {
+      "id": "legacy-u01-v1",
+      "unit": 1,
+      "title": "The Ultimate Race to Redefine the Kilogram",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-1-physical-quantities-and-measurements/the-ultimate-race-to-redefine-the-kilogram",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 2,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u02-v2",
+      "unit": 2,
+      "title": "The Misunderstood Nature of Torque",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-2-vectors/the-misunderstood-nature-of-torque",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 3,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u03-v3",
+      "unit": 3,
+      "title": "Can You Perceive Acceleration?",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-3-translatory-motion/can-you-perceive-acceleration",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 4,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u04-v4",
+      "unit": 4,
+      "title": "Rotational Kinematics & Moments of Inertia",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-4-rotational-and-circular-motion/rotational-kinematics-moments-of-inertia",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 5,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u05-v5",
+      "unit": 5,
+      "title": "Kinetic Energy & Work-Energy Transformations",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-5-work-and-energy/kinetic-energy-work-energy-transformations",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 6,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u06-v6",
+      "unit": 6,
+      "title": "The Strange Physics of the Magnus Effect",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-6-fluid-mechanics/the-strange-physics-of-the-magnus-effect",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 7,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u07-v7",
+      "unit": 7,
+      "title": "How To Make Graphene (The Nobel Prize Discovery)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-7-physics-of-solids/the-molecular-limits-of-materials",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 8,
+      "reviewNote": "The link caption and Google Sites URL slug differ; verify embedded title and origin when the site editor is available."
+    },
+    {
+      "id": "legacy-u08-v8",
+      "unit": 8,
+      "title": "What is NOT Random? (The Thermodynamic Arrow of Time)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-8-heat-and-thermodynamics/what-is-not-random-the-thermodynamic-arrow-of-time",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 9,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u09-v9",
+      "unit": 9,
+      "title": "Does gravity obey the rules of quantum mechanics?",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-9-waves/does-gravity-obey-the-rules-of-quantum-mechanics",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 10,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u10-v10",
+      "unit": 10,
+      "title": "The Most Misunderstood Concept in Physics",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-10-electrostatics/the-most-misunderstood-concept-in-physics",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 11,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u11-v11",
+      "unit": 11,
+      "title": "The Biggest Misconception About Electricity",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-11-electricity/the-biggest-misconception-about-electricity",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 12,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u12-v12",
+      "unit": 12,
+      "title": "Do we know how magnets work yet?",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-12-electromagnetism/do-we-know-how-magnets-work-yet",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 12,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u13-v13",
+      "unit": 13,
+      "title": "The Special Theory of Relativity Series",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-13-relativity/the-special-theory-of-relativity-series",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 13,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u13-v14",
+      "unit": 13,
+      "title": "What Happens If You Keep Slowing Down?",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-13-relativity/what-happens-if-you-keep-slowing-down",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 13,
+      "reviewNote": null
+    },
+    {
+      "id": "legacy-u14-v15",
+      "unit": 14,
+      "title": "The Ultimate Guide to Particle Physics",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/video-lectures/unit-14-particle-physics/the-ultimate-guide-to-particle-physics",
+      "linkType": "legacy-google-sites-video-page",
+      "hostingVideoUrlVerified": false,
+      "sourcePdfPage": 14,
+      "reviewNote": null
+    }
+  ],
+  "generalVideos": [
+    {
+      "title": "Physics VS Animation (Alan Becker)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/general-physics-conceptslecturesvideos/physics-vs-animation-alan-becker",
+      "unit": null,
+      "linkType": "legacy-google-sites-video-page",
+      "sourcePdfPage": 14,
+      "hostingVideoUrlVerified": false
+    },
+    {
+      "title": "The Strange Math That Predicts (Almost) Anything",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/general-physics-conceptslecturesvideos/the-strange-math-that-predicts-almost-anything",
+      "unit": null,
+      "linkType": "legacy-google-sites-video-page",
+      "sourcePdfPage": 14,
+      "hostingVideoUrlVerified": false
+    }
+  ],
+  "pdfHandouts": [
+    {
+      "id": "hssc-u01-pdf-1",
+      "unit": 1,
+      "category": "Class notes (SLO based)",
+      "title": "1_NOTES_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1HzC_c-HPqBGgTUEZ1fczGnDFYnwhQXuu/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1HzC_c-HPqBGgTUEZ1fczGnDFYnwhQXuu",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-2",
+      "unit": 1,
+      "category": "MCQ practice",
+      "title": "6_MCQs_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1Y1Ca0PYx52eiKZOS8zhwfop7xcjngrm4/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1Y1Ca0PYx52eiKZOS8zhwfop7xcjngrm4",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-3",
+      "unit": 1,
+      "category": "Short questions",
+      "title": "2_SHORT_Q&A_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1X9Gg1sXb-mIdPG9rbdgdAeJcPSHyrh8p/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1X9Gg1sXb-mIdPG9rbdgdAeJcPSHyrh8p",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-4",
+      "unit": 1,
+      "category": "Comprehensive questions",
+      "title": "3_LONG_Q&A_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1YHiN3kvy6Jy1WZwQe8MB5Yrlh1DfMUSZ/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1YHiN3kvy6Jy1WZwQe8MB5Yrlh1DfMUSZ",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-5",
+      "unit": 1,
+      "category": "Worked numericals",
+      "title": "4_NUMERICALS_Q&A_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1YFXWJb2omgr4es00ulEiIXFt4cFo9jbb/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1YFXWJb2omgr4es00ulEiIXFt4cFo9jbb",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-6",
+      "unit": 1,
+      "category": "Formula sheet",
+      "title": "5_ FORMULA_SHEET_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1LU43qlmixuEZXmHu7SOy1OpB3XAacABC/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1LU43qlmixuEZXmHu7SOy1OpB3XAacABC",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u01-pdf-7",
+      "unit": 1,
+      "category": "Self assessment",
+      "title": "7_Self Assessment_Unit 1 (11th).pdf",
+      "fileUrl": "https://drive.google.com/file/d/1hgMJK7sFYWuvsd_jVuaEhtOO-UnHttxg/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1hgMJK7sFYWuvsd_jVuaEhtOO-UnHttxg",
+      "sourcePdfPage": 2,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-8",
+      "unit": 2,
+      "category": "Class notes (SLO based)",
+      "title": "1_11th_Unit 2_NOTES.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1J8biWHePsQ_MIsKduT5SYLMsICPkN145/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1J8biWHePsQ_MIsKduT5SYLMsICPkN145",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-9",
+      "unit": 2,
+      "category": "MCQ practice",
+      "title": "5_11th_Unit 2_MCQs.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1dYL_JSnqQDq1RppvehFdtZF_KrM_TjpJ/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1dYL_JSnqQDq1RppvehFdtZF_KrM_TjpJ",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-10",
+      "unit": 2,
+      "category": "Short and SLO questions",
+      "title": "2_11th_Unit 2_Short+SLO_Question.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1FGOJVGSQkKUI-cuQshTVtDSoFPjko-0M/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1FGOJVGSQkKUI-cuQshTVtDSoFPjko-0M",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-11",
+      "unit": 2,
+      "category": "Comprehensive and SLO questions",
+      "title": "3_11th_Unit 2_Long+SLO.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1PL4PSp-OjCI_IN-u1Vj6cXYumeaKfH-7/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1PL4PSp-OjCI_IN-u1Vj6cXYumeaKfH-7",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-12",
+      "unit": 2,
+      "category": "Worked numericals",
+      "title": "4_11th_Unit 2_Numericals.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1Y_s_5wARx3Q4FnIN52ERKaZeiyRiGU-v/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1Y_s_5wARx3Q4FnIN52ERKaZeiyRiGU-v",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-13",
+      "unit": 2,
+      "category": "Formula sheet",
+      "title": "6_11th_Unit 2_Formula_Sheet.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1JYkrGNCckOI85DQy3SrMVBqloZfAO9Dh/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1JYkrGNCckOI85DQy3SrMVBqloZfAO9Dh",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u02-pdf-14",
+      "unit": 2,
+      "category": "Self assessment",
+      "title": "7_11th_Unit 2_Self_Assessment.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1ZX8M5ATqiM4EN21yhWW4FaYgSiLJ-tv1/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1ZX8M5ATqiM4EN21yhWW4FaYgSiLJ-tv1",
+      "sourcePdfPage": 3,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u03-pdf-15",
+      "unit": 3,
+      "category": "Comprehensive study pack",
+      "title": "Grade11_Unit3__NOTES_+_Assessments.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1pokqhrepMBE3903vYBHowTfbbV5E-msW/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1pokqhrepMBE3903vYBHowTfbbV5E-msW",
+      "sourcePdfPage": 4,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u04-pdf-16",
+      "unit": 4,
+      "category": "Comprehensive study pack",
+      "title": "11th_PHYSICS_Unit_4_(Complete NOTES)_+_ASSESSMENTS.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1vjAAmGo4mG4rfAs7Y04f33Qg8-dXnK5_/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1vjAAmGo4mG4rfAs7Y04f33Qg8-dXnK5_",
+      "sourcePdfPage": 5,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    },
+    {
+      "id": "hssc-u05-pdf-17",
+      "unit": 5,
+      "category": "Comprehensive study pack",
+      "title": "Unit 5 (Complete) + Self Assessments.pdf",
+      "fileUrl": "https://drive.google.com/file/d/1QlU1ME1WqWK3_skriwiXWnSQUVTyNi6N/view?usp=drivesdk",
+      "source": "existing-google-drive-pdf",
+      "accessAsVerified": "anyone-with-link-reader",
+      "sourceDriveId": "1QlU1ME1WqWK3_skriwiXWnSQUVTyNi6N",
+      "sourcePdfPage": 6,
+      "watermarkAdded": false,
+      "protectedDownload": false
+    }
+  ],
+  "extraReading": [
+    {
+      "unit": 7,
+      "title": "Lattice Structures in Crystalline Solids",
+      "url": "https://courses.lumenlearning.com/chemistryformajors/chapter/lattice-structures-in-crystalline-solids-2/",
+      "sourcePdfPage": 8,
+      "source": "external-original-provider",
+      "access": "external-public-reference"
+    }
+  ],
+  "legacyCoursePages": [
+    {
+      "id": "legacy-course-p01",
+      "unit": 1,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p02",
+      "unit": 1,
+      "title": "Notes (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/notes-slo-based/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p03",
+      "unit": 1,
+      "title": "MCQs (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/mcqs-slo-based/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p04",
+      "unit": 1,
+      "title": "Solved examples and assignments",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/solved-examples-assignments/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p05",
+      "unit": 1,
+      "title": "End-of-unit short questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/short-questions",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p06",
+      "unit": 1,
+      "title": "End-of-unit comprehensive questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/comprehensive-questions",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p07",
+      "unit": 1,
+      "title": "End-of-unit numerical problems",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/numerical-problems",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p08",
+      "unit": 2,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p09",
+      "unit": 2,
+      "title": "Notes (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/notes-slo-based/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p10",
+      "unit": 2,
+      "title": "MCQs (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/mcqs-slo-based/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p11",
+      "unit": 2,
+      "title": "Solved examples and assignments",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/solved-examples-assignments/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p12",
+      "unit": 2,
+      "title": "End-of-unit short & SLO questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/short-slo-based-questions",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p13",
+      "unit": 2,
+      "title": "End-of-unit comprehensive & SLO questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/comprehensive-slo-based-questions",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p14",
+      "unit": 2,
+      "title": "End-of-unit numerical problems",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/numerical-problems",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p15",
+      "unit": 3,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-3-translatory-motion",
+      "sourcePdfPage": 4,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p16",
+      "unit": 4,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-4-rotational-and-circular-motion",
+      "sourcePdfPage": 5,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p17",
+      "unit": 5,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-5-work-and-energy",
+      "sourcePdfPage": 6,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    }
+  ],
+  "oldTestBuilderPage": {
+    "title": "Build Your Physics Test",
+    "url": "https://sites.google.com/view/physics-with-sir-najam/physics-practice-assessment/build-your-physics-test",
+    "sourcePdfPage": 14,
+    "currentPortalPage": "../build-your-physics-test.html",
+    "equivalence": "Current portal Test Builder exists; old nested page body not inspected"
+  }
+}
