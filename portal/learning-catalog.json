@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v72-unit-simulation-index-no-legacy-audit-2026-11-17",
+  "catalogVersion": "pilot-v73-original-hssc-pdf-and-video-reference-index",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 have 1,690 provisional MCQs across the public Test Builder, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -35,7 +35,12 @@
           "landingHref": "./unit-01.html",
           "simulationCount": 0,
           "simulationHref": "./simulations.html?unit=1",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 7,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=1",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 2,
@@ -60,7 +65,12 @@
           "landingHref": "./unit-02.html",
           "simulationCount": 2,
           "simulationHref": "./simulations.html?unit=2",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 7,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=2",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 3,
@@ -87,7 +97,12 @@
           "landingHref": "./unit-03.html",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=3",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 1,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=3",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 4,
@@ -122,7 +137,12 @@
           "landingHref": "./unit-04.html",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=4",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 1,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=4",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 5,
@@ -154,7 +174,12 @@
           "descriptivePracticeAlternatives": 18,
           "simulationCount": 1,
           "simulationHref": "./simulations.html?unit=5",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 1,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=5",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 6,
@@ -168,7 +193,12 @@
           "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=6",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 7,
@@ -182,7 +212,12 @@
           "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
           "simulationCount": 2,
           "simulationHref": "./simulations.html?unit=7",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 1,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=7",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 8,
@@ -196,7 +231,12 @@
           "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=8",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 9,
@@ -210,7 +250,12 @@
           "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
           "simulationCount": 7,
           "simulationHref": "./simulations.html?unit=9",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=9",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 10,
@@ -224,47 +269,72 @@
           "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
           "simulationCount": 2,
           "simulationHref": "./simulations.html?unit=10",
-          "simulationMapStatus": "provisional-topic-navigation"
+          "simulationMapStatus": "provisional-topic-navigation",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=10",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 11,
-          "title": "Unit 11 — Content in preparation",
+          "title": "Electricity",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=11",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 12,
-          "title": "Unit 12 — Content in preparation",
+          "title": "Electromagnetism",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=12",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 13,
-          "title": "Unit 13 — Content in preparation",
+          "title": "Relativity",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "legacyVideoPageCount": 2,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=13",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         },
         {
           "unit": 14,
-          "title": "Unit 14 — Content in preparation",
+          "title": "Particle Physics",
           "status": "planned",
           "summary": "No verified portal resources have been released for this unit.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed"
+          "qualityStatus": "not-reviewed",
+          "legacyVideoPageCount": 1,
+          "originalPdfCount": 0,
+          "originalExternalReadingCount": 0,
+          "originalReferenceHref": "./legacy-hssc-resources.html?unit=14",
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
         }
       ],
       "enrollmentStatus": "open-free-pilot"
@@ -1045,5 +1115,6 @@
       "contentStatus": "v53-public-unit5-descriptive-teacher-led-stepwise-provisional-discussion",
       "accessDescription": "Public post-practice classroom display (NOT authenticated teacher access). Public key requested only on explicit Reveal. No student responses or grading, and not an official FBISE examination."
     }
-  ]
+  ],
+  "originalSourcesNote": "Original Google Sites PDF link annotation inventory verified 2026-11-17: 31 original standalone simulation titles correspond to existing 31 local simulations, 15 unit concept video page links, 2 additional general pages, 1 Unit7 external reading. 17 existing Drive public-link PDFs were separately read-only verified. These are NOT secure paywalled downloads, not hosted videos, and not evidence full text/teacher source rights have been audited."
 }
