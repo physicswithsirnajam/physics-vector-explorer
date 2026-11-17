@@ -132,6 +132,9 @@
     trigger.setAttribute('aria-label','Open unit resources menu');
     if(restore && previousFocus?.isConnected)previousFocus.focus();
   }
+  // Close any open drawer immediately when a portal session returns to sign-in.
+  // This resets body scrolling even when CSS hides the navigation shell.
+  document.addEventListener('psn-portal-shell-closed',()=>closeDrawer(false));
   function openDrawer(){
     if(opened)return;
     previousFocus=document.activeElement;

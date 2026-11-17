@@ -34,9 +34,16 @@ function pane(name){
  status('');
 }
 function screen(name){
+ // Presentational signed-in portal shell. This NEVER grants permissions:
+ // Firebase Auth + deployed Security Rules must enforce private data access.
+ // Only verified learner and claim-checked administrator flows call
+ // dashboard/admin; all login, signup, reset and verification states use auth.
+ document.body.classList.toggle('psn-portal-access-approved',name==='dashboard'||name==='admin');
  $('auth-screen').hidden=name!=='auth';
  $('dashboard-screen').hidden=name!=='dashboard';
  $('admin-screen').hidden=name!=='admin';
+ // If a previously opened resource drawer exists, close it during sign-out.
+ if(name==='auth')document.dispatchEvent(new Event('psn-portal-shell-closed'));
 }
 function adminStatus(message='',kind='error'){
  const el=$('admin-notice');

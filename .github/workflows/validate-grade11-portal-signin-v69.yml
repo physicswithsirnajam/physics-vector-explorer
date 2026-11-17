@@ -1,0 +1,64 @@
+name: Validate Grade XI Portal Sign-In-First Shell (V69)
+on:
+  pull_request:
+    paths:
+      - "portal/index.html"
+      - "portal/app.js"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/test_portal_signin_first_v69.cjs"
+      - "quality/grade11-single-portal-access-and-security-plan-v69.md"
+      - ".github/workflows/validate-grade11-portal-signin-v69.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/index.html"
+      - "portal/app.js"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/test_portal_signin_first_v69.cjs"
+      - "quality/grade11-single-portal-access-and-security-plan-v69.md"
+      - ".github/workflows/validate-grade11-portal-signin-v69.yml"
+  workflow_dispatch:
+jobs:
+  anonymous-auth-shell-and-logout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check portal and test JavaScript syntax
+        run: |
+          node --check portal/app.js
+          node --check shared/navigation.js
+          node --check scripts/test_portal_signin_first_v69.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify sign-in-only anonymous shell, signed-in navigation, logout cleanup, and direct-public-URL limitation
+        run: node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — V68 all 31 simulations and dashboard views
+        run: node scripts/test_student_workspace_v68.cjs
+      - name: Regression — 59 resource drawer links and in-progress quiz warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Regression — cross-unit Test Builder and student guide
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload anonymous/synthetic account QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v69-anonymous-portal-and-signed-in-workspace
+          path: |
+            qa-artifacts/portal-v69/*.png
+            qa-artifacts/workspace-v68/*.png
+          retention-days: 7
+          if-no-files-found: warn
