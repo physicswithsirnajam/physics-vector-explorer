@@ -1,0 +1,21 @@
+/* Physics with Sir Najam — browser-generated print/PDF watermark V70.
+   Applied to our own reports, not third-party textbook PDFs or raw data exports.
+   position:fixed is reprinted on each page in Chromium's print renderer. */
+.psn-print-watermark{display:none!important;}
+@media print{
+ .psn-print-watermark{
+  position:fixed!important;inset:0!important;display:flex!important;
+  flex-direction:column!important;justify-content:space-around!important;align-items:center!important;
+  width:100%!important;height:100%!important;pointer-events:none!important;
+  user-select:none!important;overflow:hidden!important;z-index:2147483000!important;
+  transform:rotate(-24deg) scale(1.24)!important;transform-origin:center center!important;
+  font-family:Arial,Helvetica,sans-serif!important;font-size:clamp(17px,3.3vw,29px)!important;
+  font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important;
+  color:rgba(18,45,79,.11)!important;-webkit-print-color-adjust:exact!important;
+  print-color-adjust:exact!important;
+ }
+ .psn-print-watermark span{
+  flex:0 0 auto!important;display:block!important;white-space:nowrap!important;
+  line-height:1.65!important;text-align:center!important;
+ }
+}
