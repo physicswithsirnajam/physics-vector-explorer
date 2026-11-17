@@ -1,0 +1,89 @@
+name: Validate Student Workspace Navigation and Simulations (V68)
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/index.html"
+      - "portal/app.js"
+      - "portal/workspace-tabs.js"
+      - "portal/workspace-tabs.css"
+      - "portal/simulations.html"
+      - "portal/unit-01.html"
+      - "portal/unit-02.html"
+      - "portal/unit-03.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "assessment-blueprint/index.html"
+      - "scripts/test_student_workspace_v68.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - "quality/grade11-portal-experience-security-audit-v68.md"
+      - ".github/workflows/validate-grade11-student-experience-v68.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/index.html"
+      - "portal/app.js"
+      - "portal/workspace-tabs.js"
+      - "portal/workspace-tabs.css"
+      - "portal/simulations.html"
+      - "portal/unit-01.html"
+      - "portal/unit-02.html"
+      - "portal/unit-03.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "assessment-blueprint/index.html"
+      - "scripts/test_student_workspace_v68.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - "quality/grade11-portal-experience-security-audit-v68.md"
+      - ".github/workflows/validate-grade11-student-experience-v68.yml"
+  workflow_dispatch:
+jobs:
+  student-experience-and-routing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source and published content
+        uses: actions/checkout@v5
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify navigation and QA JavaScript parses
+        run: |
+          node --check shared/navigation.js
+          node --check portal/workspace-tabs.js
+          node --check portal/app.js
+          node --check scripts/test_student_workspace_v68.cjs
+          node --check scripts/test_grade11_resource_drawer_v58.cjs
+          node -e "const j=require('./portal/simulation-catalog.json');const m=require('./question-bank/manifest.json');const g=m.grades.find(x=>x.grade===11);if(j.simulations.length!==31||g.units.find(x=>x.unit===4).liveMcqCount!==640||g.units.reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
+      - name: Install pinned Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Browser audit — 31 simulations, honest navigation, workspace and read-only profile
+        run: node scripts/test_student_workspace_v68.cjs
+      - name: Regression — full 59-resource drawer and unfinished-quiz protection
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Regression — mixed unit Test Builder and first-use student guide
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload workspace and simulation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v68-workspace-simulation-desktop-and-mobile
+          path: |
+            qa-artifacts/workspace-v68/*.png
+            qa-artifacts/drawer-v58/*.png
+          retention-days: 7
+          if-no-files-found: warn

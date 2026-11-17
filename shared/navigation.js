@@ -1,4 +1,4 @@
-/* Physics with Sir Najam V58 global public navigation.
+/* Physics with Sir Najam V68 global public navigation.
  * An accessible, collapsible unit/resource drawer. It is navigation ONLY:
  * no login authority, data writes, academic approval or protected content grants.
  * Unit/resource links are derived from the already-public course catalogue.
@@ -33,7 +33,7 @@
     link('build-your-physics-test.html','Build a Test','builder'),
     link('portal/#learning-hub','Learning Hub','learn'),
     link('student-guide.html','Student Guide','guide'),
-    {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Simulations',key:'explore'},
+    link('portal/simulations.html','Simulations','simulations'),
     link('assessment-blueprint/','FBISE Blueprint','blueprint')
   ];
   const isQuizInProgress=()=>{
@@ -67,6 +67,7 @@
     if(item.key==='builder'&&here.endsWith('/build-your-physics-test.html'))a.setAttribute('aria-current','page');
     if(item.key==='guide'&&here.endsWith('/student-guide.html'))a.setAttribute('aria-current','page');
     if(item.key==='blueprint'&&here.includes('/assessment-blueprint/'))a.setAttribute('aria-current','page');
+    if(item.key==='simulations'&&here.endsWith('/portal/simulations.html'))a.setAttribute('aria-current','page');
     a.addEventListener('click',permitNavigation);
     list.append(a);
   }
@@ -94,7 +95,8 @@
     link('portal/','Student Dashboard','portal'),
     link('portal/#my-progress','My Private Progress','progress'),
     link('assessment-blueprint/','FBISE Blueprint','blueprint'),
-    link('portal/simulations.html','Simulation Library','simulations')
+    link('portal/simulations.html','Simulation Library','simulations'),
+    {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Google Sites Student Hub (external)',key:'external-hub'}
   ];
   const info=e('p','psn-drawer-hint','Select a published unit to expand its study, simulations, practice and revision resources.');
   const content=e('nav','psn-drawer-content');content.setAttribute('aria-label','Grade XI unit-by-unit resources');
@@ -115,7 +117,9 @@
   };
   function addQuickLinks(){
     for(const item of quickLinks){
-      const a=e('a',null,item.label);a.href=item.url;quick.append(setCurrent(a));
+      const a=e('a',null,item.label);a.href=item.url;
+      if(new URL(a.href).origin!==root.origin){a.target='_blank';a.rel='noopener noreferrer';}
+      quick.append(setCurrent(a));
     }
   }
   addQuickLinks();

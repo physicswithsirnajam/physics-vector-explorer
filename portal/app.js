@@ -49,8 +49,14 @@ function enrollmentNotice(text,error=false){
 }
 async function showLearner(user,profile){
  const request=++enrollmentToken;
- $('student-name').textContent=profile.displayName||user.displayName||'Student';
- $('student-email').textContent=user.email||'your Google account';
+ const displayName=profile.displayName||user.displayName||'Student';
+ const accountEmail=user.email||'your Google account';
+ $('student-name').textContent=displayName;
+ $('student-email').textContent=accountEmail;
+ $('profile-display-name').textContent=displayName;
+ $('profile-email').textContent=accountEmail;
+ $('profile-verification').textContent=user.emailVerified?'Verified email':'Verification required';
+ $('profile-enrollment').textContent='Checking current enrollment…';
  $('enrolled-learner-content').hidden=true;
  $('enrollment-gate').hidden=false;
  enrollmentNotice('Checking your academic enrollment…');
@@ -66,20 +72,24 @@ async function showLearner(user,profile){
    $('enrollment-gate').hidden=true;
    $('enrolled-learner-content').hidden=false;
    $('current-enrollment-label').textContent='Grade XI · FBISE';
+   $('profile-enrollment').textContent='Grade XI · HSSC-I · FBISE';
    setHubEnrollment(record.grade);
    portalAnchorScroll();
   }else{
+   $('profile-enrollment').textContent='Not enrolled yet';
    enrollmentNotice('No current grade enrollment yet. Select Grade XI / FBISE to begin.');
   }
  }catch(error){
   if(request!==enrollmentToken||auth?.currentUser?.uid!==user.uid)return;
+  $('profile-enrollment').textContent='Enrollment verification unavailable';
   enrollmentNotice('Unable to verify enrollment from Firebase. Please check the V10 Firestore rules and your connection, then choose Refresh account permissions. '+authError(error),true);
  }
 }
 
 function portalAnchorScroll(){
+ window.PSNWorkspaceTabs?.fromHash();
  const hash=location.hash;
- if(hash!=='#learning-hub' && hash!=='#my-progress')return;
+ if(!['#learning-hub','#my-progress','#my-profile','#privacy-centre','#student-top'].includes(hash))return;
  requestAnimationFrame(()=>document.getElementById(hash.slice(1))?.scrollIntoView({block:'start'}));
 }
 
@@ -339,7 +349,14 @@ async function profileFor(user){
 async function refreshView(user){
  const current=++navigationToken;
  adminSessionUid=null;
- if(!user){enrollmentToken++;$('enrolled-learner-content').hidden=true;$('enrollment-gate').hidden=true;clearProgressArchive();screen('auth');pane('login');return;}
+ if(!user){
+  enrollmentToken++;$('enrolled-learner-content').hidden=true;$('enrollment-gate').hidden=true;
+  for(const id of ['student-name','student-email','profile-display-name','profile-email','profile-verification','profile-enrollment']){
+   $(id).textContent=id==='student-name'?'Student':'—';
+  }
+  window.PSNWorkspaceTabs?.reset();
+  clearProgressArchive();screen('auth');pane('login');return;
+ }
  screen('auth');
  if(!user.emailVerified){
   $('verify-email').textContent=user.email||'your email address';
@@ -351,7 +368,7 @@ async function refreshView(user){
   const token=await user.getIdTokenResult(true);
   const profile=await profileFor(user);
   if(current!==navigationToken||auth.currentUser?.uid!==user.uid) return;
-  if(token.claims.admin===true && !['#learning-hub','#my-progress'].includes(location.hash)){
+  if(token.claims.admin===true && !['#learning-hub','#my-progress','#my-profile','#privacy-centre','#student-top'].includes(location.hash)){
     enrollmentToken++;$('enrolled-learner-content').hidden=true;showAdmin(user);
   }else{
     showLearner(user,profile);

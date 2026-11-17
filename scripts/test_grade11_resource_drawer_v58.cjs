@@ -40,7 +40,7 @@ function audit(){
  }
  for(const file of ['portal/index.html','student-guide.html','build-your-physics-test.html',
   'practice-engine/index.html','assessment-blueprint/index.html']){
-  assert.ok(read(file).includes('shared/navigation.js?v=58'),'student entry still using stale navigation asset '+file);
+  assert.ok(read(file).includes('shared/navigation.js?v=68'),'student entry still using stale navigation asset '+file);
  }
  console.log('PASS V58 static: 5 released units, 59 public-catalog resource IDs, 51 linked HTML resources all use shared nav.');
 }

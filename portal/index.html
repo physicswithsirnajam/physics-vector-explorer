@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=10">
+  <link rel="stylesheet" href="./styles.css?v=68">
+  <link rel="stylesheet" href="./workspace-tabs.css?v=68">
   <link rel="stylesheet" href="../shared/navigation.css?v=58">
 </head>
 <body>
@@ -16,7 +17,7 @@
       <span class="brand-name"><span class="wordmark-top">PHYSICS WITH</span><span class="wordmark-main">SIR NAJAM</span></span>
     </a>
     <div class="header-right">
-      <span class="stage-label">LEARNING PORTAL · V10 PILOT</span>
+      <span class="stage-label">LEARNING PORTAL · V68 PILOT</span>
       <a class="header-link" href="https://sites.google.com/view/physics-with-sir-najam/">Public website <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -117,6 +118,14 @@
       <h1>Welcome, <span id="student-name">Student</span><span class="gold-period">.</span></h1>
       <p class="dashboard-subtitle">Your enrolled grade determines your learning resources. Continue studying, practising and reviewing your progress below.</p>
       <div class="account-strip"><span class="account-dot"></span><span>Signed in as <strong id="student-email"></strong></span><span class="account-pill">Independent learner</span></div>
+      <nav class="psn-workspace-tabs" id="psn-workspace-nav" aria-label="Student workspace sections">
+        <a class="psn-workspace-tab" data-workspace-tab="overview" href="#student-top" aria-current="page">⌂ <span>Overview</span></a>
+        <a class="psn-workspace-tab" data-workspace-tab="learn" href="#learning-hub">◉ <span>Learning Hub</span></a>
+        <a class="psn-workspace-tab" href="./simulations.html">◎ <span>Simulations</span></a>
+        <a class="psn-workspace-tab" data-workspace-tab="progress" href="#my-progress">▤ <span>My Progress</span></a>
+        <a class="psn-workspace-tab" data-workspace-tab="profile" href="#my-profile">♙ <span>My Profile</span></a>
+        <a class="psn-workspace-tab" data-workspace-tab="privacy" href="#privacy-centre">◇ <span>Privacy</span></a>
+      </nav>
       <section class="enrollment-gate" id="enrollment-gate" aria-labelledby="enroll-heading" hidden>
         <div class="enrollment-heading"><span class="eyebrow">ACADEMIC ENROLLMENT · FREE PILOT</span><h2 id="enroll-heading">Choose your Physics grade</h2><p>Enroll once to personalize your learning area. Your previous practice history stays with your account.</p></div>
         <form id="enrollment-form" class="enrollment-form">
@@ -140,14 +149,15 @@
       </section>
       <div class="enrolled-learner-content" id="enrolled-learner-content" hidden>
       <div class="enrollment-current"><span id="current-enrollment-label">Grade XI · FBISE</span> <small>Free independent learning · Grade changes require review</small></div>
-      <h2 class="section-title" id="student-top">Your learning home</h2>
-      <div class="action-grid">
+      <h2 class="section-title" id="student-top" data-workspace-panel="overview">Your learning home</h2>
+      <div class="action-grid" data-workspace-panel="overview">
         <a class="action-card" href="#learning-hub"><span class="action-symbol">◉</span><span class="action-kicker">LEARN & EXPLORE</span><strong>Open My Learning Hub</strong><span>Follow a simple path from concepts to simulations, practice and revision</span><span class="card-arrow">Explore published Units 1–5 ↓</span></a>
         <a class="action-card" href="../build-your-physics-test.html"><span class="action-symbol">✦</span><span class="action-kicker">PRACTISE</span><strong>Build Your Physics Test</strong><span>Grade XI Units 1–5 · Choose one, several or all five for MCQ practice</span><span class="card-arrow">Create a test ↗</span></a>
+                <a class="action-card" href="./simulations.html"><span class="action-symbol">◎</span><span class="action-kicker">INTERACTIVE LABS</span><strong>Explore Physics Simulations</strong><span>Search 31 original interactive physics models by topic</span><span class="card-arrow">Open simulation library ↗</span></a>
         <a class="action-card" href="#my-progress"><span class="action-symbol">▤</span><span class="action-kicker">MY PROGRESS</span><strong>Saved MCQ Practice</strong><span>See your results, revision priorities and PDF reports</span><span class="card-arrow">Review my progress ↓</span></a>
       </div>
-      <p class="hub-explanation">First time using the portal? <a href="../student-guide.html"><strong>Open the Grade XI Student Start Guide</strong></a> to find all five Learning Desks and learn how to build a single-unit or combined-unit test. Public tests are ungraded self-practice; cloud saving currently supports individual Unit 1 or Unit 2 tests only.</p>
-      <section class="learning-hub" id="learning-hub" aria-labelledby="learning-hub-title">
+      <p class="hub-explanation" data-workspace-panel="overview">First time using the portal? <a href="../student-guide.html"><strong>Open the Grade XI Student Start Guide</strong></a> to find all five Learning Desks and learn how to build a single-unit or combined-unit test. Public tests are ungraded self-practice; cloud saving currently supports individual Unit 1 or Unit 2 tests only.</p>
+      <section class="learning-hub" id="learning-hub" data-workspace-panel="learn" aria-labelledby="learning-hub-title" hidden>
         <div class="hub-head">
           <div><span class="eyebrow">YOUR PERSONAL LEARNING CENTRE</span><h2 id="learning-hub-title">My Physics Learning Hub</h2><p>Study concepts, explore original simulations, practise exam-style questions, and revisit your progress—all from one place.</p></div>
           <a class="hub-back" href="#student-top">↑ Back to dashboard</a>
@@ -208,7 +218,27 @@
         <div id="hub-upcoming" class="hub-upcoming" hidden><h3>Grade IX resources are planned</h3><p>We're preparing an organized Grade IX library. No Grade IX practice bank is connected to this portal yet, so there is no active Grade IX test link here.</p><a class="btn btn-secondary btn-small" href="#learning-hub" id="hub-back-to-xi">Explore available Grade XI resources</a></div>
       </section>
       </div><!-- end enrolled-learner-content -->
-      <section class="progress-section" id="my-progress" aria-labelledby="progress-heading">
+      <section class="psn-profile-section" id="my-profile" data-workspace-panel="profile" aria-labelledby="my-profile-title" hidden>
+        <div class="psn-profile-heading"><span class="eyebrow">YOUR PRIVATE LEARNING ACCOUNT</span>
+          <h2 id="my-profile-title">My Profile</h2>
+          <p>Review your existing account information. No additional personal information is collected here.</p>
+        </div>
+        <dl class="psn-profile-grid">
+          <div><dt>Display name</dt><dd id="profile-display-name">—</dd></div>
+          <div><dt>Signed-in email</dt><dd id="profile-email">—</dd></div>
+          <div><dt>Email verification</dt><dd id="profile-verification">—</dd></div>
+          <div><dt>Current learning enrollment</dt><dd id="profile-enrollment">Checking enrollment…</dd></div>
+          <div><dt>Account access</dt><dd>Independent learner · pilot</dd></div>
+          <div><dt>Saved results</dt><dd>Only eligible Unit 1 and Unit 2 practice attempts you explicitly saved</dd></div>
+        </dl>
+        <div class="psn-profile-actions">
+          <a class="btn btn-secondary btn-small" href="#my-progress">My saved practice</a>
+          <a class="btn btn-secondary btn-small" href="#privacy-centre">Privacy &amp; data controls</a>
+          <a class="btn btn-secondary btn-small" href="./privacy.html" target="_blank" rel="noopener noreferrer">Privacy information ↗</a>
+        </div>
+        <p class="psn-profile-help">Your verified account controls access. The website's public simulations and source-based self-practice remain accessible without signing in. This is a read-only profile view; account edits and teacher/class accounts are not enabled.</p>
+      </section>
+      <section class="progress-section" id="my-progress" data-workspace-panel="progress" aria-labelledby="progress-heading" hidden>
         <div class="progress-section-head"><div><span class="eyebrow">YOUR PRIVATE RECORDS</span><h2 id="progress-heading">My Physics Progress</h2><p>Only practice attempts you explicitly save are recorded. Each test is linked to your current account.</p></div><button id="reload-progress" class="btn btn-secondary btn-small" type="button">Refresh my progress</button></div>
         <div id="progress-status" class="progress-status" role="status" aria-live="polite">Loading your saved practice history…</div>
         <div id="progress-content" hidden>
@@ -246,7 +276,7 @@
           </section>
         </div>
       </section>
-      <section class="privacy-centre" id="privacy-centre" aria-labelledby="privacy-centre-title">
+      <section class="privacy-centre" id="privacy-centre" data-workspace-panel="privacy" aria-labelledby="privacy-centre-title" hidden>
         <div class="privacy-centre-head">
           <div><span class="eyebrow">ACCOUNT &amp; DATA CONTROL</span><h2 id="privacy-centre-title">My Privacy &amp; Account Data</h2></div>
           <a href="./privacy.html" target="_blank" rel="noopener" class="btn btn-secondary btn-small">Read privacy information ↗</a>
@@ -262,7 +292,7 @@
         <p class="privacy-disclaimer"><strong>Controlled pilot:</strong> Don't send passwords or private keys in a deletion request. A request can be recorded here, but complete deletion and retention procedures are not yet automated or independently audited. We will not claim deletion until all applicable records have actually been removed.</p>
       </section>
       <div class="student-footer-actions"><button id="refresh-access" class="btn btn-secondary btn-small" type="button">Refresh account permissions</button></div>
-      <div class="pilot-note"><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice results are saved <strong>only when you explicitly choose to save</strong> an eligible individual Unit 1 or Unit 2 test. All other current tests have a printable local report, but do not save to your private progress. Public learning resources remain publicly hosted until their access design is reviewed. Teacher accounts and class assignments are not enabled.</div>
+      <div class="pilot-note" data-workspace-panel="privacy" hidden><strong>About this pilot:</strong> Signing in is functional, and your own basic profile is stored privately. Practice results are saved <strong>only when you explicitly choose to save</strong> an eligible individual Unit 1 or Unit 2 test. All other current tests have a printable local report, but do not save to your private progress. Public learning resources remain publicly hosted until their access design is reviewed. Teacher accounts and class assignments are not enabled.</div>
     </section>
 
     <section id="admin-screen" class="dashboard admin-dashboard" hidden>
@@ -299,8 +329,9 @@
       <div class="pilot-note"><strong>V2 security scope:</strong> Only an authenticated, verified account carrying the trusted <code>admin: true</code> claim can list basic profiles. A student cannot gain this right by modifying the browser or a Firestore document. No teacher, class, payment, or membership management writes have been enabled. Self-practice attempts are private to their learner account; administrators do not receive blanket access to independent learners’ attempt history. Existing learning resources are still public until separately migrated.</div>
     </section>
   </main>
-  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V7 pilot · Student privacy centre</span></footer>
-  <script type="module" src="./app.js?v=11"></script>
-  <script src="../shared/navigation.js?v=58" defer></script>
+  <footer><span>© Physics with Sir Najam</span><span>Learn to understand. Practise to improve.</span><span>Portal V68 pilot · Student privacy centre</span></footer>
+  <script src="./workspace-tabs.js?v=68" defer></script>
+  <script type="module" src="./app.js?v=68"></script>
+  <script src="../shared/navigation.js?v=68" defer></script>
 </body>
 </html>
