@@ -1,0 +1,63 @@
+/* Grade XI portal V68 — student workspace navigation and read-only profile.
+   Visual organization only; not an authorization or data storage boundary. */
+#psn-workspace-nav.psn-workspace-tabs{
+ display:flex;align-items:stretch;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;
+ scrollbar-width:thin;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
+ background:#fff;border:1px solid #d8e2ec;border-radius:15px;
+ box-shadow:0 8px 28px rgba(13,35,66,.09);
+ padding:10px;margin:18px 0 23px;
+ position:sticky;top:58px;z-index:65;max-width:100%;
+}
+#psn-workspace-nav .psn-workspace-tab{
+ scroll-snap-align:start;flex:0 0 auto;display:inline-flex;align-items:center;
+ justify-content:center;gap:6px;min-height:44px;
+ color:#224363;background:#f0f5fb;border:1px solid #dbe5f0;border-radius:10px;
+ padding:10px 14px;text-decoration:none;font-weight:750;font-size:13px;line-height:1.3;
+ white-space:nowrap;transition:background-color .12s ease,border-color .12s ease;
+}
+#psn-workspace-nav .psn-workspace-tab:hover{background:#dfebf8;border-color:#acbed2}
+#psn-workspace-nav .psn-workspace-tab:focus-visible{outline:3px solid #d9b46c;outline-offset:2px}
+#psn-workspace-nav .psn-workspace-tab[aria-current="page"]{
+ background:#142e50;color:#fff;border-color:#142e50;box-shadow:inset 0 -3px 0 #e8c47b;
+}
+#psn-workspace-nav a[href="./simulations.html"]{border-color:#d1b36e;background:#fff7e7;color:#594220}
+#psn-workspace-nav a[href="./simulations.html"]:hover{background:#ffedc6}
+#dashboard-screen [data-workspace-panel][hidden]{display:none!important}
+#dashboard-screen [data-workspace-panel]{scroll-margin-top:125px}
+.psn-profile-section{
+ background:#fff;border:1px solid #dae4ef;border-radius:19px;
+ padding:clamp(18px,3.6vw,34px);box-shadow:0 14px 42px rgba(21,42,71,.075);
+ margin:16px 0 25px;min-width:0;
+}
+.psn-profile-heading h2{color:#142e50;font-size:clamp(25px,3.5vw,34px);margin:7px 0}
+.psn-profile-heading p{color:#556a83;font-size:14px;line-height:1.65;max-width:66ch}
+.psn-profile-grid{
+ margin:25px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:13px;
+}
+.psn-profile-grid>div{
+ margin:0;padding:17px 19px;border:1px solid #e0e8f1;border-radius:12px;
+ background:#f5f8fc;min-width:0;
+}
+.psn-profile-grid dt{
+ font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+ color:#576c86;margin-bottom:7px;
+}
+.psn-profile-grid dd{
+ margin:0;font-size:15px;font-weight:700;line-height:1.55;color:#163453;
+ overflow-wrap:anywhere;
+}
+.psn-profile-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.psn-profile-help{font-size:12px;color:#5a708a;line-height:1.7;max-width:75ch}
+@media(max-width:720px){
+ #psn-workspace-nav.psn-workspace-tabs{top:53px;padding:8px;margin:12px 0 20px;border-radius:12px}
+ #psn-workspace-nav .psn-workspace-tab{font-size:12px;padding:10px 12px}
+ .psn-profile-grid{grid-template-columns:1fr}
+ .psn-profile-grid>div{padding:14px 15px}
+ .psn-profile-actions .btn{width:100%;justify-content:center;text-align:center}
+}
+@media print{
+ #psn-workspace-nav{display:none!important}
+ #my-profile .psn-profile-actions{display:none!important}
+ .psn-profile-section{box-shadow:none}
+}
