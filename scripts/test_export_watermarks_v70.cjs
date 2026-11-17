@@ -108,7 +108,7 @@ async function main(){
   fs.writeFileSync(progress,await popup.pdf({format:'A4',printBackground:true,preferCSSPageSize:true}));
   const progressPages=validatePdf(progress,2);
   assert.match(await popup.locator('body').textContent(),/Synthetic Example Only/);
-  assert.match(await popup.locator('body').textContent(),/Only the/);
+  assert.match(await popup.locator('body').textContent(),/All 80 saved attempts/);
   await popup.close();
 
   // Static source practice app: display fake long solution set without touching real MCQs.
