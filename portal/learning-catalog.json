@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v66-unit4-640-complete-master-figure413-2026-11-17",
-  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Firestore rules protect enrolled courseLessons and private progress. Public study pages, simulations, formula sheet, 206 provisional Unit 2 MCQs and answer keys are publicly accessible without account login. Course enrollment is verified separately for protected lesson bodies.",
+  "catalogVersion": "pilot-v71-internal-study-and-simulations-2026-11-17",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 have 1,690 provisional MCQs across the public Test Builder, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
       "grade": 11,
@@ -246,28 +246,28 @@
     {
       "id": "study",
       "category": "STUDY",
-      "title": "Grade XI Student Hub",
-      "description": "Review available notes, explanations and learning resources on the current Google Sites student hub.",
-      "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
+      "title": "Start Studying · Unit 1 Learning Desk",
+      "description": "Open the portal's Unit 1 study desk with original explanations, worked numericals, simulations and MCQ practice.",
+      "href": "./unit-01.html",
       "public": true,
-      "external": true,
-      "action": "Browse learning resources ↗",
+      "external": false,
+      "action": "Open Unit 1 Study Desk ↗",
       "access": "public-link",
-      "contentStatus": "public-resource",
-      "accessDescription": "Public Google Sites resource; accessible without portal login."
+      "contentStatus": "published-resource-index",
+      "accessDescription": "Local portal study desk; contents are currently public unless individually marked enrolled-only. Previous Google Sites notes have not yet been migrated."
     },
     {
       "id": "explore",
       "category": "EXPLORE",
-      "title": "Interactive Physics Activities",
-      "description": "Open the current Grade XI hub to explore the simulations and interactive activities published there.",
-      "href": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc",
+      "title": "Physics Simulation Library · 31 Models",
+      "description": "Explore the portal's original interactive Physics models. Search and filter locally by topic.",
+      "href": "./simulations.html",
       "public": true,
-      "external": true,
-      "action": "Explore available activities ↗",
+      "external": false,
+      "action": "Explore simulation library ↗",
       "access": "public-link",
-      "contentStatus": "public-resource",
-      "accessDescription": "Public Google Sites resource; accessible without portal login."
+      "contentStatus": "public-interactive-demonstrations",
+      "accessDescription": "Native portal simulation library; these activities are currently public."
     },
     {
       "id": "practice",
