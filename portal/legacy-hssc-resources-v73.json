@@ -426,5 +426,184 @@
       "source": "external-original-provider",
       "access": "external-public-reference"
     }
-  ]
+  ],
+  "legacyCoursePages": [
+    {
+      "id": "legacy-course-p01",
+      "unit": 1,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p02",
+      "unit": 1,
+      "title": "Notes (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/notes-slo-based/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p03",
+      "unit": 1,
+      "title": "MCQs (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/mcqs-slo-based/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p04",
+      "unit": 1,
+      "title": "Solved examples and assignments",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/solved-examples-assignments/unit-1-physical-quantities-and-measurements",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p05",
+      "unit": 1,
+      "title": "End-of-unit short questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/short-questions",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p06",
+      "unit": 1,
+      "title": "End-of-unit comprehensive questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/comprehensive-questions",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p07",
+      "unit": 1,
+      "title": "End-of-unit numerical problems",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-1-physical-quantities-and-measurements/numerical-problems",
+      "sourcePdfPage": 2,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p08",
+      "unit": 2,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p09",
+      "unit": 2,
+      "title": "Notes (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/notes-slo-based/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p10",
+      "unit": 2,
+      "title": "MCQs (SLO based)",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/mcqs-slo-based/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p11",
+      "unit": 2,
+      "title": "Solved examples and assignments",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/solved-examples-assignments/unit-2-vectors",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p12",
+      "unit": 2,
+      "title": "End-of-unit short & SLO questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/short-slo-based-questions",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p13",
+      "unit": 2,
+      "title": "End-of-unit comprehensive & SLO questions",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/comprehensive-slo-based-questions",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p14",
+      "unit": 2,
+      "title": "End-of-unit numerical problems",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/end-of-unit-exercise/unit-2-vectors/numerical-problems",
+      "sourcePdfPage": 3,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p15",
+      "unit": 3,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-3-translatory-motion",
+      "sourcePdfPage": 4,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p16",
+      "unit": 4,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-4-rotational-and-circular-motion",
+      "sourcePdfPage": 5,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    },
+    {
+      "id": "legacy-course-p17",
+      "unit": 5,
+      "title": "Class lectures",
+      "pageUrl": "https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc/class-lectures/unit-5-work-and-energy",
+      "sourcePdfPage": 6,
+      "sourcePageBodyInspected": false,
+      "linkType": "old-google-sites-content-page",
+      "migratedContentVerified": false
+    }
+  ],
+  "oldTestBuilderPage": {
+    "title": "Build Your Physics Test",
+    "url": "https://sites.google.com/view/physics-with-sir-najam/physics-practice-assessment/build-your-physics-test",
+    "sourcePdfPage": 14,
+    "currentPortalPage": "../build-your-physics-test.html",
+    "equivalence": "Current portal Test Builder exists; old nested page body not inspected"
+  }
 }
