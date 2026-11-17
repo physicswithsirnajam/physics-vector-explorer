@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:475,5:349};
+const expected={1:275,2:206,3:220,4:555,5:349};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy'
@@ -43,7 +43,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?35:26;
+  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?41:26;
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -359,6 +359,71 @@ function adaptMasterFourV63(master,existing){
  return questions;
 }
 
+
+/* V64: corrected Word Topic 4.6 — Weightlessness in Satellites.
+ * 56 original straight + 24 in six complete scenarios; provisional source
+ * keys only, with Word run-level mathematical superscripts maintained. */
+async function loadMasterFourV64(basePath){
+ const file='unit04-v64-topic46.b64';
+ const response=await fetch(basePath+file,{cache:'no-store'});
+ if(!response.ok)throw Error('Missing corrected Unit4 Topic4.6 source (HTTP '+response.status+')');
+ const encoded=(await response.text()).trim();
+ need(encoded.length===9192,'Topic4.6 compressed source missing or truncated');
+ let hash=2166136261;
+ for(const c of encoded)hash=Math.imul(hash^c.charCodeAt(0),16777619)>>>0;
+ need(hash===0x7a493ad2,'Topic4.6 corrected source archive checksum mismatch');
+ need(typeof DecompressionStream==='function','Topic4.6 requires browser gzip DecompressionStream support.');
+ const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+ const plain=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+ return JSON.parse(plain);
+}
+function adaptMasterFourV64(master,previous){
+ need(master?.version===1&&master.source==='Grade11_Unit4_CORRECTED_STUDENT_NOTES.docx'&&
+   master.sourceSha256==='925245851971b7adaf0a11018fd6cfa5a709e894c861d0893298827bd617a777'&&
+   master.formatMethod==='original Word run-level superscript/subscript restored before source compression'&&
+   JSON.stringify(master.topics)==='["4.6"]'&&
+   master.rows?.length===80&&Object.keys(master.scenarios||{}).length===6&&
+   Object.keys(master.held||{}).length===0,'bad corrected Topic4.6 source edition/count');
+ const canon=q=>String(q.stem).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()+'|'+
+   q.options.map(o=>String(o.text).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()).join('|');
+ const ids=new Set(previous.map(q=>q.id)),fingerprints=new Set(previous.map(canon));
+ const groups=new Map(),answers={A:0,B:0,C:0,D:0};
+ const items=master.rows.map((r,index)=>{
+  need(Array.isArray(r)&&r.length===6,'malformed corrected 4.6 source record');
+  const [topic,n,stem,options,answer,explanation]=r;
+  const id='g11-u04-master-t46-q'+String(n).padStart(3,'0');
+  need(topic===46&&n===index+1&&!ids.has(id),'bad original topic order or duplicate '+id);
+  need(typeof stem==='string'&&stem.trim()&&Array.isArray(options)&&options.length===4&&
+   options.every(o=>typeof o==='string'&&o.trim())&&
+   ['A','B','C','D'].includes(answer)&&typeof explanation==='string'&&explanation.trim(),
+   'Topic4.6 original question missing source options/key/explanation '+id);
+  answers[answer]++;
+  const group=n>=57?'u04-v61-t46-s'+(1+Math.floor((n-57)/4)):null;
+  const html=group?master.scenarios[group]:null;
+  need(!group||(typeof html==='string'&&html.startsWith('<p>')&&html.length>40),
+   'Topic4.6 complete scenario introduction missing '+id);
+  const q={id,grade:11,unit:4,active:true,type:'single_choice',
+    status:'teacher-review-pending',boardEligible:false,stem,
+    options:options.map((text,i)=>({id:'ABCD'[i],text})),
+    correctOptionId:answer,explanation,sloCodes:['P-11-B-16'],
+    assessmentClassification:'summative-theory',
+    difficulty:'Unspecified',cognitiveLevel:'Unspecified',
+    sloAlignment:'Topic-level provisional SLO candidate; independent item-level Physics review pending',
+    sourceQuestionNumber:n,topic:'4.6 — Weightlessness in Satellites',
+    source:{document:master.source,sourceSha256:master.sourceSha256,
+     topic:'4.6',itemNumber:n,review:'academic-review-pending; source key only'},
+    stimulusSetId:group,stimulusHtml:html||null};
+  need(!fingerprints.has(canon(q)),'duplicate old/new Unit4 question text '+id);
+  ids.add(id);fingerprints.add(canon(q));
+  if(group){if(!groups.has(group))groups.set(group,[]);groups.get(group).push(q);}
+  return q;
+ });
+ need(Object.values(answers).every(n=>n===20)&&groups.size===6&&
+   [...groups.values()].every(g=>g.length===4&&g.every(q=>q.stimulusHtml===g[0].stimulusHtml)),
+   'Topic4.6 answer distribution or complete scenario grouping changed');
+ return items;
+}
+
 function adaptUnitFive(student,key,setLabel){
   need(student?.grade===11&&student.unit===5&&student.officialBoardPaper===false&&student.questions?.length===16,'bad Unit 5 Set '+setLabel+' student source');
   need(key?.grade===11&&key.unit===5&&key.publicResource===true&&key.notSecured===true&&key.officialFBISEKey===false,'Unit 5 key must be labelled publicly accessible and non-official');
@@ -456,13 +521,13 @@ async function loadBank(unit,basePath){
       ...adaptUnitFive(data[2],data[3],'B')
     ])
   ];
-  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];questions=[...prior,...adaptMasterFourV63(await loadMasterFourV63(basePath),prior)];}
+  else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];questions=[...first475,...adaptMasterFourV64(await loadMasterFourV64(basePath),first475)];}
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v63-original80-plus-corrected-topics41-45-395':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v64-original80-plus-corrected-topics41-46-475':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
