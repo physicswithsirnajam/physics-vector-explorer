@@ -149,6 +149,7 @@ function makeYoutubeCard(item){
  const title=document.createElement('h3');title.textContent=item.title;
  const description=document.createElement('p');description.textContent='Teacher-curated YouTube concept video · Original video stays hosted by YouTube.';
  const actions=document.createElement('div');actions.className='video-actions';
+ let warning=null;
  const youtube=document.createElement('a');youtube.className='go';youtube.href=url;
  youtube.target='_blank';youtube.rel='noopener noreferrer';
  youtube.textContent=item.status==='needs-correction-duplicate-electricity-video'?'Review supplied link ↗':'Open YouTube ↗';
@@ -172,10 +173,11 @@ function makeYoutubeCard(item){
   });
   actions.append(play);
  }else{
-  const warning=document.createElement('p');warning.className='issue';warning.textContent='Needs correction: this URL plays an electricity video and is also listed under Unit 11. Please confirm the intended Unit 10 Electrostatics link.';
-  card.append(warning);
+  warning=document.createElement('p');warning.className='issue';warning.textContent='Needs correction: this URL plays an electricity video and is also listed under Unit 11. Please confirm the intended Unit 10 Electrostatics link.';
  }
- actions.append(youtube);card.append(meta,title,description,actions);
+ actions.append(youtube);card.append(meta,title,description);
+ if(warning)card.append(warning);
+ card.append(actions);
  return card;
 }
 function showYouTubeCards(items){
