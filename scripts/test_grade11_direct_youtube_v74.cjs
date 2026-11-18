@@ -110,7 +110,10 @@ async function main(){
   await first.locator('button.play').click();
   assert.equal(await page.locator('#youtube-cards iframe').count(),1);
   assert.match(await first.locator('iframe').getAttribute('src'),/^https:\/\/www[.]youtube-nocookie[.]com\/embed\/ZMByI4s-D-Y[?]rel=0$/);
-  assert.ok(requests.length>=1,'YouTube only loads after click');
+  // The iframe has loading=lazy, so the browser may defer its real request
+  // until it enters the viewport. DOM creation plus the exact URL is the
+  // reliable click-to-load contract, not an immediate network-request count.
+  assert.equal(await first.locator('iframe').getAttribute('loading'),'lazy');
   await page.locator('#youtube-cards .card').nth(1).locator('button.play').click();
   assert.equal(await page.locator('#youtube-cards iframe').count(),1,'one player at a time');
   assert.match(await page.locator('#youtube-cards iframe').getAttribute('src'),/Oo0jm1PPRuo/);
