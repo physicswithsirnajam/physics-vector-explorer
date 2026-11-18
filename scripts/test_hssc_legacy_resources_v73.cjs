@@ -109,11 +109,11 @@ function staticAudit(){
  assert.equal(mapped.size,31);
  const hub=read('portal/learning-hub.js'),index=read('portal/index.html'),page=read('portal/legacy-hssc-resources.html');
  assert.ok(hub.includes('appendSourceReferences(card,u)'));
- assert.ok(hub.includes("learning-catalog.json?v=73"));
- assert.ok(read('portal/app.js').includes("learning-hub.js?v=73"));
- assert.ok(index.includes('app.js?v=73'));
+ assert.ok(hub.includes("learning-catalog.json?v=74"));
+ assert.ok(read('portal/app.js').includes("learning-hub.js?v=74"));
+ assert.ok(index.includes('app.js?v=74'));
  assert.ok(page.includes('id="pdf-cards"')&&page.includes('id="video-cards"')&&page.includes('id="extra-cards"'));
- assert.ok(page.includes('not secure student-only downloads')&&page.includes('video-host'));
+ assert.ok(page.includes('not secure student-only downloads')&&page.includes('original YouTube hosts'));
  assert.ok(page.includes("link.rel='noopener noreferrer'"));
  assert.ok(!page.includes('firebase/storage'),'no false backend secure-file claims');
  assert.ok(!page.includes('youtube.com/embed/'),'never invent YouTube embedding URL');
@@ -129,10 +129,11 @@ async function main(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'portal/legacy-hssc-resources.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.querySelectorAll('.card').length===35);
+  await page.waitForFunction(()=>document.querySelectorAll('.card').length===62);
   assert.equal(await page.locator('#pdf-cards .card').count(),17);
   assert.equal(await page.locator('#video-cards .card').count(),17);
   assert.equal(await page.locator('#extra-cards .card').count(),1);
+  assert.equal(await page.locator('#youtube-cards .card').count(),27);
   await page.screenshot({path:path.join(out,'grade11-all-external-source-links-desktop.png'),fullPage:false});
   for(const [n,[video,pdfs,extra]] of Object.entries(countsByUnit)){
    await page.locator('#unit').selectOption(n);

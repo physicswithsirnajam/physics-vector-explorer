@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v73-original-hssc-pdf-and-video-reference-index",
+  "catalogVersion": "pilot-v74-owner-supplied-youtube-videos-embedded-on-click",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 have 1,690 provisional MCQs across the public Test Builder, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -40,7 +40,9 @@
           "originalPdfCount": 7,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=1",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 3,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 2,
@@ -70,7 +72,9 @@
           "originalPdfCount": 7,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=2",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 3,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 3,
@@ -102,7 +106,9 @@
           "originalPdfCount": 1,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=3",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 4,
@@ -142,7 +148,9 @@
           "originalPdfCount": 1,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=4",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 5,
@@ -179,7 +187,9 @@
           "originalPdfCount": 1,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=5",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 2,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 6,
@@ -198,7 +208,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=6",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 7,
@@ -217,7 +229,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 1,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=7",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 2,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 8,
@@ -236,7 +250,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=8",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 9,
@@ -255,7 +271,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=9",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 10,
@@ -274,7 +292,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=10",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": true
         },
         {
           "unit": 11,
@@ -289,7 +309,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=11",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 12,
@@ -304,7 +326,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=12",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 1,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 13,
@@ -319,7 +343,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=13",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 5,
+          "directVideoReviewRequired": false
         },
         {
           "unit": 14,
@@ -334,7 +360,9 @@
           "originalPdfCount": 0,
           "originalExternalReadingCount": 0,
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=14",
-          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate"
+          "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
+          "directYouTubeCount": 4,
+          "directVideoReviewRequired": false
         }
       ],
       "enrollmentStatus": "open-free-pilot"
@@ -1116,5 +1144,5 @@
       "accessDescription": "Public post-practice classroom display (NOT authenticated teacher access). Public key requested only on explicit Reveal. No student responses or grading, and not an official FBISE examination."
     }
   ],
-  "originalSourcesNote": "Original Google Sites PDF link annotation inventory verified 2026-11-17: 31 original standalone simulation titles correspond to existing 31 local simulations, 15 unit concept video page links, 2 additional general pages, 1 Unit7 external reading. 17 existing Drive public-link PDFs were separately read-only verified. These are NOT secure paywalled downloads, not hosted videos, and not evidence full text/teacher source rights have been audited."
+  "originalSourcesNote": "Original Google Sites PDF link annotation inventory verified 2026-11-17: 31 original standalone simulation titles correspond to existing 31 local simulations, 15 unit concept video page links, 2 additional general pages, 1 Unit7 external reading. 17 existing Drive public-link PDFs were separately read-only verified. These are NOT secure paywalled downloads, not hosted videos, and not evidence full text/teacher source rights have been audited. V74 adds 27 direct teacher-curated YouTube entries across Units1–14 (26 distinct IDs), with source links unchanged and Unit10/11 identical bHIhgxav9LY explicitly flagged for correction. Original 17 Google Sites video page URLs and 17 public-link Google Drive notes remain unchanged. Videos play only after a learner clicks a YouTube privacy-enhanced iframe; these links are publicly accessible and are NOT private Firebase teaching resources."
 }
