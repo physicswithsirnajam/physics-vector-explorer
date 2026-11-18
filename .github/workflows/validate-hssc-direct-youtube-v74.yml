@@ -1,0 +1,75 @@
+name: Validate HSSC-I 27 Direct YouTube Videos (V74)
+on:
+  pull_request:
+    paths:
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "scripts/test_grade11_direct_youtube_v74.cjs"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "quality/hssc-v74-direct-youtube-video-migration-audit.md"
+      - ".github/workflows/validate-hssc-direct-youtube-v74.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/app.js"
+      - "portal/index.html"
+      - "scripts/test_grade11_direct_youtube_v74.cjs"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "quality/hssc-v74-direct-youtube-video-migration-audit.md"
+      - ".github/workflows/validate-hssc-direct-youtube-v74.yml"
+  workflow_dispatch:
+jobs:
+  verify-27-youtube-direct-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax and safety
+        run: |
+          node --check scripts/test_grade11_direct_youtube_v74.cjs
+          node --check scripts/test_hssc_legacy_resources_v73.cjs
+          node --check portal/learning-hub.js
+          node --check portal/app.js
+          node -e "const m=require('./portal/hssc-concept-videos-v74.json');if(m.videoCount!==27||m.uniqueVideoCount!==26)process.exit(1)"
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Check direct YouTube video library with offline stubbed player
+        run: node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Regression — preserve all previous 35 external source links
+        run: node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Regression — 31 original plus 9 enhanced simulations
+        run: node scripts/test_grade11_simulation_migration_v72.cjs
+      - name: Regression — sign-in-first, learner workspace and original resource navigation
+        run: |
+          node scripts/test_grade11_resource_drawer_v58.cjs
+          node scripts/test_student_workspace_v68.cjs
+          node scripts/test_portal_signin_first_v69.cjs
+      - name: Regression — 1,690 previous MCQs and five-unit test builder
+        run: |
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Upload synthetic visual previews (no student data or real video files)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v74-direct-youtube-concept-video-gallery
+          path: qa-artifacts/hssc-youtube-v74/*.png
+          retention-days: 7
+          if-no-files-found: warn
