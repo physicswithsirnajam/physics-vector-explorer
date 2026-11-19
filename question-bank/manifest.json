@@ -133,35 +133,37 @@
         },
         {
           "unit": 6,
-          "name": "Fluid Mechanics (Topics 6.1 and 6.2 only)",
+          "name": "Fluid Mechanics (Topics 6.1, 6.2 and 6.3 only)",
           "path": "grade-11/unit-06-topic-61-v76-80-source.json",
           "sourceFiles": [
             "grade-11/unit-06-topic-61-v76-80-source.json",
-            "grade-11/unit-06-topic-62-v78-80-source.json"
+            "grade-11/unit-06-topic-62-v78-80-source.json",
+            "grade-11/unit-06-topic-63-v80-80-source.json"
           ],
-          "liveMcqCount": 156,
-          "sourceTopicMcqCount": 160,
-          "sourceFigureHeldCount": 4,
-          "topicPublished": "6.1 — Upthrust and Archimedes’ Principle; 6.2 — Viscous Drag and Terminal Velocity (partial previews)",
+          "liveMcqCount": 234,
+          "sourceTopicMcqCount": 240,
+          "sourceFigureHeldCount": 6,
+          "topicPublished": "6.1 — Upthrust and Archimedes’ Principle; 6.2 — Viscous Drag and Terminal Velocity; 6.3 — Fluid Flow (all partial previews)",
           "summativeTopicSloCodes": [
             "P-11-B-33",
             "P-11-B-34",
             "P-11-B-41",
-            "P-11-B-42"
+            "P-11-B-42",
+            "P-11-B-35"
           ],
           "perQuestionSloVerified": false,
           "cognitiveLevelVerified": false,
           "formativelyCertified": false,
           "exactFbiseModeReady": false,
           "independentSharedStimulusGroupCount": 0,
-          "standaloneSituationQuestionCount": 34,
+          "standaloneSituationQuestionCount": 53,
           "status": "partial-public-topic-preview",
-          "bankVersion": "v79-topics61-62-public-156-only",
-          "importNote": "V79 adds original V78 Topic6.2 77 selectable MCQs to existing V77 Topic6.1 79, totaling 156 provisional public Unit6 self-practice MCQs and 1,846 Grade XI central MCQs overall. Source archives retain 160 originals; Figure6.2 Q11 and Figure6.3/6.5 Q26/Q64/Q72 remain held. All 34 situation MCQs are individually standalone (16 from 6.1 and 18 from 6.2); zero common-stimulus groups. B-33/B-34 and B-41/B-42 have framework-verified topic-level summative classification only, not question-level SLO/cognitive labels. Unit6 full release remains planned; cloud saving disabled."
+          "bankVersion": "v81-topics61-63-public-234-only",
+          "importNote": "V81 adds original V80 Topic6.3 78 selectable MCQs to the prior 79 Topic6.1 + 77 Topic6.2. Unit6 partial bank is 234; Grade XI central public self-practice is 1,924 (original Units1–5 still 1,690). Source archives retain all 240 originals; six textbook-figure items remain held: Topic6.1 Q11; Topic6.2 Q26/Q64/Q72; Topic6.3 Q24/Q80. Source situation items are standalone (16 + 18 + 19 = 53 selectable) with ZERO common-stimulus groups. Official FBISE B-35 is Summative, Knowledge+Understanding at topic level only; original B-33/B-34/B-41/B-42 topic classifications unchanged, and individual item SLO/cognitive labels remain unverified. Unit6 full course remains planned; cloud grading disabled."
         }
       ]
     }
   ],
-  "bankVersion": "v79-five-full-banks-plus-partial-unit06-1846-public-mcqs",
+  "bankVersion": "v81-five-original-banks-plus-partial-u6-1924-public-mcqs",
   "lastUpdated": "2026-11-19"
 }
