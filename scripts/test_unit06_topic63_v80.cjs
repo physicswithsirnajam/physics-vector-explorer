@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /* V80: source-faithful Topic 6.3 standalone public MCQ preview.
- * Full Unit6 and central V79 1,846 bank remain unchanged; no cloud grades.
+ * Full Unit6 and central V79 1,924 bank remain unchanged; no cloud grades.
  */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(__dirname,'..');
@@ -93,21 +93,23 @@ assert.equal(bank.questions[58].correctOptionId,'A'); // time needed for Q=V/t
 assert.equal(bank.questions[59].correctOptionId,'C'); // units m³/s
 // V80 does not modify central builder or full course status.
 const xi=load('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,156]);
-assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),1846);
+assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,234]);
+assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),1924);
 const unit6=load('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(x=>x.unit===6);
 assert.equal(unit6.status,'planned');
 assert.equal(unit6.questionBankCount,0);
-assert.equal(unit6.partialTestBuilderMcqCount,156);
+assert.equal(unit6.partialTestBuilderMcqCount,234);
 assert.ok(!fs.existsSync(path.join(root,'portal/unit-06.html')));
 assert.ok(!fs.existsSync(path.join(root,'portal/Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
 const hub=read('portal/index.html');
 assert.ok(hub.includes('href="./unit-06-topic-63-preview.html"'));
-assert.ok(hub.includes('Topic 6.3 is NOT yet included in the central Test Builder'));
+assert.ok(hub.includes('Topic 6.3 is also now in the central Test Builder'));
+assert.ok(hub.includes('unit-06-topic-63-preview.html'));
+assert.ok(hub.includes('build-your-physics-test.html?unit=6'));
 assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">78</strong>'));
 assert.ok(read('portal/unit-06-topic-63-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-63-v80-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'continuity-fluid-flow.html')));
-console.log('V80 STATIC PASS: 80 original Q/answers, 78 active, Figure6.6 Q24/Q80 held, 20+19+20+19 public groups, independent Q=V/t calculations, central 1,846 unchanged.');
+console.log('V80 STATIC PASS: 80 original Q/answers, 78 active, Figure6.6 Q24/Q80 held, 20+19+20+19 public groups, independent Q=V/t calculations, central 1,924 unchanged.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
