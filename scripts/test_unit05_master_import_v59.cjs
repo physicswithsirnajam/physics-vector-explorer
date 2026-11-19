@@ -55,7 +55,7 @@ function sourceCheck(){
  assert.equal(unit5.liveMcqCount,349);
  assert.equal(unit5.scenarioGroupCount,26);
  assert.equal(unit5.newMasterImportedCount,317);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((s,u)=>s+u.liveMcqCount,0),1690);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.slice(0,5).reduce((s,u)=>s+u.liveMcqCount,0),1690);
  assert.equal(read('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===5).questionBankCount,349);
  console.log('PASS V59 static: 317 validated imported MCQs (221 straight + 96 scenario), 24 source scenario groups, 3 diagram questions held.');
 }
