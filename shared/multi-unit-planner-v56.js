@@ -7,7 +7,7 @@
  */
 (function(root){
 'use strict';
-const MAX_UNIT=5;
+const MAX_UNIT=6; // Unit 6 is Topic 6.1 only, with zero shared-stimulus sets.
 function isValidUnits(input){
  return Array.isArray(input)&&input.length>=1&&input.length<=MAX_UNIT&&
   input.every(Number.isInteger)&&input.every(n=>n>=1&&n<=MAX_UNIT)&&
@@ -62,7 +62,7 @@ function unitOptions(all,eligible,unit,arrangement,count,order){
    arrangement==='grouped'?singles.length+groups.reduce((n,g)=>n+g.length,0):qs.length};
 }
 function plan(all,eligible,units,arrangement,count,order){
- if(!isValidUnits(units))return {possible:false,available:0,reason:'Choose at least one unique, published unit between 1 and 5.'};
+ if(!isValidUnits(units))return {possible:false,available:0,reason:'Choose at least one supported bank among Units 1–6 (Unit 6 is only a partial topic preview).'};
  if(!Array.isArray(all)||!Array.isArray(eligible))return {possible:false,available:0,reason:'Question banks are not ready.'};
  if(!['random','grouped','scenario'].includes(arrangement))return {possible:false,available:0,reason:'Unknown question arrangement.'};
  if(!Number.isInteger(count)||count<1||count>60)return {possible:false,available:0,reason:'Choose a supported number of questions.'};

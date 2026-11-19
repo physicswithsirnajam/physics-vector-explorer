@@ -30,7 +30,8 @@ async function sourceIntegrity(){
  const a=ctx.PSNPracticeBankV55,p=ctx.PSNMultiUnitV56;
  assert.equal(p.isValidUnits([1,2,3,4,5]),true);
  assert.equal(p.isValidUnits([1,1]),false);
- assert.equal(p.isValidUnits([1,6]),false);
+ assert.equal(p.isValidUnits([1,6]),true,'Unit 6 topic bank supported');
+  assert.equal(p.isValidUnits([1,7]),false);
  assert.equal(p.isValidUnits([]),false);
  const banks=await Promise.all([1,2,3,4,5].map(u=>a.loadBank(u,'question-bank/grade-11/')));
  const all=banks.flatMap(b=>b.questions);
@@ -98,6 +99,9 @@ async function actualBrowser(){
 
   await page.goto(base+'build-your-physics-test.html',{waitUntil:'networkidle'});
   await page.locator('#allUnits').click();
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1769 eligible MCQ'));
+  assert.equal(await page.locator('input[name="unit"]:checked').count(),6);
+  await page.locator('input[name="unit"][value="6"]').uncheck(); // Keep the original 5-unit scenario regression.
   await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1690 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),5);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
@@ -155,7 +159,7 @@ async function actualBrowser(){
   await page.goto(base+'practice-engine/index.html?units=1%2C1&count=20',{waitUntil:'networkidle'});
   await page.waitForFunction(()=>document.getElementById('loading').textContent.includes('Unable to load'));
   assert.equal(await page.locator('#start').isVisible(),false,'duplicate unit requests fail closed');
-  await page.goto(base+'practice-engine/index.html?units=1%2C6&count=20',{waitUntil:'networkidle'});
+  await page.goto(base+'practice-engine/index.html?units=1%2C7&count=20',{waitUntil:'networkidle'});
   await page.waitForFunction(()=>document.getElementById('loading').textContent.includes('Unable to load'));
   assert.equal(await page.locator('#start').isVisible(),false,'unavailable unit requests fail closed');
 

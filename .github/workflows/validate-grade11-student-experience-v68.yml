@@ -64,7 +64,7 @@ jobs:
           node --check portal/app.js
           node --check scripts/test_student_workspace_v68.cjs
           node --check scripts/test_grade11_resource_drawer_v58.cjs
-          node -e "const j=require('./portal/simulation-catalog.json');const m=require('./question-bank/manifest.json');const g=m.grades.find(x=>x.grade===11);if(j.simulations.length!==31||g.units.find(x=>x.unit===4).liveMcqCount!==640||g.units.reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
+          node -e "const j=require('./portal/simulation-catalog.json');const m=require('./question-bank/manifest.json');const g=m.grades.find(x=>x.grade===11);if(j.simulations.length!==31||g.units.find(x=>x.unit===4).liveMcqCount!==640||g.units.slice(0,5).reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
       - name: Install pinned Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

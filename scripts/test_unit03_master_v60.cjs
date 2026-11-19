@@ -40,7 +40,7 @@ async function staticAudit(){
  assert.equal(unit3.summativePilotCount,160);
  assert.equal(unit3.formativePilotCount,60);
  assert.equal(unit3.scenarioGroupCount,17);
- assert.equal(m.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1690);
+ assert.equal(m.grades.find(g=>g.grade===11).units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0),1690);
  assert.equal(c.grades.find(g=>g.grade===11).units.find(u=>u.unit===3).questionBankCount,220);
  const original=read(fileAt+'unit-03-stage2-80-practice.json').questions;
  assert.equal(original.length,80);

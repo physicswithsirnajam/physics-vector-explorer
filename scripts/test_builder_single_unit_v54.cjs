@@ -42,7 +42,8 @@ async function main(){
   assert.equal(await page.locator('input[name="unit"][value="1"]').isChecked(),true);
   assert.equal(await page.locator('input[name="unit"][value="2"]').isChecked(),false);
   for(const n of [3,4,5])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),false,"Unit "+n+" is now test-ready in V55");
-  for(const n of [6,14])assert.equal(await page.locator('input[name="unit"][value="'+n+'"]').isDisabled(),true,"Unit "+n+" must not claim builder readiness");
+  assert.equal(await page.locator('input[name="unit"][value="6"]').isDisabled(),false,'Unit 6 Topic 6.1 partial bank now available');
+   assert.equal(await page.locator('input[name="unit"][value="14"]').isDisabled(),true,'Unit 14 must remain planned');
   assert.equal(await page.locator("#allUnits").isDisabled(),false,"V56 enables all five published units");
   assert.equal(await page.locator("#quickStartLink").isVisible(),true,"Default quick start must be visible");
   assert.match(await page.locator("#quickStartLink").getAttribute("href"),/unit=1/);

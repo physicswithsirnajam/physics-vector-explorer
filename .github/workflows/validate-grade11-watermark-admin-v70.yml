@@ -43,7 +43,7 @@ jobs:
           node --check portal/app.js
           node --check scripts/test_export_watermarks_v70.cjs
           node --check scripts/test_portal_signin_first_v69.cjs
-          node -e "const m=require('./question-bank/manifest.json');const u=m.grades.find(x=>x.grade===11).units;if(u.reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json');const u=m.grades.find(x=>x.grade===11).units;if(u.slice(0,5).reduce((n,x)=>n+x.liveMcqCount,0)!==1690)process.exit(1)"
       - name: Install real Chromium and PDF inspection tools
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

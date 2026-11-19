@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v74-owner-supplied-youtube-videos-embedded-on-click",
-  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 have 1,690 provisional MCQs across the public Test Builder, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
+  "catalogVersion": "pilot-v77-partial-unit06-topic61-central-practice",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topic 6.1 contributes 79 more, giving 1,769 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
       "grade": 11,
@@ -200,7 +200,7 @@
           "assessmentStatus": "not-published",
           "resourceIds": [],
           "qualityStatus": "not-reviewed",
-          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "studentNotice": "Topic 6.1 now has 79 provisional public MCQs in the central Test Builder (80 original; Q11 held for Fig. 6.2), five existing simulations and one YouTube video. This is NOT a complete released Unit6, official SLO-certified set, secured test or saved cloud score.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -210,7 +210,12 @@
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=6",
           "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
           "directYouTubeCount": 1,
-          "directVideoReviewRequired": false
+          "directVideoReviewRequired": false,
+          "partialTestBuilderMcqCount": 79,
+          "partialTestBuilderHref": "../build-your-physics-test.html?unit=6",
+          "partialTestBuilderStatus": "public-topic61-only-provisional",
+          "sourceTopicMcqCount": 80,
+          "sourceFigureHeldCount": 1
         },
         {
           "unit": 7,

@@ -68,7 +68,7 @@ function source(){
  assert.equal(unit.liveMcqCount,640);
  assert.equal(unit.newMasterImportedCount,560);
  assert.equal(unit.scenarioGroupCount,48);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1690);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0),1690);
  assert.equal(catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,640);
  assert.ok(text('portal/unit-04.html').includes('640 provisional Unit 4 MCQs'));
  assert.equal(read(folder+'unit-04-v39-80-practice.json').questions.length,80,'unchanged 80-item classroom bank');

@@ -62,15 +62,15 @@
 <h3>Performance by Unit</h3><div class="slo-grid" id="unitStats"></div><h3>Learning-outcome breakdown</h3><p id="sloAuditNote" class="muted hidden" role="note" style="font-size:13px;line-height:1.6"><strong>Unit 4 topic-level SLO caution:</strong> the corrected Topics 4.1–4.7 source questions currently use provisional TOPIC-LEVEL SLO candidates, not independently verified question-level mappings. A question can count under more than one code. These tallies are study indicators, not certified FBISE SLO mastery.</p><div class="slo-grid" id="sloStats"></div><h3 style="margin-top:18px">Actual question mix</h3><div class="slo-grid" id="mixStats"></div><p class="muted" style="font-size:12px" id="mixNote"></p><h3 style="margin-top:22px">Question-by-question solutions</h3><div id="review"></div><div class="actions no-print"><button id="retry" class="primary">Try another random selection</button><button id="print">Print / Save Results as PDF</button><a href="../build-your-physics-test.html">Return to Test Builder</a><a href="../portal/#my-progress">My Dashboard &amp; Progress</a></div></section>
 <div class="foot">Physics with Sir Najam · NBF Grade XI · Educational self-practice bank · Questions and worked answers are sourced from provisional teacher-prepared public learning banks; no secure examination keys.</div>
 </main>
-<script src="../shared/practice-bank-adapter-v55.js?v=66"></script>
-<script src="../shared/multi-unit-planner-v56.js"></script>
+<script src="../shared/practice-bank-adapter-v55.js?v=77"></script>
+<script src="../shared/multi-unit-planner-v56.js?v=77"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const params=new URLSearchParams(window.location.search);
 const rawUnits=params.get('units');
 const parsedUnits=rawUnits===null?
- (params.get('unit')===null?[1]:[/^[1-5]$/.test(params.get('unit'))?Number(params.get('unit')):0]):
+ (params.get('unit')===null?[1]:[/^[1-6]$/.test(params.get('unit'))?Number(params.get('unit')):0]):
  rawUnits.split(',').map(x=>/^\d+$/.test(x)?Number(x):0);
 const requestUnits=PSNMultiUnitV56.isValidUnits(parsedUnits)?parsedUnits.slice().sort((a,b)=>a-b):[];
 const cfg={units:requestUnits,unit:requestUnits.length===1?requestUnits[0]:null,count:Math.max(1,Math.min(60,Number(params.get('count'))||10)),scope:['all','summative','formative'].includes(params.get('scope'))?params.get('scope'):'all',feedback:['instant','end','hints'].includes(params.get('feedback'))?params.get('feedback'):'end',timer:Math.max(0,Math.min(120,Number(params.get('timer'))||0)),shuffle:params.get('shuffle')!=='false',cognitive:(params.get('cognitive')||'').split(',').filter(Boolean),difficulty:params.get('difficulty')||'balanced',arrangement:['random','grouped','scenario'].includes(params.get('arrangement'))?params.get('arrangement'):'random',selection:params.get('selection')==='random'?'random':'balanced',preferUnseen:params.get('unseen')!=='false',slo:(params.get('slo')||'').split(',').map(x=>x.trim().toUpperCase()).filter(Boolean)};
@@ -398,7 +398,7 @@ Promise.all(cfg.units.map(unit=>PSNPracticeBankV55.loadBank(unit,'../question-ba
    $('unitTitle').textContent=cfg.units.length===1?PSNPracticeBankV55.names[cfg.unit]+' — MCQ Practice':'Mixed-Unit Physics MCQ Practice';
    setup();
  })
- .catch(err=>showError('Unable to load the selected Grade XI question bank(s): '+err.message+' Please return to the Test Builder and choose published Units 1–5.'));
+ .catch(err=>showError('Unable to load the selected Grade XI question bank(s): '+err.message+' Please return to the Test Builder and choose Units 1–5 or the partial Unit 6 Topic 6.1 preview.'));
 </script>
 <script type="module" src="../portal/attempt-sync.js"></script>
   <script src="../shared/navigation.js?v=68" defer></script>

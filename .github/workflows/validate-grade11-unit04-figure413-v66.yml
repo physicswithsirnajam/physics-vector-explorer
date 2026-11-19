@@ -58,7 +58,7 @@ jobs:
           node --check scripts/test_unit04_master_v63.cjs
           node --check scripts/test_unit04_master_v62.cjs
           node --check scripts/test_unit04_master_v61.cjs
-          node -e "const g=require('./question-bank/manifest.json').grades.find(x=>x.grade===11),u=g.units.find(x=>x.unit===4);if(u.liveMcqCount!==640||u.scenarioGroupCount!==48||u.newMasterImportedCount!==560||g.units.reduce((s,x)=>s+x.liveMcqCount,0)!==1690)process.exit(1)"
+          node -e "const g=require('./question-bank/manifest.json').grades.find(x=>x.grade===11),u=g.units.find(x=>x.unit===4);if(u.liveMcqCount!==640||u.scenarioGroupCount!==48||u.newMasterImportedCount!==560||g.units.slice(0,5).reduce((s,x)=>s+x.liveMcqCount,0)!==1690)process.exit(1)"
       - name: Install pinned Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

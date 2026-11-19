@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Physics with Sir Najam",
   "status": "practice-pilot",
-  "updated": "2026-11-17",
+  "updated": "2026-11-19",
   "grades": [
     {
       "grade": 11,
@@ -130,10 +130,35 @@
             "5.3": 80,
             "5.4": 80
           }
+        },
+        {
+          "unit": 6,
+          "name": "Fluid Mechanics (Topic 6.1 only)",
+          "path": "grade-11/unit-06-topic-61-v76-80-source.json",
+          "sourceFiles": [
+            "grade-11/unit-06-topic-61-v76-80-source.json"
+          ],
+          "liveMcqCount": 79,
+          "sourceTopicMcqCount": 80,
+          "sourceFigureHeldCount": 1,
+          "topicPublished": "6.1 — Upthrust and Archimedes’ Principle",
+          "summativeTopicSloCodes": [
+            "P-11-B-33",
+            "P-11-B-34"
+          ],
+          "perQuestionSloVerified": false,
+          "cognitiveLevelVerified": false,
+          "formativelyCertified": false,
+          "exactFbiseModeReady": false,
+          "independentSharedStimulusGroupCount": 0,
+          "standaloneSituationQuestionCount": 16,
+          "status": "partial-public-topic-preview",
+          "bankVersion": "v77-topic61-public-79-only",
+          "importNote": "V77 reuses the original V76 80-item source, exposes 79 items through the public central Test Builder while keeping Fig6.2 Q11 held; 16 standalone real-life situations are NOT common-stimulus groups. Units1–5 remain 1,690; Grade XI total 1,769. B-33/B-34 are verified summative topic SLOs but per-question cognitive/SLO mapping is not certified. Filter by All learning outcomes and Unclassified in source; no cloud-saved results. Unit6 overall remains planned, not fully released."
         }
       ]
     }
   ],
-  "bankVersion": "v66-five-unit-central-1690-source-mcqs",
-  "lastUpdated": "2026-11-17"
+  "bankVersion": "v77-five-full-units-plus-partial-unit06-1769-public-mcqs",
+  "lastUpdated": "2026-11-19"
 }

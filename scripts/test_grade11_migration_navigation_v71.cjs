@@ -40,8 +40,10 @@ function audit(){
   'legacy links must not be disguised as Study or Explore resources');
  assert.equal(JSON.parse(read('portal/simulation-catalog.json')).simulations.length,31);
  const counts=JSON.parse(read('question-bank/manifest.json')).grades.find(g=>g.grade===11).units.map(x=>x.liveMcqCount);
- assert.deepEqual(counts,[275,206,220,640,349]);
- assert.equal(counts.reduce((a,b)=>a+b,0),1690);
+ assert.deepEqual(counts.slice(0,5),[275,206,220,640,349],'preserve the five original MCQ bank counts');
+  assert.equal(counts.length,6,'five released banks plus partial Unit 6 Topic 6.1 bank');
+ assert.equal(counts.slice(0,5).reduce((a,b)=>a+b,0),1690);
+  assert.equal(counts[5],79,'Unit6 partial bank does not release full unit');
  const css=read('shared/print-watermark-v70.css');
  assert.ok(css.includes('font-family:"Times New Roman",Times,"Liberation Serif",Georgia,serif!important'));
  assert.ok(css.includes('position:fixed!important')&&css.includes('transform:rotate'));
