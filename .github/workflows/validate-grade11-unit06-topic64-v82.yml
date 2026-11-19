@@ -1,0 +1,57 @@
+name: Validate Grade XI Unit6 Topic6.4 Preview (V82)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "portal/unit-06-topic-64-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic64_v82.cjs"
+      - "quality/grade11-unit06-topic64-v82-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic64-v82.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "portal/unit-06-topic-64-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic64_v82.cjs"
+      - "quality/grade11-unit06-topic64-v82-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic64-v82.yml"
+  workflow_dispatch:
+jobs:
+  source-and-student-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source and JS syntax
+        run: |
+          node --check portal/unit-06-topic-64-preview.js
+          node --check scripts/test_unit06_topic64_v82.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V82 source fidelity, 20 numericals and mobile Chromium
+        run: node scripts/test_unit06_topic64_v82.cjs
+      - name: Regression — V81 central and older Unit 6 previews
+        run: |
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic61_v76.cjs
+      - name: Regression — source video links
+        run: node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload mobile QA screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v82-unit6-continuity-mobile
+          path: qa-artifacts/unit06-topic64-v82/*.png
+          if-no-files-found: warn
+          retention-days: 7
