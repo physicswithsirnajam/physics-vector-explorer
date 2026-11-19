@@ -5,10 +5,10 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:640,5:349,6:156};
+const expected={1:275,2:206,3:220,4:640,5:349,6:234};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
-  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1 and 6.2 (partial)'
+  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1, 6.2 and 6.3 (partial)'
 };
 const files={
   1:['unit-01.json'],2:['unit-02.json'],
@@ -19,7 +19,7 @@ const files={
     'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json',
     'unit-05-master-topic-v59-317.json'
   ],
-  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json']
+  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json','unit-06-topic-63-v80-80-source.json']
 };
 function need(condition,reason){if(!condition)throw Error('Grade XI MCQ source validation: '+reason);}
 function escapeHTML(value){return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -734,6 +734,66 @@ function adaptUnitSixTopic62(source){
    'original Topic 6.2 source sections corrupted');
  return kept;
 }
+
+/* V81: source-faithful Topic6.3 intake. Review the entire original V80 archive
+ * before exposing 78 diagram-independent items in PUBLIC self-practice.
+ * Neither topic-level B-35 status nor original MCQs confer individual
+ * summative/SLO/cognitive certification. Unit6 is NOT a fully released unit.
+ */
+function adaptUnitSixTopic63(source){
+ need(source?.bankId==='PSN-XI-U06-T63-V80'&&source.grade===11&&
+   source.unit===6&&source.topicNumber==='6.3'&&source.title==='Fluid Flow'&&
+   source.sourceQuestionCount===80&&source.importedQuestionCount===80&&
+   source.publicPreviewCount===78&&source.secureExam===false&&
+   source.publicSelfPractice===true&&source.questions?.length===80&&
+   source.unitReleaseStatus==='planned-partial-topic-preview',
+   'Invalid Unit6 Topic6.3 archival source or publication boundary');
+ need(source.frameworkClassification==='Summative'&&
+   source.officialFrameworkCognitiveLevel==='Knowledge + Understanding'&&
+   source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-35'&&
+   source.perQuestionFrameworkMappingStatus==='not individually verified'&&
+   source.sections?.sharedStimulusGroups===0,
+   'Topic6.3 cannot claim independently mapped item SLOs or fabricated scenarios');
+ const key='AADBDCBADCCDBBACCDBCADDBCBBADDABACCBDDCDCDCBDACBCDABBACCDAACCADDAABCADABBACABBDB';
+ need(key.length===80&&source.originalSourceAnswerKey===key&&
+   source.questions.map(q=>q.correctOptionId).join('')===key,
+   'Original 80-letter Topic6.3 answer key changed');
+ const held=new Set([24,80]),kept=[],sections={fundamentals:0,reasoning:0,numericals:0,'standalone-situations':0};
+ for(let i=0;i<80;i++){
+   const q=source.questions[i],n=i+1;
+   const section=n<=20?'fundamentals':n<=40?'reasoning':n<=60?'numericals':'standalone-situations';
+   need(q.id==='XI-U06-T63-MCQ-'+String(n).padStart(4,'0')&&
+     q.sourceQuestionNumber===n&&q.unit===6&&q.grade===11&&q.topic==='Fluid Flow'&&
+     q.type==='single_choice'&&q.sourceSection===section&&q.situationBased===(n>=61),
+     'Topic6.3 original sequence, topic or section mismatch');
+   need(q.boardEligible===false&&q.assessmentClassification==='summative-topic-provisional'&&
+     q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
+     Array.isArray(q.sloCodes)&&q.sloCodes.length===0&&
+     q.topicSloCodes?.join(',')==='P-11-B-35'&&q.stimulusSetId===null,
+     'Topic6.3 unverified per-question SLO or fabricated stimulus metadata');
+   need(Array.isArray(q.options)&&q.options.map(o=>o.id).join('')==='ABCD'&&
+     q.options.every(o=>typeof o.text==='string'&&o.text.trim())&&
+     q.options.some(o=>o.id===q.correctOptionId)&&
+     typeof q.stem==='string'&&q.stem.trim()&&
+     typeof q.explanation==='string'&&q.explanation.trim(),
+     'Topic6.3 original MCQ content/answer invalid');
+   if(held.has(n)){
+     need(q.active===false&&q.status==='pending-figure-review'&&
+       q.holdReason?.includes('Figure 6.6')&&/Fig\. 6\.6/.test(q.stem),
+       'Topic6.3 Figure6.6 original Q'+n+' incorrectly enabled');
+   }else{
+     need(q.active===true&&q.status==='provisional-public-self-practice',
+       'Topic6.3 original Q'+n+' incorrectly inactive');
+     kept.push({...q,stimulusHtml:''});sections[section]++;
+   }
+ }
+ need(kept.length===78&&new Set(kept.map(q=>q.id)).size===78,
+   'Topic6.3 visible question count must remain 78');
+ need(sections.fundamentals===20&&sections.reasoning===19&&
+   sections.numericals===20&&sections['standalone-situations']===19,
+   'Topic6.3 source sections or figure holds changed');
+ return kept;
+}
 async function loadBank(unit,basePath){
   need(Number.isInteger(unit)&&Object.hasOwn(files,unit),'unit not available');
   need(typeof basePath==='string'&&/^(?:\.\.\/)?question-bank\/grade-11\/$/.test(basePath),'unexpected question bank folder');
@@ -754,17 +814,17 @@ async function loadBank(unit,basePath){
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else if(unit===6){
-    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]);
-    const earlier=new Set(first.map(q=>q.id));
-    need(second.every(q=>!earlier.has(q.id)), 'duplicate MCQ across Unit 6 Topics 6.1 and 6.2');
-    questions=[...first,...second];
+    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]);
+    const earlier=new Set([...first,...second].map(q=>q.id));
+    need(third.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.3');
+    questions=[...first,...second,...third];
    }
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v79-topics61-62-public-156-only':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v81-topics61-63-public-234-only':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
