@@ -1,0 +1,80 @@
+name: Validate Grade XI Unit6 Five-Topic Central Builder (V85)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-65-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "scripts/test_grade11_unit06_central_v85.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v85.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-65-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "scripts/test_grade11_unit06_central_v85.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v85.yml"
+  workflow_dispatch:
+jobs:
+  source-and-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check 2,084 current manifest and JavaScript syntax
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_unit06_central_v85.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((s,u)=>s+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==394||m[5].sourceTopicMcqCount!==400||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==93||m.reduce((s,u)=>s+u.liveMcqCount,0)!==2084)process.exit(1)"
+      - name: Install Chromium browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V85 original five-source QA, 80 Bernoulli keys, safeguards and browser
+        run: node scripts/test_grade11_unit06_central_v85.cjs
+      - name: Regression — earlier central adapter tests and all five standalone previews
+        run: |
+          node scripts/test_grade11_unit06_central_v83.cjs
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_grade11_central_v77.cjs
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+          node scripts/test_unit06_topic65_v84.cjs
+      - name: Regression — original five units, mixed-unit planning and safety constraints
+        run: |
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Preserve HSSC original videos and legacy resource links
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload 390px synthetic student screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v85-central-five-topic-mobile
+          path: qa-artifacts/unit06-v85/*.png
+          if-no-files-found: warn
+          retention-days: 7
