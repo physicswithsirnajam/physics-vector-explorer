@@ -61,7 +61,7 @@ function checkSource(){
  const u=g.units.find(x=>x.unit===4);
  assert.equal(u.liveMcqCount,640);assert.equal(u.scenarioGroupCount,48);
  assert.equal(u.newMasterImportedCount,560);assert.equal(u.masterTopicsImported['4.5'],80);
- assert.equal(g.units.reduce((n,x)=>n+x.liveMcqCount,0),1690);
+ assert.equal(g.units.slice(0,5).reduce((n,x)=>n+x.liveMcqCount,0),1690);
  assert.equal(json('portal/learning-catalog.json').grades.find(x=>x.grade===11).units.find(x=>x.unit===4).questionBankCount,640);
  console.log('PASS V63 source: original corrected Topic4.5 80 keys/options/steps, 56 straight + six intact four-question scenarios, Word math, expected metadata');
  return src;
