@@ -1,0 +1,3967 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T64-V82",
+  "bankVersion": "v82-topic64-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.4",
+  "title": "Equation of Continuity",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's ChatGPT Library (original master remains outside public GitHub)",
+  "sourceCompiledPdfPages": "137–150 of 577",
+  "originalNbfTextbookPages": "96–99",
+  "frameworkDocument": "11_Physics_HSSC_I_model_paper_50_percent(7).pdf",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-36",
+    "P-11-B-37",
+    "P-11-B-38"
+  ],
+  "frameworkClassification": "Summative at topic level",
+  "perQuestionFrameworkMappingStatus": "not individually verified",
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 80,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "BBCCACCCBCACBADDCBCCDCADDBBBDDDBCCDBBDBAABCDACBDBDADABBDCBAAACAAADABDAADCAABCDCD",
+  "holds": [],
+  "sourceScope": "Mass conservation, continuity ρAv, incompressible Av, textbook Figures 6.7/6.8, rubber-hose, river and circulatory examples, NBF Example 6.3 and Assignment 6.3; calculations include author-created extension questions.",
+  "importantDistinction": "Continuity requires density factors and source/sink accounting when appropriate; hose constriction can change discharge, so constant Q is an approximation. Q14 names Fig6.7 but its one-inlet/one-outlet wording is understandable without the image.",
+  "limitations": [
+    "80 source questions, 4 original options, original answer letters and concise explanations preserved; only PDF-extracted displaced superscripts in Q45/Q53/Q68 restored.",
+    "20 real-life questions are independent, not fabricated four-question stimulus groups.",
+    "Original teacher key's per-question SLO references retained for provenance, not official independently verified individual SLO/cognitive labels.",
+    "Public provisional self-practice only, no saved cloud score.",
+    "Standalone only; central Test Builder remains V81 with 1,924 selectable MCQs; full Unit6 still planned."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T64-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "What physical principle is expressed by the equation of continuity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conservation of electric charge"
+        },
+        {
+          "id": "B",
+          "text": "Conservation of mass"
+        },
+        {
+          "id": "C",
+          "text": "Conservation of angular momentum only"
+        },
+        {
+          "id": "D",
+          "text": "Conservation of temperature"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Mass entering a flow region equals mass leaving it in steady flow without accumulation.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "For steady flow through a single inlet and outlet, the general continuity relation is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1 / v1 = A2 / v2"
+        },
+        {
+          "id": "B",
+          "text": "ρ1 A1 v1 = ρ2 A2 v2"
+        },
+        {
+          "id": "C",
+          "text": "ρ1 v2 = ρ2 v1"
+        },
+        {
+          "id": "D",
+          "text": "A1 v2 = A2 v1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Mass flow rate ρAv remains the same at both cross-sections.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "For a steady, incompressible fluid in a pipe without leakage, the continuity equation becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1 + v1 = A2 + v2"
+        },
+        {
+          "id": "B",
+          "text": "A1 / A2 = v1 / v2"
+        },
+        {
+          "id": "C",
+          "text": "A1 v1 = A2 v2"
+        },
+        {
+          "id": "D",
+          "text": "A1 v2 = A2 v1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Equal density at the two sections cancels from ρ1A1v1 = ρ2A2v2.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "In the continuity equation, A represents the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Total wetted outside area of the pipe"
+        },
+        {
+          "id": "B",
+          "text": "Acceleration of the fluid"
+        },
+        {
+          "id": "C",
+          "text": "Cross-sectional area of the flow passage"
+        },
+        {
+          "id": "D",
+          "text": "Area under a speed–time graph"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "A is the area of a section perpendicular to the mean fluid velocity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "In A v = constant, v represents the fluid’s:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Average speed through the cross-section"
+        },
+        {
+          "id": "B",
+          "text": "Volume of the entire pipe"
+        },
+        {
+          "id": "C",
+          "text": "Viscosity of the fluid"
+        },
+        {
+          "id": "D",
+          "text": "Change in potential energy"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Av measures volumetric flow rate when v is the average normal flow speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "What is the SI unit of the quantity A v?",
+      "options": [
+        {
+          "id": "A",
+          "text": "m s-1"
+        },
+        {
+          "id": "B",
+          "text": "kg m-3"
+        },
+        {
+          "id": "C",
+          "text": "m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "N m-2"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Area (m2) multiplied by speed (m s-1) gives m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 137,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "The quantity ρ A v gives the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Volume of a stationary object"
+        },
+        {
+          "id": "B",
+          "text": "Pressure of the fluid"
+        },
+        {
+          "id": "C",
+          "text": "Mass flow rate"
+        },
+        {
+          "id": "D",
+          "text": "Force per unit area"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Density multiplied by volume passing per second gives kilograms per second.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "What is the SI unit of mass flow rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "kg m-3"
+        },
+        {
+          "id": "C",
+          "text": "kg s-1"
+        },
+        {
+          "id": "D",
+          "text": "Pa s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Mass passing per second is measured in kg s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "For a particle moving at steady speed v during a short time Δt, its displacement is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Δx = v / Δt"
+        },
+        {
+          "id": "B",
+          "text": "Δx = v Δt"
+        },
+        {
+          "id": "C",
+          "text": "Δx = v + Δt"
+        },
+        {
+          "id": "D",
+          "text": "Δx = Δt / v"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Distance equals speed multiplied by elapsed time.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "The volume passing through a pipe section of area A in time Δt is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "ΔV = A / (v Δt)"
+        },
+        {
+          "id": "B",
+          "text": "ΔV = v / A"
+        },
+        {
+          "id": "C",
+          "text": "ΔV = A v Δt"
+        },
+        {
+          "id": "D",
+          "text": "ΔV = ρ A v"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "A fluid segment has length vΔt, so its volume is A(vΔt).",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "The mass entering at a section of density ρ during time Δt is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Δm = ρ A v Δt"
+        },
+        {
+          "id": "B",
+          "text": "Δm = A v / ρ"
+        },
+        {
+          "id": "C",
+          "text": "Δm = ρ A / (v Δt)"
+        },
+        {
+          "id": "D",
+          "text": "Δm = ρ v / A"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Mass is density times the displaced volume A v Δt.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "Under what condition can ρ1 and ρ2 be cancelled from the two-section continuity equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Whenever the pipe bends upward"
+        },
+        {
+          "id": "B",
+          "text": "Only when the pressures are equal"
+        },
+        {
+          "id": "C",
+          "text": "When the flowing fluid is incompressible, so the densities are equal"
+        },
+        {
+          "id": "D",
+          "text": "Whenever the cross-sectional areas are equal"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Incompressible flow has essentially unchanged density at the two sections.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "For steady incompressible flow, Av has which physical meaning?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mass per unit volume"
+        },
+        {
+          "id": "B",
+          "text": "Volume flowing past a section per second"
+        },
+        {
+          "id": "C",
+          "text": "Work done per unit mass"
+        },
+        {
+          "id": "D",
+          "text": "Pressure difference along the tube"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Av is the volumetric flow rate Q.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "In deriving continuity in Fig. 6.7, the NBF textbook assumes a tube with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "One entrance and one exit"
+        },
+        {
+          "id": "B",
+          "text": "Two entrances and three exits"
+        },
+        {
+          "id": "C",
+          "text": "A closed end and no outlet"
+        },
+        {
+          "id": "D",
+          "text": "A pipe with a leaking wall"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The derivation equates mass entering one inlet with mass leaving one outlet.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 138,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "If there is no source or sink between sections of a steady pipe, which quantity stays constant for an incompressible fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cross-sectional area A"
+        },
+        {
+          "id": "B",
+          "text": "Speed v at every section"
+        },
+        {
+          "id": "C",
+          "text": "Fluid pressure at every section"
+        },
+        {
+          "id": "D",
+          "text": "Volumetric flow rate Q"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "In steady incompressible flow without branches or leaks, Q=Av is conserved.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "For a flowing incompressible liquid, v is inversely proportional to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "The total volume stored in the tank"
+        },
+        {
+          "id": "B",
+          "text": "Time measured on a stopwatch"
+        },
+        {
+          "id": "C",
+          "text": "The mass of the pipe"
+        },
+        {
+          "id": "D",
+          "text": "Cross-sectional area A"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Since Av is constant, v = Q/A ∝ 1/A for fixed Q.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "Which statement best describes the conservation-of-mass step in the derivation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Entering fluid always gains mass"
+        },
+        {
+          "id": "B",
+          "text": "Fluid density must increase at the narrower section"
+        },
+        {
+          "id": "C",
+          "text": "Mass entering in a given interval equals mass leaving in that interval"
+        },
+        {
+          "id": "D",
+          "text": "Fluid mass is proportional to the square of speed"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Steady flow through a no-leak one-inlet/one-outlet tube conserves mass.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "What is the SI unit of density ρ appearing in the general continuity equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "kg s-1"
+        },
+        {
+          "id": "B",
+          "text": "kg m-3"
+        },
+        {
+          "id": "C",
+          "text": "m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "N s m-2"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Density is mass divided by volume, hence kg m-3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "If the cross-sectional area is unchanged and the fluid is incompressible, the mean steady speed at two sections is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always greater at the outlet"
+        },
+        {
+          "id": "B",
+          "text": "Always smaller at the outlet"
+        },
+        {
+          "id": "C",
+          "text": "The same at both sections"
+        },
+        {
+          "id": "D",
+          "text": "Always zero"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "A1=A2 in A1v1=A2v2 gives v1=v2.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "At a junction where a steady incompressible flow divides into two branches, the correct relation is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Q_main = Q_branch1 × Q_branch2"
+        },
+        {
+          "id": "B",
+          "text": "Q_main + Q_branch1 + Q_branch2 = 0 for all directions taken as positive"
+        },
+        {
+          "id": "C",
+          "text": "Q_main = Q_branch1 + Q_branch2"
+        },
+        {
+          "id": "D",
+          "text": "Q_main = Q_branch1 / Q_branch2"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Conservation of mass requires incoming volumetric flow to equal the sum of outgoing flows.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "If a pipe’s cross-sectional area becomes half while Q stays constant, its mean fluid speed becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Half as large"
+        },
+        {
+          "id": "B",
+          "text": "Four times as large"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Twice as large"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v=Q/A, so halving A doubles v.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 139,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "A pipe widens to three times its original cross-sectional area. In steady incompressible flow, speed becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Three times its original value"
+        },
+        {
+          "id": "B",
+          "text": "Nine times its original value"
+        },
+        {
+          "id": "C",
+          "text": "One-third of its original value"
+        },
+        {
+          "id": "D",
+          "text": "Unchanged"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Increasing area threefold reduces speed by a factor of three.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "If steady incompressible flow speed increases to three times its initial value, the required cross-sectional area is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "One-third of the original area"
+        },
+        {
+          "id": "B",
+          "text": "Three times the original area"
+        },
+        {
+          "id": "C",
+          "text": "Nine times the original area"
+        },
+        {
+          "id": "D",
+          "text": "The same area"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A2/A1=v1/v2=1/3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "For a circular pipe, reducing its diameter to one-half makes the cross-sectional area:",
+      "options": [
+        {
+          "id": "A",
+          "text": "One-half of its original value"
+        },
+        {
+          "id": "B",
+          "text": "Twice its original value"
+        },
+        {
+          "id": "C",
+          "text": "Four times its original value"
+        },
+        {
+          "id": "D",
+          "text": "One-quarter of its original value"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Area A=πd2/4 is proportional to diameter squared.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "If the diameter of a circular pipe is halved and flow rate stays the same, its mean speed:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Becomes two times as large"
+        },
+        {
+          "id": "B",
+          "text": "Becomes one-quarter as large"
+        },
+        {
+          "id": "C",
+          "text": "Remains unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Becomes four times as large"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Diameter halving makes area one-quarter, so speed must quadruple.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "In a steady incompressible flow, which pair of changes is consistent with continuity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Area doubles while speed doubles"
+        },
+        {
+          "id": "B",
+          "text": "Area doubles while speed halves"
+        },
+        {
+          "id": "C",
+          "text": "Area halves while speed halves"
+        },
+        {
+          "id": "D",
+          "text": "Area triples while speed triples"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The product Av must remain unchanged.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "Why does squeezing the open end of a rubber hose usually produce a faster outgoing water jet, approximately?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Water acquires extra mass at the opening"
+        },
+        {
+          "id": "B",
+          "text": "The smaller exit area can give a greater speed for an approximately maintained flow rate"
+        },
+        {
+          "id": "C",
+          "text": "Water density necessarily becomes zero"
+        },
+        {
+          "id": "D",
+          "text": "A smaller opening always increases the volume flow rate"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "For approximately fixed discharge Q, v=Q/A increases as the opening narrows.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-37",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "Why does a freely falling water stream typically become narrower with increasing distance below a tap?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its mass disappears during the fall"
+        },
+        {
+          "id": "B",
+          "text": "Its speed increases while approximately the same water volume passes each level per"
+        },
+        {
+          "id": "C",
+          "text": "Its density must double after leaving the tap"
+        },
+        {
+          "id": "D",
+          "text": "Water particles slow down continuously while falling"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The falling water accelerates under gravity, so its area decreases for nearly constant Q.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 140,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "For two parts of a river carrying the same discharge, the section with greater effective flow area has, on average:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Higher mean water speed"
+        },
+        {
+          "id": "B",
+          "text": "The same speed regardless of area"
+        },
+        {
+          "id": "C",
+          "text": "Zero speed"
+        },
+        {
+          "id": "D",
+          "text": "Lower mean water speed"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v=Q/A predicts smaller mean velocity at larger area for equal discharge.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "Why is the speed through each of 30 equal-sized arteries potentially lower than through the aorta?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Because blood stops being a fluid in arteries"
+        },
+        {
+          "id": "B",
+          "text": "Because all arteries have zero cross-sectional area"
+        },
+        {
+          "id": "C",
+          "text": "Because 30 arteries must each carry the whole aortic flow"
+        },
+        {
+          "id": "D",
+          "text": "The combined area of the 30 arteries can be larger than the aortic area"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The total branch area, not the area of one branch alone, sets the average branch speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "In a pipe carrying compressible gas, which relation must generally be retained?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1 v1 = A2 v2 regardless of density changes"
+        },
+        {
+          "id": "B",
+          "text": "v1 = v2 regardless of area"
+        },
+        {
+          "id": "C",
+          "text": "ρ1 = ρ2 always"
+        },
+        {
+          "id": "D",
+          "text": "ρ1 A1 v1 = ρ2 A2 v2"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Density can change in compressible flow, so conserve ρAv rather than Av.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "If water leaks from a pipe between points 1 and 2, which statement is generally true?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A1v1 must equal A2v2 even with leakage"
+        },
+        {
+          "id": "B",
+          "text": "Flow rate at section 2 may be less than at section 1"
+        },
+        {
+          "id": "C",
+          "text": "No mass can leave through the leak"
+        },
+        {
+          "id": "D",
+          "text": "All water outside the leak becomes motionless"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The difference between inflow and outflow accounts for leakage.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "Which change is NOT required by conservation of mass itself?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Equal mass flow rates through inlet and outlet in steady no-leak flow"
+        },
+        {
+          "id": "B",
+          "text": "The proper density factor for a compressible fluid"
+        },
+        {
+          "id": "C",
+          "text": "Pressure being equal at two sections"
+        },
+        {
+          "id": "D",
+          "text": "Accounting for any flow through side branches"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Continuity constrains mass flow, not equal fluid pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "Which assumption is NOT essential to the fundamental conservation-of-mass principle?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mass cannot vanish inside the pipe"
+        },
+        {
+          "id": "B",
+          "text": "Any added/removed mass must be accounted for"
+        },
+        {
+          "id": "C",
+          "text": "The fluid must be non-viscous"
+        },
+        {
+          "id": "D",
+          "text": "Mass entering and leaving is balanced at steady state"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Continuity is conservation of mass and applies to viscous fluids as well.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "A pipe narrows gradually. For steady incompressible flow, the ratio v2/v1 equals:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A2/A1"
+        },
+        {
+          "id": "B",
+          "text": "A1A2"
+        },
+        {
+          "id": "C",
+          "text": "v1/v2"
+        },
+        {
+          "id": "D",
+          "text": "A1/A2"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "From A1v1=A2v2, divide by A2v1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "For two sections of one steady incompressible stream, if A1=A2 then:",
+      "options": [
+        {
+          "id": "A",
+          "text": "v1=2v2"
+        },
+        {
+          "id": "B",
+          "text": "v1=v2"
+        },
+        {
+          "id": "C",
+          "text": "v2=4v1"
+        },
+        {
+          "id": "D",
+          "text": "v1v2=0"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Equal areas imply equal average speeds from continuity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 141,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "At a Y-junction, what must be done to use continuity correctly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Assume all outgoing speed values are equal"
+        },
+        {
+          "id": "B",
+          "text": "Add the volumetric flows through both outgoing branches"
+        },
+        {
+          "id": "C",
+          "text": "Multiply the two branch volumes"
+        },
+        {
+          "id": "D",
+          "text": "Ignore one branch if it is narrower"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "All outgoing streams together carry the incoming discharge.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "For a nonzero constant discharge through a pipe of finite cross-sectional area, speed at a section cannot be:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Greater than its upstream value"
+        },
+        {
+          "id": "B",
+          "text": "Less than its upstream value"
+        },
+        {
+          "id": "C",
+          "text": "Different after a contraction"
+        },
+        {
+          "id": "D",
+          "text": "Zero"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Q=Av is nonzero, so with finite A the speed cannot be zero.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "In a steady incompressible stream, if area triples while speed doubles, the product Av:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remains unchanged"
+        },
+        {
+          "id": "B",
+          "text": "Increases sixfold and violates unchanged discharge in an unbranched, no-leak tube"
+        },
+        {
+          "id": "C",
+          "text": "Decreases sixfold"
+        },
+        {
+          "id": "D",
+          "text": "Must become zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Multiplying area by 3 and speed by 2 multiplies discharge by 6.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "A river receives water from a tributary between two measurement stations. Why is v1A1=v2A2 not sufficient by itself?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An additional incoming flow must be included in the balance"
+        },
+        {
+          "id": "B",
+          "text": "The river ceases to contain liquid water"
+        },
+        {
+          "id": "C",
+          "text": "Density becomes infinite"
+        },
+        {
+          "id": "D",
+          "text": "Cross-sectional areas must always match"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Continuity must account for the tributary source flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "Water enters a pipe of area 6 cm2 at 2 m s-1 and leaves through area 3 cm2. Find the outlet speed.",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "1 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "2 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "6 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v2=(A1/A2)v1=(6/3)(2)=4 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "A stream has area 4 × 10-4 m2 and mean speed 3 m s-1. Its volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.2 × 10-4 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "1.2 × 10-3 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "7 × 10-4 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "12 m3 s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Q=Av=(4×10-4)(3)=1.2×10-3 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "The flow rate is 2 × 10-3 m3 s-1 through an area of 5 × 10-4 m2. Mean speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.25 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "10 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "4 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.4 m s-1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v=Q/A=(2×10-3)/(5×10-4)=4 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "Convert a water discharge of 12 L min-1 into SI units.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.2 × 10-2 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.20 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "2.0 × 10-2 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "2.0 × 10-4 m3 s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "12 L min-1 = (12×10-3)/60=2×10-4 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 142,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "At constant volumetric flow rate 3 × 10-3 m3 s-1, the volume delivered in 40 s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.12 m3"
+        },
+        {
+          "id": "B",
+          "text": "0.075 m3"
+        },
+        {
+          "id": "C",
+          "text": "1.2 m3"
+        },
+        {
+          "id": "D",
+          "text": "0.0075 m3"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "V=Qt=(0.003)(40)=0.12 m3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "Water flows at 1 m s-1 in a 4 cm diameter hose. If the diameter narrows to 2 cm and Q remains constant, speed becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "4 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "8 m s-1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v2=v1(d1/d2)2=1×(4/2)2=4 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-37",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "A circular pipe expands from radius 1 cm to 2 cm. If the inlet speed is 8 m s-1, the outlet speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "2 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "16 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "32 m s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v2=v1(r1/r2)2=8(1/2)2=2 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "A compressible fluid has ρ1=800 kg m-3, A1=2 × 10-3 m2, v1=1 m s-1; ρ2=1000 kg m-3 and A2=10-3 m2. Find v2.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.8 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.4 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "1.6 m s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v2=(ρ1A1v1)/(ρ2A2)=800×0.002/(1000×0.001)=1.6 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "Water of density 1000 kg m-3 flows at a mass rate of 2 kg s-1. The volume flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 × 103 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "2 × 10-3 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "500 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.20 m3 s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Q=ṁ/ρ=2/1000=0.002 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "Three equal branches each have area 2 cm2 and mean speed 1.5 m s-1. Total outflow is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 × 10-4 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "9 × 10-2 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "6 × 10-4 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "9 × 10-4 m3 s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "3Av=3(2×10-4)(1.5)=9×10-4 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "A main stream (area 2 cm2; speed 5 m s-1) divides into two equal branches of area 1 cm2 each. Branch speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "10 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "20 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2×5=2×1×v_branch gives v_branch=5 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "NBF Example 6.3: Aorta radius 0.8 cm, speed 0.33 m s-1; blood enters 30 arteries each radius 0.4 cm. Speed in each artery is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.33 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "1.32 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.11 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.044 m s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v2=(1/30)(0.8/0.4)2(0.33)=0.044 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 143,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "Blood at 0.40 m s-1 in a vessel of radius 0.8 cm splits equally into 16 vessels of radius 0.2 cm. Speed in one branch is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.40 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.025 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "1.60 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "6.40 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v2=[(0.8/0.2)2/16]×0.40=0.40 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "Water flows from a section of area 10 cm2 at 0.6 m s-1 to a 2 cm2 section. Outlet speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.12 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "3.0 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "1.2 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "6.0 m s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v2=(10/2)(0.6)=3.0 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "A hose delivers 15 L in 5 s. Its volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "3 × 10-3 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "75 × 10-3 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "3 × 10-2 m3 s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Q=(15×10-3)/5=3×10-3 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "Flow through a passage of area 0.008 m2 at 0.25 m s-1 has discharge:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.032 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.020 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.200 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.002 m3 s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Q=Av=0.008×0.25=0.002 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "type": "single_choice",
+      "stem": "A pipe carries Q=10-3 m3 s-1 into an area 2.5 × 10-4 m2. Speed there is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.25 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "4 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.4 m s-1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v=Q/A=0.001/0.00025=4 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "type": "single_choice",
+      "stem": "A pipe of cross-section 0.004 m2 carries water (ρ=1000 kg m-3) at 1.5 m s-1. Mass flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.006 kg s-1"
+        },
+        {
+          "id": "B",
+          "text": "6 kg s-1"
+        },
+        {
+          "id": "C",
+          "text": "1.5 kg s-1"
+        },
+        {
+          "id": "D",
+          "text": "6000 kg s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "ṁ=ρAv=1000×0.004×1.5=6 kg s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "If 6 L s-1 passes through cross-sectional area 0.003 m2, mean speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "20 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.002 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "6 L s-1=0.006 m3 s-1, and v=Q/A=0.006/0.003=2 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "type": "single_choice",
+      "stem": "A gas has ρ1=1.2 kg m-3, A1=0.010 m2, v1=10 m s-1; ρ2=1.5 kg m-3 and A2=0.008 m2. Find v2.",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "8 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "12.5 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "15 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v2=(1.2×0.010×10)/(1.5×0.008)=10 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 144,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "type": "single_choice",
+      "stem": "A garden hose carries steady water at 1.2 m s-1 through an opening of area 4 cm2. A nozzle reduces its area to 1 cm2 without changing Q. Jet speed becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "4.8 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.3 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "1.2 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "9.6 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v2=(4/1)×1.2=4.8 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-37",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "type": "single_choice",
+      "stem": "A student squeezes a hose and observes a faster jet. Which condition is needed to use the simple speed ratio v2/v1=A1/A2 exactly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The fluid suddenly doubles its density"
+        },
+        {
+          "id": "B",
+          "text": "The hose completely stops all flow"
+        },
+        {
+          "id": "C",
+          "text": "The volume flow rate remains unchanged"
+        },
+        {
+          "id": "D",
+          "text": "The exit pressure must equal inlet pressure"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The speed ratio follows from constant Q=Av, not merely from narrowing by itself.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-37",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "type": "single_choice",
+      "stem": "A smooth stream leaving a tap accelerates while falling and carries nearly constant discharge. What happens to its area?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It decreases"
+        },
+        {
+          "id": "B",
+          "text": "It increases in direct proportion to speed"
+        },
+        {
+          "id": "C",
+          "text": "It must remain unchanged"
+        },
+        {
+          "id": "D",
+          "text": "It becomes zero immediately"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v rises while Q=Av stays roughly fixed, so A falls.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "type": "single_choice",
+      "stem": "Two river reaches carry the same discharge. The deeper reach has twice the effective flow area of the shallow reach. Its mean speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Half the shallow-reach speed"
+        },
+        {
+          "id": "B",
+          "text": "Twice the shallow-reach speed"
+        },
+        {
+          "id": "C",
+          "text": "Four times the shallow-reach speed"
+        },
+        {
+          "id": "D",
+          "text": "Exactly the same speed"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For fixed Q, v=Q/A, so doubled area means half speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "type": "single_choice",
+      "stem": "A river carrying 12 m3 s-1 splits into two channels. One carries 5 m3 s-1. The other carries:",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 m3 s-1"
+        },
+        {
+          "id": "B",
+          "text": "17 m3 s-1"
+        },
+        {
+          "id": "C",
+          "text": "2.4 m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "60 m3 s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Conservation of discharge: 12=5+Q2 gives 7 m3 s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "An aorta carries 0.33 m s-1 blood to 30 equal-sized arteries. Why is each branch speed 0.044 m s-1 in Example 6.3?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Every artery has a larger radius than the aorta"
+        },
+        {
+          "id": "B",
+          "text": "The 30 arteries each receive the full aortic discharge"
+        },
+        {
+          "id": "C",
+          "text": "The blood loses all its mass in the junction"
+        },
+        {
+          "id": "D",
+          "text": "The summed cross-sectional area of the branches is larger than that of the aorta"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Combined branch area is 30π(0.4)2 versus π(0.8)2, so total branch area is 7.5 times larger.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "type": "single_choice",
+      "stem": "One vessel (radius 1 cm) divides into 50 equal vessels (radius 0.1 cm). If initial speed is 0.20 m s-1 and flow is conserved, branch speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.40 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.004 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.20 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "2.0 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v_branch=(1/50)(1/0.1)2×0.20=0.40 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 145,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "type": "single_choice",
+      "stem": "Water flows steadily into a three-way splitter at 6 L s-1. Two exits carry 2 L s-1 each. The third must carry:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 L s-1"
+        },
+        {
+          "id": "B",
+          "text": "2 L s-1"
+        },
+        {
+          "id": "C",
+          "text": "8 L s-1"
+        },
+        {
+          "id": "D",
+          "text": "12 L s-1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The sum of the three outlets equals 6 L s-1, so the last is 6−2−2=2 L s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "type": "single_choice",
+      "stem": "A flowmeter records steady speeds at sections of identical area in a closed, unbranched water pipe: 2 m s-1 upstream and 3 m s-1 downstream. Which conclusion follows?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Both readings automatically satisfy continuity"
+        },
+        {
+          "id": "B",
+          "text": "The pipe must be increasing the water’s mass"
+        },
+        {
+          "id": "C",
+          "text": "Continuity holds only when pressures match"
+        },
+        {
+          "id": "D",
+          "text": "The readings or constant-flow assumptions should be checked"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Equal areas demand equal speeds for steady incompressible no-leak flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "An irrigation channel widens downstream but also receives additional side inflow. Which procedure is valid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Include added side discharge in the mass balance"
+        },
+        {
+          "id": "B",
+          "text": "Use A1v1=A2v2 without considering side inflow"
+        },
+        {
+          "id": "C",
+          "text": "Set every speed to zero"
+        },
+        {
+          "id": "D",
+          "text": "Assume the wider section has exactly twice the speed"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Flow entering from the side is a source and must be added to the discharge balance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "type": "single_choice",
+      "stem": "A sprinkler feeds three identical branches of equal cross-sectional area. Their total discharge is fixed at 9 L min-1 and split equally. Discharge in one branch is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 L min-1"
+        },
+        {
+          "id": "B",
+          "text": "9 L min-1"
+        },
+        {
+          "id": "C",
+          "text": "27 L min-1"
+        },
+        {
+          "id": "D",
+          "text": "1 L min-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Each of three equal branches carries 9/3=3 L min-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "type": "single_choice",
+      "stem": "A compressible-gas pipe has fixed area but its density doubles from one point to another at constant mass flow rate. Mean speed then:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Doubles"
+        },
+        {
+          "id": "B",
+          "text": "Quadruples"
+        },
+        {
+          "id": "C",
+          "text": "Remains the same necessarily"
+        },
+        {
+          "id": "D",
+          "text": "Halves"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "With A unchanged, ρv remains constant, so doubled ρ means halved v.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "type": "single_choice",
+      "stem": "Students compare the aorta and 30 major arteries. Which area should they compare with the aortic area to explain the branch speeds?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only the outside surface area of the largest artery"
+        },
+        {
+          "id": "B",
+          "text": "The length of a single artery"
+        },
+        {
+          "id": "C",
+          "text": "The sum of the cross-sectional areas of all 30 arteries"
+        },
+        {
+          "id": "D",
+          "text": "The mass of the heart per second"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Branching conservation compares total outlet area with the one upstream section.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "type": "single_choice",
+      "stem": "A water pipe carries 5 L s-1 just before a leak and 4 L s-1 after it. Water escaping each second is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 L"
+        },
+        {
+          "id": "B",
+          "text": "4 L"
+        },
+        {
+          "id": "C",
+          "text": "5 L"
+        },
+        {
+          "id": "D",
+          "text": "9 L"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Leak flow = upstream − downstream = 1 L s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 146,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-38",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "type": "single_choice",
+      "stem": "A large storage tank drains into a much narrower steady outlet. For a given discharge, the outlet water generally has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Greater mean speed because its available flow area is smaller"
+        },
+        {
+          "id": "B",
+          "text": "Smaller mean speed because the outlet is narrower"
+        },
+        {
+          "id": "C",
+          "text": "The same speed independent of area"
+        },
+        {
+          "id": "D",
+          "text": "No volume passing the outlet"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For steady incompressible flow, v=Q/A is larger at a smaller outlet.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "In an artery, the diameter is reduced to 70% of its earlier value while the same volume passes per second. Approximate new mean speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.70 times the original speed"
+        },
+        {
+          "id": "B",
+          "text": "2.04 times the original speed"
+        },
+        {
+          "id": "C",
+          "text": "1.43 times the original speed"
+        },
+        {
+          "id": "D",
+          "text": "0.49 times the original speed"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v_new/v_old=(1/0.70)2≈2.04.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "At one location in a steady channel, flow area decreases from 0.40 m2 to 0.10 m2. If speed initially was 0.5 m s-1, new mean speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.125 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.50 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "2.0 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "4.0 m s-1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v2=(0.40/0.10)(0.5)=2.0 m s-1.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "type": "single_choice",
+      "stem": "During a 0.50 s interval, a fluid element travels at steady mean speed 2.0 m s-1 through a pipe. Its displacement along that section is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.25 m"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m"
+        },
+        {
+          "id": "C",
+          "text": "4.0 m"
+        },
+        {
+          "id": "D",
+          "text": "1.0 m"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Δx=vΔt=2×0.5=1 m.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "type": "single_choice",
+      "stem": "A student multiplies pipe area (m2) by flow speed (m s-1). Which of the following is the appropriate interpretation of the result?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mass flow rate in kg s-1 without using density"
+        },
+        {
+          "id": "B",
+          "text": "Dynamic pressure in pascals"
+        },
+        {
+          "id": "C",
+          "text": "Volumetric discharge in m3 s-1"
+        },
+        {
+          "id": "D",
+          "text": "A force in newtons"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Av has units m3/s; multiply by density to obtain mass flow rate.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T64-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "A river section has discharge 20 m3 s-1 and average speed 2 m s-1. If the next section is steady, unbranched and carries the same discharge at 1 m s-1, its effective area is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 m2"
+        },
+        {
+          "id": "B",
+          "text": "10 m2"
+        },
+        {
+          "id": "C",
+          "text": "40 m2"
+        },
+        {
+          "id": "D",
+          "text": "20 m2"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A2=Q/v2=20/1=20 m2.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Equation of Continuity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 147,
+      "originalPrintedTextbookPages": "96–99",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "sourceKeySloReference": "P-11-B-36",
+      "sloAlignment": "Original teacher key suggests SLO; individual item mapping and cognitive demand not board-certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    }
+  ]
+}
