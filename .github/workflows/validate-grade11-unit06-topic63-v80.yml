@@ -1,0 +1,57 @@
+name: Validate Grade XI Unit6 Topic6.3 Preview (V80)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "portal/unit-06-topic-63-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic63_v80.cjs"
+      - "quality/grade11-unit06-topic63-v80-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic63-v80.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "portal/unit-06-topic-63-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic63_v80.cjs"
+      - "quality/grade11-unit06-topic63-v80-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic63-v80.yml"
+  workflow_dispatch:
+jobs:
+  source-and-student-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source and client syntax
+        run: |
+          node --check portal/unit-06-topic-63-preview.js
+          node --check scripts/test_unit06_topic63_v80.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify 80 original questions, 78 preview and student browser
+        run: node scripts/test_unit06_topic63_v80.cjs
+      - name: Regression — V79 central 1,846, previous Unit 6 previews and source protections
+        run: |
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_source_intake_v75.cjs
+      - name: Preserve original 27 owner-supplied YouTube video links
+        run: node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload optional mobile browser screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit06-v80-fluid-flow-preview-mobile
+          path: qa-artifacts/unit06-topic63-v80/*.png
+          if-no-files-found: warn
+          retention-days: 7
