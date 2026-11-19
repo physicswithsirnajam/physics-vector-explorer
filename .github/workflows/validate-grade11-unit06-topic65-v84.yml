@@ -1,0 +1,58 @@
+name: Validate Grade XI Unit6 Topic6.5 Preview (V84)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "portal/unit-06-topic-65-preview.*"
+      - "portal/unit-06-topic-64-preview.html"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic65_v84.cjs"
+      - "quality/grade11-unit06-topic65-v84-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic65-v84.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "portal/unit-06-topic-65-preview.*"
+      - "portal/unit-06-topic-64-preview.html"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic65_v84.cjs"
+      - "quality/grade11-unit06-topic65-v84-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic65-v84.yml"
+  workflow_dispatch:
+jobs:
+  original-source-and-student-preview:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source and script syntax
+        run: |
+          node --check portal/unit-06-topic-65-preview.js
+          node --check scripts/test_unit06_topic65_v84.cjs
+      - name: Install Chromium for actual browser test
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify all original 80 MCQs, 20 recalculated numericals, student quiz and mobile
+        run: node scripts/test_unit06_topic65_v84.cjs
+      - name: Regression — previous central 2,004 and Topic6.4 source
+        run: |
+          node scripts/test_grade11_unit06_central_v83.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+      - name: Preserve original HSSC video links and resource mappings
+        run: node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload synthetic mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v84-unit6-bernoulli-mobile
+          path: qa-artifacts/unit06-topic65-v84/*.png
+          if-no-files-found: warn
+          retention-days: 7

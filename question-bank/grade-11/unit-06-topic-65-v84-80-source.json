@@ -1,0 +1,4134 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T65-V84",
+  "bankVersion": "v84-topic65-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.5",
+  "title": "Bernoulli’s Equation",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's ChatGPT Library (master stays outside public GitHub)",
+  "sourceCompiledPdfPages": "183–196 of 577",
+  "originalNbfTextbookPages": "99–101",
+  "frameworkDocument": "11_Physics_HSSC_I_model_paper_50_percent(7).pdf",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-40"
+  ],
+  "formativeContextSloCodes": [
+    "P-11-B-39"
+  ],
+  "frameworkClassification": "P-11-B-40 summative; P-11-B-39 formative context in original source",
+  "perQuestionFrameworkMappingStatus": "not individually verified",
+  "sourceCognitiveTagsStatus": "teacher-provided K/U/A reference only; not individual board-certified cognitive mapping",
+  "sourceCognitiveTagCounts": {
+    "K": 10,
+    "U": 26,
+    "A": 44
+  },
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 80,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "AACCBCDCBACADDBCABADCDDABCDACCADBDDAABDADBDADBACCBBABCBBACADDBBABCCDBDBCBDCACCDA",
+  "holds": [],
+  "sourceScope": "Ideal steady, incompressible and non-viscous streamline-flow Bernoulli relation, conservation of mechanical energy, pressure/kinetic/potential terms, horizontal and vertical applications, supplementary pressure/height/speed calculations and real-world scenarios. Named applications/devices belong to subsequent Topic 6.6.",
+  "importantDistinction": "B-39 is formative; the official summative topic is B-40. The original K/U/A key tags are author annotations, not independently certified per-item exam demands. Equation is for ideal/no-loss flow along a streamline; pumps, significant viscosity and nonideal cases need extended energy balances.",
+  "limitations": [
+    "Original 80 questions, answer letters, options, explanations and teacher key cognitive tags retained, with extracted PDF line wraps normalized; four split teacher key explanation rows rejoined from displayed source.",
+    "All 20 original section-IV situation/scenario-labelled questions are independent and do not include a shared multi-question stimulus.",
+    "Q13/Q14 mention textbook Fig.6.9, but ask about stated pressure-work directions; neither requires interpreting a diagram to select the answer. No figure hold.",
+    "This is public self-practice, not an official board examination and no cloud grades saved.",
+    "Central Test Builder stays V83 with 2,004 selectable questions; Unit 6 has 314 from Topics6.1–6.4, full Unit6 remains planned."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T65-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "Bernoulli’s equation principally relates which three quantities for an ideal flowing fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure, speed, and elevation"
+        },
+        {
+          "id": "B",
+          "text": "Pressure, temperature, and charge"
+        },
+        {
+          "id": "C",
+          "text": "Mass, density, and electric field"
+        },
+        {
+          "id": "D",
+          "text": "Speed, temperature, and current"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "It links pressure, fluid speed, and elevation along an ideal-fluid streamline.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "Which conservation law is used in the NBF textbook to derive Bernoulli’s equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conservation of mechanical energy"
+        },
+        {
+          "id": "B",
+          "text": "Conservation of angular momentum alone"
+        },
+        {
+          "id": "C",
+          "text": "Conservation of electric charge"
+        },
+        {
+          "id": "D",
+          "text": "Conservation of heat only"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Pressure work changes the fluid’s kinetic and gravitational potential energies.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "Which of the following is the general Bernoulli equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pρ + ½v² + gh = constant"
+        },
+        {
+          "id": "B",
+          "text": "P + ½ρv + ρg/h = constant"
+        },
+        {
+          "id": "C",
+          "text": "P + ½ρv² + ρgh = constant"
+        },
+        {
+          "id": "D",
+          "text": "P + ρv + gh = constant"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Pressure, kinetic energy density and gravitational potential energy density add to a constant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "In Bernoulli’s equation, the symbol ρ denotes the fluid’s:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Volume flow rate"
+        },
+        {
+          "id": "B",
+          "text": "Dynamic viscosity"
+        },
+        {
+          "id": "C",
+          "text": "Mass density"
+        },
+        {
+          "id": "D",
+          "text": "Absolute temperature"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Density determines the kinetic and gravitational energy per unit volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "The term ½ρv² represents:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Work done per unit mass by gravity"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic energy per unit volume"
+        },
+        {
+          "id": "C",
+          "text": "Mass flow rate"
+        },
+        {
+          "id": "D",
+          "text": "Pressure energy per unit mass"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "½mv² divided by volume, using m/V = ρ, gives ½ρv².",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "The term ρgh represents:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Volume flow rate"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic energy per unit mass"
+        },
+        {
+          "id": "C",
+          "text": "Gravitational potential energy per unit volume"
+        },
+        {
+          "id": "D",
+          "text": "Viscous drag per unit area"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "mgh/V = ρgh for fluid density ρ.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 183,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "In Bernoulli’s equation, the pressure term P is associated with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A change in mass density alone"
+        },
+        {
+          "id": "B",
+          "text": "Electric potential energy"
+        },
+        {
+          "id": "C",
+          "text": "Rotational kinetic energy of a solid"
+        },
+        {
+          "id": "D",
+          "text": "Pressure work per unit volume"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Pressure work PΔV divided by ΔV gives P.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "What is the SI unit of every term in P + ½ρv² + ρgh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kilogram (kg)"
+        },
+        {
+          "id": "B",
+          "text": "Metre per second (m/s)"
+        },
+        {
+          "id": "C",
+          "text": "Pascal (Pa)"
+        },
+        {
+          "id": "D",
+          "text": "Watt (W)"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Each term has units of pressure, Pa = J/m³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "Which unit is equivalent to a pascal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "m²/N"
+        },
+        {
+          "id": "B",
+          "text": "N/m²"
+        },
+        {
+          "id": "C",
+          "text": "N·m"
+        },
+        {
+          "id": "D",
+          "text": "kg/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Pressure is force divided by area.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "The elevation h in Bernoulli’s equation is measured in:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Metres"
+        },
+        {
+          "id": "B",
+          "text": "Newtons"
+        },
+        {
+          "id": "C",
+          "text": "Watts"
+        },
+        {
+          "id": "D",
+          "text": "Pascals"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Height is a length measured in SI metres.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "For a horizontal pipe with no change in elevation, Bernoulli’s equation reduces to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "P − ρgh = constant"
+        },
+        {
+          "id": "B",
+          "text": "P + ρgh = constant"
+        },
+        {
+          "id": "C",
+          "text": "P + ½ρv² = constant"
+        },
+        {
+          "id": "D",
+          "text": "P + ρv = constant"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The ρgh term is the same at both points and cancels.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "The textbook derivation considers a fluid with which idealized properties?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Steady, incompressible and non-viscous flow"
+        },
+        {
+          "id": "B",
+          "text": "Rapidly turbulent and strongly viscous flow"
+        },
+        {
+          "id": "C",
+          "text": "Flow with substantial heat loss and pump work"
+        },
+        {
+          "id": "D",
+          "text": "Only a fluid whose density changes with height"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The standard textbook form assumes steady, incompressible, inviscid flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "In Figure 6.9, the inlet pressure does which kind of work on the fluid segment?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Work equal to its temperature"
+        },
+        {
+          "id": "B",
+          "text": "Negative work regardless of flow direction"
+        },
+        {
+          "id": "C",
+          "text": "Zero work because pressure is not a force"
+        },
+        {
+          "id": "D",
+          "text": "Positive work"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The inlet force acts along the inlet displacement.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "In the textbook’s derivation, pressure work at the outlet is taken as:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Equal to mgh at both points"
+        },
+        {
+          "id": "B",
+          "text": "Zero for any flowing fluid"
+        },
+        {
+          "id": "C",
+          "text": "Positive because pressure acts in the direction of every displacement"
+        },
+        {
+          "id": "D",
+          "text": "Negative because the pressure force opposes the fluid’s forward displacement there"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Outlet pressure acts opposite the direction of outgoing displacement of the chosen fluid element.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "The work done by pressure P moving a boundary of area A through distance Δx is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "PA/Δx"
+        },
+        {
+          "id": "B",
+          "text": "PAΔx"
+        },
+        {
+          "id": "C",
+          "text": "PΔx/A"
+        },
+        {
+          "id": "D",
+          "text": "P/(AΔx)"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Force is PA, so work = force × displacement = PAΔx.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 184,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "Which geometrical expression equals the small fluid volume displaced?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Δx/A"
+        },
+        {
+          "id": "B",
+          "text": "A + Δx"
+        },
+        {
+          "id": "C",
+          "text": "AΔx"
+        },
+        {
+          "id": "D",
+          "text": "A/Δx"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Volume of a short cylindrical fluid element is area times length.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "For a steady incompressible flow, the displaced volumes at two sections in the same time are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Equal"
+        },
+        {
+          "id": "B",
+          "text": "Always proportional to static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Always zero"
+        },
+        {
+          "id": "D",
+          "text": "Equal only if the speeds are equal"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Continuity gives A₁v₁Δt = A₂v₂Δt.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "Bernoulli’s equation in the textbook is first written between:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only the top and bottom of a stationary container"
+        },
+        {
+          "id": "B",
+          "text": "Two points of the flowing fluid"
+        },
+        {
+          "id": "C",
+          "text": "Only two identical horizontal open tanks"
+        },
+        {
+          "id": "D",
+          "text": "Two points in separate unrelated pipes"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The equation compares pressure, speed and height between points 1 and 2.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "The volume flow rate V/Δt is equivalent, for uniform speed across a cross-section, to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Av"
+        },
+        {
+          "id": "B",
+          "text": "ρAv²"
+        },
+        {
+          "id": "C",
+          "text": "v/A"
+        },
+        {
+          "id": "D",
+          "text": "A/v"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A fluid travels distance vΔt in time Δt, displacing volume AvΔt.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "The textbook credits the equation to which physicist?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Blaise Pascal"
+        },
+        {
+          "id": "B",
+          "text": "Michael Faraday"
+        },
+        {
+          "id": "C",
+          "text": "Isaac Newton"
+        },
+        {
+          "id": "D",
+          "text": "Daniel Bernoulli"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The NBF information box identifies Daniel Bernoulli as the physicist.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "In horizontal ideal steady flow, if fluid speed increases, its static pressure:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increases without limit"
+        },
+        {
+          "id": "B",
+          "text": "Must remain constant"
+        },
+        {
+          "id": "C",
+          "text": "Decreases"
+        },
+        {
+          "id": "D",
+          "text": "Becomes independent of speed"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For equal height, P + ½ρv² is constant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "In horizontal ideal steady flow, the slower of two sections generally has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Zero pressure"
+        },
+        {
+          "id": "C",
+          "text": "The same static pressure regardless of speed"
+        },
+        {
+          "id": "D",
+          "text": "Higher static pressure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A lower kinetic-energy-density term is balanced by a higher pressure term.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "A fluid rises vertically while maintaining the same speed in a steady ideal-flow model. Its static pressure:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increases"
+        },
+        {
+          "id": "B",
+          "text": "Must become zero"
+        },
+        {
+          "id": "C",
+          "text": "Remains the same"
+        },
+        {
+          "id": "D",
+          "text": "Decreases"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "As ρgh increases and ½ρv² stays fixed, pressure decreases.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 185,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "If an ideal fluid descends while its speed is unchanged, what happens to its pressure?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It increases"
+        },
+        {
+          "id": "B",
+          "text": "Its density must double"
+        },
+        {
+          "id": "C",
+          "text": "It is necessarily constant"
+        },
+        {
+          "id": "D",
+          "text": "It decreases"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A decrease in elevation term is balanced by an increase in pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "For steady, incompressible flow at equal heights, fluid enters a narrower pipe section. Which pair is expected?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Greater speed and greater pressure"
+        },
+        {
+          "id": "B",
+          "text": "Greater speed and lower pressure"
+        },
+        {
+          "id": "C",
+          "text": "Lower speed and unchanged pressure"
+        },
+        {
+          "id": "D",
+          "text": "Lower speed and lower pressure"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Continuity increases speed; horizontal Bernoulli then reduces pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "A wider segment follows a narrow segment of an ideal horizontal pipe. The fluid usually has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Higher speed and the same pressure in the wider segment"
+        },
+        {
+          "id": "B",
+          "text": "Higher speed and lower pressure in the wider segment"
+        },
+        {
+          "id": "C",
+          "text": "Lower speed and higher pressure in the wider segment"
+        },
+        {
+          "id": "D",
+          "text": "Lower speed and lower pressure in the wider segment"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Increased area reduces speed and thus increases static pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "Why is the ρgh term omitted from the horizontal form of Bernoulli’s equation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure does no work in a horizontal pipe"
+        },
+        {
+          "id": "B",
+          "text": "The fluid density must become zero"
+        },
+        {
+          "id": "C",
+          "text": "Gravity is absent on Earth"
+        },
+        {
+          "id": "D",
+          "text": "It has the same value at both comparison points"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The elevation difference is zero, so the gravitational terms cancel.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "Which statement about fluid pressure and speed is MOST accurate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Their relation must be considered together with changes in elevation and other assumptions"
+        },
+        {
+          "id": "B",
+          "text": "A faster fluid always has lower pressure at every point in every system"
+        },
+        {
+          "id": "C",
+          "text": "Pressure never depends on elevation"
+        },
+        {
+          "id": "D",
+          "text": "Fluid speed and static pressure are always equal"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The full relation includes P, ½ρv² and ρgh; restrictions matter.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "In the ideal-flow derivation, pressure work is converted into:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Electric field energy of the liquid"
+        },
+        {
+          "id": "B",
+          "text": "An unavoidable increase in viscous heating only"
+        },
+        {
+          "id": "C",
+          "text": "Changes in kinetic and gravitational potential energies"
+        },
+        {
+          "id": "D",
+          "text": "A net creation of fluid mass"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The conservation-of-energy step uses W = ΔKE + ΔPE.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "If static pressure and elevation remain equal at two points on the same ideal streamline, their speeds are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always zero"
+        },
+        {
+          "id": "B",
+          "text": "Unrelated"
+        },
+        {
+          "id": "C",
+          "text": "Equal in magnitude"
+        },
+        {
+          "id": "D",
+          "text": "Necessarily in the ratio 2:1"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Equal P and h imply equal values of ½ρv².",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "Why does the ideal Bernoulli relation usually need correction for significant viscosity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscous forces dissipate mechanical energy"
+        },
+        {
+          "id": "B",
+          "text": "Viscosity always makes fluid density zero"
+        },
+        {
+          "id": "C",
+          "text": "Viscosity makes gravitational acceleration disappear"
+        },
+        {
+          "id": "D",
+          "text": "Viscosity converts all pressure into electric charge"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Frictional energy loss is excluded from the simplest Bernoulli equation.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 186,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "If a pump adds significant energy between two points, the simple Bernoulli relation without extra terms:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Requires the fluid speed to vanish"
+        },
+        {
+          "id": "B",
+          "text": "Becomes an equation of electric charge"
+        },
+        {
+          "id": "C",
+          "text": "Proves pressure is constant"
+        },
+        {
+          "id": "D",
+          "text": "Cannot generally be applied unchanged"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A pump adds mechanical energy, which must be included in an extended energy balance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "Which quantity is directly conserved in the NBF Bernoulli derivation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The static pressure alone"
+        },
+        {
+          "id": "B",
+          "text": "Mechanical energy of an ideal fluid element, accounting for pressure work"
+        },
+        {
+          "id": "C",
+          "text": "The elevation alone"
+        },
+        {
+          "id": "D",
+          "text": "The velocity alone"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The pressure, kinetic and height energy terms exchange while the sum is constant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "As fluid speed doubles at unchanged density, its kinetic energy per unit volume becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Half as large"
+        },
+        {
+          "id": "B",
+          "text": "Twice as large"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Four times as large"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "½ρv² is proportional to the square of speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "At a fixed speed, if fluid density doubles, the kinetic-energy-density term:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Becomes four times as large"
+        },
+        {
+          "id": "B",
+          "text": "Is halved"
+        },
+        {
+          "id": "C",
+          "text": "Does not change"
+        },
+        {
+          "id": "D",
+          "text": "Doubles"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "½ρv² is directly proportional to ρ when v is fixed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "A rise of h at constant density and speed increases which term?",
+      "options": [
+        {
+          "id": "A",
+          "text": "ρgh"
+        },
+        {
+          "id": "B",
+          "text": "AΔx"
+        },
+        {
+          "id": "C",
+          "text": "½ρv²"
+        },
+        {
+          "id": "D",
+          "text": "P by definition"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Only the gravitational potential energy density depends directly on height.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "For ideal horizontal flow, the difference P₁ − P₂ equals:",
+      "options": [
+        {
+          "id": "A",
+          "text": "½ρ(v₂² − v₁²)"
+        },
+        {
+          "id": "B",
+          "text": "½ρ(v₁² − v₂²)"
+        },
+        {
+          "id": "C",
+          "text": "ρg(h₁ − h₂) when heights are equal"
+        },
+        {
+          "id": "D",
+          "text": "ρ(v₁ − v₂)"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Rearrange P₁ + ½ρv₁² = P₂ + ½ρv₂².",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "Two points have the same pressure but different heights. For ideal flow, which conclusion is justified?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The density must be zero"
+        },
+        {
+          "id": "B",
+          "text": "Their speeds can differ to compensate for elevation"
+        },
+        {
+          "id": "C",
+          "text": "Their heights must actually be equal"
+        },
+        {
+          "id": "D",
+          "text": "Their speeds must both be zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The speed and height contributions can offset one another.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "For the fluid element used in the derivation, the change in kinetic energy is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "½m(v₁² + v₂²)"
+        },
+        {
+          "id": "B",
+          "text": "m(v₂ − v₁)"
+        },
+        {
+          "id": "C",
+          "text": "mg(h₂ − h₁)"
+        },
+        {
+          "id": "D",
+          "text": "½m(v₂² − v₁²)"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Subtract initial kinetic energy from final kinetic energy.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 187,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "For the same fluid element, the change in gravitational potential energy is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "mg(h₂ − h₁)"
+        },
+        {
+          "id": "B",
+          "text": "½m(v₂² − v₁²)"
+        },
+        {
+          "id": "C",
+          "text": "mg(h₁ + h₂)"
+        },
+        {
+          "id": "D",
+          "text": "P₂ − P₁"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Final minus initial gravitational potential energy is mgh₂ − mgh₁.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "Water flows horizontally: P₁ = 120 kPa, v₁ = 2 m/s and v₂ = 6 m/s. If ρ = 1000 kg/m³, find P₂.",
+      "options": [
+        {
+          "id": "A",
+          "text": "88 kPa"
+        },
+        {
+          "id": "B",
+          "text": "136 kPa"
+        },
+        {
+          "id": "C",
+          "text": "120 kPa"
+        },
+        {
+          "id": "D",
+          "text": "104 kPa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "P₂ = 120 + ½(1000)(2² − 6²)/1000 = 104 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "Water flows horizontally: P₁ = 90 kPa, v₁ = 3 m/s and v₂ = 5 m/s. Find P₂ (ρ = 1000 kg/m³).",
+      "options": [
+        {
+          "id": "A",
+          "text": "86 kPa"
+        },
+        {
+          "id": "B",
+          "text": "82 kPa"
+        },
+        {
+          "id": "C",
+          "text": "98 kPa"
+        },
+        {
+          "id": "D",
+          "text": "78 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "P₂ = 90 + ½(1000)(9 − 25)/1000 = 82 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "In a horizontal ideal pipe, P₁ = 180 kPa, v₁ = 4 m/s and v₂ = 2 m/s. Find P₂ for water.",
+      "options": [
+        {
+          "id": "A",
+          "text": "174 kPa"
+        },
+        {
+          "id": "B",
+          "text": "184 kPa"
+        },
+        {
+          "id": "C",
+          "text": "192 kPa"
+        },
+        {
+          "id": "D",
+          "text": "186 kPa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "P₂ = 180 + ½(1000)(16 − 4)/1000 = 186 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "In a pipe carrying water, speed remains constant while the fluid rises by 5 m. If P₁ = 200 kPa, find P₂. Take g = 9.8 m/s².",
+      "options": [
+        {
+          "id": "A",
+          "text": "151 kPa"
+        },
+        {
+          "id": "B",
+          "text": "249 kPa"
+        },
+        {
+          "id": "C",
+          "text": "200 kPa"
+        },
+        {
+          "id": "D",
+          "text": "195 kPa"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "P₂ = 200 kPa − (1000)(9.8)(5)/1000 = 151 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "For water of density 1000 kg/m³ flowing at 5 m/s, the quantity ½ρv² is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "500 Pa"
+        },
+        {
+          "id": "B",
+          "text": "25 000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "2 500 Pa"
+        },
+        {
+          "id": "D",
+          "text": "12 500 Pa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "½ρv² = ½(1000)(5²) = 12 500 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "For an oil of density 800 kg/m³ flowing at 10 m/s, calculate ½ρv².",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "40 000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "8 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "80 000 Pa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "½ρv² = ½(800)(10²) = 40 000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "For water at elevation 3 m, find ρgh when ρ = 1000 kg/m³ and g = 9.8 m/s².",
+      "options": [
+        {
+          "id": "A",
+          "text": "29 400 Pa"
+        },
+        {
+          "id": "B",
+          "text": "9 800 Pa"
+        },
+        {
+          "id": "C",
+          "text": "3 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "2 940 Pa"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ρgh = (1000)(9.8)(3) = 29 400 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 188,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "Water in a horizontal pipe has P₁ = 150 kPa, P₂ = 130 kPa and v₁ = 2 m/s. Find v₂ (ρ = 1000 kg/m³).",
+      "options": [
+        {
+          "id": "A",
+          "text": "8.00 m/s"
+        },
+        {
+          "id": "B",
+          "text": "4.00 m/s"
+        },
+        {
+          "id": "C",
+          "text": "6.63 m/s"
+        },
+        {
+          "id": "D",
+          "text": "2.45 m/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v₂ = √[v₁² + 2(P₁ − P₂)/ρ] = √44 = 6.63 m/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "Water speed rises from 4 m/s to 8 m/s in an ideal horizontal pipe. What is P₁ − P₂?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32 kPa"
+        },
+        {
+          "id": "B",
+          "text": "12 kPa"
+        },
+        {
+          "id": "C",
+          "text": "24 kPa"
+        },
+        {
+          "id": "D",
+          "text": "48 kPa"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "P₁ − P₂ = ½(1000)(8² − 4²) = 24 000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "An ideal horizontal water flow has P₁ − P₂ = 12 kPa and v₁ = 2 m/s. Calculate v₂.",
+      "options": [
+        {
+          "id": "A",
+          "text": "6.00 m/s"
+        },
+        {
+          "id": "B",
+          "text": "5.29 m/s"
+        },
+        {
+          "id": "C",
+          "text": "4.00 m/s"
+        },
+        {
+          "id": "D",
+          "text": "3.46 m/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v₂ = √[2² + 2(12 000)/1000] = √28 = 5.29 m/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "For water, P₁ = 130 kPa, P₂ = 115 kPa, v₁ = 1 m/s and v₂ = 3 m/s. Find h₂ − h₁ when g = 10 m/s².",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.5 m"
+        },
+        {
+          "id": "B",
+          "text": "1.1 m"
+        },
+        {
+          "id": "C",
+          "text": "0.7 m"
+        },
+        {
+          "id": "D",
+          "text": "2.3 m"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "ρgΔh = 15 000 + ½(1000)(1² − 3²) = 11 000 Pa, so Δh = 1.1 m.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "For water, P₁ = 110 kPa, P₂ = 90 kPa, v₁ = 2 m/s and v₂ = 6 m/s. Find h₂ − h₁ using g = 10 m/s².",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.4 m"
+        },
+        {
+          "id": "B",
+          "text": "3.6 m"
+        },
+        {
+          "id": "C",
+          "text": "2.0 m"
+        },
+        {
+          "id": "D",
+          "text": "1.6 m"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ρgΔh = 20 000 + ½(1000)(4 − 36) = 4 000 Pa, so Δh = 0.4 m.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "Water flows upward by 2 m with unchanged speed. Find the pressure drop, taking g = 9.8 m/s².",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.8 kPa"
+        },
+        {
+          "id": "B",
+          "text": "19.6 kPa"
+        },
+        {
+          "id": "C",
+          "text": "2.0 kPa"
+        },
+        {
+          "id": "D",
+          "text": "39.2 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "P₁ − P₂ = ρgΔh = (1000)(9.8)(2) = 19.6 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "For horizontal water flow, speed increases from 3 m/s to 7 m/s. By how much does the kinetic term increase?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40 000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "16 000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "20 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "8 000 Pa"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Δ(½ρv²) = ½(1000)(49 − 9) = 20 000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "If ideal horizontal water slows from 4 m/s to 0 m/s, by how much does static pressure increase?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8 kPa"
+        },
+        {
+          "id": "C",
+          "text": "4 kPa"
+        },
+        {
+          "id": "D",
+          "text": "2 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "ΔP = ½(1000)(4² − 0²) = 8 000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 189,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "Ideal horizontal water accelerates from rest to 10 m/s. If upstream pressure is 100 kPa, the downstream pressure is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "100 kPa"
+        },
+        {
+          "id": "B",
+          "text": "50 kPa"
+        },
+        {
+          "id": "C",
+          "text": "150 kPa"
+        },
+        {
+          "id": "D",
+          "text": "75 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The kinetic term rises by ½(1000)(10²) = 50 kPa, so pressure falls to 50 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "type": "single_choice",
+      "stem": "Pressure of 80 kPa acts through a displaced fluid volume of 0.002 m³. The pressure work PΔV is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "160 J"
+        },
+        {
+          "id": "B",
+          "text": "400 J"
+        },
+        {
+          "id": "C",
+          "text": "40 J"
+        },
+        {
+          "id": "D",
+          "text": "16 J"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "W = PΔV = 80 000 × 0.002 = 160 J.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "type": "single_choice",
+      "stem": "Water moves at 3 m/s through cross-sectional area 0.020 m² for 5 s. How much volume passes? Assume uniform velocity.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.030 m³"
+        },
+        {
+          "id": "B",
+          "text": "3.0 m³"
+        },
+        {
+          "id": "C",
+          "text": "0.30 m³"
+        },
+        {
+          "id": "D",
+          "text": "0.10 m³"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "ΔV = AvΔt = 0.020 × 3 × 5 = 0.30 m³ (continuity prerequisite).",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "Water has speed 4 m/s and density 1000 kg/m³. Its kinetic energy per unit volume is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 000 J/m³"
+        },
+        {
+          "id": "B",
+          "text": "4 000 J/m³"
+        },
+        {
+          "id": "C",
+          "text": "2 000 J/m³"
+        },
+        {
+          "id": "D",
+          "text": "16 000 J/m³"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "½ρv² = ½(1000)(16) = 8 000 J/m³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "type": "single_choice",
+      "stem": "Find the water speed when ½ρv² = 18 kPa and ρ = 1000 kg/m³.",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 m/s"
+        },
+        {
+          "id": "B",
+          "text": "9 m/s"
+        },
+        {
+          "id": "C",
+          "text": "3 m/s"
+        },
+        {
+          "id": "D",
+          "text": "6 m/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v = √(2 × 18 000/1000) = √36 = 6 m/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "type": "single_choice",
+      "stem": "A smooth horizontal pipe narrows from section X to section Y, and water flows steadily. Relative to X, Y has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower speed and higher static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Higher speed and higher static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged speed and unchanged static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Higher speed and lower static pressure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Continuity gives higher v in the narrower region; ideal Bernoulli gives lower P.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "type": "single_choice",
+      "stem": "Water in an ideal vertical pipe rises 4 m between points but maintains the same speed. Which statement is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The upper point has higher pressure"
+        },
+        {
+          "id": "B",
+          "text": "The upper point has lower pressure"
+        },
+        {
+          "id": "C",
+          "text": "Pressure is identical because speed is identical"
+        },
+        {
+          "id": "D",
+          "text": "Both points must have zero pressure"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "An increase in gravitational energy per volume requires a pressure decrease.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 190,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "type": "single_choice",
+      "stem": "Water descends through an ideal pipe without changing speed. Compared with the upper location, the lower location has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower pressure"
+        },
+        {
+          "id": "B",
+          "text": "Higher pressure"
+        },
+        {
+          "id": "C",
+          "text": "No gravitational term"
+        },
+        {
+          "id": "D",
+          "text": "Equal pressure regardless of elevation"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A lower elevation leaves more of the Bernoulli sum in the pressure term.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "type": "single_choice",
+      "stem": "An ideal pipe both rises and narrows in the flow direction. What happens to pressure?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It decreases"
+        },
+        {
+          "id": "B",
+          "text": "It is unchanged"
+        },
+        {
+          "id": "C",
+          "text": "It increases"
+        },
+        {
+          "id": "D",
+          "text": "It necessarily becomes atmospheric"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Both higher elevation and greater speed require lower static pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "type": "single_choice",
+      "stem": "An ideal pipe both descends and widens in the direction of flow. Which pressure change is expected?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure must become negative"
+        },
+        {
+          "id": "B",
+          "text": "Pressure increases"
+        },
+        {
+          "id": "C",
+          "text": "Pressure stays constant"
+        },
+        {
+          "id": "D",
+          "text": "Pressure decreases"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Lower elevation and lower speed both increase the static-pressure term.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "Two pressure gauges on an ideal horizontal pipe read different values at unequal areas. The smaller-area section is expected to show:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero speed"
+        },
+        {
+          "id": "B",
+          "text": "Exactly the same static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Lower static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Higher static pressure"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Continuity speeds up the liquid in the smaller section, lowering P.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "type": "single_choice",
+      "stem": "A water stream rises in a tube of unchanged area. Which pair of energy terms is unchanged and increased, respectively?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure term increased; gravitational term decreased"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic term decreased; gravitational term decreased"
+        },
+        {
+          "id": "C",
+          "text": "Kinetic term unchanged; gravitational term increased"
+        },
+        {
+          "id": "D",
+          "text": "Kinetic term increased; gravitational term unchanged"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Same area and steady incompressible flow give the same speed, while height rises.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "type": "single_choice",
+      "stem": "A fluid undergoes substantial frictional loss between two points. Why should a student avoid applying the basic Bernoulli equation directly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Density automatically becomes negative"
+        },
+        {
+          "id": "B",
+          "text": "Gravity changes its direction"
+        },
+        {
+          "id": "C",
+          "text": "Fluid must stop completely"
+        },
+        {
+          "id": "D",
+          "text": "Mechanical energy is lost to viscous effects"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The unmodified equation excludes head loss from friction.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "type": "single_choice",
+      "stem": "In the textbook derivation, equal fluid volumes move past the lower and upper pipe sections over the same time. This follows from:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conservation of electric charge"
+        },
+        {
+          "id": "B",
+          "text": "Steady incompressible continuity"
+        },
+        {
+          "id": "C",
+          "text": "Thermal radiation"
+        },
+        {
+          "id": "D",
+          "text": "Newton’s third law alone"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A₁v₁Δt = A₂v₂Δt for steady incompressible flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 191,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "A student calculates inlet pressure work as +P₁V and outlet pressure work as −P₂V. What is the net pressure work?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero in every flow"
+        },
+        {
+          "id": "B",
+          "text": "P₁P₂V"
+        },
+        {
+          "id": "C",
+          "text": "(P₁ + P₂)V"
+        },
+        {
+          "id": "D",
+          "text": "(P₁ − P₂)V"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Algebra gives W = P₁V − P₂V = (P₁ − P₂)V.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "type": "single_choice",
+      "stem": "A pump lies between two measurement stations and adds energy to the fluid. Which equation is appropriate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only the continuity equation for pressure prediction"
+        },
+        {
+          "id": "B",
+          "text": "An extended energy equation including pump work"
+        },
+        {
+          "id": "C",
+          "text": "An equation that ignores inlet pressure"
+        },
+        {
+          "id": "D",
+          "text": "The ideal Bernoulli equation with no extra term in all cases"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Added shaft work must appear in the energy balance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "type": "single_choice",
+      "stem": "In two ideal horizontal sections, speed drops from 8 to 4 m/s. The static pressure:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Has no relation to speed even with the stated assumptions"
+        },
+        {
+          "id": "B",
+          "text": "Must stay fixed"
+        },
+        {
+          "id": "C",
+          "text": "Rises"
+        },
+        {
+          "id": "D",
+          "text": "Falls"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Slower flow has less kinetic energy density, so P increases.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "type": "single_choice",
+      "stem": "A pipe rises but becomes wider at the same time. Without numerical values, can the downstream pressure change be predicted?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes; it must increase"
+        },
+        {
+          "id": "B",
+          "text": "No; the speed decrease and height increase have competing effects"
+        },
+        {
+          "id": "C",
+          "text": "Yes; it must decrease"
+        },
+        {
+          "id": "D",
+          "text": "Yes; it must remain constant"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Lower speed tends to raise P; greater height tends to lower it.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "type": "single_choice",
+      "stem": "A student ignores the elevation term when comparing two pipe sections at heights 1 m and 8 m. What is the main error?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Treating water as having mass"
+        },
+        {
+          "id": "B",
+          "text": "Using the wrong unit for area only"
+        },
+        {
+          "id": "C",
+          "text": "Failing to include electric potential"
+        },
+        {
+          "id": "D",
+          "text": "Neglecting a nonzero change in ρgh"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A 7 m elevation difference produces a significant gravitational-energy difference.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "type": "single_choice",
+      "stem": "Two points on the same ideal streamline have equal speed and equal height. Bernoulli’s equation gives:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Higher downstream pressure"
+        },
+        {
+          "id": "B",
+          "text": "Zero pressure at both points"
+        },
+        {
+          "id": "C",
+          "text": "Equal static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Lower downstream pressure"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Both nonpressure terms are equal, so P₁ = P₂.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "A velocity–pressure calculation uses a fluid density of 1000 kg/m³. If the actual fluid has density 800 kg/m³, at the same speeds the ideal dynamic-pressure difference is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.8 times the original difference"
+        },
+        {
+          "id": "B",
+          "text": "Unchanged"
+        },
+        {
+          "id": "C",
+          "text": "2 times the original difference"
+        },
+        {
+          "id": "D",
+          "text": "1.25 times the original difference"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "At fixed speeds ΔP = ½ρΔ(v²), so the difference scales with density.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 192,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "In an ideal horizontal pipe, the speed of water doubles from 4 to 8 m/s. The associated static-pressure drop is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8 kPa"
+        },
+        {
+          "id": "C",
+          "text": "24 kPa"
+        },
+        {
+          "id": "D",
+          "text": "32 kPa"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "ΔP = ½(1000)(8² − 4²) = 24 kPa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 193,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "type": "single_choice",
+      "stem": "A fluid moves steadily in a horizontal pipe with the same cross-sectional area at both points. Ignoring losses and pumps, its static pressures are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Necessarily increasing downstream"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily decreasing downstream"
+        },
+        {
+          "id": "C",
+          "text": "Equal"
+        },
+        {
+          "id": "D",
+          "text": "Always both zero"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Equal area gives equal speed, and equal height plus ideal Bernoulli gives equal P.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 193,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "type": "single_choice",
+      "stem": "A fluid parcel experiences a net pressure-work input and gains both speed and height. Its gained mechanical energy comes from:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Creation of extra mass"
+        },
+        {
+          "id": "B",
+          "text": "A reduction of gravitational acceleration"
+        },
+        {
+          "id": "C",
+          "text": "Electric charge on the pipe"
+        },
+        {
+          "id": "D",
+          "text": "Work done by pressure forces"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Bernoulli’s energy derivation transfers pressure work to kinetic and potential energies.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 193,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T65-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "What should be held constant when the term P + ½ρv² + ρgh is compared at two points in the textbook’s ideal-flow model?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The Bernoulli sum along the same streamline"
+        },
+        {
+          "id": "B",
+          "text": "Each of P, v, and h separately"
+        },
+        {
+          "id": "C",
+          "text": "The pipe cross-sectional area at every point"
+        },
+        {
+          "id": "D",
+          "text": "The pressure term alone"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The total mechanical energy per unit volume is constant, not each term individually.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Bernoulli’s Equation",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 193,
+      "originalPrintedTextbookPages": "99–101",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyCognitiveTagStatus": "teacher-authored label; not independently board-certified",
+      "sloAlignment": "Source SLO P-11-B-40 summative topic; P-11-B-39 formative context. Individual item alignment/cognitive demand not independently verified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    }
+  ]
+}
