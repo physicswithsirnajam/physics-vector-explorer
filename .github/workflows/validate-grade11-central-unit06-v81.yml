@@ -1,0 +1,76 @@
+name: Validate Grade XI Unit6 Three-Topic Central Builder (V81)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "scripts/test_grade11_unit06_central_v81.cjs"
+      - "scripts/test_grade11_unit06_central_v79.cjs"
+      - "scripts/test_unit06_topic63_v80.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v81.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "scripts/test_grade11_unit06_central_v81.cjs"
+      - "scripts/test_grade11_unit06_central_v79.cjs"
+      - "scripts/test_unit06_topic63_v80.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v81.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-and-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate code and central-bank manifest
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_unit06_central_v81.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==234||m.reduce((n,u)=>n+u.liveMcqCount,0)!==1924)process.exit(1)"
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify 240 original three-topic sources and central/browser integration
+        run: node scripts/test_grade11_unit06_central_v81.cjs
+      - name: Regression — standalone source previews and older six-unit builder
+        run: |
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_grade11_central_v77.cjs
+          node scripts/test_grade11_unit06_central_v79.cjs
+      - name: Regression — original five-bank scenario/practice UI
+        run: |
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Preserve source links and course boundaries
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload synthetic 390px QA screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v81-central-unit6-three-topic-mobile
+          path: qa-artifacts/unit06-v81/*.png
+          if-no-files-found: warn
+          retention-days: 7
