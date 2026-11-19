@@ -114,11 +114,11 @@ eq(correctNumber(65),42+5);
 eq(correctNumber(66),50/8);
 eq(correctNumber(80),2.12/1.144,.006);
 const xi=load('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,79]);
-assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),1769,'V78 must not add topic to central bank prematurely');
+assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,156]);
+assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),1846,'V79 adds the original 77 Topic6.2 practice questions to the central builder');
 const course=load('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');
-assert.equal(course.partialTestBuilderMcqCount,79);
+assert.equal(course.partialTestBuilderMcqCount,156);
 assert.equal(course.questionBankCount,0);
 assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')),'Full unit6 not yet published');
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')),'Owner original PDF must remain private');
@@ -127,7 +127,7 @@ assert.ok(read('portal/unit-06-topic-62-preview.html').includes('Topic 6.2'));
 assert.ok(read('portal/unit-06-topic-62-preview.html').includes('77'));
 assert.ok(read('portal/unit-06-topic-62-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-62-v78-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'viscosity-terminal-velocity.html')));
-console.log('V78 STATIC PASS: 80 source records / 77 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, unchanged central 1769.');
+console.log('V78 STATIC PASS: 80 source records / 77 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, V79 central 1846 without modifying original V78 source.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
