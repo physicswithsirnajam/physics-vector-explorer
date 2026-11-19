@@ -106,7 +106,9 @@ async function assertAdapters(){
  }
  assert.equal(allIds.size,1690,"all 1690 original and imported questions must have unique IDs");
  const partialSix=await adapter.loadBank(6,fileAt);
-  assert.equal(partialSix.questions.length,79,'Unit 6 must preserve the original Q11 figure hold');
+  assert.equal(partialSix.questions.length,156,'Unit6 now includes 79 Topic6.1 + 77 Topic6.2 items, with all four figure questions held');
+  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T61-')).length,79);
+  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T62-')).length,77);
   assert.ok(partialSix.questions.every(q=>q.sloCodes.length===0&&q.boardEligible===false),'No invented Unit6 per-item SLO certification');
   assert.ok(partialSix.questions.every(q=>q.stimulusSetId===null),'No fabricated four-question groups in Unit6');
  await assert.rejects(adapter.loadBank(5,"https://untrusted.test/"),/unexpected question bank folder/);
