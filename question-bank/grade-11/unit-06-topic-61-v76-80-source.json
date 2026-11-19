@@ -1,0 +1,3811 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T61-V76",
+  "bankVersion": "v76-topic61-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.1",
+  "title": "Upthrust and Archimedes’ Principle",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "ChatGPT owner Library; original PDF retained outside GitHub",
+  "sourceCompiledPdfPages": "3–16 of 577",
+  "originalNbfTextbookPages": "89–91",
+  "frameworkDocument": "11_Physics_HSSC_I_model_paper_50_percent(6).pdf",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-33",
+    "P-11-B-34"
+  ],
+  "frameworkClassification": "Summative",
+  "officialFrameworkCognitiveLevel": "Application",
+  "perQuestionFrameworkMappingStatus": "not individually verified",
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 79,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 24,
+    "standalone-situations": 16,
+    "sharedStimulusGroups": 0
+  },
+  "holds": [
+    {
+      "sourceQuestionNumber": 11,
+      "reason": "Source refers to NBF Fig. 6.2. Retained unchanged in source bank, excluded from live preview pending accessible figure verification."
+    }
+  ],
+  "limitations": [
+    "Original 80 source questions, four options and answer letters are retained. PDF table line-wrapping in answer-key explanations has been normalized, not rewritten for new content.",
+    "Sixteen individually self-contained situation questions (#65–80) are NOT four-question common-stimulus sets.",
+    "This is a PUBLIC provisional learning-practice source; it is not a secured examination or official FBISE question bank.",
+    "Official framework verifies B-33/B-34 as summative Application topic SLOs. Individual MCQ SLO and cognitive labels are NOT yet certified.",
+    "Question 11 is retained but not served in public quiz until the textbook Fig. 6.2 context can be checked.",
+    "Scientific correctness of all 80 items still needs teacher signoff; 24 numerical answer letters were recalculated as a focused initial check.",
+    "Unit 6 complete lessons, 574 broader prepared MCQs and protected PDF notes are not released. Units 1–5 central builder remains unchanged."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T61-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "Which of the following is a fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Neither water nor air"
+        },
+        {
+          "id": "B",
+          "text": "Only solid iron"
+        },
+        {
+          "id": "C",
+          "text": "Both water and air"
+        },
+        {
+          "id": "D",
+          "text": "Only water"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Liquids and gases are fluids; water and air are examples.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "In a liquid at rest, the pressure generally ____ as depth increases.",
+      "options": [
+        {
+          "id": "A",
+          "text": "becomes zero"
+        },
+        {
+          "id": "B",
+          "text": "decreases"
+        },
+        {
+          "id": "C",
+          "text": "always stays the same"
+        },
+        {
+          "id": "D",
+          "text": "increases"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Liquid pressure increases with depth, making the force on the lower face larger.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "For a cylinder immersed in water, which surface experiences the greater liquid pressure?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The top surface"
+        },
+        {
+          "id": "B",
+          "text": "The bottom surface"
+        },
+        {
+          "id": "C",
+          "text": "Both surfaces always have zero pressure"
+        },
+        {
+          "id": "D",
+          "text": "Both surfaces have equal pressure at different depths"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The cylinder bottom is at a greater depth than the top.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "The net upward force exerted by a fluid on an immersed object is called _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "frictional force"
+        },
+        {
+          "id": "B",
+          "text": "tension"
+        },
+        {
+          "id": "C",
+          "text": "magnetic force"
+        },
+        {
+          "id": "D",
+          "text": "upthrust (buoyant force)"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Upthrust is the resultant upward force caused by fluid pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "Upthrust acts in which direction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Horizontally to the right"
+        },
+        {
+          "id": "B",
+          "text": "Vertically upward"
+        },
+        {
+          "id": "C",
+          "text": "Opposite to the fluid density"
+        },
+        {
+          "id": "D",
+          "text": "Vertically downward"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The resultant force due to the depth difference acts upward.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "Which equation gives the magnitude of upthrust in the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "FB = ρg/V"
+        },
+        {
+          "id": "B",
+          "text": "FB = V/(ρg)"
+        },
+        {
+          "id": "C",
+          "text": "FB = ρV/g"
+        },
+        {
+          "id": "D",
+          "text": "FB = ρgV"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Archimedes’ principle gives upthrust as fluid density × g × displaced volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 3,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "For a completely submerged solid block, the volume of liquid displaced equals _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "the mass of the block"
+        },
+        {
+          "id": "B",
+          "text": "the volume of the liquid container"
+        },
+        {
+          "id": "C",
+          "text": "the volume of the block"
+        },
+        {
+          "id": "D",
+          "text": "zero"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "A fully submerged object displaces liquid equal to its own volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "The SI unit of upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "pascal (Pa)"
+        },
+        {
+          "id": "B",
+          "text": "cubic metre (m3)"
+        },
+        {
+          "id": "C",
+          "text": "kilogram (kg)"
+        },
+        {
+          "id": "D",
+          "text": "newton (N)"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Upthrust is a force, so its SI unit is the newton.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "At a depth h1 in a liquid of density ρ, the pressure due to the liquid is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "P1 = ρh1/g"
+        },
+        {
+          "id": "B",
+          "text": "P1 = ρgh1"
+        },
+        {
+          "id": "C",
+          "text": "P1 = h1/(ρg)"
+        },
+        {
+          "id": "D",
+          "text": "P1 = ρg/h1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The textbook uses P = ρgh for hydrostatic pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "For a horizontal upper face of area A, the downward pressure force is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "F1 = P1+A"
+        },
+        {
+          "id": "B",
+          "text": "F1 = P1A"
+        },
+        {
+          "id": "C",
+          "text": "F1 = P1/A"
+        },
+        {
+          "id": "D",
+          "text": "F1 = A/P1"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Force equals pressure multiplied by area.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "For the cylinder in Fig. 6.2, the upward force on its bottom face is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "F2 = A/P2"
+        },
+        {
+          "id": "B",
+          "text": "F2 = P2+A"
+        },
+        {
+          "id": "C",
+          "text": "F2 = P2A"
+        },
+        {
+          "id": "D",
+          "text": "F2 = P2/A"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Pressure on the bottom acts over its area and gives upward force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "holdReason": "Original stem references NBF Figure 6.2; figure not yet independently reviewed for accessible standalone display.",
+      "status": "pending-figure-review"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "If the cylinder top and bottom are at depths h1 and h2, its height h is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "h1/h2"
+        },
+        {
+          "id": "B",
+          "text": "h1 − h2"
+        },
+        {
+          "id": "C",
+          "text": "h2 − h1"
+        },
+        {
+          "id": "D",
+          "text": "h1 + h2"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The lower face is h below the upper face.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "In the textbook derivation, net upthrust on the cylinder equals _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "F1F2"
+        },
+        {
+          "id": "B",
+          "text": "F1 + F2"
+        },
+        {
+          "id": "C",
+          "text": "F1 − F2"
+        },
+        {
+          "id": "D",
+          "text": "F2 − F1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The greater upward bottom force minus the downward top force gives upthrust.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "For a cylinder with cross-sectional area A and height h, its volume is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "h/A"
+        },
+        {
+          "id": "B",
+          "text": "A+h"
+        },
+        {
+          "id": "C",
+          "text": "Ah"
+        },
+        {
+          "id": "D",
+          "text": "A/h"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Volume of a uniform cylinder is cross-sectional area multiplied by height.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 4,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "According to Archimedes’ principle, the upthrust equals _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "the weight of liquid displaced"
+        },
+        {
+          "id": "B",
+          "text": "the mass of the object in kilograms"
+        },
+        {
+          "id": "C",
+          "text": "the weight of the container"
+        },
+        {
+          "id": "D",
+          "text": "the pressure at the liquid surface"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The upthrust is equal to the weight of displaced liquid.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "An object remains suspended at a depth in a fluid when _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "upthrust is less than its weight"
+        },
+        {
+          "id": "B",
+          "text": "upthrust equals its weight"
+        },
+        {
+          "id": "C",
+          "text": "upthrust exceeds its weight"
+        },
+        {
+          "id": "D",
+          "text": "upthrust is zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Equal upward and downward forces give zero resultant force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "When seawater is admitted into a submarine’s ballast tanks, its _____ increases.",
+      "options": [
+        {
+          "id": "A",
+          "text": "weight"
+        },
+        {
+          "id": "B",
+          "text": "buoyant force automatically becomes zero"
+        },
+        {
+          "id": "C",
+          "text": "gravitational acceleration"
+        },
+        {
+          "id": "D",
+          "text": "external volume necessarily doubles"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Filling ballast tanks with seawater increases submarine weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "To return to the surface, a submerged submarine empties its tanks of _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "air from the surrounding atmosphere only"
+        },
+        {
+          "id": "B",
+          "text": "seawater"
+        },
+        {
+          "id": "C",
+          "text": "its engines"
+        },
+        {
+          "id": "D",
+          "text": "steel"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Removing seawater from ballast tanks reduces its weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "A ship’s hull is designed mainly to displace sufficient _____ to support the ship.",
+      "options": [
+        {
+          "id": "A",
+          "text": "ballast metal"
+        },
+        {
+          "id": "B",
+          "text": "air inside the cabins"
+        },
+        {
+          "id": "C",
+          "text": "engine oil"
+        },
+        {
+          "id": "D",
+          "text": "water"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A ship floats when the water it displaces weighs as much as the ship.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "Which ship-design feature is specifically used to improve stability?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All mass positioned high above the deck"
+        },
+        {
+          "id": "B",
+          "text": "A hull with no ability to displace water"
+        },
+        {
+          "id": "C",
+          "text": "Low weight distribution and ballast tanks"
+        },
+        {
+          "id": "D",
+          "text": "Reducing structural strength"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Low weight distribution and ballast help resist overturning.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "Does an immersed stone experience upthrust while it is sinking?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes, but only in gases, not liquids."
+        },
+        {
+          "id": "B",
+          "text": "Yes, upthrust acts even if the stone sinks."
+        },
+        {
+          "id": "C",
+          "text": "No, upthrust acts only on floating objects."
+        },
+        {
+          "id": "D",
+          "text": "No, it acts only after the stone reaches the bottom."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The textbook states that upthrust is present whether an object floats, sinks or remains suspended.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "A submerged object initially has upthrust greater than its weight. What is its initial tendency?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It accelerates upward."
+        },
+        {
+          "id": "B",
+          "text": "It accelerates downward."
+        },
+        {
+          "id": "C",
+          "text": "Its buoyant force must be zero."
+        },
+        {
+          "id": "D",
+          "text": "It remains in equilibrium."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Greater upthrust gives a net upward force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 5,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "If an immersed object’s weight exceeds its upthrust, it tends to _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "remain suspended at that depth"
+        },
+        {
+          "id": "B",
+          "text": "become weightless"
+        },
+        {
+          "id": "C",
+          "text": "sink"
+        },
+        {
+          "id": "D",
+          "text": "rise"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The resultant force is downward when weight exceeds upthrust.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "An object has weight 15 N and upthrust 15 N. Its net vertical force is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0 N"
+        },
+        {
+          "id": "B",
+          "text": "30 N upward"
+        },
+        {
+          "id": "C",
+          "text": "15 N downward"
+        },
+        {
+          "id": "D",
+          "text": "15 N upward"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Equal upward upthrust and downward weight cancel.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "Why does a mug filled with water feel lighter when held below water?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its mass becomes zero."
+        },
+        {
+          "id": "B",
+          "text": "Water exerts an upward buoyant force on it."
+        },
+        {
+          "id": "C",
+          "text": "The liquid increases its weight."
+        },
+        {
+          "id": "D",
+          "text": "Gravity disappears under water."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Upthrust reduces the downward force the hand must support.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "Why does an air-filled balloon released under water initially move upward?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its weight suddenly becomes zero."
+        },
+        {
+          "id": "B",
+          "text": "Water exerts no force on the balloon."
+        },
+        {
+          "id": "C",
+          "text": "Its mass becomes negative."
+        },
+        {
+          "id": "D",
+          "text": "The upward buoyant force is greater than its weight."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A net upward force moves the balloon toward the surface.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "A large steel ship can float because its hull _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "removes Earth’s gravity"
+        },
+        {
+          "id": "B",
+          "text": "has zero mass"
+        },
+        {
+          "id": "C",
+          "text": "displaces enough water for the upthrust to balance its weight"
+        },
+        {
+          "id": "D",
+          "text": "prevents all surrounding water from touching it"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The hull displaces water whose weight can equal the ship’s weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "A fully submerged rigid block displaces a fixed volume of liquid. If liquid density increases, its upthrust _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "increases"
+        },
+        {
+          "id": "B",
+          "text": "remains unchanged regardless of density"
+        },
+        {
+          "id": "C",
+          "text": "becomes zero"
+        },
+        {
+          "id": "D",
+          "text": "decreases"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "FB = ρgV, so larger ρ gives larger upthrust at fixed g and V.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "A rigid block remains completely immersed in water and is moved deeper without changing its volume. Its upthrust ideally _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "remains the same"
+        },
+        {
+          "id": "B",
+          "text": "decreases to zero"
+        },
+        {
+          "id": "C",
+          "text": "increases proportionally to depth"
+        },
+        {
+          "id": "D",
+          "text": "reverses direction"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Both face pressures rise, but their difference remains ρgh, giving the same ρgV.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "If g is doubled with liquid density and displaced volume unchanged, upthrust _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "does not change"
+        },
+        {
+          "id": "B",
+          "text": "becomes four times as large"
+        },
+        {
+          "id": "C",
+          "text": "halves"
+        },
+        {
+          "id": "D",
+          "text": "doubles"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "FB is directly proportional to g.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 6,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "If the displaced volume doubles in the same liquid at the same g, upthrust _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "halves"
+        },
+        {
+          "id": "B",
+          "text": "remains the same"
+        },
+        {
+          "id": "C",
+          "text": "doubles"
+        },
+        {
+          "id": "D",
+          "text": "becomes one-fourth"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "FB = ρgV, so upthrust increases in direct proportion to displaced volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "Two different completely submerged objects displace equal volumes in the same water. Their upthrusts are _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "necessarily zero"
+        },
+        {
+          "id": "B",
+          "text": "equal"
+        },
+        {
+          "id": "C",
+          "text": "always inversely proportional to their densities"
+        },
+        {
+          "id": "D",
+          "text": "always proportional to their weights"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Upthrust depends on the fluid and displaced volume, not directly on object material.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "Which expression correctly explains why the lower face of an immersed cylinder pushes more strongly upward?",
+      "options": [
+        {
+          "id": "A",
+          "text": "P2 < P1 because h2 > h1"
+        },
+        {
+          "id": "B",
+          "text": "P2 = 0 at greater depth"
+        },
+        {
+          "id": "C",
+          "text": "Pressure decreases with depth"
+        },
+        {
+          "id": "D",
+          "text": "P2 > P1 because h2 > h1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Greater depth produces greater liquid pressure on the lower face.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "If the height of a completely immersed cylinder doubles while its area remains fixed, upthrust _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "halves"
+        },
+        {
+          "id": "B",
+          "text": "doubles"
+        },
+        {
+          "id": "C",
+          "text": "becomes one-quarter"
+        },
+        {
+          "id": "D",
+          "text": "remains the same"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "FB = ρgAh and h doubles while other factors remain fixed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "When both top and bottom faces of a fixed-size immersed cylinder move down by the same depth, the pressure difference between them _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "falls to zero"
+        },
+        {
+          "id": "B",
+          "text": "changes sign"
+        },
+        {
+          "id": "C",
+          "text": "increases in proportion to their absolute depths"
+        },
+        {
+          "id": "D",
+          "text": "stays unchanged"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The separation h2 − h1 stays fixed, so ΔP = ρgh stays fixed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "Why is upthrust not limited to floating objects?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It arises from the fluid-pressure difference on any immersed object."
+        },
+        {
+          "id": "B",
+          "text": "It is produced by the object’s motor."
+        },
+        {
+          "id": "C",
+          "text": "It acts only when the body is motionless."
+        },
+        {
+          "id": "D",
+          "text": "It exists only when the object is hollow."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Different fluid pressures at upper and lower surfaces give an upward resultant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "After a ship takes on more cargo, what must happen for it to float at a new equilibrium?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It must displace no water."
+        },
+        {
+          "id": "B",
+          "text": "It must displace a greater weight of water."
+        },
+        {
+          "id": "C",
+          "text": "Its own weight must become zero."
+        },
+        {
+          "id": "D",
+          "text": "It must reduce the surrounding water’s density to zero."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Additional cargo increases weight, so equilibrium requires greater buoyant force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "Why can a hollow ship float although a compact piece of the same metal may sink?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Metal completely loses its weight when shaped into a hull."
+        },
+        {
+          "id": "B",
+          "text": "The ship’s hull can displace much more water relative to its total weight."
+        },
+        {
+          "id": "C",
+          "text": "Air removes the force of gravity."
+        },
+        {
+          "id": "D",
+          "text": "Buoyant force never acts on compact metal."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Floating is governed by displaced water weight versus total ship weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 7,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "For ship safety, which combination is highlighted in the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Speed, temperature and magnetism"
+        },
+        {
+          "id": "B",
+          "text": "Only engine power and hull colour"
+        },
+        {
+          "id": "C",
+          "text": "Only the density of engine fuel"
+        },
+        {
+          "id": "D",
+          "text": "Buoyancy, stability and structural reliability"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook lists buoyancy, stability and structural reliability as ship-design fundamentals.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "Why are strong, relatively lightweight materials selected for ships?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To remove the need for stable hull design"
+        },
+        {
+          "id": "B",
+          "text": "To make the sea denser"
+        },
+        {
+          "id": "C",
+          "text": "To withstand stresses, loads and vibrations while controlling weight"
+        },
+        {
+          "id": "D",
+          "text": "To eliminate all need for buoyancy"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Structural reliability requires strength against service loads and vibrations.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "A block displaces 0.002 m3 of water. For ρ = 1000 kg/m3 and g = 9.8 m/s2, its upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.0196 N"
+        },
+        {
+          "id": "B",
+          "text": "196 N"
+        },
+        {
+          "id": "C",
+          "text": "19.6 N"
+        },
+        {
+          "id": "D",
+          "text": "1.96 N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "FB = 1000 × 9.8 × 0.002 = 19.6 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "A completely immersed body displaces 0.005 m3 of water. Use ρ = 1000 kg/m3, g = 9.8 m/s2. Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.49 N"
+        },
+        {
+          "id": "B",
+          "text": "490 N"
+        },
+        {
+          "id": "C",
+          "text": "4.9 N"
+        },
+        {
+          "id": "D",
+          "text": "49 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "FB = 1000 × 9.8 × 0.005 = 49 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "A body displaces liquid of mass 3.0 kg. With g = 9.8 m/s2, the upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.8 N"
+        },
+        {
+          "id": "B",
+          "text": "294 N"
+        },
+        {
+          "id": "C",
+          "text": "29.4 N"
+        },
+        {
+          "id": "D",
+          "text": "3.0 N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Upthrust equals displaced liquid weight: 3.0 × 9.8 = 29.4 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "A body displaces 0.010 m3 of water (ρ = 1000 kg/m3, g = 9.8 m/s2). Its upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "980 N"
+        },
+        {
+          "id": "B",
+          "text": "9.8 N"
+        },
+        {
+          "id": "C",
+          "text": "0.98 N"
+        },
+        {
+          "id": "D",
+          "text": "98 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "FB = 1000 × 9.8 × 0.010 = 98 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "A body displaces 0.004 m3 of liquid of density 800 kg/m3. Use g = 9.8 m/s2. Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "39.2 N"
+        },
+        {
+          "id": "B",
+          "text": "3.136 N"
+        },
+        {
+          "id": "C",
+          "text": "31.36 N"
+        },
+        {
+          "id": "D",
+          "text": "313.6 N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "FB = 800 × 9.8 × 0.004 = 31.36 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 8,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "A submerged body displaces 0.002 m3 of a liquid with ρ = 1200 kg/m3; take g = 10 m/s2. Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 N"
+        },
+        {
+          "id": "B",
+          "text": "24 N"
+        },
+        {
+          "id": "C",
+          "text": "240 N"
+        },
+        {
+          "id": "D",
+          "text": "2.4 N"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "FB = 1200 × 10 × 0.002 = 24 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "An object experiences 39.2 N of upthrust in water (ρ = 1000 kg/m3, g = 9.8 m/s2). Its displaced volume is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.004 m3"
+        },
+        {
+          "id": "B",
+          "text": "0.04 m3"
+        },
+        {
+          "id": "C",
+          "text": "4 m3"
+        },
+        {
+          "id": "D",
+          "text": "0.0004 m3"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "V = FB/(ρg) = 39.2/9800 = 0.004 m3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "A fully immersed object displaces 0.015 m3 of water. For ρ = 1000 kg/m3, g = 10 m/s2, the upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 N"
+        },
+        {
+          "id": "B",
+          "text": "1.5 N"
+        },
+        {
+          "id": "C",
+          "text": "150 N"
+        },
+        {
+          "id": "D",
+          "text": "1500 N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "FB = 1000 × 10 × 0.015 = 150 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "An object receives 78.4 N upthrust in water (ρ = 1000 kg/m3, g = 9.8 m/s2). Displaced volume is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.008 m3"
+        },
+        {
+          "id": "B",
+          "text": "8 m3"
+        },
+        {
+          "id": "C",
+          "text": "0.08 m3"
+        },
+        {
+          "id": "D",
+          "text": "0.0008 m3"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "V = 78.4/(1000 × 9.8) = 0.008 m3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "A cube of side 0.20 m is completely immersed in water. If ρ = 1000 kg/m3 and g = 9.8 m/s2, upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "78.4 N"
+        },
+        {
+          "id": "B",
+          "text": "19.6 N"
+        },
+        {
+          "id": "C",
+          "text": "39.2 N"
+        },
+        {
+          "id": "D",
+          "text": "784 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "V = (0.20)3 = 0.008 m3, hence FB = 78.4 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "A cube of side 5 cm is completely immersed in water (ρ = 1000 kg/m3, g = 9.8 m/s2). Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "122.5 N"
+        },
+        {
+          "id": "B",
+          "text": "1.225 N"
+        },
+        {
+          "id": "C",
+          "text": "12.25 N"
+        },
+        {
+          "id": "D",
+          "text": "0.1225 N"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "V = (0.05)3 = 0.000125 m3; FB = 1.225 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "A submerged cylinder has A = 0.020 m2 and h = 0.30 m. In water (ρ = 1000 kg/m3, g = 9.8 m/s2), upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "58.8 N"
+        },
+        {
+          "id": "B",
+          "text": "29.4 N"
+        },
+        {
+          "id": "C",
+          "text": "588 N"
+        },
+        {
+          "id": "D",
+          "text": "5.88 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "V = Ah = 0.006 m3, so FB = 58.8 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 9,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "A cylinder has A = 0.010 m2, top depth 0.40 m and bottom depth 0.90 m. In water, ρ = 1000 kg/m3 and g = 9.8 m/s2. Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "39.2 N"
+        },
+        {
+          "id": "B",
+          "text": "49 N"
+        },
+        {
+          "id": "C",
+          "text": "88.2 N"
+        },
+        {
+          "id": "D",
+          "text": "127.4 N"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "FB = ρgA(h2 − h1) = 1000 × 9.8 × 0.01 × 0.5 = 49 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "At depth 0.20 m in water with ρ = 1000 kg/m3, taking g = 10 m/s2, liquid pressure is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "200 Pa"
+        },
+        {
+          "id": "B",
+          "text": "5000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "2000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "20 000 Pa"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "P = ρgh = 1000 × 10 × 0.20 = 2000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "At depth 0.60 m in water (ρ = 1000 kg/m3, g = 10 m/s2), liquid pressure is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "6000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "600 Pa"
+        },
+        {
+          "id": "C",
+          "text": "60 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "4000 Pa"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "P = ρgh = 1000 × 10 × 0.60 = 6000 Pa.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "Pressures on the top and bottom faces of a cylinder are 2000 Pa and 6000 Pa. Each face has area 0.020 m2. Net upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 N"
+        },
+        {
+          "id": "B",
+          "text": "800 N"
+        },
+        {
+          "id": "C",
+          "text": "120 N"
+        },
+        {
+          "id": "D",
+          "text": "40 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "FB = (6000 − 2000) × 0.020 = 80 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "type": "single_choice",
+      "stem": "A submerged body weighs 50 N and receives 19.6 N of upthrust. Its resultant vertical force is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "30.4 N downward"
+        },
+        {
+          "id": "B",
+          "text": "30.4 N upward"
+        },
+        {
+          "id": "C",
+          "text": "19.6 N downward"
+        },
+        {
+          "id": "D",
+          "text": "69.6 N upward"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Net force = weight − upthrust = 50 − 19.6 = 30.4 N downward.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "type": "single_choice",
+      "stem": "An object weighs 120 N in air and experiences 25 N upthrust in water. Its apparent weight in water is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "145 N"
+        },
+        {
+          "id": "B",
+          "text": "120 N"
+        },
+        {
+          "id": "C",
+          "text": "95 N"
+        },
+        {
+          "id": "D",
+          "text": "25 N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Apparent weight = actual weight − upthrust = 120 − 25 = 95 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "A body weighs 60 N and experiences 60 N upward buoyant force. Its net vertical force is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "120 N upward"
+        },
+        {
+          "id": "B",
+          "text": "60 N downward"
+        },
+        {
+          "id": "C",
+          "text": "60 N upward"
+        },
+        {
+          "id": "D",
+          "text": "0 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Equal and opposite forces cancel: 60 − 60 = 0 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 10,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "type": "single_choice",
+      "stem": "In textbook Assignment 6.1, an iron object appears 200 N lighter in water than in air. Using ρwater = 1000 kg/m3, g = 9.8 m/s2, its volume is approximately _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.04 m3"
+        },
+        {
+          "id": "B",
+          "text": "0.00204 m3"
+        },
+        {
+          "id": "C",
+          "text": "0.204 m3"
+        },
+        {
+          "id": "D",
+          "text": "0.0204 m3"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "V = 200/(1000 × 9.8) ≈ 0.0204 m3.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "type": "single_choice",
+      "stem": "For the same iron object in Assignment 6.1, if ρiron = 7800 kg/m3, its weight in air is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "200 N"
+        },
+        {
+          "id": "B",
+          "text": "1760 N"
+        },
+        {
+          "id": "C",
+          "text": "780 N"
+        },
+        {
+          "id": "D",
+          "text": "1560 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "W = ρirongV = (7800/1000) × 200 = 1560 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "type": "single_choice",
+      "stem": "At depth 0.20 m in water (ρ = 1000 kg/m3, g = 10 m/s2), pressure acts on a horizontal area of 0.010 m2. Its force magnitude is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "200 N"
+        },
+        {
+          "id": "B",
+          "text": "2 N"
+        },
+        {
+          "id": "C",
+          "text": "2000 N"
+        },
+        {
+          "id": "D",
+          "text": "20 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "F = PA = (1000 × 10 × 0.20) × 0.010 = 20 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "type": "single_choice",
+      "stem": "At depth 0.50 m in water (ρ = 1000 kg/m3, g = 10 m/s2), the fluid pressure force on a horizontal area 0.010 m2 is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 N"
+        },
+        {
+          "id": "B",
+          "text": "5 N"
+        },
+        {
+          "id": "C",
+          "text": "500 N"
+        },
+        {
+          "id": "D",
+          "text": "5000 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F = ρghA = 1000 × 10 × 0.50 × 0.010 = 50 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "type": "single_choice",
+      "stem": "A completely immersed body displaces 0.020 m3 of liquid of density 1025 kg/m3; take g = 10 m/s2. Upthrust is _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "20.5 N"
+        },
+        {
+          "id": "B",
+          "text": "102.5 N"
+        },
+        {
+          "id": "C",
+          "text": "2050 N"
+        },
+        {
+          "id": "D",
+          "text": "205 N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "FB = 1025 × 10 × 0.020 = 205 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "type": "single_choice",
+      "stem": "A child releases an inflated balloon below the water surface. It quickly rises. Which is the best explanation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Liquid pressure decreases with depth."
+        },
+        {
+          "id": "B",
+          "text": "The water removes the balloon’s mass."
+        },
+        {
+          "id": "C",
+          "text": "There is no downward gravitational force."
+        },
+        {
+          "id": "D",
+          "text": "The buoyant force exceeds the balloon’s weight."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Upthrust larger than weight gives an upward resultant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "A cargo ship is loaded with additional containers and settles slightly lower in the sea. Why?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its hull can no longer experience upthrust."
+        },
+        {
+          "id": "B",
+          "text": "It must displace more water to balance the greater weight."
+        },
+        {
+          "id": "C",
+          "text": "Its gravitational force becomes zero."
+        },
+        {
+          "id": "D",
+          "text": "Water pressure becomes independent of depth."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The loaded ship must displace enough additional water for increased upthrust.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 11,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "type": "single_choice",
+      "stem": "A model boat sinks when an extra heavy weight is placed on it. What is the most direct cause?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The boat experiences no water pressure."
+        },
+        {
+          "id": "B",
+          "text": "Its weight exceeds the available upthrust."
+        },
+        {
+          "id": "C",
+          "text": "Its material immediately loses volume."
+        },
+        {
+          "id": "D",
+          "text": "Water density becomes zero."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A downward resultant occurs if weight exceeds the buoyant force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "type": "single_choice",
+      "stem": "A naval engineer places heavy ballast low in the ship. The main purpose is to _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "make the sea less dense"
+        },
+        {
+          "id": "B",
+          "text": "remove the need for a hull"
+        },
+        {
+          "id": "C",
+          "text": "improve resistance to overturning"
+        },
+        {
+          "id": "D",
+          "text": "eliminate the ship’s weight"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Low weight distribution and ballast tanks improve stability.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "type": "single_choice",
+      "stem": "A submarine fills its ballast tanks with seawater and begins to sink. Which force comparison explains this?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its weight has become greater than upthrust."
+        },
+        {
+          "id": "B",
+          "text": "Upthrust has become greater than its weight."
+        },
+        {
+          "id": "C",
+          "text": "Its weight is necessarily zero."
+        },
+        {
+          "id": "D",
+          "text": "The gravitational force has vanished."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Adding ballast increases weight, allowing it to exceed upthrust.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "A submarine at a certain depth neither rises nor sinks. Which condition is consistent with this?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Upthrust equals weight."
+        },
+        {
+          "id": "B",
+          "text": "Weight is greater than upthrust."
+        },
+        {
+          "id": "C",
+          "text": "Weight is zero and upthrust is nonzero."
+        },
+        {
+          "id": "D",
+          "text": "Upthrust is always absent."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Equal forces produce neutral vertical balance at that depth.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "type": "single_choice",
+      "stem": "A submerged submarine pumps seawater out of its ballast tanks and begins to rise. The primary change is that _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "its weight decreases"
+        },
+        {
+          "id": "B",
+          "text": "water stops exerting pressure"
+        },
+        {
+          "id": "C",
+          "text": "the density of seawater becomes zero"
+        },
+        {
+          "id": "D",
+          "text": "gravitational acceleration reverses"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Emptying tanks decreases weight, allowing buoyancy to dominate.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "type": "single_choice",
+      "stem": "Someone lifts a water-filled mug from a swimming pool into air. It feels heavier primarily because _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "its original weight was zero under water"
+        },
+        {
+          "id": "B",
+          "text": "its mass suddenly doubles"
+        },
+        {
+          "id": "C",
+          "text": "gravity changes sign"
+        },
+        {
+          "id": "D",
+          "text": "the water’s upward buoyant support is lost"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Removing the mug from water removes most of the water’s upthrust.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "type": "single_choice",
+      "stem": "A ship designer selects steel and aluminium components able to withstand vibrations and heavy loads. This primarily improves _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "the acceleration of gravity"
+        },
+        {
+          "id": "B",
+          "text": "structural reliability"
+        },
+        {
+          "id": "C",
+          "text": "the absence of water pressure"
+        },
+        {
+          "id": "D",
+          "text": "water’s density"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Ship structures must resist stresses, loads and vibrations.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 12,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "type": "single_choice",
+      "stem": "A ship has enough buoyancy but is prone to overturning because weights are placed very high. Which design concern is most relevant?",
+      "options": [
+        {
+          "id": "A",
+          "text": "magnetic flux"
+        },
+        {
+          "id": "B",
+          "text": "stability"
+        },
+        {
+          "id": "C",
+          "text": "electrical resistance"
+        },
+        {
+          "id": "D",
+          "text": "surface temperature alone"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The textbook emphasizes placing weight low and designing a stable hull.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "type": "single_choice",
+      "stem": "Two equal-sized cubes, one made of wood and one of iron, are completely submerged in the same water. Which statement about buoyant force is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Neither cube receives upthrust."
+        },
+        {
+          "id": "B",
+          "text": "The wooden cube always receives more upthrust."
+        },
+        {
+          "id": "C",
+          "text": "Both receive equal upthrust."
+        },
+        {
+          "id": "D",
+          "text": "The iron cube always receives more upthrust."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Equal displaced volume in the same liquid gives equal ρgV.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "A compact steel block sinks, whereas a much heavier steel ship floats. Which statement best explains the difference?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Steel has no weight when used in a ship."
+        },
+        {
+          "id": "B",
+          "text": "The compact block is not acted on by upthrust."
+        },
+        {
+          "id": "C",
+          "text": "The ship’s hull allows enough water displacement relative to its total weight."
+        },
+        {
+          "id": "D",
+          "text": "Pressure is zero under ships."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The ship’s overall shape enables water displacement sufficient to support its weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "A rigid object is completely under water at 1 m depth and then lowered to 3 m without changing its displaced volume. What happens to its ideal upthrust?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It remains the same."
+        },
+        {
+          "id": "B",
+          "text": "It falls to one-third."
+        },
+        {
+          "id": "C",
+          "text": "It becomes three times greater."
+        },
+        {
+          "id": "D",
+          "text": "It changes from upward to downward."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Upthrust depends on displaced volume, fluid density and g, not absolute depth.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "type": "single_choice",
+      "stem": "Two identical submerged objects are placed in liquids of different densities. In which liquid is buoyancy greater?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The denser liquid"
+        },
+        {
+          "id": "B",
+          "text": "Only the liquid at the greater surface depth"
+        },
+        {
+          "id": "C",
+          "text": "The less dense liquid"
+        },
+        {
+          "id": "D",
+          "text": "Both necessarily give zero upthrust"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For fixed displaced volume, FB increases with fluid density.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "type": "single_choice",
+      "stem": "A ship’s engineers modify its hull to displace a larger volume of water without greatly increasing its total weight. This mainly improves its ability to _____.",
+      "options": [
+        {
+          "id": "A",
+          "text": "make the displaced water weightless"
+        },
+        {
+          "id": "B",
+          "text": "develop sufficient buoyant support"
+        },
+        {
+          "id": "C",
+          "text": "avoid all vibrations without other design choices"
+        },
+        {
+          "id": "D",
+          "text": "remove Earth’s gravitational pull"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Larger possible water displacement makes greater buoyant support available.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    },
+    {
+      "id": "XI-U06-T61-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "An immersed object has weight 40 N and upthrust 55 N. Which observation is expected at that moment?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It rises with a 95 N upward net force."
+        },
+        {
+          "id": "B",
+          "text": "It stays in equilibrium because the forces differ."
+        },
+        {
+          "id": "C",
+          "text": "It tends to rise because the net force is 15 N upward."
+        },
+        {
+          "id": "D",
+          "text": "It tends to sink with a 15 N downward net force."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Resultant vertical force is 55 − 40 = 15 N upward.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Upthrust and Archimedes’ Principle",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 13,
+      "originalPrintedTextbookPages": "89–91",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "sloAlignment": "topic-level only; item mapping not certified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice"
+    }
+  ]
+}
