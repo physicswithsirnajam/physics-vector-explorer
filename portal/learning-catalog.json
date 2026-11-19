@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v79-partial-unit06-topics61-62-central-practice",
-  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.2 contribute 156 more, giving 1,846 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
+  "catalogVersion": "pilot-v81-partial-unit06-topics61-63-central-practice",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.3 contribute 234 more, giving 1,924 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
       "grade": 11,
@@ -200,7 +200,7 @@
           "assessmentStatus": "not-published",
           "resourceIds": [],
           "qualityStatus": "not-reviewed",
-          "studentNotice": "Topics 6.1 and 6.2 now contribute 156 provisional MCQs to the central Test Builder (160 original; 4 textbook-figure questions held). Existing five public simulations and owner video remain. This is NOT a full released Unit6, a question-level SLO-certified bank, a protected exam, or a saved cloud grade.",
+          "studentNotice": "Partial Unit6 Topics 6.1–6.3 now contribute 234 provisional MCQs to the central Test Builder (240 originals, 6 figure-referencing items held). Five previously published simulations and original video remain. This is NOT a full released Unit6, item-level FBISE-certified examination, secured test or cloud-saved grade.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -211,11 +211,11 @@
           "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
           "directYouTubeCount": 1,
           "directVideoReviewRequired": false,
-          "partialTestBuilderMcqCount": 156,
+          "partialTestBuilderMcqCount": 234,
           "partialTestBuilderHref": "../build-your-physics-test.html?unit=6",
-          "partialTestBuilderStatus": "public-topic61-and-62-provisional",
-          "sourceTopicMcqCount": 160,
-          "sourceFigureHeldCount": 4
+          "partialTestBuilderStatus": "public-topics61-63-provisional",
+          "sourceTopicMcqCount": 240,
+          "sourceFigureHeldCount": 6
         },
         {
           "unit": 7,
