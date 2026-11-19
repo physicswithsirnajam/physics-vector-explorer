@@ -57,7 +57,7 @@ function staticAudit(){
  for(const u of grades.units.filter(x=>x.unit>=6))assert.equal(u.status,'planned','no premature course availability');
  const mcq=JSON.parse(read('question-bank/manifest.json')).grades.find(x=>x.grade===11).units.map(x=>x.liveMcqCount);
  assert.deepEqual(mcq.slice(0,5),[275,206,220,640,349]);
-  assert.equal(mcq[5],314);
+  assert.equal(mcq[5],394);
  const ids=new Set(),pdfIds=new Set();
  for(const [n,row] of Object.entries(countsByUnit)){
   const id=Number(n),[video,pdfs,extra]=row;
