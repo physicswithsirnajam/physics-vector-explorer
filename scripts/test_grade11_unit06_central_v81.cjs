@@ -74,9 +74,9 @@ async function verifySource(){
     assert.equal(JSON.stringify(q.options),JSON.stringify(source.options),'Original options changed: '+q.id);
   }
  }
- assert.deepEqual(byTopic[0][0].topicSloCodes,['P-11-B-33','P-11-B-34']);
- assert.deepEqual(byTopic[1][0].topicSloCodes,['P-11-B-41','P-11-B-42']);
- assert.deepEqual(byTopic[2][0].topicSloCodes,['P-11-B-35']);
+ assert.equal(byTopic[0][0].topicSloCodes.join(','),'P-11-B-33,P-11-B-34');
+ assert.equal(byTopic[1][0].topicSloCodes.join(','),'P-11-B-41,P-11-B-42');
+ assert.equal(byTopic[2][0].topicSloCodes.join(','),'P-11-B-35');
  assert.equal(planner.plan(all,partial,[6],'random',20).possible,true);
  const sixPlan=planner.plan(all,all,[1,2,3,4,5,6],'random',30);
  assert.equal(sixPlan.possible,true);
