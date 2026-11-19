@@ -1,0 +1,17 @@
+# V86 — Grade XI Physics Unit 6, Topic 6.6: Applications of Bernoulli’s Equation
+
+## Verified source
+Owner's private master `Grade11_Unit6_COMPLETE_MASTER_ALL.pdf`, volume 1 printed compilation pp. **227–242** (of 577). The original 80 multiple-choice question stems, A–D options and source answer table are from pp.227–238 and pp.239–242 respectively. NBF printed textbook pp.101–106 cover the underlying topic. Student quiz material is `question-bank/grade-11/unit-06-topic-66-v86-80-source.json` and only that source-derived item data is placed in this public repository; the protected master PDF and Word files are **not** uploaded.
+
+There are exactly **80** original MCQs: Q1–20 fundamentals, Q21–40 reasoning, Q41–60 numericals and Q61–80 standalone real-life scenarios. All 80 text-answerable originals are selectable. Q2 references Figure 6.10, Q13 Figure 6.13 and Q16 the aerofoil figure; their stems specify enough of the relevant setup to answer without needing the figure, so no figure hold is introduced. No shared-stimulus four-question sets are claimed. Answers and one-line explanations are preserved from the source; PDF text wraps in cells are rejoined. Q80(D) ends **'at comparable heights'**, including the final line of the source page.
+
+## Academic integrity and special caution
+The source Part A teacher key annotates individual topics `B-40` (39 items) and `B-44` (41 items), and cognitive levels K=4, U=41, A=35. These are **source annotations only**, not independently certified official FBISE item-level mappings; all questions retain `sloCodes:[]`, `boardEligible:false`, `cognitiveLevel:'Unspecified'`, `difficulty:'Unspecified'`. Source topic SLOs P-11-B-40 and P-11-B-44 are identified as summative; P-11-B-39 (Bernoulli effect) is formative supporting context, not a separate written-board target.
+
+The 80-letter teacher answer-key pattern for Topic6.6 matches the archived Topic6.4 answer sequence exactly; this was present in the user's original source, **not introduced by the importer**. We preserve original key letters and options rather than automatically changing them. All **20 numerical MCQs are independently recalculated** in CI from the values given, including Torricelli speeds, Venturi rates, Example 6.4 pressure and the textbook's idealized wing lift. Source-grounded explanations are retained. Further independent conceptual editorial QC may be undertaken separately; equal-transit-time reasoning is explicitly rejected in Q36/Q75 and the simplified wing lift calculation is labelled as idealized, not a complete physical theory.
+
+## Preview and controlled release
+A new standalone `portal/unit-06-topic-66-preview.html` and client-side controller allow four original categories, 10/20/40/all selected questions, boxed A–D options, local scoring and explanations, printable review and 390px mobile layout. Linked from the Learning Hub. No cloud/grade or authentication write. **V86 does not integrate Topic6.6 into central Test Builder**: central remains **2,084** total (Units1–5 1,690 + partial Unit6 Topics6.1–6.5 394), six previous figure-dependent holds still held, full Unit6 status `planned`. V87 may integrate this 80-item source into central only after its QA is green.
+
+## Merge gate
+All GitHub Actions on PR latest commit **must pass before merge**. After merge verify the Learning Hub Topic6.6 link, 10 numerical MCQs, 20 independent scenarios, all 80 solution reviews, 390px mobile and unchanged central total **2,084**. The existing simulations and original video URLs remain unchanged.
