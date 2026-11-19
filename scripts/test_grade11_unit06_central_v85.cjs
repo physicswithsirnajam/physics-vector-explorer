@@ -144,10 +144,10 @@ async function verifySource(){
   try{await assert.rejects(adapter.loadBank(6,'question-bank/grade-11/'),regex);}
   finally{ctx.fetch=originalFetch65;}
  }
- await rejectBadBernoulli(s=>{s.questions[0].boardEligible=true},/Topic6\\.5/);
- await rejectBadBernoulli(s=>{s.questions[0].sloCodes=['P-11-B-40']},/Topic6\\.5/);
+ await rejectBadBernoulli(s=>{s.questions[0].boardEligible=true},/Topic6\.5/);
+ await rejectBadBernoulli(s=>{s.questions[0].sloCodes=['P-11-B-40']},/Topic6\.5/);
  await rejectBadBernoulli(s=>{s.questions[0].correctOptionId='D'},/answer key/);
- await rejectBadBernoulli(s=>{s.questions[65].stimulusSetId='fake-four-question-stimulus'},/Topic6\\.5/);
+ await rejectBadBernoulli(s=>{s.questions[65].stimulusSetId='fake-four-question-stimulus'},/Topic6\.5/);
  await rejectBadBernoulli(s=>{s.questions[0].sourceKeyCognitiveTag='A'},/source section or author/);
  assert.equal(planner.plan(all,partial,[6],'random',20).possible,true);
  const sixPlan=planner.plan(all,all,[1,2,3,4,5,6],'random',30);
