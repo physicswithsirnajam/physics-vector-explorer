@@ -5,10 +5,10 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:640,5:349,6:234};
+const expected={1:275,2:206,3:220,4:640,5:349,6:314};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
-  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1, 6.2 and 6.3 (partial)'
+  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1–6.4 (partial)'
 };
 const files={
   1:['unit-01.json'],2:['unit-02.json'],
@@ -19,7 +19,7 @@ const files={
     'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json',
     'unit-05-master-topic-v59-317.json'
   ],
-  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json','unit-06-topic-63-v80-80-source.json']
+  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json','unit-06-topic-63-v80-80-source.json','unit-06-topic-64-v82-80-source.json']
 };
 function need(condition,reason){if(!condition)throw Error('Grade XI MCQ source validation: '+reason);}
 function escapeHTML(value){return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -794,6 +794,52 @@ function adaptUnitSixTopic63(source){
    'Topic6.3 source sections or figure holds changed');
  return kept;
 }
+
+/* V83 source-preserving Topic6.4 adapter. Teacher-key SLO references are provenance only;
+ * individual FBISE SLO/cognitive status is not certified. */
+function adaptUnitSixTopic64(source){
+ need(source?.schemaVersion===1&&source.bankId==='PSN-XI-U06-T64-V82'&&
+  source.unit===6&&source.grade===11&&source.topicNumber==='6.4'&&
+  source.title==='Equation of Continuity'&&source.sourceQuestionCount===80&&
+  source.importedQuestionCount===80&&source.publicPreviewCount===80&&
+  source.secureExam===false&&source.publicSelfPractice===true&&
+  source.unitReleaseStatus==='planned-partial-topic-preview'&&source.questions?.length===80,
+  'Invalid original Topic6.4 source/public boundary');
+ need(source.frameworkClassification==='Summative at topic level'&&
+  source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-36,P-11-B-37,P-11-B-38'&&
+  source.perQuestionFrameworkMappingStatus==='not individually verified'&&
+  source.sections?.sharedStimulusGroups===0&&source.holds?.length===0,
+  'Topic6.4 original item SLO/stimulus metadata is unverified');
+ const key='BBCCACCCBCACBADDCBCCDCADDBBBDDDBCCDBBDBAABCDACBDBDADABBDCBAAACAAADABDAADCAABCDCD';
+ need(key.length===80&&source.originalSourceAnswerKey===key&&
+   source.questions.map(q=>q.correctOptionId).join('')===key,
+   'Topic6.4 80-letter original answer key changed');
+ const kept=[],sections={fundamentals:0,reasoning:0,numericals:0,'standalone-situations':0};
+ for(let i=0;i<80;i++){
+  const q=source.questions[i],n=i+1;
+  const section=n<=20?'fundamentals':n<=40?'reasoning':n<=60?'numericals':'standalone-situations';
+  need(q.id==='XI-U06-T64-MCQ-'+String(n).padStart(4,'0')&&q.sourceQuestionNumber===n&&
+    q.unit===6&&q.grade===11&&q.topic==='Equation of Continuity'&&
+    q.type==='single_choice'&&q.sourceSection===section&&q.situationBased===(n>=61),
+    'Topic6.4 original Q numbering/section changed');
+  need(q.active===true&&q.boardEligible===false&&q.holdReason===null&&
+    q.status==='provisional-public-self-practice'&&
+    q.assessmentClassification==='summative-topic-provisional'&&
+    q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
+    Array.isArray(q.sloCodes)&&q.sloCodes.length===0&&
+    q.topicSloCodes?.join(',')==='P-11-B-36,P-11-B-37,P-11-B-38'&&
+    ['P-11-B-36','P-11-B-37','P-11-B-38'].includes(q.sourceKeySloReference)&&
+    q.stimulusSetId===null,'Topic6.4 fake item SLO, cognitive or stimulus metadata');
+  need(Array.isArray(q.options)&&q.options.map(x=>x.id).join('')==='ABCD'&&
+    q.options.every(x=>typeof x.text==='string'&&x.text.trim())&&
+    q.options.some(x=>x.id===q.correctOptionId)&&q.stem?.trim()&&q.explanation?.trim(),
+    'Topic6.4 invalid source stem/options/answer');
+  kept.push({...q,stimulusHtml:''});sections[section]++;
+ }
+ need(kept.length===80&&new Set(kept.map(q=>q.id)).size===80&&
+  Object.values(sections).every(n=>n===20),'Topic6.4 section inventory changed');
+ return kept;
+}
 async function loadBank(unit,basePath){
   need(Number.isInteger(unit)&&Object.hasOwn(files,unit),'unit not available');
   need(typeof basePath==='string'&&/^(?:\.\.\/)?question-bank\/grade-11\/$/.test(basePath),'unexpected question bank folder');
@@ -814,17 +860,17 @@ async function loadBank(unit,basePath){
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else if(unit===6){
-    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]);
-    const earlier=new Set([...first,...second].map(q=>q.id));
-    need(third.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.3');
-    questions=[...first,...second,...third];
+    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourth=adaptUnitSixTopic64(data[3]);
+    const earlier=new Set([...first,...second,...third].map(q=>q.id));
+    need(fourth.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.4');
+    questions=[...first,...second,...third,...fourth];
    }
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v81-topics61-63-public-234-only':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v83-topics61-64-public-314-only':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'

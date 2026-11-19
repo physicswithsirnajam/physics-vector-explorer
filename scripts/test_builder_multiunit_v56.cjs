@@ -99,7 +99,7 @@ async function actualBrowser(){
 
   await page.goto(base+'build-your-physics-test.html',{waitUntil:'networkidle'});
   await page.locator('#allUnits').click();
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1924 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('2004 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),6);
   await page.locator('input[name="unit"][value="6"]').uncheck(); // Keep the original 5-unit scenario regression.
   await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('1690 eligible MCQ'));
