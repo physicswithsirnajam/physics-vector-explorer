@@ -76,17 +76,22 @@ assert.equal(source.questions.filter(q=>q.situationBased&&q.active).length,18);
 assert.equal(source.questions.slice(40,60).map(q=>q.correctOptionId).join(''),'CADCCCBBBAAABCBDACCB');
 const eq=(x,y,tol=0.001)=>assert.ok(Math.abs(x-y)<=Math.max(1e-12,Math.abs(y)*tol),x+' vs '+y);
 function correctNumber(n){
- const q=source.questions[n-1],text=q.options.find(o=>o.id===q.correctOptionId).text.trim();
- const parts=text.split('× 10');
- const mantissa=Number.parseFloat(parts[0]);
- assert.ok(Number.isFinite(mantissa),'Invalid numeric answer '+n+': '+text);
- if(parts.length===1)return mantissa;
- assert.equal(parts.length,2,'Unexpected scientific notation '+n);
- const digits={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
- let exponent='';
- for(const ch of parts[1]){if(Object.hasOwn(digits,ch))exponent+=digits[ch];else break;}
- assert.ok(exponent.length>0&&Number.isFinite(Number(exponent)),'Invalid exponent '+n+': '+text);
- return mantissa*Math.pow(10,Number(exponent));
+ const q=source.questions[n-1],answer=q.options.find(o=>o.id===q.correctOptionId).text.trim();
+ // Accept both "1.88 × 10⁻⁵" and bare "10⁻³"; do not silently treat either as 10.
+ const s=answer.replace(/\s+/g,'');
+ const superscript={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
+ const exponent=raw=>{
+  const t=Array.from(raw,ch=>superscript[ch]).join('');
+  assert.match(t,/^[+-]?\d+$/,'Bad exponent for source Q'+n+': '+answer);
+  return Number(t);
+ };
+ const bare=s.match(/^10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+)/);
+ if(bare)return 10**exponent(bare[1]);
+ const sci=s.match(/^([+-]?\d+(?:\.\d+)?)[×x]10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+)/);
+ if(sci)return Number(sci[1])*10**exponent(sci[2]);
+ const plain=s.match(/^[+-]?\d+(?:\.\d+)?/);
+ assert.ok(plain,'Cannot read original numerical answer Q'+n+': '+answer);
+ return Number(plain[0]);
 }
 eq(correctNumber(41),6*3.14*1e-3*1e-3,.004);
 eq(correctNumber(42),2*4e-6);
