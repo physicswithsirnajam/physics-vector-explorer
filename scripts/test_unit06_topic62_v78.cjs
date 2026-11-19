@@ -77,7 +77,7 @@ assert.equal(source.questions.slice(40,60).map(q=>q.correctOptionId).join(''),'C
 const eq=(x,y,tol=0.001)=>assert.ok(Math.abs(x-y)<=Math.max(1e-12,Math.abs(y)*tol),x+' vs '+y);
 function correctNumber(n){
  const q=source.questions[n-1],t=q.options.find(o=>o.id===q.correctOptionId).text;
- const m=t.match(/^([+-]?\\d+(?:\\.\\d+)?)(?:\\s*[×x]\\s*10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+))?/);
+ const m=t.match(/^([+-]?\d+(?:\\.\d+)?)(?:\s*[×x]\s*10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+))?/);
  assert.ok(m,'Cannot parse selected source numeric option '+n+': '+t);
  if(!m[2])return Number(m[1]);
  const digits={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
