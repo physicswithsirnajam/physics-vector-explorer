@@ -1,0 +1,35 @@
+name: Validate Unit 6 Source Intake (V75)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v75-source-intake.*"
+      - "scripts/test_unit06_source_intake_v75.cjs"
+      - "portal/simulation-catalog.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/learning-catalog.json"
+      - ".github/workflows/validate-grade11-unit06-source-v75.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v75-source-intake.*"
+      - "scripts/test_unit06_source_intake_v75.cjs"
+      - "portal/simulation-catalog.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/learning-catalog.json"
+      - ".github/workflows/validate-grade11-unit06-source-v75.yml"
+  workflow_dispatch:
+jobs:
+  unit06-inventory-boundary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        run: node --check scripts/test_unit06_source_intake_v75.cjs
+      - name: Validate source inventory, existing resources and no premature Unit6 release
+        run: node scripts/test_unit06_source_intake_v75.cjs

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "release": "V75",
+  "unit": 6,
+  "title": "Fluid Mechanics",
+  "publicationStatus": "source-inventory-only",
+  "source": {
+    "name": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+    "kind": "user-owned ChatGPT Library file; not copied into public GitHub",
+    "compiledPdfPages": 577,
+    "sourceCompilationDate": "2026-10-17",
+    "sourceFilesStatedByCover": 32,
+    "originalPdfPagesStatedByCover": 335,
+    "verification": "cover and table of contents directly read from source PDF on 2026-11-18; question-by-question correctness not yet verified"
+  },
+  "topics": [
+    {
+      "number": "6.1",
+      "title": "Upthrust and Archimedes' Principle",
+      "pdfStarts": {
+        "mcqs": 3,
+        "short": 17,
+        "derivations": 26,
+        "examples": 40
+      }
+    },
+    {
+      "number": "6.2",
+      "title": "Viscous Drag and Terminal Velocity",
+      "pdfStarts": {
+        "mcqs": 51,
+        "short": 65,
+        "derivations": 78,
+        "examples": 88
+      }
+    },
+    {
+      "number": "6.3",
+      "title": "Fluid Flow",
+      "pdfStarts": {
+        "mcqs": 99,
+        "short": 113,
+        "derivations": 121,
+        "examples": 127
+      }
+    },
+    {
+      "number": "6.4",
+      "title": "Equation of Continuity",
+      "pdfStarts": {
+        "mcqs": 137,
+        "short": 151,
+        "derivations": 162,
+        "examples": 173
+      }
+    },
+    {
+      "number": "6.5",
+      "title": "Bernoulli's Equation",
+      "pdfStarts": {
+        "mcqs": 183,
+        "short": 197,
+        "derivations": 207,
+        "examples": 220
+      }
+    },
+    {
+      "number": "6.6",
+      "title": "Applications of Bernoulli's Equation",
+      "pdfStarts": {
+        "mcqs": 227,
+        "short": 243,
+        "derivations": 255,
+        "examples": 266
+      }
+    },
+    {
+      "number": "6.7",
+      "title": "Superfluidity",
+      "pdfStarts": {
+        "mcqs": 274,
+        "short": 289,
+        "derivations": 298,
+        "examples": 304
+      }
+    }
+  ],
+  "preparedTopicMcqsPerTopic": 80,
+  "preparedTopicMcqsNominalTotal": 560,
+  "textbookExercise": {
+    "mcqs": {
+      "count": 14,
+      "startPdfPage": 312
+    },
+    "shortQuestions": {
+      "count": 11,
+      "startPdfPage": 315
+    },
+    "comprehensiveQuestions": {
+      "count": 11,
+      "startPdfPage": 319
+    },
+    "numericals": {
+      "count": 11,
+      "startPdfPage": 330
+    }
+  },
+  "existingPublicSimulations": [
+    "archimedes-flotation.html",
+    "bernoulli-venturi.html",
+    "continuity-fluid-flow.html",
+    "viscosity-terminal-velocity.html",
+    "superfluidity-explorer.html"
+  ],
+  "directYouTubeVideoId": "2OSrvzNW9FE",
+  "readiness": {
+    "bookFrameworkSloVerification": "pending",
+    "sourceAnswersIndependentPhysicsQc": "pending",
+    "deduplicationScenarioGrouping": "pending",
+    "teacherSignoff": "pending",
+    "protectedNotesDelivery": "not enabled",
+    "publicQuestionBankCount": 0
+  },
+  "limitations": [
+    "The 560 is the sum of seven prepared source sets, not 560 verified unique publishable MCQs.",
+    "No original PDF/Word pages, question stems, answer keys, student identity data, or protected documents are copied into the public repository in this release.",
+    "Existing five Unit6 simulations and one owner-supplied YouTube video are third-party/public exploration resources; unit-to-SLO mapping is provisional.",
+    "This source index is not an official FBISE certification, a released Unit6 assessment, or proof of deployed Firebase Security Rules."
+  ]
+}
