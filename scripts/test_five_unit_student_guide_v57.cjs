@@ -31,7 +31,7 @@ function validateCatalog(){
  const published=course.units.filter(u=>u.status==='available');
  assert.deepEqual(published.map(u=>u.unit),[1,2,3,4,5],'only Units 1–5 are published in this checkpoint');
  assert.equal(xi.units.length,6,'five full banks plus partial Unit6');
-  assert.equal(xi.units.find(x=>x.unit===6)?.liveMcqCount,234);
+  assert.equal(xi.units.find(x=>x.unit===6)?.liveMcqCount,314);
  assert.equal(published.reduce((a,u)=>a+u.resourceIds.length,0),59,'expected 59 published unit-linked resource entries');
  assert.equal(catalog.resources.length,59,'all linked resource records in catalogue');
  const ids=new Set(),resourceMap=new Map();
