@@ -1,0 +1,76 @@
+name: Validate Grade XI Partial Unit6 Central Test Builder (V77)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "scripts/test_grade11_central_v77.cjs"
+      - "scripts/test_builder_*.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "quality/grade11-unit06-v77-central-builder-audit.md"
+      - ".github/workflows/validate-grade11-central-unit06-v77.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "scripts/test_grade11_central_v77.cjs"
+      - "scripts/test_builder_*.cjs"
+      - "scripts/test_five_unit_student_guide_v57.cjs"
+      - "quality/grade11-unit06-v77-central-builder-audit.md"
+      - ".github/workflows/validate-grade11-central-unit06-v77.yml"
+  workflow_dispatch:
+jobs:
+  six-unit-core-and-browser-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and JSON gates
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_central_v77.cjs
+          node -e "const m=require('./question-bank/manifest.json');if(m.grades.find(g=>g.grade===11).units.reduce((s,u)=>s+u.liveMcqCount,0)!==1769)process.exit(1)"
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: New V77 core bank, source and browser end-to-end checks
+        run: node scripts/test_grade11_central_v77.cjs
+      - name: Recheck V76 source integrity and original independent practice
+        run: node scripts/test_unit06_topic61_v76.cjs
+      - name: Preserve original first-five unit builder and scenario regressions
+        run: |
+          node scripts/test_builder_single_unit_v54.cjs
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+          node scripts/test_five_unit_student_guide_v57.cjs
+      - name: Preserve original access boundaries and source links
+        run: |
+          node scripts/test_portal_signin_first_v69.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+          node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload synthetic screenshots, no student data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v77-sixth-partial-bank-qa
+          path: qa-artifacts/builder-v77/*.png
+          if-no-files-found: warn
+          retention-days: 7
