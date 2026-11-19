@@ -1,0 +1,3901 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T62-V78",
+  "bankVersion": "v78-topic62-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.2",
+  "title": "Viscous Drag and Terminal Velocity",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's ChatGPT Library only; master source not copied to public GitHub",
+  "sourceCompiledPdfPages": "51–64 of 577",
+  "originalNbfTextbookPages": "91–95",
+  "frameworkDocument": "11_Physics_HSSC_I_model_paper_50_percent(7).pdf",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-41",
+    "P-11-B-42"
+  ],
+  "frameworkClassification": "Summative",
+  "officialFrameworkCognitiveLevel": "Understanding",
+  "perQuestionFrameworkMappingStatus": "not individually verified",
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 77,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "BCBDCCCBBABCADBBCACADACBDDDBDBCCCCDADAABCADCCCBBBAAABCBDACCBDDAADDADAAADDBDCABBD",
+  "holds": [
+    {
+      "sourceQuestionNumber": 26,
+      "reason": "Original source explicitly references NBF Figure 6.3; the image and caption have not been verified for accessible standalone display."
+    },
+    {
+      "sourceQuestionNumber": 64,
+      "reason": "Original source explicitly references NBF Figure 6.5(c); graph context has not been reviewed or reproduced."
+    },
+    {
+      "sourceQuestionNumber": 72,
+      "reason": "Original source explicitly references NBF Figure 6.3; the figure context has not yet been reviewed."
+    }
+  ],
+  "calculationModel": "Source uses NBF simplified Stokes terminal-speed relation vₜ = 2ρgr²/(9η), neglects fluid buoyancy and assumes slow spherical Stokes-law conditions. Do not treat it as general parachute or large-drop law.",
+  "limitations": [
+    "Source's 80 original stems, four options, answer letters and one-line explanations retained (PDF line wraps normalized).",
+    "Three Figure-6.3/6.5-referencing items Q26, Q64, Q72 remain in the source archive but are not student-selectable until verified standalone figure context is provided.",
+    "20 real-life/situation items Q61–Q80 are independent questions, not fabricated shared-stimulus groups.",
+    "The official framework verifies B-41 and B-42 as Summative/Understanding at topic level; no original MCQ is certified at individual SLO/cognitive level.",
+    "This is provisional PUBLIC self-practice, not an official FBISE exam, high-stakes assessment or cloud-saved grade.",
+    "Original previous central Test Builder remains 1,769 questions until a separate verified integration; the whole Unit6 stays planned.",
+    "Scientific review of all items and Stokes-model physical realism requires teacher signoff; numeric answer letters checked as a focused first pass."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T62-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "Which property of a real fluid measures its resistance to flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Density"
+        },
+        {
+          "id": "B",
+          "text": "Viscosity"
+        },
+        {
+          "id": "C",
+          "text": "Compressibility"
+        },
+        {
+          "id": "D",
+          "text": "Surface area"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Viscosity is the internal resistance offered by fluid layers to their relative motion.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "The coefficient of dynamic viscosity is represented by which symbol?",
+      "options": [
+        {
+          "id": "A",
+          "text": "ρ"
+        },
+        {
+          "id": "B",
+          "text": "μ₀"
+        },
+        {
+          "id": "C",
+          "text": "η"
+        },
+        {
+          "id": "D",
+          "text": "σ"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The NBF chapter denotes the coefficient of viscosity by η (eta).",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "Which is an SI unit of dynamic viscosity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pa/s"
+        },
+        {
+          "id": "B",
+          "text": "Pa s"
+        },
+        {
+          "id": "C",
+          "text": "N m"
+        },
+        {
+          "id": "D",
+          "text": "kg m s⁻¹"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Dynamic viscosity has SI unit pascal-second, equivalent to N s m⁻².",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "Which unit is equivalent to Pa s?",
+      "options": [
+        {
+          "id": "A",
+          "text": "kg m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "kg m⁻² s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "kg m s⁻²"
+        },
+        {
+          "id": "D",
+          "text": "kg m⁻¹ s⁻¹"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Pa s = (N m⁻²)s = kg m⁻¹ s⁻¹.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "In most liquids, the viscosity generally changes with increasing temperature by:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increasing"
+        },
+        {
+          "id": "B",
+          "text": "Remaining strictly constant"
+        },
+        {
+          "id": "C",
+          "text": "Decreasing"
+        },
+        {
+          "id": "D",
+          "text": "Becoming negative"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "As most liquids are heated, their viscosity decreases.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "For most gases, viscosity generally ______ as temperature rises.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreases"
+        },
+        {
+          "id": "B",
+          "text": "Becomes zero"
+        },
+        {
+          "id": "C",
+          "text": "Increases"
+        },
+        {
+          "id": "D",
+          "text": "Becomes independent of temperature"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The NBF text contrasts gases with liquids: gas viscosity generally rises with temperature.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "Which substance generally flows more slowly than water at similar temperature because it is more viscous?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air"
+        },
+        {
+          "id": "B",
+          "text": "Methanol"
+        },
+        {
+          "id": "C",
+          "text": "Honey"
+        },
+        {
+          "id": "D",
+          "text": "Ethanol"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Honey has a much larger viscosity than water at comparable temperature.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 51,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "Which pair correctly identifies both kinds of fluids discussed in the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only solids and liquids"
+        },
+        {
+          "id": "B",
+          "text": "Liquids and gases"
+        },
+        {
+          "id": "C",
+          "text": "Only liquid mixtures"
+        },
+        {
+          "id": "D",
+          "text": "Only gases and solids"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Fluid is a substance that can flow; both liquids and gases are fluids.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "The resistive force on an object moving relative to a fluid is called:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tension"
+        },
+        {
+          "id": "B",
+          "text": "Drag force"
+        },
+        {
+          "id": "C",
+          "text": "Normal reaction"
+        },
+        {
+          "id": "D",
+          "text": "Elastic force"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Drag is the resistive or retarding force associated with motion through a fluid.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "Drag force acting on a moving body is generally directed:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Opposite its motion relative to the fluid"
+        },
+        {
+          "id": "B",
+          "text": "Along the velocity"
+        },
+        {
+          "id": "C",
+          "text": "Always vertically upward"
+        },
+        {
+          "id": "D",
+          "text": "Always toward Earth’s centre"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Drag opposes relative motion; upward drag is typical for an object falling downward.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "The drag experienced by an object moving through air is called:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hydrodynamic drag"
+        },
+        {
+          "id": "B",
+          "text": "Aerodynamic drag"
+        },
+        {
+          "id": "C",
+          "text": "Magnetic force"
+        },
+        {
+          "id": "D",
+          "text": "Buoyant density"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "In air, drag is called aerodynamic drag or air resistance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "The resistive drag experienced by an object moving through water is termed:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Electrical drag"
+        },
+        {
+          "id": "B",
+          "text": "Thermal drag"
+        },
+        {
+          "id": "C",
+          "text": "Hydrodynamic drag"
+        },
+        {
+          "id": "D",
+          "text": "Gravitational drag"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The NBF chapter uses hydrodynamic drag for motion in a liquid.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "For a small spherical body in the Stokes-law model, the drag-force magnitude is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "6πηrv"
+        },
+        {
+          "id": "B",
+          "text": "ρgV"
+        },
+        {
+          "id": "C",
+          "text": "mv²/r"
+        },
+        {
+          "id": "D",
+          "text": "η/(6πrv)"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Stokes’ law gives Fᵈ = 6πηrv for a sphere in the applicable slow-flow regime.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "Which quantity does NOT appear explicitly in Fᵈ = 6πηrv?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Speed v"
+        },
+        {
+          "id": "B",
+          "text": "Fluid viscosity η"
+        },
+        {
+          "id": "C",
+          "text": "Sphere radius r"
+        },
+        {
+          "id": "D",
+          "text": "Gravitational acceleration g"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "In Stokes’ formula, drag depends directly on η, r and relative speed v, not directly on g.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "What is the SI unit of the drag force Fᵈ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pascal (Pa)"
+        },
+        {
+          "id": "B",
+          "text": "Newton (N)"
+        },
+        {
+          "id": "C",
+          "text": "Joule (J)"
+        },
+        {
+          "id": "D",
+          "text": "Watt (W)"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Fᵈ is a force, so its SI unit is the newton.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "For constant viscosity and radius in Stokes’ law, drag is directly proportional to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Density squared"
+        },
+        {
+          "id": "B",
+          "text": "Relative speed"
+        },
+        {
+          "id": "C",
+          "text": "Temperature cubed"
+        },
+        {
+          "id": "D",
+          "text": "Area squared"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "With η and r fixed, Fᵈ ∝ v.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 52,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "With fluid viscosity and relative speed fixed, Stokes’ drag is proportional to the sphere’s:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Volume cubed"
+        },
+        {
+          "id": "B",
+          "text": "Mass squared"
+        },
+        {
+          "id": "C",
+          "text": "Radius"
+        },
+        {
+          "id": "D",
+          "text": "Density squared"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "In the Stokes regime Fᵈ ∝ r.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "Terminal velocity is best described as the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Constant limiting speed of a falling body in a resisting fluid"
+        },
+        {
+          "id": "B",
+          "text": "Greatest gravitational acceleration"
+        },
+        {
+          "id": "C",
+          "text": "Speed at which drag vanishes"
+        },
+        {
+          "id": "D",
+          "text": "Speed that increases indefinitely"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A body reaches terminal speed when resistance balances its effective downward force and acceleration becomes zero.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "In the textbook’s simplified falling-body model (buoyancy neglected), terminal velocity is attained when:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fᵈ = 0"
+        },
+        {
+          "id": "B",
+          "text": "Fᵈ = 2mg"
+        },
+        {
+          "id": "C",
+          "text": "Fᵈ = mg"
+        },
+        {
+          "id": "D",
+          "text": "mg = 0"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "With upward drag equal to downward weight, the net force becomes zero.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "At constant terminal velocity, the acceleration is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero"
+        },
+        {
+          "id": "B",
+          "text": "g"
+        },
+        {
+          "id": "C",
+          "text": "2g"
+        },
+        {
+          "id": "D",
+          "text": "−g"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Constant velocity means zero acceleration and therefore zero resultant force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "Honey drains more slowly than water from an identical tilted cup mainly because honey has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower mass"
+        },
+        {
+          "id": "B",
+          "text": "Zero density"
+        },
+        {
+          "id": "C",
+          "text": "No cohesive forces"
+        },
+        {
+          "id": "D",
+          "text": "Greater viscosity"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Greater viscosity causes stronger internal resistance to flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "Why might warm honey pour more readily than cold honey?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its viscosity usually decreases as it warms"
+        },
+        {
+          "id": "B",
+          "text": "Its gravitational force becomes zero"
+        },
+        {
+          "id": "C",
+          "text": "It turns into an ideal non-viscous fluid"
+        },
+        {
+          "id": "D",
+          "text": "Its mass disappears"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Most liquids become less viscous as temperature increases.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "Why does a hand held edge-on outside a moving car window usually feel less drag than a spread palm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The hand becomes weightless"
+        },
+        {
+          "id": "B",
+          "text": "Air ceases to move"
+        },
+        {
+          "id": "C",
+          "text": "Its orientation presents less effective area to the airflow"
+        },
+        {
+          "id": "D",
+          "text": "The hand has no volume"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook identifies size, shape and orientation as factors affecting drag.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "What generally happens to air resistance on a hand outside a car when the car travels faster?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It necessarily vanishes"
+        },
+        {
+          "id": "B",
+          "text": "It increases"
+        },
+        {
+          "id": "C",
+          "text": "It remains exactly unchanged"
+        },
+        {
+          "id": "D",
+          "text": "It turns into magnetic force"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The chapter notes that the drag felt by the hand increases with car speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 53,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "Which change can alter the drag on an object even if its mass and speed stay fixed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Changing the date"
+        },
+        {
+          "id": "B",
+          "text": "Renaming the object"
+        },
+        {
+          "id": "C",
+          "text": "Changing the stopwatch brand"
+        },
+        {
+          "id": "D",
+          "text": "Changing its orientation"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Drag depends on shape and orientation as well as speed and viscosity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "Why do migrating geese sometimes fly in a V-shaped formation, according to Figure 6.3?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To increase their individual drag"
+        },
+        {
+          "id": "B",
+          "text": "To avoid any need for gravity"
+        },
+        {
+          "id": "C",
+          "text": "To eliminate air density"
+        },
+        {
+          "id": "D",
+          "text": "To reduce drag and energy expenditure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook notes that the V formation can reduce individual drag and energy consumption.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "status": "pending-figure-review",
+      "holdReason": "Original source explicitly references NBF Figure 6.3; the image and caption have not been verified for accessible standalone display."
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "Why do swimmers and skydivers alter their body positions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To change gravity itself"
+        },
+        {
+          "id": "B",
+          "text": "To remove their inertia"
+        },
+        {
+          "id": "C",
+          "text": "To make fluid viscosity zero"
+        },
+        {
+          "id": "D",
+          "text": "To change effective area and drag"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Changing body shape/orientation lets them influence the drag force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "Why does a raindrop stop gaining speed after falling through air for some time?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its weight becomes zero"
+        },
+        {
+          "id": "B",
+          "text": "The upward resisting force balances its weight in the simplified model"
+        },
+        {
+          "id": "C",
+          "text": "Gravity stops acting"
+        },
+        {
+          "id": "D",
+          "text": "Its mass doubles"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "At terminal speed the net force is zero; gravity continues to act.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "Just after release from rest in still air, the drag predicted by a speed-dependent model is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always greater than weight"
+        },
+        {
+          "id": "B",
+          "text": "Equal to twice the weight"
+        },
+        {
+          "id": "C",
+          "text": "Independent of speed"
+        },
+        {
+          "id": "D",
+          "text": "Approximately zero"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "At v = 0 the motion-dependent drag begins at zero in the idealized model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "A raindrop falls downward at terminal speed. Which statement about its forces is correct in the textbook’s approximation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only weight acts"
+        },
+        {
+          "id": "B",
+          "text": "Drag and weight have equal magnitudes"
+        },
+        {
+          "id": "C",
+          "text": "Drag exceeds weight"
+        },
+        {
+          "id": "D",
+          "text": "Weight exceeds drag"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Balanced downward weight and upward drag produce constant downward velocity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "Immediately after a parachute opens, why can a descending parachutist slow down?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gravity reverses direction"
+        },
+        {
+          "id": "B",
+          "text": "Mass instantly becomes zero"
+        },
+        {
+          "id": "C",
+          "text": "Upward drag temporarily exceeds weight"
+        },
+        {
+          "id": "D",
+          "text": "Air pressure vanishes"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Opening increases resisting force so the net force may act upward while the motion is still downward.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "For identical spherical particles in the simplified Stokes model with unchanged density and viscosity, vₜ is proportional to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "r⁻²"
+        },
+        {
+          "id": "B",
+          "text": "r"
+        },
+        {
+          "id": "C",
+          "text": "r²"
+        },
+        {
+          "id": "D",
+          "text": "r³"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook’s buoyancy-neglecting expression gives vₜ = 2ρgr²/(9η).",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "If sphere radius doubles, what happens to vₜ according to vₜ ∝ r², with other quantities fixed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It doubles"
+        },
+        {
+          "id": "B",
+          "text": "It is halved"
+        },
+        {
+          "id": "C",
+          "text": "It quadruples"
+        },
+        {
+          "id": "D",
+          "text": "It remains unchanged"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "(2r)² = 4r², so the model predicts four times the terminal speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 54,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "If viscosity triples, with density, radius and g unchanged, the Stokes-model terminal speed:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Triples"
+        },
+        {
+          "id": "B",
+          "text": "Increases ninefold"
+        },
+        {
+          "id": "C",
+          "text": "Becomes one-third"
+        },
+        {
+          "id": "D",
+          "text": "Does not change"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "In the simplified expression, vₜ ∝ 1/η.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "When the sphere density doubles while its radius and fluid conditions are fixed, the simplified expression predicts vₜ:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Becomes one-fourth"
+        },
+        {
+          "id": "B",
+          "text": "Becomes four times"
+        },
+        {
+          "id": "C",
+          "text": "Does not change"
+        },
+        {
+          "id": "D",
+          "text": "Doubles"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook’s approximate Stokes terminal-speed formula has vₜ ∝ ρ.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "If a sphere’s diameter doubles, by what factor does r² change?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Doubling diameter doubles radius, and the square of radius becomes fourfold.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "For spheres of identical density, doubling radius makes the sphere mass:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Twice as large"
+        },
+        {
+          "id": "B",
+          "text": "Four times greater"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged"
+        },
+        {
+          "id": "D",
+          "text": "Eight times greater"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Mass = ρ(4/3)πr³, so it increases by 2³ = 8.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "For a falling sphere in the simplified Stokes model, which expression gives its mass?",
+      "options": [
+        {
+          "id": "A",
+          "text": "m = ρ(4/3)πr³"
+        },
+        {
+          "id": "B",
+          "text": "m = 6πηrv"
+        },
+        {
+          "id": "C",
+          "text": "m = ρπr²"
+        },
+        {
+          "id": "D",
+          "text": "m = ηr/v"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A uniform sphere has volume (4/3)πr³ and mass equal to density times volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "For a fixed relative speed and viscosity under Stokes’ law, doubling the sphere radius makes its drag:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Twice as large"
+        },
+        {
+          "id": "B",
+          "text": "One-quarter"
+        },
+        {
+          "id": "C",
+          "text": "Four times"
+        },
+        {
+          "id": "D",
+          "text": "Unchanged"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Stokes drag is directly proportional to r, unlike terminal speed, which is proportional to r² in the simplified model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "If a falling body has downward weight greater than upward drag (buoyancy neglected), it will:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Move at constant speed"
+        },
+        {
+          "id": "B",
+          "text": "Accelerate downward"
+        },
+        {
+          "id": "C",
+          "text": "Accelerate upward"
+        },
+        {
+          "id": "D",
+          "text": "Remain stationary"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A net downward force produces downward acceleration.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "Use Stokes’ law with η = 1.0 × 10⁻³ Pa s, r = 1.0 × 10⁻³ m and v = 1.0 m s⁻¹. With π = 3.14, Fᵈ is closest to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.88 × 10⁻⁸ N"
+        },
+        {
+          "id": "B",
+          "text": "1.88 × 10⁻³ N"
+        },
+        {
+          "id": "C",
+          "text": "1.88 × 10⁻⁵ N"
+        },
+        {
+          "id": "D",
+          "text": "1.88 × 10⁻² N"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Fᵈ = 6 × 3.14 × 10⁻³ × 10⁻³ × 1 = 1.884 × 10⁻⁵ N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 55,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "A spherical body moves through a liquid with Stokes drag 4.0 × 10⁻⁶ N at speed 1 m s⁻¹. At 2 m s⁻¹, with other factors fixed, the drag is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8.0 × 10⁻⁶ N"
+        },
+        {
+          "id": "B",
+          "text": "2.0 × 10⁻⁶ N"
+        },
+        {
+          "id": "C",
+          "text": "4.0 × 10⁻⁶ N"
+        },
+        {
+          "id": "D",
+          "text": "1.6 × 10⁻⁵ N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Fᵈ ∝ v: doubling speed doubles drag from 4.0 to 8.0 μN.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "For NBF Example 6.2 (η = 1.9 × 10⁻⁵ Pa s, r = 2 mm, v = 2 m s⁻¹), Stokes’ drag is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.43 × 10⁻² N"
+        },
+        {
+          "id": "B",
+          "text": "1.43 × 10⁻⁹ N"
+        },
+        {
+          "id": "C",
+          "text": "1.43 N"
+        },
+        {
+          "id": "D",
+          "text": "1.43 × 10⁻⁶ N"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Fᵈ = 6π(1.9 × 10⁻⁵)(2 × 10⁻³)(2) ≈ 1.43 × 10⁻⁶ N (textbook example).",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "A sphere experiences drag Fᵈ under Stokes conditions. If its radius is doubled at unchanged η and v, drag becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fᵈ/4"
+        },
+        {
+          "id": "B",
+          "text": "4Fᵈ"
+        },
+        {
+          "id": "C",
+          "text": "2Fᵈ"
+        },
+        {
+          "id": "D",
+          "text": "Fᵈ/2"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Since Fᵈ ∝ r, a twofold increase in radius doubles drag.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "A sphere has drag 12 μN at 4 m s⁻¹ in the Stokes model. At 2 m s⁻¹, drag is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "24 μN"
+        },
+        {
+          "id": "B",
+          "text": "3 μN"
+        },
+        {
+          "id": "C",
+          "text": "6 μN"
+        },
+        {
+          "id": "D",
+          "text": "12 μN"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Halving v halves drag: 12/2 = 6 μN.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "If fluid viscosity doubles and sphere speed triples, while r remains fixed, Stokes drag changes by a factor of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "1.5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "2/3"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Fᵈ ∝ ηv, so the factor is 2 × 3 = 6.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "If Fᵈ = 1.884 × 10⁻⁵ N, r = 1.0 mm and v = 1.0 m s⁻¹ (π = 3.14), the viscosity is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.0 × 10⁻⁵ Pa s"
+        },
+        {
+          "id": "B",
+          "text": "1.0 × 10⁻³ Pa s"
+        },
+        {
+          "id": "C",
+          "text": "1.0 Pa s"
+        },
+        {
+          "id": "D",
+          "text": "1.0 × 10⁻¹ Pa s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "η = Fᵈ/(6πrv) = 1.884 × 10⁻⁵/(6 × 3.14 × 0.001 × 1) = 0.001 Pa s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "For Fᵈ = 1.884 × 10⁻⁵ N, η = 1.0 × 10⁻³ Pa s and v = 0.5 m s⁻¹, the sphere radius is (π = 3.14):",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.0 mm"
+        },
+        {
+          "id": "B",
+          "text": "2.0 mm"
+        },
+        {
+          "id": "C",
+          "text": "4.0 mm"
+        },
+        {
+          "id": "D",
+          "text": "0.5 mm"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "r = Fᵈ/(6πηv) = 1.884 × 10⁻⁵/(6 × 3.14 × 0.001 × 0.5) = 0.002 m.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "A sphere has Fᵈ = 1.884 × 10⁻⁵ N, η = 2.0 × 10⁻³ Pa s and r = 1.0 mm. Its speed is (π = 3.14):",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.5 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "1.0 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "0.1 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v = Fᵈ/(6πηr) = 1.884 × 10⁻⁵/(6 × 3.14 × 0.002 × 0.001) = 0.5 m s⁻¹.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 56,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "The fundamental dimensions of dynamic viscosity η are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "[ML⁻¹T⁻¹]"
+        },
+        {
+          "id": "B",
+          "text": "[MLT⁻²]"
+        },
+        {
+          "id": "C",
+          "text": "[ML⁻²T]"
+        },
+        {
+          "id": "D",
+          "text": "[L²T⁻¹]"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "From η = F/(rv), its dimensions are [MLT⁻²]/([L][LT⁻¹]) = [ML⁻¹T⁻¹].",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "A viscosity of 1 mPa s equals:",
+      "options": [
+        {
+          "id": "A",
+          "text": "10⁻³ Pa s"
+        },
+        {
+          "id": "B",
+          "text": "10³ Pa s"
+        },
+        {
+          "id": "C",
+          "text": "10⁻⁶ Pa s"
+        },
+        {
+          "id": "D",
+          "text": "10 Pa s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The prefix milli means 10⁻³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "At 20°C Table 6.1 gives water viscosity 1.0016 mPa s. This is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.0010016 Pa s"
+        },
+        {
+          "id": "B",
+          "text": "1.0016 Pa s"
+        },
+        {
+          "id": "C",
+          "text": "1001.6 Pa s"
+        },
+        {
+          "id": "D",
+          "text": "0.0000010016 Pa s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Convert mPa s to Pa s by multiplying by 10⁻³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "Honey at 2000 mPa s has a viscosity equal to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.002 Pa s"
+        },
+        {
+          "id": "B",
+          "text": "2 Pa s"
+        },
+        {
+          "id": "C",
+          "text": "200 Pa s"
+        },
+        {
+          "id": "D",
+          "text": "20,000 Pa s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "2000 mPa s = 2000 × 0.001 = 2 Pa s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "Using the simplified Stokes terminal-speed formula vₜ = 2ρgr²/(9η) with ρ = 1000 kg m⁻³, r = 0.10 mm, g = 10 m s⁻² and η = 1.0 × 10⁻³ Pa s gives approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.0022 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.22 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.0222 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "2.22 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "vₜ = 2(1000)(10)(10⁻⁴)²/[9(10⁻³)] = 0.0222 m s⁻¹; buoyancy is neglected.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "A tiny sphere has a Stokes-model terminal speed of 0.03 m s⁻¹. If its radius doubles (same density and fluid), the predicted new terminal speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.06 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.12 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.015 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "0.0075 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "vₜ ∝ r², hence 4 × 0.03 = 0.12 m s⁻¹.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "A model particle has terminal speed 0.16 m s⁻¹. Halving its radius while holding other factors constant gives:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.32 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.08 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.64 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "0.04 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "(r/2)² = r²/4, so vₜ becomes 0.16/4 = 0.04 m s⁻¹.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "type": "single_choice",
+      "stem": "If viscosity doubles, a predicted terminal speed of 0.10 m s⁻¹ becomes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.05 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.20 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.40 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "0.10 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The textbook’s simplified terminal-speed relation is inversely proportional to viscosity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "type": "single_choice",
+      "stem": "A sphere’s simplified model terminal speed is 0.02 m s⁻¹. If its radius triples, the predicted speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.06 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.12 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.18 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "0.0022 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Tripling radius multiplies r² and thus predicted vₜ by 9: 0.02 × 9 = 0.18.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 57,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "NBF Assignment 6.2 gives a raindrop radius of 0.3 mm and air viscosity 1.8 × 10⁻⁵ Pa s. Which additional quantity is required to use the textbook formula vₜ = 2ρgr²/(9η)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Parachute area"
+        },
+        {
+          "id": "B",
+          "text": "Volume of the entire cloud"
+        },
+        {
+          "id": "C",
+          "text": "Droplet density ρ"
+        },
+        {
+          "id": "D",
+          "text": "Length of the rainstorm"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The NBF simplified equation contains the droplet density ρ; a numerical result requires that value or an explicitly stated assumption.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "type": "single_choice",
+      "stem": "A spherical droplet of density 1000 kg m⁻³ and radius 1.0 mm has mass closest to (π = 3.14):",
+      "options": [
+        {
+          "id": "A",
+          "text": "4.19 × 10⁻³ kg"
+        },
+        {
+          "id": "B",
+          "text": "4.19 × 10⁻⁶ kg"
+        },
+        {
+          "id": "C",
+          "text": "4.19 × 10⁻⁹ kg"
+        },
+        {
+          "id": "D",
+          "text": "4.19 kg"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "m = ρ(4/3)πr³ = 1000(4/3)(3.14)(10⁻³)³ ≈ 4.19 × 10⁻⁶ kg.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "type": "single_choice",
+      "stem": "A skydiver is moving downward at a steady terminal speed. Which force statement best matches this situation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Weight exceeds drag"
+        },
+        {
+          "id": "B",
+          "text": "Drag exceeds weight"
+        },
+        {
+          "id": "C",
+          "text": "No forces are acting"
+        },
+        {
+          "id": "D",
+          "text": "The resultant force is zero"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Weight and upward drag balance in the simplified model; forces still act.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "type": "single_choice",
+      "stem": "A parachutist deploys a canopy while falling rapidly. What initially explains the sharp reduction in downward speed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Earth’s gravity temporarily disappears"
+        },
+        {
+          "id": "B",
+          "text": "The canopy removes all motion"
+        },
+        {
+          "id": "C",
+          "text": "The parachutist gains upward velocity instantly"
+        },
+        {
+          "id": "D",
+          "text": "Upward air resistance becomes greater than weight"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A larger surface area produces a large drag and hence an upward resultant force.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "type": "single_choice",
+      "stem": "After a parachutist slows and then falls steadily with the open canopy, which condition applies?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Drag again balances weight"
+        },
+        {
+          "id": "B",
+          "text": "Speed is zero"
+        },
+        {
+          "id": "C",
+          "text": "Weight is zero"
+        },
+        {
+          "id": "D",
+          "text": "Drag is zero"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "At the new, lower terminal speed, upward air resistance equals downward weight.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "type": "single_choice",
+      "stem": "Figure 6.5(c) shows a horizontal part of the downward speed–time graph before canopy opening. This indicates:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Constant downward speed"
+        },
+        {
+          "id": "B",
+          "text": "Increasing acceleration"
+        },
+        {
+          "id": "C",
+          "text": "Constant downward net force"
+        },
+        {
+          "id": "D",
+          "text": "Rapidly increasing speed"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A horizontal velocity–time graph indicates zero acceleration and terminal motion.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "status": "pending-figure-review",
+      "holdReason": "Original source explicitly references NBF Figure 6.5(c); graph context has not been reviewed or reproduced."
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "type": "single_choice",
+      "stem": "In the textbook example, the parachute is opened about 42 s after the jump and a lower steady speed is reached within about the next 5 s. The approximate time is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "37 s"
+        },
+        {
+          "id": "B",
+          "text": "42 s"
+        },
+        {
+          "id": "C",
+          "text": "70 s"
+        },
+        {
+          "id": "D",
+          "text": "47 s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "42 + 5 = 47 s after the jump.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "A textbook parachutist has terminal speeds about 50 m s⁻¹ before opening the parachute and 8 m s⁻¹ afterward. The ratio of these speeds is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.16"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "58"
+        },
+        {
+          "id": "D",
+          "text": "6.25"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "50 ÷ 8 = 6.25; the open parachute produces a much lower terminal speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 58,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "type": "single_choice",
+      "stem": "A student slowly pours water and honey from identical cups. Which statement best explains the difference?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Honey flows more slowly because its viscosity is higher"
+        },
+        {
+          "id": "B",
+          "text": "Honey has no gravity"
+        },
+        {
+          "id": "C",
+          "text": "Water has no viscosity"
+        },
+        {
+          "id": "D",
+          "text": "Honey has zero internal friction"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Greater internal resistance of honey produces slower flow in the same demonstration.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "type": "single_choice",
+      "stem": "A cook warms syrup and notices it pours more freely. Which interpretation matches the NBF liquid-viscosity trend?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The syrup becomes massless"
+        },
+        {
+          "id": "B",
+          "text": "Its viscosity must have increased"
+        },
+        {
+          "id": "C",
+          "text": "The syrup is no longer a fluid"
+        },
+        {
+          "id": "D",
+          "text": "Its viscosity is usually reduced by heating"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The viscosity of most liquids decreases on heating.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "type": "single_choice",
+      "stem": "A gas is heated under conditions where its viscosity follows the usual trend. Which change is expected?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscosity increases"
+        },
+        {
+          "id": "B",
+          "text": "Viscosity becomes negative"
+        },
+        {
+          "id": "C",
+          "text": "It is forced to zero"
+        },
+        {
+          "id": "D",
+          "text": "Viscosity necessarily falls"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Most gases show increasing viscosity with increasing temperature.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "An object moves in near-empty space where no fluid is present. Which statement about ordinary fluid drag is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "There is essentially no fluid drag"
+        },
+        {
+          "id": "B",
+          "text": "Drag must equal its weight"
+        },
+        {
+          "id": "C",
+          "text": "Drag is infinite"
+        },
+        {
+          "id": "D",
+          "text": "Drag always accelerates the object"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Fluid drag requires a fluid; in a vacuum ordinary air resistance is absent.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "type": "single_choice",
+      "stem": "A stationary small sphere is immersed in still liquid. What does Fᵈ = 6πηrv predict for the motion-related drag?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is zero because relative speed is zero"
+        },
+        {
+          "id": "B",
+          "text": "It equals mg"
+        },
+        {
+          "id": "C",
+          "text": "It is proportional to gravity alone"
+        },
+        {
+          "id": "D",
+          "text": "It is infinite"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Stokes motion drag vanishes at v = 0; buoyancy can still act on the sphere.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "type": "single_choice",
+      "stem": "A flock of migratory geese flies in a V formation. Which advantage is associated with this arrangement in Figure 6.3?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It increases each bird’s resistance"
+        },
+        {
+          "id": "B",
+          "text": "It removes the effect of gravity"
+        },
+        {
+          "id": "C",
+          "text": "It makes their wings stationary"
+        },
+        {
+          "id": "D",
+          "text": "It can reduce each bird’s drag and energy expenditure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The chapter’s figure caption explicitly links V formation to drag and energy savings.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "status": "pending-figure-review",
+      "holdReason": "Original source explicitly references NBF Figure 6.3; the figure context has not yet been reviewed."
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "type": "single_choice",
+      "stem": "A passenger extends a broad palm into an airstream and then turns the hand edge-on. Drag generally:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Becomes exactly equal to weight"
+        },
+        {
+          "id": "B",
+          "text": "Always increases"
+        },
+        {
+          "id": "C",
+          "text": "Becomes a downward gravitational force"
+        },
+        {
+          "id": "D",
+          "text": "Decreases"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The new orientation reduces effective area presented to the airstream.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "type": "single_choice",
+      "stem": "Two tiny droplets of the same material fall through still air. In the simplified Stokes model, which has lower terminal speed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The droplet with larger radius"
+        },
+        {
+          "id": "B",
+          "text": "The droplet with smaller radius"
+        },
+        {
+          "id": "C",
+          "text": "Both always have identical speeds regardless of size"
+        },
+        {
+          "id": "D",
+          "text": "The heavier droplet has zero speed"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The model vₜ ∝ r² predicts a lower terminal speed for the smaller droplet.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 59,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "type": "single_choice",
+      "stem": "Two equal small spheres fall through fluids of different viscosity. Under the same Stokes assumptions, the sphere in the fluid with double viscosity has:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Double terminal speed"
+        },
+        {
+          "id": "B",
+          "text": "Fourfold terminal speed"
+        },
+        {
+          "id": "C",
+          "text": "The same terminal speed"
+        },
+        {
+          "id": "D",
+          "text": "Half the model terminal speed"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "With other quantities constant, vₜ varies inversely with η in the simplified model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "A student applies Fᵈ = 6πηrv to a fast-moving full-size parachute as though it were a slowly moving sphere. What is the best evaluation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is exact for every moving body"
+        },
+        {
+          "id": "B",
+          "text": "It works provided gravity is zero"
+        },
+        {
+          "id": "C",
+          "text": "It is unsuitable because Stokes’ spherical slow-flow model does not describe a parachute"
+        },
+        {
+          "id": "D",
+          "text": "It is only a viscosity-unit conversion"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Stokes’ law applies under restricted low-speed flow conditions for small spheres; parachutes need a different drag model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "A falling body has weight 20 N and upward drag 12 N; neglect buoyancy. The net force is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 N downward"
+        },
+        {
+          "id": "B",
+          "text": "32 N downward"
+        },
+        {
+          "id": "C",
+          "text": "8 N upward"
+        },
+        {
+          "id": "D",
+          "text": "20 N downward"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Net downward force = 20 − 12 = 8 N.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "type": "single_choice",
+      "stem": "A parachutist moves downward while experiencing upward drag of 900 N and weight of 700 N. What happens to the downward speed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It increases"
+        },
+        {
+          "id": "B",
+          "text": "It decreases"
+        },
+        {
+          "id": "C",
+          "text": "It must remain constant"
+        },
+        {
+          "id": "D",
+          "text": "It instantly becomes zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The net force is 200 N upward, so a still-descending parachutist decelerates.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "type": "single_choice",
+      "stem": "A student claims: “An object moving downward at constant terminal speed has stopped falling.” What is the correction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Terminal speed is always zero"
+        },
+        {
+          "id": "B",
+          "text": "It keeps falling but at a constant non-zero downward speed"
+        },
+        {
+          "id": "C",
+          "text": "Its weight has become zero"
+        },
+        {
+          "id": "D",
+          "text": "No drag force acts"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Zero acceleration at terminal speed does not mean zero velocity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-42",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T62-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "At 20°C the NBF table lists viscosity of whole milk as 2.12 mPa s and ethanol as 1.144 mPa s. Their viscosity ratio ηₘᵢₗₖ/ηₑₜₕₐₙₒₗ is closest to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.54"
+        },
+        {
+          "id": "B",
+          "text": "3.26"
+        },
+        {
+          "id": "C",
+          "text": "0.92"
+        },
+        {
+          "id": "D",
+          "text": "1.85"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "2.12/1.144 ≈ 1.85; whole milk has the larger tabulated viscosity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Viscous Drag and Terminal Velocity",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 60,
+      "originalPrintedTextbookPages": "91–95",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "sourceClaimedSloCode": "P-11-B-41",
+      "topicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "sloAlignment": "Official topic-level SLO classification only; no item-level verification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    }
+  ]
+}
