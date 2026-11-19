@@ -1,0 +1,3737 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T63-V80",
+  "bankVersion": "v80-topic63-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.3",
+  "title": "Fluid Flow",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's ChatGPT Library (original master remains outside public GitHub)",
+  "sourceCompiledPdfPages": "99–112 of 577",
+  "originalNbfTextbookPages": "95–96",
+  "frameworkDocument": "11_Physics_HSSC_I_model_paper_50_percent(7).pdf",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-35"
+  ],
+  "frameworkClassification": "Summative",
+  "officialFrameworkCognitiveLevel": "Knowledge + Understanding",
+  "perQuestionFrameworkMappingStatus": "not individually verified",
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 78,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "AADBDCBADCCDBBACCDBCADDBCBBADDABACCBDDCDCDCBDACBCDABBACCDAACCADDAABCADABBACABBDB",
+  "holds": [
+    {
+      "sourceQuestionNumber": 24,
+      "reason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+    },
+    {
+      "sourceQuestionNumber": 80,
+      "reason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+    }
+  ],
+  "sourceScope": "Streamline/laminar and turbulent flow, incompressible and non-viscous assumptions of an ideal fluid; simple flow-rate Q = V/t and unit conversions. Continuity equation belongs to Topic 6.4.",
+  "importantDistinction": "The source uses 'steady (streamline or laminar)' at introductory level; real fluid mechanics distinguishes steady (time dependence) from laminar (flow regime). Do not imply universal equivalence. Irrotational also does not imply straight particle paths.",
+  "limitations": [
+    "All 80 original stems/options/answers/explanations preserved with line wrapping normalized.",
+    "Q24 and Q80 explicitly depend on textbook Figure 6.6 and remain source-archived but withheld until figure context can be verified.",
+    "20 source situation/scenario-labelled items are independent standalone questions, not any common-stimulus group. 19 selectable after Q80 hold.",
+    "FBISE framework marks SLO P-11-B-35 Summative with Knowledge + Understanding topic cognitive level; no individual source question is independently certified.",
+    "Source flow-rate Q=V/t exercises are supporting basic numeracy, not an extra specified FBISE B-35 assessment requirement.",
+    "This is PUBLIC provisional self-practice only, not a secure exam or official board paper. No saved cloud grade.",
+    "Central Test Builder remains V79 with 1,846 selectable MCQs until later verified integration; complete Unit6 course stays planned."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T63-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "type": "single_choice",
+      "stem": "Which description best identifies a fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A substance that can flow, such as a liquid or gas"
+        },
+        {
+          "id": "B",
+          "text": "A substance that must keep a fixed shape"
+        },
+        {
+          "id": "C",
+          "text": "Any material with zero density"
+        },
+        {
+          "id": "D",
+          "text": "Only a liquid that flows through a pipe"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A substance that can flow, such as a liquid or gas. The textbook includes both liquids and gases in the category of fluids.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "type": "single_choice",
+      "stem": "In Topic 6.3, the flow rate of a fluid is defined as the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Volume passing a point per unit time"
+        },
+        {
+          "id": "B",
+          "text": "Mass per unit volume"
+        },
+        {
+          "id": "C",
+          "text": "Distance travelled by one molecule per second"
+        },
+        {
+          "id": "D",
+          "text": "Pressure change per unit depth"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Volume passing a point per unit time. Volumetric flow rate is volume divided by the time taken.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "type": "single_choice",
+      "stem": "The two fluid-flow types explicitly described in Section 6.3 are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Conduction and convection"
+        },
+        {
+          "id": "B",
+          "text": "Elastic and inelastic flow"
+        },
+        {
+          "id": "C",
+          "text": "Static and magnetic flow"
+        },
+        {
+          "id": "D",
+          "text": "Streamline and turbulent flow"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Streamline and turbulent flow. The textbook introduces streamline flow and turbulent flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "type": "single_choice",
+      "stem": "Streamline flow is identified primarily by fluid particles following:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only paths made of circles"
+        },
+        {
+          "id": "B",
+          "text": "Smooth, well-defined paths"
+        },
+        {
+          "id": "C",
+          "text": "Completely random, intersecting paths"
+        },
+        {
+          "id": "D",
+          "text": "Paths that continuously reverse direction"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Smooth, well-defined paths. Smooth orderly paths are the characteristic of streamline flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "type": "single_choice",
+      "stem": "At a fixed point in an idealized steady flow, successive fluid particles have:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Different densities on every arrival"
+        },
+        {
+          "id": "B",
+          "text": "Random directions on every arrival"
+        },
+        {
+          "id": "C",
+          "text": "Zero velocity at all times"
+        },
+        {
+          "id": "D",
+          "text": "The same velocity at that point"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The same velocity at that point. In steady flow, the velocity at a given location does not change with time.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "type": "single_choice",
+      "stem": "According to the textbook description, streamlines of a given smooth flow:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Must intersect at every pipe bend"
+        },
+        {
+          "id": "B",
+          "text": "Are always concentric circles"
+        },
+        {
+          "id": "C",
+          "text": "Do not cross one another"
+        },
+        {
+          "id": "D",
+          "text": "Exist only in gases"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Do not cross one another. Intersecting streamlines would give two velocity directions at the same point.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "type": "single_choice",
+      "stem": "Another term the textbook associates with smooth streamline flow is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Turbulent flow"
+        },
+        {
+          "id": "B",
+          "text": "Laminar flow"
+        },
+        {
+          "id": "C",
+          "text": "Random flow"
+        },
+        {
+          "id": "D",
+          "text": "Brownian motion"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Laminar flow. The text refers to streamline flow as laminar flow in its introductory treatment.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 99,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "type": "single_choice",
+      "stem": "In laminar flow through a tube, the fluid layer in the middle generally tends to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Move faster than layers near the wall"
+        },
+        {
+          "id": "B",
+          "text": "Remain stationary for all flows"
+        },
+        {
+          "id": "C",
+          "text": "Move backward while outer layers move forward"
+        },
+        {
+          "id": "D",
+          "text": "Have zero density"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Move faster than layers near the wall. The book states that the middle layer tends to flow faster.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "type": "single_choice",
+      "stem": "Streamline flow is more commonly observed at:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Extremely high speeds under every condition"
+        },
+        {
+          "id": "B",
+          "text": "Only at the boiling point"
+        },
+        {
+          "id": "C",
+          "text": "Only when large eddies form"
+        },
+        {
+          "id": "D",
+          "text": "Relatively lower fluid speeds"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Relatively lower fluid speeds. The NBF text associates smoother streamline motion with lower flow speeds.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "type": "single_choice",
+      "stem": "Which feature most directly characterizes turbulent flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Perfectly parallel, smooth paths"
+        },
+        {
+          "id": "B",
+          "text": "Complete absence of fluid motion"
+        },
+        {
+          "id": "C",
+          "text": "Irregular, disordered motion with eddies"
+        },
+        {
+          "id": "D",
+          "text": "Unchanging flow direction at every location"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Irregular, disordered motion with eddies. The textbook describes turbulent flow as irregular and whirlpool-like.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "type": "single_choice",
+      "stem": "A whirlpool-like region in turbulent fluid flow is commonly called a(n):",
+      "options": [
+        {
+          "id": "A",
+          "text": "Electrode"
+        },
+        {
+          "id": "B",
+          "text": "Focal point"
+        },
+        {
+          "id": "C",
+          "text": "Eddy"
+        },
+        {
+          "id": "D",
+          "text": "Rigid body"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Eddy. Eddies are swirling regions associated with turbulent motion.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "type": "single_choice",
+      "stem": "The textbook states that above a certain critical speed, streamline flow may become:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Solid"
+        },
+        {
+          "id": "B",
+          "text": "Incompressible by necessity"
+        },
+        {
+          "id": "C",
+          "text": "Non-viscous by necessity"
+        },
+        {
+          "id": "D",
+          "text": "Turbulent"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Turbulent. Turbulence can appear as flow speed exceeds a critical value for the situation.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "type": "single_choice",
+      "stem": "Which object shape does the textbook associate with a tendency towards smoother flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A large flat plate facing the flow"
+        },
+        {
+          "id": "B",
+          "text": "A streamlined shape"
+        },
+        {
+          "id": "C",
+          "text": "A body with many projecting sharp edges"
+        },
+        {
+          "id": "D",
+          "text": "An arbitrarily rough shape"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A streamlined shape. Streamlining generally limits flow disturbance around moving objects.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "type": "single_choice",
+      "stem": "A non-viscous fluid is one in which:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Density must be zero"
+        },
+        {
+          "id": "B",
+          "text": "Internal viscous friction is neglected"
+        },
+        {
+          "id": "C",
+          "text": "Pressure must be zero"
+        },
+        {
+          "id": "D",
+          "text": "All fluid particles are immobile"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Internal viscous friction is neglected. The ideal-fluid model neglects viscous resistance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "type": "single_choice",
+      "stem": "An incompressible fluid is modeled as having:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Constant density"
+        },
+        {
+          "id": "B",
+          "text": "Constant speed at every point"
+        },
+        {
+          "id": "C",
+          "text": "Zero volume"
+        },
+        {
+          "id": "D",
+          "text": "Zero pressure"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Constant density. The textbook defines incompressibility through constant density.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "type": "single_choice",
+      "stem": "Which material does the textbook generally treat as more nearly incompressible?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air under large compression"
+        },
+        {
+          "id": "B",
+          "text": "Steam undergoing expansion"
+        },
+        {
+          "id": "C",
+          "text": "Liquid water"
+        },
+        {
+          "id": "D",
+          "text": "Any rapidly compressing gas"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Liquid water. Liquids are usually much less compressible than gases under ordinary conditions.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 100,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "type": "single_choice",
+      "stem": "Which is an assumption listed for the NBF model of ideal fluid flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All fluids exert zero pressure"
+        },
+        {
+          "id": "B",
+          "text": "Every flow must be turbulent"
+        },
+        {
+          "id": "C",
+          "text": "Flow is treated as non-viscous"
+        },
+        {
+          "id": "D",
+          "text": "The fluid has no mass"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Flow is treated as non-viscous. Non-viscous behavior is an explicit ideal-flow assumption in the book.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "type": "single_choice",
+      "stem": "The NBF ideal-flow model assumes the fluid is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Infinitely dense"
+        },
+        {
+          "id": "B",
+          "text": "Always stationary"
+        },
+        {
+          "id": "C",
+          "text": "A rigid solid"
+        },
+        {
+          "id": "D",
+          "text": "Incompressible"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Incompressible. The simplified model takes fluid density as constant.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "type": "single_choice",
+      "stem": "The book contrasts an ideal fluid with a real fluid by noting that real fluids:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Never flow"
+        },
+        {
+          "id": "B",
+          "text": "Exhibit viscosity"
+        },
+        {
+          "id": "C",
+          "text": "Must always be turbulent"
+        },
+        {
+          "id": "D",
+          "text": "Have no internal friction at any speed"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Exhibit viscosity. Real fluids have viscous resistance, unlike the idealized non-viscous model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "type": "single_choice",
+      "stem": "The SI unit of volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "m/s"
+        },
+        {
+          "id": "B",
+          "text": "kg/m³"
+        },
+        {
+          "id": "C",
+          "text": "m³/s"
+        },
+        {
+          "id": "D",
+          "text": "N/m²"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "m³/s. Volume divided by time has SI unit cubic metres per second.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "type": "single_choice",
+      "stem": "Why can two streamline paths not cross at the same point in a steady velocity field?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A single point cannot have two distinct velocity directions at once"
+        },
+        {
+          "id": "B",
+          "text": "Fluid particles cannot exist inside a pipe bend"
+        },
+        {
+          "id": "C",
+          "text": "Pressure would have to become exactly zero"
+        },
+        {
+          "id": "D",
+          "text": "The fluid would immediately become a solid"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A single point cannot have two distinct velocity directions at once. At one point, a defined velocity vector has a unique direction.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "type": "single_choice",
+      "stem": "Which observation most clearly suggests laminar rather than turbulent flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dye spreads into many rapidly mixing eddies"
+        },
+        {
+          "id": "B",
+          "text": "Random swirls repeatedly reverse local flow direction"
+        },
+        {
+          "id": "C",
+          "text": "Large vortices form behind a blunt obstruction"
+        },
+        {
+          "id": "D",
+          "text": "A dye streak remains narrow and follows a smooth path"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A dye streak remains narrow and follows a smooth path. A stable smooth dye line indicates orderly flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "type": "single_choice",
+      "stem": "Which change in a flow system may promote turbulence according to the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Making every flow path smoother"
+        },
+        {
+          "id": "B",
+          "text": "Reducing disturbances while maintaining slow flow"
+        },
+        {
+          "id": "C",
+          "text": "Using a uniformly streamlined body"
+        },
+        {
+          "id": "D",
+          "text": "A sudden change in the tube direction"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A sudden change in the tube direction. Sudden changes in direction or geometry can disturb the flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "type": "single_choice",
+      "stem": "What chiefly distinguishes the particle paths illustrated in Fig. 6.6(a) from those in Fig. 6.6(b)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gases versus solids"
+        },
+        {
+          "id": "B",
+          "text": "Orderly paths versus disordered swirling paths"
+        },
+        {
+          "id": "C",
+          "text": "Conductors versus insulators"
+        },
+        {
+          "id": "D",
+          "text": "Charged particles versus neutral particles"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Orderly paths versus disordered swirling paths. The figure contrasts smooth streamline flow with eddy-rich turbulent flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "status": "pending-figure-review",
+      "holdReason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "type": "single_choice",
+      "stem": "Which statement about particle speed in laminar layers is consistent with the NBF description?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Every layer must have exactly the same speed"
+        },
+        {
+          "id": "B",
+          "text": "Every layer must flow backwards"
+        },
+        {
+          "id": "C",
+          "text": "Different layers may have different speeds, with the middle often faster"
+        },
+        {
+          "id": "D",
+          "text": "The middle layer must be stationary"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Different layers may have different speeds, with the middle often faster. Steady flow at a point does not mean identical speed at every location.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 101,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "type": "single_choice",
+      "stem": "Which statement gives the safest interpretation of a “critical speed” for turbulence?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is exactly 1 m/s for all liquids"
+        },
+        {
+          "id": "B",
+          "text": "It is a threshold that depends on the flow situation, not one fixed universal number"
+        },
+        {
+          "id": "C",
+          "text": "It is the speed of sound in a vacuum"
+        },
+        {
+          "id": "D",
+          "text": "It is always zero for a smooth pipe"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "It is a threshold that depends on the flow situation, not one fixed universal number. Transition conditions vary with geometry, fluid and disturbances.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "type": "single_choice",
+      "stem": "If a pipe flow appears ordered at a low speed and later shows irregular swirling, what occurred?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Solidification of the fluid"
+        },
+        {
+          "id": "B",
+          "text": "A transition toward turbulence"
+        },
+        {
+          "id": "C",
+          "text": "Loss of all fluid mass"
+        },
+        {
+          "id": "D",
+          "text": "Perfectly ideal irrotational flow"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A transition toward turbulence. The appearance of eddies indicates the onset of turbulent features.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "type": "single_choice",
+      "stem": "Why is viscosity relevant when comparing ideal and real fluids?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscosity accounts for internal resistance omitted from the ideal model"
+        },
+        {
+          "id": "B",
+          "text": "Viscosity means density has no units"
+        },
+        {
+          "id": "C",
+          "text": "Ideal fluids have infinite viscous drag"
+        },
+        {
+          "id": "D",
+          "text": "Only a real fluid can be incompressible"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Viscosity accounts for internal resistance omitted from the ideal model. The distinguishing idealization is zero viscosity; real fluids resist relative motion.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "type": "single_choice",
+      "stem": "Which statement about “incompressible” is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It requires zero fluid pressure"
+        },
+        {
+          "id": "B",
+          "text": "It requires the fluid to be at rest"
+        },
+        {
+          "id": "C",
+          "text": "It means that a pipe may not bend"
+        },
+        {
+          "id": "D",
+          "text": "It refers to density remaining constant, not necessarily to zero flow speed"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "It refers to density remaining constant, not necessarily to zero flow speed. Incompressibility concerns density, while speed can remain nonzero.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "type": "single_choice",
+      "stem": "Why are liquids usually modeled as incompressible in introductory fluid problems?",
+      "options": [
+        {
+          "id": "A",
+          "text": "They cannot move between locations"
+        },
+        {
+          "id": "B",
+          "text": "They must have zero mass"
+        },
+        {
+          "id": "C",
+          "text": "They are always inviscid"
+        },
+        {
+          "id": "D",
+          "text": "Their densities change relatively little under ordinary pressure variations"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Their densities change relatively little under ordinary pressure variations. Liquid density is approximately constant for many ordinary situations.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "type": "single_choice",
+      "stem": "How does a streamlined body generally assist motion through a fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It reduces flow disturbance and often reduces drag"
+        },
+        {
+          "id": "B",
+          "text": "It guarantees the fluid has zero density"
+        },
+        {
+          "id": "C",
+          "text": "It makes fluid friction disappear under all conditions"
+        },
+        {
+          "id": "D",
+          "text": "It stops all fluid motion behind the body"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "It reduces flow disturbance and often reduces drag. A smoother shape tends to reduce disturbance and drag but does not eliminate it.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "type": "single_choice",
+      "stem": "Why do engineers study car models in wind tunnels?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To remove the car’s gravitational mass"
+        },
+        {
+          "id": "B",
+          "text": "To observe airflow and improve aerodynamic design"
+        },
+        {
+          "id": "C",
+          "text": "To measure only the car’s electrical charge"
+        },
+        {
+          "id": "D",
+          "text": "To ensure every real airflow is completely non-viscous"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "To observe airflow and improve aerodynamic design. Wind tunnels show how moving air interacts with a body or model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "type": "single_choice",
+      "stem": "The dolphin information box attributes easier movement through water mainly to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Streamlined shape that reduces resistance"
+        },
+        {
+          "id": "B",
+          "text": "Zero mass of the dolphin"
+        },
+        {
+          "id": "C",
+          "text": "Elimination of water pressure everywhere"
+        },
+        {
+          "id": "D",
+          "text": "Magnetic repulsion from seawater"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Streamlined shape that reduces resistance. The text links dolphin shape with lower opposing fluid resistance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "type": "single_choice",
+      "stem": "Which statement is a limitation of ideal-fluid models?",
+      "options": [
+        {
+          "id": "A",
+          "text": "They accurately represent every turbulent flow without approximation"
+        },
+        {
+          "id": "B",
+          "text": "They require no assumptions"
+        },
+        {
+          "id": "C",
+          "text": "They neglect effects such as viscous friction that occur in real fluids"
+        },
+        {
+          "id": "D",
+          "text": "They prohibit calculation of any physical quantity"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "They neglect effects such as viscous friction that occur in real fluids. An ideal model is simplified and cannot capture every real-fluid effect.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 102,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "type": "single_choice",
+      "stem": "A fluid whose density remains unchanged while moving can be described as:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Automatically non-viscous"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily turbulent"
+        },
+        {
+          "id": "C",
+          "text": "Incompressible"
+        },
+        {
+          "id": "D",
+          "text": "Always motionless"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Incompressible. Constant density is the defining condition for incompressibility.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "type": "single_choice",
+      "stem": "Which fluid sample best illustrates viscosity as internal resistance to motion?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An empty container with no fluid"
+        },
+        {
+          "id": "B",
+          "text": "Honey flowing more reluctantly than water"
+        },
+        {
+          "id": "C",
+          "text": "A stationary steel bar acting as a spring"
+        },
+        {
+          "id": "D",
+          "text": "A ray of light travelling in vacuum"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Honey flowing more reluctantly than water. Different fluids offer different resistance to flow; honey is more viscous.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "type": "single_choice",
+      "stem": "Which statement about streamline flow should a student avoid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "“The local flow direction is well defined.”"
+        },
+        {
+          "id": "B",
+          "text": "“Fluid paths appear smooth.”"
+        },
+        {
+          "id": "C",
+          "text": "“The flow can be steady at a fixed location.”"
+        },
+        {
+          "id": "D",
+          "text": "“All fluid particles everywhere must move at exactly the same speed.”"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "“All fluid particles everywhere must move at exactly the same speed.”. Laminar layers may have different speeds, so global uniform speed is not required.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "type": "single_choice",
+      "stem": "Why does a blunt obstruction often cause a disturbed wake in a flowing fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It makes viscosity mathematically negative"
+        },
+        {
+          "id": "B",
+          "text": "It removes all molecules behind the object"
+        },
+        {
+          "id": "C",
+          "text": "It creates a permanent vacuum in the entire tube"
+        },
+        {
+          "id": "D",
+          "text": "Its shape can disrupt smooth flow and promote eddies"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Its shape can disrupt smooth flow and promote eddies. Non-streamlined shapes are associated with disturbed, potentially turbulent wakes.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "type": "single_choice",
+      "stem": "Which property may remain nonzero even in a non-viscous ideal fluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dynamic viscosity"
+        },
+        {
+          "id": "B",
+          "text": "Viscous shear resistance"
+        },
+        {
+          "id": "C",
+          "text": "Density"
+        },
+        {
+          "id": "D",
+          "text": "Internal viscous friction"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Density. Zero viscosity does not imply zero fluid density.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "type": "single_choice",
+      "stem": "Which pair describes the intended simplifying assumptions used in the textbook’s ideal- flow model?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Turbulent and highly viscous"
+        },
+        {
+          "id": "B",
+          "text": "Compressible and completely stationary"
+        },
+        {
+          "id": "C",
+          "text": "Randomly swirling and friction-dominated"
+        },
+        {
+          "id": "D",
+          "text": "Incompressible and non-viscous"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Incompressible and non-viscous. The textbook ideal model takes constant density and neglects viscosity.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "type": "single_choice",
+      "stem": "A water pipe delivers 1.2 m³ in 4.0 s. What is its average volumetric flow rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4.8 m³/s"
+        },
+        {
+          "id": "B",
+          "text": "3.3 m³/s"
+        },
+        {
+          "id": "C",
+          "text": "0.30 m³/s"
+        },
+        {
+          "id": "D",
+          "text": "0.030 m³/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "0.30 m³/s. Q = V/t = 1.2/4.0 = 0.30 m³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "type": "single_choice",
+      "stem": "A tube delivers 9.0 L of water in 3.0 s. Its volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "27 L/s"
+        },
+        {
+          "id": "B",
+          "text": "0.33 L/s"
+        },
+        {
+          "id": "C",
+          "text": "12 L/s"
+        },
+        {
+          "id": "D",
+          "text": "3.0 L/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "3.0 L/s. Q = 9.0/3.0 = 3.0 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "type": "single_choice",
+      "stem": "A tap fills 600 cm³ in 2.0 s. The volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1200 cm³/s"
+        },
+        {
+          "id": "B",
+          "text": "0.003 cm³/s"
+        },
+        {
+          "id": "C",
+          "text": "300 cm³/s"
+        },
+        {
+          "id": "D",
+          "text": "602 cm³/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "300 cm³/s. Q = 600/2.0 = 300 cm³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 103,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "type": "single_choice",
+      "stem": "A flow rate of 2.0 L/s is equal to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 × 10³ m³/s"
+        },
+        {
+          "id": "B",
+          "text": "2.0 × 10⁻³ m³/s"
+        },
+        {
+          "id": "C",
+          "text": "2.0 m³/s"
+        },
+        {
+          "id": "D",
+          "text": "2.0 × 10⁻⁶ m³/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "2.0 × 10⁻³ m³/s. Since 1 L = 10⁻³ m³, 2.0 L/s = 2.0 × 10⁻³ m³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "type": "single_choice",
+      "stem": "Convert 0.015 m³/s to litres per second.",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.015 L/s"
+        },
+        {
+          "id": "B",
+          "text": "1.5 L/s"
+        },
+        {
+          "id": "C",
+          "text": "1500 L/s"
+        },
+        {
+          "id": "D",
+          "text": "15 L/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "15 L/s. 0.015 × 1000 = 15 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "type": "single_choice",
+      "stem": "Water flows at 0.25 m³/s for 8.0 s. The delivered volume is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 m³"
+        },
+        {
+          "id": "B",
+          "text": "0.03125 m³"
+        },
+        {
+          "id": "C",
+          "text": "8.25 m³"
+        },
+        {
+          "id": "D",
+          "text": "32 m³"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2.0 m³. V = Qt = 0.25 × 8.0 = 2.0 m³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "type": "single_choice",
+      "stem": "How long does a flow of 0.30 m³/s take to deliver 1.8 m³?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.17 s"
+        },
+        {
+          "id": "B",
+          "text": "2.1 s"
+        },
+        {
+          "id": "C",
+          "text": "6.0 s"
+        },
+        {
+          "id": "D",
+          "text": "5.4 s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "6.0 s. t = V/Q = 1.8/0.30 = 6.0 s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "type": "single_choice",
+      "stem": "A stream delivers 12 L per minute. Its average rate in L/s is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "720 L/s"
+        },
+        {
+          "id": "B",
+          "text": "0.20 L/s"
+        },
+        {
+          "id": "C",
+          "text": "12 L/s"
+        },
+        {
+          "id": "D",
+          "text": "60 L/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "0.20 L/s. Q = 12/60 = 0.20 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "type": "single_choice",
+      "stem": "A tank receives 360 L in 3.0 minutes. What is the average flow rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "120 L/s"
+        },
+        {
+          "id": "B",
+          "text": "1080 L/s"
+        },
+        {
+          "id": "C",
+          "text": "2.0 L/s"
+        },
+        {
+          "id": "D",
+          "text": "0.50 L/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "2.0 L/s. 3.0 min = 180 s, hence Q = 360/180 = 2.0 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "type": "single_choice",
+      "stem": "A channel carries 0.80 m³ in 20 s. The volumetric flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 m³/s"
+        },
+        {
+          "id": "B",
+          "text": "25 m³/s"
+        },
+        {
+          "id": "C",
+          "text": "0.25 m³/s"
+        },
+        {
+          "id": "D",
+          "text": "0.040 m³/s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "0.040 m³/s. Q = 0.80/20 = 0.040 m³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "type": "single_choice",
+      "stem": "A small nozzle releases 90 cm³ in 3.0 s. Express the rate in m³/s.",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.0 × 10⁻⁵ m³/s"
+        },
+        {
+          "id": "B",
+          "text": "3.0 × 10⁻² m³/s"
+        },
+        {
+          "id": "C",
+          "text": "3.0 × 10⁻⁴ m³/s"
+        },
+        {
+          "id": "D",
+          "text": "30 m³/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "3.0 × 10⁻⁵ m³/s. 90/3 = 30 cm³/s = 30 × 10⁻⁶ = 3.0 × 10⁻⁵ m³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "type": "single_choice",
+      "stem": "A bottle of volume 2500 mL fills in 5.0 s. What is the flow rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "500 L/s"
+        },
+        {
+          "id": "B",
+          "text": "0.50 L/s"
+        },
+        {
+          "id": "C",
+          "text": "12.5 L/s"
+        },
+        {
+          "id": "D",
+          "text": "0.002 L/s"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "0.50 L/s. 2500 mL = 2.5 L; 2.5/5.0 = 0.50 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 104,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "type": "single_choice",
+      "stem": "Water flows at 5.0 × 10⁻³ m³/s for 2.0 s. How many litres pass?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 L"
+        },
+        {
+          "id": "B",
+          "text": "10 L"
+        },
+        {
+          "id": "C",
+          "text": "100 L"
+        },
+        {
+          "id": "D",
+          "text": "0.010 L"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "10 L. V = Qt = 0.010 m³ = 10 L.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "type": "single_choice",
+      "stem": "If 15 L of water pass a point in 30 s, the average rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.50 L/s"
+        },
+        {
+          "id": "B",
+          "text": "2.0 L/s"
+        },
+        {
+          "id": "C",
+          "text": "450 L/s"
+        },
+        {
+          "id": "D",
+          "text": "45 L/s"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "0.50 L/s. Q = 15/30 = 0.50 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "type": "single_choice",
+      "stem": "Flow A delivers 60 L in 20 s; Flow B delivers 45 L in 10 s. Which is faster by volumetric rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A, because 60 L > 45 L"
+        },
+        {
+          "id": "B",
+          "text": "Both have exactly 3.0 L/s"
+        },
+        {
+          "id": "C",
+          "text": "B, because 4.5 L/s > 3.0 L/s"
+        },
+        {
+          "id": "D",
+          "text": "Rates cannot be compared using volume and time"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "B, because 4.5 L/s > 3.0 L/s. Q_A = 60/20 = 3.0 L/s; Q_B = 45/10 = 4.5 L/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "type": "single_choice",
+      "stem": "Two pipes deliver 2.0 m³ in 5.0 s and 1.2 m³ in 3.0 s. Their average rates are:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 and 1.2 m³/s"
+        },
+        {
+          "id": "B",
+          "text": "Equal at 2.5 m³/s"
+        },
+        {
+          "id": "C",
+          "text": "Equal at 0.40 m³/s"
+        },
+        {
+          "id": "D",
+          "text": "0.10 and 0.90 m³/s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Equal at 0.40 m³/s. 2.0/5.0 = 1.2/3.0 = 0.40 m³/s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "type": "single_choice",
+      "stem": "If a 5.0 L container fills at 0.50 L/s, its filling time is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.5 s"
+        },
+        {
+          "id": "B",
+          "text": "0.10 s"
+        },
+        {
+          "id": "C",
+          "text": "5.5 s"
+        },
+        {
+          "id": "D",
+          "text": "10 s"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "10 s. t = V/Q = 5.0/0.50 = 10 s.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "type": "single_choice",
+      "stem": "At 0.060 m³/s, how much liquid passes in 10 s?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.60 m³"
+        },
+        {
+          "id": "B",
+          "text": "6.0 m³"
+        },
+        {
+          "id": "C",
+          "text": "0.0060 m³"
+        },
+        {
+          "id": "D",
+          "text": "0.060 m³"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "0.60 m³. V = 0.060 × 10 = 0.60 m³.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "type": "single_choice",
+      "stem": "Which physical quantity must be measured, in addition to volume, to determine average volumetric flow rate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Elapsed time"
+        },
+        {
+          "id": "B",
+          "text": "Temperature only"
+        },
+        {
+          "id": "C",
+          "text": "Weight of the container only"
+        },
+        {
+          "id": "D",
+          "text": "Electric charge"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Elapsed time. Flow rate is defined by Q = volume/elapsed time.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "type": "single_choice",
+      "stem": "A flow rate stated in m³/s describes:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Distance travelled by a particle in a second"
+        },
+        {
+          "id": "B",
+          "text": "Mass contained in one cubic metre"
+        },
+        {
+          "id": "C",
+          "text": "Volume crossing a location in each second"
+        },
+        {
+          "id": "D",
+          "text": "Force acting on each square metre"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Volume crossing a location in each second. m³/s is volume per time, not speed, density, or pressure.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "type": "single_choice",
+      "stem": "A researcher injects dye into slowly flowing water. The dye remains a long, smooth narrow line. Which interpretation is most appropriate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The fluid must be violently turbulent"
+        },
+        {
+          "id": "B",
+          "text": "The dye indicates zero flow rate"
+        },
+        {
+          "id": "C",
+          "text": "The motion is displaying streamline characteristics"
+        },
+        {
+          "id": "D",
+          "text": "The liquid is necessarily compressible"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The motion is displaying streamline characteristics. A smooth persistent dye streak is a common indicator of orderly flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 105,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "type": "single_choice",
+      "stem": "In another test, dye rapidly spreads into irregular swirls behind a rough object. The observed pattern is most consistent with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Turbulent flow"
+        },
+        {
+          "id": "B",
+          "text": "Smooth idealized streamline paths only"
+        },
+        {
+          "id": "C",
+          "text": "Zero fluid movement"
+        },
+        {
+          "id": "D",
+          "text": "A purely rigid-body rotation of the pipe"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Turbulent flow. Irregular swirling and mixing are characteristic of turbulent flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "type": "single_choice",
+      "stem": "A stream of water passes a rock and develops many small rotating regions downstream. Those regions are evidence of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete absence of drag"
+        },
+        {
+          "id": "B",
+          "text": "Zero fluid density"
+        },
+        {
+          "id": "C",
+          "text": "Perfect laminar order at every point"
+        },
+        {
+          "id": "D",
+          "text": "Eddies and turbulent disturbance"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Eddies and turbulent disturbance. The eddies indicate disturbed, irregular motion near and behind the rock.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "type": "single_choice",
+      "stem": "A designer makes the front of a vehicle smoother and tests it in a wind tunnel. The main intended fluid-mechanics benefit is to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increase every wake vortex"
+        },
+        {
+          "id": "B",
+          "text": "Remove gravity from the vehicle"
+        },
+        {
+          "id": "C",
+          "text": "Make air an actual non-viscous fluid"
+        },
+        {
+          "id": "D",
+          "text": "Reduce flow disturbance and aerodynamic drag"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Reduce flow disturbance and aerodynamic drag. Streamlined designs commonly help reduce drag in moving air.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "type": "single_choice",
+      "stem": "Two fish of similar size swim at the same speed. One has a smoother shape and produces less disturbed water. This supports the idea that:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Streamlining can lower resistance during motion"
+        },
+        {
+          "id": "B",
+          "text": "Both fish must have zero mass"
+        },
+        {
+          "id": "C",
+          "text": "Turbulent wakes always reduce drag to zero"
+        },
+        {
+          "id": "D",
+          "text": "Fluid viscosity is absent around all fish"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Streamlining can lower resistance during motion. A streamlined profile tends to disturb the fluid less.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "type": "single_choice",
+      "stem": "A student observes a smooth water flow, then turns a valve so abruptly that swirling begins. Which cause best fits the NBF description?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The change disturbed an initially orderly flow"
+        },
+        {
+          "id": "B",
+          "text": "Density instantly became zero"
+        },
+        {
+          "id": "C",
+          "text": "Water ceased to be a fluid"
+        },
+        {
+          "id": "D",
+          "text": "The pipe became a perfectly ideal solid"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The change disturbed an initially orderly flow. Sudden changes in flow conditions can promote turbulent motion.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "type": "single_choice",
+      "stem": "A teacher models flow by assuming constant density and no internal viscous friction. Which idealization is being used?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Compressible, viscous flow"
+        },
+        {
+          "id": "B",
+          "text": "Incompressible, non-viscous flow"
+        },
+        {
+          "id": "C",
+          "text": "Stagnant, highly turbulent flow"
+        },
+        {
+          "id": "D",
+          "text": "A model containing no matter"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Incompressible, non-viscous flow. These are the two main fluid-property assumptions of the model.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "type": "single_choice",
+      "stem": "A computer animation displays two streamline arrows crossing with different directions at the same point in a steady velocity field. What is the issue?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The crossing proves perfect laminar flow"
+        },
+        {
+          "id": "B",
+          "text": "The crossing proves density is zero"
+        },
+        {
+          "id": "C",
+          "text": "It assigns two incompatible flow directions to one point"
+        },
+        {
+          "id": "D",
+          "text": "All streamline diagrams must show intersections"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "It assigns two incompatible flow directions to one point. A uniquely defined local velocity cannot point in two directions simultaneously.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "type": "single_choice",
+      "stem": "A sample of air is strongly compressed while flowing, so its density changes considerably. Which ideal-fluid assumption is least suitable?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Incompressibility"
+        },
+        {
+          "id": "B",
+          "text": "Existence of gravitational mass"
+        },
+        {
+          "id": "C",
+          "text": "Fluidity"
+        },
+        {
+          "id": "D",
+          "text": "Use of SI units"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Incompressibility. A changing density violates the constant-density idealization.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 106,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "type": "single_choice",
+      "stem": "Honey moves slowly through a container and strongly resists relative motion between its layers. Which simplifying assumption would be least accurate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Finite density"
+        },
+        {
+          "id": "B",
+          "text": "Nonzero volume"
+        },
+        {
+          "id": "C",
+          "text": "Existence of fluid motion"
+        },
+        {
+          "id": "D",
+          "text": "Zero viscosity"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Zero viscosity. Honey is viscous, so an inviscid description would miss its internal resistance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "type": "single_choice",
+      "stem": "A slow narrow river has smooth water in one section and swirling regions near an obstruction. What is the best conclusion?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Different regions can exhibit different flow behavior"
+        },
+        {
+          "id": "B",
+          "text": "An entire river must be either perfectly laminar or perfectly turbulent everywhere"
+        },
+        {
+          "id": "C",
+          "text": "The river is necessarily a solid"
+        },
+        {
+          "id": "D",
+          "text": "A swirl guarantees a fluid has zero viscosity"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Different regions can exhibit different flow behavior. Local obstacles can make flow disturbed in one region but smoother elsewhere.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "type": "single_choice",
+      "stem": "An engineer notices that a blunt attachment increases a vehicle’s wake. The most sensible design response is to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Add further protrusions without testing"
+        },
+        {
+          "id": "B",
+          "text": "Examine a more streamlined attachment"
+        },
+        {
+          "id": "C",
+          "text": "Remove all airflow around the car"
+        },
+        {
+          "id": "D",
+          "text": "Assume drag can never depend on shape"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Examine a more streamlined attachment. Streamlining may reduce the flow separation and wake disturbance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "type": "single_choice",
+      "stem": "A diagram shows a fixed point P in an ordered flow. Every particle passing P is observed to have the same velocity. This demonstrates:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Random reversal at P"
+        },
+        {
+          "id": "B",
+          "text": "Steady behavior at P"
+        },
+        {
+          "id": "C",
+          "text": "No possible flow at P"
+        },
+        {
+          "id": "D",
+          "text": "That the fluid density is zero"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Steady behavior at P. The velocity at a fixed location is time-independent in steady flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "type": "single_choice",
+      "stem": "A learner claims: “Because a flow is laminar, the center and wall regions must have identical speeds.” What is the best response?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Different layers may move at different speeds in laminar flow"
+        },
+        {
+          "id": "B",
+          "text": "All fluid must remain at rest"
+        },
+        {
+          "id": "C",
+          "text": "The center must flow in the opposite direction"
+        },
+        {
+          "id": "D",
+          "text": "Laminar means an explosion of eddies"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Different layers may move at different speeds in laminar flow. Laminar describes orderly flow; the speed need not be uniform across layers.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "type": "single_choice",
+      "stem": "Water in a clear tube changes from smooth paths to disordered motion when pump speed increases. Which textbook idea does this illustrate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The tube gaining mass from the water"
+        },
+        {
+          "id": "B",
+          "text": "Water losing its ability to flow"
+        },
+        {
+          "id": "C",
+          "text": "Transition to turbulence above a critical flow condition"
+        },
+        {
+          "id": "D",
+          "text": "Conversion of all fluid into a non-viscous gas"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Transition to turbulence above a critical flow condition. The text notes that higher flow speed can trigger turbulent patterns.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "type": "single_choice",
+      "stem": "A lab report says that a fluid is non-viscous and therefore must have zero density. Why is this incorrect?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscosity and density are different physical properties"
+        },
+        {
+          "id": "B",
+          "text": "Density is always equal to viscosity"
+        },
+        {
+          "id": "C",
+          "text": "Only gases possess density"
+        },
+        {
+          "id": "D",
+          "text": "Zero viscosity requires zero volume"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Viscosity and density are different physical properties. Neglecting viscous resistance does not remove mass per unit volume.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "type": "single_choice",
+      "stem": "An athlete wants to reduce resistance while moving through water. Which design principle from the topic is most relevant?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increase irregular protrusions"
+        },
+        {
+          "id": "B",
+          "text": "Present a smooth, streamlined profile"
+        },
+        {
+          "id": "C",
+          "text": "Create as many large eddies as possible"
+        },
+        {
+          "id": "D",
+          "text": "Require water to have no mass"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Present a smooth, streamlined profile. Streamlined bodies, including dolphins, show how shape reduces fluid resistance.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 107,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "type": "single_choice",
+      "stem": "A flow meter records 18 L passing a point during 6 s. Which statement reports the correct measured quantity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The fluid speed is 3 m/s"
+        },
+        {
+          "id": "B",
+          "text": "The average volumetric flow rate is 3 L/s"
+        },
+        {
+          "id": "C",
+          "text": "The density is 3 kg/m³"
+        },
+        {
+          "id": "D",
+          "text": "The pressure is 3 Pa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The average volumetric flow rate is 3 L/s. Flow rate = 18 L / 6 s = 3 L/s; this is not a measurement of speed.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 108,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "type": "single_choice",
+      "stem": "In a smooth-flow demonstration, a student marks several particles along one streamline. What should be true of successive particles arriving at the same location in steady flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "They must all have zero speed"
+        },
+        {
+          "id": "B",
+          "text": "They must each change density on arrival"
+        },
+        {
+          "id": "C",
+          "text": "They must reverse direction each time"
+        },
+        {
+          "id": "D",
+          "text": "They have the same local velocity there"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "They have the same local velocity there. Steady flow gives a time-independent velocity at each location.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 108,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T63-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "type": "single_choice",
+      "stem": "A class compares Fig. 6.6(a) and Fig. 6.6(b). Which pairing correctly identifies the patterns?",
+      "options": [
+        {
+          "id": "A",
+          "text": "(a) turbulent; (b) streamline"
+        },
+        {
+          "id": "B",
+          "text": "(a) streamline; (b) turbulent"
+        },
+        {
+          "id": "C",
+          "text": "(a) static solid; (b) electric current"
+        },
+        {
+          "id": "D",
+          "text": "(a) pressure only; (b) temperature only"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "(a) streamline; (b) turbulent. The figure labels a as smooth streamline flow and b as irregular turbulent flow.",
+      "grade": 11,
+      "unit": 6,
+      "topic": "Fluid Flow",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 108,
+      "originalPrintedTextbookPages": "95–96",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-35"
+      ],
+      "sloAlignment": "Source topic alignment; individual item mapping/cognitive demand unverified",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": false,
+      "status": "pending-figure-review",
+      "holdReason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+    }
+  ]
+}
