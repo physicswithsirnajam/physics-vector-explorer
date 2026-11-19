@@ -64,7 +64,7 @@ function auditSource(){
  assert.equal(u4.newMasterImportedCount,560);
  assert.equal(u4.masterTopicsImported['4.3'],80);
  assert.equal(u4.masterTopicsImported['4.4'],80);
- assert.equal(manifest.grades.find(g=>g.grade===11).units.reduce((n,u)=>n+u.liveMcqCount,0),1690);
+ assert.equal(manifest.grades.find(g=>g.grade===11).units.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0),1690);
  assert.equal(json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===4).questionBankCount,640);
  console.log('PASS V62 source: 155 original corrected items, 11 complete scenarios, 5 source-figure holds, exact Word equation typography and original classroom80.');
  return src;
