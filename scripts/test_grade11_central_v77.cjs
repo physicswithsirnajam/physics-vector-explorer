@@ -35,7 +35,7 @@ async function sourceIntegrity(){
  assert.ok(six.every(q=>q.assessmentClassification==='summative-topic-provisional'&&
    q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
    q.sloCodes.length===0&&q.boardEligible===false&&!q.stimulusSetId&&q.active));
- assert.deepEqual(six.filter(q=>q.situationBased).map(q=>q.sourceQuestionNumber),Array.from({length:16},(_,i)=>65+i));
+ assert.deepEqual(Array.from(six.filter(q=>q.situationBased),q=>q.sourceQuestionNumber),Array.from({length:16},(_,i)=>65+i));
  for(let u=1;u<=5;u++)assert.equal(banks[u-1].questions.length,totals[u-1]);
  const pSix=p.plan(all,six,[6],'random',20);
  assert.equal(pSix.possible,true);assert.equal(pSix.unitCounts['6'],20);
