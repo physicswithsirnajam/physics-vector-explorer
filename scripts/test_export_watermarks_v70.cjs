@@ -65,8 +65,10 @@ function staticAudit(){
  assert.ok(portal.includes('id="admin-screen" class="dashboard admin-dashboard" hidden'));
  assert.ok(app.includes('getIdTokenResult(true)')&&app.includes('token.claims.admin===true'));
  const grades=JSON.parse(read('question-bank/manifest.json')).grades.find(x=>x.grade===11).units;
- assert.deepEqual(grades.map(x=>x.liveMcqCount),[275,206,220,640,349]);
- assert.equal(grades.reduce((sum,x)=>sum+x.liveMcqCount,0),1690);
+ assert.deepEqual(grades.slice(0,5).map(x=>x.liveMcqCount),[275,206,220,640,349]);
+  assert.equal(grades[5]?.liveMcqCount,79);
+ assert.equal(grades.slice(0,5).reduce((sum,x)=>sum+x.liveMcqCount,0),1690);
+  assert.equal(grades.reduce((sum,x)=>sum+x.liveMcqCount,0),1769);
  console.log('PASS V70 static: printable watermarks, export provenance, honest admin roadmap and original student security boundaries preserved');
 }
 async function main(){
