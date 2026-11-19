@@ -5,10 +5,10 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:640,5:349};
+const expected={1:275,2:206,3:220,4:640,5:349,6:79};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
-  4:'Rotational and Circular Motion',5:'Work and Energy'
+  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topic 6.1 (partial)'
 };
 const files={
   1:['unit-01.json'],2:['unit-02.json'],
@@ -18,7 +18,8 @@ const files={
     'unit-05-v50-16-student.json','unit-05-v50-16-teacher-key.json',
     'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json',
     'unit-05-master-topic-v59-317.json'
-  ]
+  ],
+  6:['unit-06-topic-61-v76-80-source.json']
 };
 function need(condition,reason){if(!condition)throw Error('Grade XI MCQ source validation: '+reason);}
 function escapeHTML(value){return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -34,8 +35,8 @@ function checkQuestions(unit,items){
     need(q.options.every(o=>typeof o.text==='string'&&o.text.trim()),'empty option '+q.id);
     need(q.options.some(o=>o.id===q.correctOptionId),'unmatched answer '+q.id);
     need(typeof q.explanation==='string'&&q.explanation.trim(),'missing explanation '+q.id);
-    need(Array.isArray(q.sloCodes)&&q.sloCodes.length>0,'missing SLO '+q.id);
-    need(q.assessmentClassification==='formative'||q.assessmentClassification==='summative-theory','missing practice classification '+q.id);
+    need(Array.isArray(q.sloCodes)&&(unit===6?q.sloCodes.length===0:q.sloCodes.length>0),'invalid per-item SLO status '+q.id);
+    need(unit===6?q.assessmentClassification==='summative-topic-provisional':(q.assessmentClassification==='formative'||q.assessmentClassification==='summative-theory'),'missing practice classification '+q.id);
     need(typeof q.difficulty==='string'&&q.difficulty.length>0,'missing difficulty metadata '+q.id);
     if(q.stimulusSetId){
       need(typeof q.stimulusHtml==='string'&&q.stimulusHtml.length>0,'missing scenario stimulus '+q.id);
@@ -43,7 +44,7 @@ function checkQuestions(unit,items){
       groups.get(q.stimulusSetId).push(q);
     }
   }
-  const expectedGroups=unit===1?24:unit===2?15:unit===3?17:unit===4?48:26;
+  const expectedGroups=({1:24,2:15,3:17,4:48,5:26,6:0})[unit];
   need(groups.size===expectedGroups,'unexpected number of complete Unit '+unit+' scenario groups');
   for(const [id,group] of groups){
     need(group.length>1,'partial scenario '+id);
@@ -629,6 +630,51 @@ function adaptMasterFive(master,older){
     'Unit 5 source scenario-question count mismatch');
   return master.questions;
 }
+
+/* Unit 6 is partial PUBLIC Topic 6.1 practice, NOT an independently mapped
+ * summative bank or complete released unit. Validate all 80 original entries,
+ * retain the NBF Figure 6.2 Q11 hold and expose only 79 for practice.
+ */
+function adaptUnitSix(source){
+ need(source?.bankId==='PSN-XI-U06-T61-V76'&&source.unit===6&&
+   source.sourceQuestionCount===80&&source.importedQuestionCount===80&&
+   source.publicPreviewCount===79&&source.secureExam===false&&
+   source.publicSelfPractice===true&&source.questions?.length===80,
+   'invalid Unit 6 source or public-preview boundary');
+ need(source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-33,P-11-B-34'&&
+   source.perQuestionFrameworkMappingStatus==='not individually verified',
+   'unsupported individual-SLO mapping for Unit 6');
+ const key='CDBDBDCDBBCCDCABABDCBACABDCAADCBDBDABBDCCDCDCBACAABABCAAACDDDDADDBBCAAADBBCCAABC';
+ need(key.length===80&&source.questions.map(q=>q.correctOptionId).join('')===key,
+   'Unit 6 original source 80-answer key differs');
+ const kept=[];
+ for(let i=0;i<80;i++){
+  const q=source.questions[i];
+  need(q.id==='XI-U06-T61-MCQ-'+String(i+1).padStart(4,'0')&&
+    q.sourceQuestionNumber===i+1&&q.grade===11&&q.unit===6&&
+    q.topic==='Upthrust and Archimedes’ Principle'&&q.type==='single_choice',
+    'Unit 6 source numbering/topic is incorrect');
+  need(q.boardEligible===false&&q.cognitiveLevel==='Unspecified'&&
+    q.difficulty==='Unspecified'&&q.assessmentClassification==='summative-topic-provisional'&&
+    Array.isArray(q.sloCodes)&&q.sloCodes.length===0&&
+    q.topicSloCodes?.join(',')==='P-11-B-33,P-11-B-34'&&
+    q.stimulusSetId===null&&q.situationBased===(i>=64),
+    'Unit 6 has fabricated scenario or unverified SLO/cognitive labels');
+  need(Array.isArray(q.options)&&q.options.map(o=>o.id).join('')==='ABCD'&&
+    q.options.some(o=>o.id===q.correctOptionId)&&q.explanation?.trim(),
+    'invalid Unit 6 source answers');
+  if(i===10){
+    need(q.active===false&&q.status==='pending-figure-review'&&
+      /Figure 6.2/.test(q.holdReason||''),'Unit 6 Fig 6.2 hold was removed');
+  }else{
+    need(q.active===true,'unexpected inactive original Unit 6 question');
+    kept.push({...q,stimulusHtml:''});
+  }
+ }
+ need(kept.length===79&&new Set(kept.map(q=>q.id)).size===79,
+   'Unit 6 public bank does not contain exactly 79 distinct questions');
+ return kept;
+}
 async function loadBank(unit,basePath){
   need(Number.isInteger(unit)&&Object.hasOwn(files,unit),'unit not available');
   need(typeof basePath==='string'&&/^(?:\.\.\/)?question-bank\/grade-11\/$/.test(basePath),'unexpected question bank folder');
@@ -648,12 +694,13 @@ async function loadBank(unit,basePath){
     ])
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
+  else if(unit===6)questions=adaptUnitSix(data[0]);
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v77-topic61-public-79-only':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
