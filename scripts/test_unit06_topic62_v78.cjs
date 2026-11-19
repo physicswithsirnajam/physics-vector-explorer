@@ -76,13 +76,17 @@ assert.equal(source.questions.filter(q=>q.situationBased&&q.active).length,18);
 assert.equal(source.questions.slice(40,60).map(q=>q.correctOptionId).join(''),'CADCCCBBBAAABCBDACCB');
 const eq=(x,y,tol=0.001)=>assert.ok(Math.abs(x-y)<=Math.max(1e-12,Math.abs(y)*tol),x+' vs '+y);
 function correctNumber(n){
- const q=source.questions[n-1],t=q.options.find(o=>o.id===q.correctOptionId).text;
- const m=t.match(/^([+-]?\d+(?:\\.\d+)?)(?:\s*[×x]\s*10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+))?/);
- assert.ok(m,'Cannot parse selected source numeric option '+n+': '+t);
- if(!m[2])return Number(m[1]);
+ const q=source.questions[n-1],text=q.options.find(o=>o.id===q.correctOptionId).text.trim();
+ const parts=text.split('× 10');
+ const mantissa=Number.parseFloat(parts[0]);
+ assert.ok(Number.isFinite(mantissa),'Invalid numeric answer '+n+': '+text);
+ if(parts.length===1)return mantissa;
+ assert.equal(parts.length,2,'Unexpected scientific notation '+n);
  const digits={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
- const exponent=Number(Array.from(m[2],ch=>digits[ch]).join(''));
- return Number(m[1])*Math.pow(10,exponent);
+ let exponent='';
+ for(const ch of parts[1]){if(Object.hasOwn(digits,ch))exponent+=digits[ch];else break;}
+ assert.ok(exponent.length>0&&Number.isFinite(Number(exponent)),'Invalid exponent '+n+': '+text);
+ return mantissa*Math.pow(10,Number(exponent));
 }
 eq(correctNumber(41),6*3.14*1e-3*1e-3,.004);
 eq(correctNumber(42),2*4e-6);
