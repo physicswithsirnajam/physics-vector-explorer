@@ -81,7 +81,7 @@ const html=read('portal/unit-06-topic-61-preview.html');
 assert.ok(html.includes('unit-06-topic-61-preview.js?v=76'));
 assert.ok(html.includes('class="option-grid"'));
 assert.ok(html.includes('id="score"'));
-assert.ok(html.includes('public'));
+assert.ok(html.includes('Public provisional learning preview.'));
 assert.ok(read('portal/unit-06-topic-61-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-61-v76-80-source.json'"));
 assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')),'Full-unit page remains unreleased');
 console.log('V76 source QA passed: all 80 keys, 24 numerical calculations, 79 selectable and no phantom scenario groups.');
@@ -107,7 +107,7 @@ async function browserCheck(){
    page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:'+port+'/'))offsite.push(r.url());});
    page.on('dialog',d=>d.accept());
    await page.goto('http://127.0.0.1:'+port+'/portal/unit-06-topic-61-preview.html',{waitUntil:'load'});
-   await page.waitForFunction(()=>!document.getElementById('begin').disabled,{timeout:12000});
+   await page.waitForFunction(()=>!document.getElementById('begin').disabled,null,{timeout:12000});
    assert.equal(await page.locator('#question-count').textContent(),'79');
    await page.locator('#category').selectOption('standalone-situations');
    await page.locator('#size').selectOption('all');
