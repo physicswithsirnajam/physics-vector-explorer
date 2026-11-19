@@ -1,0 +1,76 @@
+name: Validate Grade XI Unit6 Four-Topic Central Builder (V83)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "scripts/test_grade11_unit06_central_v83.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v83.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "scripts/test_grade11_unit06_central_v83.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v83.yml"
+  workflow_dispatch:
+jobs:
+  source-and-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Current 2,004 inventory and JavaScript syntax
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_unit06_central_v83.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==314||m[5].sourceTopicMcqCount!==320||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2004)process.exit(1)"
+      - name: Install Chromium for real student browser checks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V83 four source archives, 2,004 questions, tamper rejection and browser
+        run: node scripts/test_grade11_unit06_central_v83.cjs
+      - name: Regression — prior central source fidelity and four topic previews
+        run: |
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_grade11_central_v77.cjs
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+      - name: Regression — five original banks, scenarios, privacy and selected units
+        run: |
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Preserve HSSC original YouTube video links and legacy resources
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload synthetic 390px student QA screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v83-central-four-topic-mobile
+          path: qa-artifacts/unit06-v83/*.png
+          if-no-files-found: warn
+          retention-days: 7
