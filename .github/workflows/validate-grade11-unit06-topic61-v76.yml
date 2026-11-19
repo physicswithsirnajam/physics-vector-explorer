@@ -1,0 +1,59 @@
+name: Validate Grade XI Unit6 Topic6.1 Preview (V76)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "portal/unit-06-topic-61-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic61_v76.cjs"
+      - "quality/grade11-unit06-topic61-v76-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic61-v76.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "portal/unit-06-topic-61-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic61_v76.cjs"
+      - "quality/grade11-unit06-topic61-v76-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic61-v76.yml"
+  workflow_dispatch:
+jobs:
+  verify-topic61-source-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source and student JS syntax
+        run: |
+          node --check portal/unit-06-topic-61-preview.js
+          node --check scripts/test_unit06_topic61_v76.cjs
+      - name: Install test Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify 80 originals, 24 numeric keys and student browser
+        run: node scripts/test_unit06_topic61_v76.cjs
+      - name: Regression — V75 Unit 6 unreleased boundaries
+        run: node scripts/test_unit06_source_intake_v75.cjs
+      - name: Regression — prior Grade XI 27 original YouTube links and legacy sources
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Regression — 40 existing physics simulations and 1,690 original builder MCQs
+        run: |
+          node scripts/test_grade11_simulation_migration_v72.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Upload synthetic student preview screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit06-v76-topic61-mobile
+          path: qa-artifacts/unit06-v76/*.png
+          if-no-files-found: warn
+          retention-days: 7
