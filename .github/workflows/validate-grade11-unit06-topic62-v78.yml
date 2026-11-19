@@ -1,0 +1,57 @@
+name: Validate Grade XI Unit6 Topic6.2 Preview (V78)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "portal/unit-06-topic-62-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic62_v78.cjs"
+      - "quality/grade11-unit06-topic62-v78-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic62-v78.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "portal/unit-06-topic-62-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic62_v78.cjs"
+      - "quality/grade11-unit06-topic62-v78-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic62-v78.yml"
+  workflow_dispatch:
+jobs:
+  source-and-preview:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax
+        run: |
+          node --check portal/unit-06-topic-62-preview.js
+          node --check scripts/test_unit06_topic62_v78.cjs
+      - name: Install Chromium for student browser QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify original 80 items, 77 active and student browser
+        run: node scripts/test_unit06_topic62_v78.cjs
+      - name: Regression — V76 original source and V77 central Test Builder remain stable
+        run: |
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_grade11_central_v77.cjs
+      - name: Preserve V75 inventory and V74 original YouTube list
+        run: |
+          node scripts/test_unit06_source_intake_v75.cjs
+          node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload optional QA screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit06-topic62-v78-mobile
+          path: qa-artifacts/topic62-v78/*.png
+          if-no-files-found: warn
+          retention-days: 7
