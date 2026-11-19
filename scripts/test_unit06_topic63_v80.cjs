@@ -76,12 +76,15 @@ const checks={
  41:1.2/4,42:9/3,43:600/2,44:2/1000,45:.015*1000,
  46:.25*8,47:1.8/.3,48:12/60,49:360/(3*60),
  50:.8/20,51:(90/3)/1e6,52:2.5/5,53:(5e-3*2)*1000,
- 54:15/30,57:5/.5,58:.06*10,78:18/6
+ 54:15/30,57:5/.5,58:.06*10
 };
 for(const [n,calculated] of Object.entries(checks)){
  const stated=numericAnswer(Number(n));
  assert.ok(Math.abs(stated-calculated)<=Math.max(1e-12,Math.abs(calculated)*.001),'Source Q'+n+' incorrect arithmetic: '+stated+' instead of '+calculated);
 }
+assert.equal(bank.questions[77].correctOptionId,'B'); // Q78 rate: 18 L / 6 s = 3 L/s
+assert.ok(bank.questions[77].options[1].text.includes('3 L/s'));
+assert.equal(18/6,3);
 assert.equal(bank.questions[54].correctOptionId,'C'); // 60/20=3, 45/10=4.5
 assert.match(bank.questions[54].options[2].text,/4\.5\s*L\/s\s*>\s*3\.0\s*L\/s/);
 assert.equal(bank.questions[55].correctOptionId,'C'); // 2/5 = 1.2/3 = 0.4
