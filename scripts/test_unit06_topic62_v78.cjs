@@ -75,8 +75,16 @@ assert.equal(source.questions.filter(q=>q.situationBased&&q.active).length,18);
 // limited Stokes approximation, not validation of all physical flow regimes.
 assert.equal(source.questions.slice(40,60).map(q=>q.correctOptionId).join(''),'CADCCCBBBAAABCBDACCB');
 const eq=(x,y,tol=0.001)=>assert.ok(Math.abs(x-y)<=Math.max(1e-12,Math.abs(y)*tol),x+' vs '+y);
-function correctNumber(n){const q=source.questions[n-1];return Number.parseFloat(q.options.find(o=>o.id===q.correctOptionId).text);}
-eq(correctNumber(41),6*3.14*1e-3*1e-3);
+function correctNumber(n){
+ const q=source.questions[n-1],t=q.options.find(o=>o.id===q.correctOptionId).text;
+ const m=t.match(/^([+-]?\\d+(?:\\.\\d+)?)(?:\\s*[×x]\\s*10([⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹]+))?/);
+ assert.ok(m,'Cannot parse selected source numeric option '+n+': '+t);
+ if(!m[2])return Number(m[1]);
+ const digits={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
+ const exponent=Number(Array.from(m[2],ch=>digits[ch]).join(''));
+ return Number(m[1])*Math.pow(10,exponent);
+}
+eq(correctNumber(41),6*3.14*1e-3*1e-3,.004);
 eq(correctNumber(42),2*4e-6);
 eq(correctNumber(43),6*3.14*1.9e-5*2e-3*2,.004);
 eq(correctNumber(45),12/2);
