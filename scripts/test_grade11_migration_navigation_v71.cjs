@@ -43,7 +43,7 @@ function audit(){
  assert.deepEqual(counts.slice(0,5),[275,206,220,640,349],'preserve the five original MCQ bank counts');
   assert.equal(counts.length,6,'five released banks plus partial Unit 6 Topic 6.1 bank');
  assert.equal(counts.slice(0,5).reduce((a,b)=>a+b,0),1690);
-  assert.equal(counts[5],79,'Unit6 partial bank does not release full unit');
+  assert.equal(counts[5],156,'Unit6 partial 156-item bank does not release full unit');
  const css=read('shared/print-watermark-v70.css');
  assert.ok(css.includes('font-family:"Times New Roman",Times,"Liberation Serif",Georgia,serif!important'));
  assert.ok(css.includes('position:fixed!important')&&css.includes('transform:rotate'));
