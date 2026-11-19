@@ -39,7 +39,7 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Verify 80 original questions, 78 preview and student browser
         run: node scripts/test_unit06_topic63_v80.cjs
-      - name: Regression — current central 1,924, older Unit 6 previews and source protections
+      - name: Regression — current central 2,004, older Unit 6 previews and source protections
         run: |
           node scripts/test_grade11_unit06_central_v79.cjs
           node scripts/test_unit06_topic61_v76.cjs
