@@ -47,7 +47,7 @@ jobs:
           node --check shared/multi-unit-planner-v56.js
           node --check scripts/test_grade11_unit06_central_v79.cjs
           node --check scripts/test_grade11_unit06_central_v81.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==234)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==314)process.exit(1)"
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
