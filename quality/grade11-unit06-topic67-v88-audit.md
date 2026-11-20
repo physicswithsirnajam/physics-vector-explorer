@@ -1,0 +1,19 @@
+# V88 — Grade XI Physics Unit 6 Topic6.7 Superfluidity standalone 80-MCQ practice
+
+## Source and extraction
+Owner's private `Grade11_Unit6_COMPLETE_MASTER_ALL.pdf`, compiled pages **274–288 of 577**, underlying NBF textbook Topic6.7 printed **page 106**. Q1–80 from compiled pages 274–285, printed teacher answer table and explanations from 286–288. The teacher study edition introduces exactly 80 newly developed source-based practice MCQs. **All 80 original stems, A–D option text, answer letters and one-line explanations are retained** with PDF line wraps rejoined. The private master PDF, pages and proprietary diagrams are never uploaded into the public repo.
+
+Section I Q1–20 fundamentals, Section II Q21–40 conceptual distinctions, Section III Q41–60 temperature, figure and data interpretation, Section IV Q61–80 independent real-life situations. All 80 text-answerable records active, zero new figure holds. References to original NBF Figures6.16 (superfluid creep) and6.17 (helium pressure-temperature graph) are answered through the text descriptions of axes, states, phases and behavior given in the source MCQs/teacher explanations; no figures are cropped or recreated in the preview. **No authentic multi-question common-stimulus groups** are included or claimed.
+
+## Source SLO and level restrictions
+The original study-edition cover and answer key identify **P-11-B-43 Summative; official topic cognitive classification Understanding**. Item-by-item official board classifications have not undergone independent certification; retain `sloCodes:[]`, `boardEligible:false`, `cognitiveLevel:'Unspecified'`, `difficulty:'Unspecified'`, and `stimulusSetId:null` for every new public-practice MCQ. The key introduction mentions individual K/U labels conceptually but displays **no K/U column** for its 80 answer rows. Consequently no individual source-key cognitive tags are fabricated (`sourceKeyCognitiveTag:null`). Do not relabel Section III as 20 compulsory numerical SLO derivations: threshold calculations/kelvin-to-millikelvin conversions enrich an Understanding target.
+
+## QC and student interface
+Original 80-letter answer sequence stored and tested separately. Independently confirm the numerical relations: ⁴He ~2.17 K, ³He ~0.0025 K, 2.17−2.00=0.17 K, 0.0025 K=2.5 mK, 2.17 K=2170 mK and ratio=868, plus source answer letters for Q41–51,Q60,Q63,Q64. This is source-level QA, not a scientific claim that the idealized zero-viscosity model applies to ordinary liquids at room temperature.
+
+New `portal/unit-06-topic-67-preview.html` and controller offer 20-question section filters, 10/20/40/all selections, separate answer-explanation review, printable results, keyboard-accessible controls and 390px mobile. Preview is linked from the Learning Hub, where the full course still remains planned. No new Firebase/cloud grade writes, secure exams, authorization or payment changes.
+
+**V88 leaves the central Grade XI Test Builder unchanged at 2,164 MCQs:** 1,690 from Units1–5, 474 from provisional Unit6 Topics6.1–6.6. All **six old figure holds** remain in place (source Unit6 480 archived vs 474 live), 113 independent scenario-labelled Unit6 MCQs, no multi-MCQ shared-stimulus groups. V89 may integrate the 80 Topic6.7 originals into central only after standalone QA is green; new totals would then be 2,244 overall / 554 Unit6, subject to no additional holds.
+
+## Merge gate
+**Do not merge until all GitHub Actions checks for latest V88 PR commit are green.** Verify new standalone preview loads 80; section III contains temperature/data MCQs, not '20 numericals'; 20 independent situations; 10-choice selection; full 80 explanation reviews; original Topic6.6 link still works; 390px mobile; central Test Builder unchanged 2,164. No source/master PDF or school records published.

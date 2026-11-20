@@ -1,0 +1,4050 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T67-V88",
+  "bankVersion": "v88-topic67-superfluidity-original-80-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.7",
+  "title": "Superfluidity",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's private ChatGPT Library; master PDF never published",
+  "sourceCompiledPdfPages": "274–288 of 577",
+  "originalNbfTextbookPages": "106",
+  "questionSourcePages": "274–285",
+  "answerKeyPages": "286–288",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-43"
+  ],
+  "frameworkClassification": "P-11-B-43 summative at topic level, official cognitive classification Understanding",
+  "officialTopicCognitiveLevel": "Understanding",
+  "perQuestionFrameworkMappingStatus": "not individually independently verified",
+  "sourceKeyCognitiveStatus": "No individual K/U levels shown in printed answer-key rows; do not manufacture individual cognitive labels",
+  "sourceAnswerStatus": "Original teacher-prepared study-edition answer letters and explanations preserved; independent item scientific audit ongoing",
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 80,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "data-interpretation": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "ABABBCDABCCDDDDBACDCAAABCDAACCCCCDACDABBAAABDDDCCABCADBDBCBCBDDDBBBADACBADCABCDB",
+  "holds": [],
+  "sourceScope": "Zero viscosity, liquid helium-3 and helium-4 critical temperatures, superfluid creep, phase diagram and axes, persistent quantized vortices, rotating containers, quantum origin, precision gyroscopes, temperature conversion and independent real-life situations.",
+  "limitations": [
+    "All original source question stems, four printed options, source answer letters and teacher explanations preserved; PDF column line wraps joined without altering science.",
+    "Figures 6.16 and 6.17 are referenced by some stems, but the relevant graph axes, phases or phenomena are described textually in the source itself; no extra textbook illustration reproduced or figure-dependent hold introduced.",
+    "The source associates all 80 questions with summative P-11-B-43 at the topic level and official Understanding cognitive demand; per-item official mapping is not independently certified.",
+    "Original key introduction mentions K/U labels but does not display per-item K/U tags; do not infer or fabricate them.",
+    "Original Section III contains 20 temperature, data and figure questions; these are not collectively numerical calculation questions nor compulsory SLO B-43 formula requirements.",
+    "Twenty Section IV scenarios are independent MCQs, never four-MCQ shared-stimulus groups.",
+    "Standalone student self-practice only. V87 central Test Builder retains 2,164 MCQs (474 Unit6) until V89 integration; full Unit6 course status planned and no saved school grades."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T67-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which statement best defines superfluidity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A state of liquid flow characterized by zero viscosity."
+        },
+        {
+          "id": "B",
+          "text": "A state in which any liquid becomes a solid."
+        },
+        {
+          "id": "C",
+          "text": "A state in which the liquid has zero density."
+        },
+        {
+          "id": "D",
+          "text": "A state in which a gas becomes perfectly incompressible."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The NBF textbook defines a superfluid as a liquid with zero viscosity.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 274,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which property becomes zero in the ideal textbook description of a superfluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mass."
+        },
+        {
+          "id": "B",
+          "text": "Viscosity."
+        },
+        {
+          "id": "C",
+          "text": "Density."
+        },
+        {
+          "id": "D",
+          "text": "Gravitational acceleration."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Zero viscosity is the characteristic property; mass and gravity do not vanish.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 274,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why is there no viscous dissipation in an ideal superfluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Its viscosity is zero."
+        },
+        {
+          "id": "B",
+          "text": "Its particles never move."
+        },
+        {
+          "id": "C",
+          "text": "Its weight is zero."
+        },
+        {
+          "id": "D",
+          "text": "Its temperature is always exactly 0 K."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Zero viscosity removes the usual frictional loss caused by viscous flow.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 274,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What happens to a vortex formed by stirring an ideal superfluid in the textbook description?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It converts the entire fluid into a gas."
+        },
+        {
+          "id": "B",
+          "text": "It can continue spinning for a very long time without viscous damping."
+        },
+        {
+          "id": "C",
+          "text": "It immediately becomes a solid."
+        },
+        {
+          "id": "D",
+          "text": "It stops at once because the liquid has no inertia."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "In the idealized description, the absence of viscous damping allows persistent vortices.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 274,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which phenomenon is illustrated by NBF Figure 6.16?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Water rising in a hydraulic lift."
+        },
+        {
+          "id": "B",
+          "text": "A superfluid creeping over a container wall."
+        },
+        {
+          "id": "C",
+          "text": "A drop floating due to surface tension."
+        },
+        {
+          "id": "D",
+          "text": "A gas condensing on a cold surface."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Figure 6.16 specifically illustrates superfluid creep over the walls of a container.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 274,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "In the textbook, the unusual behavior of superfluids is attributed primarily to which effects?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Atmospheric pressure alone."
+        },
+        {
+          "id": "B",
+          "text": "Static electricity alone."
+        },
+        {
+          "id": "C",
+          "text": "Quantum-mechanical effects."
+        },
+        {
+          "id": "D",
+          "text": "Ordinary dry friction."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook describes superfluidity as arising from quantum-mechanical effects.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which substance is discussed as a laboratory example of superfluidity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air at normal room temperature."
+        },
+        {
+          "id": "B",
+          "text": "Molten iron at high temperature."
+        },
+        {
+          "id": "C",
+          "text": "Room-temperature tap water."
+        },
+        {
+          "id": "D",
+          "text": "Liquid helium at very low temperature."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Superfluidity of helium is the chapter’s principal example.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "According to the textbook information box, helium-4 becomes superfluid below approximately which temperature?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.17 K."
+        },
+        {
+          "id": "B",
+          "text": "217 K."
+        },
+        {
+          "id": "C",
+          "text": "17.2 K."
+        },
+        {
+          "id": "D",
+          "text": "0.217 K."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The textbook gives 2.17 K as the helium-4 threshold.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "According to the textbook information box, helium-3 becomes superfluid below approximately which temperature?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25 K."
+        },
+        {
+          "id": "B",
+          "text": "0.0025 K."
+        },
+        {
+          "id": "C",
+          "text": "0.25 K."
+        },
+        {
+          "id": "D",
+          "text": "2.5 K."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The stated helium-3 threshold is 0.0025 K.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is the temperature unit on the horizontal axis of NBF Figure 6.17?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pascal (Pa)."
+        },
+        {
+          "id": "B",
+          "text": "Metre (m)."
+        },
+        {
+          "id": "C",
+          "text": "Kelvin (K)."
+        },
+        {
+          "id": "D",
+          "text": "Degree Celsius (°C)."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The horizontal axis of the helium phase diagram is temperature in kelvin.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What quantity is represented on the vertical axis of NBF Figure 6.17?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Angular speed in rad/s."
+        },
+        {
+          "id": "B",
+          "text": "Flow rate in m³/s."
+        },
+        {
+          "id": "C",
+          "text": "Pressure in MPa."
+        },
+        {
+          "id": "D",
+          "text": "Density in kg/m³."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The graph plots pressure vertically, with MPa as the unit.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which set of regions appears in the textbook helium pressure–temperature diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only solid and gas."
+        },
+        {
+          "id": "B",
+          "text": "Only normal liquid and vacuum."
+        },
+        {
+          "id": "C",
+          "text": "Only liquid and plasma."
+        },
+        {
+          "id": "D",
+          "text": "Solid, normal liquid, superfluid and gas."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Figure 6.17 labels solid, normal liquid, superfluid and gas regions.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 275,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "In a slowly rotating container below the critical angular velocity, how does an ideal superfluid initially behave according to the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It must develop infinitely many vortices."
+        },
+        {
+          "id": "B",
+          "text": "It must rotate as a rigid body with the vessel."
+        },
+        {
+          "id": "C",
+          "text": "It immediately boils away."
+        },
+        {
+          "id": "D",
+          "text": "It can remain stationary rather than rotating uniformly with the vessel."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Below the stated critical angular velocity, the textbook describes the superfluid as remaining stationary.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is observed once the critical angular velocity is reached in the textbook account?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The liquid loses all mass."
+        },
+        {
+          "id": "B",
+          "text": "Its density necessarily becomes infinite."
+        },
+        {
+          "id": "C",
+          "text": "The liquid must become a gas."
+        },
+        {
+          "id": "D",
+          "text": "The superfluid forms a quantized vortex."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Vortices begin to form at the critical rotation threshold.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What does “quantized vortex strength” mean in this context?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Each vortex must have zero circulation."
+        },
+        {
+          "id": "B",
+          "text": "Any arbitrary vortex strength is equally allowed."
+        },
+        {
+          "id": "C",
+          "text": "Vortices can exist only at exactly 0 K."
+        },
+        {
+          "id": "D",
+          "text": "Only discrete allowed strengths of circulation occur."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Quantization restricts the circulation of vortices to discrete permitted values.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "How is rotation in an ordinary liquid such as water contrasted with superfluid rotation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ordinary water has zero viscosity."
+        },
+        {
+          "id": "B",
+          "text": "Ordinary-liquid circulation is not restricted to quantized vortex strengths in this description."
+        },
+        {
+          "id": "C",
+          "text": "Ordinary water cannot rotate."
+        },
+        {
+          "id": "D",
+          "text": "Ordinary water can have only one vortex."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The book contrasts quantized superfluid vortices with non-quantized rotation of ordinary water.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which scientific device is named as an application of superfluids?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A high-precision gyroscope."
+        },
+        {
+          "id": "B",
+          "text": "A simple wooden lever."
+        },
+        {
+          "id": "C",
+          "text": "A mercury barometer only."
+        },
+        {
+          "id": "D",
+          "text": "A friction-based car brake pad."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The textbook lists precision gyroscopes among applications of superfluids.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which measurement area is mentioned in connection with superfluid instruments?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ambient room humidity only."
+        },
+        {
+          "id": "B",
+          "text": "Household electrical energy bills."
+        },
+        {
+          "id": "C",
+          "text": "Very small gravitational effects."
+        },
+        {
+          "id": "D",
+          "text": "Rainfall collected in a bucket."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The chapter links high-precision superfluid devices to measuring subtle gravitational effects.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which unusual light-related application is mentioned in the text?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Converting all light into gravity."
+        },
+        {
+          "id": "B",
+          "text": "Stopping electromagnetic waves in every material."
+        },
+        {
+          "id": "C",
+          "text": "Generating sunlight by friction."
+        },
+        {
+          "id": "D",
+          "text": "Trapping and slowing light."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook says superfluids have been used in experiments to trap and slow light.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 276,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Where is a superfluid state suggested beyond the laboratory helium example?",
+      "options": [
+        {
+          "id": "A",
+          "text": "In dry sand at room temperature."
+        },
+        {
+          "id": "B",
+          "text": "In every ordinary glass of water."
+        },
+        {
+          "id": "C",
+          "text": "In the interior of a neutron star."
+        },
+        {
+          "id": "D",
+          "text": "In all gases at atmospheric pressure."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook notes that the neutron fluid in a neutron star may be superfluid.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why does a superfluid not have to be motionless even though its viscosity is zero?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscosity describes internal resistance, not whether the liquid has velocity."
+        },
+        {
+          "id": "B",
+          "text": "Every superfluid must be a stationary solid."
+        },
+        {
+          "id": "C",
+          "text": "Zero viscosity means zero kinetic energy at every instant."
+        },
+        {
+          "id": "D",
+          "text": "Velocity is defined only for viscous liquids."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Zero viscosity does not imply zero flow speed or absence of kinetic energy.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A learner claims that zero viscosity also means zero density. What is the correct correction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Density and viscosity are distinct physical properties."
+        },
+        {
+          "id": "B",
+          "text": "Both must always be zero together."
+        },
+        {
+          "id": "C",
+          "text": "Viscosity equals density multiplied by gravity."
+        },
+        {
+          "id": "D",
+          "text": "Density exists only in gases."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A superfluid retains matter and density even when idealized viscosity vanishes.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why can fluid motion persist particularly well in an ideal superfluid?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Viscous friction does not continuously dissipate the motion."
+        },
+        {
+          "id": "B",
+          "text": "The container must rotate at infinite speed."
+        },
+        {
+          "id": "C",
+          "text": "The fluid must be heated continuously."
+        },
+        {
+          "id": "D",
+          "text": "Gravity must be absent."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The lack of viscous damping supports persistent motion.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is the most direct cause of the superfluid “creep” phenomenon in the textbook explanation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An increase in the fluid’s mass to infinity."
+        },
+        {
+          "id": "B",
+          "text": "The unusual low-temperature superfluid state, illustrated by flow over walls."
+        },
+        {
+          "id": "C",
+          "text": "Forced heating above the boiling point."
+        },
+        {
+          "id": "D",
+          "text": "A hydraulic piston attached to the walls."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Wall-climbing flow is presented as a characteristic behavior of superfluids.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why would ordinary everyday water fail to show the specific behaviors described for superfluid helium?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Water contains no molecules."
+        },
+        {
+          "id": "B",
+          "text": "It has no pressure at all."
+        },
+        {
+          "id": "C",
+          "text": "It is not in the zero-viscosity superfluid state."
+        },
+        {
+          "id": "D",
+          "text": "It experiences no gravitational force."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Ordinary water retains viscosity and does not exhibit helium’s low-temperature superfluid phase.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why are superfluid vortices called a quantum effect rather than an ordinary viscous whirlpool?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Their existence requires strong dry friction."
+        },
+        {
+          "id": "B",
+          "text": "They have no measurable motion."
+        },
+        {
+          "id": "C",
+          "text": "They can exist only in air."
+        },
+        {
+          "id": "D",
+          "text": "Their allowed circulation comes in discrete amounts."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Quantization of circulation is the defining quantum distinction.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 277,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which interpretation of the textbook’s “flows without loss of kinetic energy” statement is most accurate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ideal viscous dissipation is absent; it does not mean kinetic energy can never change for any reason."
+        },
+        {
+          "id": "B",
+          "text": "Energy can be created without limit."
+        },
+        {
+          "id": "C",
+          "text": "Gravity ceases to act on the fluid."
+        },
+        {
+          "id": "D",
+          "text": "The liquid contains no kinetic energy."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The statement refers to the absence of ordinary viscous losses, not unlimited creation or permanent constancy of all energy.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why does Figure 6.17 include a normal-liquid region as well as a superfluid region?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Helium can occupy different states depending on temperature and pressure."
+        },
+        {
+          "id": "B",
+          "text": "Every part of the diagram must have zero viscosity."
+        },
+        {
+          "id": "C",
+          "text": "The same helium sample has no temperature."
+        },
+        {
+          "id": "D",
+          "text": "The axes describe different chemical elements."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The diagram distinguishes superfluid helium from normal liquid helium under different conditions.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What does cooling helium toward absolute zero make possible?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Making all materials superfluid at room temperature."
+        },
+        {
+          "id": "B",
+          "text": "Destroying all helium atoms."
+        },
+        {
+          "id": "C",
+          "text": "Reaching conditions where helium can enter a superfluid state."
+        },
+        {
+          "id": "D",
+          "text": "Making gravity exactly zero."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The chapter describes producing superfluid states by strong cooling.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why should the numerical transition temperature for helium-4 not automatically be used for helium-3?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All isotopes have identical transition temperatures."
+        },
+        {
+          "id": "B",
+          "text": "Helium-4 is a type of water."
+        },
+        {
+          "id": "C",
+          "text": "They are different isotopes with different stated superfluid thresholds."
+        },
+        {
+          "id": "D",
+          "text": "Helium-3 is a unit of pressure."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook lists different thresholds for ³He and ⁴He.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is meant by the “critical angular velocity” in the rotating-container account?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The pressure at which all liquids freeze."
+        },
+        {
+          "id": "B",
+          "text": "The temperature at which water boils."
+        },
+        {
+          "id": "C",
+          "text": "The rotation threshold at which vortices start to form."
+        },
+        {
+          "id": "D",
+          "text": "The liquid’s speed of light."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook uses this term for the onset of vortex formation during rotation.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why can a superfluid remain stationary while its container begins to turn slowly?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Every liquid always behaves this way."
+        },
+        {
+          "id": "B",
+          "text": "The container exerts no forces of any kind."
+        },
+        {
+          "id": "C",
+          "text": "The absence of ordinary viscous coupling permits non-co-rotation below the vortex threshold."
+        },
+        {
+          "id": "D",
+          "text": "The superfluid has no inertia or mass."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook describes stationary superfluid behavior below critical angular velocity, unlike ordinary viscous co-rotation.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What changes qualitatively as the rotation of a superfluid is raised beyond its onset of vortex formation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The circulation becomes entirely unrestricted."
+        },
+        {
+          "id": "B",
+          "text": "Its mass becomes negative."
+        },
+        {
+          "id": "C",
+          "text": "Additional quantized vortices may appear."
+        },
+        {
+          "id": "D",
+          "text": "Viscosity instantly becomes infinite."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook states that increasing rotation produces more quantized vortices.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 278,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which statement correctly distinguishes an ordinary vortex from a quantized superfluid vortex?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Superfluid vortices must be invisible."
+        },
+        {
+          "id": "B",
+          "text": "Ordinary vortices always have zero diameter."
+        },
+        {
+          "id": "C",
+          "text": "Ordinary vortices contain no flowing fluid."
+        },
+        {
+          "id": "D",
+          "text": "Superfluid vortex circulation has discrete allowed values."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The restriction to quantized circulation is the relevant difference.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "How does the textbook describe the physical origin of superfluidity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "As a low-temperature phenomenon linked to quantum mechanics."
+        },
+        {
+          "id": "B",
+          "text": "As a direct application of Coulomb’s law only."
+        },
+        {
+          "id": "C",
+          "text": "As ordinary boiling under high heat."
+        },
+        {
+          "id": "D",
+          "text": "As a consequence of infinite viscosity."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Quantum-mechanical behavior under very cold conditions explains the phase.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is the essential difference between superconductivity and the liquid-helium example in this chapter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Superconductivity always means liquid helium is solid."
+        },
+        {
+          "id": "B",
+          "text": "No quantum behavior is involved in either."
+        },
+        {
+          "id": "C",
+          "text": "Superfluidity describes liquid flow; superconductivity concerns electrical behavior in suitable solids."
+        },
+        {
+          "id": "D",
+          "text": "Both are simply ordinary fluid viscosity."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The chapter mentions superconducting electrons, but its main superfluid example is a liquid with unusual flow properties.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Why is a pressure–temperature phase diagram useful for this topic?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It measures the resistance of a car brake."
+        },
+        {
+          "id": "B",
+          "text": "It guarantees superfluidity at all pressures."
+        },
+        {
+          "id": "C",
+          "text": "It directly gives the mass of a single electron."
+        },
+        {
+          "id": "D",
+          "text": "It identifies regions where helium has different physical phases."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Figure 6.17 plots helium phases against pressure and temperature.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "The textbook describes cooling helium by expansion through a nozzle. Which change makes the gas cooler in that account?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Expansion following compression."
+        },
+        {
+          "id": "B",
+          "text": "Continuously adding heat."
+        },
+        {
+          "id": "C",
+          "text": "Making the container rotate faster."
+        },
+        {
+          "id": "D",
+          "text": "Replacing helium with hot steam."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Its described cooling sequence includes compression followed by expansion through a small nozzle.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "How should “indefinitely spinning” vortices be understood in a school-level ideal model?",
+      "options": [
+        {
+          "id": "A",
+          "text": "As meaning the vortex is never affected by any external disturbance."
+        },
+        {
+          "id": "B",
+          "text": "As persistent circulation without ordinary viscous damping."
+        },
+        {
+          "id": "C",
+          "text": "As evidence that every vortex supplies unlimited usable energy."
+        },
+        {
+          "id": "D",
+          "text": "As requiring fluid viscosity to increase with time."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "This is an idealized persistence statement, not a perpetual-energy device.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which statement best explains why superfluidity is unusual compared with ordinary flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The liquid becomes a perfect vacuum."
+        },
+        {
+          "id": "B",
+          "text": "Macroscopic liquid flow exhibits quantum effects and essentially zero viscosity."
+        },
+        {
+          "id": "C",
+          "text": "Fluid molecules are all removed."
+        },
+        {
+          "id": "D",
+          "text": "The liquid is simply compressed at room temperature."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The book attributes zero-viscosity flow and quantized vortices to quantum behavior.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 279,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Using the textbook ⁴He threshold, which temperature is below 2.17 K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.00 K."
+        },
+        {
+          "id": "B",
+          "text": "3.00 K."
+        },
+        {
+          "id": "C",
+          "text": "2.50 K."
+        },
+        {
+          "id": "D",
+          "text": "4.00 K."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2.00 K is less than the given 2.17 K threshold; pressure and other conditions must also be suitable.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Using the textbook ⁴He threshold, which temperature is above 2.17 K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.40 K."
+        },
+        {
+          "id": "B",
+          "text": "1.50 K."
+        },
+        {
+          "id": "C",
+          "text": "0.50 K."
+        },
+        {
+          "id": "D",
+          "text": "2.10 K."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2.40 K is above the transition temperature specified for ⁴He under the stated conditions.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which stated temperature lies below the textbook ³He transition value of 0.0025 K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.0010 K."
+        },
+        {
+          "id": "B",
+          "text": "0.025 K."
+        },
+        {
+          "id": "C",
+          "text": "0.25 K."
+        },
+        {
+          "id": "D",
+          "text": "0.0030 K."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "0.0010 K < 0.0025 K; suitable pressure conditions are assumed.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which temperature lies above 0.0025 K, the textbook threshold for ³He?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.0005 K."
+        },
+        {
+          "id": "B",
+          "text": "0.0040 K."
+        },
+        {
+          "id": "C",
+          "text": "0.0020 K."
+        },
+        {
+          "id": "D",
+          "text": "0.0010 K."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "0.0040 K exceeds 0.0025 K.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "How much lower is 2.00 K than the textbook ⁴He transition value of 2.17 K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.17 K."
+        },
+        {
+          "id": "B",
+          "text": "4.17 K."
+        },
+        {
+          "id": "C",
+          "text": "2.00 K."
+        },
+        {
+          "id": "D",
+          "text": "0.17 K."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "2.17 − 2.00 = 0.17 K.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "The ³He threshold 0.0025 K is equivalent to how many millikelvin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "250 mK."
+        },
+        {
+          "id": "B",
+          "text": "25 mK."
+        },
+        {
+          "id": "C",
+          "text": "0.25 mK."
+        },
+        {
+          "id": "D",
+          "text": "2.5 mK."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "1 K = 1000 mK, so 0.0025 K = 2.5 mK.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "What is 2.17 K expressed in millikelvin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.17 mK."
+        },
+        {
+          "id": "B",
+          "text": "21.7 mK."
+        },
+        {
+          "id": "C",
+          "text": "217 mK."
+        },
+        {
+          "id": "D",
+          "text": "2170 mK."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "2.17 × 1000 = 2170 mK.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 280,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which isotope has the higher superfluid transition temperature in the NBF information box?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Neither isotope has a threshold."
+        },
+        {
+          "id": "B",
+          "text": "Both have the same threshold."
+        },
+        {
+          "id": "C",
+          "text": "Helium-4."
+        },
+        {
+          "id": "D",
+          "text": "Helium-3."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The listed thresholds are 2.17 K for ⁴He and 0.0025 K for ³He.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "By approximately what factor does 2.17 K exceed 0.0025 K?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8.68."
+        },
+        {
+          "id": "B",
+          "text": "86.8."
+        },
+        {
+          "id": "C",
+          "text": "868."
+        },
+        {
+          "id": "D",
+          "text": "8680."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "2.17 ÷ 0.0025 = 868; this compares the listed threshold magnitudes.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A sample of ⁴He is at 2.10 K under suitable pressure conditions. What does the textbook threshold suggest?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The temperature is low enough for the superfluid phase."
+        },
+        {
+          "id": "B",
+          "text": "It is necessarily gaseous."
+        },
+        {
+          "id": "C",
+          "text": "It must be solid at every pressure."
+        },
+        {
+          "id": "D",
+          "text": "It cannot show superfluidity because 2.10 > 2.17."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2.10 K is below the textbook ⁴He threshold; phase also depends on pressure.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A sample of ³He is at 0.0030 K. What does the textbook threshold alone indicate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is below 0.0025 K."
+        },
+        {
+          "id": "B",
+          "text": "It is above the stated ³He superfluid transition temperature."
+        },
+        {
+          "id": "C",
+          "text": "It has become helium-4."
+        },
+        {
+          "id": "D",
+          "text": "It is exactly at 0 K."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "0.0030 K > 0.0025 K; the quoted condition for ³He superfluidity is not met.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "On NBF Figure 6.17, what is the label of the low-temperature fluid region?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ordinary air."
+        },
+        {
+          "id": "B",
+          "text": "Plasma."
+        },
+        {
+          "id": "C",
+          "text": "Superfluid."
+        },
+        {
+          "id": "D",
+          "text": "Molten steel."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The helium diagram labels a superfluid region on the low-temperature side.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which phase label is located toward the warmer, low-pressure side of the helium diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gas."
+        },
+        {
+          "id": "B",
+          "text": "Solid only."
+        },
+        {
+          "id": "C",
+          "text": "Superfluid only."
+        },
+        {
+          "id": "D",
+          "text": "Liquid metal."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Figure 6.17 includes a gas region at relatively higher temperature and low pressure.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which phase label appears at relatively high pressures and low temperatures in Figure 6.17?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air."
+        },
+        {
+          "id": "B",
+          "text": "Normal gas only."
+        },
+        {
+          "id": "C",
+          "text": "Vacuum."
+        },
+        {
+          "id": "D",
+          "text": "Solid."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The high-pressure, low-temperature area of the graph is labelled solid.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 281,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "If the plotted point moves horizontally to the right on Figure 6.17, what is increasing?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure."
+        },
+        {
+          "id": "B",
+          "text": "Temperature."
+        },
+        {
+          "id": "C",
+          "text": "Density by definition."
+        },
+        {
+          "id": "D",
+          "text": "Angular speed."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The horizontal axis represents temperature.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "If the plotted point moves vertically upward on Figure 6.17, what is increasing?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Time."
+        },
+        {
+          "id": "B",
+          "text": "Temperature."
+        },
+        {
+          "id": "C",
+          "text": "Viscosity by definition."
+        },
+        {
+          "id": "D",
+          "text": "Pressure."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The vertical axis is pressure, measured in MPa.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A student points to the arrows rising above the liquid edge in Figure 6.16. What process do the arrows illustrate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Liquid converting entirely into electrons."
+        },
+        {
+          "id": "B",
+          "text": "Superfluid creep over the container walls."
+        },
+        {
+          "id": "C",
+          "text": "The liquid losing gravitational mass."
+        },
+        {
+          "id": "D",
+          "text": "A pump deliberately forcing ordinary water upward."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The arrows show the superfluid creeping up and over the walls.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "In a rotating-container experiment, the container speed is below the critical angular velocity. What behavior is described in the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The liquid must evaporate."
+        },
+        {
+          "id": "B",
+          "text": "A vortex must already exist."
+        },
+        {
+          "id": "C",
+          "text": "The superfluid can remain stationary."
+        },
+        {
+          "id": "D",
+          "text": "Every vortex becomes infinitely strong."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The book specifies stationary liquid below the critical angular velocity.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Which variable is varied to reach the onset of quantized vortices in the rotating-container account?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Length of the graph’s temperature axis."
+        },
+        {
+          "id": "B",
+          "text": "Angular velocity of the container."
+        },
+        {
+          "id": "C",
+          "text": "Number of helium isotopes in the universe."
+        },
+        {
+          "id": "D",
+          "text": "Density of the Earth."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The critical quantity is the angular velocity of rotation.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A learner calls 0.0025 K “2.5 kelvin.” What is the correct reading?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Twenty-five kelvin."
+        },
+        {
+          "id": "B",
+          "text": "Two and a half degrees Celsius."
+        },
+        {
+          "id": "C",
+          "text": "Two and a half millikelvin."
+        },
+        {
+          "id": "D",
+          "text": "Two hundred fifty kelvin."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "0.0025 K is 2.5 mK, not 2.5 K.",
+      "sourceSection": "data-interpretation",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A very cold helium liquid climbs over the rim of an open vessel without a pump. Which concept best explains the observation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An increase in dry friction."
+        },
+        {
+          "id": "B",
+          "text": "Superfluid creep."
+        },
+        {
+          "id": "C",
+          "text": "Electrical resistance heating."
+        },
+        {
+          "id": "D",
+          "text": "Archimedes’ principle alone."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Wall-climbing liquid is the hallmark behavior illustrated in Figure 6.16.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 282,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A researcher stirs a low-temperature liquid and its circulation shows almost no viscous slowing. Which observation best supports a superfluid interpretation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The liquid weighs nothing."
+        },
+        {
+          "id": "B",
+          "text": "The sample has become dry powder."
+        },
+        {
+          "id": "C",
+          "text": "It must be above its boiling point."
+        },
+        {
+          "id": "D",
+          "text": "The liquid has negligible viscous damping."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Persistent flow is consistent with negligible viscosity.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Two helium-4 samples are under otherwise suitable conditions: A is at 2.00 K and B at 2.50 K. Which is the stronger superfluid candidate from the textbook threshold?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Both equally, because temperature is irrelevant."
+        },
+        {
+          "id": "B",
+          "text": "Neither, because helium cannot be a liquid."
+        },
+        {
+          "id": "C",
+          "text": "Sample B."
+        },
+        {
+          "id": "D",
+          "text": "Sample A."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Only 2.00 K is below 2.17 K.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A student assumes that helium-3 becomes superfluid whenever helium-4 does. What should the teacher emphasize?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Temperature is measured in pascals."
+        },
+        {
+          "id": "B",
+          "text": "Helium-3 cannot exist as a fluid."
+        },
+        {
+          "id": "C",
+          "text": "The two isotopes have exactly identical transition temperatures."
+        },
+        {
+          "id": "D",
+          "text": "Helium-3 has a much lower threshold temperature."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook gives a ³He threshold of 0.0025 K versus 2.17 K for ⁴He.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A vessel rotates slowly, but the ideal superfluid inside does not rotate with it. Which explanation matches the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The vessel cannot transfer any energy to anything."
+        },
+        {
+          "id": "B",
+          "text": "The speed is below the critical angular velocity for vortex formation."
+        },
+        {
+          "id": "C",
+          "text": "Superfluidity requires zero mass."
+        },
+        {
+          "id": "D",
+          "text": "The liquid must have infinite viscosity."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The textbook describes stationary superfluid motion below the critical angular velocity.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "While gradually increasing a superfluid container’s rotation speed, an observer sees the first vortex. What threshold has been reached?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gravitational escape speed."
+        },
+        {
+          "id": "B",
+          "text": "Critical angular velocity."
+        },
+        {
+          "id": "C",
+          "text": "Temperature of boiling water."
+        },
+        {
+          "id": "D",
+          "text": "Speed of sound in air."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Vortices first appear once the critical angular velocity is reached.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A student observes an increasing number of vortices as rotational speed rises further. Which interpretation is supported?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All the liquid has become gas."
+        },
+        {
+          "id": "B",
+          "text": "More quantized vortices can form with increasing rotation."
+        },
+        {
+          "id": "C",
+          "text": "The vortex strengths can now vary without any restriction."
+        },
+        {
+          "id": "D",
+          "text": "The fluid necessarily stops rotating forever."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The text describes more and more quantized vortices as rotation increases.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "In a comparison experiment, ordinary water forms circulation with variable strengths, while superfluid helium forms discrete vortex strengths. What concept is being tested?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Quantization of superfluid vortex circulation."
+        },
+        {
+          "id": "B",
+          "text": "Archimedes’ law of flotation."
+        },
+        {
+          "id": "C",
+          "text": "Conservation of electric charge in a wire."
+        },
+        {
+          "id": "D",
+          "text": "Absence of gravity in water."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Discrete permitted circulation is the key distinction.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 283,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A precision sensor is to exploit exceptionally stable quantum fluid rotation. Which device mentioned in the textbook is most relevant?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A frictional brake pad."
+        },
+        {
+          "id": "B",
+          "text": "A mechanical hand saw."
+        },
+        {
+          "id": "C",
+          "text": "A household light switch."
+        },
+        {
+          "id": "D",
+          "text": "A high-precision gyroscope."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The NBF text mentions precision gyroscopes as superfluid applications.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A laboratory studies tiny gravitational effects using an ultra-sensitive fluid device. Which chapter topic provides a relevant example?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Superfluid applications."
+        },
+        {
+          "id": "B",
+          "text": "Basic fluid density alone."
+        },
+        {
+          "id": "C",
+          "text": "Atmospheric evaporation only."
+        },
+        {
+          "id": "D",
+          "text": "Ordinary surface rusting."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The book lists measurement of theoretically predicted gravitational effects.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "Researchers trap and slow a light pulse in a specialized ultracold setup. Which textbook application is this closest to?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Heat conduction along a copper rod."
+        },
+        {
+          "id": "B",
+          "text": "A conventional water turbine."
+        },
+        {
+          "id": "C",
+          "text": "Superfluid-based slowing of light."
+        },
+        {
+          "id": "D",
+          "text": "A mercury barometer."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Superfluids are mentioned as having been used to trap and slow light in experiments.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A class describes an unusual neutron fluid in a neutron star as potentially superfluid. Which interpretation follows the textbook?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Neutrons are necessarily liquid helium atoms."
+        },
+        {
+          "id": "B",
+          "text": "Superfluidity may occur in extreme astrophysical matter."
+        },
+        {
+          "id": "C",
+          "text": "All neutron stars are made of ordinary room-temperature water."
+        },
+        {
+          "id": "D",
+          "text": "There is no quantum physics in stars."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The text notes a possible superfluid neutron component inside neutron stars.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "An engineer claims a superfluid would automatically make a perpetual-motion power generator. What is the best response?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Zero viscosity does not allow unlimited creation of energy."
+        },
+        {
+          "id": "B",
+          "text": "Gravity must disappear from the laboratory."
+        },
+        {
+          "id": "C",
+          "text": "Temperature can no longer change."
+        },
+        {
+          "id": "D",
+          "text": "The generator must create infinite power."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Low viscous dissipation does not override conservation of energy.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A diagram shows solid, normal liquid, superfluid and gas for helium at different coordinates. Which conclusion is safest?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Helium is superfluid at every point on the graph."
+        },
+        {
+          "id": "B",
+          "text": "All gases become superfluid when pressurized."
+        },
+        {
+          "id": "C",
+          "text": "Temperature alone is never relevant."
+        },
+        {
+          "id": "D",
+          "text": "Both pressure and temperature help determine the phase."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Phase boundaries in the graph depend on the two plotted variables.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A learner argues that a zero-viscosity liquid cannot flow because it has “no force.” How should this be corrected?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A superfluid has neither momentum nor mass."
+        },
+        {
+          "id": "B",
+          "text": "The liquid has become a vacuum."
+        },
+        {
+          "id": "C",
+          "text": "Viscosity measures resistance, not the presence or absence of every force."
+        },
+        {
+          "id": "D",
+          "text": "Zero viscosity prevents all possible motion."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "A superfluid can flow and respond to forces despite negligible viscous resistance.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 284,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A student reads 2.17 K from the book and applies it to helium-3. What is the error?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Confusing the helium-4 and helium-3 transition thresholds."
+        },
+        {
+          "id": "B",
+          "text": "Confusing pressure with force."
+        },
+        {
+          "id": "C",
+          "text": "Converting seconds into metres."
+        },
+        {
+          "id": "D",
+          "text": "Measuring angular speed in kelvin."
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "2.17 K is the stated ⁴He threshold, not the ³He value.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 285,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "An experiment reports zero normal-flow friction but no rotating vortex because the vessel turns very slowly. Which textbook account is consistent with this?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Helium gas at ordinary room temperature."
+        },
+        {
+          "id": "B",
+          "text": "Superfluid state below the critical angular velocity."
+        },
+        {
+          "id": "C",
+          "text": "A superfluid that has turned into a solid."
+        },
+        {
+          "id": "D",
+          "text": "Normal water always at high viscosity."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The superfluid can remain stationary below the vortex-onset threshold.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 285,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A student notices that the chapter mentions superconducting electrons as well as liquid helium. Which statement is scientifically careful?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Any electrical conductor is automatically a superfluid liquid."
+        },
+        {
+          "id": "B",
+          "text": "An electron is a classical liquid droplet of helium."
+        },
+        {
+          "id": "C",
+          "text": "Both involve quantum behavior, but superconductivity of electrons and liquid-helium superfluidity are not identical phenomena."
+        },
+        {
+          "id": "D",
+          "text": "The two concepts prove viscosity is always infinite."
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The textbook links them as quantum phenomena; their physical systems are different.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 285,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "A scientist needs an example showing that a material can move without conventional viscous dissipation. Which observation is most suitable?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A stone sliding to rest on rough ground."
+        },
+        {
+          "id": "B",
+          "text": "A moving car experiencing tyre friction."
+        },
+        {
+          "id": "C",
+          "text": "Honey flowing with appreciable resistance."
+        },
+        {
+          "id": "D",
+          "text": "Persistent motion of a superfluid vortex."
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "A persistent vortex illustrates the absence of ordinary viscous damping in the ideal superfluid picture.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 285,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T67-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Superfluidity",
+      "type": "single_choice",
+      "stem": "During revision, a student says “superfluidity means all liquids become frictionless once stirred.” Which correction best fits the NBF section?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stirring alone removes viscosity from any liquid."
+        },
+        {
+          "id": "B",
+          "text": "Superfluidity is a special quantum state obtained under appropriate conditions, such as ultracold helium."
+        },
+        {
+          "id": "C",
+          "text": "Pressure and temperature have no relevance."
+        },
+        {
+          "id": "D",
+          "text": "Superfluidity is merely the word for turbulence."
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The chapter treats superfluidity as an exceptional low-temperature state, not a result of routine stirring.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 285,
+      "sourceKeyPdfPages": "286–288",
+      "originalNbfTextbookPages": "106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-43"
+      ],
+      "topicOfficialCognitiveLevel": "Understanding",
+      "sourceKeyCognitiveTag": null,
+      "sourceKeyCognitiveTagStatus": "No individual item cognitive labels available in the printed answer table; section statement mentions K/U but does not map each MCQ",
+      "formativeContextSloCodes": [],
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    }
+  ]
+}

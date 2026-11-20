@@ -1,0 +1,58 @@
+name: Validate Grade XI Unit6 Topic6.7 Superfluidity Preview (V88)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "portal/unit-06-topic-67-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic67_v88.cjs"
+      - "quality/grade11-unit06-topic67-v88-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic67-v88.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "portal/unit-06-topic-67-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic67_v88.cjs"
+      - "quality/grade11-unit06-topic67-v88-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic67-v88.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-and-student-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Original 80-source metadata, 2,164 central unchanged and JavaScript syntax
+        run: |
+          node --check portal/unit-06-topic-67-preview.js
+          node --check scripts/test_unit06_topic67_v88.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==474||m[5].sourceTopicMcqCount!==480||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==113||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2164)process.exit(1)"
+      - name: Install Chromium for mobile and student review
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V88 original 80 keys, source integrity, independent temperature checks and 390px mobile
+        run: node scripts/test_unit06_topic67_v88.cjs
+      - name: Regression — central six-topic builder, original Bernoulli applications preview
+        run: |
+          node scripts/test_grade11_unit06_central_v87.cjs
+          node scripts/test_unit06_topic66_v86.cjs
+      - name: Regression — original video URLs, connected legacy resources and privacy boundaries
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload mobile synthetic screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v88-superfluidity-student-mobile
+          path: qa-artifacts/unit06-topic67-v88/*.png
+          if-no-files-found: warn
+          retention-days: 7
