@@ -22,7 +22,7 @@
   "unitReleaseStatus": "planned-partial-topic-preview",
   "sourceQuestionCount": 80,
   "importedQuestionCount": 80,
-  "publicPreviewCount": 78,
+  "publicPreviewCount": 80,
   "sections": {
     "fundamentals": 20,
     "reasoning": 20,
@@ -31,21 +31,12 @@
     "sharedStimulusGroups": 0
   },
   "originalSourceAnswerKey": "AADBDCBADCCDBBACCDBCADDBCBBADDABACCBDDCDCDCBDACBCDABBACCDAACCADDAABCADABBACABBDB",
-  "holds": [
-    {
-      "sourceQuestionNumber": 24,
-      "reason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
-    },
-    {
-      "sourceQuestionNumber": 80,
-      "reason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
-    }
-  ],
+  "holds": [],
   "sourceScope": "Streamline/laminar and turbulent flow, incompressible and non-viscous assumptions of an ideal fluid; simple flow-rate Q = V/t and unit conversions. Continuity equation belongs to Topic 6.4.",
   "importantDistinction": "The source uses 'steady (streamline or laminar)' at introductory level; real fluid mechanics distinguishes steady (time dependence) from laminar (flow regime). Do not imply universal equivalence. Irrotational also does not imply straight particle paths.",
   "limitations": [
     "All 80 original stems/options/answers/explanations preserved with line wrapping normalized.",
-    "Q24 and Q80 explicitly depend on textbook Figure 6.6 and remain source-archived but withheld until figure context can be verified.",
+    "The original figure-dependent MCQs have been visually verified against the NBF printed figures and now render V90 independent educational drawings in public practice; no NBF scans are published.",
     "20 source situation/scenario-labelled items are independent standalone questions, not any common-stimulus group. 19 selectable after Q80 hold.",
     "FBISE framework marks SLO P-11-B-35 Summative with Knowledge + Understanding topic cognitive level; no individual source question is independently certified.",
     "Source flow-rate Q=V/t exercises are supporting basic numeracy, not an extra specified FBISE B-35 assessment requirement.",
@@ -1153,9 +1144,10 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "status": "pending-figure-review",
-      "holdReason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null,
+      "referenceFigureId": "unit6-figure66"
     },
     {
       "id": "XI-U06-T63-MCQ-0025",
@@ -3729,9 +3721,11 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "status": "pending-figure-review",
-      "holdReason": "The original stem explicitly compares textbook Figure 6.6(a) and (b); the visual has not been inspected for accessible standalone use."
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null,
+      "referenceFigureId": "unit6-figure66"
     }
-  ]
+  ],
+  "figureVerificationRelease": "V93 review: original NBF textbook figures 6.2 (p.90), 6.3 (p.92), 6.5(c) (p.94), 6.6 (p.95) visually checked. No change to original stem/options/letter/explanation or provisional FBISE tags."
 }

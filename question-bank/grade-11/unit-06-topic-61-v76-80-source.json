@@ -23,7 +23,7 @@
   "unitReleaseStatus": "planned-partial-topic-preview",
   "sourceQuestionCount": 80,
   "importedQuestionCount": 80,
-  "publicPreviewCount": 79,
+  "publicPreviewCount": 80,
   "sections": {
     "fundamentals": 20,
     "reasoning": 20,
@@ -31,12 +31,7 @@
     "standalone-situations": 16,
     "sharedStimulusGroups": 0
   },
-  "holds": [
-    {
-      "sourceQuestionNumber": 11,
-      "reason": "Source refers to NBF Fig. 6.2. Retained unchanged in source bank, excluded from live preview pending accessible figure verification."
-    }
-  ],
+  "holds": [],
   "limitations": [
     "Original 80 source questions, four options and answer letters are retained. PDF table line-wrapping in answer-key explanations has been normalized, not rewritten for new content.",
     "Sixteen individually self-contained situation questions (#65–80) are NOT four-question common-stimulus sets.",
@@ -560,9 +555,10 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "holdReason": "Original stem references NBF Figure 6.2; figure not yet independently reviewed for accessible standalone display.",
-      "status": "pending-figure-review"
+      "active": true,
+      "holdReason": null,
+      "status": "provisional-public-self-practice",
+      "referenceFigureId": "unit6-figure62"
     },
     {
       "id": "XI-U06-T61-MCQ-0012",
@@ -3807,5 +3803,6 @@
       "holdReason": null,
       "status": "provisional-public-self-practice"
     }
-  ]
+  ],
+  "figureVerificationRelease": "V93 review: original NBF textbook figures 6.2 (p.90), 6.3 (p.92), 6.5(c) (p.94), 6.6 (p.95) visually checked. No change to original stem/options/letter/explanation or provisional FBISE tags."
 }

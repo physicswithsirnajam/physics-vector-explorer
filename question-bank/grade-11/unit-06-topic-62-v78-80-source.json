@@ -23,7 +23,7 @@
   "unitReleaseStatus": "planned-partial-topic-preview",
   "sourceQuestionCount": 80,
   "importedQuestionCount": 80,
-  "publicPreviewCount": 77,
+  "publicPreviewCount": 80,
   "sections": {
     "fundamentals": 20,
     "reasoning": 20,
@@ -32,24 +32,11 @@
     "sharedStimulusGroups": 0
   },
   "originalSourceAnswerKey": "BCBDCCCBBABCADBBCACADACBDDDBDBCCCCDADAABCADCCCBBBAAABCBDACCBDDAADDADAAADDBDCABBD",
-  "holds": [
-    {
-      "sourceQuestionNumber": 26,
-      "reason": "Original source explicitly references NBF Figure 6.3; the image and caption have not been verified for accessible standalone display."
-    },
-    {
-      "sourceQuestionNumber": 64,
-      "reason": "Original source explicitly references NBF Figure 6.5(c); graph context has not been reviewed or reproduced."
-    },
-    {
-      "sourceQuestionNumber": 72,
-      "reason": "Original source explicitly references NBF Figure 6.3; the figure context has not yet been reviewed."
-    }
-  ],
+  "holds": [],
   "calculationModel": "Source uses NBF simplified Stokes terminal-speed relation vₜ = 2ρgr²/(9η), neglects fluid buoyancy and assumes slow spherical Stokes-law conditions. Do not treat it as general parachute or large-drop law.",
   "limitations": [
     "Source's 80 original stems, four options, answer letters and one-line explanations retained (PDF line wraps normalized).",
-    "Three Figure-6.3/6.5-referencing items Q26, Q64, Q72 remain in the source archive but are not student-selectable until verified standalone figure context is provided.",
+    "The original figure-dependent MCQs have been visually verified against the NBF printed figures and now render V90 independent educational drawings in public practice; no NBF scans are published.",
     "20 real-life/situation items Q61–Q80 are independent questions, not fabricated shared-stimulus groups.",
     "The official framework verifies B-41 and B-42 as Summative/Understanding at topic level; no original MCQ is certified at individual SLO/cognitive level.",
     "This is provisional PUBLIC self-practice, not an official FBISE exam, high-stakes assessment or cloud-saved grade.",
@@ -1301,9 +1288,10 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "status": "pending-figure-review",
-      "holdReason": "Original source explicitly references NBF Figure 6.3; the image and caption have not been verified for accessible standalone display."
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null,
+      "referenceFigureId": "unit6-figure63"
     },
     {
       "id": "XI-U06-T62-MCQ-0027",
@@ -3125,9 +3113,10 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "status": "pending-figure-review",
-      "holdReason": "Original source explicitly references NBF Figure 6.5(c); graph context has not been reviewed or reproduced."
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null,
+      "referenceFigureId": "unit6-figure65c"
     },
     {
       "id": "XI-U06-T62-MCQ-0065",
@@ -3509,9 +3498,10 @@
       "cognitiveLevel": "Unspecified",
       "difficulty": "Unspecified",
       "boardEligible": false,
-      "active": false,
-      "status": "pending-figure-review",
-      "holdReason": "Original source explicitly references NBF Figure 6.3; the figure context has not yet been reviewed."
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null,
+      "referenceFigureId": "unit6-figure63"
     },
     {
       "id": "XI-U06-T62-MCQ-0073",
@@ -3897,5 +3887,6 @@
       "status": "provisional-public-self-practice",
       "holdReason": null
     }
-  ]
+  ],
+  "figureVerificationRelease": "V93 review: original NBF textbook figures 6.2 (p.90), 6.3 (p.92), 6.5(c) (p.94), 6.6 (p.95) visually checked. No change to original stem/options/letter/explanation or provisional FBISE tags."
 }
