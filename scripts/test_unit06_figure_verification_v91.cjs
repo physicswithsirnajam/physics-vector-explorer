@@ -15,18 +15,18 @@ const held=[
  {topic:'63',num:80,answer:'B',printedPage:95,figure:'6.6'}
 ];
 const sourceFiles={61:'unit-06-topic-61-v76-80-source.json',62:'unit-06-topic-62-v78-80-source.json',63:'unit-06-topic-63-v80-80-source.json'};
-const key={61:79,62:77,63:78};
+const key={61:80,62:80,63:80};
 for(const topic of ['61','62','63']){
  const bank=json('question-bank/grade-11/'+sourceFiles[topic]);
  assert.equal(bank.sourceQuestionCount,80);
  assert.equal(bank.questions.length,80);
  assert.equal(bank.questions.filter(q=>q.active).length,key[topic]);
  const expected=held.filter(x=>x.topic===topic).map(x=>x.num).join(',');
- assert.equal(bank.questions.filter(q=>!q.active).map(q=>q.sourceQuestionNumber).join(','),expected,'Held source list changed for topic '+topic);
+ assert.equal(bank.questions.filter(q=>!q.active).length,0,'Source holds remain after V93 release');
  for(const h of held.filter(x=>x.topic===topic)){
   const q=bank.questions[h.num-1];
   assert.equal(q.sourceQuestionNumber,h.num);
-  assert.equal(q.active,false);assert.equal(q.holdReason?.length>15,true);
+  assert.equal(q.active,true);assert.equal(q.holdReason,null);assert.ok(q.referenceFigureId);
   assert.equal(q.correctOptionId,h.answer,'Original teacher key changed');
   assert.equal(q.id,'XI-U06-T'+topic+'-MCQ-'+String(h.num).padStart(4,'0'));
   assert.equal(q.options.map(o=>o.id).join(''),'ABCD');
@@ -35,21 +35,21 @@ for(const topic of ['61','62','63']){
  }
 }
 const manifest=json('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,554]);
+assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,560]);
 assert.equal(manifest[5].sourceTopicMcqCount,560);
-assert.equal(manifest[5].sourceFigureHeldCount,6);
+assert.equal(manifest[5].sourceFigureHeldCount,0);
 assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
-assert.equal(manifest[5].standaloneSituationQuestionCount,133);
-assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2244);
+assert.equal(manifest[5].standaloneSituationQuestionCount,136);
+assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2250);
 const unit=json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(unit.status,'planned');assert.equal(unit.questionBankCount,0);
-assert.equal(unit.partialTestBuilderMcqCount,554);
+assert.equal(unit.partialTestBuilderMcqCount,560);
 assert.equal(unit.sourceTopicMcqCount,560);
 const html=read('portal/unit-06-figure-verification-v91.html'),controller=read('portal/unit-06-figure-verification-v91.js');
 assert.match(html,/Unit 6 Figure Verification Desk|Figure Verification Desk|Figure Comparison &amp; Verification Desk/);
-assert.match(html,/2,244/);
+assert.match(html,/2,250/);
 assert.match(html,/local browser worksheet/);
-assert.match(html,/No automatic release or official certification/);
+assert.match(html,/No automatic code edits or official certification/);
 assert.match(html,/actual NBF Grade XI printed figures/);
 assert.match(html,/unit-06-figure-verification-v91\.js/);
 assert.match(read('portal/index.html'),/unit-06-figure-verification-v91\.html/);
@@ -57,14 +57,14 @@ assert.match(read('portal/unit-06-figure-study-v90.html'),/unit-06-figure-verifi
 for(const file of Object.values(sourceFiles))assert.match(controller,new RegExp(file.replaceAll('.','\\.')));
 assert.match(controller,/candidate-signoff/);
 assert.match(controller,/candidate status needs all three checks/i);
-assert.match(controller,/source question remains held|original question is still held/i);
+assert.match(controller,/question remains available in public self-practice/i);
 assert.match(controller,/navigator\.clipboard/);
 assert.match(controller,/copyRecord/);
 assert.doesNotMatch(controller,/\blocalStorage\b|\bsessionStorage\b|indexedDB|firestore|firebase|sendBeacon|XMLHttpRequest|\.post\(/i);
 assert.doesNotMatch(html,/<iframe\b/i);
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
 assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')),'Full Unit6 course cannot be released with an unverified figure');
-console.log('V91 STATIC PASS — six original held keys, no certification, 554 Unit6 / 2,244 all XI unchanged, no cloud or auth changes.');
+console.log('V91 STATIC PASS — six original held keys, no certification, 560 Unit6 / 2,250 all XI unchanged, no cloud or auth changes.');
 async function verifyBrowser(){
  const {chromium}=require('playwright'),mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
  const server=http.createServer((req,res)=>{
@@ -80,7 +80,7 @@ async function verifyBrowser(){
   page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('/favicon.ico'))missing.push(r.status()+': '+r.url());});
   page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:'))external.push(r.url());});
   await page.goto('http://127.0.0.1:'+server.address().port+'/portal/unit-06-figure-verification-v91.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('Six original held MCQs loaded'));
+  await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('Six verified source-figure MCQs loaded'));
   assert.equal(await page.locator('article.question').count(),6);
   assert.equal(await page.locator('.question .option').count(),24);
   assert.equal(await page.locator('.question details').count(),6);
@@ -100,8 +100,8 @@ async function verifyBrowser(){
   assert.equal(await first.locator('select').inputValue(),'candidate-signoff');
   const report=await page.locator('#review-summary').textContent();
   assert.match(report,/1 candidates for separate teacher signoff/);
-  assert.match(report,/Public question status: STILL HELD/);
-  assert.equal((report.match(/Public question status: STILL HELD/g)||[]).length,6);
+  assert.match(report,/Public question status: SELECTABLE PROVISIONAL SELF-PRACTICE/);
+  assert.equal((report.match(/Public question status: SELECTABLE PROVISIONAL SELF-PRACTICE/g)||[]).length,6);
   assert.match(report,/XI-U06-T62-MCQ-0064/);
   assert.match(report,/XI-U06-T63-MCQ-0080/);
   await page.context().grantPermissions(['clipboard-read','clipboard-write']);

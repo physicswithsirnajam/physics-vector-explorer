@@ -1,0 +1,26 @@
+<svg role="img" aria-labelledby="fig65title fig65desc" viewBox="0 0 760 350" xmlns="http://www.w3.org/2000/svg">
+<title id="fig65title">A paratrooper's downward speed versus time</title>
+<desc id="fig65desc">The downward speed rises from zero to about 50 metres per second in the first 20 seconds, remains at a steady 50 metres per second from about 20 to 42 seconds, falls rapidly when the parachute opens at 42 seconds, and becomes steady at about 8 metres per second from about 47 to 70 seconds.</desc>
+<defs><marker id="arr65" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#355876"/></marker></defs>
+<rect width="760" height="350" fill="#f7fbff"/>
+<path d="M78 30V268H684" fill="none" stroke="#355876" stroke-width="2.5" marker-end="url(#arr65)"/>
+<g stroke="#cfdae4" stroke-width="1" stroke-dasharray="4 6"><path d="M78 79H675"/><path d="M78 237H675"/></g>
+<g stroke="#9aaec1" stroke-width="1.2"><path d="M77 79H70 M77 268H70 M78 264V273 M238 264V273 M413 264V273 M456 264V273 M637 264V273"/></g>
+<text x="68" y="85" text-anchor="end" font-size="14" fill="#42627e">50</text>
+<text x="68" y="242" text-anchor="end" font-size="14" fill="#42627e">8</text>
+<text x="69" y="274" text-anchor="end" font-size="14" fill="#42627e">0</text>
+<text x="78" y="289" text-anchor="middle" font-size="14" fill="#42627e">0</text>
+<text x="238" y="289" text-anchor="middle" font-size="14" fill="#42627e">20</text>
+<text x="413" y="289" text-anchor="middle" font-size="14" fill="#42627e">42</text>
+<text x="456" y="289" text-anchor="middle" font-size="14" fill="#42627e">47</text>
+<text x="637" y="289" text-anchor="middle" font-size="14" fill="#42627e">70</text>
+<path d="M78 268 C128 151 170 81 238 79 L413 79 C430 145 440 216 456 237 L637 237" fill="none" stroke="#0c7692" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M413 39V268" stroke="#bd7c2a" stroke-dasharray="7 6" stroke-width="2"/>
+<text x="386" y="27" font-size="14" fill="#98652b">Parachute opens</text>
+<text x="260" y="63" font-size="14" font-weight="760" fill="#0a617e">Steady ≈ 50 m/s</text>
+<text x="500" y="223" font-size="14" font-weight="760" fill="#0a617e">Steady ≈ 8 m/s</text>
+<text x="174" y="164" transform="rotate(-45 174 164)" font-size="13" fill="#2b617b">Accelerates</text>
+<text x="470" y="150" transform="rotate(72 470 150)" font-size="13" fill="#8d662c">Slows down</text>
+<text x="374" y="324" text-anchor="middle" font-size="17" font-weight="760" fill="#25415e">Time / s</text>
+<text x="18" y="174" transform="rotate(-90 18 174)" text-anchor="middle" font-size="16" fill="#25415e">Downward speed / (m/s)</text>
+</svg>

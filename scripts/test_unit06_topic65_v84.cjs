@@ -67,18 +67,18 @@ for(const [str,correct] of Object.entries(numericAnswers)){
  assert.ok(Math.abs(actual-correct)<=Math.max(0.01,correct*1e-5),'Numerical original answer Q'+n+' = '+actual+' != '+correct);
 }
 const manifest=JSON.parse(read('question-bank/manifest.json')).grades.find(g=>g.grade===11).units;
-assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,554]);
-assert.equal(manifest.reduce((s,u)=>s+u.liveMcqCount,0),2244);
+assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,560]);
+assert.equal(manifest.reduce((s,u)=>s+u.liveMcqCount,0),2250);
 assert.equal(manifest[5].sourceTopicMcqCount,560);
-assert.equal(manifest[5].sourceFigureHeldCount,6);
+assert.equal(manifest[5].sourceFigureHeldCount,0);
 assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
 const course=JSON.parse(read('portal/learning-catalog.json')).grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
-assert.equal(course.status,'planned');assert.equal(course.questionBankCount,0);assert.equal(course.partialTestBuilderMcqCount,554);
+assert.equal(course.status,'planned');assert.equal(course.questionBankCount,0);assert.equal(course.partialTestBuilderMcqCount,560);
 const hub=read('portal/index.html'),client=read('portal/unit-06-topic-65-preview.js'),html=read('portal/unit-06-topic-65-preview.html');
 assert.match(hub,/unit-06-topic-65-preview\.html/);assert.match(client,/unit-06-topic-65-v84-80-source\.json/);
-assert.match(html,/P-11-B-39 is formative/);assert.match(html,/2,244/);
+assert.match(html,/P-11-B-39 is formative/);assert.match(html,/2,250/);
 assert.doesNotMatch(client,/firebase|firestore|localStorage\.setItem/i);
-assert.match(read('portal/unit-06-topic-64-preview.html'),/2,244/);
+assert.match(read('portal/unit-06-topic-64-preview.html'),/2,250/);
 assert.doesNotMatch(read('portal/unit-06-topic-64-preview.html'),/1,924/);
 assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')));
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
@@ -115,7 +115,7 @@ async function browser(){
   const output=path.join(root,'qa-artifacts','unit06-topic65-v84');fs.mkdirSync(output,{recursive:true});
   await page.screenshot({path:path.join(output,'unit06-topic65-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
-  console.log('V84 PASS — 80 original Bernoulli keys, 20 numerical values, 20 independent situations, 2,244 central preserved, 80-question explanation review and 390px mobile.');
+  console.log('V84 PASS — 80 original Bernoulli keys, 20 numerical values, 20 independent situations, 2,250 central preserved, 80-question explanation review and 390px mobile.');
  }finally{if(b)await b.close();await new Promise(resolve=>server.close(resolve));}
 }
 browser().catch(e=>{console.error('FAIL V84',e);process.exitCode=1;});

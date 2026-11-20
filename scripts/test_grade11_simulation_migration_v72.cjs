@@ -60,9 +60,9 @@ function audit(){
  }
  assert.equal(grade.units.filter(u=>u.status==='available').length,5);
  assert.deepEqual(main.slice(0,5).map(u=>u.liveMcqCount),[275,206,220,640,349]);
-  assert.equal(main[5]?.liveMcqCount,554);
+  assert.equal(main[5]?.liveMcqCount,560);
  assert.equal(main.slice(0,5).reduce((a,u)=>a+u.liveMcqCount,0),1690);
-  assert.equal(main.reduce((a,u)=>a+u.liveMcqCount,0),2244);
+  assert.equal(main.reduce((a,u)=>a+u.liveMcqCount,0),2250);
  const s=read('portal/simulations.html'),hub=read('portal/learning-hub.js');
  assert.ok(s.includes('id="specialized-labs"')&&s.includes('id="unit"'));
  assert.ok(s.includes('learning-labs-v72.json'));

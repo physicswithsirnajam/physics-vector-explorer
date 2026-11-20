@@ -37,17 +37,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Current 2,244 inventory and JavaScript syntax
+      - name: Current 2,250 inventory and JavaScript syntax
         run: |
           node --check shared/practice-bank-adapter-v55.js
           node --check shared/multi-unit-planner-v56.js
           node --check scripts/test_grade11_unit06_central_v83.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==560||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2250)process.exit(1)"
       - name: Install Chromium for real student browser checks
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
-      - name: V83 four source archives, 2,244 questions, tamper rejection and browser
+      - name: V83 four source archives, 2,250 questions, tamper rejection and browser
         run: node scripts/test_grade11_unit06_central_v83.cjs
       - name: Regression — prior central source fidelity and four topic previews
         run: |

@@ -19,7 +19,7 @@ assert.equal(source.unit,6);
 assert.equal(source.topicNumber,'6.2');
 assert.equal(source.sourceQuestionCount,80);
 assert.equal(source.importedQuestionCount,80);
-assert.equal(source.publicPreviewCount,77);
+assert.equal(source.publicPreviewCount,80);
 assert.equal(source.secureExam,false);
 assert.equal(source.publicSelfPractice,true);
 assert.equal(source.unitReleaseStatus,'planned-partial-topic-preview');
@@ -29,7 +29,7 @@ assert.equal(source.officialFrameworkCognitiveLevel,'Understanding');
 assert.equal(source.perQuestionFrameworkMappingStatus,'not individually verified');
 assert.equal(source.questions.length,80);
 assert.equal(source.questions.map(q=>q.correctOptionId).join(''),key,'Original PDF source answer letters changed');
-assert.deepEqual(source.questions.filter(q=>!q.active).map(q=>q.sourceQuestionNumber),[26,64,72]);
+assert.deepEqual(source.questions.filter(q=>!q.active).map(q=>q.sourceQuestionNumber),[]);
 assert.equal(source.sections.sharedStimulusGroups,0);
 assert.equal(source.sections.fundamentals,20);
 assert.equal(source.sections.reasoning,20);
@@ -62,14 +62,15 @@ source.questions.forEach((q,i)=>{
  assert.equal(q.sourceSection,range,'Original sections must not be rearranged');
  counts[q.sourceSection]=(counts[q.sourceSection]||0)+Number(q.active);
  if([26,64,72].includes(i+1)){
-   assert.equal(q.active,false);
-   assert.equal(q.status,'pending-figure-review');
-   assert.match(q.holdReason,/Figure/);
+   assert.equal(q.active,true);
+   assert.equal(q.status,'provisional-public-self-practice');
+   assert.equal(q.holdReason,null);
+   assert.equal(q.referenceFigureId,(i+1)===64?'unit6-figure65c':'unit6-figure63');
  }else assert.equal(q.active,true);
 });
-assert.deepEqual(counts,{fundamentals:20,reasoning:19,numericals:20,'standalone-situations':18});
-assert.equal(source.questions.filter(q=>q.active).length,77);
-assert.equal(source.questions.filter(q=>q.situationBased&&q.active).length,18);
+assert.deepEqual(counts,{fundamentals:20,reasoning:20,numericals:20,'standalone-situations':20});
+assert.equal(source.questions.filter(q=>q.active).length,80);
+assert.equal(source.questions.filter(q=>q.situationBased&&q.active).length,20);
 // Twenty numerical/mathematical application letters are checked in source order.
 // The quantity checks are independent recalculations under the owner's explicitly
 // limited Stokes approximation, not validation of all physical flow regimes.
@@ -114,20 +115,20 @@ eq(correctNumber(65),42+5);
 eq(correctNumber(66),50/8);
 eq(correctNumber(80),2.12/1.144,.006);
 const xi=load('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,554]);
-assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),2244,'V81 retains Topic6.2 source while adding Topic6.3 to the central builder');
+assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,560]);
+assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),2250,'V81 retains Topic6.2 source while adding Topic6.3 to the central builder');
 const course=load('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');
-assert.equal(course.partialTestBuilderMcqCount,554);
+assert.equal(course.partialTestBuilderMcqCount,560);
 assert.equal(course.questionBankCount,0);
 assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')),'Full unit6 not yet published');
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')),'Owner original PDF must remain private');
 assert.ok(read('portal/index.html').includes('href="./unit-06-topic-62-preview.html"'));
 assert.ok(read('portal/unit-06-topic-62-preview.html').includes('Topic 6.2'));
-assert.ok(read('portal/unit-06-topic-62-preview.html').includes('77'));
+assert.ok(read('portal/unit-06-topic-62-preview.html').includes('80'));
 assert.ok(read('portal/unit-06-topic-62-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-62-v78-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'viscosity-terminal-velocity.html')));
-console.log('V78 STATIC PASS: 80 source records / 77 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, V79 central 2244 without modifying original V78 source.');
+console.log('V78 STATIC PASS: 80 source records / 80 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, V79 central 2250 without modifying original V78 source.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
@@ -149,9 +150,9 @@ async function browserTest(){
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'portal/unit-06-topic-62-preview.html',{waitUntil:'load'});
   await page.waitForFunction(()=>!document.getElementById('begin').disabled);
-  assert.equal(await page.locator('#question-count').textContent(),'77');
+  assert.equal(await page.locator('#question-count').textContent(),'80');
   assert.ok(await page.locator('a[href="../viscosity-terminal-velocity.html"]').count());
-  for(const [section,count] of [['fundamentals',20],['reasoning',19],['numericals',20],['standalone-situations',18]]){
+  for(const [section,count] of [['fundamentals',20],['reasoning',20],['numericals',20],['standalone-situations',20]]){
     await page.locator('#category').selectOption(section);
     await page.locator('#size').selectOption('all');
     await page.locator('#begin').click();
@@ -169,11 +170,11 @@ async function browserTest(){
   await page.locator('#category').selectOption('all');
   await page.locator('#size').selectOption('all');
   await page.locator('#begin').click();
-  assert.match(await page.locator('#position').textContent(),/of 77$/);
+  assert.match(await page.locator('#position').textContent(),/of 80$/);
   await page.locator('#finish').click();
-  assert.equal(await page.locator('#review article').count(),77);
+  assert.equal(await page.locator('#review article').count(),80);
   const sourceNums=await page.locator('#review article .subtle').allTextContents();
-  assert.equal(sourceNums.length,77);
+  assert.equal(sourceNums.length,80);
   await page.locator('#try-again').click();
   await page.setViewportSize({width:390,height:844});
   const dimensions=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));

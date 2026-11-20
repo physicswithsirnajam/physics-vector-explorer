@@ -1,0 +1,21 @@
+<svg role="img" aria-labelledby="fig66title fig66desc" viewBox="0 0 760 325" xmlns="http://www.w3.org/2000/svg">
+<title id="fig66title">Two flow patterns in pipes</title>
+<desc id="fig66desc">Panel a on the left shows smooth parallel noncrossing paths flowing from left to right, labelled streamline flow. Panel b on the right shows irregular swirling particle paths and eddies inside a horizontal pipe, labelled turbulent flow.</desc>
+<defs><marker id="arr66" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2d819d"/></marker></defs>
+<rect x="18" y="39" width="343" height="210" rx="9" fill="#eaf8fc" stroke="#bbd9e7" stroke-width="2"/>
+<rect x="399" y="39" width="343" height="210" rx="9" fill="#eaf8fc" stroke="#bbd9e7" stroke-width="2"/>
+<g stroke="#4c6c86" stroke-width="5" stroke-linecap="round"><path d="M38 69H341 M38 217H341 M419 69H722 M419 217H722"/></g>
+<g stroke="#1687a7" stroke-width="4" fill="none" marker-end="url(#arr66)"><path d="M51 100H336"/><path d="M51 141H336"/><path d="M51 183H336"/></g>
+<g stroke="#1687a7" stroke-width="4" fill="none" stroke-linecap="round">
+<path d="M423 107 C452 75 477 135 501 103 S551 79 566 128 S620 151 630 113 S685 99 710 129"/>
+<path d="M423 165 C453 143 481 184 511 160 S548 124 573 154 S611 188 642 173 S689 182 711 150"/>
+<path d="M423 196 C465 222 471 167 496 187 C512 199 532 204 545 186"/>
+<path d="M566 101 C602 70 628 101 604 120 C579 137 576 108 589 100"/>
+<path d="M660 195 C637 177 648 151 669 153 C693 157 695 189 678 197"/>
+</g>
+<text x="189" y="26" text-anchor="middle" font-size="19" font-weight="800" fill="#173c5e">(a) Streamline</text>
+<text x="570" y="26" text-anchor="middle" font-size="19" font-weight="800" fill="#173c5e">(b) Turbulent</text>
+<text x="189" y="275" text-anchor="middle" font-size="15" fill="#4e6480">Orderly, smooth paths</text>
+<text x="570" y="275" text-anchor="middle" font-size="15" fill="#4e6480">Irregular paths and eddies</text>
+<text x="378" y="312" text-anchor="middle" font-size="14" fill="#71869c">Flow directions illustrated schematically; not to scale</text>
+</svg>

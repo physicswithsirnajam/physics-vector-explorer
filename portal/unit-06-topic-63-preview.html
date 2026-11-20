@@ -34,7 +34,9 @@ kbd{font:inherit;border-radius:5px;background:#f0f3f7;padding:2px 6px}
 footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 [hidden]{display:none!important}@media(max-width:620px){.controls,.option-grid{grid-template-columns:1fr}header a{margin-left:0}header .inner{gap:10px}.card{padding:17px}main{margin-top:22px}}
 @media print{header a,.actions,#setup,.notice,#quiz,.lead{display:none!important}main{max-width:none;margin:0}#results{display:block!important}.card{box-shadow:none;border:0;padding:0}#review article{break-inside:avoid}}
+.unit6-source-figure{margin:12px 0 18px;border:1px solid #dbe5ee;border-radius:9px;padding:10px;background:#f6faff}.unit6-source-figure img{display:block;width:100%;max-height:330px;object-fit:contain}.unit6-source-figure figcaption{font-size:12px;color:#4b6178;margin-top:6px}
 </style>
+<script src="./unit06-figure-card-v93.js?v=93" defer></script>
 <script src="./unit-06-topic-63-preview.js?v=80" defer></script>
 </head>
 <body>
@@ -43,14 +45,14 @@ footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 <div class="kicker">NBF Physics · Unit 6 · Topic 6.3</div>
 <h1>Fluid Flow</h1>
 <p class="lead">Practise the original MCQs on streamline and turbulent flow, ideal-fluid assumptions, and volumetric flow rate (Q = V/t). Choose concept checks, basic numerical calculations or independent real-life situations.</p>
-<div class="notice"><strong>Public provisional learning preview.</strong> Source bank: 80 original MCQs. Currently available: <strong id="question-count">78</strong> (original Questions 24 and 80 refer to textbook Figure 6.6 and are held for diagram verification). The 20 original real-life situation questions are independent items, not shared-stimulus groups; 19 are currently selectable. Answers are shown after submission. This is not an official FBISE examination, a protected test or a recorded school result.</div>
+<div class="notice"><strong>Public provisional learning preview.</strong> Source bank: 80 original MCQs. Currently available: <strong id="question-count">80</strong> (Questions 24 and 80 now show an original reference diagram for Figure 6.6). The 20 original real-life situation questions are independent items, not shared-stimulus groups; all 20 are now selectable. Answers are shown after submission. This is not an official FBISE examination, a protected test or a recorded school result.</div>
 <section id="setup" class="card" aria-labelledby="setup-title">
 <h2 id="setup-title">Build a Topic 6.3 practice</h2>
-<p class="subtle"><strong>New source-figure study:</strong> <a href="./unit-06-figure-study-v90.html#figure66">Compare streamline (a) with turbulent (b) flow in an original schematic</a>. Questions 24 and 80 remain held.</p>
+<p class="subtle"><strong>New source-figure study:</strong> <a href="./unit-06-figure-study-v90.html#figure66">Compare streamline (a) with turbulent (b) flow in an original schematic</a>. Questions 24 and 80 now include the original Figure 6.6 educational schematic.</p>
 <p class="subtle">Related exploration: <a href="../continuity-fluid-flow.html">Continuity and Fluid Flow simulation</a> (includes continuity-equation material from the following Topic 6.4, beyond this MCQ bank).</p>
 <p id="load-status" class="subtle" role="status">Checking the question source…</p>
 <div class="controls">
-<label class="field" for="category"><span>Topic practice section</span><select id="category"><option value="all">All topic questions</option><option value="fundamentals">Fundamentals (20 available)</option><option value="reasoning">Conceptual reasoning (19)</option><option value="numericals">Flow-rate numerical applications (20)</option><option value="standalone-situations">Real-life situations (19)</option></select></label>
+<label class="field" for="category"><span>Topic practice section</span><select id="category"><option value="all">All topic questions</option><option value="fundamentals">Fundamentals (20 available)</option><option value="reasoning">Conceptual reasoning (20)</option><option value="numericals">Flow-rate numerical applications (20)</option><option value="standalone-situations">Real-life situations (20)</option></select></label>
 <label class="field" for="size"><span>Number of MCQs</span><select id="size"><option value="10">10 MCQs</option><option value="20" selected>20 MCQs</option><option value="40">40 MCQs (where available)</option><option value="all">All available in this section</option></select></label>
 </div>
 <p class="subtle">Topic SLO P-11-B-35: Summative, Knowledge + Understanding in the supplied official FBISE framework. Individual MCQ alignment remains unverified. Original numerical questions use Q = V/t; continuity-equation questions belong to Topic 6.4. The textbook introductory phrasing links steady and laminar flow, but these are distinct properties in general fluid mechanics. Your responses are not uploaded or saved to the cloud.</p>
@@ -62,6 +64,7 @@ footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 <div class="progress" aria-label="Question position"><span id="bar"></span></div>
 <div class="subtle" id="source-number"></div>
 <div class="stem" id="stem"></div>
+<div id="figure-reference" aria-label="Illustration for this MCQ" hidden></div>
 <fieldset id="choices" style="border:0;margin:0;padding:0"><legend class="subtle">Choose one answer</legend><div class="option-grid" id="option-grid"></div></fieldset>
 <div class="actions"><button id="previous" class="btn" type="button">Previous</button><button id="next" class="btn" type="button">Next</button><button id="finish" class="btn primary" type="button">Submit and view explanations</button></div>
 <p class="subtle">You may return to earlier questions before submitting. Questions and options are shown as supplied, including the original numerical units.</p>

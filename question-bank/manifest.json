@@ -144,9 +144,9 @@
             "grade-11/unit-06-topic-66-v86-80-source.json",
             "grade-11/unit-06-topic-67-v88-80-source.json"
           ],
-          "liveMcqCount": 554,
+          "liveMcqCount": 560,
           "sourceTopicMcqCount": 560,
-          "sourceFigureHeldCount": 6,
+          "sourceFigureHeldCount": 0,
           "topicPublished": "6.1 — Upthrust and Archimedes’ Principle; 6.2 — Viscous Drag and Terminal Velocity; 6.3 — Fluid Flow; 6.4 — Equation of Continuity; 6.5 — Bernoulli’s Equation; 6.6 — Applications of Bernoulli’s Equation; 6.7 — Superfluidity (all partial self-practice previews)",
           "summativeTopicSloCodes": [
             "P-11-B-33",
@@ -166,14 +166,14 @@
           "formativelyCertified": false,
           "exactFbiseModeReady": false,
           "independentSharedStimulusGroupCount": 0,
-          "standaloneSituationQuestionCount": 133,
+          "standaloneSituationQuestionCount": 136,
           "status": "partial-public-topic-preview",
-          "bankVersion": "v89-topics61-67-public-554-only",
-          "importNote": "V89 integrates all 80 original Topic6.7 Superfluidity V88 source MCQs into the prior 79+77+78+80+80+80=474 partial Unit6 public MCQs. Now 554 selectable Unit6 (560 originals), the six earlier figure-dependent items still held; 133 independent situation questions, ZERO shared four-MCQ stimulus groups. Overall Grade XI 2,244 provisional public Test Builder MCQs (original Units1–5 unchanged at 1,690). P-11-B-43 is summative and Understanding at official topic level but no independently verified per-item SLO/cognitive labels. Individual source key K/U tags are not present and never inferred. Full Unit6 course remains planned; no certified FBISE exam or cloud grade."
+          "bankVersion": "v93-topics61-67-all-560-original-mcqs-figure-verified",
+          "importNote": "V93 releases the six figure-dependent original Unit6 MCQs after visual comparison to NBF printed Figures6.2,6.3,6.5(c),6.6. All original stems, options, key letters and explanations preserved; each of six questions now shows a matching original educational SVG inside central and standalone practice. All seven Unit6 topics now provide 80 items apiece: 560/560; Grade XI 2,250 public MCQs. 136 independent situations and no authentic grouped stimuli. NBF original photos are never public. Topic-level FBISE classifications are not individual certifications; full Unit6 course remains planned and self-practice is ungraded by the school."
         }
       ]
     }
   ],
-  "bankVersion": "v89-five-original-banks-plus-partial-u6-2244-public-mcqs",
+  "bankVersion": "v93-five-original-banks-plus-partial-u6-2250-public-mcqs",
   "lastUpdated": "2026-11-20"
 }

@@ -33,17 +33,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Syntax, 6 source holds, all 4 figure references, and unchanged 2,244 central MCQ count
+      - name: Syntax, 6 source holds, all 4 figure references, and unchanged 2,250 central MCQ count
         run: |
           node --check scripts/test_unit06_figure_study_v90.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==560||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2250)process.exit(1)"
       - name: Install real Chromium for accessible SVG and mobile testing
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
       - name: V90 6 held item/source keys unchanged and original 4-figure mobile learning page
         run: node scripts/test_unit06_figure_study_v90.cjs
-      - name: Regression — V89 central 2,244 and V88 standalone 80 original Superfluidity MCQs
+      - name: Regression — V89 central 2,250 and V88 standalone 80 original Superfluidity MCQs
         run: |
           node scripts/test_grade11_unit06_central_v89.cjs
           node scripts/test_unit06_topic67_v88.cjs

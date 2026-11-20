@@ -14,7 +14,7 @@ function safeBank(bank){
   if(q.options.map(x=>x.id).join('')!=='ABCD')return false;
   if(q.sloCodes?.length!==0||q.boardEligible!==false||q.stimulusSetId!==null)return false;
  }
- return bank.questions.filter(q=>q.active).length===77&&[26,64,72].every(n=>bank.questions.find(q=>q.sourceQuestionNumber===n)?.active===false);
+ return bank.questions.filter(q=>q.active).length===80&&[26,64,72].every(n=>bank.questions.find(q=>q.sourceQuestionNumber===n)?.active===true);
 }
 function setMessage(message){$('load-status').textContent=message;}
 function selectedQuestions(){
@@ -43,6 +43,7 @@ function showQuestion(){
  $('bar').style.width=String(100*(position+1)/test.length)+'%';
  $('source-number').textContent='Original Topic 6.2 source Q'+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · NBF pp. 91–95';
  $('stem').textContent=q.stem;
+ PSNUnit6FigureCardV93.show($('figure-reference'),q,'../assets/illustrations/');
  const grid=$('option-grid');grid.replaceChildren();
  q.options.forEach(o=>{
   const lab=make('label','answer-option'),input=make('input'),letter=make('span','letter',o.id),body=make('span','',o.text);

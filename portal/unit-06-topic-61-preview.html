@@ -34,7 +34,9 @@ kbd{font:inherit;border-radius:5px;background:#f0f3f7;padding:2px 6px}
 footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 [hidden]{display:none!important}@media(max-width:620px){.controls,.option-grid{grid-template-columns:1fr}header a{margin-left:0}header .inner{gap:10px}.card{padding:17px}main{margin-top:22px}}
 @media print{header a,.actions,#setup,.notice,#quiz,.lead{display:none!important}main{max-width:none;margin:0}#results{display:block!important}.card{box-shadow:none;border:0;padding:0}#review article{break-inside:avoid}}
+.unit6-source-figure{margin:12px 0 18px;border:1px solid #dbe5ee;border-radius:9px;padding:10px;background:#f6faff}.unit6-source-figure img{display:block;width:100%;max-height:330px;object-fit:contain}.unit6-source-figure figcaption{font-size:12px;color:#4b6178;margin-top:6px}
 </style>
+<script src="./unit06-figure-card-v93.js?v=93" defer></script>
 <script src="./unit-06-topic-61-preview.js?v=76" defer></script>
 </head>
 <body>
@@ -43,13 +45,13 @@ footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 <div class="kicker">NBF Physics · Unit 6 · Topic 6.1</div>
 <h1>Upthrust and Archimedes’ Principle</h1>
 <p class="lead">Practice original source-based MCQs on fluid pressure, buoyancy, floating ships and submarines. Work through concept checks, numerical problems or everyday situations in the familiar four-option exam-style format.</p>
-<div class="notice"><strong>Public provisional learning preview.</strong> Source bank: 80 original MCQs. Currently available: <strong id="question-count">79</strong> (source Question 11 is reserved for its Figure 6.2 review). The 16 real-life situation MCQs are standalone items, not grouped shared-stimulus sets. Answers are shown after submission. This is not an official FBISE examination, a protected test or a recorded school result.</div>
+<div class="notice"><strong>Public provisional learning preview.</strong> Source bank: 80 original MCQs. Currently available: <strong id="question-count">80</strong> (original Q11 is now selectable with its original teaching diagram). The 16 real-life situation MCQs are standalone items, not grouped shared-stimulus sets. Answers are shown after submission. This is not an official FBISE examination, a protected test or a recorded school result.</div>
 <section id="setup" class="card" aria-labelledby="setup-title">
 <h2 id="setup-title">Build a Topic 6.1 practice</h2>
-<p class="subtle"><strong>New source-figure study:</strong> <a href="./unit-06-figure-study-v90.html#figure62">Explore an original cylinder/upthrust schematic for NBF Figure 6.2</a>. Source Q11 stays held pending exact textbook visual comparison.</p>
+<p class="subtle"><strong>New source-figure study:</strong> <a href="./unit-06-figure-study-v90.html#figure62">Explore an original cylinder/upthrust schematic for NBF Figure 6.2</a>. Source Q11 has passed textbook-figure checking and now appears with its original teaching diagram.</p>
 <p id="load-status" class="subtle" role="status">Checking the question source…</p>
 <div class="controls">
-<label class="field" for="category"><span>Topic practice section</span><select id="category"><option value="all">All topic questions</option><option value="fundamentals">Fundamentals (19 available)</option><option value="reasoning">Conceptual reasoning (20)</option><option value="numericals">Numerical applications (24)</option><option value="standalone-situations">Real-life situations (16)</option></select></label>
+<label class="field" for="category"><span>Topic practice section</span><select id="category"><option value="all">All topic questions</option><option value="fundamentals">Fundamentals (20 available)</option><option value="reasoning">Conceptual reasoning (20)</option><option value="numericals">Numerical applications (24)</option><option value="standalone-situations">Real-life situations (16)</option></select></label>
 <label class="field" for="size"><span>Number of MCQs</span><select id="size"><option value="10">10 MCQs</option><option value="20" selected>20 MCQs</option><option value="40">40 MCQs (where available)</option><option value="all">All available in this section</option></select></label>
 </div>
 <p class="subtle">Topic SLOs: P-11-B-33 and P-11-B-34 (summative Application in the supplied official framework). Per-question SLO and cognitive-level certification are still pending. Your responses remain inside this page and are not saved to the cloud.</p>
@@ -61,6 +63,7 @@ footer{text-align:center;padding:22px;color:#65758e;font-size:12px}
 <div class="progress" aria-label="Question position"><span id="bar"></span></div>
 <div class="subtle" id="source-number"></div>
 <div class="stem" id="stem"></div>
+<div id="figure-reference" aria-label="Illustration for this MCQ" hidden></div>
 <fieldset id="choices" style="border:0;margin:0;padding:0"><legend class="subtle">Choose one answer</legend><div class="option-grid" id="option-grid"></div></fieldset>
 <div class="actions"><button id="previous" class="btn" type="button">Previous</button><button id="next" class="btn" type="button">Next</button><button id="finish" class="btn primary" type="button">Submit and view explanations</button></div>
 <p class="subtle">You may return to earlier questions before submitting. Questions and options are shown as supplied, including the original numerical units.</p>

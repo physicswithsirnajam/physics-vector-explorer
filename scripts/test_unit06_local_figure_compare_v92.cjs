@@ -6,20 +6,20 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8'),json=p=>JSON.parse(read(p));
 const manifest=json('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.equal(manifest[5].liveMcqCount,554);assert.equal(manifest[5].sourceTopicMcqCount,560);
-assert.equal(manifest[5].sourceFigureHeldCount,6);assert.equal(manifest[5].standaloneSituationQuestionCount,133);
-assert.equal(manifest[5].independentSharedStimulusGroupCount,0);assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2244);
+assert.equal(manifest[5].liveMcqCount,560);assert.equal(manifest[5].sourceTopicMcqCount,560);
+assert.equal(manifest[5].sourceFigureHeldCount,0);assert.equal(manifest[5].standaloneSituationQuestionCount,136);
+assert.equal(manifest[5].independentSharedStimulusGroupCount,0);assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2250);
 const originals=[
  {file:'unit-06-topic-61-v76-80-source.json',hold:[11],key:'C'},
  {file:'unit-06-topic-62-v78-80-source.json',hold:[26,64,72],key:'DAD'},
  {file:'unit-06-topic-63-v80-80-source.json',hold:[24,80],key:'BB'}
 ];
 for(const src of originals){
- const bank=json('question-bank/grade-11/'+src.file),held=bank.questions.filter(q=>!q.active);
+ const bank=json('question-bank/grade-11/'+src.file),held=bank.questions.filter(q=>src.hold.includes(q.sourceQuestionNumber));
  assert.equal(bank.questions.length,80);
- assert.deepEqual(held.map(q=>q.sourceQuestionNumber),src.hold);
+ assert.deepEqual(held.map(q=>q.sourceQuestionNumber),src.hold);assert.equal(bank.questions.filter(q=>!q.active).length,0);
  assert.equal(held.map(q=>q.correctOptionId).join(''),src.key);
- assert.ok(held.every(q=>q.boardEligible===false&&q.stimulusSetId===null&&q.sloCodes.length===0));
+ assert.ok(held.every(q=>q.active===true&&q.referenceFigureId&&q.boardEligible===false&&q.stimulusSetId===null&&q.sloCodes.length===0));
 }
 const pageSource=read('portal/unit-06-figure-verification-v91.html'),code=read('portal/unit-06-figure-verification-v91.js');
 assert.match(pageSource,/V92/);
@@ -38,7 +38,7 @@ assert.doesNotMatch(code,/\blocalStorage\b|\bsessionStorage\b|indexedDB|firebase
 assert.match(read('portal/index.html'),/V92 — Private Local Figure Comparison/);
 assert.match(read('portal/unit-06-figure-study-v90.html'),/V92 — Private Local Figure Comparison/);
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
-console.log('V92 STATIC PASS — original 554/560, 6 source holds, local image URLs, clearing, no file transmission or cloud storage.');
+console.log('V92 STATIC PASS — original 560/560, 6 source holds, local image URLs, clearing, no file transmission or cloud storage.');
 async function browserTest(){
  const {chromium}=require('playwright');
  const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
@@ -58,7 +58,7 @@ async function browserTest(){
    if(r.method()!=='GET')uploads.push(r.method()+':'+r.url());
   });
   await page.goto('http://127.0.0.1:'+server.address().port+'/portal/unit-06-figure-verification-v91.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('Six original held MCQs loaded'));
+  await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('Six verified source-figure MCQs loaded'));
   assert.equal(await page.locator('article.question').count(),6);
   assert.equal(await page.locator('.comparison').count(),4);
   assert.equal(await page.locator('.compare-grid').count(),4);
@@ -109,7 +109,7 @@ async function browserTest(){
   record=await page.locator('#review-summary').textContent();
   assert.match(record,/XI-U06-T61-MCQ-0011[\s\S]*?Local image shown during review: NO/);
   assert.match(record,/XI-U06-T62-MCQ-0026[\s\S]*?Local image shown during review: YES/);
-  assert.equal((record.match(/Public question status: STILL HELD/g)||[]).length,6);
+  assert.equal((record.match(/Public question status: SELECTABLE PROVISIONAL SELF-PRACTICE/g)||[]).length,6);
   assert.deepEqual(external,[]);assert.deepEqual(uploads,[]);
   await page.setViewportSize({width:390,height:844});
   const size=await page.evaluate(()=>({viewport:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));

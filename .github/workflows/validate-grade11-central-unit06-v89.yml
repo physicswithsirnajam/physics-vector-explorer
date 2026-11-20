@@ -41,12 +41,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Current 2,244 original inventory and adapter JavaScript syntax
+      - name: Current 2,250 original inventory and adapter JavaScript syntax
         run: |
           node --check shared/practice-bank-adapter-v55.js
           node --check shared/multi-unit-planner-v56.js
           node --check scripts/test_grade11_unit06_central_v89.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==133||m[5].independentSharedStimulusGroupCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==560||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==0||m[5].standaloneSituationQuestionCount!==136||m[5].independentSharedStimulusGroupCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2250)process.exit(1)"
       - name: Install Chromium for full student browser and 390px QA
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

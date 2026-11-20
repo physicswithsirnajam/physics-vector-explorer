@@ -29,11 +29,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Source schema, 2,244 existing central count, and JavaScript syntax
+      - name: Source schema, 2,250 existing central count, and JavaScript syntax
         run: |
           node --check portal/unit-06-topic-66-preview.js
           node --check scripts/test_unit06_topic66_v86.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==560||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2250)process.exit(1)"
       - name: Install Chromium for student browser testing
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0

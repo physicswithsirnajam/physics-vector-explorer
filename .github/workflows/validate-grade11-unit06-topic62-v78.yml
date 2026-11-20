@@ -37,7 +37,7 @@ jobs:
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
-      - name: Verify original 80 items, 77 active and student browser
+      - name: Verify original 80 items, 80 active and student browser
         run: node scripts/test_unit06_topic62_v78.cjs
       - name: Regression — V76 original source and V77 central Test Builder remain stable
         run: |

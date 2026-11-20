@@ -12,7 +12,7 @@ assert.equal(bank.schemaVersion,1);
 assert.equal(bank.bankId,'PSN-XI-U06-T61-V76');
 assert.equal(bank.sourceQuestionCount,80);
 assert.equal(bank.importedQuestionCount,80);
-assert.equal(bank.publicPreviewCount,79);
+assert.equal(bank.publicPreviewCount,80);
 assert.equal(bank.secureExam,false);
 assert.equal(bank.publicSelfPractice,true);
 assert.equal(bank.questions.length,80);
@@ -43,10 +43,10 @@ for(let i=0;i<80;i++){
  assert.equal(q.situationBased,i>=64);
  assert.ok(!/SLO alignment|Source: National Book|FBISE Physics HSSC-I Assessment Framework|NBF pp\./i.test(q.explanation),'PDF footer/explanation contamination '+q.id);
 }
-assert.equal(bank.questions.filter(q=>q.active).length,79);
-assert.deepEqual(bank.questions.filter(q=>!q.active).map(q=>q.sourceQuestionNumber),[11]);
+assert.equal(bank.questions.filter(q=>q.active).length,80);
+assert.deepEqual(bank.questions.filter(q=>!q.active).map(q=>q.sourceQuestionNumber),[]);
 assert.match(bank.questions[10].stem,/Fig\. 6\.2/);
-assert.match(bank.questions[10].holdReason,/Figure 6\.2/);
+assert.equal(bank.questions[10].holdReason,null);assert.equal(bank.questions[10].referenceFigureId,'unit6-figure62');
 for(const [section,n] of [['fundamentals',20],['reasoning',20],['numericals',24],['standalone-situations',16]]){
  assert.equal(bank.questions.filter(q=>q.sourceSection===section).length,n);
 }
@@ -108,7 +108,7 @@ async function browserCheck(){
    page.on('dialog',d=>d.accept());
    await page.goto('http://127.0.0.1:'+port+'/portal/unit-06-topic-61-preview.html',{waitUntil:'load'});
    await page.waitForFunction(()=>!document.getElementById('begin').disabled,null,{timeout:12000});
-   assert.equal(await page.locator('#question-count').textContent(),'79');
+   assert.equal(await page.locator('#question-count').textContent(),'80');
    await page.locator('#category').selectOption('standalone-situations');
    await page.locator('#size').selectOption('all');
    await page.locator('#begin').click();
@@ -128,7 +128,7 @@ async function browserCheck(){
    await page.locator('#category').selectOption('fundamentals');
    await page.locator('#size').selectOption('all');
    await page.locator('#begin').click();
-   assert.ok((await page.locator('#position').textContent()).includes('of 19'),'Q11 must be withheld');
+   assert.ok((await page.locator('#position').textContent()).includes('of 20'),'Q11 is source-verified and active');
    await page.setViewportSize({width:390,height:844});
    const width=await page.evaluate(()=>({inner:window.innerWidth,scroll:document.documentElement.scrollWidth}));
    assert.ok(width.scroll<=width.inner+4,'Mobile horizontal overflow: '+JSON.stringify(width));

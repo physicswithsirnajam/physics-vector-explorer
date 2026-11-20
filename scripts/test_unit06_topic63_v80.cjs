@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /* V80: source-faithful Topic 6.3 standalone public MCQ preview.
- * Full Unit6 and central V79 2,244 bank remain unchanged; no cloud grades.
+ * Full Unit6 and central V79 2,250 bank remain unchanged; no cloud grades.
  */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(__dirname,'..');
@@ -13,7 +13,7 @@ assert.equal(bank.bankId,'PSN-XI-U06-T63-V80');
 assert.equal(bank.schemaVersion,1);assert.equal(bank.grade,11);
 assert.equal(bank.unit,6);assert.equal(bank.topicNumber,'6.3');
 assert.equal(bank.sourceQuestionCount,80);assert.equal(bank.importedQuestionCount,80);
-assert.equal(bank.publicPreviewCount,78);assert.equal(bank.questions.length,80);
+assert.equal(bank.publicPreviewCount,80);assert.equal(bank.questions.length,80);
 assert.equal(bank.secureExam,false);assert.equal(bank.publicSelfPractice,true);
 assert.equal(bank.unitReleaseStatus,'planned-partial-topic-preview');
 assert.deepEqual(bank.verifiedFrameworkTopicSloCodes,['P-11-B-35']);
@@ -22,10 +22,10 @@ assert.equal(bank.officialFrameworkCognitiveLevel,'Knowledge + Understanding');
 assert.equal(bank.perQuestionFrameworkMappingStatus,'not individually verified');
 assert.equal(bank.originalSourceAnswerKey,key);
 assert.equal(bank.questions.map(x=>x.correctOptionId).join(''),key,'Printed source answer key changed');
-assert.deepEqual(bank.questions.filter(x=>!x.active).map(x=>x.sourceQuestionNumber),[24,80]);
+assert.deepEqual(bank.questions.filter(x=>!x.active).map(x=>x.sourceQuestionNumber),[]);
 assert.deepEqual(bank.sections,{fundamentals:20,reasoning:20,numericals:20,'standalone-situations':20,sharedStimulusGroups:0});
-assert.equal(bank.questions.filter(x=>x.active).length,78);
-assert.equal(bank.questions.filter(x=>x.active&&x.situationBased).length,19);
+assert.equal(bank.questions.filter(x=>x.active).length,80);
+assert.equal(bank.questions.filter(x=>x.active&&x.situationBased).length,20);
 assert.equal(new Set(bank.questions.map(x=>x.id)).size,80);
 assert.equal(new Set(bank.questions.map(x=>x.stem.toLowerCase()+'|'+x.options.map(y=>y.text).join('|'))).size,80);
 const live={fundamentals:0,reasoning:0,numericals:0,'standalone-situations':0};
@@ -50,14 +50,15 @@ for(let i=0;i<80;i++){
  assert.equal(q.cognitiveLevel,'Unspecified');assert.equal(q.difficulty,'Unspecified');
  assert.ok(!/NBF PHYSICS XI|TEACHER NOTE|SECTION (?:I|II|III|IV)/i.test(q.stem+' '+q.explanation),'PDF page furniture leaked Q'+n);
  if(n===24||n===80){
-  assert.equal(q.active,false);assert.equal(q.status,'pending-figure-review');
-  assert.match(q.stem,/Fig\. 6\.6/);assert.match(q.holdReason,/Figure 6\.6/);
+  assert.equal(q.active,true);assert.equal(q.status,'provisional-public-self-practice');
+  assert.match(q.stem,/Fig\. 6\.6/);assert.equal(q.holdReason,null);assert.equal(q.referenceFigureId,'unit6-figure66');
+  live[q.sourceSection]++;
  }else{
   assert.equal(q.active,true);assert.equal(q.status,'provisional-public-self-practice');
   live[q.sourceSection]++;
  }
 }
-assert.deepEqual(live,{fundamentals:20,reasoning:19,numericals:20,'standalone-situations':19});
+assert.deepEqual(live,{fundamentals:20,reasoning:20,numericals:20,'standalone-situations':20});
 const scientificExp=exp=>{
  const digits={'⁻':'-','⁺':'+','⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9'};
  const value=Array.from(exp,ch=>digits[ch]).join('');
@@ -93,12 +94,12 @@ assert.equal(bank.questions[58].correctOptionId,'A'); // time needed for Q=V/t
 assert.equal(bank.questions[59].correctOptionId,'C'); // units m³/s
 // V80 does not modify central builder or full course status.
 const xi=load('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,554]);
-assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),2244);
+assert.deepEqual(xi.map(x=>x.liveMcqCount),[275,206,220,640,349,560]);
+assert.equal(xi.reduce((n,x)=>n+x.liveMcqCount,0),2250);
 const unit6=load('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(x=>x.unit===6);
 assert.equal(unit6.status,'planned');
 assert.equal(unit6.questionBankCount,0);
-assert.equal(unit6.partialTestBuilderMcqCount,554);
+assert.equal(unit6.partialTestBuilderMcqCount,560);
 assert.ok(!fs.existsSync(path.join(root,'portal/unit-06.html')));
 assert.ok(!fs.existsSync(path.join(root,'portal/Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
 const hub=read('portal/index.html');
@@ -106,10 +107,10 @@ assert.ok(hub.includes('href="./unit-06-topic-63-preview.html"'));
 assert.ok(hub.includes('Topic 6.3 is also now in the central Test Builder'));
 assert.ok(hub.includes('unit-06-topic-63-preview.html'));
 assert.ok(hub.includes('build-your-physics-test.html?unit=6'));
-assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">78</strong>'));
+assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">80</strong>'));
 assert.ok(read('portal/unit-06-topic-63-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-63-v80-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'continuity-fluid-flow.html')));
-console.log('V80 STATIC PASS: 80 original Q/answers, 78 active, Figure6.6 Q24/Q80 held, 20+19+20+19 public groups, independent Q=V/t calculations, central 2,244 unchanged.');
+console.log('V93-retained V80 STATIC PASS: 80 original Q/answers, 80 active, Figure6.6 Q24/Q80 released with diagram, four groups of 20, independent Q=V/t calculations, central 2,250.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
@@ -133,9 +134,9 @@ async function browserTest(){
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'portal/unit-06-topic-63-preview.html',{waitUntil:'load'});
   await page.waitForFunction(()=>!document.getElementById('begin').disabled);
-  assert.equal(await page.locator('#question-count').textContent(),'78');
+  assert.equal(await page.locator('#question-count').textContent(),'80');
   assert.equal(await page.locator('a[href="../continuity-fluid-flow.html"]').count(),1);
-  for(const [section,count] of [['fundamentals',20],['reasoning',19],['numericals',20],['standalone-situations',19]]){
+  for(const [section,count] of [['fundamentals',20],['reasoning',20],['numericals',20],['standalone-situations',20]]){
     await page.locator('#category').selectOption(section);
     await page.locator('#size').selectOption('all');
     await page.locator('#begin').click();
@@ -152,12 +153,12 @@ async function browserTest(){
   await page.locator('#category').selectOption('all');
   await page.locator('#size').selectOption('all');
   await page.locator('#begin').click();
-  assert.match(await page.locator('#position').textContent(),/of 78$/);
+  assert.match(await page.locator('#position').textContent(),/of 80$/);
   await page.locator('#finish').click();
-  assert.equal(await page.locator('#review article').count(),78);
+  assert.equal(await page.locator('#review article').count(),80);
   const text=await page.locator('#review').textContent();
-  assert.ok(!text.includes('original Q24 '),'Held Q24 accidentally served');
-  assert.ok(!text.includes('original Q80 '),'Held Q80 accidentally served');
+  assert.ok(text.includes('original Q24'),'Verified Q24 should appear in the complete review');
+  assert.ok(text.includes('original Q80'),'Verified Q80 should appear in the complete review');
   await page.locator('#try-again').click();
   await page.setViewportSize({width:390,height:844});
   const dims=await page.evaluate(()=>({w:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
@@ -167,7 +168,7 @@ async function browserTest(){
   await page.screenshot({path:path.join(out,'unit06-topic63-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);
   assert.deepEqual(missing,[],'Missing local assets');
-  console.log('V80 BROWSER PASS: four topic categories, full 78-MCQ review, diagram holds, explanation scoring, related link and mobile 390px.');
+  console.log('V80 BROWSER PASS: four topic categories, full 80-MCQ review, verified figure questions, explanation scoring, related link and mobile 390px.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 browserTest().catch(e=>{console.error('FAIL V80',e);process.exitCode=1;});

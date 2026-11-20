@@ -5,7 +5,7 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:640,5:349,6:554};
+const expected={1:275,2:206,3:220,4:640,5:349,6:560};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
   4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1–6.7 (partial)'
@@ -638,7 +638,7 @@ function adaptMasterFive(master,older){
 function adaptUnitSix(source){
  need(source?.bankId==='PSN-XI-U06-T61-V76'&&source.unit===6&&
    source.sourceQuestionCount===80&&source.importedQuestionCount===80&&
-   source.publicPreviewCount===79&&source.secureExam===false&&
+   source.publicPreviewCount===80&&source.secureExam===false&&
    source.publicSelfPractice===true&&source.questions?.length===80,
    'invalid Unit 6 source or public-preview boundary');
  need(source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-33,P-11-B-34'&&
@@ -663,15 +663,11 @@ function adaptUnitSix(source){
   need(Array.isArray(q.options)&&q.options.map(o=>o.id).join('')==='ABCD'&&
     q.options.some(o=>o.id===q.correctOptionId)&&q.explanation?.trim(),
     'invalid Unit 6 source answers');
-  if(i===10){
-    need(q.active===false&&q.status==='pending-figure-review'&&
-      /Figure 6.2/.test(q.holdReason||''),'Unit 6 Fig 6.2 hold was removed');
-  }else{
-    need(q.active===true,'unexpected inactive original Unit 6 question');
-    kept.push({...q,stimulusHtml:''});
-  }
+  need(q.active===true&&q.status==='provisional-public-self-practice','Unit6 source item not available '+(i+1));
+  if(i===10)need(q.referenceFigureId==='unit6-figure62'&&q.holdReason===null,'Unit6 Fig6.2 reference missing');
+  kept.push({...q,stimulusHtml:''});
  }
- need(kept.length===79&&new Set(kept.map(q=>q.id)).size===79,
+ need(kept.length===80&&new Set(kept.map(q=>q.id)).size===80,
    'Unit 6 public bank does not contain exactly 79 distinct questions');
  return kept;
 }
@@ -683,7 +679,7 @@ function adaptUnitSix(source){
 function adaptUnitSixTopic62(source){
  need(source?.bankId==='PSN-XI-U06-T62-V78'&&source.unit===6&&
    source.topicNumber==='6.2'&&source.sourceQuestionCount===80&&
-   source.importedQuestionCount===80&&source.publicPreviewCount===77&&
+   source.importedQuestionCount===80&&source.publicPreviewCount===80&&
    source.secureExam===false&&source.publicSelfPractice===true&&
    source.questions?.length===80,'invalid Unit 6 Topic 6.2 source boundary');
  need(source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-41,P-11-B-42'&&
@@ -718,19 +714,14 @@ function adaptUnitSixTopic62(source){
      typeof q.stem==='string'&&q.stem.trim()&&
      typeof q.explanation==='string'&&q.explanation.trim(),
      'invalid Topic 6.2 source MCQ');
-   if(holds.has(n)){
-     need(q.active===false&&q.status==='pending-figure-review'&&
-       q.holdReason?.includes(holds.get(n)), 'Figure-dependent Q'+n+' incorrectly enabled');
-   }else{
-     need(q.active===true&&q.status==='provisional-public-self-practice',
-       'unexpected inactive or labelled Topic 6.2 question');
-     kept.push({...q,stimulusHtml:''});sections[expectedSection]++;
-   }
+   need(q.active===true&&q.status==='provisional-public-self-practice','Topic6.2 item unavailable '+n);
+   if(holds.has(n))need(q.referenceFigureId===(n===64?'unit6-figure65c':'unit6-figure63')&&q.holdReason===null,'Topic6.2 figure context missing '+n);
+   kept.push({...q,stimulusHtml:''});sections[expectedSection]++;
  }
- need(kept.length===77&&new Set(kept.map(q=>q.id)).size===77,
+ need(kept.length===80&&new Set(kept.map(q=>q.id)).size===80,
    'Topic 6.2 public item count or IDs changed');
- need(sections.fundamentals===20&&sections.reasoning===19&&
-   sections.numericals===20&&sections['standalone-situations']===18,
+ need(sections.fundamentals===20&&sections.reasoning===20&&
+   sections.numericals===20&&sections['standalone-situations']===20,
    'original Topic 6.2 source sections corrupted');
  return kept;
 }
@@ -744,7 +735,7 @@ function adaptUnitSixTopic63(source){
  need(source?.bankId==='PSN-XI-U06-T63-V80'&&source.grade===11&&
    source.unit===6&&source.topicNumber==='6.3'&&source.title==='Fluid Flow'&&
    source.sourceQuestionCount===80&&source.importedQuestionCount===80&&
-   source.publicPreviewCount===78&&source.secureExam===false&&
+   source.publicPreviewCount===80&&source.secureExam===false&&
    source.publicSelfPractice===true&&source.questions?.length===80&&
    source.unitReleaseStatus==='planned-partial-topic-preview',
    'Invalid Unit6 Topic6.3 archival source or publication boundary');
@@ -777,20 +768,14 @@ function adaptUnitSixTopic63(source){
      typeof q.stem==='string'&&q.stem.trim()&&
      typeof q.explanation==='string'&&q.explanation.trim(),
      'Topic6.3 original MCQ content/answer invalid');
-   if(held.has(n)){
-     need(q.active===false&&q.status==='pending-figure-review'&&
-       q.holdReason?.includes('Figure 6.6')&&/Fig\. 6\.6/.test(q.stem),
-       'Topic6.3 Figure6.6 original Q'+n+' incorrectly enabled');
-   }else{
-     need(q.active===true&&q.status==='provisional-public-self-practice',
-       'Topic6.3 original Q'+n+' incorrectly inactive');
-     kept.push({...q,stimulusHtml:''});sections[section]++;
-   }
+   need(q.active===true&&q.status==='provisional-public-self-practice','Topic6.3 item unavailable '+n);
+   if(held.has(n))need(q.referenceFigureId==='unit6-figure66'&&q.holdReason===null,'Topic6.3 figure missing '+n);
+   kept.push({...q,stimulusHtml:''});sections[section]++;
  }
- need(kept.length===78&&new Set(kept.map(q=>q.id)).size===78,
+ need(kept.length===80&&new Set(kept.map(q=>q.id)).size===80,
    'Topic6.3 visible question count must remain 78');
- need(sections.fundamentals===20&&sections.reasoning===19&&
-   sections.numericals===20&&sections['standalone-situations']===19,
+ need(sections.fundamentals===20&&sections.reasoning===20&&
+   sections.numericals===20&&sections['standalone-situations']===20,
    'Topic6.3 source sections or figure holds changed');
  return kept;
 }
@@ -1061,7 +1046,7 @@ async function loadBank(unit,basePath){
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v89-topics61-67-public-554-only':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v93-topics61-67-all-560-figure-verified':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
