@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "project": "Physics with Sir Najam",
   "status": "practice-pilot",
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "grades": [
     {
       "grade": 11,
@@ -172,6 +172,6 @@
       ]
     }
   ],
-  "bankVersion": "v85-five-original-banks-plus-partial-u6-2164-public-mcqs",
-  "lastUpdated": "2026-11-19"
+  "bankVersion": "v87-five-original-banks-plus-partial-u6-2164-public-mcqs",
+  "lastUpdated": "2026-11-20"
 }
