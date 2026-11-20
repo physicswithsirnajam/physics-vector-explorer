@@ -78,7 +78,7 @@ async function browserTest(){
   await input.setInputFiles({name:'PRIVATE_ORIGINAL_BOOK_FILENAME.png',mimeType:'image/png',buffer:png});
   await page.waitForTimeout(500);
   const firstState=await page.evaluate(()=>({imgWidth:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth||0,status:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-status')?.textContent||'',inputFiles:document.querySelector('#local-fig-figure62')?.files?.length||0,inputMime:document.querySelector('#local-fig-figure62')?.files?.[0]?.type||null,inputName:document.querySelector('#local-fig-figure62')?.files?.[0]?.name||null,events:document.querySelector('#local-fig-figure62')?.__v92Events||[]}));
-  assert.equal(firstState.imgWidth,2,'Locally selected synthetic PNG did not load: '+JSON.stringify(firstState));
+  assert.equal(firstState.imgWidth,2,'Locally selected synthetic PNG did not load: '+JSON.stringify({...firstState,scriptErrors:errors}));
   const firstCompare=page.locator('.comparison').first();
   const localImg=firstCompare.locator('.compare-viewport img');
   assert.equal(await localImg.count(),1);
