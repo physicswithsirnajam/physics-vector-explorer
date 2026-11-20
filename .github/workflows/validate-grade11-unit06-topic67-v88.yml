@@ -29,11 +29,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Original 80-source metadata, 2,164 central unchanged and JavaScript syntax
+      - name: Original 80-source metadata, 2,244 central unchanged and JavaScript syntax
         run: |
           node --check portal/unit-06-topic-67-preview.js
           node --check scripts/test_unit06_topic67_v88.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==474||m[5].sourceTopicMcqCount!==480||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==113||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2164)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==133||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
       - name: Install Chromium for mobile and student review
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
