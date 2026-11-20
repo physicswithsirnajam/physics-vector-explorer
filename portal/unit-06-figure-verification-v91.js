@@ -85,7 +85,7 @@ function makeComparison(group){
  concept.append(el('p','compare-note','This drawing is for learning only. Verify the actual printed figure, its labels and orientation independently.'));
  grid.append(local,concept);root.append(grid);
  root.append(el('p','compare-note','Selecting an image does NOT mark the original figure as checked and does NOT approve an answer. The source images are never attached to the copyable review report.'));
- let currentImage=null;
+ let currentImage=null,lastHandledFile=null;
  function forget(){
   const old=localImages.get(group.fragment);
   if(old){URL.revokeObjectURL(old);localImages.delete(group.fragment);}
@@ -95,7 +95,7 @@ function makeComparison(group){
   if(loaded)rebuildSummary();
  }
  function reset(){
-  forget();input.value='';
+  forget();lastHandledFile=null;input.value='';
   status.textContent='Local image cleared from this page. Original source question remains held.';
  }
  clear.addEventListener('click',reset);
@@ -105,10 +105,13 @@ function makeComparison(group){
   currentImage.style.width=value+'%';
   zoomOutput.textContent=value+'%';
  });
- input.addEventListener('change',()=>{
-  forget();
+ function handleFileSelection(){
+  // Real browsers dispatch input then change. Process each selected File only once;
+  // also support environments that dispatch only one of those events.
   const file=input.files?.[0];
-  if(!file){status.textContent='No original printed figure image selected.';return;}
+  if(!file||file===lastHandledFile)return;
+  lastHandledFile=file;
+  forget();
   if(!['image/png','image/jpeg','image/webp'].includes(file.type)){
    input.value='';status.textContent='File rejected. Please choose a JPEG, PNG or WebP image. Nothing was uploaded.';
    return;
@@ -132,7 +135,9 @@ function makeComparison(group){
   },{once:true});
   localImages.set(group.fragment,url);
   currentImage=picture;area.append(picture);
- });
+ }
+ input.addEventListener('input',handleFileSelection);
+ input.addEventListener('change',handleFileSelection);
  schematicDocument().then(doc=>{
   const source=doc.getElementById(group.fragment)?.querySelector('svg');
   if(!source)throw Error('V90 original schematic missing');
