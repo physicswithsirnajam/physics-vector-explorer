@@ -107,7 +107,7 @@ assert.ok(hub.includes('href="./unit-06-topic-63-preview.html"'));
 assert.ok(hub.includes('Topic 6.3 is also now in the central Test Builder'));
 assert.ok(hub.includes('unit-06-topic-63-preview.html'));
 assert.ok(hub.includes('build-your-physics-test.html?unit=6'));
-assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">78</strong>'));
+assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">80</strong>'));
 assert.ok(read('portal/unit-06-topic-63-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-63-v80-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'continuity-fluid-flow.html')));
 console.log('V80 STATIC PASS: 80 original Q/answers, 78 active, Figure6.6 Q24/Q80 held, 20+19+20+19 public groups, independent Q=V/t calculations, central 2,250 unchanged.');
@@ -153,7 +153,7 @@ async function browserTest(){
   await page.locator('#category').selectOption('all');
   await page.locator('#size').selectOption('all');
   await page.locator('#begin').click();
-  assert.match(await page.locator('#position').textContent(),/of 78$/);
+  assert.match(await page.locator('#position').textContent(),/of 80$/);
   await page.locator('#finish').click();
   assert.equal(await page.locator('#review article').count(),80);
   const text=await page.locator('#review').textContent();

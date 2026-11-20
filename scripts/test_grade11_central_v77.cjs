@@ -109,7 +109,7 @@ async function browserCheck(){
   assert.match(await page.locator('#review').textContent(),/Correct answer:/);
   await page.screenshot({path:path.join(out,'02-u6-reviewed.png')});
   await page.goto(base+'build-your-physics-test.html?units=1,6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('829 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('835 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'U1 scenario+U6 singles should build');
   await page.locator('#quickStartLink').click();

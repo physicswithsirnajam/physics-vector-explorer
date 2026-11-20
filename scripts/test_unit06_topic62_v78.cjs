@@ -128,7 +128,7 @@ assert.ok(read('portal/unit-06-topic-62-preview.html').includes('Topic 6.2'));
 assert.ok(read('portal/unit-06-topic-62-preview.html').includes('80'));
 assert.ok(read('portal/unit-06-topic-62-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-62-v78-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'viscosity-terminal-velocity.html')));
-console.log('V78 STATIC PASS: 80 source records / 77 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, V79 central 2250 without modifying original V78 source.');
+console.log('V78 STATIC PASS: 80 source records / 80 active, exact original letters, 3 held figure questions, 20+20+20+20 original groups, numerical formulas, V79 central 2250 without modifying original V78 source.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
@@ -170,7 +170,7 @@ async function browserTest(){
   await page.locator('#category').selectOption('all');
   await page.locator('#size').selectOption('all');
   await page.locator('#begin').click();
-  assert.match(await page.locator('#position').textContent(),/of 77$/);
+  assert.match(await page.locator('#position').textContent(),/of 80$/);
   await page.locator('#finish').click();
   assert.equal(await page.locator('#review article').count(),80);
   const sourceNums=await page.locator('#review article .subtle').allTextContents();

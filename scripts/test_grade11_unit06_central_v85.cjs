@@ -228,7 +228,7 @@ async function verifyBrowser(){
   assert.equal(await page.locator('#save-result').isDisabled(),true,'Unit6 must not save school/cloud grade');
   assert.match(await page.locator('#review').textContent(),/Correct answer:/);
   await page.goto(base+'build-your-physics-test.html?units=1,6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('829 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('835 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'Mixed grouped Unit1 + Unit6 should remain possible');
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});
