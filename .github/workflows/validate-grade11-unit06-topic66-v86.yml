@@ -1,0 +1,59 @@
+name: Validate Grade XI Unit6 Topic6.6 Preview (V86)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "portal/unit-06-topic-66-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic66_v86.cjs"
+      - "quality/grade11-unit06-topic66-v86-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic66-v86.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "portal/unit-06-topic-66-preview.*"
+      - "portal/index.html"
+      - "scripts/test_unit06_topic66_v86.cjs"
+      - "quality/grade11-unit06-topic66-v86-audit.md"
+      - ".github/workflows/validate-grade11-unit06-topic66-v86.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-and-student-browser:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source schema, 2,084 existing central count, and JavaScript syntax
+        run: |
+          node --check portal/unit-06-topic-66-preview.js
+          node --check scripts/test_unit06_topic66_v86.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==394||m[5].sourceTopicMcqCount!==400||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2084)process.exit(1)"
+      - name: Install Chromium for student browser testing
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V86 original 80 keys, 20 independently recomputed numericals, browser and 390px
+        run: node scripts/test_unit06_topic66_v86.cjs
+      - name: Regression — V85 central source/balanced builder and V84 Bernoulli preview
+        run: |
+          node scripts/test_grade11_unit06_central_v85.cjs
+          node scripts/test_unit06_topic65_v84.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+      - name: Regression — original HSSC YouTube URLs, resource and privacy constraints
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload synthetic mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v86-unit6-bernoulli-applications-mobile
+          path: qa-artifacts/unit06-topic66-v86/*.png
+          if-no-files-found: warn
+          retention-days: 7

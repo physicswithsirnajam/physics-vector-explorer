@@ -1,0 +1,4219 @@
+{
+  "schemaVersion": 1,
+  "bankId": "PSN-XI-U06-T66-V86",
+  "bankVersion": "v86-topic66-original-source-preview",
+  "grade": 11,
+  "unit": 6,
+  "topicNumber": "6.6",
+  "title": "Applications of Bernoulli’s Equation",
+  "sourceDocument": "Grade11_Unit6_COMPLETE_MASTER_ALL.pdf",
+  "sourceLocation": "Owner's ChatGPT Library; private master not published",
+  "sourceCompiledPdfPages": "227–242 of 577",
+  "originalNbfTextbookPages": "101–106",
+  "verifiedFrameworkTopicSloCodes": [
+    "P-11-B-40",
+    "P-11-B-44"
+  ],
+  "formativeContextSloCodes": [
+    "P-11-B-39"
+  ],
+  "frameworkClassification": "P-11-B-40 and P-11-B-44 are the source-identified summative topic links; P-11-B-39 is formative context",
+  "perQuestionFrameworkMappingStatus": "not individually independently verified",
+  "sourceKeySloStatus": "teacher-provided item B-40/B-44 reference retained as provenance, NOT independent board-verified item mapping",
+  "sourceKeyCognitiveStatus": "teacher-provided K/U/A labels retained as provenance, NOT individually board-certified cognitive classification",
+  "sourceKeyCognitiveTagCounts": {
+    "K": 4,
+    "U": 41,
+    "A": 35
+  },
+  "sourceKeySloCounts": {
+    "P-11-B-40": 39,
+    "P-11-B-44": 41
+  },
+  "secureExam": false,
+  "publicSelfPractice": true,
+  "unitReleaseStatus": "planned-partial-topic-preview",
+  "sourceQuestionCount": 80,
+  "importedQuestionCount": 80,
+  "publicPreviewCount": 80,
+  "sections": {
+    "fundamentals": 20,
+    "reasoning": 20,
+    "numericals": 20,
+    "standalone-situations": 20,
+    "sharedStimulusGroups": 0
+  },
+  "originalSourceAnswerKey": "BBCCACCCBCACBADDCBCCDCADDBBBDDDBCCDBBDBAABCDACBDBDADABBDCBAAACAAADABDAADCAABCDCD",
+  "holds": [],
+  "sourceScope": "Topic6.6 applications of Bernoulli and continuity: atomizer, water-jet filter pump, Torricelli efflux, Venturi meter, carburetor, aerofoil lift, Magnus effect and paper-sheets demonstration. Twenty numeric MCQs and twenty standalone situations.",
+  "limitations": [
+    "All 80 original source question stems, printed A-D options and teacher-key answer letters preserved; PDF line breaks normalized and split key explanations rejoined.",
+    "Q2 refers to Figure6.10, Q13 to Figure6.13 and Q16 to simplified aerofoil diagram; each is text-answerable without inspecting the figure, so no figure hold introduced.",
+    "All 20 Section IV situations are independent MCQs, not 4-question common-stimulus groups.",
+    "Printed key B-40/B-44 and K/U/A item tags are teacher source annotations, not independently confirmed official per-item mappings; P-11-B-39 is formative context.",
+    "The textbook's aerofoil explanation and numeric wing lift are idealized Bernoulli model examples; real lift depends on the full flow field; equal-transit-time is not a physical requirement.",
+    "This is standalone public self-practice only. V85 central bank stays 2,084 items (394 partial Unit6), full Unit6 planned and no cloud grades."
+  ],
+  "questions": [
+    {
+      "id": "XI-U06-T66-MCQ-0001",
+      "sourceQuestionNumber": 1,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Which physical principle is used to explain the operation of a perfume atomizer?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hooke’s law"
+        },
+        {
+          "id": "B",
+          "text": "Bernoulli’s principle"
+        },
+        {
+          "id": "C",
+          "text": "Archimedes’ principle"
+        },
+        {
+          "id": "D",
+          "text": "Pascal’s principle"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Fast airflow across the tube lowers static pressure and draws liquid up.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 227,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0002",
+      "sourceQuestionNumber": 2,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the simple atomizer illustrated in Fig. 6.10, the fast-moving stream above the liquid creates:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A region of greater hydrostatic pressure"
+        },
+        {
+          "id": "B",
+          "text": "A region of lower static pressure"
+        },
+        {
+          "id": "C",
+          "text": "A vacuum throughout the whole bottle"
+        },
+        {
+          "id": "D",
+          "text": "An increase in the liquid’s density"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The lower pressure above the tube allows the surrounding higher pressure to push liquid upward.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 227,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0003",
+      "sourceQuestionNumber": 3,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The main purpose of the atomizer nozzle is to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Turn the liquid into a solid"
+        },
+        {
+          "id": "B",
+          "text": "Increase the liquid’s molecular mass"
+        },
+        {
+          "id": "C",
+          "text": "Break the liquid into small droplets"
+        },
+        {
+          "id": "D",
+          "text": "Stop air from moving"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The liquid encounters the fast airstream near the nozzle and disperses as a spray.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 227,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0004",
+      "sourceQuestionNumber": 4,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Which device is described in the textbook as using a water jet to produce partial suction?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Spring balance"
+        },
+        {
+          "id": "B",
+          "text": "Mercury barometer"
+        },
+        {
+          "id": "C",
+          "text": "Filter pump"
+        },
+        {
+          "id": "D",
+          "text": "Hydraulic press"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The fast water jet creates a low-pressure region that draws air into the flow.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 227,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0005",
+      "sourceQuestionNumber": 5,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the textbook’s filter pump, the side tube is connected to the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Vessel from which air is to be removed"
+        },
+        {
+          "id": "B",
+          "text": "Main water supply tank only"
+        },
+        {
+          "id": "C",
+          "text": "Top of a mercury column"
+        },
+        {
+          "id": "D",
+          "text": "Airfoil surface"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Air is drawn from the attached vessel through the side tube.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 227,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0006",
+      "sourceQuestionNumber": 6,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Torricelli’s theorem gives the ideal efflux speed from an orifice as:",
+      "options": [
+        {
+          "id": "A",
+          "text": "v = 2g/h"
+        },
+        {
+          "id": "B",
+          "text": "v = gh²"
+        },
+        {
+          "id": "C",
+          "text": "v = √(2gh)"
+        },
+        {
+          "id": "D",
+          "text": "v = ρgh"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The ideal exit speed equals the speed gained by free fall through height h.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0007",
+      "sourceQuestionNumber": 7,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In v = √(2gh), h represents the vertical distance between the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tank’s two sidewalls"
+        },
+        {
+          "id": "B",
+          "text": "Nozzle and the ground only"
+        },
+        {
+          "id": "C",
+          "text": "Free surface and the orifice"
+        },
+        {
+          "id": "D",
+          "text": "Inside and outside air temperatures"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The driving pressure head is determined by the depth of the opening below the free surface.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0008",
+      "sourceQuestionNumber": 8,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Which condition is assumed in the textbook’s simplified derivation of Torricelli’s theorem?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The fluid density varies rapidly"
+        },
+        {
+          "id": "B",
+          "text": "The tank is sealed with no external pressure"
+        },
+        {
+          "id": "C",
+          "text": "The free surface moves negligibly slowly"
+        },
+        {
+          "id": "D",
+          "text": "The outflow experiences very large viscous losses"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For a large tank, the surface speed is approximated as zero in Bernoulli’s equation.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0009",
+      "sourceQuestionNumber": 9,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The SI unit of the speed predicted by Torricelli’s theorem is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "m s⁻²"
+        },
+        {
+          "id": "B",
+          "text": "m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "N m⁻²"
+        },
+        {
+          "id": "D",
+          "text": "kg m⁻³"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Since gh has units m² s⁻², its square root has units m s⁻¹.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0010",
+      "sourceQuestionNumber": 10,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A Venturi meter is used primarily to determine the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Boiling point of a fluid"
+        },
+        {
+          "id": "B",
+          "text": "Mass of the container"
+        },
+        {
+          "id": "C",
+          "text": "Flow speed or flow rate in a tube"
+        },
+        {
+          "id": "D",
+          "text": "Absolute humidity of air"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The instrument uses a narrowed section and the associated pressure difference to infer flow.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0011",
+      "sourceQuestionNumber": 11,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In an ideal horizontal Venturi tube, the fluid pressure in the narrow throat is generally:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower than in the wider section"
+        },
+        {
+          "id": "B",
+          "text": "Always exactly zero"
+        },
+        {
+          "id": "C",
+          "text": "Higher than in the wider section"
+        },
+        {
+          "id": "D",
+          "text": "Independent of the flow speed"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Continuity increases speed at the throat, while Bernoulli’s equation gives a lower static pressure.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0012",
+      "sourceQuestionNumber": 12,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For steady incompressible flow through a Venturi meter, the equation relating the two sections is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "A₁v₂ = A₂v₁ for every case"
+        },
+        {
+          "id": "B",
+          "text": "ρ₁v₁² = ρ₂v₂²"
+        },
+        {
+          "id": "C",
+          "text": "A₁v₁ = A₂v₂"
+        },
+        {
+          "id": "D",
+          "text": "P₁A₁ = P₂A₂"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Conservation of volume flow gives A₁v₁ = A₂v₂.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0013",
+      "sourceQuestionNumber": 13,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In Fig. 6.13, the two vertical tubes attached to the Venturi meter indicate a difference in:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Molecular viscosity"
+        },
+        {
+          "id": "B",
+          "text": "Static pressure head"
+        },
+        {
+          "id": "C",
+          "text": "Liquid density"
+        },
+        {
+          "id": "D",
+          "text": "Fluid temperature"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A larger piezometer column height indicates a greater local static pressure.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 228,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0014",
+      "sourceQuestionNumber": 14,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The pressure difference P₁ − P₂ in the ideal horizontal Venturi meter is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "½ρ(v₂² − v₁²)"
+        },
+        {
+          "id": "B",
+          "text": "½ρ(v₁ − v₂)"
+        },
+        {
+          "id": "C",
+          "text": "ρg(v₁ + v₂)"
+        },
+        {
+          "id": "D",
+          "text": "½ρ(v₁² + v₂²)"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "At equal heights, Bernoulli’s equation gives P₁ − P₂ = ½ρ(v₂² − v₁²).",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0015",
+      "sourceQuestionNumber": 15,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "An aerofoil produces lift when there is a net:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Downward weight acting on the air only"
+        },
+        {
+          "id": "B",
+          "text": "Horizontal static force with no vertical component"
+        },
+        {
+          "id": "C",
+          "text": "Increase in its mass during flight"
+        },
+        {
+          "id": "D",
+          "text": "Upward pressure force on its surfaces"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The pressure distribution around the aerofoil exerts a net upward aerodynamic force.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0016",
+      "sourceQuestionNumber": 16,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "According to the simplified aerofoil diagram in the textbook, air flows faster on the:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Wing root only"
+        },
+        {
+          "id": "B",
+          "text": "Inside of the fuel tank"
+        },
+        {
+          "id": "C",
+          "text": "Lower side of the wing"
+        },
+        {
+          "id": "D",
+          "text": "Upper side of the wing"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook diagram associates the faster upper-side flow with lower static pressure.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0017",
+      "sourceQuestionNumber": 17,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The Magnus effect is associated particularly with a body that is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Moving without any rotation in a vacuum"
+        },
+        {
+          "id": "B",
+          "text": "Perfectly stationary in still air"
+        },
+        {
+          "id": "C",
+          "text": "Spinning while moving through a fluid"
+        },
+        {
+          "id": "D",
+          "text": "Submerged but not moving"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Rotation changes the surrounding flow and generates a transverse aerodynamic force.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0018",
+      "sourceQuestionNumber": 18,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The Magnus effect can help explain the curved path of a:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Static iron block"
+        },
+        {
+          "id": "B",
+          "text": "Spinning cricket ball"
+        },
+        {
+          "id": "C",
+          "text": "Floating wooden raft at rest"
+        },
+        {
+          "id": "D",
+          "text": "Stationary thermometer"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Spin changes the pressure distribution and can deflect the ball sideways.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0019",
+      "sourceQuestionNumber": 19,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the textbook’s two-sheet Bernoulli activity, blowing between suspended sheets makes them:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remain unmoved irrespective of airflow"
+        },
+        {
+          "id": "B",
+          "text": "Move farther apart in every trial"
+        },
+        {
+          "id": "C",
+          "text": "Move toward each other"
+        },
+        {
+          "id": "D",
+          "text": "Immediately turn into a single solid sheet"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The faster flow between the sheets reduces pressure there relative to the outside.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0020",
+      "sourceQuestionNumber": 20,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Which textbook example in Section 6.6 asks for the pressure at a point 3 m lower in flowing water?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Assignment 6.2"
+        },
+        {
+          "id": "B",
+          "text": "Example 6.1"
+        },
+        {
+          "id": "C",
+          "text": "Example 6.4"
+        },
+        {
+          "id": "D",
+          "text": "Example 6.3"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Example 6.4 applies Bernoulli’s equation between two points with different speeds and heights.",
+      "sourceSection": "fundamentals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 229,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "K",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0021",
+      "sourceQuestionNumber": 21,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Why does squeezing the rubber bulb of an atomizer help to raise perfume through its vertical tube?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It increases perfume density"
+        },
+        {
+          "id": "B",
+          "text": "It raises atmospheric pressure everywhere equally"
+        },
+        {
+          "id": "C",
+          "text": "It removes gravitational attraction"
+        },
+        {
+          "id": "D",
+          "text": "It increases air speed over the tube opening and lowers local pressure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The pressure difference drives the liquid upward into the fast airflow.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0022",
+      "sourceQuestionNumber": 22,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A filter pump becomes ineffective if its water jet is very weak mainly because:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Water loses all its mass"
+        },
+        {
+          "id": "B",
+          "text": "The side tube develops gravitational repulsion"
+        },
+        {
+          "id": "C",
+          "text": "It produces too small a pressure reduction to draw much air"
+        },
+        {
+          "id": "D",
+          "text": "The liquid becomes perfectly incompressible only at high speed"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Weak jet flow produces less suction at the side opening.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0023",
+      "sourceQuestionNumber": 23,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A perfume sprayer is operated at higher airflow speed while other conditions remain similar. The pressure close to the spraying tube generally:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreases"
+        },
+        {
+          "id": "B",
+          "text": "Increases in all cases"
+        },
+        {
+          "id": "C",
+          "text": "Becomes equal to the liquid density"
+        },
+        {
+          "id": "D",
+          "text": "Changes to kinetic energy with no pressure term"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The ideal Bernoulli model associates greater speed with smaller static pressure.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0024",
+      "sourceQuestionNumber": 24,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For the same liquid level, an ideal orifice farther below the free surface produces:",
+      "options": [
+        {
+          "id": "A",
+          "text": "The same speed at every depth"
+        },
+        {
+          "id": "B",
+          "text": "Zero speed if the tank is open"
+        },
+        {
+          "id": "C",
+          "text": "Smaller efflux speed"
+        },
+        {
+          "id": "D",
+          "text": "Greater efflux speed"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Torricelli’s relation v = √(2gh) increases with the depth h.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0025",
+      "sourceQuestionNumber": 25,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Why can the velocity of the free surface be neglected in a large water tank draining through a small opening?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gravity acts only at the opening"
+        },
+        {
+          "id": "B",
+          "text": "Atmospheric pressure is zero"
+        },
+        {
+          "id": "C",
+          "text": "The tank water is perfectly motionless everywhere"
+        },
+        {
+          "id": "D",
+          "text": "Its cross-sectional area is very large compared with the opening"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Continuity makes the surface speed much smaller than the outlet speed.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0026",
+      "sourceQuestionNumber": 26,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In deriving Torricelli’s theorem for an open tank, atmospheric pressures cancel because:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Atmospheric pressure does not exist"
+        },
+        {
+          "id": "B",
+          "text": "Both the free surface and the jet are exposed to the same atmosphere"
+        },
+        {
+          "id": "C",
+          "text": "Density at the opening equals zero"
+        },
+        {
+          "id": "D",
+          "text": "The opening is always above the free surface"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Equal atmospheric terms on the two sides of Bernoulli’s equation subtract out.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0027",
+      "sourceQuestionNumber": 27,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Why is Torricelli’s ideal exit-speed formula independent of liquid density?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The density is always 1 kg m⁻³"
+        },
+        {
+          "id": "B",
+          "text": "The density cancels in the ideal Bernoulli equation"
+        },
+        {
+          "id": "C",
+          "text": "Pressure has no relation to density"
+        },
+        {
+          "id": "D",
+          "text": "Only gases experience gravity"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The same fluid density multiplies the pressure-head and kinetic-energy terms.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 230,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The exit speed v = √(2gh) is compared in the textbook with:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Terminal speed in a viscous medium"
+        },
+        {
+          "id": "B",
+          "text": "Speed gained by a body falling freely through the same height"
+        },
+        {
+          "id": "C",
+          "text": "Angular velocity of a rotating wheel"
+        },
+        {
+          "id": "D",
+          "text": "Speed of sound in vacuum"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Both ideal results follow from converting gravitational potential energy into kinetic energy.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0029",
+      "sourceQuestionNumber": 29,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "If the free surface and the opening are at the same elevation, the ideal Torricelli speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "g"
+        },
+        {
+          "id": "B",
+          "text": "Independent of h and always nonzero"
+        },
+        {
+          "id": "C",
+          "text": "2g"
+        },
+        {
+          "id": "D",
+          "text": "Zero"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "With zero head h, the formula gives v = √0 = 0.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0030",
+      "sourceQuestionNumber": 30,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "When applying Torricelli’s theorem to a real outlet, the actual speed can be less than the ideal prediction because of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Extra creation of mechanical energy"
+        },
+        {
+          "id": "B",
+          "text": "Negative gravity"
+        },
+        {
+          "id": "C",
+          "text": "Atmospheric pressure disappearing"
+        },
+        {
+          "id": "D",
+          "text": "Viscous and other flow losses"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Real flows dissipate mechanical energy, unlike the textbook’s ideal model.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0031",
+      "sourceQuestionNumber": 31,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In a horizontal Venturi meter, the pressure is higher in the wider section because the fluid there generally moves:",
+      "options": [
+        {
+          "id": "A",
+          "text": "At infinite speed"
+        },
+        {
+          "id": "B",
+          "text": "Only vertically"
+        },
+        {
+          "id": "C",
+          "text": "More rapidly"
+        },
+        {
+          "id": "D",
+          "text": "More slowly"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "At equal height, lower speed corresponds to higher static pressure in ideal flow.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0032",
+      "sourceQuestionNumber": 32,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "What mainly allows the Venturi meter to infer flow speed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A constant thermal expansion coefficient"
+        },
+        {
+          "id": "B",
+          "text": "A measurable pressure difference between wide and narrow sections"
+        },
+        {
+          "id": "C",
+          "text": "A known melting point"
+        },
+        {
+          "id": "D",
+          "text": "Zero gravitational acceleration"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Bernoulli’s equation connects the measured pressure difference to velocities.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0033",
+      "sourceQuestionNumber": 33,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the textbook Venturi arrangement, if the throat area becomes smaller at a fixed inlet volume flow rate, the throat speed:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Decreases"
+        },
+        {
+          "id": "B",
+          "text": "Is always the same as the inlet speed"
+        },
+        {
+          "id": "C",
+          "text": "Increases"
+        },
+        {
+          "id": "D",
+          "text": "Must become zero"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For steady incompressible flow, v₂ = Q/A₂.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0034",
+      "sourceQuestionNumber": 34,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Why are the heights h₁ and h₂ omitted when applying Bernoulli’s equation to a horizontal Venturi tube?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Fluid has no weight"
+        },
+        {
+          "id": "B",
+          "text": "Both pressure terms are zero"
+        },
+        {
+          "id": "C",
+          "text": "They are equal and their gravitational terms cancel"
+        },
+        {
+          "id": "D",
+          "text": "Gravity is absent everywhere in a pipe"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "At equal elevations, ρgh₁ = ρgh₂.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 231,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0035",
+      "sourceQuestionNumber": 35,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The carburetor described in the textbook uses a Venturi because:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air is compressed to zero volume"
+        },
+        {
+          "id": "B",
+          "text": "The engine’s gravity increases"
+        },
+        {
+          "id": "C",
+          "text": "The petrol is magnetically attracted"
+        },
+        {
+          "id": "D",
+          "text": "Fast air in the throat lowers pressure and helps draw petrol into the flow"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The low-pressure region near the throat draws fuel from its supply.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0036",
+      "sourceQuestionNumber": 36,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Which statement about the aerofoil illustration is most accurate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lift is present only when gravity is zero"
+        },
+        {
+          "id": "B",
+          "text": "It depicts a lower static pressure above the wing and higher pressure below"
+        },
+        {
+          "id": "C",
+          "text": "The wing has no downward pressure force anywhere"
+        },
+        {
+          "id": "D",
+          "text": "All air flowing above the wing must reach the trailing edge simultaneously"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The figure uses a simplified pressure-distribution explanation; equal-transit-time reasoning is not required.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0037",
+      "sourceQuestionNumber": 37,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "If the pressure below a wing exceeds the pressure above, the resulting pressure force on the wing is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Downward"
+        },
+        {
+          "id": "B",
+          "text": "Upward"
+        },
+        {
+          "id": "C",
+          "text": "Always zero"
+        },
+        {
+          "id": "D",
+          "text": "Purely horizontal"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Higher pressure below pushes upward relative to the smaller pressure above.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0038",
+      "sourceQuestionNumber": 38,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A spinning ball bends to one side in flight because rotation:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Converts air into a solid on one side"
+        },
+        {
+          "id": "B",
+          "text": "Changes the ball’s gravitational mass continuously"
+        },
+        {
+          "id": "C",
+          "text": "Eliminates air resistance entirely"
+        },
+        {
+          "id": "D",
+          "text": "Changes the flow and pressure distribution around the ball"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The Magnus force acts transversely due to spin-induced asymmetric flow.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0039",
+      "sourceQuestionNumber": 39,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "If a ball’s direction of spin is reversed while its flight direction remains unchanged, its Magnus deflection may:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always remain in the same direction"
+        },
+        {
+          "id": "B",
+          "text": "Reverse direction"
+        },
+        {
+          "id": "C",
+          "text": "Disappear because gravity becomes zero"
+        },
+        {
+          "id": "D",
+          "text": "Increase without any limit"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Reversing spin reverses the asymmetry and can reverse the transverse force.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0040",
+      "sourceQuestionNumber": 40,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the sheet-blowing activity, why does moving air between the sheets not simply push them apart?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Static pressure between them decreases relative to the surrounding air"
+        },
+        {
+          "id": "B",
+          "text": "Air pressure is always greatest where its speed is greatest"
+        },
+        {
+          "id": "C",
+          "text": "The sheets acquire opposite electric charges"
+        },
+        {
+          "id": "D",
+          "text": "The force of gravity acts sideways"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The pressure imbalance pushes the sheets toward the lower-pressure middle region.",
+      "sourceSection": "reasoning",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0041",
+      "sourceQuestionNumber": 41,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Water escapes ideally from an orifice 5.0 m below the free surface. With g = 9.8 m s⁻², its exit speed is closest to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.90 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "19.6 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "49.0 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "4.90 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v = √(2gh) = √(2 × 9.8 × 5.0) = 9.90 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 232,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0042",
+      "sourceQuestionNumber": 42,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For a 1.25 m water head and g = 9.8 m s⁻², the ideal efflux speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.80 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "4.95 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "2.45 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "12.25 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v = √(2 × 9.8 × 1.25) = √24.5 ≈ 4.95 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0043",
+      "sourceQuestionNumber": 43,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "An ideal water jet emerges at 14.0 m s⁻¹. Taking g = 9.8 m s⁻², the pressure head is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "20.0 m"
+        },
+        {
+          "id": "B",
+          "text": "7.0 m"
+        },
+        {
+          "id": "C",
+          "text": "10.0 m"
+        },
+        {
+          "id": "D",
+          "text": "14.0 m"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "h = v²/(2g) = 196/19.6 = 10.0 m.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0044",
+      "sourceQuestionNumber": 44,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "The ideal discharge speed from a hole 2.00 m below the surface (g = 9.8 m s⁻²) is approximately:",
+      "options": [
+        {
+          "id": "A",
+          "text": "19.6 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "3.13 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "39.2 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "6.26 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v = √(2gh) = √39.2 ≈ 6.26 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In a Venturi meter, A₁/A₂ = 3 and inlet speed is 1.0 m s⁻¹. The ideal throat speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.0 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "0.33 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "9.0 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "1.0 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A₁v₁ = A₂v₂, so v₂ = (A₁/A₂)v₁ = 3.0 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Water flows through a Venturi meter with A₁ = 8.0 cm², A₂ = 2.0 cm² and v₁ = 1.5 m s⁻¹. The throat speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.375 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "12.0 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "6.0 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "3.0 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "v₂ = (8.0/2.0) × 1.5 = 6.0 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In horizontal ideal water flow, v₁ = 2 m s⁻¹ and v₂ = 6 m s⁻¹. For ρ = 1000 kg m⁻³, P₁ − P₂ equals:",
+      "options": [
+        {
+          "id": "A",
+          "text": "8,000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "16,000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "32,000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "20,000 Pa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "P₁ − P₂ = ½ρ(v₂² − v₁²) = 500(36 − 4) = 16,000 Pa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0048",
+      "sourceQuestionNumber": 48,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "An ideal fluid of density 800 kg m⁻³ flows horizontally with v₁ = 2 m s⁻¹ and v₂ = 5 m s⁻¹. Find P₁ − P₂:",
+      "options": [
+        {
+          "id": "A",
+          "text": "21,000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "4,200 Pa"
+        },
+        {
+          "id": "C",
+          "text": "16,800 Pa"
+        },
+        {
+          "id": "D",
+          "text": "8,400 Pa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "ΔP = ½(800)(25 − 4) = 8,400 Pa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 233,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0049",
+      "sourceQuestionNumber": 49,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In a horizontal Venturi meter, water enters at 2 m s⁻¹ and P₁ − P₂ = 4,500 Pa. For ρ = 1000 kg m⁻³, throat speed is closest to:",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.00 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "3.61 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "4.50 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "2.50 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "v₂ = √[v₁² + 2ΔP/ρ] = √(4 + 9) ≈ 3.61 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0050",
+      "sourceQuestionNumber": 50,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Two water-filled piezometer columns of a horizontal Venturi meter differ in height by 2.5 m. Taking ρ = 1000 kg m⁻³ and g = 9.8 m s⁻², the pressure difference is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "98,000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "2,450 Pa"
+        },
+        {
+          "id": "C",
+          "text": "9,800 Pa"
+        },
+        {
+          "id": "D",
+          "text": "24,500 Pa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "ΔP = ρgΔh = 1000 × 9.8 × 2.5 = 24,500 Pa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "In the textbook Venturi-speed relation, A₁/A₂ = 2 and piezometer height difference h = 0.60 m. For g = 9.8 m s⁻², the inlet speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.98 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "1.40 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "3.96 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "4.85 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "v₁ = √[2gh/((A₁/A₂)² − 1)] = √(11.76/3) ≈ 1.98 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For a Venturi meter with A₁/A₂ = 3, h = 0.80 m and g = 9.8 m s⁻², the inlet speed is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.80 m s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "4.20 m s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "0.70 m s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "1.40 m s⁻¹"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "v₁ = √[2(9.8)(0.80)/(9 − 1)] = √1.96 = 1.40 m s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0053",
+      "sourceQuestionNumber": 53,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "If an ideal Venturi meter has inlet area 5.0 cm² and inlet speed 4.0 m s⁻¹, its volume flow rate is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.0 × 10⁻³ m³ s⁻¹"
+        },
+        {
+          "id": "B",
+          "text": "2.0 × 10⁻² m³ s⁻¹"
+        },
+        {
+          "id": "C",
+          "text": "20 m³ s⁻¹"
+        },
+        {
+          "id": "D",
+          "text": "2.0 × 10⁻⁴ m³ s⁻¹"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Q = Av = (5.0 × 10⁻⁴ m²)(4.0 m s⁻¹) = 2.0 × 10⁻³ m³ s⁻¹.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0054",
+      "sourceQuestionNumber": 54,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For horizontal water flow, v₁ = 3.0 m s⁻¹ and v₂ = 5.0 m s⁻¹. With ρ = 1000 kg m⁻³, the ideal pressure drop is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "16.0 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8.0 kPa"
+        },
+        {
+          "id": "C",
+          "text": "2.0 kPa"
+        },
+        {
+          "id": "D",
+          "text": "4.0 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "ΔP = ½(1000)(25 − 9) = 8,000 Pa = 8.0 kPa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "NBF Example 6.4: water moves at 4 m s⁻¹ at P₁ = 47.1 kPa and at 3 m s⁻¹ at a point 3 m lower. Take ρ = 1000 kg m⁻³ and g = 9.8 m s⁻². P₂ is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "14.2 kPa"
+        },
+        {
+          "id": "B",
+          "text": "80.0 kPa"
+        },
+        {
+          "id": "C",
+          "text": "47.1 kPa"
+        },
+        {
+          "id": "D",
+          "text": "76.5 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "P₂ = 47.1 + ½(1000)(16 − 9)/1000 + 29.4 = 80.0 kPa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 234,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A flowing-water point is 3 m lower than another. For ρ = 1000 kg m⁻³ and g = 9.8 m s⁻², the hydrostatic-energy term ρgΔh is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "9.8 kPa"
+        },
+        {
+          "id": "B",
+          "text": "2.94 kPa"
+        },
+        {
+          "id": "C",
+          "text": "294 kPa"
+        },
+        {
+          "id": "D",
+          "text": "29.4 kPa"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "ρgΔh = 1000 × 9.8 × 3 = 29,400 Pa = 29.4 kPa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0057",
+      "sourceQuestionNumber": 57,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "NBF Assignment 6.4: air speeds are 450 m s⁻¹ above and 410 m s⁻¹ below a wing; ρ = 1.29 kg m⁻³. The ideal pressure difference is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "344 Pa"
+        },
+        {
+          "id": "B",
+          "text": "44,376 Pa"
+        },
+        {
+          "id": "C",
+          "text": "22,188 Pa"
+        },
+        {
+          "id": "D",
+          "text": "1,290 Pa"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "ΔP = ½(1.29)(450² − 410²) = 22,188 Pa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "For the NBF Assignment 6.4 wing (15 m long, 3 m wide), the pressure difference 22,188 Pa gives a lift of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "22,188 N"
+        },
+        {
+          "id": "B",
+          "text": "998,460 N"
+        },
+        {
+          "id": "C",
+          "text": "332,820 N"
+        },
+        {
+          "id": "D",
+          "text": "66,564 N"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "A = 15 × 3 = 45 m²; F = ΔP A = 22,188 × 45 = 998,460 N.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0059",
+      "sourceQuestionNumber": 59,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A wing has effective area 20 m² and ideal upper–lower pressure difference 1,500 Pa. Its approximate lift from this pressure difference is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "30,000 N"
+        },
+        {
+          "id": "B",
+          "text": "75 N"
+        },
+        {
+          "id": "C",
+          "text": "3,000 N"
+        },
+        {
+          "id": "D",
+          "text": "1,520 N"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "F = ΔP A = 1,500 × 20 = 30,000 N.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0060",
+      "sourceQuestionNumber": 60,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "With air density 1.2 kg m⁻³, ideal speeds above and below a wing of 30 m s⁻¹ and 20 m s⁻¹ give pressure difference:",
+      "options": [
+        {
+          "id": "A",
+          "text": "300 Pa"
+        },
+        {
+          "id": "B",
+          "text": "100 Pa"
+        },
+        {
+          "id": "C",
+          "text": "600 Pa"
+        },
+        {
+          "id": "D",
+          "text": "500 Pa"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ΔP = ½(1.2)(30² − 20²) = 0.6 × 500 = 300 Pa.",
+      "sourceSection": "numericals",
+      "situationBased": false,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A student blows briskly through the narrow tube of a perfume spray bottle. The perfume climbs toward the outlet. Which explanation best fits the observation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The pressure at the tube opening falls below pressure on the liquid surface"
+        },
+        {
+          "id": "B",
+          "text": "The liquid becomes weightless"
+        },
+        {
+          "id": "C",
+          "text": "The nozzle removes surface tension completely"
+        },
+        {
+          "id": "D",
+          "text": "The liquid pressure at the opening must be highest"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The pressure difference pushes liquid up toward the lower-pressure air stream.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0062",
+      "sourceQuestionNumber": 62,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A paint sprayer produces large drops when airflow is weak but a finer spray when airflow is increased. Which change is most relevant?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The paint gains extra mass"
+        },
+        {
+          "id": "B",
+          "text": "The sprayer no longer needs a pressure difference"
+        },
+        {
+          "id": "C",
+          "text": "Stronger airflow creates more effective liquid entrainment and breakup"
+        },
+        {
+          "id": "D",
+          "text": "Gravity ceases to act"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "The moving air helps draw the liquid into the nozzle and disperse it into droplets.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 235,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0063",
+      "sourceQuestionNumber": 63,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A laboratory needs to remove air from a small connected vessel using running tap water. Which textbook device is most suitable?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Filter pump"
+        },
+        {
+          "id": "B",
+          "text": "Aerofoil"
+        },
+        {
+          "id": "C",
+          "text": "Venturi meter used alone as a thermometer"
+        },
+        {
+          "id": "D",
+          "text": "Atomizer"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "A filter pump uses a fast water jet to create suction through its side tube.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0064",
+      "sourceQuestionNumber": 64,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A technician accidentally blocks the side tube of a water-jet filter pump. What immediate effect is most likely?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Little or no air will be removed from the connected vessel"
+        },
+        {
+          "id": "B",
+          "text": "The pump becomes a mass balance"
+        },
+        {
+          "id": "C",
+          "text": "The pressure in the water jet becomes atmospheric everywhere"
+        },
+        {
+          "id": "D",
+          "text": "Water density must double"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Blocking the suction passage stops air from entering the jet region.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0065",
+      "sourceQuestionNumber": 65,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A large open tank has two ideal outlet holes at different depths. Which hole initially discharges water faster?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The deeper one"
+        },
+        {
+          "id": "B",
+          "text": "The shallower one"
+        },
+        {
+          "id": "C",
+          "text": "Their speeds depend only on hole diameters"
+        },
+        {
+          "id": "D",
+          "text": "Both necessarily have zero velocity"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The deeper outlet has a larger liquid head and hence larger √(2gh).",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0066",
+      "sourceQuestionNumber": 66,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A student doubles the depth h of an orifice beneath a constant water surface. The ideal outlet speed changes by a factor of:",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "½"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "√2"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Because v ∝ √h, doubling h multiplies speed by √2.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "At the same vertical depth and with negligible losses, water is replaced by a denser liquid in an open tank. Torricelli’s theorem predicts the new exit speed will:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remain the same"
+        },
+        {
+          "id": "B",
+          "text": "Double automatically"
+        },
+        {
+          "id": "C",
+          "text": "Decrease in inverse proportion to density"
+        },
+        {
+          "id": "D",
+          "text": "Become zero"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The ideal expression v = √(2gh) contains no density factor.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0068",
+      "sourceQuestionNumber": 68,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A small orifice drains from an open tank. If the free surface gradually falls, the ideal jet speed should:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increase without bound"
+        },
+        {
+          "id": "B",
+          "text": "Decrease as the liquid head decreases"
+        },
+        {
+          "id": "C",
+          "text": "Become negative"
+        },
+        {
+          "id": "D",
+          "text": "Remain constant until the tank empties"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "The available head h decreases as the water level falls.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0069",
+      "sourceQuestionNumber": 69,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A horizontal pipe constricts smoothly. At the narrow section, which pair of changes is expected for steady incompressible ideal flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lower speed and higher static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Greater speed and greater static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Same speed and same pressure"
+        },
+        {
+          "id": "D",
+          "text": "Greater speed and lower static pressure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Continuity raises speed in a constriction, and Bernoulli predicts lower pressure.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 236,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0070",
+      "sourceQuestionNumber": 70,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A flow meter has piezometer tubes above wide and narrow sections. The column in the wide section is taller. The most reasonable conclusion is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pressure is higher in the wide section"
+        },
+        {
+          "id": "B",
+          "text": "Speed is greater in the wide section"
+        },
+        {
+          "id": "C",
+          "text": "No fluid is moving anywhere"
+        },
+        {
+          "id": "D",
+          "text": "The water density is necessarily different"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The height of the piezometer column reflects local static pressure.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0071",
+      "sourceQuestionNumber": 71,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A Venturi meter has the same measured pressure difference but a smaller working-fluid density in an otherwise comparable ideal calculation. The velocity inferred from the same pressure difference tends to be:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Greater"
+        },
+        {
+          "id": "B",
+          "text": "Exactly independent of density"
+        },
+        {
+          "id": "C",
+          "text": "Always zero"
+        },
+        {
+          "id": "D",
+          "text": "Smaller"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For fixed geometry, ΔP is proportional to ρv², so lower ρ implies larger inferred v.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0072",
+      "sourceQuestionNumber": 72,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A car carburetor uses a narrow section of an air passage to help draw petrol into the airstream. The dominant effect is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Loss of air mass in the constriction"
+        },
+        {
+          "id": "B",
+          "text": "An increase in atmospheric pressure outside the car"
+        },
+        {
+          "id": "C",
+          "text": "A magnetic force on fuel molecules"
+        },
+        {
+          "id": "D",
+          "text": "Local reduction in static pressure at high air speed"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The Venturi throat produces a lower-pressure region that encourages fuel entry.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0073",
+      "sourceQuestionNumber": 73,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A Venturi flow meter is installed backward, swapping labels of wide and narrow sections. Which statement must still hold for ideal steady incompressible flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The smaller-area section has the lower flow speed"
+        },
+        {
+          "id": "B",
+          "text": "Pressure has to be zero at both ends"
+        },
+        {
+          "id": "C",
+          "text": "The smaller-area section has the larger flow speed"
+        },
+        {
+          "id": "D",
+          "text": "The fluid mass flow disappears"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Continuity depends on area, not on how the measurement points are named.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0074",
+      "sourceQuestionNumber": 74,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "An aircraft wing experiences a pressure of 97 kPa on its upper surface and 100 kPa below it over an effective area of 12 m². The pressure contribution to lift is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "36,000 N upward"
+        },
+        {
+          "id": "B",
+          "text": "36,000 N downward"
+        },
+        {
+          "id": "C",
+          "text": "3,000 N upward"
+        },
+        {
+          "id": "D",
+          "text": "1,164,000 N upward"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "ΔP = 3,000 Pa and F = ΔP A = 3,000 × 12 = 36,000 N upward.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0075",
+      "sourceQuestionNumber": 75,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A student claims that lift occurs because two neighboring air parcels separating at the front of a wing must meet again at the back at exactly the same time. The best response is:",
+      "options": [
+        {
+          "id": "A",
+          "text": "That equal-transit-time claim is not required to explain lift"
+        },
+        {
+          "id": "B",
+          "text": "It is an exact law of fluid motion"
+        },
+        {
+          "id": "C",
+          "text": "It means wings cannot lift at low airspeeds"
+        },
+        {
+          "id": "D",
+          "text": "It proves pressure has no effect"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Lift involves the actual pressure and flow field; equal transit times are not a valid requirement.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0076",
+      "sourceQuestionNumber": 76,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A spinning cricket ball curves during flight. Which adjustment can alter the direction of its sideways deflection?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Painting the ball a different color only"
+        },
+        {
+          "id": "B",
+          "text": "Reversing the spin direction"
+        },
+        {
+          "id": "C",
+          "text": "Removing gravitational acceleration from the equations"
+        },
+        {
+          "id": "D",
+          "text": "Replacing the ball with a stationary support"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Spin direction controls the side-to-side flow asymmetry and associated Magnus force.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 237,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0077",
+      "sourceQuestionNumber": 77,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "Two otherwise similar spinning golf balls travel with opposite directions of spin. Their sideways Magnus forces may be:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Always exactly zero"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily both upward"
+        },
+        {
+          "id": "C",
+          "text": "In opposite directions"
+        },
+        {
+          "id": "D",
+          "text": "Identical in direction regardless of spin"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Reversing spin can reverse the direction of the transverse Magnus force.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 238,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A learner sees two hanging sheets draw closer when air is blown between them. Which pressure comparison explains this?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Static pressure between the sheets is higher than outside"
+        },
+        {
+          "id": "B",
+          "text": "Only the sheet weight changes"
+        },
+        {
+          "id": "C",
+          "text": "Both surfaces are pressure-free"
+        },
+        {
+          "id": "D",
+          "text": "Static pressure between the sheets is lower than outside"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Greater flow speed between the sheets produces lower static pressure in the idealized demonstration.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 238,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "U",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0079",
+      "sourceQuestionNumber": 79,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A vertical pipe has water moving from a higher point to a lower point, and the lower point has a smaller flow speed. Under ideal conditions, its static pressure at the lower point may:",
+      "options": [
+        {
+          "id": "A",
+          "text": "Be exactly equal to zero"
+        },
+        {
+          "id": "B",
+          "text": "Be unrelated to elevation and speed"
+        },
+        {
+          "id": "C",
+          "text": "Be higher due to both elevation decrease and speed decrease"
+        },
+        {
+          "id": "D",
+          "text": "Have to be lower solely because it is lower"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Bernoulli gives an increase in static pressure when height and speed both decrease.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 238,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-40",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    },
+    {
+      "id": "XI-U06-T66-MCQ-0080",
+      "sourceQuestionNumber": 80,
+      "grade": 11,
+      "unit": 6,
+      "topic": "Applications of Bernoulli’s Equation",
+      "type": "single_choice",
+      "stem": "A student uses NBF Assignment 6.4 to estimate wing lift from two air speeds. Which assumption is most important to state?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Air has zero density"
+        },
+        {
+          "id": "B",
+          "text": "Wing lift equals its mass"
+        },
+        {
+          "id": "C",
+          "text": "The two air paths must take identical times"
+        },
+        {
+          "id": "D",
+          "text": "The pressure difference is estimated with a simplified Bernoulli model at comparable heights"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "The textbook calculation approximates the pressure difference using air density and the speeds above and below.",
+      "sourceSection": "standalone-situations",
+      "situationBased": true,
+      "stimulusSetId": null,
+      "sourcePdfPage": 238,
+      "originalPrintedTextbookPages": "101–106",
+      "assessmentClassification": "summative-topic-provisional",
+      "sloCodes": [],
+      "topicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "formativeContextSloCodes": [
+        "P-11-B-39"
+      ],
+      "sourceKeySloReference": "P-11-B-44",
+      "sourceKeyCognitiveTag": "A",
+      "sourceKeyTagsStatus": "teacher-study-edition annotations retained for provenance, not independent per-question board certification",
+      "cognitiveLevel": "Unspecified",
+      "difficulty": "Unspecified",
+      "boardEligible": false,
+      "active": true,
+      "status": "provisional-public-self-practice",
+      "holdReason": null
+    }
+  ]
+}
