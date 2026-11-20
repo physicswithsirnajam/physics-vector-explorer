@@ -63,7 +63,7 @@ function audit(){
  assert.equal(JSON.parse(read('portal/learning-labs-v72.json')).labs.length,9);
  const existing=JSON.parse(read('question-bank/manifest.json')).grades.find(g=>g.grade===11).units.map(u=>u.liveMcqCount);
   assert.deepEqual(existing.slice(0,5),[275,206,220,640,349]);
-  assert.equal(existing[5],474);
+  assert.equal(existing[5],554);
  assert.equal(course.resources.length,59);
  const html=read('portal/legacy-hssc-resources.html');
  const script=html.match(/<script>\s*'use strict';([\s\S]*?)<\/script>/)?.[1];
