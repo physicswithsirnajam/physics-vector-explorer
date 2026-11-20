@@ -1,0 +1,84 @@
+name: Validate Grade XI Unit6 Six-Topic Central Builder (V87)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-66-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "scripts/test_grade11_unit06_central_v87.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v87.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-66-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "scripts/test_grade11_unit06_central_v87.cjs"
+      - ".github/workflows/validate-grade11-central-unit06-v87.yml"
+  workflow_dispatch:
+jobs:
+  source-and-chromium:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Current 2,164 inventory and adapter JavaScript syntax
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_unit06_central_v87.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==474||m[5].sourceTopicMcqCount!==480||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==113||m[5].independentSharedStimulusGroupCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2164)process.exit(1)"
+      - name: Install Chromium for real student browser QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V87 original 6-source fidelity, 80 Topic6.6 answers, tamper rejection, 390px mobile
+        run: node scripts/test_grade11_unit06_central_v87.cjs
+      - name: Regression — V85 V83 V81 V79 V77 central builder
+        run: |
+          node scripts/test_grade11_unit06_central_v85.cjs
+          node scripts/test_grade11_unit06_central_v83.cjs
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_grade11_central_v77.cjs
+      - name: Regression — all six Unit6 original topic banks and standalone student previews
+        run: |
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+          node scripts/test_unit06_topic65_v84.cjs
+          node scripts/test_unit06_topic66_v86.cjs
+      - name: Regression — untouched original 1,690 and mixed unit planning
+        run: |
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — original YouTube links and resource/privacy constraints
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload synthetic 390px mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v87-central-six-topic-mobile
+          path: qa-artifacts/unit06-v87/*.png
+          if-no-files-found: warn
+          retention-days: 7
