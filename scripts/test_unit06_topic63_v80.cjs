@@ -157,8 +157,8 @@ async function browserTest(){
   await page.locator('#finish').click();
   assert.equal(await page.locator('#review article').count(),80);
   const text=await page.locator('#review').textContent();
-  assert.match(text,/original Q24\\b/,'Verified Q24 should appear in the complete review');
-  assert.match(text,/original Q80\\b/,'Verified Q80 should appear in the complete review');
+  assert.ok(text.includes('original Q24'),'Verified Q24 should appear in the complete review');
+  assert.ok(text.includes('original Q80'),'Verified Q80 should appear in the complete review');
   await page.locator('#try-again').click();
   await page.setViewportSize({width:390,height:844});
   const dims=await page.evaluate(()=>({w:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
