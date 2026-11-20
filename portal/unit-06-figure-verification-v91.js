@@ -9,7 +9,7 @@ const groups=[
  {title:'Figure 6.6 · Streamline and turbulent flow',printedPage:95,fragment:'figure66',topic:'6.3',file:'unit-06-topic-63-v80-80-source.json',bankId:'PSN-XI-U06-T63-V80',ids:[24,80]}
 ];
 const exactKeys={'XI-U06-T61-MCQ-0011':'C','XI-U06-T62-MCQ-0026':'D','XI-U06-T62-MCQ-0064':'A','XI-U06-T62-MCQ-0072':'D','XI-U06-T63-MCQ-0024':'B','XI-U06-T63-MCQ-0080':'B'};
-const expectedHolds={'6.1':[11],'6.2':[26,64,72],'6.3':[24,80]};
+const expectedFigureItems={'6.1':[11],'6.2':[26,64,72],'6.3':[24,80]};
 const records=new Map();let loaded=false;
 const localImages=new Map();let schematicDocumentPromise=null;
 function el(tag,className,value){
@@ -22,14 +22,14 @@ function requireBank(b,group){
  if(!b||b.schemaVersion!==1||b.bankId!==group.bankId||b.grade!==11||b.unit!==6||
     b.topicNumber!==group.topic||b.sourceQuestionCount!==80||b.questions?.length!==80||
     b.publicSelfPractice!==true||b.secureExam!==false)throw Error('Unexpected original bank metadata');
- const held=b.questions.filter(q=>q.active===false),expected=expectedHolds[group.topic];
- if(held.map(q=>q.sourceQuestionNumber).join(',')!==expected.join(','))throw Error('Source hold flags have changed');
+ const held=b.questions.filter(q=>Object.prototype.hasOwnProperty.call(exactKeys,q.id)),expected=expectedFigureItems[group.topic];
+ if(held.map(q=>q.sourceQuestionNumber).join(',')!==expected.join(','))throw Error('Source figure item IDs have changed');
  for(const q of held){
   if(!Object.prototype.hasOwnProperty.call(exactKeys,q.id)||exactKeys[q.id]!==q.correctOptionId||
     q.boardEligible!==false||q.stimulusSetId!==null||q.cognitiveLevel!=='Unspecified'||
     !Array.isArray(q.sloCodes)||q.sloCodes.length!==0||
     !Array.isArray(q.options)||q.options.map(o=>o.id).join('')!=='ABCD'||
-    typeof q.stem!=='string'||typeof q.explanation!=='string'||!q.holdReason){
+    typeof q.stem!=='string'||typeof q.explanation!=='string'||q.active!==true||q.holdReason!==null||q.status!=='provisional-public-self-practice'||!q.referenceFigureId){
    throw Error('Archived figure hold, key, or provisional certification changed');
   }
  }
@@ -76,7 +76,7 @@ function makeComparison(group){
  const clear=el('button','','Remove image');clear.type='button';clear.disabled=true;
  clear.id='clear-'+group.fragment;
  tools.append(zoomLabel,zoom,zoomOutput,clear);local.append(tools);
- const status=el('p','compare-status','No local image loaded. Source question status remains held.');
+ const status=el('p','compare-status','No local image loaded. Source question remains available in provisional practice.');
  status.setAttribute('role','status');local.append(status);
  concept.append(el('strong','','V90 independent educational schematic'));
  const sketch=el('div','compare-viewport');
@@ -96,7 +96,7 @@ function makeComparison(group){
  }
  function reset(){
   forget();lastHandledFile=null;input.value='';
-  status.textContent='Local image cleared from this page. Original source question remains held.';
+  status.textContent='Local image cleared from this page. Original source question remains available in provisional practice.';
  }
  clear.addEventListener('click',reset);
  zoom.addEventListener('input',()=>{
@@ -130,7 +130,7 @@ function makeComparison(group){
   picture.addEventListener('load',()=>{
    placeholder.hidden=true;
    zoom.disabled=false;clear.disabled=false;
-   status.textContent='Local image displayed. Zoom to inspect labels. No image has left your browser; all questions remain held.';
+   status.textContent='Local image displayed. Zoom to inspect labels. No image has left your browser; all original questions are selectable in provisional practice.';
    if(loaded)rebuildSummary();
   },{once:true});
   picture.addEventListener('error',()=>{
@@ -168,7 +168,7 @@ function makeQuestion(q,group){
  const answer=q.options.find(o=>o.id===q.correctOptionId);
  const source=el('div','source-key');
  const key=el('p');key.append(el('strong','',q.correctOptionId+' — '+answer.text));
- source.append(key,el('p','',q.explanation),el('p','', 'Original hold reason: '+q.holdReason));
+ source.append(key,el('p','',q.explanation),el('p','', 'Previous hold resolved after source-figure verification in V93.));
  detail.append(source);article.append(detail);
  const checks=el('div','checks');
  const viewed=fieldWithCheckbox('I examined the actual printed NBF figure, not only the V90 drawing.');
@@ -179,7 +179,7 @@ function makeQuestion(q,group){
  const controls=el('div','controls');
  const choiceLabel=el('label','field');const choiceTitle=el('span','','Review recommendation');
  const choice=document.createElement('select');choice.setAttribute('aria-label','Review decision for '+q.id);
- [['not-reviewed','Not reviewed yet — held'],['keep-held','Keep held — review incomplete / issue found'],['candidate-signoff','Candidate for teacher signoff (still held)']].forEach(([v,t])=>{
+ [['not-reviewed','Not reviewed yet — public source unchanged'],['keep-held','Recommend follow-up teacher review'],['candidate-signoff','Review completed — source remains public']].forEach(([v,t])=>{
   const o=document.createElement('option');o.value=v;o.textContent=t;choice.append(o);
  });
  choiceLabel.append(choiceTitle,choice);
@@ -188,7 +188,7 @@ function makeQuestion(q,group){
  notes.placeholder='Printed label, visual discrepancy, graph stage, correct answer justification or unresolved concern…';
  notes.setAttribute('aria-label','Evidence notes for '+q.id);
  noteLabel.append(notes);controls.append(choiceLabel,noteLabel);article.append(controls);
- const indicator=el('p','indicator','The original question remains held regardless of this worksheet recommendation.');
+ const indicator=el('p','indicator','This local worksheet does not change the released provisional public source record.');
  indicator.setAttribute('role','status');article.append(indicator);
  const item={q,group,viewed:viewed.check,labels:labels.check,answerSupported:answerSupported.check,choice,notes,indicator};
  function update(){
@@ -198,9 +198,9 @@ function makeQuestion(q,group){
    if(!all||!reason){
     choice.value='keep-held';
     indicator.textContent='Recommendation kept on HOLD: candidate status needs all three checks and at least 15 characters of evidence.';
-   }else indicator.textContent='Candidate for independent teacher signoff only — the original question is still held.';
+   }else indicator.textContent='Candidate for independent teacher signoff only — the question remains available in public self-practice.';
   }else{
-   indicator.textContent=choice.value==='keep-held'?'Keep held — no public source question has changed.':'Not reviewed — source question remains held.';
+   indicator.textContent=choice.value==='keep-held'?'Recommend follow-up review — no public source question has changed.':'Not reviewed — public source remains available.';
   }
   rebuildSummary();
  }
@@ -222,14 +222,14 @@ function render(archives){
   const bank=archives[group.file];
   for(const n of group.ids){
    const q=bank.questions.find(q=>q.sourceQuestionNumber===n);
-   if(!q||q.active!==false)throw Error('Expected held source question unavailable');
+   if(!q||q.active!==true)throw Error('Expected released figure question unavailable');
    section.append(makeQuestion(q,group));
   }
   mount.append(section);
  }
  if(records.size!==6)throw Error('Expected exactly six distinct held MCQs');
  loaded=true;$('copy-record').disabled=false;$('print-record').disabled=false;
- $('load-status').textContent='Six original held MCQs loaded from verified archives. Compare printed textbook pages 90, 92, 94 and 95.';
+ $('load-status').textContent='Six verified source-figure MCQs loaded for optional post-release review. Compare printed textbook pages 90, 92, 94 and 95.';
  rebuildSummary();
 }
 function rebuildSummary(){
@@ -237,8 +237,8 @@ function rebuildSummary(){
  const lines=['PHYSICS WITH SIR NAJAM — UNIT 6 PRINTED FIGURE VERIFICATION WORKSHEET (V91)',
  'Record type: Local recommendation ONLY. Not an official FBISE key, secure approval or automatic code change.',
  'Source: NBF Grade XI Physics, printed pp. 90, 92, 94 and 95. Compare the original artwork physically.',
- 'Current public state: Unit 6 554 of 560 original MCQs selectable; six remain HELD; Grade XI total 2,244.',
- 'All source bank flags remain HELD regardless of the recommendations below.',''];
+ 'Current public state: Unit 6 all 560 original MCQs selectable; zero figure holds; Grade XI total 2,250.',
+ 'This worksheet never changes source flags or user-accessible practice regardless of recommendations below.',''];
  const entries=[...records.values()];
  const candidate=entries.filter(x=>x.choice.value==='candidate-signoff').length;
  const held=entries.filter(x=>x.choice.value==='keep-held').length;
@@ -255,7 +255,7 @@ function rebuildSummary(){
    'Answer independently supported: '+(item.answerSupported.checked?'YES':'NO'),
    'Recommendation: '+(item.choice.value==='candidate-signoff'?'CANDIDATE — separate teacher signoff required':item.choice.value==='keep-held'?'KEEP HELD':'NOT REVIEWED'),
    'Evidence notes: '+(item.notes.value.trim()||'(none)'),
-   'Public question status: STILL HELD','');
+   'Public question status: SELECTABLE PROVISIONAL SELF-PRACTICE','');
  }
  lines.push('Teacher signoff and an independently tested future PR are required before any source question can be activated.');
  $('review-summary').textContent=lines.join('\n');
