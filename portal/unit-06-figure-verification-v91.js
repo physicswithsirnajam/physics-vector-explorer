@@ -142,6 +142,7 @@ function rebuildSummary(){
 }
 async function copyRecord(){
  const content=$('review-summary').textContent;
+ $('copy-status').textContent='Copying the review record to this device’s clipboard…';
  try{
   if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(content);
   else{
