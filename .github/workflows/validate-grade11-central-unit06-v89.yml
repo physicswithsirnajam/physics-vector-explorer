@@ -1,0 +1,88 @@
+name: Validate Grade XI Unit6 Seven-Topic Central Builder (V89)
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-67-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "scripts/test_grade11_unit06_central_v89.cjs"
+      - "quality/grade11-unit06-v89-seven-topic-central-audit.md"
+      - ".github/workflows/validate-grade11-central-unit06-v89.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "portal/index.html"
+      - "portal/learning-catalog.json"
+      - "portal/unit-06-topic-67-preview.html"
+      - "question-bank/manifest.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "scripts/test_grade11_unit06_central_v89.cjs"
+      - "quality/grade11-unit06-v89-seven-topic-central-audit.md"
+      - ".github/workflows/validate-grade11-central-unit06-v89.yml"
+  workflow_dispatch:
+jobs:
+  source-and-chromium:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Current 2,244 original inventory and adapter JavaScript syntax
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check shared/multi-unit-planner-v56.js
+          node --check scripts/test_grade11_unit06_central_v89.cjs
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((n,u)=>n+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==133||m[5].independentSharedStimulusGroupCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+      - name: Install Chromium for full student browser and 390px QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V89 seven-source fidelity, 80 original Superfluidity keys, fail-closed tamper safeguards, mobile
+        run: node scripts/test_grade11_unit06_central_v89.cjs
+      - name: Regression — earlier six-topic central builder and count protections
+        run: |
+          node scripts/test_grade11_unit06_central_v87.cjs
+          node scripts/test_grade11_unit06_central_v85.cjs
+          node scripts/test_grade11_unit06_central_v83.cjs
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_grade11_central_v77.cjs
+      - name: Regression — all 7 original Unit6 topic source banks and student previews
+        run: |
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_unit06_topic64_v82.cjs
+          node scripts/test_unit06_topic65_v84.cjs
+          node scripts/test_unit06_topic66_v86.cjs
+          node scripts/test_unit06_topic67_v88.cjs
+      - name: Regression — original 1,690 Units1–5 and mixed-unit test planning
+        run: |
+          node scripts/test_builder_five_units_v55.cjs
+          node scripts/test_builder_multiunit_v56.cjs
+      - name: Regression — direct YouTube links, legacy resources and privacy
+        run: |
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+      - name: Upload 390px synthetic mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v89-central-seven-topic-mobile
+          path: qa-artifacts/unit06-v89/*.png
+          if-no-files-found: warn
+          retention-days: 7
