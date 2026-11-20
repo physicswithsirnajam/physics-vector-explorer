@@ -62,9 +62,10 @@ source.questions.forEach((q,i)=>{
  assert.equal(q.sourceSection,range,'Original sections must not be rearranged');
  counts[q.sourceSection]=(counts[q.sourceSection]||0)+Number(q.active);
  if([26,64,72].includes(i+1)){
-   assert.equal(q.active,false);
-   assert.equal(q.status,'pending-figure-review');
-   assert.match(q.holdReason,/Figure/);
+   assert.equal(q.active,true);
+   assert.equal(q.status,'provisional-public-self-practice');
+   assert.equal(q.holdReason,null);
+   assert.equal(q.referenceFigureId,(i+1)===64?'unit6-figure65c':'unit6-figure63');
  }else assert.equal(q.active,true);
 });
 assert.deepEqual(counts,{fundamentals:20,reasoning:20,numericals:20,'standalone-situations':20});
