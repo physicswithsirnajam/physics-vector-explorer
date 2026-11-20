@@ -31,9 +31,9 @@ async function sourceIntegrity(){
  assert.equal(all.length,2250);assert.equal(new Set(all.map(q=>q.id)).size,2250);
  const six=banks[5].questions;
  assert.equal(six.length,560);
- assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T61-')).length,79);
- assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T62-')).length,77);
- assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T63-')).length,78);
+ assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T61-')).length,80);
+ assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T62-')).length,80);
+ assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T63-')).length,80);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T64-')).length,80);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T65-')).length,80);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T66-')).length,80);
