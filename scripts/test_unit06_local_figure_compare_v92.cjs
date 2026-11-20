@@ -64,15 +64,17 @@ async function browserTest(){
   assert.equal(await page.locator('.compare-grid').count(),4);
   assert.equal(await page.locator('input.local-input[type=file]').count(),4);
   assert.equal(await page.locator('.compare-pane svg[role=img]').count(),4);
-  const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+X1ZoAAAAASUVORK5CYII=','base64');
+  const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGP8//8/AwMDEwMDAwMDAwAkBgMB/DXemwAAAABJRU5ErkJggg==','base64');
   const input=page.locator('#local-fig-figure62');
   // Reject a non-image without creating a browser-local photo.
   await input.setInputFiles({name:'no-figure.txt',mimeType:'text/plain',buffer:Buffer.from('not an image')});
   assert.match(await page.locator('.comparison').first().locator('.compare-status').textContent(),/File rejected/);
   assert.equal(await page.locator('.comparison').first().locator('.compare-viewport img').count(),0);
-  // Use a synthetic 1×1 test PNG, NOT a copied NBF figure or private file.
+  // Use a newly encoded, valid synthetic 2×2 test PNG, NOT a copied NBF figure or private file.
   await input.setInputFiles({name:'PRIVATE_ORIGINAL_BOOK_FILENAME.png',mimeType:'image/png',buffer:png});
-  await page.waitForFunction(()=>document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth===1);
+  await page.waitForTimeout(500);
+  const firstState=await page.evaluate(()=>({imgWidth:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth||0,status:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-status')?.textContent||'',inputFiles:document.querySelector('#local-fig-figure62')?.files?.length||0}));
+  assert.equal(firstState.imgWidth,2,'Locally selected synthetic PNG did not load: '+JSON.stringify(firstState));
   const firstCompare=page.locator('.comparison').first();
   const localImg=firstCompare.locator('.compare-viewport img');
   assert.equal(await localImg.count(),1);
@@ -91,7 +93,9 @@ async function browserTest(){
   assert.equal(await firstCompare.locator('output').textContent(),'200%');
   // Selecting a second figure is still private and leaves independent source holds intact.
   await page.locator('#local-fig-figure63').setInputFiles({name:'private_page92.png',mimeType:'image/png',buffer:png});
-  await page.waitForFunction(()=>document.querySelector('#local-fig-figure63')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth===1);
+  await page.waitForTimeout(500);
+  const secondState=await page.evaluate(()=>({imgWidth:document.querySelector('#local-fig-figure63')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth||0,status:document.querySelector('#local-fig-figure63')?.closest('.compare-pane')?.querySelector('.compare-status')?.textContent||''}));
+  assert.equal(secondState.imgWidth,2,'Second original figure image failed: '+JSON.stringify(secondState));
   assert.equal(await page.locator('article.question').count(),6);
   assert.equal(await page.locator('article.question input[type=checkbox]:checked').count(),0);
   // Removing one photo revokes its object URL, leaving other local figure independent.
