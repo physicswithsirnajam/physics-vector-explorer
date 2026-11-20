@@ -993,6 +993,10 @@ function adaptUnitSixTopic67(source){
  need(originalKey.length===80&&source.originalSourceAnswerKey===originalKey&&
    source.questions.map(q=>q.correctOptionId).join('')===originalKey,
   'Topic6.7 original 80-letter source answer key changed');
+ const exactText=JSON.stringify(source.questions.map(q=>[q.id,q.stem,q.options.map(o=>[o.id,o.text]),q.correctOptionId,q.explanation]));
+ let sourceHash=0x811c9dc5;
+ for(let i=0;i<exactText.length;i++)sourceHash=Math.imul(sourceHash^exactText.charCodeAt(i),0x01000193)>>>0;
+ need(sourceHash===0xfa87557e,'Topic6.7 original source text/options/key/explanations checksum mismatch');
  const kept=[],sections={fundamentals:0,reasoning:0,'data-interpretation':0,'standalone-situations':0};
  for(let i=0;i<80;i++){
   const q=source.questions[i],n=i+1;
