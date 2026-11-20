@@ -39,12 +39,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check 2,084 current manifest and JavaScript syntax
+      - name: Check 2,164 current manifest and JavaScript syntax
         run: |
           node --check shared/practice-bank-adapter-v55.js
           node --check shared/multi-unit-planner-v56.js
           node --check scripts/test_grade11_unit06_central_v85.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((s,u)=>s+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==394||m[5].sourceTopicMcqCount!==400||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==93||m.reduce((s,u)=>s+u.liveMcqCount,0)!==2084)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m.slice(0,5).reduce((s,u)=>s+u.liveMcqCount,0)!==1690||m[5].liveMcqCount!==474||m[5].sourceTopicMcqCount!==480||m[5].sourceFigureHeldCount!==6||m[5].standaloneSituationQuestionCount!==113||m.reduce((s,u)=>s+u.liveMcqCount,0)!==2164)process.exit(1)"
       - name: Install Chromium browser
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
