@@ -11,6 +11,7 @@ const groups=[
 const exactKeys={'XI-U06-T61-MCQ-0011':'C','XI-U06-T62-MCQ-0026':'D','XI-U06-T62-MCQ-0064':'A','XI-U06-T62-MCQ-0072':'D','XI-U06-T63-MCQ-0024':'B','XI-U06-T63-MCQ-0080':'B'};
 const expectedHolds={'6.1':[11],'6.2':[26,64,72],'6.3':[24,80]};
 const records=new Map();let loaded=false;
+const localImages=new Map();let schematicDocumentPromise=null;
 function el(tag,className,value){
  const node=document.createElement(tag);
  if(className)node.className=className;
@@ -37,6 +38,116 @@ function fieldWithCheckbox(text){
  const label=el('label');const check=document.createElement('input');
  check.type='checkbox';label.append(check,el('span','',text));return {label,check};
 }
+
+/* V92: display user-selected textbook photos only through browser-local blob URLs.
+ * Never send the image bytes, file names, or temporary blob URLs to any server or report.
+ * These aids DO NOT automatically pass the original visual-verification checkboxes.
+ */
+function schematicDocument(){
+ if(!schematicDocumentPromise){
+  schematicDocumentPromise=fetch('./unit-06-figure-study-v90.html',{cache:'no-store'}).then(response=>{
+   if(!response.ok)throw Error('V90 diagram companion unavailable');
+   return response.text();
+  }).then(markup=>new DOMParser().parseFromString(markup,'text/html'));
+ }
+ return schematicDocumentPromise;
+}
+function makeComparison(group){
+ const root=el('div','comparison');
+ const heading=el('h3','','Compare the original textbook artwork with the teaching schematic');
+ root.append(heading,el('p','comparison-intro','NBF printed page '+group.printedPage+' · Your photograph remains on this device; our V90 illustration is NOT a copy of the textbook.'));
+ const grid=el('div','compare-grid');
+ const local=el('div','compare-pane'),concept=el('div','compare-pane');
+ local.append(el('strong','', 'Your printed NBF figure · local image'));
+ const area=el('div','compare-viewport');
+ const placeholder=el('p','compare-placeholder','Select an image of the printed textbook figure. No file has been selected.');
+ area.append(placeholder);local.append(area);
+ const inputLabel=el('label','local-file-label','Choose a photo or screenshot (JPEG, PNG or WebP; maximum 15 MB)');
+ const input=document.createElement('input');
+ input.type='file';input.accept='image/png,image/jpeg,image/webp';input.className='local-input';
+ input.id='local-fig-'+group.fragment;input.setAttribute('aria-label','Choose original textbook figure image for '+group.title);
+ inputLabel.htmlFor=input.id;local.append(inputLabel,input);
+ const tools=el('div','compare-tools');
+ const zoomLabel=el('label','','Zoom');const zoom=document.createElement('input');
+ zoom.type='range';zoom.min='100';zoom.max='300';zoom.step='25';zoom.value='100';zoom.disabled=true;
+ zoom.id='zoom-'+group.fragment;zoom.setAttribute('aria-label','Zoom local textbook photo '+group.title);
+ zoomLabel.htmlFor=zoom.id;
+ const zoomOutput=el('output','','100%');zoomOutput.htmlFor=zoom.id;
+ const clear=el('button','','Remove image');clear.type='button';clear.disabled=true;
+ clear.id='clear-'+group.fragment;
+ tools.append(zoomLabel,zoom,zoomOutput,clear);local.append(tools);
+ const status=el('p','compare-status','No local image loaded. Source question status remains held.');
+ status.setAttribute('role','status');local.append(status);
+ concept.append(el('strong','','V90 independent educational schematic'));
+ const sketch=el('div','compare-viewport');
+ const sketchPlaceholder=el('p','compare-placeholder','Loading our original explanatory diagram…');
+ sketch.append(sketchPlaceholder);concept.append(sketch);
+ concept.append(el('p','compare-note','This drawing is for learning only. Verify the actual printed figure, its labels and orientation independently.'));
+ grid.append(local,concept);root.append(grid);
+ root.append(el('p','compare-note','Selecting an image does NOT mark the original figure as checked and does NOT approve an answer. The source images are never attached to the copyable review report.'));
+ let currentImage=null;
+ function forget(){
+  const old=localImages.get(group.fragment);
+  if(old){URL.revokeObjectURL(old);localImages.delete(group.fragment);}
+  if(currentImage){currentImage.remove();currentImage=null;}
+  placeholder.hidden=false;
+  zoom.disabled=true;zoom.value='100';zoomOutput.textContent='100%';clear.disabled=true;
+  if(loaded)rebuildSummary();
+ }
+ function reset(){
+  forget();input.value='';
+  status.textContent='Local image cleared from this page. Original source question remains held.';
+ }
+ clear.addEventListener('click',reset);
+ zoom.addEventListener('input',()=>{
+  if(!currentImage)return;
+  const value=Number(zoom.value);
+  currentImage.style.width=value+'%';
+  zoomOutput.textContent=value+'%';
+ });
+ input.addEventListener('change',()=>{
+  forget();
+  const file=input.files?.[0];
+  if(!file){status.textContent='No original printed figure image selected.';return;}
+  if(!['image/png','image/jpeg','image/webp'].includes(file.type)){
+   input.value='';status.textContent='File rejected. Please choose a JPEG, PNG or WebP image. Nothing was uploaded.';
+   return;
+  }
+  if(file.size<1||file.size>15*1024*1024){
+   input.value='';status.textContent='File rejected: image must be between 1 byte and 15 MB. Nothing was uploaded.';
+   return;
+  }
+  const url=URL.createObjectURL(file);
+  const picture=el('img');
+  picture.alt='Locally selected original textbook figure for '+group.title;
+  picture.decoding='async';picture.style.width='100%';
+  picture.addEventListener('load',()=>{
+   placeholder.hidden=true;
+   zoom.disabled=false;clear.disabled=false;
+   status.textContent='Local image displayed. Zoom to inspect labels. No image has left your browser; all questions remain held.';
+   if(loaded)rebuildSummary();
+  },{once:true});
+  picture.addEventListener('error',()=>{
+   forget();input.value='';status.textContent='Could not decode this image. Choose a valid JPG, PNG or WebP. No file was uploaded.';
+  },{once:true});
+  localImages.set(group.fragment,url);
+  currentImage=picture;area.append(picture);
+ });
+ schematicDocument().then(doc=>{
+  const source=doc.getElementById(group.fragment)?.querySelector('svg');
+  if(!source)throw Error('V90 original schematic missing');
+  const safeCopy=document.importNode(source,true);
+  sketch.replaceChildren(safeCopy);
+ }).catch(()=>{
+  sketchPlaceholder.textContent='The original explanatory schematic could not be loaded. The separate V90 figure-study link remains available.';
+ });
+ return root;
+}
+window.addEventListener('pagehide',()=>{
+ for(const url of localImages.values())URL.revokeObjectURL(url);
+ localImages.clear();
+});
+
 function makeQuestion(q,group){
  const article=el('article','question');article.id='held-'+q.id;
  article.append(el('p','qid',q.id+' · original Topic '+group.topic+' source Q'+q.sourceQuestionNumber+' · compiled study source p. '+q.sourcePdfPage));
@@ -99,6 +210,7 @@ function render(archives){
   const link=el('a','','Open the V90 teaching schematic (not the original textbook)');
   link.href='./unit-06-figure-study-v90.html#'+group.fragment;
   const p=el('p');p.append(link);section.append(p);
+  section.append(makeComparison(group));
   const bank=archives[group.file];
   for(const n of group.ids){
    const q=bank.questions.find(q=>q.sourceQuestionNumber===n);
@@ -128,6 +240,7 @@ function rebuildSummary(){
   const q=item.q;
   lines.push(q.id+' | '+item.group.title+' | NBF printed p. '+item.group.printedPage,
    'Original stem: '+q.stem,
+   'Local image shown during review: '+(localImages.has(item.group.fragment)?'YES':'NO')+' (no image file or filename included)',
    'Original source answer: '+q.correctOptionId+' — '+q.options.find(o=>o.id===q.correctOptionId).text,
    'Printed original figure viewed: '+(item.viewed.checked?'YES':'NO'),
    'Labels/orientation support item: '+(item.labels.checked?'YES':'NO'),
