@@ -46,7 +46,7 @@ assert.equal(unit.status,'planned');assert.equal(unit.questionBankCount,0);
 assert.equal(unit.partialTestBuilderMcqCount,554);
 assert.equal(unit.sourceTopicMcqCount,560);
 const html=read('portal/unit-06-figure-verification-v91.html'),controller=read('portal/unit-06-figure-verification-v91.js');
-assert.match(html,/Unit 6 Figure Verification Desk|Figure Verification Desk/);
+assert.match(html,/Unit 6 Figure Verification Desk|Figure Verification Desk|Figure Comparison &amp; Verification Desk/);
 assert.match(html,/2,244/);
 assert.match(html,/local browser worksheet/);
 assert.match(html,/No automatic release or official certification/);

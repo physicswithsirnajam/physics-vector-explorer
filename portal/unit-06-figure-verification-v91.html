@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Source-verified Grade XI Unit 6 original held MCQ review worksheet. Compare NBF printed Figures 6.2, 6.3, 6.5(c), 6.6 against six archived source items; no automatic unlocking or cloud storage.">
-<title>Unit 6 Figure Verification Desk · Physics with Sir Najam</title>
+<title>Unit 6 Printed Figure Comparison &amp; Verification · Physics with Sir Najam</title>
 <style>
 :root{color-scheme:light;--navy:#102747;--deep:#1b385c;--gold:#c89e49;--muted:#52647d;--paper:#f4f7fb;--line:#dce5ee;--ink:#1c304b;--teal:#126c7f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -47,23 +47,43 @@ textarea{min-height:92px;resize:vertical}
 .record{white-space:pre-wrap;overflow-wrap:anywhere;max-height:490px;overflow:auto;border:1px solid #d3dee9;background:#f7fafc;border-radius:9px;padding:14px;font:12.5px/1.6 ui-monospace,Consolas,monospace}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.btn{border:1px solid #aec6d8;border-radius:9px;padding:10px 16px;background:white;color:var(--deep);font:700 14px system-ui;cursor:pointer}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}button:disabled{opacity:.45;cursor:not-allowed}
 footer{text-align:center;color:#66768c;font-size:13px;padding:24px}
-@media(max-width:650px){main{padding:19px 12px 40px}.option-grid,.checks,.controls{grid-template-columns:1fr}.question{padding:13px}header a{margin-left:0}}
+.comparison{margin:17px 0 20px;border:1px solid #cbddeb;background:#f5f9fd;border-radius:12px;padding:15px}
+.comparison>h3{margin:2px 0 8px}.comparison-intro{font-size:13px;color:var(--muted);margin:4px 0 11px}
+.compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.compare-pane{min-width:0;background:white;border:1px solid var(--line);border-radius:9px;padding:12px}
+.compare-pane>strong{display:block;font-size:14px;color:#284763;margin:0 0 9px}
+.compare-viewport{width:100%;max-height:400px;min-height:156px;overflow:auto;background:#eaf2f9;border:1px solid #d5e3ee;border-radius:7px;position:relative}
+.compare-viewport img{display:block;width:100%;max-width:none;height:auto;object-fit:contain}
+.compare-pane svg{width:100%;height:auto;display:block;max-height:400px}
+.compare-placeholder{padding:32px 15px;text-align:center;color:#647890;line-height:1.5}
+.local-file-label{display:block;margin:9px 0 3px;font-weight:700;font-size:13px}
+.local-input{width:100%;max-width:100%;font:inherit;font-size:13px;color:var(--ink)}
+.compare-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:11px}
+.compare-tools label{font-size:13px;font-weight:700}
+.compare-tools input[type=range]{width:140px;max-width:100%;accent-color:#17657f}
+.compare-tools output{font-variant-numeric:tabular-nums;font-size:13px}
+.compare-tools button{font:700 12px system-ui;padding:7px 11px;border-radius:7px;border:1px solid #b7c9d9;background:white;color:#21425f;cursor:pointer}
+.compare-tools button:disabled{opacity:.45;cursor:not-allowed}
+.compare-status{font-size:12px;color:#45627d;margin-top:9px}
+.compare-note{font-size:12px;color:#6a4e24;margin:10px 0 0}
+@media(max-width:650px){main{padding:19px 12px 40px}.option-grid,.checks,.controls,.compare-grid{grid-template-columns:1fr}.question{padding:13px}header a{margin-left:0}}
 @media print{header,.actions,.instructions,.notice{display:none!important}body{background:#fff}.panel,.question{border:1px solid #bbb;box-shadow:none;break-inside:avoid}.record{max-height:none;overflow:visible}.checks{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
-<script src="./unit-06-figure-verification-v91.js?v=91" defer></script>
+<script src="./unit-06-figure-verification-v91.js?v=92" defer></script>
 </head>
 <body>
 <header><div class="inner"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo"><div><strong>Physics with Sir Najam</strong><small>From Fundamentals to Frontiers · HSSC-I</small></div><a href="./#learning-hub">Learning Hub</a></div></header>
 <main>
-<div class="eyebrow">V91 · Unit 6 · Original source comparison worksheet</div>
-<h1>Figure Verification Desk</h1>
+<div class="eyebrow">V92 · Unit 6 · Original source comparison worksheet</div>
+<h1>Figure Comparison &amp; Verification Desk</h1>
 <p class="lead">Review the <strong>six original held MCQs</strong> against the <strong>actual NBF Grade XI printed figures</strong>. Each question, its four options, and its teacher-study answer are loaded directly from the existing archived source bank without rewriting the content.</p>
 <div class="facts"><div class="fact"><strong>560</strong><small>Archived Unit 6 MCQs</small></div><div class="fact"><strong>554</strong><small>Currently selectable</small></div><div class="fact"><strong>6</strong><small>Still held for figures</small></div><div class="fact"><strong>2,244</strong><small>Grade XI total available</small></div></div>
+<div class="notice"><strong>New in V92:</strong> Choose your own photograph or screenshot of each printed NBF figure and compare it side by side with our original V90 teaching schematic. The image is displayed only in your browser using a temporary local image URL; it is <strong>never uploaded, saved, copied into the review text, or committed to GitHub</strong>. Removing the image or closing the page discards the preview.</div>
 <div class="notice"><strong>No automatic release or official certification.</strong> This is an <strong>ephemeral local browser worksheet</strong>, not a secure staff approval system. It does not change GitHub, publish answers, activate questions, create student grades, or save anything to a cloud account. Marking a question as a <em>candidate for teacher signoff</em> does <strong>not</strong> unlock it; the source remains held until separate manual verification and a later, tested pull request.</div>
 <section class="panel" aria-labelledby="steps-title">
 <h2 id="steps-title">How to verify each held question</h2>
 <ol class="instructions">
-<li>Open your <strong>actual NBF Grade XI textbook</strong> on the printed page shown below (90, 92, 94 or 95). Do not treat our V90 study drawing as a substitute for the original illustration.</li>
+<li>Open your <strong>actual NBF Grade XI textbook</strong> on the printed page shown below (90, 92, 94 or 95). Optionally select a clear photo or screenshot in the on-device comparison panel. The image never leaves your browser; the V90 schematic is an explanatory aid, not the authoritative illustration.</li>
 <li>Compare the printed figure's <strong>labels, arrows, orientation and graph stages</strong> against the original MCQ wording and answer options.</li>
 <li>Expand the <strong>teacher-study answer key</strong> and independently decide if it is scientifically supported. Source answer keys are <em>not</em> automatically official FBISE keys.</li>
 <li>Record your observations. Select <strong>Candidate for teacher signoff</strong> only when all three checks are marked and the notes are specific enough for review. Otherwise keep the question held.</li>
@@ -82,6 +102,6 @@ footer{text-align:center;color:#66768c;font-size:13px;padding:24px}
 </section>
 <p><a href="./unit-06-figure-study-v90.html">Back to Unit 6 Figure Study</a> · <a href="../build-your-physics-test.html?unit=6">Open the current Unit 6 Test Builder (554 available)</a></p>
 </main>
-<footer>Physics with Sir Najam · V91 verification worksheet · Public, local-only, no source-bank unlock</footer>
+<footer>Physics with Sir Najam · V92 local image-comparison worksheet · Public, local-only, no source-bank unlock</footer>
 </body>
 </html>
