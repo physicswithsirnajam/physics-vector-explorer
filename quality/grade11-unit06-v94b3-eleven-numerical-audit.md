@@ -5,7 +5,7 @@
 
 ## Source and proof boundaries
 
-**Source actually read:** User-owned, private `Grade11_Unit6_COMPLETE_MASTER_ALL.pdf`, pages **330–337 of 577**: 11 prepared solved numerical exercises, steps, original-book answer comparisons asserted by the prepared notes, and source uncertainty notes. Original Grade XI NBF book **printed pages 110–111** are cited by this *derivative* solved compilation but **were not independently opened** for this 11-exercise audit. Therefore, statements such as “NBF prints 0.72 kg/m³” are explicitly **reported by the owner's prepared source, pending direct confirmation**, not a certified transcription of the actual textbook.
+**Sources now directly checked:** Owner's private prepared Grade11_Unit6_COMPLETE_MASTER_ALL.pdf (combined pages 330–337), **and teacher-supplied photographs of the original NBF printed textbook pages 110–111**, visually inspected on 20 November 2026. NBF printed p.110 contains Numerical 6.1–6.2, and p.111 contains Numerical 6.3–6.11. The original photographs are private evidence; no image files or page scans may be copied into the public GitHub repository. **Q6.9's textbook answer 0.72 kg m⁻³ is directly confirmed**, not merely quoted by the derivative prepared guide.
 
 **Framework:** Previously accessed user's official `11_Physics_HSSC_I_model_paper_50_percent(9).pdf`, framework PDF pp.11–12, NCP Grade XI 2022–23 / Scheme 2024. Summative physics-outcome descriptions relevant to these numerical problems include B33 (Archimedes), B36 (continuity calculations), B40 (Bernoulli horizontal/vertical application); B44 describes Bernoulli real-life application, and B42 covers viscous retardation. B39 is **formative** and must not be silently assessed as summative in written theory exams. Per-item SLOs are **candidate alignment**, not official board item certification.
 
@@ -25,7 +25,7 @@
 | **6.6(b)** | `Δp=½×1000×(12.5²−2.0²)` | **76,125 Pa** | ≈7.6×10⁴ Pa | **Agrees:** horizontal steady ideal flow with no head losses. |
 | **6.7** | `p₁=1.01×10⁵+½×1000×(25.5²−1.96²)` Pa | **424,204.2 Pa absolute** | 4.24×10⁵ Pa absolute | **Agrees conditionally:** water density 1000 kg/m³ is assumed but omitted from the quoted problem. Must not confuse gauge/absolute pressure. |
 | **6.8** | Open large reservoir, `p₁=p₂=p_atm`, negligible `v_surface`: `gh=½v²` | **v=√(2gh)** | √(2gh) | **Symbolic derivation agrees:** h from surface to orifice, ideal negligible losses. |
-| **6.9** | `v=33.8 m/s; Δp=4.12×10⁵ Pa`; `ρ=2Δp/v²` | **721.2632611 kg/m³ = 0.7212632611 g/cm³** | ≈721 kg/m³ ≈0.72 g/cm³ | **Agrees with corrected SI unit under gauge-pressure interpretation.** Prepared source reports original printed answer **0.72 kg/m³**, a factor-1000 unit inconsistency **pending actual printed NBF p.111 confirmation**. If 4.12×10⁵ Pa were **absolute** tank pressure against 1.01×10⁵ Pa atmosphere, ideal pressure-only calculation gives **≈544.45 kg/m³** instead. |
+| **6.9** | `v=33.8 m/s; Δp=4.12×10⁵ Pa`; `ρ=2Δp/v²` | **721.2632611 kg/m³ = 0.7212632611 g/cm³** | ≈721 kg/m³ ≈0.72 g/cm³ | **Agrees with corrected SI unit under gauge-pressure interpretation.** Prepared source reports original printed answer **0.72 kg/m³**, a factor-1000 printed-unit inconsistency **now directly verified against original NBF p.111**. If 4.12×10⁵ Pa were **absolute** tank pressure against 1.01×10⁵ Pa atmosphere, ideal pressure-only calculation gives **≈544.45 kg/m³** instead. |
 | **6.10** | `Δp=½×1.29×(30²−20²)` Pa | **322.5 Pa** (bottom minus top) | 322.5 Pa | **Arithmetic agrees**, but comparing the wing's top/bottom using simple Bernoulli needs a suitable common upstream total pressure/energy assumption; aerodynamic lift depends on full pressure field, not merely two chosen local velocities. |
 | **6.11** | `(ρ_air−ρ_H2)gV−W_empty=(1.3−0.09)×9.8×10−80` N | **38.58 N** | 38.58 N | **Agrees:** maximum additional payload **WEIGHT** in newtons, not mass; fixed densities, volume and no other load. The prepared source retains original unusual “metrological balloon” wording. |
 
@@ -35,7 +35,7 @@
 
 | Issue ID | Problem | Type and severity | Required handling | Can preserve original and add a clearer separate item? |
 |---|---|---|---|---|
-| NUM-01 | **6.9** | **Compulsory — major unit/pressure ambiguity** | Do **not** label `0.72 kg/m³` correct: under gauge-pressure driving head the SI result is `721 kg/m³`. **First inspect actual NBF printed p.111** before declaring a textbook printing error. Explicitly specify gauge pressure / outlet pressure assumptions; if treating pressure as absolute, recalculate with atmospheric subtraction. | **Yes**, retain textbook-exact quoted statement and append a conspicuous teacher correction/alternative version after source verification. |
+| NUM-01 | **6.9** | **Compulsory — major unit/pressure ambiguity** | Do **not** label `0.72 kg/m³` correct: under gauge-pressure driving head the SI result is `721 kg/m³`. **Original p.111 has now been inspected and prints 0.72 kg m⁻³**, whereas under gauge/driving-pressure interpretation the result is 721 kg/m³ = 0.721 g/cm³. Preserve original wording but publish a clearly marked teacher correction only after approval. The statement leaves pressure type unspecified: an absolute interpretation requires atmospheric subtraction and a different conditional result (≈544 kg/m³ for a 1.01×10⁵ Pa outlet). | **Yes**, retain textbook-exact quoted statement and append a conspicuous teacher correction/alternative version after source verification. |
 | NUM-02 | **6.1** | **Compulsory — unstated density** | Supply/label water-droplet density assumption `1000 kg/m³` and low-Re/air buoyancy simplification. Without density, a unique numeric radius is not determined. | **Yes**; preserve question and add assumed givens box. |
 | NUM-03 | **6.7** | **Compulsory — unstated water density & pressure basis** | Label density `1000 kg/m³` and differentiate `4.24×10⁵ Pa absolute` from gauge pressure. | **Yes**. |
 | NUM-04 | **6.5, 6.6, 6.8** | **Compulsory — ideal-flow modelling** | Clarify no-loss, equal-head/level assumptions, relation of atmospheric pressure, large-reservoir condition and dimensional units. For 6.5 the supply head may change when lifting a real hose. | **Yes**. |
@@ -48,7 +48,7 @@
 ## Future V95 acceptance criteria for numericals
 
 1. Teacher reviews the 7 issue rows and approves any clarifications before exposing a textbook-exercise answer or automatic marking.
-2. Directly inspect the **original NBF textbook printed pp.110–111**, especially **6.9 reported unit** and **6.1/6.7 missing variables**, before giving students a definitive “textbook correction.” If originals unavailable, label the result as confirmed against the *prepared copy only*.
+2. **Original NBF printed pp.110–111 have now been inspected.** Confirmed: 6.1 omits droplet density, 6.7 omits an explicit water-density figure, and 6.9 prints 0.72 kg m⁻³ while not specifying gauge versus absolute pressure. Prepare a teacher-approved correction note and make modelling assumptions visible before publishing adapted versions; retain the textbook-exact source text.
 3. Store source-exact problem separately from the *explicit-assumption worked version*; maintain precise units, boundary conditions, rounding, SLO candidate and teacher decision per item.
 4. Expose the idealization `ρg` / pressure unit assumptions to students; distinguish **formula, substitution, unit analysis and final answer** in numerical practice and solution review.
 5. Keep topic-candidate official B33/B36/B40/B42/B44 distinct from item-level FBISE certification. Do not classify official formative B39 as summative.
@@ -57,4 +57,18 @@
 
 ## Status
 
-**V94-B3 audit complete for numerical consistency with prepared source:** 11 exercise solutions independently recalculated, all match their stated model assumptions. **Source-to-original textbook fidelity and teacher approval remain pending.** This is a documentation-only review pending its own draft PR merge gates. Independent V94-B2 PR #86 was open at the start of this work; do not assume or imply its merge by opening B3.
+**V94-B3 audit complete for numerical consistency with prepared source:** 11 exercise solutions independently recalculated, all match their stated model assumptions. **Original printed pages 110–111 are now visually cross-checked for the numerical problems and Q6.9's printed unit is confirmed; teacher approval and final adapted problem wording remain pending.** This is a documentation-only review pending its own draft PR merge gates. Independent V94-B2 PR #86 was open at the start of this work; do not assume or imply its merge by opening B3.
+
+
+## Direct source photo verification — original NBF printed pp.110–111 (20 November 2026)
+
+The teacher supplied clear photographs of the genuine original textbook pages, privately in this conversation. **Do not commit or rehost those page photographs.** Comparing the 11 numerical prompts with the owner-prepared compilation confirms their ordering and printed answer annotations.
+
+- **6.9, printed p.111:** The problem states an oil efflux speed of 33.8 m/s and pressure of 4.12×10⁵ Pa; the bracketed printed key visibly reads **0.72 kg m⁻³**. It does **not** label the pressure absolute or gauge. This makes the **printed unit mismatch directly confirmed**, rather than merely inferred from a prepared study edition.
+- **Calculated with an assumed driving/gauge pressure of 4.12×10⁵ Pa:** density is 721.26 kg/m³, equivalent to 0.72126 g/cm³. Printed 0.72 is the correct approximate **value in g/cm³**, not in kg/m³.
+- **Alternate conditional pressure reading:** If 4.12×10⁵ Pa were an absolute upstream value and the outlet is at 1.01×10⁵ Pa, pressure difference is 3.11×10⁵ Pa and the simplified estimate is 544.45 kg/m³. This is not a second official textbook key.
+- **6.1, printed p.110:** Droplet density is missing; calculating 5.1 μm requires an assumed density of approximately 1000 kg/m³ plus low-Re Stokes conditions.
+- **6.7, printed p.111:** It explicitly states the nozzle pressure is absolute but omits a numerical density for water; the prepared solution assumes 1000 kg/m³.
+- **6.11, printed p.111:** The book prints 38.58 N, a payload weight rather than a mass, and uses the wording “metrological balloon.”
+
+**Teacher release action:** Preserve the exact original textbook question and misprinted key as traceable source evidence, display a conspicuous correction note beside the teacher-solved 6.9, and only publish a separately phrased version with its pressure assumption after approval. No live question or key has been changed in this audit.
