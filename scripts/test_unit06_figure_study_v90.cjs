@@ -52,7 +52,7 @@ assert.equal((html.match(/<svg role="img"/g)||[]).length,4,'Each of four diagram
 assert.equal((html.match(/<title id="fig/g)||[]).length,4,'Each diagram must have accessible SVG title');
 assert.equal((html.match(/<desc id="fig/g)||[]).length,4,'Each diagram must have accessible SVG textual description');
 assert.equal((html.match(/<section class="card" id="figure/g)||[]).length,4);
-assert.equal((html.match(/<strong>554<\/strong>/g)||[]).length,0,'Unexpected direct count style changed');
+assert.match(html,/<strong>554<\/strong>/,'Student gallery must display the current Unit6 selectable count');
 assert.match(html,/Six source holds|six source holds|6<\/strong>[\s\S]*?Figure-referencing questions held/i);
 assert.match(html,/original educational schematics/i);
 assert.match(html,/not<\/strong> been activated/i);
