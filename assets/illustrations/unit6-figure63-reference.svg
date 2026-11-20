@@ -1,0 +1,17 @@
+<svg role="img" aria-labelledby="fig63title fig63desc" viewBox="0 0 760 305" xmlns="http://www.w3.org/2000/svg">
+<title id="fig63title">Schematic V-shaped flight formation</title>
+<desc id="fig63desc">One leading bird is followed by two diagonal lines of stylized birds, giving a V-shaped flock. The textbook notes that this arrangement can help reduce drag and energy expenditure for individual birds.</desc>
+<defs><g id="bird63" fill="none" stroke="#173c64" stroke-width="7" stroke-linecap="round"><path d="M-21 -5 Q-8 -12 0 8 Q9 -12 21 -5"/></g></defs>
+<rect width="760" height="305" rx="12" fill="#e9f5fd"/>
+<path d="M380 63 L180 272 M380 63 L580 272" stroke="#a5c9df" stroke-width="3" stroke-dasharray="9 8"/>
+<use href="#bird63" x="380" y="65" transform="translate(380 65) scale(1.2) translate(-380 -65)"/>
+<use href="#bird63" x="337" y="108"/><use href="#bird63" x="423" y="108"/>
+<use href="#bird63" x="291" y="157"/><use href="#bird63" x="469" y="157"/>
+<use href="#bird63" x="243" y="205"/><use href="#bird63" x="517" y="205"/>
+<use href="#bird63" x="198" y="252"/><use href="#bird63" x="562" y="252"/>
+<text x="380" y="32" text-anchor="middle" font-size="20" font-weight="750" fill="#203f65">Leader</text>
+<text x="82" y="116" font-size="18" fill="#315c7e">V formation</text>
+<text x="82" y="143" font-size="13" fill="#466c89">Long-distance migration</text>
+<text x="592" y="224" font-size="15" fill="#315c7e">Shared aerodynamic</text>
+<text x="592" y="245" font-size="15" fill="#315c7e">advantages</text>
+</svg>

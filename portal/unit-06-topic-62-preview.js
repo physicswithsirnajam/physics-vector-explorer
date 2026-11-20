@@ -43,6 +43,7 @@ function showQuestion(){
  $('bar').style.width=String(100*(position+1)/test.length)+'%';
  $('source-number').textContent='Original Topic 6.2 source Q'+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · NBF pp. 91–95';
  $('stem').textContent=q.stem;
+ PSNUnit6FigureCardV93.show($('figure-reference'),q,'../assets/illustrations/');
  const grid=$('option-grid');grid.replaceChildren();
  q.options.forEach(o=>{
   const lab=make('label','answer-option'),input=make('input'),letter=make('span','letter',o.id),body=make('span','',o.text);

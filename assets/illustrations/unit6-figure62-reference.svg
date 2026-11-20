@@ -1,0 +1,23 @@
+<svg role="img" aria-labelledby="fig62title fig62desc" viewBox="0 0 760 285" xmlns="http://www.w3.org/2000/svg">
+<title id="fig62title">Upthrust due to pressure difference on a submerged cylinder</title>
+<desc id="fig62desc">A cylinder with horizontal cross-sectional area A is submerged in liquid. Its top face is at depth h1 with pressure P1 and downward force F1 equals P1 A. Its bottom face is at greater depth h2 with pressure P2 and upward force F2 equals P2 A. The upward force exceeds the downward force.</desc>
+<defs><marker id="arr62" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#0a688d"/></marker></defs>
+<rect x="38" y="59" width="684" height="194" fill="#e7f7fd"/>
+<path d="M38 59 Q67 53 96 59 T154 59 T212 59 T270 59 T328 59 T386 59 T444 59 T502 59 T560 59 T618 59 T676 59 T722 59" fill="none" stroke="#46a5ca" stroke-width="3"/>
+<rect x="307" y="105" width="147" height="103" rx="4" fill="#d0dce8" stroke="#405f7d" stroke-width="3"/>
+<text x="380" y="159" text-anchor="middle" font-size="23" font-weight="800" fill="#132d4d">A</text>
+<text x="380" y="179" text-anchor="middle" font-size="13" fill="#41516b">cross-sectional area</text>
+<path d="M381 75 L381 122" stroke="#0a688d" stroke-width="5" marker-end="url(#arr62)"/>
+<path d="M381 245 L381 194" stroke="#0a688d" stroke-width="5" marker-end="url(#arr62)"/>
+<text x="415" y="94" font-size="18" fill="#0b5f84" font-weight="750">F₁ down</text>
+<text x="416" y="233" font-size="18" fill="#0b5f84" font-weight="750">F₂ up</text>
+<path d="M170 59 L195 59 M170 105 L195 105 M170 208 L195 208" stroke="#43536b" stroke-width="2"/>
+<path d="M180 61 L180 103 M169 59 L191 59 M169 105 L191 105" stroke="#43536b" stroke-width="1.5"/>
+<path d="M160 60 L160 206 M149 208 L171 208" stroke="#43536b" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="118" y="90" font-size="19" fill="#263e5b">h₁</text>
+<text x="117" y="187" font-size="19" fill="#263e5b">h₂</text>
+<text x="43" y="34" font-size="17" fill="#3a5778" font-weight="650">Liquid surface</text>
+<text x="540" y="136" font-size="16" fill="#263e5b">P₁ at top</text>
+<text x="540" y="170" font-size="16" fill="#263e5b">P₂ at bottom</text>
+<text x="540" y="204" font-size="14" fill="#466783">P₂ &gt; P₁</text>
+</svg>
