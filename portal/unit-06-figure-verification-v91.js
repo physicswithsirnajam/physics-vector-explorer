@@ -109,7 +109,9 @@ function makeComparison(group){
   // Real browsers dispatch input then change. Process each selected File only once;
   // also support environments that dispatch only one of those events.
   const file=input.files?.[0];
-  if(!file||file===lastHandledFile)return;
+  if(!file)return;
+  // A rejected selection has no preview; never suppress a subsequent valid photo.
+  if(file===lastHandledFile&&currentImage&&localImages.has(group.fragment))return;
   lastHandledFile=file;
   forget();
   if(!['image/png','image/jpeg','image/webp'].includes(file.type)){
@@ -120,6 +122,7 @@ function makeComparison(group){
    input.value='';status.textContent='File rejected: image must be between 1 byte and 15 MB. Nothing was uploaded.';
    return;
   }
+  status.textContent='Valid local image selected; loading its preview on this device…';
   const url=URL.createObjectURL(file);
   const picture=el('img');
   picture.alt='Locally selected original textbook figure for '+group.title;
