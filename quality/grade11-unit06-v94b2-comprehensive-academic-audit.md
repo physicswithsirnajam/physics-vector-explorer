@@ -40,7 +40,7 @@
 
 ## Source-bound limits
 
-1. **Not confirmed:** The original NBF textbook's exact wording/punctuation on printed exercise p.110 and all original NBF textbook illustrations; source master says it preserves them but is an independently prepared derivative study compilation. Original-figure audit V93 covers only Figures6.2, 6.3, 6.5(c), 6.6—not 6.16 or 6.17.
+1. **Now partly confirmed from original NBF p.110:** On 20 November 2026 the teacher provided a legible photograph of the original Unit 6 printed page 110. It shows **all eleven comprehensive exercise prompts, Q6.1–6.11, in the same order and with matching substantive wording as the owner-prepared master**. This resolves the specific earlier unverified-question-list concern. **Not confirmed:** all original chapter explanatory prose, individual solution derivations, and original figures (including 6.16 or 6.17), which were not shown on this page. V93 covers only Figures 6.2, 6.3, 6.5(c), 6.6. Do not copy the original textbook page image into public GitHub.
 2. **Not confirmed:** Individual FBISE question-level board eligibility, cognitive tags, final assessment equivalence or ownership/licensing for distributing any original textbook image. The SLO numbers in the prepared answers are **author-suggested alignments** only.
 3. **Not published:** 11 comprehensive exercises, private PDF pages, worked solutions or answers as new Unit6 portal content.
 4. **Need teacher approval:** Corrective notes/extra questions must first be accepted by the teacher; only after that can V95 create independent, accessible student explanations and diagrams.
@@ -54,3 +54,12 @@
 **V95:** design the seven-topic, fully integrated `Read → Simulate → Practice → Revise` desk; 560 public original topic MCQs remain unchanged until teacher explicitly approves corrections; the complete Unit6 portal status remains `planned` until rollout passes CI and user signoff.
 
 **V94-B2 branch is documentation-only.** No mutation of original source answers, Test Builder, Firebase, student accounts/grades, textbook scans, billing or permissions. Keep as draft until teacher reviews and CI (if triggered) passes.
+
+
+## Supplementary original-source check (20 Nov 2026)
+
+The teacher privately supplied original NBF **printed page 110**. Direct reading shows the heading **Comprehensive Questions**, followed by original **6.1–6.11**, in the same order and with substantively the same wording as the prepared 11-question audit. In particular, original Q6.5 expressly requests the Stokes-law derivation “by using dimensional analysis”; the audit's scientifically essential caveat remains: dimensional analysis fixes the proportionality but **cannot** derive the coefficient 6π. The prepared source's distinction is worth preserving in students' full solutions.
+
+This photograph also visibly contains end-of-unit short-response Q6.3–6.11 and numerical Q6.1–6.2. Printed page 111 separately confirms the remaining numerical Q6.3–6.11. These photographs should remain private and are **not** committed to this repository.
+
+**Revised provenance status:** comprehensive-question **wording and order confirmed against original printed NBF p.110**; scientific derivation review is an independent evaluation of the *prepared solutions*, not an audit of original chapter solution text or non-shown diagrams. Teacher approval and release gating remain outstanding.
