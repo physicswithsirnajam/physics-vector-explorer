@@ -9,7 +9,7 @@ const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'qa-artifacts','builder-v77');
 fs.mkdirSync(out,{recursive:true});
 const read=p=>fs.readFileSync(path.join(root,p),'utf8'),json=p=>JSON.parse(read(p));
-const totals=[275,206,220,640,349,474];
+const totals=[275,206,220,640,349,554];
 async function sourceIntegrity(){
  const original=json('question-bank/grade-11/unit-06-topic-61-v76-80-source.json');
  assert.equal(original.questions.length,80);
@@ -28,15 +28,16 @@ async function sourceIntegrity(){
  const banks=await Promise.all([1,2,3,4,5,6].map(u=>a.loadBank(u,'question-bank/grade-11/')));
  assert.deepEqual(banks.map(b=>b.questions.length),totals);
  const all=banks.flatMap(b=>b.questions);
- assert.equal(all.length,2164);assert.equal(new Set(all.map(q=>q.id)).size,2164);
+ assert.equal(all.length,2244);assert.equal(new Set(all.map(q=>q.id)).size,2244);
  const six=banks[5].questions;
- assert.equal(six.length,474);
+ assert.equal(six.length,554);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T61-')).length,79);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T62-')).length,77);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T63-')).length,78);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T64-')).length,80);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T65-')).length,80);
  assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T66-')).length,80);
+ assert.equal(six.filter(q=>q.id.startsWith('XI-U06-T67-')).length,80);
  assert.ok(!six.some(q=>['XI-U06-T61-MCQ-0011','XI-U06-T62-MCQ-0026','XI-U06-T62-MCQ-0064','XI-U06-T62-MCQ-0072','XI-U06-T63-MCQ-0024','XI-U06-T63-MCQ-0080'].includes(q.id)),'All six held textbook-figure questions must remain unavailable');
  assert.ok(six.every(q=>q.assessmentClassification==='summative-topic-provisional'&&
    q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
@@ -64,7 +65,7 @@ async function sourceIntegrity(){
  const course=json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
  assert.equal(course.status,'planned','Not a full Unit6 course release');
  assert.equal(course.questionBankCount,0,'Full-unit bank remains unreleased');
- assert.equal(course.partialTestBuilderMcqCount,474);
+ assert.equal(course.partialTestBuilderMcqCount,554);
  assert.equal(course.sourceFigureHeldCount,6);
  assert.equal(course.partialTestBuilderHref,'../build-your-physics-test.html?unit=6');
  assert.ok(read('portal/index.html').includes('href="../build-your-physics-test.html?unit=6"'));
@@ -88,7 +89,7 @@ async function browserCheck(){
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('474 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('554 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"][value="6"]').isChecked(),true);
   assert.equal(await page.locator('input[name="unit"]:checked').count(),1);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'U6 individual 20-MCQ mode unavailable');
@@ -108,7 +109,7 @@ async function browserCheck(){
   assert.match(await page.locator('#review').textContent(),/Correct answer:/);
   await page.screenshot({path:path.join(out,'02-u6-reviewed.png')});
   await page.goto(base+'build-your-physics-test.html?units=1,6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('749 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('829 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'U1 scenario+U6 singles should build');
   await page.locator('#quickStartLink').click();
@@ -123,7 +124,7 @@ async function browserCheck(){
   assert.ok(summaries.some(s=>s.startsWith('Unit 6:')),'Mixed results miss U6');
   assert.equal(await page.locator('#save-result').isDisabled(),true);
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('474 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('554 eligible MCQ'));
   await page.locator('#arrangement').selectOption('scenario');
   assert.equal(await page.locator('#quickStartLink').isVisible(),false,'U6 has zero shared-stimulus groups');
   await page.locator('#arrangement').selectOption('random');
@@ -134,7 +135,7 @@ async function browserCheck(){
   assert.equal(await page.locator('#quickStartLink').isVisible(),false,'Do not invent individual B33 tags');
   await page.locator('#slo').fill('');
   await page.locator('#allUnits').click();
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('2164 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('2244 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),6);
   await page.locator('#quantity').selectOption('30');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'six-unit 30-MCQ plan not feasible');
