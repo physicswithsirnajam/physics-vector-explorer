@@ -1,0 +1,42 @@
+name: Validate Grade XI Unit 6 Figure-Held MCQ Release (V93)
+on:
+  pull_request:
+    paths:
+      - "assets/illustrations/unit6-figure*-reference.svg"
+      - "portal/unit06-figure-card-v93.js"
+      - "portal/unit-06-topic-6*-preview.*"
+      - "portal/unit-06-figure-*.html"
+      - "portal/unit-06-figure-verification-v91.js"
+      - "practice-engine/index.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/unit-06-topic-6*-source.json"
+      - "question-bank/manifest.json"
+      - "portal/learning-catalog.json"
+      - "scripts/test_unit06_figure_release_v93.cjs"
+      - ".github/workflows/validate-grade11-unit06-figure-release-v93.yml"
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  six-verified-mcqs-and-mobile-figure-access:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Original source answer integrity and validated release counts
+        run: |
+          node --check scripts/test_unit06_figure_release_v93.cjs
+          node --check portal/unit06-figure-card-v93.js
+          node --check shared/practice-bank-adapter-v55.js
+          node scripts/test_unit06_figure_release_v93.cjs
+      - name: Install Chromium for full Topic6.1–6.3 390px question checks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Six verified original figure MCQs shown in 80-item student practices
+        run: node scripts/test_unit06_figure_release_v93.cjs --browser
