@@ -29,11 +29,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: JS syntax, privacy and unchanged 2,244 central MCQ manifest
+      - name: JS syntax, privacy and unchanged 2,250 central MCQ manifest
         run: |
           node --check portal/unit-06-figure-verification-v91.js
           node --check scripts/test_unit06_local_figure_compare_v92.cjs
-          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==554||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==6||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+          node -e "const m=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(m[5].liveMcqCount!==560||m[5].sourceTopicMcqCount!==560||m[5].sourceFigureHeldCount!==0||m.reduce((n,u)=>n+u.liveMcqCount,0)!==2250)process.exit(1)"
       - name: Install Chromium for real private file input and mobile browser
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
@@ -44,7 +44,7 @@ jobs:
         run: node scripts/test_unit06_figure_verification_v91.cjs
       - name: Regression — V90 independent conceptual figure drawings
         run: node scripts/test_unit06_figure_study_v90.cjs
-      - name: Regression — V89 central 2,244 MCQs and V88 original Superfluidity bank
+      - name: Regression — V89 central 2,250 MCQs and V88 original Superfluidity bank
         run: |
           node scripts/test_grade11_unit06_central_v89.cjs
           node scripts/test_unit06_topic67_v88.cjs
