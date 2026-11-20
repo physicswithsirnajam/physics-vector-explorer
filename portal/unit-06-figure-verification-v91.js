@@ -125,7 +125,6 @@ function makeComparison(group){
   status.textContent='Valid local image selected; loading its preview on this device…';
   const url=URL.createObjectURL(file);
   const picture=el('img');
-  picture.src=url;
   picture.alt='Locally selected original textbook figure for '+group.title;
   picture.decoding='async';picture.style.width='100%';
   picture.addEventListener('load',()=>{
@@ -138,7 +137,7 @@ function makeComparison(group){
    forget();input.value='';status.textContent='Could not decode this image. Choose a valid JPG, PNG or WebP. No file was uploaded.';
   },{once:true});
   localImages.set(group.fragment,url);
-  currentImage=picture;area.append(picture);
+  currentImage=picture;picture.src=url;area.append(picture);
  }
  input.addEventListener('input',handleFileSelection);
  input.addEventListener('change',handleFileSelection);
