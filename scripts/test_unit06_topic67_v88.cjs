@@ -62,19 +62,19 @@ assert.match(chosen(43),/^0\.0010 K/);assert.match(chosen(44),/^0\.0040 K/);
 assert.match(chosen(45),/^0\.17 K/);assert.match(chosen(46),/^2\.5 mK/);
 assert.match(chosen(47),/^2170 mK/);assert.match(chosen(49),/^868\b/);
 const manifest=json('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.deepEqual(manifest.map(x=>x.liveMcqCount),[275,206,220,640,349,474]);
-assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2164);
-assert.equal(manifest[5].sourceTopicMcqCount,480);assert.equal(manifest[5].sourceFigureHeldCount,6);
-assert.equal(manifest[5].standaloneSituationQuestionCount,113);
+assert.deepEqual(manifest.map(x=>x.liveMcqCount),[275,206,220,640,349,554]);
+assert.equal(manifest.reduce((n,u)=>n+u.liveMcqCount,0),2244);
+assert.equal(manifest[5].sourceTopicMcqCount,560);assert.equal(manifest[5].sourceFigureHeldCount,6);
+assert.equal(manifest[5].standaloneSituationQuestionCount,133);
 assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
-assert.ok(!manifest[5].sourceFiles.some(f=>f.includes('topic-67')),'V88 preview must not silently integrate into central adapter');
+assert.equal(manifest[5].sourceFiles.at(-1),'grade-11/unit-06-topic-67-v88-80-source.json','V89 integrates Topic6.7 without changing the V88 source');
 const course=json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');assert.equal(course.questionBankCount,0);
-assert.equal(course.partialTestBuilderMcqCount,474);assert.equal(course.sourceTopicMcqCount,480);
+assert.equal(course.partialTestBuilderMcqCount,554);assert.equal(course.sourceTopicMcqCount,560);
 const html=read('portal/unit-06-topic-67-preview.html'),client=read('portal/unit-06-topic-67-preview.js'),hub=read('portal/index.html');
 assert.match(hub,/unit-06-topic-67-preview\.html/);assert.match(client,/unit-06-topic-67-v88-80-source\.json/);
-assert.match(html,/P-11-B-43/);assert.match(html,/data-interpretation/);assert.match(html,/2,164 MCQs/);
-assert.match(html,/Topic 6\.7 is not yet in the central builder/);
+assert.match(html,/P-11-B-43/);assert.match(html,/data-interpretation/);assert.match(html,/2,244 MCQs/);
+assert.match(html,/Topic 6\.7 is now included in the central Test Builder/);
 assert.doesNotMatch(client,/firebase|firestore|localStorage\.setItem/i);
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')),'Protected source PDF unexpectedly published');
 async function browser(){
@@ -115,7 +115,7 @@ async function browser(){
   const output=path.join(root,'qa-artifacts','unit06-topic67-v88');fs.mkdirSync(output,{recursive:true});
   await page.screenshot({path:path.join(output,'unit06-topic67-superfluidity-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
-  console.log('V88 PASS — 80 original Superfluidity MCQs, independently checked temperature options, 20 standalone situations, 80 reviews, no cloud grades, and mobile 390px. Existing 2,164 unchanged.');
+  console.log('V88 PASS — 80 original Superfluidity MCQs, independently checked temperature options, 20 standalone situations, 80 reviews, no cloud grades, and mobile 390px. Existing 2,244 unchanged.');
  }finally{if(b)await b.close();await new Promise(resolve=>server.close(resolve));}
 }
 browser().catch(e=>{console.error('V88 FAILURE',e);process.exitCode=1;});
