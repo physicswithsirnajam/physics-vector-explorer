@@ -14,13 +14,13 @@ const sourcePaths=[
 ];
 const ids=['XI-U06-T61-MCQ-0011','XI-U06-T62-MCQ-0026','XI-U06-T62-MCQ-0064','XI-U06-T62-MCQ-0072','XI-U06-T63-MCQ-0024','XI-U06-T63-MCQ-0080'];
 const key={ 'XI-U06-T61-MCQ-0011':'C','XI-U06-T62-MCQ-0026':'D','XI-U06-T62-MCQ-0064':'A','XI-U06-T62-MCQ-0072':'D','XI-U06-T63-MCQ-0024':'B','XI-U06-T63-MCQ-0080':'B'};
-const banks=sourcePaths.map(json),held=banks.flatMap(b=>b.questions.filter(q=>!q.active));
+const banks=sourcePaths.map(json),held=banks.flatMap(b=>b.questions.filter(q=>Object.prototype.hasOwnProperty.call(key,q.id)));
 assert.deepEqual(held.map(q=>q.id),ids,'Six archived original figure holds must remain unchanged and in source order');
 assert.deepEqual(banks.map(b=>b.questions.length),[80,80,80]);
-assert.deepEqual(banks.map(b=>b.questions.filter(q=>q.active).length),[79,77,78]);
+assert.deepEqual(banks.map(b=>b.questions.filter(q=>q.active).length),[80,80,80]);
 for(const q of held){
  assert.equal(q.correctOptionId,key[q.id],'Original source key changed on '+q.id);
- assert.equal(q.active,false);assert.ok(q.holdReason&&q.holdReason.length>15);
+ assert.equal(q.active,true);assert.equal(q.holdReason,null);assert.ok(q.referenceFigureId);
  assert.ok(q.options.length===4&&q.options.map(o=>o.id).join('')==='ABCD');
  assert.equal(q.stimulusSetId,null);assert.equal(q.boardEligible,false);
  assert.deepEqual(q.sloCodes,[]);
@@ -32,18 +32,18 @@ assert.match(held[3].options.find(o=>o.id==='D').text,/reduce each bird’s drag
 assert.match(held[4].options.find(o=>o.id==='B').text,/Orderly paths/i);
 assert.match(held[5].options.find(o=>o.id==='B').text,/\(a\) streamline;\s*\(b\) turbulent/i);
 const manifest=json('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
-assert.equal(manifest[5].liveMcqCount,554);
+assert.equal(manifest[5].liveMcqCount,560);
 assert.equal(manifest[5].sourceTopicMcqCount,560);
-assert.equal(manifest[5].sourceFigureHeldCount,6);
-assert.equal(manifest[5].standaloneSituationQuestionCount,133);
+assert.equal(manifest[5].sourceFigureHeldCount,0);
+assert.equal(manifest[5].standaloneSituationQuestionCount,136);
 assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
-assert.equal(manifest.reduce((sum,u)=>sum+u.liveMcqCount,0),2244);
+assert.equal(manifest.reduce((sum,u)=>sum+u.liveMcqCount,0),2250);
 assert.equal(manifest.slice(0,5).reduce((sum,u)=>sum+u.liveMcqCount,0),1690);
 const course=json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');assert.equal(course.questionBankCount,0);
-assert.equal(course.partialTestBuilderMcqCount,554);
+assert.equal(course.partialTestBuilderMcqCount,560);
 assert.equal(course.sourceTopicMcqCount,560);
-assert.equal(course.sourceFigureHeldCount,6);
+assert.equal(course.sourceFigureHeldCount,0);
 for(const [anchor,label] of [['figure62','Figure 6.2'],['figure63','Figure 6.3'],['figure65c','Figure 6.5(c)'],['figure66','Figure 6.6']]){
  assert.match(html,new RegExp('id="'+anchor+'"'),'Missing semantic section '+anchor);
  assert.ok(html.includes(label),'Missing original figure reference '+label);
@@ -52,22 +52,22 @@ assert.equal((html.match(/<svg role="img"/g)||[]).length,4,'Each of four diagram
 assert.equal((html.match(/<title id="fig/g)||[]).length,4,'Each diagram must have accessible SVG title');
 assert.equal((html.match(/<desc id="fig/g)||[]).length,4,'Each diagram must have accessible SVG textual description');
 assert.equal((html.match(/<section class="card" id="figure/g)||[]).length,4);
-assert.match(html,/<strong>554<\/strong>/,'Student gallery must display the current Unit6 selectable count');
-assert.match(html,/Six source holds|six source holds|6<\/strong>[\s\S]*?Figure-referencing questions held/i);
+assert.match(html,/<strong>560<\/strong>/,'Student gallery must display the current Unit6 selectable count');
+assert.match(html,/<strong>0<\/strong><span>Figure-referencing questions held/i);
 assert.match(html,/original educational schematics/i);
-assert.match(html,/not<\/strong> been activated/i);
-assert.match(html,/actual printed diagram/i);
+assert.match(html,/now selectable|now available|now provisionally released/i);
+assert.match(html,/original educational schematics/i);
 assert.doesNotMatch(html,/<script\b|<iframe\b|firebase|school grade stored|payment/i);
 for(const number of ['11','26','64','72','24','80'])assert.match(html,new RegExp('Q'+number+'\\b'));
 const hub=read('portal/index.html');
 assert.match(hub,/unit-06-figure-study-v90\.html/);
-assert.match(hub,/2,244/);
+assert.match(hub,/2,250/);
 for(const [topic,anchor] of [['61','figure62'],['62','figure63'],['62','figure65c'],['63','figure66']]){
  assert.match(read('portal/unit-06-topic-'+topic+'-preview.html'),new RegExp('unit-06-figure-study-v90[.]html#'+anchor));
 }
-for(const b of banks)assert.deepEqual(b.questions.filter(q=>!q.active).map(q=>q.id),ids.filter(id=>id.includes('-T'+b.topicNumber.replace('.','')+'-')));
+for(const b of banks)assert.deepEqual(b.questions.filter(q=>!q.active).map(q=>q.id),[]);
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')));
-console.log('V90 STATIC PASS: all 6 held original keys and 4 original accessible schematic descriptions; Unit6 remains 554/560, total 2,244, no new certs or source PDF.');
+console.log('V90 STATIC PASS: all 6 held original keys and 4 original accessible schematic descriptions; Unit6 remains 560/560, total 2,250, no new certs or source PDF.');
 async function browser(){
  const {chromium}=require('playwright'),mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml'};
  const server=http.createServer((req,res)=>{
