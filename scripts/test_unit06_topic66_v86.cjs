@@ -83,20 +83,20 @@ for(let n=41;n<=60;n++){
  assert.ok(Math.abs(value-answer)<=tolerance,'Q'+n+' original key '+q.correctOptionId+' ('+source.text+') = '+value+'; independently computed '+answer);
 }
 const manifest=JSON.parse(read('question-bank/manifest.json')).grades.find(g=>g.grade===11).units;
-assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,394]);
-assert.equal(manifest.reduce((s,u)=>s+u.liveMcqCount,0),2084);
-assert.equal(manifest[5].sourceTopicMcqCount,400);
+assert.deepEqual(manifest.map(u=>u.liveMcqCount),[275,206,220,640,349,474]);
+assert.equal(manifest.reduce((s,u)=>s+u.liveMcqCount,0),2164);
+assert.equal(manifest[5].sourceTopicMcqCount,480);
 assert.equal(manifest[5].sourceFigureHeldCount,6);
 assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
 const course=JSON.parse(read('portal/learning-catalog.json')).grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');
-assert.equal(course.questionBankCount,0);assert.equal(course.partialTestBuilderMcqCount,394);
-assert.equal(course.sourceTopicMcqCount,400);
+assert.equal(course.questionBankCount,0);assert.equal(course.partialTestBuilderMcqCount,474);
+assert.equal(course.sourceTopicMcqCount,480);
 const hub=read('portal/index.html'),client=read('portal/unit-06-topic-66-preview.js'),html=read('portal/unit-06-topic-66-preview.html');
 assert.match(hub,/unit-06-topic-66-preview\.html/);
 assert.match(client,/unit-06-topic-66-v86-80-source\.json/);
 assert.match(html,/P-11-B-39 is formative/);
-assert.match(html,/2,084 MCQs/);
+assert.match(html,/2,164 MCQs/);
 assert.doesNotMatch(client,/firebase|firestore|localStorage\.setItem/i);
 assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')),'Owner private PDF unexpectedly published');
 async function browser(){
@@ -137,7 +137,7 @@ async function browser(){
   const output=path.join(root,'qa-artifacts','unit06-topic66-v86');fs.mkdirSync(output,{recursive:true});
   await page.screenshot({path:path.join(output,'unit06-topic66-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
-  console.log('V86 PASS — 80 original Bernoulli applications MCQs, 20 independently recomputed numericals, 20 independent situations, local-only review and 390px mobile. Central 2,084 unchanged.');
+  console.log('V86 PASS — 80 original Bernoulli applications MCQs, 20 independently recomputed numericals, 20 independent situations, local-only review and 390px mobile. Central 2,164 unchanged.');
  }finally{if(b)await b.close();await new Promise(resolve=>server.close(resolve));}
 }
 browser().catch(e=>{console.error('V86 FAILURE',e);process.exitCode=1;});

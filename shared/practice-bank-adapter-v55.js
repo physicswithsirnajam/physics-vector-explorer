@@ -5,10 +5,10 @@
  */
 (function(root){
 'use strict';
-const expected={1:275,2:206,3:220,4:640,5:349,6:394};
+const expected={1:275,2:206,3:220,4:640,5:349,6:474};
 const names={
   1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',
-  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1–6.5 (partial)'
+  4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — Topics 6.1–6.6 (partial)'
 };
 const files={
   1:['unit-01.json'],2:['unit-02.json'],
@@ -19,7 +19,7 @@ const files={
     'unit-05-v51-16-student-b.json','unit-05-v51-16-teacher-key-b.json',
     'unit-05-master-topic-v59-317.json'
   ],
-  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json','unit-06-topic-63-v80-80-source.json','unit-06-topic-64-v82-80-source.json','unit-06-topic-65-v84-80-source.json']
+  6:['unit-06-topic-61-v76-80-source.json','unit-06-topic-62-v78-80-source.json','unit-06-topic-63-v80-80-source.json','unit-06-topic-64-v82-80-source.json','unit-06-topic-65-v84-80-source.json','unit-06-topic-66-v86-80-source.json']
 };
 function need(condition,reason){if(!condition)throw Error('Grade XI MCQ source validation: '+reason);}
 function escapeHTML(value){return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -899,6 +899,70 @@ function adaptUnitSixTopic65(source){
    'Topic6.5 source section or author K/U/A inventory changed');
  return kept;
 }
+
+/* V87: source-faithful public intake of 80 original Topic6.6 Bernoulli
+ * applications. Teacher key B40/B44 and K/U/A item annotations are provenance
+ * only. Independent per-question FBISE status and SLOs are NOT certified.
+ */
+function adaptUnitSixTopic66(source){
+ need(source?.schemaVersion===1&&source.bankId==='PSN-XI-U06-T66-V86'&&
+  source.grade===11&&source.unit===6&&source.topicNumber==='6.6'&&
+  source.title==='Applications of Bernoulli’s Equation'&&
+  source.sourceQuestionCount===80&&source.importedQuestionCount===80&&
+  source.publicPreviewCount===80&&source.questions?.length===80&&
+  source.secureExam===false&&source.publicSelfPractice===true&&
+  source.unitReleaseStatus==='planned-partial-topic-preview',
+  'Invalid Topic6.6 original source or public practice boundary');
+ need(source.frameworkClassification==='P-11-B-40 and P-11-B-44 are the source-identified summative topic links; P-11-B-39 is formative context'&&
+  source.verifiedFrameworkTopicSloCodes?.join(',')==='P-11-B-40,P-11-B-44'&&
+  source.formativeContextSloCodes?.join(',')==='P-11-B-39'&&
+  source.perQuestionFrameworkMappingStatus==='not individually independently verified'&&
+  source.sourceKeySloCounts?.['P-11-B-40']===39&&source.sourceKeySloCounts?.['P-11-B-44']===41&&
+  source.sourceKeyCognitiveTagCounts?.K===4&&source.sourceKeyCognitiveTagCounts?.U===41&&
+  source.sourceKeyCognitiveTagCounts?.A===35&&
+  source.sections?.fundamentals===20&&source.sections?.reasoning===20&&
+  source.sections?.numericals===20&&source.sections?.['standalone-situations']===20&&
+  source.sections?.sharedStimulusGroups===0&&source.holds?.length===0,
+  'Topic6.6 SLO, formative, author-key or fake shared-stimulus metadata');
+ const originalKey='BBCCACCCBCACBADDCBCCDCADDBBBDDDBCCDBBDBAABCDACBDBDADABBDCBAAACAAADABDAADCAABCDCD';
+ need(originalKey.length===80&&source.originalSourceAnswerKey===originalKey&&
+  source.questions.map(q=>q.correctOptionId).join('')===originalKey,
+  'Topic6.6 original 80-letter answer key changed');
+ const kept=[],sections={fundamentals:0,reasoning:0,numericals:0,'standalone-situations':0};
+ const cog={K:0,U:0,A:0},slo={'P-11-B-40':0,'P-11-B-44':0};
+ for(let i=0;i<80;i++){
+  const q=source.questions[i],n=i+1;
+  const sec=n<=20?'fundamentals':n<=40?'reasoning':n<=60?'numericals':'standalone-situations';
+  need(q.id==='XI-U06-T66-MCQ-'+String(n).padStart(4,'0')&&
+    q.sourceQuestionNumber===n&&q.grade===11&&q.unit===6&&
+    q.topic==='Applications of Bernoulli’s Equation'&&q.type==='single_choice'&&
+    q.sourceSection===sec&&q.situationBased===(n>=61),
+    'Topic6.6 original question numbers or section changed');
+  need(q.active===true&&q.boardEligible===false&&q.holdReason===null&&
+    q.status==='provisional-public-self-practice'&&
+    q.assessmentClassification==='summative-topic-provisional'&&
+    q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
+    Array.isArray(q.sloCodes)&&q.sloCodes.length===0&&
+    q.topicSloCodes?.join(',')==='P-11-B-40,P-11-B-44'&&
+    q.formativeContextSloCodes?.join(',')==='P-11-B-39'&&
+    q.stimulusSetId===null&&Object.hasOwn(cog,q.sourceKeyCognitiveTag)&&
+    Object.hasOwn(slo,q.sourceKeySloReference)&&
+    q.sourceKeyTagsStatus==='teacher-study-edition annotations retained for provenance, not independent per-question board certification',
+    'Topic6.6 fake item SLO, board certification, cognitive or shared stimulus');
+  need(Array.isArray(q.options)&&q.options.map(o=>o.id).join('')==='ABCD'&&
+    q.options.every(o=>typeof o.text==='string'&&o.text.trim())&&
+    q.options.some(o=>o.id===q.correctOptionId)&&
+    typeof q.stem==='string'&&q.stem.trim()&&
+    typeof q.explanation==='string'&&q.explanation.trim(),
+    'Topic6.6 original question text, options or explanation incomplete');
+  kept.push({...q,stimulusHtml:''});sections[sec]++;cog[q.sourceKeyCognitiveTag]++;slo[q.sourceKeySloReference]++;
+ }
+ need(kept.length===80&&new Set(kept.map(q=>q.id)).size===80&&
+  Object.values(sections).every(n=>n===20)&&
+  cog.K===4&&cog.U===41&&cog.A===35&&slo['P-11-B-40']===39&&slo['P-11-B-44']===41,
+  'Topic6.6 original section, cognitive or source SLO annotation counts changed');
+ return kept;
+}
 async function loadBank(unit,basePath){
   need(Number.isInteger(unit)&&Object.hasOwn(files,unit),'unit not available');
   need(typeof basePath==='string'&&/^(?:\.\.\/)?question-bank\/grade-11\/$/.test(basePath),'unexpected question bank folder');
@@ -919,17 +983,17 @@ async function loadBank(unit,basePath){
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else if(unit===6){
-    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourth=adaptUnitSixTopic64(data[3]),fifth=adaptUnitSixTopic65(data[4]);
-    const earlier=new Set([...first,...second,...third,...fourth].map(q=>q.id));
-    need(fifth.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.5');
-    questions=[...first,...second,...third,...fourth,...fifth];
+    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourth=adaptUnitSixTopic64(data[3]),fifth=adaptUnitSixTopic65(data[4]),sixth=adaptUnitSixTopic66(data[5]);
+    const earlier=new Set([...first,...second,...third,...fourth,...fifth].map(q=>q.id));
+    need(sixth.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.6');
+    questions=[...first,...second,...third,...fourth,...fifth,...sixth];
    }
   else questions=adaptLegacy(unit,data[0]);
   const mapped=checkQuestions(unit,questions);
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v85-topics61-65-public-394-only':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v87-topics61-66-public-474-only':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
