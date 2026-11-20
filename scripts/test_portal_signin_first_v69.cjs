@@ -47,9 +47,9 @@ function audit(){
  assert.equal(JSON.parse(read('portal/simulation-catalog.json')).simulations.length,31);
  const units=JSON.parse(read('question-bank/manifest.json')).grades.find(x=>x.grade===11).units;
  assert.deepEqual(units.slice(0,5).map(x=>x.liveMcqCount),[275,206,220,640,349]);
-  assert.equal(units.find(x=>x.unit===6)?.liveMcqCount,474);
+  assert.equal(units.find(x=>x.unit===6)?.liveMcqCount,554);
  assert.equal(units.slice(0,5).reduce((n,x)=>n+x.liveMcqCount,0),1690);
-  assert.equal(units.reduce((n,x)=>n+x.liveMcqCount,0),2164);
+  assert.equal(units.reduce((n,x)=>n+x.liveMcqCount,0),2244);
  console.log('PASS V69 static: original 1690 MCQs/31 simulations intact; login, signup, reset, email verification and navigation isolation retained');
 }
 async function main(){
