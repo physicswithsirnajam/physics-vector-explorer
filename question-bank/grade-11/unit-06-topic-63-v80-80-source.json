@@ -37,11 +37,11 @@
   "limitations": [
     "All 80 original stems/options/answers/explanations preserved with line wrapping normalized.",
     "The original figure-dependent MCQs have been visually verified against the NBF printed figures and now render V90 independent educational drawings in public practice; no NBF scans are published.",
-    "20 source situation/scenario-labelled items are independent standalone questions, not any common-stimulus group. 19 selectable after Q80 hold.",
+    "20 source situation/scenario-labelled items are independent standalone questions, not any common-stimulus group. all 20 selectable after teacher-supplied figure verification.",
     "FBISE framework marks SLO P-11-B-35 Summative with Knowledge + Understanding topic cognitive level; no individual source question is independently certified.",
     "Source flow-rate Q=V/t exercises are supporting basic numeracy, not an extra specified FBISE B-35 assessment requirement.",
     "This is PUBLIC provisional self-practice only, not a secure exam or official board paper. No saved cloud grade.",
-    "Central Test Builder remains V79 with 1,846 selectable MCQs until later verified integration; complete Unit6 course stays planned."
+    "V93 partial Unit 6 practice has 560 original questions across seven topics; the complete Unit 6 course remains planned."
   ],
   "questions": [
     {

@@ -133,7 +133,7 @@ async function verifyBrowser(){
   assert.equal(await page.locator('#save-result').isDisabled(),true,'No server-authoritative school grade for Unit6');
   assert.match(await page.locator('#review').textContent(),/Correct answer:/);
   await page.goto(base+'build-your-physics-test.html?units=1,6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('829 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('835 eligible MCQ'));
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});

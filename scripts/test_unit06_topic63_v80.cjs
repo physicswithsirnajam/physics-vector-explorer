@@ -110,7 +110,7 @@ assert.ok(hub.includes('build-your-physics-test.html?unit=6'));
 assert.ok(read('portal/unit-06-topic-63-preview.html').includes('id="question-count">80</strong>'));
 assert.ok(read('portal/unit-06-topic-63-preview.js').includes("fetch('../question-bank/grade-11/unit-06-topic-63-v80-80-source.json'"));
 assert.ok(fs.existsSync(path.join(root,'continuity-fluid-flow.html')));
-console.log('V80 STATIC PASS: 80 original Q/answers, 78 active, Figure6.6 Q24/Q80 held, 20+19+20+19 public groups, independent Q=V/t calculations, central 2,250 unchanged.');
+console.log('V93-retained V80 STATIC PASS: 80 original Q/answers, 80 active, Figure6.6 Q24/Q80 released with diagram, four groups of 20, independent Q=V/t calculations, central 2,250.');
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.css':'text/css'};
 const server=http.createServer((req,res)=>{
  try{
@@ -157,8 +157,8 @@ async function browserTest(){
   await page.locator('#finish').click();
   assert.equal(await page.locator('#review article').count(),80);
   const text=await page.locator('#review').textContent();
-  assert.ok(text.includes('original Q24 '),'Verified Q24 should be served');
-  assert.ok(text.includes('original Q80 '),'Verified Q80 should be served');
+  assert.match(text,/original Q24\\b/,'Verified Q24 should appear in the complete review');
+  assert.match(text,/original Q80\\b/,'Verified Q80 should appear in the complete review');
   await page.locator('#try-again').click();
   await page.setViewportSize({width:390,height:844});
   const dims=await page.evaluate(()=>({w:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
@@ -168,7 +168,7 @@ async function browserTest(){
   await page.screenshot({path:path.join(out,'unit06-topic63-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);
   assert.deepEqual(missing,[],'Missing local assets');
-  console.log('V80 BROWSER PASS: four topic categories, full 78-MCQ review, diagram holds, explanation scoring, related link and mobile 390px.');
+  console.log('V80 BROWSER PASS: four topic categories, full 80-MCQ review, verified figure questions, explanation scoring, related link and mobile 390px.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 browserTest().catch(e=>{console.error('FAIL V80',e);process.exitCode=1;});
