@@ -66,6 +66,10 @@ async function browserTest(){
   assert.equal(await page.locator('.compare-pane svg[role=img]').count(),4);
   const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGP8//8/AwMDEwMDAwMDAwAkBgMB/DXemwAAAABJRU5ErkJggg==','base64');
   const input=page.locator('#local-fig-figure62');
+  await input.evaluate(element=>{
+   element.__v92Events=[];
+   for(const name of ['input','change'])element.addEventListener(name,()=>element.__v92Events.push({event:name,fileName:element.files?.[0]?.name||null,mime:element.files?.[0]?.type||null}),{capture:true});
+  });
   // Reject a non-image without creating a browser-local photo.
   await input.setInputFiles({name:'no-figure.txt',mimeType:'text/plain',buffer:Buffer.from('not an image')});
   assert.match(await page.locator('.comparison').first().locator('.compare-status').textContent(),/File rejected/);
@@ -73,7 +77,7 @@ async function browserTest(){
   // Use a newly encoded, valid synthetic 2×2 test PNG, NOT a copied NBF figure or private file.
   await input.setInputFiles({name:'PRIVATE_ORIGINAL_BOOK_FILENAME.png',mimeType:'image/png',buffer:png});
   await page.waitForTimeout(500);
-  const firstState=await page.evaluate(()=>({imgWidth:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth||0,status:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-status')?.textContent||'',inputFiles:document.querySelector('#local-fig-figure62')?.files?.length||0}));
+  const firstState=await page.evaluate(()=>({imgWidth:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-viewport img')?.naturalWidth||0,status:document.querySelector('#local-fig-figure62')?.closest('.compare-pane')?.querySelector('.compare-status')?.textContent||'',inputFiles:document.querySelector('#local-fig-figure62')?.files?.length||0,inputMime:document.querySelector('#local-fig-figure62')?.files?.[0]?.type||null,inputName:document.querySelector('#local-fig-figure62')?.files?.[0]?.name||null,events:document.querySelector('#local-fig-figure62')?.__v92Events||[]}));
   assert.equal(firstState.imgWidth,2,'Locally selected synthetic PNG did not load: '+JSON.stringify(firstState));
   const firstCompare=page.locator('.comparison').first();
   const localImg=firstCompare.locator('.compare-viewport img');
