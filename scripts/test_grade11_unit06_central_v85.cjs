@@ -22,8 +22,9 @@ async function verifySource(){
   const seventh=json('question-bank/grade-11/unit-06-topic-67-v88-80-source.json');
  const originals=[first,second,third,fourth,fifth,sixth,seventh];
  assert.deepEqual(originals.map(x=>x.questions.length),[80,80,80,80,80,80,80]);
- assert.deepEqual(originals.map(x=>x.questions.filter(q=>q.active).length),[79,77,78,80,80,80,80]);
- assert.deepEqual(originals.flatMap(o=>o.questions.filter(q=>!q.active).map(q=>q.id)),idsHeld);
+ assert.deepEqual(originals.map(x=>x.questions.filter(q=>q.active).length),[80,80,80,80,80,80,80]);
+ assert.deepEqual(originals.flatMap(o=>o.questions.filter(q=>!q.active).map(q=>q.id)),[]);
+ for(const id of idsHeld)assert.ok(originals.flatMap(o=>o.questions).some(q=>q.id===id&&q.active&&q.referenceFigureId),'Missing verified illustration '+id);
  const fourthKey='BBCCACCCBCACBADDCBCCDCADDBBBDDDBCCDBBDBAABCDACBDBDADABBDCBAAACAAADABDAADCAABCDCD';
  assert.equal(fourthKey.length,80);
  assert.equal(fourth.originalSourceAnswerKey,fourthKey);
@@ -80,29 +81,29 @@ async function verifySource(){
  vm.runInContext(read('shared/practice-bank-adapter-v55.js'),ctx);
  vm.runInContext(read('shared/multi-unit-planner-v56.js'),ctx);
  const adapter=ctx.PSNPracticeBankV55,planner=ctx.PSNMultiUnitV56;
- assert.equal(adapter.expected[6],554);
+ assert.equal(adapter.expected[6],560);
  assert.equal(planner.isValidUnits([1,2,3,4,5,6]),true);
  assert.equal(planner.isValidUnits([1,7]),false);
  const banks=await Promise.all([1,2,3,4,5,6].map(u=>adapter.loadBank(u,'question-bank/grade-11/')));
  const counts=Array.from(banks,b=>b.questions.length);
- assert.deepEqual(counts,[...fullOriginalCounts,554]);
- assert.equal(total(counts),2244);
+ assert.deepEqual(counts,[...fullOriginalCounts,560]);
+ assert.equal(total(counts),2250);
  assert.equal(total(counts.slice(0,5)),1690);
  const all=banks.flatMap(b=>b.questions);
- assert.equal(new Set(all.map(q=>q.id)).size,2244);
+ assert.equal(new Set(all.map(q=>q.id)).size,2250);
  const partial=banks[5].questions;
  const topicCodes=['T61','T62','T63','T64','T65','T66','T67'];
  const byTopic=topicCodes.map(code=>partial.filter(q=>q.id.includes('-'+code+'-')));
- assert.deepEqual(byTopic.map(x=>x.length),[79,77,78,80,80,80,80]);
- assert.deepEqual(byTopic.map(x=>x.filter(q=>q.situationBased).length),[16,18,19,20,20,20,20]);
- assert.equal(partial.filter(q=>q.situationBased).length,133);
- assert.equal(partial.length,554);
+ assert.deepEqual(byTopic.map(x=>x.length),[80,80,80,80,80,80,80]);
+ assert.deepEqual(byTopic.map(x=>x.filter(q=>q.situationBased).length),[16,20,20,20,20,20,20]);
+ assert.equal(partial.filter(q=>q.situationBased).length,136);
+ assert.equal(partial.length,560);
  assert.ok(partial.every(q=>q.unit===6&&q.grade===11&&q.active===true&&
   q.assessmentClassification==='summative-topic-provisional'&&q.boardEligible===false&&
   Array.isArray(q.sloCodes)&&q.sloCodes.length===0&&
   q.cognitiveLevel==='Unspecified'&&q.difficulty==='Unspecified'&&
   q.stimulusSetId===null&&q.stimulusHtml===''));
- for(const id of idsHeld)assert.ok(!partial.some(q=>q.id===id),'Held original figure MCQ accidentally enabled: '+id);
+ for(const id of idsHeld)assert.ok(partial.some(q=>q.id===id&&q.referenceFigureId),'Verified original figure MCQ missing: '+id);
  for(let i=0;i<7;i++){
   const original=originals[i];
   for(const q of byTopic[i]){
@@ -165,19 +166,19 @@ async function verifySource(){
  assert.equal(planner.plan(all,all,[1,6],'grouped',20).possible,true);
  assert.equal(planner.plan(all,all.filter(q=>q.unit!==6),[1,2,3,4,5],'scenario',20).possible,true);
  const manifest=json('question-bank/manifest.json').grades.find(g=>g.grade===11).units;
- assert.deepEqual(manifest.map(u=>u.liveMcqCount),[...fullOriginalCounts,554]);
+ assert.deepEqual(manifest.map(u=>u.liveMcqCount),[...fullOriginalCounts,560]);
  assert.equal(manifest[5].sourceTopicMcqCount,560);
- assert.equal(manifest[5].sourceFigureHeldCount,6);
+ assert.equal(manifest[5].sourceFigureHeldCount,0);
  assert.equal(manifest[5].sourceFiles.at(-1),'grade-11/unit-06-topic-67-v88-80-source.json');
- assert.equal(manifest[5].standaloneSituationQuestionCount,133);
+ assert.equal(manifest[5].standaloneSituationQuestionCount,136);
  assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
  assert.equal(manifest[5].exactFbiseModeReady,false);
  const course=json('portal/learning-catalog.json').grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
  assert.equal(course.status,'planned');
  assert.equal(course.questionBankCount,0);
- assert.equal(course.partialTestBuilderMcqCount,554);
+ assert.equal(course.partialTestBuilderMcqCount,560);
  assert.equal(course.sourceTopicMcqCount,560);
- assert.equal(course.sourceFigureHeldCount,6);
+ assert.equal(course.sourceFigureHeldCount,0);
  assert.equal(course.partialTestBuilderStatus,'public-topics61-67-provisional');
  assert.ok(read('portal/index.html').includes('unit-06-topic-63-preview.html'));
   assert.ok(read('portal/index.html').includes('unit-06-topic-64-preview.html'));
@@ -188,7 +189,7 @@ async function verifySource(){
  assert.ok(!fs.existsSync(path.join(root,'portal','unit-06.html')),'Unreviewed complete Unit6 course incorrectly released');
  assert.ok(!fs.existsSync(path.join(root,'portal','Grade11_Unit6_COMPLETE_MASTER_ALL.pdf')),'Protected source PDF leaked');
  assert.ok(read('build-your-physics-test.html').includes('Topics 6.1–6.7'));
- console.log('V85 STATIC PASS — 1,690 original + 79+77+78+80+80+80+80 = 2,244 unique public MCQs; 6 held figure records; 133 independent real-life MCQs; no fabricated SLO or scenario groups.');
+ console.log('V85 STATIC PASS — 1,690 original + 79+77+78+80+80+80+80 = 2,250 unique public MCQs; 6 verified figure records; 133 independent real-life MCQs; no fabricated SLO or scenario groups.');
 }
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.css':'text/css'};
 const server=http.createServer((req,res)=>{
@@ -213,7 +214,7 @@ async function verifyBrowser(){
   page.on('dialog',d=>d.accept());
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('554 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('560 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"][value="6"]').isChecked(),true);
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.locator('#quickStartLink').click();
@@ -231,7 +232,7 @@ async function verifyBrowser(){
   await page.locator('#arrangement').selectOption('grouped');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true,'Mixed grouped Unit1 + Unit6 should remain possible');
   await page.goto(base+'build-your-physics-test.html?unit=6',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('554 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('560 eligible MCQ'));
   await page.locator('#arrangement').selectOption('scenario');
   assert.equal(await page.locator('#quickStartLink').isVisible(),false,'No fabricated Unit6 common-stimulus group');
   await page.locator('#arrangement').selectOption('random');
@@ -239,7 +240,7 @@ async function verifyBrowser(){
   assert.equal(await page.locator('#quickStartLink').isVisible(),false,'Unreviewed source items cannot be promoted as certified summative');
   await page.locator('#scope').selectOption('all');
   await page.locator('#allUnits').click();
-  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('2244 eligible MCQ'));
+  await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('2250 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),6);
   await page.locator('#quantity').selectOption('30');
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
