@@ -1,0 +1,62 @@
+name: Validate Grade XI Unit6 Figure Verification Desk (V91)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-figure-verification-v91.*"
+      - "portal/unit-06-figure-study-v90.html"
+      - "portal/index.html"
+      - "scripts/test_unit06_figure_verification_v91.cjs"
+      - "quality/grade11-unit06-v91-verification-desk-audit.md"
+      - ".github/workflows/validate-grade11-unit06-figure-verification-v91.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-figure-verification-v91.*"
+      - "portal/unit-06-figure-study-v90.html"
+      - "portal/index.html"
+      - "scripts/test_unit06_figure_verification_v91.cjs"
+      - "quality/grade11-unit06-v91-verification-desk-audit.md"
+      - ".github/workflows/validate-grade11-unit06-figure-verification-v91.yml"
+  workflow_dispatch:
+jobs:
+  original-source-held-item-checks:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: V91 JavaScript syntax and intact 554/560 Unit6 source inventory
+        run: |
+          node --check portal/unit-06-figure-verification-v91.js
+          node --check scripts/test_unit06_figure_verification_v91.cjs
+          node -e "const x=require('./question-bank/manifest.json').grades.find(g=>g.grade===11).units;if(x[5].liveMcqCount!==554||x[5].sourceTopicMcqCount!==560||x[5].sourceFigureHeldCount!==6||x.reduce((n,u)=>n+u.liveMcqCount,0)!==2244)process.exit(1)"
+      - name: Install Chromium for local review controls and 390px browser validation
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: V91 six source holds, original options and answer letters, review gate and local clipboard
+        run: node scripts/test_unit06_figure_verification_v91.cjs
+      - name: Regression — V90 four-figure study and all six held MCQs
+        run: node scripts/test_unit06_figure_study_v90.cjs
+      - name: Regression — V89 complete 2,244 central and V88 80 Superfluidity MCQs
+        run: |
+          node scripts/test_grade11_unit06_central_v89.cjs
+          node scripts/test_unit06_topic67_v88.cjs
+      - name: Regression — original topic sources with held figures and privacy
+        run: |
+          node scripts/test_unit06_topic61_v76.cjs
+          node scripts/test_unit06_topic62_v78.cjs
+          node scripts/test_unit06_topic63_v80.cjs
+          node scripts/test_grade11_direct_youtube_v74.cjs
+      - name: Upload local-only verification desk mobile screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v91-unit6-review-desk-mobile
+          path: qa-artifacts/unit06-review-v91/*.png
+          if-no-files-found: warn
+          retention-days: 7
