@@ -91,7 +91,7 @@ assert.equal(manifest[5].independentSharedStimulusGroupCount,0);
 const course=JSON.parse(read('portal/learning-catalog.json')).grades.find(g=>g.grade===11).units.find(u=>u.unit===6);
 assert.equal(course.status,'planned');
 assert.equal(course.questionBankCount,0);assert.equal(course.partialTestBuilderMcqCount,474);
-assert.equal(course.sourceTopicMcqCount,400);
+assert.equal(course.sourceTopicMcqCount,480);
 const hub=read('portal/index.html'),client=read('portal/unit-06-topic-66-preview.js'),html=read('portal/unit-06-topic-66-preview.html');
 assert.match(hub,/unit-06-topic-66-preview\.html/);
 assert.match(client,/unit-06-topic-66-v86-80-source\.json/);
