@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-/* V82 Topic6.4 original bank, 20 independent numericals, 80-MCQ browser and 2,244 current central inventory */
+/* V82 Topic6.4 original bank, 20 independent numericals, 80-MCQ browser and 2,250 current central inventory */
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const bank=JSON.parse(read('question-bank/grade-11/unit-06-topic-64-v82-80-source.json'));
@@ -46,8 +46,8 @@ const expected={41:4,42:0.0012,43:4,44:0.0002,45:0.12,46:4,47:2,48:1.6,49:0.002,
 for(const [n,v] of Object.entries(expected))assert.ok(Math.abs(numeric(bank.questions[n-1])-v)<Math.max(1e-10,v*0.0001),'Numerical key Q'+n);
 const manifest=JSON.parse(read('question-bank/manifest.json')).grades.find(g=>g.grade===11).units;
 assert.equal(manifest.slice(0,5).reduce((s,x)=>s+x.liveMcqCount,0),1690);
-assert.equal(manifest[5].liveMcqCount,554);
-assert.equal(manifest.reduce((s,x)=>s+x.liveMcqCount,0),2244);
+assert.equal(manifest[5].liveMcqCount,560);
+assert.equal(manifest.reduce((s,x)=>s+x.liveMcqCount,0),2250);
 const client=read('portal/unit-06-topic-64-preview.js'),html=read('portal/unit-06-topic-64-preview.html');
 assert.match(read('portal/index.html'),/unit-06-topic-64-preview\.html/);
 assert.match(client,/unit-06-topic-64-v82-80-source\.json/);
@@ -86,7 +86,7 @@ async function browser(){
   const out=path.join(root,'qa-artifacts','unit06-topic64-v82');fs.mkdirSync(out,{recursive:true});
   await p.screenshot({path:path.join(out,'unit06-topic64-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
-  console.log('V82 PASS — 80 source-faithful keyed MCQs, 20 numericals, full review, local-only score, mobile and 2,244 central after V83 integration.');
+  console.log('V82 PASS — 80 source-faithful keyed MCQs, 20 numericals, full review, local-only score, mobile and 2,250 central after V83 integration.');
  }finally{if(b)await b.close();await new Promise(done=>server.close(done));}
 }
 browser().catch(e=>{console.error('FAIL V82',e);process.exitCode=1;});

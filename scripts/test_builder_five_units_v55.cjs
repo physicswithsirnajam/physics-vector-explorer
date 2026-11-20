@@ -106,10 +106,10 @@ async function assertAdapters(){
  }
  assert.equal(allIds.size,1690,"all 1690 original and imported questions must have unique IDs");
  const partialSix=await adapter.loadBank(6,fileAt);
-  assert.equal(partialSix.questions.length,554,'Partial Unit6 Topics6.1–6.6 include 554 selectable MCQs from 560 originals; six earlier figure holds remain');
-  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T61-')).length,79);
-  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T62-')).length,77);
-  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T63-')).length,78);
+  assert.equal(partialSix.questions.length,560,'Partial Unit6 Topics6.1–6.6 include 560 selectable MCQs from 560 originals; six textbook-verified figure MCQs are now available');
+  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T61-')).length,80);
+  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T62-')).length,80);
+  assert.equal(partialSix.questions.filter(q=>q.id.includes('-T63-')).length,80);
   assert.equal(partialSix.questions.filter(q=>q.id.includes('-T64-')).length,80);
   assert.equal(partialSix.questions.filter(q=>q.id.includes('-T65-')).length,80);
   assert.equal(partialSix.questions.filter(q=>q.id.includes('-T66-')).length,80);
