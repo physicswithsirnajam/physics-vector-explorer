@@ -133,19 +133,20 @@
         },
         {
           "unit": 6,
-          "name": "Fluid Mechanics (Topics 6.1–6.5 only)",
+          "name": "Fluid Mechanics (Topics 6.1–6.6 only)",
           "path": "grade-11/unit-06-topic-61-v76-80-source.json",
           "sourceFiles": [
             "grade-11/unit-06-topic-61-v76-80-source.json",
             "grade-11/unit-06-topic-62-v78-80-source.json",
             "grade-11/unit-06-topic-63-v80-80-source.json",
             "grade-11/unit-06-topic-64-v82-80-source.json",
-            "grade-11/unit-06-topic-65-v84-80-source.json"
+            "grade-11/unit-06-topic-65-v84-80-source.json",
+            "grade-11/unit-06-topic-66-v86-80-source.json"
           ],
-          "liveMcqCount": 394,
-          "sourceTopicMcqCount": 400,
+          "liveMcqCount": 474,
+          "sourceTopicMcqCount": 480,
           "sourceFigureHeldCount": 6,
-          "topicPublished": "6.1 — Upthrust and Archimedes’ Principle; 6.2 — Viscous Drag and Terminal Velocity; 6.3 — Fluid Flow; 6.4 — Equation of Continuity; 6.5 — Bernoulli’s Equation (all partial previews)",
+          "topicPublished": "6.1 — Upthrust and Archimedes’ Principle; 6.2 — Viscous Drag and Terminal Velocity; 6.3 — Fluid Flow; 6.4 — Equation of Continuity; 6.5 — Bernoulli’s Equation; 6.6 — Applications of Bernoulli’s Equation (all partial previews)",
           "summativeTopicSloCodes": [
             "P-11-B-33",
             "P-11-B-34",
@@ -155,21 +156,22 @@
             "P-11-B-36",
             "P-11-B-37",
             "P-11-B-38",
-            "P-11-B-40"
+            "P-11-B-40",
+            "P-11-B-44"
           ],
           "perQuestionSloVerified": false,
           "cognitiveLevelVerified": false,
           "formativelyCertified": false,
           "exactFbiseModeReady": false,
           "independentSharedStimulusGroupCount": 0,
-          "standaloneSituationQuestionCount": 93,
+          "standaloneSituationQuestionCount": 113,
           "status": "partial-public-topic-preview",
-          "bankVersion": "v85-topics61-65-public-394-only",
-          "importNote": "V85 integrates all 80 original V84 Bernoulli Topic6.5 MCQs into central self-practice with the prior 79+77+78+80 from Topics6.1–6.4. Now 394 live Unit6, 400 archived originals, six unchanged figure holds, 93 independent situation items, ZERO shared stimulus groups. Overall public Grade XI 2,084 (original five banks 1,690). Topic6.5 source P-11-B-40 is summative and P-11-B-39 formative context; author K/U/A tags are stored as provenance but NOT certified individual cognitive classification. No verified per-question SLO or secured exam/cloud grades. Full Unit6 course remains planned."
+          "bankVersion": "v87-topics61-66-public-474-only",
+          "importNote": "V87 adds all 80 original Topic6.6 V86 Bernoulli Applications source MCQs to the prior 79+77+78+80+80 = 394 partial Unit6 public bank. Now 474 selectable Unit6 (480 source originals) with the prior six figure-dependent questions still held; 113 standalone situation questions, ZERO shared multi-question stimulus groups. Overall Grade XI Test Builder now 2,164 public provisional self-practice MCQs (original Units1–5 1,690). Teacher source SLO B-40/B-44 and K/U/A tags are provenance only, NOT independently verified per-item FBISE mappings; B-39 remains formative. Unit6 full course planned; no certified written board mode or cloud scoring."
         }
       ]
     }
   ],
-  "bankVersion": "v85-five-original-banks-plus-partial-u6-2084-public-mcqs",
+  "bankVersion": "v85-five-original-banks-plus-partial-u6-2164-public-mcqs",
   "lastUpdated": "2026-11-19"
 }
