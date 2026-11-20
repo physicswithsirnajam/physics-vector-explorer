@@ -168,7 +168,7 @@ function makeQuestion(q,group){
  const answer=q.options.find(o=>o.id===q.correctOptionId);
  const source=el('div','source-key');
  const key=el('p');key.append(el('strong','',q.correctOptionId+' — '+answer.text));
- source.append(key,el('p','',q.explanation),el('p','', 'Previous hold resolved after source-figure verification in V93.));
+ source.append(key,el('p','',q.explanation),el('p','', 'Previous hold resolved after source-figure verification in V93.'));
  detail.append(source);article.append(detail);
  const checks=el('div','checks');
  const viewed=fieldWithCheckbox('I examined the actual printed NBF figure, not only the V90 drawing.');
