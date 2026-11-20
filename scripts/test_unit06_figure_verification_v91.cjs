@@ -104,7 +104,9 @@ async function verifyBrowser(){
   assert.equal((report.match(/Public question status: STILL HELD/g)||[]).length,6);
   assert.match(report,/XI-U06-T62-MCQ-0064/);
   assert.match(report,/XI-U06-T63-MCQ-0080/);
+  await page.context().grantPermissions(['clipboard-read','clipboard-write']);
   await page.locator('#copy-record').click();
+  await page.waitForFunction(()=>/copied locally|blocked/i.test(document.querySelector('#copy-status')?.textContent||''),{timeout:10000});
   assert.match(await page.locator('#copy-status').textContent(),/copied locally|blocked/i);
   await page.setViewportSize({width:390,height:844});
   const dimensions=await page.evaluate(()=>({viewport:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
