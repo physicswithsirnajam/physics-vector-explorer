@@ -142,7 +142,7 @@
       <p style="margin-top:16px"><a href="student-guide.html" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">New to the portal? Read our five-unit Student Start Guide →</a></p>
       <p style="margin-top:16px"><a href="assessment-blueprint/" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">Explore the official Grade XI FBISE Blueprint &amp; Bank Readiness →</a></p>
     </section>
-    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Single-unit and mixed-unit MCQ practice are available.</strong> Select Units 1–5 and/or the 554 provisional Unit 6 Topics 6.1–6.7 questions, and choose a question count. The test automatically checks each selected unit and will not start if an eligible combination cannot be assembled.</span></div>
+    <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Single-unit and mixed-unit MCQ practice are available.</strong> Select Units 1–5 and/or the 560 provisional Unit 6 Topics 6.1–6.7 questions, and choose a question count. The test automatically checks each selected unit and will not start if an eligible combination cannot be assembled.</span></div>
     <div class="layout">
       <form id="builderForm" class="stack" novalidate>
         <section class="panel" aria-labelledby="scope-title">
@@ -154,7 +154,7 @@
           <div class="field">
             <div class="unit-toolbar"><span class="label">Choose released units or the partial Unit 6 topic preview</span><div class="inline-actions"><button type="button" class="text-button" id="allUnits">Select all six</button><button type="button" class="text-button" id="clearUnits">Clear</button></div></div>
             <div id="units" class="units" role="group" aria-label="Grade XI Physics units"></div>
-            <small class="help">Select one, several or all six supported banks. Unit 6 currently provides Topics 6.1–6.7 only (554 selectable MCQs; six figure-dependent items held), not full-unit coverage. Default balanced selection shares MCQs between selected units. Each selected unit must contribute an eligible question.</small>
+            <small class="help">Select one, several or all six supported banks. Unit 6 currently provides Topics 6.1–6.7 only (560 selectable MCQs; all six textbook figure items now selectable with original diagrams), not full-unit coverage. Default balanced selection shares MCQs between selected units. Each selected unit must contribute an eligible question.</small>
           </div>
           <div class="field"><label class="label" for="slo">Specific SLO code (optional)</label><input type="text" id="slo" maxlength="40" placeholder="Example: P-11-B-05" spellcheck="false"><small class="help">Leave blank for all eligible SLOs. <strong>Unit 4 caution:</strong> the additional 560 corrected MCQs currently carry topic-level SLO candidates, NOT individually verified FBISE mappings. A specific SLO filter can include related questions from the wider topic. Scores are not certified individual-SLO mastery. <strong>Unit 6 caution:</strong> its topic-level B-33/B-34 and B-41/B-42 references are verified, but per-question SLO and cognitive mappings are NOT verified. Use All learning outcomes, no specific SLO, and Unclassified in source for this partial bank.</small></div>
         </section>
@@ -372,7 +372,7 @@
         raw.split(',').map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=6);
       const checked=new Set(selected);
       $('units').innerHTML=unitNames.map((name,i)=>{
-        const n=i+1,live=n<=6,note=n===6?'Topics 6.1–6.7 ONLY · 554 public provisional MCQs':live?'Available for MCQ tests':'Unit in preparation';
+        const n=i+1,live=n<=6,note=n===6?'Topics 6.1–6.7 ONLY · 560 public provisional MCQs':live?'Available for MCQ tests':'Unit in preparation';
         return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&checked.has(n)?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
       }).join('');
     }
@@ -440,7 +440,7 @@
       $('sum-scope').textContent=names.scope[p.scope];
       $('sum-slo').textContent=p.slo || 'Any eligible SLO';
       $('sum-units').replaceChildren(...p.units.map(n=>{const tag=document.createElement('span');tag.className='pill';tag.textContent='Unit '+n;return tag;}));
-      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 retain 1,690 MCQs. Partial Unit 6 Topics 6.1–6.7 add 554 provisional MCQs (2,244 combined), with six textbook-figure questions held. Unit 6 has no common-stimulus groups and no verified per-question SLO/cognitive labels.';
+      $('board-note').textContent=p.mode==='full'?'Official supplied Grade XI model: 80 MCQs (56 straight + 24 stimulus/scenario), 7 × 4-mark SRQs, and 2 × 6-mark ERQs, totalling 80 theory marks. Internal OR choices and SLO/difficulty balance will be implemented by the Practice Engine.':p.mode==='unit'?'FBISE-style unit practice will use summative theory SLOs. A unit test is not a full official domain-balanced board paper.':'Units 1–5 retain 1,690 MCQs. Partial Unit 6 Topics 6.1–6.7 add 560 provisional MCQs (2,250 combined), with six figure questions available with original diagrams. Unit 6 has no common-stimulus groups and no verified per-question SLO/cognitive labels.';
       const errors=[];
       if (!p.units.length) errors.push('Select at least one textbook unit.');
       if (!p.cognitiveLevels.length) errors.push('Select at least one cognitive level.');

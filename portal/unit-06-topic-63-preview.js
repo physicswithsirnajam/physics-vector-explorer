@@ -14,7 +14,7 @@ function safeBank(bank){
   if(q.options.map(x=>x.id).join('')!=='ABCD')return false;
   if(q.sloCodes?.length!==0||q.boardEligible!==false||q.stimulusSetId!==null)return false;
  }
- return bank.questions.filter(q=>q.active).length===78&&[24,80].every(n=>bank.questions.find(q=>q.sourceQuestionNumber===n)?.active===false);
+ return bank.questions.filter(q=>q.active).length===80&&[24,80].every(n=>bank.questions.find(q=>q.sourceQuestionNumber===n)?.active===true);
 }
 function setMessage(message){$('load-status').textContent=message;}
 function selectedQuestions(){

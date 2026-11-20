@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogVersion": "pilot-v89-partial-unit06-topics61-67-central-practice",
-  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 554 more, giving 2,244 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
+  "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 560 more, giving 2,250 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
       "grade": 11,
@@ -200,7 +200,7 @@
           "assessmentStatus": "not-published",
           "resourceIds": [],
           "qualityStatus": "not-reviewed",
-          "studentNotice": "Partial Unit6 Topics 6.1–6.7 contribute 554 provisional public MCQs to the central Test Builder (560 source originals; six textbook-figure-dependent questions remain held). Superfluidity P-11-B-43 is officially Summative/Understanding at topic level, not independently per-MCQ certified. The original simulations and video remain. This is NOT a fully released Unit6 course, an FBISE-certified exam, a secure test or a cloud-recorded school grade.",
+          "studentNotice": "Partial Unit6 Topics6.1–6.7 contribute all 560 original public MCQs (GradeXI total 2,250). Six NBF figure-referencing MCQs from Topics6.1–6.3 were checked against original printed textbook figures and now display separate V90 original educational SVGs during central and topic self-practice. No actual textbook art is published. Individual SLO/cognitive classification remains provisional, zero Unit6 authentic shared-stimulus groups, full Unit6 course planned, no protected examination or cloud-recorded school grade.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -211,11 +211,11 @@
           "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
           "directYouTubeCount": 1,
           "directVideoReviewRequired": false,
-          "partialTestBuilderMcqCount": 554,
+          "partialTestBuilderMcqCount": 560,
           "partialTestBuilderHref": "../build-your-physics-test.html?unit=6",
           "partialTestBuilderStatus": "public-topics61-67-provisional",
           "sourceTopicMcqCount": 560,
-          "sourceFigureHeldCount": 6
+          "sourceFigureHeldCount": 0
         },
         {
           "unit": 7,

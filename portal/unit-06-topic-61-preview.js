@@ -13,7 +13,7 @@ function safeBank(bank){
   ids.add(q.id);
   if(q.options.map(x=>x.id).join('')!=='ABCD')return false;
  }
- return bank.questions.filter(q=>q.active).length===79&&!bank.questions.find(q=>q.sourceQuestionNumber===11).active;
+ return bank.questions.filter(q=>q.active).length===80&&bank.questions.find(q=>q.sourceQuestionNumber===11).active===true;
 }
 function setMessage(message){$('load-status').textContent=message;}
 function selectedQuestions(){
