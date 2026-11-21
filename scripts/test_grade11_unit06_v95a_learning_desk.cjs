@@ -9,7 +9,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const root=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
-const html=read('portal/unit-06.html'),css=read('portal/unit-06-desk-v95a.css');
+const html=read('portal/unit-06-learning-desk-v95a.html'),css=read('portal/unit-06-desk-v95a.css');
 const js=read('portal/unit-06-desk-v95a.js'),dashboard=read('portal/index.html');
 const catalog=JSON.parse(read('portal/learning-catalog.json'));
 const manifest=JSON.parse(read('question-bank/manifest.json'));
@@ -93,7 +93,7 @@ async function browser(){
   for(const width of [390,768,1440]){
    const page=await browserInstance.newPage({viewport:{width,height:850},reducedMotion:'reduce'});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
-   const response=await page.goto(host+'/portal/unit-06.html',{waitUntil:'load'});
+   const response=await page.goto(host+'/portal/unit-06-learning-desk-v95a.html',{waitUntil:'load'});
    assert.equal(response.status(),200);
    await page.locator('#topic-61').waitFor({state:'visible'});
    assert.equal(await page.locator('.topic').count(),7);
