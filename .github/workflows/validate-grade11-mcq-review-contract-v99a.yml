@@ -1,0 +1,39 @@
+name: Grade XI MCQ Review Intake Contract (V99-A)
+on:
+  pull_request:
+    paths:
+      - "shared/mcq-review-contract-v99a.js"
+      - "scripts/test_grade11_mcq_review_contract_v99a.cjs"
+      - "scripts/test_grade11_mcq_issue_report.py"
+      - "practice-engine/index.html"
+      - "question-bank/grade-11/**"
+      - ".github/workflows/validate-grade11-mcq-review-contract-v99a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/mcq-review-contract-v99a.js"
+      - "scripts/test_grade11_mcq_review_contract_v99a.cjs"
+      - "scripts/test_grade11_mcq_issue_report.py"
+      - "practice-engine/index.html"
+      - "question-bank/grade-11/**"
+      - ".github/workflows/validate-grade11-mcq-review-contract-v99a.yml"
+  workflow_dispatch:
+jobs:
+  privacy-minimal-review-contract-offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check offline MCQ review contract and source-question sample test
+        run: |
+          node --check shared/mcq-review-contract-v99a.js
+          node --check scripts/test_grade11_mcq_review_contract_v99a.cjs
+      - name: Validate real six-unit source IDs, allowed fields and fail-closed report constraints
+        run: node scripts/test_grade11_mcq_review_contract_v99a.cjs
+      - name: Preserve existing copy-only MCQ report format and privacy promises
+        run: python3 scripts/test_grade11_mcq_issue_report.py
