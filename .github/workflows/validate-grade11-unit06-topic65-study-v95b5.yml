@@ -1,0 +1,50 @@
+name: Validate Grade XI Unit 6 Topic 6.5 Bernoulli Study (V95-B5)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-topic-65-study-v95b5.html"
+      - "portal/unit-06-topic-65-study-v95b5.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b5-bernoulli-pressure-work-original.svg"
+      - "quality/grade11-unit06-v95b5-topic65-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b5_topic65_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic65-study-v95b5.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-topic-65-study-v95b5.html"
+      - "portal/unit-06-topic-65-study-v95b5.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b5-bernoulli-pressure-work-original.svg"
+      - "quality/grade11-unit06-v95b5-topic65-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b5_topic65_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic65-study-v95b5.yml"
+  workflow_dispatch:
+jobs:
+  bernoulli-derivation-math-and-responsive-student-test:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bernoulli B39/B40 source, calculations, rights and earlier-course regressions
+        run: |
+          node --check portal/unit-06-topic-65-study-v95b5.js
+          node --check scripts/test_grade11_unit06_v95b5_topic65_study.cjs
+          node scripts/test_grade11_unit06_v95b5_topic65_study.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+          node scripts/test_grade11_unit06_v95b2_topic62_study.cjs
+          node scripts/test_grade11_unit06_v95b3_topic63_study.cjs
+          node scripts/test_grade11_unit06_v95b4_topic64_study.cjs
+      - name: Install Chromium for mobile, tablet and projector
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Check original diagram, eight revisions and horizontal/vertical/head calculators
+        run: node scripts/test_grade11_unit06_v95b5_topic65_study.cjs --browser
