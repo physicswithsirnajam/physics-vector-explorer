@@ -78,9 +78,8 @@ async function browserChecks(){
    await page.locator('#tab-cross').click();
    assert.equal(await page.locator('#tab-cross').getAttribute('aria-selected'),'true','cross product works');
    await page.locator('#tab-components').click();
-   await page.locator('#mag-a').fill('15');
-   await page.locator('#mag-a').dispatchEvent('input');
-   assert.equal(await page.locator('#mag-a-value').innerText(),'15','slider redraws its result');
+   await page.locator('#mag-a').evaluate(el=>{el.value='15';el.dispatchEvent(new Event('input',{bubbles:true}));});
+   assert.equal(await page.locator('#mag-a-value').innerText(),'15.0 N','slider redraws its result');
    await page.locator('#reset').click();
    assert.equal(await page.locator('#tab-components').getAttribute('aria-selected'),'true','reset restores components');
    assert.equal(await page.locator('#mag-a').inputValue(),'10','reset restores original magnitude');
