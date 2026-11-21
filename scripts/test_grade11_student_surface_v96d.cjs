@@ -99,7 +99,7 @@ async function browserAudit(){
   await page.locator('#psn-nav-menu-button, #psn-global-nav .psn-nav-menu-button').first().click();
   await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   assert.equal(await page.locator('#psn-resource-drawer a[href*="sites.google.com"]').count(),0);
-  assert.equal(await page.getByRole('link',{name:'Notes & Concept Videos'}).count(),1);
+  assert.equal(await page.locator('#psn-resource-drawer').getByRole('link',{name:'Notes & Concept Videos'}).count(),1);
   await page.goto(base+'student-guide.html',{waitUntil:'domcontentloaded'});
  assert.equal(await page.locator('a[href*="sites.google.com"]').count(),0);
  assert.equal(await page.locator('a[href="portal/legacy-hssc-resources.html"]').count(),1);
