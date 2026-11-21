@@ -187,10 +187,11 @@
     if(practiceUrl)body.append(makeLink(practiceUrl,'Practise Unit '+unit.unit+' MCQs','public-link'));
     const categories=new Map();
     const seen=new Set();
-    for(const id of unit.resourceIds||[]){
-      if(seen.has(id))continue;seen.add(id);
-      const record=byId.get(id);
-      if(!record)continue;
+    const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
+      ...(unit.practicePreviewStatus==='public-provisional'&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
+    for(const record of records){
+      if(!record?.id||seen.has(record.id))continue;
+      seen.add(record.id);
       const href=safeHref(record.href,portalBase);
       if(!href)continue;
       const category=record.category||'OTHER RESOURCES';
