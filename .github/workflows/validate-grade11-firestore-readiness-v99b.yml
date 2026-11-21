@@ -1,0 +1,47 @@
+name: Grade XI Firestore Security Readiness Preflight (V99-B)
+on:
+  pull_request:
+    paths:
+      - "portal/app.js"
+      - "portal/academic-enrollment.js"
+      - "portal/attempt-sync.js"
+      - "portal/firebase-config.js"
+      - "practice-engine/index.html"
+      - "shared/mcq-review-contract-v99a.js"
+      - "scripts/audit_grade11_firestore_review_readiness_v99b.cjs"
+      - ".github/workflows/validate-grade11-firestore-readiness-v99b.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/app.js"
+      - "portal/academic-enrollment.js"
+      - "portal/attempt-sync.js"
+      - "portal/firebase-config.js"
+      - "practice-engine/index.html"
+      - "shared/mcq-review-contract-v99a.js"
+      - "scripts/audit_grade11_firestore_review_readiness_v99b.cjs"
+      - ".github/workflows/validate-grade11-firestore-readiness-v99b.yml"
+  workflow_dispatch:
+jobs:
+  repository-only-security-readiness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate repository-only security inventory syntax
+        run: node --check scripts/audit_grade11_firestore_review_readiness_v99b.cjs
+      - name: Inventory existing Firestore read/write paths and confirm report backend is not silently enabled
+        run: node scripts/audit_grade11_firestore_review_readiness_v99b.cjs
+      - name: Preserve access-path matrix and security readiness report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-firestore-readiness-v99b-evidence
+          path: qa-artifacts/firestore-readiness-v99b/
+          if-no-files-found: warn
+          retention-days: 14
