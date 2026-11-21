@@ -1,0 +1,55 @@
+name: Grade XI Student Visual Baseline (V98-C)
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_student_visual_v98c.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98c.yml"
+      - "index.html"
+      - "student-guide.html"
+      - "portal/index.html"
+      - "portal/simulations.html"
+      - "portal/unit-01.html"
+      - "portal/unit-03.html"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_student_visual_v98c.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98c.yml"
+      - "index.html"
+      - "student-guide.html"
+      - "portal/index.html"
+      - "portal/simulations.html"
+      - "portal/unit-01.html"
+      - "portal/unit-03.html"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+  workflow_dispatch:
+jobs:
+  public-student-seven-page-local-visual-audit:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check read-only visual audit script syntax
+        run: node --check scripts/audit_grade11_student_visual_v98c.cjs
+      - name: Install Chromium for desktop/mobile source rendering
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Audit seven representative student views without logging in
+        run: node scripts/audit_grade11_student_visual_v98c.cjs
+      - name: Preserve all screenshots and explicit warning report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-student-visual-v98c-evidence
+          path: qa-artifacts/student-visual-v98c/
+          if-no-files-found: warn
+          retention-days: 10
