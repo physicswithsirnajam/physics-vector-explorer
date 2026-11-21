@@ -1,0 +1,45 @@
+name: Validate Unit 5 Study Guide Mobile Layout (V98-K)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05-work-study.html"
+      - "portal/unit-05.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit05_work_study_mobile_v98k.cjs"
+      - ".github/workflows/validate-grade11-unit05-work-study-mobile-v98k.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05-work-study.html"
+      - "portal/unit-05.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit05_work_study_mobile_v98k.cjs"
+      - ".github/workflows/validate-grade11-unit05-work-study-mobile-v98k.yml"
+  workflow_dispatch:
+jobs:
+  unit05-study-six-viewport-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source-preserving browser test syntax
+        run: node --check scripts/test_grade11_unit05_work_study_mobile_v98k.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Diagnose Unit 5 study page overflow and verify mobile/desktop correction
+        run: node scripts/test_grade11_unit05_work_study_mobile_v98k.cjs
+      - name: Preserve screenshots and precise DOM diagnostics including on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit05-study-mobile-v98k-evidence
+          path: qa-artifacts/unit05-mobile-v98k/
+          if-no-files-found: warn
+          retention-days: 10
