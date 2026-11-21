@@ -1,0 +1,50 @@
+name: Validate Grade XI Unit 6 Topic 6.3 Detailed Study (V95-B3)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-topic-63-study-v95b3.html"
+      - "portal/unit-06-topic-63-study-v95b3.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b3-flow-patterns-original.svg"
+      - "assets/illustrations/unit6-v95b3-flow-rate-graph-original.svg"
+      - "quality/grade11-unit06-v95b3-topic63-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b3_topic63_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic63-study-v95b3.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-topic-63-study-v95b3.html"
+      - "portal/unit-06-topic-63-study-v95b3.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b3-flow-patterns-original.svg"
+      - "assets/illustrations/unit6-v95b3-flow-rate-graph-original.svg"
+      - "quality/grade11-unit06-v95b3-topic63-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b3_topic63_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic63-study-v95b3.yml"
+  workflow_dispatch:
+jobs:
+  topic63-flow-assumptions-and-supporting-arithmetic:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Topic6.3 source boundary, concepts, graphs, numbers, safety and prior topics
+        run: |
+          node --check portal/unit-06-topic-63-study-v95b3.js
+          node --check scripts/test_grade11_unit06_v95b3_topic63_study.cjs
+          node scripts/test_grade11_unit06_v95b3_topic63_study.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+          node scripts/test_grade11_unit06_v95b2_topic62_study.cjs
+      - name: Install Chromium for 390px mobile, tablet and desktop
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Check original diagrams, both local forms, six revision checks and viewport layout
+        run: node scripts/test_grade11_unit06_v95b3_topic63_study.cjs --browser
