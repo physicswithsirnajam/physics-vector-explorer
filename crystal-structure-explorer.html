@@ -11,6 +11,7 @@ body.projector .shell{max-width:1460px}body.projector .card{font-size:18px}body.
 @media (max-width:790px){.shell{padding:13px 12px 40px}.top{align-items:flex-start}.brand{font-size:16px}.pill{font-size:10px;white-space:normal}.hero{grid-template-columns:1fr}.heroaside{padding:13px}.grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.tabs{gap:7px}.tab{padding:9px 11px;font-size:12px}.options{grid-template-columns:1fr}.card{padding:14px}.stage canvas{aspect-ratio:6/5}.foot-grid{grid-template-columns:1fr}}
 @media print{body{background:#fff;color:#121b2b}.tabs,.heroaside,button,.stage{display:none!important}.card,.question{color:#121b2b;background:#fff;border:1px solid #aaa}.shell{max-width:none}}
 </style>
+ <link rel="stylesheet" href="shared/standalone-brand-v97a.css?v=97a">
 </head>
 <body>
 <div class="shell">
@@ -104,4 +105,5 @@ $('projector').onclick=()=>{let active=document.body.classList.toggle('projector
 let resizeId;window.addEventListener('resize',()=>{clearTimeout(resizeId);resizeId=setTimeout(()=>{drawStructure();drawLattice();},90);});
 chooseMaterial('crystalline');chooseCell('sc');renderQuiz();
 </script>
+ <script src="shared/standalone-brand-v97a.js?v=97a"></script>
 </body></html>
