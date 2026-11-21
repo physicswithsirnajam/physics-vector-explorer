@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v89-partial-unit06-topics61-67-central-practice",
+  "catalogVersion": "pilot-v96a-six-resource-visible-units-unit06-provisional-practice-only",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 560 more, giving 2,250 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -195,11 +195,15 @@
           "unit": 6,
           "title": "Fluid Mechanics",
           "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
-          "questionBankCount": 0,
+          "summary": "Public seven-topic Fluid Mechanics study preview: 560 provisional MCQs, five mapped simulations and original topic learning activities. First-pass scientific/source inspection is complete; individual teacher/FBISE certification and the full course remain pending.",
+          "questionBankCount": 560,
           "assessmentStatus": "not-published",
-          "resourceIds": [],
-          "qualityStatus": "not-reviewed",
+          "resourceIds": [
+            "unit6-preview-learning-desk",
+            "unit6-preview-central-mcqs",
+            "unit6-preview-simulations"
+          ],
+          "qualityStatus": "560-of-560-first-pass-reviewed; individual-scientific-key-SLO-cognitive-teacher-approval-pending",
           "studentNotice": "Partial Unit6 Topics6.1–6.7 contribute all 560 original public MCQs (GradeXI total 2,250). Six NBF figure-referencing MCQs from Topics6.1–6.3 were checked against original printed textbook figures and now display separate V90 original educational SVGs during central and topic self-practice. No actual textbook art is published. Individual SLO/cognitive classification remains provisional, zero Unit6 authentic shared-stimulus groups, full Unit6 course planned, no protected examination or cloud-recorded school grade.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
@@ -215,7 +219,9 @@
           "partialTestBuilderHref": "../build-your-physics-test.html?unit=6",
           "partialTestBuilderStatus": "public-topics61-67-provisional",
           "sourceTopicMcqCount": 560,
-          "sourceFigureHeldCount": 0
+          "sourceFigureHeldCount": 0,
+          "practicePreviewStatus": "public-provisional",
+          "landingHref": "./unit-06-learning-desk-v95a.html"
         },
         {
           "unit": 7,
@@ -1147,6 +1153,45 @@
       "access": "public-link",
       "contentStatus": "v53-public-unit5-descriptive-teacher-led-stepwise-provisional-discussion",
       "accessDescription": "Public post-practice classroom display (NOT authenticated teacher access). Public key requested only on explicit Reveal. No student responses or grading, and not an official FBISE examination."
+    },
+    {
+      "id": "unit6-preview-learning-desk",
+      "category": "STUDY",
+      "title": "Unit 6 — Fluid Mechanics Seven-Topic Learning Desk Preview",
+      "description": "Seven topic orientations with five existing simulations, original MCQ topic previews and revision checks. This is an accessible public practice/study preview, not a full certified course.",
+      "href": "./unit-06-learning-desk-v95a.html",
+      "public": true,
+      "external": false,
+      "action": "Open Unit 6 Learning Desk Preview",
+      "access": "public-link",
+      "contentStatus": "first-pass-inspected-560-provisional-student-study-preview-teacher-certification-pending",
+      "accessDescription": "Public GitHub Pages learning preview. All Unit 6 teacher signoffs and item-level FBISE SLO/cognitive certifications remain pending."
+    },
+    {
+      "id": "unit6-preview-central-mcqs",
+      "category": "PRACTISE",
+      "title": "Unit 6 — Build a 560-MCQ Provisional Practice Test",
+      "description": "Select from all seven Fluid Mechanics topics in the central Test Builder. Original source keys remain provisional pending teacher certification.",
+      "href": "../build-your-physics-test.html?unit=6",
+      "public": true,
+      "external": false,
+      "action": "Practise Unit 6 MCQs",
+      "access": "public-link",
+      "contentStatus": "public-self-practice-original-560-items-with-review-register-no-exam-certification",
+      "accessDescription": "Public, ungraded self-practice. Combined and Unit 6 attempt cloud saving is not yet supported; the full Unit 6 course and graded examination remain unreleased."
+    },
+    {
+      "id": "unit6-preview-simulations",
+      "category": "SIMULATIONS",
+      "title": "Unit 6 — Five Fluid Mechanics Simulations",
+      "description": "Browse five original public Fluid Mechanics simulations from the local simulation library, filtered to Unit 6.",
+      "href": "./simulations.html?unit=6",
+      "public": true,
+      "external": false,
+      "action": "Explore Unit 6 Simulations",
+      "access": "public-link",
+      "contentStatus": "public-five-mapped-simulations-standalone-pages-not-private",
+      "accessDescription": "Public educational models: they do not require sign-in or store certified assessment grades."
     }
   ],
   "originalSourcesNote": "Original Google Sites PDF link annotation inventory verified 2026-11-17: 31 original standalone simulation titles correspond to existing 31 local simulations, 15 unit concept video page links, 2 additional general pages, 1 Unit7 external reading. 17 existing Drive public-link PDFs were separately read-only verified. These are NOT secure paywalled downloads, not hosted videos, and not evidence full text/teacher source rights have been audited. V74 adds 27 direct teacher-curated YouTube entries across Units1–14 (26 distinct IDs), with source links unchanged and Unit10/11 identical bHIhgxav9LY explicitly flagged for correction. Original 17 Google Sites video page URLs and 17 public-link Google Drive notes remain unchanged. Videos play only after a learner clicks a YouTube privacy-enhanced iframe; these links are publicly accessible and are NOT private Firebase teaching resources."
