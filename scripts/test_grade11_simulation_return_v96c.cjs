@@ -33,6 +33,9 @@ function staticAudit(){
  assert.ok(css.includes('@media print'), 'hide navigation in prints');
  assert.ok(css.includes(':focus-visible'), 'keyboard focus must be visible');
  assert.ok(js.includes("new URL('../',script.src)"),'project-path-safe relative links required');
+ assert.ok(js.includes("new URL('portal/assets/physics-with-sir-najam-official-logo.png',repoRoot)"),'official original image must be path-safe');
+ assert.ok(js.includes("logo.alt='Physics with Sir Najam official logo'"),'official identity needs accessible image alternative');
+ assert.ok(css.includes('.psn-simulation-return-logo'),'dedicated compact official-logo style required');
  assert.ok(js.includes("aria-label','Return to Unit 6 and learning portal'"));
  assert.ok(!/localStorage|sessionStorage|fetch\s*\(|auth\.|database|firestore/i.test(js),'navigation must not read or write accounts');
  assert.ok(read('portal/simulations.html').includes('id="unit"'));
@@ -91,6 +94,12 @@ async function browserAudit(){
    assert.equal(await page.locator(nav).count(),1,'Only one return bar');
    assert.equal(await page.locator(nav+' a').count(),4,'All four links');
    assert.equal(await page.locator(nav).getAttribute('aria-label'),'Return to Unit 6 and learning portal');
+   const brandLogo=page.locator(nav+' .psn-simulation-return-logo');
+   assert.equal(await brandLogo.count(),1,'Exactly one original official logo per simulation bar');
+   assert.equal(await brandLogo.getAttribute('alt'),'Physics with Sir Najam official logo');
+   assert.equal(await brandLogo.getAttribute('src'),origin+'/portal/assets/physics-with-sir-najam-official-logo.png');
+   await page.waitForFunction(()=>{const img=document.querySelector('#psn-simulation-return-nav .psn-simulation-return-logo');return !!(img&&img.complete&&img.naturalWidth>0);});
+   assert.equal(await page.locator(nav+' .psn-simulation-return-brand').innerText(),'PHYSICS WITH SIR NAJAM');
    const items=await page.locator(nav+' a').evaluateAll(as=>as.map(a=>({text:a.textContent,href:a.href,target:a.getAttribute('target')})));
    for(let k=0;k<targets.length;k++){
     assert.equal(items[k].text,targets[k][0]);
@@ -103,6 +112,8 @@ async function browserAudit(){
    const size=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
    assert.ok(size.scroll<=size.client+2,file+' causes mobile horizontal overflow '+JSON.stringify(size));
    for(const a of await page.locator(nav+' a').all())assert.equal(await a.isVisible(),true,'All 4 links visible on mobile');
+   assert.equal(await brandLogo.isVisible(),true,'Official logo visible on mobile');
+   assert.ok((await brandLogo.boundingBox()).width<=38,'Official logo must not dominate the mobile lab');
    if(i===0)await page.screenshot({path:path.join(screenshots,'unit6-navigation-mobile.png'),fullPage:false});
    await page.setViewportSize({width:1280,height:820});
   }
@@ -119,7 +130,7 @@ async function browserAudit(){
   // This is a PUBLIC library. Hub/Dashboard targets intentionally go to the
   // existing portal sign-in shell; we do not bypass authentication in tests.
   assert.deepEqual(pageErrors,[],'Lab navigation must not introduce JavaScript exceptions');
-  console.log('V96-C browser PASS: 5/5 originals, four accessible same-tab links, 390px mobile no overflow, real Unit6 desk/library routes and unchanged lab UIs.');
+  console.log('V96-E + V96-C browser PASS: 5/5 original labs show official responsive logo, preserve four accessible links, 390px mobile no overflow, real Unit6 desk/library routes and unchanged science UIs.');
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok));}
 }
 async function main(){staticAudit();await browserAudit()}
