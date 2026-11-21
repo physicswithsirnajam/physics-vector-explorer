@@ -8,6 +8,7 @@
 2. **Sign-in screen** (`portal/index.html`): replace the outbound historical public-hub link with the native original Notes & Concept Videos page; the Grade XI Student Guide stays.
 3. **Simulation library** (`portal/simulations.html`): replace the old-site header navigation with **Unit 6 Learning Desk**; revise the outdated migration notice to point to notes/videos within the portal.
 4. **Signed-in Learning Hub** (`portal/learning-hub.js`): its generated navigation no longer whitelists the former Google Sites origin. Source archives do not become authentication or entitlement controls.
+5. **Student Guide and Unit 1 desk** (`student-guide.html`, `portal/unit-01.html`): the two remaining public old-site hrefs found during the full HTML scan were replaced by the same-site Notes & Concept Videos library.
 5. **Old Notes & Videos library** (`portal/legacy-hssc-resources.html`): preserve 17 historical video-page titles (15 unit pages + 2 general pages) in their existing visible archive cards **as text only**, with **zero links** leading to Google Sites. Retain exactly the original 17 source records and URLs inside `portal/legacy-hssc-resources-v73.json` for provenance. The existing **27 direct YouTube entries / 26 distinct IDs**, **17 original Drive PDF handouts**, and **one external reading** remain unchanged. The Unit10 direct YouTube link known to be a duplicate/wrong-topic entry stays flagged and must not autoplay.
 
 ## Security/privacy distinction
@@ -25,7 +26,7 @@ A **missing menu link does not restrict an HTML page hosted on public GitHub Pag
 
 ## Read-only wider audit
 
-The dedicated V96-D test enumerates public HTML in the repository root and portal and generates a CI-only report of any remaining literal **outbound Google Sites hrefs**. The five explicitly migrated student navigation entrypoints must contain **zero** literal `sites.google.com` references. Other HTML findings, if any, are captured as future small migration tasks and are **not automatically edited**, so existing verified study resources are not inadvertently deleted.
+The dedicated V96-D test enumerates public HTML in the repository root and portal and generates a CI-only report of any remaining literal **outbound Google Sites hrefs**. All seven explicitly migrated student navigation entrypoints must contain **zero** literal `sites.google.com` references. The test scans all root and portal HTML and requires **zero literal outbound Google Sites hrefs**. Historical URLs in the unchanged JSON source remain for archive provenance, not student navigation.
 
 ## Regression and verification
 - `scripts/test_hssc_legacy_resources_v73.cjs` is updated only to expect **17 non-clickable historical title cards** instead of live old-site links. Its other PDF source, page count, original mismatch, search/bookmark and mobile checks remain.
