@@ -1,0 +1,85 @@
+name: Grade XI Student Practice Visual and Interaction Audit (V98-H)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-03-mcq-practice.html"
+      - "portal/unit-03-mcq-practice.js"
+      - "portal/unit-03-mcq-full80.html"
+      - "portal/unit-03-mcq-full80.js"
+      - "portal/unit-04-mcq-full80.html"
+      - "portal/unit-04-mcq-full80.js"
+      - "portal/unit-04-combined-student-paper.html"
+      - "portal/unit-04-combined-student-paper.js"
+      - "portal/unit-05-mcq-practice.html"
+      - "portal/unit-05-mcq-practice.js"
+      - "portal/unit-05-mcq-set-b.html"
+      - "portal/unit-05-mcq-set-b.js"
+      - "portal/unit-05-descriptive-student.html"
+      - "portal/unit-05-descriptive-student.js"
+      - "portal/unit-05-descriptive-v52.css"
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "question-bank/grade-11/unit-05-v50-16-student.json"
+      - "question-bank/grade-11/unit-05-v51-16-student-b.json"
+      - "question-bank/grade-11/unit-05-v52-descriptive-student.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/audit_grade11_student_practice_v98h.cjs"
+      - ".github/workflows/validate-grade11-student-practice-v98h.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-03-mcq-practice.html"
+      - "portal/unit-03-mcq-practice.js"
+      - "portal/unit-03-mcq-full80.html"
+      - "portal/unit-03-mcq-full80.js"
+      - "portal/unit-04-mcq-full80.html"
+      - "portal/unit-04-mcq-full80.js"
+      - "portal/unit-04-combined-student-paper.html"
+      - "portal/unit-04-combined-student-paper.js"
+      - "portal/unit-05-mcq-practice.html"
+      - "portal/unit-05-mcq-practice.js"
+      - "portal/unit-05-mcq-set-b.html"
+      - "portal/unit-05-mcq-set-b.js"
+      - "portal/unit-05-descriptive-student.html"
+      - "portal/unit-05-descriptive-student.js"
+      - "portal/unit-05-descriptive-v52.css"
+      - "question-bank/grade-11/unit-03-stage1-practice.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "question-bank/grade-11/unit-05-v50-16-student.json"
+      - "question-bank/grade-11/unit-05-v51-16-student-b.json"
+      - "question-bank/grade-11/unit-05-v52-descriptive-student.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/audit_grade11_student_practice_v98h.cjs"
+      - ".github/workflows/validate-grade11-student-practice-v98h.yml"
+  workflow_dispatch:
+jobs:
+  seven-public-student-practice-views:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check local student practice audit
+        run: node --check scripts/audit_grade11_student_practice_v98h.cjs
+      - name: Install Chromium for public local source testing
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test seven public practice pages at phone and desktop widths without grading or teacher-key access
+        run: node scripts/audit_grade11_student_practice_v98h.cjs
+      - name: Upload screenshots and diagnostics (even on failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-student-practice-v98h-evidence
+          path: qa-artifacts/student-practice-v98h/
+          if-no-files-found: warn
+          retention-days: 10
