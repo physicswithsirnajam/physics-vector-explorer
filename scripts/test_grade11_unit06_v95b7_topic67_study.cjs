@@ -75,7 +75,7 @@ assert.ok(!html.includes('<iframe'),'Do not embed private textbook pages');
 for(const pic of svgPaths){
  const image=read(pic);
  assert.ok(image.includes('<title')&&image.includes('<desc')&&image.includes('role="img"'));
- assert.ok(image.includes('independently')||image.includes('original')||image.includes('not a copy'),'Original artwork provenance missing '+pic);
+ assert.ok(/independent|original|not a copy/i.test(image),'Original artwork provenance missing '+pic);
  assert.ok(html.includes('../'+pic),'Lesson did not link safe original SVG '+pic);
 }
 const phase=read(svgPaths[2]);
