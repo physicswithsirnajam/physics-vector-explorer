@@ -39,6 +39,8 @@
     const unit=numberIn(input.unit,1,6,'Grade XI unit');
     const questionId=clean(input.questionId,80);
     if(!ID.test(questionId))throw new TypeError('Invalid stable source question identifier');
+    const idUnit=/^(?:XI-)?U0([1-6])-/.exec(questionId);
+    if(!idUnit||Number(idUnit[1])!==unit)throw new TypeError('Question ID does not belong to the stated unit');
     const sourceQuestionNumber=numberIn(input.sourceQuestionNumber,1,5000,'Source question number');
     const bankVersion=clean(input.bankVersion,120);
     if(!bankVersion)throw new TypeError('Bank version required for teacher lookup');
