@@ -123,6 +123,8 @@ function renderGrade(){
  if(selectionStatus)selectionStatus.textContent=current
    ? `Showing Unit ${current.unit} — ${current.title}${current.practicePreviewStatus==='public-provisional'?' (provisional practice)':''}. Choose another unit to switch resources.`
    : 'Browse six units below or select one unit to focus on its resources.';
+ const unit6Topics=byId('hub-unit6-topic-shortcuts');
+ if(unit6Topics)unit6Topics.hidden=selectedUnit!=='all'&&selectedUnit!=='6';
  for(const u of active){
   if(selectedUnit!=='all'&&String(u.unit)!==selectedUnit)continue;
   const card=document.createElement('article');card.className='hub-unit';
