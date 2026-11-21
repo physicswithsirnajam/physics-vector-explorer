@@ -1,0 +1,42 @@
+name: Validate Grade XI Compact Learning Hub (V96-B)
+on:
+  pull_request:
+    paths:
+      - "portal/index.html"
+      - "portal/learning-hub.js"
+      - "portal/styles.css"
+      - "scripts/test_grade11_learning_hub_compact_v96b.cjs"
+      - ".github/workflows/validate-grade11-learning-hub-v96b.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/index.html"
+      - "portal/learning-hub.js"
+      - "portal/styles.css"
+      - "scripts/test_grade11_learning_hub_compact_v96b.cjs"
+      - ".github/workflows/validate-grade11-learning-hub-v96b.yml"
+  workflow_dispatch:
+jobs:
+  compact-unit-first-hub-and-preserved-release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax, first-pass source and academic release safety
+        run: |
+          node --check portal/learning-hub.js
+          node --check scripts/test_grade11_learning_hub_compact_v96b.cjs
+          node scripts/test_grade11_unit06_preview_discovery_v96a.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95c3b_topic67_last20_scenarios.cjs
+      - name: Install pinned Chromium browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Exercise real Learning Hub markup with mobile and desktop browser
+        run: node scripts/test_grade11_learning_hub_compact_v96b.cjs
