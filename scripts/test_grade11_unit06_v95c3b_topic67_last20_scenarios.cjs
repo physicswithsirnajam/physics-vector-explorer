@@ -91,7 +91,7 @@ assert.equal(get(79).correctOptionId,'D');
 assert.equal(get(80).correctOptionId,'B');
 assert.ok(2.00<2.17&&2.50>2.17&&.0025<2.17);
 const report=read('quality/grade11-unit06-v95c3b-topic67-mcq61-80-final-scenario-review.md');
-for(const s of ['20/20 stems, 80/80 A–D choice texts and 20/20 original correct letters matched','560/560','P-11-B-43','Figure6.16','Figure6.17','all 560'])assert.ok(report.includes(s),'Teacher report missing '+s);
+for(const s of ['20/20 stems, 80/80 A–D choice texts and 20/20 original correct letters matched','560/560','P-11-B-43','Figure6.16','Figure6.17','560 central teacher approval fields'])assert.ok(report.includes(s),'Teacher report missing '+s);
 for(const n of mandatory.keys())assert.ok(report.includes('XI-U06-T67-MCQ-'+String(n).padStart(4,'0')));
 const orig=read('quality/grade11-unit06-v95c1-560-item-review-queue.csv').trimEnd().split(/\r?\n/);
 assert.equal(orig.length,561);const origHeader=csvParse(orig[0]);
