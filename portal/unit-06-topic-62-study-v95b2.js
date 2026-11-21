@@ -6,7 +6,7 @@
 'use strict';
 const form=document.getElementById('stokes-form');
 if(!form)return;
-const eta=document.getElementById('viscosity');
+const eta=document.getElementById('fluid-viscosity');
 const radius=document.getElementById('sphere-radius');
 const speed=document.getElementById('relative-speed');
 const rho=document.getElementById('fluid-density');
