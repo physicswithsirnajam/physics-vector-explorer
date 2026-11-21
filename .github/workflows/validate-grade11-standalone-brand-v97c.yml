@@ -1,0 +1,55 @@
+name: Validate Grade XI Standalone Simulation Official Branding (V97-C)
+on:
+  pull_request:
+    paths:
+      - "gravitational-waves-interferometer.html"
+      - "heat-engine-carnot.html"
+      - "ideal-gas-kinetic-theory.html"
+      - "motion-graphs.html"
+      - "polarization-malus-law.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97c.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97c.yml"
+  push:
+    branches: [main]
+    paths:
+      - "gravitational-waves-interferometer.html"
+      - "heat-engine-carnot.html"
+      - "ideal-gas-kinetic-theory.html"
+      - "motion-graphs.html"
+      - "polarization-malus-law.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97c.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97c.yml"
+  workflow_dispatch:
+jobs:
+  third-five-labs-science-and-brand-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source and branding script syntax
+        run: |
+          node --check shared/standalone-brand-v97a.js
+          node --check scripts/test_grade11_standalone_brand_v97c.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify five original physics labs, official identity, mobile and navigation
+        run: node scripts/test_grade11_standalone_brand_v97c.cjs
+      - name: Archive screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-standalone-brand-v97c-screenshots
+          path: qa-artifacts/standalone-brand-v97c/*.png
+          if-no-files-found: warn
+          retention-days: 7
