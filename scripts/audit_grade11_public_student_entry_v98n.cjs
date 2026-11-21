@@ -87,7 +87,7 @@ async function functionality(page,item,origin){
   assert.ok(tags.every(x=>x==='6'),'Unit 6 filter excludes unrelated unit cards');
   await page.locator('#search').fill('unmatched-v98n-physics-token');
   assert.equal(await cards.count(),0,'search narrows the currently selected unit');
-  assert.match(await page.locator('#results').innerText(),/^0 of /);
+  assert.match(await page.locator('#results').innerText(),/No matching simulations/i,'real directory empty-search guidance is shown');
   await page.locator('#search').fill('');
   assert.equal(await cards.count(),n,'clearing search restores Unit 6 results');
   const firstHref=await cards.first().locator('a.go').getAttribute('href');
