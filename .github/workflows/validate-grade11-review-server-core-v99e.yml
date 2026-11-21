@@ -1,0 +1,42 @@
+name: Grade XI Undeployed MCQ Report Intake Core (V99-E)
+on:
+  pull_request:
+    paths:
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "scripts/test_grade11_review_server_core_v99e.cjs"
+      - "scripts/test_grade11_mcq_issue_report.py"
+      - "practice-engine/index.html"
+      - "question-bank/grade-11/**"
+      - ".github/workflows/validate-grade11-review-server-core-v99e.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "scripts/test_grade11_review_server_core_v99e.cjs"
+      - "scripts/test_grade11_mcq_issue_report.py"
+      - "practice-engine/index.html"
+      - "question-bank/grade-11/**"
+      - ".github/workflows/validate-grade11-review-server-core-v99e.yml"
+  workflow_dispatch:
+jobs:
+  offline-server-intake-acceptance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate original intake contract, new server core, and six-unit offline tests
+        run: |
+          node --check shared/mcq-review-contract-v99a.js
+          node --check server/mcq-review-intake-v99e.cjs
+          node --check scripts/test_grade11_review_server_core_v99e.cjs
+      - name: Run real Grade XI item references and atomic intake policy regression
+        run: node scripts/test_grade11_review_server_core_v99e.cjs
+      - name: Ensure the existing MCQ issue button is still copy-only and safe
+        run: python3 scripts/test_grade11_mcq_issue_report.py
