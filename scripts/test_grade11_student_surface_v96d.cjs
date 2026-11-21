@@ -10,7 +10,7 @@ const path=require('node:path');
 const http=require('node:http');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
-const entrypoints=['shared/navigation.js','portal/learning-hub.js','portal/index.html','portal/simulations.html','portal/legacy-hssc-resources.html'];
+const entrypoints=['shared/navigation.js','portal/learning-hub.js','portal/index.html','portal/simulations.html','portal/legacy-hssc-resources.html','student-guide.html','portal/unit-01.html'];
 const original=JSON.parse(read('portal/legacy-hssc-resources-v73.json'));
 const direct=JSON.parse(read('portal/hssc-concept-videos-v74.json'));
 const manifest=JSON.parse(read('question-bank/manifest.json'));
@@ -70,8 +70,8 @@ function staticAudit(){
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(path.join(out,'remaining-public-html-google-sites-hrefs.json'),
  JSON.stringify({scanScope:'root and portal HTML',scanned:publicFiles.length,remainingLiteralHrefCount:findings.length,findings},null,2)+'\n');
- assert.ok(findings.every(x=>!entrypoints.includes(x.file)),'Migrated entrypoint still contains outbound reference');
- console.log('V96-D static PASS: 5 student entrypoints have zero old-site URLs; 17 legacy titles preserved for provenance, 27 direct YouTube links, 17 PDFs, 560 MCQs and assessment release gates closed.');
+ assert.equal(findings.length,0,'All root and portal HTML must be free of literal old-site outbound links');
+ console.log('V96-D static PASS: 7 student entrypoints have zero old-site URLs; 17 legacy titles preserved for provenance, 27 direct YouTube links, 17 PDFs, 560 MCQs and assessment release gates closed.');
  console.log('V96-D inventory: '+publicFiles.length+' HTML pages scanned, '+findings.length+' remaining literal old-site hrefs logged for follow-up.');
  for(const finding of findings)console.log('V96-D REMAINING-LINK: '+finding.file+':'+finding.line);
 }
@@ -100,7 +100,13 @@ async function browserAudit(){
   await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   assert.equal(await page.locator('#psn-resource-drawer a[href*="sites.google.com"]').count(),0);
   assert.equal(await page.getByRole('link',{name:'Notes & Concept Videos'}).count(),1);
-  await page.goto(base+'portal/index.html',{waitUntil:'domcontentloaded'});
+  await page.goto(base+'student-guide.html',{waitUntil:'domcontentloaded'});
+ assert.equal(await page.locator('a[href*="sites.google.com"]').count(),0);
+ assert.equal(await page.locator('a[href="portal/legacy-hssc-resources.html"]').count(),1);
+ await page.goto(base+'portal/unit-01.html',{waitUntil:'domcontentloaded'});
+ assert.equal(await page.locator('a[href*="sites.google.com"]').count(),0);
+ assert.equal(await page.locator('a[href="./legacy-hssc-resources.html"]').count(),1);
+ await page.goto(base+'portal/index.html',{waitUntil:'domcontentloaded'});
   assert.equal(await page.locator('a[href*="sites.google.com"]').count(),0);
   assert.equal(await page.locator('.public-demo a[href="./legacy-hssc-resources.html"]').count(),1);
   await page.goto(base+'portal/simulations.html',{waitUntil:'networkidle'});
