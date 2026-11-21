@@ -39,8 +39,12 @@
     const unit=numberIn(input.unit,1,6,'Grade XI unit');
     const questionId=clean(input.questionId,80);
     if(!ID.test(questionId))throw new TypeError('Invalid stable source question identifier');
-    const idUnit=/^(?:XI-)?U0([1-6])-/.exec(questionId);
-    if(!idUnit||Number(idUnit[1])!==unit)throw new TypeError('Question ID does not belong to the stated unit');
+    // The validated PUBLIC Grade XI bank also contains original lower-case
+    // g11-u03, g11-u04 and g11-u05 master-source identifiers. They are
+    // canonical learning IDs, not fabricated new question records.
+    const idUnit=/^(?:XI-U0([1-6])-|U0([1-6])-|g11-u0([3-5])-)/.exec(questionId);
+    if(!idUnit||Number(idUnit[1]||idUnit[2]||idUnit[3])!==unit)
+      throw new TypeError('Question ID does not belong to the stated unit');
     const sourceQuestionNumber=numberIn(input.sourceQuestionNumber,1,5000,'Source question number');
     const bankVersion=clean(input.bankVersion,120);
     if(!bankVersion)throw new TypeError('Bank version required for teacher lookup');
