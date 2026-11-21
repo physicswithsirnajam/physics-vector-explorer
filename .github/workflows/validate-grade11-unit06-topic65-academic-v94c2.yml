@@ -1,0 +1,29 @@
+name: Validate Grade XI Unit 6 Topic 6.5 Academic QC (V94-C2.5)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v94c2-topic65-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic65_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic65-academic-v94c2.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v94c2-topic65-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic65_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic65-academic-v94c2.yml"
+  workflow_dispatch:
+jobs:
+  bernoulli-scientific-and-numeric-review:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check academic test syntax
+        run: node --check scripts/test_grade11_unit06_topic65_academic_v94c2.cjs
+      - name: Recalculate Bernoulli B/C/D and check public portal invariants
+        run: node scripts/test_grade11_unit06_topic65_academic_v94c2.cjs
