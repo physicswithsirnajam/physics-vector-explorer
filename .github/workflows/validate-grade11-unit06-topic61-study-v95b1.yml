@@ -1,0 +1,46 @@
+name: Validate Grade XI Unit 6 Topic 6.1 Detailed Study (V95-B1)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-topic-61-study-v95b1.html"
+      - "portal/unit-06-study-v95b1.css"
+      - "portal/unit-06-topic-61-study-v95b1.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "quality/grade11-unit06-v95b1-topic61-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b1_topic61_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic61-study-v95b1.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-topic-61-study-v95b1.html"
+      - "portal/unit-06-study-v95b1.css"
+      - "portal/unit-06-topic-61-study-v95b1.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "quality/grade11-unit06-v95b1-topic61-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b1_topic61_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic61-study-v95b1.yml"
+  workflow_dispatch:
+jobs:
+  topic61-source-math-and-mobile-lesson:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source integrity, complete derivation arithmetic and no-premature-release checks
+        run: |
+          node --check portal/unit-06-topic-61-study-v95b1.js
+          node --check scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+          node scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+      - name: Install Chromium for 390px mobile, tablet and projector
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify lesson navigation, educational drawing, math calculator and mobile layout
+        run: node scripts/test_grade11_unit06_v95b1_topic61_study.cjs --browser
