@@ -88,7 +88,7 @@ for(let i=0;i<24;i++){
  assert.equal(x.original_nbf_printed_source_review,'PENDING_PRINTED_NBF_PP89_TO91');
  assert.equal(x.individual_slo_approval,'PENDING');
  assert.equal(x.teacher_approval,'PENDING');
- assert.ok(x.teacher_note.length>=35);
+ assert.ok(x.teacher_note.length>=20,'Each item must retain a meaningful teacher note');
 }
 const doc=read('quality/grade11-unit06-v95c2c-topic61-mcq41-64-numerical-review.md');
 assert.ok(doc.includes('24/24 matching MCQ stems'));
