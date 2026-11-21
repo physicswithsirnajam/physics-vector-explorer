@@ -1,0 +1,42 @@
+name: Validate Grade XI Unit 6 Consolidated Teacher Review Register (V95-C3C)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v95c3c-consolidated-teacher-review-roadmap.md"
+      - "scripts/build_grade11_unit06_v95c3c_review_register.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c3c-consolidated-review.yml"
+      - "quality/grade11-unit06-v95c2*.csv"
+      - "quality/grade11-unit06-v95c3*.csv"
+      - "quality/grade11-unit06-v95c1-560-item-review-queue.csv"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v95c3c-consolidated-teacher-review-roadmap.md"
+      - "scripts/build_grade11_unit06_v95c3c_review_register.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c3c-consolidated-review.yml"
+  workflow_dispatch:
+jobs:
+  consolidate-all-560-pending-source-decisions-without-release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build exact source review register; assert first-pass/approval separation
+        run: |
+          node --check scripts/build_grade11_unit06_v95c3c_review_register.cjs
+          node scripts/build_grade11_unit06_v95c3c_review_register.cjs --output quality/generated/grade11-unit06-v95c3c-consolidated-560-teacher-decision-register.csv
+          node scripts/test_grade11_unit06_v95c3b_topic67_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Publish 560-row teacher-only CSV for download and review
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit06-first-pass-560-teacher-review-register
+          path: quality/generated/grade11-unit06-v95c3c-consolidated-560-teacher-decision-register.csv
+          if-no-files-found: error
+          retention-days: 30
