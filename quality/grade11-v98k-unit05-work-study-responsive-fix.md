@@ -21,3 +21,24 @@ No Firebase or login changes, private student records, teacher keys, grading, ne
 The first diagnosis run may **fail intentionally** while overflow is reproduced; keep this PR a draft until a corrected latest-head run passes. GitHub Actions artifact: `grade11-unit05-study-mobile-v98k-evidence`.
 
 When this PR finishes green and is merged, return to small-scope audits of uncovered public study/practice pages.
+
+## Final root-cause analysis and actual fix
+
+The early V98-K browser runs reproduced **383px document width** at both 320px and 375px, while the guide fitted 390px and wider viewports. A deliberate trial on `.action` links did **not** improve document width and was **discarded**.
+
+More precise browser instrumentation compared each element's **scrollWidth** with its **clientWidth**, and excluded the already-contained SLO tables and off-canvas shared-navigation links. At 320px it found:
+
+- `main` — client width 320px, scroll width 383px
+- A direct child `p.muted` source-reference paragraph — x=11px, client width 298px, scroll width **372px**, hence its content reaches **x=383px**
+
+The overflowing text is the long unbroken supplementary PDF reference **`Grade11_Physics_Unit5_Student_Notes_and_Practice.pdf`** in that paragraph. The tables were already enclosed in properly scrolling `.tbl` wrappers and were not the cause of document-level overflow.
+
+The **only retained source-page change** is this narrow, screen-only CSS rule immediately before the existing print stylesheet:
+
+```css
+@media screen and (max-width:560px){main>p.muted{overflow-wrap:anywhere}}
+```
+
+It allows the source filename to wrap without changing any text, academic contents, physics equations, SLO labels, images, website navigation, table display or printed formatting. Deleting that exact CSS line recovers the untouched original `portal/unit-05-work-study.html` FNV-1a fingerprint **2185159722**.
+
+Final readiness depends on the latest-head Chromium six-viewport test and the site's preexisting GitHub checks. The earlier failed diagnostic runs are intentional evidence of the original overflow and do not authorize merging any red checks.
