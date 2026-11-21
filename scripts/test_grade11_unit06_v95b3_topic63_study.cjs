@@ -46,7 +46,7 @@ assert.equal((html.match(/<details>/g)||[]).length,6);
 for(const id of ['meanings','patterns','ideals','applications','rate','worked','try-it','review'])assert.ok(html.includes('id="'+id+'"'),'Missing educational section '+id);
 const ids=[...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);
 assert.equal(ids.length,new Set(ids).size,'Duplicate IDs can break labels and keyboard navigation');
-for(const term of ['P-11-B-35','Summative','Knowledge + Understanding','not a completed or officially approved Unit 6 course','steady','laminar','incompressible','non-viscous','irrotational','m³/s','0.0040 m³/s','0.0018 m³/s','0.002 m³/s','continuity equation','teacher-developed']){
+for(const term of ['P-11-B-35','Summative','Knowledge + Understanding','not a completed or officially approved Unit 6 course','steady','laminar','incompressible','non-viscous','irrotational','m³/s','0.0040 m³/s','0.0018 m³/s','0.002 m³/s','Equation of Continuity','teacher-developed']){
  assert.ok(html.includes(term),'Required source/model concept missing: '+term);
 }
 assert.ok(html.includes('not a separate prescribed summative calculation in FBISE B35'));
