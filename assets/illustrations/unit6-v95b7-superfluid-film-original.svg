@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 410" role="img" aria-labelledby="title desc">
+<title id="title">Original educational superfluid thin-film wall creep diagram</title>
+<desc id="desc">Open container with helium liquid inside. A thin blue line traces a possible surface film along the inside wall up to the exposed rim, then down the outside wall toward a small drop. Arrows indicate a possible surface path, not bulk liquid leaping over the rim. A sealed vessel without an exposed continuous path would not permit this same route. This drawing is independently created, schematic and not a copy of NBF Figure 6.16.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#087da9"/></marker></defs>
+<rect width="940" height="410" rx="16" fill="#f8fbff"/>
+<text x="32" y="39" font-family="Arial,sans-serif" font-size="25" font-weight="800" fill="#213c5a">Thin superfluid film can follow a surface over an open rim</text>
+<path d="M170 96V330H645V96" stroke="#5c788a" stroke-width="17" fill="none" stroke-linecap="round"/>
+<path d="M182 204H632V323H182Z" fill="#c6e9f7"/>
+<path d="M182 204Q228 199 270 204T358 204T450 204T548 204T632 204" stroke="#389dbf" stroke-width="3" fill="none"/>
+<path d="M181 244L181 106Q181 88 199 88H638Q652 88 652 105V286" stroke="#087da9" stroke-width="7" fill="none" stroke-linejoin="round"/>
+<g stroke="#087da9" fill="none" stroke-width="4" marker-end="url(#arrow)">
+<path d="M196 215V145"/><path d="M385 90H474"/><path d="M653 146V210"/>
+</g>
+<path d="M652 308C646 325 645 338 653 344C667 355 678 342 671 331C668 325 659 314 652 308Z" fill="#8dc6de" stroke="#087da9" stroke-width="2"/>
+<g font-family="Arial,sans-serif" fill="#274762" font-size="19" font-weight="700">
+<text x="204" y="180">Liquid level</text>
+<text x="80" y="127">Thin film</text><path d="M162 127H179" stroke="#587e9a" stroke-width="2"/>
+<text x="436" y="75">Over rim</text>
+<text x="692" y="250">Down outer wall</text>
+<text x="680" y="342">Possible transport out</text>
+</g>
+<rect x="252" y="345" width="355" height="48" rx="9" fill="#fff4df" stroke="#c3a371" stroke-width="2"/>
+<text x="429" y="375" font-family="Arial,sans-serif" text-anchor="middle" font-size="19" font-weight="800" fill="#40546a">Surface-film motion, not bulk jumping</text>
+</svg>
