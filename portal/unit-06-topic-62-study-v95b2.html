@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 6 Topic 6.2 detailed viscosity, Stokes drag, terminal velocity and force-balance study preview.">
+<title>Topic 6.2 · Viscous Drag and Terminal Velocity | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-62-study-v95b2.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-62">Unit 6 Desk</a><a href="../viscosity-terminal-velocity.html">Simulation</a><a href="./unit-06-topic-62-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.2</p>
+<h1 id="lesson-title">Viscous Drag &amp; <span>Terminal Velocity</span></h1>
+<p class="lead">Understand resistance inside real fluids, distinguish drag in liquids and gases, follow the sphere’s terminal-speed derivation and learn why a correct model calculation can still be physically unsuitable.</p>
+<p class="notice" role="note"><strong>V95-B2 public study preview — not a completed or officially approved Unit 6 course.</strong> Prepared from the private Topic 6.2 teaching master (combined pp. 65–98), the V94-C2.2 academic audit and the supplied official FBISE framework. These are new teaching explanations, not an NBF textbook reproduction. Original printed NBF pp. 91–95, Figure 6.4, Table 6.1 and exact Example 6.2/Assignment 6.2 wording still need comprehensive independent source matching. Per-MCQ SLO/cognitive certification remains pending.</p>
+<div class="hero-tools"><a class="btn solid" href="#stokes">Study Stokes’ law</a><a class="btn subtle" href="#terminal">Derive terminal velocity</a><a class="btn subtle" href="#worked">Worked problems</a><a class="btn subtle" href="#try-it">Try model checker</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">Official framework learning outcomes</h2>
+<div class="outcome-grid">
+<div><strong>P-11-B-41</strong><span>Explain why real fluids are viscous fluids</span><small>Summative · Understanding</small></div>
+<div><strong>P-11-B-42</strong><span>Describe how viscous forces create a retarding force on a body moving through a fluid</span><small>Summative · Understanding</small></div>
+</div>
+<p class="fine">These outcome-level assessments and cognitive levels were checked against the teacher-supplied FBISE HSSC-I framework, PDF p.12. The extended algebra and model diagnostics below aid understanding and must not be advertised as separately prescribed official derivations or individually certified exam questions.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#viscosity">Viscosity</a><a href="#stokes">Stokes’ law</a><a href="#terminal">Terminal velocity</a><a href="#buoyancy">Buoyancy correction</a><a href="#parachute">Parachutist graph</a><a href="#worked">Worked solutions</a><a href="#try-it">Model checker</a><a href="#review">Revision</a></nav>
+<section class="lesson" id="viscosity" aria-labelledby="viscosity-title">
+<p class="eyebrow">01 · NATURE OF REAL FLUIDS</p><h2 id="viscosity-title">Viscosity is resistance between fluid layers</h2>
+<p>A real fluid resists relative sliding of its neighbouring layers. This internal resistance is called <strong>viscosity</strong>. It applies to <strong>both liquids and gases</strong> and affects how easily they flow under a given driving pressure or gravitational force.</p>
+<div class="comparison">
+<article><h3>Honey and water</h3><p>Under comparable geometry, head and temperature, honey generally drains more slowly because it is more viscous. Do not infer exact draining times from viscosity alone.</p></article>
+<article><h3>Liquid temperature trend</h3><p>The dynamic viscosity of most common liquids <strong>decreases</strong> as their temperature rises. The effect is material- and condition-dependent.</p></article>
+<article><h3>Gas temperature trend</h3><p>For most gases, dynamic viscosity generally <strong>increases</strong> with temperature. The textbook comparison must be read as a common trend, not an exceptionless law.</p></article>
+</div>
+<p>The coefficient of <strong>dynamic viscosity</strong> is written η (eta). Its SI unit is the <strong>pascal-second</strong>:</p>
+<div class="equation" role="math" aria-label="Dynamic viscosity has units pascal seconds, equivalent to kilogram per metre second"><strong>[η] = Pa·s = N·s/m² = kg/(m·s)</strong><span>1 mPa·s = 10⁻³ Pa·s. The prepared master reports source Table 6.1 values at 20°C, but the original printed table is not yet independently verified for exact reproduction.</span></div>
+<p>When an object moves through a fluid, the fluid exerts a <strong>drag force opposite to the object’s velocity relative to that fluid</strong>. Drag in air is aerodynamic; drag in a liquid is hydrodynamic. Their actual magnitudes depend on the object's speed, size, shape, flow regime and fluid properties.</p>
+<div class="concept-note"><strong>Classroom safety:</strong> The moving-car hand example in the prepared textbook discussion is a thought experiment only. Students must not put their hands outside a moving vehicle to test air resistance.</div>
+</section>
+<section class="lesson" id="stokes" aria-labelledby="stokes-title">
+<p class="eyebrow">02 · A SPECIAL SLOW-FLOW MODEL</p><h2 id="stokes-title">Stokes’ law for a small sphere</h2>
+<p>For a <strong>sphere</strong> moving sufficiently slowly relative to a <strong>Newtonian viscous fluid</strong>, when flow is in the creeping-flow regime, the magnitude of its drag is approximately:</p>
+<div class="equation primary" role="math" aria-label="Stokes drag force equals six pi times dynamic viscosity times sphere radius times relative speed"><strong>F<sub>d</sub> = 6πηrv</strong><span>F<sub>d</sub> in N; η in Pa·s; radius r in m; relative speed v in m/s. Drag acts opposite the relative motion.</span></div>
+<p>With other quantities fixed <em>and the model still applicable</em>, doubling η, r or v doubles the drag predicted by this particular formula. It is <strong>not</strong> the drag law for a parachute, bird, car, swimmer or arbitrary fast-moving object.</p>
+<p>The SI dimensions are consistent: [ηrv] = (kg m⁻¹ s⁻¹)(m)(m s⁻¹) = kg m s⁻² = N. However, <strong>dimensional analysis cannot derive the numerical coefficient 6π</strong>; that coefficient comes from the appropriate viscous-flow solution, beyond the school derivation.</p>
+<h3>How do we judge whether Stokes’ model is plausible?</h3>
+<div class="equation" role="math" aria-label="Supplementary Reynolds number is fluid density multiplied by relative speed and sphere diameter divided by viscosity"><strong>Re = ρ<sub>fluid</sub>vd / η = 2ρ<sub>fluid</sub>vr / η</strong><span>Supplementary diagnostic · d = 2r · Re is dimensionless. Stokes creeping-flow use requires Re much smaller than 1; a small Reynolds number alone does not guarantee all other model assumptions.</span></div>
+<p>A numerical result can be <em>algebraically correct</em> without being an accurate real-world drag prediction. We will see this distinction in the prepared Example 6.2 and Assignment 6.2 below.</p>
+</section>
+<section class="lesson" id="terminal" aria-labelledby="terminal-title">
+<p class="eyebrow">03 · FORCE BALANCE DERIVATION</p><h2 id="terminal-title">Why falling bodies approach terminal speed</h2>
+<p>A falling object initially gains speed because downward weight exceeds upward resistance. As relative speed rises, drag tends to increase. At <strong>terminal velocity</strong>, the total vertical force is zero, acceleration is zero, and the object continues falling at a <em>constant nonzero speed</em>. Gravity and drag do not disappear.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b2-terminal-force-original.svg" width="900" height="360" alt="Original force diagram of a slowly descending sphere: weight W acts downward, viscous drag Fd and buoyancy Fb act upward. At terminal settling speed W equals Fd plus Fb; the textbook simplified derivation neglects buoyancy. Arrows are not to scale.">
+<figcaption>Original educational schematic prepared for this portal, not NBF Figure 6.4. The full balance includes buoyancy; the book's initial simplified model omits it.</figcaption>
+</figure>
+<p>In the <strong>simplified NBF model</strong>, take downward as positive and ignore fluid buoyancy. For a spherical object of mass m and radius r:</p>
+<ol class="steps">
+<li><strong>Identify forces:</strong> downward weight W = mg; upward Stokes drag F<sub>d</sub> = 6πηrv.</li>
+<li><strong>Apply Newton’s second law:</strong> F<sub>net</sub> = mg − 6πηrv = ma.</li>
+<li><strong>Set acceleration to zero at terminal speed:</strong> 0 = mg − 6πηrv<sub>t</sub>.</li>
+<li><strong>Rearrange:</strong> mg = 6πηrv<sub>t</sub>, so v<sub>t</sub> = mg/(6πηr).</li>
+<li><strong>Write the mass of a uniform sphere:</strong> m = ρ<sub>sphere</sub>(4/3)πr³.</li>
+<li><strong>Substitute and cancel common factors:</strong> v<sub>t</sub> = [(4/3)πr³ρ<sub>sphere</sub>g]/(6πηr) = 2ρ<sub>sphere</sub>gr²/(9η).</li>
+</ol>
+<div class="equation primary" role="math" aria-label="Simplified Stokes terminal speed equals two times sphere density times g times radius squared divided by nine times viscosity"><strong>v<sub>t</sub> = 2ρ<sub>sphere</sub>gr² / (9η)</strong><span>Formal textbook result · spherical body · creeping flow · buoyancy neglected. The squared radius is essential.</span></div>
+<div class="concept-note"><strong>Exam reasoning:</strong> The factor 6π is a <em>stated Stokes-law result</em>, not something obtained by the terminal-force balance itself. A larger sphere may have a much higher <em>predicted</em> terminal speed, but that prediction can leave the valid low-Re regime.</div>
+</section>
+<section class="lesson" id="buoyancy" aria-labelledby="buoyancy-title">
+<p class="eyebrow">04 · CLEARLY LABELLED EXTENSION</p><h2 id="buoyancy-title">What if buoyancy cannot be ignored?</h2>
+<p>Archimedes’ principle from Topic 6.1 gives an upward buoyant force F<sub>b</sub> = ρ<sub>fluid</sub>Vg. A small sphere settling in a liquid experiences <strong>weight downward</strong>, with <strong>buoyancy and drag upward</strong>. At terminal settling speed, the complete balance is:</p>
+<div class="equation" role="math" aria-label="Weight minus buoyancy minus viscous drag equals zero at terminal settling speed"><strong>0 = W − F<sub>b</sub> − F<sub>d</sub></strong><span>(ρ<sub>sphere</sub> − ρ<sub>fluid</sub>)Vg = 6πηrv<sub>t</sub></span></div>
+<p>For a settling sphere denser than the fluid, substituting V = (4/3)πr³ gives a <strong>supplementary buoyancy-inclusive</strong> formula:</p>
+<div class="equation" role="math" aria-label="Corrected terminal settling speed equals two times density difference times g times radius squared divided by nine viscosity"><strong>v<sub>t</sub> = 2(ρ<sub>sphere</sub> − ρ<sub>fluid</sub>)gr² / (9η)</strong><span>Teacher-developed extension; it still requires creeping flow and does not become valid for parachutes or fast raindrops.</span></div>
+<p>If sphere and fluid densities match, this ideal model has no net gravitational settling tendency. If the sphere is less dense, its net buoyancy tends upward; a <em>signed</em> velocity must then be interpreted using a consistent direction convention.</p>
+</section>
+<section class="lesson" id="parachute" aria-labelledby="parachute-title">
+<p class="eyebrow">05 · REAL-WORLD DRAG AND GRAPH READING</p><h2 id="parachute-title">Parachutists, birds and changing drag</h2>
+<p>Opening a parachute suddenly increases effective aerodynamic resistance. Drag may then exceed weight, causing an <strong>upward acceleration while the parachutist is still descending</strong>. Downward speed decreases until a lower terminal descent speed is reached.</p>
+<p>The prepared source describes the NBF Figure 6.5(c) as approximately <strong>50 m/s</strong> before opening, opening near <strong>42 s</strong>, decreasing to about <strong>8 m/s</strong> in roughly <strong>5 s</strong>, and landing near <strong>70 s</strong>. These are approximate illustrative graph readings, not universal parachuting data or experimental constants.</p>
+<div class="equation" role="math" aria-label="Approximate average downward acceleration during parachute opening equals eight minus fifty divided by five, or negative eight point four metres per second squared"><strong>a<sub>avg</sub> ≈ (8 − 50) / 5 = −8.4 m/s²</strong><span>Choose downward velocity as positive. Negative acceleration means downward speed is decreasing.</span></div>
+<p>Flying geese in a V formation may gain aerodynamic benefits from neighbouring birds' wake flow; swimmers change their posture and body orientation to control water resistance. These are <strong>qualitative drag illustrations</strong>, not situations where the spherical Stokes law may be applied directly.</p>
+<p><a class="btn subtle" href="./unit-06-figure-study-v90.html#figure65c">Study the independently authored parachutist graph</a> <a class="btn subtle" href="./unit-06-figure-study-v90.html#figure63">Review the original geese illustration</a></p>
+</section>
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · SOLVED EXERCISES</p><h2 id="worked-title">Five worked applications with model checks</h2>
+<p class="fine">The first two problem sets use values attributed in the teacher-prepared master to NBF Example 6.2 and Assignment 6.2. The source data and resulting school-model answers are checked, but the original printed wording has <strong>not</strong> been exhaustively compared to NBF pp. 94–95. These are not verbatim textbook transcriptions. Remaining examples are explicitly supplementary.</p>
+<article class="problem">
+<div class="problem-label">Prepared master: NBF Example 6.2 data · original wording unverified</div><h3>Formal drag on a 2 mm sphere</h3>
+<p>A sphere of radius 2 mm moves through air at 2 m/s. Use the supplied η = 1.9 × 10⁻⁵ Pa·s and the Stokes expression to calculate drag.</p>
+<ol>
+<li>Convert radius: 2 mm = <strong>0.002 m</strong>.</li>
+<li>State the formula: F<sub>d</sub> = 6πηrv.</li>
+<li>Substitute using π ≈ 3.14: F<sub>d</sub> = 6 × 3.14 × (1.9 × 10⁻⁵) × (0.002) × 2.</li>
+<li>Evaluate: <strong>F<sub>d</sub> ≈ 1.43 × 10⁻⁶ N</strong>, the formal result of the supplied equation.</li>
+</ol>
+<p class="key-point"><strong>Compulsory physical warning:</strong> With <em>supplementary</em> typical air density ρ ≈ 1.2 kg/m³, Re ≈ 505. The creeping-flow assumption (Re ≪ 1) is not fulfilled. Retain the prepared numerical answer for the school-model algebra, but do not claim it is verified real aerodynamic drag.</p>
+</article>
+<article class="problem">
+<div class="problem-label">Prepared master: NBF Assignment 6.2 data · original wording unverified</div><h3>Formal terminal speed of a 0.3 mm raindrop</h3>
+<p>A raindrop of radius 0.3 mm falls through air of viscosity 1.8 × 10⁻⁵ Pa·s. Calculate the school-model terminal speed, <em>explicitly assuming</em> ρ<sub>drop</sub> = 1000 kg/m³ and g = 9.8 m/s², and neglecting buoyancy.</p>
+<ol>
+<li>Convert radius: r = 0.3 mm = <strong>3.0 × 10⁻⁴ m</strong>.</li>
+<li>Square the radius: r² = <strong>9.0 × 10⁻⁸ m²</strong>.</li>
+<li>Use the textbook simplified relation v<sub>t</sub> = 2ρ<sub>drop</sub>gr²/(9η).</li>
+<li>Substitute: v<sub>t</sub> = [2 × 1000 × 9.8 × (9.0 × 10⁻⁸)] / [9 × (1.8 × 10⁻⁵)].</li>
+<li>Divide: 1.764 × 10⁻³ / 1.62 × 10⁻⁴ ≈ <strong>10.9 m/s (formal model result)</strong>.</li>
+</ol>
+<p class="key-point"><strong>Compulsory source/model warning:</strong> The prepared record says the original assignment does not state the raindrop density. The 1000 kg/m³ value above is an added assumption. With supplementary air density 1.2 kg/m³, this formal speed implies Re ≈ 436; <strong>10.9 m/s is not a reliable physical prediction for this raindrop</strong>.</p>
+</article>
+<article class="problem">
+<div class="problem-label">Teacher-created supplementary calculation</div><h3>Find the viscosity from a measured drag</h3>
+<p>Suppose F<sub>d</sub> = 3.0 × 10⁻⁶ N, radius r = 0.50 mm and relative speed v = 0.020 m/s. Find the viscosity that the Stokes model would imply.</p>
+<ol><li>Convert r = <strong>0.00050 m</strong>.</li><li>Rearrange: η = F<sub>d</sub>/(6πrv).</li><li>η = (3.0 × 10⁻⁶)/[6π × 0.00050 × 0.020].</li><li><strong>η ≈ 0.015915 Pa·s ≈ 1.59 × 10⁻² Pa·s</strong>. Model validation also requires knowing the surrounding fluid density and flow conditions.</li></ol>
+</article>
+<article class="problem">
+<div class="problem-label">Teacher-created supplementary buoyancy-inclusive extension</div><h3>A tiny sphere settling in viscous liquid</h3>
+<p>A sphere has density 1200 kg/m³, radius 50 μm, and moves through a liquid of density 1000 kg/m³ and dynamic viscosity 0.10 Pa·s. Find its predicted terminal settling speed.</p>
+<ol><li>Convert r = 50 μm = <strong>5 × 10⁻⁵ m</strong>.</li><li>Density difference: ρ<sub>sphere</sub> − ρ<sub>fluid</sub> = <strong>200 kg/m³</strong>.</li><li>Use v<sub>t</sub> = 2(ρ<sub>sphere</sub> − ρ<sub>fluid</sub>)gr²/(9η).</li><li>v<sub>t</sub> = [2 × 200 × 9.8 × (5 × 10⁻⁵)²]/[9 × 0.10].</li><li><strong>v<sub>t</sub> ≈ 1.09 × 10⁻⁵ m/s downward</strong>, conditional on the small-sphere creeping-flow model.</li></ol>
+</article>
+<article class="problem">
+<div class="problem-label">Teacher-created supplementary graph-reading exercise</div><h3>How much does the parachute reduce downward speed?</h3>
+<p>For the prepared graph’s <em>approximate</em> 50 m/s before opening and 8 m/s after the transition:</p>
+<ol><li>Speed ratio = 50/8 = <strong>6.25</strong>.</li><li>Speed decrease = 50 − 8 = <strong>42 m/s</strong>.</li><li>Approximate average downward acceleration over 5 s: (8 − 50)/5 = <strong>−8.4 m/s²</strong>.</li></ol>
+<p class="key-point">Do not apply Stokes’ sphere formula to a parachutist. This is a schematic graph, not a measured flight dataset.</p>
+</article>
+</section>
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · INTERACTIVE MODEL VALIDITY</p><h2 id="try-title">Stokes drag and Reynolds-number checker</h2>
+<p>Try a very slow sphere in a viscous liquid, or load the <strong>textbook-style Example 6.2 inputs</strong>. The tool calculates a <em>formal</em> Stokes drag and a supplementary Reynolds diagnostic. It does not simulate an actual aerodynamically accurate high-speed sphere or certify real measurements.</p>
+<div class="hero-tools"><button type="button" class="btn subtle" id="preset-slow">Load a slow-flow example</button><button type="button" class="btn subtle" id="preset-textbook">Load textbook-style Example 6.2</button></div>
+<form id="stokes-form" class="calculator" novalidate>
+<div class="fields">
+<label for="fluid-viscosity">Dynamic viscosity η (Pa·s)<input id="fluid-viscosity" type="number" value="0.1" min="0.000000001" max="100000" step="any" inputmode="decimal" required></label>
+<label for="sphere-radius">Sphere radius (mm)<input id="sphere-radius" type="number" value="0.05" min="0.000001" max="1000" step="any" inputmode="decimal" required></label>
+<label for="relative-speed">Relative speed (m/s)<input id="relative-speed" type="number" value="0.001" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="fluid-density">Fluid density (kg/m³)<input id="fluid-density" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Check the Stokes model</button>
+<p id="calc-error" role="alert" class="calc-error" hidden></p>
+<div class="calc-output" id="calc-output" aria-live="polite" role="status">
+<p><strong>Stokes drag:</strong> 9.425e-8 N (formal model).</p>
+<p><strong>Reynolds number:</strong> 0.001 (supplementary diagnostic).</p>
+<p><strong>Model interpretation:</strong> Reynolds number is well below 1; creeping-flow use is plausible if the remaining sphere and fluid assumptions hold.</p>
+</div>
+</form>
+<p class="fine">Inputs are processed on your device only; no grade, name, account activity, form data or result is sent to a server. For high Reynolds numbers the calculated force is labelled a formal, <em>invalid-as-a-real-prediction</em> Stokes expression rather than a reliable drag.</p>
+</section>
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · REVISE &amp; REFLECT</p><h2 id="review-title">Six essential self-checks</h2>
+<div class="questions">
+<details><summary>1. Do real gases have viscosity, or is viscosity only a property of liquids?</summary><p>Both liquids and gases have viscosity. For many common liquids viscosity falls with heating; for many gases it rises with heating.</p></details>
+<details><summary>2. A falling sphere reaches terminal velocity. Is its velocity zero?</summary><p>No. Its <em>acceleration</em> is zero because the forces balance, but it can continue falling at a nonzero constant speed.</p></details>
+<details><summary>3. Can we derive Stokes’ 6π coefficient just from dimensions?</summary><p>No. Dimensional analysis establishes a consistent force dimension for ηrv but cannot supply the numerical coefficient 6π.</p></details>
+<details><summary>4. When does the simplified weight-versus-drag terminal expression become inaccurate?</summary><p>When appreciable buoyancy is neglected, when the body is not a sphere or when flow is outside the creeping-flow regime. The corrected density-difference expression still requires slow flow.</p></details>
+<details><summary>5. Why does opening a parachute sharply reduce a skydiver’s descent speed?</summary><p>Air resistance increases because the canopy changes effective area and flow. Drag may exceed weight temporarily, slowing downward motion until a lower terminal speed is reached.</p></details>
+<details><summary>6. Does the prepared 10.9 m/s raindrop answer establish a real raindrop’s terminal speed?</summary><p>No. It is the output of the specified simplified equation using an assumed raindrop density. The corresponding Reynolds number is much larger than 1, violating Stokes creeping-flow applicability.</p></details>
+</div>
+<section class="summary" aria-labelledby="summary-title"><h3 id="summary-title">Formula recap</h3>
+<div class="formula-grid">
+<p><strong>Dynamic viscosity:</strong> Pa·s = kg/(m·s)</p>
+<p><strong>Slow-sphere drag:</strong> F<sub>d</sub> = 6πηrv</p>
+<p><strong>Textbook terminal force:</strong> mg = 6πηrv<sub>t</sub></p>
+<p><strong>Textbook terminal speed:</strong> v<sub>t</sub> = 2ρ<sub>sphere</sub>gr²/(9η)</p>
+<p><strong>Buoyancy extension:</strong> v<sub>t</sub> = 2(ρ<sub>sphere</sub> − ρ<sub>fluid</sub>)gr²/(9η)</p>
+<p><strong>Supplementary validity:</strong> Re = 2ρ<sub>fluid</sub>vr/η ≪ 1</p>
+</div></section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Continue Read → Simulate → Practice → Revise</h2>
+<p>Use the existing Viscosity and Terminal Velocity simulation, then practise the original provisional 80 MCQs and review the accessible V90 educational figure study.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-62">Back to Unit 6 Desk</a><a class="btn subtle" href="../viscosity-terminal-velocity.html">Explore the simulation</a><a class="btn subtle" href="./unit-06-topic-62-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-63">Next: Topic 6.3</a></div>
+<p class="fine">Source record: private prepared master Topic 6.2 (combined pp. 65–98), merged V94-C2.2 audit, official FBISE framework pp. 11–12. Worked examples reproduce stated numeric givens only as new pedagogical explanations. All original textbook scans/figures, master study PDF and source item-level official certification are outside this preview; final teacher signoff pending.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B2 · Public study preview · No school grades recorded</footer>
+</body>
+</html>
