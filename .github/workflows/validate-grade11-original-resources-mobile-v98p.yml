@@ -1,0 +1,51 @@
+name: Grade XI Original Notes and Videos Mobile QA (V98-P)
+on:
+  pull_request:
+    paths:
+      - "portal/legacy-hssc-resources.html"
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_original_resources_mobile_v98p.cjs"
+      - ".github/workflows/validate-grade11-original-resources-mobile-v98p.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/legacy-hssc-resources.html"
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_original_resources_mobile_v98p.cjs"
+      - ".github/workflows/validate-grade11-original-resources-mobile-v98p.yml"
+  workflow_dispatch:
+jobs:
+  seven-viewport-resource-directory-diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check resource directory browser auditor
+        run: node --check scripts/test_grade11_original_resources_mobile_v98p.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Diagnose Notes and Videos directory at seven viewport widths
+        run: node scripts/test_grade11_original_resources_mobile_v98p.cjs
+      - name: Preserve seven screen captures and layout details even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-original-resources-v98p-evidence
+          path: qa-artifacts/original-resources-mobile-v98p/
+          if-no-files-found: warn
+          retention-days: 10
