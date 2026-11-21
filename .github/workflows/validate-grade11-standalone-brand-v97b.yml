@@ -1,0 +1,55 @@
+name: Validate Grade XI Standalone Simulation Official Branding (V97-B)
+on:
+  pull_request:
+    paths:
+      - "diffraction-ripple-tank.html"
+      - "doppler-effect-laboratory.html"
+      - "electric-field-particle-lab.html"
+      - "first-law-pv-work.html"
+      - "free-fall.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97b.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97b.yml"
+  push:
+    branches: [main]
+    paths:
+      - "diffraction-ripple-tank.html"
+      - "doppler-effect-laboratory.html"
+      - "electric-field-particle-lab.html"
+      - "first-law-pv-work.html"
+      - "free-fall.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97b.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97b.yml"
+  workflow_dispatch:
+jobs:
+  five-wave-electric-thermal-motion-labs-brand-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check test syntax and original logo display component
+        run: |
+          node --check shared/standalone-brand-v97a.js
+          node --check scripts/test_grade11_standalone_brand_v97b.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify five original lab fingerprints, branding, navigation and mobile UI
+        run: node scripts/test_grade11_standalone_brand_v97b.cjs
+      - name: Archive browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-standalone-brand-v97b-screenshots
+          path: qa-artifacts/standalone-brand-v97b/*.png
+          if-no-files-found: warn
+          retention-days: 7
