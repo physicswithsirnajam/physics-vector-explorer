@@ -1,0 +1,35 @@
+name: Validate Grade XI Unit 6 Topic 6.1 Numerical MCQ 41-64 QC (V95-C2C)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v95c2c-topic61-mcq41-64-numerical-review.csv"
+      - "quality/grade11-unit06-v95c2c-topic61-mcq41-64-numerical-review.md"
+      - "scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2c-topic61-mcq41-64.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v95c2c-topic61-mcq41-64-numerical-review.csv"
+      - "quality/grade11-unit06-v95c2c-topic61-mcq41-64-numerical-review.md"
+      - "scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2c-topic61-mcq41-64.yml"
+  workflow_dispatch:
+jobs:
+  numerical-original-24-key-arithmetic-and-teacher-approval:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Q41-64 calculations, 24 source snapshots and release safeguards
+        run: |
+          node --check scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs
+          node scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs
+          node scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs
+          node scripts/test_grade11_unit06_v95c2a_topic61_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
