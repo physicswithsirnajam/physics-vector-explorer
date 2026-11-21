@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 6 Topic 6.4 continuity equation: conservation of mass derivation, incompressible pipes, river and hose examples, aorta branch calculations and interactive checks.">
+<title>Topic 6.4 · Equation of Continuity | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-64-study-v95b4.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-64">Unit 6 Desk</a><a href="../continuity-fluid-flow.html">Simulation</a><a href="./unit-06-topic-64-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.4</p>
+<h1 id="lesson-title">Equation of <span>Continuity</span></h1>
+<p class="lead">Derive the continuity equation from conservation of mass, solve two-section and branching problems, and learn exactly when narrowing a flow passage changes speed.</p>
+<p class="notice" role="note"><strong>V95-B4 public study preview — not a completed or officially approved Unit 6 course.</strong> The lesson draws on the teacher's private Topic 6.4 master (compiled pp.151–182), V94-C2.4 academic audit and supplied official FBISE framework. Illustrations and explanations are newly authored. The original printed NBF pp.96–99, Figures 6.7/6.8 and verbatim Example 6.3/Assignment 6.3 have not been exhaustively source-matched. Per-question SLO and cognitive certification still await teacher review.</p>
+<div class="hero-tools"><a class="btn solid" href="#derivation">Derive continuity</a><a class="btn subtle" href="#branches">Explore branches</a><a class="btn subtle" href="#worked">Worked numericals</a><a class="btn subtle" href="#try-it">Interactive calculations</a></div>
+</section>
+<section class="outcomes" aria-labelledby="outcomes-title">
+<h2 id="outcomes-title">FBISE HSSC-I learning outcomes</h2>
+<div class="outcome-grid"><div><strong>P-11-B-36</strong><span>Use the equation of continuity to solve problems</span><small>Summative · Application</small></div>
+<div><strong>P-11-B-37</strong><span>Explain the increased velocity of water when the end of a rubber pipe is squeezed</span><small>Summative · Understanding</small></div>
+<div><strong>P-11-B-38</strong><span>Justify that continuity expresses conservation of mass</span><small>Summative · Application</small></div></div>
+<p class="fine">These are verified SLO-level classifications from the supplied FBISE framework PDF p.11; generated exercises are provisional until individual teacher review. Formative B39 and Bernoulli pressure effects belong to Topic 6.5, not this continuity derivation.</p>
+</section>
+<nav class="contents" aria-label="Lesson topics"><span>ON THIS PAGE</span><a href="#meaning">Flow quantities</a><a href="#derivation">Full derivation</a><a href="#incompressible">Constant density</a><a href="#branches">Branching</a><a href="#applications">Applications</a><a href="#worked">Worked examples</a><a href="#try-it">Explore</a><a href="#review">Revision</a></nav>
+
+<section class="lesson" id="meaning" aria-labelledby="meaning-title">
+<p class="eyebrow">01 · MEANING AND UNITS</p><h2 id="meaning-title">How much fluid passes a section?</h2>
+<p>At each selected pipe cross-section, let <strong>A</strong> be the area perpendicular to the local flow and <strong>v</strong> the mean speed normal to that section. Let fluid density be <strong>ρ</strong>. During a short interval Δt, the fluid moves a mean distance Δx = vΔt; the transferred volume is ΔV = AΔx = AvΔt.</p>
+<div class="equation" role="math" aria-label="Volume flow rate equals area multiplied by mean normal speed"><strong>Q = ΔV/Δt = Av</strong><span>Volume flow rate Q: m³/s (or L/s). Mean speed v: m/s. Cross-section area A: m².</span></div>
+<div class="equation" role="math" aria-label="Mass flow rate equals density times area times speed"><strong>ṁ = Δm/Δt = ρAv = ρQ</strong><span>Mass flow rate ṁ: kg/s. Density ρ: kg/m³. Mass flow rate and volume flow rate are different physical quantities.</span></div>
+<p><strong>Essential conversions:</strong> 1 cm = 10⁻² m; <strong>1 cm² = 10⁻⁴ m²</strong>; 1 L = 10⁻³ m³; 1 m³/s = 1000 L/s. For a circular internal pipe section, <strong>A = πr² = πd²/4</strong>. Doubling radius increases area by four, not two.</p>
+<div class="concept-note"><strong>Units check:</strong> [Av] = m² × m/s = m³/s; [ρAv] = kg/m³ × m³/s = kg/s. Never compare or add speeds (m/s) as if they were volumetric flow rates (m³/s).</div>
+</section>
+
+<section class="lesson" id="derivation" aria-labelledby="derivation-title">
+<p class="eyebrow">02 · TWELVE-STEP CONSERVATION DERIVATION</p><h2 id="derivation-title">Why ρ₁A₁v₁ = ρ₂A₂v₂</h2>
+<p>Consider steady flow through one pipe, with <strong>no side sources, sinks, leaks or change of stored mass</strong> between inlet (1) and outlet (2). Areas A₁ and A₂ are perpendicular to the local flow, and v₁ and v₂ denote average normal speeds. Use the <strong>same positive time interval Δt</strong> at both sections.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b4-continuity-pipe-original.svg" width="950" height="405" alt="Original educational diagram showing a wide upstream pipe with area A1 and mean speed v1 narrowing to section A2 and v2. Mass balance is rho1 A1 v1 equals rho2 A2 v2.">
+<figcaption>Independently authored two-section teaching diagram, <strong>not</strong> a reproduction of original NBF Figure 6.7. The arrows represent mean flow direction; pressure is not determined by this picture alone.</figcaption>
+</figure>
+<ol class="steps">
+<li><strong>Choose one interval:</strong> compare fluid passing both cross-sections during the identical Δt.</li>
+<li><strong>Start with mean speed at section 1:</strong> v₁ = Δx₁/Δt.</li>
+<li><strong>Rearrange distance:</strong> Δx₁ = v₁Δt.</li>
+<li><strong>Form a short fluid cylinder:</strong> ΔV₁ = A₁Δx₁.</li>
+<li><strong>Substitute:</strong> ΔV₁ = A₁v₁Δt.</li>
+<li><strong>Find incoming mass:</strong> Δm₁ = ρ₁ΔV₁ = ρ₁A₁v₁Δt.</li>
+<li><strong>Repeat at section 2:</strong> Δx₂ = v₂Δt and ΔV₂ = A₂v₂Δt.</li>
+<li><strong>Find outgoing mass:</strong> Δm₂ = ρ₂A₂v₂Δt.</li>
+<li><strong>Apply conservation:</strong> with no accumulation or leakage in the steady control volume, Δm₁ = Δm₂.</li>
+<li><strong>Substitute both masses:</strong> ρ₁A₁v₁Δt = ρ₂A₂v₂Δt.</li>
+<li><strong>Divide by common nonzero Δt:</strong> cancel it on both sides.</li>
+<li><strong>Identify steady mass throughput:</strong> ρ₁A₁v₁ = ρ₂A₂v₂ = ṁ, in kg/s.</li>
+</ol>
+<div class="equation primary" role="math" aria-label="The general two-section steady continuity equation states rho one area one speed one equals rho two area two speed two"><strong>ρ₁A₁v₁ = ρ₂A₂v₂</strong><span>General steady mass continuity · no storage, leak, side inflow/outflow or mass creation in the compared region</span></div>
+<p><strong>What is conserved?</strong> The mass entering per second equals the mass leaving per second. If density changes, <em>the volume rates need not be equal</em>; mass throughput still matches in this model.</p>
+</section>
+
+<section class="lesson" id="incompressible" aria-labelledby="incompressible-title">
+<p class="eyebrow">03 · IMPORTANT SPECIAL CASE</p><h2 id="incompressible-title">When can density cancel?</h2>
+<p>For steady incompressible flow through an unbranched passage, suppose ρ₁ = ρ₂ = ρ and ρ is nonzero. Substituting into the general relation gives ρA₁v₁ = ρA₂v₂. Divide by ρ:</p>
+<div class="equation primary" role="math" aria-label="For constant density and steady no-leak flow, area one times speed one equals area two times speed two"><strong>A₁v₁ = A₂v₂ = Q</strong><span>Identical volume flow rate Q across the compared sections at that steady instant, assuming no leaks or side outlets</span></div>
+<p>The outlet speed follows by dividing by A₂: <strong>v₂ = (A₁/A₂)v₁</strong>. If the radius changes in a circular tube, areas scale with the square of radius:</p>
+<div class="equation" role="math" aria-label="For circular constant-flow sections, the speed ratio equals the square of inlet to outlet radius ratio"><strong>v₂ = (r₁/r₂)²v₁ = (d₁/d₂)²v₁</strong><span>If radius halves with unchanged Q, mean speed becomes four times larger. If density changes, instead use the full ρAv relation.</span></div>
+<p><strong>Pressure warning:</strong> Continuity contains no pressure term. A speed change by itself does not allow you to calculate pressure or prove it increased. Pressure/energy arguments require additional equations and physical conditions in Topic 6.5.</p>
+</section>
+
+<section class="lesson" id="branches" aria-labelledby="branches-title">
+<p class="eyebrow">04 · MULTIPLE OUTLETS</p><h2 id="branches-title">A branching pipe must conserve the total flow</h2>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b4-branching-original.svg" width="950" height="395" alt="One incoming pipe divides into three outgoing branches. For steady incompressible flow with no leaks or accumulation, inlet volume flow rate equals Q1 plus Q2 plus Q3, not each branch separately.">
+<figcaption>Independently authored branch diagram. It shows total conservation only, not a measurement or copy of printed NBF Figure 6.7/6.8.</figcaption>
+</figure>
+<div class="equation" role="math" aria-label="At a junction, the sum of entering mass flow rates equals the sum of leaving mass flow rates"><strong>Σṁ<sub>in</sub> = Σṁ<sub>out</sub></strong><span>General steady mass balance with no accumulation or external sources/sinks</span></div>
+<div class="equation primary" role="math" aria-label="With the same constant density, incoming volume flow rate equals sum of all outlet volume flow rates"><strong>Q<sub>in</sub> = Q₁ + Q₂ + ⋯ + Q<sub>n</sub></strong><span>For the same incompressible fluid, Q = Av. The inlet rate is not generally equal to each branch's rate.</span></div>
+<p>If <strong>n</strong> outlet tubes have equal area A<sub>b</sub> and equal mean speed v<sub>b</sub>, and the inlet has A<sub>in</sub>, v<sub>in</sub>, then A<sub>in</sub>v<sub>in</sub> = nA<sub>b</sub>v<sub>b</sub>.</p>
+<div class="equation" role="math" aria-label="Equal circular branches have each branch mean speed equal inlet speed times squared inlet to branch radius ratio divided by branch count"><strong>v<sub>b</sub> = (r<sub>in</sub>/r<sub>b</sub>)² × (v<sub>in</sub>/n)</strong><span>Only for equal-size, equal-flow branches of a steady incompressible stream</span></div>
+<p>This is the structure behind the prepared NBF-labelled <strong>Example 6.3</strong> on the aorta and 30 smaller arteries. It is a simplified average-flow model, not a full prediction of circulation physiology.</p>
+</section>
+
+<section class="lesson" id="applications" aria-labelledby="applications-title">
+<p class="eyebrow">05 · INTERPRET PHYSICAL APPLICATIONS</p><h2 id="applications-title">Squeezed hose, falling jet and river channel</h2>
+<div class="triad">
+<article><h3>Squeezed rubber pipe</h3><p><strong>At one steady instant:</strong> for constant Q in an unbranched hose, reducing the outlet area makes its mean speed larger. <strong>Before vs after squeezing:</strong> real supply resistance may change Q itself, so the same numerical factor is not guaranteed.</p></article>
+<article><h3>Freely falling water jet</h3><p>As water accelerates downward under gravity, a steady incompressible jet can become narrower because Av must stay constant. Gravity explains acceleration; continuity explains the changing cross-section, not the cause of acceleration.</p></article>
+<article><h3>Deep or shallow channel</h3><p>For a rectangular river with approximately the same width and unchanged discharge, a deeper section has greater flow area and lower mean speed. River slope, bed friction, width, side streams and discharge can invalidate a universal “deeper = slower” rule.</p></article>
+</div>
+<div class="concept-note"><strong>Keep the comparisons separate:</strong> Continuity relates sections of one steady flow, whereas changing the hose opening may alter the whole system's discharge between two different experiments. Neither statement alone establishes a pressure change.</div>
+</section>
+
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · STEP-BY-STEP NUMERICALS</p><h2 id="worked-title">Eight worked applications, including the prepared 30-artery example</h2>
+<p class="fine">The prepared master's data for its NBF-labelled Example 6.3 are used in a newly worded explanation below. Exact original printed NBF pp.98–99 wording and figure remain unverified. The other cases use author-developed supplementary Part C example values, not additional original numbered NBF tasks.</p>
+<article class="problem"><div class="problem-label">Prepared master · NBF-labelled Example 6.3 data · original wording unverified</div><h3>One aorta divides into 30 equal-size arteries</h3>
+<p>The aorta has radius 0.8 cm and mean blood speed 0.33 m/s. Flow divides equally between <strong>30</strong> arteries, each of radius 0.4 cm. Assuming approximately incompressible steady flow, find the mean speed in each small artery.</p>
+<ol><li>Use total-outlet volume conservation: πr<sub>in</sub>²v<sub>in</sub> = 30πr<sub>b</sub>²v<sub>b</sub>.</li><li>Cancel π and rearrange: v<sub>b</sub> = (r<sub>in</sub>/r<sub>b</sub>)²(v<sub>in</sub>/30).</li><li>The squared radius ratio is (0.8/0.4)² = <strong>4</strong>.</li><li>v<sub>b</sub> = 4 × 0.33/30 = <strong>0.044 m/s</strong>.</li><li>Combined artery area is <strong>7.5</strong> times the aorta area, hence each branch's mean speed is 7.5 times smaller than the original mean speed.</li></ol>
+<p class="key-point">This calculation assumes the 30 branches are identical and share the discharge equally; the speed in <em>one</em> artery is not found by setting its own Q equal to the aorta's entire Q.</p>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 1 · constricted pipe</div><h3>Areas 0.012 m² and 0.004 m²</h3>
+<p>For one steady incompressible flow, A₁ = 0.012 m², v₁ = 1.5 m/s and A₂ = 0.004 m².</p><ol><li>Apply A₁v₁ = A₂v₂.</li><li>v₂ = (0.012/0.004) × 1.5 = <strong>4.5 m/s</strong>.</li><li>Q = 0.012 × 1.5 = <strong>0.018 m³/s</strong> through both sections.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 2 · radius ratio</div><h3>Halving internal radius</h3>
+<p>Radius decreases from 6 cm to 3 cm and inlet mean speed is 1.2 m/s.</p><ol><li>Area ratio = (6/3)² = <strong>4</strong>.</li><li>v₂ = 4 × 1.2 = <strong>4.8 m/s</strong>, only if the same incompressible Q passes both sections.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 3 · collecting water</div><h3>12 L collected in 40 s from a 1 cm-radius nozzle</h3>
+<ol><li>Convert 12 L = 0.012 m³.</li><li>Q = 0.012/40 = <strong>3.0 × 10⁻⁴ m³/s</strong>.</li><li>Outlet radius = 0.010 m; A = π(0.010)² ≈ 3.1416 × 10⁻⁴ m².</li><li>Mean speed = Q/A ≈ <strong>0.955 m/s</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 4 · three equal branches</div><h3>1.2 cm inlet and three 0.6 cm outlets</h3>
+<p>Inlet mean speed is 1.0 m/s and flow splits evenly into three equal-radius outlets.</p>
+<ol><li>Use v<sub>b</sub> = (1.2/0.6)²(1.0/3).</li><li>v<sub>b</sub> = 4/3 ≈ <strong>1.33 m/s</strong> in each branch.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 5 · unequal outlets</div><h3>Find the remaining branch rate and speed</h3>
+<p>One inlet carries 0.040 m³/s. Branch 1 carries 0.015 m³/s; branch 2 has area 0.005 m².</p>
+<ol><li>Q₂ = 0.040 − 0.015 = <strong>0.025 m³/s</strong>.</li><li>v₂ = Q₂/A₂ = 0.025/0.005 = <strong>5.0 m/s</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 6 · variable-density gas</div><h3>Mass flow is conserved even when volume rate changes</h3>
+<p>ρ₁ = 1.2 kg/m³, A₁ = 0.08 m², v₁ = 3.0 m/s; downstream ρ₂ = 0.9 kg/m³ and A₂ = 0.06 m².</p>
+<ol><li>Apply the general relation: ρ₁A₁v₁ = ρ₂A₂v₂.</li><li>Mass rate = 1.2 × 0.08 × 3.0 = <strong>0.288 kg/s</strong>.</li><li>v₂ = 0.288/(0.9 × 0.06) = <strong>5.33 m/s</strong> approximately.</li><li>Q₁ = 0.08 × 3.0 = <strong>0.24 m³/s</strong>; Q₂ ≈ 0.06 × 5.333… = <strong>0.32 m³/s</strong>. <strong>Do not cancel unequal densities.</strong></li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary application 7 · conditional channel</div><h3>Why depth alone does not determine speed</h3>
+<p>A model river is 20 m wide at both sections. Deep-section depth is 2.5 m and mean speed 0.80 m/s; shallow-section depth is 1.0 m. Assume steady unchanged discharge with no tributaries.</p>
+<ol><li>Deep area = 20 × 2.5 = <strong>50 m²</strong>.</li><li>Shallow area = 20 × 1.0 = <strong>20 m²</strong>.</li><li>Shallow-section mean speed = (50/20) × 0.80 = <strong>2.0 m/s</strong>.</li></ol>
+<p class="key-point">This numerical is an idealized illustration of the prepared NBF-labelled Assignment 6.3 principle, not a universal measured property of real rivers or a verbatim original textbook question.</p>
+</article>
+</section>
+
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · LIVE MODEL CHECKERS</p><h2 id="try-title">Explore conservation for two sections and equal branches</h2>
+<p>Enter fluid density, pipe cross-section and speed to calculate the downstream speed required by <em>steady mass continuity</em>. These inputs describe an idealized comparison, not an uncontrolled real pipe or a pressure/drag experiment.</p>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-water">Load incompressible water</button><button class="btn subtle" type="button" id="preset-gas">Load variable-density gas</button></div>
+<form id="mass-continuity-form" class="calculator" novalidate>
+<div class="fields">
+<label for="rho-in">Inlet density ρ₁ (kg/m³)<input id="rho-in" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+<label for="area-in">Inlet area A₁ (m²)<input id="area-in" type="number" value="0.012" min="0.000000001" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="speed-in">Inlet mean speed v₁ (m/s)<input id="speed-in" type="number" value="1.5" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="rho-out">Outlet density ρ₂ (kg/m³)<input id="rho-out" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+<label for="area-out">Outlet area A₂ (m²)<input id="area-out" type="number" value="0.004" min="0.000000001" max="1000000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate continuity</button>
+<p id="continuity-error" role="alert" class="calc-error" hidden></p>
+<div id="continuity-output" role="status" aria-live="polite" class="calc-output">
+<p><strong>Required downstream speed:</strong> 4.5 m/s.</p>
+<p><strong>Conserved mass rate:</strong> 18 kg/s. Volume rate: 0.018 m³/s at both sections (equal density).</p>
+</div>
+</form>
+<h3>Check the thirty-artery example with equal branches</h3>
+<p>Change the inlet radius, downstream branch radius, branch count and inlet speed. All branches are assumed to have the same mean area and to share flow equally.</p>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-aorta">Load the prepared 30-artery data</button><button class="btn subtle" type="button" id="preset-three">Load three equal branches</button></div>
+<form id="branch-continuity-form" class="calculator" novalidate>
+<div class="fields">
+<label for="branch-inlet-radius">Inlet radius (cm)<input id="branch-inlet-radius" type="number" value="0.8" min="0.000001" max="100000" step="any" inputmode="decimal" required></label>
+<label for="branch-inlet-speed">Inlet mean speed (m/s)<input id="branch-inlet-speed" type="number" value="0.33" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="branch-outlet-radius">Radius of each branch (cm)<input id="branch-outlet-radius" type="number" value="0.4" min="0.000001" max="100000" step="any" inputmode="decimal" required></label>
+<label for="branch-count">Number of equal branches<input id="branch-count" type="number" value="30" min="1" max="100000" step="1" inputmode="numeric" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate each branch speed</button>
+<p id="branch-error" role="alert" class="calc-error" hidden></p>
+<div id="branch-output" role="status" aria-live="polite" class="calc-output">
+<p><strong>Each branch mean speed:</strong> (0.8/0.4)² × (0.33/30) = 0.044 m/s.</p>
+<p><strong>Assumption:</strong> equal branches share total incompressible discharge evenly; the inlet flow is the sum of all outlet flows.</p>
+</div>
+</form>
+<p class="fine">Both interactive tools run locally without sending values, saving grades or accessing accounts. They are mathematical demonstrations only; the equations cannot alone calculate pressure, predict real hose discharge after adjustment or certify safe vessel/medical operation.</p>
+</section>
+
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · REVISION SELF-CHECK</p><h2 id="review-title">Six conceptual checks with revealable explanations</h2>
+<div class="questions">
+<details><summary>1. Which physical quantity is fundamentally conserved in ρ₁A₁v₁ = ρ₂A₂v₂?</summary><p>Mass throughput, in kg/s, for a steady control volume without leaks, storage or side sources. When density remains the same, this reduces to constant volumetric throughput.</p></details>
+<details><summary>2. Can we always cancel density to write A₁v₁ = A₂v₂?</summary><p>No. Cancellation requires ρ₁ = ρ₂ and the same steady no-loss stream. If density changes, retain the full ρAv relation.</p></details>
+<details><summary>3. What happens to speed if circular pipe radius halves and Q remains constant?</summary><p>Area becomes one quarter because A = πr², so the required mean speed becomes four times larger.</p></details>
+<details><summary>4. Does squeezing a real hose automatically keep its before-and-after Q unchanged?</summary><p>No. At any one steady instant, the same Q crosses unbranched sections if the liquid is incompressible. Changing the outlet can change the complete supply system's discharge between different instants.</p></details>
+<details><summary>5. Why must a junction equation include all outgoing branches?</summary><p>All outlets share the inlet flow. For incompressible steady flow, Q in equals the sum of all outlet Q values. The aorta example requires division across 30 equal arteries, not assignment of the whole inlet flow to each artery.</p></details>
+<details><summary>6. Can the continuity equation alone tell us the pressure inside a nozzle?</summary><p>No. It connects density, area and mean flow speed to mass conservation. Pressure and energy effects require additional physical information and are addressed in Topic 6.5.</p></details>
+</div>
+<section class="summary" aria-labelledby="formula-summary-title"><h3 id="formula-summary-title">Fast revision formulas</h3>
+<div class="formula-grid">
+<p><strong>Mass continuity:</strong> ρ₁A₁v₁ = ρ₂A₂v₂</p>
+<p><strong>Incompressible:</strong> A₁v₁ = A₂v₂ = Q</p>
+<p><strong>Volume rate:</strong> Q = Av · m³/s</p>
+<p><strong>Mass rate:</strong> ṁ = ρAv · kg/s</p>
+<p><strong>Circular area:</strong> A = πr² = πd²/4</p>
+<p><strong>Branching:</strong> Σṁ in = Σṁ out</p>
+<p><strong>Equal branches:</strong> v<sub>b</sub> = (r<sub>in</sub>/r<sub>b</sub>)²(v<sub>in</sub>/n)</p>
+<p><strong>Conversions:</strong> 1 cm² = 10⁻⁴ m²; 1 L = 10⁻³ m³</p>
+</div>
+</section>
+</section>
+
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Continue Read → Simulate → Practice → Revise</h2>
+<p>Return to the Unit 6 Learning Desk for the existing Continuity and Fluid Flow simulation, the 80 provisional Topic 6.4 MCQs and the next Bernoulli lesson once it is developed.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-64">Back to Unit 6 Desk</a><a class="btn subtle" href="../continuity-fluid-flow.html">Explore the simulation</a><a class="btn subtle" href="./unit-06-topic-64-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-65">Next: Topic 6.5</a></div>
+<p class="fine">Source record: private Grade XI Unit 6 prepared master pp.151–182, merged Topic6.4 V94-C2.4 audit and supplied FBISE HSSC-I framework p.11. Graphical material is newly authored. Full original NBF figure/text proof, individual MCQ alignment and final teacher signoff remain outstanding.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B4 · Public lesson preview · No school grades recorded</footer>
+</body>
+</html>
