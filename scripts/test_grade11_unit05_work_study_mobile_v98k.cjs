@@ -75,7 +75,14 @@ async function main(){
     return {viewport:vw,documentWidth:doc,overflows:doc>vw+2,offenders:descendants,tables};
    });
    states.push({requestedWidth:width,...state});
-   console.log('V98-K WIDTH DIAG',JSON.stringify({width,viewport:state.viewport,documentWidth:state.documentWidth,overflow:state.overflows,offenders:state.offenders.slice(0,8),tables:state.tables.slice(0,7)}));
+   const unclipped=await page.evaluate(()=>[...document.querySelectorAll('body *')]
+    .filter(el=>!el.closest('.tbl')&&!el.closest('#psn-global-nav')&&el.getBoundingClientRect().right>document.documentElement.clientWidth+2)
+    .map(el=>{const r=el.getBoundingClientRect(),cs=getComputedStyle(el);return {tag:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className:'',
+      text:(el.textContent||'').trim().replace(/\\s+/g,' ').slice(0,85),left:Math.round(r.left),right:Math.round(r.right),
+      width:Math.round(r.width),clientWidth:el.clientWidth,scrollWidth:el.scrollWidth,overflowX:cs.overflowX};})
+    .sort((a,b)=>b.right-a.right).slice(0,30));
+   console.log('V98-K WIDTH DIAG',JSON.stringify({width,viewport:state.viewport,documentWidth:state.documentWidth,overflow:state.overflows,
+      unclipped,offenders:state.offenders.slice(0,8),tables:state.tables.slice(0,7)}));
    await page.screenshot({path:path.join(out,'unit05-'+width+'px.png'),fullPage:false,animations:'disabled'});
   }
   fs.writeFileSync(path.join(out,'diagnostic.json'),JSON.stringify({states,pageErrors,missing},null,2)+'\n');
