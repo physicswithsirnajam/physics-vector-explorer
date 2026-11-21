@@ -1,0 +1,32 @@
+// V99-C: ISOLATED FIRESTORE EMULATOR FIXTURE ONLY — NOT PRODUCTION RULES.
+// This file deliberately omits the existing profiles, enrollment, history,
+// privacy and course-lesson policies. NEVER publish this entire fixture.
+// When approved later, only the narrowly scoped mcqReviewReports match block
+// could be adapted into the existing published rules before the catch-all deny.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function verifiedAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.admin == true;
+    }
+
+    // Draft report queue access for the existing single trusted administrator.
+    // Future student submission and admin updates must be server-mediated,
+    // never granted through public web/mobile Firestore SDK writes.
+    match /mcqReviewReports/{reportId} {
+      allow get: if verifiedAdmin();
+      allow list: if verifiedAdmin()
+        && request.query.limit != null
+        && request.query.limit <= 25;
+      allow create, update, delete: if false;
+    }
+
+    // Test fixture only: all unrelated paths are denied here. This does NOT
+    // stand in for the user's existing deployed policy or its regression tests.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
