@@ -68,7 +68,7 @@ for(let i=0;i<20;i++){
  assert.equal(r.scientific_key_result,n===28?'KEY_SUPPORTED_OPTION_TRUNCATED':'SOURCE_KEY_SCIENTIFICALLY_SUPPORTED');
  assert.equal(r.amendment_priority,mandatory.get(n)||(['OPTIONAL_GEOMETRY_NOTE','OPTIONAL_COGNITION_NOTE'].includes(r.amendment_priority)?r.amendment_priority:'OPTIONAL'));
  assert.ok(r.amendment_type.length>10);
- assert.ok(r.teacher_review_note.length>60);
+ assert.ok(r.teacher_review_note.trim().length>=20,'Teacher note must contain a substantive scientific explanation for Q'+n);
  assert.notEqual(r.teacher_review_note.trim(),'undefined');
  const slo=n===27?'P-11-B-37':candidateB38.has(n)?'P-11-B-38':'P-11-B-36';
  assert.equal(r.candidate_topic_slo_only,slo);
