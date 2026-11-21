@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 900 360">
+<title id="title">Forces on a slowly settling sphere at terminal speed</title>
+<desc id="desc">An original force diagram of a small sphere settling downward in liquid. Weight W acts downward. Viscous drag F sub d and buoyancy F sub b act upward. At terminal speed these upward forces together balance weight: W = Fd + Fb. In the simplified textbook version buoyancy is omitted, so W approximately equals Fd. Arrows are schematic and not drawn to scale.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#146b96"/></marker><marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a44829"/></marker></defs>
+<rect width="900" height="360" rx="16" fill="#f7fbfe"/>
+<rect x="28" y="28" width="495" height="306" rx="12" fill="#e1f3fc" stroke="#9bc8db" stroke-width="2"/>
+<path d="M28 70 Q57 64 86 70 T144 70 T202 70 T260 70 T318 70 T376 70 T434 70 T492 70" fill="none" stroke="#3397c1" stroke-width="4"/>
+<text x="46" y="51" font-size="19" fill="#28566d" font-weight="750">Liquid (at rest)</text>
+<circle cx="274" cy="205" r="48" fill="#f2cd83" stroke="#8f661f" stroke-width="3"/>
+<text x="274" y="212" text-anchor="middle" font-size="24" fill="#342a17" font-weight="900">Sphere</text>
+<path d="M250 156 L250 91" stroke="#146b96" stroke-width="6" marker-end="url(#a)"/>
+<path d="M300 158 L300 111" stroke="#146b96" stroke-width="6" marker-end="url(#a)"/>
+<text x="109" y="104" font-size="20" font-weight="800" fill="#146b96">F<tspan baseline-shift="sub" font-size="14">d</tspan> (drag)</text>
+<path d="M215 98 L248 103" stroke="#146b96" stroke-width="2"/>
+<text x="330" y="123" font-size="19" font-weight="800" fill="#146b96">F<tspan baseline-shift="sub" font-size="14">b</tspan></text>
+<path d="M274 255 L274 321" stroke="#a44829" stroke-width="6" marker-end="url(#b)"/>
+<text x="325" y="295" font-size="20" font-weight="850" fill="#a44829">W = mg</text>
+<text x="51" y="312" font-size="16" fill="#31536c">Downward settling; arrows not to scale</text>
+<rect x="553" y="38" width="320" height="130" rx="10" fill="#fff7e9" stroke="#cfb178"/>
+<text x="573" y="68" font-size="21" fill="#573d1b" font-weight="850">Full terminal balance</text>
+<text x="573" y="105" font-size="23" fill="#243b54" font-weight="750">W = F<tspan baseline-shift="sub" font-size="15">d</tspan> + F<tspan baseline-shift="sub" font-size="15">b</tspan></text>
+<text x="573" y="136" font-size="16" fill="#405872">Net force = 0, speed constant</text>
+<rect x="553" y="186" width="320" height="132" rx="10" fill="#eef5ff" stroke="#8eacc9"/>
+<text x="573" y="215" font-size="20" fill="#21486c" font-weight="850">NBF simplified model</text>
+<text x="573" y="251" font-size="23" fill="#243b54" font-weight="750">W ≈ F<tspan baseline-shift="sub" font-size="15">d</tspan></text>
+<text x="573" y="281" font-size="16" fill="#405872">Buoyancy neglected; valid only</text>
+<text x="573" y="302" font-size="16" fill="#405872">when model assumptions hold</text>
+</svg>
