@@ -13,7 +13,7 @@ const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..');
 const output=path.join(root,'qa-artifacts','original-resources-mobile-v98p');
 const originalSourceFNV=3496041848;
-const approvedCss='@media screen and (max-width:620px){.controls{grid-template-columns:minmax(0,1fr)}.controls>*{min-width:0}}';
+const approvedCss='@media screen and (max-width:620px){#pdf-cards .card h3{overflow-wrap:anywhere}}';
 function fnv(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;return h;}
 function sourceGate(){
  const html=fs.readFileSync(path.join(root,'portal/legacy-hssc-resources.html'),'utf8');
