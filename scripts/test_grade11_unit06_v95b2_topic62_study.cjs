@@ -121,7 +121,7 @@ async function browser(){
    await tab.locator('#preset-textbook').click();
    output=await tab.locator('#calc-output').innerText();
    assert.ok(output.includes('1.4326e-6')&&output.includes('505.263')&&output.includes('NOT a trustworthy real drag prediction'),'High-Re warning missing at '+width+': '+output);
-   await tab.locator('#viscosity').fill('-1');
+   await tab.locator('#fluid-viscosity').fill('-1');
    await tab.locator('#stokes-form button[type="submit"]').click();
    assert.equal(await tab.locator('#calc-error').isVisible(),true,'Invalid viscosity not rejected');
    assert.deepEqual(errors,[],'Page JS errors at '+width);
