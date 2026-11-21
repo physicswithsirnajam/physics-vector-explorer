@@ -72,7 +72,7 @@ async function main(){
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
   await page.locator('#psn-global-nav .psn-nav-menu-button').click();
-  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===5);
+  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   const unit=page.locator('[data-psn-unit="1"]');
   await unit.locator(':scope > summary').click();
   const study=unit.locator('[data-psn-category="STUDY"]');
