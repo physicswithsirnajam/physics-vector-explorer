@@ -21,7 +21,7 @@ function staticChecks(){
  assert.ok(html.includes('id="hub-browse-all"'));
  assert.ok(html.includes('class="hub-optional-guide"'));
  assert.ok(html.includes('id="hub-unit6-topic-shortcuts"'));
- assert.ok(html.includes('class="hub-topic-link-grid"'));
+ assert.ok(html.includes('class="hub-unit6-topic-contents"'));
  assert.ok(html.includes('href="./unit-06-figure-study-v90.html"'));
  assert.ok(html.includes('href="./unit-06-figure-verification-v91.html"'));
  assert.equal((html.match(/href="\.\/unit-06-learning-desk-v95a\.html"/g)||[]).length,2);
@@ -53,7 +53,7 @@ function staticChecks(){
  console.log('V96-B static PASS: 7 original topic links, 59+3 resources, separate preview, 560 MCQs, academic release closed.');
 }
 const from=html.indexOf('<section class="learning-hub"');
-const close=html.indexOf('</section>',from);
+const close=html.indexOf('</section>',html.indexOf('<div id="hub-upcoming"',from));
 assert.ok(from>0&&close>from,'Cannot extract source Learning Hub markup');
 const markup=html.slice(from,close+'</section>'.length)
   .replace(/(<section class="learning-hub"[^>]*?) hidden>/,'$1>'); // show learner fixture without impersonating Firebase enrollment
@@ -96,7 +96,7 @@ async function browserChecks(){
   assert.ok(unit6Hrefs.some(x=>x.includes('build-your-physics-test.html?unit=6')));
   assert.ok(unit6Hrefs.some(x=>x.includes('simulations.html?unit=6')));
   await page.locator('#hub-unit6-topic-shortcuts summary').first().click();
-  assert.equal(await page.locator('.hub-topic-link-grid a').count(),7);
+  assert.equal(await page.locator('#hub-unit6-topic-shortcuts a[href*="unit-06-topic-6"][href$="-preview.html"]').count(),7);
   await page.locator('#hub-unit-filter').selectOption('2');
   assert.equal(await page.locator('#hub-units article').count(),1);
   assert.equal(await page.locator('#hub-resources .hub-resource').count(),8);
