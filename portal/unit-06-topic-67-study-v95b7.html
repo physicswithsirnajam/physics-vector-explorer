@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 6 Topic 6.7 Superfluidity: zero viscosity, helium wall creep, persistent quantized vortices, phase diagram, textbook benchmarks and interactive review.">
+<title>Topic 6.7 · Superfluidity | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-67-study-v95b7.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-67">Unit 6 Desk</a><a href="../superfluidity-explorer.html">Simulation</a><a href="./unit-06-topic-67-preview.html">80 MCQs</a></nav>
+</div></header>
+<body>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.7 · FINAL TOPIC</p>
+<h1 id="lesson-title"><span>Superfluidity</span></h1>
+<p class="lead">Discover what zero viscosity means, why a superfluid can creep over a container wall, how quantized vortices can persist and what liquid-helium temperatures tell us.</p>
+<p class="notice" role="note"><strong>V95-B7 public study preview — not a completed or officially approved Unit 6 course.</strong> New teaching explanations grounded in the owner's private prepared Topic 6.7 master (compiled pp.289–311), merged V94-C2.7 academic QC and official FBISE HSSC-I assessment framework. The printed NBF p.106, Figures 6.16–6.17 and information box have not been comprehensively verified image-by-image. This page includes only independently authored diagrams; it <strong>does not reproduce the original textbook Figure 6.17</strong> embedded in the private notes. Source-reported helium numbers are provisional pending original-page verification.</p>
+<div class="hero-tools"><a class="btn solid" href="#zero-viscosity">Start with zero viscosity</a><a class="btn subtle" href="#wall-creep">See wall creep</a><a class="btn subtle" href="#vortices">Study vortices</a><a class="btn subtle" href="#worked">Temperature practice</a><a class="btn subtle" href="#try-it">Interactive review</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">Official FBISE HSSC-I learning outcome</h2>
+<div class="outcome-grid">
+<div><strong>P-11-B-43</strong><span>Describe superfluidity as a liquid state of zero viscosity and explain implications such as wall creep and persistent vortices</span><small>Summative · Understanding</small></div>
+<div><strong>Academic boundary</strong><span>Temperature conversions and phase-reading aids below are supplementary reinforcement, not new prescribed superfluid vortex-energy or critical-speed calculations</span><small>No separate numerical B43 derivation required by the supplied assessment framework</small></div>
+</div>
+<p class="fine">Source: the official owner-supplied FBISE Grade XI framework, PDF p.12. This is an outcome-level classification. It does not automatically certify any of the author-written 80 MCQs or supplementary questions as official board items.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#zero-viscosity">Zero viscosity</a><a href="#wall-creep">Film creep</a><a href="#vortices">Vortices</a><a href="#helium">Helium phases</a><a href="#applications">Applications</a><a href="#worked">Conversions</a><a href="#try-it">Interactive lab</a><a href="#review">Revision</a></nav>
+<section class="lesson" id="zero-viscosity" aria-labelledby="zero-title">
+<p class="eyebrow">01 · CONCEPT AND LANGUAGE</p><h2 id="zero-title">A superfluid has zero ordinary viscous resistance</h2>
+<p><strong>Viscosity</strong> describes the internal resistance a fluid offers to relative sliding motion of its layers. Ordinary liquids such as water and oil possess viscosity, so motion can lose mechanical energy through viscous dissipation. In the simplified textbook description, a <strong>superfluid</strong> is an unusual liquid state with <strong>zero viscosity</strong> that can sustain flow without the usual viscous resistance.</p>
+<div class="equation primary" role="math" aria-label="Idealized dynamic viscosity of superfluid equals zero pascal seconds"><strong>η = 0 Pa·s</strong><span>Idealized property statement. η is dynamic viscosity and Pa·s is its SI unit; this is NOT a new derivation or universal claim that every possible force disappears.</span></div>
+<div class="comparison">
+<article><h3>Ordinary viscous liquid</h3><p>Internal viscous forces can gradually slow circulating motion and convert organized mechanical motion into thermal energy.</p></article>
+<article><h3>Textbook superfluid idealization</h3><p>Ordinary viscous resistance of the superfluid component is absent, allowing unusual long-lived flow, thin-film transport and quantized vortices.</p></article>
+<article><h3>What does not disappear?</h3><p>Mass, volume, density, gravity, pressure and other physical interactions still matter. Actual helium can have normal and superfluid components; not every process is free of dissipation.</p></article>
+</div>
+<p>Superfluidity is associated with a macroscopic <strong>quantum-mechanical state</strong>. That origin helps explain why its behaviour differs from the motion of an ordinary classical liquid. The exam focus here is to <em>describe the phenomena</em>, not to derive microscopic quantum theory.</p>
+</section>
+<section class="lesson" id="wall-creep" aria-labelledby="film-title">
+<p class="eyebrow">02 · SUPPORTED PHENOMENON</p><h2 id="film-title">Thin superfluid films can creep over an open container rim</h2>
+<p>A very thin superfluid film can spread along surfaces, move up the inner wall of an <strong>open</strong> vessel, pass over its rim and continue down the outside. Under suitable conditions this surface-film transport can carry liquid out, giving rise to the textbook expression that a superfluid container may appear to “empty itself.”</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b7-superfluid-film-original.svg" width="940" height="410" alt="Original schematic showing a very thin blue superfluid film moving up an inner container wall, over the open rim and down the outer wall toward a drop, while the bulk liquid stays inside the vessel.">
+<figcaption>Independently authored illustrative surface-film route; <strong>not a reproduction of NBF Figure 6.16</strong>. This is thin-film transport, not bulk helium spontaneously jumping over a wall.</figcaption>
+</figure>
+<ol class="steps">
+<li><strong>Surface contact:</strong> The superfluid wets the accessible inner container surface under suitable experimental conditions.</li>
+<li><strong>Film transport:</strong> A thin layer can continue up the side rather than behaving like a large poured stream of water.</li>
+<li><strong>Exposed rim:</strong> If a continuous path exists, the film can pass over the top.</li>
+<li><strong>Outer wall:</strong> Continued transport along the outside may remove liquid from the vessel.</li>
+</ol>
+<p>The absence of ordinary viscous resistance is important, but by itself does not explain every microscopic surface-film interaction. An appropriately sealed container that lacks the same exposed surface path does <strong>not</strong> automatically empty in this way.</p>
+</section>
+<section class="lesson" id="vortices" aria-labelledby="vortex-title">
+<p class="eyebrow">03 · MOTION THAT CAN PERSIST</p><h2 id="vortex-title">Persistent and quantized vortices</h2>
+<p>A <strong>vortex</strong> is a circulating pattern of fluid motion. In the simplified superfluid description, an established vortex can persist for a very long time because ordinary viscous damping is absent. “Persistent” does not mean the liquid contains infinite kinetic energy or that no real disturbance could ever affect it.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b7-vortex-onset-original.svg" width="960" height="360" alt="Three original conceptual circular illustrations: a vortex-free arrangement below the onset condition, one discrete vortex at onset and several vortices in a higher-rotation example. Not a measured experiment or a universal critical-speed graph.">
+<figcaption>Original conceptual depiction of possible vortex onset and multiple cores. Counts, arrow shapes and rotation regimes are illustrative, not measurements or a claim about a universal threshold.</figcaption>
+</figure>
+<p>The source discusses a <strong>critical angular velocity</strong> for a <em>particular arrangement</em>. Below onset, the superfluid component may remain vortex-free; after suitable onset, quantized vortices may form. With further rotation, more vortices may appear.</p>
+<div class="concept-note"><strong>What is quantized?</strong> Allowed <em>circulation</em> occurs in discrete units. This does not imply that all parcels of liquid can move at only a few permitted linear speeds, and the supplied NBF section gives <strong>no universal numerical formula</strong> for critical angular velocity, vortex count or vortex energy. We do not invent one for FBISE B43.</div>
+</section>
+<section class="lesson" id="helium" aria-labelledby="helium-title">
+<p class="eyebrow">04 · SOURCE-REPORTED HELIUM BENCHMARKS AND PHASE READING</p><h2 id="helium-title">Two helium isotopes; pressure and temperature both matter</h2>
+<p>The prepared NBF-guided information box reports characteristic superfluid transition temperatures of <strong>⁴He below approximately 2.17 K</strong> and <strong>³He below approximately 0.0025 K</strong>. Their respective millikelvin representations are <strong>2170 mK</strong> and <strong>2.5 mK</strong>. These are <em>reported approximate reference values under relevant conditions</em>, not universal boundaries for all pressures, isotopes or other liquids.</p>
+<div class="comparison"><article><h3>Helium-4 (⁴He)</h3><p>Prepared source transition benchmark: <strong>2.17 K = 2170 mK</strong>. A low-temperature liquid example commonly used to explain superfluidity.</p></article><article><h3>Helium-3 (³He)</h3><p>Prepared source transition benchmark: <strong>0.0025 K = 2.5 mK</strong>. Its superfluid transition occurs at a much lower temperature in the quoted comparison.</p></article></div>
+<p>The described NBF helium phase chart has <strong>temperature (K) on the horizontal axis</strong>, <strong>pressure (MPa) on the vertical axis</strong>, and regions labelled <strong>solid, normal liquid, superfluid and gas</strong>. Use <em>both</em> coordinates to identify a state, and verify the correct boundary from a trusted source before classifying a particular temperature–pressure point.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b7-phase-axes-guide-original.svg" width="940" height="370" alt="Original reading guide showing horizontal temperature K and vertical pressure MPa, with the four reported phase names in a separate legend. It intentionally plots no boundaries or phase positions because the NBF original figure was not verified.">
+<figcaption>Rights-safe independent axis-reading guide, <strong>not a copy or reconstruction of NBF Figure 6.17</strong>. It does not plot phase boundaries or assign invented pressures. The original NBF image reproduced in the private master is deliberately not included here.</figcaption>
+</figure>
+<p>At a boundary the material can change phase; a point inside a region corresponds to the labelled state in that source diagram. A sketch without verified numeric boundary coordinates <strong>cannot</strong> be used to calculate a precise critical pressure or classify arbitrary plotted points. Consult your original NBF textbook if a task requires detailed Figure 6.17 boundary reading.</p>
+</section>
+<section class="lesson" id="applications" aria-labelledby="applications-title">
+<p class="eyebrow">05 · RELATED SCIENCE AND LIMITATIONS</p><h2 id="applications-title">Cooling, scientific instruments and superconductivity</h2>
+<p>The prepared source describes cooling helium to extremely low temperatures, mentioning compression followed by controlled expansion through a nozzle. This is <strong>introductory context</strong>, not a complete cryogenic procedure: compression alone does not guarantee cooling, and laboratory superfluid preparation requires specialized equipment and thermodynamic control. This page gives no operational cryogenics instructions.</p>
+<div class="triad">
+<article><h3>Precision gyroscopes</h3><p>Persistent quantum-fluid motion is relevant to sensitive rotation research; not all gyroscopes use a superfluid.</p></article>
+<article><h3>Optical experiments</h3><p>Some specialized low-temperature experiments study unusually slow light. Do not claim slowing light is an automatic property of every superfluid.</p></article>
+<article><h3>Astrophysics</h3><p>Superfluid constituents have been proposed in models of neutron-star interiors. This is a scientific interpretation, not direct classroom observation of neutron-star matter.</p></article>
+</div>
+<p><strong>Superconductivity is different:</strong> A superconducting solid is associated with zero electrical resistance under appropriate conditions. A superfluid liquid is associated with the absence of ordinary viscous resistance. Both can involve quantum phenomena, but they are not synonyms.</p>
+<p>The prepared NBF <em>Fluid Mechanics and Medical Technology</em> box on printed p.107 belongs to chapter-wide enrichment and is <strong>not</strong> a separate prescribed superfluidity SLO B43 derivation.</p>
+</section>
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · SUPPLEMENTARY NUMERICAL FLUENCY</p><h2 id="worked-title">Eight source-derived temperature illustrations — not board-required derivations</h2>
+<p class="fine">The following use the two prepared source-reported temperature benchmarks. These are the teacher-created Part C's <strong>eight supplementary conversions and comparisons</strong>, not original numbered NBF superfluidity exercises nor an independent FBISE B43 mathematical requirement. Numbers reflect approximate reference temperatures, not universal high-precision phase boundaries.</p>
+<article class="problem"><div class="problem-label">Supplementary 1 · kelvin to millikelvin</div><h3>Convert the ⁴He benchmark to mK</h3><ol><li>Given 2.17 K; use <strong>1 K = 1000 mK</strong>.</li><li>2.17 × 1000 = <strong>2170 mK</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 2 · kelvin to millikelvin</div><h3>Convert the ³He benchmark to mK</h3><ol><li>Given 0.0025 K; use 1000 mK/K.</li><li>0.0025 × 1000 = <strong>2.5 mK</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 3 · compare source benchmarks</div><h3>Ratio of the two reference temperatures</h3><ol><li>Divide two positive Kelvin temperature values: 2.17/0.0025.</li><li>Numerical benchmark ratio = <strong>868</strong>, dimensionless. This does not predict a phase boundary from a new physical law.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 4 · temperature difference</div><h3>Difference between the source benchmarks</h3><ol><li>2.17 K − 0.0025 K = <strong>2.1675 K</strong>.</li><li>This difference reflects reported rounded reference values.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 5 · millikelvin to kelvin</div><h3>Convert 3.0 mK to kelvin</h3><ol><li>Use 1 mK = 0.001 K.</li><li>3.0 × 0.001 = <strong>0.0030 K</strong>, numerically above the prepared ³He 0.0025 K benchmark.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 6 · microkelvin</div><h3>Express 0.0025 K in μK</h3><ol><li>Use 1 K = 1,000,000 μK.</li><li>0.0025 × 1,000,000 = <strong>2500 μK</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 7 · Celsius conversion</div><h3>Convert 2.17 K into °C</h3><ol><li>Use t(°C) = T(K) − 273.15.</li><li>2.17 − 273.15 = <strong>−270.98 °C</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary 8 · difference below a benchmark</div><h3>Compare 1.50 K against 2.17 K</h3><ol><li>2.17 − 1.50 = <strong>0.67 K below</strong> the quoted value.</li><li>Temperature alone still does not certify the sample's actual phase without pressure and isotope conditions.</li></ol></article>
+</section>
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · INTERACTIVE, NON-GRADED PRACTICE</p><h2 id="try-title">Helium benchmark and phase-chart reading lab</h2>
+<p>Use the first tool to convert kelvin into millikelvin, microkelvin and Celsius, and compare it numerically with the source-reported ⁴He or ³He reference. <strong>It deliberately does not declare a verified actual phase</strong> from temperature alone.</p>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-he4">Load ⁴He 2.17 K reference</button><button class="btn subtle" type="button" id="preset-he3">Load ³He 0.0025 K reference</button><button class="btn subtle" type="button" id="preset-millikelvin">Load 3 mK (= 0.003 K)</button></div>
+<form id="helium-converter-form" class="calculator" novalidate>
+<div class="fields">
+<label for="helium-temp-k">Temperature T (K)<input id="helium-temp-k" type="number" value="2.17" min="0" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="helium-isotope">Compare against source benchmark<select id="helium-isotope" required><option value="he4">Helium-4 (⁴He) · 2.17 K</option><option value="he3">Helium-3 (³He) · 0.0025 K</option></select></label>
+</div><button class="btn solid" type="submit">Compare and convert temperatures</button>
+<p id="helium-error" class="calc-error" role="alert" hidden></p>
+<div id="helium-output" class="calc-output" role="status" aria-live="polite">
+<p><strong>Temperature conversions:</strong> 2.17 K = 2170 mK = 2,170,000 μK = −270.98 °C.</p><p><strong>Benchmark comparison:</strong> Equal to the source-reported ⁴He reference; phase still requires pressure and material information.</p>
+</div>
+</form>
+<h3>Concept check — choose an observation</h3>
+<p>This second tool explains what a selected superfluid observation can support. It is not a simulation of real experimental dynamics or a source-derived vortex-counting instrument.</p>
+<form id="superfluid-concept-form" class="calculator" novalidate>
+<div class="fields"><label for="superfluid-observation">Observed situation<select id="superfluid-observation" required><option value="film">A thin film moves over an open container rim</option><option value="vortex">A previously formed superfluid vortex continues circulating</option><option value="below">A rotating container is below a particular vortex-onset threshold</option><option value="graph">A phase chart shows temperature and pressure axes</option></select></label></div>
+<button class="btn solid" type="submit">Explain the observation</button>
+<div id="superfluid-concept-output" role="status" aria-live="polite" class="calc-output"><p><strong>Thin-film creep:</strong> Surface transport can cross an open rim under suitable conditions; it is not bulk liquid jumping.</p></div>
+</form>
+<p class="fine">Both learning tools run only in the browser. No student names, personal information, scores or answers are saved or transmitted. These are supplementary aids; they cannot certify a helium sample's physical state, plot the exact textbook phase boundary or calculate a universal critical rotation threshold.</p>
+</section>
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · EXPLAIN AND REVISE</p><h2 id="review-title">Ten conceptual questions with answers</h2>
+<div class="questions">
+<details><summary>1. What is superfluidity according to FBISE B43?</summary><p>A special liquid state characterized by zero viscosity in the textbook idealization, with implications including thin-film wall creep and persistent vortices.</p></details>
+<details><summary>2. Does zero viscosity mean that a liquid has zero mass or gravity?</summary><p>No. Viscosity, mass, density and gravity describe different physical properties. A superfluid still occupies volume and responds to forces.</p></details>
+<details><summary>3. How can superfluid helium leave an open container without ordinary pouring?</summary><p>A thin superfluid film can move over the rim and down the outside wall along a continuous surface path, carrying liquid away under suitable conditions.</p></details>
+<details><summary>4. Can a vortex persist even if no motor keeps driving the fluid?</summary><p>In the simplified zero-viscosity model, ordinary viscous damping is absent, allowing long-lived circulation. Real experimental disturbances can still affect it.</p></details>
+<details><summary>5. What does “quantized” refer to in a superfluid vortex?</summary><p>Circulation occurs in discrete allowed units. It does not prescribe one universal rotational speed or imply that every fluid particle has only a small list of speeds.</p></details>
+<details><summary>6. Which helium isotope has the lower source-reported transition benchmark?</summary><p>Helium-3: approximately 0.0025 K (2.5 mK), lower than helium-4's reported 2.17 K.</p></details>
+<details><summary>7. Which axes and region names are reported for the helium phase chart?</summary><p>Temperature (K) is horizontal; pressure (MPa) vertical. The prepared source reports solid, normal liquid, superfluid and gas regions. The original phase boundaries are not reproduced here.</p></details>
+<details><summary>8. Why is a temperature reading by itself insufficient for an exact phase claim?</summary><p>Phase depends on isotope, temperature and pressure. The quoted benchmarks are approximate and conditional; exact phase classification needs verified boundaries.</p></details>
+<details><summary>9. Is superconductivity the same as superfluidity?</summary><p>No. Superconductivity concerns electrical resistance; superfluidity concerns viscous resistance in a liquid. They are related quantum topics but not equivalent states.</p></details>
+<details><summary>10. Are vortex-energy and phase-pressure calculations required under B43?</summary><p>No additional quantitative law is specified in the supplied B43 outcome, which is summative at Understanding level. Temperature-unit examples on this page are supplementary fluency practice, not original NBF numbered exercises.</p></details>
+</div>
+<section class="summary" aria-labelledby="summary-title"><h3 id="summary-title">Last-minute revision sheet</h3>
+<div class="formula-grid">
+<p><strong>Core statement:</strong> η = 0 Pa·s (idealized)</p>
+<p><strong>Wall creep:</strong> thin film moves over accessible rim</p>
+<p><strong>Persistent motion:</strong> no ordinary viscous slowing</p>
+<p><strong>Vortex quantization:</strong> circulation in discrete units</p>
+<p><strong>⁴He source benchmark:</strong> 2.17 K = 2170 mK</p>
+<p><strong>³He source benchmark:</strong> 0.0025 K = 2.5 mK</p>
+<p><strong>Phase axes:</strong> temperature (K), pressure (MPa)</p>
+<p><strong>FBISE:</strong> P-11-B-43 · Summative · Understanding</p>
+</div></section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Your seven-topic Unit 6 learning path</h2>
+<p>This completes the <strong>seventh detailed student lesson preview</strong>. Continue using the existing Superfluidity Explorer simulation, the original 80 provisional Topic 6.7 MCQs and the Unit 6 Learning Desk. Final teacher signoff, source figure fidelity, individual question certification and full assessment integration are still pending.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-67">Back to Unit 6 Desk</a><a class="btn subtle" href="../superfluidity-explorer.html">Explore Superfluidity simulation</a><a class="btn subtle" href="./unit-06-topic-67-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#choose-topic">Review all seven topics</a></div>
+<p class="fine">Source boundary: owner-prepared compiled Unit 6 pp.289–311 and merged V94-C2.7; official FBISE HSSC-I framework p.12. Printed NBF p.106 and figures require direct comparison before declaring source-exactness. The original NBF Figure 6.17 excerpt in the private teacher file has not been published here. No real cryogenic procedures or protected textbook images have been introduced.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B7 · Public lesson preview · No school grades recorded</footer>
+</body>
+</html>
