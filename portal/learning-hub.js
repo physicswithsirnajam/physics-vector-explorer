@@ -36,11 +36,13 @@ function renderResourceList(grade,active){
  const wrap=resetChildren('hub-resources');
  const visibleUnits=selectedUnit==='all'?active:active.filter(u=>String(u.unit)===selectedUnit);
  const ids=[...new Set(visibleUnits.flatMap(u=>u.resourceIds||[]))];
+ const records=[...ids.map(id=>catalogue.resources.find(x=>x.id===id)),
+   ...visibleUnits.filter(u=>u.practicePreviewStatus==='public-provisional').flatMap(u=>Array.isArray(u.previewResources)?u.previewResources:[])];
  const filter=byId('hub-resource-filter')?.value||'all';
  const term=(byId('hub-resource-search')?.value||'').trim().toLowerCase();
  let found=0;
- for(const id of ids){
-  const r=catalogue.resources.find(x=>x.id===id);if(!r)continue;
+ for(const r of records){
+  if(!r)continue;
   if(filter!=='all'&&r.category!==filter)continue;
   if(term&&![r.title,r.description,r.category,r.accessDescription].join(' ').toLowerCase().includes(term))continue;
   const href=safeHref(r.href);if(!href)continue;
@@ -86,7 +88,7 @@ function renderGrade(){
  const grade=catalogue.grades.find(g=>g.grade===11);
  if(!grade){line.textContent='Grade XI catalogue is not available.';return;}
  const published=grade.units.filter(u=>u.status==='available');
- const previews=grade.units.filter(u=>u.status!=='available'&&u.practicePreviewStatus==='public-provisional'&&Number(u.questionBankCount)>0&&Array.isArray(u.resourceIds)&&u.resourceIds.length>0);
+ const previews=grade.units.filter(u=>u.status!=='available'&&u.practicePreviewStatus==='public-provisional'&&Number(u.partialTestBuilderMcqCount)>0&&Array.isArray(u.previewResources)&&u.previewResources.length>0);
  const active=[...published,...previews].sort((a,b)=>a.unit-b.unit);
  const planned=grade.units.filter(u=>!active.includes(u));
  const total=grade.units.length;
@@ -108,11 +110,12 @@ function renderGrade(){
   const card=document.createElement('article');card.className='hub-unit';
   const top=document.createElement('div');top.className='hub-unit-top';
   const title=document.createElement('strong');title.textContent=`Unit ${u.unit} — ${u.title}`;
-  const hasBank=Number(u.questionBankCount)>0;
+  const bankCount=Number(u.questionBankCount)>0?Number(u.questionBankCount):u.practicePreviewStatus==='public-provisional'?Number(u.partialTestBuilderMcqCount)||0:0;
+  const hasBank=bankCount>0;
   top.append(title,chip(u.practicePreviewStatus==='public-provisional'?'Provisional practice · Teacher approval pending':hasBank?'Pilot MCQ practice':'Enrolled study lessons','true'));
   const desc=document.createElement('p');desc.textContent=u.summary||'';
   const meta=document.createElement('div');meta.className='hub-unit-meta';
-  meta.append(chip(hasBank?`${u.questionBankCount} provisional MCQs`:'Unit MCQs not yet imported'),chip(u.practicePreviewStatus==='public-provisional'?'First-pass inspected · Certification pending':hasBank?'MCQ academic review pending':'Unit source package QC passed'));
+  meta.append(chip(hasBank?`${bankCount} provisional MCQs`:'Unit MCQs not yet imported'),chip(u.practicePreviewStatus==='public-provisional'?'First-pass inspected · Certification pending':hasBank?'MCQ academic review pending':'Unit source package QC passed'));
   const note=document.createElement('p');note.className='hub-unit-note';
   note.textContent=u.studentNotice||'Available for exploratory self-practice; academic approval remains in progress.';
   card.append(top,desc,meta,note);
