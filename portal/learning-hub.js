@@ -1,7 +1,7 @@
 /* Physics with Sir Najam — Portal V11 Grade XI course catalogue.
    Resource metadata and the catalogue JSON are PUBLIC. They DO NOT grant access.
    Firestore Security Rules enforce the enrolled protected-lesson read.
-   Existing GitHub Pages and Google Sites links are PUBLIC until migrated.
+   Public GitHub Pages files are not made private by navigation alone.
    Never infer paid access, board verification, or teacher permissions from this data. */
 import {SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 
@@ -22,9 +22,9 @@ function safeHref(raw){
  try{
   const url=new URL(raw,location.href);
   if(!['http:','https:'].includes(url.protocol))return null;
-  const sameOrigin=url.origin===location.origin;
-  const officialSite=url.hostname==='sites.google.com'&&url.pathname.startsWith('/view/physics-with-sir-najam/');
-  return sameOrigin||officialSite?url.href:null;
+  // Only same-site links are surfaced in learner navigation; archived original
+  // source URLs remain in the separate migration inventory.
+  return url.origin===location.origin?url.href:null;
  }catch{return null;}
 }
 function resetChildren(id){const node=byId(id);node?.replaceChildren();return node;}
