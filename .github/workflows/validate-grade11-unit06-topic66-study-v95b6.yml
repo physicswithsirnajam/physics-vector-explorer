@@ -1,0 +1,51 @@
+name: Validate Grade XI Unit 6 Topic 6.6 Bernoulli Applications (V95-B6)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-topic-66-study-v95b6.html"
+      - "portal/unit-06-topic-66-study-v95b6.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b6-torricelli-venturi-original.svg"
+      - "quality/grade11-unit06-v95b6-topic66-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b6_topic66_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic66-study-v95b6.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-topic-66-study-v95b6.html"
+      - "portal/unit-06-topic-66-study-v95b6.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b6-torricelli-venturi-original.svg"
+      - "quality/grade11-unit06-v95b6-topic66-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b6_topic66_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic66-study-v95b6.yml"
+  workflow_dispatch:
+jobs:
+  applications-science-source-and-mobile:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source gates, model warnings, arithmetic and preceding lessons
+        run: |
+          node --check portal/unit-06-topic-66-study-v95b6.js
+          node --check scripts/test_grade11_unit06_v95b6_topic66_study.cjs
+          node scripts/test_grade11_unit06_v95b6_topic66_study.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+          node scripts/test_grade11_unit06_v95b2_topic62_study.cjs
+          node scripts/test_grade11_unit06_v95b3_topic63_study.cjs
+          node scripts/test_grade11_unit06_v95b4_topic64_study.cjs
+          node scripts/test_grade11_unit06_v95b5_topic65_study.cjs
+      - name: Install Chromium for 390px mobile, tablet and desktop
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify original diagram, ten revision cards, three learning models and high-speed warning
+        run: node scripts/test_grade11_unit06_v95b6_topic66_study.cjs --browser
