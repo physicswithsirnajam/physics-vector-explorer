@@ -183,6 +183,9 @@ async function main(){
     if(metrics.horizontalOverflow)audit.alerts.push({page:item.path,viewport:width,type:'page-wide-horizontal-overflow',documentWidth:metrics.documentWidth});
     if(metrics.logoWidth<28||(width<=390&&metrics.logoWidth>95))audit.alerts.push({page:item.path,viewport:width,type:'unexpected-logo-size',logoWidth:metrics.logoWidth});
    }
+   // The public Portal's desktop-only header link is deliberately hidden on 320px phones.
+   // Keep phone visual/overflow coverage, but click that responsive desktop link at 1280px.
+   if(item.kind==='portal')await page.setViewportSize({width:1280,height:850});
    const interaction=await functionality(page,item,origin);
    const jsErrors=[...new Set(errors)];
    for(const error of jsErrors)audit.alerts.push({page:item.path,type:'browser-js-error',message:error});
