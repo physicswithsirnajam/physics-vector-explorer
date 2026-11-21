@@ -1,0 +1,29 @@
+name: Validate Grade XI Unit 6 Topic 6.1 Academic Calculations (V94-C2.1)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v94c2-topic61-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic61_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic61-academic-v94c2.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v94c2-topic61-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic61_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic61-academic-v94c2.yml"
+  workflow_dispatch:
+jobs:
+  review-topic61-28-numeric-values:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Parse formula regression script
+        run: node --check scripts/test_grade11_unit06_topic61_academic_v94c2.cjs
+      - name: Recalculate Topic6.1 Part B/C/D answers
+        run: node scripts/test_grade11_unit06_topic61_academic_v94c2.cjs
