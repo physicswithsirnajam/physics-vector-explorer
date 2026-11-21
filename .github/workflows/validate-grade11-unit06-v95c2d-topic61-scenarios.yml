@@ -1,0 +1,36 @@
+name: Validate Grade XI Unit 6 Topic 6.1 16 Standalone Scenarios (V95-C2D)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v95c2d-topic61-mcq65-80-scenario-review.csv"
+      - "quality/grade11-unit06-v95c2d-topic61-mcq65-80-scenario-review.md"
+      - "scripts/test_grade11_unit06_v95c2d_topic61_scenarios.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2d-topic61-scenarios.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v95c2d-topic61-mcq65-80-scenario-review.csv"
+      - "quality/grade11-unit06-v95c2d-topic61-mcq65-80-scenario-review.md"
+      - "scripts/test_grade11_unit06_v95c2d_topic61_scenarios.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2d-topic61-scenarios.yml"
+  workflow_dispatch:
+jobs:
+  topic61-sixteen-situations-source-key-and-teacher-holds:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate 16 situation IDs, source keys, Q80 calculation and teacher signoff gates
+        run: |
+          node --check scripts/test_grade11_unit06_v95c2d_topic61_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2d_topic61_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs
+          node scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs
+          node scripts/test_grade11_unit06_v95c2a_topic61_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
