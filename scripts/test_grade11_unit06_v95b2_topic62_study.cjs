@@ -41,6 +41,8 @@ assert.ok(desk.includes('href="./unit-06-topic-62-study-v95b2.html"'));
 assert.ok(desk.includes('href="./unit-06-topic-62-preview.html"'));
 assert.ok(desk.includes('href="../viscosity-terminal-velocity.html"'));
 for(const n of ['61','62','63','64','65','66','67'])assert.ok(desk.includes('href="./unit-06-topic-'+n+'-preview.html"'));
+const allIds=[...html.matchAll(/\\bid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(allIds.length,new Set(allIds).size,'Lesson HTML IDs must be unique for accessible field labels and section anchors');
 assert.equal((html.match(/class="lesson" id=/g)||[]).length,8);
 assert.equal((html.match(/class="problem"/g)||[]).length,5);
 assert.equal((html.match(/<details>/g)||[]).length,6);
