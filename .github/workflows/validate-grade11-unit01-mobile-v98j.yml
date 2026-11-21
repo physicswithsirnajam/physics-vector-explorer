@@ -1,0 +1,45 @@
+name: Validate Unit 1 Study Guide Mobile Layout (V98-J)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-01-study-guide.html"
+      - "portal/unit-01.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit01_mobile_overflow_v98j.cjs"
+      - ".github/workflows/validate-grade11-unit01-mobile-v98j.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-01-study-guide.html"
+      - "portal/unit-01.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit01_mobile_overflow_v98j.cjs"
+      - ".github/workflows/validate-grade11-unit01-mobile-v98j.yml"
+  workflow_dispatch:
+jobs:
+  unit01-six-viewports-and-original-source:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check responsive regression test syntax
+        run: node --check scripts/test_grade11_unit01_mobile_overflow_v98j.cjs
+      - name: Install Chromium for phone and desktop testing
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Diagnose Unit 1 phone overflow and verify exact lesson source
+        run: node scripts/test_grade11_unit01_mobile_overflow_v98j.cjs
+      - name: Upload browser screenshots and DOM diagnostics including on failed checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit01-mobile-v98j-evidence
+          path: qa-artifacts/unit01-mobile-v98j/
+          if-no-files-found: warn
+          retention-days: 10
