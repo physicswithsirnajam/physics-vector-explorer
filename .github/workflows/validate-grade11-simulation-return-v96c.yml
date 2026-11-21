@@ -1,0 +1,57 @@
+name: Validate Unit 6 Standalone Simulation Return Navigation (V96-C)
+on:
+  pull_request:
+    paths:
+      - "archimedes-flotation.html"
+      - "viscosity-terminal-velocity.html"
+      - "continuity-fluid-flow.html"
+      - "bernoulli-venturi.html"
+      - "superfluidity-explorer.html"
+      - "shared/simulation-return-v96c.js"
+      - "shared/simulation-return-v96c.css"
+      - "scripts/test_grade11_simulation_return_v96c.cjs"
+      - ".github/workflows/validate-grade11-simulation-return-v96c.yml"
+  push:
+    branches: [main]
+    paths:
+      - "archimedes-flotation.html"
+      - "viscosity-terminal-velocity.html"
+      - "continuity-fluid-flow.html"
+      - "bernoulli-venturi.html"
+      - "superfluidity-explorer.html"
+      - "shared/simulation-return-v96c.js"
+      - "shared/simulation-return-v96c.css"
+      - "scripts/test_grade11_simulation_return_v96c.cjs"
+      - ".github/workflows/validate-grade11-simulation-return-v96c.yml"
+  workflow_dispatch:
+jobs:
+  unit6-return-paths-and-original-lab-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JS and preserve Unit 6 assessment nonrelease
+        run: |
+          node --check shared/simulation-return-v96c.js
+          node --check scripts/test_grade11_simulation_return_v96c.cjs
+          node scripts/test_grade11_unit06_preview_discovery_v96a.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Five real simulation pages, links, mobile and scientific fingerprints
+        run: node scripts/test_grade11_simulation_return_v96c.cjs
+      - name: Archive UI screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit06-simulation-return-navigation-v96c
+          path: qa-artifacts/unit06-sim-return-v96c/*.png
+          if-no-files-found: warn
+          retention-days: 7
