@@ -1,0 +1,50 @@
+name: Validate Grade XI Unit 6 Balanced MCQ Assessment (V95-C1)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-balanced-mcq-v95c1.html"
+      - "portal/unit-06-balanced-mcq-v95c1.css"
+      - "portal/unit-06-balanced-mcq-v95c1.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "quality/grade11-unit06-v95c1-560-item-review-queue.csv"
+      - "quality/grade11-unit06-v95c1-assessment-baseline-and-review-method.md"
+      - "scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs"
+      - ".github/workflows/validate-grade11-unit06-balanced-assessment-v95c1.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-balanced-mcq-v95c1.html"
+      - "portal/unit-06-balanced-mcq-v95c1.css"
+      - "portal/unit-06-balanced-mcq-v95c1.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "quality/grade11-unit06-v95c1-560-item-review-queue.csv"
+      - "quality/grade11-unit06-v95c1-assessment-baseline-and-review-method.md"
+      - "scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs"
+      - ".github/workflows/validate-grade11-unit06-balanced-assessment-v95c1.yml"
+  workflow_dispatch:
+jobs:
+  unit6-balanced-practice-and-review-ledger:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 560 immutable source questions, 136 situations, 560 pending teacher decisions and course release
+        run: |
+          node --check portal/unit-06-balanced-mcq-v95c1.js
+          node --check scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95b7_topic67_study.cjs
+          node scripts/test_grade11_unit06_central_v89.cjs
+      - name: Install Chromium for mobile/tablet/desktop local self-practice
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify seven-topic equal sampling, original options/figures, all-correct scoring, and failing source guard
+        run: node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs --browser
