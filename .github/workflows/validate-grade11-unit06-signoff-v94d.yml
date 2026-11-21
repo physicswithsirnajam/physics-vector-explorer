@@ -1,0 +1,31 @@
+name: Validate Grade XI Unit 6 Signoff Matrix (V94-D)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v94d-signoff-and-release-gates.md"
+      - "quality/grade11-unit06-v94d-signoff-matrix.json"
+      - "scripts/test_grade11_unit06_v94d_signoff_gates.cjs"
+      - ".github/workflows/validate-grade11-unit06-signoff-v94d.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v94d-signoff-and-release-gates.md"
+      - "quality/grade11-unit06-v94d-signoff-matrix.json"
+      - "scripts/test_grade11_unit06_v94d_signoff_gates.cjs"
+      - ".github/workflows/validate-grade11-unit06-signoff-v94d.yml"
+  workflow_dispatch:
+jobs:
+  source-register-and-release-gate:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check signoff script syntax
+        run: node --check scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Validate seven source audits, issue IDs and blocked release
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
