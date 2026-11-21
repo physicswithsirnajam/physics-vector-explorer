@@ -83,7 +83,7 @@ assert.equal(20/4,5,'Q33 throat v=Q/A');
 const rho=1000,vwide=2,vthroat=6;
 const dP=.5*rho*(vthroat*vthroat-vwide*vwide);
 assert.equal(dP,16000,'Venturi pressure drop sign and magnitude');
-assert.equal(Math.sqrt(2*9.8*5)**2,98,'Torricelli from 5m head');
+assert.ok(Math.abs(Math.sqrt(2*9.8*5)**2-98)<1e-10,'Torricelli from 5m head');
 assert.equal(Math.sqrt(0),0,'Torricelli zero-head ideal limit');
 const queue=read('quality/grade11-unit06-v95c1-560-item-review-queue.csv').trimEnd().split(/\r?\n/);
 assert.equal(queue.length,561);const header=csvParse(queue[0]);
