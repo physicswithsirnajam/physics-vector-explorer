@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam · Grade XI Unit 6 Topic 6.1 detailed buoyancy, Archimedes’ principle, floating ships, apparent weight, derivations and solved practice. Public lesson preview.">
+<title>Topic 6.1 · Upthrust &amp; Archimedes’ Principle | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-61-study-v95b1.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-61">Unit 6 Desk</a><a href="../archimedes-flotation.html">Simulation</a><a href="./unit-06-topic-61-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.1</p>
+<h1 id="lesson-title">Upthrust &amp; <span>Archimedes’ Principle</span></h1>
+<p class="lead">Understand why fluids push upward, derive the buoyant-force equation, explain floating ships, and solve buoyancy problems with the right assumptions and SI units.</p>
+<p class="notice" role="note"><strong>V95-B1 public study preview, not a completed or officially approved Unit 6 course.</strong> Prepared from the owner's private Topic 6.1 teaching master (compiled pp. 17–50), the merged academic audit and the supplied FBISE assessment framework. These are <em>fresh teaching explanations</em>, not copied NBF pages. Original printed NBF pp. 89–91, Figure 6.1 and exact Example/Assignment 6.1 wording still need source-by-source comparison before any “textbook-exact” claim. Question-level FBISE certification remains pending.</p>
+<div class="hero-tools"><a class="btn solid" href="#derivation">Start the derivation</a><a class="btn subtle" href="#worked">See solved problems</a><a class="btn subtle" href="#try-it">Try buoyancy calculator</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">What you should learn</h2>
+<div class="outcome-grid"><div><strong>P-11-B-33</strong><span>Justify and use Archimedes’ principle of flotation</span><small>Summative · Application</small></div><div><strong>P-11-B-34</strong><span>Justify how ships are engineered to float in the sea</span><small>Summative · Application</small></div></div>
+<p class="fine">Both topic-level classifications above are confirmed directly against the supplied official FBISE HSSC-I assessment framework (PDF p. 11). These labels do not certify every individual practice item.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#why">Why upthrust exists</a><a href="#derivation">Derivation</a><a href="#floating">Floating conditions</a><a href="#ships">Ships &amp; submarines</a><a href="#apparent">Apparent weight</a><a href="#worked">Worked examples</a><a href="#try-it">Try it</a><a href="#review">Revision</a></nav>
+<section class="lesson" id="why" aria-labelledby="why-title">
+<p class="eyebrow">01 · THE PHYSICS</p><h2 id="why-title">Why a submerged object feels an upward force</h2>
+<p>Fluid pressure acts on an immersed surface in every direction. The lower face of a submerged upright cylinder is at a greater depth than the upper face, so <strong>its upward pressure force is larger than the downward pressure force on the top</strong>. The two vertical forces do not cancel: their resultant is <strong>upthrust</strong>.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-figure62-reference.svg" width="760" height="285" loading="lazy" alt="Original educational diagram: a fully submerged cylinder with top face at depth h1 and bottom face at the greater depth h2. Top pressure P1 pushes down; bottom pressure P2 pushes up with P2 greater than P1.">
+<figcaption>Independently authored teaching schematic based on the pressure arrangement previously checked for NBF Figure 6.2. It is not an original textbook scan.</figcaption>
+</figure>
+<p>For a uniform-density liquid at rest, the <strong>gauge pressure</strong> at depth <em>h</em> is given by:</p>
+<div class="equation" role="math" aria-label="Gauge pressure equals fluid density multiplied by g multiplied by depth"><strong>p = ρ<sub>f</sub>gh</strong><span>p: gauge pressure (Pa); ρ<sub>f</sub>: fluid density (kg/m³); g: gravitational field strength (m/s²); h: depth (m)</span></div>
+<p>For an open liquid surface, absolute pressure is atmospheric pressure plus ρ<sub>f</sub>gh. The same atmospheric contribution acts at the top and bottom and cancels in their pressure <em>difference</em>.</p>
+</section>
+<section class="lesson" id="derivation" aria-labelledby="derive-title">
+<p class="eyebrow">02 · STEP-BY-STEP DERIVATION</p><h2 id="derive-title">Deriving Archimedes’ principle from pressure</h2>
+<p>Consider a rigid, completely immersed, upright cylinder of constant horizontal cross-sectional area <em>A</em>. The top lies at depth <em>h₁</em>, the bottom at <em>h₂</em>, with h₂ greater than h₁. Assume static liquid, constant density and gravitational field, and no other forces contributing to the liquid-pressure resultant.</p>
+<ol class="steps">
+<li><strong>Write the pressures:</strong> p₁ = ρ<sub>f</sub>gh₁ and p₂ = ρ<sub>f</sub>gh₂.</li>
+<li><strong>Find the two vertical forces:</strong> top force F₁ = p₁A, downward; bottom force F₂ = p₂A, upward.</li>
+<li><strong>Subtract using upward positive:</strong> F<sub>B</sub> = F₂ − F₁ = (p₂ − p₁)A.</li>
+<li><strong>Substitute pressure:</strong> F<sub>B</sub> = ρ<sub>f</sub>g(h₂ − h₁)A.</li>
+<li><strong>Use the submerged cylinder height:</strong> h = h₂ − h₁, so (h₂ − h₁)A = Ah = V<sub>displaced</sub>.</li>
+<li><strong>Identify displaced fluid weight:</strong> m<sub>displaced</sub> = ρ<sub>f</sub>V<sub>displaced</sub>; its weight is ρ<sub>f</sub>gV<sub>displaced</sub>.</li>
+</ol>
+<div class="equation primary" role="math" aria-label="Buoyant force equals fluid density multiplied by g multiplied by displaced fluid volume"><strong>F<sub>B</sub> = ρ<sub>f</sub>gV<sub>displaced</sub></strong><span>Upthrust = weight of the fluid displaced · SI unit: newton (N)</span></div>
+<p><strong>Archimedes’ principle:</strong> A body partly or completely immersed in a fluid experiences an upward buoyant force equal to the weight of fluid displaced. For a partially immersed body, <em>V<sub>displaced</sub></em> is only the submerged volume.</p>
+<div class="concept-note"><strong>Important condition:</strong> For a rigid <em>fully submerged</em> body in an incompressible liquid of fixed density, lowering the body farther increases absolute pressure on all its surfaces but does not change the net upthrust, since the displaced volume remains unchanged. This result is different from lowering a <em>partly submerged</em> body farther, which can increase its displaced volume.</div>
+</section>
+<section class="lesson" id="floating" aria-labelledby="floating-title">
+<p class="eyebrow">03 · FORCE BALANCE</p><h2 id="floating-title">Floating, neutral buoyancy and sinking</h2>
+<p>If an object floats freely at rest with no other vertical contact or support force, the sum of forces is zero:</p>
+<div class="equation" role="math" aria-label="At free floating equilibrium, buoyant force equals weight"><strong>F<sub>B</sub> = W = mg</strong><span>Floating equilibrium only · Not a universal equation for every immersed object</span></div>
+<p>Combining this with Archimedes’ principle gives <strong>V<sub>displaced</sub> = m/ρ<sub>f</sub></strong>. A heavier load therefore requires a larger volume of fluid to be displaced, provided the body can still float safely.</p>
+<div class="comparison"><article><h3>Surface flotation</h3><p>For a fixed-volume uniform object with mean density <strong>ρ<sub>object</sub> &lt; ρ<sub>fluid</sub></strong>, part of the body may remain above the surface at equilibrium.</p></article><article><h3>Neutral suspension</h3><p>If <strong>ρ<sub>object</sub> = ρ<sub>fluid</sub></strong>, the fully submerged body can be neutrally buoyant under the ideal static model.</p></article><article><h3>Sinking when released</h3><p>If <strong>ρ<sub>object</sub> &gt; ρ<sub>fluid</sub></strong>, even complete immersion does not provide enough buoyancy to balance its weight without other support.</p></article></div>
+<p>For a uniform floating object, the immersed fraction follows by replacing mass with mean density times total volume:</p>
+<div class="equation" role="math" aria-label="Fraction of whole floating object volume submerged equals object average density divided by fluid density"><strong>V<sub>displaced</sub> / V<sub>total</sub> = ρ<sub>object</sub> / ρ<sub>fluid</sub></strong><span>For a homogeneous floating object in an approximately uniform-density fluid</span></div>
+<p><strong>Supplementary illustration:</strong> A uniform block of density 600 kg/m³ floating in water of density 1000 kg/m³ has an immersed fraction of 600/1000 = <strong>0.60, or 60%</strong>. For irregular hulls, submerged <em>height</em> cannot be obtained from this fraction without their actual geometry.</p>
+</section>
+<section class="lesson" id="ships" aria-labelledby="ships-title">
+<p class="eyebrow">04 · ENGINEERING APPLICATION</p><h2 id="ships-title">Why steel ships can float</h2>
+<p>A solid steel block is generally denser than water, but a large hollow hull encloses air and can displace a substantial mass of seawater while keeping the <em>average density of the whole loaded ship</em> low enough to float. Cargo, passengers, fuel and machinery all contribute to total weight.</p>
+<div class="triad"><article><h3>Buoyancy</h3><p>The hull must displace enough water to support its entire loaded mass. Adding cargo increases the needed displaced volume and generally the draft.</p></article><article><h3>Stability</h3><p>A floating ship must also resist capsizing and tend to return upright after tilting. Weight placement, ballast and hull shape matter.</p></article><article><h3>Structural reliability</h3><p>The structure must withstand operating forces and prevent unacceptable deformation or flooding. Buoyancy alone does not certify seaworthiness.</p></article></div>
+<div class="equation" role="math" aria-label="Required displaced seawater volume is loaded ship mass divided by seawater density"><strong>V<sub>displaced</sub> = m<sub>loaded ship</sub> / ρ<sub>sea</sub></strong><span>Ideal hydrostatic displacement only — subject to safe draft, stability and strength constraints</span></div>
+<p>In denser seawater the same ship needs to displace less volume than in freshwater, so it generally floats higher when its mass and hull configuration remain the same.</p>
+<h3>What changes inside a submarine?</h3><p>For a submerged vessel of approximately fixed outside displaced volume, water taken into ballast tanks raises the vessel's total weight without greatly changing its upthrust. Releasing ballast water reduces its weight. Ideal neutral buoyancy occurs when <strong>m<sub>total</sub> = ρ<sub>fluid</sub>V<sub>external</sub></strong>. Actual submarines also use control surfaces when moving.</p>
+</section>
+<section class="lesson" id="apparent" aria-labelledby="apparent-title">
+<p class="eyebrow">05 · MEASURING BUOYANCY</p><h2 id="apparent-title">Apparent weight in a liquid</h2>
+<p>Imagine a solid hanging stationary from a spring balance while fully immersed in water, without touching the vessel floor. Its <strong>true weight</strong> acts downward; the upward forces are buoyancy and balance tension.</p>
+<div class="equation" role="math" aria-label="The balance reading in liquid equals true weight minus buoyant force"><strong>W<sub>apparent</sub> = W − F<sub>B</sub></strong><span>Static immersion · Balance reads supporting tension · Neglect air buoyancy</span></div>
+<p>The object <strong>has not lost mass or actual gravitational weight</strong>. Water supplies some of the upward force, so the supporting balance registers less. If the immersed object's true weight and apparent weight are both known, buoyancy is their difference.</p>
+<div class="concept-note"><strong>SI reminder:</strong> 10 cm = 0.10 m; 1 cm³ = 10⁻⁶ m³; 1 L = 10⁻³ m³; 1 g/cm³ = 1000 kg/m³. Use the <em>fluid density</em> in F<sub>B</sub> = ρ<sub>f</sub>gV, not the object's density.</div>
+</section>
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · WORKED APPLICATIONS</p><h2 id="worked-title">Numericals with complete working</h2>
+<p class="fine">The first two calculations use the data described as NBF Example 6.1 and Assignment 6.1 in the private teacher-prepared compilation. Their solutions have been independently audited, but the exact wording and data have not yet been cross-checked against original printed NBF pp. 89–91; they are <strong>not reproduced as verbatim textbook questions</strong>. The third and fourth are teacher-developed supplementary illustrations.</p>
+<article class="problem"><div class="problem-label">Prepared-master NBF Example 6.1 data · textbook wording unverified</div><h3>A completely immersed cube</h3>
+<p>A cube with edge length 10 cm is completely dipped in water. Find the upthrust using ρ<sub>water</sub> = 1000 kg/m³ and g = 9.8 m/s².</p>
+<ol><li>Convert the side length: 10 cm = <strong>0.10 m</strong>.</li><li>The immersed cube displaces its full volume: V = L³ = (0.10 m)³ = <strong>0.001 m³</strong>.</li><li>Apply the fluid-density formula: F<sub>B</sub> = 1000 × 9.8 × 0.001.</li><li><strong>Answer: 9.8 N upward.</strong></li></ol>
+<p class="key-point">Why fully immersed matters: a partly submerged cube would displace a smaller volume and experience a correspondingly smaller upthrust.</p></article>
+<article class="problem"><div class="problem-label">Prepared-master NBF Assignment 6.1 data · textbook wording unverified</div><h3>Iron object appears lighter by 200 N</h3>
+<p>A fully submerged iron object has density 7.8 g/cm³ and appears 200 N lighter in water. Determine (a) its volume and (b) its true weight in air. Assume ρ<sub>water</sub> = 1000 kg/m³, g = 9.8 m/s², and negligible buoyancy of air.</p>
+<ol><li>The apparent loss in supporting force equals upthrust: <strong>F<sub>B</sub> = 200 N</strong>.</li><li>V = F<sub>B</sub>/(ρ<sub>water</sub>g) = 200/(1000 × 9.8) = <strong>0.020408… m³</strong>.</li><li>Convert iron density: 7.8 g/cm³ = <strong>7800 kg/m³</strong>.</li><li>Mass of iron = 7800 × 0.020408… ≈ <strong>159.18 kg</strong>.</li><li>True weight = mg ≈ 159.18 × 9.8 = <strong>1560 N</strong>.</li><li>Check: the supporting force while submerged would be 1560 − 200 = <strong>1360 N</strong>.</li></ol>
+<p class="key-point"><strong>Answers:</strong> (a) V ≈ 2.04 × 10⁻² m³; (b) W ≈ 1560 N. The 200 N is the apparent <em>loss</em>, not the true weight.</p></article>
+<article class="problem"><div class="problem-label">Supplementary practice · teacher-developed</div><h3>Apparent weight of a 5 kg body</h3>
+<p>A body of mass 5 kg is held fully immersed in water and displaces 0.002 m³. Find its true weight, buoyant force and stationary spring-balance reading.</p>
+<ol><li>True weight = 5 × 9.8 = <strong>49 N</strong>.</li><li>Upthrust = 1000 × 9.8 × 0.002 = <strong>19.6 N</strong>.</li><li>Balance reading = 49 − 19.6 = <strong>29.4 N</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary idealized safety comparison · teacher-developed</div><h3>Why maximum displacement matters</h3>
+<p>A small boat system has a specified maximum allowed displaced-water volume of 0.80 m³. Its total loaded mass is 900 kg. Water density is 1000 kg/m³. Is the load supportable within the <em>specified displacement limit</em>?</p>
+<ol><li>Required equilibrium displacement: V = 900/1000 = <strong>0.90 m³</strong>.</li><li>Specified allowable displaced volume: <strong>0.80 m³</strong>.</li><li>Since 0.90 m³ &gt; 0.80 m³, the weight cannot be supported <em>within that stated limit</em>.</li></ol>
+<p class="key-point">This is an idealized hydrostatic capacity comparison, not a complete marine safety certification. Stability, freeboard and structural strength require separate checks.</p></article>
+</section>
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · EXPLORE THE FORMULA</p><h2 id="try-title">Calculate upthrust for a chosen submerged volume</h2>
+<p>Enter the <strong>fluid density</strong> and the <strong>volume of fluid displaced</strong>. Optionally compare the resulting force with a specified body weight. This is an ideal hydrostatic calculation, not a boat-loading or real-world safety simulator.</p>
+<form id="buoyancy-form" class="calculator" novalidate>
+<div class="fields"><label for="fluid-density">Fluid density (kg/m³)<input id="fluid-density" type="number" value="1000" step="1" min="1" max="25000" inputmode="decimal" required></label>
+<label for="displaced-litres">Fluid displaced (litres)<input id="displaced-litres" type="number" value="2" step="0.1" min="0.001" max="10000" inputmode="decimal" required></label>
+<label for="body-weight">Object weight (N)<input id="body-weight" type="number" value="25" step="0.1" min="0" max="100000000" inputmode="decimal" required></label></div>
+<button class="btn solid" type="submit">Calculate upthrust</button>
+<p id="calc-error" role="alert" class="calc-error" hidden></p>
+<div class="calc-output" id="calc-output" role="status" aria-live="polite">
+<p><strong>Given:</strong> ρ<sub>f</sub> = 1000 kg/m³; V<sub>displaced</sub> = 2 L = 0.002 m³; g = 9.8 m/s²</p>
+<p><strong>Upthrust:</strong> F<sub>B</sub> = 1000 × 9.8 × 0.002 = <strong>19.6 N upward</strong></p>
+<p><strong>At this specified immersion:</strong> upward buoyancy is 5.4 N less than the supplied 25 N weight, before considering any additional forces.</p>
+</div>
+</form>
+<p class="fine"><strong>Model boundary:</strong> The force comparison applies to the stated <em>instantaneous immersed volume</em>. A body with a different available total volume can displace additional fluid as it moves; comparing these numbers does not by itself predict a final floating depth, acceleration through water, or vessel stability. The calculation is local to your device and records no personal data or grades.</p>
+</section>
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · SELF-CHECK &amp; REVISION</p><h2 id="review-title">Make sure the ideas are clear</h2>
+<div class="questions">
+<details><summary>1. If a fully immersed rigid cube is lowered deeper in water, does its buoyant force increase?</summary><p>Not in the ideal model with constant water density and fixed cube volume. Both top and bottom pressures rise, but their difference depends on the fixed face separation.</p></details>
+<details><summary>2. A steel ship floats. Does that mean steel is less dense than water?</summary><p>No. The <em>complete hollow ship</em>, including air and load, can displace enough water. The material steel itself generally remains denser than water.</p></details>
+<details><summary>3. If a spring balance reads less underwater, has the object's mass decreased?</summary><p>No. Buoyancy reduces how much of the unchanged gravitational weight must be supported by the balance.</p></details>
+<details><summary>4. Is F<sub>B</sub> = W true for every immersed object?</summary><p>No. It holds for a freely floating or neutrally buoyant object in vertical equilibrium without other support forces. A supported or accelerating immersed object may have unequal weight and buoyancy.</p></details>
+<details><summary>5. Why does a ship float higher in denser seawater than in fresh water?</summary><p>For the same total mass, V<sub>displaced</sub> = m/ρ<sub>fluid</sub>. A larger fluid density requires less displaced volume, provided the vessel's configuration and loading are unchanged.</p></details>
+<details><summary>6. Can a ship with enough hydrostatic buoyancy still be unsafe?</summary><p>Yes. Buoyancy does not establish restoring stability, freeboard, damage resistance, structural strength or compliance with safe-loading requirements.</p></details>
+</div>
+<section class="summary" aria-labelledby="summary-title"><h3 id="summary-title">Fast revision formula sheet</h3>
+<div class="formula-grid">
+<p><strong>Hydrostatic gauge pressure:</strong> p = ρ<sub>f</sub>gh</p>
+<p><strong>Archimedes:</strong> F<sub>B</sub> = ρ<sub>f</sub>gV<sub>displaced</sub></p>
+<p><strong>Free-floating equilibrium:</strong> F<sub>B</sub> = mg</p>
+<p><strong>Required volume:</strong> V<sub>displaced</sub> = m/ρ<sub>f</sub></p>
+<p><strong>Static apparent weight:</strong> W<sub>app</sub> = W − F<sub>B</sub></p>
+<p><strong>Floating fraction:</strong> V<sub>displaced</sub>/V<sub>total</sub> = ρ<sub>object</sub>/ρ<sub>fluid</sub></p>
+</div></section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Continue your learning pathway</h2><p>Return to the integrated Unit 6 Desk to explore the original Archimedes simulation, practise 80 provisional source-based MCQs and revisit the topic's revision card.</p><div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-61">Return to Unit 6 Desk</a><a class="btn subtle" href="../archimedes-flotation.html">Explore the simulation</a><a class="btn subtle" href="./unit-06-topic-61-preview.html">Practise Topic 6.1 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-62">Next: Topic 6.2</a></div>
+<p class="fine">Provenance: prepared combined master pp. 17–50, V94-C2.1 source audit (PR #89), official supplied FBISE framework p. 11. Calculations are independently verified against the prepared source's givens. The private teacher master and original NBF textbook figures remain unpublished; per-question curriculum verification and final teacher signoff are pending.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B1 · Public study preview · No school grades recorded</footer>
+</body>
+</html>
