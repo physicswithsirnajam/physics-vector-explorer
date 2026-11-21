@@ -1,0 +1,29 @@
+name: Validate Grade XI Unit 6 Topic 6.3 Academic QC (V94-C2.3)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v94c2-topic63-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic63_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic63-academic-v94c2.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v94c2-topic63-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic63_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic63-academic-v94c2.yml"
+  workflow_dispatch:
+jobs:
+  topic63-flow-rate-and-model-validity:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check Topic 6.3 academic test syntax
+        run: node --check scripts/test_grade11_unit06_topic63_academic_v94c2.cjs
+      - name: Recalculate Part B/C/D fluid flow and graph results
+        run: node scripts/test_grade11_unit06_topic63_academic_v94c2.cjs
