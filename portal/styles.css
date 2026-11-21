@@ -238,3 +238,10 @@
 .hub-resource-controls{grid-template-columns:auto minmax(120px,1fr) auto minmax(165px,1.2fr)}
 #hub-browse-all[hidden]{display:none}
 @media(max-width:700px){.hub-units[data-view="overview"]{grid-template-columns:1fr}.hub-topic-link-grid{grid-template-columns:1fr}.hub-unit-chooser{padding:13px 14px}.hub-optional-guide>summary,.hub-unit6-topics>summary{padding:13px 14px}.hub-topic-link-grid{margin:0 13px 13px}.hub-unit6-topics>.btn{margin-left:13px}}
+
+/* V96-B: detailed legacy Unit 6 topic notes remain accessible but collapsed by default. */
+.hub-unit6-topic-contents>.hub-focus{display:block;margin:0 13px 13px;padding:17px 19px}
+.hub-unit6-topic-contents>.hub-focus strong{display:block;margin-top:15px}
+.hub-unit6-topic-contents>.hub-focus p{max-width:none}
+.hub-unit6-topic-contents>.hub-focus .btn{display:inline-block;margin:5px 6px 8px 0;max-width:100%;white-space:normal}
+@media(max-width:700px){.hub-unit6-topic-contents>.hub-focus{padding:14px 12px;margin:0 10px 12px}}
