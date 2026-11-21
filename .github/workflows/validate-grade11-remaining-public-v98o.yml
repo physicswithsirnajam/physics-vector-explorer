@@ -1,0 +1,75 @@
+name: Grade XI Remaining Public Resources and Link Audit (V98-O)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/privacy.html"
+      - "portal/unit-03-assessment-pack.html"
+      - "portal/unit-03-assessment-pack.js"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-assessment-pack.js"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_remaining_public_v98o.cjs"
+      - ".github/workflows/validate-grade11-remaining-public-v98o.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/legacy-hssc-resources-v73.json"
+      - "portal/hssc-concept-videos-v74.json"
+      - "portal/privacy.html"
+      - "portal/unit-03-assessment-pack.html"
+      - "portal/unit-03-assessment-pack.js"
+      - "portal/unit-04-assessment-pack.html"
+      - "portal/unit-04-assessment-pack.js"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-03-descriptive-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-04-descriptive-practice.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_remaining_public_v98o.cjs"
+      - ".github/workflows/validate-grade11-remaining-public-v98o.yml"
+  workflow_dispatch:
+jobs:
+  seven-public-resource-and-link-integrity-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check public resource browser auditor
+        run: node --check scripts/audit_grade11_remaining_public_v98o.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Audit seven remaining public pages, existing local links and safe student interactions
+        run: node scripts/audit_grade11_remaining_public_v98o.cjs
+      - name: Preserve diagnostic report and 21 viewport screenshots even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-remaining-public-v98o-evidence
+          path: qa-artifacts/remaining-public-v98o/
+          if-no-files-found: warn
+          retention-days: 10
