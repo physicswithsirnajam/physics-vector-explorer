@@ -112,7 +112,7 @@ async function run(){
   await rejects(receive({callerIdentity:caller('wrong-enrollment'),draft:draft(sample[0])}),
    'enrollment-required','incorrect Grade X enrollment rejected');
   const unknown=buildDraft({unit:1,questionId:'XI-U01-MCQ-9999',
-   sourceQuestionNumber:9999,bankVersion:'unknown',category:'other',note:''});
+   sourceQuestionNumber:4999,bankVersion:'unknown',category:'other',note:''});
   await rejects(receive({callerIdentity:caller('learner2'),draft:unknown}),
    'unavailable-question','unpublished source reference rejected by trusted catalog lookup');
 
