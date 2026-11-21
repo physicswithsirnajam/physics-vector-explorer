@@ -107,7 +107,7 @@ for(let i=0;i<20;i++){
  assert.equal(r.original_correct_option_text,q.options.find(x=>x.id===q.correctOptionId).text);
  assert.equal(r.key_result,'SOURCE_KEY_SUPPORTED_WITH_EXPLICIT_MODEL_LIMITS');
  assert.equal(r.amendment_priority,compulsory.get(n)||'OPTIONAL');
- assert.ok(r.teacher_note.length>=60);
+ assert.ok(r.teacher_note.length>=60 && r.teacher_note!=='undefined','Teacher note must be meaningful, not a placeholder');
  assert.equal(r.candidate_topic_slo_only,n===50||n===51||n===52||n===53?'P-11-B-41':'P-11-B-42');
  assert.ok(['Knowledge','Understanding','Application'].includes(r.candidate_item_cognitive_not_certified));
  assert.equal(r.original_printed_nbf_fidelity,'PENDING_PRINTED_NBF_PP91_TO95');
