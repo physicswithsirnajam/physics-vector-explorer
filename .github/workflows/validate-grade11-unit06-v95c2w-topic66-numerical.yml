@@ -1,0 +1,55 @@
+name: Validate Grade XI Unit 6 Topic 6.6 MCQ 41-60 Numerical QC (V95-C2W)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v95c2w-topic66-mcq41-60-numerical-review.csv"
+      - "quality/grade11-unit06-v95c2w-topic66-mcq41-60-numerical-review.md"
+      - "scripts/test_grade11_unit06_v95c2w_topic66_num41_60_academic.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2w-topic66-numerical.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v95c2w-topic66-mcq41-60-numerical-review.csv"
+      - "quality/grade11-unit06-v95c2w-topic66-mcq41-60-numerical-review.md"
+      - "scripts/test_grade11_unit06_v95c2w_topic66_num41_60_academic.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2w-topic66-numerical.yml"
+  workflow_dispatch:
+jobs:
+  topic66-third20-numerical-source-and-teacher-safety:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 20 independent calculations, nine compulsory flags and inherited release holds
+        run: |
+          node --check scripts/test_grade11_unit06_v95c2w_topic66_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2w_topic66_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2v_topic66_second20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2u_topic66_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2t_topic65_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2s_topic65_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2r_topic65_second20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2q_topic65_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2p_topic64_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2o_topic64_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2n_topic64_second20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2m_topic64_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2l_topic63_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2k_topic63_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2j_topic63_second20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2i_topic63_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2h_topic62_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2g_topic62_num41_60_academic.cjs
+          node scripts/test_grade11_unit06_v95c2f_topic62_second20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2e_topic62_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c2d_topic61_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c2c_topic61_mcq41_64_numerical.cjs
+          node scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs
+          node scripts/test_grade11_unit06_v95c2a_topic61_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
