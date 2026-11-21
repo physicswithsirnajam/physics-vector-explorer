@@ -1,0 +1,85 @@
+name: Grade XI Six Interactive Labs and Unit 6 Figure QA (V98-M)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-03-motion-lab.html"
+      - "portal/unit-03-motion-engine.js"
+      - "portal/unit-03-motion-ui.js"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-03-collision-engine.js"
+      - "portal/unit-03-collision-ui.js"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-rotational-engine.js"
+      - "portal/unit-04-rotation-ui.js"
+      - "portal/unit-04-angular-momentum-lab.html"
+      - "portal/unit-04-angular-momentum-engine.js"
+      - "portal/unit-04-angular-momentum-ui.js"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-artificial-gravity-engine.js"
+      - "portal/unit-04-artificial-gravity-ui.js"
+      - "portal/unit-04-centrifuge-lab.html"
+      - "portal/unit-04-centrifuge-engine.js"
+      - "portal/unit-04-centrifuge-ui.js"
+      - "portal/unit-06-figure-study-v90.html"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_uncovered_interactive_labs_v98m.cjs"
+      - ".github/workflows/validate-grade11-interactive-labs-v98m.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-03-motion-lab.html"
+      - "portal/unit-03-motion-engine.js"
+      - "portal/unit-03-motion-ui.js"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-03-collision-engine.js"
+      - "portal/unit-03-collision-ui.js"
+      - "portal/unit-04-rotation-lab.html"
+      - "portal/unit-04-rotational-engine.js"
+      - "portal/unit-04-rotation-ui.js"
+      - "portal/unit-04-angular-momentum-lab.html"
+      - "portal/unit-04-angular-momentum-engine.js"
+      - "portal/unit-04-angular-momentum-ui.js"
+      - "portal/unit-04-artificial-gravity-lab.html"
+      - "portal/unit-04-artificial-gravity-engine.js"
+      - "portal/unit-04-artificial-gravity-ui.js"
+      - "portal/unit-04-centrifuge-lab.html"
+      - "portal/unit-04-centrifuge-engine.js"
+      - "portal/unit-04-centrifuge-ui.js"
+      - "portal/unit-06-figure-study-v90.html"
+      - "portal/unit-04-rotation-study.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_uncovered_interactive_labs_v98m.cjs"
+      - ".github/workflows/validate-grade11-interactive-labs-v98m.yml"
+  workflow_dispatch:
+jobs:
+  seven-public-student-interactive-resources:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify student simulation QA syntax
+        run: node --check scripts/audit_grade11_uncovered_interactive_labs_v98m.cjs
+      - name: Install Chromium for local browser audit
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test six public simulations and one physics-figure companion on desktop and phones
+        run: node scripts/audit_grade11_uncovered_interactive_labs_v98m.cjs
+      - name: Preserve screenshots and diagnostic JSON even when a test fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-interactive-labs-v98m-evidence
+          path: qa-artifacts/interactive-labs-v98m/
+          if-no-files-found: warn
+          retention-days: 10
