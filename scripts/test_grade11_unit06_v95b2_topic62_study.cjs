@@ -110,7 +110,8 @@ async function browser(){
    const dims=await tab.evaluate(()=>({clientWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth}));
    assert.ok(dims.scrollWidth<=dims.clientWidth+2,'Overflow at '+width+': '+JSON.stringify(dims));
    const img=tab.locator('.teaching-figure img');await img.scrollIntoViewIfNeeded();
-   assert.equal(await img.evaluate(i=>i.complete&&i.naturalWidth>0),true,'SVG failed to load '+width);
+   const imageResult=await img.evaluate(async i=>{try{await i.decode();}catch(e){return {loaded:false,reason:String(e),src:i.currentSrc};}return {loaded:i.complete&&i.naturalWidth>0,naturalWidth:i.naturalWidth,src:i.currentSrc};});
+   assert.equal(imageResult.loaded,true,'Original SVG must load at '+width+': '+JSON.stringify(imageResult));
    const details=tab.locator('#review details');assert.equal(await details.count(),6);
    await details.first().locator('summary').click();
    assert.equal(await details.first().evaluate(d=>d.open),true);
