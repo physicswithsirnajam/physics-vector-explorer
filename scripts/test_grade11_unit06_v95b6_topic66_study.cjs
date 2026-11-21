@@ -70,7 +70,7 @@ assert.ok(html.includes('never interpret this as a credible measured flight-lift
 assert.ok(!html.includes('Grade11_Unit6_COMPLETE_MASTER_ALL.pdf'),'Do not disclose private source on student page');
 assert.ok(!html.includes('<iframe'),'Do not embed NBF scans');
 assert.ok(svg.includes('role="img"')&&svg.includes('aria-labelledby="t d"'));
-assert.ok(svg.includes('different cross-sections')&&svg.includes('not NBF textbook figures'));
+assert.ok(svg.includes('A1 larger than A2')&&svg.includes('not NBF textbook figures'),'Original SVG must state wide/throat geometry and source-art distinction');
 assert.match(css,/@media\(max-width:550px\)/);
 assert.match(css,/@media print/);
 assert.ok(js.includes('e.preventDefault()'));
