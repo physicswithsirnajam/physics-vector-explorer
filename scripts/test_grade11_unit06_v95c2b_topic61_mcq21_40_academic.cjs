@@ -91,10 +91,10 @@ for(let i=20;i<40;i++){
 const manifest=JSON.parse(read('question-bank/manifest.json'));
 const catalog=JSON.parse(read('portal/learning-catalog.json'));
 const signoff=JSON.parse(read('quality/grade11-unit06-v94d-signoff-matrix.json'));
-const g=manifest.grades.find(x=>x.grade===11),unit=g.units.find(x=>x.unit===6);
+const grade11=manifest.grades.find(x=>x.grade===11),unit=grade11.units.find(x=>x.unit===6);
 const cat=catalog.grades.find(x=>x.grade===11).units.find(x=>x.unit===6);
 assert.equal(unit.liveMcqCount,560);
-assert.equal(g.units.reduce((s,x)=>s+x.liveMcqCount,0),2250);
+assert.equal(grade11.units.reduce((s,x)=>s+x.liveMcqCount,0),2250);
 assert.equal(unit.standaloneSituationQuestionCount,136);
 assert.equal(unit.independentSharedStimulusGroupCount,0);
 assert.equal(unit.perQuestionSloVerified,false);
