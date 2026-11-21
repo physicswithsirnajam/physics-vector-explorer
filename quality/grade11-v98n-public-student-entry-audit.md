@@ -10,7 +10,7 @@ PR #157 has been independently confirmed merged at commit `65ec1e56ee6b46cf75cec
 
 | Original route | Read-only student-path check |
 |---|---|
-| `portal/index.html` | Public landing/login entry references the exact original official logo and banner; unauthenticated header link opens the Simulation Directory. No login or registration is attempted. |
+| `portal/index.html` | Public landing/login entry references the exact original official logo and banner. The existing V69 sign-in-first CSS deliberately **hides** the Simulation Directory header shortcut and public-demo section while signed out. The audit respects this design and confirms the public Simulation Directory URL is directly reachable without authentication (without claiming a visible signed-out shortcut). No login or registration is attempted. |
 | `portal/simulations.html?unit=6` | Public directory loads its original simulation and unit-specific laboratory catalogs, preselects Unit 6, renders its five original standalone simulations, filters on search and restores them when cleared; first linked simulation resolves locally. |
 | `student-guide.html` | Student Start Guide loads its manifest-based public MCQ total and links to Test Builder and the real Unit 1 Learning Desk. |
 | `build-your-physics-test.html?unit=6` | Public Test Builder preselects provisional Unit 6, can Clear, Select All and Reset unit selections without launching, grading or saving a test. |
@@ -35,3 +35,9 @@ Headless Chromium serves the checked-out repository files locally and checks all
 This is anonymous, source-local public-browser testing, **not** certification of deployed website, production auth, personalized user dashboards, complete academic SLO mappings, screen-reader accessibility, or teacher-controlled workflows. It does not interact with private accounts, answer keys, grades or test submissions.
 
 After latest-head checks finish green, review `report.md` and screenshots. Then **Ready for review → Merge pull request → Confirm merge**. Keep the one-PR-at-a-time policy and isolate follow-up defects.
+
+## Sign-in-first CSS discovery during the first diagnostic run
+
+The first V98-N browser run failed because it tried to click a signed-out portal header shortcut that was not visible. A second check at desktop width showed the same result. The cause is **deliberate global navigation styling**, not a phone-only defect: `shared/navigation.css` explicitly hides `.topbar .header-link` and `.public-demo` for `body.psn-portal-auth-gated:not(.psn-portal-access-approved)`. That is an existing sign-in-first visual-routing policy, and this audit will not bypass it.
+
+The corrected test checks that the original public banner and logo load and that **`/portal/simulations.html` responds successfully without authentication** via its direct URL, while recording `publicShortcutVisible: false` for signed-out visitors. The test does **not** claim signed-out portal users can click a hidden header link. Whether an explicitly visible public-resource shortcut should be restored is a separate design/UX decision for later discussion; that change is **not** in this read-only PR.
