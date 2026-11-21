@@ -124,7 +124,7 @@ async function main(){
    assert.equal(await page.locator('#option-grid input[type="radio"]').first().isChecked(),true,'answer survives next/back '+item.path);
    const activeWidth=await page.evaluate(()=>({screen:document.documentElement.clientWidth,content:document.documentElement.scrollWidth}));
    if(activeWidth.content>activeWidth.screen+2)report.alerts.push({page:item.path,width:390,type:'active-practice-horizontal-overflow',detail:'Question/option state extends beyond phone viewport '+activeWidth.content+'px'});
-   const practiceScreenshot=item.path.replace(/\\//g,'-').replace(/\\.html$/,'')+'-active-practice-mobile.png';
+   const practiceScreenshot=item.path.split('/').join('-').replace('.html','')+'-active-practice-mobile.png';
    await page.screenshot({path:path.join(output,practiceScreenshot),fullPage:false,animations:'disabled'});
    // Do not click Submit: no scores/answers are published or stored during this audit.
    const practice={bankLoaded:true,questionCount:10,optionCount:4,firstAnswerPersisted:true,screenWidth:activeWidth.screen,contentWidth:activeWidth.content,screenshot:practiceScreenshot};
