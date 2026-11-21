@@ -36,11 +36,13 @@ function renderResourceList(grade,active){
  const wrap=resetChildren('hub-resources');
  const visibleUnits=selectedUnit==='all'?active:active.filter(u=>String(u.unit)===selectedUnit);
  const ids=[...new Set(visibleUnits.flatMap(u=>u.resourceIds||[]))];
+ const records=[...ids.map(id=>catalogue.resources.find(x=>x.id===id)),
+   ...visibleUnits.filter(u=>u.practicePreviewStatus==='public-provisional').flatMap(u=>Array.isArray(u.previewResources)?u.previewResources:[])];
  const filter=byId('hub-resource-filter')?.value||'all';
  const term=(byId('hub-resource-search')?.value||'').trim().toLowerCase();
  let found=0;
- for(const id of ids){
-  const r=catalogue.resources.find(x=>x.id===id);if(!r)continue;
+ for(const r of records){
+  if(!r)continue;
   if(filter!=='all'&&r.category!==filter)continue;
   if(term&&![r.title,r.description,r.category,r.accessDescription].join(' ').toLowerCase().includes(term))continue;
   const href=safeHref(r.href);if(!href)continue;
@@ -85,38 +87,41 @@ function renderGrade(){
  if(!catalogue){line.textContent='Catalogue temporarily unavailable. Existing links in the dashboard may still work.';return;}
  const grade=catalogue.grades.find(g=>g.grade===11);
  if(!grade){line.textContent='Grade XI catalogue is not available.';return;}
- const active=grade.units.filter(u=>u.status==='available');
- const planned=grade.units.filter(u=>u.status!=='available');
+ const published=grade.units.filter(u=>u.status==='available');
+ const previews=grade.units.filter(u=>u.status!=='available'&&u.practicePreviewStatus==='public-provisional'&&Number(u.partialTestBuilderMcqCount)>0&&Array.isArray(u.previewResources)&&u.previewResources.length>0);
+ const active=[...published,...previews].sort((a,b)=>a.unit-b.unit);
+ const planned=grade.units.filter(u=>!active.includes(u));
  const total=grade.units.length;
  const unitFilter=byId('hub-unit-filter');
  if(unitFilter){
    const old=selectedUnit;
    unitFilter.replaceChildren();
-   const all=document.createElement('option');all.value='all';all.textContent='All released units';unitFilter.append(all);
-   for(const u of active){const option=document.createElement('option');option.value=String(u.unit);option.textContent=`Unit ${u.unit} — ${u.title}`;unitFilter.append(option);}
+   const all=document.createElement('option');all.value='all';all.textContent='All units with study or practice resources';unitFilter.append(all);
+   for(const u of active){const option=document.createElement('option');option.value=String(u.unit);option.textContent=`Unit ${u.unit} — ${u.title}${u.practicePreviewStatus==='public-provisional'?' (practice preview)':''}`;unitFilter.append(option);}
    selectedUnit=active.some(u=>String(u.unit)===old)?old:'all';unitFilter.value=selectedUnit;
  }
  byId('hub-total-units').textContent=String(total);
  byId('hub-linked-units').textContent=String(active.length);
  byId('hub-awaiting-units').textContent=String(planned.length);
  byId('hub-upcoming-count').textContent=`(${planned.length})`;
- line.textContent=`Grade XI / FBISE · ${active.length} of ${total} units linked · self-practice material is provisional, not a certified board exam.`;
+ line.textContent=`Grade XI / FBISE · ${published.length} published-resource units + ${previews.length} provisional practice preview${previews.length===1?'':'s'} · ${active.length} of ${total} units with learning resources. Full Unit 6 course and formal assessment remain pending.`;
  const list=resetChildren('hub-units');
  for(const u of active){
   const card=document.createElement('article');card.className='hub-unit';
   const top=document.createElement('div');top.className='hub-unit-top';
   const title=document.createElement('strong');title.textContent=`Unit ${u.unit} — ${u.title}`;
-  const hasBank=Number(u.questionBankCount)>0;
-  top.append(title,chip(hasBank?'Pilot MCQ practice':'Enrolled study lessons','true'));
+  const bankCount=Number(u.questionBankCount)>0?Number(u.questionBankCount):u.practicePreviewStatus==='public-provisional'?Number(u.partialTestBuilderMcqCount)||0:0;
+  const hasBank=bankCount>0;
+  top.append(title,chip(u.practicePreviewStatus==='public-provisional'?'Provisional practice · Teacher approval pending':hasBank?'Pilot MCQ practice':'Enrolled study lessons','true'));
   const desc=document.createElement('p');desc.textContent=u.summary||'';
   const meta=document.createElement('div');meta.className='hub-unit-meta';
-  meta.append(chip(hasBank?`${u.questionBankCount} imported MCQs`:'Unit MCQs not yet imported'),chip(hasBank?'MCQ academic review pending':'Unit source package QC passed'));
+  meta.append(chip(hasBank?`${bankCount} provisional MCQs`:'Unit MCQs not yet imported'),chip(u.practicePreviewStatus==='public-provisional'?'First-pass inspected · Certification pending':hasBank?'MCQ academic review pending':'Unit source package QC passed'));
   const note=document.createElement('p');note.className='hub-unit-note';
   note.textContent=u.studentNotice||'Available for exploratory self-practice; academic approval remains in progress.';
   card.append(top,desc,meta,note);
   const unitHref=u.landingHref?safeHref(u.landingHref):null;
-  if(unitHref){const link=document.createElement('a');link.href=unitHref;link.className='btn btn-secondary btn-small';link.textContent=`Open Unit ${u.unit} Learning Desk ↗`;card.append(link);}
-  if(hasBank&&Number.isInteger(u.unit)&&u.unit>=1&&u.unit<=5){
+  if(unitHref){const link=document.createElement('a');link.href=unitHref;link.className='btn btn-secondary btn-small';link.textContent=`Open Unit ${u.unit} ${u.practicePreviewStatus==='public-provisional'?'Learning Desk Preview':'Learning Desk'} ↗`;card.append(link);}
+  if(hasBank&&Number.isInteger(u.unit)&&u.unit>=1&&u.unit<=6){
     const practiceHref=safeHref('../build-your-physics-test.html?unit='+u.unit);
     if(practiceHref){const practice=document.createElement('a');practice.href=practiceHref;practice.className='btn btn-primary btn-small';practice.textContent=`Practise Unit ${u.unit} MCQs ↗`;card.append(practice);}
   }

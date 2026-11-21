@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v89-partial-unit06-topics61-67-central-practice",
+  "catalogVersion": "pilot-v96-unit06-provisional-public-practice-discovery",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 560 more, giving 2,250 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -195,11 +195,11 @@
           "unit": 6,
           "title": "Fluid Mechanics",
           "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "summary": "Public seven-topic Fluid Mechanics study preview: 560 provisional MCQs, five mapped simulations and original topic learning activities. First-pass scientific/source inspection is complete; individual teacher/FBISE certification and the full course remain pending.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed",
+          "qualityStatus": "560-of-560-first-pass-reviewed; individual-scientific-key-SLO-cognitive-teacher-approval-pending",
           "studentNotice": "Partial Unit6 Topics6.1–6.7 contribute all 560 original public MCQs (GradeXI total 2,250). Six NBF figure-referencing MCQs from Topics6.1–6.3 were checked against original printed textbook figures and now display separate V90 original educational SVGs during central and topic self-practice. No actual textbook art is published. Individual SLO/cognitive classification remains provisional, zero Unit6 authentic shared-stimulus groups, full Unit6 course planned, no protected examination or cloud-recorded school grade.",
           "simulationCount": 5,
           "simulationHref": "./simulations.html?unit=6",
@@ -215,7 +215,50 @@
           "partialTestBuilderHref": "../build-your-physics-test.html?unit=6",
           "partialTestBuilderStatus": "public-topics61-67-provisional",
           "sourceTopicMcqCount": 560,
-          "sourceFigureHeldCount": 0
+          "sourceFigureHeldCount": 0,
+          "practicePreviewStatus": "public-provisional",
+          "landingHref": "./unit-06-learning-desk-v95a.html",
+          "previewResources": [
+            {
+              "id": "unit6-preview-learning-desk",
+              "category": "STUDY",
+              "title": "Unit 6 — Fluid Mechanics Seven-Topic Learning Desk Preview",
+              "description": "Seven topic orientations with five existing simulations, original MCQ topic previews and revision checks. This is an accessible public practice/study preview, not a full certified course.",
+              "href": "./unit-06-learning-desk-v95a.html",
+              "public": true,
+              "external": false,
+              "action": "Open Unit 6 Learning Desk Preview",
+              "access": "public-link",
+              "contentStatus": "first-pass-inspected-560-provisional-student-study-preview-teacher-certification-pending",
+              "accessDescription": "Public GitHub Pages learning preview. All Unit 6 teacher signoffs and item-level FBISE SLO/cognitive certifications remain pending."
+            },
+            {
+              "id": "unit6-preview-central-mcqs",
+              "category": "PRACTISE",
+              "title": "Unit 6 — Build a 560-MCQ Provisional Practice Test",
+              "description": "Select from all seven Fluid Mechanics topics in the central Test Builder. Original source keys remain provisional pending teacher certification.",
+              "href": "../build-your-physics-test.html?unit=6",
+              "public": true,
+              "external": false,
+              "action": "Practise Unit 6 MCQs",
+              "access": "public-link",
+              "contentStatus": "public-self-practice-original-560-items-with-review-register-no-exam-certification",
+              "accessDescription": "Public, ungraded self-practice. Combined and Unit 6 attempt cloud saving is not yet supported; the full Unit 6 course and graded examination remain unreleased."
+            },
+            {
+              "id": "unit6-preview-simulations",
+              "category": "SIMULATIONS",
+              "title": "Unit 6 — Five Fluid Mechanics Simulations",
+              "description": "Browse five original public Fluid Mechanics simulations from the local simulation library, filtered to Unit 6.",
+              "href": "./simulations.html?unit=6",
+              "public": true,
+              "external": false,
+              "action": "Explore Unit 6 Simulations",
+              "access": "public-link",
+              "contentStatus": "public-five-mapped-simulations-standalone-pages-not-private",
+              "accessDescription": "Public educational models: they do not require sign-in or store certified assessment grades."
+            }
+          ]
         },
         {
           "unit": 7,

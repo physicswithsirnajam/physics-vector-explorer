@@ -98,7 +98,7 @@
     link('portal/simulations.html','Simulation Library','simulations'),
     {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Google Sites Student Hub (external)',key:'external-hub'}
   ];
-  const info=e('p','psn-drawer-hint','Select a published unit to expand its study, simulations, practice and revision resources.');
+  const info=e('p','psn-drawer-hint','Choose a unit to explore study, simulations and practice. Unit 6 is a provisional practice preview, not an approved full course.');
   const content=e('nav','psn-drawer-content');content.setAttribute('aria-label','Grade XI unit-by-unit resources');
   const live=e('p','psn-drawer-loading','Open the menu to browse available resources.');
   live.setAttribute('role','status');live.setAttribute('aria-live','polite');
@@ -177,7 +177,7 @@
     const panel=e('details','psn-drawer-unit');
     panel.dataset.psnUnit=String(unit.unit);
     const summary=e('summary','psn-drawer-unit-summary');
-    const name=e('strong',null,'Unit '+unit.unit+' — '+unit.title);
+    const name=e('strong',null,'Unit '+unit.unit+' — '+unit.title+(unit.practicePreviewStatus==='public-provisional'?' · Practice preview':''));
     const indicator=e('span',null,'Expand');indicator.className='psn-drawer-chevron';
     summary.append(name,indicator);panel.append(summary);
     const body=e('div','psn-drawer-unit-body');
@@ -187,10 +187,11 @@
     if(practiceUrl)body.append(makeLink(practiceUrl,'Practise Unit '+unit.unit+' MCQs','public-link'));
     const categories=new Map();
     const seen=new Set();
-    for(const id of unit.resourceIds||[]){
-      if(seen.has(id))continue;seen.add(id);
-      const record=byId.get(id);
-      if(!record)continue;
+    const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
+      ...(unit.practicePreviewStatus==='public-provisional'&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
+    for(const record of records){
+      if(!record?.id||seen.has(record.id))continue;
+      seen.add(record.id);
       const href=safeHref(record.href,portalBase);
       if(!href)continue;
       const category=record.category||'OTHER RESOURCES';
@@ -214,7 +215,7 @@
       group.append(summary,linksBox);body.append(group);
     }
     panel.append(body);
-    const activeUnit=here.match(/\/unit-0([1-5])(?:[.-]|\/)/);
+    const activeUnit=here.match(/\/unit-0([1-6])(?:[.-]|\/)/);
     panel.open=Boolean(activeUnit&&Number(activeUnit[1])===unit.unit);
     if(panel.open){
       const active=[...body.querySelectorAll('.psn-drawer-category')];
@@ -225,7 +226,7 @@
     return panel;
   }
   async function loadResources(){
-    loading=true;live.textContent='Loading the five published Grade XI unit menus…';
+    loading=true;live.textContent='Loading available Grade XI unit resources and provisional practice previews…';
     try{
       const url=new URL('portal/learning-catalog.json',root);
       const response=await fetch(url,{cache:'no-store'});
@@ -233,23 +234,23 @@
       const catalog=await response.json();
       const grade=catalog.grades?.find(g=>g.grade===11);
       if(!grade||!Array.isArray(grade.units)||!Array.isArray(catalog.resources))throw Error('Invalid learning catalogue');
-      const active=grade.units.filter(u=>u.status==='available'&&
+      const active=grade.units.filter(u=>(u.status==='available'||u.practicePreviewStatus==='public-provisional')&&
         Number.isInteger(u.unit)&&u.unit>=1&&u.unit<=14&&Array.isArray(u.resourceIds));
       const map=new Map(catalog.resources.filter(r=>typeof r.id==='string').map(r=>[r.id,r]));
       const portalBase=new URL('portal/',root);
       const fragment=document.createDocumentFragment();
       for(const unit of active)fragment.append(renderUnit(unit,map,portalBase));
       content.replaceChildren(fragment);
-      live.textContent=active.length+' published unit menus available. Other units are still being developed.';
+      live.textContent=active.length+' unit menus with resources, including the provisional Unit 6 practice preview. The full Unit 6 course and graded examinations are not released.';
       loaded=true;
     }catch(error){
-      // Five verified first milestone desks remain reachable if the public JSON fails.
+      // Five original published desks plus the Unit 6 public study preview remain reachable if catalogue fetch fails.
       const fallback=e('div','psn-drawer-fallback');
       fallback.append(e('p',null,'Resource categories are temporarily unavailable. Open a published Unit Learning Desk instead.'));
       const names=['Physical Quantities and Measurements','Vectors','Translatory Motion',
-        'Rotational and Circular Motion','Work and Energy'];
+        'Rotational and Circular Motion','Work and Energy','Fluid Mechanics (practice preview)'];
       names.forEach((name,index)=>fallback.append(makeLink(
-        new URL('portal/unit-0'+(index+1)+'.html',root).href,
+        new URL(index===5?'portal/unit-06-learning-desk-v95a.html':'portal/unit-0'+(index+1)+'.html',root).href,
         'Unit '+(index+1)+' — '+name,'public-link'
       )));
       content.replaceChildren(fallback);
