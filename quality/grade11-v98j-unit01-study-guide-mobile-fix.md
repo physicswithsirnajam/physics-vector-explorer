@@ -19,3 +19,17 @@ The original image `portal/assets/physics-with-sir-najam-official-logo.png` must
 The diagnostic runs against checked-out repository files locally, not live GitHub Pages. The early diagnose-first draft may deliberately have a **red** workflow before the correction. Keep the PR draft and do not merge until all latest-head workflows are green. Evidence is collected even on failure as `grade11-unit01-mobile-v98j-evidence`.
 
 **After this fix merges:** diagnose the separately recorded Unit 5 Work and Energy Study Guide overflow at 320px in its own focused PR.
+
+## Root cause confirmed and minimal correction applied
+
+The initial V98-J Chromium diagnostic replicated **398px page width at 320px, 375px and 390px**, while pages fit at 540px, 768px and 1280px. The exact offender was the original four-column **Quantity / Defining relation / SI base units / Dimensions** table in the Unit 1 lesson. Its `<table>` element had a minimum rendered width of **360px** starting about x=38px, placing its right edge at **398px**; some other tables also exceeded the 320px phone width.
+
+Only one media-screen-specific CSS rule was added immediately before the existing `@page` print rule:
+
+```css
+@media screen and (max-width:540px){section.lesson table{display:block;max-width:100%;overflow-x:auto}}
+```
+
+This keeps the entire four-column science reference table unchanged while allowing sideways scrolling **within the table itself** at narrow phone widths. It does **not** affect desktop, larger tablets or printed A4 lesson layouts because the media query is screen-only. The original markup, every word, calculation, image, link and answer retain their exact baseline bytes. Removing the single approved CSS line recovers FNV-1a **2697198545**.
+
+The final latest-head regression must pass all six viewports, logo asset loading, original content fingerprint, safe Unit 1 Learning Desk return navigation, and any additional GitHub checks. Do not merge on the first diagnostic failure; use the later green latest-head run.
