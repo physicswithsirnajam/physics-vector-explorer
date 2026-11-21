@@ -7,6 +7,9 @@ on:
       - "portal/index.html"
       - "portal/simulations.html"
       - "portal/legacy-hssc-resources.html"
+      - "portal/unit-01.html"
+      - "student-guide.html"
+      - "scripts/test_student_workspace_v68.cjs"
       - "scripts/test_hssc_legacy_resources_v73.cjs"
       - "scripts/test_grade11_student_surface_v96d.cjs"
       - "quality/grade11-v96d-student-surface-and-google-sites-navigation-audit.md"
@@ -19,6 +22,9 @@ on:
       - "portal/index.html"
       - "portal/simulations.html"
       - "portal/legacy-hssc-resources.html"
+      - "portal/unit-01.html"
+      - "student-guide.html"
+      - "scripts/test_student_workspace_v68.cjs"
       - "scripts/test_hssc_legacy_resources_v73.cjs"
       - "scripts/test_grade11_student_surface_v96d.cjs"
       - "quality/grade11-v96d-student-surface-and-google-sites-navigation-audit.md"
@@ -52,6 +58,7 @@ jobs:
           node scripts/test_grade11_student_surface_v96d.cjs
           node scripts/test_hssc_legacy_resources_v73.cjs
           node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_student_workspace_v68.cjs
       - name: Archive read-only remaining-link inventory
         if: always()
         uses: actions/upload-artifact@v4
