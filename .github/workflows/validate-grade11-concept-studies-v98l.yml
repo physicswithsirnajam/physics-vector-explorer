@@ -1,0 +1,65 @@
+name: Grade XI Unit 3 and 4 Concept Studies Visual Audit (V98-L)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-centrifuge-study.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-04-slo-focus.html"
+      - "portal/unit-04-slo-focus.js"
+      - "portal/unit-04-rotation-lab.html"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "scripts/audit_grade11_concept_studies_v98l.cjs"
+      - ".github/workflows/validate-grade11-concept-studies-v98l.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-04-rotation-study.html"
+      - "portal/unit-04-centripetal-study.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/unit-04-artificial-gravity-study.html"
+      - "portal/unit-04-centrifuge-study.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-04-slo-focus.html"
+      - "portal/unit-04-slo-focus.js"
+      - "portal/unit-04-rotation-lab.html"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "scripts/audit_grade11_concept_studies_v98l.cjs"
+      - ".github/workflows/validate-grade11-concept-studies-v98l.yml"
+  workflow_dispatch:
+jobs:
+  seven-public-concept-studies-and-slo-navigator:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate standalone browser script syntax
+        run: node --check scripts/audit_grade11_concept_studies_v98l.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Audit seven concept-study views at desktop and two phone sizes
+        run: node scripts/audit_grade11_concept_studies_v98l.cjs
+      - name: Preserve 21 screenshots and diagnostic JSON even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-concept-studies-v98l-evidence
+          path: qa-artifacts/concept-study-v98l/
+          if-no-files-found: warn
+          retention-days: 10
