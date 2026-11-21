@@ -10,6 +10,7 @@
 body.projector{font-size:18px}body.projector .wrap{max-width:1450px}body.projector .card h2{font-size:22px}body.projector .control label{font-size:17px}body.projector .btn{font-size:16px;padding:11px 15px}body.projector .metric .num{font-size:28px}body.projector .sub{font-size:15px}
 @media print{.header,.tabs,.toolbar,.scenario,.cards,.foot,.control, .printbox{display:none!important}.panel{display:none!important}.panel.active{display:block!important}.two{grid-template-columns:1fr 1fr}.card{box-shadow:none;break-inside:avoid}.wrap{max-width:none;padding:0}.stage{background:#fff}.metrics{grid-template-columns:repeat(4,1fr)}}
 </style>
+ <link rel="stylesheet" href="shared/standalone-brand-v97a.css?v=97a">
 </head>
 <body>
 <header class="header"><div class="wrap"><div class="brand"><div class="brandname">PHYSICS <strong>WITH SIR NAJAM</strong></div><div class="overline">Interactive Physics Laboratory · HSSC-I</div></div><div class="hero"><div><div class="overline">UNIT 4 · ROTATIONAL & CIRCULAR MOTION</div><h1>Torque, Inertia &amp;<br>Angular Momentum</h1><p>Move masses closer to the axis, apply a turning force, and compare rotating objects. See what changes and what stays conserved.</p><div class="pills"><span class="pill">NBF textbook · pp. 64–71</span><span class="pill">FBISE summative · P-11-B-18, B-19, B-20</span><span class="pill">Ideal rigid-body models</span></div></div><button class="btn btn-dark" id="projector">▣ Projector mode</button></div></div></header>
@@ -113,4 +114,5 @@ const quiz=[
 function animate(now){if(last===null)last=now;const dt=Math.min(.055,Math.max(0,(now-last)/1000));last=now;if(playingSkater){spinAngle=(spinAngle+skaterState().w*dt)%(2*Math.PI);$('skaterSpin').setAttribute('transform',`rotate(${-spinAngle*180/Math.PI} 285 166)`);}if(playingDisc){let nt=Math.min(8,t+dt*.75);t=nt;$('torqueTime').value=nt;updateTorque();if(nt>=8){playingDisc=false;$('discPlay').textContent='▶ Play';}}requestAnimationFrame(animate);}updateSkater();updateTorque();updateShape();requestAnimationFrame(animate);
 })();
 </script>
+ <script src="shared/standalone-brand-v97a.js?v=97a"></script>
 </body></html>
