@@ -1,0 +1,29 @@
+name: Validate Grade XI Unit 6 Topic 6.2 Academic QC (V94-C2.2)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v94c2-topic62-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic62_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic62-academic-v94c2.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v94c2-topic62-detailed-qc.md"
+      - "scripts/test_grade11_unit06_topic62_academic_v94c2.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic62-academic-v94c2.yml"
+  workflow_dispatch:
+jobs:
+  topic62-formula-and-physical-validity:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check topic 6.2 regression script syntax
+        run: node --check scripts/test_grade11_unit06_topic62_academic_v94c2.cjs
+      - name: Recalculate independent Part B/C/D results and test model limitations
+        run: node scripts/test_grade11_unit06_topic62_academic_v94c2.cjs
