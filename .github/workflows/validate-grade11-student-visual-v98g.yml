@@ -1,0 +1,85 @@
+name: Grade XI Unit 6 Seven Topic Previews Visual & Practice Audit (V98-G)
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_student_visual_v98g.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98g.yml"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "viscosity-terminal-velocity.html"
+      - "portal/unit-06-topic-61-preview.html"
+      - "portal/unit-06-topic-61-preview.js"
+      - "portal/unit-06-topic-62-preview.html"
+      - "portal/unit-06-topic-62-preview.js"
+      - "portal/unit-06-topic-63-preview.html"
+      - "portal/unit-06-topic-63-preview.js"
+      - "portal/unit-06-topic-64-preview.html"
+      - "portal/unit-06-topic-64-preview.js"
+      - "portal/unit-06-topic-65-preview.html"
+      - "portal/unit-06-topic-65-preview.js"
+      - "portal/unit-06-topic-66-preview.html"
+      - "portal/unit-06-topic-66-preview.js"
+      - "portal/unit-06-topic-67-preview.html"
+      - "portal/unit-06-topic-67-preview.js"
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_student_visual_v98g.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98g.yml"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "viscosity-terminal-velocity.html"
+      - "portal/unit-06-topic-61-preview.html"
+      - "portal/unit-06-topic-61-preview.js"
+      - "portal/unit-06-topic-62-preview.html"
+      - "portal/unit-06-topic-62-preview.js"
+      - "portal/unit-06-topic-63-preview.html"
+      - "portal/unit-06-topic-63-preview.js"
+      - "portal/unit-06-topic-64-preview.html"
+      - "portal/unit-06-topic-64-preview.js"
+      - "portal/unit-06-topic-65-preview.html"
+      - "portal/unit-06-topic-65-preview.js"
+      - "portal/unit-06-topic-66-preview.html"
+      - "portal/unit-06-topic-66-preview.js"
+      - "portal/unit-06-topic-67-preview.html"
+      - "portal/unit-06-topic-67-preview.js"
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+  workflow_dispatch:
+jobs:
+  seven-unit06-student-topic-previews:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check browser test syntax
+        run: node --check scripts/audit_grade11_student_visual_v98g.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Validate seven preview layouts and actual MCQ start/answer/navigation
+        run: node scripts/audit_grade11_student_visual_v98g.cjs
+      - name: Retain evidence even if practice or rendering fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit06-preview-v98g-evidence
+          path: qa-artifacts/student-visual-v98g/
+          if-no-files-found: warn
+          retention-days: 10
