@@ -11,7 +11,7 @@ const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..');
 const out=path.join(root,'qa-artifacts','unit05-mobile-v98e');
 const originalFingerprint=770261505;
-const allowedCssPatch='@media(max-width:700px){.go{max-width:100%;white-space:normal;overflow-wrap:anywhere}}';
+const allowedCssPatch='@media(max-width:700px){.source em{overflow-wrap:anywhere}}';
 function fnv(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;return h;}
 function staticAudit(){
  const source=fs.readFileSync(path.join(root,'portal/unit-05.html'),'utf8');
