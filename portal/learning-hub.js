@@ -10,6 +10,7 @@ const catalogUrl=new URL('./learning-catalog.json?v=74',import.meta.url);
 const gradeButtons=[...document.querySelectorAll('[data-hub-grade]')];
 let selectedGrade='11'; // displayed only after the Firestore enrollment gate
 let selectedUnit='all'; // filter within the learner's Grade XI course; does not grant access
+let showAllResources=false; // user-controlled expansion; not an access grant
 let catalogue=null;
 const fallbackBuilder='../build-your-physics-test.html';
 const ACCESS_LABELS={
@@ -40,6 +41,16 @@ function renderResourceList(grade,active){
    ...visibleUnits.filter(u=>u.practicePreviewStatus==='public-provisional').flatMap(u=>Array.isArray(u.previewResources)?u.previewResources:[])];
  const filter=byId('hub-resource-filter')?.value||'all';
  const term=(byId('hub-resource-search')?.value||'').trim().toLowerCase();
+ const browseButton=byId('hub-browse-all');
+ if(browseButton){
+  browseButton.hidden=selectedUnit!=='all';
+  browseButton.setAttribute('aria-expanded',String(showAllResources));
+  browseButton.textContent=showAllResources?'Hide all learning resources':'Show all learning resources';
+ }
+ if(selectedUnit==='all'&&!showAllResources&&filter==='all'&&!term){
+  byId('hub-resource-feedback').textContent='Choose a unit above to see its resources, or search, filter or show all resources.';
+  return;
+ }
  let found=0;
  for(const r of records){
   if(!r)continue;
@@ -106,7 +117,14 @@ function renderGrade(){
  byId('hub-upcoming-count').textContent=`(${planned.length})`;
  line.textContent=`Grade XI / FBISE · ${published.length} published-resource units + ${previews.length} provisional practice preview${previews.length===1?'':'s'} · ${active.length} of ${total} units with learning resources. Full Unit 6 course and formal assessment remain pending.`;
  const list=resetChildren('hub-units');
+ list.dataset.view=selectedUnit==='all'?'overview':'focused';
+ const current=active.find(u=>String(u.unit)===selectedUnit);
+ const selectionStatus=byId('hub-selection-status');
+ if(selectionStatus)selectionStatus.textContent=current
+   ? `Showing Unit ${current.unit} — ${current.title}${current.practicePreviewStatus==='public-provisional'?' (provisional practice)':''}. Choose another unit to switch resources.`
+   : 'Browse six units below or select one unit to focus on its resources.';
  for(const u of active){
+  if(selectedUnit!=='all'&&String(u.unit)!==selectedUnit)continue;
   const card=document.createElement('article');card.className='hub-unit';
   const top=document.createElement('div');top.className='hub-unit-top';
   const title=document.createElement('strong');title.textContent=`Unit ${u.unit} — ${u.title}`;
@@ -159,10 +177,21 @@ export function initLearningHub(){
  for(const id of ['hub-unit-filter','hub-resource-filter','hub-resource-search']){
   const input=byId(id);if(!input)continue;
   input.addEventListener(id==='hub-resource-search'?'input':'change',()=>{
-    if(id==='hub-unit-filter')selectedUnit=input.value;
+    if(id==='hub-unit-filter'){
+      selectedUnit=input.value;
+      if(selectedUnit!=='all')showAllResources=false;
+    }
     if(catalogue&&selectedGrade==='11')renderGrade();
   });
  }
+ byId('hub-browse-all')?.addEventListener('click',()=>{
+  showAllResources=!showAllResources;
+  if(catalogue&&selectedGrade==='11'){
+   const grade=catalogue.grades.find(g=>g.grade===11);
+   const visible=grade?.units.filter(u=>u.status==='available'||u.practicePreviewStatus==='public-provisional')||[];
+   renderResourceList(grade,visible);
+  }
+ });
  const slos=resetChildren('hub-slo-links');
  for(const [code,title] of Object.entries(SLO_TOPICS)){
   const url=targetedPracticeUrl(code);if(!url)continue;
