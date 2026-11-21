@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 395" role="img" aria-labelledby="t d">
+<title id="t">Mass flow through a junction and multiple branches</title>
+<desc id="d">Original branch schematic: one pipe enters from the left, splitting into three rightward outlet tubes. Flow arrows identify the inlet and each outlet. At steady state, absent leakage and accumulation, entering mass flow equals the sum of all three outgoing mass flows. For the same incompressible liquid, Q in equals Q1 plus Q2 plus Q3. Never equate the inlet flow rate separately to each outlet.</desc>
+<rect width="950" height="395" rx="18" fill="#f8fbff"/>
+<text x="38" y="38" font-family="Arial,sans-serif" font-size="25" font-weight="800" fill="#25415e">At a junction, add every branch</text>
+<g fill="none" stroke="#3f86a7" stroke-linejoin="round" stroke-linecap="round" stroke-width="49">
+<path d="M85 201H370"/>
+<path d="M370 201 C455 201 475 93 560 93 H848"/>
+<path d="M370 201 H848"/>
+<path d="M370 201 C455 201 475 310 560 310 H848"/>
+</g>
+<g fill="none" stroke="#c6ebf8" stroke-linejoin="round" stroke-linecap="round" stroke-width="37">
+<path d="M85 201H370"/>
+<path d="M370 201 C455 201 475 93 560 93 H848"/>
+<path d="M370 201 H848"/>
+<path d="M370 201 C455 201 475 310 560 310 H848"/>
+</g>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1a7da2"/></marker></defs>
+<g stroke="#1a7da2" stroke-width="5" fill="none" marker-end="url(#a)"><path d="M140 201H235"/><path d="M699 93H811"/><path d="M699 201H811"/><path d="M699 310H811"/></g>
+<g font-family="Arial,sans-serif" font-size="20" font-weight="850" fill="#21435c"><text x="90" y="163">Q in</text><text x="727" y="63">Q₁</text><text x="727" y="170">Q₂</text><text x="727" y="279">Q₃</text></g>
+<rect x="220" y="347" width="510" height="37" rx="9" fill="#fff3da" stroke="#c59b50" stroke-width="2"/>
+<text x="475" y="373" font-family="Arial,sans-serif" font-size="21" text-anchor="middle" font-weight="800" fill="#243e57">Q in = Q₁ + Q₂ + Q₃  (same density)</text>
+</svg>

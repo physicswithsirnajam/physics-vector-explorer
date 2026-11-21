@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 405" role="img" aria-labelledby="t d">
+<title id="t">Continuity through a wide and a narrow pipe</title>
+<desc id="d">Original educational schematic of a single unbranched pipe, wider at section 1 on the left and narrower at section 2 on the right. Fluid flows to the right with mean speeds v1 and v2. Section areas A1 and A2 are drawn as vertical cross-sectional lines. For steady, leak-free incompressible flow, A1 v1 equals A2 v2, so smaller A2 requires larger v2. For variable density, conserve rho1 A1 v1 equals rho2 A2 v2. This does not calculate pressure or claim that discharge must remain the same before and after separately squeezing a hose.</desc>
+<rect width="950" height="405" rx="18" fill="#f8fbff"/>
+<text x="37" y="40" font-family="Arial,sans-serif" font-size="25" fill="#193d5d" font-weight="800">Steady mass conservation through two sections</text>
+<path d="M60 106 H323 C390 106 430 156 506 160 H882 V244 H506 C430 248 390 298 323 298 H60 Z" fill="#e2f3fb" stroke="#2c779b" stroke-width="5" stroke-linejoin="round"/>
+<g stroke="#9dcce1" stroke-width="2" stroke-dasharray="7 5"><path d="M60 202H882"/></g>
+<line x1="222" y1="106" x2="222" y2="298" stroke="#cc8b34" stroke-width="6"/>
+<line x1="695" y1="160" x2="695" y2="244" stroke="#cc8b34" stroke-width="6"/>
+<g font-family="Arial,sans-serif" font-size="21" fill="#243e58" font-weight="750">
+<text x="167" y="90">A₁</text><text x="672" y="148">A₂</text>
+<text x="89" y="331">Wide section 1</text><text x="715" y="275">Narrow section 2</text>
+</g>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#157da5"/></marker></defs>
+<g stroke="#157da5" stroke-width="6" fill="none" stroke-linecap="round" marker-end="url(#arrow)">
+<path d="M93 199 H170"/><path d="M325 202H452"/><path d="M522 202H650"/><path d="M730 202H843"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="20" fill="#066887" font-weight="800"><text x="103" y="182">v₁</text><text x="773" y="184">v₂</text></g>
+<rect x="250" y="341" width="460" height="47" rx="10" fill="#fff3da" stroke="#c49a4a" stroke-width="2"/>
+<text x="480" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="#35516a">ρ₁ A₁ v₁ = ρ₂ A₂ v₂</text>
+</svg>
