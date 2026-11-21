@@ -206,3 +206,35 @@
 .hub-sim-shortcut:focus-visible{outline:3px solid #d9b46c;outline-offset:2px}
 .hub-planned-unit .hub-sim-shortcut{font-size:10px}
 @media(max-width:650px){.hub-sim-shortcut{width:auto}.hub-planned-unit .hub-sim-shortcut{font-size:10px}}
+
+
+/* V96-B — unit-first Learning Hub. Presentation only; catalogue/release gates unchanged. */
+.hub-unit-chooser{display:flex;flex-direction:column;gap:9px;padding:18px 20px;margin:14px 0 18px;border-radius:14px;border:1px solid #b9cde1;background:linear-gradient(120deg,#edf4fb,#fcfdff)}
+.hub-unit-chooser label{color:#163c63;font-size:15px;font-weight:800}
+.hub-unit-chooser select{width:100%;max-width:580px;border:1px solid #9db8d2;border-radius:10px;background:#fff;padding:13px 14px;color:#1b3959;font:inherit}
+.hub-unit-chooser select:focus-visible,.hub-unit6-topics summary:focus-visible,.hub-topic-link-grid a:focus-visible,.hub-optional-guide summary:focus-visible,.hub-unit6-extra summary:focus-visible{outline:3px solid #c69d50;outline-offset:2px}
+#hub-selection-status{font-size:12px;line-height:1.5;color:#526b84;margin:0}
+.hub-optional-guide,.hub-unit6-topics{border:1px solid #d4e0ed;background:#f9fbfe;border-radius:12px;margin:12px 0 16px}
+.hub-optional-guide>summary,.hub-unit6-topics>summary{padding:15px 18px;cursor:pointer;font-size:13px;font-weight:800;color:#1a4266}
+.hub-optional-guide .hub-steps{margin:0 15px 15px}
+.hub-unit6-topics{margin:14px 0 20px}
+.hub-unit6-topics>summary span{display:block;font-size:11px;color:#5c7693;font-weight:600;margin-top:4px}
+.hub-unit6-topics>p{margin:0 18px 12px;font-size:12px;line-height:1.6;color:#526b83}
+.hub-unit6-topics>.btn{margin:0 18px 14px}
+.hub-topic-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 18px 15px}
+.hub-topic-link-grid a{display:flex;flex-direction:column;gap:4px;text-decoration:none;padding:12px 14px;border:1px solid #d3dfed;border-radius:9px;background:white}
+.hub-topic-link-grid a strong{color:#1d4265;font-size:12px}
+.hub-topic-link-grid a span{color:#65788c;font-size:11px;line-height:1.4}
+.hub-topic-link-grid a:hover{border-color:#c19c5b;background:#fffaf0}
+.hub-unit6-extra{margin:0 18px 15px;padding:10px 13px;border:1px dashed #d1dbe6;border-radius:10px}
+.hub-unit6-extra summary{cursor:pointer;font-size:12px;font-weight:800;color:#365676}
+.hub-unit6-extra a{display:block;font-size:12px;margin:9px 0}
+.hub-unit6-extra p{font-size:11px;line-height:1.5;color:#63778a}
+.hub-units[data-view="overview"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hub-units[data-view="overview"] .hub-unit{padding:14px 15px}
+.hub-units[data-view="overview"] .hub-unit>p,.hub-units[data-view="overview"] .hub-unit-note,.hub-units[data-view="overview"] .hub-source-reference-shortcut{display:none}
+.hub-units[data-view="overview"] .hub-unit-top strong{font-size:16px}
+.hub-units[data-view="overview"] .hub-unit-meta{margin:10px 0}
+.hub-resource-controls{grid-template-columns:auto minmax(120px,1fr) auto minmax(165px,1.2fr)}
+#hub-browse-all[hidden]{display:none}
+@media(max-width:700px){.hub-units[data-view="overview"]{grid-template-columns:1fr}.hub-topic-link-grid{grid-template-columns:1fr}.hub-unit-chooser{padding:13px 14px}.hub-optional-guide>summary,.hub-unit6-topics>summary{padding:13px 14px}.hub-topic-link-grid{margin:0 13px 13px}.hub-unit6-topics>.btn{margin-left:13px}}
