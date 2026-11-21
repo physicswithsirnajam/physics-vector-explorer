@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 435" role="img" aria-labelledby="t d">
+<title id="t">Original Bernoulli inclined streamtube with pressure force directions and elevations</title>
+<desc id="d">A pipe rises from a wide lower inlet cross-section marked 1 to a narrower upper outlet marked 2. Flow is rightward and upward. Inlet pressure force F1 acts along the fluid motion, giving positive work P1 V. Outlet opposing pressure force F2 acts against the motion, giving negative work minus P2 V. Speeds v1 and v2, heights h1 and h2 above the same datum and an equal transported volume V are labelled. Arrows are not to scale. Illustration is original and not NBF Figure 6.9.</desc>
+<rect width="950" height="435" rx="18" fill="#f7fbff"/>
+<text x="30" y="38" font-family="Arial,sans-serif" font-size="24" font-weight="800" fill="#25445f">The same fluid volume moves from lower section 1 to higher section 2</text>
+<line x1="40" y1="368" x2="910" y2="368" stroke="#7e98aa" stroke-width="2.5" stroke-dasharray="9 6"/>
+<text x="45" y="393" font-family="Arial,sans-serif" font-size="17" fill="#4a6174">Common height datum: h = 0</text>
+<path d="M72 270 H295 Q365 270 422 209 L566 109 Q591 90 639 90 H877 V154 H646 Q620 154 592 173 L448 273 Q385 335 295 335 H72 Z" stroke="#317a9f" stroke-width="4" fill="#d9f2fe"/>
+<g stroke="#cf902c" stroke-width="5"><path d="M210 270V335"/><path d="M756 90V154"/></g>
+<defs><marker id="flow" markerWidth="9" markerHeight="9" viewBox="0 0 10 10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14799c"/></marker><marker id="press" markerWidth="9" markerHeight="9" viewBox="0 0 10 10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#ad5139"/></marker></defs>
+<g fill="none" stroke="#14799c" stroke-width="5" marker-end="url(#flow)" stroke-linecap="round"><path d="M95 301H178"/><path d="M325 301L415 252"/><path d="M536 166L616 119"/><path d="M697 122H813"/></g>
+<g stroke="#ad5139" stroke-width="5" fill="none" marker-end="url(#press)"><path d="M160 231H241"/><path d="M834 65H775"/></g>
+<g font-family="Arial,sans-serif" font-size="19" fill="#243e59" font-weight="750">
+<text x="150" y="259">A₁</text><text x="742" y="180">A₂</text>
+<text x="101" y="219" fill="#a74330">+ F₁</text><text x="806" y="56" fill="#a74330">− F₂</text>
+<text x="245" y="287">v₁</text><text x="644" y="111">v₂</text>
+<text x="84" y="348">1 · P₁, h₁</text><text x="768" y="212">2 · P₂, h₂</text>
+</g>
+<g stroke="#4c7690" stroke-width="1.8" fill="none"><path d="M277 336V368"/><path d="M825 153V368"/></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#315b75"><text x="284" y="356">h₁</text><text x="830" y="283">h₂</text></g>
+<rect x="330" y="339" width="375" height="51" rx="10" fill="#fff1d8" stroke="#c8a05b" stroke-width="2"/>
+<text x="517" y="371" font-family="Arial,sans-serif" font-size="20" text-anchor="middle" font-weight="800" fill="#38516a">Net pressure work = (P₁ − P₂) V</text>
+</svg>

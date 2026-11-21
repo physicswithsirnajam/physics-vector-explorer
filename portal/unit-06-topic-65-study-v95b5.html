@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Topic 6.5 Bernoulli equation: complete signed-pressure-work derivation, horizontal and vertical flow, worked numericals and interactive pressure-and-head exercises.">
+<title>Topic 6.5 · Bernoulli’s Equation | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-65-study-v95b5.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-65">Unit 6 Desk</a><a href="../bernoulli-venturi.html">Simulation</a><a href="./unit-06-topic-65-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.5</p>
+<h1 id="lesson-title">Bernoulli’s <span>Equation</span></h1>
+<p class="lead">See exactly how inlet pressure work, kinetic energy and elevation combine. Derive Bernoulli’s equation in twelve steps, then calculate pressure and speed in horizontal and vertical flows.</p>
+<p class="notice" role="note"><strong>V95-B5 public study preview, not a completed or teacher-approved Unit 6 course.</strong> Based on the owner’s private prepared master (combined pp.197–226), merged Topic 6.5 academic review and supplied FBISE Grade XI framework. This page contains newly written explanations and original artwork; the original printed NBF pp.99–101 and textbook Figure 6.9 have not been fully compared. These are not verbatim original textbook exercise transcriptions or individually certified FBISE MCQs.</p>
+<div class="hero-tools"><a class="btn solid" href="#derive">Derive the equation</a><a class="btn subtle" href="#special">Horizontal / vertical</a><a class="btn subtle" href="#worked">Worked numericals</a><a class="btn subtle" href="#try-it">Interactive model</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">FBISE learning outcomes and assessment boundary</h2>
+<div class="outcome-grid">
+<div><strong>P-11-B-40</strong><span>Explain and apply Bernoulli’s equation for <em>horizontal and vertical fluid flow</em></span><small>Summative · Application</small></div>
+<div><strong>P-11-B-39</strong><span>Justify pressure differences associated with differing fluid flow rates — Bernoulli effect</span><small>Formative · Application · Not separately assessed in final theory</small></div>
+</div>
+<p class="fine">These classifications come directly from the supplied FBISE assessment framework, PDF pp.11–12. They do not certify per-question labels; students still need both horizontal and vertical applications under the summative B40 outcome.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#assumptions">Assumptions</a><a href="#derive">Derivation</a><a href="#terms">Energy terms</a><a href="#special">Special cases</a><a href="#limits">Model limits</a><a href="#worked">Numericals</a><a href="#try-it">Calculator</a><a href="#review">Revision</a></nav>
+<section class="lesson" id="assumptions" aria-labelledby="assumptions-title">
+<p class="eyebrow">01 · START WITH THE MODEL</p><h2 id="assumptions-title">When can Bernoulli’s equation be used?</h2>
+<p>This school derivation assumes <strong>steady, incompressible flow</strong> of a fluid with <strong>negligible viscosity and mechanical losses</strong> along the <strong>same streamline</strong>. Gravity is approximately uniform. No external pump or turbine adds or removes energy between the two chosen sections. A consistent vertical height datum is used throughout.</p>
+<div class="comparison">
+<article><h3>Static pressure, P</h3><p>The ordinary local fluid pressure in pascals (Pa); distinct from the kinetic or dynamic-pressure term. One consistent gauge or absolute pressure reference must be used at both points.</p></article>
+<article><h3>Mean speed, v</h3><p>At the school level, each cross-section’s representative flow speed, in m/s. For a real nonuniform velocity profile, replacing local streamline speed by a section average is an additional approximation.</p></article>
+<article><h3>Elevation, h</h3><p>Vertical height measured from one common datum in metres. Sloping pipe length is <em>not</em> the vertical height difference.</p></article>
+</div>
+<div class="concept-note"><strong>Essential distinction:</strong> Topic 6.4 continuity is a <em>mass-balance</em> relation. Bernoulli’s equation is an <em>ideal mechanical-energy</em> relation. The flow may require both, but continuity alone cannot supply pressure.</div>
+</section>
+<section class="lesson" id="derive" aria-labelledby="derive-title">
+<p class="eyebrow">02 · FULL WORK–ENERGY DERIVATION</p><h2 id="derive-title">From pressure work to conserved energy per volume</h2>
+<p>Track the same small quantity of fluid between sections 1 and 2 in a steady ideal streamtube. During one short, shared interval Δt the transported volumes at both ends are equal: V = A₁v₁Δt = A₂v₂Δt, and the transported mass is m = ρV.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b5-bernoulli-pressure-work-original.svg" width="950" height="435" alt="Original rising streamtube: inlet pressure force does positive work, outlet pressure force does negative work, and the same fluid mass moves between heights h1 and h2. Equal volume V passes both sections.">
+<figcaption>Independently authored pressure-work teaching schematic, <strong>not an NBF Figure 6.9 reproduction</strong>. Arrow lengths are schematic. Use the same vertical height reference for h₁ and h₂.</figcaption>
+</figure>
+<ol class="steps">
+<li><strong>Use the same time:</strong> Δx₁ = v₁Δt and Δx₂ = v₂Δt.</li>
+<li><strong>Inlet pressure force:</strong> F₁ = P₁A₁, acting along the inlet displacement.</li>
+<li><strong>Positive inlet work:</strong> W₁ = +F₁Δx₁ = +P₁A₁Δx₁.</li>
+<li><strong>Outlet opposing force:</strong> F₂ = P₂A₂, acting against fluid displacement; its work is <strong>negative</strong>, W₂ = −P₂A₂Δx₂.</li>
+<li><strong>Add signed pressure work:</strong> W = P₁A₁v₁Δt − P₂A₂v₂Δt.</li>
+<li><strong>Apply incompressible continuity:</strong> V = A₁v₁Δt = A₂v₂Δt, so <strong>W = (P₁ − P₂)V</strong>.</li>
+<li><strong>Identify fluid mass:</strong> m = ρV, where ρ is the shared constant density.</li>
+<li><strong>Find kinetic-energy change:</strong> ΔK = ½m(v₂² − v₁²).</li>
+<li><strong>Find gravitational-energy change:</strong> ΔU = mg(h₂ − h₁), using the same height datum.</li>
+<li><strong>Apply work–energy:</strong> (P₁ − P₂)V = ½m(v₂² − v₁²) + mg(h₂ − h₁).</li>
+<li><strong>Divide by V and substitute m/V = ρ:</strong> P₁ − P₂ = ½ρ(v₂² − v₁²) + ρg(h₂ − h₁).</li>
+<li><strong>Move terms across:</strong> P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂.</li>
+</ol>
+<div class="equation primary" role="math" aria-label="Bernoulli equation: static pressure plus one half rho v squared plus rho g h is constant along the ideal streamline"><strong>P + ½ρv² + ρgh = constant</strong><span>Pressure + kinetic energy per volume + gravitational energy per volume · steady ideal flow along one streamline</span></div>
+<p>The <strong>negative sign on outlet pressure work</strong> is essential: the downstream environment resists the tracked fluid parcel. Cancelling volume and mass works only because the derivation tracks the same steady, incompressible throughput.</p>
+</section>
+<section class="lesson" id="terms" aria-labelledby="terms-title">
+<p class="eyebrow">03 · THREE TERMS, THREE COMPATIBLE UNITS</p><h2 id="terms-title">Pressure and energy per volume</h2>
+<div class="triad">
+<article><h3>Static pressure</h3><p><strong>P</strong> is measured in pascals (Pa = N/m² = J/m³).</p></article>
+<article><h3>Kinetic term</h3><p><strong>½ρv²</strong> has units (kg/m³)(m²/s²) = kg/(m·s²) = Pa.</p></article>
+<article><h3>Elevation term</h3><p><strong>ρgh</strong> has units (kg/m³)(m/s²)(m) = kg/(m·s²) = Pa.</p></article>
+</div>
+<p>Because all three terms have the same units, they can be added. For another useful view, divide by ρg (nonzero):</p>
+<div class="equation" role="math" aria-label="Bernoulli head form: pressure divided by rho g plus velocity squared divided by two g plus elevation equals total head"><strong>P/(ρg) + v²/(2g) + h = H</strong><span>Supplementary “head” form: all four terms have units of metres, not pascals. H = total head, constant under the same ideal-flow assumptions.</span></div>
+<p><strong>Do not confuse forms:</strong> P + ½ρv² + ρgh is <em>energy per unit volume</em>, while P/(ρg) + v²/(2g) + h is <em>head per unit weight</em>. You cannot substitute a pressure value in kPa into a head value in metres without conversion.</p>
+</section>
+<section class="lesson" id="special" aria-labelledby="special-title">
+<p class="eyebrow">04 · APPLY THE RIGHT SPECIAL CASE</p><h2 id="special-title">Horizontal and vertical flow</h2>
+<h3>Case A — Both points at equal height</h3>
+<p>When h₁ = h₂, the common elevation terms cancel:</p>
+<div class="equation" role="math" aria-label="Horizontal ideal Bernoulli pressure difference equals one half rho times outlet speed squared minus inlet speed squared"><strong>P₁ − P₂ = ½ρ(v₂² − v₁²)</strong><span>At equal elevation along the same ideal streamline, faster motion at section 2 corresponds to a lower static pressure there.</span></div>
+<h3>Case B — Fluid rises or descends at unchanged speed</h3>
+<p>When v₁ = v₂, cancel the kinetic terms instead:</p>
+<div class="equation" role="math" aria-label="Same speed pressure relation, P2 equals P1 plus rho g times h1 minus h2"><strong>P₂ = P₁ + ρg(h₁ − h₂)</strong><span>If the outlet is higher (h₂ &gt; h₁) with speed unchanged, its static pressure is lower by ρg(h₂ − h₁).</span></div>
+<h3>Case C — Both speed and elevation change</h3>
+<p>When both quantities change, neither contribution may be discarded. Use the full signed expression:</p>
+<div class="equation primary" role="math" aria-label="Outlet pressure equals inlet pressure plus one half density times inlet speed squared minus outlet speed squared plus density g times inlet height minus outlet height"><strong>P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂)</strong><span>Rising height lowers the pressure contribution, but slowing speed raises it. Their net result needs actual calculation.</span></div>
+<p>For an unknown outlet speed, rearrange to v₂² = v₁² + 2(P₁ − P₂)/ρ + 2g(h₁ − h₂). A physically real speed requires <strong>v₂² ≥ 0</strong>. A negative value indicates inconsistent givens or an unsuitable assumed model; it is not a meaningful real speed.</p>
+</section>
+<section class="lesson" id="limits" aria-labelledby="limits-title">
+<p class="eyebrow">05 · COMBINE WITH TOPIC 6.4, WITHOUT OVERCLAIMING</p><h2 id="limits-title">Where continuity and Bernoulli meet</h2>
+<p>For a steady, unbranched, incompressible flow with negligible losses, continuity gives A₁v₁ = A₂v₂. For circular cross-sections <strong>A = πd²/4</strong>, so <strong>v₂ = (d₁/d₂)²v₁</strong>. Substitute that speed in the Bernoulli pressure equation if both sets of assumptions apply.</p>
+<p>At a fixed height, this model predicts a static-pressure reduction where the mean speed increases. However, a real constriction may introduce viscous losses, turbulence and altered overall discharge. These ideal equations do not independently establish the true downstream pressure of an arbitrary real installation.</p>
+<div class="concept-note"><strong>Assessment boundary:</strong> The qualitative Bernoulli-effect SLO <strong>P-11-B-39 is formative</strong> in the supplied framework. The actual <strong>P-11-B-40 summative</strong> outcome includes explaining and applying the equation to both horizontal and vertical flow. Named devices such as atomisers, Venturi arrangements and spinning balls are covered systematically in Topic 6.6.</div>
+</section>
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · FULLY WORKED EXAMPLES</p><h2 id="worked-title">Eight supplementary numerical applications</h2>
+<p class="fine">All eight cases below are <strong>newly explained, teacher-developed Part C numerical practice</strong> from the prepared master, not original numbered NBF Example 6.x or Assignment 6.x questions in Topic 6.5. SI conversion and model assumptions are stated. Water uses ρ = 1000 kg/m³ and g = 9.8 m/s² unless specified otherwise.</p>
+<article class="problem"><div class="problem-label">Supplementary 1 · horizontal pressure</div><h3>Water accelerates from 2.0 to 5.0 m/s</h3>
+<p>At equal elevation, P₁ = 180 kPa, v₁ = 2.0 m/s and v₂ = 5.0 m/s. Determine P₂.</p>
+<ol><li>Use P₂ = P₁ + ½ρ(v₁² − v₂²).</li><li>Convert P₁ = <strong>180,000 Pa</strong>.</li><li>P₂ = 180,000 + 500(2² − 5²) = 180,000 − 10,500 = <strong>169,500 Pa = 169.5 kPa</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 2 · vertical rising pipe</div><h3>Water both rises and accelerates</h3>
+<p>At section 1: P₁ = 220 kPa, v₁ = 3 m/s and h₁ = 2 m. Section 2 has v₂ = 4 m/s and h₂ = 8 m. Determine P₂.</p>
+<ol><li>Use P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂).</li><li>Speed term: 500(9 − 16) = <strong>−3500 Pa</strong>.</li><li>Elevation term: 1000 × 9.8 × (2 − 8) = <strong>−58,800 Pa</strong>.</li><li>P₂ = 220,000 − 3500 − 58,800 = <strong>157,700 Pa = 157.7 kPa</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 3 · find velocity</div><h3>Pressure drop determines an ideal outlet speed</h3>
+<p>For horizontal water flow, v₁ = 1.2 m/s and P₁ − P₂ = 5400 Pa.</p>
+<ol><li>Start with 5400 = 500(v₂² − 1.2²).</li><li>v₂² = 5400/500 + 1.44 = <strong>12.24 m²/s²</strong>.</li><li>Take the positive square root: v₂ = √12.24 ≈ <strong>3.50 m/s</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 4 · equal speed, different height</div><h3>Water descends by 5 m</h3>
+<p>Static pressure is 120 kPa at elevation h₁ = 12 m; downstream elevation h₂ = 7 m and speed remains unchanged.</p>
+<ol><li>Use P₂ = P₁ + ρg(h₁ − h₂).</li><li>Pressure increase = 1000 × 9.8 × 5 = <strong>49,000 Pa</strong>.</li><li>P₂ = 120,000 + 49,000 = <strong>169,000 Pa = 169 kPa</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 5 · head form</div><h3>Pressure head, velocity head and total head</h3>
+<p>At one water-flow point, P = 180 kPa, v = 4.0 m/s and h = 3.0 m.</p>
+<ol><li>Pressure head: P/(ρg) = 180,000/9800 ≈ <strong>18.37 m</strong>.</li><li>Velocity head: v²/(2g) = 16/19.6 ≈ <strong>0.816 m</strong>.</li><li>Total H ≈ 18.3673 + 0.8163 + 3.0 ≈ <strong>22.18 m</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 6 · combine continuity and Bernoulli</div><h3>Horizontal pipe diameter halves</h3>
+<p>Diameter decreases from 8.0 to 4.0 cm; v₁ = 1.5 m/s and P₁ = 200 kPa.</p>
+<ol><li>From continuity v₂ = (8/4)² × 1.5 = <strong>6.0 m/s</strong>.</li><li>From horizontal Bernoulli, P₂ = 200,000 + 500(1.5² − 6²).</li><li>P₂ = 200,000 − 16,875 = <strong>183,125 Pa ≈ 183.1 kPa</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 7 · net pressure work</div><h3>Pressure work on a transported volume</h3>
+<p>An ideal streamtube transports V = 0.020 m³ between inlet P₁ = 180 kPa and outlet P₂ = 150 kPa.</p>
+<ol><li>Net pressure work = (P₁ − P₂)V.</li><li>W = (180,000 − 150,000) × 0.020 = <strong>600 J</strong>.</li><li>This is <em>net pressure work on the tracked volume</em>, not automatically the total work of every force in every process.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary 8 · rise plus slowing</div><h3>Speed decreases but elevation rises</h3>
+<p>Water moves from (P₁ = 150 kPa, v₁ = 4 m/s, h₁ = 5 m) to (v₂ = 2 m/s, h₂ = 7 m).</p>
+<ol><li>Pressure contribution from slowing: 500(4² − 2²) = <strong>+6000 Pa</strong>.</li><li>Elevation contribution: 9800(5 − 7) = <strong>−19,600 Pa</strong>.</li><li>P₂ = 150,000 + 6000 − 19,600 = <strong>136,400 Pa = 136.4 kPa</strong>.</li><li>The net pressure falls, but only after adding both opposing effects.</li></ol>
+</article>
+</section>
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · INTERACTIVE LEARNING LAB</p><h2 id="try-title">Explore Bernoulli pressure and head</h2>
+<p>The pressure solver evaluates <strong>P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂)</strong>. Choose a prepared horizontal example, a rising accelerating flow or a rising-but-slowing flow. The result is an <em>ideal-model prediction</em>, not a measurement of a real pipe.</p>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-horizontal">Horizontal example</button><button class="btn subtle" type="button" id="preset-rising">Rising flow</button><button class="btn subtle" type="button" id="preset-slowing">Rising but slowing</button></div>
+<form id="bernoulli-pressure-form" class="calculator" novalidate>
+<div class="fields">
+<label for="bern-density">Fluid density ρ (kg/m³)<input id="bern-density" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+<label for="bern-gravity">Gravity g (m/s²)<input id="bern-gravity" type="number" value="9.8" min="0.000001" max="1000" step="any" inputmode="decimal" required></label>
+<label for="bern-pressure-in">Inlet static pressure P₁ (kPa)<input id="bern-pressure-in" type="number" value="180" min="-1000000" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="bern-speed-in">Inlet speed v₁ (m/s)<input id="bern-speed-in" type="number" value="2" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="bern-speed-out">Outlet speed v₂ (m/s)<input id="bern-speed-out" type="number" value="5" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="bern-height-in">Inlet elevation h₁ (m)<input id="bern-height-in" type="number" value="0" min="-1000000" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="bern-height-out">Outlet elevation h₂ (m)<input id="bern-height-out" type="number" value="0" min="-1000000" max="1000000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate outlet static pressure</button>
+<p id="bern-pressure-error" role="alert" class="calc-error" hidden></p>
+<div id="bern-pressure-output" role="status" aria-live="polite" class="calc-output">
+<p><strong>Ideal outlet pressure:</strong> 169.5 kPa.</p><p><strong>Signed changes:</strong> kinetic contribution −10.5 kPa; elevation contribution 0 kPa.</p>
+</div>
+</form>
+<h3>Examine the three head contributions at one location</h3>
+<p>Head is a supplementary learning form of the equation. It uses <strong>metres</strong>, not pascals. Use one consistent pressure reference and height datum.</p>
+<form id="bernoulli-head-form" class="calculator" novalidate>
+<div class="fields">
+<label for="head-pressure">Static pressure (kPa)<input id="head-pressure" type="number" value="180" min="-1000000" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="head-speed">Speed (m/s)<input id="head-speed" type="number" value="4" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="head-height">Elevation (m)<input id="head-height" type="number" value="3" min="-1000000" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="head-density">Density (kg/m³)<input id="head-density" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+<label for="head-gravity">Gravity (m/s²)<input id="head-gravity" type="number" value="9.8" min="0.000001" max="1000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate pressure, velocity and total head</button>
+<p id="bern-head-error" role="alert" class="calc-error" hidden></p>
+<div id="bern-head-output" role="status" aria-live="polite" class="calc-output">
+<p><strong>Pressure head:</strong> 18.3673 m.</p><p><strong>Velocity head:</strong> 0.816327 m.</p><p><strong>Total head:</strong> 22.1837 m ≈ 22.18 m.</p>
+</div>
+</form>
+<p class="fine">No entered value is stored or sent to a server, no school grade is recorded and the outputs do not substitute for real hydraulic design. A negative gauge pressure result is not automatically impossible, but absolute versus gauge pressure and the physical model must be checked before interpretation.</p>
+</section>
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · REVISE WITH EXPLANATIONS</p><h2 id="review-title">Eight key conceptual self-checks</h2>
+<div class="questions">
+<details><summary>1. Why is the outlet pressure work negative in the derivation?</summary><p>The pressure force exerted at the outlet opposes displacement of the tracked fluid volume; W₂ = −P₂A₂Δx₂. The inlet force acts with the displacement and contributes positive work.</p></details>
+<details><summary>2. May we apply one Bernoulli constant to any two points anywhere in a real river?</summary><p>No. The school derivation assumes steady, incompressible, effectively inviscid flow along the same streamline without loss or external shaft work. Real mixing, friction and other effects can break the ideal relation.</p></details>
+<details><summary>3. Why do P, ½ρv² and ρgh have the same units?</summary><p>Each term is mechanical energy per unit volume: J/m³, numerically equal to Pa. Their sum is dimensionally consistent.</p></details>
+<details><summary>4. If speed rises at the same height, what happens to static pressure in the ideal model?</summary><p>It falls, since P₁ − P₂ = ½ρ(v₂² − v₁²) is positive when v₂ is greater than v₁, assuming the same fluid streamline and no losses.</p></details>
+<details><summary>5. If a flow both rises and slows, must the downstream static pressure fall?</summary><p>Not necessarily. Increased elevation tends to reduce the static-pressure term while decreasing speed tends to raise it. Calculate their signed contributions.</p></details>
+<details><summary>6. Why can’t continuity alone determine downstream pressure?</summary><p>Continuity expresses conservation of mass; Bernoulli connects static pressure to kinetic and gravitational energy under additional assumptions.</p></details>
+<details><summary>7. Which of B39 and B40 is summative in this FBISE framework?</summary><p>B40 is summative and covers horizontal and vertical Bernoulli applications. B39, concerning the pressure difference associated with differing flow rates, is formative. A practice example using B39 ideas is not automatically a separately prescribed summative B39 item.</p></details>
+<details><summary>8. Why does a velocity calculation require a nonnegative radicand?</summary><p>A real speed magnitude cannot be the square root of a negative number. If the algebra gives v² below zero, check supplied pressures, height signs and the ideal-flow assumptions.</p></details>
+</div>
+<section class="summary" aria-labelledby="summary-title"><h3 id="summary-title">Formula sheet</h3>
+<div class="formula-grid">
+<p><strong>Full Bernoulli:</strong> P + ½ρv² + ρgh = C</p>
+<p><strong>Outlet pressure:</strong> P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂)</p>
+<p><strong>Horizontal:</strong> P₁ − P₂ = ½ρ(v₂² − v₁²)</p>
+<p><strong>Equal speed:</strong> P₂ − P₁ = ρg(h₁ − h₂)</p>
+<p><strong>Pressure work:</strong> W = (P₁ − P₂)V</p>
+<p><strong>Head extension:</strong> P/(ρg) + v²/(2g) + h = H</p>
+<p><strong>Continuity where valid:</strong> A₁v₁ = A₂v₂</p>
+<p><strong>Unit bridge:</strong> 1 kPa = 1000 Pa; 1 Pa = 1 J/m³</p>
+</div>
+</section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Continue Read → Simulate → Practice → Revise</h2>
+<p>Return to the Unit 6 Learning Desk, experiment with the existing original Bernoulli–Venturi simulator, and practise the 80 original provisional Topic 6.5 MCQs. Topic 6.6 develops real applications.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-65">Back to Unit 6 Desk</a><a class="btn subtle" href="../bernoulli-venturi.html">Explore Bernoulli simulation</a><a class="btn subtle" href="./unit-06-topic-65-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-66">Next: Topic 6.6</a></div>
+<p class="fine">Provenance: owner's private prepared Unit 6 master pp.197–226, merged V94-C2.5 Topic6.5 academic review, official FBISE framework pp.11–12. No protected NBF figure/text scan, private teacher PDF or student grading record appears on this page. Final original-book figure check, question-level verification and teacher signoff remain pending.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B5 · Public lesson preview · No school grades recorded</footer>
+</body>
+</html>
