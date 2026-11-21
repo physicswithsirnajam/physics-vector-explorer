@@ -1,0 +1,299 @@
+{
+  "schemaVersion": "v94d-2026-11-21",
+  "purpose": "Academic consolidation only. No automatic curriculum certification or permission to publish.",
+  "releaseApproved": false,
+  "studentCourseStatus": "planned",
+  "teacherSignoff": "pending",
+  "verifiedFigureHolds": 0,
+  "currentPublicBank": {
+    "unit6": 560,
+    "grade11": 2250,
+    "standaloneSituations": 136,
+    "authenticSharedStimulusGroups": 0,
+    "mappedSimulations": 5
+  },
+  "exerciseAudit": {
+    "printedMCQs": 14,
+    "shortResponses": 11,
+    "comprehensiveResponses": 11,
+    "numericalResponses": 11,
+    "printedPages110to111Checked": true,
+    "printedNumerical69UnitErrorConfirmed": true,
+    "studentCorrectionPublished": false
+  },
+  "framework": {
+    "officialFormative": [
+      "P-11-B-39"
+    ],
+    "officialSummative": [
+      "P-11-B-33",
+      "P-11-B-34",
+      "P-11-B-35",
+      "P-11-B-36",
+      "P-11-B-37",
+      "P-11-B-38",
+      "P-11-B-40",
+      "P-11-B-41",
+      "P-11-B-42",
+      "P-11-B-43",
+      "P-11-B-44"
+    ],
+    "itemLevelSloVerified": false,
+    "cognitiveLevelVerified": false
+  },
+  "topics": [
+    {
+      "id": "6.1",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic61-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 52,
+      "partCSectionCount": 15,
+      "partDCount": 24,
+      "teacherIssueIDs": [
+        "T61-01",
+        "T61-02",
+        "T61-03",
+        "T61-04",
+        "T61-05",
+        "T61-06",
+        "T61-07",
+        "T61-08"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-33",
+        "P-11-B-34"
+      ],
+      "originalSourceFigureChecks": [
+        "Figure6.2-limited-V93"
+      ],
+      "additionalChecksNeeded": [
+        "NBF pp89-91 source proof",
+        "Fig6.1",
+        "Example6.1",
+        "Assignment6.1"
+      ],
+      "highestPriority": "Flotation equilibrium, displaced volume, ship stability"
+    },
+    {
+      "id": "6.2",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic62-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 56,
+      "partCSectionCount": 14,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T62-01",
+        "T62-02",
+        "T62-03",
+        "T62-04",
+        "T62-05",
+        "T62-06",
+        "T62-07",
+        "T62-08",
+        "T62-09"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-41",
+        "P-11-B-42"
+      ],
+      "originalSourceFigureChecks": [
+        "Figure6.3-limited-V93",
+        "Figure6.5c-limited-V93"
+      ],
+      "additionalChecksNeeded": [
+        "NBF pp91-95 original source proof",
+        "Table6.1",
+        "Fig6.4",
+        "Example6.2",
+        "Assignment6.2"
+      ],
+      "highestPriority": "Low-Re Stokes validity and formal textbook-model raindrop speed caveat"
+    },
+    {
+      "id": "6.3",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic63-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 48,
+      "partCSectionCount": 10,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T63-01",
+        "T63-02",
+        "T63-03",
+        "T63-04",
+        "T63-05",
+        "T63-06",
+        "T63-07",
+        "T63-08",
+        "T63-09"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-35"
+      ],
+      "originalSourceFigureChecks": [
+        "Figure6.6-limited-V93"
+      ],
+      "additionalChecksNeeded": [
+        "NBF pp95-96 prose proof",
+        "Original sidebar/source details"
+      ],
+      "highestPriority": "Steady versus laminar; irrotational versus straight streamline"
+    },
+    {
+      "id": "6.4",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic64-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 56,
+      "partCSectionCount": 17,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T64-01",
+        "T64-02",
+        "T64-03",
+        "T64-04",
+        "T64-05",
+        "T64-06",
+        "T64-07",
+        "T64-08",
+        "T64-09"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-36",
+        "P-11-B-37",
+        "P-11-B-38"
+      ],
+      "originalSourceFigureChecks": [],
+      "additionalChecksNeeded": [
+        "NBF pp96-99 source proof",
+        "Figures6.7-6.8",
+        "Example6.3",
+        "Assignment6.3"
+      ],
+      "highestPriority": "Mass versus volume continuity, branches, fixed-discharge assumptions"
+    },
+    {
+      "id": "6.5",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic65-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 56,
+      "partCSectionCount": 12,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T65-01",
+        "T65-02",
+        "T65-03",
+        "T65-04",
+        "T65-05",
+        "T65-06",
+        "T65-07",
+        "T65-08",
+        "T65-09"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-40"
+      ],
+      "originalSourceFigureChecks": [],
+      "additionalChecksNeeded": [
+        "NBF pp99-101 source proof",
+        "Figure6.9"
+      ],
+      "highestPriority": "Energy-density terms, signed pressure work, ideal-flow conditions, B39 formative boundary"
+    },
+    {
+      "id": "6.6",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic66-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 56,
+      "partCSectionCount": 13,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T66-01",
+        "T66-02",
+        "T66-03",
+        "T66-04",
+        "T66-05",
+        "T66-06",
+        "T66-07",
+        "T66-08",
+        "T66-09",
+        "T66-10"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-40",
+        "P-11-B-44"
+      ],
+      "originalSourceFigureChecks": [],
+      "additionalChecksNeeded": [
+        "NBF pp101-106 source proof",
+        "Figures6.10-6.15",
+        "Example6.4",
+        "Assignment6.4"
+      ],
+      "highestPriority": "Venturi and Torricelli assumptions, air-jet apparatus, formal 450/410m/s wing-model caveat"
+    },
+    {
+      "id": "6.7",
+      "sourceAudit": "quality/grade11-unit06-v94c2-topic67-detailed-qc.md",
+      "academicAuditMerged": true,
+      "topicTeacherApproved": false,
+      "studentLessonReady": false,
+      "partBCount": 48,
+      "partCSectionCount": 11,
+      "partDCount": 32,
+      "teacherIssueIDs": [
+        "T67-01",
+        "T67-02",
+        "T67-03",
+        "T67-04",
+        "T67-05",
+        "T67-06",
+        "T67-07",
+        "T67-08",
+        "T67-09",
+        "T67-10",
+        "T67-11"
+      ],
+      "officialSummativeTopicSloCodes": [
+        "P-11-B-43"
+      ],
+      "originalSourceFigureChecks": [],
+      "additionalChecksNeeded": [
+        "NBF p106 original proof",
+        "Figures6.16-6.17",
+        "Verified original educational phase diagram"
+      ],
+      "highestPriority": "Zero-viscosity scope and copyright-safe original phase diagram; no prescribed B43 math"
+    }
+  ],
+  "gates": {
+    "scientificTeacherReview": "pending",
+    "sourceExactnessForClaimedTextbookMaterials": "partial",
+    "copyrightAndNewFigureReview": "pending",
+    "perItemBoardAlignment": "pending",
+    "exerciseCorrectionApproval": "pending",
+    "studentLessonCompleteness": "not-started",
+    "browserMobileProjectorPrint": "not-started",
+    "accessPrivacyReview": "pending",
+    "liveRegressionAndPortalStatus": "not-started"
+  },
+  "hardRules": [
+    "No rehosting original NBF Figure6.17 or source scans",
+    "Preserve original prepared source answer keys until teacher approves adapted materials",
+    "Do not certify B39 as summative",
+    "Do not label topic-level SLOs as individually verified",
+    "No portal status available until integrated V95 acceptance",
+    "No changes to student data, Firebase, access permissions, protected PDFs or billing"
+  ]
+}
