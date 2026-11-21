@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v96a-five-released-course-units-plus-separate-unit06-public-practice-preview",
+  "catalogVersion": "pilot-v96-unit06-provisional-public-practice-discovery",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 560 more, giving 2,250 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
