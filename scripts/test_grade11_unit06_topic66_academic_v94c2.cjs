@@ -90,7 +90,7 @@ near('D32 time for 1L',d32t,1.01);
 // The reference airspeeds exceed typical ambient sound speed (~343 m/s),
 // so the constant-density incompressible model cannot be a real lift forecast.
 assert.ok(450>343&&410>343,'High-speed NBF wing example must retain compressibility warning');
-assert.equal(highSpeedLift,998460,'Must preserve source formal arithmetic, not invent replacement');
+near('High-speed textbook formal lift preserved despite floating-point rounding',highSpeedLift,998460);
 // Public academic release invariants, not student mutations.
 const root=path.resolve(__dirname,'..');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'question-bank/manifest.json'),'utf8'));
