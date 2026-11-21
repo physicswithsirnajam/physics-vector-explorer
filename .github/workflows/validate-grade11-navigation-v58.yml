@@ -43,7 +43,7 @@ jobs:
         run: |
           node --check shared/navigation.js
           node --check scripts/test_grade11_resource_drawer_v58.cjs
-          node -e "const c=require('./portal/learning-catalog.json');const u=c.grades.find(g=>g.grade===11).units.filter(x=>x.status==='available'||x.practicePreviewStatus==='public-provisional');if(u.length!==6||c.resources.length!==62)process.exit(1)"
+          node -e "const c=require('./portal/learning-catalog.json');const u=c.grades.find(g=>g.grade===11).units.filter(x=>x.status==='available'||x.practicePreviewStatus==='public-provisional');if(u.length!==6||c.resources.length!==59)process.exit(1)"
       - name: Install pinned browser runtime
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
