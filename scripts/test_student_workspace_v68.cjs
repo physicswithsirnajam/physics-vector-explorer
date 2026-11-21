@@ -38,7 +38,8 @@ function audit(){
   'top Simulations tab must lead to the local catalog, not the external Google Sites homepage');
  assert.ok(!navigation.includes("label:'Simulations',key:'explore'"),'stale Google Sites Simulations alias');
  assert.ok(navigation.includes('permitNavigation'),'in-progress quiz warning removed');
- assert.ok(navigation.includes('Google Sites Student Hub (external)'),'Google Sites should remain clearly labeled');
+ assert.ok(navigation.includes("link('portal/legacy-hssc-resources.html','Notes & Concept Videos','videos')"),'Retired external quick link must resolve to native notes/videos');
+ assert.ok(!navigation.includes('sites.google.com'),'Global student menu must not link to the former website');
  const portal=read('portal/index.html');
  for(const view of ['overview','learn','progress','profile','privacy']){
   assert.ok(portal.includes('data-workspace-tab="'+view+'"'));

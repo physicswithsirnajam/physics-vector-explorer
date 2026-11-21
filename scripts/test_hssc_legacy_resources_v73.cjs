@@ -146,8 +146,8 @@ async function main(){
   await page.locator('#unit').selectOption('7');
   const graph=page.locator('#video-cards .card');
   assert.match(await graph.textContent(),/Graphene/);
-  const graphUrl=await graph.locator('a').getAttribute('href');
-  assert.match(graphUrl,/the-molecular-limits-of-materials$/);
+  assert.equal(await graph.locator('a').count(),0,'No links to archived Google Sites video pages');
+  assert.match(await graph.textContent(),/Archived title only/);
   assert.match(await page.locator('#extra-cards .card').textContent(),/Lumen Learning/);
   await page.locator('#unit').selectOption('additional');
   assert.equal(await page.locator('#video-cards .card').count(),2);
@@ -159,8 +159,9 @@ async function main(){
   await page.locator('#search').fill('');
   await page.locator('#unit').selectOption('1');
   await page.screenshot({path:path.join(out,'unit01-original-seven-drive-pdfs-video-page.png'),fullPage:false});
-  const links=await page.locator('#pdf-cards .card a, #video-cards .card a, #extra-cards .card a').all();
-  assert.equal(links.length,8);
+  const links=await page.locator('#pdf-cards .card a, #extra-cards .card a').all();
+  assert.equal(links.length,7,'Unit1 keeps seven original Drive PDFs but no legacy video links');
+  assert.equal(await page.locator('#video-cards a').count(),0);
   for(const link of links){
    assert.equal(await link.getAttribute('rel'),'noopener noreferrer');
    assert.equal(await link.getAttribute('target'),'_blank');
@@ -174,7 +175,7 @@ async function main(){
   assert.ok(dim[1]<=dim[0]+2,'390px mobile horizontal overflow in source resource directory');
   await page.screenshot({path:path.join(out,'unit01-source-links-mobile.png'),fullPage:false});
   assert.deepEqual(errors,[]);
-  console.log('PASS V73 Chromium: 35 external links, Unit1–14 source counts, Unit7 original title/URL mismatch preserved, search, bookmarks, 390px layout and no browser errors');
+  console.log('PASS V73 Chromium: 17 non-clickable archived video titles, original Drive PDF/reading links, Unit1-14 counts, search and mobile');
  }finally{
   if(browser)await browser.close();
   await new Promise(resolve=>server.close(resolve));

@@ -58,7 +58,7 @@ h1{font-size:clamp(1.9rem,4vw,3.15rem);line-height:1.18;margin:8px 0 12px}h2{fon
 <main>
 <p class="eyebrow">HSSC-I · Original learning resources</p>
 <h1>Original Notes & Concept Videos</h1>
-<p class="intro">Watch the concept videos selected for all 14 Grade XI units, explore our original PDF study handouts, and find the earlier Google Sites references. You can watch YouTube videos here without navigating away, or open them on YouTube.</p>
+<p class="intro">Watch the concept videos selected for all 14 Grade XI units, explore our original PDF study handouts, and review archived video page titles without leaving the portal. You can watch YouTube videos here without navigating away, or open them on YouTube.</p>
 <div class="notice" role="note">
 <strong>Important access notice</strong>
 <p><b>These links are publicly accessible external resources, not secure student-only downloads.</b> PDF handouts open from their original Google Drive locations. Concept-video links now point directly to the YouTube URLs supplied by the teacher. YouTube playback is loaded <b>only when you click Watch here</b>; otherwise you can open the video on YouTube.</p>
@@ -83,10 +83,10 @@ h1{font-size:clamp(1.9rem,4vw,3.15rem);line-height:1.18;margin:8px 0 12px}h2{fon
 <div class="cards" id="youtube-cards"></div><p class="empty" id="youtube-empty">No direct YouTube concept videos match this selection.</p>
 </section>
 <details class="legacy-details" id="legacy-video-pages">
-<summary>Original Google Sites video pages (archived links)</summary>
+<summary>Archived Video Page Titles · Reference Only (No External Links)</summary>
 <section aria-labelledby="videos-heading">
-<div class="section-title"><h2 id="videos-heading">Old Google Sites Video Pages</h2><span class="counter" id="video-count">—</span></div>
-<p class="mini">Retained for reference during migration: 15 unit pages plus 2 general-physics video pages. These are the old Google Sites subpages, not the original YouTube hosts.</p>
+<div class="section-title"><h2 id="videos-heading">Earlier Video Page References</h2><span class="counter" id="video-count">—</span></div>
+<p class="mini">Original titles are retained for migration traceability: 15 unit entries plus 2 general physics entries. These are non-clickable archives, not the original YouTube hosts or verified video sources. Use the direct YouTube concept videos above to watch content.</p>
 <div class="cards" id="video-cards"></div><p class="empty" id="video-empty">No old video pages match this selection.</p>
 </section>
 </details>
@@ -97,7 +97,7 @@ h1{font-size:clamp(1.9rem,4vw,3.15rem);line-height:1.18;margin:8px 0 12px}h2{fon
 </section>
 <div class="notice" role="note">
 <strong>Next migration step</strong>
-<p>The original Google Sites video pages and Google Drive PDFs remain available as references during migration. The exact YouTube URLs have now been added here, but Google Sites, Drive permissions, Firebase enrollment and Grade 9 resources remain unchanged. We will retire the legacy site only after both classes are migrated and tested.</p>
+<p>Historical video-page metadata is preserved in the migration inventory; students are no longer offered old Google Sites navigation links here. Direct YouTube and original Drive PDF links remain unchanged. Completing resource migration and securing teacher-only content require separate review.</p>
 </div>
 </main>
 <footer>Physics with Sir Najam · From Fundamentals to Frontiers · Source-linked transitional learning resources</footer>
@@ -111,7 +111,6 @@ function verifiedLink(value,kind){
  try{
   const u=new URL(value);
   if(u.protocol!=='https:')return null;
-  if(kind==='video'&&u.hostname==='sites.google.com'&&u.pathname.startsWith('/view/physics-with-sir-najam/'))return u.href;
   if(kind==='youtube'&&u.hostname==='www.youtube.com'&&u.pathname==='/watch'&&/^[-_A-Za-z0-9]{11}$/.test(u.searchParams.get('v')||''))return u.href;
   if(kind==='pdf'&&u.hostname==='drive.google.com'&&/^\/file\/d\/[-A-Za-z0-9_]+\/view$/.test(u.pathname))return u.href;
   if(kind==='reading'&&u.hostname==='courses.lumenlearning.com'&&u.pathname.startsWith('/chemistryformajors/chapter/'))return u.href;
@@ -122,18 +121,21 @@ function titleCaseUnit(n){
  return n===null?'General physics · enrichment':'Unit '+n+' · '+(source.unitTitles[n]||'Grade XI Physics');
 }
 function makeCard(data,type){
- const url=verifiedLink(type==='pdf'?data.fileUrl:type==='reading'?data.url:data.pageUrl,type);
- if(!url)return null;
+ const url=type==='video'?null:verifiedLink(type==='pdf'?data.fileUrl:type==='reading'?data.url:data.pageUrl,type);
+ if(type!=='video'&&!url)return null;
  const card=document.createElement('article');card.className='card';card.dataset.unit=data.unit===null?'additional':String(data.unit);
  const meta=document.createElement('span');meta.className='meta';meta.textContent=titleCaseUnit(data.unit);
  const title=document.createElement('h3');title.textContent=data.title;
  const description=document.createElement('p');
  if(type==='pdf')description.textContent=data.category+' · Existing Google Drive PDF (public link; not protected by portal login).';
- if(type==='video')description.textContent='External Google Sites concept-video page · Original video host not yet identified.';
+ if(type==='video')description.textContent='Archived title only — no external link. Use direct YouTube concept videos above where available.';
  if(type==='reading')description.textContent='External article · Original publisher: Lumen Learning.';
- const link=document.createElement('a');link.className='go';link.href=url;link.target='_blank';link.rel='noopener noreferrer';
- link.textContent=type==='pdf'?'Open original PDF ↗':type==='video'?'Open original video page ↗':'Read original article ↗';
- card.append(meta,title,description,link);
+ card.append(meta,title,description);
+ if(type!=='video'){
+  const link=document.createElement('a');link.className='go';link.href=url;link.target='_blank';link.rel='noopener noreferrer';
+  link.textContent=type==='pdf'?'Open original PDF ↗':'Read original article ↗';
+  card.append(link);
+ }
  return card;
 }
 function stopPreviousVideo(){

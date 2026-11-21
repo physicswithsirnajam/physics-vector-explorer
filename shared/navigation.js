@@ -20,10 +20,8 @@
     try{
       const url=new URL(raw,base);
       const sameOrigin=url.origin===root.origin && url.pathname.startsWith(root.pathname);
-      const verifiedSite=url.hostname==='sites.google.com' &&
-        url.pathname.startsWith('/view/physics-with-sir-najam/');
-      return url.protocol==='https:'&& (sameOrigin||verifiedSite) ? url.href :
-        url.protocol==='http:'&&sameOrigin ? url.href : null;
+      // Student navigation is same-site only; historical sources are archived separately.
+      return (url.protocol==='https:'||url.protocol==='http:')&&sameOrigin ? url.href : null;
     }catch{return null;}
   };
   const link=(target,label,key)=>({url:new URL(target,root).href,label,key});
@@ -96,7 +94,7 @@
     link('portal/#my-progress','My Private Progress','progress'),
     link('assessment-blueprint/','FBISE Blueprint','blueprint'),
     link('portal/simulations.html','Simulation Library','simulations'),
-    {url:'https://sites.google.com/view/physics-with-sir-najam/student-hub/1st-year-hssc',label:'Google Sites Student Hub (external)',key:'external-hub'}
+    link('portal/legacy-hssc-resources.html','Notes & Concept Videos','videos')
   ];
   const info=e('p','psn-drawer-hint','Choose a unit to explore study, simulations and practice. Unit 6 is a provisional practice preview, not an approved full course.');
   const content=e('nav','psn-drawer-content');content.setAttribute('aria-label','Grade XI unit-by-unit resources');

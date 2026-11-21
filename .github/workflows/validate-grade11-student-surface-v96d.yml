@@ -1,0 +1,69 @@
+name: Validate Grade XI Student-Facing Google Sites Retirement (V96-D)
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/learning-hub.js"
+      - "portal/index.html"
+      - "portal/simulations.html"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/unit-01.html"
+      - "student-guide.html"
+      - "scripts/test_student_workspace_v68.cjs"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "scripts/test_grade11_student_surface_v96d.cjs"
+      - "quality/grade11-v96d-student-surface-and-google-sites-navigation-audit.md"
+      - ".github/workflows/validate-grade11-student-surface-v96d.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/learning-hub.js"
+      - "portal/index.html"
+      - "portal/simulations.html"
+      - "portal/legacy-hssc-resources.html"
+      - "portal/unit-01.html"
+      - "student-guide.html"
+      - "scripts/test_student_workspace_v68.cjs"
+      - "scripts/test_hssc_legacy_resources_v73.cjs"
+      - "scripts/test_grade11_student_surface_v96d.cjs"
+      - "quality/grade11-v96d-student-surface-and-google-sites-navigation-audit.md"
+      - ".github/workflows/validate-grade11-student-surface-v96d.yml"
+  workflow_dispatch:
+jobs:
+  student-entrypoints-archive-and-release-safety:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate scripts and current release holds
+        run: |
+          node --check shared/navigation.js
+          node --check portal/learning-hub.js
+          node --check scripts/test_grade11_student_surface_v96d.cjs
+          node --check scripts/test_hssc_legacy_resources_v73.cjs
+          node scripts/test_grade11_unit06_preview_discovery_v96a.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Entry-point link audit and real-browser source-preservation tests
+        run: |
+          node scripts/test_grade11_student_surface_v96d.cjs
+          node scripts/test_hssc_legacy_resources_v73.cjs
+          node scripts/test_grade11_direct_youtube_v74.cjs
+          node scripts/test_student_workspace_v68.cjs
+      - name: Archive read-only remaining-link inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v96d-remaining-google-sites-link-inventory
+          path: qa-artifacts/v96d/remaining-public-html-google-sites-hrefs.json
+          if-no-files-found: warn
+          retention-days: 30
