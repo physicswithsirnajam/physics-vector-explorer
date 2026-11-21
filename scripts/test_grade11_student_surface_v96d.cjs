@@ -73,6 +73,7 @@ function staticAudit(){
  assert.ok(findings.every(x=>!entrypoints.includes(x.file)),'Migrated entrypoint still contains outbound reference');
  console.log('V96-D static PASS: 5 student entrypoints have zero old-site URLs; 17 legacy titles preserved for provenance, 27 direct YouTube links, 17 PDFs, 560 MCQs and assessment release gates closed.');
  console.log('V96-D inventory: '+publicFiles.length+' HTML pages scanned, '+findings.length+' remaining literal old-site hrefs logged for follow-up.');
+ for(const finding of findings)console.log('V96-D REMAINING-LINK: '+finding.file+':'+finding.line);
 }
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.svg':'image/svg+xml','.jpg':'image/jpeg'};
 const server=http.createServer((req,res)=>{
