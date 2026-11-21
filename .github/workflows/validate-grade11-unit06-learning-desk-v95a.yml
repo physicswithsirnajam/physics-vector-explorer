@@ -2,7 +2,7 @@ name: Validate Grade XI Unit 6 Learning Desk Scaffold (V95-A)
 on:
   pull_request:
     paths:
-      - "portal/unit-06.html"
+      - "portal/unit-06-learning-desk-v95a.html"
       - "portal/unit-06-desk-v95a.css"
       - "portal/unit-06-desk-v95a.js"
       - "portal/index.html"
@@ -11,7 +11,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "portal/unit-06.html"
+      - "portal/unit-06-learning-desk-v95a.html"
       - "portal/unit-06-desk-v95a.css"
       - "portal/unit-06-desk-v95a.js"
       - "portal/index.html"
