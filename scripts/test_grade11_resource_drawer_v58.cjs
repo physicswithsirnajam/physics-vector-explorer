@@ -24,15 +24,15 @@ const server=http.createServer((req,res)=>{
  }catch{res.writeHead(404);res.end('Not found')}
 });
 function audit(){
- assert.equal(units.length,6);assert.equal(data.resources.length,62);
- assert.equal(units.reduce((n,u)=>n+u.resourceIds.length,0),62);
+ assert.equal(units.length,6);assert.equal(data.resources.length,59);
+ assert.equal(units.reduce((n,u)=>n+u.resourceIds.length,0),59);
  assert.ok(read('shared/navigation.js').includes("portal/learning-catalog.json"),'public catalog must be source');
  assert.ok(read('shared/navigation.js').includes('permitNavigation'),'unfinished quiz protection must remain');
  assert.ok(read('shared/navigation.css').includes('#psn-resource-drawer'),'sidebar stylesheet must be namespaced');
  const files=new Set(data.resources.map(r=>r.href)
   .filter(h=>typeof h==='string'&&h.startsWith('./')&&h.includes('.html'))
   .map(h=>'portal/'+h.slice(2).split('?')[0]));
- assert.equal(files.size,52,'expected 52 independently accessible catalogue HTML files');
+ assert.equal(files.size,51,'expected 51 original public catalogue HTML files');
  for(const file of files){
   const html=read(file);
   assert.ok(html.includes('shared/navigation.js'),'resource missing V58 navbar: '+file);
@@ -43,7 +43,7 @@ function audit(){
   const expectedNavVersion=file==='portal/index.html'?'69':'68';
   assert.ok(read(file).includes('shared/navigation.js?v='+expectedNavVersion),'student entry still using stale navigation asset '+file);
  }
- console.log('PASS V58 static: 5 available units + 1 provisional Unit 6 practice preview, 62 catalogue resource IDs, 52 linked HTML resources all use shared nav.');
+ console.log('PASS V58 static: 5 available units + 1 provisional Unit6 practice preview; 59 original resource records and 3 separate preview destinations; original 51 catalogue HTML files retain shared nav.');
 }
 async function main(){
  audit();
