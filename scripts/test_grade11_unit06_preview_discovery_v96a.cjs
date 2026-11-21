@@ -21,7 +21,7 @@ assert.equal(units.filter(u=>u.status==='planned'&&!u.practicePreviewStatus).len
 assert.equal(unit.status,'planned','Unit6 full course must remain unreleased');
 assert.equal(unit.assessmentStatus,'not-published');
 assert.equal(unit.practicePreviewStatus,'public-provisional');
-assert.equal(unit.questionBankCount,560);
+assert.equal(unit.questionBankCount,0,'Full course bank must remain unreleased');
 assert.equal(unit.partialTestBuilderMcqCount,560);
 assert.equal(unit.sourceTopicMcqCount,560);
 assert.equal(unit.sourceFigureHeldCount,0);
@@ -40,11 +40,12 @@ const expected=[
  ['unit6-preview-central-mcqs','PRACTISE','../build-your-physics-test.html?unit=6'],
  ['unit6-preview-simulations','SIMULATIONS','./simulations.html?unit=6']
 ];
-assert.deepEqual(unit.resourceIds,expected.map(e=>e[0]));
-assert.equal(cat.resources.length,62);
+assert.deepEqual(unit.resourceIds,[],'Full course resource IDs remain unpublished');
+assert.deepEqual(unit.previewResources.map(r=>r.id),expected.map(e=>e[0]));
+assert.equal(cat.resources.length,59,'Original public resource registry unchanged');
 assert.equal(new Set(cat.resources.map(r=>r.id)).size,cat.resources.length);
 for(const [id,category,href] of expected){
- const r=cat.resources.find(x=>x.id===id);
+ const r=unit.previewResources.find(x=>x.id===id);
  assert.ok(r,'Missing resource '+id);
  assert.equal(r.category,category);
  assert.equal(r.href,href);
@@ -59,12 +60,14 @@ for(const [id,category,href] of expected){
 const hub=read('portal/learning-hub.js');
 assert.ok(hub.includes("u.practicePreviewStatus==='public-provisional'"));
 assert.ok(hub.includes("const active=[...published,...previews]"));
+assert.ok(hub.includes('visibleUnits.filter(u=>u.practicePreviewStatus'), 'preview resources must be rendered in Hub');
 assert.ok(hub.includes('u.unit<=6'),'Unit6 should be included in MCQ practice action');
 assert.ok(hub.includes("practice preview"));
 const nav=read('shared/navigation.js');
 assert.ok(nav.includes("u.practicePreviewStatus==='public-provisional'"));
 assert.ok(nav.includes("'Fluid Mechanics (practice preview)'"),'Fallback includes Unit6 desk');
 assert.ok(nav.includes('index===5?'), 'Unit6 fallback must target existing preview page');
+assert.ok(nav.includes('unit.previewResources'), 'preview resource links must render in drawer');
 assert.ok(nav.includes('Unit 6 is a provisional practice preview'));
 const html=read('portal/index.html');
 assert.ok(html.includes('<strong id="hub-linked-units">6</strong>'));
