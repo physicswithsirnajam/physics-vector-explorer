@@ -43,6 +43,7 @@ function staticAudit(){
  assert.equal(pages.length,7);
  assert.ok(fs.existsSync(path.join(root,'portal/assets/physics-with-sir-najam-official-logo.png')));
  for(const p of pages){
+  assert.ok(!/teacher|mcq-key|secure-lesson|course-lesson|admin/i.test(p.path),'V98-D must never inspect teacher or enrolled/private routes: '+p.path);
   const src=fs.readFileSync(path.join(root,p.path),'utf8');
   assert.match(src,/<meta\s+name=["']viewport["']/i,'viewport meta missing in '+p.path);
   assert.ok(src.includes('physics-with-sir-najam-official-logo.png'),'official logo path missing in '+p.path);
