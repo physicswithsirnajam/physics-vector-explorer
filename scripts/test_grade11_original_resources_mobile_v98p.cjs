@@ -67,6 +67,9 @@ async function main(){
    await page.waitForTimeout(100);
    const state=await page.evaluate(()=>{
     const vw=document.documentElement.clientWidth,doc=document.documentElement.scrollWidth;
+    const overflowingPdfTitles=[...document.querySelectorAll('#pdf-cards .card h3')]
+      .filter(e=>e.scrollWidth>e.clientWidth+2)
+      .map(e=>({title:e.textContent.trim().slice(0,110),client:e.clientWidth,scroll:e.scrollWidth}));
     const primary=['header','.inner','main','.controls','.controls>div','.controls select','.controls input','.cards','.card','#youtube-cards','.legacy-details','footer'];
     const key=primary.map(selector=>{
      const e=document.querySelector(selector);
@@ -82,7 +85,7 @@ async function main(){
       left:Math.round(b.left),right:Math.round(b.right),client:e.clientWidth,scroll:e.scrollWidth,overflowX:c.overflowX};
     }).filter(x=>(x.right>vw+2&&x.left<vw)||x.scroll>x.client+2)
        .sort((a,b)=>Math.max(b.right,b.left+b.scroll)-Math.max(a.right,a.left+a.scroll)).slice(0,28);
-    return {viewport:vw,documentWidth:doc,overflow:doc>vw+2,key,offending};
+    return {viewport:vw,documentWidth:doc,overflow:doc>vw+2,key,offending,overflowingPdfTitles};
    });
    results.push({requestedWidth:width,...state});
    console.log('V98-P LAYOUT',JSON.stringify({width,viewport:state.viewport,documentWidth:state.documentWidth,overflow:state.overflow,
@@ -103,6 +106,8 @@ async function main(){
   fs.writeFileSync(path.join(output,'diagnostic.json'),JSON.stringify({originalCounts,results,unit2Resources:unitCount,errors,missing},null,2)+'\n');
   for(const result of results)assert.equal(result.overflow,false,
    'document overflow at '+result.requestedWidth+'px (document '+result.documentWidth+'px); examine diagnostic JSON, GitHub logs and screenshots');
+  for(const result of results.filter(x=>x.requestedWidth<=620))assert.deepEqual(result.overflowingPdfTitles,[],
+   'PDF filenames must wrap within their cards instead of being clipped or forcing document-wide scrolling at '+result.requestedWidth+'px');
   console.log('V98-P PASS: original resource URLs and branding preserved, source catalog filters work, seven desktop/phone widths fit.');
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok));}
 }
