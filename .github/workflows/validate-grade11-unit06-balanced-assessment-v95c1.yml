@@ -41,10 +41,11 @@ jobs:
           node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
           node scripts/test_grade11_unit06_v95a_learning_desk.cjs
           node scripts/test_grade11_unit06_v95b7_topic67_study.cjs
-          node scripts/test_grade11_unit06_central_v89.cjs
       - name: Install Chromium for mobile/tablet/desktop local self-practice
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
+      - name: Recheck inherited central V89 source and browser flows after Chromium installation
+        run: node scripts/test_grade11_unit06_central_v89.cjs
       - name: Verify seven-topic equal sampling, original options/figures, all-correct scoring, and failing source guard
         run: node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs --browser
