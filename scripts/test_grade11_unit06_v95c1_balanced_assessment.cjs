@@ -116,7 +116,7 @@ assert.ok(html.includes('source figure')||html.includes('source number'));
 assert.ok(js.includes("PSNUnit6FigureCardV93.show"));
 assert.ok(js.includes("PSNUnit6FigureCardV93.append"));
 assert.ok(js.includes("test=build(count,mode,order)"));
-assert.ok(js.includes('answers.get(q.id)===q.correctOptionId'));
+assert.ok(js.includes('answers.get(item.q.id)===item.q.correctOptionId'),'Source-key scoring must read the unchanged question record');
 assert.ok(js.includes("options.append(label)")||js.includes("options.append(label);"));
 assert.ok(!/localStorage|sessionStorage|firebase|sendBeacon|XMLHttpRequest/.test(js));
 assert.ok(!/\.innerHTML\s*=/.test(js),'Do not inject source stems as HTML');
