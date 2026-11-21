@@ -1,0 +1,45 @@
+name: Validate Unit 5 Mobile Layout (V98-E)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-05.html"
+      - "portal/unit-05-work-energy-lab.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit05_mobile_overflow_v98e.cjs"
+      - ".github/workflows/validate-grade11-unit05-mobile-v98e.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-05.html"
+      - "portal/unit-05-work-energy-lab.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/test_grade11_unit05_mobile_overflow_v98e.cjs"
+      - ".github/workflows/validate-grade11-unit05-mobile-v98e.yml"
+  workflow_dispatch:
+jobs:
+  unit05-390px-overflow-diagnostic-and-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check targeted regression script syntax
+        run: node --check scripts/test_grade11_unit05_mobile_overflow_v98e.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify Unit 5 layout widths, official logo, original science and live lab navigation
+        run: node scripts/test_grade11_unit05_mobile_overflow_v98e.cjs
+      - name: Preserve all diagnostic evidence and screenshots even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit05-mobile-v98e-diagnostics
+          path: qa-artifacts/unit05-mobile-v98e/
+          if-no-files-found: warn
+          retention-days: 10
