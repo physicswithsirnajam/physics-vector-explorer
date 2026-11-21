@@ -81,6 +81,14 @@ async function main(){
       text:(el.textContent||'').trim().replace(/\\s+/g,' ').slice(0,85),left:Math.round(r.left),right:Math.round(r.right),
       width:Math.round(r.width),clientWidth:el.clientWidth,scrollWidth:el.scrollWidth,overflowX:cs.overflowX};})
     .sort((a,b)=>b.right-a.right).slice(0,30));
+   const scrolling=await page.evaluate(()=>[...document.querySelectorAll('body *')]
+      .filter(el=>!el.closest('.tbl')&&!el.closest('#psn-global-nav')&&el.scrollWidth>el.clientWidth+2)
+      .map(el=>{const b=el.getBoundingClientRect(),c=getComputedStyle(el);return {tag:el.tagName.toLowerCase(),
+        className:typeof el.className==='string'?el.className:'',text:(el.textContent||'').trim().replace(/\\s+/g,' ').slice(0,105),
+        left:Math.round(b.left),right:Math.round(b.right),client:el.clientWidth,scroll:el.scrollWidth,
+        scrollRight:Math.round(b.left)+el.scrollWidth,overflowX:c.overflowX};})
+      .sort((a,b)=>b.scrollRight-a.scrollRight).slice(0,30));
+   console.log('V98-K SCROLL CHILDREN',JSON.stringify({width,scrolling}));
    console.log('V98-K WIDTH DIAG',JSON.stringify({width,viewport:state.viewport,documentWidth:state.documentWidth,overflow:state.overflows,
       unclipped,offenders:state.offenders.slice(0,8),tables:state.tables.slice(0,7)}));
    await page.screenshot({path:path.join(out,'unit05-'+width+'px.png'),fullPage:false,animations:'disabled'});
