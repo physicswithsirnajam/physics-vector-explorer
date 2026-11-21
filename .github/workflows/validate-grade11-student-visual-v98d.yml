@@ -1,0 +1,55 @@
+name: Grade XI Student Visual Baseline Part 2 (V98-D)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "portal/unit-02-concept-lab.html"
+      - "portal/unit-04-centripetal-lab.html"
+      - "portal/unit-05-work-energy-lab.html"
+      - "portal/unit-06-topic-67-study-v95b7.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/audit_grade11_student_visual_v98d.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98d.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-02.html"
+      - "portal/unit-04.html"
+      - "portal/unit-05.html"
+      - "portal/unit-02-concept-lab.html"
+      - "portal/unit-04-centripetal-lab.html"
+      - "portal/unit-05-work-energy-lab.html"
+      - "portal/unit-06-topic-67-study-v95b7.html"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "scripts/audit_grade11_student_visual_v98d.cjs"
+      - ".github/workflows/validate-grade11-student-visual-v98d.yml"
+  workflow_dispatch:
+jobs:
+  unit-245-and-67-seven-page-local-visual-audit:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check V98-D source audit script syntax
+        run: node --check scripts/audit_grade11_student_visual_v98d.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Audit seven more Unit 2, 4, 5 and 6 student pages locally without sign-in
+        run: node scripts/audit_grade11_student_visual_v98d.cjs
+      - name: Preserve diagnostic report and fourteen desktop/mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-student-visual-v98d-evidence
+          path: qa-artifacts/student-visual-v98d/
+          if-no-files-found: warn
+          retention-days: 10
