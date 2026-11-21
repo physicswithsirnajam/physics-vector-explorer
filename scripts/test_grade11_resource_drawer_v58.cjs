@@ -10,7 +10,7 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'qa-artifacts','drawe
 fs.mkdirSync(out,{recursive:true});
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const data=JSON.parse(read('portal/learning-catalog.json'));
-const units=data.grades.find(g=>g.grade===11).units.filter(u=>u.status==='available');
+const units=data.grades.find(g=>g.grade===11).units.filter(u=>u.status==='available'||u.practicePreviewStatus==='public-provisional');
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml'};
 const server=http.createServer((req,res)=>{
  try{
@@ -24,15 +24,15 @@ const server=http.createServer((req,res)=>{
  }catch{res.writeHead(404);res.end('Not found')}
 });
 function audit(){
- assert.equal(units.length,5);assert.equal(data.resources.length,59);
- assert.equal(units.reduce((n,u)=>n+u.resourceIds.length,0),59);
+ assert.equal(units.length,6);assert.equal(data.resources.length,62);
+ assert.equal(units.reduce((n,u)=>n+u.resourceIds.length,0),62);
  assert.ok(read('shared/navigation.js').includes("portal/learning-catalog.json"),'public catalog must be source');
  assert.ok(read('shared/navigation.js').includes('permitNavigation'),'unfinished quiz protection must remain');
  assert.ok(read('shared/navigation.css').includes('#psn-resource-drawer'),'sidebar stylesheet must be namespaced');
  const files=new Set(data.resources.map(r=>r.href)
   .filter(h=>typeof h==='string'&&h.startsWith('./')&&h.includes('.html'))
   .map(h=>'portal/'+h.slice(2).split('?')[0]));
- assert.equal(files.size,51,'expected 51 independently accessible catalogue HTML files');
+ assert.equal(files.size,52,'expected 52 independently accessible catalogue HTML files');
  for(const file of files){
   const html=read(file);
   assert.ok(html.includes('shared/navigation.js'),'resource missing V58 navbar: '+file);
@@ -43,7 +43,7 @@ function audit(){
   const expectedNavVersion=file==='portal/index.html'?'69':'68';
   assert.ok(read(file).includes('shared/navigation.js?v='+expectedNavVersion),'student entry still using stale navigation asset '+file);
  }
- console.log('PASS V58 static: 5 released units, 59 public-catalog resource IDs, 51 linked HTML resources all use shared nav.');
+ console.log('PASS V58 static: 5 available units + 1 provisional Unit 6 practice preview, 62 catalogue resource IDs, 52 linked HTML resources all use shared nav.');
 }
 async function main(){
  audit();
@@ -60,12 +60,12 @@ async function main(){
   assert.equal(await trigger.getAttribute('aria-expanded'),'false');
   assert.equal(await page.locator('#psn-resource-drawer').isHidden(),true);
   await trigger.click();
-  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===5);
+  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   assert.equal(await trigger.getAttribute('aria-expanded'),'true');
   assert.equal(await page.locator('#psn-resource-drawer').isVisible(),true);
   assert.equal(await page.locator('#psn-nav-backdrop').isVisible(),true);
-  assert.equal(await page.locator('#psn-resource-drawer .psn-drawer-category-links a').count(),59,'all 59 catalogue resources must be in the drawer');
-  assert.match(await page.locator('#psn-resource-drawer .psn-drawer-loading').textContent(),/5 published unit/);
+  assert.equal(await page.locator('#psn-resource-drawer .psn-drawer-category-links a').count(),62,'all 62 catalogue resources must be in the drawer');
+  assert.match(await page.locator('#psn-resource-drawer .psn-drawer-loading').textContent(),/6 unit menus with resources/);
   await page.locator('[data-psn-unit="4"] > summary').click();
   assert.equal(await page.locator('[data-psn-unit="4"]').evaluate(x=>x.open),true);
   const labs=page.locator('[data-psn-unit="4"] [data-psn-category="SIMULATIONS"]');
@@ -93,11 +93,11 @@ async function main(){
   const inDrawer=await page.evaluate(()=>document.getElementById('psn-resource-drawer').contains(document.activeElement));
   assert.equal(inDrawer,true,'keyboard focus must stay inside the open modal');
   await page.keyboard.press('Escape');
-  console.log('PASS V58 desktop: 59 original resources in collapsible categories; accessible open, ESC, backdrop and keyboard focus.');
+  console.log('PASS V58 desktop: 62 available/provisional resources in collapsible categories; accessible open, ESC, backdrop and keyboard focus.');
 
   await page.setViewportSize({width:390,height:844});
   await trigger.click();
-  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===5);
+  await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   const size=await page.evaluate(()=>{
    const drawer=document.getElementById('psn-resource-drawer');
    return {vw:document.documentElement.clientWidth,sw:document.documentElement.scrollWidth,
@@ -117,7 +117,7 @@ async function main(){
    await page.goto(base+file,{waitUntil:'domcontentloaded'});
    await page.waitForFunction(()=>document.getElementById('psn-global-nav')!==null);
    await page.locator('#psn-global-nav .psn-nav-menu-button').click();
-   await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===5);
+   await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
    assert.equal(await page.locator('[data-psn-unit="1"]').count(),1,'drawer missing '+file);
    await page.keyboard.press('Escape');
    console.log('PASS previously missing nav: '+file);
