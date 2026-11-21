@@ -55,7 +55,8 @@ function staticChecks(){
 const from=html.indexOf('<section class="learning-hub"');
 const close=html.indexOf('</section>',from);
 assert.ok(from>0&&close>from,'Cannot extract source Learning Hub markup');
-const markup=html.slice(from,close+'</section>'.length);
+const markup=html.slice(from,close+'</section>'.length)
+  .replace(/(<section class="learning-hub"[^>]*?) hidden>/,'$1>'); // show learner fixture without impersonating Firebase enrollment
 const fixture='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/portal/styles.css"></head><body>'+markup+
  '<script type="module">import {initLearningHub} from "/portal/learning-hub.js"; initLearningHub();</script></body></html>';
 const MIME={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8'};
