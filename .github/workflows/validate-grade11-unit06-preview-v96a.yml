@@ -1,0 +1,46 @@
+name: Validate Grade XI Unit 6 Provisional Discovery (V96-A)
+on:
+  pull_request:
+    paths:
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/index.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_unit06_preview_discovery_v96a.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - ".github/workflows/validate-grade11-navigation-v58.yml"
+      - ".github/workflows/validate-grade11-unit06-preview-v96a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/learning-catalog.json"
+      - "portal/learning-hub.js"
+      - "portal/index.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_unit06_preview_discovery_v96a.cjs"
+      - "scripts/test_grade11_resource_drawer_v58.cjs"
+      - ".github/workflows/validate-grade11-navigation-v58.yml"
+      - ".github/workflows/validate-grade11-unit06-preview-v96a.yml"
+  workflow_dispatch:
+jobs:
+  validate-unit06-practice-preview-with-release-closed:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and unit visibility/catalogue tests
+        run: |
+          node --check portal/learning-hub.js
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_unit06_preview_discovery_v96a.cjs
+          node scripts/test_grade11_unit06_preview_discovery_v96a.cjs
+      - name: Preserve academic and examination nonrelease safeguards
+        run: |
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95c3b_topic67_last20_scenarios.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
