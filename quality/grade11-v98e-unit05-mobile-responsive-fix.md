@@ -22,3 +22,19 @@ Original official logo: `portal/assets/physics-with-sir-najam-official-logo.png`
 This tests checked-out repository source locally in headless Chromium. It is not a live production/account-access certification. Full browser screenshots and diagnostic JSON are attached as GitHub Actions artifact `grade11-unit05-mobile-v98e-diagnostics`.
 
 No editing of other Unit 5 pages, public teacher-key status, FBISE / NBF source judgments, authentication, Firebase, assessment releases, student records, or GitHub Pages settings.
+
+## Confirmed root cause and the exact correction
+
+The pre-fix V98-E Chromium run reproduced document widths of **453px at both 390px and 320px**, while 768px and 1280px had no document overflow. Instrumented DOM rectangles pinpointed an unbroken *italicized filename* in `portal/unit-05.html`'s `.source` reference paragraph:
+
+`11_Physics_HSSC_I_model_paper_50_percent(9).pdf`
+
+Its inline element extended from about **x=33px to x=448px** at phone width, accounting for the page overflow. Several global-navigation links also had off-screen rectangles, but those did not contribute to document scroll width and **were not modified**.
+
+The only correction is the narrowly scoped rule:
+
+```css
+@media(max-width:700px){.source em{overflow-wrap:anywhere}}
+```
+
+This permits the otherwise unbreakable filename to wrap on phone screens **without changing any text, original brand asset, page structure, links, scientific formulas or lab behavior**. The test allows exactly this single CSS rule and compares the remainder of the document against fingerprint `770261505`. Browser regression measures 320px, 390px, 768px and 1280px plus original logo and Work–Energy Lab navigation.
