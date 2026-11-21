@@ -74,7 +74,7 @@ function validateStaticManifest(manifest){
   ids:()=>Object.freeze([...lookup.keys()])
  });
 }
-function createSignedManifest(unitCounts,bankVersions,questionRefs){
+function createHashedManifest(unitCounts,bankVersions,questionRefs){
  const payload={
   schemaVersion:1,kind:KIND,grade:11,publicPracticeOnly:true,
   unitCounts,bankVersions,questionRefs
@@ -83,4 +83,4 @@ function createSignedManifest(unitCounts,bankVersions,questionRefs){
  validateStaticManifest(manifest);
  return manifest;
 }
-module.exports=Object.freeze({TOTAL,EXPECTED,KIND,validateStaticManifest,createSignedManifest});
+module.exports=Object.freeze({TOTAL,EXPECTED,KIND,validateStaticManifest,createHashedManifest});
