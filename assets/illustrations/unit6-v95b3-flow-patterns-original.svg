@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" role="img" aria-labelledby="title desc">
+<title id="title">Original comparison of orderly and irregular fluid flow</title>
+<desc id="desc">Two educational schematic channels are shown. The left shows multiple smooth, gently curving, nonintersecting paths with arrows representing ordered or laminar flow. The right shows paths with variable directions and several curved eddy loops, representing a qualitative turbulent pattern. This is not a measurement or an exact copy of NBF Figure 6.6; in real flow streamlines at one instant have a well-defined local direction and can curve without implying turbulence.</desc>
+<rect width="900" height="350" rx="18" fill="#f7fbff"/>
+<rect x="25" y="55" width="405" height="255" rx="16" fill="#e5f5fd" stroke="#a8cdda" stroke-width="2"/>
+<rect x="470" y="55" width="405" height="255" rx="16" fill="#fff2e6" stroke="#ddbd98" stroke-width="2"/>
+<g font-family="Arial,sans-serif" fill="#223b56">
+<text x="50" y="37" font-size="25" font-weight="750">Smooth / orderly flow</text>
+<text x="495" y="37" font-size="25" font-weight="750">Irregular / mixing flow</text>
+<text x="50" y="331" font-size="17">Lines remain separate and ordered</text>
+<text x="495" y="331" font-size="17">Eddies indicate disturbed flow</text>
+</g>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1d7598"/></marker><marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bf702b"/></marker></defs>
+<g fill="none" stroke="#1d7598" stroke-width="4.5" stroke-linecap="round" marker-end="url(#ar)">
+<path d="M42 102 C120 93 180 105 235 112 S343 120 406 105"/>
+<path d="M42 145 C120 140 190 139 242 152 S334 161 406 147"/>
+<path d="M42 195 C120 188 176 203 246 200 S346 210 406 193"/>
+<path d="M42 245 C130 248 193 235 251 248 S344 250 406 241"/>
+</g>
+<g fill="none" stroke="#bf702b" stroke-width="4.5" stroke-linecap="round" marker-end="url(#ao)">
+<path d="M482 98 C528 81 561 128 601 100 S667 113 693 91 S768 124 859 103"/>
+<path d="M483 162 C535 118 568 202 616 167 C647 141 676 173 655 192 C634 212 608 183 625 165 C646 142 681 148 705 172 C753 224 801 146 859 173"/>
+<path d="M483 249 C524 275 560 216 600 242 C630 265 600 288 582 260 C568 236 608 216 641 246 C693 283 738 216 772 244 S823 270 858 238"/>
+</g>
+</svg>

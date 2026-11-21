@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Topic 6.3 Fluid Flow: steady, laminar, turbulent, incompressible and ideal flow, flow-rate units, worked examples and original interactive learning.">
+<title>Topic 6.3 · Fluid Flow | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-63-study-v95b3.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-63">Unit 6 Desk</a><a href="../continuity-fluid-flow.html">Simulation</a><a href="./unit-06-topic-63-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.3</p>
+<h1 id="lesson-title">Fluid <span>Flow</span></h1>
+<p class="lead">Recognize ordered and turbulent motion, distinguish steady flow from laminar flow, explain the assumptions of an ideal fluid, and interpret volume transferred per unit time.</p>
+<p class="notice" role="note"><strong>V95-B3 public study preview — not a completed or officially approved Unit 6 course.</strong> Based on the teacher's private Topic 6.3 prepared master (combined PDF pp.113–136), its V94-C2.3 review and the supplied FBISE framework. Original printed NBF pp.95–96 have not undergone a complete verbatim text/figure audit. All graphics on this page are independently authored, not copied textbook scans. Individual MCQ SLO and cognitive certification remains pending.</p>
+<div class="hero-tools"><a class="btn solid" href="#patterns">Compare flow patterns</a><a class="btn subtle" href="#ideals">Ideal-fluid assumptions</a><a class="btn subtle" href="#worked">Worked examples</a><a class="btn subtle" href="#try-it">Flow-rate lab</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">Official outcome for this lesson</h2>
+<div class="outcome-grid"><div><strong>P-11-B-35</strong><span>Define and apply steady (streamline or laminar), incompressible, and non-viscous flow in the motion of an ideal fluid</span><small>Summative · Knowledge + Understanding</small></div>
+<div><strong>Content boundary</strong><span>Volume flow-rate arithmetic and the graph are supporting teacher-developed exercises</span><small>Not a separately prescribed B35 numerical derivation; equation of continuity belongs to Topic 6.4</small></div></div>
+<p class="fine">FBISE classification is confirmed at <em>SLO level</em> from the supplied official framework p.11. Author-written questions and supplementary calculations are not individually board-certified.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#meanings">Definitions</a><a href="#patterns">Flow patterns</a><a href="#ideals">Ideal fluid</a><a href="#applications">Applications</a><a href="#rate">Flow-rate meaning</a><a href="#worked">Worked examples</a><a href="#try-it">Flow-rate lab</a><a href="#review">Revision</a></nav>
+
+<section class="lesson" id="meanings" aria-labelledby="meanings-title">
+<p class="eyebrow">01 · FIRST PRINCIPLES</p><h2 id="meanings-title">Fluids move, but not always in the same pattern</h2>
+<p>A <strong>fluid</strong> is a substance that flows: liquids such as water and gases such as air both qualify. <strong>Fluid flow</strong> is motion of a fluid relative to a selected location or channel. We can describe how its motion changes with position, time and the surrounding boundaries.</p>
+<p>A <strong>streamline</strong> at an instant is a curve whose direction follows the local fluid velocity. Where that velocity has one well-defined nonzero direction, distinct instantaneous streamlines do not intersect: crossing would assign two different directions to one velocity vector.</p>
+<div class="concept-note"><strong>Clarification worth remembering:</strong> <em>steady</em> means the local velocity field at each fixed location does not vary with time. It does <strong>not</strong> require the same speed everywhere. A fluid may have different speeds in different parts of a pipe yet still flow steadily.</div>
+</section>
+
+<section class="lesson" id="patterns" aria-labelledby="patterns-title">
+<p class="eyebrow">02 · RECOGNIZE FLOW PATTERNS</p><h2 id="patterns-title">Streamline (laminar) versus turbulent flow</h2>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b3-flow-patterns-original.svg" width="900" height="350" alt="Original comparison: left orderly, smooth, nonintersecting arrows; right irregular arrows and eddies. A curved streamline alone does not indicate turbulence.">
+<figcaption>Original educational schematic, not NBF Figure 6.6 or a measurement of a real flow field. Figure 6.6(a)/(b) was compared with teacher-supplied original images in V93; this new art is independently drawn for learning.</figcaption>
+</figure>
+<div class="comparison">
+<article><h3>Laminar / ordered</h3><p>Fluid motion is organized into smooth paths or layers, with relatively little mixing across them. In a typical <em>real viscous</em> pipe flow, near-wall layers can move more slowly than the central layers.</p></article>
+<article><h3>Turbulent / irregular</h3><p>Fluctuating motion, eddies and mixing become prominent. High speeds, bends, obstructions and sudden changes in the flow passage can promote turbulence, depending on conditions.</p></article>
+<article><h3>What is not enough?</h3><p>A gently curved path alone is not turbulence. One smooth dye streak is evidence consistent with ordered flow, but cannot establish the entire fluid's regime in every location.</p></article>
+</div>
+<p>The textbook associates a transition to turbulence with a <strong>critical speed</strong>. There is no single universal critical velocity for all liquids, gases, pipes and disturbances. Fluid properties, length scale, geometry and boundary conditions matter.</p>
+<p><a class="btn subtle" href="./unit-06-figure-study-v90.html#figure66">View the separately authored V90 Figure 6.6 study aid</a></p>
+</section>
+
+<section class="lesson" id="ideals" aria-labelledby="ideals-title">
+<p class="eyebrow">03 · MODELS AND ASSUMPTIONS</p><h2 id="ideals-title">What makes an ideal-fluid model?</h2>
+<p>The teacher-prepared Topic 6.3 master lists four school-model assumptions associated with its NBF discussion. Each simplifies the physics; ordinary water and air are still <em>real fluids</em>.</p>
+<ol class="steps">
+<li><strong>Non-viscous:</strong> take dynamic viscosity as zero in the model and neglect internal friction between fluid layers. This does not mean the fluid has zero density.</li>
+<li><strong>Laminar / orderly motion:</strong> assume a smooth, organized flow pattern rather than chaotic turbulent mixing.</li>
+<li><strong>Incompressible:</strong> treat the density of each moving fluid element as constant. Real liquids often approximate this under ordinary conditions, but no material is absolutely incompressible.</li>
+<li><strong>Irrotational:</strong> the fluid has no local rotation (zero local vorticity). The school text simplifies this as straight-line motion, but <strong>curving streamlines may also be irrotational</strong>; straight paths are not the strict definition.</li>
+</ol>
+<div class="concept-note"><strong>Do not merge different ideas:</strong> "steady" describes time-dependence, "laminar" describes flow organization, "incompressible" concerns density, and "non-viscous" concerns friction. Treating them as four identical properties produces incorrect explanations.</div>
+<p>A <em>real</em> steady laminar water flow still has viscosity. Conversely, an ideal-fluid model can be a useful approximation while not matching every actual physical detail.</p>
+</section>
+
+<section class="lesson" id="applications" aria-labelledby="applications-title">
+<p class="eyebrow">04 · FROM CONCEPT TO DESIGN</p><h2 id="applications-title">Why streamlined bodies and wind tunnels matter</h2>
+<p>In the prepared discussion based on NBF p.96, streamlined dolphins move efficiently through water; fast-moving vehicles use suitable external shapes to manage air resistance; and wind tunnels create controlled airflow past stationary models so engineers can compare designs.</p>
+<div class="triad">
+<article><h3>Dolphin</h3><p>A streamlined body can reduce disturbances and resistive effects in water. This is a qualitative biological example; a dolphin is not a Stokes-law sphere.</p></article>
+<article><h3>Fast vehicle</h3><p>Body shape, size, speed and orientation influence the air resistance. A smoother shape may improve performance, but actual improvement needs appropriate testing.</p></article>
+<article><h3>Wind tunnel</h3><p>Air passing a stationary vehicle model creates relative flow over its surface. Designers observe and compare the flow rather than deducing a universal car-drag force from a sphere formula.</p></article>
+</div>
+<p><strong>Investigation prompt:</strong> A dye streak stays thin through a straight channel but becomes irregular after a sharp bend. The second observation is consistent with turbulence; the first alone does not prove the fluid is everywhere inviscid or perfectly laminar.</p>
+</section>
+
+<section class="lesson" id="rate" aria-labelledby="rate-title">
+<p class="eyebrow">05 · SUPPLEMENTARY NUMERICAL UNDERSTANDING</p><h2 id="rate-title">From "volume per time" to a usable formula</h2>
+<p>The NBF topic describes volumetric flow rate in words: the volume of fluid passing a given place per unit time. For a precise measurement, consider the <strong>volume crossing a chosen cross-section during an elapsed time interval</strong>. Then:</p>
+<div class="equation primary" role="math" aria-label="Average volumetric flow rate is the change in transferred volume divided by the elapsed time"><strong>Q<sub>avg</sub> = ΔV / Δt</strong><span>Q in m³/s (or L/s); ΔV is transferred volume, Δt is elapsed time. For a constant flow rate: Q = V/t, V = Qt, t = V/Q.</span></div>
+<p>Since [V] = L³ and [t] = T, the dimensions of volumetric flow rate are <strong>[Q] = L³T⁻¹</strong>. Key conversions: <strong>1 m³ = 1000 L</strong>; <strong>1 L = 10⁻³ m³</strong>; <strong>1 min = 60 s</strong>.</p>
+<p><strong>Important syllabus boundary:</strong> These formula manipulations, volume–time graph and numerical exercises are <em>teacher-developed support</em> for the definition in Topic 6.3. They are <strong>not a separate prescribed summative calculation in FBISE B35</strong>. The equation connecting flow speed with cross-sectional area is the subject of <strong>Topic 6.4 — Equation of Continuity</strong>, and is intentionally not derived here.</p>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b3-flow-rate-graph-original.svg" width="920" height="385" alt="Original volume-time graph of a constant flow rate. Volume increases from zero to 0.20 cubic metres at 50 seconds. From 10 to 40 seconds, volume increases from 0.040 to 0.160 cubic metres; slope equals 0.004 cubic metres per second.">
+<figcaption>Newly authored supporting graph based on the compiled master’s supplementary (t, V) values, not a scanned NBF graph. The slope of cumulative volume against time gives the corresponding average transferred volume per second.</figcaption>
+</figure>
+<div class="equation" role="math" aria-label="The volume time slope between 10 and 40 seconds is 0.120 cubic metres divided by 30 seconds, or 0.004 cubic metres per second"><strong>Q = (0.160 − 0.040) / (40 − 10) = 0.0040 m³/s</strong><span>Take the difference in the volumes and divide by the corresponding difference in times, with correct units.</span></div>
+</section>
+
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · COMPLETE WORKED EXAMPLES</p><h2 id="worked-title">Seven supplementary calculations</h2>
+<p class="fine">The next seven cases follow the data in the teacher's prepared Topic 6.3 Part C, examples C1–C7. They are <strong>original teacher-developed practice</strong>, not numbered NBF textbook Example 6.x / Assignment 6.x tasks. Numerical quantities are not presented as separately prescribed FBISE B35 examination questions.</p>
+<article class="problem"><div class="problem-label">Supplementary C1 · volume to rate</div><h3>0.48 m³ of water in 2.0 minutes</h3>
+<ol><li>Convert time: t = 2.0 × 60 = <strong>120 s</strong>.</li><li>Calculate: Q = V/t = 0.48/120 = <strong>0.0040 m³/s</strong>.</li><li>Convert to litres: 0.0040 × 1000 = <strong>4.0 L/s</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C2 · filling a tank</div><h3>720 L collected in 6 minutes</h3>
+<ol><li>Volume = 720/1000 = <strong>0.720 m³</strong>; time = 6 × 60 = <strong>360 s</strong>.</li><li>Q = 0.720/360 = <strong>0.00200 m³/s</strong>.</li><li>Equivalent: <strong>2.00 L/s</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C3 · find time</div><h3>How long to transfer 1.8 m³ at 0.015 m³/s?</h3>
+<ol><li>Rearrange Q = V/t to obtain <strong>t = V/Q</strong> for a constant nonzero rate.</li><li>t = 1.8/0.015 = <strong>120 s = 2 min</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C4 · find volume</div><h3>45 mL/s for 4 minutes</h3>
+<ol><li>Convert time: 4 × 60 = <strong>240 s</strong>.</li><li>V = Qt = 45 × 240 = <strong>10,800 mL</strong>.</li><li>Convert to litres: V = <strong>10.8 L</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C5 · tank flow rate</div><h3>0.75 m³ in 5 minutes</h3>
+<ol><li>Time = 5 × 60 = <strong>300 s</strong>.</li><li>Q = 0.75/300 = <strong>0.0025 m³/s = 2.5 L/s</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C6 · volume transferred</div><h3>0.008 m³/s for 90 seconds</h3>
+<ol><li>V = Qt = 0.008 × 90 = <strong>0.72 m³</strong>.</li><li>Converting: V = 0.72 × 1000 = <strong>720 L</strong>.</li></ol></article>
+<article class="problem"><div class="problem-label">Supplementary C7 · time-weighted mean</div><h3>Two intervals of unequal duration</h3>
+<p>In the first 20 s, 0.06 m³ passes; in the next 30 s, another 0.03 m³ passes. Find the average flow rate over all 50 s.</p>
+<ol><li>First rate: 0.06/20 = <strong>0.003 m³/s</strong>.</li><li>Second rate: 0.03/30 = <strong>0.001 m³/s</strong>.</li><li>Total volume = 0.06 + 0.03 = <strong>0.09 m³</strong>.</li><li>Total time = 20 + 30 = <strong>50 s</strong>.</li><li>Overall average: 0.09/50 = <strong>0.0018 m³/s</strong>.</li></ol>
+<p class="key-point"><strong>Common mistake:</strong> (0.003 + 0.001)/2 = 0.002 m³/s is <em>not</em> the correct overall average when the intervals have unequal durations. Use total volume divided by total time, or the correctly time-weighted mean.</p>
+</article>
+</section>
+
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · INTERACTIVE SUPPLEMENTARY LAB</p><h2 id="try-title">Try the flow-rate formula yourself</h2>
+<p>This simple local calculator explores the volume/time definition using <strong>litres and seconds</strong>. It does not measure a real fluid or create an official examination result.</p>
+<form id="flow-rate-form" class="calculator" novalidate>
+<div class="fields"><label for="transfer-litres">Volume transferred (L)<input id="transfer-litres" type="number" value="150" min="0" max="100000000" step="any" inputmode="decimal" required></label>
+<label for="transfer-seconds">Elapsed time (s)<input id="transfer-seconds" type="number" value="50" min="0.000001" max="100000000" step="any" inputmode="decimal" required></label></div>
+<button class="btn solid" type="submit">Calculate average flow rate</button>
+<p id="rate-error" class="calc-error" role="alert" hidden></p>
+<div id="rate-output" class="calc-output" role="status" aria-live="polite"><p><strong>Average flow rate:</strong> 150 L ÷ 50 s = 3 L/s = 0.003 m³/s.</p></div>
+</form>
+<h3>Challenge: two intervals</h3>
+<p>Use different durations to check why a simple arithmetic average of interval rates can be misleading.</p>
+<form id="two-interval-form" class="calculator" novalidate>
+<div class="fields">
+<label for="first-litres">Volume 1 (L)<input id="first-litres" type="number" value="60" min="0" max="100000000" step="any" inputmode="decimal" required></label>
+<label for="first-seconds">Time 1 (s)<input id="first-seconds" type="number" value="20" min="0.000001" max="100000000" step="any" inputmode="decimal" required></label>
+<label for="second-litres">Volume 2 (L)<input id="second-litres" type="number" value="30" min="0" max="100000000" step="any" inputmode="decimal" required></label>
+<label for="second-seconds">Time 2 (s)<input id="second-seconds" type="number" value="30" min="0.000001" max="100000000" step="any" inputmode="decimal" required></label>
+</div><button class="btn solid" type="submit">Compare interval rates</button>
+<p id="interval-error" class="calc-error" role="alert" hidden></p>
+<div id="interval-output" class="calc-output" role="status" aria-live="polite"><p><strong>Whole-interval average:</strong> (60 + 30) L ÷ (20 + 30) s = 1.8 L/s = 0.0018 m³/s. The simple average of 3 and 1 L/s is 2 L/s and is incorrect here.</p></div>
+</form>
+<p class="fine">All calculations happen in your own browser. These forms do not upload names, grades, input values or results. The section is a <strong>supplementary learning aid</strong>, not a measurement of pipe speed or a continuity-equation solver.</p>
+</section>
+
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · REVISE AND EXPLAIN</p><h2 id="review-title">Six conceptual questions to check understanding</h2>
+<div class="questions">
+<details><summary>1. Must steady flow have the same speed at every location?</summary><p>No. In steady flow, fluid velocity at each fixed point stays constant with time. Its value can still differ at different positions.</p></details>
+<details><summary>2. Does a gently curving streamline necessarily indicate turbulence?</summary><p>No. A streamline may curve smoothly. Turbulence concerns irregular, fluctuating eddies and mixing, not merely curvature.</p></details>
+<details><summary>3. Does incompressible mean the same thing as non-viscous?</summary><p>No. Incompressible means density is treated as constant, while non-viscous means internal shear friction is neglected. Real water can be approximately incompressible yet still viscous.</p></details>
+<details><summary>4. Must irrotational flow travel in straight lines?</summary><p>No. Irrotational means zero local rotation or vorticity. Streamlines may bend without requiring local spin, so straight paths are only a simplified picture.</p></details>
+<details><summary>5. Can one smooth dye streak prove that all fluid flow is laminar?</summary><p>No. It is evidence consistent with orderly flow along the observed path, but it does not establish the full velocity field or all locations in the fluid.</p></details>
+<details><summary>6. Which topic formally links flow speed and cross-sectional area?</summary><p>Topic 6.4, Equation of Continuity. Topic 6.3 defines flow patterns and ideal-fluid assumptions; the volume/time arithmetic shown here is supplementary.</p></details>
+</div>
+<section class="summary" aria-labelledby="formula-summary-title"><h3 id="formula-summary-title">Quick reference sheet</h3>
+<div class="formula-grid"><p><strong>Steady:</strong> velocity fixed in time at each location</p><p><strong>Laminar:</strong> orderly, smooth paths or layers</p><p><strong>Incompressible:</strong> fluid density constant</p><p><strong>Non-viscous:</strong> viscosity neglected</p><p><strong>Irrotational:</strong> zero local spin/vorticity</p><p><strong>Supplementary rate:</strong> Q<sub>avg</sub> = ΔV/Δt (m³/s)</p></div>
+</section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Continue Read → Simulate → Practice → Revise</h2>
+<p>Return to the integrated Unit 6 Desk, explore the existing Continuity and Fluid Flow simulator, or practise the 80 Topic 6.3 MCQs. The simulator includes later continuity concepts, which are formally taught in Topic 6.4.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-63">Return to Unit 6 Desk</a><a class="btn subtle" href="../continuity-fluid-flow.html">Explore the simulator</a><a class="btn subtle" href="./unit-06-topic-63-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-64">Next: Topic 6.4</a></div>
+<p class="fine">Provenance: private prepared Unit 6 master pp.113–136; V94-C2.3 academic review; official FBISE framework p.11. The page uses original educational graphics and author-developed calculations; no protected NBF scan, teacher PDF or grading record is published. Complete-topic source and teacher signoff remain pending.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B3 · Public lesson preview · No school grades recorded</footer>
+</body>
+</html>

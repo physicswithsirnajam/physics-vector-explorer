@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 385" role="img" aria-labelledby="title desc">
+<title id="title">Original volume versus time graph for constant average fluid flow</title>
+<desc id="desc">Graph of accumulated volume V in cubic metres against elapsed time t in seconds. A straight rising line runs from zero volume at zero seconds to 0.20 cubic metres at 50 seconds. Marked points at 10 seconds and 0.040 cubic metres, and 40 seconds and 0.160 cubic metres, show slope equals change in volume 0.120 cubic metres divided by 30 seconds, or 0.004 cubic metres per second. This is supplementary learning art, not an NBF book figure.</desc>
+<rect x="0" y="0" width="920" height="385" fill="#f7fbff" rx="18"/>
+<text x="35" y="34" font-family="Arial,sans-serif" font-size="24" font-weight="750" fill="#203958">Flow rate = slope of accumulated volume–time graph</text>
+<g stroke="#d8e5ee" stroke-width="1.5">
+<path d="M115 310H590 M115 252H590 M115 194H590 M115 136H590 M115 78H590"/>
+<path d="M115 78V310 M210 78V310 M305 78V310 M400 78V310 M495 78V310 M590 78V310"/>
+</g>
+<g stroke="#253e5b" stroke-width="3"><path d="M115 64V310H608"/></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#284561">
+<text x="99" y="317" text-anchor="end">0</text>
+<text x="99" y="258" text-anchor="end">0.05</text>
+<text x="99" y="200" text-anchor="end">0.10</text>
+<text x="99" y="142" text-anchor="end">0.15</text>
+<text x="99" y="84" text-anchor="end">0.20</text>
+<text x="115" y="338" text-anchor="middle">0</text>
+<text x="210" y="338" text-anchor="middle">10</text>
+<text x="305" y="338" text-anchor="middle">20</text>
+<text x="400" y="338" text-anchor="middle">30</text>
+<text x="495" y="338" text-anchor="middle">40</text>
+<text x="590" y="338" text-anchor="middle">50</text>
+<text x="340" y="370" text-anchor="middle">Time, t (s)</text>
+<text transform="translate(32 220) rotate(-90)" text-anchor="middle">Accumulated volume, V (m³)</text>
+</g>
+<path d="M115 310 L590 78" fill="none" stroke="#087fa5" stroke-width="6" stroke-linecap="round"/>
+<g fill="#eb9f3b" stroke="#75441e" stroke-width="2"><circle cx="210" cy="263.6" r="7"/><circle cx="495" cy="124.4" r="7"/></g>
+<g stroke="#b27637" stroke-width="2" stroke-dasharray="6 5"><path d="M210 263.6H495V124.4" fill="none"/></g>
+<g font-family="Arial,sans-serif" fill="#243c55">
+<text x="237" y="296" font-size="15">(10 s, 0.040 m³)</text>
+<text x="385" y="108" font-size="15">(40 s, 0.160 m³)</text>
+</g>
+<rect x="636" y="80" width="258" height="216" rx="12" fill="#fff7e9" stroke="#caa75c" stroke-width="2"/>
+<g font-family="Arial,sans-serif" fill="#243951">
+<text x="653" y="115" font-size="21" font-weight="800">Calculate the slope</text>
+<text x="653" y="151" font-size="19">ΔV = 0.160 − 0.040</text>
+<text x="653" y="178" font-size="19">= 0.120 m³</text>
+<text x="653" y="212" font-size="19">Δt = 40 − 10 = 30 s</text>
+<text x="653" y="257" font-size="20" font-weight="800" fill="#086b85">Q = 0.004 m³/s</text>
+</g>
+</svg>
