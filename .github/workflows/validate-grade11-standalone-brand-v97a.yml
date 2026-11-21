@@ -1,0 +1,55 @@
+name: Validate Grade XI Standalone Simulation Official Branding (V97-A)
+on:
+  pull_request:
+    paths:
+      - "centrifuge-applications.html"
+      - "circular-motion.html"
+      - "collisions-lab.html"
+      - "coulomb-vector-lab.html"
+      - "crystal-structure-explorer.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97a.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "centrifuge-applications.html"
+      - "circular-motion.html"
+      - "collisions-lab.html"
+      - "coulomb-vector-lab.html"
+      - "crystal-structure-explorer.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97a.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97a.yml"
+  workflow_dispatch:
+jobs:
+  five-standalone-labs-source-and-brand-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check branding script and science-preservation assertions
+        run: |
+          node --check shared/standalone-brand-v97a.js
+          node --check scripts/test_grade11_standalone_brand_v97a.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Five real standalone simulations, original code, mobile and navigation
+        run: node scripts/test_grade11_standalone_brand_v97a.cjs
+      - name: Archive desktop and mobile checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-standalone-brand-v97a-screenshots
+          path: qa-artifacts/standalone-brand-v97a/*.png
+          if-no-files-found: warn
+          retention-days: 7
