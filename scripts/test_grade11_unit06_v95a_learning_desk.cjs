@@ -119,7 +119,7 @@ async function browser(){
    assert.equal(await reveal.evaluate(el=>el.open),true);
    assert.equal(await reveal.locator('p').isVisible(),true);
    const localLinks=await page.locator('.stage-action').evaluateAll(els=>els.map(a=>a.getAttribute('href')));
-   assert.equal(localLinks.filter(x=>x&&x.includes('unit-06-topic-')).length,7);
+   assert.equal(localLinks.filter(x=>x&&/unit-06-topic-6[1-7]-preview\\.html(?:[?#]|$)/.test(x)).length,7);
    assert.deepEqual(errors,[],'Browser script errors width '+width);
    await page.close();
   }
