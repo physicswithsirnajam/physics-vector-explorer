@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1e35">
+<meta name="description" content="Physics with Sir Najam Grade XI Topic 6.6 Bernoulli applications: air-jet atomizers, filter pumps, Torricelli, Venturi, aerofoil, Magnus effect, worked numericals and interactive tools.">
+<title>Topic 6.6 · Bernoulli Applications | Physics with Sir Najam</title>
+<link rel="stylesheet" href="./unit-06-study-v95b1.css">
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<script src="./unit-06-topic-66-study-v95b6.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to lesson content</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="50" height="50" alt="Physics with Sir Najam official logo"><span><strong>PHYSICS WITH SIR NAJAM</strong><small>From Fundamentals to Frontiers</small></span></a>
+<nav aria-label="Lesson navigation"><a href="./unit-06-learning-desk-v95a.html#topic-66">Unit 6 Desk</a><a href="../bernoulli-venturi.html">Simulation</a><a href="./unit-06-topic-66-preview.html">80 MCQs</a></nav>
+</div></header>
+<main id="main-content">
+<section class="hero" aria-labelledby="lesson-title">
+<p class="eyebrow">GRADE XI · FLUID MECHANICS · TOPIC 6.6</p>
+<h1 id="lesson-title">Applications of <span>Bernoulli’s Equation</span></h1>
+<p class="lead">Connect the ideal pressure–speed–height model to atomizers, filter pumps, tank outlets, Venturi meters, wings and spinning sports balls — while testing when textbook calculations are physically justified.</p>
+<p class="notice" role="note"><strong>V95-B6 public study preview — not a completed or teacher-approved Unit 6 course.</strong> This new teaching page is based on the owner’s private Topic 6.6 prepared master (combined pp.243–273), merged V94-C2.6 audit and supplied FBISE framework. Original NBF printed pp.101–106, Figures 6.10–6.15 and exact wording of Example 6.4 / Assignment 6.4 still await complete comparison. The diagram below is independently drawn; exercises use prepared-master data but are not verbatim NBF transcriptions. Individual MCQ classifications remain provisional.</p>
+<div class="hero-tools"><a class="btn solid" href="#applications">Study devices</a><a class="btn subtle" href="#torricelli">Torricelli derivation</a><a class="btn subtle" href="#venturi">Venturi derivation</a><a class="btn subtle" href="#worked">Worked numericals</a><a class="btn subtle" href="#try-it">Interactive labs</a></div>
+</section>
+<section class="outcomes" aria-labelledby="slo-title">
+<h2 id="slo-title">Official FBISE framework focus</h2>
+<div class="outcome-grid">
+<div><strong>P-11-B-44</strong><span>Analyze real-world Bernoulli applications: atomizers, spinning cricket/golf balls and Venturi devices</span><small>Summative · Application</small></div>
+<div><strong>P-11-B-40</strong><span>Apply Bernoulli’s equation to horizontal and vertical fluid flow</span><small>Summative · Application</small></div>
+<div><strong>P-11-B-39</strong><span>Explain pressure differences associated with different flow rates</span><small>Formative · Application · Not an independent final-theory-exam SLO</small></div>
+</div>
+<p class="fine">SLO classifications from the official teacher-supplied HSSC-I framework pp.11–12; not individual-question FBISE certification.</p>
+</section>
+<nav class="contents" aria-label="Lesson sections"><span>ON THIS PAGE</span><a href="#principle">Core principle</a><a href="#applications">Sprayers and pumps</a><a href="#torricelli">Torricelli</a><a href="#venturi">Venturi</a><a href="#aerofoil">Lift and Magnus</a><a href="#worked">Numericals</a><a href="#try-it">Interactive labs</a><a href="#review">Revision</a></nav>
+
+<section class="lesson" id="principle" aria-labelledby="principle-title">
+<p class="eyebrow">01 · START WITH A VALID MODEL</p><h2 id="principle-title">What Bernoulli explains — and what it cannot</h2>
+<p>For <strong>steady, incompressible, effectively inviscid fluid flow along one streamline</strong>, with negligible energy loss and no pump/turbine work between the selected points, the mechanical energy per unit volume stays constant:</p>
+<div class="equation primary" role="math" aria-label="Static pressure plus half fluid density times speed squared plus density times g times elevation is constant along an ideal streamline"><strong>P + ½ρv² + ρgh = constant</strong><span>P is static pressure (Pa); ρ density (kg/m³); v speed (m/s); h vertical elevation (m).</span></div>
+<p>At <strong>equal elevation</strong> along the same ideal streamline, P₁ − P₂ = ½ρ(v₂² − v₁²). That relates static pressure and speed but is <strong>not a universal rule</strong> that the fastest point anywhere has the lowest pressure. Real turbulent mixing, boundary layers and viscous losses change the situation.</p>
+<p>In this topic, we move from mathematical relations to devices. For each one, first identify <strong>which fluid, which pressure comparison, which height difference and which assumptions</strong> are being used.</p>
+</section>
+
+<section class="lesson" id="applications" aria-labelledby="applications-title">
+<p class="eyebrow">02 · PRESSURE-DRIVEN DEVICES</p><h2 id="applications-title">Air-jet atomizer and filter pump</h2>
+<div class="comparison">
+<article><h3>Air-jet or bulb atomizer</h3><p>A fast jet of air passes near the mouth of a liquid tube. Under suitable conditions the local static pressure falls below the reservoir pressure, which pushes liquid up the tube. <strong>Droplet breakup happens after the liquid reaches the jet</strong>.</p></article>
+<article><h3>Mechanical perfume-pump bottle</h3><p>A manually pressed liquid-pump sprayer creates pressure mechanically. It is <strong>not automatically an air-jet atomizer</strong>. Identify its apparatus before applying the Bernoulli suction explanation.</p></article>
+<article><h3>Water-jet filter pump</h3><p>Fast water and subsequent mixing can draw gas out of a connected vessel, producing a <strong>partial vacuum</strong>. Entrainment, leaks and losses matter; Bernoulli alone does not give an exact evacuation rate or perfect vacuum.</p></article>
+</div>
+<p>A supplementary *static-head estimate* for lifting a liquid column of vertical height H uses ΔP ≈ ρ<sub>liquid</sub>gH. This neglects losses, tube effects and the dynamics of atomization; it is <strong>not a complete spray-rate formula</strong>.</p>
+<div class="equation" role="math" aria-label="Approximate ideal static suction pressure difference equals liquid density times gravity times vertical lift height"><strong>ΔP ≈ ρ<sub>liquid</sub>gH</strong><span>Supplementary minimum static lifting-head estimate; not an NBF numbered atomizer derivation.</span></div>
+<p><strong>Another common confusion:</strong> Natural chimney draft often depends strongly on the <em>buoyancy of warm gas</em>. Wind can modify it, but the stack effect is not solely a universal Bernoulli-suction mechanism.</p>
+</section>
+
+<section class="lesson" id="torricelli" aria-labelledby="torricelli-title">
+<p class="eyebrow">03 · NBF §6.6.3 · STEPWISE DERIVATION</p><h2 id="torricelli-title">Torricelli’s theorem: why a tank opening ejects water</h2>
+<figure class="teaching-figure">
+<img src="../assets/illustrations/unit6-v95b6-torricelli-venturi-original.svg" width="920" height="410" alt="Original instructional side-by-side schematics: large open tank with liquid surface a vertical distance H above outlet; horizontal Venturi with narrow throat, different cross-sections and two same-liquid pressure-head tubes.">
+<figcaption>Independent teaching schematic, <strong>not a copy of original NBF Figures 6.10–6.15</strong>. All pipes and arrows are qualitative, not to scale. Venturi head assumes both open pressure tubes contain the flowing liquid.</figcaption>
+</figure>
+<p>Consider an <strong>open large reservoir</strong> with a small outlet. Section 1 is the free surface, section 2 the opening. Both are exposed to the <strong>same atmospheric pressure</strong>, and the large tank cross-section makes the free-surface speed negligible compared with the jet.</p>
+<ol class="steps">
+<li><strong>Write two-point Bernoulli:</strong> P₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂.</li>
+<li><strong>Cancel atmospheric pressures:</strong> P₁ = P₂ = P<sub>atm</sub>.</li>
+<li><strong>Neglect reservoir surface speed:</strong> v₁ ≈ 0 because A<sub>tank</sub> ≫ A<sub>outlet</sub>.</li>
+<li><strong>Collect gravitational terms:</strong> ρg(h₁ − h₂) = ½ρv₂².</li>
+<li><strong>Define the vertical head H:</strong> H = h₁ − h₂, giving 2gH = v₂² after cancelling ρ.</li>
+<li><strong>Use the nonnegative speed:</strong> v₂ = √(2gH).</li>
+</ol>
+<div class="equation primary" role="math" aria-label="Torricelli ideal outlet speed equals square root of two times gravity times vertical head"><strong>v = √(2gH)</strong><span>Ideal efflux speed (m/s), H is vertical free-surface-to-opening height (m), g in m/s².</span></div>
+<p>For a specified physical opening area A, the supplementary ideal discharge is Q = A√(2gH), in m³/s. Real jets experience friction, contraction and other losses. If the water level falls with time, H and the instantaneous exit speed change; this simple expression does <strong>not automatically give a constant tank-draining rate</strong>.</p>
+</section>
+
+<section class="lesson" id="venturi" aria-labelledby="venturi-title">
+<p class="eyebrow">04 · NBF §6.6.4 · STEPWISE DERIVATION</p><h2 id="venturi-title">Venturi effect: area, speed and pressure</h2>
+<p>A Venturi meter has a wider upstream cross-section A₁ and a narrower throat A₂, with A₂ &lt; A₁. For ideal steady incompressible <em>horizontal</em> flow without leaks, v₂ is greater than v₁.</p>
+<ol class="steps">
+<li><strong>Start with horizontal Bernoulli:</strong> P₁ − P₂ = ½ρ(v₂² − v₁²).</li>
+<li><strong>Apply continuity:</strong> A₁v₁ = A₂v₂, therefore v₂ = (A₁/A₂)v₁.</li>
+<li><strong>Square the complete ratio:</strong> v₂² = (A₁/A₂)²v₁².</li>
+<li><strong>Substitute:</strong> P₁ − P₂ = ½ρv₁²[(A₁/A₂)² − 1].</li>
+<li><strong>Use a same-liquid open-piezometer difference:</strong> ΔP = P₁ − P₂ = ρgH, provided both columns contain the flowing liquid and open to the same atmosphere.</li>
+<li><strong>Cancel ρ, isolate v₁², and take positive square root:</strong> v₁ = √{2gH/[(A₁/A₂)² − 1]}.</li>
+</ol>
+<div class="equation primary" role="math" aria-label="Ideal Venturi inlet speed equals square root of two g H divided by the squared inlet-to-throat area ratio minus one"><strong>v₁ = √{2gH/[(A₁/A₂)² − 1]}</strong><span>Use only A₁ &gt; A₂, H ≥ 0 and the same-liquid open piezometer/ideal model assumptions.</span></div>
+<div class="equation" role="math" aria-label="Ideal Venturi throat speed is inlet-to-throat area ratio multiplied by inlet speed and pressure difference is half density times squared speed difference"><strong>v₂ = (A₁/A₂)v₁; ΔP = ½ρ(v₂² − v₁²)</strong><span>If diameters are given, A₁/A₂ = (d₁/d₂)², not d₁/d₂. ΔP = ρgH is not generally the unchanged formula for a two-fluid differential manometer.</span></div>
+<p><strong>Model limit:</strong> If A₁ = A₂ the denominator in the head-based inlet-speed formula is zero; the ideal meter has no throat-induced pressure difference and this equation cannot infer speed. Real devices require calibration for viscous losses, fluid mixing and geometry.</p>
+</section>
+
+<section class="lesson" id="aerofoil" aria-labelledby="aerofoil-title">
+<p class="eyebrow">05 · WINGS AND SPORTS BALLS</p><h2 id="aerofoil-title">Aerofoil lift and the Magnus effect</h2>
+<h3>What produces aerodynamic lift?</h3>
+<p>An aerofoil changes pressure and velocity around its surfaces and redirects airflow. The net aerodynamic force depends on the distribution of <strong>pressure and shear forces</strong> and the resulting momentum transfer. A useful classroom *uniform pressure-difference approximation* is:</p>
+<div class="equation" role="math" aria-label="Simplified wing pressure difference equals half air density times upper speed squared minus lower speed squared, lift is this difference times effective area"><strong>ΔP ≈ ½ρ(v<sub>upper</sub>² − v<sub>lower</sub>²); F ≈ ΔP A</strong><span>Teacher's simplified wing-numerical model; not a complete aerodynamic lift formula or aircraft certification.</span></div>
+<p>There is <strong>no general equal-transit-time rule</strong> requiring air going above and below a wing to meet simultaneously at the trailing edge. A longer upper path alone does not explain lift.</p>
+<div class="concept-note"><strong>Compulsory physical warning — prepared NBF Assignment 6.4:</strong> The given airspeeds of <strong>450 m/s above</strong> and <strong>410 m/s below</strong> lead to a <strong>formal 998,460 N</strong> using the stated constant-density toy formula, but these speeds are around/above typical speed of sound in air. Compressibility and real wing flow become crucial. <strong>Do not report 998,460 N as a verified real-aircraft lift prediction.</strong> The prepared result is preserved for algebraic study, not endorsed as real-flight physics.</div>
+<h3>Why do spinning balls curve? — Magnus effect</h3>
+<p>A spinning cricket ball or golf ball modifies the relative airflow on opposite sides. The resulting asymmetric pressures and momentum transfer can generate a <strong>transverse aerodynamic force</strong>, curving the flight. Its direction depends on the spin orientation, motion and fluid-flow details. Reversing spin can reverse the sideways curve.</p>
+<p>No universal quantitative Magnus-force equation is derived in the owner-prepared §6.6 chapter. It would be misleading to calculate an exact Magnus force from Bernoulli’s 1D expression alone without additional aerodynamic data and assumptions.</p>
+</section>
+
+<section class="lesson" id="worked" aria-labelledby="worked-title">
+<p class="eyebrow">06 · WORKED APPLICATIONS</p><h2 id="worked-title">Eight numerical problems with every model condition</h2>
+<p class="fine">The first six selected applications below include teacher-created practice and the <em>prepared-master numerical givens</em> attributed to original NBF Example 6.4 and Assignment 6.4. The last two are teacher-developed supplements. Exact original printed wording and figures on pp.101–106 have not been independently compared; <strong>none is labelled verbatim NBF text</strong>.</p>
+<article class="problem"><div class="problem-label">Teacher-developed Torricelli practice</div><h3>Outflow speed from a 5.0 m vertical head</h3>
+<ol><li>Given H = 5.0 m, g = 9.8 m/s². Reservoir open, large and ideal.</li><li>v = √(2gH) = √(2 × 9.8 × 5.0) = √98.</li><li><strong>v ≈ 9.90 m/s</strong>, ideal exit speed; not a measured discharge.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Teacher-developed Torricelli practice</div><h3>Height needed for 7.0 m/s efflux</h3>
+<ol><li>Rearrange v² = 2gH to H = v²/(2g).</li><li>H = 7.0²/(2 × 9.8) = 49/19.6 = <strong>2.50 m</strong>.</li><li>This is a <em>vertical</em> height difference, not distance along a sloped tank wall.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Teacher-developed Venturi practice</div><h3>Two cross-sections: 12 cm² and 6 cm²</h3>
+<p>Ideal incompressible liquid has ρ = 1000 kg/m³ and v₁ = 2.0 m/s. A₁ = 12 cm², A₂ = 6 cm².</p>
+<ol><li>v₂ = (12/6) × 2.0 = <strong>4.0 m/s</strong>.</li><li>Pressure drop ΔP = ½(1000)(4.0² − 2.0²) = 500(16 − 4).</li><li><strong>ΔP = 6000 Pa = 6.0 kPa</strong> for ideal horizontal flow.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Teacher-developed Venturi piezometer practice</div><h3>Inlet speed from two same-liquid tubes</h3>
+<p>The inlet-to-throat area ratio A₁/A₂ is 2.0; the measured pressure-head difference is H = 0.30 m and g = 9.8 m/s². Assume same-liquid open piezometers.</p>
+<ol><li>v₁ = √{2gH/[(A₁/A₂)² − 1]} = √[2 × 9.8 × 0.30/(4 − 1)].</li><li>v₁ = √(5.88/3) = <strong>1.40 m/s</strong>.</li><li>v₂ = 2 × 1.40 = <strong>2.80 m/s</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Prepared-master NBF Example 6.4 values · exact original wording unverified</div><h3>Pressure in a lower pipe section</h3>
+<p>P₁ = 47.1 kPa, v₁ = 4.0 m/s, v₂ = 3.0 m/s, h₁ − h₂ = +3.0 m, water ρ = 1000 kg/m³, g = 9.8 m/s².</p>
+<ol><li>Convert P₁ = <strong>47,100 Pa</strong>.</li><li>Use P₂ = P₁ + ½ρ(v₁² − v₂²) + ρg(h₁ − h₂).</li><li>P₂ = 47,100 + 500(16 − 9) + 9800(3.0).</li><li>P₂ = 47,100 + 3500 + 29,400 = <strong>80,000 Pa = 80.0 kPa</strong>.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Prepared-master NBF Assignment 6.4 values · formal toy-model result</div><h3>High-speed wing lift — algebraic exercise, NOT real prediction</h3>
+<p>Upper speed 450 m/s, lower speed 410 m/s, air density 1.29 kg/m³ and effective rectangular area 15 × 3 = 45 m².</p>
+<ol><li>Difference of squared speeds = 450² − 410² = 202,500 − 168,100 = <strong>34,400 m²/s²</strong>.</li><li>ΔP = ½(1.29)(34,400) = <strong>22,188 Pa</strong>.</li><li>F ≈ ΔP A = 22,188 × 45 = <strong>998,460 N</strong> <em>formal simplified result only</em>.</li></ol>
+<p class="key-point"><strong>Physical limitation:</strong> The speeds are far too high to trust the simple incompressible-air/constant-ΔP wing model for actual aircraft performance. Preserve the supplied educational arithmetic; never interpret this as a credible measured flight-lift force.</p>
+</article>
+<article class="problem"><div class="problem-label">Supplementary moderate-speed wing comparison · idealized</div><h3>Uniform ΔP model for lower illustrative speeds</h3>
+<p>v<sub>upper</sub> = 80 m/s, v<sub>lower</sub> = 60 m/s, ρ = 1.20 kg/m³, A = 20 m².</p>
+<ol><li>ΔP = 0.5 × 1.20 × (80² − 60²) = 0.6 × 2800 = <strong>1680 Pa</strong>.</li><li>F = 1680 × 20 = <strong>33,600 N</strong> in the toy model, not the certified lift of an actual wing.</li></ol>
+</article>
+<article class="problem"><div class="problem-label">Supplementary atomizer static-head estimate · idealized</div><h3>Liquid rises 15 cm through a small tube</h3>
+<p>Liquid density ρ = 800 kg/m³, H = 0.15 m and g = 9.8 m/s².</p>
+<ol><li>Minimum ideal static pressure head ΔP ≈ ρgH.</li><li>ΔP ≈ 800 × 9.8 × 0.15 = <strong>1176 Pa ≈ 1.18 kPa</strong>.</li><li>This is not the atomizer's actual spray-rate prediction.</li></ol>
+</article>
+</section>
+
+<section class="lesson" id="try-it" aria-labelledby="try-title">
+<p class="eyebrow">07 · EXPLORE THE MATHEMATICS</p><h2 id="try-title">Three interactive ideal-model calculators</h2>
+<h3>A. Torricelli — tank head and ideal jet</h3>
+<form id="torricelli-form" class="calculator" novalidate>
+<div class="fields">
+<label for="tank-head">Vertical head H (m)<input id="tank-head" type="number" value="5" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="tank-gravity">Gravity g (m/s²)<input id="tank-gravity" type="number" value="9.8" min="0.000001" max="1000" step="any" inputmode="decimal" required></label>
+<label for="tank-area">Physical outlet area (cm²)<input id="tank-area" type="number" value="0.8" min="0.000001" max="100000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate ideal efflux and discharge</button><p id="torricelli-error" class="calc-error" role="alert" hidden></p>
+<div id="torricelli-output" class="calc-output" role="status" aria-live="polite"><p><strong>Ideal speed:</strong> 9.90 m/s.</p><p><strong>Ideal discharge:</strong> about 0.000792 m³/s = 0.792 L/s.</p></div>
+</form>
+<p class="fine">Assumes a large open tank, same atmospheric pressure at the surface/outlet, negligible surface speed and no losses; an actual tank with falling level does not keep this head fixed.</p>
+<h3>B. Venturi — throat speed and static pressure drop</h3>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-venturi-area">Load 12/6 cm² example</button><button class="btn subtle" type="button" id="preset-venturi-diameters">Load diameter-ratio example</button></div>
+<form id="venturi-form" class="calculator" novalidate>
+<div class="fields">
+<label for="venturi-area-in">Wide section area A₁ (cm²)<input id="venturi-area-in" type="number" value="12" min="0.000001" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="venturi-area-out">Throat area A₂ (cm²)<input id="venturi-area-out" type="number" value="6" min="0.000001" max="1000000" step="any" inputmode="decimal" required></label>
+<label for="venturi-speed-in">Inlet speed v₁ (m/s)<input id="venturi-speed-in" type="number" value="2" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="venturi-density">Fluid density ρ (kg/m³)<input id="venturi-density" type="number" value="1000" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate ideal Venturi effect</button><p id="venturi-error" class="calc-error" role="alert" hidden></p>
+<div id="venturi-output" class="calc-output" role="status" aria-live="polite"><p><strong>Throat speed:</strong> 4.0 m/s.</p><p><strong>Inlet-minus-throat pressure drop:</strong> 6.0 kPa.</p></div>
+</form>
+<p class="fine">This is a same-elevation, steady, incompressible and loss-free model. For same-liquid open piezometers only, H = ΔP/(ρg). Do not treat the same relation as a universal two-fluid manometer formula.</p>
+<h3>C. Wing — classroom uniform pressure-difference model</h3>
+<div class="hero-tools"><button class="btn subtle" type="button" id="preset-wing-moderate">Load supplementary 80/60 m/s</button><button class="btn subtle" type="button" id="preset-wing-textbook">Load prepared 450/410 m/s exercise</button></div>
+<form id="wing-form" class="calculator" novalidate>
+<div class="fields">
+<label for="wing-upper-speed">Upper airflow speed (m/s)<input id="wing-upper-speed" type="number" value="80" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="wing-lower-speed">Lower airflow speed (m/s)<input id="wing-lower-speed" type="number" value="60" min="0" max="100000" step="any" inputmode="decimal" required></label>
+<label for="wing-air-density">Air density (kg/m³)<input id="wing-air-density" type="number" value="1.2" min="0.000001" max="25000" step="any" inputmode="decimal" required></label>
+<label for="wing-effective-area">Effective model area (m²)<input id="wing-effective-area" type="number" value="20" min="0.000001" max="1000000" step="any" inputmode="decimal" required></label>
+</div>
+<button class="btn solid" type="submit">Calculate formal model lift</button><p id="wing-error" class="calc-error" role="alert" hidden></p>
+<div id="wing-output" class="calc-output" role="status" aria-live="polite"><p><strong>Formal pressure difference:</strong> 1680 Pa.</p><p><strong>Formal model force:</strong> 33,600 N (not certified real-wing lift).</p></div>
+</form>
+<p class="fine"><strong>Do not use for aircraft design.</strong> This deliberately simplified constant-density/constant-ΔP calculation does not establish actual wing pressure distributions, lift, stability or compressible high-speed behaviour. The 450/410 m/s exercise is <strong>especially physically unsuitable</strong> as an incompressible-air prediction. The three calculators run locally and save or transmit no student data or grades.</p>
+</section>
+<section class="lesson" id="review" aria-labelledby="review-title">
+<p class="eyebrow">08 · ACTIVE REVISION</p><h2 id="review-title">Ten questions with revealable answers</h2>
+<div class="questions">
+<details><summary>1. What pushes liquid up an air-jet atomizer tube?</summary><p>Fast air can reduce static pressure at the tube mouth. The higher reservoir pressure pushes liquid up; subsequent jet mixing breaks it into droplets.</p></details>
+<details><summary>2. Is a push-button mechanical perfume bottle necessarily an air-jet atomizer?</summary><p>No. A mechanical liquid pump increases liquid pressure by an entirely different mechanism. Identify the apparatus before making the Bernoulli argument.</p></details>
+<details><summary>3. Does a water-jet filter pump produce a perfect vacuum?</summary><p>No. It makes a partial vacuum by gas entrainment and low-pressure flow; mixing, vapor pressure, leaks and losses set real limitations.</p></details>
+<details><summary>4. Which pressure and speed assumptions lead to Torricelli’s v = √(2gH)?</summary><p>The free surface and outlet are open to the same atmosphere, the tank is much wider than the outlet, surface speed is negligible, and ideal mechanical-energy losses are neglected.</p></details>
+<details><summary>5. In a Venturi, why is throat speed greater than inlet speed?</summary><p>Steady incompressible continuity A₁v₁ = A₂v₂ requires higher speed through the smaller throat area. Horizontal ideal Bernoulli then links that speed difference to lower throat static pressure.</p></details>
+<details><summary>6. Why does a diameter ratio need to be squared in Venturi calculations?</summary><p>A circular section has area A = πd²/4; therefore A₁/A₂ = (d₁/d₂)². In the pressure equation the complete <em>area ratio</em> is squared again.</p></details>
+<details><summary>7. Can ΔP = ρgH be used unchanged for any manometer?</summary><p>No. The given textbook Venturi relation assumes two open pressure columns containing the same flowing liquid. A different manometer liquid requires separate hydrostatic analysis.</p></details>
+<details><summary>8. Does air over a wing have to meet the lower air at the trailing edge at the same time?</summary><p>No. The equal-transit-time story is not a general aerodynamic law. Lift involves pressure/shear distribution and momentum change in the surrounding flow.</p></details>
+<details><summary>9. Why is the prepared 998,460 N answer only a formal model result?</summary><p>The 450/410 m/s inputs approach or exceed typical sound speed in air, so treating the flow as incompressible and using a uniform pressure difference for real wing lift is not justified.</p></details>
+<details><summary>10. Can Bernoulli alone calculate a spinning cricket ball's exact Magnus force?</summary><p>No. Force direction and size depend on spin, ball motion, the fluid and detailed flow. The prepared NBF section gives a qualitative Magnus explanation, not a universal exact force formula.</p></details>
+</div>
+<section class="summary" aria-labelledby="summary-title"><h3 id="summary-title">Quick formula sheet and conditions</h3>
+<div class="formula-grid">
+<p><strong>Bernoulli:</strong> P + ½ρv² + ρgh = constant</p>
+<p><strong>Torricelli:</strong> v = √(2gH)</p>
+<p><strong>Venturi continuity:</strong> v₂ = (A₁/A₂)v₁</p>
+<p><strong>Venturi pressure:</strong> ΔP = ½ρ(v₂² − v₁²)</p>
+<p><strong>Same-liquid piezometers:</strong> ΔP = ρgH</p>
+<p><strong>Venturi inlet:</strong> v₁ = √{2gH/[(A₁/A₂)² − 1]}</p>
+<p><strong>Ideal model lift:</strong> F ≈ ½ρA(v<sub>upper</sub>² − v<sub>lower</sub>²)</p>
+<p><strong>Atomizer head extension:</strong> ΔP ≈ ρ<sub>liquid</sub>gH</p>
+</div>
+</section>
+</section>
+<section class="next" aria-labelledby="next-title"><h2 id="next-title">Keep learning: Read → Simulate → Practice → Revise</h2>
+<p>Go back to the Unit 6 Learning Desk for the existing original Bernoulli/Venturi simulation, 80 provisional Topic 6.6 MCQs and the next lesson, Topic 6.7 Superfluidity.</p>
+<div class="hero-tools"><a class="btn solid" href="./unit-06-learning-desk-v95a.html#topic-66">Back to Unit 6 Desk</a><a class="btn subtle" href="../bernoulli-venturi.html">Explore the simulation</a><a class="btn subtle" href="./unit-06-topic-66-preview.html">Practise 80 MCQs</a><a class="btn subtle" href="./unit-06-learning-desk-v95a.html#topic-67">Next: Topic 6.7</a></div>
+<p class="fine">Sources: private owner-prepared master compiled pp.243–273; merged V94-C2.6 detailed audit; official FBISE HSSC-I Physics Assessment Framework pp.11–12. Copyrighted NBF original Figures6.10–6.15/textbook scans are not included. Exact original printed figure and problem text checks, individual assessment mapping and final teacher signoff remain outstanding.</p>
+</section>
+</main>
+<footer>Physics with Sir Najam · V95-B6 · Public lesson preview · No school grades recorded</footer>
+</body>
+</html>
