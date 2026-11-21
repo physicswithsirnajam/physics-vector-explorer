@@ -1,0 +1,83 @@
+name: Grade XI Complete Mixed Practice and MCQ Report QA (V98-Q)
+on:
+  pull_request:
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "portal/unit06-figure-card-v93.js"
+      - "portal/attempt-sync.js"
+      - "portal/firebase-config.js"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "question-bank/grade-11/unit-01.json"
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-05-v50-16-student.json"
+      - "question-bank/grade-11/unit-05-v51-16-student-b.json"
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "scripts/audit_grade11_mixed_practice_completion_v98q.cjs"
+      - ".github/workflows/validate-grade11-mixed-practice-completion-v98q.yml"
+  push:
+    branches: [main]
+    paths:
+      - "build-your-physics-test.html"
+      - "practice-engine/index.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "portal/unit06-figure-card-v93.js"
+      - "portal/attempt-sync.js"
+      - "portal/firebase-config.js"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "question-bank/grade-11/unit-01.json"
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/grade-11/unit-03-stage2-80-practice.json"
+      - "question-bank/grade-11/unit-04-v39-80-practice.json"
+      - "question-bank/grade-11/unit-05-v50-16-student.json"
+      - "question-bank/grade-11/unit-05-v51-16-student-b.json"
+      - "question-bank/grade-11/unit-06-topic-61-v76-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-62-v78-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-63-v80-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-64-v82-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-65-v84-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-66-v86-80-source.json"
+      - "question-bank/grade-11/unit-06-topic-67-v88-80-source.json"
+      - "scripts/audit_grade11_mixed_practice_completion_v98q.cjs"
+      - ".github/workflows/validate-grade11-mixed-practice-completion-v98q.yml"
+  workflow_dispatch:
+jobs:
+  six-unit-thirty-mcq-complete-browser-attempt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check complete quiz browser QA script
+        run: node --check scripts/audit_grade11_mixed_practice_completion_v98q.cjs
+      - name: Install Chromium for local test without external requests
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Complete an anonymous mixed six-unit quiz and verify review/report accuracy
+        run: node scripts/audit_grade11_mixed_practice_completion_v98q.cjs
+      - name: Preserve nine screenshots and result/issue-report QA data even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-mixed-practice-v98q-evidence
+          path: qa-artifacts/mixed-practice-v98q/
+          if-no-files-found: warn
+          retention-days: 10
