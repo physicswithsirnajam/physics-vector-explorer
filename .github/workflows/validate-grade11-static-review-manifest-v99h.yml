@@ -1,0 +1,50 @@
+name: Grade XI Static MCQ Review Reference Manifest (V99-H)
+on:
+  pull_request:
+    paths:
+      - "server/static-review-catalog-v99h.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/**"
+      - "scripts/build_grade11_static_review_manifest_v99h.cjs"
+      - "scripts/test_grade11_static_review_manifest_v99h.cjs"
+      - ".github/workflows/validate-grade11-static-review-manifest-v99h.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/static-review-catalog-v99h.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/**"
+      - "scripts/build_grade11_static_review_manifest_v99h.cjs"
+      - "scripts/test_grade11_static_review_manifest_v99h.cjs"
+      - ".github/workflows/validate-grade11-static-review-manifest-v99h.yml"
+  workflow_dispatch:
+jobs:
+  build-verify-static-reference-index:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check metadata-only modules and tests
+        run: |
+          node --check server/static-review-catalog-v99h.cjs
+          node --check scripts/build_grade11_static_review_manifest_v99h.cjs
+          node --check scripts/test_grade11_static_review_manifest_v99h.cjs
+      - name: Build and verify every public Grade XI source reference without Firebase access
+        run: node scripts/test_grade11_static_review_manifest_v99h.cjs
+      - name: Upload only public, answer-free metadata for review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-static-review-manifest-v99h
+          path: qa-artifacts/grade11-static-manifest-v99h/approved-public-review-refs.json
+          if-no-files-found: error
+          retention-days: 14
