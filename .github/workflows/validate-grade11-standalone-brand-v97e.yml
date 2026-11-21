@@ -1,0 +1,55 @@
+name: Validate Grade XI Standalone Simulation Official Branding (V97-E)
+on:
+  pull_request:
+    paths:
+      - "vector-addition.html"
+      - "wave-intensity-energy.html"
+      - "wave-superposition-interference.html"
+      - "weightlessness-artificial-gravity.html"
+      - "work-energy.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97e.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97e.yml"
+  push:
+    branches: [main]
+    paths:
+      - "vector-addition.html"
+      - "wave-intensity-energy.html"
+      - "wave-superposition-interference.html"
+      - "weightlessness-artificial-gravity.html"
+      - "work-energy.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97e.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97e.yml"
+  workflow_dispatch:
+jobs:
+  final-five-standalone-original-science-and-branding-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check reusable component and browser regression syntax
+        run: |
+          node --check shared/standalone-brand-v97a.js
+          node --check scripts/test_grade11_standalone_brand_v97e.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify five source fingerprints and official logo, links, desktop and mobile
+        run: node scripts/test_grade11_standalone_brand_v97e.cjs
+      - name: Archive desktop and phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-standalone-brand-v97e-screenshots
+          path: qa-artifacts/standalone-brand-v97e/*.png
+          if-no-files-found: warn
+          retention-days: 7
