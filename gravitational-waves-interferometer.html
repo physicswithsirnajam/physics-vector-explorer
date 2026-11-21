@@ -13,6 +13,7 @@ nav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 18px}.tab{border:1px solid #3
 @media (max-width:850px){.grid,.grid.two{grid-template-columns:1fr}.practice{grid-template-columns:1fr}header{padding:19px 16px}main{padding:14px 11px 32px}.panel{padding:13px}.tab{padding:10px 11px}.metric strong{font-size:20px}}@media(max-width:360px){.cards{grid-template-columns:1fr 1fr}.metric{padding:8px}.metric strong{font-size:16px}.tab{font-size:12px}h1{font-size:24px}}
 @media print{nav,.btn,.control{display:none!important}body{background:white;color:black}header,.panel{background:white;color:black;border:1px solid #888;box-shadow:none}.stage{display:block!important;page-break-before:always}p,.small{color:#333}.canvas{max-height:300px}.metric strong{color:black}}
 </style>
+ <link rel="stylesheet" href="shared/standalone-brand-v97a.css?v=97a">
 </head>
 <body>
 <header>
@@ -154,4 +155,5 @@ function setup(){document.querySelectorAll('.tab').forEach(btn=>btn.addEventList
  $('showTotal').onclick=()=>{let answered=selected.filter(v=>v!==null).length,correct=selected.reduce((a,v,i)=>a+(v===mcqs[i].c?1:0),0);$('totalFeedback').textContent=`Concept questions: ${correct}/8 correct; ${answered}/8 attempted. Review feedback under each question.`};$('quizReset').onclick=()=>{selected.fill(null);renderQuestions();$('totalFeedback').textContent='Responses cleared.'};renderQuestions();renderNums();updateB();updateS();updateI();}
 let last=0;function tick(ms){let dt=last?Math.min(.07,(ms-last)/1000):0;last=ms;if(!document.hidden){if(bPlay)btime+=dt*(+$('bSpeed').value);if(active==='binary')drawBinary(btime);if(active==='strain'){if(sPlay){$('sPhase').value=(+$('sPhase').value+dt*45)%360;updateS()}else drawStrain()}if(active==='interferometer'&&iPlay){$('iPhase').value=(+$('iPhase').value+dt*45)%360;updateI()}}requestAnimationFrame(tick)}setup();requestAnimationFrame(tick);
 </script>
+ <script src="shared/standalone-brand-v97a.js?v=97a"></script>
 </body></html>
