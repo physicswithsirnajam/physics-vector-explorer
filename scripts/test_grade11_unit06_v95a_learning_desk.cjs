@@ -99,7 +99,16 @@ async function browser(){
    assert.equal(await page.locator('.topic').count(),7);
    assert.equal(await page.locator('.stage').count(),28);
    const size=await page.evaluate(()=>({available:document.documentElement.clientWidth,full:document.documentElement.scrollWidth}));
-   assert.ok(size.full<=size.available+2,'Horizontal overflow at width='+width+': '+JSON.stringify(size));
+   if(size.full>size.available+2){
+    const culprits=await page.evaluate(()=>[...document.querySelectorAll('body *')]
+      .filter(el=>el.getClientRects().length && getComputedStyle(el).visibility!=='hidden')
+      .map(el=>({tag:el.tagName,cls:typeof el.className==='string'?el.className.slice(0,75):'',id:el.id,
+        text:(el.textContent||'').trim().slice(0,35),right:Math.round(el.getBoundingClientRect().right),
+        width:Math.round(el.getBoundingClientRect().width)}))
+      .filter(el=>el.right>document.documentElement.clientWidth+2)
+      .sort((a,b)=>b.right-a.right).slice(0,18));
+    assert.fail('Horizontal overflow at width='+width+': '+JSON.stringify(size)+' offenders='+JSON.stringify(culprits));
+   }
    await page.selectOption('#topic-select','topic-64');
    await page.waitForFunction(()=>location.hash==='#topic-64');
    assert.equal(await page.locator('[data-topic-nav="topic-64"]').getAttribute('aria-current'),'location');
