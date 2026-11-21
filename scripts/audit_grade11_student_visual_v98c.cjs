@@ -38,7 +38,7 @@ const server=http.createServer((req,res)=>{
  res.writeHead(200,{'Content-Type':mime[path.extname(file).toLowerCase()]||'application/octet-stream','Cache-Control':'no-store'});
  fs.createReadStream(file).pipe(res);
 });
-const logoSelector='img[src*="physics-with-sir-najam-official-logo.png"]';
+const logoSelector='img[src*="physics-with-sir-najam-official-logo.png"][alt*="Physics with Sir Najam"]';
 function staticAudit(){
  assert.equal(pages.length,7);
  assert.ok(fs.existsSync(path.join(root,'portal/assets/physics-with-sir-najam-official-logo.png')));
@@ -69,11 +69,15 @@ async function main(){
    assert.ok(title.includes('Physics with Sir Najam'),'correct title '+item.path);
    const logo=page.locator(logoSelector).first();
    assert.equal(await logo.count(),1,'official image exists '+item.path);
-   await logo.waitFor({state:'visible',timeout:15000});
+   await logo.waitFor({state:'attached',timeout:8000});
+   // Do not confuse hidden lazy placeholders (alt='') with the actual branded header.
+   // Record real visibility problems and continue to capture all seven audit pages.
+   const canSee=await logo.isVisible();
+   if(!canSee)report.alerts.push({page:item.path,type:'official-logo-hidden',detail:'Branded source image exists but is not visible in initial state'});
    const alt=await logo.getAttribute('alt');
    assert.ok(alt&&alt.trim().length>=10,'accessible official logo text '+item.path);
    await page.waitForFunction(()=>{
-    const img=document.querySelector('img[src*="physics-with-sir-najam-official-logo.png"]');
+    const img=document.querySelector('img[src*="physics-with-sir-najam-official-logo.png"][alt*="Physics with Sir Najam"]');
     return !!(img&&img.complete&&img.naturalWidth>0);
    },null,{timeout:15000});
    const layouts=[];
@@ -81,7 +85,7 @@ async function main(){
     await page.setViewportSize({width,height:width===1280?850:844});
     await page.waitForTimeout(120);
     const layout=await page.evaluate(()=>{
-     const image=document.querySelector('img[src*="physics-with-sir-najam-official-logo.png"]');
+     const image=document.querySelector('img[src*="physics-with-sir-najam-official-logo.png"][alt*="Physics with Sir Najam"]');
      const box=image.getBoundingClientRect();
      return {viewportWidth:window.innerWidth,contentWidth:document.documentElement.scrollWidth,
       horizontalOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+2,
@@ -90,7 +94,7 @@ async function main(){
       h1Count:document.querySelectorAll('h1').length,
       visibleLinks:[...document.querySelectorAll('a[href]')].filter(a=>a.getClientRects().length>0).length};
     });
-    assert.equal(layout.logoVisible,true,'official logo must show '+item.path+' at '+width);
+    if(!layout.logoVisible)report.alerts.push({page:item.path,width,type:'official-logo-hidden',detail:'Official header logo is not visible at this viewport; inspect screenshot'});
     const screenshot=item.path.replace(/\//g,'-').replace(/\.html$/,'')+'-'+(width===1280?'desktop':'mobile')+'.png';
     await page.screenshot({path:path.join(output,screenshot),fullPage:false,animations:'disabled'});
     layouts.push({...layout,screenshot});
@@ -123,7 +127,9 @@ async function main(){
     '', '## Boundaries','',
     'These baseline screenshots do not certify all 73 portal pages, accessibility conformance, Firebase authorization or live deployment.',''];
   fs.writeFileSync(path.join(output,'report.md'),lines.join('\n'));
-  console.log('V98-C PASS: official logo loaded and visible on seven pages at 1280/390px; navigation passed; '+report.alerts.length+' diagnostic alerts recorded.');
+  console.log('V98-C completed seven-page browser source audit. Diagnostic alerts: '+report.alerts.length+'; see attached report and screenshots.');
+  const critical=report.alerts.filter(a=>a.type==='official-logo-hidden');
+  if(critical.length)throw new Error('Visible official logo failure(s): '+critical.map(a=>a.page+' '+(a.width||'initial')).join(', '));
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok));}
 }
 main().catch(e=>{console.error('V98-C FAILED',e);server.close();process.exitCode=1;});
