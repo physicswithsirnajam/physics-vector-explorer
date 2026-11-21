@@ -1,0 +1,47 @@
+name: Validate Grade XI Unit 6 Topic 6.2 Detailed Study (V95-B2)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06-topic-62-study-v95b2.html"
+      - "portal/unit-06-topic-62-study-v95b2.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b2-terminal-force-original.svg"
+      - "quality/grade11-unit06-v95b2-topic62-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b2_topic62_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic62-study-v95b2.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06-topic-62-study-v95b2.html"
+      - "portal/unit-06-topic-62-study-v95b2.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "assets/illustrations/unit6-v95b2-terminal-force-original.svg"
+      - "quality/grade11-unit06-v95b2-topic62-student-lesson-source-and-signoff.md"
+      - "scripts/test_grade11_unit06_v95b2_topic62_study.cjs"
+      - ".github/workflows/validate-grade11-unit06-topic62-study-v95b2.yml"
+  workflow_dispatch:
+jobs:
+  topic62-viscosity-source-math-mobile:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Academic source, model physics and reserved-course checks
+        run: |
+          node --check portal/unit-06-topic-62-study-v95b2.js
+          node --check scripts/test_grade11_unit06_v95b2_topic62_study.cjs
+          node scripts/test_grade11_unit06_v95b2_topic62_study.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95b1_topic61_study.cjs
+      - name: Install browser for mobile and desktop tests
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify Topic 6.2 local model checker, figure and responsive layout
+        run: node scripts/test_grade11_unit06_v95b2_topic62_study.cjs --browser
