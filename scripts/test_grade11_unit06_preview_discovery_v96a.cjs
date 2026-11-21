@@ -73,7 +73,7 @@ const html=read('portal/index.html');
 assert.ok(html.includes('<strong id="hub-linked-units">6</strong>'));
 assert.ok(html.includes('<strong id="hub-awaiting-units">8</strong>'));
 assert.ok(html.includes('provisional Unit 6 practice preview'));
-assert.ok(read('.github/workflows/validate-grade11-navigation-v58.yml').includes('u.length!==6||c.resources.length!==62'));
+assert.ok(read('.github/workflows/validate-grade11-navigation-v58.yml').includes('u.length!==6||c.resources.length!==59'));
 const queue=read('quality/grade11-unit06-v95c1-560-item-review-queue.csv').trimEnd().split(/\r?\n/);
 assert.equal(queue.length,561);
 const head=queue[0].split(',');
