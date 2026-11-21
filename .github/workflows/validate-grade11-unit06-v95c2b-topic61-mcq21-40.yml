@@ -1,0 +1,34 @@
+name: Validate Grade XI Unit 6 Topic 6.1 MCQ 21-40 Academic QC (V95-C2B)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v95c2b-topic61-mcq21-40-academic-review.csv"
+      - "quality/grade11-unit06-v95c2b-topic61-mcq21-40-academic-review.md"
+      - "scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2b-topic61-mcq21-40.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v95c2b-topic61-mcq21-40-academic-review.csv"
+      - "quality/grade11-unit06-v95c2b-topic61-mcq21-40-academic-review.md"
+      - "scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs"
+      - ".github/workflows/validate-grade11-unit06-v95c2b-topic61-mcq21-40.yml"
+  workflow_dispatch:
+jobs:
+  topic61-second20-source-key-scientific-and-teacher-review:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate original MCQ 21-40 snapshot, 20 teacher decisions and unchanged course holds
+        run: |
+          node --check scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs
+          node scripts/test_grade11_unit06_v95c2b_topic61_mcq21_40_academic.cjs
+          node scripts/test_grade11_unit06_v95c2a_topic61_first20_academic.cjs
+          node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
