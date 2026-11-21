@@ -1,0 +1,55 @@
+name: Validate Grade XI Standalone Simulation Official Branding (V97-D)
+on:
+  pull_request:
+    paths:
+      - "projectile-motion.html"
+      - "second-law-entropy-refrigerator.html"
+      - "stationary-waves-harmonics.html"
+      - "stress-strain-young-modulus.html"
+      - "torque-angular-momentum.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97d.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97d.yml"
+  push:
+    branches: [main]
+    paths:
+      - "projectile-motion.html"
+      - "second-law-entropy-refrigerator.html"
+      - "stationary-waves-harmonics.html"
+      - "stress-strain-young-modulus.html"
+      - "torque-angular-momentum.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/standalone-brand-v97a.css"
+      - "scripts/test_grade11_standalone_brand_v97d.cjs"
+      - ".github/workflows/validate-grade11-standalone-brand-v97d.yml"
+  workflow_dispatch:
+jobs:
+  five-standalone-labs-brand-and-science-regression:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate syntax and reusable branded component
+        run: |
+          node --check shared/standalone-brand-v97a.js
+          node --check scripts/test_grade11_standalone_brand_v97d.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify source fingerprints, original lab controls, logo, navigation and mobile
+        run: node scripts/test_grade11_standalone_brand_v97d.cjs
+      - name: Archive desktop and mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-standalone-brand-v97d-screenshots
+          path: qa-artifacts/standalone-brand-v97d/*.png
+          if-no-files-found: warn
+          retention-days: 7
