@@ -1,0 +1,89 @@
+name: Grade XI Public Student Entry and Navigation Audit (V98-N)
+on:
+  pull_request:
+    paths:
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/workspace-tabs.css"
+      - "portal/workspace-tabs.js"
+      - "portal/app.js"
+      - "portal/simulations.html"
+      - "portal/simulation-catalog.json"
+      - "portal/learning-labs-v72.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "question-bank/manifest.json"
+      - "portal/unit-01.html"
+      - "portal/unit-01-study-guide.html"
+      - "portal/unit-03.html"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "portal/unit-06-desk-v95a.js"
+      - "portal/unit-06-desk-v95a.css"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-banner.png"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_public_student_entry_v98n.cjs"
+      - ".github/workflows/validate-grade11-public-student-entry-v98n.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/workspace-tabs.css"
+      - "portal/workspace-tabs.js"
+      - "portal/app.js"
+      - "portal/simulations.html"
+      - "portal/simulation-catalog.json"
+      - "portal/learning-labs-v72.json"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "shared/practice-bank-adapter-v55.js"
+      - "shared/multi-unit-planner-v56.js"
+      - "question-bank/manifest.json"
+      - "portal/unit-01.html"
+      - "portal/unit-01-study-guide.html"
+      - "portal/unit-03.html"
+      - "portal/unit-03-collision-lab.html"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "portal/unit-06-desk-v95a.js"
+      - "portal/unit-06-desk-v95a.css"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-banner.png"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "shared/navigation.css"
+      - "shared/navigation.js"
+      - "scripts/audit_grade11_public_student_entry_v98n.cjs"
+      - ".github/workflows/validate-grade11-public-student-entry-v98n.yml"
+  workflow_dispatch:
+jobs:
+  seven-public-student-entry-points:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check public-entry browser QA script syntax
+        run: node --check scripts/audit_grade11_public_student_entry_v98n.cjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Audit student discovery paths and safe public controls at 1280px, 390px and 320px
+        run: node scripts/audit_grade11_public_student_entry_v98n.cjs
+      - name: Archive diagnostic screenshots and report, including on test failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-public-entry-v98n-evidence
+          path: qa-artifacts/student-entry-v98n/
+          if-no-files-found: warn
+          retention-days: 10
