@@ -1,6 +1,10 @@
 /* V96-C · Only the original standalone Unit 6 simulation return bar. */
 #psn-simulation-return-nav.psn-simulation-return{position:sticky;top:0;z-index:1000;box-sizing:border-box;width:100%;padding:8px 14px;background:#0a192e;color:#eef5ff;border-bottom:1px solid #4f6b8b;box-shadow:0 3px 9px rgba(1,9,18,.19);font:500 13px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif}
 #psn-simulation-return-nav .psn-simulation-return-inner{max-width:1360px;margin:auto;display:flex;gap:16px;justify-content:space-between;align-items:center;min-width:0}
+#psn-simulation-return-nav .psn-simulation-return-identity{display:flex;align-items:center;gap:9px;flex:none;min-width:0}
+#psn-simulation-return-nav .psn-simulation-return-logo{display:block;width:38px;height:38px;object-fit:contain;flex:none}
+#psn-simulation-return-nav .psn-simulation-return-wordmark{display:flex;flex-direction:column;gap:3px;min-width:0}
+#psn-simulation-return-nav .psn-simulation-return-brand{color:#eef5ff;font-size:11px;line-height:1.15;font-weight:850;letter-spacing:.025em;white-space:nowrap}
 #psn-simulation-return-nav .psn-simulation-return-label{flex:none;color:#f3d48d;font-size:11px;font-weight:850;letter-spacing:.06em;white-space:nowrap}
 #psn-simulation-return-nav .psn-simulation-return-links{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;min-width:0}
 #psn-simulation-return-nav .psn-simulation-return-link{color:#eff7ff!important;display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:7px 10px;border:1px solid #567493;border-radius:8px;background:#193452;text-decoration:none!important;white-space:normal;text-align:center;font-size:12px;font-weight:750;line-height:1.25;box-sizing:border-box}
@@ -9,7 +13,10 @@
 @media(max-width:690px){
  #psn-simulation-return-nav.psn-simulation-return{padding:7px 9px}
  #psn-simulation-return-nav .psn-simulation-return-inner{flex-direction:column;gap:5px;align-items:stretch}
- #psn-simulation-return-nav .psn-simulation-return-label{text-align:center;font-size:10px}
+ #psn-simulation-return-nav .psn-simulation-return-identity{justify-content:center}
+ #psn-simulation-return-nav .psn-simulation-return-logo{width:32px;height:32px}
+ #psn-simulation-return-nav .psn-simulation-return-brand{font-size:10px}
+ #psn-simulation-return-nav .psn-simulation-return-label{text-align:left;font-size:10px}
  #psn-simulation-return-nav .psn-simulation-return-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:5px}
  #psn-simulation-return-nav .psn-simulation-return-link{font-size:11px;min-height:30px;padding:5px 7px}
 }

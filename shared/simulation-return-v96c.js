@@ -20,10 +20,26 @@
   nav.setAttribute('aria-label','Return to Unit 6 and learning portal');
   const inner=document.createElement('div');
   inner.className='psn-simulation-return-inner';
+  // Reuse the repository's original official logo without redrawing it.
+  // The identity is deliberately not an anchor: the four navigation targets stay unchanged.
+  const identity=document.createElement('div');
+  identity.className='psn-simulation-return-identity';
+  const logo=document.createElement('img');
+  logo.className='psn-simulation-return-logo';
+  logo.src=new URL('portal/assets/physics-with-sir-najam-official-logo.png',repoRoot).href;
+  logo.alt='Physics with Sir Najam official logo';
+  logo.width=38;logo.height=38;logo.decoding='async';
+  const labelGroup=document.createElement('div');
+  labelGroup.className='psn-simulation-return-wordmark';
+  const brandName=document.createElement('span');
+  brandName.className='psn-simulation-return-brand';
+  brandName.textContent='PHYSICS WITH SIR NAJAM';
   const title=document.createElement('span');
   title.className='psn-simulation-return-label';
   title.textContent='UNIT 6 · EXPLORE';
-  inner.append(title);
+  labelGroup.append(brandName,title);
+  identity.append(logo,labelGroup);
+  inner.append(identity);
   const linkList=document.createElement('div');
   linkList.className='psn-simulation-return-links';
   for(const [relative,label] of links){
