@@ -31,3 +31,21 @@ GitHub Actions artifact: `grade11-original-resources-v98p-evidence`.
 ## Release gate
 
 Keep the PR as a **Draft** until the **latest-head** dedicated V98-P run and all other triggered CI checks are green. Read the diagnostic artifact; do not assume green means all issues were resolved. Only then use **Ready for review → Merge pull request → Confirm merge**.
+
+## Diagnostic root cause and approved correction — confirmed by Chromium
+
+The first browser run successfully loaded the original PDF and YouTube JSON catalogs and logged the actual elements causing horizontal scrolling:
+
+- At **320px, 375px, and 390px**, the overall document was **457px** wide. The offending content was an `h3` heading inside `#pdf-cards .card`, with an unbreakable original PDF filename `Grade11_Unit3__NOTES_+_Assessments.pdf`. Its card's scroll width was approximately **442px**, although the card visually occupied the normal mobile grid column.
+- At **620px**, the two-column card grid produced **653px** overall page width, with another unbroken filename `11th_PHYSICS_Unit_4_(Complete NOTES)_+_ASSESSMENTS.pdf` overflowing its card. The source catalog, selector and input themselves fit correctly.
+- The observed document fit at **540px, 768px, and 1280px** in the first diagnostic. Separately, the shared global navigation link strip scrolls internally as designed and was not identified as the cause.
+
+The proposed `.controls` fix was **not used** because browser measurements showed those controls already fit. The retained, single CSS change is:
+
+```css
+@media screen and (max-width:620px){#pdf-cards .card h3{overflow-wrap:anywhere}}
+```
+
+This affects **only PDF card headings on smaller screens**. It preserves the complete original filename text, existing Google Drive URL, original source catalog entries, original logo, video catalog and A4/print styles. Removing the one approved style line recovers the original byte-exact HTML FNV-1a32 fingerprint `3496041848`.
+
+The latest-head checks must verify all seven screen widths and the original unit-select and catalog-search interactions. If tests identify any further layout issue, do not merge until resolved.
