@@ -1,0 +1,41 @@
+name: Validate Grade XI Branding Inventory (V98-A)
+on:
+  pull_request:
+    paths:
+      - "portal/*.html"
+      - "*.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/simulation-return-v96c.js"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-banner.png"
+      - "scripts/audit_grade11_brand_v98a.cjs"
+      - ".github/workflows/validate-grade11-brand-inventory-v98a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/*.html"
+      - "*.html"
+      - "shared/standalone-brand-v97a.js"
+      - "shared/simulation-return-v96c.js"
+      - "assets/branding/physics-with-sir-najam-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - "portal/assets/physics-with-sir-najam-official-banner.png"
+      - "scripts/audit_grade11_brand_v98a.cjs"
+      - ".github/workflows/validate-grade11-brand-inventory-v98a.yml"
+  workflow_dispatch:
+jobs:
+  read-only-official-brand-inventory:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check audit script syntax
+        run: node --check scripts/audit_grade11_brand_v98a.cjs
+      - name: Audit direct portal identity, 30 root labs and byte-identical builder logo
+        run: node scripts/audit_grade11_brand_v98a.cjs
