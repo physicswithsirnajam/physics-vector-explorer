@@ -107,13 +107,14 @@ async function browserAudit(){
    await page.setViewportSize({width:1280,height:820});
   }
   await page.goto(origin+'/archimedes-flotation.html',{waitUntil:'domcontentloaded'});
-  await page.locator(nav+' a').getByText('Unit 6 Learning Desk').click();
+  await page.getByRole('link',{name:'Unit 6 Learning Desk'}).click();
   await page.waitForURL(url=>url.pathname.endsWith('/portal/unit-06-learning-desk-v95a.html'));
   assert.ok((await page.locator('body').innerText()).includes('Unit 6'),'Learning Desk should load in same tab');
   await page.goto(origin+'/archimedes-flotation.html',{waitUntil:'domcontentloaded'});
-  await page.locator(nav+' a').getByText('Unit 6 Simulations').click();
+  await page.getByRole('link',{name:'Unit 6 Simulations'}).click();
   await page.waitForURL(url=>url.pathname==='/portal/simulations.html'&&url.searchParams.get('unit')==='6');
   await page.locator('main').waitFor();
+  await page.waitForFunction(()=>document.getElementById('unit')?.value==='6');
   assert.equal(await page.locator('#unit').inputValue(),'6','Simulation library should open prefiltered to Unit6');
   // This is a PUBLIC library. Hub/Dashboard targets intentionally go to the
   // existing portal sign-in shell; we do not bypass authentication in tests.
