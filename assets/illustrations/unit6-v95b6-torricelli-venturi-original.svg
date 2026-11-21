@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 410" role="img" aria-labelledby="t d">
+<title id="t">Original schematic comparing a Torricelli tank outlet and a Venturi tube</title>
+<desc id="d">On the left a large open water tank has a free surface above a small outlet; the vertical difference H between surface and opening gives ideal exit speed v equals square root of 2gH, assuming equal air pressures, negligible surface speed and no loss. On the right, a Venturi channel narrows to a throat: A1 larger than A2, v2 larger than v1, and static P2 lower than P1 in the horizontal ideal model. Two same-liquid pressure tubes show an inlet-to-throat height difference H; the difference is not a differential two-fluid manometer reading. Drawings are original, diagrammatic and not NBF textbook figures.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path fill="#157fa3" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+<rect width="920" height="410" rx="18" fill="#f7fbff"/>
+<g font-family="Arial,sans-serif" fill="#25405a"><text x="28" y="35" font-weight="800" font-size="25">Torricelli: large open reservoir</text><text x="480" y="35" font-weight="800" font-size="25">Venturi: narrow throat</text></g>
+<rect x="24" y="55" width="424" height="326" rx="14" fill="#f0f8ff" stroke="#b8d5e6" stroke-width="2"/>
+<rect x="472" y="55" width="424" height="326" rx="14" fill="#f0f8ff" stroke="#b8d5e6" stroke-width="2"/>
+<path d="M78 90V311H350V90" fill="none" stroke="#47738b" stroke-width="9" stroke-linecap="round"/>
+<path d="M83 144H345V305H83Z" fill="#bde5f5"/>
+<path d="M83 144Q116 138 147 144T217 144T287 144T345 144" fill="none" stroke="#278ba9" stroke-width="3"/>
+<path d="M350 263H416" stroke="#47738b" stroke-width="22" stroke-linecap="round"/>
+<path d="M350 263H416" stroke="#bde5f5" stroke-width="13"/>
+<path d="M403 263H435" stroke="#157fa3" stroke-width="5" marker-end="url(#arr)"/>
+<g font-family="Arial,sans-serif" font-size="18" fill="#24465f" font-weight="750"><text x="112" y="124">Free surface · P atm</text><text x="319" y="253">Outlet</text><text x="352" y="295">v ≈ √(2gH)</text></g>
+<line x1="246" y1="144" x2="246" y2="261" stroke="#bc8036" stroke-width="4"/><path d="M235 144h22M235 261h22" stroke="#bc8036" stroke-width="4"/>
+<text x="265" y="207" font-family="Arial,sans-serif" font-size="23" font-weight="800" fill="#805a31">H</text>
+<path d="M503 209H602 C643 209 642 232 684 232H705 C739 232 745 209 777 209H867V285H777 C745 285 739 262 705 262H684 C642 262 643 285 602 285H503Z" fill="#c4eafb" stroke="#427e9e" stroke-width="4"/>
+<g stroke="#ce9e52" stroke-width="4" fill="none"><path d="M568 210V108H601"/><path d="M704 231V171H738"/></g>
+<g stroke="#427e9e" stroke-width="7" fill="none"><path d="M568 211V94"/><path d="M704 231V155"/></g>
+<g fill="#c4eafb"><path d="M565 132H571V211H565Z"/><path d="M701 194H707V231H701Z"/></g>
+<g stroke="#b27835" stroke-width="3"><path d="M568 133H704M568 194H704"/></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#25445e" font-weight="750"><text x="523" y="87">P₁</text><text x="699" y="147">P₂</text><text x="617" y="166">Head difference</text><text x="630" y="191">H</text><text x="531" y="319">A₁, v₁</text><text x="723" y="319">A₂, v₂</text><text x="526" y="354">A₁ &gt; A₂</text><text x="679" y="354">v₂ &gt; v₁; P₂ &lt; P₁</text></g>
+<g stroke="#157fa3" stroke-width="5" fill="none" marker-end="url(#arr)"><path d="M520 247H585"/><path d="M642 247H689"/><path d="M776 247H846"/></g>
+</svg>
