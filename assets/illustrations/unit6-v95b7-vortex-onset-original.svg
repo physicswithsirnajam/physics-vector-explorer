@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+<title id="title">Original schematic of vortex onset and quantized circulation</title>
+<desc id="desc">Three independent circular top views, drawn only as conceptual examples. First illustrates an arrangement below vortex onset with no vortex core. Second shows one discrete vortex after a critical-onset condition. Third shows several separated vortex cores under a higher rotation condition. This is a qualitative depiction, not a universal numeric critical angular velocity, precise vortex count or actual measured phase boundary. Quantized refers to circulation, not permitted bulk speed values. Not a copy of any NBF figure.</desc>
+<rect width="960" height="360" rx="18" fill="#f8fbff"/>
+<text x="26" y="37" font-family="Arial,sans-serif" fill="#25415d" font-size="24" font-weight="800">Rotation and quantized vortices — conceptual states</text>
+<g fill="#e3f4fc" stroke="#5b92b0" stroke-width="4"><circle cx="165" cy="175" r="93"/><circle cx="477" cy="175" r="93"/><circle cx="789" cy="175" r="93"/></g>
+<g stroke="#087eaa" fill="none" stroke-linecap="round" stroke-width="5"><path d="M465 176C454 149 487 144 492 172C496 195 471 200 461 184"/><path d="M767 157C756 131 789 127 796 154C801 178 773 184 764 167"/><path d="M816 206C805 180 838 174 844 203C849 227 824 234 813 216"/><path d="M736 222C725 196 758 193 765 219C770 245 744 251 734 233"/></g>
+<g fill="#cc8a40"><circle cx="477" cy="175" r="7"/><circle cx="789" cy="156" r="7"/><circle cx="837" cy="205" r="7"/><circle cx="757" cy="223" r="7"/></g>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#24425d">
+<text x="165" y="292" font-size="20" font-weight="800">Below onset</text><text x="165" y="319" font-size="16">Vortex-free possible</text>
+<text x="477" y="292" font-size="20" font-weight="800">At onset</text><text x="477" y="319" font-size="16">Discrete vortex may form</text>
+<text x="789" y="292" font-size="20" font-weight="800">Higher rotation</text><text x="789" y="319" font-size="16">More vortices may develop</text>
+</g>
+</svg>
