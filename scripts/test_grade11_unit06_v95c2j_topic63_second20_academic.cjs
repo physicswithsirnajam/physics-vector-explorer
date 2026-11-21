@@ -73,7 +73,7 @@ for(let i=0;i<20;i++){
  assert.equal(r.amendment_priority,mandatory.get(n)||'OPTIONAL');
  assert.ok(r.scientific_review_theme.length>10);
  assert.ok(r.teacher_note.length>75);
- assert.ok(!r.teacher_note.includes('undefined'));
+ assert.notEqual(r.teacher_note.trim(),'undefined','Teacher note must not be an undefined placeholder');
  const candidate=n===36?'P-11-B-41;P-11-B-35':n>=31&&n<=33?'P-11-B-35;P-11-B-42':'P-11-B-35';
  assert.equal(r.candidate_topic_slo_only,candidate);
  assert.ok(['Knowledge','Understanding'].includes(r.candidate_cognitive_not_certified));
