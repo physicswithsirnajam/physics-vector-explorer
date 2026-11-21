@@ -1,0 +1,43 @@
+name: Validate Grade XI Unit 6 Learning Desk Scaffold (V95-A)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-06.html"
+      - "portal/unit-06-desk-v95a.css"
+      - "portal/unit-06-desk-v95a.js"
+      - "portal/index.html"
+      - "scripts/test_grade11_unit06_v95a_learning_desk.cjs"
+      - ".github/workflows/validate-grade11-unit06-learning-desk-v95a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-06.html"
+      - "portal/unit-06-desk-v95a.css"
+      - "portal/unit-06-desk-v95a.js"
+      - "portal/index.html"
+      - "scripts/test_grade11_unit06_v95a_learning_desk.cjs"
+      - ".github/workflows/validate-grade11-unit06-learning-desk-v95a.yml"
+  workflow_dispatch:
+jobs:
+  integrated-seven-topic-student-navigation:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify academic and no-premature-release gates
+        run: |
+          node --check portal/unit-06-desk-v95a.js
+          node --check scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v95a_learning_desk.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Install Chromium for 390px, tablet and desktop student checks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify navigation, seven topic steps, disclosures and responsive layout
+        run: node scripts/test_grade11_unit06_v95a_learning_desk.cjs --browser
