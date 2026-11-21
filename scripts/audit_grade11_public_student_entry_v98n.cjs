@@ -63,10 +63,16 @@ async function functionality(page,item,origin){
   assert.equal(await page.locator('#auth-screen').count(),1,'public sign-in entry exists');
   // No auth form is submitted, no account is created and no authenticated hub is opened.
   const link=page.locator('header a.header-link[href="./simulations.html"]').first();
-  await link.click();
-  await page.waitForURL(u=>u.pathname.endsWith('/portal/simulations.html'));
-  assert.match(await page.title(),/Interactive Physics Simulations/);
-  return {result:'unauthenticated public portal → simulation directory; original banner and logo load'};
+  assert.equal(await link.count(),1,'signed-in-only header shortcut is present in source');
+  // The existing V69 sign-in-first CSS deliberately hides .topbar .header-link
+  // and .public-demo for signed-out visitors. Do NOT remove the auth-gated
+  // CSS, fake a sign-in, or describe this hidden link as clickable.
+  const visible=await link.isVisible();
+  assert.equal(visible,false,'signed-out public shortcut is intentionally hidden by current portal visual routing');
+  const publicUrl=origin+'/portal/simulations.html';
+  const linked=await page.request.get(publicUrl);
+  assert.equal(linked.status(),200,'public Simulation Directory URL is accessible without authentication');
+  return {result:'original public logo/banner load; sign-in-first hides the shortcut, but direct public Simulation Directory URL resolves',publicShortcutVisible:visible};
  }
  case 'simulations':{
   await page.waitForFunction(()=>{
@@ -183,9 +189,6 @@ async function main(){
     if(metrics.horizontalOverflow)audit.alerts.push({page:item.path,viewport:width,type:'page-wide-horizontal-overflow',documentWidth:metrics.documentWidth});
     if(metrics.logoWidth<28||(width<=390&&metrics.logoWidth>95))audit.alerts.push({page:item.path,viewport:width,type:'unexpected-logo-size',logoWidth:metrics.logoWidth});
    }
-   // The public Portal's desktop-only header link is deliberately hidden on 320px phones.
-   // Keep phone visual/overflow coverage, but click that responsive desktop link at 1280px.
-   if(item.kind==='portal')await page.setViewportSize({width:1280,height:850});
    const interaction=await functionality(page,item,origin);
    const jsErrors=[...new Set(errors)];
    for(const error of jsErrors)audit.alerts.push({page:item.path,type:'browser-js-error',message:error});
