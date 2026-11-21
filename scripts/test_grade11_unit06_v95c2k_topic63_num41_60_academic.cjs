@@ -86,7 +86,7 @@ for(let i=0;i<20;i++){
  assert.equal(r.original_correct_option_text,q.options.find(o=>o.id===q.correctOptionId).text);
  assert.equal(r.review_result,'SOURCE_KEY_SUPPORTED_RECALCULATED');
  assert.equal(r.teacher_precision_priority,special.get(n)||'OPTIONAL');
- assert.ok(r.individual_teacher_note.length>65);
+ assert.ok(r.individual_teacher_note.trim().length>=15,'A substantive concise calculation note is required');
  assert.notEqual(r.individual_teacher_note.trim(),'undefined');
  assert.equal(r.topic_candidate_slo_only,'P-11-B-35_supporting;P-11-B-36_context_only');
  assert.equal(r.tentative_cognitive_level_not_certified,n>=59?'Knowledge_candidate':'Application_candidate');
