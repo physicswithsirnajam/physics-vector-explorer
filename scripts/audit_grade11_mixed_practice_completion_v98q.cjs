@@ -44,7 +44,7 @@ function staticGate(){
  console.log('V98-Q SOURCE PASS: Test Builder and Practice Engine unchanged; canonical image matches root brand; MCQ report is copy-only.');
 }
 async function verifyLogo(page){
- const logo=page.locator('header img[src*="physics-with-sir-najam-logo.png"], .top img[src*="physics-with-sir-najam-logo.png"]').first();
+ const logo=page.locator('header img[src*="physics-with-sir-najam-logo.png"], header img[src*="physics-with-sir-najam-official-logo.png"]').first();
  assert.equal(await logo.count(),1,'original Physics with Sir Najam logo visibly included');
  await logo.waitFor({state:'visible',timeout:12000});
  assert.equal(await logo.evaluate(e=>e.complete&&e.naturalWidth>0),true,'official image bytes load');
@@ -56,7 +56,7 @@ async function snapshot(page,phase,alerts){
   await page.waitForTimeout(100);
   const metrics=await page.evaluate(()=>{
    const w=document.documentElement.clientWidth,sw=document.documentElement.scrollWidth;
-   return {viewport:w,documentWidth:sw,horizontalOverflow:sw>w+2,logoImages:[...document.querySelectorAll('img[src*="physics-with-sir-najam-logo.png"]')].filter(i=>i.naturalWidth>0).length};
+   return {viewport:w,documentWidth:sw,horizontalOverflow:sw>w+2,logoImages:[...document.querySelectorAll('img[src*="physics-with-sir-najam-logo.png"], img[src*="physics-with-sir-najam-official-logo.png"]')].filter(i=>i.naturalWidth>0).length};
   });
   if(metrics.horizontalOverflow)alerts.push({phase,viewport:width,type:'document-overflow',documentWidth:metrics.documentWidth});
   if(metrics.logoImages===0)alerts.push({phase,viewport:width,type:'original-logo-not-loaded'});
