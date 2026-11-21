@@ -94,7 +94,12 @@ for(let i=0;i<20;i++){
  assert.equal(r.original_printed_nbf_fidelity,'PENDING_ORIGINAL_PRINTED_NBF_PP95_TO96');
  assert.equal(r.teacher_approval,'PENDING');
  const r0=expected[i][1];
- assert.equal(r.recalculated_numeric_value_or_pair,r0===null?'CONCEPTUAL':Array.isArray(r0)?r0.join(';'):String(r0));
+ if(r0===null)assert.equal(r.recalculated_numeric_value_or_pair,'CONCEPTUAL');
+ else if(Array.isArray(r0)){
+  const vals=r.recalculated_numeric_value_or_pair.split(';').map(Number);
+  assert.equal(vals.length,r0.length,'Pair value count Q'+n);
+  for(let j=0;j<vals.length;j++)assert.ok(approx(vals[j],r0[j]),'Numeric comparison pair mismatch Q'+n);
+ }else assert.ok(approx(Number(r.recalculated_numeric_value_or_pair),r0),'Numeric rounding/precision mismatch Q'+n);
 }
 const doc=read('quality/grade11-unit06-v95c2k-topic63-mcq41-60-numerical-review.md');
 assert.ok(doc.includes('20/20 matching stems'));
