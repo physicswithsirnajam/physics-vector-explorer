@@ -100,7 +100,7 @@ async function browserAudit(){
    if(i===0||i===labs.length-1)await page.screenshot({path:path.join(out,i===0?'batch3-gravitational-mobile.png':'batch3-polarization-mobile.png'),fullPage:false});
    await page.setViewportSize({width:1280,height:820});
   }
-  await page.goto(origin+'/doppler-effect-laboratory.html',{waitUntil:'domcontentloaded'});
+  await page.goto(origin+'/motion-graphs.html',{waitUntil:'domcontentloaded'});
   await page.locator(nav).getByRole('link',{name:'All Simulations'}).click();
   await page.waitForURL(url=>url.pathname.endsWith('/portal/simulations.html'));
   await page.locator('main').waitFor();
