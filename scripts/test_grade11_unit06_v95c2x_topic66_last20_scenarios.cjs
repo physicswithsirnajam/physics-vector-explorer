@@ -57,7 +57,8 @@ for(let i=0;i<20;i++){
  assert.equal(r.standalone_situation,'YES');
  assert.equal(r.genuine_shared_stimulus_group,'NONE');
  assert.equal(r.scientific_source_key_status,'SOURCE_BEST_ANSWER_SUPPORTED_UNDER_STATED_OR_INTENDED_ASSUMPTIONS');
- assert.equal(r.teacher_review_priority,mandatory.get(n)||(r.teacher_review_priority.startsWith('OPTIONAL')?'OPTIONAL':'OPTIONAL'));
+ if(mandatory.has(n))assert.equal(r.teacher_review_priority,mandatory.get(n));
+ else assert.ok(r.teacher_review_priority.startsWith('OPTIONAL'),'Expected optional review classification for Q'+n);
  assert.ok(r.teacher_review_theme.length>9);
  assert.ok(r.scientific_teacher_note.length>75);
  assert.ok(r.candidate_official_slo_only.length>=5);
