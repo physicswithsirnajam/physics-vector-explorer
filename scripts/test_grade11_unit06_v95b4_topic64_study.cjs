@@ -63,7 +63,7 @@ for(const term of [
  assert.ok(html.includes(term),'Required source/model or numeric topic missing: '+term);
 }
 for(let i=1;i<=9;i++)assert.ok(report.includes('T64-'+String(i).padStart(2,'0')),'Teacher issue absent T64-'+i);
-assert.ok(html.includes('not a reproduction of original NBF Figure 6.7'));
+assert.ok(html.includes('not</strong> a reproduction of original NBF Figure 6.7'),'The source-art disclaimer must survive HTML formatting');
 assert.ok(html.includes('not a measurement or copy of printed NBF Figure 6.7/6.8'));
 assert.ok(!html.includes('Grade11_Unit6_COMPLETE_MASTER_ALL.pdf'),'Private teacher PDF should not be linked on student page');
 assert.ok(!html.includes('<iframe'),'Do not embed private textbook pages');
