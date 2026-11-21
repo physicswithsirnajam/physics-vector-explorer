@@ -75,6 +75,7 @@ for(const forged of [
 for(const bad of [
  {unit:0,questionId:'XI-U01-MCQ-0001',sourceQuestionNumber:1,bankVersion:'v1',category:'other',note:''},
  {unit:7,questionId:'XI-U07-MCQ-0001',sourceQuestionNumber:1,bankVersion:'v1',category:'other',note:''},
+ {unit:2,questionId:'XI-U01-MCQ-0001',sourceQuestionNumber:1,bankVersion:'v1',category:'other',note:''},
  {unit:2,questionId:'bad id',sourceQuestionNumber:1,bankVersion:'v1',category:'other',note:''},
  {unit:2,questionId:'XI-U02-MCQ-0001',sourceQuestionNumber:0,bankVersion:'v1',category:'other',note:''},
  {unit:2,questionId:'XI-U02-MCQ-0001',sourceQuestionNumber:1,bankVersion:'',category:'other',note:''},
