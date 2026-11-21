@@ -49,7 +49,7 @@ async function main(){
   page.on('response',r=>{if(r.url().startsWith(origin)&&r.status()>=400)missing.push(r.status()+' '+r.url().slice(origin.length));});
   const response=await page.goto(origin+'/portal/unit-05-work-study.html',{waitUntil:'domcontentloaded'});
   assert.equal(response.status(),200,'Unit 5 Work Study Guide loads');
-  assert.match(await page.title(),/Unit 5 Study Guide.*Physics with Sir Najam/);
+  assert.match(await page.title(),/Unit 5.*Work.*Energy.*Physics with Sir Najam/);
   const logo=page.locator('header img[src="./assets/physics-with-sir-najam-official-logo.png"]');
   await logo.waitFor({state:'visible',timeout:12000});
   assert.equal(await logo.evaluate(img=>img.complete&&img.naturalWidth>0),true,'exact original official logo is loaded');
