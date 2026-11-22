@@ -108,7 +108,9 @@ function inspect(snapshot){
    js.indexOf('getAuth(',initPosition)>initPosition&&
    js.indexOf('getFirestore(',initPosition)>initPosition,
    'App Check must initialize before Auth/Firestore services in '+e.module);
-  assert.ok(!/firebase-app-check\\.js|initializeAppCheck\\s*\\(|ReCaptchaEnterpriseProvider\\s*\\(/.test(js),
+  assert.ok(!js.includes('firebase-app-check.js')&&
+   !js.includes('initializeAppCheck(')&&
+   !js.includes('new ReCaptchaEnterpriseProvider('),
    'ReCaptchaEnterpriseProvider is owned only by approved helper: '+e.module);
   findings.push(Object.freeze({
    html:e.page,module:e.module,use:e.use,
