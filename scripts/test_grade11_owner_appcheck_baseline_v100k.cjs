@@ -31,14 +31,14 @@ function main(){
  assert.equal(result.firebase.webAppId,'1:158078442603:web:b4738a9875a1d5b1c8a52e');
  pass('user-reported exact repository-scoped GitHub Pages URL and existing public Firebase identity');
 
- assert.equal(result.firebase.ownerReportedAppCheckRegistration,'unregistered');
- assert.equal(result.firebase.ownerReportedAppCheckProvider,'none');
+ assert.equal(result.firebase.ownerReportedAppCheckRegistration,'registered');
+ assert.equal(result.firebase.ownerReportedAppCheckProvider,'recaptcha-enterprise');
  assert.equal(result.firebase.ownerReportedFirestoreAppCheckEnforcement,'not-enforced');
  assert.equal(result.firebase.ownerReportedAuthenticationAppCheckEnforcement,'not-enforced');
  assert.equal(result.firebase.currentConsoleStateIndependentlyQueried,false);
  assert.equal(result.website.verifiedByIndependentLiveRequest,false);
  assert.equal(result.website.googleSitesIframeEmbeddingConfirmed,false);
- pass('observations are dated, source-attributed, and never labeled live independent Console/API proof');
+ pass('owner screenshot of registered Enterprise provider and unenforced APIs is not labeled independent live Firebase API proof');
 
  for(const replacement of [
   'http://physicswithsirnajam.github.io/physics-vector-explorer/',
@@ -50,8 +50,8 @@ function main(){
  pass('reject unsafe http, host confusion, unconfirmed deep-link and unexpected URL origin/path');
 
  for(const changed of [
-  {appCheckRegistration:'registered'},
-  {appCheckProvider:'recaptcha-enterprise'},
+  {appCheckRegistration:'unregistered'},
+  {appCheckProvider:'none'},
   {firestoreAppCheckEnforcement:'enforced'},
   {authenticationAppCheckEnforcement:'enforced'},
   {externalIframeEmbedding:'confirmed'},
