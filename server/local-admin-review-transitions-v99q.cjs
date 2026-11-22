@@ -23,6 +23,7 @@ const {PROJECT,HOST:FS_HOST,REPORTS,requireLocalDemo}=
  require('./firebase-review-emulator-v99f.cjs');
 const {extractBearer}=require('./verified-report-boundary-v99g.cjs');
 const catalog=require('./pinned-approved-review-catalog-v99i.cjs');
+const {checkFreshLocalAdmin}=require('./local-admin-account-freshness-v99y.cjs');
 
 const AUTH_HOST='127.0.0.1:9099';
 const AUDIT='mcqReviewAdminAudit';
@@ -116,6 +117,8 @@ function createLocalAdminReviewTransitions({
    if(verified.admin!==true||!allowed.has(verified.uid))
     deny('admin-access-required');
    if(!(await enabled()))deny('temporarily-unavailable');
+   const freshCode=await checkFreshLocalAdmin({adminAuth,verified,allowedAdminUids:allowed});
+   if(freshCode)deny(freshCode);
 
    const time=now();
    if(!Number.isSafeInteger(time)||time<0||
