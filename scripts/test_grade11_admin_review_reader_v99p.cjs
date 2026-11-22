@@ -72,14 +72,54 @@ async function main(){
   assert.equal(ownerClaims.admin,true);
   assert.equal(ownerClaims.email_verified,true);
   const permitted=[users.owner.uid,users.unverifiedAdmin.uid];
+  let readerEnabled=true;
   const list=createLocalAdminReviewReader({
-   firestore:db,adminAuth:serverAuth,allowedAdminUids:permitted
+   firestore:db,adminAuth:serverAuth,allowedAdminUids:permitted,
+   isReviewReaderEnabled:()=>readerEnabled
   });
   const noOtherAdmin=createLocalAdminReviewReader({
-   firestore:db,adminAuth:serverAuth,allowedAdminUids:[users.owner.uid]
+   firestore:db,adminAuth:serverAuth,allowedAdminUids:[users.owner.uid],
+   isReviewReaderEnabled:()=>true
   });
   permitted.push(users.otherAdmin.uid); // cannot mutate reader's trust list
 
+  const makeReader=(options={})=>createLocalAdminReviewReader({
+   firestore:db,adminAuth:serverAuth,allowedAdminUids:[users.owner.uid],
+   ...options
+  });
+  denied(await makeReader()(req(users.owner.token)),'temporarily-unavailable');
+  denied(await makeReader({isReviewReaderEnabled:async()=>undefined})(
+   req(users.owner.token)),'temporarily-unavailable');
+  denied(await makeReader({isReviewReaderEnabled:()=>{
+   throw Error('PRIVATE SERVICE SWITCH FAILURE');
+  }})(req(users.owner.token)),'temporarily-unavailable');
+  assert.throws(()=>makeReader({isReviewReaderEnabled:true}),TypeError);
+  pass('V99-Z review queue is OFF by default; only trusted literal true callback can enable it');
+
+  const spyDb={projectId:PROJECT,doc:name=>db.doc(name),
+   runTransaction:async()=>{},collection:()=>{
+    throw Error('NO FIRESTORE READ SHOULD OCCUR WHEN OFF');
+   }
+  };
+  const spyOff=makeReader({firestore:spyDb});
+  denied(await spyOff(req(users.owner.token)),'temporarily-unavailable');
+  readerEnabled=false;
+  denied(await list(req(users.owner.token)),'temporarily-unavailable');
+  readerEnabled=true;
+  const midAuth={
+   app:admin,getUser:serverAuth.getUser.bind(serverAuth),
+   verifyIdToken:async(token,checkRevoked)=>{
+    const claims=await serverAuth.verifyIdToken(token,checkRevoked);
+    readerEnabled=false;return claims;
+   }
+  };
+  const midReader=makeReader({
+   adminAuth:midAuth,isReviewReaderEnabled:()=>readerEnabled
+  });
+  denied(await midReader(req(users.owner.token)),'temporarily-unavailable');
+  readerEnabled=true;
+  pass('V99-Z disabling reader blocks Firestore query; mid-authorization OFF stops the response');
+  
   let result=await list(req(users.student.token));
   denied(result,'admin-access-required');
   denied(await list(req(users.teacher.token)),'admin-access-required');
@@ -176,6 +216,29 @@ async function main(){
   pass('real Firestore Admin read returns maximum 25 latest verified public source records, redacting owner UID, scores, answers and private fields');
   pass('read-only Admin review never changes reports, quotas or status');
 
+  let afterQueryFlag=true;
+  const querySpy={
+   projectId:PROJECT,doc:name=>db.doc(name),runTransaction:async()=>{},
+   collection:(name)=>({
+    orderBy:(field,direction)=>({
+     limit:(n)=>({
+      get:async()=>{
+       const snapshot=await db.collection(name)
+        .orderBy(field,direction).limit(n).get();
+       afterQueryFlag=false;return snapshot;
+      }
+     })
+    })
+   })
+  };
+  const afterQuery=makeReader({
+   firestore:querySpy,isReviewReaderEnabled:()=>afterQueryFlag
+  });
+  denied(await afterQuery(req(users.owner.token,{limit:2})),
+   'temporarily-unavailable');
+  assert.equal((await db.collection(REPORTS).get()).size,30);
+  pass('V99-Z switching OFF after an already-running Firestore query suppresses private report response');
+
   const wrongProject=process.env.GCLOUD_PROJECT;
   try{
    process.env.GCLOUD_PROJECT='live-production-project';
@@ -213,7 +276,7 @@ async function main(){
   };
   const broken=createLocalAdminReviewReader({
    firestore:brokenFirestore,adminAuth:serverAuth,
-   allowedAdminUids:[users.owner.uid]
+   allowedAdminUids:[users.owner.uid],isReviewReaderEnabled:()=>true
   });
   const unavailable=await broken(req(users.owner.token));
   denied(unavailable,'temporarily-unavailable');
@@ -258,6 +321,8 @@ async function main(){
    adminTokenVerifiedByAdminSDKAgainstLocalAuthEmulator:true,
    productionSignedTokenProof:false,
    trustedUidAllowlistRequired:true,
+   defaultOffReviewReader:true,
+   midAuthAndPostQueryDisableBlocksResponse:true,
    serverOnlyRead:true,
    browserAdminReadDeniedInIsolatedFixture:true,
    reportWritesByReviewReader:0,realAccountData:false,
