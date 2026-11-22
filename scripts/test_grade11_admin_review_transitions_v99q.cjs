@@ -135,6 +135,11 @@ async function main(){
    'temporarily-unavailable');
   assert.equal((await db.collection(AUDIT).get()).size,0);
   pass('illegal new-to-resolved jump, missing report and corrupted source metadata fail without audit writes');
+  // The earlier V99-P reader intentionally rejects an entire page if ANY
+  // selected report is corrupted. Remove this negative-only emulator fixture
+  // before verifying that healthy status updates remain visible to that reader.
+  // This is synthetic test cleanup, NOT a production data deletion workflow.
+  await db.collection(REPORTS).doc(ids.corrupt).delete();
 
   const started=await update(req(users.owner.token,ids.first,'start-review'));
   assert.deepEqual(started,{
@@ -289,7 +294,8 @@ async function main(){
   const summary={
    version:'V99-Q',environment:'LOCAL FIREBASE AUTH AND FIRESTORE EMULATORS',
    originalPublicQuestionReferences:2250,
-   fakeReportDocuments:4,privateAuditEvents:3,
+   seededSyntheticReportDocuments:4,remainingSyntheticReports:3,
+   privateAuditEvents:3,
    realLocalAuthVerification:true,productionSignedTokenProof:false,
    realAtomicFirestoreReportAndAuditTransitions:true,
    trustedAdminUidAllowlistRequired:true,triageDefaultOff:true,
