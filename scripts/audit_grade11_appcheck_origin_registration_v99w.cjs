@@ -94,7 +94,7 @@ function inspect(snapshot){
  const cname=trackedPaths.filter(p=>(/(^|\/)CNAME$/i).test(p));
  assert.equal(cname.length,0,'CNAME found — recheck actual hosting hostname');
  const appCheckFiles=trackedPaths.filter(p=>
-  /(^|\/)(?:app-check|appcheck)(?:\.|\/|$)/i.test(p)&&
+  /(^|\/)(?:app-check|appcheck)(?:[-.\/]|$)/i.test(p)&&
   /^(?:portal|practice-engine|shared)\//.test(p));
  assert.equal(appCheckFiles.length,0,
   'New client App Check file requires revised owner configuration review');
