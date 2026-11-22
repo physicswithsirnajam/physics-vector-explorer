@@ -38,7 +38,7 @@
  .item-name{font-size:12px;font-weight:850}.item-meta{font-size:11px;color:var(--sub);margin-top:4px}.item-note{font-size:12px;color:#53647a;margin:9px 0 0;line-height:1.55;max-height:3.1em;overflow:hidden}
  .pill{border-radius:99px;padding:5px 8px;font-size:10px;font-weight:800;white-space:nowrap}
  .pill-new{background:#fff1cb;color:#795814}.pill-in-review{background:#e4efff;color:#235287}.pill-resolved{background:#dcf5e6;color:#1d6b50}
- .empty{padding:25px;color:var(--sub)}
+ .empty{padding:25px;color:var(--sub)}.empty-detail{padding:15px 0;color:var(--sub);line-height:1.7}
  .details{padding:22px}.ref{font-size:10px;color:#697a91;overflow-wrap:anywhere}.details h3{font:700 24px Georgia,serif;margin:10px 0 3px}
  .field{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#66768c;font-weight:900;margin:24px 0 8px}
  .issue{background:#f7f8fb;border-left:3px solid var(--gold);padding:15px;border-radius:0 9px 9px 0;color:#3b4c64;white-space:pre-wrap;overflow-wrap:anywhere}
@@ -140,13 +140,21 @@
    document.getElementById('metric-'+st).textContent=reports.filter(function(r){return r.status===st;}).length;
   });
  }
- function renderList(){
-  list.replaceChildren();
+ function visibleReports(){
   const phrase=search.value.trim().toLowerCase();
-  const showing=reports.filter(function(r){
+  return reports.filter(function(r){
    return (activeFilter==='all'||r.status===activeFilter)&&
     (r.questionId+' '+labels[r.category]+' '+'Unit '+r.unit).toLowerCase().includes(phrase);
   });
+ }
+ function focusSelectedReport(){
+  const btn=Array.from(list.querySelectorAll('[data-report-id]')).find(function(b){
+   return b.dataset.reportId===selected;
+  });
+  if(btn)btn.focus();
+ }
+ function renderList(showing){
+  list.replaceChildren();
   if(!showing.length){add(list,'li','empty','No matching fictional reports.');return;}
   showing.forEach(function(r){
    const item=add(list,'li','');
@@ -160,7 +168,7 @@
    add(left,'div','item-meta',labels[r.category]+' · #'+r.sourceQuestionNumber);
    row.appendChild(pill(r.status));
    add(btn,'p','item-note',r.note);
-   btn.addEventListener('click',function(){selected=r.reportId;render();});
+   btn.addEventListener('click',function(){selected=r.reportId;render();focusSelectedReport();});
   });
  }
  function field(grid,name,value){
@@ -169,7 +177,13 @@
  }
  function renderDetail(){
   details.replaceChildren();
-  const r=reports.find(function(a){return a.reportId===selected;})||reports[0];
+  if(selected===null){
+   add(details,'p','empty-detail',
+    'No matching fictional report is selected. Clear the search or change the review-stage filter to view details.');
+   return;
+  }
+  const r=reports.find(function(a){return a.reportId===selected;});
+  if(!r)throw new Error('Unknown fictional report selection');
   const row=add(details,'div','detail-line');
   add(row,'div','ref','REPORT '+r.reportId.slice(-9).toUpperCase());
   row.appendChild(pill(r.status));
@@ -201,6 +215,17 @@
     r.events.push({action:next,fromStatus:before,toStatus:to,
      reviewedAtIso:new Date(Date.parse('2026-11-22T18:00:00.000Z')+clicks++*60000).toISOString()});
     r.status=to;render();
+    // The old action button was removed by render(); keep keyboard focus useful.
+    if(selected===r.reportId){
+     const next=details.querySelector('[data-demo-action]')||
+      details.querySelector('#reset-demo');
+     if(next)next.focus();
+    }else{
+     // A stage-filtered report left the list; never focus another report's action.
+     const next=list.querySelector('button.item')||
+      document.querySelector('[data-filter][aria-pressed="true"]');
+     if(next)next.focus();
+    }
    });
   }else add(buttons,'span','pill pill-resolved','Review complete in this preview');
   const reset=add(buttons,'button','secondary','Reset demonstration');
@@ -208,17 +233,23 @@
   reset.addEventListener('click',function(){location.reload();});
   add(details,'p','subtle','The creation timestamp belongs to the report queue; subsequent review events come from the separate private audit-history contract. Actions here change browser memory only and never update Firebase or actual MCQ records.');
  }
- function render(){stats();renderList();renderDetail();}
+ function render(){
+  const showing=visibleReports();
+  if(!showing.some(function(r){return r.reportId===selected;})){
+   selected=showing.length?showing[0].reportId:null;
+  }
+  stats();renderList(showing);renderDetail();
+ }
  document.querySelectorAll('[data-filter]').forEach(function(btn){
   btn.addEventListener('click',function(){
    activeFilter=btn.dataset.filter;
    document.querySelectorAll('[data-filter]').forEach(function(b){
     b.setAttribute('aria-pressed',String(b===btn));
    });
-   renderList();
+   render();
   });
  });
- search.addEventListener('input',renderList);
+ search.addEventListener('input',render);
  render();
 }());
 </script>
