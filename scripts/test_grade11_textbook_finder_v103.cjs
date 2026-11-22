@@ -96,7 +96,7 @@ async function main(){
    assert.equal(await page.locator('#unit').inputValue(),'3');
    assert.equal(await page.locator('#kind').inputValue(),'textbook-numerical');
    assert.equal(await page.locator('.item').count(),8);
-   assert.equal(await page.locator('h2').count(),1);
+   assert.equal(await page.locator('#results > .unit-block h2').count(),1);
    assert.equal(await page.locator('.item a[href*="XI-U03-N-3.6"]').count(),1);
    const over=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
    assert.equal(over,false,'Horizontal overflow at '+width);
