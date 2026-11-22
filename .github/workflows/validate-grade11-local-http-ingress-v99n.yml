@@ -1,0 +1,43 @@
+name: Grade XI Loopback HTTP Request Ingress Rehearsal (V99-N)
+on:
+  pull_request:
+    paths:
+      - "server/local-http-review-ingress-v99n.cjs"
+      - "scripts/test_grade11_local_http_ingress_v99n.cjs"
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-local-http-ingress-v99n.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/local-http-review-ingress-v99n.cjs"
+      - "scripts/test_grade11_local_http_ingress_v99n.cjs"
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-local-http-ingress-v99n.yml"
+  workflow_dispatch:
+jobs:
+  loopback-real-http-boundary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      GCLOUD_PROJECT: demo-psn-v99f-firestore
+      PSN_LOCAL_HTTP_REHEARSAL: enabled-local-test-only
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check nondeployable loopback HTTP rehearsal code
+        run: |
+          node --check server/local-http-review-ingress-v99n.cjs
+          node --check scripts/test_grade11_local_http_ingress_v99n.cjs
+      - name: Test real HTTP socket ingress with zero Firebase credentials or deployment
+        run: node scripts/test_grade11_local_http_ingress_v99n.cjs
