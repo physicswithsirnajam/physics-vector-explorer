@@ -28,6 +28,8 @@ const USED_SOURCES=Object.freeze([
  'portal/app.js',
  'portal/attempt-sync.js',
  'portal/course-lesson.js',
+ 'portal/secure-lesson.js',
+ 'portal/recaptcha-enterprise-v100m.mjs',
  'portal/index.html',
  'practice-engine/index.html'
 ]);
@@ -68,7 +70,7 @@ function inspect(snapshot){
  assert.ok(!/\b(?:private_key|serviceAccount|client_email)\b/i.test(config),
   'Firebase public config must not contain service account fields');
 
- const modulePaths=['portal/app.js','portal/attempt-sync.js','portal/course-lesson.js'];
+ const modulePaths=['portal/app.js','portal/attempt-sync.js','portal/course-lesson.js','portal/secure-lesson.js'];
  for(const file of modulePaths){
   const s=files[file];
   assert.ok(s.includes("from './firebase-config.js'")&&
@@ -76,11 +78,29 @@ function inspect(snapshot){
    'Verified Firebase web-app initialization path missing: '+file);
   assert.ok(/firebase-auth\.js/.test(s)&&/firebase-firestore\.js/.test(s),
    'Protected student app Firebase service path missing: '+file);
+  assert.ok(s.includes("from './recaptcha-enterprise-v100m.mjs'"),
+   'Approved V100-M App Check import missing from '+file);
+  const appCheckPos=s.indexOf('await initializeAppCheckBeforeServices(');
+  const authPos=s.indexOf('getAuth(',appCheckPos);
+  const storePos=s.indexOf('getFirestore(',appCheckPos);
+  assert.ok(appCheckPos>=0&&authPos>appCheckPos&&storePos>appCheckPos,
+   'App Check must initialize before the existing Auth and Firestore services: '+file);
   assert.ok(!/firebase-app-check\.js|initializeAppCheck\s*\(|ReCaptchaEnterpriseProvider\s*\(/.test(s),
-   'Unexpected production App Check initializer requires owner rollout review: '+file);
+   'Provider should be owned only by the approved early-start module: '+file);
   assert.ok(!/FIREBASE_APPCHECK_DEBUG_TOKEN|DebugAppCheckProvider/.test(s),
    'Browser debug provider or token forbidden: '+file);
  }
+ const helper=files['portal/recaptcha-enterprise-v100m.mjs'];
+ for(const item of [
+  "const APPROVED_HOST='physicswithsirnajam.github.io';",
+  "https://www.gstatic.com/firebasejs/13.1.0/firebase-app-check.js",
+  'new sdk.ReCaptchaEnterpriseProvider(SITE_KEY)',
+  'isTokenAutoRefreshEnabled:true',
+  "locationLike?.protocol!=='https:'",
+  'await loadSdk()'
+ ])assert.ok(helper.includes(item),'Approved App Check helper drift: '+item);
+ assert.ok(!/FIREBASE_APPCHECK_DEBUG_TOKEN|DebugAppCheckProvider/.test(helper),
+  'Production App Check debug provider/token forbidden');
  const page=files['portal/index.html'];
  assert.ok(page.includes('Firebase')&&page.includes('student')&&
   /app\.js/.test(page),'Existing signed-in portal entrypoint must remain intact');
@@ -106,7 +126,7 @@ function inspect(snapshot){
   firebaseAuthenticationDomain:EXPECTED.authDomain,
   browserFirebasePaths:Object.freeze(modulePaths),
   observedPublicStudentReportState:'COPY_ONLY',
-  sourceAppCheckInitializerObserved:false,
+  sourceAppCheckInitializerObserved:true,
   sourceBrowserDebugProviderObserved:false,
   githubPagesDefaultHostCandidate:EXPECTED.candidateHost,
   githubPagesPortalPathCandidate:EXPECTED.candidatePortalPath,
@@ -129,8 +149,8 @@ function main(){
   fs.mkdirSync(dir,{recursive:true});
   fs.writeFileSync(path.join(dir,'summary.json'),
    JSON.stringify(report,null,2)+'\n');
-  console.log('V99-W PASS: pinned Firebase project/web app, 3 browser SDK entrypoints, copy-only reporting and no App Check initializer in inspected source.');
-  console.log('V99-W HOLD: inferred GitHub Pages hostname is a CANDIDATE; live browser origin, Console registration and enforcement remain unverified.');
+  console.log('V99-W PASS: pinned Firebase identity, 4 separate browser startup paths, approved monitoring-only App Check helper, Copy-only reporting.');
+  console.log('V99-W HOLD: source does not prove real token acceptance, current Console registration, browser origin or enforcement.');
   console.log('V99-W NO LIVE FIREBASE CALLS, NO CONFIG OR ENFORCEMENT CHANGES.');
  }catch(e){
   console.error('V99-W FAILED: '+String(e.message||'source drift').slice(0,300));
