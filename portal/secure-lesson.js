@@ -3,6 +3,7 @@
    Firebase Firestore Security Rules (not this UI) are the access control.
    Do not store private keys, answer keys, or restricted lessons here. */
 import {firebaseConfig} from './firebase-config.js';
+import {initializeAppCheckBeforeServices} from './recaptcha-enterprise-v100m.mjs';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {getAuth,onAuthStateChanged,reload,signOut} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
 import {getFirestore,doc,getDocFromServer} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
@@ -71,15 +72,17 @@ async function verifyAndLoad(user){
     state(denied?'Access denied':'Unable to open lesson',message,{retry:true,logout:true});
   }
 }
-function boot(){
+async function boot(){
   const configured=Object.values(firebaseConfig).every(v=>typeof v==='string' && v.trim() && !v.includes('REPLACE_'));
   if(!configured){state('Firebase setup needed','Use the existing working portal/firebase-config.js. Never publish service-account private keys.');return;}
   try{
     const app=initializeApp(firebaseConfig);
+    // V100-M: initialize App Check before the separate protected-lesson client.
+    await initializeAppCheckBeforeServices(app);
     auth=getAuth(app);db=getFirestore(app);
     onAuthStateChanged(auth,user=>verifyAndLoad(user),()=>state('Sign-in status unavailable','Return to Portal and try again.',{login:true}));
   }catch{state('Firebase setup error','Check the existing portal configuration and retry after correcting it.');}
 }
 $('retry-button').addEventListener('click',()=>verifyAndLoad(auth?.currentUser));
 $('signout-button').addEventListener('click',async()=>{clearContent();sequence++;state('Signing out…','Removing the lesson from this view.');try{await signOut(auth);}catch{state('Sign-out not completed','Return to the Portal and try again.',{retry:true,logout:true});}});
-boot();
+void boot();
