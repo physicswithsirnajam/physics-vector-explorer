@@ -29,6 +29,7 @@
     link('portal/','Dashboard','portal'),
     link('portal/#my-progress','My Progress','progress'),
     link('build-your-physics-test.html','Build a Test','builder'),
+    link('portal/exam-quick-access.html','Exam Quick Access','revision'),
     link('portal/#learning-hub','Learning Hub','learn'),
     link('student-guide.html','Student Guide','guide'),
     link('portal/simulations.html','Simulations','simulations'),
@@ -64,6 +65,7 @@
     if(item.key==='portal'&&/\/portal\/?$/.test(here))a.setAttribute('aria-current','page');
     if(item.key==='builder'&&here.endsWith('/build-your-physics-test.html'))a.setAttribute('aria-current','page');
     if(item.key==='guide'&&here.endsWith('/student-guide.html'))a.setAttribute('aria-current','page');
+    if(item.key==='revision'&&here.endsWith('/portal/exam-quick-access.html'))a.setAttribute('aria-current','page');
     if(item.key==='blueprint'&&here.includes('/assessment-blueprint/'))a.setAttribute('aria-current','page');
     if(item.key==='simulations'&&here.endsWith('/portal/simulations.html'))a.setAttribute('aria-current','page');
     a.addEventListener('click',permitNavigation);
@@ -88,6 +90,7 @@
   const quick=e('nav','psn-drawer-quick');
   quick.setAttribute('aria-label','Quick physics learning links');
   const quickLinks=[
+    link('portal/exam-quick-access.html','Exam Quick Access','revision'),
     link('student-guide.html','Start Here','guide'),
     link('build-your-physics-test.html','Build a Physics Test','builder'),
     link('portal/','Student Dashboard','portal'),
