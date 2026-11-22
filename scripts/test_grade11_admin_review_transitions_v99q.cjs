@@ -171,7 +171,8 @@ async function main(){
   pass('identical repeated triage command remains idempotent and does not duplicate audit records');
 
   const reader=createLocalAdminReviewReader({
-   firestore:db,adminAuth,allowedAdminUids:[users.owner.uid]
+   firestore:db,adminAuth,allowedAdminUids:[users.owner.uid],
+   isReviewReaderEnabled:()=>true
   });
   const listing=await reader({authorization:'Bearer '+users.owner.token,limit:10});
   assert.equal(listing.ok,true);
