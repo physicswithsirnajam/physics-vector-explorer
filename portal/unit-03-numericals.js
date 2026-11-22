@@ -56,6 +56,17 @@
     article.appendChild(answerSpace);
     return article;
   }
+  /* V103: number-specific textbook links can arrive before the source
+   * exercise JSON finishes loading. Revisit URL fragments after rendering.
+   * No edits to questions, answers, printing or assessment logic. */
+  function revealReferencedExercise(){
+    let id;
+    try{id=decodeURIComponent(window.location.hash.slice(1))}catch{return}
+    if(!id || !/^XI-U03-N-3\.[1-8]$/.test(id))return;
+    const target=document.getElementById(id);
+    if(target)requestAnimationFrame(()=>target.scrollIntoView({block:"start"}));
+  }
+  window.addEventListener("hashchange",revealReferencedExercise);
   function allDetails(){return [...document.querySelectorAll(".problem details")]}
   function print(teacher){
     if(!bank)return;
@@ -86,6 +97,7 @@
     $("summativeExercises").replaceChildren(...data.numericals.filter(n=>n.assessment==="summative").map(exercise));
     $("formativeExercises").replaceChildren(...data.numericals.filter(n=>n.assessment!=="summative").map(exercise));
     $("loadStatus").textContent="8 numericals ready · 6 summative aligned · 2 formative";
+    revealReferencedExercise();
     for(const id of ["revealAll","hideAll","printQuestions","printSolutions"])$(id).disabled=false;
   }).catch(error=>{
     $("loadStatus").textContent="Could not load numerical exercises";
