@@ -1,0 +1,57 @@
+name: Grade XI App Check Origin and Registration Inventory (V99-W)
+on:
+  pull_request:
+    paths:
+      - "portal/firebase-config.js"
+      - "portal/app.js"
+      - "portal/attempt-sync.js"
+      - "portal/course-lesson.js"
+      - "portal/index.html"
+      - "practice-engine/index.html"
+      - "CNAME"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/test_grade11_appcheck_origin_registration_v99w.cjs"
+      - ".github/workflows/validate-grade11-appcheck-origin-v99w.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/firebase-config.js"
+      - "portal/app.js"
+      - "portal/attempt-sync.js"
+      - "portal/course-lesson.js"
+      - "portal/index.html"
+      - "practice-engine/index.html"
+      - "CNAME"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/test_grade11_appcheck_origin_registration_v99w.cjs"
+      - ".github/workflows/validate-grade11-appcheck-origin-v99w.yml"
+  workflow_dispatch:
+jobs:
+  code-only-hostname-candidate-and-registration-unknowns:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check read-only hosting and App Check source inventory
+        run: |
+          node --check scripts/audit_grade11_appcheck_origin_registration_v99w.cjs
+          node --check scripts/test_grade11_appcheck_origin_registration_v99w.cjs
+      - name: Test unsafe-domain, app ID, browser initializer and report state mutations
+        run: node scripts/test_grade11_appcheck_origin_registration_v99w.cjs
+      - name: Verify repository source evidence without accessing Firebase Console
+        run: node scripts/audit_grade11_appcheck_origin_registration_v99w.cjs
+      - name: Save public-metadata-only inventory with all unresolved facts labelled
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-appcheck-hostname-inventory-v99w
+          path: qa-artifacts/appcheck-domain-preflight-v99w/summary.json
+          if-no-files-found: warn
+          retention-days: 14
