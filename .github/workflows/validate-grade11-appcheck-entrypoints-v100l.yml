@@ -1,0 +1,53 @@
+name: Grade XI App Check Four-Entrypoint Readiness Map (V100-L)
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "shared/**"
+      - "CNAME"
+      - "**/CNAME"
+      - ".github/workflows/validate-grade11-appcheck-entrypoints-v100l.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "shared/**"
+      - "CNAME"
+      - "**/CNAME"
+      - ".github/workflows/validate-grade11-appcheck-entrypoints-v100l.yml"
+  workflow_dispatch:
+jobs:
+  four-browser-startup-paths-readonly:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check read-only App Check browser entrypoint inventory
+        run: |
+          node --check scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node --check scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Test source routes and fail-closed mutations without Firebase SDK or service access
+        run: node scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Record four-page source startup inventory, not real provider proof
+        run: node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Upload source-only App Check integration inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-appcheck-browser-entrypoints-v100l
+          path: qa-artifacts/grade11-appcheck-entrypoints-v100l/source-inventory.json
+          if-no-files-found: warn
+          retention-days: 14
