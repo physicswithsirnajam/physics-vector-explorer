@@ -153,9 +153,10 @@ async function startLocalReviewHttpRehearsal({handle}={}){
     bodyText
    }));
    return emit(res,result);
-  }catch{
-   // Never serialize raw transport, SDK or application exceptions.
-   return emit(res,refusal('temporarily-unavailable'));
+  }catch(e){
+   // Permit ONLY explicitly typed allowlisted RequestGateError codes, such
+   // as streamed body 413. Any arbitrary/internal exception is redacted.
+   return emit(res,publicError(e));
   }
  });
  server.maxHeadersCount=24;
