@@ -42,6 +42,10 @@ function safeEnvironment(env,argv,stdinTTY){
   return 'disabled';
  if(env.PSN_APPCHECK_LOCAL_PROOF!==REQUIRED_ACK)
   return 'owner-approval-required';
+ // Prevent use as a GitHub Actions/token-bearing CI step even if someone
+ // incorrectly supplies the owner acknowledgement environment variable.
+ if(env.CI==='true'||env.GITHUB_ACTIONS==='true')
+  return 'runner-forbidden';
  if(env.GOOGLE_APPLICATION_CREDENTIALS||
     env.FIREBASE_AUTH_EMULATOR_HOST||
     env.FIRESTORE_EMULATOR_HOST||
