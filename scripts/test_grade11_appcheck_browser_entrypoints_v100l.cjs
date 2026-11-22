@@ -24,8 +24,8 @@ function main(){
  ]);
  assert.ok(report.browserEntrypoints.every(x=>
   x.pinnedFirebaseWebSdk==='13.1.0'&&
-  x.appCheckCurrentlyInitialized===false&&x.realBrowserProviderProof===false));
- pass('four actual HTML module links each independently initialize the pinned Firebase 13.1.0 SDK');
+  x.appCheckEarlyStartupWiredInSource===true&&x.realBrowserProviderProof===false));
+ pass('four actual HTML module links each initialize Firebase 13.1.0 after approved App Check bootstrap');
 
  assert.equal(report.sharedFirebaseServiceConsumer.length,1);
  assert.equal(report.sharedFirebaseServiceConsumer[0].module,'portal/academic-enrollment.js');
@@ -43,10 +43,14 @@ function main(){
  for(const e of audit.ENTRIES){
   mustReject('missing known initializer '+e.module,changeFile(e.module,s=>
    s.replace(e.initializer,'/* no firebase application initialization */')));
-  mustReject('live client App Check '+e.module,changeFile(e.module,s=>
-   s+'\ninitializeAppCheck(app,{provider:new ReCaptchaEnterpriseProvider("UNREGISTERED")});\n'));
+  mustReject('unapproved duplicate App Check initializer '+e.module,changeFile(e.module,s=>
+   s+'\ninitializeAppCheck(app,{provider:new ReCaptchaEnterpriseProvider("UNKNOWN")});\n'));
+  mustReject('removed approved App Check startup '+e.module,changeFile(e.module,s=>
+   s.replace('await initializeAppCheckBeforeServices(', 'await omittedAppCheckEarly(')));
+  mustReject('missing approved module import '+e.module,changeFile(e.module,s=>
+   s.replace("from './recaptcha-enterprise-v100m.mjs'","from './unapproved-provider.mjs'")));
  }
- pass('missing initialization and unexpected App Check setup are refused on every route');
+ pass('missing Firebase/App Check initialization and unapproved duplicate provider are refused on every route');
 
  const phantom='shared/accidental-firebase-init.js';
  const extra="import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';\n"+
@@ -72,15 +76,15 @@ function main(){
   ));
  pass('domain and public Firebase configuration changes require explicit owner review');
 
- assert.equal(report.providerRegistrationStatus,'UNREGISTERED — OWNER REPORTED');
+ assert.equal(report.providerRegistrationStatus,'REGISTERED ENTERPRISE — OWNER SCREENSHOT');
  assert.equal(report.serviceEnforcementStatus,'NOT ENFORCED — OWNER REPORTED');
- assert.equal(report.originalBrowserAppCheckSetupPresent,false);
+ assert.equal(report.originalBrowserAppCheckSetupPresent,true);
  assert.equal(report.firebaseConsoleIndependentlyQueried,false);
  assert.equal(report.realProviderProofReceived,false);
  assert.equal(report.safeToEnforceAppCheck,false);
  assert.equal(report.studentReportAction,'COPY ONLY');
  assert.equal(report.liveReportSendingEnabled,false);
- pass('all live/provider/enforcement claims remain explicitly blocked and no simulated success is mislabeled real');
+ pass('registered provider is owner-observed; no actual signed positive token, enforcement or Send is claimed');
 
  console.log('V100-L FINISHED: '+groups.length+
   ' OFFLINE inventory/regression groups passed; no service setting changed.');
