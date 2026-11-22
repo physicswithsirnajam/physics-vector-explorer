@@ -130,7 +130,7 @@ async function main(){
   try{
    await deep.goto(base+'textbook-resource-finder.html?unit=3&kind=textbook-numerical');
    await deep.waitForFunction(()=>document.querySelectorAll('.item').length===8);
-   await deep.locator('a[href="./unit-03-numericals.html#XI-U03-N-3.6"]').click();
+   await deep.locator('a[href*="unit-03-numericals.html#XI-U03-N-3.6"]').click();
    await deep.waitForURL('**/unit-03-numericals.html#XI-U03-N-3.6');
    await deep.locator('[id="XI-U03-N-3.6"]').waitFor();
    await deep.waitForFunction(()=>{
