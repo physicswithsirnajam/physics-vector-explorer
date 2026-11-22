@@ -47,6 +47,10 @@ jobs:
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
+      - name: Install Poppler PDF text/page inspection tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
       - name: Verify watermark appears on EVERY real PDF page with browser print backgrounds OFF
         run: node scripts/test_grade11_sitewide_print_watermark_v102.cjs
       - name: Preserve V70 progress and MCQ report watermark coverage
