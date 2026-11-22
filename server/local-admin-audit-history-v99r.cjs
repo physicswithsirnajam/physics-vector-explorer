@@ -22,6 +22,7 @@ const {PROJECT,HOST:FS_HOST,REPORTS,requireLocalDemo}=
 const {AUDIT}=require('./local-admin-review-transitions-v99q.cjs');
 const {extractBearer}=require('./verified-report-boundary-v99g.cjs');
 const catalog=require('./pinned-approved-review-catalog-v99i.cjs');
+const {checkFreshLocalAdmin}=require('./local-admin-account-freshness-v99y.cjs');
 
 const AUTH_HOST='127.0.0.1:9099';
 const UID=/^[A-Za-z0-9_-]{1,128}$/;
@@ -138,6 +139,8 @@ function createLocalAdminAuditHistoryReader({
    if(claim.admin!==true||!allowed.has(claim.uid))
     deny('admin-access-required');
    if(!(await enabled()))deny('temporarily-unavailable');
+   const freshCode=await checkFreshLocalAdmin({adminAuth,verified:claim,allowedAdminUids:allowed});
+   if(freshCode)deny(freshCode);
 
    const reportRef=firestore.collection(REPORTS).doc(request.reportId);
    const firstRef=firestore.collection(AUDIT).doc(eventId(request.reportId,ACTIONS[0].to));
