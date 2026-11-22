@@ -1,0 +1,48 @@
+name: Grade XI Offline Firebase Admin App Check SDK Rejection (V99-L)
+on:
+  pull_request:
+    paths:
+      - "server/offline-admin-appcheck-v99l.cjs"
+      - "scripts/test_grade11_offline_admin_appcheck_v99l.cjs"
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "server/verified-report-boundary-v99g.cjs"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "shared/mcq-review-contract-v99a.js"
+      - ".github/workflows/validate-grade11-admin-appcheck-v99l.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/offline-admin-appcheck-v99l.cjs"
+      - "scripts/test_grade11_offline_admin_appcheck_v99l.cjs"
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "server/verified-report-boundary-v99g.cjs"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "shared/mcq-review-contract-v99a.js"
+      - ".github/workflows/validate-grade11-admin-appcheck-v99l.yml"
+  workflow_dispatch:
+jobs:
+  offline-admin-appcheck-denial-and-proof-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    env:
+      GCLOUD_PROJECT: demo-psn-v99f-firestore
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate offline App Check bridge and test scripts
+        run: |
+          node --check server/offline-admin-appcheck-v99l.cjs
+          node --check scripts/test_grade11_offline_admin_appcheck_v99l.cjs
+      - name: Install pinned Firebase Admin SDK only, no emulator or credentials
+        run: npm install --no-save --no-package-lock --ignore-scripts firebase-admin@14.3.0
+      - name: Test genuine SDK rejection of malformed App Check JWT and fail-closed synthetic proof contract
+        run: node scripts/test_grade11_offline_admin_appcheck_v99l.cjs
