@@ -1,8 +1,14 @@
-name: Validate Grade XI Vector Explorer Official Logo (V98-B)
+name: Grade XI Homepage & Preserved Vector Explorer Navigation (V99-X)
 on:
   pull_request:
     paths:
       - "index.html"
+      - "vector-explorer.html"
+      - "portal/simulation-catalog.json"
+      - "quality/hssc-v73-31-simulation-link-crosswalk.json"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "scripts/test_grade11_homepage_vector_navigation_v99x.cjs"
       - "portal/assets/physics-with-sir-najam-official-logo.png"
       - "scripts/test_grade11_vector_explorer_brand_v98b.cjs"
       - ".github/workflows/validate-grade11-vector-brand-v98b.yml"
@@ -10,6 +16,12 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "vector-explorer.html"
+      - "portal/simulation-catalog.json"
+      - "quality/hssc-v73-31-simulation-link-crosswalk.json"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "scripts/test_grade11_homepage_vector_navigation_v99x.cjs"
       - "portal/assets/physics-with-sir-najam-official-logo.png"
       - "scripts/test_grade11_vector_explorer_brand_v98b.cjs"
       - ".github/workflows/validate-grade11-vector-brand-v98b.yml"
@@ -26,18 +38,24 @@ jobs:
         with:
           node-version: '22'
       - name: Validate audit/test syntax
-        run: node --check scripts/test_grade11_vector_explorer_brand_v98b.cjs
+        run: |
+          node --check scripts/test_grade11_vector_explorer_brand_v98b.cjs
+          node --check scripts/test_grade11_homepage_vector_navigation_v99x.cjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
-      - name: Preserve original Vector Explorer physics and verify exact branded image on root and project GitHub Pages
+      - name: Preserve original Vector Explorer physics at new dedicated URL and verify branded navigation
         run: node scripts/test_grade11_vector_explorer_brand_v98b.cjs
+      - name: Verify root-to-portal redirect, 31 simulation links and responsive return navigation
+        run: node scripts/test_grade11_homepage_vector_navigation_v99x.cjs
       - name: Archive desktop and mobile screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: grade11-vector-brand-v98b-screenshots
-          path: qa-artifacts/vector-brand-v98b/*.png
+          path: |
+            qa-artifacts/vector-brand-v98b/*.png
+            qa-artifacts/homepage-vector-v99x/*.png
           if-no-files-found: warn
           retention-days: 7

@@ -15,13 +15,19 @@ const newMark='<div class="brandmark"><img src="portal/assets/physics-with-sir-n
 const originalStyle='.brand strong{display:block;font-size:19px;letter-spacing:-.4px}';
 const newStyle='.brandmark img{display:block;width:100%;height:100%;object-fit:contain}.brand strong{display:block;font-size:19px;letter-spacing:-.4px}';
 const logo='portal/assets/physics-with-sir-najam-official-logo.png';
+const addedCss='<link rel="stylesheet" href="shared/navigation.css?v=69">\n';
+const addedStyle='.topactions a.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}\n';
+const addedLink='<a class="btn" href="portal/" aria-label="Return to the Physics learning portal">← Learning Portal</a>';
+const addedJs='<script src="shared/navigation.js?v=69" defer></script>\n';
 const fnv=s=>{let h=2166136261>>>0;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;return h;};
 function staticChecks(){
- const current=read('index.html');
+ const current=read('vector-explorer.html');
+ for(const added of [addedCss,addedStyle,addedLink,addedJs])assert.equal(current.split(added).length,2,'exactly one navigation integration: '+added.slice(0,70));
  assert.equal(current.split(newMark).length,2,'exactly one original official image must replace the brandmark');
  assert.equal(current.split(newStyle).length,2,'one scoped image CSS rule');
  assert.ok(!current.includes(originalMark),'decorative star must be removed');
- assert.equal(fnv(current.replace(newMark,originalMark).replace(newStyle,originalStyle)),171963615,
+ assert.equal(fnv(current.replace(newMark,originalMark).replace(newStyle,originalStyle)
+   .replace(addedCss,'').replace(addedStyle,'').replace(addedLink,'').replace(addedJs,'')),171963615,
    'entire original vector science HTML must remain unchanged except logo/brandmark CSS');
  assert.equal((current.match(/<img\b/g)||[]).length,1,'no duplicate logos');
  assert.ok(fs.statSync(path.join(root,logo)).size>1000,'exact official existing logo asset');
@@ -58,7 +64,7 @@ async function browserChecks(){
    const page=await browser.newPage({viewport:{width:1280,height:850},reducedMotion:'reduce'});
    const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
-   const resp=await page.goto(origin+prefix+'/index.html',{waitUntil:'domcontentloaded'});
+   const resp=await page.goto(origin+prefix+'/vector-explorer.html',{waitUntil:'domcontentloaded'});
    assert.equal(resp.status(),200,name+' loads');
    const image=page.locator('header.top .brand .brandmark img');
    assert.equal(await image.count(),1,'exactly one official header image '+name);
@@ -69,6 +75,14 @@ async function browserChecks(){
    assert.equal(await page.locator('header.top .brand strong').innerText(),'Physics with Sir Najam');
    assert.equal(await page.locator('#tab-components').getAttribute('aria-selected'),'true');
    assert.equal(await page.locator('#graph').count(),1,'original vector graph exists');
+   const nav=page.locator('#psn-global-nav');
+   await nav.waitFor({state:'visible'});
+   assert.equal(await nav.count(),1,'exactly one shared global navigation bar '+name);
+   const portalLink=page.getByRole('link',{name:'Return to the Physics learning portal'});
+   assert.equal(await portalLink.count(),1,'explicit learning-portal return action');
+   assert.equal(await portalLink.getAttribute('href'),'portal/');
+   assert.equal(new URL(await portalLink.getAttribute('href'),page.url()).pathname,
+    prefix+'/portal/','portal return link works under '+name+' prefix');
    assert.equal(await page.locator('#reset').isEnabled(),true);
    assert.equal(await page.locator('#print').isEnabled(),true);
    assert.equal(await page.locator('#projector').isEnabled(),true);
@@ -96,7 +110,7 @@ async function browserChecks(){
    assert.deepEqual(errors,[],'no original vector/runtime errors '+name);
    await page.close();
   }
-  console.log('V98-B Chromium PASS: canonical logo resolves at custom root and GitHub project prefix; original controls, tabs, reset, responsive canvas and mobile header work.');
+  console.log('V98-B/V99-X Chromium PASS: relocated Vector Explorer keeps original physics and logo at both local and GitHub-project prefixes; shared navigation, direct portal return, reset, tabs and mobile still work.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 (async()=>{staticChecks();await browserChecks();})().catch(e=>{console.error('V98-B FAILED',e);server.close();process.exitCode=1;});

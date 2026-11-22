@@ -17,7 +17,7 @@ const pages=[
  {path:'portal/unit-03.html',label:'Unit 3 desk'},
  {path:'portal/unit-06-learning-desk-v95a.html',label:'Unit 6 public preview'},
  {path:'student-guide.html',label:'Student start guide'},
- {path:'index.html',label:'Original vector explorer'}
+ {path:'vector-explorer.html',label:'Original Vector Explorer (preserved simulation)'}
 ];
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8',
  '.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8',
