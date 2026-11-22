@@ -64,7 +64,10 @@
     try{id=decodeURIComponent(window.location.hash.slice(1))}catch{return}
     if(!id || !/^XI-U03-N-3\.[1-8]$/.test(id))return;
     const target=document.getElementById(id);
-    if(target)requestAnimationFrame(()=>target.scrollIntoView({block:"start"}));
+    if(target){
+      target.style.scrollMarginTop="5rem"; // retain heading below sticky global navigation
+      requestAnimationFrame(()=>target.scrollIntoView({block:"start"}));
+    }
   }
   window.addEventListener("hashchange",revealReferencedExercise);
   function allDetails(){return [...document.querySelectorAll(".problem details")]}
