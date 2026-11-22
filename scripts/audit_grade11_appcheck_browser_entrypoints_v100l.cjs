@@ -82,8 +82,9 @@ function inspect(snapshot){
   'V100-L new/removed Firebase initializer requires separate entrypoint and App Check review');
  const config=snapshot.checkedFiles['portal/firebase-config.js'];
  assert.ok(config.includes('projectId: "physics-with-sir-najam-portal"')&&
-  config.includes('appId: "1:158078442603:web:b4738a9875a1d5b1c8a52e"'),
-  'Existing public web-app identity changed');
+  config.includes('appId: "1:158078442603:web:b4738a9875a1d5b1c8a52e"')&&
+  config.includes('authDomain: "physics-with-sir-najam-portal.firebaseapp.com"'),
+  'Existing public Firebase project, Web App ID or Auth domain changed');
  const findings=[];
  for(const e of ENTRIES){
   assert.ok(tracked.has(e.page)&&tracked.has(e.module),'missing existing page/module '+e.module);
