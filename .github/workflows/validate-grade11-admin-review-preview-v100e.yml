@@ -1,0 +1,49 @@
+name: Grade XI Synthetic Administrator Review UX Preview (V100-E)
+on:
+  pull_request:
+    paths:
+      - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
+      - "scripts/build_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - ".github/workflows/validate-grade11-admin-review-preview-v100e.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
+      - "scripts/build_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "portal/assets/physics-with-sir-najam-official-logo.png"
+      - ".github/workflows/validate-grade11-admin-review-preview-v100e.yml"
+  workflow_dispatch:
+jobs:
+  offline-admin-demo-ux-desktop-mobile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check only local preview builder and UI tests
+        run: |
+          node --check scripts/build_grade11_admin_review_preview_v100e.cjs
+          node --check scripts/test_grade11_admin_review_preview_v100e.cjs
+      - name: Install pinned headless Chromium without Firebase SDKs
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Build standalone preview from only fictional issue reports and existing master logo
+        run: node scripts/build_grade11_admin_review_preview_v100e.cjs
+      - name: Test desktop/mobile, filters, review stages, no persistence, text safety and no API
+        run: node scripts/test_grade11_admin_review_preview_v100e.cjs
+      - name: Upload offline HTML preview, screenshots and synthetic-only result summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-admin-review-ux-preview-v100e
+          path: qa-artifacts/admin-review-preview-v100e/
+          if-no-files-found: warn
+          retention-days: 14
