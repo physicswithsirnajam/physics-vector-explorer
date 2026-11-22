@@ -82,18 +82,32 @@ async function audit(){
   assert.equal(await page.locator('#report-list .item').count(),1);
   await page.locator('[data-filter="resolved"]').click();
   assert.equal(await page.locator('#report-list .item').count(),1);
+  assert.equal(await page.locator('#report-list .item[aria-current="true"]').count(),1);
+  assert.ok((await page.locator('#details').innerText()).includes(fixtures[3].questionId),
+   'detail must follow visible resolved report, not a hidden selection');
   await page.locator('[data-filter="all"]').click();
   await page.locator('#report-search').fill(fixtures[1].questionId);
   assert.equal(await page.locator('#report-list .item').count(),1);
+  assert.ok((await page.locator('#details').innerText()).includes(fixtures[1].questionId),
+   'search result must select its matching detail');
   await page.locator('#report-search').fill('unfindable-fake-question');
   assert.equal(await page.locator('#report-list .empty').count(),1);
+  assert.equal(await page.locator('#details .empty-detail').count(),1);
+  assert.equal(await page.locator('#details .issue').count(),0,
+   'empty results must not display an unrelated/hidden report');
+  assert.equal(await page.locator('#report-search').evaluate(e=>document.activeElement===e),true,
+   'search focus must be preserved during filtering');
   await page.locator('#report-search').fill('');
-  checks.push('accessible filters and search narrow fictional report queue without network');
+  assert.equal(await page.locator('#report-list .item[aria-current="true"]').count(),1);
+  assert.equal(await page.locator('#details .empty-detail').count(),0);
+  checks.push('filters/search synchronize selected detail, empty result and search focus');
   log(checks[checks.length-1]);
 
   const first=page.locator('[data-report-id="'+fixtures[0].reportId+'"]');
   await first.click();
   assert.equal(await first.getAttribute('aria-current'),'true');
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.reportId),fixtures[0].reportId,
+   'focus must survive selection re-render');
   assert.match(await page.locator('#details .issue').innerText(),/Synthetic issue:/);
   const start=page.locator('[data-demo-action="start-review"]');
   assert.equal(await start.count(),1);
@@ -102,12 +116,28 @@ async function audit(){
   assert.equal(await page.locator('#metric-in-review').innerText(),'2');
   assert.equal(await page.locator('#details .timeline li').count(),2);
   assert.equal(await page.locator('[data-demo-action="resolve"]').count(),1);
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve',
+   'focus must move to the next action after starting review');
   await page.locator('[data-demo-action="resolve"]').click();
   assert.equal(await page.locator('#metric-resolved').innerText(),'2');
   assert.equal(await page.locator('#details .timeline li').count(),3);
   assert.equal(await page.locator('#details .pill-resolved').count(),2);
   assert.equal(await page.locator('[data-demo-action]').count(),0);
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'reset-demo',
+   'focus must land on reset when review is complete');
   checks.push('in-memory new → in-review → resolved updates counters and 0/1/2 audit events');
+  log(checks[checks.length-1]);
+
+  // Native keyboard activation must survive list and action button replacement.
+  await page.locator('[data-report-id="'+fixtures[1].reportId+'"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.reportId),
+   fixtures[1].reportId);
+  await page.locator('[data-demo-action="start-review"]').focus();
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve');
+  assert.ok((await page.locator('#details').innerText()).includes(fixtures[1].questionId));
+  checks.push('keyboard Enter selects a report and advances its demo review without losing focus');
   log(checks[checks.length-1]);
 
   // In-memory demo changes must not persist across navigation/reload.
@@ -117,6 +147,17 @@ async function audit(){
   assert.equal(await page.locator('#details .timeline li').count(),1);
   checks.push('reload restores initial fiction; no persistent report state or stored account data');
   log(checks[checks.length-1]);
+
+  await page.locator('[data-filter="new"]').click();
+  await page.locator('[data-report-id="'+fixtures[0].reportId+'"]').click();
+  await page.locator('[data-demo-action="start-review"]').click();
+  assert.equal(await page.locator('#report-list .item').count(),1);
+  assert.ok((await page.locator('#details').innerText()).includes(fixtures[1].questionId));
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.reportId),fixtures[1].reportId,
+   'focus must move to a visible list item if stage action hides the prior selection');
+  checks.push('stage transition inside a filter never leaves stale detail or focuses another report action');
+  log(checks[checks.length-1]);
+  await page.reload({waitUntil:'load'});
 
   for(const width of [1320,390,320]){
    await page.setViewportSize({width,height:width===1320?900:850});
