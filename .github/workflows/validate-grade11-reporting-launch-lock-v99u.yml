@@ -51,7 +51,7 @@ jobs:
           node --check scripts/test_grade11_reporting_launch_lock_v99u.cjs
       - name: Exercise regression injection against report and App Check boundaries
         run: node scripts/test_grade11_reporting_launch_lock_v99u.cjs
-      - name: Audit real checkout: copy-only student UI and explicit demo/OFF gates
+      - name: "Audit real checkout: copy-only student UI and explicit demo/OFF gates"
         run: node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
       - name: Upload counts-only launch-blocker summary, no account or secrets
         if: always()
