@@ -68,8 +68,12 @@ function main(){
  assert.ok(imageTags(builder).some(x=>x.includes(legacy)),'Test Builder logo path changed; re-audit it');
  assert.ok(fs.readFileSync(path.join(root,canonical)).equals(fs.readFileSync(path.join(root,legacy))),'Builder logo is no longer exactly identical to canonical logo');
  const rootLanding=read('index.html');
- const rootGap=!hasOfficialLogo(rootLanding);
- if(rootGap)console.warn('KNOWN V98-A GAP: root index.html vector explorer has a decorative star, not the exact official logo. Separate, small remediation PR recommended.');
- console.log(JSON.stringify({scope:'static-source branding inventory',portalPages:htmls.length,groups,portalLogoPages:htmls.length,portalBannerPages:bannerCount,standaloneSimulationPages:count,standaloneBrandIntegrations:'30/30',rootStudentGuide:'canonical official logo',rootTestBuilder:'alternative path; byte-for-byte equal to canonical logo',rootVectorLanding:rootGap?'known official-logo gap':'official logo present',note:'This is static source QA, not a pixel-level visual/permissions/security audit.'},null,2));
+ const relocatedVector=read('vector-explorer.html');
+ assert.ok(hasOfficialLogo(rootLanding),'Root portal redirect must use canonical official logo');
+ assert.ok(rootLanding.includes('url=./portal/'),'Public root must lead to the student portal');
+ assert.ok(hasOfficialLogo(relocatedVector),'Relocated Vector Explorer must retain canonical official logo');
+ assert.ok(relocatedVector.includes('shared/navigation.js?v=69'),
+  'Relocated vector original must provide normal site navigation');
+ console.log(JSON.stringify({scope:'static-source branding inventory',portalPages:htmls.length,groups,portalLogoPages:htmls.length,portalBannerPages:bannerCount,standaloneSimulationPages:count,standaloneBrandIntegrations:'30/30',rootStudentGuide:'canonical official logo',rootTestBuilder:'alternative path; byte-for-byte equal to canonical logo',rootLanding:'canonical logo and learning-portal redirect',relocatedVectorExplorer:'canonical logo, original science, and shared portal navigation',note:'This is static source QA, not a pixel-level visual/permissions/security audit.'},null,2));
 }
 try{main();}catch(err){console.error('V98-A BRAND AUDIT FAILED:',err);process.exitCode=1;}
