@@ -15,6 +15,29 @@
     if(text!==undefined)node.textContent=text;
     return node;
   };
+  /* V102: Extend the established V70 browser print watermark to the public
+   * study/numerical/question pages that already use this global navigation.
+   * The brand remains the owner-approved repeated diagonal text; third-party
+   * linked PDFs and machine-readable data are deliberately untouched.
+   * No Firebase, question bank, report-submission or answer-data interaction. */
+  function attachPrintWatermark(){
+    // V70 already brands MCQ practice/Progress reports. Never double-stamp.
+    if(document.querySelector('.psn-print-watermark'))return;
+    if(!document.querySelector('link[href*="print-watermark-v70.css"]')){
+      const sheet=document.createElement('link');
+      sheet.rel='stylesheet';
+      sheet.href=new URL('shared/print-watermark-v70.css?v=102',root).href;
+      sheet.dataset.psnPrintWatermark='v102';
+      document.head.appendChild(sheet);
+    }
+    const mark=e('div','psn-print-watermark');
+    mark.setAttribute('aria-hidden','true');
+    mark.style.display='none'; // avoid a brief on-screen flash before CSS loads
+    for(let i=0;i<8;i++)mark.append(e('span',null,'Physics with Sir Najam'));
+    document.body.appendChild(mark);
+  }
+  attachPrintWatermark();
+
   const safeHref=(raw,base)=>{
     if(typeof raw!=='string'||!raw.trim())return null;
     try{
