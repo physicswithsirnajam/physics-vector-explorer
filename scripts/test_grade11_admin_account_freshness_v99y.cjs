@@ -153,7 +153,8 @@ async function main(){
    [wrongAuth,'temporarily-unavailable'],
    [missingMethod,'temporarily-unavailable']
   ]){
-   const readerFake=createLocalAdminReviewReader({...opts,adminAuth:fake});
+   const readerFake=createLocalAdminReviewReader({...opts,adminAuth:fake,
+    isReviewReaderEnabled:()=>true});
    const triageFake=createLocalAdminReviewTransitions({
     ...opts,adminAuth:fake,isTriageEnabled:()=>true,
     now:()=>Date.parse('2026-11-22T18:06:00.000Z')
