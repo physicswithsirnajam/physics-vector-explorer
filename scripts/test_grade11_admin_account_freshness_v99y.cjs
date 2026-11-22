@@ -72,7 +72,7 @@ async function main(){
   assert.ok(source?.publicPractice);
   await db.collection(REPORTS).doc(ID).set(report(source));
   const opts={firestore:db,adminAuth:auth,allowedAdminUids:[record.uid]};
-  const reader=createLocalAdminReviewReader(opts);
+  const reader=createLocalAdminReviewReader({...opts,isReviewReaderEnabled:()=>true});
   const triage=createLocalAdminReviewTransitions({
    ...opts,isTriageEnabled:()=>true,now:()=>Date.parse('2026-11-22T18:05:00.000Z')
   });
@@ -153,7 +153,8 @@ async function main(){
    [wrongAuth,'temporarily-unavailable'],
    [missingMethod,'temporarily-unavailable']
   ]){
-   const readerFake=createLocalAdminReviewReader({...opts,adminAuth:fake});
+   const readerFake=createLocalAdminReviewReader({...opts,adminAuth:fake,
+    isReviewReaderEnabled:()=>true});
    const triageFake=createLocalAdminReviewTransitions({
     ...opts,adminAuth:fake,isTriageEnabled:()=>true,
     now:()=>Date.parse('2026-11-22T18:06:00.000Z')
