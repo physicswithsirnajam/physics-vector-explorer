@@ -1,0 +1,44 @@
+name: Grade XI Owner-Only Genuine App Check Verifier Preflight (V99-V)
+on:
+  pull_request:
+    paths:
+      - "scripts/probe_grade11_real_appcheck_token_v99v.cjs"
+      - "scripts/test_grade11_real_appcheck_owner_proof_v99v.cjs"
+      - "quality/grade11-v99v-genuine-appcheck-owner-only-proof.md"
+      - ".github/workflows/validate-grade11-real-appcheck-owner-proof-v99v.yml"
+      - "server/offline-admin-appcheck-v99l.cjs"
+      - "portal/firebase-config.js"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/probe_grade11_real_appcheck_token_v99v.cjs"
+      - "scripts/test_grade11_real_appcheck_owner_proof_v99v.cjs"
+      - "quality/grade11-v99v-genuine-appcheck-owner-only-proof.md"
+      - ".github/workflows/validate-grade11-real-appcheck-owner-proof-v99v.yml"
+      - "server/offline-admin-appcheck-v99l.cjs"
+      - "portal/firebase-config.js"
+  workflow_dispatch:
+jobs:
+  real-sdk-negative-check-and-owner-probe-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      GCLOUD_PROJECT: demo-psn-v99f-firestore
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check genuine App Check owner-only verifier and synthetic tests
+        run: |
+          node --check scripts/probe_grade11_real_appcheck_token_v99v.cjs
+          node --check scripts/test_grade11_real_appcheck_owner_proof_v99v.cjs
+      - name: Install pinned Firebase Admin SDK locally with no service credentials
+        run: npm install --no-save --no-package-lock --ignore-scripts firebase-admin@14.3.0
+      - name: Verify owner guard and actual Admin SDK malformed-token rejection only
+        run: node scripts/test_grade11_real_appcheck_owner_proof_v99v.cjs
+      - name: Ensure genuine verification remains OFF by default
+        run: node scripts/probe_grade11_real_appcheck_token_v99v.cjs
