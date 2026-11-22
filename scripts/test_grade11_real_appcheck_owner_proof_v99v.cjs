@@ -50,7 +50,7 @@ async function main(){
  for(const invalid of [
   '',null,'not-a-token','a.b.c',
   goodFakeJwt()+'!','a'.repeat(8193),
-  'eyJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIifQ.'+'X'.repeat(8100)
+  'eyJhbGciOiJSUzI1NiJ9.eyJmb28iOiJiYXIifQ.'+'X'.repeat(8200)
  ])assert.equal(proof.inputFormat(invalid),false);
  pass('requires exactly three URL-safe JWT segments and an 8192-byte input cap');
 
