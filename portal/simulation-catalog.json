@@ -5,7 +5,7 @@
   "disclaimer": "All links are public GitHub Pages demonstrations, not authenticated lessons. Topic tags are browsing categories, not verified NBF/FBISE unit or SLO mapping. Explore classroom applicability with teacher guidance.",
   "simulations": [
     {
-      "file": "index.html",
+      "file": "vector-explorer.html",
       "title": "Vector Explorer",
       "topic": "Vectors",
       "access": "public",
