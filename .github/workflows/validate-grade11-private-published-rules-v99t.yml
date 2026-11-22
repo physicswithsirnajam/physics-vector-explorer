@@ -1,0 +1,47 @@
+name: Grade XI Private Published Rules Snapshot Gate (V99-T)
+on:
+  pull_request:
+    paths:
+      - "scripts/compare_grade11_published_rules_snapshot_v99t.cjs"
+      - "scripts/test_grade11_published_rules_snapshot_v99t.cjs"
+      - ".github/workflows/validate-grade11-private-published-rules-v99t.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/compare_grade11_published_rules_snapshot_v99t.cjs"
+      - "scripts/test_grade11_published_rules_snapshot_v99t.cjs"
+      - ".github/workflows/validate-grade11-private-published-rules-v99t.yml"
+  workflow_dispatch:
+jobs:
+  exact-owner-console-snapshot-fingerprint:
+    if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check non-network rules comparison and tests
+        run: |
+          node --check scripts/compare_grade11_published_rules_snapshot_v99t.cjs
+          node --check scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Unit test exact snapshot equality and private-content redaction
+        run: node scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Compare TWO private rules snapshots — no Firebase API, no print, no deployment
+        env:
+          PSN_FIRESTORE_BASELINE_RULES: ${{ secrets.PSN_FIRESTORE_BASELINE_RULES }}
+          PSN_FIRESTORE_PUBLISHED_RULES_SNAPSHOT: ${{ secrets.PSN_FIRESTORE_PUBLISHED_RULES_SNAPSHOT }}
+        run: node scripts/compare_grade11_published_rules_snapshot_v99t.cjs
+      - name: Upload comparison flags only — never rules text, access tokens or student data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-private-rules-published-snapshot-v99t
+          path: qa-artifacts/published-rules-snapshot-v99t/summary.json
+          if-no-files-found: ignore
+          retention-days: 14
