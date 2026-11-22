@@ -15,6 +15,7 @@ const {PROJECT,HOST:FS_HOST,REPORTS,requireLocalDemo}=
  require('./firebase-review-emulator-v99f.cjs');
 const {extractBearer}=require('./verified-report-boundary-v99g.cjs');
 const catalog=require('./pinned-approved-review-catalog-v99i.cjs');
+const {checkFreshLocalAdmin}=require('./local-admin-account-freshness-v99y.cjs');
 
 const AUTH_HOST='127.0.0.1:9099';
 const MAX_PAGE=25,DEFAULT_PAGE=10;
@@ -103,6 +104,8 @@ function createLocalAdminReviewReader({
    if(verified.email_verified!==true)reject('verified-email-required');
    if(verified.admin!==true||!allowed.has(verified.uid))
     reject('admin-access-required');
+   const freshCode=await checkFreshLocalAdmin({adminAuth,verified,allowedAdminUids:allowed});
+   if(freshCode)reject(freshCode);
    // Always read the specific server-controlled collection, no arbitrary
    // field filters, owner searches, cursors or unbounded collection dumps.
    const snapshot=await firestore.collection(REPORTS)
