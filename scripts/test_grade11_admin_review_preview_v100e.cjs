@@ -134,7 +134,31 @@ async function audit(){
   assert.equal(await page.locator('[data-demo-action="resolve"]').count(),1);
   assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve',
    'focus must move to the next action after starting review');
+  const dialog=page.locator('#resolve-dialog');
+  assert.equal(await dialog.getAttribute('aria-labelledby'),'resolve-title');
+  assert.equal(await dialog.getAttribute('aria-describedby'),'resolve-description');
+  assert.equal(await dialog.evaluate(el=>el.open),false);
   await page.locator('[data-demo-action="resolve"]').click();
+  assert.equal(await dialog.evaluate(el=>el.open),true);
+  assert.equal(await page.locator('#resolve-ref').innerText(),fixtures[0].questionId);
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'cancel-resolution');
+  assert.equal(await page.locator('#metric-resolved').innerText(),'1',
+   'opening confirmation cannot change a fictional status');
+  assert.equal(await page.locator('#details .timeline li').count(),2,
+   'opening confirmation cannot append an audit event');
+  await page.locator('#cancel-resolution').click();
+  assert.equal(await dialog.evaluate(el=>el.open),false);
+  assert.equal(await page.locator('#metric-resolved').innerText(),'1');
+  assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve',
+   'cancel returns focus to the original review action');
+  await page.locator('[data-demo-action="resolve"]').click();
+  await page.keyboard.press('Escape');
+  assert.equal(await dialog.evaluate(el=>el.open),false);
+  assert.equal(await page.locator('#metric-resolved').innerText(),'1');
+  assert.equal(await page.locator('#details .timeline li').count(),2);
+  await page.locator('[data-demo-action="resolve"]').click();
+  await page.locator('#confirm-resolution').click();
+  assert.equal(await dialog.evaluate(el=>el.open),false);
   assert.equal(await page.locator('#metric-resolved').innerText(),'2');
   assert.match(await page.locator('#demo-feedback').innerText(),/changed to Resolved/);
   assert.equal(await page.locator('#details .timeline li').count(),3);
@@ -142,7 +166,7 @@ async function audit(){
   assert.equal(await page.locator('[data-demo-action]').count(),0);
   assert.equal(await page.evaluate(()=>document.activeElement?.id),'reset-demo',
    'focus must land on reset when review is complete');
-  checks.push('in-memory new → in-review → resolved updates counters and 0/1/2 audit events');
+  checks.push('cancelable native confirmation prevents accidental resolution; confirmed review keeps ordered 0/1/2 audit events');
   log(checks[checks.length-1]);
 
   // Native keyboard activation must survive list and action button replacement.
@@ -154,7 +178,17 @@ async function audit(){
   await page.keyboard.press('Enter');
   assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve');
   assert.ok((await page.locator('#details').innerText()).includes(fixtures[1].questionId));
-  checks.push('keyboard Enter selects a report and advances its demo review without losing focus');
+  await page.keyboard.press('Enter');
+  assert.equal(await dialog.evaluate(el=>el.open),true,
+   'keyboard activation must open a native modal before resolving');
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'cancel-resolution');
+  await page.keyboard.press('Tab');
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'confirm-resolution');
+  await page.keyboard.press('Enter');
+  assert.equal(await dialog.evaluate(el=>el.open),false);
+  assert.equal(await page.locator('#metric-resolved').innerText(),'3');
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'reset-demo');
+  checks.push('keyboard Enter selects, opens modal, tabs to confirmation, and resolves without losing focus');
   log(checks[checks.length-1]);
 
   // In-memory demo changes must not persist across navigation/reload.
@@ -198,6 +232,19 @@ async function audit(){
   }
   checks.push('legible desktop, 390px mobile and 320px narrow screen without horizontal overflow');
   log(checks[checks.length-1]);
+
+  await page.setViewportSize({width:390,height:850});
+  await page.locator('[data-report-id="'+fixtures[2].reportId+'"]').click();
+  await page.locator('[data-demo-action="resolve"]').click();
+  assert.equal(await dialog.evaluate(el=>el.open),true);
+  const modalWidth=await dialog.evaluate(el=>el.getBoundingClientRect().width);
+  assert.ok(modalWidth<=390-20,'mobile confirmation dialog must fit within the viewport');
+  await page.screenshot({path:path.join(dir,'resolution-confirm-mobile.png'),fullPage:true});
+  await page.locator('#cancel-resolution').click();
+  assert.equal(await page.locator('#metric-resolved').innerText(),'1');
+  checks.push('390px mobile modal fits screen and cancel leaves review history unchanged');
+  log(checks[checks.length-1]);
+  await page.reload({waitUntil:'load'});
 
   // Verify untrusted issue content is never parsed as executable markup.
   // No remote image requests, inline event handler or HTML tags in fixture.

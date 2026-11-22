@@ -36,6 +36,12 @@
  .clear-view{background:#fff;border:1px solid #ced6e3;color:var(--navy);border-radius:7px;padding:7px 10px;font-size:11px;font-weight:800}
  .feedback{border:1px solid #cbd8e6;border-left:3px solid var(--gold);background:#fff;color:#243e5a;padding:11px 15px;margin:0 0 19px;border-radius:7px;font-size:12px;line-height:1.6}
  .feedback:empty{display:none}
+ .confirm-modal{box-sizing:border-box;border:1px solid #c7d1e0;border-radius:14px;padding:23px;width:min(460px,calc(100vw - 28px));max-width:calc(100vw - 28px);color:var(--ink);background:white;box-shadow:0 18px 60px #101e3740}
+ .confirm-modal::backdrop{background:#101e37b8}
+ .confirm-modal h2{font:700 23px Georgia,serif;margin:0 0 12px}
+ .confirm-modal p{font-size:13px;line-height:1.7;color:#53647a}
+ .confirm-modal strong{overflow-wrap:anywhere}
+ .confirm-modal .actions{justify-content:flex-end;margin-top:21px}
  #report-list{list-style:none;padding:7px;margin:0;max-height:600px;overflow:auto}
  .item{width:100%;border:1px solid transparent;border-radius:10px;background:#fff;text-align:left;padding:14px 13px;display:block;color:var(--ink)}
  .item:hover,.item[aria-current=true]{border-color:#d8ba7b;background:#fffaf0}
@@ -122,6 +128,14 @@
   </main>
  </div>
 </div>
+<dialog id="resolve-dialog" class="confirm-modal" aria-labelledby="resolve-title" aria-describedby="resolve-description">
+ <h2 id="resolve-title">Resolve this fictional report?</h2>
+ <p id="resolve-description">Confirm that the simulated review for <strong id="resolve-ref"></strong> should be marked Resolved. This only changes the offline demonstration, not a real MCQ or student report. You can cancel without changing its status.</p>
+ <div class="actions">
+  <button type="button" id="cancel-resolution" class="secondary">Cancel</button>
+  <button type="button" id="confirm-resolution" class="primary">Confirm resolved (demo)</button>
+ </div>
+</dialog>
 <script id="demo-data" type="application/json">__FIXTURES_JSON__</script>
 <script>
 'use strict';
@@ -138,7 +152,11 @@
  const feedback=document.getElementById('demo-feedback');
  const viewCount=document.getElementById('view-count');
  const clearView=document.getElementById('clear-view');
- let selected=reports[0].reportId,activeFilter='all',clicks=0;
+ const resolveDialog=document.getElementById('resolve-dialog');
+ const resolveRef=document.getElementById('resolve-ref');
+ const cancelResolution=document.getElementById('cancel-resolution');
+ const confirmResolution=document.getElementById('confirm-resolution');
+ let selected=reports[0].reportId,activeFilter='all',clicks=0,pendingResolveId=null;
  function el(tag,css,value){
   const e=document.createElement(tag);
   if(css)e.className=css;
@@ -190,6 +208,28 @@
   const c=add(grid,'div','');
   add(c,'span','',name);add(c,'strong','',value);
  }
+ function commitTransition(r,action){
+  const from=action==='start-review'?'new':'in-review';
+  const to=action==='start-review'?'in-review':'resolved';
+  if(r.status!==from)return;
+  r.events.push({action,fromStatus:from,toStatus:to,
+   reviewedAtIso:new Date(Date.parse('2026-11-22T18:00:00.000Z')+clicks++*60000).toISOString()});
+  r.status=to;
+  const hidden=activeFilter!=='all'&&activeFilter!==to;
+  feedback.textContent='Synthetic demo: '+r.questionId+' changed to '+states[to]+
+   '. No real MCQ report was updated.'+
+   (hidden?' This report is outside the current '+states[activeFilter]+' filter.':'');
+  render();
+  if(selected===r.reportId){
+   const next=details.querySelector('[data-demo-action]')||
+    details.querySelector('#reset-demo');
+   if(next)next.focus();
+  }else{
+   const next=list.querySelector('button.item')||
+    document.querySelector('[data-filter][aria-pressed="true"]');
+   if(next)next.focus();
+  }
+ }
  function renderDetail(){
   details.replaceChildren();
   if(selected===null){
@@ -226,26 +266,12 @@
     next==='start-review'?'Start review (demo)':'Mark resolved (demo)');
    btn.type='button';btn.dataset.demoAction=next;
    btn.addEventListener('click',function(){
-    const before=r.status,to=next==='start-review'?'in-review':'resolved';
-    r.events.push({action:next,fromStatus:before,toStatus:to,
-     reviewedAtIso:new Date(Date.parse('2026-11-22T18:00:00.000Z')+clicks++*60000).toISOString()});
-    r.status=to;
-    const hidden=activeFilter!=='all'&&activeFilter!==to;
-    feedback.textContent='Synthetic demo: '+r.questionId+' changed to '+states[to]+
-     '. No real MCQ report was updated.'+
-     (hidden?' This report is outside the current '+states[activeFilter]+' filter.':'');
-    render();
-    // The old action button was removed by render(); keep keyboard focus useful.
-    if(selected===r.reportId){
-     const next=details.querySelector('[data-demo-action]')||
-      details.querySelector('#reset-demo');
-     if(next)next.focus();
-    }else{
-     // A stage-filtered report left the list; never focus another report's action.
-     const next=list.querySelector('button.item')||
-      document.querySelector('[data-filter][aria-pressed="true"]');
-     if(next)next.focus();
-    }
+    if(next==='resolve'){
+     pendingResolveId=r.reportId;
+     resolveRef.textContent=r.questionId;
+     resolveDialog.showModal();
+     cancelResolution.focus();
+    }else commitTransition(r,'start-review');
    });
   }else add(buttons,'span','pill pill-resolved','Review complete in this preview');
   const reset=add(buttons,'button','secondary','Reset demonstration');
@@ -275,6 +301,21 @@
  search.addEventListener('input',function(){
   feedback.textContent='';
   render();
+ });
+ cancelResolution.addEventListener('click',function(){
+  pendingResolveId=null;
+  resolveDialog.close();
+  const resolveButton=details.querySelector('[data-demo-action="resolve"]');
+  if(resolveButton)resolveButton.focus();
+ });
+ resolveDialog.addEventListener('cancel',function(){pendingResolveId=null;});
+ confirmResolution.addEventListener('click',function(){
+  const target=reports.find(function(r){return r.reportId===pendingResolveId;});
+  pendingResolveId=null;
+  resolveDialog.close();
+  if(target&&target.status==='in-review'&&selected===target.reportId){
+   commitTransition(target,'resolve');
+  }
  });
  clearView.addEventListener('click',function(){
   search.value='';activeFilter='all';
