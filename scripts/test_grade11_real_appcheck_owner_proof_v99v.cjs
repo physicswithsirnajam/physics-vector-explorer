@@ -33,7 +33,9 @@ async function main(){
  assert.equal(proof.safeEnvironment({},['--help'],false),'disabled');
  assert.equal(proof.safeEnvironment({},argv(),false),'owner-approval-required');
  assert.equal(proof.safeEnvironment(env(),argv(),false),null);
- pass('genuine verification OFF by default and requires exact owner mode and acknowledgement');
+ assert.equal(proof.safeEnvironment(env({CI:'true'}),argv(),false),'runner-forbidden');
+ assert.equal(proof.safeEnvironment(env({GITHUB_ACTIONS:'true'}),argv(),false),'runner-forbidden');
+ pass('genuine verification OFF by default, rejects CI/GitHub Actions, and requires exact owner mode and acknowledgement');
 
  for(const name of [
   'GOOGLE_APPLICATION_CREDENTIALS','FIRESTORE_EMULATOR_HOST',
