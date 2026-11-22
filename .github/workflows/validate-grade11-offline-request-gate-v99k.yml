@@ -1,0 +1,41 @@
+name: Grade XI Offline Request Shape and Privacy Gate (V99-K)
+on:
+  pull_request:
+    paths:
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "scripts/test_grade11_offline_review_request_gate_v99k.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/verified-report-boundary-v99g.cjs"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-offline-request-gate-v99k.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/offline-review-request-gate-v99k.cjs"
+      - "scripts/test_grade11_offline_review_request_gate_v99k.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "server/verified-report-boundary-v99g.cjs"
+      - "server/mcq-review-intake-v99e.cjs"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-offline-request-gate-v99k.yml"
+  workflow_dispatch:
+jobs:
+  offline-request-shape-denial-and-response-redaction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate offline-only request and test syntax
+        run: |
+          node --check server/offline-review-request-gate-v99k.cjs
+          node --check scripts/test_grade11_offline_review_request_gate_v99k.cjs
+      - name: Check exact transport envelopes, App Check interface and redacted response contracts
+        run: node scripts/test_grade11_offline_review_request_gate_v99k.cjs
