@@ -1,0 +1,53 @@
+name: Grade XI Exam Quick Access Student Navigation (V101-A)
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/learning-catalog.json"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - ".github/workflows/validate-grade11-exam-quick-access-v101a.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/learning-catalog.json"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - ".github/workflows/validate-grade11-exam-quick-access-v101a.yml"
+  workflow_dispatch:
+jobs:
+  exam-links-and-student-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check V101-A audit and shared navigation syntax
+        run: |
+          node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+          node --check shared/navigation.js
+      - name: Install pinned Chromium browser test runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify 41 existing links and real 1280/390/320 responsive journeys
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve existing collapsible unit navigation and quiz-leaving safeguard
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload only public-page synthetic browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-exam-quick-access-v101a
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/drawer-v58/
+          if-no-files-found: warn
+          retention-days: 10
