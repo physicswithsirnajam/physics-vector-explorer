@@ -5,8 +5,9 @@
  * No browser access, teacher inbox, live HTTP/Callable endpoint, report edits,
  * Cloud Functions or production Firebase connection. A real Firebase Admin
  * Auth Emulator ID token (verifyIdToken(...,true)), explicit trusted Admin
- * custom claim, VERIFIED email, and server-configured UID allowlist are ALL
- * required before Admin Firestore reads of at most 25 synthetic reports.
+ * custom claim, VERIFIED email, server-configured UID allowlist, and an
+ * explicit trusted enable flag are ALL required before Admin Firestore reads
+ * of at most 25 synthetic reports. This reader now starts OFF by default.
  *
  * We deliberately redact stored ownerUid, email and unrecognized fields even
  * from this local admin view. Future production UI must escape note text.
@@ -65,7 +66,7 @@ function sanitize(record,id,source){
  });
 }
 function createLocalAdminReviewReader({
- firestore,adminAuth,allowedAdminUids
+ firestore,adminAuth,allowedAdminUids,isReviewReaderEnabled=()=>false
 }={}){
  if(process.env.GCLOUD_PROJECT!==PROJECT||
     process.env.FIRESTORE_EMULATOR_HOST!==FS_HOST||
@@ -81,10 +82,16 @@ function createLocalAdminReviewReader({
     allowedAdminUids.some(uid=>typeof uid!=='string'||!ID.test(uid))||
     new Set(allowedAdminUids).size!==allowedAdminUids.length)
   throw new TypeError('Explicit trusted server-side admin UID allowlist required');
+ if(typeof isReviewReaderEnabled!=='function')
+  throw new TypeError('Trusted server-only reader enable switch required');
  const allowed=new Set(allowedAdminUids);
+ const enabled=async()=>{
+  try{return await isReviewReaderEnabled()===true;}catch{return false;}
+ };
  if(catalog.total!==2250)throw new Error('Original 2250-entry catalog required');
  return async function listLatest(request){
   try{
+   if(!(await enabled()))reject('temporarily-unavailable');
    if(!plain(request)||Object.keys(request).some(k=>!['authorization','limit'].includes(k))||
       !Object.hasOwn(request,'authorization'))reject('invalid-request');
    const limit=request.limit===undefined?DEFAULT_PAGE:request.limit;
@@ -106,6 +113,9 @@ function createLocalAdminReviewReader({
     reject('admin-access-required');
    const freshCode=await checkFreshLocalAdmin({adminAuth,verified,allowedAdminUids:allowed});
    if(freshCode)reject(freshCode);
+   // Recheck immediately before the Firestore read. An in-flight query
+   // cannot be retroactively canceled, but a later OFF prevents response.
+   if(!(await enabled()))reject('temporarily-unavailable');
    // Always read the specific server-controlled collection, no arbitrary
    // field filters, owner searches, cursors or unbounded collection dumps.
    const snapshot=await firestore.collection(REPORTS)
@@ -118,6 +128,7 @@ function createLocalAdminReviewReader({
     const source=await catalog.lookup(data?.questionId);
     reports.push(sanitize(data,doc.id,source));
    }
+   if(!(await enabled()))reject('temporarily-unavailable');
    return Object.freeze({
     ok:true,count:reports.length,reports:Object.freeze(reports)
    });
