@@ -1,0 +1,76 @@
+name: Grade XI Complete Local Administrator HTTP Review Workflow (V100-D)
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
+      - "server/local-admin-review-reader-v99p.cjs"
+      - "server/local-admin-review-transitions-v99q.cjs"
+      - "server/local-admin-audit-history-v99r.cjs"
+      - "server/local-admin-account-freshness-v99y.cjs"
+      - "security-proposals/v99j/combined-local-emulators.json"
+      - ".github/workflows/validate-grade11-local-admin-complete-http-v100d.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
+      - "server/local-admin-review-reader-v99p.cjs"
+      - "server/local-admin-review-transitions-v99q.cjs"
+      - "server/local-admin-audit-history-v99r.cjs"
+      - "server/local-admin-account-freshness-v99y.cjs"
+      - "security-proposals/v99j/combined-local-emulators.json"
+      - ".github/workflows/validate-grade11-local-admin-complete-http-v100d.yml"
+  workflow_dispatch:
+jobs:
+  complete-local-admin-review-http-flow:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      GCLOUD_PROJECT: demo-psn-v99f-firestore
+      FIRESTORE_EMULATOR_HOST: 127.0.0.1:8089
+      FIREBASE_AUTH_EMULATOR_HOST: 127.0.0.1:9099
+      PSN_LOCAL_ADMIN_HTTP_REHEARSAL: enabled-local-test-only
+      PSN_LOCAL_ADMIN_HISTORY_HTTP: enabled-local-test-only
+      PSN_LOCAL_ADMIN_TRIAGE_HTTP: enabled-local-test-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Syntax-check complete local workflow and three existing HTTP adapters
+        run: |
+          node --check scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs
+          node --check server/local-http-admin-review-v100a.cjs
+          node --check server/local-http-admin-history-v100b.cjs
+          node --check server/local-http-admin-triage-v100c.cjs
+      - name: Install pinned local-only Firebase SDKs and emulators
+        run: >
+          npm install --no-save --no-package-lock --ignore-scripts
+          firebase-admin@14.3.0 firebase@13.4.0 firebase-tools@15.37.0
+      - name: Test shared synthetic queue to transition to audit on local HTTP
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v99f-firestore
+          "node scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs"
+      - name: Archive counts and synthetic pass labels only (no real user data)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-complete-local-admin-http-v100d-summary
+          path: qa-artifacts/local-admin-workflow-v100d/summary.json
+          if-no-files-found: warn
+          retention-days: 14
