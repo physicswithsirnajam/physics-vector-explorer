@@ -112,7 +112,7 @@ async function main(){
   assert.deepEqual([appChecks,authChecks,received],before,
    'invalid request must never invoke App Check/Auth/Firestore receive');
  }
- pass('20 malformed, oversized, spoofed, unsupported or invalid-draft envelopes denied before any trusted callback');
+ pass(preflightCases.length+' malformed, oversized, spoofed, unsupported or invalid-draft envelopes denied before any trusted callback');
 
  const deniedProof=await gate({...request,appCheckToken:'synthetic.invalid.appcheck.token'});
  expectFailure(deniedProof,403,'app-check-required');
