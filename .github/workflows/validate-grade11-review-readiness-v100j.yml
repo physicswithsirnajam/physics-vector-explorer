@@ -1,0 +1,69 @@
+name: Grade XI MCQ Review Launch Readiness Ledger (V100-J)
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_review_launch_readiness_v100j.cjs"
+      - "scripts/test_grade11_review_launch_readiness_v100j.cjs"
+      - "scripts/audit_grade11_reporting_launch_lock_v99u.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
+      - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_preview_http_contract_v100f.cjs"
+      - "scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "firebase.json"
+      - "firestore.rules"
+      - ".firebaserc"
+      - ".github/workflows/validate-grade11-review-readiness-v100j.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_review_launch_readiness_v100j.cjs"
+      - "scripts/test_grade11_review_launch_readiness_v100j.cjs"
+      - "scripts/audit_grade11_reporting_launch_lock_v99u.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
+      - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_preview_http_contract_v100f.cjs"
+      - "scripts/test_grade11_local_admin_complete_http_workflow_v100d.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "firebase.json"
+      - "firestore.rules"
+      - ".firebaserc"
+      - ".github/workflows/validate-grade11-review-readiness-v100j.yml"
+  workflow_dispatch:
+jobs:
+  report-launch-evidence-is-not-production-approval:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check source-only readiness audit and mutation tests
+        run: |
+          node --check scripts/audit_grade11_review_launch_readiness_v100j.cjs
+          node --check scripts/test_grade11_review_launch_readiness_v100j.cjs
+      - name: Validate the seven production-release blockers against real checkout and synthetic mutations
+        run: node scripts/test_grade11_review_launch_readiness_v100j.cjs
+      - name: Produce counts/decision-only source evidence ledger (BLOCKED by design)
+        run: node scripts/audit_grade11_review_launch_readiness_v100j.cjs
+      - name: Upload nonsecret source-readiness summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-review-launch-readiness-v100j
+          path: qa-artifacts/grade11-review-readiness-v100j/readiness.json
+          if-no-files-found: warn
+          retention-days: 14
