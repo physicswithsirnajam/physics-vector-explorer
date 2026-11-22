@@ -1,0 +1,24 @@
+// V99-P: ISOLATED, UNDEPLOYED FIRESTORE EMULATOR FIXTURE ONLY.
+//
+// This is deliberately STRICTER than the earlier V99-C proof-of-concept:
+// even a real verified Admin browser session cannot directly read or mutate
+// the report queue. Only the trusted Admin SDK server path may read reports,
+// after independently validating the Firebase Auth token, custom Admin claim
+// and exact server-configured UID allowlist.
+//
+// NEVER publish this fixture as a replacement for the owner's complete rules.
+// It excludes all existing profiles, enrollments, results and course policies.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /mcqReviewReports/{reportId} {
+      allow read, write: if false;
+    }
+    match /mcqReviewRate/{rateId} {
+      allow read, write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
