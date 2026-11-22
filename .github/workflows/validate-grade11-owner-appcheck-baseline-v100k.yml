@@ -1,0 +1,53 @@
+name: Grade XI Owner-Observed GitHub Pages and App Check Baseline (V100-K)
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/test_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/audit_grade11_reporting_launch_lock_v99u.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "CNAME"
+      - "**/CNAME"
+      - ".github/workflows/validate-grade11-owner-appcheck-baseline-v100k.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/test_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/audit_grade11_reporting_launch_lock_v99u.cjs"
+      - "portal/**"
+      - "practice-engine/**"
+      - "CNAME"
+      - "**/CNAME"
+      - ".github/workflows/validate-grade11-owner-appcheck-baseline-v100k.yml"
+  workflow_dispatch:
+jobs:
+  verify-only-owner-attributed-host-and-unenforced-status:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check offline owner-attributed source reconciler and tests
+        run: |
+          node --check scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs
+          node --check scripts/test_grade11_owner_appcheck_baseline_v100k.cjs
+      - name: Test host, project, App Check status provenance and fail-closed drift cases
+        run: node scripts/test_grade11_owner_appcheck_baseline_v100k.cjs
+      - name: Write nonsecret owner-observed preflight with enforcement and Send blocked
+        run: node scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs
+      - name: Upload nonsecret date-scoped owner observations and source safety flags
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-owner-appcheck-baseline-v100k
+          path: qa-artifacts/grade11-owner-appcheck-v100k/owner-observed-preflight.json
+          if-no-files-found: warn
+          retention-days: 14
