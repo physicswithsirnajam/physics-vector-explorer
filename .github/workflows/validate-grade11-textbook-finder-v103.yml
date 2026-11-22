@@ -1,0 +1,57 @@
+name: Grade XI Source-Verified Textbook Finder (V103)
+on:
+  pull_request:
+    paths:
+      - "portal/textbook-resource-finder.html"
+      - "portal/verified-textbook-index-v103.json"
+      - "portal/exam-quick-access.html"
+      - "portal/unit-03-study-guide.html"
+      - "portal/unit-03-numericals.js"
+      - "scripts/test_grade11_textbook_finder_v103.cjs"
+      - ".github/workflows/validate-grade11-textbook-finder-v103.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/textbook-resource-finder.html"
+      - "portal/verified-textbook-index-v103.json"
+      - "portal/exam-quick-access.html"
+      - "portal/unit-03-study-guide.html"
+      - "portal/unit-03-numericals.js"
+      - "scripts/test_grade11_textbook_finder_v103.cjs"
+      - ".github/workflows/validate-grade11-textbook-finder-v103.yml"
+  workflow_dispatch:
+jobs:
+  source-anchored-public-resource-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check finder and asynchronous numerical anchor syntax
+        run: |
+          node --check scripts/test_grade11_textbook_finder_v103.cjs
+          node --check portal/unit-03-numericals.js
+      - name: Install pinned browser runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test all 28 source anchors and desktop/mobile UX including dynamic Unit 3 textbook links
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Protect original V101-A exam quick access links and revision flows
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve original V58 Units and Resources drawer and quiz warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload public-only / synthetic browser QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-source-verified-textbook-finder-v103
+          path: |
+            qa-artifacts/textbook-finder-v103/
+            qa-artifacts/grade11-exam-quick-access-v101a/
+          if-no-files-found: warn
+          retention-days: 10
