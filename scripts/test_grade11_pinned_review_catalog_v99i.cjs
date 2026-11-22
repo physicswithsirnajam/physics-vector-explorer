@@ -10,6 +10,17 @@ const {validateStaticManifest,EXPECTED,TOTAL}=
 const file=path.join(__dirname,
  '../server/review-manifests/grade11-approved-public-review-refs-v99i.json');
 
+function formatManifest(manifest){
+ // Preserve exact JSON data, but give the reviewer one original MCQ per line.
+ const head=JSON.stringify({...manifest,questionRefs:[]},null,2);
+ const marker='  "questionRefs": [],';
+ if(!head.includes(marker))throw Error('Manifest layout unexpectedly changed');
+ const rows=manifest.questionRefs.map((row,i)=>
+  '    '+JSON.stringify(row)+(i<manifest.questionRefs.length-1?',':'')
+ ).join('\n');
+ return head.replace(marker,'  "questionRefs": [\n'+rows+'\n  ],')+'\n';
+}
+
 async function main(){
  const raw=fs.readFileSync(file,'utf8');
  const frozen=JSON.parse(raw);
@@ -38,10 +49,10 @@ async function main(){
 
  // Import the reviewed dynamic reader ONLY in this offline CI test to prove
  // byte-for-byte regeneration parity. Never import this in the server loader.
- const {buildManifest,serialize}=
+ const {buildManifest}=
   require('./build_grade11_static_review_manifest_v99h.cjs');
  const regenerated=await buildManifest();
- assert.equal(raw,serialize(regenerated),
+ assert.equal(raw,formatManifest(regenerated),
   'committed snapshot differs from the current original V55 public MCQ bank');
  assert.equal(frozen.contentSha256,regenerated.contentSha256,
   'bank version or public question catalog digest changed');
