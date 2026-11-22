@@ -2,6 +2,7 @@
    Browser-graded SELF-PRACTICE data only; NEVER treat as secure exam marks.
    Firebase rules must independently enforce ownership and schema. */
 import {firebaseConfig} from './firebase-config.js';
+import {initializeAppCheckBeforeServices} from './recaptcha-enterprise-v100m.mjs';
 import {initializeApp,getApp,getApps} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {getAuth,onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
 import {getFirestore,collection,addDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
@@ -29,12 +30,16 @@ function updateButton(){
 window.addEventListener('psn:practice-finished',event=>{
  record=event.detail;saved=false;uploading=false;lastSaveError='';updateButton();
 });
-try{
- if(Object.values(firebaseConfig).some(v=>typeof v!=='string'||!v.trim()||v.includes('REPLACE_')))throw Error('Firebase settings are incomplete');
- const app=getApps().length?getApp():initializeApp(firebaseConfig);
- auth=getAuth(app);db=getFirestore(app);
- onAuthStateChanged(auth,()=>updateButton());
-}catch(error){say('Account saving is unavailable. The test will still work normally. Check the portal Firebase configuration.');}
+// V100-M: optional App Check runs before saved-practice Firebase services.
+void (async()=>{
+ try{
+  if(Object.values(firebaseConfig).some(v=>typeof v!=='string'||!v.trim()||v.includes('REPLACE_')))throw Error('Firebase settings are incomplete');
+  const app=getApps().length?getApp():initializeApp(firebaseConfig);
+  await initializeAppCheckBeforeServices(app);
+  auth=getAuth(app);db=getFirestore(app);
+  onAuthStateChanged(auth,()=>updateButton());
+ }catch(error){say('Account saving is unavailable. The test will still work normally. Check the portal Firebase configuration.');}
+})();
 button.addEventListener('click',async()=>{
  const user=auth?.currentUser;
  if(uploading||saved||!record||!user||!user.emailVerified||!db)return;
