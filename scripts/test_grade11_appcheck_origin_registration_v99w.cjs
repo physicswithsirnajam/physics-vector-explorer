@@ -27,18 +27,18 @@ assert.equal(baseline.publicFirebaseProjectId,EXPECTED.projectId);
 assert.equal(baseline.publicFirebaseWebAppId,EXPECTED.webAppId);
 assert.equal(baseline.firebaseAuthenticationDomain,EXPECTED.authDomain);
 assert.deepEqual(baseline.browserFirebasePaths,[
- 'portal/app.js','portal/attempt-sync.js','portal/course-lesson.js'
+ 'portal/app.js','portal/attempt-sync.js','portal/course-lesson.js','portal/secure-lesson.js'
 ]);
 assert.equal(baseline.safeToEnableProductionEnforcement,false);
 assert.equal(baseline.safeToEnableStudentReportSending,false);
-pass('source-only inventory pins current Firebase project, web app and three real browser SDK entrypoints');
+pass('source-only inventory pins Firebase project, web app and four approved browser SDK entrypoints');
 
 assert.equal(baseline.githubPagesDefaultHostCandidate,EXPECTED.candidateHost);
 assert.equal(baseline.candidateOriginVerifiedFromActualBrowser,false);
 assert.equal(baseline.realAppCheckRegistrationFetchedFromFirebase,false);
 assert.equal(baseline.googleSitesTopLevelOrIframeConfigurationChecked,false);
-assert.equal(baseline.sourceAppCheckInitializerObserved,false);
-pass('GitHub Pages hostname is explicitly candidate-only; no false Firebase registration or actual-domain claims');
+assert.equal(baseline.sourceAppCheckInitializerObserved,true);
+pass('GitHub Pages browser origin is not independently proven; approved monitor-mode initializer is source-only, not real positive attestation');
 
 denied('wrong Firebase project must invalidate inventory',x=>{
  alter(x,'portal/firebase-config.js',
@@ -70,8 +70,23 @@ denied('removed protected-lesson initialization must invalidate inventory',x=>{
  alter(x,'portal/course-lesson.js',
   'initializeApp(firebaseConfig)','initializeApp(untrusted)');
 });
-denied('unexpected active App Check initializer requires a separate change review',x=>{
+denied('unexpected SECOND active App Check initializer requires a separate change review',x=>{
  x.files['portal/app.js']+="\ninitializeAppCheck(app,{});";
+});
+denied('replacing approved App Check bootstrap in a browser route is forbidden',x=>{
+ alter(x,'portal/secure-lesson.js',
+  "await initializeAppCheckBeforeServices(app);",
+  "/* omitted App Check entirely */");
+});
+denied('removing approved dynamic provider SDK is forbidden',x=>{
+ alter(x,'portal/recaptcha-enterprise-v100m.mjs',
+  'new sdk.ReCaptchaEnterpriseProvider(SITE_KEY)',
+  'new sdk.ReCaptchaV3Provider(SITE_KEY)');
+});
+denied('App Check hostname must remain allowlisted',x=>{
+ alter(x,'portal/recaptcha-enterprise-v100m.mjs',
+  "const APPROVED_HOST='physicswithsirnajam.github.io';",
+  "const APPROVED_HOST='example.invalid';");
 });
 denied('debug App Check token in browser module is forbidden',x=>{
  x.files['portal/attempt-sync.js']+=
@@ -96,4 +111,4 @@ denied('untracked critical file must be rejected',x=>{
  x.trackedPaths=x.trackedPaths.filter(p=>p!==USED_SOURCES[0]);
 });
 console.log('V99-W FINISHED: '+results.length+
- ' checks passed. No runtime Firebase, App Check Console, live hosting or enforcement verified.');
+ ' checks passed. Four-page monitor-mode source initialization does not prove signed provider tokens or production enforcement.');
