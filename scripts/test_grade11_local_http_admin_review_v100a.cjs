@@ -218,7 +218,11 @@ async function main(){
   denial(await sent(url,{headers:authHeader(users.owner.token)}),
    'temporarily-unavailable',503);
   enabled=true;
-  const restored=await sent(url,{headers:authHeader(users.owner.token)});
+  const restoredSession=await signInWithEmailAndPassword(
+   browserAuth,'v100a-owner@example.test',PASSWORD
+  );
+  const restoredToken=await restoredSession.user.getIdToken(true);
+  const restored=await sent(url,{headers:authHeader(restoredToken)});
   assert.equal(restored.status,200);
   assert.equal(restored.body.count,2);
   assert.equal((await firestore.collection(REPORTS).get()).size,2);
