@@ -68,6 +68,9 @@ async function audit(){
   for(const [field,count] of [
    ['total','4'],['new','2'],['in-review','1'],['resolved','1']
   ])assert.equal(await page.locator('#metric-'+field).innerText(),count);
+  assert.equal(await page.locator('#view-count').innerText(),'Showing 4 of 4 fictional sample reports');
+  assert.equal(await page.locator('#demo-feedback').getAttribute('role'),'status');
+  assert.equal(await page.locator('#demo-feedback').innerText(),'');
   const fixtures=await page.locator('#demo-data').evaluate(el=>JSON.parse(el.textContent));
   assert.equal(fixtures.length,4);
   assert.deepEqual(fixtures.map(r=>r.unit),[1,2,4,6]);
@@ -77,6 +80,7 @@ async function audit(){
 
   await page.locator('[data-filter="new"]').click();
   assert.equal(await page.locator('#report-list .item').count(),2);
+  assert.equal(await page.locator('#view-count').innerText(),'Showing 2 of 4 fictional sample reports');
   assert.equal(await page.locator('[data-filter="new"]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-filter="in-review"]').click();
   assert.equal(await page.locator('#report-list .item').count(),1);
@@ -92,15 +96,23 @@ async function audit(){
    'search result must select its matching detail');
   await page.locator('#report-search').fill('unfindable-fake-question');
   assert.equal(await page.locator('#report-list .empty').count(),1);
+  assert.equal(await page.locator('#view-count').innerText(),'Showing 0 of 4 fictional sample reports');
   assert.equal(await page.locator('#details .empty-detail').count(),1);
   assert.equal(await page.locator('#details .issue').count(),0,
    'empty results must not display an unrelated/hidden report');
   assert.equal(await page.locator('#report-search').evaluate(e=>document.activeElement===e),true,
    'search focus must be preserved during filtering');
-  await page.locator('#report-search').fill('');
+  await page.locator('[data-filter="new"]').click();
+  await page.locator('#clear-view').click();
+  assert.equal(await page.locator('#report-search').inputValue(),'');
+  assert.equal(await page.locator('[data-filter="all"]').getAttribute('aria-pressed'),'true');
+  assert.equal(await page.locator('#view-count').innerText(),'Showing 4 of 4 fictional sample reports');
+  assert.equal(await page.evaluate(()=>document.activeElement?.id),'report-search');
+  assert.match(await page.locator('#demo-feedback').innerText(),
+   /search and filters cleared\. No real report was changed/);
   assert.equal(await page.locator('#report-list .item[aria-current="true"]').count(),1);
   assert.equal(await page.locator('#details .empty-detail').count(),0);
-  checks.push('filters/search synchronize selected detail, empty result and search focus');
+  checks.push('filters/search synchronize details, sample counts, empty result, clear view and search focus');
   log(checks[checks.length-1]);
 
   const first=page.locator('[data-report-id="'+fixtures[0].reportId+'"]');
@@ -114,12 +126,17 @@ async function audit(){
   await start.click();
   assert.equal(await page.locator('#metric-new').innerText(),'1');
   assert.equal(await page.locator('#metric-in-review').innerText(),'2');
+  assert.match(await page.locator('#demo-feedback').innerText(),
+   new RegExp('Synthetic demo: '+fixtures[0].questionId+' changed to In review'));
+  assert.match(await page.locator('#demo-feedback').innerText(),
+   /No real MCQ report was updated/);
   assert.equal(await page.locator('#details .timeline li').count(),2);
   assert.equal(await page.locator('[data-demo-action="resolve"]').count(),1);
   assert.equal(await page.evaluate(()=>document.activeElement?.dataset.demoAction),'resolve',
    'focus must move to the next action after starting review');
   await page.locator('[data-demo-action="resolve"]').click();
   assert.equal(await page.locator('#metric-resolved').innerText(),'2');
+  assert.match(await page.locator('#demo-feedback').innerText(),/changed to Resolved/);
   assert.equal(await page.locator('#details .timeline li').count(),3);
   assert.equal(await page.locator('#details .pill-resolved').count(),2);
   assert.equal(await page.locator('[data-demo-action]').count(),0);
@@ -144,6 +161,7 @@ async function audit(){
   await page.reload({waitUntil:'load'});
   assert.equal(await page.locator('#metric-new').innerText(),'2');
   assert.equal(await page.locator('#metric-resolved').innerText(),'1');
+  assert.equal(await page.locator('#demo-feedback').innerText(),'');
   assert.equal(await page.locator('#details .timeline li').count(),1);
   checks.push('reload restores initial fiction; no persistent report state or stored account data');
   log(checks[checks.length-1]);
@@ -152,10 +170,13 @@ async function audit(){
   await page.locator('[data-report-id="'+fixtures[0].reportId+'"]').click();
   await page.locator('[data-demo-action="start-review"]').click();
   assert.equal(await page.locator('#report-list .item').count(),1);
+  assert.equal(await page.locator('#view-count').innerText(),'Showing 1 of 4 fictional sample reports');
+  assert.match(await page.locator('#demo-feedback').innerText(),
+   /outside the current New filter/);
   assert.ok((await page.locator('#details').innerText()).includes(fixtures[1].questionId));
   assert.equal(await page.evaluate(()=>document.activeElement?.dataset.reportId),fixtures[1].reportId,
    'focus must move to a visible list item if stage action hides the prior selection');
-  checks.push('stage transition inside a filter never leaves stale detail or focuses another report action');
+  checks.push('stage transition gives accessible demo-only feedback and never leaves stale filtered detail');
   log(checks[checks.length-1]);
   await page.reload({waitUntil:'load'});
 
