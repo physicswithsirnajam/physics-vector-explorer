@@ -1,0 +1,46 @@
+name: Grade XI Pinned Static Review Catalog Parity (V99-I)
+on:
+  pull_request:
+    paths:
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/static-review-catalog-v99h.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/**"
+      - "scripts/build_grade11_static_review_manifest_v99h.cjs"
+      - "scripts/test_grade11_pinned_review_catalog_v99i.cjs"
+      - ".github/workflows/validate-grade11-pinned-review-catalog-v99i.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "server/pinned-approved-review-catalog-v99i.cjs"
+      - "server/static-review-catalog-v99h.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "shared/mcq-review-contract-v99a.js"
+      - "shared/practice-bank-adapter-v55.js"
+      - "question-bank/grade-11/**"
+      - "scripts/build_grade11_static_review_manifest_v99h.cjs"
+      - "scripts/test_grade11_pinned_review_catalog_v99i.cjs"
+      - ".github/workflows/validate-grade11-pinned-review-catalog-v99i.yml"
+  workflow_dispatch:
+jobs:
+  pinned-catalog-regeneration-and-security:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate pinned source reference catalog modules
+        run: |
+          node --check server/static-review-catalog-v99h.cjs
+          node --check server/pinned-approved-review-catalog-v99i.cjs
+          node --check scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Enforce exact 2250-reference source regeneration parity
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
