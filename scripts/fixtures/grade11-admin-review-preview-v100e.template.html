@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#101e37">
+ <meta name="robots" content="noindex,nofollow">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+ <title>MCQ Review Desk — UX Preview | Physics with Sir Najam</title>
+ <style>
+ :root{--navy:#101e37;--navy2:#273d5b;--gold:#b89453;--ink:#18283e;--sub:#687789;--line:#e1e7ef;--light:#f4f6fa;font:14px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--light)}
+ *{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}
+ button:focus-visible,input:focus-visible{outline:3px solid #c4a05a;outline-offset:3px}
+ .app{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}
+ .side{background:var(--navy);color:#fff;padding:25px 18px}.side-logo{width:88px;height:88px;object-fit:contain;display:block;margin:0 auto 16px}
+ .side-name{font:700 21px/1.3 Georgia,serif;text-align:center}.tagline{text-align:center;color:#dec18b;letter-spacing:.14em;font-size:9px;font-weight:800;margin:10px 0 26px}
+ .side-nav{border-top:1px solid #39465b;padding-top:24px}.menu-head{letter-spacing:.16em;color:#a9b6c8;font-size:10px;font-weight:900;margin-bottom:12px}
+ .side-current{border-radius:10px;padding:13px;background:#2c4160;font-weight:700;font-size:13px}.side-secondary{padding:15px 12px;color:#aebed3;font-size:12px}
+ .side-note{border-top:1px solid #39465b;margin-top:30px;padding-top:16px;color:#adc1d9;font-size:11px}
+ .main{min-width:0}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border-bottom:1px solid var(--line);padding:16px 30px}
+ .top strong{font-size:13px}.top small{display:block;color:var(--sub)}.demo{background:#fff3d6;color:#8a5c11;border:1px solid #e7cd98;padding:7px 11px;border-radius:99px;font-size:10px;font-weight:900;text-align:center}
+ main{max-width:1450px;margin:auto;padding:31px 29px 45px}.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:900;color:#906b31}
+ h1{font:700 clamp(28px,3vw,42px)/1.14 Georgia,serif;letter-spacing:-.03em;margin:9px 0}
+ .lead{color:var(--sub);max-width:850px;margin:9px 0 26px;line-height:1.7;font-size:13px}
+ .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:22px}
+ .stat{background:#fff;border:1px solid var(--line);padding:17px 19px;border-radius:12px;box-shadow:0 6px 20px #14223809}
+ .stat span{display:block;font-size:11px;color:var(--sub);font-weight:800}.stat strong{display:block;margin-top:4px;font:700 30px Georgia,serif}
+ .columns{display:grid;grid-template-columns:minmax(320px,1.08fr) minmax(350px,.92fr);gap:19px;align-items:start}
+ .panel{min-width:0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 7px 25px #14223808;overflow:hidden}
+ .panel-head{padding:21px 22px;border-bottom:1px solid var(--line)}.panel-head h2{font-size:19px;margin:0 0 5px}.caption{color:var(--sub);font-size:12px;margin:0}
+ label{display:block;font-size:11px;color:#64748b;font-weight:800;margin:17px 0 4px}
+ .search{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px}
+ .filters{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.filter{padding:7px 10px;background:#fff;border:1px solid var(--line);border-radius:7px;font-size:11px;font-weight:800;color:#4c5b71}
+ .filter[aria-pressed=true]{background:var(--navy);color:#fff}
+ #report-list{list-style:none;padding:7px;margin:0;max-height:600px;overflow:auto}
+ .item{width:100%;border:1px solid transparent;border-radius:10px;background:#fff;text-align:left;padding:14px 13px;display:block;color:var(--ink)}
+ .item:hover,.item[aria-current=true]{border-color:#d8ba7b;background:#fffaf0}
+ .item-line,.detail-line{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+ .item-name{font-size:12px;font-weight:850}.item-meta{font-size:11px;color:var(--sub);margin-top:4px}.item-note{font-size:12px;color:#53647a;margin:9px 0 0;line-height:1.55;max-height:3.1em;overflow:hidden}
+ .pill{border-radius:99px;padding:5px 8px;font-size:10px;font-weight:800;white-space:nowrap}
+ .pill-new{background:#fff1cb;color:#795814}.pill-in-review{background:#e4efff;color:#235287}.pill-resolved{background:#dcf5e6;color:#1d6b50}
+ .empty{padding:25px;color:var(--sub)}
+ .details{padding:22px}.ref{font-size:10px;color:#697a91;overflow-wrap:anywhere}.details h3{font:700 24px Georgia,serif;margin:10px 0 3px}
+ .field{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#66768c;font-weight:900;margin:24px 0 8px}
+ .issue{background:#f7f8fb;border-left:3px solid var(--gold);padding:15px;border-radius:0 9px 9px 0;color:#3b4c64;white-space:pre-wrap;overflow-wrap:anywhere}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:19px}.grid>div{border:1px solid var(--line);padding:12px;border-radius:9px;min-width:0}
+ .grid span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--sub)}.grid strong{display:block;overflow-wrap:anywhere;font-size:11px;margin-top:6px}
+ .timeline{border-left:2px solid #dae2ed;padding-left:21px;margin:5px 0 18px;list-style:none}
+ .timeline li{position:relative;margin-bottom:18px;font-size:11px;color:#65758a}
+ .timeline li:before{content:'';position:absolute;width:10px;height:10px;left:-27px;top:4px;background:#b89453;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #b89453}
+ .timeline strong{display:block;font-size:12px;color:var(--ink)}
+ .actions{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+ .primary,.secondary{padding:10px 13px;border-radius:8px;font-size:12px;font-weight:800}.primary{background:var(--navy);color:white;border:1px solid var(--navy)}.secondary{background:white;color:var(--navy);border:1px solid #ced6e3}
+ .subtle{margin-top:13px;color:var(--sub);font-size:11px;line-height:1.6}
+ .warning-foot{margin-top:23px;border:1px dashed #bac6d5;background:#fcfdff;padding:12px 15px;border-radius:9px;font-size:11px;color:#66768c;line-height:1.6}
+ @media(max-width:1100px){.app{grid-template-columns:180px minmax(0,1fr)}.columns{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:650px){.app{display:block}.side{display:flex;align-items:center;gap:12px;padding:12px 16px}.side-logo{width:45px;height:45px;margin:0}.side-name{font-size:15px;text-align:left}.tagline,.side-nav,.side-note{display:none}.top{padding:12px 15px}.top strong{font-size:11px}.top small{font-size:10px}.demo{font-size:9px;padding:5px 7px}main{padding:21px 13px 36px}.lead{font-size:12px}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:24px}.columns{display:block}.panel+.panel{margin-top:15px}.panel-head,.details{padding:17px}.item{padding:13px 8px}.item-name{font-size:11px}.details h3{font-size:21px}.grid{grid-template-columns:1fr}}
+ </style>
+</head>
+<body>
+<div class="app">
+ <aside class="side" aria-label="Preview identity">
+  <img class="side-logo" src="__LOGO_DATA__" alt="Physics with Sir Najam official logo" width="88" height="88">
+  <div class="side-name">Physics with<br>Sir Najam</div>
+  <div class="tagline">FROM FUNDAMENTALS TO FRONTIERS</div>
+  <nav class="side-nav" aria-label="Administrator preview navigation">
+   <div class="menu-head">REVIEW WORKSPACE</div>
+   <div class="side-current" aria-current="page">◈ &nbsp; MCQ Review Desk</div>
+   <div class="side-secondary">Audit history · shown per report</div>
+   <div class="side-secondary">Question editing · not enabled</div>
+  </nav>
+  <div class="side-note">Fictional reports only.<br>No real administrator access.</div>
+ </aside>
+ <div class="main">
+  <header class="top">
+   <div><strong>Administrator Experience / Design Preview</strong><small>Grade XI · Question Quality Review</small></div>
+   <span class="demo">SYNTHETIC DEMO · NOT CONNECTED</span>
+  </header>
+  <main>
+   <div class="eyebrow">QUALITY ASSURANCE · V100-E</div>
+   <h1>MCQ Review Desk</h1>
+   <p class="lead">A proposed administrator workspace for examining reported MCQ concerns. Every item is fictional. Review actions run only in this page's memory and reset when you reload.</p>
+   <section class="stats" aria-label="Fictional report totals">
+    <div class="stat"><span>Total reports</span><strong id="metric-total">0</strong></div>
+    <div class="stat"><span>New</span><strong id="metric-new">0</strong></div>
+    <div class="stat"><span>In review</span><strong id="metric-in-review">0</strong></div>
+    <div class="stat"><span>Resolved</span><strong id="metric-resolved">0</strong></div>
+   </section>
+   <div class="columns">
+    <section class="panel" aria-labelledby="queue-title">
+     <div class="panel-head">
+      <h2 id="queue-title">Reported questions</h2>
+      <p class="caption">Select a fictional issue to see its current status.</p>
+      <label for="report-search">Search by MCQ ID or category</label>
+      <input id="report-search" class="search" type="search" placeholder="Search fictional reports…" autocomplete="off">
+      <div class="filters" role="group" aria-label="Filter by review stage">
+       <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+       <button type="button" class="filter" data-filter="new" aria-pressed="false">New</button>
+       <button type="button" class="filter" data-filter="in-review" aria-pressed="false">In review</button>
+       <button type="button" class="filter" data-filter="resolved" aria-pressed="false">Resolved</button>
+      </div>
+     </div>
+     <ul id="report-list" aria-label="Fictional reported MCQs"></ul>
+    </section>
+    <section class="panel" aria-labelledby="details-title">
+     <div class="panel-head"><h2 id="details-title">Review details</h2>
+      <p class="caption">Source reference, reported concern and simulated history.</p>
+     </div>
+     <div id="details" class="details" aria-live="polite"></div>
+    </section>
+   </div>
+   <p class="warning-foot"><strong>Safety boundary:</strong> This is an isolated offline UX preview. It does not sign in, call Firebase, contact any endpoint, change a question, store a token or submit a report. The actual student issue-report feature remains Copy only.</p>
+  </main>
+ </div>
+</div>
+<script id="demo-data" type="application/json">__FIXTURES_JSON__</script>
+<script>
+'use strict';
+(function(){
+ const reports=JSON.parse(document.getElementById('demo-data').textContent).map(function(r){
+  return Object.assign({},r,{events:r.events.map(function(e){return Object.assign({},e);})});
+ });
+ const labels={'incorrect-key':'Incorrect answer key','missing-context':'Missing context',
+  'formula-display':'Formula display','unclear-wording':'Unclear wording'};
+ const states={'new':'New','in-review':'In review','resolved':'Resolved'};
+ const list=document.getElementById('report-list');
+ const details=document.getElementById('details');
+ const search=document.getElementById('report-search');
+ let selected=reports[0].reportId,activeFilter='all',clicks=0;
+ function el(tag,css,value){
+  const e=document.createElement(tag);
+  if(css)e.className=css;
+  if(value!==undefined)e.textContent=String(value);
+  return e;
+ }
+ function add(parent,tag,css,value){const e=el(tag,css,value);parent.appendChild(e);return e;}
+ function pill(status){return el('span','pill pill-'+status,states[status]);}
+ function stats(){
+  document.getElementById('metric-total').textContent=reports.length;
+  ['new','in-review','resolved'].forEach(function(st){
+   document.getElementById('metric-'+st).textContent=reports.filter(function(r){return r.status===st;}).length;
+  });
+ }
+ function renderList(){
+  list.replaceChildren();
+  const phrase=search.value.trim().toLowerCase();
+  const showing=reports.filter(function(r){
+   return (activeFilter==='all'||r.status===activeFilter)&&
+    (r.questionId+' '+labels[r.category]+' '+'Unit '+r.unit).toLowerCase().includes(phrase);
+  });
+  if(!showing.length){add(list,'li','empty','No matching fictional reports.');return;}
+  showing.forEach(function(r){
+   const item=add(list,'li','');
+   const btn=add(item,'button','item');
+   btn.type='button';
+   btn.dataset.reportId=r.reportId;
+   btn.setAttribute('aria-current',String(selected===r.reportId));
+   const row=add(btn,'div','item-line');
+   const left=add(row,'div','');
+   add(left,'div','item-name','Unit '+r.unit+' · '+r.questionId);
+   add(left,'div','item-meta',labels[r.category]+' · #'+r.sourceQuestionNumber);
+   row.appendChild(pill(r.status));
+   add(btn,'p','item-note',r.note);
+   btn.addEventListener('click',function(){selected=r.reportId;render();});
+  });
+ }
+ function field(grid,name,value){
+  const c=add(grid,'div','');
+  add(c,'span','',name);add(c,'strong','',value);
+ }
+ function renderDetail(){
+  details.replaceChildren();
+  const r=reports.find(function(a){return a.reportId===selected;})||reports[0];
+  const row=add(details,'div','detail-line');
+  add(row,'div','ref','REPORT '+r.reportId.slice(-9).toUpperCase());
+  row.appendChild(pill(r.status));
+  add(details,'h3','',labels[r.category]);
+  add(details,'div','ref',r.questionId+' · Unit '+r.unit);
+  add(details,'div','field','Reported concern · synthetic');
+  add(details,'div','issue',r.note);
+  const grid=add(details,'div','grid');
+  field(grid,'Question #',r.sourceQuestionNumber);
+  field(grid,'Bank version',r.bankVersion);
+  add(details,'div','field','Review history');
+  const timeline=add(details,'ol','timeline');
+  const first=add(timeline,'li','');
+  add(first,'strong','', 'Report received');
+  add(first,'span','',r.createdAtIso.replace('T',' · ').replace('.000Z',' UTC'));
+  r.events.forEach(function(ev){
+   const li=add(timeline,'li','');
+   add(li,'strong','',ev.action==='start-review'?'Review started':'Issue resolved');
+   add(li,'span','',ev.reviewedAtIso.replace('T',' · ').replace('.000Z',' UTC'));
+  });
+  const buttons=add(details,'div','actions');
+  if(r.status!=='resolved'){
+   const next=r.status==='new'?'start-review':'resolve';
+   const btn=add(buttons,'button','primary',
+    next==='start-review'?'Start review (demo)':'Mark resolved (demo)');
+   btn.type='button';btn.dataset.demoAction=next;
+   btn.addEventListener('click',function(){
+    const before=r.status,to=next==='start-review'?'in-review':'resolved';
+    r.events.push({action:next,fromStatus:before,toStatus:to,
+     reviewedAtIso:new Date(Date.parse('2026-11-22T18:00:00.000Z')+clicks++*60000).toISOString()});
+    r.status=to;render();
+   });
+  }else add(buttons,'span','pill pill-resolved','Review complete in this preview');
+  const reset=add(buttons,'button','secondary','Reset demonstration');
+  reset.type='button';reset.id='reset-demo';
+  reset.addEventListener('click',function(){location.reload();});
+  add(details,'p','subtle','This action changes only browser memory. It never updates Firebase or actual MCQ records.');
+ }
+ function render(){stats();renderList();renderDetail();}
+ document.querySelectorAll('[data-filter]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   activeFilter=btn.dataset.filter;
+   document.querySelectorAll('[data-filter]').forEach(function(b){
+    b.setAttribute('aria-pressed',String(b===btn));
+   });
+   renderList();
+  });
+ });
+ search.addEventListener('input',renderList);
+ render();
+}());
+</script>
+</body>
+</html>
