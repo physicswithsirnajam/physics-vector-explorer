@@ -1,0 +1,73 @@
+name: Grade XI Registered Enterprise App Check Monitor-Only Browser Integration (V100-M)
+on:
+  pull_request:
+    paths:
+      - "portal/**"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_enterprise_appcheck_monitoring_v100m.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/test_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/test_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - ".github/workflows/validate-grade11-enterprise-appcheck-v100m.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/**"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_enterprise_appcheck_monitoring_v100m.cjs"
+      - "scripts/audit_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/test_grade11_appcheck_origin_registration_v99w.cjs"
+      - "scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/test_grade11_owner_appcheck_baseline_v100k.cjs"
+      - "scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - "scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs"
+      - ".github/workflows/validate-grade11-enterprise-appcheck-v100m.yml"
+  workflow_dispatch:
+jobs:
+  monitor-only-never-enforce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check all source-only contracts and early browser boot entrypoints
+        run: |
+          for f in \
+            portal/app.js portal/attempt-sync.js portal/course-lesson.js portal/secure-lesson.js \
+            portal/recaptcha-enterprise-v100m.mjs \
+            scripts/test_grade11_enterprise_appcheck_monitoring_v100m.cjs \
+            scripts/audit_grade11_appcheck_origin_registration_v99w.cjs \
+            scripts/test_grade11_appcheck_origin_registration_v99w.cjs \
+            scripts/audit_grade11_owner_appcheck_baseline_v100k.cjs \
+            scripts/test_grade11_owner_appcheck_baseline_v100k.cjs \
+            scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs \
+            scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs; do node --check "$f"; done
+      - name: Exercise mock positive, blocked CDN and unsafe-origin skip (NEVER a real token)
+        run: node scripts/test_grade11_enterprise_appcheck_monitoring_v100m.cjs
+      - name: Recheck historical source inventory and fail-closed mutations
+        run: node scripts/test_grade11_appcheck_origin_registration_v99w.cjs
+      - name: Recheck owner-reported provider status and HTTP origin/identity mutations
+        run: node scripts/test_grade11_owner_appcheck_baseline_v100k.cjs
+      - name: Recheck four separate browser start paths and provider regression mutations
+        run: node scripts/test_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Recheck Copy-only reporting launch lock
+        run: |
+          node scripts/test_grade11_reporting_launch_lock_v99u.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload only source/mock evidence — no real provider tokens or personal data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-enterprise-appcheck-monitor-only-v100m
+          path: |
+            qa-artifacts/appcheck-monitoring-v100m/preflight.json
+            qa-artifacts/appcheck-launch-lock-v99u/summary.json
+          if-no-files-found: warn
+          retention-days: 14

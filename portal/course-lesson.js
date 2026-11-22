@@ -3,6 +3,7 @@
    Firestore security rules authorize the DOCUMENT request independently.
    Never rely on JavaScript checks alone for access control. */
 import {firebaseConfig} from './firebase-config.js';
+import {initializeAppCheckBeforeServices} from './recaptcha-enterprise-v100m.mjs';
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {getAuth,onAuthStateChanged,reload,getIdToken,signOut} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
 import {getFirestore,doc,getDocFromServer} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
@@ -93,14 +94,17 @@ async function verifyAndLoad(user){
     }
   }
 }
-function boot(){
+async function boot(){
   if(!validId){state('Invalid lesson link','The lesson identifier is not recognized.');return;}
   if(!Object.values(firebaseConfig).every(v=>typeof v==='string'&&v.trim()&&!v.includes('REPLACE_'))){
     state('Portal configuration required','The existing Firebase configuration must be restored. Never add a service-account key to public code.');return;
   }
   try{
-    auth=getAuth(initializeApp(firebaseConfig));
-    db=getFirestore();
+    const app=initializeApp(firebaseConfig);
+    // V100-M: begin provider attestation before loading protected content.
+    await initializeAppCheckBeforeServices(app);
+    auth=getAuth(app);
+    db=getFirestore(app);
     onAuthStateChanged(auth,user=>{void verifyAndLoad(user);},
       ()=>{clearLesson();state('Unable to verify sign-in','Return to the Student Portal and try again.',{login:true});});
   }catch{
@@ -114,4 +118,4 @@ $('signout').addEventListener('click',async()=>{
   state('Signing out…','Removing lesson content from this view.');
   try{await signOut(auth);}catch{state('Sign-out was not completed','Please return to your Portal dashboard and try again.',{retry:true,logout:true});}
 });
-boot();
+void boot();

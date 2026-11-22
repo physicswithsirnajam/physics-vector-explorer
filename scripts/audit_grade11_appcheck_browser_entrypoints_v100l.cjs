@@ -33,7 +33,7 @@ const ENTRIES=Object.freeze([
   page:'portal/course-lesson.html',
   module:'portal/course-lesson.js',
   script:'./course-lesson.js?v=16',
-  initializer:'getAuth(initializeApp(firebaseConfig))',
+  initializer:'const app=initializeApp(firebaseConfig);',
   use:'courseLessons server-backed protected study content'
  }),
  Object.freeze({
@@ -57,6 +57,7 @@ function sourceSnapshot(){
  }).split('\0').filter(Boolean);
  const paths=new Set(ENTRIES.flatMap(x=>[x.page,x.module]));
  paths.add('portal/firebase-config.js');
+ paths.add('portal/recaptcha-enterprise-v100m.mjs');
  for(const c of EXTRA_CONSUMERS)paths.add(c.module);
  const checkedFiles={};
  for(const p of paths)checkedFiles[p]=fs.readFileSync(path.join(ROOT,p),'utf8');
@@ -100,16 +101,34 @@ function inspect(snapshot){
   assert.ok(js.includes(e.initializer),'Unknown Firebase initialisation order in '+e.module);
   assert.ok(/\bgetAuth\s*\(/.test(js)&&/\bgetFirestore\s*\(/.test(js),
    'Existing Firebase Auth/Firestore services changed in '+e.module);
-  assert.ok(!/firebase-app-check\.js|initializeAppCheck\s*\(|ReCaptchaEnterpriseProvider\s*\(|FIREBASE_APPCHECK_DEBUG_TOKEN/.test(js),
-   'Unreviewed production App Check/browser debug integration in '+e.module);
+  assert.ok(js.includes("from './recaptcha-enterprise-v100m.mjs'"),
+   'Missing approved early App Check helper in '+e.module);
+  const initPosition=js.indexOf('await initializeAppCheckBeforeServices(');
+  assert.ok(initPosition>=0&&
+   js.indexOf('getAuth(',initPosition)>initPosition&&
+   js.indexOf('getFirestore(',initPosition)>initPosition,
+   'App Check must initialize before Auth/Firestore services in '+e.module);
+  assert.ok(!js.includes('firebase-app-check.js')&&
+   !js.includes('initializeAppCheck(')&&
+   !js.includes('new ReCaptchaEnterpriseProvider('),
+   'ReCaptchaEnterpriseProvider is owned only by approved helper: '+e.module);
   findings.push(Object.freeze({
    html:e.page,module:e.module,use:e.use,
    pinnedFirebaseWebSdk:VERSION,
-   appCheckCurrentlyInitialized:false,
+   appCheckEarlyStartupWiredInSource:true,
    realBrowserProviderProof:false,
    earlyInitializationRequiredBeforeFirebaseServices:true
   }));
  }
+ const helper=snapshot.checkedFiles['portal/recaptcha-enterprise-v100m.mjs'];
+ assert.ok(helper.includes("const APPROVED_HOST='physicswithsirnajam.github.io';")&&
+  helper.includes("https://www.gstatic.com/firebasejs/13.1.0/firebase-app-check.js")&&
+  helper.includes('new sdk.ReCaptchaEnterpriseProvider(SITE_KEY)')&&
+  helper.includes('isTokenAutoRefreshEnabled:true')&&
+  helper.includes('return false;'),
+  'Approved Enterprise App Check SDK origin, provider and fail-open monitor-mode helper changed');
+ assert.ok(!/FIREBASE_APPCHECK_DEBUG_TOKEN|DebugAppCheckProvider/.test(helper),
+  'Debug App Check provider must never ship on public site');
  const enrollment=snapshot.checkedFiles['portal/academic-enrollment.js'];
  assert.ok(enrollment.includes('firebase-firestore.js')&&
   enrollment.includes('export async function readEnrollment(db,user)')&&
@@ -125,7 +144,7 @@ function inspect(snapshot){
   originSnapshot:v99w.readSourceSnapshot(),launchSnapshot:v99u.repositorySnapshot()
  });
  assert.equal(owner.studentReportAction,'COPY_ONLY');
- assert.equal(owner.firebase.ownerReportedAppCheckRegistration,'unregistered');
+ assert.equal(owner.firebase.ownerReportedAppCheckRegistration,'registered');
  assert.equal(owner.firebase.ownerReportedFirestoreAppCheckEnforcement,'not-enforced');
  assert.equal(owner.firebase.ownerReportedAuthenticationAppCheckEnforcement,'not-enforced');
  return Object.freeze({
@@ -134,12 +153,12 @@ function inspect(snapshot){
   browserEntrypointCount:ENTRIES.length,
   browserEntrypoints:Object.freeze(findings),
   sharedFirebaseServiceConsumer:Object.freeze(EXTRA_CONSUMERS.map(x=>({...x}))),
-  originalBrowserAppCheckSetupPresent:false,
+  originalBrowserAppCheckSetupPresent:true,
   browserAuthAndFirestorePathsAllMappedForFutureRollout:true,
   ownerReportedWebsiteHostname:owner.website.ownerReportedBrowserHostname,
-  providerRegistrationStatus:'UNREGISTERED — OWNER REPORTED',
+  providerRegistrationStatus:'REGISTERED ENTERPRISE — OWNER SCREENSHOT',
   serviceEnforcementStatus:'NOT ENFORCED — OWNER REPORTED',
-  futureProviderWorkApprovedOrActivated:false,
+  sourceBrowserInitializationAttemptWired:true,
   shouldMonitorAllFourEntrypointsBeforeEnforcement:true,
   futureCustomDomainRequiresHostnameReview:true,
   realProviderProofReceived:false,
@@ -147,7 +166,7 @@ function inspect(snapshot){
   studentReportAction:'COPY ONLY',
   liveReportSendingEnabled:false,
   safeToEnforceAppCheck:false,
-  status:'HOLD — NO CLIENT INITIALIZER, KEY, ENFORCEMENT OR LIVE REPORTING IN THIS PR'
+  status:'HOLD — CLIENT INITIALIZER WIRED; ENFORCEMENT OFF, GENUINE POSITIVE TOKEN NOT VERIFIED, SEND COPY ONLY'
  });
 }
 function main(){
@@ -156,8 +175,8 @@ function main(){
   const dir=path.resolve(ROOT,'qa-artifacts/grade11-appcheck-entrypoints-v100l');
   fs.mkdirSync(dir,{recursive:true});
   fs.writeFileSync(path.join(dir,'source-inventory.json'),JSON.stringify(report,null,2)+'\n');
-  console.log('V100-L PASS: four distinct public Firebase-init entrypoints and enrollment consumer mapped from checked-in code.');
-  console.log('V100-L HOLD: owner-reported unregistered App Check, no browser initializer/positive token, Copy only; NO enforcement.');
+  console.log('V100-L PASS: four Firebase-init entrypoints all call approved early App Check starter; enrollment consumer mapped.');
+  console.log('V100-L HOLD: owner screenshot shows registered provider, no verified positive token; Copy only, NO enforcement.');
  }catch(e){
   console.error('V100-L FAILED: '+String(e.message||e).slice(0,330));process.exitCode=1;
  }

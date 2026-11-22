@@ -4,6 +4,7 @@
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
    Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
+import {initializeAppCheckBeforeServices} from './recaptcha-enterprise-v100m.mjs';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {openProgressPdfReport} from './pdf-report.js';
 import {initLearningHub,updateLearningHubInsight,clearLearningHubInsight,setHubEnrollment} from './learning-hub.js?v=74';
@@ -422,12 +423,18 @@ if(!ready){
  $('setup-prompt').hidden=false;
  for(const element of document.querySelectorAll('form button[type="submit"],#google-signin')) element.disabled=true;
 }else{
- try{
-  const firebase=initializeApp(firebaseConfig);
-  auth=getAuth(firebase);
-  db=getFirestore(firebase);
-  onAuthStateChanged(auth,user=>{refreshView(user);},err=>{screen('auth');pane('login');status(authError(err));});
- }catch(err){$('setup-prompt').hidden=false;status('Firebase could not initialize. Recheck your Web App config.');}
+ // V100-M: initialize registered App Check before Auth/Firestore service use.
+ // If the optional SDK is blocked, students still sign in while both APIs
+ // remain in Monitoring; this is NOT permission to enable enforcement.
+ void (async()=>{
+  try{
+   const firebase=initializeApp(firebaseConfig);
+   await initializeAppCheckBeforeServices(firebase);
+   auth=getAuth(firebase);
+   db=getFirestore(firebase);
+   onAuthStateChanged(auth,user=>{refreshView(user);},err=>{screen('auth');pane('login');status(authError(err));});
+  }catch(err){$('setup-prompt').hidden=false;status('Firebase could not initialize. Recheck your Web App config.');}
+ })();
 }
 
 $('login-form').addEventListener('submit',async e=>{
