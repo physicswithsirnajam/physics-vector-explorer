@@ -78,19 +78,19 @@
   <main>
    <div class="eyebrow">QUALITY ASSURANCE · V100-E</div>
    <h1>MCQ Review Desk</h1>
-   <p class="lead">A proposed administrator workspace for examining reported MCQ concerns. Every item is fictional. Review actions run only in this page's memory and reset when you reload.</p>
+   <p class="lead">A proposed administrator workspace for examining reported MCQ concerns. Every item is fictional. These counters describe only the four sample reports, not a complete report database. Review actions change only this page's memory and reset when you reload.</p>
    <section class="stats" aria-label="Fictional report totals">
-    <div class="stat"><span>Total reports</span><strong id="metric-total">0</strong></div>
-    <div class="stat"><span>New</span><strong id="metric-new">0</strong></div>
-    <div class="stat"><span>In review</span><strong id="metric-in-review">0</strong></div>
-    <div class="stat"><span>Resolved</span><strong id="metric-resolved">0</strong></div>
+    <div class="stat"><span>Sample reports</span><strong id="metric-total">0</strong></div>
+    <div class="stat"><span>Sample new</span><strong id="metric-new">0</strong></div>
+    <div class="stat"><span>Sample in review</span><strong id="metric-in-review">0</strong></div>
+    <div class="stat"><span>Sample resolved</span><strong id="metric-resolved">0</strong></div>
    </section>
    <div class="columns">
     <section class="panel" aria-labelledby="queue-title">
      <div class="panel-head">
-      <h2 id="queue-title">Reported questions</h2>
-      <p class="caption">Select a fictional issue to see its current status.</p>
-      <label for="report-search">Search by MCQ ID or category</label>
+      <h2 id="queue-title">Fictional report sample</h2>
+      <p class="caption">Search and filters apply only to these four sample entries. The tested private queue API returns at most 10 newest reports per request; it does not provide a system-wide total, pagination or server-side filters.</p>
+      <label for="report-search">Search this sample by MCQ ID or category</label>
       <input id="report-search" class="search" type="search" placeholder="Search fictional reports…" autocomplete="off">
       <div class="filters" role="group" aria-label="Filter by review stage">
        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
@@ -103,12 +103,12 @@
     </section>
     <section class="panel" aria-labelledby="details-title">
      <div class="panel-head"><h2 id="details-title">Review details</h2>
-      <p class="caption">Source reference, reported concern and simulated history.</p>
+      <p class="caption">Source reference, fictional concern, and an illustrative timeline combining the queue-created timestamp with separate audit events.</p>
      </div>
      <div id="details" class="details" aria-live="polite"></div>
     </section>
    </div>
-   <p class="warning-foot"><strong>Safety boundary:</strong> This is an isolated offline UX preview. It does not sign in, call Firebase, contact any endpoint, change a question, store a token or submit a report. The actual student issue-report feature remains Copy only.</p>
+   <p class="warning-foot"><strong>Safety boundary:</strong> All metrics and filters are limited to this four-record fictional sample. This is an isolated offline UX preview. It does not sign in, call Firebase, contact any endpoint, change a question, store a token or submit a report. The actual student issue-report feature remains Copy only.</p>
   </main>
  </div>
 </div>
@@ -180,10 +180,10 @@
   const grid=add(details,'div','grid');
   field(grid,'Question #',r.sourceQuestionNumber);
   field(grid,'Bank version',r.bankVersion);
-  add(details,'div','field','Review history');
+  add(details,'div','field','Activity timeline (creation + audit events)');
   const timeline=add(details,'ol','timeline');
   const first=add(timeline,'li','');
-  add(first,'strong','', 'Report received');
+  add(first,'strong','', 'Report created · queue timestamp (not an audit event)');
   add(first,'span','',r.createdAtIso.replace('T',' · ').replace('.000Z',' UTC'));
   r.events.forEach(function(ev){
    const li=add(timeline,'li','');
@@ -206,7 +206,7 @@
   const reset=add(buttons,'button','secondary','Reset demonstration');
   reset.type='button';reset.id='reset-demo';
   reset.addEventListener('click',function(){location.reload();});
-  add(details,'p','subtle','This action changes only browser memory. It never updates Firebase or actual MCQ records.');
+  add(details,'p','subtle','The creation timestamp belongs to the report queue; subsequent review events come from the separate private audit-history contract. Actions here change browser memory only and never update Firebase or actual MCQ records.');
  }
  function render(){stats();renderList();renderDetail();}
  document.querySelectorAll('[data-filter]').forEach(function(btn){

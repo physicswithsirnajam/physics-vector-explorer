@@ -5,6 +5,10 @@ on:
       - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
       - "scripts/build_grade11_admin_review_preview_v100e.cjs"
       - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_preview_http_contract_v100f.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
       - "portal/assets/physics-with-sir-najam-official-logo.png"
       - ".github/workflows/validate-grade11-admin-review-preview-v100e.yml"
   push:
@@ -13,6 +17,10 @@ on:
       - "scripts/fixtures/grade11-admin-review-preview-v100e.template.html"
       - "scripts/build_grade11_admin_review_preview_v100e.cjs"
       - "scripts/test_grade11_admin_review_preview_v100e.cjs"
+      - "scripts/test_grade11_admin_preview_http_contract_v100f.cjs"
+      - "server/local-http-admin-review-v100a.cjs"
+      - "server/local-http-admin-history-v100b.cjs"
+      - "server/local-http-admin-triage-v100c.cjs"
       - "portal/assets/physics-with-sir-najam-official-logo.png"
       - ".github/workflows/validate-grade11-admin-review-preview-v100e.yml"
   workflow_dispatch:
@@ -31,12 +39,15 @@ jobs:
         run: |
           node --check scripts/build_grade11_admin_review_preview_v100e.cjs
           node --check scripts/test_grade11_admin_review_preview_v100e.cjs
+          node --check scripts/test_grade11_admin_preview_http_contract_v100f.cjs
       - name: Install pinned headless Chromium without Firebase SDKs
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
       - name: Build standalone preview from only fictional issue reports and existing master logo
         run: node scripts/build_grade11_admin_review_preview_v100e.cjs
+      - name: Cross-check UI sample labels, timestamps and payloads against private HTTP wire contracts
+        run: node scripts/test_grade11_admin_preview_http_contract_v100f.cjs
       - name: Test desktop/mobile, filters, review stages, no persistence, text safety and no API
         run: node scripts/test_grade11_admin_review_preview_v100e.cjs
       - name: Upload offline HTML preview, screenshots and synthetic-only result summary
