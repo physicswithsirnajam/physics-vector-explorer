@@ -1,0 +1,27 @@
+// V99-Q: ISOLATED AND UNDEPLOYED Firestore emulator fixture ONLY.
+// This entire rules file intentionally denies unrelated application paths.
+// NEVER publish it as the owner's production rules; the currently published
+// policy must first be fetched, reviewed and tested separately.
+//
+// Admin Firestore SDK transactions bypass browser rules, so the trusted
+// V99-Q server must independently check verified Firebase Auth tokens,
+// email_verified, admin custom claim and exact UID allowlist. All direct
+// browser reads/writes of reports, private audits and rates are denied,
+// including students, fake teachers and genuine admin-claimed browsers.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /mcqReviewReports/{reportId} {
+      allow read, write: if false;
+    }
+    match /mcqReviewRate/{rateId} {
+      allow read, write: if false;
+    }
+    match /mcqReviewAdminAudit/{auditId} {
+      allow read, write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
