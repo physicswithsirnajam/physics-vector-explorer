@@ -13,6 +13,9 @@ const v99w=require('./audit_grade11_appcheck_origin_registration_v99w.cjs');
 const v99u=require('./audit_grade11_reporting_launch_lock_v99u.cjs');
 const ROOT=path.resolve(__dirname,'..');
 
+// Updated after the owner-provided Registered/Fraud Defense and APIs Monitoring
+// screenshots on 22 Nov 2026. These are not independent current
+// Firebase API queries. Historical earlier reports were Unregistered.
 // These are owner-reported observations from 22 Nov 2026, not current
 // independent Firebase API evidence or approval to change settings.
 // Do NOT replace the observed GitHub Pages host with the Firebase authDomain.
@@ -22,14 +25,14 @@ const OWNER_REPORTED=Object.freeze({
   browserHostname:'physicswithsirnajam.github.io',
   firebaseProjectId:'physics-with-sir-najam-portal',
   firebaseWebAppId:'1:158078442603:web:b4738a9875a1d5b1c8a52e',
-  appCheckRegistration:'unregistered',
-  appCheckProvider:'none',
+  appCheckRegistration:'registered',
+  appCheckProvider:'recaptcha-enterprise',
   firestoreAppCheckEnforcement:'not-enforced',
   authenticationAppCheckEnforcement:'not-enforced',
   externalIframeEmbedding:'not-confirmed'
 });
 const ALLOWED_STATUSES=Object.freeze([
- 'unregistered','none','not-enforced','not-confirmed'
+ 'registered','recaptcha-enterprise','not-enforced','not-confirmed'
 ]);
 function inspect(snapshot,observation=OWNER_REPORTED){
   assert.ok(snapshot&&snapshot.originSnapshot&&snapshot.launchSnapshot,
@@ -51,8 +54,8 @@ function inspect(snapshot,observation=OWNER_REPORTED){
   assert.equal(observation.firebaseProjectId,v99w.EXPECTED.projectId);
   assert.equal(observation.firebaseWebAppId,v99w.EXPECTED.webAppId);
   assert.equal(observation.observedOn,'2026-11-22');
-  assert.equal(observation.appCheckRegistration,'unregistered');
-  assert.equal(observation.appCheckProvider,'none');
+  assert.equal(observation.appCheckRegistration,'registered');
+  assert.equal(observation.appCheckProvider,'recaptcha-enterprise');
   assert.equal(observation.firestoreAppCheckEnforcement,'not-enforced');
   assert.equal(observation.authenticationAppCheckEnforcement,'not-enforced');
   assert.equal(observation.externalIframeEmbedding,'not-confirmed');
@@ -107,8 +110,8 @@ function main(){
     fs.mkdirSync(dir,{recursive:true});
     fs.writeFileSync(path.join(dir,'owner-observed-preflight.json'),
       JSON.stringify(result,null,2)+'\n');
-    console.log('V100-K PASS: owner-reported GitHub Pages origin and unregistered/unenforced App Check match source identity.');
-    console.log('V100-K HOLD: owner observation is not current live API proof; Copy only, enforcement OFF, future domain needs separate review.');
+    console.log('V100-K PASS: owner-reported GitHub Pages origin, registered Enterprise provider and unenforced APIs reconciled to source identity.');
+    console.log('V100-K HOLD: owner screenshot is not independent Firebase API proof or genuine provider token verification; Copy only, enforcement not enabled by this test.');
   }catch(err){
     console.error('V100-K FAILED: '+String(err.message||err).slice(0,320));
     process.exitCode=1;
