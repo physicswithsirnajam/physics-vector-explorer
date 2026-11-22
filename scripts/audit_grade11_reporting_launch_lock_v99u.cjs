@@ -70,8 +70,10 @@ function auditLaunchLock({sources,trackedPaths}){
 
  const publicConfig=sources['portal/firebase-config.js'];
  hasAll(publicConfig,[
-  'physics-with-sir-najam-portal','firebaseConfig'
- ],'expected existing public web-project identity');
+  'firebaseConfig',
+  'authDomain: "physics-with-sir-najam-portal.firebaseapp.com"',
+  'projectId: "physics-with-sir-najam-portal"'
+ ],'expected existing public Firebase Auth domain and web-project identity');
 
  const transport=sources['server/offline-review-request-gate-v99k.cjs'];
  hasAll(transport,[
