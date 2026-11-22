@@ -69,16 +69,23 @@ function deny(response,code,status){
  assert.equal(response.headers['cache-control'],'no-store, max-age=0');
  assert.equal(response.headers['access-control-allow-origin'],undefined);
 }
-function assertPrivacy(response,users){
+function assertPrivacy(response,users,{authorizedQueue=false}={}){
  assert.equal(response.status,200);
  assert.equal(response.headers['access-control-allow-origin'],undefined);
  assert.equal(response.headers['cache-control'],'no-store, max-age=0');
  assert.equal(response.headers['x-content-type-options'],'nosniff');
- for(const bad of [
-  'PRIVATE_STUDENT','SYNTHETIC_CORRECT_ANSWER','ar_',
+ // An authorized queue deliberately includes the learner's issue *note*.
+ // That note is NOT allowed in transition receipts or audit history.
+ // Account identities, secrets, answers and private audit document IDs
+ // are never allowed in ANY HTTP response, including the admin queue.
+ const excluded=[
+  'SYNTHETIC_CORRECT_ANSWER','ar_',
   'synthetic-owner@example.test',users.owner.uid,users.owner.token,
   users.student.uid,users.student.token
- ])assert.ok(!response.raw.includes(bad),'no internal/private contents in HTTP JSON');
+ ];
+ if(!authorizedQueue)excluded.push('PRIVATE_STUDENT');
+ for(const bad of excluded)
+  assert.ok(!response.raw.includes(bad),'no forbidden private field in HTTP JSON');
 }
 function seed(q,i){
  return {
@@ -163,7 +170,7 @@ async function main(){
 
   queueEnabled=historyEnabled=triageEnabled=true;
   const qInitial=await send(queue.url,{headers:header(users.owner.token)});
-  assertPrivacy(qInitial,users);
+  assertPrivacy(qInitial,users,{authorizedQueue:true});
   assert.equal(qInitial.body.count,2);
   assert.deepEqual(qInitial.body.reports.map(r=>r.reportId),[SECOND,FIRST],
    'newest first, same shared synthetic database');
@@ -221,7 +228,7 @@ async function main(){
    ok:true,reportId:FIRST,status:'resolved',alreadyApplied:false
   });
   const qResolved=await send(queue.url,{headers:header(users.owner.token)});
-  assertPrivacy(qResolved,users);
+  assertPrivacy(qResolved,users,{authorizedQueue:true});
   assert.equal(qResolved.body.reports.find(r=>r.reportId===FIRST).status,'resolved');
   assert.equal(qResolved.body.reports.find(r=>r.reportId===SECOND).status,'new');
   const hResolved=await send(history.urlFor(FIRST),{
