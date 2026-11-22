@@ -1,0 +1,65 @@
+name: Grade XI Sitewide Browser Print Watermark Regression (V102)
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "shared/print-watermark-v70.css"
+      - "portal/unit-03-numericals.html"
+      - "portal/unit-03-numericals.js"
+      - "portal/unit-01-numericals.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/course-lesson.html"
+      - "portal/pdf-report.js"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_sitewide_print_watermark_v102.cjs"
+      - ".github/workflows/validate-grade11-sitewide-print-watermark-v102.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "shared/print-watermark-v70.css"
+      - "portal/unit-03-numericals.html"
+      - "portal/unit-03-numericals.js"
+      - "portal/unit-01-numericals.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/course-lesson.html"
+      - "portal/pdf-report.js"
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_sitewide_print_watermark_v102.cjs"
+      - ".github/workflows/validate-grade11-sitewide-print-watermark-v102.yml"
+  workflow_dispatch:
+jobs:
+  real-browser-print-pdf-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check existing global navigation and added watermark audit
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_sitewide_print_watermark_v102.cjs
+      - name: Install pinned headless browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify watermark appears on EVERY real PDF page with browser print backgrounds OFF
+        run: node scripts/test_grade11_sitewide_print_watermark_v102.cjs
+      - name: Preserve V70 progress and MCQ report watermark coverage
+        run: node scripts/test_export_watermarks_v70.cjs
+      - name: Preserve original unit drawer and quiz navigation behavior
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload synthetic/public PDF and text-based watermark evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-print-watermark-v102-pdf-evidence
+          path: |
+            qa-artifacts/print-watermark-v102/
+            qa-artifacts/watermark-v70/
+          retention-days: 10
+          if-no-files-found: warn
