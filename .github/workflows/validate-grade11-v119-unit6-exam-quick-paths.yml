@@ -1,0 +1,60 @@
+name: Grade XI V119 Unit 6 Exam Quick MCQ Practice Paths
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "scripts/test_grade11_unit6_exam_quick_paths_v119.cjs"
+      - "quality/grade11-v119-exam-quick-unit6-mcq-pathways.md"
+      - ".github/workflows/validate-grade11-v119-unit6-exam-quick-paths.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "scripts/test_grade11_unit6_exam_quick_paths_v119.cjs"
+      - "quality/grade11-v119-exam-quick-unit6-mcq-pathways.md"
+      - ".github/workflows/validate-grade11-v119-unit6-exam-quick-paths.yml"
+  workflow_dispatch:
+jobs:
+  student-revision-quick-paths-and-source-holds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate V119 and legacy V101A regression scripts
+        run: |
+          node --check scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+          node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Verify three exact Unit6 links, 43 source-backed exam routes and untouched practice/academic release safeguards
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve source-only V118 six-unit exam-readiness baseline and teacher-public audience register
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve 560 pending Unit6 academic and no graded examination release
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve exactly 2250 signed answer-free public question references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium browser runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify six real browser unit filters and new Unit6 exam-quick routes at 1280 390 320px
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve source-driven six-unit resource drawer and unsaved quiz leave warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload synthetic source and responsive public-page screenshots only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v119-unit6-exam-quick-provisional-paths
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+            qa-artifacts/drawer-v58/
+          if-no-files-found: warn
+          retention-days: 10
