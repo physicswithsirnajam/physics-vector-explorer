@@ -1,0 +1,53 @@
+name: Grade XI Unit 6 Provisional Worked-Topic Finder (V108)
+on:
+  pull_request:
+    paths:
+      - "portal/textbook-resource-finder.html"
+      - "portal/verified-unit6-worked-topic-index-v108.json"
+      - "scripts/test_grade11_unit6_worked_topic_finder_v108.cjs"
+      - ".github/workflows/validate-grade11-unit6-worked-topic-finder-v108.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/textbook-resource-finder.html"
+      - "portal/verified-unit6-worked-topic-index-v108.json"
+      - "scripts/test_grade11_unit6_worked_topic_finder_v108.cjs"
+      - ".github/workflows/validate-grade11-unit6-worked-topic-finder-v108.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-scope-and-browser-worked-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check V108 source/browser script syntax
+        run: node --check scripts/test_grade11_unit6_worked_topic_finder_v108.cjs
+      - name: Install pinned Chromium browser test dependencies
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Check all seven Unit 6 worked anchors and browser navigation
+        run: node scripts/test_grade11_unit6_worked_topic_finder_v108.cjs
+      - name: Regress 28 exact/source-labelled Unit 1–4 textbook links (V103)
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Regress V106 formulas and SLO finder
+        run: node scripts/test_grade11_slo_study_finder_v106.cjs
+      - name: Regress V107 individual Unit 5 descriptive links
+        run: node scripts/test_grade11_u05_question_deeplinks_v107.cjs
+      - name: Upload synthetic public-source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-unit6-worked-topic-finder-v108
+          path: |
+            qa-artifacts/unit6-worked-topics-v108/
+            qa-artifacts/textbook-finder-v103/
+            qa-artifacts/slo-study-finder-v106/
+            qa-artifacts/u05-question-deeplinks-v107/
+          retention-days: 10
+          if-no-files-found: warn
