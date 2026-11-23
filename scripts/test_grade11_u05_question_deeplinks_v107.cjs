@@ -91,7 +91,7 @@ async function browserAudit(){
    await target.waitFor();
    assert.match(await target.innerText(),/Question 8/);
    assert.equal(await target.locator('.option').count(),2);
-   assert.ok(await page.evaluate(()=>document.activeElement?.id==='u5-q8'),'Asynchronous anchor should receive keyboard focus');
+   await page.waitForFunction(()=>document.activeElement?.id==='u5-q8');
    assert.ok((await page.locator('#loadStatus').innerText()).includes('no model answers loaded'));
    await page.goto(base+'descriptive-answer-finder.html?unit=5&type=short-response&q=Q4',{waitUntil:'load'});
    await page.waitForFunction(()=>document.querySelectorAll('#unit5-practice-index .practice-card').length===1);
