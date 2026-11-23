@@ -1,0 +1,62 @@
+name: Grade XI V118 Six-Unit Pre-Exam Readiness Source and Browser Audit
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_exam_readiness_v118.cjs"
+      - "scripts/test_grade11_exam_readiness_v118.cjs"
+      - "quality/grade11-v118-exam-readiness-six-unit-source-audit.md"
+      - ".github/workflows/validate-grade11-v118-exam-readiness-source-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_exam_readiness_v118.cjs"
+      - "scripts/test_grade11_exam_readiness_v118.cjs"
+      - "quality/grade11-v118-exam-readiness-six-unit-source-audit.md"
+      - ".github/workflows/validate-grade11-v118-exam-readiness-source-audit.yml"
+  workflow_dispatch:
+jobs:
+  source-links-teacher-scope-and-student-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check read-only source auditor and its independent contract
+        run: |
+          node --check scripts/audit_grade11_exam_readiness_v118.cjs
+          node --check scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Audit six-unit exam routes, source links, public teacher-style pages and pending grade privacy gates
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Retain Unit6 560-review-queue unreleased academic status
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Retain locked student Copy-only report control and non-production admin inbox
+        run: node scripts/test_grade11_reporting_launch_lock_v99u.cjs
+      - name: Install pinned real browser runtime without changing website source
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify existing six-unit Exam Quick Access links and 1280/390/320px live student filter UX
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Verify six-unit focused Learning Hub and honest status wording
+        run: node scripts/test_grade11_learning_hub_compact_v96b.cjs
+      - name: Verify standalone simulations have navigation back to unit and dashboard
+        run: node scripts/test_grade11_simulation_return_v96c.cjs
+      - name: Verify six-unit resource drawer and unsaved test navigation warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload read-only synthetic inventory and public local-browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v118-six-unit-exam-readiness-source-and-browser
+          path: |
+            qa-artifacts/grade11-v118-exam-readiness/
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-learning-hub-v96b/
+            qa-artifacts/unit06-simulation-return-v96c/
+            qa-artifacts/drawer-v58/
+          if-no-files-found: warn
+          retention-days: 10
