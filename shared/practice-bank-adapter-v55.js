@@ -1046,7 +1046,7 @@ function applyUnit6Topic65StagnationPracticeOverlay(questions,overlay){
     /steady ideal horizontal flow/i.test(record.proposedStem)&&
     /same streamline/i.test(record.proposedStem)&&
     /density 1000 kg\/m³/i.test(record.proposedStem)&&
-    /negligible viscous losses/i.test(record.proposedStem),
+    /Neglect viscous losses/i.test(record.proposedStem),
     'V116 Q55 local stagnation flow assumptions missing');
   if(n===56)need(/very large reservoir/i.test(record.proposedStem)&&
     /speed is negligible/i.test(record.proposedStem)&&
