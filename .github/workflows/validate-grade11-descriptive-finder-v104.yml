@@ -1,0 +1,58 @@
+name: Grade XI Source-Labelled Descriptive Answer Finder (V104)
+on:
+  pull_request:
+    paths:
+      - "portal/descriptive-answer-finder.html"
+      - "portal/verified-descriptive-index-v104.json"
+      - "portal/exam-quick-access.html"
+      - "portal/unit-01-descriptive.html"
+      - "portal/unit-02-descriptive.html"
+      - "scripts/test_grade11_descriptive_finder_v104.cjs"
+      - ".github/workflows/validate-grade11-descriptive-finder-v104.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/descriptive-answer-finder.html"
+      - "portal/verified-descriptive-index-v104.json"
+      - "portal/exam-quick-access.html"
+      - "portal/unit-01-descriptive.html"
+      - "portal/unit-02-descriptive.html"
+      - "scripts/test_grade11_descriptive_finder_v104.cjs"
+      - ".github/workflows/validate-grade11-descriptive-finder-v104.yml"
+  workflow_dispatch:
+jobs:
+  source-grounded-short-and-long-response-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check new source-index browser test syntax
+        run: node --check scripts/test_grade11_descriptive_finder_v104.cjs
+      - name: Install pinned browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify every individual source question and 1280/390/320px browser navigation
+        run: node scripts/test_grade11_descriptive_finder_v104.cjs
+      - name: Preserve the six-unit 41-link Exam Quick Access regression
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve V103 textbook numerical/example finder navigation
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Preserve Units and Resources drawer and unfinished quiz warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload synthetic/public browser screenshots and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-descriptive-answer-finder-v104
+          path: |
+            qa-artifacts/descriptive-finder-v104/
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/textbook-finder-v103/
+          retention-days: 10
+          if-no-files-found: warn
