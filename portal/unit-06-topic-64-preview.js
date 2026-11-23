@@ -41,7 +41,7 @@ function showQuestion(){
  $('position').textContent='Question '+(position+1)+' of '+test.length;
  $('answered').textContent=responses.size+' of '+test.length+' answered';
  $('bar').style.width=String(100*(position+1)/test.length)+'%';
- $('source-number').textContent=(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'Clarified provisional variant of source Q':'Corrected provisional source Q')+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · Source context: NBF pp. 96–99';
+ $('source-number').textContent=(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'Clarified provisional variant of source Q':q.practiceOverlayVersion==='V111'?'Corrected provisional source Q':'Original provisional source Q')+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · Source context: NBF pp. 96–99';
  $('stem').textContent=q.stem;
  const grid=$('option-grid');grid.replaceChildren();
  q.options.forEach(o=>{
@@ -64,7 +64,7 @@ function submit(){
  const review=$('review');review.replaceChildren();
  test.forEach((q,i)=>{
   const row=make('article'),good=responses.get(q.id)===q.correctOptionId;
-  row.append(make('strong',good?'ok':'wrong','Q'+(i+1)+' · '+(good?'Correct':'Review needed')+' · '+(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'clarified variant of source Q':'corrected source Q')+q.sourceQuestionNumber));
+  row.append(make('strong',good?'ok':'wrong','Q'+(i+1)+' · '+(good?'Correct':'Review needed')+' · '+(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'clarified variant of source Q':q.practiceOverlayVersion==='V111'?'corrected source Q':'original source Q')+q.sourceQuestionNumber));
   row.append(make('p','',q.stem));
   const selected=responses.get(q.id)||'Unanswered';
   const right=q.options.find(x=>x.id===q.correctOptionId);
