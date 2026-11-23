@@ -1,0 +1,55 @@
+name: Grade XI Unit 6 V115 Bernoulli Stagnation Teacher Proposals
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v115-q55-q56-stagnation-teacher-candidates.json"
+      - "quality/grade11-unit06-v115-q55-q56-stagnation-teacher-review.md"
+      - "scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs"
+      - ".github/workflows/validate-grade11-u06-v115-stagnation-teacher-proposals.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v115-q55-q56-stagnation-teacher-candidates.json"
+      - "quality/grade11-unit06-v115-q55-q56-stagnation-teacher-review.md"
+      - "scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs"
+      - ".github/workflows/validate-grade11-u06-v115-stagnation-teacher-proposals.yml"
+  workflow_dispatch:
+jobs:
+  original-source-science-and-nonrelease:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Ensure teacher-only science QA script parses
+        run: node --check scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs
+      - name: Validate original source SHA, exact two option-B keys, physical stagnation model, no student or formal exam release
+        run: node scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs
+      - name: Retain 20 original Topic 6.5 numerical stems, full A-D choices, all calculated values and compulsory Q55/Q56 flags
+        run: node scripts/test_grade11_unit06_v95c2s_topic65_num41_60_academic.cjs
+      - name: Retain V113 original-preserving three Bernoulli Q61/Q67/Q78 teacher review proposals
+        run: node scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs
+      - name: Retain all 560 pending teacher approvals and unreleased course status
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Install pinned Chromium and PDF inspector for protected live-overlay regression
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Retain V114 teacher-authorized live practice variants, V111 original-source fixes and watermarked 80-item PDF
+        run: node scripts/test_grade11_u06_v114_approved_bernoulli_practice_overlay.cjs
+      - name: Upload synthetic browser and source-safety evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-u06-v115-teacher-proposals-science-and-source
+          path: |
+            qa-artifacts/unit6-v114-bernoulli-overlay/
+            qa-artifacts/unit06-topic65-v95c2s/
+          retention-days: 10
+          if-no-files-found: warn
