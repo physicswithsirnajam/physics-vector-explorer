@@ -148,10 +148,22 @@ async function browser(){
   }finally{await figure.close()}
   // Real 80-item quiz: dynamic textContent rendering after clicks must be typographic.
   const quiz=await browser.newPage({viewport:{width:390,height:820}});
+  // V112: the original quiz protects unanswered submissions with window.confirm.
+  // This synthetic unattended print test must explicitly ACCEPT that prompt;
+  // Playwright otherwise dismisses it and the review correctly remains hidden.
+  let unansweredConfirmationAccepted=0;
+  quiz.on('dialog',async dialog=>{
+   assert.equal(dialog.type(),'confirm','Unexpected browser prompt in real Topic 6.4 quiz');
+   assert.match(dialog.message(),/80 unanswered question\(s\)/);
+   unansweredConfirmationAccepted++;
+   await dialog.accept();
+  });
   try{
    await quiz.goto(base+'portal/unit-06-topic-64-preview.html',{waitUntil:'load'});
    await quiz.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('80 questions available'),null,{timeout:25000});
    await quiz.locator('#size').selectOption('all');await quiz.locator('#begin').click();await quiz.locator('#finish').click();
+   assert.equal(unansweredConfirmationAccepted,1,'The real safety prompt must have been accepted exactly once');
+   await quiz.locator('#review article').first().waitFor({state:'visible'});
    assert.equal(await quiz.locator('#review article').count(),80);
    await quiz.waitForFunction(()=>document.querySelectorAll('#review sup').length>=5);
    const src=await quiz.locator('#review').textContent();
