@@ -1,0 +1,39 @@
+name: Grade XI Unit 6 V117 Four Bernoulli Scope Teacher Reviews
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v117-topic65-four-slo-scope-teacher-decisions.json"
+      - "quality/grade11-unit06-v117-topic65-four-slo-scope-teacher-review.md"
+      - "scripts/test_grade11_unit6_v117_topic65_scope_teacher_review.cjs"
+      - ".github/workflows/validate-grade11-u06-v117-topic65-slo-scope-teacher-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v117-topic65-four-slo-scope-teacher-decisions.json"
+      - "quality/grade11-unit06-v117-topic65-four-slo-scope-teacher-review.md"
+      - "scripts/test_grade11_unit6_v117_topic65_scope_teacher_review.cjs"
+      - ".github/workflows/validate-grade11-u06-v117-topic65-slo-scope-teacher-review.yml"
+  workflow_dispatch:
+jobs:
+  source-faithfulness-scope-and-academic-nonrelease:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify pure-source V117 regression syntax
+        run: node --check scripts/test_grade11_unit6_v117_topic65_scope_teacher_review.cjs
+      - name: Verify original prepared source, correct D/B/A/C results and pending B36/B40 item decisions
+        run: node scripts/test_grade11_unit6_v117_topic65_scope_teacher_review.cjs
+      - name: Retain complete 20 original Topic 6.5 numerical source options and B40/B36 warning flags
+        run: node scripts/test_grade11_unit06_v95c2s_topic65_num41_60_academic.cjs
+      - name: Retain V115 original stagnation review source and separately authorized V116 public practice references
+        run: node scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs
+      - name: Retain V113 original Q61/Q67/Q78 teacher candidate evidence
+        run: node scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs
+      - name: Retain independent original-source inventory and official teacher exam release holds
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs

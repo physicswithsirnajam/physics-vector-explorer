@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "version": "V117",
+  "scope": "TEACHER_REVIEW_ONLY_SOURCE_AND_STUDENT_PRACTICE_UNCHANGED",
+  "ownerDecision": "PENDING",
+  "releaseApproved": false,
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.5",
+  "sourceBank": "question-bank/grade-11/unit-06-topic-65-v84-80-source.json",
+  "sourceBankBlobSha": "f5a7dd0a29d5e90842c0ef557071aebc10a70baf",
+  "audit": "quality/grade11-unit06-v95c2s-topic65-mcq41-60-numerical-review.csv",
+  "originalSourceCount": 80,
+  "decisionCount": 4,
+  "unit6ProvisionalCount": 560,
+  "grade11ReferenceCount": 2250,
+  "allowedTreatment": "Keep numerically correct originals provisionally; document the full-B40 versus supporting-term/B36 continuity distinction before separately deciding any formal exam eligibility.",
+  "certificationNote": "Individual SLO, formative/summative, cognitive and official examination status remain independently PENDING; topic-level tags and teacher-authored A labels are not per-item certification.",
+  "candidates": [
+    {
+      "decisionId": "XI-U06-T65-V117-TEACHER-SCOPE-0045",
+      "originalSourceId": "XI-U06-T65-MCQ-0045",
+      "sourceQuestionNumber": 45,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 188,
+      "originalStem": "For water of density 1000 kg/m³ flowing at 5 m/s, the quantity ½ρv² is:",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "500 Pa"
+        },
+        {
+          "id": "B",
+          "text": "25 000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "2 500 Pa"
+        },
+        {
+          "id": "D",
+          "text": "12 500 Pa"
+        }
+      ],
+      "originalCorrectOptionId": "D",
+      "originalExplanation": "½ρv² = ½(1000)(5²) = 12 500 Pa.",
+      "sourceAuditPriority": "COMPULSORY_B40_SCOPE_NOTE",
+      "reviewedPreparedSourceRow": "XI-U06-T65-MCQ-0045,6.5,45,188,195,MATCHED_PREPARED_MASTER,4,D,MATCHED,12 500 Pa,rho*v^2/2,12500,COMPULSORY_B40_SCOPE_NOTE,Isolated kinetic-energy-density substitution,\"0.5×1000×5²=12500 Pa. The arithmetic is correct, but computing a single Bernoulli term does not by itself explain or apply the two-point Bernoulli relation at the official B40 Application level.\",P-11-B-40_supporting,Application_author_tag,PRINTED_NBF_P99_P100_EQUATION_VISUALLY_VERIFIED_ITEM_MAPPING_PENDING,PENDING,PENDING",
+      "formula": "½ρv²",
+      "independentMath": "0.5 × 1000 kg/m³ × (5 m/s)² = 12,500 kg/(m·s²) = 12,500 Pa",
+      "independentNumericResultSI": 12500,
+      "scientificFinding": "CORRECT_NUMERICAL_ANSWER_WITH_SCOPE_DECISION_PENDING",
+      "teacherProposedTreatment": "RETAIN_UNALTERED_PROVISIONAL_PRACTICE_AND_WITHHOLD_FORMAL_EXAM_ELIGIBILITY",
+      "suggestedPracticeRole": "Supportive practice: calculation of the kinetic energy-density/pressure term of Bernoulli's equation.",
+      "exactConcern": "Single isolated ½ρv² term; does not itself apply the two-point pressure–speed–height balance.",
+      "candidateItemSloNotCertified": [
+        "P-11-B-40"
+      ],
+      "topicContextSlo": "P-11-B-40",
+      "authorCognitiveTagNotBoardCertified": "Application_author_tag",
+      "individualCognitiveClassification": "PENDING",
+      "sourceFidelity": "HISTORICALLY_VERIFIED_PREPARED_MASTER_NOT_RECHECKED_IN_THIS_PR",
+      "teacherDecision": "PENDING",
+      "individualFBISEMapping": "PENDING",
+      "scientificKeyTeacherSignoff": "PENDING",
+      "examCertification": "PENDING",
+      "boardEligible": false,
+      "replacementNeededForScientificCorrectness": false,
+      "currentlyAvailableAsProvisionalSelfPractice": true,
+      "newStudentVariantAuthorized": false,
+      "existingSourceUnchanged": true
+    },
+    {
+      "decisionId": "XI-U06-T65-V117-TEACHER-SCOPE-0046",
+      "originalSourceId": "XI-U06-T65-MCQ-0046",
+      "sourceQuestionNumber": 46,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 188,
+      "originalStem": "For an oil of density 800 kg/m³ flowing at 10 m/s, calculate ½ρv².",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "4 000 Pa"
+        },
+        {
+          "id": "B",
+          "text": "40 000 Pa"
+        },
+        {
+          "id": "C",
+          "text": "8 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "80 000 Pa"
+        }
+      ],
+      "originalCorrectOptionId": "B",
+      "originalExplanation": "½ρv² = ½(800)(10²) = 40 000 Pa.",
+      "sourceAuditPriority": "COMPULSORY_B40_SCOPE_NOTE",
+      "reviewedPreparedSourceRow": "XI-U06-T65-MCQ-0046,6.5,46,188,195,MATCHED_PREPARED_MASTER,4,B,MATCHED,40 000 Pa,rho*v^2/2,40000,COMPULSORY_B40_SCOPE_NOTE,Oil kinetic term alone versus full equation,\"0.5×800×10²=40000 Pa. This is valid energy-density practice, not an independently certified B40 horizontal/vertical pressure-speed-height application.\",P-11-B-40_supporting,Application_author_tag,PRINTED_NBF_P99_P100_EQUATION_VISUALLY_VERIFIED_ITEM_MAPPING_PENDING,PENDING,PENDING",
+      "formula": "½ρv²",
+      "independentMath": "0.5 × 800 kg/m³ × (10 m/s)² = 40,000 Pa",
+      "independentNumericResultSI": 40000,
+      "scientificFinding": "CORRECT_NUMERICAL_ANSWER_WITH_SCOPE_DECISION_PENDING",
+      "teacherProposedTreatment": "RETAIN_UNALTERED_PROVISIONAL_PRACTICE_AND_WITHHOLD_FORMAL_EXAM_ELIGIBILITY",
+      "suggestedPracticeRole": "Supportive practice: kinetic energy-density term for an oil of stated density.",
+      "exactConcern": "Correct single-term substitution; not independently a complete horizontal/vertical two-point Bernoulli application.",
+      "candidateItemSloNotCertified": [
+        "P-11-B-40"
+      ],
+      "topicContextSlo": "P-11-B-40",
+      "authorCognitiveTagNotBoardCertified": "Application_author_tag",
+      "individualCognitiveClassification": "PENDING",
+      "sourceFidelity": "HISTORICALLY_VERIFIED_PREPARED_MASTER_NOT_RECHECKED_IN_THIS_PR",
+      "teacherDecision": "PENDING",
+      "individualFBISEMapping": "PENDING",
+      "scientificKeyTeacherSignoff": "PENDING",
+      "examCertification": "PENDING",
+      "boardEligible": false,
+      "replacementNeededForScientificCorrectness": false,
+      "currentlyAvailableAsProvisionalSelfPractice": true,
+      "newStudentVariantAuthorized": false,
+      "existingSourceUnchanged": true
+    },
+    {
+      "decisionId": "XI-U06-T65-V117-TEACHER-SCOPE-0047",
+      "originalSourceId": "XI-U06-T65-MCQ-0047",
+      "sourceQuestionNumber": 47,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 188,
+      "originalStem": "For water at elevation 3 m, find ρgh when ρ = 1000 kg/m³ and g = 9.8 m/s².",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "29 400 Pa"
+        },
+        {
+          "id": "B",
+          "text": "9 800 Pa"
+        },
+        {
+          "id": "C",
+          "text": "3 000 Pa"
+        },
+        {
+          "id": "D",
+          "text": "2 940 Pa"
+        }
+      ],
+      "originalCorrectOptionId": "A",
+      "originalExplanation": "ρgh = (1000)(9.8)(3) = 29 400 Pa.",
+      "sourceAuditPriority": "COMPULSORY_B40_SCOPE_NOTE",
+      "reviewedPreparedSourceRow": "XI-U06-T65-MCQ-0047,6.5,47,188,195,MATCHED_PREPARED_MASTER,4,A,MATCHED,29 400 Pa,rho*g*h,29400,COMPULSORY_B40_SCOPE_NOTE,Gravitational energy term alone,1000×9.8×3=29400 Pa. Correct gravitational-energy density calculation supports Bernoulli's equation but does not alone satisfy using the complete equation for two flow points.,P-11-B-40_supporting,Application_author_tag,PRINTED_NBF_P99_P100_EQUATION_VISUALLY_VERIFIED_ITEM_MAPPING_PENDING,PENDING,PENDING",
+      "formula": "ρgh",
+      "independentMath": "1000 kg/m³ × 9.8 m/s² × 3 m = 29,400 Pa",
+      "independentNumericResultSI": 29400,
+      "scientificFinding": "CORRECT_NUMERICAL_ANSWER_WITH_SCOPE_DECISION_PENDING",
+      "teacherProposedTreatment": "RETAIN_UNALTERED_PROVISIONAL_PRACTICE_AND_WITHHOLD_FORMAL_EXAM_ELIGIBILITY",
+      "suggestedPracticeRole": "Supportive practice: gravitational potential energy per unit volume at a specified elevation.",
+      "exactConcern": "ρgh calculation is a Bernoulli prerequisite, not a complete two-point pressure/height/speed application.",
+      "candidateItemSloNotCertified": [
+        "P-11-B-40"
+      ],
+      "topicContextSlo": "P-11-B-40",
+      "authorCognitiveTagNotBoardCertified": "Application_author_tag",
+      "individualCognitiveClassification": "PENDING",
+      "sourceFidelity": "HISTORICALLY_VERIFIED_PREPARED_MASTER_NOT_RECHECKED_IN_THIS_PR",
+      "teacherDecision": "PENDING",
+      "individualFBISEMapping": "PENDING",
+      "scientificKeyTeacherSignoff": "PENDING",
+      "examCertification": "PENDING",
+      "boardEligible": false,
+      "replacementNeededForScientificCorrectness": false,
+      "currentlyAvailableAsProvisionalSelfPractice": true,
+      "newStudentVariantAuthorized": false,
+      "existingSourceUnchanged": true
+    },
+    {
+      "decisionId": "XI-U06-T65-V117-TEACHER-SCOPE-0058",
+      "originalSourceId": "XI-U06-T65-MCQ-0058",
+      "sourceQuestionNumber": 58,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 190,
+      "originalStem": "Water moves at 3 m/s through cross-sectional area 0.020 m² for 5 s. How much volume passes? Assume uniform velocity.",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "0.030 m³"
+        },
+        {
+          "id": "B",
+          "text": "3.0 m³"
+        },
+        {
+          "id": "C",
+          "text": "0.30 m³"
+        },
+        {
+          "id": "D",
+          "text": "0.10 m³"
+        }
+      ],
+      "originalCorrectOptionId": "C",
+      "originalExplanation": "ΔV = AvΔt = 0.020 × 3 × 5 = 0.30 m³ (continuity prerequisite).",
+      "sourceAuditPriority": "COMPULSORY_CROSS_SLO_NOTE",
+      "reviewedPreparedSourceRow": "XI-U06-T65-MCQ-0058,6.5,58,190,195,MATCHED_PREPARED_MASTER,4,C,MATCHED,0.30 m³,A*v*deltaT,0.3,COMPULSORY_CROSS_SLO_NOTE,Pure continuity throughput instead of Bernoulli,\"V=(0.020 m²)(3 m/s)(5 s)=0.30 m³, with uniform velocity explicitly assumed. This is a continuity/volume-rate question, not an independent B40 pressure-speed-height Bernoulli Application item; B36 possible pending teacher decision.\",P-11-B-36_candidate;P-11-B-40_supporting,Application_author_tag,PRINTED_NBF_P99_P100_EQUATION_VISUALLY_VERIFIED_ITEM_MAPPING_PENDING,PENDING,PENDING",
+      "formula": "ΔV = AvΔt",
+      "independentMath": "0.020 m² × 3 m/s × 5 s = 0.30 m³",
+      "independentNumericResultSI": 0.3,
+      "scientificFinding": "CORRECT_NUMERICAL_ANSWER_WITH_SCOPE_DECISION_PENDING",
+      "teacherProposedTreatment": "RETAIN_UNALTERED_PROVISIONAL_PRACTICE_AND_WITHHOLD_FORMAL_EXAM_ELIGIBILITY",
+      "suggestedPracticeRole": "Provisional steady, uniform-flow volume-throughput practice; possible individual continuity outcome B36, not a full B40 application.",
+      "exactConcern": "Directly assesses volume passed at a given area, speed and time. The existing B40 topic grouping is context, not evidence of a B40-certified individual item.",
+      "candidateItemSloNotCertified": [
+        "P-11-B-36"
+      ],
+      "topicContextSlo": "P-11-B-40",
+      "authorCognitiveTagNotBoardCertified": "Application_author_tag",
+      "individualCognitiveClassification": "PENDING",
+      "sourceFidelity": "HISTORICALLY_VERIFIED_PREPARED_MASTER_NOT_RECHECKED_IN_THIS_PR",
+      "teacherDecision": "PENDING",
+      "individualFBISEMapping": "PENDING",
+      "scientificKeyTeacherSignoff": "PENDING",
+      "examCertification": "PENDING",
+      "boardEligible": false,
+      "replacementNeededForScientificCorrectness": false,
+      "currentlyAvailableAsProvisionalSelfPractice": true,
+      "newStudentVariantAuthorized": false,
+      "existingSourceUnchanged": true
+    }
+  ]
+}
