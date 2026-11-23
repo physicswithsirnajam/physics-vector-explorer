@@ -155,6 +155,17 @@ async function verifySource(){
      assert.equal(q.practiceOverlayVersion,'V114');
      assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
      assert.equal(q.cognitiveLevel,'Unspecified');
+    }else if(source.id.startsWith('XI-U06-T65-MCQ-')&&[55,56].includes(source.sourceQuestionNumber)){
+     const x=json('question-bank/grade-11/unit-06-topic65-v116-approved-stagnation-practice-overlay.json').replacements.find(c=>c.originalId===source.id);
+     assert.ok(x,'Missing explicitly teacher-authorized stagnation/reservoir variant for '+source.id);
+     assert.equal(q.id,x.practiceId);assert.equal(q.stem,x.proposedStem);
+     assert.equal(q.sourceOriginalId,source.id);
+     assert.equal(q.correctOptionId,source.correctOptionId);
+     assert.equal(q.explanation,x.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(x.proposedOptions));
+     assert.equal(q.practiceOverlayVersion,'V116');
+     assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
+     assert.equal(q.cognitiveLevel,'Unspecified');
     }else{
      assert.equal(q.id,source.id);assert.equal(q.stem,source.stem);
      assert.equal(q.correctOptionId,source.correctOptionId);
