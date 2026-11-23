@@ -58,7 +58,10 @@ function staticAudit(){
   assert.equal(html.split(jsTag).length,2,'one script tag in '+name);
   assert.ok(html.indexOf(cssTag)<html.indexOf('</head>'),'CSS must load in head '+name);
   assert.ok(html.indexOf(jsTag)<html.indexOf('</body>'),'Script must load at end '+name);
-  assert.equal(fnv(html.replace(cssTag,'').replace(jsTag,'')),fingerprint,'Original lab HTML/science changed '+name);
+  const v112Tag='<script src="shared/sitewide-science-print-v112.js?v=112" defer></script>';
+  assert.equal(html.split(v112Tag).length,2,'new V112 print/math layer must appear once '+name);
+  const original=html.replace(v112Tag+'\n','').replace(cssTag,'').replace(jsTag,'');
+  assert.equal(fnv(original),fingerprint,'Original lab HTML/science changed beyond the additive V96C/V112 layers '+name);
  }
  const catalog=JSON.parse(read('portal/simulation-catalog.json'));
  const unit6= catalog.simulations.filter(x=>x.unit===6).map(x=>x.file).sort();

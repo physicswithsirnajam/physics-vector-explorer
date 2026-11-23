@@ -1,0 +1,65 @@
+name: Grade XI Universal Scientific Superscripts and PDF Watermark (V112)
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "shared/navigation.js"
+      - "shared/sitewide-science-print-v112.js"
+      - "shared/sitewide-science-print-v112.css"
+      - "shared/print-watermark-v70.css"
+      - "scripts/test_grade11_v112_universal_science_print.cjs"
+      - ".github/workflows/validate-grade11-v112-universal-science-print.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "shared/navigation.js"
+      - "shared/sitewide-science-print-v112.js"
+      - "shared/sitewide-science-print-v112.css"
+      - "shared/print-watermark-v70.css"
+      - "scripts/test_grade11_v112_universal_science_print.cjs"
+      - ".github/workflows/validate-grade11-v112-universal-science-print.yml"
+  workflow_dispatch:
+jobs:
+  print-and-science-source-preservation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate syntax of global science display and source-neutral print regression
+        run: |
+          node --check shared/sitewide-science-print-v112.js
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v112_universal_science_print.cjs
+      - name: Install pinned real Chromium and PDF page inspection tools
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          pdfinfo -v
+          pdftotext -v
+      - name: Audit 114 public HTML routes, exponents, real printed pages and previous learner QA
+        run: node scripts/test_grade11_v112_universal_science_print.cjs
+      - name: Retain existing signed-off V70 exported PDF watermarks
+        run: node scripts/test_export_watermarks_v70.cjs
+      - name: Retain existing V102 navigation-backed multi-page print watermarks
+        run: node scripts/test_grade11_sitewide_print_watermark_v102.cjs
+      - name: Protect approved V111 Unit 6 practice variants and source bank
+        run: node scripts/test_grade11_u06_v111_approved_practice_overlay.cjs
+      - name: Upload only synthetic/ordinary public print browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v112-universal-science-and-print-evidence
+          path: |
+            qa-artifacts/v112-universal-science-print/
+            qa-artifacts/print-watermark-v102/
+            qa-artifacts/watermark-v70/
+          retention-days: 10
+          if-no-files-found: warn

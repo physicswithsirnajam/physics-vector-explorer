@@ -1,0 +1,21 @@
+/* V112: render superscripts without rewriting source text or MCQ answer keys.
+ * The <sup> element is actual typographic superscript in print/PDF too.
+ * Carets/braces remain in DOM textContent, visually zero-sized for source fidelity. */
+.psn-scientific-token{display:inline;white-space:nowrap;font-variant-ligatures:none}
+.psn-scientific-token sup{
+  font-size:.70em!important;
+  line-height:0!important;
+  position:relative;
+  vertical-align:super!important;
+}
+.psn-scientific-source-notation{
+  position:absolute!important;inline-size:0!important;block-size:0!important;
+  font-size:0!important;line-height:0!important;overflow:hidden!important;
+  opacity:0!important;pointer-events:none!important;
+}
+@media print{
+ .psn-scientific-token sup{
+  font-size:.70em!important;vertical-align:super!important;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+ }
+}

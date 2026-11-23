@@ -42,8 +42,10 @@ function staticAudit(){
   assert.equal(html.split(jsTag).length,2,'exactly one script on '+file);
   assert.ok(html.indexOf(cssTag)<html.indexOf('</head>'),'stylesheet in head '+file);
   assert.ok(html.indexOf(jsTag)<html.lastIndexOf('</body>'),'script at end '+file);
-  const original=html.replace(' '+cssTag+'\n','').replace(' '+jsTag+'\n','');
-  assert.equal(fnv(original),fingerprint,'original scientific HTML must remain unchanged '+file);
+  const v112Tag='<script src="shared/sitewide-science-print-v112.js?v=112" defer></script>';
+  assert.equal(html.split(v112Tag).length,2,'one V112 presentation-only print/notation reference '+file);
+  const original=html.replace(v112Tag+'\n','').replace(' '+cssTag+'\n','').replace(' '+jsTag+'\n','');
+  assert.equal(fnv(original),fingerprint,'Original physics HTML changed beyond additive V97/V112 presentation references '+file);
  }
  assert.ok(read('portal/index.html').includes('id="learning-hub"'));
  assert.ok(read('portal/simulations.html').includes('id="unit"'));

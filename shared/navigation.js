@@ -37,6 +37,15 @@
     document.body.appendChild(mark);
   }
   attachPrintWatermark();
+  /* V112: every page with existing shared navigation also uses native
+   * superscript math presentation. Pages without navigation load V112 directly.
+   * The V112 loader recognizes an existing watermark and never duplicates it. */
+  if(!document.querySelector('script[data-psn-science-print-loader="v112"]')){
+    const scienceScript=document.createElement('script');
+    scienceScript.src=new URL('shared/sitewide-science-print-v112.js?v=112',root).href;
+    scienceScript.dataset.psnSciencePrintLoader='v112';
+    document.head.appendChild(scienceScript);
+  }
 
   const safeHref=(raw,base)=>{
     if(typeof raw!=='string'||!raw.trim())return null;
