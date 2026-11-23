@@ -901,6 +901,89 @@ function applyUnit6Topic64PracticeOverlay(questions,overlay){
  return revised;
 }
 
+/* V114 — separately approved provisional Bernoulli practice variants.
+ * The V84 original 80-item topic bank remains an immutable source archive.
+ * Q61/Q67/Q78 originals MUST NOT appear in any student quiz/Test Builder.
+ */
+function applyUnit6Topic65PracticeOverlay(questions,overlay){
+ need(Array.isArray(questions)&&questions.length===80,
+  'V114 requires all 80 original Topic 6.5 source items');
+ need(overlay?.schemaVersion===1&&overlay.version==='V114'&&overlay.grade===11&&
+  overlay.unit===6&&overlay.topic==='6.5'&&overlay.sourceQuestionCount===80&&
+  overlay.practiceQuestionCount===80&&overlay.overlayQuestionCount===3&&
+  overlay.sourceArchivedUnchanged===true&&
+  overlay.purpose==='teacher-approved-clarified-bernoulli-self-practice-only-no-fbise-exam-certification'&&
+  overlay.releaseState==='provisional-self-practice-only'&&
+  overlay.sourceBankBlobSha==='f5a7dd0a29d5e90842c0ef557071aebc10a70baf'&&
+  overlay.sourceBankFile==='unit-06-topic-65-v84-80-source.json',
+  'V114 Bernoulli overlay source version or certification boundary changed');
+ const numbers=[61,67,78];
+ const blocked=numbers.map(n=>'XI-U06-T65-MCQ-'+String(n).padStart(4,'0'));
+ need(Array.isArray(overlay.blockedOriginalIds)&&
+  overlay.blockedOriginalIds.join(',')===blocked.join(',')&&
+  Array.isArray(overlay.replacements)&&overlay.replacements.length===3,
+  'V114 ambiguous Bernoulli source suppression boundary changed');
+ const changes=new Map(),seen=new Set(),letters=['D','C','C'];
+ for(let i=0;i<numbers.length;i++){
+  const n=numbers[i],id=blocked[i],record=overlay.replacements[i];
+  const original=questions.find(q=>q.id===id);
+  need(original&&record&&record.originalId===id&&record.sourceQuestionNumber===n&&
+   record.practiceId===id+'-V114'&&
+   record.changeType==='teacher-approved-clarified-bernoulli-practice-variant'&&
+   record.sourceSection==='standalone-situations'&&record.sourceSection===original.sourceSection&&
+   record.sourcePdfPage===original.sourcePdfPage&&
+   record.originalStem===original.stem&&
+   Array.isArray(record.originalOptionTexts)&&record.originalOptionTexts.length===4&&
+   record.originalOptionTexts.every((t,j)=>t===original.options[j].text)&&
+   record.correctOptionId===letters[i]&&record.correctOptionId===original.correctOptionId&&
+   record.originalSourceKeyUnchanged===true&&record.appliedPracticeOnly===true&&
+   record.boardEligible===false&&record.individualSloCertified===false&&
+   record.individualCognitiveCertified===false&&
+   record.academicStatus==='provisional-self-practice'&&
+   record.teacherAuthorization==='explicit-topic65-Q61-Q67-Q78-practice-approval-2026-11-23'&&
+   record.teacherApprovedPracticeWording===true&&record.fullExamCertificationApproved===false&&
+   !seen.has(id),
+   'V114 authorized item boundary failed for Bernoulli Q'+n);
+  seen.add(id);
+  need(typeof record.proposedStem==='string'&&record.proposedStem.trim().length>50&&
+   record.proposedStem!==original.stem&&
+   typeof record.explanation==='string'&&record.explanation.trim().length>100&&
+   Array.isArray(record.proposedOptions)&&record.proposedOptions.length===4&&
+   record.proposedOptions.map(o=>o.id).join('')==='ABCD'&&
+   record.proposedOptions.every((o,j)=>o.text===original.options[j].text),
+   'V114 incorrect Bernoulli practice stem or altered original options '+id);
+  if(n===61)need(/incompressibl/i.test(record.proposedStem)&&/negligible viscous losses/i.test(record.proposedStem)&&
+   /no pumps or turbines/i.test(record.proposedStem)&&/same streamline/i.test(record.proposedStem)&&
+   /horizontal/i.test(record.proposedStem)&&/steadily/i.test(record.proposedStem),
+   'V114 Q61 must explicitly qualify same-streamline lossless Bernoulli');
+  if(n===67)need(/incompressibl/i.test(record.proposedStem)&&/steadily/i.test(record.proposedStem)&&
+   /without leaks/i.test(record.proposedStem)&&/unbranched/i.test(record.proposedStem)&&
+   /constant cross-sectional area/i.test(record.proposedStem)&&/higher one/i.test(record.proposedStem),
+   'V114 Q67 must explicitly qualify constant-area incompressible flow');
+  if(n===78)need(/incompressibl/i.test(record.proposedStem)&&/steadily/i.test(record.proposedStem)&&
+   /no pumps or turbines/i.test(record.proposedStem)&&/negligible viscous losses/i.test(record.proposedStem)&&
+   /same streamline/i.test(record.proposedStem)&&/horizontal/i.test(record.proposedStem),
+   'V114 Q78 must explicitly qualify constant density and no-loss pressure inference');
+  changes.set(id,record);
+ }
+ const corrected=questions.map(q=>{
+  const c=changes.get(q.id);
+  if(!c)return q;
+  return {...q,id:c.practiceId,stem:c.proposedStem,
+   options:c.proposedOptions.map(o=>({id:o.id,text:o.text})),
+   explanation:c.explanation,sourceOriginalId:q.id,
+   practiceVariantType:c.changeType,practiceOverlayVersion:'V114',
+   practiceApprovalScope:'teacher-authorized-provisional-practice-only-not-FBISE-certification',
+   boardEligible:false,sloCodes:[],cognitiveLevel:'Unspecified',
+   status:'provisional-public-self-practice',active:true,holdReason:null};
+ });
+ need(corrected.length===80&&new Set(corrected.map(q=>q.id)).size===80&&
+  blocked.every(id=>!corrected.some(q=>q.id===id))&&
+  corrected.filter(q=>q.practiceOverlayVersion==='V114').length===3,
+  'V114 ambiguous Bernoulli originals still served or questions lost');
+ return corrected;
+}
+
 /* V85: preserve all 80 original V84 Bernoulli questions. P-11-B-40 is source-
  * certified as a summative TOPIC, P-11-B-39 is formative context, while source
  * K/U/A tags and per-MCQ SLO mappings have NOT undergone independent board QA.
@@ -1111,10 +1194,13 @@ async function loadBank(unit,basePath){
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else if(unit===6){
-    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourthSource=adaptUnitSixTopic64(data[3]),fifth=adaptUnitSixTopic65(data[4]),sixth=adaptUnitSixTopic66(data[5]),seventh=adaptUnitSixTopic67(data[6]);
+    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourthSource=adaptUnitSixTopic64(data[3]),fifthSource=adaptUnitSixTopic65(data[4]),sixth=adaptUnitSixTopic66(data[5]),seventh=adaptUnitSixTopic67(data[6]);
     const overlayResponse=await fetch(basePath+'unit-06-topic64-v111-approved-practice-overlay.json',{cache:'no-store'});
     need(overlayResponse.ok,'Unit 6 safety overlay unavailable; disable practice rather than serve ambiguous originals');
     const fourth=applyUnit6Topic64PracticeOverlay(fourthSource,await overlayResponse.json());
+    const bernoulliOverlayResponse=await fetch(basePath+'unit-06-topic65-v114-approved-practice-overlay.json',{cache:'no-store'});
+    need(bernoulliOverlayResponse.ok,'V114 Bernoulli safety overlay unavailable; disable Unit 6 practice rather than serve ambiguous originals');
+    const fifth=applyUnit6Topic65PracticeOverlay(fifthSource,await bernoulliOverlayResponse.json());
     const earlier=new Set([...first,...second,...third,...fourth,...fifth,...sixth].map(q=>q.id));
     need(seventh.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.7');
     questions=[...first,...second,...third,...fourth,...fifth,...sixth,...seventh];
@@ -1124,13 +1210,13 @@ async function loadBank(unit,basePath){
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v111-topic64-practice-safety-overlay-560-provisional':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v114-topic64-v111-and-topic65-three-clarified-560-provisional':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
   };
 }
 root.PSNPracticeBankV55=Object.freeze({
-  loadBank,applyUnit6Topic64PracticeOverlay,expected:Object.freeze(expected),names:Object.freeze(names)
+  loadBank,applyUnit6Topic64PracticeOverlay,applyUnit6Topic65PracticeOverlay,expected:Object.freeze(expected),names:Object.freeze(names)
 });
 })(typeof window==='object'?window:globalThis);
