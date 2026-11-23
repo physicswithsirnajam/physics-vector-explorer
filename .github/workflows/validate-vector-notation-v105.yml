@@ -50,7 +50,7 @@ jobs:
       - name: Check all 433 static source symbols and actual Chromium/phone/PDF fallback
         run: node scripts/test_vector_notation_v105.cjs
       - name: Preserve Unit 2 original academic resource tests
-        run: node scripts/test_grade11_unit02_learning_resources.cjs
+        run: python3 scripts/validate_unit2_learning_resources.py
       - name: Preserve V104 descriptive finder and question deep links
         run: node scripts/test_grade11_descriptive_finder_v104.cjs
       - name: Preserve previous V102 global Print to PDF watermark
