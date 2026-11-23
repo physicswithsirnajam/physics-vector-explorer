@@ -150,7 +150,8 @@ async function browserChecks(){
   try{
    const response=await balanced.goto(base+'/portal/unit-06-balanced-mcq-v95c1.html',{waitUntil:'load'});assert.equal(response.status(),200);
    await balanced.waitForFunction(()=>document.getElementById('start')?.disabled===false,null,{timeout:20000});
-   assert.ok((await balanced.locator('#status').innerText()).includes('V111 Topic 6.4 practice corrections'));
+   assert.ok((await balanced.locator('#status').innerText()).includes('V111/V114/V116 approved practice clarifications'),
+    'Balanced quiz must declare all current approved provisional practice overlays');
    await balanced.locator('#per-topic').selectOption('4');
    await balanced.locator('#start').click();
    assert.equal(await balanced.locator('#quiz-panel').isVisible(),true);
