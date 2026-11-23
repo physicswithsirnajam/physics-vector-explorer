@@ -197,7 +197,7 @@ async function browser(){
    const seenIds=new Set(),perTopic={},scenarioByTopic={};
    for(let i=0;i<28;i++){
     const meta=await page.locator('#question-meta').innerText();
-    const m=meta.match(/^Topic (6\.\d) · .* · (?:original source Q|V111 clarified variant of source Q|V111 corrected source Q|V114 clarified variant of source Q)(\d+) · (.+)$/);
+    const m=meta.match(/^Topic (6\.\d) · .* · (?:original source Q|V111 clarified variant of source Q|V111 corrected source Q|V114 clarified variant of source Q|V116 clarified variant of source Q)(\d+) · (.+)$/);
     assert.ok(m,'Missing topic and source number on item '+i+' '+meta);
     const [,topic,num,section]=m;
     const key=topic+'-'+num;
@@ -237,7 +237,7 @@ async function browser(){
    const counts={};
    for(let i=0;i<28;i++){
     const meta=await page.locator('#question-meta').innerText();
-    const m=meta.match(/^Topic (6\.\d) · .* · (?:original source Q|V111 clarified variant of source Q|V111 corrected source Q|V114 clarified variant of source Q)(\d+) · (.+)$/);
+    const m=meta.match(/^Topic (6\.\d) · .* · (?:original source Q|V111 clarified variant of source Q|V111 corrected source Q|V114 clarified variant of source Q|V116 clarified variant of source Q)(\d+) · (.+)$/);
     assert.ok(m&&m[3]==='standalone situations','Non-situation item in standalone-only quiz: '+meta);
     counts[m[1]]=(counts[m[1]]||0)+1;
     if(i<27)await page.locator('#next').click();
