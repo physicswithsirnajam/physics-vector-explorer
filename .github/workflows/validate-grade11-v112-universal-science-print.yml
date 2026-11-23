@@ -36,10 +36,14 @@ jobs:
           node --check shared/sitewide-science-print-v112.js
           node --check shared/navigation.js
           node --check scripts/test_grade11_v112_universal_science_print.cjs
-      - name: Install pinned real Chromium
+      - name: Install pinned real Chromium and PDF page inspection tools
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
           npx playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          pdfinfo -v
+          pdftotext -v
       - name: Audit 114 public HTML routes, exponents, real printed pages and previous learner QA
         run: node scripts/test_grade11_v112_universal_science_print.cjs
       - name: Retain existing signed-off V70 exported PDF watermarks
