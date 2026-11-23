@@ -1,0 +1,39 @@
+name: Grade XI Unit 6 Four Full Teacher MCQ Candidates (V110)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v110-four-full-mcq-candidates-teacher-only.json"
+      - "quality/grade11-unit06-v110-four-ready-mcq-candidates-teacher-review.md"
+      - "scripts/test_grade11_unit6_v110_full_candidate_items.cjs"
+      - ".github/workflows/validate-grade11-unit6-v110-four-mcq-candidates.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v110-four-full-mcq-candidates-teacher-only.json"
+      - "quality/grade11-unit06-v110-four-ready-mcq-candidates-teacher-review.md"
+      - "scripts/test_grade11_unit6_v110_full_candidate_items.cjs"
+      - ".github/workflows/validate-grade11-unit6-v110-four-mcq-candidates.yml"
+  workflow_dispatch:
+jobs:
+  verify-teacher-drafts-not-live-approved-items:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check proposal-only candidate test syntax
+        run: node --check scripts/test_grade11_unit6_v110_full_candidate_items.cjs
+      - name: Validate complete A-D candidates, four exact deltas, original source hash and scientific calculations
+        run: node scripts/test_grade11_unit6_v110_full_candidate_items.cjs
+      - name: Preserve V109 source-only approval proposals and all 560 pending teacher flags
+        run: node scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs
+      - name: Preserve Topic 6.4 Q21-40 original source snapshot and incomplete option evidence
+        run: node scripts/test_grade11_unit06_v95c2n_topic64_second20_academic.cjs
+      - name: Preserve Topic 6.4 Q41-60 original numeric evidence and conditional keys
+        run: node scripts/test_grade11_unit06_v95c2o_topic64_num41_60_academic.cjs
+      - name: Preserve Topic 6.4 Q61-80 original source and scenario limitations
+        run: node scripts/test_grade11_unit06_v95c2p_topic64_last20_scenarios.cjs
