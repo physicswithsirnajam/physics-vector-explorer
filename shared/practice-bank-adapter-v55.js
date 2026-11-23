@@ -826,6 +826,81 @@ function adaptUnitSixTopic64(source){
  return kept;
 }
 
+/* V111 — approved, non-certified practice substitutions. The V82 bank stays
+ * an immutable source archive (including its historical Q28 import truncation).
+ * Every student-facing Unit 6 loader must use this exact fail-closed transform.
+ */
+function applyUnit6Topic64PracticeOverlay(questions,overlay){
+ need(Array.isArray(questions)&&questions.length===80,'V111 requires all 80 original Topic 6.4 items');
+ need(overlay?.schemaVersion===1&&overlay.version==='V111'&&overlay.grade===11&&
+   overlay.unit===6&&overlay.topic==='6.4'&&overlay.sourceQuestionCount===80&&
+   overlay.practiceQuestionCount===80&&overlay.overlayQuestionCount===4&&
+   overlay.sourceArchivedUnchanged===true&&
+   overlay.purpose==='approved-student-practice-text-and-clarified-variants-only-no-exam-certification'&&
+   overlay.releaseState==='provisional-self-practice-only'&&
+   overlay.sourceBankBlobSha==='c832e1e0e71773a23e5364e8f065c6b520f7f5e6'&&
+   overlay.sourceBankFile==='unit-06-topic-64-v82-80-source.json',
+   'V111 practice overlay source boundary or release status changed');
+ const originals=[28,51,52,67];
+ const blocked=[51,52,67].map(n=>'XI-U06-T64-MCQ-'+String(n).padStart(4,'0'));
+ need(Array.isArray(overlay.blockedOriginalIds)&&
+   overlay.blockedOriginalIds.join(',')===blocked.join(',')&&
+   Array.isArray(overlay.replacements)&&overlay.replacements.length===4,
+   'V111 approved original exclusions missing or extra');
+ const seen=new Set(),changes=new Map();
+ for(let i=0;i<4;i++){
+  const record=overlay.replacements[i],n=originals[i];
+  const id='XI-U06-T64-MCQ-'+String(n).padStart(4,'0');
+  const original=questions.find(q=>q.id===id);
+  need(original&&record&&record.originalId===id&&record.sourceQuestionNumber===n&&
+    record.practiceId===(n===28?id:id+'-V111')&&
+    record.changeType===(n===28?'one-word-source-copy-correction':'teacher-approved-clarified-practice-variant')&&
+    record.sourceSection===original.sourceSection&&record.sourcePdfPage===original.sourcePdfPage&&
+    record.originalStem===original.stem&&record.originalOptionB===original.options[1].text&&
+    record.correctOptionId===original.correctOptionId&&
+    record.originalSourceKeyUnchanged===true&&record.appliedPracticeOnly===true&&
+    record.boardEligible===false&&record.individualSloCertified===false&&
+    record.individualCognitiveCertified===false&&
+    record.academicStatus==='provisional-self-practice'&&
+    record.teacherAuthorization==='explicit-narrow-treatment-approval-2026-11-23'&&
+    !seen.has(id),'V111 item boundary failed for source Q'+n);
+  seen.add(id);
+  need(typeof record.proposedStem==='string'&&record.proposedStem.trim().length>15&&
+    typeof record.explanation==='string'&&record.explanation.trim().length>60&&
+    Array.isArray(record.proposedOptions)&&record.proposedOptions.length===4&&
+    record.proposedOptions.map(o=>o.id).join('')==='ABCD'&&
+    record.proposedOptions.every(o=>typeof o.text==='string'&&o.text.trim()),
+    'V111 incomplete proposed content '+id);
+  if(n===28){
+   need(record.proposedStem===original.stem&&
+     record.proposedOptions.every((o,j)=>o.text===(j===1?original.options[j].text+' second':original.options[j].text)),
+     'V111 Q28 must only restore one source word');
+  }else{
+   need(record.proposedStem.includes('equal volume flow')&&
+     record.proposedOptions.every((o,j)=>o.text===original.options[j].text),
+     'V111 clarified variant changed original answers or omitted equal-flow assumption '+id);
+  }
+  changes.set(id,record);
+ }
+ const revised=questions.map(q=>{
+  const candidate=changes.get(q.id);
+  if(!candidate)return q;
+  return {...q,id:candidate.practiceId,stem:candidate.proposedStem,
+    options:candidate.proposedOptions.map(o=>({id:o.id,text:o.text})),
+    explanation:candidate.explanation,sourceOriginalId:q.id,
+    practiceVariantType:candidate.changeType,
+    practiceOverlayVersion:'V111',
+    practiceApprovalScope:'provisional-correction-only-not-FBISE-certification',
+    boardEligible:false,sloCodes:[],cognitiveLevel:'Unspecified',
+    status:'provisional-public-self-practice',active:true,holdReason:null};
+ });
+ need(revised.length===80&&new Set(revised.map(q=>q.id)).size===80&&
+   blocked.every(id=>!revised.some(q=>q.id===id))&&
+   revised.filter(q=>q.practiceOverlayVersion==='V111').length===4,
+   'V111 ambiguous originals still served or questions lost');
+ return revised;
+}
+
 /* V85: preserve all 80 original V84 Bernoulli questions. P-11-B-40 is source-
  * certified as a summative TOPIC, P-11-B-39 is formative context, while source
  * K/U/A tags and per-MCQ SLO mappings have NOT undergone independent board QA.
@@ -1036,7 +1111,10 @@ async function loadBank(unit,basePath){
   ];
   else if(unit===4){const old=adaptLegacy(4,data[0]);const first=adaptMasterFour(await loadMasterFour(basePath),old);const existing=[...old,...first];const second=adaptMasterFourV62(await loadMasterFourV62(basePath),existing);const prior=[...existing,...second];const third=adaptMasterFourV63(await loadMasterFourV63(basePath),prior);const first475=[...prior,...third];const fourth=adaptMasterFourV64(await loadMasterFourV64(basePath),first475);const beforeV65=[...first475,...fourth];const latest=adaptMasterFourV65(await loadMasterFourV65(basePath),beforeV65);const prior640Base=[...beforeV65,...latest];questions=[...prior640Base,...adaptMasterFourFigureV66(await loadMasterFourFigureV66(basePath),prior640Base)];}
   else if(unit===6){
-    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourth=adaptUnitSixTopic64(data[3]),fifth=adaptUnitSixTopic65(data[4]),sixth=adaptUnitSixTopic66(data[5]),seventh=adaptUnitSixTopic67(data[6]);
+    const first=adaptUnitSix(data[0]),second=adaptUnitSixTopic62(data[1]),third=adaptUnitSixTopic63(data[2]),fourthSource=adaptUnitSixTopic64(data[3]),fifth=adaptUnitSixTopic65(data[4]),sixth=adaptUnitSixTopic66(data[5]),seventh=adaptUnitSixTopic67(data[6]);
+    const overlayResponse=await fetch(basePath+'unit-06-topic64-v111-approved-practice-overlay.json',{cache:'no-store'});
+    need(overlayResponse.ok,'Unit 6 safety overlay unavailable; disable practice rather than serve ambiguous originals');
+    const fourth=applyUnit6Topic64PracticeOverlay(fourthSource,await overlayResponse.json());
     const earlier=new Set([...first,...second,...third,...fourth,...fifth,...sixth].map(q=>q.id));
     need(seventh.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.7');
     questions=[...first,...second,...third,...fourth,...fifth,...sixth,...seventh];
@@ -1046,13 +1124,13 @@ async function loadBank(unit,basePath){
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v93-topics61-67-all-560-figure-verified':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v111-topic64-practice-safety-overlay-560-provisional':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
   };
 }
 root.PSNPracticeBankV55=Object.freeze({
-  loadBank,expected:Object.freeze(expected),names:Object.freeze(names)
+  loadBank,applyUnit6Topic64PracticeOverlay,expected:Object.freeze(expected),names:Object.freeze(names)
 });
 })(typeof window==='object'?window:globalThis);
