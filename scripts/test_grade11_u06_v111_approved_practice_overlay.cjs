@@ -13,12 +13,12 @@ const numbers=[28,51,52,67],blocked=numbers.slice(1).map(n=>'XI-U06-T64-MCQ-'+St
 let gates=0;function pass(s){gates++;console.log('V111 PASS:',s)}
 const gitBlobSha=buf=>crypto.createHash('sha1').update('blob '+Buffer.byteLength(buf)+'\0').update(buf).digest('hex');
 function makeContext(fetchFn){
- const sandbox={fetch:fetchFn||async url=>{
+ const sandbox={fetch:fetchFn||(async url=>{
   const p=String(url);assert.ok(p.startsWith('question-bank/grade-11/')||p.startsWith('../question-bank/grade-11/'),'Unexpected fetch '+p);
   const filepath=p.replace(/^\.\.\//,'');
   if(!fs.existsSync(path.join(root,filepath)))return {ok:false,status:404};
   return {ok:true,status:200,json:async()=>json(filepath),text:async()=>read(filepath)};
- }};
+ })};
  vm.createContext(sandbox);vm.runInContext(read('shared/practice-bank-adapter-v55.js'),sandbox,{filename:'practice-bank-adapter-v55.js'});
  return sandbox;
 }
