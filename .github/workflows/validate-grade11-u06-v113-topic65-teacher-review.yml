@@ -1,0 +1,41 @@
+name: Grade XI Unit 6 V113 Bernoulli Three Teacher Proposals
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v113-topic65-three-bernoulli-teacher-candidates.json"
+      - "quality/grade11-unit06-v113-topic65-three-bernoulli-teacher-review.md"
+      - "scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs"
+      - ".github/workflows/validate-grade11-u06-v113-topic65-teacher-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v113-topic65-three-bernoulli-teacher-candidates.json"
+      - "quality/grade11-unit06-v113-topic65-three-bernoulli-teacher-review.md"
+      - "scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs"
+      - ".github/workflows/validate-grade11-u06-v113-topic65-teacher-review.yml"
+  workflow_dispatch:
+jobs:
+  review-proposals-preserve-source-and-exam-holds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate V113 source-only science QA syntax
+        run: node --check scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs
+      - name: Verify exact Topic 6.5 source, all 3 complete provisional alternatives and scientific counterexamples
+        run: node scripts/test_grade11_unit6_v113_topic65_teacher_proposals.cjs
+      - name: Preserve original Topic 6.5 Q61-80 full A-D provenance and key review
+        run: node scripts/test_grade11_unit06_v95c2t_topic65_last20_scenarios.cjs
+      - name: Preserve previous Topic 6.5 Q41-60 numeric reasoning and qualifiers
+        run: node scripts/test_grade11_unit06_v95c2s_topic65_num41_60_academic.cjs
+      - name: Preserve previously drafted Topic 6.4 V109/V110 teacher-only source proposals
+        run: |
+          node scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs
+          node scripts/test_grade11_unit6_v110_full_candidate_items.cjs
+      - name: Preserve global Unit 6 teacher nonrelease signoff matrix
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
