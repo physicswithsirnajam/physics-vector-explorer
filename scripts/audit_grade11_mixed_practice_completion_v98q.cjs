@@ -171,8 +171,13 @@ async function main(){
   let correctlyReviewed=0,unanswered=0;
   for(let i=0;i<30;i++){
    const e=entries.nth(i);
-   const currentUser=norm(await e.locator('.review-user span').innerText());
-   const correct=norm(await e.locator('.review-answer span').innerText());
+   // V112 scientific-unit typography nests supplementary spans inside the
+   // single original answer text element. Match direct children, while retaining
+   // full answer-versus-key text equality and score reconciliation.
+   assert.equal(await e.locator('.review-user > span').count(),1,'One selected-answer text element');
+   assert.equal(await e.locator('.review-answer > span').count(),1,'One key-answer text element');
+   const currentUser=norm(await e.locator('.review-user > span').innerText());
+   const correct=norm(await e.locator('.review-answer > span').innerText());
    assert.ok(correct.length>0,'correct-choice review text present for original MCQ '+(i+1));
    if(selections[i].answered){
     assert.ok(currentUser.length>0&&currentUser!=='Not answered','answer appears in review '+(i+1));
