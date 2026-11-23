@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "version": "V111",
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.4",
+  "purpose": "approved-student-practice-text-and-clarified-variants-only-no-exam-certification",
+  "sourceBankFile": "unit-06-topic-64-v82-80-source.json",
+  "sourceBankBlobSha": "c832e1e0e71773a23e5364e8f065c6b520f7f5e6",
+  "sourceQuestionCount": 80,
+  "practiceQuestionCount": 80,
+  "overlayQuestionCount": 4,
+  "approvalScope": "User explicitly authorized Q28 option B one-word repair, Q51/Q52/Q67 separate clarified equal-volume-flow practice variants, and suppression of ambiguous originals in student-facing practice on 2026-11-23. No approval of individual SLO, cognitive, formal FBISE or full Unit 6 release.",
+  "releaseState": "provisional-self-practice-only",
+  "sourceArchivedUnchanged": true,
+  "blockedOriginalIds": [
+    "XI-U06-T64-MCQ-0051",
+    "XI-U06-T64-MCQ-0052",
+    "XI-U06-T64-MCQ-0067"
+  ],
+  "replacements": [
+    {
+      "originalId": "XI-U06-T64-MCQ-0028",
+      "sourceQuestionNumber": 28,
+      "practiceId": "XI-U06-T64-MCQ-0028",
+      "changeType": "one-word-source-copy-correction",
+      "originalStem": "Why does a freely falling water stream typically become narrower with increasing distance below a tap?",
+      "originalOptionB": "Its speed increases while approximately the same water volume passes each level per",
+      "proposedStem": "Why does a freely falling water stream typically become narrower with increasing distance below a tap?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Its mass disappears during the fall"
+        },
+        {
+          "id": "B",
+          "text": "Its speed increases while approximately the same water volume passes each level per second"
+        },
+        {
+          "id": "C",
+          "text": "Its density must double after leaving the tap"
+        },
+        {
+          "id": "D",
+          "text": "Water particles slow down continuously while falling"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Gravity accelerates a falling water stream. For approximately steady incompressible flow, the volume flow rate Q = Av is approximately constant, so a higher speed requires a smaller cross-sectional area.",
+      "sourceSection": "reasoning",
+      "sourcePdfPage": 140,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-narrow-treatment-approval-2026-11-23",
+      "provenance": "Source archived from original teacher-prepared bank; corrected practice wording approved by teacher."
+    },
+    {
+      "originalId": "XI-U06-T64-MCQ-0051",
+      "sourceQuestionNumber": 51,
+      "practiceId": "XI-U06-T64-MCQ-0051-V111",
+      "changeType": "teacher-approved-clarified-practice-variant",
+      "originalStem": "A main stream (area 2 cm2; speed 5 m s-1) divides into two equal branches of area 1 cm2 each. Branch speed is:",
+      "originalOptionB": "2.5 m s-1",
+      "proposedStem": "A main stream (area 2 cm2; speed 5 m s-1) divides into two equal branches of area 1 cm2 each, with equal volume flow rate through both branches. Speed in either branch is:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "5 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "2.5 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "10 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "20 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "The 2 cm² inlet at 5 m/s carries 10 cm²·m/s. Equal volume discharge into two 1 cm² branches gives 2 × 1 × v = 10; hence v = 5 m/s per branch. Equal branch areas alone do not require equal discharge.",
+      "sourceSection": "numericals",
+      "sourcePdfPage": 143,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-narrow-treatment-approval-2026-11-23",
+      "provenance": "Source archived from original teacher-prepared bank; corrected practice wording approved by teacher."
+    },
+    {
+      "originalId": "XI-U06-T64-MCQ-0052",
+      "sourceQuestionNumber": 52,
+      "practiceId": "XI-U06-T64-MCQ-0052-V111",
+      "changeType": "teacher-approved-clarified-practice-variant",
+      "originalStem": "NBF Example 6.3: Aorta radius 0.8 cm, speed 0.33 m s-1; blood enters 30 arteries each radius 0.4 cm. Speed in each artery is:",
+      "originalOptionB": "1.32 m s-1",
+      "proposedStem": "Based on the idealized equal-flow split in NBF Example 6.3: Aorta radius 0.8 cm, speed 0.33 m s-1; blood enters 30 arteries, each of radius 0.4 cm, with equal volume flow through each artery. Speed in each artery is:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "0.33 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "1.32 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.11 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "0.044 m s-1"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "For the idealized equal-flow model based on NBF Example 6.3, A_in v_in = 30 A_out v_out, giving v_out = (0.8/0.4)² × 0.33 / 30 = 0.044 m/s. Equal radii alone do not prove equal discharge.",
+      "sourceSection": "numericals",
+      "sourcePdfPage": 143,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-narrow-treatment-approval-2026-11-23",
+      "provenance": "Printed NBF Example 6.3 numerical data/results verified in V95-C2S; clarified question wording is teacher-authored, not verbatim textbook text."
+    },
+    {
+      "originalId": "XI-U06-T64-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "practiceId": "XI-U06-T64-MCQ-0067-V111",
+      "changeType": "teacher-approved-clarified-practice-variant",
+      "originalStem": "One vessel (radius 1 cm) divides into 50 equal vessels (radius 0.1 cm). If initial speed is 0.20 m s-1 and flow is conserved, branch speed is:",
+      "originalOptionB": "0.004 m s-1",
+      "proposedStem": "One vessel (radius 1 cm) divides into 50 equal-radius vessels (radius 0.1 cm), with equal volume flow rate through each branch. If initial speed is 0.20 m s-1 and the fluid is approximately incompressible, speed in each branch is:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "0.40 m s-1"
+        },
+        {
+          "id": "B",
+          "text": "0.004 m s-1"
+        },
+        {
+          "id": "C",
+          "text": "0.20 m s-1"
+        },
+        {
+          "id": "D",
+          "text": "2.0 m s-1"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "For steady incompressible flow divided equally among 50 outlets, π(1 cm)² × 0.20 m/s = 50π(0.1 cm)² × v. Therefore v = 0.40 m/s. Equal outlet radii without equal discharge do not uniquely determine individual speeds.",
+      "sourceSection": "standalone-situations",
+      "sourcePdfPage": 145,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-narrow-treatment-approval-2026-11-23",
+      "provenance": "Source archived from original teacher-prepared bank; corrected practice wording approved by teacher."
+    }
+  ]
+}

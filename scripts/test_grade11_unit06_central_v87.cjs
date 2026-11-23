@@ -134,11 +134,22 @@ async function verifySource(){
   const original=originals[i];
   for(const q of byTopic[i]){
     const source=original.questions[q.sourceQuestionNumber-1];
-    assert.equal(q.id,source.id);
-    assert.equal(q.stem,source.stem);
-    assert.equal(q.correctOptionId,source.correctOptionId);
-    assert.equal(q.explanation,source.explanation);
-    assert.equal(JSON.stringify(q.options),JSON.stringify(source.options),'Original options changed: '+q.id);
+    if(source.id.startsWith('XI-U06-T64-MCQ-')&&[28,51,52,67].includes(source.sourceQuestionNumber)){
+     const x=json('question-bank/grade-11/unit-06-topic64-v111-approved-practice-overlay.json').replacements.find(c=>c.originalId===source.id);
+     assert.ok(x,'Missing teacher-approved safe variant for '+source.id);
+     assert.equal(q.id,x.practiceId);assert.equal(q.stem,x.proposedStem);
+     assert.equal(q.sourceOriginalId,source.id);
+     assert.equal(q.correctOptionId,source.correctOptionId);
+     assert.equal(q.explanation,x.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(x.proposedOptions));
+     assert.equal(q.practiceOverlayVersion,'V111');
+     assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
+    }else{
+     assert.equal(q.id,source.id);assert.equal(q.stem,source.stem);
+     assert.equal(q.correctOptionId,source.correctOptionId);
+     assert.equal(q.explanation,source.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(source.options),'Unexpected original source change: '+q.id);
+    }
   }
  }
  assert.equal(byTopic[0][0].topicSloCodes.join(','),'P-11-B-33,P-11-B-34');

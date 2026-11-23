@@ -64,10 +64,22 @@ async function verifySource(){
  for(const [original,live] of [[first,t61],[second,t62],[third,t63],[json('question-bank/grade-11/unit-06-topic-64-v82-80-source.json'),t64],[json('question-bank/grade-11/unit-06-topic-65-v84-80-source.json'),t65],[json('question-bank/grade-11/unit-06-topic-66-v86-80-source.json'),t66],[json('question-bank/grade-11/unit-06-topic-67-v88-80-source.json'),t67]]){
   for(const q of live){
    const o=original.questions[q.sourceQuestionNumber-1];
-   assert.equal(q.id,o.id);assert.equal(q.stem,o.stem);
-   assert.equal(q.correctOptionId,o.correctOptionId);
-   assert.equal(q.explanation,o.explanation);
-   assert.equal(JSON.stringify(q.options),JSON.stringify(o.options),'Option text or ordering changed for '+q.id);
+   if(o.id.startsWith('XI-U06-T64-MCQ-')&&[28,51,52,67].includes(o.sourceQuestionNumber)){
+     const x=json('question-bank/grade-11/unit-06-topic64-v111-approved-practice-overlay.json').replacements.find(c=>c.originalId===o.id);
+     assert.ok(x,'Missing teacher-approved safe variant for '+o.id);
+     assert.equal(q.id,x.practiceId);assert.equal(q.stem,x.proposedStem);
+     assert.equal(q.sourceOriginalId,o.id);
+     assert.equal(q.correctOptionId,o.correctOptionId);
+     assert.equal(q.explanation,x.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(x.proposedOptions));
+     assert.equal(q.practiceOverlayVersion,'V111');
+     assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
+    }else{
+     assert.equal(q.id,o.id);assert.equal(q.stem,o.stem);
+     assert.equal(q.correctOptionId,o.correctOptionId);
+     assert.equal(q.explanation,o.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(o.options),'Unexpected original source change: '+q.id);
+    }
   }
  }
  assert.equal(p.plan(all,six,[6],'random',20).possible,true);
