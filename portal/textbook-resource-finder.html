@@ -34,8 +34,17 @@ h1{font-size:clamp(1.85rem,4vw,2.65rem);line-height:1.18;color:var(--navy);margi
 .tagline{font-size:.75rem;font-weight:730;color:#74562c;letter-spacing:.01em;margin-bottom:5px}
 .none{background:#fff;border:1px solid var(--line);border-radius:11px;padding:20px;margin-top:20px}
 .none strong{color:var(--navy)}
+.preview-block{background:#fff;border:1px solid #cfdeeb;border-radius:12px;padding:18px 20px;margin-top:22px}
+.preview-block h2{font-size:1.17rem;color:var(--navy);margin:0 0 9px}
+.preview-warning{font-size:.91rem;line-height:1.5;margin:0 0 15px;color:#614717;background:#fff7e9;border-left:4px solid var(--gold);padding:10px 13px}
+.preview-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.preview-card{border:1px solid #dce6ef;background:#f8fbfe;border-radius:9px;padding:13px 15px;min-width:0;overflow-wrap:anywhere}
+.preview-card a{display:block;font-weight:780;line-height:1.42}
+.preview-card .preview-tag{font-size:.76rem;font-weight:800;color:#755627;margin-bottom:5px}
+.preview-card p{font-size:.78rem;color:var(--muted);margin:7px 0 0}
+
 footer{background:var(--navy);color:#e8edf5;text-align:center;padding:20px;font-size:.82rem}
-@media(max-width:650px){.filters,.items{grid-template-columns:1fr}.unit-block{padding:15px}main{padding:18px 12px 42px}}
+@media(max-width:650px){.filters,.items,.preview-cards{grid-template-columns:1fr}.unit-block{padding:15px}main{padding:18px 12px 42px}}
 @media print{header,footer,.filters,#finder-status{display:none!important}.unit-block{break-inside:avoid}.item{background:white}}
 </style>
 <link rel="stylesheet" href="../shared/navigation.css?v=58">
@@ -47,14 +56,15 @@ footer{background:var(--navy);color:#e8edf5;text-align:center;padding:20px;font-
 <div class="eyebrow">GRADE XI · NBF SOURCE-LABELLED RESOURCE NAVIGATION</div>
 <h1>Find a Textbook Example or Numerical</h1>
 <p class="lead">Choose your unit and what you are looking for. Numbered entries go directly to the matching existing worked example or numerical. Source-related Unit 1 practice is labelled separately, so adapted questions are never presented as exact textbook reproductions.</p>
-<div class="caution"><strong>Academic scope:</strong> This is a navigation index of existing public teaching material, not a new answer key or an official FBISE verification. Unit 3 numerical solutions remain pending final scientific teacher sign-off. Not all textbook exercises, derivations or end-of-unit short/long responses have individually verified deep links yet. For those materials, use <a href="./exam-quick-access.html">Exam Quick Access</a>.</div>
+<div class="caution"><strong>Academic scope:</strong> This is a navigation index of existing public teaching material, not a new answer key or an official FBISE verification. Unit 3 numerical solutions remain pending final scientific teacher sign-off. Not all textbook exercises, derivations or end-of-unit short/long responses have individually verified deep links yet. For those materials, use <a href="./exam-quick-access.html">Exam Quick Access</a>. Unit 6 topic-level worked sections are available separately as <strong>provisional teaching practice, not verified textbook exercise numbers</strong>.</div>
 <div class="filters" role="group" aria-label="Find a verified textbook source link">
 <div><label for="unit">Choose unit</label><select id="unit"><option value="all">All Units 1–6</option><option value="1">Unit 1 — Physical Quantities and Measurements</option><option value="2">Unit 2 — Vectors</option><option value="3">Unit 3 — Translatory Motion</option><option value="4">Unit 4 — Rotational and Circular Motion</option><option value="5">Unit 5 — Work and Energy</option><option value="6">Unit 6 — Fluid Mechanics (provisional)</option></select></div>
-<div><label for="kind">Choose resource type</label><select id="kind"><option value="all">All currently indexed material</option><option value="textbook-example">Numbered worked examples</option><option value="textbook-numerical">Numbered textbook numerical exercises</option><option value="source-related-practice">Source-related adapted worked problems</option></select></div>
+<div><label for="kind">Choose resource type</label><select id="kind"><option value="all">All currently indexed material</option><option value="textbook-example">Numbered worked examples</option><option value="textbook-numerical">Numbered textbook numerical exercises</option><option value="source-related-practice">Source-related adapted worked problems</option><option value="provisional-worked-topic-section">Unit 6 — Provisional worked-topic sections</option></select></div>
 <div class="search"><label for="query">Optional: search number, topic or SLO</label><input id="query" type="search" placeholder="e.g. 3.5, uncertainty, P-11-B-05" maxlength="80"></div>
 </div>
 <p id="finder-status" role="status" aria-live="polite">Loading source-confirmed references…</p>
 <div id="results" aria-label="Source-confirmed resource links"></div>
+<div id="provisional-worked" aria-label="Separately labelled provisional Unit 6 worked-topic learning sections"></div>
 <noscript><p class="none">This filtered index requires JavaScript. Use the existing <a href="./exam-quick-access.html">Exam Quick Access page</a> to open public resources without the index.</p></noscript>
 </main>
 <footer>Physics with Sir Najam · From Fundamentals to Frontiers. · Source navigation, not a certified answer key.</footer>
@@ -62,8 +72,8 @@ footer{background:var(--navy);color:#e8edf5;text-align:center;padding:20px;font-
 'use strict';
 const units={1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — provisional'};
 const selectors={unit:document.getElementById('unit'),kind:document.getElementById('kind'),query:document.getElementById('query')};
-const destination=document.getElementById('results'),status=document.getElementById('finder-status');
-let catalog=null;
+const destination=document.getElementById('results'),status=document.getElementById('finder-status'),previewDestination=document.getElementById('provisional-worked');
+let catalog=null,provisionalWorked=[];
 function textEl(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;el.textContent=text;return el}
 function verifiedLocalHref(href){
  if(typeof href!=='string'||!/^\.\/[a-z0-9-]+\.html#[a-zA-Z0-9.-]+$/.test(href))return null;
@@ -89,6 +99,24 @@ function addEntry(box,entry){
  if(details)item.append(textEl('div','scope',details));
  box.append(item);
 }
+function renderProvisional(){
+ previewDestination.replaceChildren();
+ const u=selectors.unit.value,k=selectors.kind.value,q=selectors.query.value.trim().toLowerCase();
+ if((u!=='all'&&u!=='6')||(k!=='all'&&k!=='provisional-worked-topic-section'))return 0;
+ const visible=provisionalWorked.filter(x=>!q||[x.title,x.topic,x.sourceNote,x.assessmentStatus].join(' ').toLowerCase().includes(q));
+ if(!visible.length)return 0;
+ const section=textEl('section','preview-block','');
+ section.append(textEl('h2','','Unit 6 — Provisional worked-topic practice'));
+ section.append(textEl('p','preview-warning','These are learning-topic sections, NOT seven verified NBF textbook exercises. Some contain teacher-created work; others use prepared-master example data whose original textbook wording still needs checking. Academic approval remains pending.'));
+ const grid=textEl('div','preview-cards','');
+ for(const e of visible){
+  const card=textEl('article','preview-card','');
+  card.append(textEl('div','preview-tag','Topic '+e.topic+' · Provisional · '+(e.sourceType==='mixed'?'Mixed source-related / supplementary':'Teacher-developed supplementary')));
+  const link=document.createElement('a');link.textContent=e.title;link.href=verifiedLocalHref(e.href)||'./exam-quick-access.html';card.append(link);
+  card.append(textEl('p','',e.sourceNote));grid.append(card);
+ }
+ section.append(grid);previewDestination.append(section);return visible.length;
+}
 function render(){
  if(!catalog){status.textContent='Loading source-confirmed references…';return}
  const unit=selectors.unit.value,kind=selectors.kind.value,query=selectors.query.value.trim().toLowerCase();
@@ -109,7 +137,8 @@ function render(){
   box.append(textEl('p','', 'This does not mean the unit has no learning material. Exact textbook-number links will be added only after checking source labels and individual destinations.'));
   const more=document.createElement('a');more.href='./exam-quick-access.html'+(unit==='all'?'':'?unit='+encodeURIComponent(unit));more.textContent='Open existing Unit resources in Exam Quick Access';box.append(more);destination.append(box);
  }
- status.textContent=entries.length+' source-labelled link'+(entries.length===1?'':'s')+' displayed. '+(unit==='all'?'Across current Units 1–6.':'Unit '+unit+' selected.')+' Exact exercise numbering is never implied for adapted Unit 1 problems.';
+ const provisionalCount=renderProvisional();
+ status.textContent=entries.length+' source-labelled link'+(entries.length===1?'':'s')+' displayed. '+(unit==='all'?'Across current Units 1–6.':'Unit '+unit+' selected.')+' Exact exercise numbering is never implied for adapted Unit 1 problems.'+(provisionalCount?' Plus '+provisionalCount+' separate provisional Unit 6 worked-topic section'+(provisionalCount===1?'':'s')+' (not textbook numbers).':'');
 }
 async function begin(){
  const search=new URLSearchParams(location.search),u=search.get('unit'),k=search.get('kind');
@@ -123,6 +152,22 @@ async function begin(){
   if(result.schemaVersion!==1||result.grade!==11||!Array.isArray(result.entries)||result.entries.length!==28)throw Error('Unexpected source index schema');
   for(const x of result.entries){if(!Number.isInteger(x.unit)||x.unit<1||x.unit>4||!['textbook-example','textbook-numerical','source-related-practice'].includes(x.kind)||!verifiedLocalHref(x.href))throw Error('Unsafe or invalid source link') }
   catalog=result;render();
+  // Optional provisional supplement never changes the 28 verified V103 textbook references.
+  try{
+   const extra=await fetch('./verified-unit6-worked-topic-index-v108.json',{cache:'no-store'});
+   if(!extra.ok)throw Error('Provisional source index HTTP '+extra.status);
+   const v=await extra.json();
+   if(v.schemaVersion!==1||v.grade!==11||v.unit!==6||
+      v.status!=='public-provisional-worked-section-index-not-verified-textbook-exercises'||
+      !Array.isArray(v.entries)||v.entries.length!==7||
+      !v.entries.every((x,i)=>x.id==='v108-u6-topic-'+(i+1)&&x.unit===6&&x.topic==='6.'+(i+1)&&
+        x.kind==='provisional-worked-topic-section'&&
+        ['mixed','teacher-developed'].includes(x.sourceType)&&
+        x.href==='./unit-06-topic-6'+(i+1)+'-study-v95b'+(i+1)+'.html#worked'&&
+        verifiedLocalHref(x.href)&&typeof x.title==='string'&&typeof x.sourceNote==='string'&&
+        /Provisional/.test(x.assessmentStatus)))throw Error('Unverified provisional source index');
+   provisionalWorked=v.entries;render();
+  }catch{/* The original 28 V103 textbook links stay functional. */}
  }catch(e){
   status.textContent='Source index unavailable; no student data or server settings were changed.';
   const a=document.createElement('a');a.href='./exam-quick-access.html';a.textContent='Use Exam Quick Access instead';
