@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "version": "V115",
+  "title": "Topic 6.5 Q55/Q56 Bernoulli stagnation and reservoir teacher-decision proposals",
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.5",
+  "sourceFile": "question-bank/grade-11/unit-06-topic-65-v84-80-source.json",
+  "sourceBlobSha": "f5a7dd0a29d5e90842c0ef557071aebc10a70baf",
+  "originalQuestionCount": 80,
+  "reviewedPreparedSourceAudit": "quality/grade11-unit06-v95c2s-topic65-mcq41-60-numerical-review.md",
+  "reviewedPreparedSourceAuditCsv": "quality/grade11-unit06-v95c2s-topic65-mcq41-60-numerical-review.csv",
+  "provenance": "Prepared-master compiled question pp.189–190 and original answer key p.195 were previously source-checked; printed NBF pp.99–100 supports Bernoulli formula, not verbatim candidate question wording.",
+  "scope": "TEACHER_DECISION_ONLY_NO_STUDENT_CHANGE",
+  "teacherAcademicApproval": "PENDING",
+  "certification": "NOT_CERTIFIED",
+  "unit6ReleaseApproved": false,
+  "counts": {
+    "originalTopic65": 80,
+    "unit6PublicProvisional": 560,
+    "grade11PublicProvisional": 2250,
+    "topic65CandidateDecisions": 2
+  },
+  "candidates": [
+    {
+      "candidateId": "XI-U06-T65-V115-TEACHER-ONLY-0055",
+      "originalSourceId": "XI-U06-T65-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 189,
+      "issue": "Stagnation point versus zero throughflow",
+      "sourceAuditPriority": "COMPULSORY_STAGNATION_CONDITION",
+      "status": "TEACHER_REVIEW_ONLY_NOT_IN_STUDENT_POOL",
+      "originalStem": "If ideal horizontal water slows from 4 m/s to 0 m/s, by how much does static pressure increase?",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "16 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8 kPa"
+        },
+        {
+          "id": "C",
+          "text": "4 kPa"
+        },
+        {
+          "id": "D",
+          "text": "2 kPa"
+        }
+      ],
+      "originalCorrectOptionId": "B",
+      "originalExplanation": "ΔP = ½(1000)(4² − 0²) = 8 000 Pa.",
+      "proposedStem": "In steady ideal horizontal flow, water of density 1000 kg/m³ moves at 4 m/s at point X and reaches a stagnation point Y (local speed 0 m/s) along the same streamline. Neglect viscous losses. By how much is the static pressure at Y greater than at X?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "16 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8 kPa"
+        },
+        {
+          "id": "C",
+          "text": "4 kPa"
+        },
+        {
+          "id": "D",
+          "text": "2 kPa"
+        }
+      ],
+      "proposedCorrectOptionId": "B",
+      "proposedExplanation": "Along a horizontal, lossless streamline ending at a stagnation point, P_Y − P_X = ½ρ(v_X² − v_Y²) = ½(1000)(4² − 0²) = 8000 Pa = 8 kPa. The original answer B is correct when the zero-speed condition is local stagnation, not zero discharge everywhere.",
+      "whyClarify": "The original describes slowing from 4 to 0 m/s without identifying the zero-speed location. A stagnation point has zero local speed while steady throughflow can continue around the body; zero average velocity across an entire unbranched downstream pipe section would contradict steady incompressible continuity.",
+      "workedPhysics": [
+        "Choose point X in the moving flow, v_X = 4 m/s, and stagnation point Y, v_Y = 0 m/s.",
+        "The points are on the same level ideal streamline, so P_X + ½ρv_X² = P_Y + ½ρv_Y².",
+        "With ρ = 1000 kg/m³, P_Y − P_X = 0.5 × 1000 × 16 Pa = 8000 Pa = 8 kPa.",
+        "The static-pressure increase is 8 kPa: original source letter B."
+      ],
+      "modelLimitations": [
+        "Zero local velocity at a stagnation point is physically different from stopping all fluid discharge through a complete pipe section.",
+        "The ideal, horizontal, same-streamline assumptions and explicit density make the calculation determinate; they do not certify an individual FBISE exam item."
+      ],
+      "candidateSloOnlyNotCertified": [
+        "P-11-B-40"
+      ],
+      "candidateCognitiveOnlyNotCertified": "Application",
+      "teacherDecision": "PENDING",
+      "officialExamEligibility": "PENDING",
+      "individualSloReview": "PENDING",
+      "individualCognitiveReview": "PENDING",
+      "sourceFidelityReview": "PENDING",
+      "fullScienceSignoff": "PENDING",
+      "approvedForStudentPractice": false,
+      "boardEligible": false,
+      "sourceArchivedUnchanged": true
+    },
+    {
+      "candidateId": "XI-U06-T65-V115-TEACHER-ONLY-0056",
+      "originalSourceId": "XI-U06-T65-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "sourceSection": "numericals",
+      "sourcePdfPage": 190,
+      "issue": "Large-reservoir nearly-zero inlet speed versus finite-section rest",
+      "sourceAuditPriority": "COMPULSORY_STAGNATION_CONDITION",
+      "status": "TEACHER_REVIEW_ONLY_NOT_IN_STUDENT_POOL",
+      "originalStem": "Ideal horizontal water accelerates from rest to 10 m/s. If upstream pressure is 100 kPa, the downstream pressure is:",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "100 kPa"
+        },
+        {
+          "id": "B",
+          "text": "50 kPa"
+        },
+        {
+          "id": "C",
+          "text": "150 kPa"
+        },
+        {
+          "id": "D",
+          "text": "75 kPa"
+        }
+      ],
+      "originalCorrectOptionId": "B",
+      "originalExplanation": "The kinetic term rises by ½(1000)(10²) = 50 kPa, so pressure falls to 50 kPa.",
+      "proposedStem": "Water of density 1000 kg/m³ flows steadily from a very large reservoir into a horizontal duct. At point X in the reservoir, its speed is negligible and its static pressure is 100 kPa. At point Y downstream on the same elevation and streamline, the water speed is 10 m/s. Neglect viscous losses and pumps. What is the static pressure at Y?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "100 kPa"
+        },
+        {
+          "id": "B",
+          "text": "50 kPa"
+        },
+        {
+          "id": "C",
+          "text": "150 kPa"
+        },
+        {
+          "id": "D",
+          "text": "75 kPa"
+        }
+      ],
+      "proposedCorrectOptionId": "B",
+      "proposedExplanation": "Apply ideal horizontal Bernoulli between a near-stagnant point in a very large reservoir and a downstream point on the same streamline. P_Y = P_X + ½ρ(v_X² − v_Y²) ≈ 100000 + ½(1000)(0 − 10²) Pa = 50000 Pa = 50 kPa. The original letter B is retained. No downstream atmospheric discharge is assumed.",
+      "whyClarify": "The original phrase 'accelerates from rest to 10 m/s' in steady ideal flow can be misunderstood as a finite upstream throughflow section with zero discharge. A very large reservoir makes the initial local speed negligibly small while finite flow can pass through the smaller duct. No open-to-atmosphere outlet boundary is inferred.",
+      "workedPhysics": [
+        "In a large reservoir the local approach speed at X is negligible compared with the downstream duct speed, so v_X ≈ 0.",
+        "The ideal same-elevation streamline relation gives P_Y = P_X + ½ρ(v_X² − v_Y²).",
+        "With ρ = 1000 kg/m³ and v_Y = 10 m/s, dynamic pressure rise is 50000 Pa = 50 kPa.",
+        "The downstream static pressure is 100 kPa − 50 kPa = 50 kPa: original letter B."
+      ],
+      "modelLimitations": [
+        "A zero-speed finite inlet cross section cannot supply positive downstream discharge in steady, incompressible, unbranched throughflow.",
+        "The calculated downstream pressure is a point in a duct and is not asserted to be an atmospheric-pressure free-jet exit; the source alone does not specify that boundary.",
+        "Any nonnegligible head loss, pump, elevation change or initial reservoir speed would require further model terms."
+      ],
+      "candidateSloOnlyNotCertified": [
+        "P-11-B-40"
+      ],
+      "candidateCognitiveOnlyNotCertified": "Application",
+      "teacherDecision": "PENDING",
+      "officialExamEligibility": "PENDING",
+      "individualSloReview": "PENDING",
+      "individualCognitiveReview": "PENDING",
+      "sourceFidelityReview": "PENDING",
+      "fullScienceSignoff": "PENDING",
+      "approvedForStudentPractice": false,
+      "boardEligible": false,
+      "sourceArchivedUnchanged": true
+    }
+  ]
+}
