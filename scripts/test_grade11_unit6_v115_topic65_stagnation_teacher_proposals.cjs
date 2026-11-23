@@ -98,15 +98,30 @@ function main(){
  assert.deepEqual(old.replacements.map(q=>q.sourceQuestionNumber),[61,67,78]);
  const t64=load('question-bank/grade-11/unit-06-topic64-v111-approved-practice-overlay.json');
  assert.equal(t64.version,'V111');assert.equal(t64.overlayQuestionCount,4);
+ // The V115 review-only proposal remains immutable historical evidence.
+ // A separately recorded explicit teacher approval now authorizes V116 practice.
+ // Check current public metadata IDs without treating that as official SLO/board approval.
+ const approved=load('question-bank/grade-11/unit-06-topic65-v116-approved-stagnation-practice-overlay.json');
+ assert.equal(approved.version,'V116');assert.equal(approved.overlayQuestionCount,2);
+ assert.deepEqual(approved.replacements.map(q=>q.correctOptionId),['B','B']);
  const refs=load('server/review-manifests/grade11-approved-public-review-refs-v99i.json');
  assert.equal(refs.questionRefs.length,2250);
  for(const n of [55,56]){
   const id='XI-U06-T65-MCQ-'+String(n).padStart(4,'0');
-  assert.ok(refs.questionRefs.some(([x,u,q])=>x===id&&u===6&&q===n),
-   'Proposal-only V115 must not replace public Q'+n);
+  assert.ok(refs.questionRefs.some(([x,u,q])=>x===id+'-V116'&&u===6&&q===n),
+   'Teacher-approved V116 practice reference required for Q'+n);
+  assert.ok(!refs.questionRefs.some(([x])=>x===id),
+   'Unqualified ambiguous original must not be served Q'+n);
+  const before=source.questions[n-1];
+  const record=approved.replacements.find(x=>x.originalId===id);
+  assert.ok(record);
+  assert.equal(record.originalStem,before.stem);
+  assert.equal(record.proposedStem,pack.candidates[n-55].proposedStem);
+  assert.equal(record.correctOptionId,before.correctOptionId);
+  assert.equal(record.boardEligible,false);
  }
  assert.ok(!refs.questionRefs.some(([x])=>x.includes('V115')));
- assert.equal(refs.bankVersions['6'],'v114-topic64-v111-and-topic65-three-clarified-560-provisional');
+ assert.equal(refs.bankVersions['6'],'v116-topic64-v111-and-topic65-five-clarified-560-provisional');
  const manifest=load('question-bank/manifest.json');
  assert.equal(manifest.grades.find(g=>g.grade===11).units[5].liveMcqCount,560);
  const ledger=read('quality/grade11-unit06-v95c1-560-item-review-queue.csv').trimEnd().split(/\r?\n/);
@@ -127,7 +142,7 @@ function main(){
   'shared/practice-bank-adapter-v55.js','practice-engine/index.html','build-your-physics-test.html']){
   assert.ok(!read(p).includes('V115'),'Review-only V115 was accidentally added to a student-facing asset '+p);
  }
- pass('no student/practice adapter/UI pages reference V115 before separate teacher approval');
+ pass('Historical V115 remains a teacher-only proposal while separately teacher-approved V116 practice IDs stay non-certified');
  console.log('V115 COMPLETE:',gates,'source/math/approval regression groups');
 }
 main();
