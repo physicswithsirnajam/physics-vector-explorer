@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "version": "V114",
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.5",
+  "purpose": "teacher-approved-clarified-bernoulli-self-practice-only-no-fbise-exam-certification",
+  "sourceBankFile": "unit-06-topic-65-v84-80-source.json",
+  "sourceBankBlobSha": "f5a7dd0a29d5e90842c0ef557071aebc10a70baf",
+  "sourceQuestionCount": 80,
+  "practiceQuestionCount": 80,
+  "overlayQuestionCount": 3,
+  "approvalScope": "User explicitly authorized three separately identified clarified provisional practice variants for Topic 6.5 Q61 Q67 Q78 on 2026-11-23, preserving original answer letters D C C and old V84 source; block originals in every student-facing quiz. Per-question SLO, cognitive, science/exam signoff and full Unit 6 release NOT approved.",
+  "releaseState": "provisional-self-practice-only",
+  "sourceArchivedUnchanged": true,
+  "blockedOriginalIds": [
+    "XI-U06-T65-MCQ-0061",
+    "XI-U06-T65-MCQ-0067",
+    "XI-U06-T65-MCQ-0078"
+  ],
+  "replacements": [
+    {
+      "originalId": "XI-U06-T65-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "practiceId": "XI-U06-T65-MCQ-0061-V114",
+      "changeType": "teacher-approved-clarified-bernoulli-practice-variant",
+      "originalStem": "A smooth horizontal pipe narrows from section X to section Y, and water flows steadily. Relative to X, Y has:",
+      "originalOptionTexts": [
+        "Lower speed and higher static pressure",
+        "Higher speed and higher static pressure",
+        "Unchanged speed and unchanged static pressure",
+        "Higher speed and lower static pressure"
+      ],
+      "proposedStem": "In a horizontal, unbranched pipe, water flows steadily and incompressibly from a wider section X to a narrower section Y. Assume negligible viscous losses, no pumps or turbines, and compare points on the same streamline. Relative to X, Y has:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Lower speed and higher static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Higher speed and higher static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged speed and unchanged static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Higher speed and lower static pressure"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "Conservation of volume discharge gives AX vX = AY vY. Because AY is smaller, vY is larger. Along the same horizontal ideal streamline without head loss or shaft work, PX + (ρvX²)/2 = PY + (ρvY²)/2, so PY - PX = (ρ/2)(vX² - vY²) < 0. Thus section Y has higher speed and lower static pressure (D).",
+      "sourceSection": "standalone-situations",
+      "sourcePdfPage": 190,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-topic65-Q61-Q67-Q78-practice-approval-2026-11-23",
+      "sourceProvenance": "Teacher-prepared MCQ source; printed NBF pp.99–100 verifies Bernoulli formula, not verbatim revised question wording",
+      "sourceFidelityNote": "Original prepared-source wording and key are retained in immutable V84 source bank",
+      "teacherApprovedPracticeWording": true,
+      "fullExamCertificationApproved": false
+    },
+    {
+      "originalId": "XI-U06-T65-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "practiceId": "XI-U06-T65-MCQ-0067-V114",
+      "changeType": "teacher-approved-clarified-bernoulli-practice-variant",
+      "originalStem": "A water stream rises in a tube of unchanged area. Which pair of energy terms is unchanged and increased, respectively?",
+      "originalOptionTexts": [
+        "Pressure term increased; gravitational term decreased",
+        "Kinetic term decreased; gravitational term decreased",
+        "Kinetic term unchanged; gravitational term increased",
+        "Kinetic term increased; gravitational term unchanged"
+      ],
+      "proposedStem": "Water flows steadily and incompressibly without leaks through an unbranched tube of constant cross-sectional area, rising from a lower section to a higher one. Which pair of energy terms is unchanged and increased, respectively?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Pressure term increased; gravitational term decreased"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic term decreased; gravitational term decreased"
+        },
+        {
+          "id": "C",
+          "text": "Kinetic term unchanged; gravitational term increased"
+        },
+        {
+          "id": "D",
+          "text": "Kinetic term increased; gravitational term unchanged"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For an unbranched, leak-free, steady incompressible stream, the discharge Q = Av is constant. Since A is the same at both stations, v is the same, so ½ρv² is unchanged. The higher point has greater ρgh, so the gravitational energy term increases. The source correct answer remains C. This alone does not guarantee individual FBISE B40 Application certification.",
+      "sourceSection": "standalone-situations",
+      "sourcePdfPage": 191,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-topic65-Q61-Q67-Q78-practice-approval-2026-11-23",
+      "sourceProvenance": "Teacher-prepared MCQ source; printed NBF pp.99–100 verifies Bernoulli formula, not verbatim revised question wording",
+      "sourceFidelityNote": "Original prepared-source wording and key are retained in immutable V84 source bank",
+      "teacherApprovedPracticeWording": true,
+      "fullExamCertificationApproved": false
+    },
+    {
+      "originalId": "XI-U06-T65-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "practiceId": "XI-U06-T65-MCQ-0078-V114",
+      "changeType": "teacher-approved-clarified-bernoulli-practice-variant",
+      "originalStem": "A fluid moves steadily in a horizontal pipe with the same cross-sectional area at both points. Ignoring losses and pumps, its static pressures are:",
+      "originalOptionTexts": [
+        "Necessarily increasing downstream",
+        "Necessarily decreasing downstream",
+        "Equal",
+        "Always both zero"
+      ],
+      "proposedStem": "An incompressible fluid flows steadily through an unbranched horizontal pipe of equal cross-sectional area at points X and Y. Assume both points lie on the same streamline, with negligible viscous losses and no pumps or turbines between them. The static pressures at X and Y are:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Necessarily increasing downstream"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily decreasing downstream"
+        },
+        {
+          "id": "C",
+          "text": "Equal"
+        },
+        {
+          "id": "D",
+          "text": "Always both zero"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "For steady incompressible no-leak flow, Q = Av is constant. Equal AX and AY give vX = vY. Because both points are horizontal and the same ideal lossless streamline is used, PX + ½ρvX² = PY + ½ρvY²; hence PX = PY (C). Compressible flow can have different densities and speeds at equal area, so the original unqualified premise was under-specified.",
+      "sourceSection": "standalone-situations",
+      "sourcePdfPage": 193,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-topic65-Q61-Q67-Q78-practice-approval-2026-11-23",
+      "sourceProvenance": "Teacher-prepared MCQ source; printed NBF pp.99–100 verifies Bernoulli formula, not verbatim revised question wording",
+      "sourceFidelityNote": "Original prepared-source wording and key are retained in immutable V84 source bank",
+      "teacherApprovedPracticeWording": true,
+      "fullExamCertificationApproved": false
+    }
+  ]
+}
