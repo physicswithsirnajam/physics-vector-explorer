@@ -1,0 +1,55 @@
+name: Grade XI Unit 6 Four Teacher Decision Proposals (V109)
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-unit06-v109-first-four-teacher-decisions.md"
+      - "quality/grade11-unit06-v109-topic64-first-four-decision-proposals.json"
+      - "scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs"
+      - ".github/workflows/validate-grade11-u06-v109-teacher-decisions.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-unit06-v109-first-four-teacher-decisions.md"
+      - "quality/grade11-unit06-v109-topic64-first-four-decision-proposals.json"
+      - "scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs"
+      - ".github/workflows/validate-grade11-u06-v109-teacher-decisions.yml"
+  workflow_dispatch:
+jobs:
+  verify-proposals-not-certified-edits:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check deterministic V109 review syntax
+        run: node --check scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs
+      - name: Verify source digest, four exact candidates, branch-flow counterexamples and all 560 approval holds
+        run: node scripts/test_grade11_unit6_v109_first_four_teacher_decisions.cjs
+      - name: Retain original V95-C2N Topic 6.4 Q21–40 audit and source snapshot
+        run: node scripts/test_grade11_unit06_v95c2n_topic64_second20_academic.cjs
+      - name: Retain original V95-C2O Topic 6.4 Q41–60 scientific audit
+        run: node scripts/test_grade11_unit06_v95c2o_topic64_num41_60_academic.cjs
+      - name: Retain original V95-C2P Topic 6.4 Q61–80 science/scenario audit
+        run: node scripts/test_grade11_unit06_v95c2p_topic64_last20_scenarios.cjs
+      - name: Install pinned Chromium for V108 navigation regression
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Retain V108 public worked-topic navigation and V103 verified textbook links
+        run: |
+          node scripts/test_grade11_unit6_worked_topic_finder_v108.cjs
+          node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Upload synthetic V108 browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-u06-v109-original-sources-intact
+          path: |
+            qa-artifacts/unit6-worked-topics-v108/
+            qa-artifacts/textbook-finder-v103/
+          retention-days: 10
+          if-no-files-found: warn
