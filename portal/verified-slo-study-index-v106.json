@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "version": "v106-public-verified-slo-formula-derivation-navigation",
+  "grade": 11,
+  "status": "public-navigation-only-not-academic-certification",
+  "notice": "Every shortcut targets an existing source-labelled public study section, not a newly reviewed textbook transcription or official FBISE marking guide. Formative SLOs must not be represented as summative theory. Unit 6 remains a provisional seven-topic learning preview, and source-specific derivations are not automatically independent summative question requirements. Confirm the school's assigned exam syllabus.",
+  "units": [
+    8,
+    5,
+    7,
+    13,
+    5,
+    10
+  ],
+  "entries": [
+    {
+      "id": "v106-u01-1",
+      "unit": 1,
+      "kind": "slo-notes",
+      "title": "Estimating physical quantities",
+      "href": "./unit-01-study-guide.html#estimating",
+      "slo": "P-11-A-01",
+      "assessmentStatus": "Formative learning outcome (not summative theory)",
+      "sourceNote": "Unit 1 section 1; original estimation guidance"
+    },
+    {
+      "id": "v106-u01-2",
+      "unit": 1,
+      "kind": "formulas",
+      "title": "Derived SI units and dimensions",
+      "href": "./unit-01-study-guide.html#derived",
+      "slo": "P-11-A-02",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 2; SI base-unit examples"
+    },
+    {
+      "id": "v106-u01-3",
+      "unit": 1,
+      "kind": "slo-notes",
+      "title": "Checking dimensional homogeneity",
+      "href": "./unit-01-study-guide.html#homogeneity",
+      "slo": "P-11-A-03",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 3; concept, correct equation and counterexample"
+    },
+    {
+      "id": "v106-u01-4",
+      "unit": 1,
+      "kind": "derivation",
+      "title": "Derive simple relationships using dimensions",
+      "href": "./unit-01-study-guide.html#derivation",
+      "slo": "P-11-A-04",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 4; dimensional-analysis worked method"
+    },
+    {
+      "id": "v106-u01-5",
+      "unit": 1,
+      "kind": "slo-notes",
+      "title": "Accuracy versus precision",
+      "href": "./unit-01-study-guide.html#accuracy",
+      "slo": "P-11-A-05",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 5; definitions and examples"
+    },
+    {
+      "id": "v106-u01-6",
+      "unit": 1,
+      "kind": "slo-notes",
+      "title": "Measurement uncertainty",
+      "href": "./unit-01-study-guide.html#uncertainty",
+      "slo": "P-11-A-06; P-11-A-07",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 6; measurement limits and uncertainty"
+    },
+    {
+      "id": "v106-u01-7",
+      "unit": 1,
+      "kind": "formulas",
+      "title": "Conservative uncertainty propagation rules",
+      "href": "./unit-01-study-guide.html#propagation",
+      "slo": "P-11-A-06",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 1 section 7; addition, subtraction, multiplication and powers"
+    },
+    {
+      "id": "v106-u01-8",
+      "unit": 1,
+      "kind": "formulas",
+      "title": "Final revision sheet",
+      "href": "./unit-01-study-guide.html#summary",
+      "slo": "P-11-A-02–A-07",
+      "assessmentStatus": "Mixed Unit 1 revision; use SLO classifications in guide",
+      "sourceNote": "Unit 1 end-of-guide summary, not a standalone official formula insert"
+    },
+    {
+      "id": "v106-u02-9",
+      "unit": 2,
+      "kind": "formulas",
+      "title": "Rectangular components and position vectors",
+      "href": "./unit-02-formula-sheet.html#g1",
+      "slo": "P-11-B-01",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 2 dedicated formula sheet, first group"
+    },
+    {
+      "id": "v106-u02-10",
+      "unit": 2,
+      "kind": "formulas",
+      "title": "Scalar/dot product formulas",
+      "href": "./unit-02-formula-sheet.html#g2",
+      "slo": "P-11-B-02",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 2 dedicated formula sheet, second group"
+    },
+    {
+      "id": "v106-u02-11",
+      "unit": 2,
+      "kind": "formulas",
+      "title": "Vector/cross product formulas",
+      "href": "./unit-02-formula-sheet.html#g3",
+      "slo": "P-11-B-02",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 2 dedicated formula sheet, third group"
+    },
+    {
+      "id": "v106-u02-12",
+      "unit": 2,
+      "kind": "formulas",
+      "title": "Integrated relations and applications",
+      "href": "./unit-02-formula-sheet.html#g4",
+      "slo": "P-11-B-01; P-11-B-02",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 2 integrated formulas, angle and product ratios"
+    },
+    {
+      "id": "v106-u02-13",
+      "unit": 2,
+      "kind": "slo-notes",
+      "title": "Examiner tips and vector pitfalls",
+      "href": "./unit-02-formula-sheet.html#traps",
+      "slo": "P-11-B-01; P-11-B-02",
+      "assessmentStatus": "Study support, not a separate new SLO",
+      "sourceNote": "Unit 2 formula sheet, final practical tips"
+    },
+    {
+      "id": "v106-u03-14",
+      "unit": 3,
+      "kind": "derivation",
+      "title": "Equations of motion from a velocity–time graph",
+      "href": "./unit-03-study-guide.html#equations",
+      "slo": "P-11-B-03",
+      "assessmentStatus": "Formative learning outcome (not summative theory)",
+      "sourceNote": "Unit 3 section 2; formative derivation labelled in original guide"
+    },
+    {
+      "id": "v106-u03-15",
+      "unit": 3,
+      "kind": "formulas",
+      "title": "Free fall, signs and equations",
+      "href": "./unit-03-study-guide.html#freefall",
+      "slo": "P-11-B-04",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 3 section 3; idealized free-fall relations"
+    },
+    {
+      "id": "v106-u03-16",
+      "unit": 3,
+      "kind": "formulas",
+      "title": "Projectile motion without air resistance",
+      "href": "./unit-03-study-guide.html#projectiles",
+      "slo": "P-11-B-05",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 3 section 4; projectiles and formula assumptions"
+    },
+    {
+      "id": "v106-u03-17",
+      "unit": 3,
+      "kind": "slo-notes",
+      "title": "Air resistance and projectile motion",
+      "href": "./unit-03-collision-study.html#drag",
+      "slo": "P-11-B-06",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 3 Part 2, section 2; qualitative effects of drag"
+    },
+    {
+      "id": "v106-u03-18",
+      "unit": 3,
+      "kind": "slo-notes",
+      "title": "Conservation of momentum (foundation)",
+      "href": "./unit-03-collision-study.html#momentum",
+      "slo": "P-11-B-11",
+      "assessmentStatus": "Formative learning outcome (not summative theory)",
+      "sourceNote": "Unit 3 Part 2, section 3; formative momentum law, supports collisions"
+    },
+    {
+      "id": "v106-u03-19",
+      "unit": 3,
+      "kind": "slo-notes",
+      "title": "Elastic collisions",
+      "href": "./unit-03-collision-study.html#elastic",
+      "slo": "P-11-B-12",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 3 Part 2, section 4; momentum and kinetic-energy conditions"
+    },
+    {
+      "id": "v106-u03-20",
+      "unit": 3,
+      "kind": "slo-notes",
+      "title": "Inelastic collisions and energy change",
+      "href": "./unit-03-collision-study.html#inelastic",
+      "slo": "P-11-B-13",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 3 Part 2, section 5; distinguish energy and momentum conservation"
+    },
+    {
+      "id": "v106-u04-21",
+      "unit": 4,
+      "kind": "formulas",
+      "title": "Radian definition and angular measures",
+      "href": "./unit-04-rotation-study.html#radian",
+      "slo": "P-11-B-07",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 1; radians, arc and degree conversions"
+    },
+    {
+      "id": "v106-u04-22",
+      "unit": 4,
+      "kind": "formulas",
+      "title": "Angular displacement, velocity and acceleration",
+      "href": "./unit-04-rotation-study.html#quantities",
+      "slo": "P-11-B-08",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 1; angular quantities and definitions"
+    },
+    {
+      "id": "v106-u04-23",
+      "unit": 4,
+      "kind": "formulas",
+      "title": "Rotational motion with constant angular acceleration",
+      "href": "./unit-04-rotation-study.html#equations",
+      "slo": "P-11-B-09",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 1; rotational kinematic relations"
+    },
+    {
+      "id": "v106-u04-24",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Curved-path acceleration and direction",
+      "href": "./unit-04-centripetal-study.html#curved-motion",
+      "slo": "P-11-B-10",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 2; qualitative circular-motion acceleration"
+    },
+    {
+      "id": "v106-u04-25",
+      "unit": 4,
+      "kind": "formulas",
+      "title": "Centripetal force and acceleration",
+      "href": "./unit-04-centripetal-study.html#net-force",
+      "slo": "P-11-B-14",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 2; inward force and circular motion"
+    },
+    {
+      "id": "v106-u04-26",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Which real force supplies centripetal force?",
+      "href": "./unit-04-centripetal-study.html#mechanisms",
+      "slo": "P-11-B-15",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 2; examples of force mechanisms"
+    },
+    {
+      "id": "v106-u04-27",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Why orbiting astronauts appear weightless",
+      "href": "./unit-04-artificial-gravity-study.html#weightlessness",
+      "slo": "P-11-B-16",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 3; free-fall and apparent weightlessness"
+    },
+    {
+      "id": "v106-u04-28",
+      "unit": 4,
+      "kind": "formulas",
+      "title": "Artificial gravity in rotating space stations",
+      "href": "./unit-04-artificial-gravity-study.html#artificial",
+      "slo": "P-11-B-17",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 3; circular motion model and formulas"
+    },
+    {
+      "id": "v106-u04-29",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Moment of inertia and angular momentum",
+      "href": "./unit-04-angular-momentum-study.html#inertia",
+      "slo": "P-11-B-18",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 4; rotational inertia; read following Angular Momentum section too"
+    },
+    {
+      "id": "v106-u04-30",
+      "unit": 4,
+      "kind": "derivation",
+      "title": "Torque and angular acceleration relation",
+      "href": "./unit-04-angular-momentum-study.html#torque",
+      "slo": "P-11-B-19",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 4; torque and angular acceleration explanation"
+    },
+    {
+      "id": "v106-u04-31",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Conservation of angular momentum",
+      "href": "./unit-04-angular-momentum-study.html#conservation",
+      "slo": "P-11-B-20",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 4; angular momentum conservation and conditions"
+    },
+    {
+      "id": "v106-u04-32",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Centrifugation and material separation",
+      "href": "./unit-04-centrifuge-study.html#principle",
+      "slo": "P-11-B-21",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 4 Part 5; centrifuge mechanism and principles"
+    },
+    {
+      "id": "v106-u04-33",
+      "unit": 4,
+      "kind": "slo-notes",
+      "title": "Unit 4 summative theory SLO coverage matrix",
+      "href": "./unit-04-slo-audit.html#matrix",
+      "slo": "P-11-B-07–B-10; B-14–B-21",
+      "assessmentStatus": "Summative SLO coverage audit; not academic certification of MCQs",
+      "sourceNote": "Unit 4 source-to-study matrix, 12 summative SLOs"
+    },
+    {
+      "id": "v106-u05-34",
+      "unit": 5,
+      "kind": "slo-notes",
+      "title": "Four Unit 5 assessed learning outcomes",
+      "href": "./unit-05-work-study.html#slo-map",
+      "slo": "P-11-B-29–B-32",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 5 source-mapped four-SLO table"
+    },
+    {
+      "id": "v106-u05-35",
+      "unit": 5,
+      "kind": "formulas",
+      "title": "Work and the force–displacement graph",
+      "href": "./unit-05-work-study.html#work",
+      "slo": "P-11-B-30",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 5 section 5.1; graph-area method"
+    },
+    {
+      "id": "v106-u05-36",
+      "unit": 5,
+      "kind": "slo-notes",
+      "title": "Conservative versus non-conservative forces",
+      "href": "./unit-05-work-study.html#conservative",
+      "slo": "P-11-B-31",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 5 section 5.2; path dependence"
+    },
+    {
+      "id": "v106-u05-37",
+      "unit": 5,
+      "kind": "derivation",
+      "title": "Deriving the kinetic-energy expression",
+      "href": "./unit-05-work-study.html#kinetic",
+      "slo": "P-11-B-29",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 5 section 5.3; textbook-page-labelled worked derivation"
+    },
+    {
+      "id": "v106-u05-38",
+      "unit": 5,
+      "kind": "formulas",
+      "title": "Work–energy theorem with resistive forces",
+      "href": "./unit-05-work-study.html#resistance",
+      "slo": "P-11-B-32",
+      "assessmentStatus": "Summative theory SLO (as labelled on existing study source)",
+      "sourceNote": "Unit 5 section 5.4; work against resistance"
+    },
+    {
+      "id": "v106-u06-39",
+      "unit": 6,
+      "kind": "derivation",
+      "title": "Pressure derivation of Archimedes’ principle",
+      "href": "./unit-06-topic-61-study-v95b1.html#derivation",
+      "slo": "P-11-B-33; P-11-B-34",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.1 Step 2; provisional school-level derivation"
+    },
+    {
+      "id": "v106-u06-40",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Upthrust and flotation — formula recap",
+      "href": "./unit-06-topic-61-study-v95b1.html#summary-title",
+      "slo": "P-11-B-33; P-11-B-34",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.1 quick formula recap"
+    },
+    {
+      "id": "v106-u06-41",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Viscous drag and terminal velocity recap",
+      "href": "./unit-06-topic-62-study-v95b2.html#summary-title",
+      "slo": "P-11-B-41; P-11-B-42",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.2 provisional formula recap"
+    },
+    {
+      "id": "v106-u06-42",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Fluid-flow formulas and quantities",
+      "href": "./unit-06-topic-63-study-v95b3.html#formula-summary-title",
+      "slo": "P-11-B-35",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.3 provisional formula recap"
+    },
+    {
+      "id": "v106-u06-43",
+      "unit": 6,
+      "kind": "derivation",
+      "title": "Continuity equation from conservation of mass",
+      "href": "./unit-06-topic-64-study-v95b4.html#derivation",
+      "slo": "P-11-B-36; P-11-B-37; P-11-B-38",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.4 Step 2; twelve-step school-level continuity derivation"
+    },
+    {
+      "id": "v106-u06-44",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Continuity equation — formula recap",
+      "href": "./unit-06-topic-64-study-v95b4.html#formula-summary-title",
+      "slo": "P-11-B-36; P-11-B-37; P-11-B-38",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.4 provisional formula recap"
+    },
+    {
+      "id": "v106-u06-45",
+      "unit": 6,
+      "kind": "derivation",
+      "title": "Bernoulli equation from work–energy",
+      "href": "./unit-06-topic-65-study-v95b5.html#derive",
+      "slo": "P-11-B-40; P-11-B-39 (formative background)",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.5 Step 2; Bernoulli school derivation, B-39 context formative"
+    },
+    {
+      "id": "v106-u06-46",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Bernoulli equation — horizontal and vertical cases",
+      "href": "./unit-06-topic-65-study-v95b5.html#summary-title",
+      "slo": "P-11-B-40; P-11-B-39 (formative background)",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.5 provisional formula recap; assumptions matter"
+    },
+    {
+      "id": "v106-u06-47",
+      "unit": 6,
+      "kind": "formulas",
+      "title": "Bernoulli applications — formulas and conditions",
+      "href": "./unit-06-topic-66-study-v95b6.html#summary-title",
+      "slo": "P-11-B-40; P-11-B-44",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.6 formula recap; model limits and effects"
+    },
+    {
+      "id": "v106-u06-48",
+      "unit": 6,
+      "kind": "slo-notes",
+      "title": "Superfluidity — last-minute conceptual revision",
+      "href": "./unit-06-topic-67-study-v95b7.html#summary-title",
+      "slo": "P-11-B-43",
+      "assessmentStatus": "Provisional Unit 6 teaching preview; SLO-level classification, not certified item/exam release",
+      "sourceNote": "Topic 6.7 provisional summary sheet; non-numerical concept focus"
+    }
+  ]
+}
