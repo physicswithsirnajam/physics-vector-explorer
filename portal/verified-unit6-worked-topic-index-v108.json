@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "version": "v108-unit6-worked-topic-source-navigation",
+  "grade": 11,
+  "unit": 6,
+  "status": "public-provisional-worked-section-index-not-verified-textbook-exercises",
+  "notice": "These are seven existing Unit 6 lesson sections containing source-related, teacher-composed, and supplementary worked problems, NOT seven individual textbook example numbers and NOT certified NBF exercise transcriptions or official FBISE answer keys. Compare the original printed textbook before any exercise-number claim. Unit 6 academic sign-off remains pending.",
+  "entries": [
+    {
+      "id": "v108-u6-topic-1",
+      "unit": 6,
+      "topic": "6.1",
+      "title": "Upthrust & Archimedes’ Principle",
+      "href": "./unit-06-topic-61-study-v95b1.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "mixed",
+      "sourceNote": "Prepared-master Example/Assignment 6.1 data plus teacher-developed practice; original NBF pp.89–91 wording and figure not fully cross-checked.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-2",
+      "unit": 6,
+      "topic": "6.2",
+      "title": "Viscosity, Stokes’ law & terminal velocity",
+      "href": "./unit-06-topic-62-study-v95b2.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "mixed",
+      "sourceNote": "Prepared-master Example/Assignment 6.2 data plus supplementary practice; original NBF pp.91–95 source wording not fully verified.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-3",
+      "unit": 6,
+      "topic": "6.3",
+      "title": "Fluid flow and volume-rate calculations",
+      "href": "./unit-06-topic-63-study-v95b3.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "teacher-developed",
+      "sourceNote": "Seven teacher-developed supplementary cases C1–C7; not independently numbered NBF textbook exercises.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-4",
+      "unit": 6,
+      "topic": "6.4",
+      "title": "Continuity & branching flow calculations",
+      "href": "./unit-06-topic-64-study-v95b4.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "mixed",
+      "sourceNote": "Prepared-master Example 6.3 data and supplementary calculations; original NBF pp.96–99 exercise wording/figure unverified.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-5",
+      "unit": 6,
+      "topic": "6.5",
+      "title": "Bernoulli horizontal & vertical calculations",
+      "href": "./unit-06-topic-65-study-v95b5.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "teacher-developed",
+      "sourceNote": "Eight teacher-developed supplementary numerical cases; not original NBF Example 6.x or Assignment 6.x tasks.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-6",
+      "unit": 6,
+      "topic": "6.6",
+      "title": "Bernoulli applications: Venturi, outflow & lift",
+      "href": "./unit-06-topic-66-study-v95b6.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "mixed",
+      "sourceNote": "Mixed prepared-master Example/Assignment 6.4 numerical givens and teacher-created cases; original NBF pp.101–106 not fully compared.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    },
+    {
+      "id": "v108-u6-topic-7",
+      "unit": 6,
+      "topic": "6.7",
+      "title": "Superfluidity: temperature illustrations",
+      "href": "./unit-06-topic-67-study-v95b7.html#worked",
+      "kind": "provisional-worked-topic-section",
+      "sourceType": "teacher-developed",
+      "sourceNote": "Eight supplementary temperature conversions/comparisons; not board-required derivations or numbered NBF exercises.",
+      "assessmentStatus": "Provisional teacher-learning examples only; no per-question official FBISE or verbatim NBF certification"
+    }
+  ]
+}
