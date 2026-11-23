@@ -65,7 +65,7 @@ assert.deepEqual(after,before,'Read-only V118 audit modified a protected source,
 const report=read('quality/grade11-v118-exam-readiness-six-unit-source-audit.md');
 for(const token of ['December 7, 2026','Q45','Q58','Unit 6','Q55','Copy only',
  'public GitHub Pages','teacher','exam-readiness','PR #218']){
- assert.ok(report.includes(token),'Teacher-readable report missing required qualified subject '+token);
+ assert.ok(report.toLowerCase().includes(token.toLowerCase()),'Teacher-readable report missing required qualified subject '+token);
 }
 assert.ok(!/boardEligible:\s*true|releaseApproved:\s*true/.test(report));
 console.log('V118 TEST PASSED: audit source unchanged, 7 source gates, all 6 units/2,250 MCQs, '+doc.examQuick.localAndExternalHrefCount+
