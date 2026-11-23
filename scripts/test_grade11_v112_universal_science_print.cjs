@@ -28,23 +28,35 @@ function staticCoverage(){
  assert.ok(js.includes('question-bank')&&js.includes('all authored question-bank bytes'));
  assert.ok(css.includes('vertical-align:super!important')&&css.includes('@media print'));
  assert.ok(wm.includes('position:fixed')&&wm.includes('transform:rotate')&&wm.includes('print-color-adjust:exact'));
- let navCount=0,directCount=0;
+ let navCount=0,directCount=0,cssOnlyCount=0;
  for(const p of pages){
   const s=read(p);
   const hasNavigation=s.includes('shared/navigation.js');
   const hasDirect=s.includes(direct);
-  assert.equal(hasNavigation===hasDirect,false,'Public HTML is missing layer or double-loads it: '+p);
-  if(hasNavigation)navCount++;else directCount++;
+  const cssOnly=p==='portal/unit-06-figure-study-v90.html';
+  if(cssOnly){
+   assert.equal(hasNavigation,false);assert.equal(hasDirect,false);
+   assert.ok(!/<script\b/i.test(s),'Original V90 figure gallery MUST remain script-free');
+   assert.ok(s.includes('../shared/print-watermark-v70.css?v=112'));
+   assert.ok(s.includes('../shared/sitewide-science-print-v112.css?v=112'));
+   assert.equal((s.match(/Physics with Sir Najam<\/span>/g)||[]).length,8);
+   assert.ok(s.includes('class="psn-print-watermark"'));
+   cssOnlyCount++;
+  }else{
+   assert.equal(hasNavigation===hasDirect,false,'Public HTML is missing layer or double-loads it: '+p);
+   if(hasNavigation)navCount++;else directCount++;
+  }
   if(hasDirect){
    const relative=p.startsWith('portal/')?'../shared/':'shared/';
    assert.ok(s.includes('src="'+relative+direct+'"'),'Direct loader wrong base path '+p);
   }
   assert.ok(/<html\b/i.test(s)&&/<\/head>/i.test(s)&&/<\/body>/i.test(s),'Unexpected public HTML route malformed '+p);
  }
- assert.ok(navCount>=60&&directCount>=35,'Sitewide coverage split unexpectedly narrowed: '+navCount+'/'+directCount);
+ assert.ok(navCount>=60&&directCount>=35&&cssOnlyCount===1,'Sitewide split unexpectedly narrowed: '+navCount+'/'+directCount+'/'+cssOnlyCount);
+ assert.equal(navCount+directCount+cssOnlyCount,pages.length,'Every public route must have approved print coverage');
  assert.ok(read('portal/pdf-report.js').includes("new URL('../shared/print-watermark-v70.css',import.meta.url)"),'Existing generated progress report stamp lost');
  assert.ok(read('practice-engine/index.html').includes('print-watermark-v70.css?v=71'),'Existing practice report stamp lost');
- pass('all '+pages.length+' tracked public HTML routes explicitly use navigation print layer or standalone shared layer ('+navCount+' navigation, '+directCount+' standalone), no double loaders');
+ pass('all '+pages.length+' tracked public HTML routes covered ('+navCount+' navigation, '+directCount+' standalone script, '+cssOnlyCount+' intentionally script-free figure CSS); no duplicate loaders');
 }
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png'};
 const server=http.createServer((req,res)=>{
@@ -121,6 +133,19 @@ async function browser(){
   audits.push(await proof(browser,base+'continuity-fluid-flow.html','continuity-standalone-simulation-390',{width:390}));
   audits.push(await proof(browser,base+'portal/unit-02-numericals.html','unit02-navigation-numericals-1280',{width:1280,minPages:2,requiredText:['Worked Numericals']}));
   audits.push(await proof(browser,base+'index.html','standalone-homepage-390',{width:390}));
+  // The original V90 source-image gallery must stay SCRIPT-FREE, yet still print with a brand stamp.
+  const figure=await browser.newPage({viewport:{width:1100,height:840}});
+  try{
+   await figure.goto(base+'portal/unit-06-figure-study-v90.html',{waitUntil:'load'});
+   await figure.waitForFunction(()=>Boolean(document.querySelector('link[href*="print-watermark-v70.css"]')?.sheet));
+   assert.equal(await figure.locator('.psn-print-watermark span').count(),8);
+   assert.equal(await figure.evaluate(()=>window.PSNSciencePrintV112===undefined),true,'Figure study must not import a script');
+   await figure.emulateMedia({media:'print'});
+   const file=path.join(out,'script-free-figure-study.pdf');
+   fs.writeFileSync(file,await figure.pdf({format:'A4',printBackground:false,preferCSSPageSize:true}));
+   const n=checkPdf(file,1,['Figure 6.2']);
+   pass('original script-free Unit 6 figure study retains accessible schematic source and brand watermark across '+n+' PDF pages');
+  }finally{await figure.close()}
   // Real 80-item quiz: dynamic textContent rendering after clicks must be typographic.
   const quiz=await browser.newPage({viewport:{width:390,height:820}});
   try{
