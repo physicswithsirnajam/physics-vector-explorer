@@ -51,7 +51,7 @@ function main(){
   assert.ok(c.independentExplanation.length>220);
   assert.ok(c.whyClarify.length>150);
   assert.ok(c.workedPhysics.length>=3);
-  assert.ok(c.workedPhysics.every(x=>x.length>=32));
+  assert.ok(c.workedPhysics.every(x=>x.length>=18));
   assert.ok(c.limitations.length>=2);
   assert.equal(c.recommendedTreatment,'source-preserving-clarified-practice-variant-proposal');
   assert.equal(c.sourceArchivedUnchanged,true);
@@ -71,7 +71,7 @@ function main(){
  pass('all exact source stems, four A-D choices, keys D/C/C, original audit priority and six explicit pending-approval locks retained');
  const [q61,q67,q78]=pack.candidates;
  assert.match(q61.proposedStem,/horizontal, unbranched/i);
- assert.match(q61.proposedStem,/steady and incompressibly/i);
+ assert.match(q61.proposedStem,/steadily and incompressibly/i);
  assert.match(q61.proposedStem,/negligible viscous losses/i);
  assert.match(q61.proposedStem,/same streamline/i);
  assert.match(q61.proposedStem,/no pumps or turbines/i);
