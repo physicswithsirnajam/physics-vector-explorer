@@ -28,6 +28,9 @@ h1{font-size:clamp(1.85rem,4vw,2.7rem);line-height:1.17;color:var(--navy);margin
 .extra{border:1px solid #cedcea;background:#fff;border-radius:11px;padding:18px;margin:18px 0}
 .extra p{color:var(--muted);font-size:.9rem}
 .extra ul{margin-bottom:0}.extra li{margin:6px 0}
+.practice-card{border:1px solid #d9e4ed;background:#f8fbff;padding:13px 14px;border-radius:9px;min-width:0;overflow-wrap:anywhere}
+.practice-card a{display:block;font-weight:760;text-decoration:none;line-height:1.4}
+.practice-card a:hover{text-decoration:underline}
 footer{background:var(--navy);color:#dde8f3;text-align:center;padding:20px;font-size:.83rem}
 @media(max-width:650px){.controls,.cards{grid-template-columns:1fr}.section{padding:15px}.controls{padding:14px}main{padding:18px 12px 42px}}
 @media print{header,footer,.controls,#status{display:none!important}.section{break-inside:avoid}.card{background:#fff}}
@@ -42,7 +45,7 @@ footer{background:var(--navy);color:#dde8f3;text-align:center;padding:20px;font-
 <div class="kicker">Grade XI · HSSC-I · Short and comprehensive responses</div>
 <h1>Find a Short or Comprehensive Answer</h1>
 <p class="lead">Use the dropdowns to open an individual existing answer. Questions are labelled according to the instructor's actual source: textbook-labelled, additional SLO practice or source-related teaching adaptations. No new answers have been created by this finder.</p>
-<div class="notice"><strong>Read before using:</strong> This is a public practice-resource index, <em>not</em> an official FBISE answer key or verified transcription of the NBF textbook exercise. Unit 1 has source-related original explanations; Unit 2 has instructor-source textbook labels and extra SLO responses. Units 3–5 currently offer section-level practice papers rather than certified individually numbered end-of-unit textbook answers. Unit 6 descriptive mapping is still pending.</div>
+<div class="notice"><strong>Read before using:</strong> This is a public practice-resource index, <em>not</em> an official FBISE answer key or verified transcription of the NBF textbook exercise. Unit 1 has source-related original explanations; Unit 2 has instructor-source textbook labels and extra SLO responses. Units 3–4 offer section-level practice. Unit 5 also has direct links to its nine original <strong>question-only</strong> A/B practice pairs; these are <strong>not individually numbered NBF textbook exercises or solved answers</strong>. Unit 6 descriptive mapping is still pending.</div>
 <div class="controls" role="group" aria-label="Filter short and comprehensive Physics question resources">
 <div><label for="unit">Choose unit</label><select id="unit"><option value="all">All Units 1–6</option><option value="1">Unit 1 — Physical Quantities and Measurements</option><option value="2">Unit 2 — Vectors</option><option value="3">Unit 3 — Translatory Motion</option><option value="4">Unit 4 — Rotational and Circular Motion</option><option value="5">Unit 5 — Work and Energy</option><option value="6">Unit 6 — Fluid Mechanics (provisional)</option></select></div>
 <div><label for="type">Choose question type</label><select id="type"><option value="all">Short & comprehensive</option><option value="short-response">Short-response</option><option value="comprehensive-response">Comprehensive / extended</option></select></div>
@@ -50,6 +53,7 @@ footer{background:var(--navy);color:#dde8f3;text-align:center;padding:20px;font-
 </div>
 <p id="status" role="status" aria-live="polite">Loading verified links…</p>
 <div id="results" aria-label="Individually indexed model responses"></div>
+<div id="unit5-practice-index" aria-label="Unit 5 individual original question-only practice"></div>
 <div id="practice" aria-label="Other available descriptive practice sections"></div>
 <noscript><div class="extra">JavaScript is needed for individual question filtering. <a href="./exam-quick-access.html">Open existing short and long answer pages via Exam Quick Access.</a></div></noscript>
 </main>
@@ -57,8 +61,8 @@ footer{background:var(--navy);color:#dde8f3;text-align:center;padding:20px;font-
 <script>
 'use strict';
 const names={1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — provisional'};
-const $=id=>document.getElementById(id),els={unit:$('unit'),type:$('type'),query:$('query'),results:$('results'),practice:$('practice'),status:$('status')};
-let data=null;
+const $=id=>document.getElementById(id),els={unit:$('unit'),type:$('type'),query:$('query'),results:$('results'),unit5:$('unit5-practice-index'),practice:$('practice'),status:$('status')};
+let data=null,u5practice=[];
 function make(tag,cls,value){const e=document.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=value;return e}
 function safeTarget(href){
  if(typeof href!=='string'||!/^\.\/[a-z0-9-]+\.html#[A-Za-z0-9_-]+$/.test(href))return null;
@@ -89,6 +93,21 @@ function render(){
   const section=make('section','section');section.append(make('h2','', 'Unit '+n+' — '+names[n]));
   const cards=make('div','cards');selected.forEach(e=>addCard(cards,e));section.append(cards);els.results.append(section);
  }
+ const u5matched=u5practice.filter(e=>(unit==='all'||unit==='5')&&(type==='all'||type===e.type)&&(!q||[e.label,'Question '+e.number,e.slo,e.sourceNote].join(' ').toLowerCase().includes(q)));
+ els.unit5.replaceChildren();
+ if(u5matched.length){
+  const section=make('section','section');section.append(make('h2','','Unit 5 — Original question-only practice (not solved textbook exercises)'));
+  const intro=make('p','meta','Select one of the A/B alternatives within each question. These direct links open the original 40-mark student paper at that exact question; the teacher key is never loaded.');
+  section.append(intro);const cards=make('div','cards');
+  for(const entry of u5matched){
+   const card=make('article','practice-card');
+   card.append(make('div','tag','Question-only · '+entry.marks+' marks · teacher review pending'));
+   const a=make('a','',entry.label);a.href=safeTarget(entry.href)||'./exam-quick-access.html';card.append(a);
+   card.append(make('p','meta',entry.slo+' · '+entry.sourceNote));
+   cards.append(card);
+  }
+  section.append(cards);els.unit5.append(section);
+ }
  let showOther=0;
  if(!q)for(const section of data.publicSections){
   if(unit!=='all'&&Number(unit)!==section.unit)continue;
@@ -102,12 +121,12 @@ function render(){
   }
   box.append(links);els.practice.append(box);
  }
- if(unit==='6'||(matched.length===0&&showOther===0)){
+ if(unit==='6'||(matched.length===0&&showOther===0&&u5matched.length===0)){
   const box=make('div','extra');box.append(make('h2','','No individually verified match for this selection'));
   box.append(make('p','',unit==='6'?'Unit 6 is a provisional seven-topic preview; its individual short/extended question-number index is not yet source-verified.':'This filter does not yet have a separately verified individual answer. We will not invent a textbook exercise number.'));
   const a=make('a','','Open available Unit resources in Exam Quick Access');a.href='./exam-quick-access.html'+(unit==='all'?'':'?unit='+encodeURIComponent(unit));box.append(a);els.practice.append(box);
  }
- els.status.textContent=matched.length+' individually indexed answer'+(matched.length===1?'':'s')+' displayed'+(showOther?' plus '+showOther+' unit-level Section B/C practice source'+(showOther===1?'':'s'):'')+'.';
+ els.status.textContent=matched.length+' individually indexed answer'+(matched.length===1?'':'s')+' displayed'+(u5matched.length?' plus '+u5matched.length+' original Unit 5 question-only practice pair'+(u5matched.length===1?'':'s'):'')+(showOther?' plus '+showOther+' unit-level Section B/C practice source'+(showOther===1?'':'s'):'')+'.';
 }
 async function start(){
  const qs=new URLSearchParams(location.search),u=qs.get('unit'),t=qs.get('type');
@@ -122,6 +141,23 @@ async function start(){
   if(!v.records.every(e=>[1,2].includes(e.unit)&&['short-response','comprehensive-response'].includes(e.type)&&safeTarget(e.href)))throw Error('Unsafe index');
   if(!v.publicSections.every(e=>[3,4,5].includes(e.unit)&&safeTarget(e.short)&&safeTarget(e.long)))throw Error('Unsafe section links');
   data=v;render();
+  // Optional V107 supplement: never let its absence hide the 64 pre-existing model-response links.
+  try{
+   const add=await fetch('./verified-u05-descriptive-practice-index-v107.json',{cache:'no-store'});
+   if(!add.ok)throw Error('Supplement HTTP '+add.status);
+   const index=await add.json();
+   if(index.schemaVersion!==1||index.grade!==11||index.unit!==5||
+      index.status!=='individual-public-question-only-practice-not-textbook-numbering'||
+      !Array.isArray(index.entries)||index.entries.length!==9||
+      !index.entries.every((e,i)=>e.unit===5&&e.number===i+1&&
+      e.id==='v107-u05-q'+(i+1)&&['short-response','comprehensive-response'].includes(e.type)&&
+      (i<7?e.type==='short-response':e.type==='comprehensive-response')&&
+      e.marks===(i<7?4:6)&&/^P-11-B-(29|30|31|32)$/.test(e.slo)&&
+      e.sourcePage>=79&&e.sourcePage<=83&&
+      e.href==='./unit-05-descriptive-student.html#u5-q'+(i+1)&&safeTarget(e.href)&&
+      typeof e.label==='string'&&typeof e.sourceNote==='string'))throw Error('Unexpected V107 source index');
+   u5practice=index.entries;render();
+  }catch{ /* Previous verified model-response finder stays available. */ }
  }catch{
   els.status.textContent='Could not load this public question index.';
   els.results.replaceChildren();els.practice.replaceChildren();

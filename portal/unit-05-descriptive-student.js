@@ -38,6 +38,7 @@ function valid(d){
 }
 function makeQuestion(q){
  const article=el("article","question");article.dataset.question=String(q.number);
+ article.id="u5-q"+q.number;article.tabIndex=-1;
  const top=el("div","questionhead");top.append(el("h3","", "Question "+q.number),el("span","mark",q.marks+" marks · choose A OR B"));
  article.append(top);
  for(let i=0;i<2;i++){
@@ -51,11 +52,19 @@ function makeQuestion(q){
  space.setAttribute("aria-hidden","true");article.append(space);
  return article;
 }
+function scrollToQuestionHash(){
+ const hash=window.location.hash;
+ if(!/^#u5-q[1-9]$/.test(hash))return;
+ const target=$(hash.slice(1));
+ if(!target)return;
+ requestAnimationFrame(()=>{target.scrollIntoView({block:"start"});target.focus({preventScroll:true});});
+}
+window.addEventListener("hashchange",()=>{if(loaded)scrollToQuestionHash();});
 function render(d){
  $("shortQuestions").replaceChildren(...d.sectionB.map(makeQuestion));
  $("extendedQuestions").replaceChildren(...d.sectionC.map(makeQuestion));
  $("loadStatus").textContent="Ready · 7 short/numerical OR pairs (28 marks) + 2 extended/numerical OR pairs (12 marks) · no model answers loaded";
- $("printPaper").disabled=false;loaded=true;
+ $("printPaper").disabled=false;loaded=true;scrollToQuestionHash();
 }
 $("printPaper").addEventListener("click",()=>{if(loaded)window.print();});
 fetch(source,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Student bank HTTP "+r.status);return r.json();}).then(d=>{valid(d);render(d);}).catch(e=>{
