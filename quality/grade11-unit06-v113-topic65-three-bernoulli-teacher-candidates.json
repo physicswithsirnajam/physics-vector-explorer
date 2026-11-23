@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "version": "V113",
+  "title": "Three highest-priority Topic 6.5 Bernoulli scenario model assumptions for teacher decision",
+  "scope": "teacher-facing original-preserving proposal-only",
+  "ownerAcademicDecision": "PENDING",
+  "teacherSignoff": "PENDING",
+  "releaseApproved": false,
+  "officialExamStatus": "not-certified",
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.5",
+  "sourceFile": "question-bank/grade-11/unit-06-topic-65-v84-80-source.json",
+  "sourceBlobSha": "f5a7dd0a29d5e90842c0ef557071aebc10a70baf",
+  "sourceQuestionCount": 80,
+  "candidateCount": 3,
+  "initialReviewEvidence": "quality/grade11-unit06-v95c2t-topic65-mcq61-80-scenario-review.csv",
+  "sourceOriginalPrintedQuestionProvenance": "Teacher-prepared master PDF pp.190–193; printed original NBF pp.99–100 confirms the Bernoulli relation, not the verbatim proposed questions",
+  "releaseConstraints": "No student bank, PDF export, SLO ledger, Test Builder availability, Firebase security or academic release edits. Approved wording must be separately authorized before an implementation PR.",
+  "candidates": [
+    {
+      "candidateId": "XI-U06-T65-V113-TEACHER-ONLY-0061",
+      "originalSourceId": "XI-U06-T65-MCQ-0061",
+      "sourceQuestionNumber": 61,
+      "originalSourcePdfPage": 190,
+      "sourceAuditCsv": "quality/grade11-unit06-v95c2t-topic65-mcq61-80-scenario-review.csv",
+      "sourceAuditPriority": "COMPULSORY_IDEAL_MODEL_NOTE",
+      "status": "REVIEW_ONLY_NOT_AVAILABLE_FOR_STUDENT_PRACTICE",
+      "approval": {
+        "wording": "PENDING",
+        "sourceFidelity": "PENDING",
+        "scientificKey": "PENDING",
+        "individualFbiseSlo": "PENDING",
+        "individualCognitiveLevel": "PENDING",
+        "examCertification": "PENDING"
+      },
+      "recommendedTreatment": "source-preserving-clarified-practice-variant-proposal",
+      "originalStem": "A smooth horizontal pipe narrows from section X to section Y, and water flows steadily. Relative to X, Y has:",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "Lower speed and higher static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Higher speed and higher static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged speed and unchanged static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Higher speed and lower static pressure"
+        }
+      ],
+      "originalCorrectOptionId": "D",
+      "proposedStem": "In a horizontal, unbranched pipe, water flows steadily and incompressibly from a wider section X to a narrower section Y. Assume negligible viscous losses, no pumps or turbines, and compare points on the same streamline. Relative to X, Y has:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Lower speed and higher static pressure"
+        },
+        {
+          "id": "B",
+          "text": "Higher speed and higher static pressure"
+        },
+        {
+          "id": "C",
+          "text": "Unchanged speed and unchanged static pressure"
+        },
+        {
+          "id": "D",
+          "text": "Higher speed and lower static pressure"
+        }
+      ],
+      "proposedCorrectOptionId": "D",
+      "independentExplanation": "Conservation of volume discharge gives AX vX = AY vY. Because AY is smaller, vY is larger. Along the same horizontal ideal streamline without head loss or shaft work, PX + (ρvX²)/2 = PY + (ρvY²)/2, so PY - PX = (ρ/2)(vX² - vY²) < 0. Thus section Y has higher speed and lower static pressure (D).",
+      "workedPhysics": [
+        "Incompressible steady leak-free continuity: AX vX = AY vY.",
+        "AY < AX makes vY > vX.",
+        "Ideal same-height Bernoulli: PY − PX = (ρ/2)(vX² − vY²) < 0.",
+        "Therefore original answer D remains correct, conditionally."
+      ],
+      "whyClarify": "Smooth pipe and steady water flow do not alone establish the ideal Bernoulli pressure outcome. A decrease in area yields higher speed by steady incompressible continuity; static pressure is lower only in the stated no-loss/no-shaft-work same-elevation same-streamline model.",
+      "limitations": [
+        "Viscous pipe losses and pump/turbine energy invalidate the simple no-loss pressure inference.",
+        "Formative SLO P-11-B-39 must not be silently mapped as summative theory; P-11-B-40 item-level mapping remains pending."
+      ],
+      "candidateSloOnly": [
+        "P-11-B-40"
+      ],
+      "candidateCognitiveOnly": "Application",
+      "sourceArchivedUnchanged": true,
+      "approvedPublicPractice": false,
+      "boardEligible": false,
+      "studentSourceStillProvisional": true,
+      "teacherReviewDecision": "PENDING"
+    },
+    {
+      "candidateId": "XI-U06-T65-V113-TEACHER-ONLY-0067",
+      "originalSourceId": "XI-U06-T65-MCQ-0067",
+      "sourceQuestionNumber": 67,
+      "originalSourcePdfPage": 191,
+      "sourceAuditCsv": "quality/grade11-unit06-v95c2t-topic65-mcq61-80-scenario-review.csv",
+      "sourceAuditPriority": "COMPULSORY_CONTINUITY_ASSUMPTION_NOTE",
+      "status": "REVIEW_ONLY_NOT_AVAILABLE_FOR_STUDENT_PRACTICE",
+      "approval": {
+        "wording": "PENDING",
+        "sourceFidelity": "PENDING",
+        "scientificKey": "PENDING",
+        "individualFbiseSlo": "PENDING",
+        "individualCognitiveLevel": "PENDING",
+        "examCertification": "PENDING"
+      },
+      "recommendedTreatment": "source-preserving-clarified-practice-variant-proposal",
+      "originalStem": "A water stream rises in a tube of unchanged area. Which pair of energy terms is unchanged and increased, respectively?",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "Pressure term increased; gravitational term decreased"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic term decreased; gravitational term decreased"
+        },
+        {
+          "id": "C",
+          "text": "Kinetic term unchanged; gravitational term increased"
+        },
+        {
+          "id": "D",
+          "text": "Kinetic term increased; gravitational term unchanged"
+        }
+      ],
+      "originalCorrectOptionId": "C",
+      "proposedStem": "Water flows steadily and incompressibly without leaks through an unbranched tube of constant cross-sectional area, rising from a lower section to a higher one. Which pair of energy terms is unchanged and increased, respectively?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Pressure term increased; gravitational term decreased"
+        },
+        {
+          "id": "B",
+          "text": "Kinetic term decreased; gravitational term decreased"
+        },
+        {
+          "id": "C",
+          "text": "Kinetic term unchanged; gravitational term increased"
+        },
+        {
+          "id": "D",
+          "text": "Kinetic term increased; gravitational term unchanged"
+        }
+      ],
+      "proposedCorrectOptionId": "C",
+      "independentExplanation": "For an unbranched, leak-free, steady incompressible stream, the discharge Q = Av is constant. Since A is the same at both stations, v is the same, so ½ρv² is unchanged. The higher point has greater ρgh, so the gravitational energy term increases. The source correct answer remains C. This alone does not guarantee individual FBISE B40 Application certification.",
+      "workedPhysics": [
+        "Steady incompressible continuity: Q = A1v1 = A2v2.",
+        "A1 = A2 and no leaks/branches imply v1 = v2.",
+        "The kinetic energy-density term ½ρv² remains unchanged.",
+        "For h2 > h1, the gravitational energy-density term ρgh increases; original answer C."
+      ],
+      "whyClarify": "Equal area alone does not guarantee equal velocities in time-varying or compressible flow or if fluid leaks or branches. Clarify constant discharge, no leaks and density, then the original kinetic and gravitational energy claims follow.",
+      "limitations": [
+        "Unsteady flow and compressible density variation may defeat a universal inference from equal area.",
+        "This uses continuity in support of Bernoulli, so P-11-B-36 vs P-11-B-40 and item cognition require separate review."
+      ],
+      "candidateSloOnly": [
+        "P-11-B-36",
+        "P-11-B-40"
+      ],
+      "candidateCognitiveOnly": "Application",
+      "sourceArchivedUnchanged": true,
+      "approvedPublicPractice": false,
+      "boardEligible": false,
+      "studentSourceStillProvisional": true,
+      "teacherReviewDecision": "PENDING"
+    },
+    {
+      "candidateId": "XI-U06-T65-V113-TEACHER-ONLY-0078",
+      "originalSourceId": "XI-U06-T65-MCQ-0078",
+      "sourceQuestionNumber": 78,
+      "originalSourcePdfPage": 193,
+      "sourceAuditCsv": "quality/grade11-unit06-v95c2t-topic65-mcq61-80-scenario-review.csv",
+      "sourceAuditPriority": "COMPULSORY_INCOMPRESSIBLE_MODEL_NOTE",
+      "status": "REVIEW_ONLY_NOT_AVAILABLE_FOR_STUDENT_PRACTICE",
+      "approval": {
+        "wording": "PENDING",
+        "sourceFidelity": "PENDING",
+        "scientificKey": "PENDING",
+        "individualFbiseSlo": "PENDING",
+        "individualCognitiveLevel": "PENDING",
+        "examCertification": "PENDING"
+      },
+      "recommendedTreatment": "source-preserving-clarified-practice-variant-proposal",
+      "originalStem": "A fluid moves steadily in a horizontal pipe with the same cross-sectional area at both points. Ignoring losses and pumps, its static pressures are:",
+      "originalOptions": [
+        {
+          "id": "A",
+          "text": "Necessarily increasing downstream"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily decreasing downstream"
+        },
+        {
+          "id": "C",
+          "text": "Equal"
+        },
+        {
+          "id": "D",
+          "text": "Always both zero"
+        }
+      ],
+      "originalCorrectOptionId": "C",
+      "proposedStem": "An incompressible fluid flows steadily through an unbranched horizontal pipe of equal cross-sectional area at points X and Y. Assume both points lie on the same streamline, with negligible viscous losses and no pumps or turbines between them. The static pressures at X and Y are:",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "Necessarily increasing downstream"
+        },
+        {
+          "id": "B",
+          "text": "Necessarily decreasing downstream"
+        },
+        {
+          "id": "C",
+          "text": "Equal"
+        },
+        {
+          "id": "D",
+          "text": "Always both zero"
+        }
+      ],
+      "proposedCorrectOptionId": "C",
+      "independentExplanation": "For steady incompressible no-leak flow, Q = Av is constant. Equal AX and AY give vX = vY. Because both points are horizontal and the same ideal lossless streamline is used, PX + ½ρvX² = PY + ½ρvY²; hence PX = PY (C). Compressible flow can have different densities and speeds at equal area, so the original unqualified premise was under-specified.",
+      "workedPhysics": [
+        "Steady incompressible continuity: AX vX = AY vY.",
+        "Since AX = AY, vX = vY.",
+        "At equal height, ideal Bernoulli implies PX + ½ρvX² = PY + ½ρvY².",
+        "Therefore PX = PY under the stated model, original answer C."
+      ],
+      "whyClarify": "The original says a fluid with equal areas, which does not enforce constant density. Steady compressible mass continuity ρAv = constant permits different speeds at the same area; static pressure need not be equal. State incompressibility and ideal Bernoulli conditions.",
+      "limitations": [
+        "For compressible flow, constant mass rate ρAv—not equal area alone—governs speed, and pressures may differ.",
+        "Real flow pressure losses also make equal static pressure invalid unless negligible as explicitly stated."
+      ],
+      "candidateSloOnly": [
+        "P-11-B-40"
+      ],
+      "candidateCognitiveOnly": "Application",
+      "sourceArchivedUnchanged": true,
+      "approvedPublicPractice": false,
+      "boardEligible": false,
+      "studentSourceStillProvisional": true,
+      "teacherReviewDecision": "PENDING"
+    }
+  ]
+}
