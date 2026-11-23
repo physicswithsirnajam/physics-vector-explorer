@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Source-labelled Grade XI Physics formula, derivation and SLO study shortcuts for Units 1–6, preserving formative and provisional distinctions.">
+<title>Derivations, Formulas &amp; SLO Notes | Physics with Sir Najam</title>
+<style>
+:root{--navy:#102744;--ink:#183048;--muted:#52657a;--gold:#bc8b34;--line:#d4e0ed;--bg:#f4f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:#145985}a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{background:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:13px max(14px,calc((100% - 1060px)/2))}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;text-decoration:none}.brand img{height:48px;width:48px;object-fit:contain}
+header nav{display:flex;gap:15px;flex-wrap:wrap}header nav a{color:#f6d798}
+main{max-width:1040px;margin:auto;padding:28px 16px 64px}
+.kicker{font-size:.76rem;letter-spacing:.12em;font-weight:850;color:#88601e;text-transform:uppercase}
+h1{font-size:clamp(1.85rem,4vw,2.7rem);line-height:1.17;color:var(--navy);margin:9px 0 11px}
+.lead{color:var(--muted);max-width:850px}
+.notice{border-left:4px solid var(--gold);background:#fff7e6;border-radius:8px;padding:14px 17px;font-size:.91rem;margin:21px 0 24px}
+.controls{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.controls .full{grid-column:1/-1}.controls label{display:block;font-size:.86rem;font-weight:750;margin-bottom:6px}
+.controls select,.controls input{width:100%;min-height:46px;padding:10px;border:1px solid #a7b7c9;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+#status{font-size:.9rem;color:var(--muted);margin:15px 2px}
+.unit{background:#fff;border:1px solid var(--line);padding:18px 20px;border-radius:12px;margin:16px 0}
+.unit h2{font-size:1.16rem;line-height:1.32;margin:0 0 13px;color:var(--navy)}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.item{border:1px solid #dae5ee;border-radius:9px;padding:13px 14px;min-width:0;overflow-wrap:anywhere;background:#f8fbff}
+.item a{display:block;font-weight:770;line-height:1.42;text-decoration:none}.item a:hover{text-decoration:underline}
+.kind{font-weight:800;letter-spacing:.02em;color:#806020;font-size:.77rem;margin-bottom:5px}
+.scope{font-size:.78rem;color:#435b73;margin:7px 0 0}
+.source{font-size:.76rem;color:var(--muted);margin:5px 0 0}
+.empty{border:1px solid var(--line);background:#fff;border-radius:12px;padding:18px 21px}
+.empty h2{font-size:1.16rem;margin:0 0 10px}
+.tip{margin-top:25px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.tip h2{font-size:1.17rem;margin:0 0 8px}.tip p{margin:0;color:var(--muted);font-size:.92rem}
+footer{background:var(--navy);color:#dce7f2;text-align:center;font-size:.84rem;padding:20px}
+@media(max-width:650px){.controls,.items{grid-template-columns:1fr}main{padding:19px 12px 45px}.unit{padding:15px}.controls{padding:14px}}
+@media print{header,footer,.controls,#status{display:none!important}.unit{break-inside:avoid}.item{background:white}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=58">
+</head>
+<body>
+<header>
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Official Physics with Sir Najam logo"><span>Physics with Sir Najam</span></a>
+<nav aria-label="Learning resources"><a href="./exam-quick-access.html">Exam Quick Access</a><a href="./textbook-resource-finder.html">Examples &amp; Numericals</a></nav>
+</header>
+<main>
+<div class="kicker">Grade XI · HSSC-I · Source-labelled revision navigation</div>
+<h1>Derivations, Formulas &amp; SLO Notes</h1>
+<p class="lead">Choose your unit and study need to go directly to the relevant section of an existing learning resource. Find individual formula groups, derivation explanations and focused SLO-based notes without searching through a whole unit desk.</p>
+<div class="notice"><strong>Important assessment distinction:</strong> A derivation appearing in our notes does <strong>not</strong> by itself establish that it is a summative theory examination requirement. For example, Unit 3 equations-of-motion derivation <strong>P-11-B-03 is formative</strong>. The entries retain the classification shown in the existing source guides. <strong>Unit 6 is a provisional seven-topic learning preview</strong>, not a final academic certification. These resources are not an official FBISE formula insert or answer key.</div>
+<div class="controls" role="group" aria-label="Filter Grade XI Physics study shortcuts">
+<div><label for="unit">Choose unit</label><select id="unit"><option value="all">All Units 1–6</option><option value="1">Unit 1 — Physical Quantities and Measurements</option><option value="2">Unit 2 — Vectors</option><option value="3">Unit 3 — Translatory Motion</option><option value="4">Unit 4 — Rotational and Circular Motion</option><option value="5">Unit 5 — Work and Energy</option><option value="6">Unit 6 — Fluid Mechanics (provisional)</option></select></div>
+<div><label for="kind">What do you need?</label><select id="kind"><option value="all">All study shortcuts</option><option value="derivation">Step-by-step derivations</option><option value="formulas">Formula sheets and relations</option><option value="slo-notes">Concept / SLO study notes</option></select></div>
+<div class="full"><label for="query">Optional: search a topic or SLO</label><input id="query" type="search" maxlength="80" placeholder="e.g. Bernoulli, torque, P-11-B-29"></div>
+</div>
+<p id="status" role="status" aria-live="polite">Loading checked source links…</p>
+<div id="results" aria-label="Verified study section links"></div>
+<section class="tip"><h2>How to use these resources</h2><p>Open a concept, practise the derivation or formula with the page hidden, then review worked numerical examples or answers through <a href="./textbook-resource-finder.html">Textbook Resource Finder</a> and <a href="./descriptive-answer-finder.html">Short &amp; Comprehensive Answer Finder</a>. Always match your school's assigned syllabus before a send-up test.</p></section>
+<noscript><div class="empty">The searchable index needs JavaScript. Use <a href="./exam-quick-access.html">Exam Quick Access</a> to reach existing unit guides.</div></noscript>
+</main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers. · Teaching resource navigation, not a certified examination paper.</footer>
+<script>
+'use strict';
+const unitNames={1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — provisional'};
+const kindNames={derivation:'Step-by-step derivation',formulas:'Formula / method', 'slo-notes':'Concept / SLO notes'};
+const $=id=>document.getElementById(id);
+const form={unit:$('unit'),kind:$('kind'),query:$('query'),status:$('status'),results:$('results')};
+let items=null;
+function make(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el}
+function verifiedHref(href){
+ if(typeof href!=='string'||!/^\.\/[a-z0-9-]+\.html#[a-z0-9-]+$/i.test(href))return null;
+ try{const parsed=new URL(href,location.href);
+ if(parsed.origin!==location.origin||!parsed.pathname.startsWith(new URL('./',location.href).pathname))return null;
+ return parsed.href;
+ }catch{return null}
+}
+function render(){
+ if(!items)return;
+ const unit=form.unit.value,kind=form.kind.value,query=form.query.value.trim().toLowerCase();
+ const chosen=items.filter(x=>(unit==='all'||String(x.unit)===unit)&&(kind==='all'||x.kind===kind)&&(!query||[x.title,x.sourceNote,x.slo,x.assessmentStatus].filter(Boolean).join(' ').toLowerCase().includes(query)));
+ form.results.replaceChildren();
+ for(const u of [1,2,3,4,5,6]){
+  const subset=chosen.filter(x=>x.unit===u);if(!subset.length)continue;
+  const section=make('section','unit');section.append(make('h2','','Unit '+u+' — '+unitNames[u]));
+  const grid=make('div','items');
+  for(const e of subset){
+   const card=make('article','item');card.append(make('div','kind',kindNames[e.kind]));
+   const a=make('a','',e.title);a.href=verifiedHref(e.href)||'./exam-quick-access.html';card.append(a);
+   card.append(make('div','scope',e.slo+' · '+e.assessmentStatus));
+   card.append(make('p','source',e.sourceNote));
+   grid.append(card);
+  }
+  section.append(grid);form.results.append(section);
+ }
+ if(!chosen.length){
+  const box=make('section','empty');box.append(make('h2','','No separately indexed study section matches this selection'));
+  box.append(make('p','',"The absence of a specific shortcut does not mean a topic has no study material. The finder only includes existing source-checked sections; no missing derivation or SLO is invented."));
+  const a=make('a','','Open available unit resources');a.href='./exam-quick-access.html'+(unit==='all'?'':'?unit='+encodeURIComponent(unit));
+  box.append(a);form.results.append(box);
+ }
+ form.status.textContent=chosen.length+' source-checked study shortcut'+(chosen.length===1?'':'s')+' displayed.'+(unit==='6'?' Unit 6 material remains provisional.':'');
+}
+function update(){
+ const uri=new URL(location.href);
+ for(const key of ['unit','kind','q'])uri.searchParams.delete(key);
+ if(form.unit.value!=='all')uri.searchParams.set('unit',form.unit.value);
+ if(form.kind.value!=='all')uri.searchParams.set('kind',form.kind.value);
+ if(form.query.value.trim())uri.searchParams.set('q',form.query.value.trim());
+ history.replaceState(null,'',uri.pathname+uri.search+uri.hash);render();
+}
+async function start(){
+ const qs=new URLSearchParams(location.search),u=qs.get('unit'),k=qs.get('kind');
+ if([...form.unit.options].some(o=>o.value===u))form.unit.value=u;
+ if([...form.kind.options].some(o=>o.value===k))form.kind.value=k;
+ form.query.value=(qs.get('q')||'').slice(0,80);
+ try{
+  const response=await fetch('./verified-slo-study-index-v106.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);
+  const data=await response.json();
+  if(data.schemaVersion!==1||data.grade!==11||!Array.isArray(data.entries)||data.entries.length!==48)throw Error('Unexpected source index');
+  if(!data.entries.every(x=>Number.isInteger(x.unit)&&x.unit>=1&&x.unit<=6&&kindNames[x.kind]&&verifiedHref(x.href)&&typeof x.title==='string'&&x.slo&&x.assessmentStatus))throw Error('Unsafe/invalid entry');
+  items=data.entries;render();
+ }catch{
+  form.status.textContent='This public source index could not load.';
+  form.results.replaceChildren();
+  const link=make('a','','Use Exam Quick Access instead');link.href='./exam-quick-access.html';form.results.append(link);
+ }
+}
+for(const key of ['unit','kind'])form[key].addEventListener('change',update);
+form.query.addEventListener('input',update);
+start();
+</script>
+<script src="../shared/navigation.js?v=68" defer></script>
+</body>
+</html>
