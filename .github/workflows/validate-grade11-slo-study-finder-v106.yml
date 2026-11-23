@@ -1,0 +1,59 @@
+name: Grade XI Source-Checked Derivations, Formulas & SLO Finder (V106)
+on:
+  pull_request:
+    paths:
+      - "portal/slo-study-finder.html"
+      - "portal/verified-slo-study-index-v106.json"
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_slo_study_finder_v106.cjs"
+      - ".github/workflows/validate-grade11-slo-study-finder-v106.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/slo-study-finder.html"
+      - "portal/verified-slo-study-index-v106.json"
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_slo_study_finder_v106.cjs"
+      - ".github/workflows/validate-grade11-slo-study-finder-v106.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-slo-derivation-formula-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate source audit and existing navigator syntax
+        run: |
+          node --check scripts/test_grade11_slo_study_finder_v106.cjs
+          node --check shared/navigation.js
+      - name: Install pinned browser test runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Validate all 48 source anchors, SLO statuses and actual browser navigation
+        run: node scripts/test_grade11_slo_study_finder_v106.cjs
+      - name: Retain existing Exam Quick Access and 41 resource links
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Retain V103 textbook example/numerical deep links
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Retain V104 short/comprehensive answer deep links
+        run: node scripts/test_grade11_descriptive_finder_v104.cjs
+      - name: Preserve existing Units and Resources drawer/unsaved test warning
+        run: node scripts/test_grade11_resource_drawer_v58.cjs
+      - name: Upload synthetic/public-source mobile screenshots and audit record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-slo-derivation-formula-finder-v106
+          path: |
+            qa-artifacts/slo-study-finder-v106/
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/textbook-finder-v103/
+            qa-artifacts/descriptive-finder-v104/
+          retention-days: 10
+          if-no-files-found: warn
