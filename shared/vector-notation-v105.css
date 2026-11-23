@@ -1,0 +1,54 @@
+/* V105: Font-independent right-arrow-above, for vector letters written as U+20D7.
+ * Draw strokes as actual CSS borders, not Unicode glyphs or printable backgrounds.
+ * Source mark remains in the DOM and the mathematical content is not rewritten.
+ */
+.psn-vector-symbol {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  box-sizing: content-box;
+  padding: .24em .07em 0 .04em;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-ligatures: none;
+}
+.psn-vector-symbol::before {
+  content: "";
+  position: absolute;
+  left: .09em;
+  right: .14em;
+  top: .105em;
+  border-top: .074em solid currentColor;
+  pointer-events: none;
+}
+.psn-vector-symbol::after {
+  content: "";
+  position: absolute;
+  right: .09em;
+  top: .032em;
+  width: .16em;
+  height: .16em;
+  border-top: .074em solid currentColor;
+  border-right: .074em solid currentColor;
+  transform: rotate(45deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+.psn-vector-source-mark {
+  position: absolute !important;
+  inline-size: 0 !important;
+  block-size: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  pointer-events: none;
+}
+/* Explicit print rendering also works when "Background graphics" is off. */
+@media print {
+  .psn-vector-symbol::before,
+  .psn-vector-symbol::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
