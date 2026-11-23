@@ -73,7 +73,7 @@ function show(){
  const item=test[at],q=item.q;
  $('position').textContent='Question '+(at+1)+' of '+test.length;
  $('progress-fill').style.width=((at+1)/test.length*100)+'%';
- $('question-meta').textContent='Topic '+item.topic.id+' · '+item.topic.title+' · original source Q'+q.sourceQuestionNumber+' · '+q.sourceSection.replace(/-/g,' ');
+ $('question-meta').textContent='Topic '+item.topic.id+' · '+item.topic.title+' · '+(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'V111 clarified variant of source Q':q.practiceOverlayVersion==='V111'?'V111 corrected source Q':'original source Q')+q.sourceQuestionNumber+' · '+q.sourceSection.replace(/-/g,' ');
  $('question-stem').textContent=q.stem;
  const area=$('figure-reference');
  if(q.referenceFigureId){
@@ -157,7 +157,7 @@ function submit(){
   const chosenOption=q.options.find(o=>o.id===chosen);
   const ok=chosen===q.correctOptionId;
   const row=element('article','review-card '+(ok?'correct':'wrong'));
-  row.append(element('h3','',(i+1)+'. Topic '+topic.id+' · source Q'+q.sourceQuestionNumber+' · '+(ok?'Correct':'Review')));
+  row.append(element('h3','',(i+1)+'. Topic '+topic.id+' · '+(q.practiceVariantType==='teacher-approved-clarified-practice-variant'?'V111 clarified variant of source Q':q.practiceOverlayVersion==='V111'?'V111 corrected source Q':'source Q')+q.sourceQuestionNumber+' · '+(ok?'Correct':'Review')));
   row.append(element('p','',q.stem));
   if(q.referenceFigureId){
    const fig=element('div','figure-area');
@@ -176,7 +176,7 @@ function submit(){
 function reset(){
  test=[];answers=new Map();flags=new Set();at=0;submitted=false;
  $('results-panel').hidden=true;$('quiz-panel').hidden=true;$('setup-panel').hidden=false;
- message('Seven verified public source banks are ready: 560 original provisional MCQs and 136 independent situations.');
+ message('Seven provisional source banks: 560 available practice MCQs, including four corrected/clarified Topic 6.4 records; 136 independent situations. No official exam certification.');
  $('setup-panel').scrollIntoView({block:'start'});
 }
 $('setup-form').addEventListener('submit',start);
@@ -194,11 +194,17 @@ $('print-review').addEventListener('click',()=>window.print());
 Promise.all(topics.map(async topic=>{
  const response=await fetch('../question-bank/grade-11/'+topic.file,{cache:'no-store'});
  if(!response.ok)throw Error('Topic '+topic.id+' bank returned HTTP '+response.status);
- const data=await response.json();return {topic,questions:verify(topic,data)};
+ const data=await response.json();
+ const originals=verify(topic,data);
+ if(topic.n!==64)return {topic,questions:originals};
+ const over=await fetch('../question-bank/grade-11/unit-06-topic64-v111-approved-practice-overlay.json',{cache:'no-store'});
+ if(!over.ok)throw Error('V111 safety overlay missing; cannot serve ambiguous Topic 6.4 originals');
+ if(!window.PSNPracticeBankV55?.applyUnit6Topic64PracticeOverlay)throw Error('V111 safety transform missing');
+ return {topic,questions:window.PSNPracticeBankV55.applyUnit6Topic64PracticeOverlay(originals,await over.json())};
 })).then(list=>{
  for(const item of list)banks.set(item.topic.id,item.questions);
  $('start').disabled=false;
- message('All seven original public banks verified. Choose a balanced 28–56-question practice set. No school grades or cloud saving.');
+ message('All seven provisional source banks and V111 Topic 6.4 practice corrections verified. Choose 28–56 MCQs. No formal certification, school grade or cloud saving.');
 }).catch(err=>{
  banks.clear();$('start').disabled=true;
  message('Source verification failed. This practice is disabled to avoid inaccurate or incomplete tests: '+err.message,true);
