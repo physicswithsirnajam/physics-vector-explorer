@@ -74,6 +74,17 @@ async function verifySource(){
      assert.equal(JSON.stringify(q.options),JSON.stringify(x.proposedOptions));
      assert.equal(q.practiceOverlayVersion,'V111');
      assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
+    }else if(o.id.startsWith('XI-U06-T65-MCQ-')&&[61,67,78].includes(o.sourceQuestionNumber)){
+     const x=json('question-bank/grade-11/unit-06-topic65-v114-approved-practice-overlay.json').replacements.find(c=>c.originalId===o.id);
+     assert.ok(x,'Missing teacher-approved Bernoulli safety variant for '+o.id);
+     assert.equal(q.id,x.practiceId);assert.equal(q.stem,x.proposedStem);
+     assert.equal(q.sourceOriginalId,o.id);
+     assert.equal(q.correctOptionId,o.correctOptionId);
+     assert.equal(q.explanation,x.explanation);
+     assert.equal(JSON.stringify(q.options),JSON.stringify(x.proposedOptions));
+     assert.equal(q.practiceOverlayVersion,'V114');
+     assert.equal(q.boardEligible,false);assert.deepEqual(Array.from(q.sloCodes),[]);
+     assert.equal(q.cognitiveLevel,'Unspecified');
     }else{
      assert.equal(q.id,o.id);assert.equal(q.stem,o.stem);
      assert.equal(q.correctOptionId,o.correctOptionId);
