@@ -984,6 +984,98 @@ function applyUnit6Topic65PracticeOverlay(questions,overlay){
  return corrected;
 }
 
+/* V116 — teacher-approved, source-preserving stagnation/reservoir practice.
+ * Apply ONLY AFTER original V84 source validation AND original V114 Q61/67/78
+ * transform. If either approved overlay is missing, do not serve Topic 6.5.
+ */
+function applyUnit6Topic65StagnationPracticeOverlay(questions,overlay){
+ need(Array.isArray(questions)&&questions.length===80,'V116 requires all 80 prior V114 Topic 6.5 practice records');
+ need(overlay?.schemaVersion===1&&overlay.version==='V116'&&overlay.grade===11&&
+  overlay.unit===6&&overlay.topic==='6.5'&&overlay.sourceQuestionCount===80&&
+  overlay.practiceQuestionCount===80&&overlay.overlayQuestionCount===2&&
+  overlay.sourceArchivedUnchanged===true&&
+  overlay.purpose==='teacher-approved-stagnation-reservoir-provisional-practice-only-not-fbise-exam'&&
+  overlay.releaseState==='provisional-self-practice-only'&&
+  overlay.sourceBankBlobSha==='f5a7dd0a29d5e90842c0ef557071aebc10a70baf'&&
+  overlay.sourceBankFile==='unit-06-topic-65-v84-80-source.json'&&
+  overlay.prerequisiteOverlayFile==='unit-06-topic65-v114-approved-practice-overlay.json'&&
+  overlay.prerequisiteOverlayVersion==='V114'&&
+  overlay.prerequisiteOverlayBlobSha==='701ac8e6daa4c2d7fdfc60671c3d8219626dd061',
+  'V116 source version or prerequisite V114 overlay boundary changed');
+ const ids=[55,56].map(n=>'XI-U06-T65-MCQ-'+String(n).padStart(4,'0'));
+ const v114Numbers=[61,67,78];
+ const v114Ids=v114Numbers.map(n=>'XI-U06-T65-MCQ-'+String(n).padStart(4,'0')+'-V114');
+ need(Array.isArray(overlay.blockedOriginalIds)&&overlay.blockedOriginalIds.join(',')===ids.join(',')&&
+  Array.isArray(overlay.previouslyApprovedV114PracticeIds)&&
+  overlay.previouslyApprovedV114PracticeIds.join(',')===v114Ids.join(',')&&
+  Array.isArray(overlay.replacements)&&overlay.replacements.length===2,
+  'V116 approved Q55/Q56 and prior V114 identity boundary changed');
+ need(v114Ids.every(id=>questions.some(q=>q.id===id&&q.practiceOverlayVersion==='V114'&&
+  q.boardEligible===false&&q.sourceOriginalId===id.slice(0,-5)))&&
+  v114Numbers.every(n=>!questions.some(q=>q.id==='XI-U06-T65-MCQ-'+String(n).padStart(4,'0')))&&
+  questions.filter(q=>q.practiceOverlayVersion==='V114').length===3,
+  'V116 requires V114 Q61/Q67/Q78 clarified versions, not their ambiguous originals');
+ const changes=new Map();
+ for(let i=0;i<2;i++){
+  const id=ids[i],record=overlay.replacements[i],original=questions.find(q=>q.id===id),n=i+55;
+  need(original&&record&&record.originalId===id&&record.sourceQuestionNumber===n&&
+   record.practiceId===id+'-V116'&&
+   record.changeType==='teacher-approved-stagnation-reservoir-practice-variant'&&
+   record.sourceSection==='numericals'&&record.sourceSection===original.sourceSection&&
+   record.sourcePdfPage===original.sourcePdfPage&&
+   record.originalStem===original.stem&&
+   Array.isArray(record.originalOptionTexts)&&record.originalOptionTexts.length===4&&
+   record.originalOptionTexts.every((t,j)=>t===original.options[j].text)&&
+   record.correctOptionId==='B'&&record.correctOptionId===original.correctOptionId&&
+   record.originalSourceKeyUnchanged===true&&record.appliedPracticeOnly===true&&
+   record.teacherApprovedPracticeWording===true&&record.sourceArchivedUnchanged===true&&
+   record.boardEligible===false&&record.individualSloCertified===false&&
+   record.individualCognitiveCertified===false&&record.fullExamCertificationApproved===false&&
+   record.academicStatus==='provisional-self-practice'&&
+   record.teacherAuthorization==='explicit-topic65-Q55-Q56-practice-approval-2026-11-23',
+   'V116 teacher-approved original/key and noncertification boundary failed Q'+n);
+  need(typeof record.proposedStem==='string'&&record.proposedStem!==original.stem&&
+   record.proposedStem.length>120&&
+   Array.isArray(record.proposedOptions)&&record.proposedOptions.length===4&&
+   record.proposedOptions.map(o=>o.id).join('')==='ABCD'&&
+   record.proposedOptions.every((o,j)=>o.text===original.options[j].text)&&
+   typeof record.explanation==='string'&&record.explanation.length>120,
+   'V116 proposed wording/options or explanation changed Q'+n);
+  if(n===55)need(/stagnation point Y/i.test(record.proposedStem)&&
+    /local speed 0 m\/s/i.test(record.proposedStem)&&
+    /steady ideal horizontal flow/i.test(record.proposedStem)&&
+    /same streamline/i.test(record.proposedStem)&&
+    /density 1000 kg\/m³/i.test(record.proposedStem)&&
+    /negligible viscous losses/i.test(record.proposedStem),
+    'V116 Q55 local stagnation flow assumptions missing');
+  if(n===56)need(/very large reservoir/i.test(record.proposedStem)&&
+    /speed is negligible/i.test(record.proposedStem)&&
+    /static pressure is 100 kPa/i.test(record.proposedStem)&&
+    /speed is 10 m\/s/i.test(record.proposedStem)&&
+    /same elevation and streamline/i.test(record.proposedStem)&&
+    /Neglect viscous losses and pumps/i.test(record.proposedStem),
+    'V116 Q56 negligible reservoir speed and lossless duct assumptions missing');
+  changes.set(id,record);
+ }
+ const result=questions.map(q=>{
+  const r=changes.get(q.id);
+  if(!r)return q;
+  return {...q,id:r.practiceId,stem:r.proposedStem,
+   options:r.proposedOptions.map(o=>({id:o.id,text:o.text})),explanation:r.explanation,
+   sourceOriginalId:q.id,practiceVariantType:r.changeType,practiceOverlayVersion:'V116',
+   practiceApprovalScope:'teacher-authorized-provisional-practice-only-not-FBISE-certification',
+   boardEligible:false,sloCodes:[],cognitiveLevel:'Unspecified',
+   status:'provisional-public-self-practice',active:true,holdReason:null};
+ });
+ need(result.length===80&&new Set(result.map(q=>q.id)).size===80&&
+  ids.every(id=>!result.some(q=>q.id===id))&&
+  v114Ids.every(id=>result.some(q=>q.id===id))&&
+  result.filter(q=>q.practiceOverlayVersion==='V116').length===2&&
+  result.filter(q=>q.practiceOverlayVersion==='V114').length===3,
+  'V116 ambiguous original remains or V114 approved practice changed');
+ return result;
+}
+
 /* V85: preserve all 80 original V84 Bernoulli questions. P-11-B-40 is source-
  * certified as a summative TOPIC, P-11-B-39 is formative context, while source
  * K/U/A tags and per-MCQ SLO mappings have NOT undergone independent board QA.
@@ -1200,7 +1292,10 @@ async function loadBank(unit,basePath){
     const fourth=applyUnit6Topic64PracticeOverlay(fourthSource,await overlayResponse.json());
     const bernoulliOverlayResponse=await fetch(basePath+'unit-06-topic65-v114-approved-practice-overlay.json',{cache:'no-store'});
     need(bernoulliOverlayResponse.ok,'V114 Bernoulli safety overlay unavailable; disable Unit 6 practice rather than serve ambiguous originals');
-    const fifth=applyUnit6Topic65PracticeOverlay(fifthSource,await bernoulliOverlayResponse.json());
+    const fifthAfterV114=applyUnit6Topic65PracticeOverlay(fifthSource,await bernoulliOverlayResponse.json());
+    const stagnationOverlayResponse=await fetch(basePath+'unit-06-topic65-v116-approved-stagnation-practice-overlay.json',{cache:'no-store'});
+    need(stagnationOverlayResponse.ok,'V116 stagnation safety overlay unavailable; disable Unit 6 rather than serve ambiguous Q55/Q56 originals');
+    const fifth=applyUnit6Topic65StagnationPracticeOverlay(fifthAfterV114,await stagnationOverlayResponse.json());
     const earlier=new Set([...first,...second,...third,...fourth,...fifth,...sixth].map(q=>q.id));
     need(seventh.every(q=>!earlier.has(q.id)), 'Duplicate MCQ across Unit 6 Topics 6.1–6.7');
     questions=[...first,...second,...third,...fourth,...fifth,...sixth,...seventh];
@@ -1210,13 +1305,13 @@ async function loadBank(unit,basePath){
   return {
     schemaVersion:1,status:'practice-pilot',
     bankId:'central-readonly-unit-'+unit,
-    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v114-topic64-v111-and-topic65-three-clarified-560-provisional':data[0].bankVersion,
+    bankVersion:unit===4?'v66-original80-plus-corrected-topics41-47-560-figure413':unit===5?'v59-original-v50-v51-plus-source-master-317':unit===3?'v60-original-80-plus-formative-60-and-collisions-80':unit===6?'v116-topic64-v111-and-topic65-five-clarified-560-provisional':data[0].bankVersion,
     title:names[unit],unit,grade:11,questions:mapped,
     publicSelfPractice:true,secureExam:false,
     academicStatus:'provisional-independent-teacher-review-pending'
   };
 }
 root.PSNPracticeBankV55=Object.freeze({
-  loadBank,applyUnit6Topic64PracticeOverlay,applyUnit6Topic65PracticeOverlay,expected:Object.freeze(expected),names:Object.freeze(names)
+  loadBank,applyUnit6Topic64PracticeOverlay,applyUnit6Topic65PracticeOverlay,applyUnit6Topic65StagnationPracticeOverlay,expected:Object.freeze(expected),names:Object.freeze(names)
 });
 })(typeof window==='object'?window:globalThis);
