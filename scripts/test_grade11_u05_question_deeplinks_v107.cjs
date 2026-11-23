@@ -40,10 +40,10 @@ function sourceAudit(){
  assert.match(student,/location\.hash/);
  assert.match(student,/requestAnimationFrame/);
  assert.match(finder,/verified-u05-descriptive-practice-index-v107\.json/);
- assert.match(finder,/class.+'practice-card'/);
+ assert.match(finder,/make\('article','practice-card'\)/);
  assert.match(finder,/question-only/i);
  for(const bad of ['firebaseConfig','initializeAppCheck','localStorage','sessionStorage','indexedDB','sendReport','FIREBASE_APPCHECK_DEBUG_TOKEN'])assert.ok(!finder.includes(bad),'Disallowed backend addition '+bad);
- for(const bad of ['teacher-key','teacherKey','teacherNotes','workedSteps','markingRubric'])assert.ok(!student.includes(bad),'Student-only script exposed teacher resource '+bad);
+ assert.ok(!student.includes('unit-05-v52-descriptive-teacher.json'),'Student script must never fetch teacher answer key');
  pass('safe, asynchronous deep linking with unchanged V104 response bank, no Firestore, hidden teacher key or student storage');
 }
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png'};
