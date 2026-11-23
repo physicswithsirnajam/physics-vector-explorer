@@ -65,7 +65,7 @@ async function sourceChecks(){
  pass('exact student-facing Q28 option and three separately identified equal-flow variants; no ambiguous originals or fake SLO approval');
  const unit=JSON.parse(JSON.stringify(await x.PSNPracticeBankV55.loadBank(6,'question-bank/grade-11/')));
  assert.equal(unit.questions.length,560);
- assert.equal(unit.bankVersion,'v111-topic64-practice-safety-overlay-560-provisional');
+ assert.equal(unit.bankVersion,'v114-topic64-v111-and-topic65-three-clarified-560-provisional');
  assert.equal(unit.questions.filter(q=>q.situationBased).length,136);
  assert.equal(unit.questions.filter(q=>q.practiceOverlayVersion==='V111').length,4);
  for(const id of blocked)assert.equal(unit.questions.some(q=>q.id===id),false);
@@ -100,7 +100,8 @@ async function sourceChecks(){
   assert.ok(read(p).includes('applyUnit6Topic64PracticeOverlay'),'Missing safety application at '+p);
  }
  for(const p of ['portal/unit-06-topic-64-preview.html','portal/unit-06-balanced-mcq-v95c1.html','practice-engine/index.html','build-your-physics-test.html'])
-  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v=111'),'Missing cache-busted overlay implementation at '+p);
+  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v='+(p.includes('topic-64-preview')?'111':'114')),
+    'Missing cache-busted versioned safety adapter at '+p);
  pass('all original academic signoffs and release locks remain pending; all four practice entrypoints use V111');
 }
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png'};
