@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Source-labelled Grade XI Physics textbook example and numerical exercise finder, with honest adapted/source-related distinctions and direct in-page links.">
+<title>Verified Textbook Resource Finder | Physics with Sir Najam</title>
+<style>
+:root{color-scheme:light;--navy:#102744;--ink:#192e47;--muted:#52657a;--gold:#bd8d37;--line:#d8e3ee;--bg:#f4f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.52 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:#165989}a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{background:var(--navy);padding:13px max(16px,calc((100% - 1060px)/2));display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;font-weight:800}
+.brand img{width:48px;height:48px;object-fit:contain}
+header nav{display:flex;flex-wrap:wrap;gap:14px}header nav a{color:#f2d89d}
+main{max-width:1040px;margin:auto;padding:28px 16px 64px}
+.eyebrow{font-size:.76rem;letter-spacing:.11em;color:#875f1f;text-transform:uppercase;font-weight:850}
+h1{font-size:clamp(1.85rem,4vw,2.65rem);line-height:1.18;color:var(--navy);margin:10px 0}
+.lead{max-width:850px;color:var(--muted)}
+.caution{border-left:4px solid var(--gold);padding:14px 17px;background:#fff7e6;border-radius:8px;font-size:.92rem;margin:20px 0}
+.filters{background:white;border:1px solid var(--line);border-radius:13px;padding:17px;display:grid;grid-template-columns:1fr 1fr;gap:12px;box-shadow:0 3px 14px #132b450a}
+.filters label{display:block;font-size:.84rem;font-weight:750;margin-bottom:6px}
+.filters select,.filters input{border:1px solid #aebfd0;border-radius:8px;padding:11px;width:100%;min-height:46px;background:white;color:var(--ink);font:inherit}
+.filters .search{grid-column:1 / -1}
+#finder-status{margin:17px 2px;color:var(--muted);font-size:.9rem}
+.unit-block{margin:22px 0 0;border:1px solid var(--line);background:#fff;border-radius:12px;padding:18px 20px}
+.unit-block h2{font-size:1.18rem;color:var(--navy);margin:0 0 14px;line-height:1.32}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.item{border:1px solid #dce6ef;border-radius:9px;padding:13px 15px;min-width:0;background:#f8fbfe;overflow-wrap:anywhere}
+.item a{display:block;font-weight:780;text-decoration:none;line-height:1.4}
+.item a:hover{text-decoration:underline}
+.source{font-size:.78rem;color:var(--muted);margin:8px 0 3px}
+.scope{font-size:.74rem;color:#6b562b}
+.tagline{font-size:.75rem;font-weight:730;color:#74562c;letter-spacing:.01em;margin-bottom:5px}
+.none{background:#fff;border:1px solid var(--line);border-radius:11px;padding:20px;margin-top:20px}
+.none strong{color:var(--navy)}
+footer{background:var(--navy);color:#e8edf5;text-align:center;padding:20px;font-size:.82rem}
+@media(max-width:650px){.filters,.items{grid-template-columns:1fr}.unit-block{padding:15px}main{padding:18px 12px 42px}}
+@media print{header,footer,.filters,#finder-status{display:none!important}.unit-block{break-inside:avoid}.item{background:white}}
+</style>
+<link rel="stylesheet" href="../shared/navigation.css?v=58">
+</head>
+<body>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Original Physics with Sir Najam logo"><span>Physics with Sir Najam</span></a>
+<nav aria-label="Learning links"><a href="./exam-quick-access.html">Exam Quick Access</a><a href="../build-your-physics-test.html">Build a Test</a></nav></header>
+<main>
+<div class="eyebrow">GRADE XI · NBF SOURCE-LABELLED RESOURCE NAVIGATION</div>
+<h1>Find a Textbook Example or Numerical</h1>
+<p class="lead">Choose your unit and what you are looking for. Numbered entries go directly to the matching existing worked example or numerical. Source-related Unit 1 practice is labelled separately, so adapted questions are never presented as exact textbook reproductions.</p>
+<div class="caution"><strong>Academic scope:</strong> This is a navigation index of existing public teaching material, not a new answer key or an official FBISE verification. Unit 3 numerical solutions remain pending final scientific teacher sign-off. Not all textbook exercises, derivations or end-of-unit short/long responses have individually verified deep links yet. For those materials, use <a href="./exam-quick-access.html">Exam Quick Access</a>.</div>
+<div class="filters" role="group" aria-label="Find a verified textbook source link">
+<div><label for="unit">Choose unit</label><select id="unit"><option value="all">All Units 1–6</option><option value="1">Unit 1 — Physical Quantities and Measurements</option><option value="2">Unit 2 — Vectors</option><option value="3">Unit 3 — Translatory Motion</option><option value="4">Unit 4 — Rotational and Circular Motion</option><option value="5">Unit 5 — Work and Energy</option><option value="6">Unit 6 — Fluid Mechanics (provisional)</option></select></div>
+<div><label for="kind">Choose resource type</label><select id="kind"><option value="all">All currently indexed material</option><option value="textbook-example">Numbered worked examples</option><option value="textbook-numerical">Numbered textbook numerical exercises</option><option value="source-related-practice">Source-related adapted worked problems</option></select></div>
+<div class="search"><label for="query">Optional: search number, topic or SLO</label><input id="query" type="search" placeholder="e.g. 3.5, uncertainty, P-11-B-05" maxlength="80"></div>
+</div>
+<p id="finder-status" role="status" aria-live="polite">Loading source-confirmed references…</p>
+<div id="results" aria-label="Source-confirmed resource links"></div>
+<noscript><p class="none">This filtered index requires JavaScript. Use the existing <a href="./exam-quick-access.html">Exam Quick Access page</a> to open public resources without the index.</p></noscript>
+</main>
+<footer>Physics with Sir Najam · From Fundamentals to Frontiers. · Source navigation, not a certified answer key.</footer>
+<script>
+'use strict';
+const units={1:'Physical Quantities and Measurements',2:'Vectors',3:'Translatory Motion',4:'Rotational and Circular Motion',5:'Work and Energy',6:'Fluid Mechanics — provisional'};
+const selectors={unit:document.getElementById('unit'),kind:document.getElementById('kind'),query:document.getElementById('query')};
+const destination=document.getElementById('results'),status=document.getElementById('finder-status');
+let catalog=null;
+function textEl(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;el.textContent=text;return el}
+function verifiedLocalHref(href){
+ if(typeof href!=='string'||!/^\.\/[a-z0-9-]+\.html#[a-zA-Z0-9.-]+$/.test(href))return null;
+ try{const parsed=new URL(href,location.href);if(parsed.origin!==location.origin||!parsed.pathname.startsWith(new URL('./',location.href).pathname))return null;return parsed.href;}catch{return null}
+}
+function applyQuery(){
+ const url=new URL(location.href);
+ for(const key of ['unit','kind','q'])url.searchParams.delete(key);
+ if(selectors.unit.value!=='all')url.searchParams.set('unit',selectors.unit.value);
+ if(selectors.kind.value!=='all')url.searchParams.set('kind',selectors.kind.value);
+ if(selectors.query.value.trim())url.searchParams.set('q',selectors.query.value.trim());
+ history.replaceState(null,'',url.pathname+url.search+url.hash);
+ render();
+}
+function addEntry(box,entry){
+ const item=textEl('article','item','');
+ let tag=entry.kind==='textbook-numerical'?'Textbook numerical exercise':entry.kind==='textbook-example'?'Textbook worked example':'Adapted / inspired source-related practice';
+ item.append(textEl('div','tagline',tag));
+ const href=verifiedLocalHref(entry.href);
+ const a=document.createElement('a');a.href=href||'./exam-quick-access.html';a.textContent=entry.label;item.append(a);
+ item.append(textEl('p','source',entry.sourceNote||'Source metadata not available'));
+ const details=[entry.slo,entry.assessment].filter(Boolean).join(' · ');
+ if(details)item.append(textEl('div','scope',details));
+ box.append(item);
+}
+function render(){
+ if(!catalog){status.textContent='Loading source-confirmed references…';return}
+ const unit=selectors.unit.value,kind=selectors.kind.value,query=selectors.query.value.trim().toLowerCase();
+ destination.replaceChildren();
+ const entries=catalog.entries.filter(x=>(unit==='all'||String(x.unit)===unit)&&(kind==='all'||x.kind===kind)&&(!query||[x.label,x.sourceNote,x.slo,x.assessment].filter(Boolean).join(' ').toLowerCase().includes(query)));
+ const visibleUnits=unit==='all'?[1,2,3,4,5,6]:[Number(unit)];
+ for(const u of visibleUnits){
+  const relevant=entries.filter(x=>x.unit===u);
+  if(!relevant.length)continue;
+  const sec=textEl('section','unit-block','');
+  sec.append(textEl('h2','', 'Unit '+u+' — '+units[u]));
+  const grid=textEl('div','items','');
+  relevant.forEach(x=>addEntry(grid,x));sec.append(grid);destination.append(sec);
+ }
+ if(!entries.length){
+  const box=textEl('div','none','');
+  box.append(textEl('strong','', 'No independently indexed links match this selection.'));
+  box.append(textEl('p','', 'This does not mean the unit has no learning material. Exact textbook-number links will be added only after checking source labels and individual destinations.'));
+  const more=document.createElement('a');more.href='./exam-quick-access.html'+(unit==='all'?'':'?unit='+encodeURIComponent(unit));more.textContent='Open existing Unit resources in Exam Quick Access';box.append(more);destination.append(box);
+ }
+ status.textContent=entries.length+' source-labelled link'+(entries.length===1?'':'s')+' displayed. '+(unit==='all'?'Across current Units 1–6.':'Unit '+unit+' selected.')+' Exact exercise numbering is never implied for adapted Unit 1 problems.';
+}
+async function begin(){
+ const search=new URLSearchParams(location.search),u=search.get('unit'),k=search.get('kind');
+ if([...selectors.unit.options].some(o=>o.value===u))selectors.unit.value=u;
+ if([...selectors.kind.options].some(o=>o.value===k))selectors.kind.value=k;
+ selectors.query.value=(search.get('q')||'').slice(0,80);
+ try{
+  const response=await fetch('./verified-textbook-index-v103.json',{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const result=await response.json();
+  if(result.schemaVersion!==1||result.grade!==11||!Array.isArray(result.entries)||result.entries.length!==28)throw Error('Unexpected source index schema');
+  for(const x of result.entries){if(!Number.isInteger(x.unit)||x.unit<1||x.unit>4||!['textbook-example','textbook-numerical','source-related-practice'].includes(x.kind)||!verifiedLocalHref(x.href))throw Error('Unsafe or invalid source link') }
+  catalog=result;render();
+ }catch(e){
+  status.textContent='Source index unavailable; no student data or server settings were changed.';
+  const a=document.createElement('a');a.href='./exam-quick-access.html';a.textContent='Use Exam Quick Access instead';
+  const p=textEl('p','none','');p.append(a);destination.replaceChildren(p);
+ }
+}
+selectors.unit.addEventListener('change',applyQuery);
+selectors.kind.addEventListener('change',applyQuery);
+selectors.query.addEventListener('input',applyQuery);
+begin();
+</script>
+<script src="../shared/navigation.js?v=68" defer></script>
+</body></html>
