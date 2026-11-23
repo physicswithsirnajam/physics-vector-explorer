@@ -1,0 +1,54 @@
+name: Grade XI Unit 5 Individual Question-Only Deep Links (V107)
+on:
+  pull_request:
+    paths:
+      - "portal/descriptive-answer-finder.html"
+      - "portal/unit-05-descriptive-student.js"
+      - "portal/verified-u05-descriptive-practice-index-v107.json"
+      - "scripts/test_grade11_u05_question_deeplinks_v107.cjs"
+      - ".github/workflows/validate-grade11-u05-descriptive-deeplinks-v107.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/descriptive-answer-finder.html"
+      - "portal/unit-05-descriptive-student.js"
+      - "portal/verified-u05-descriptive-practice-index-v107.json"
+      - "scripts/test_grade11_u05_question_deeplinks_v107.cjs"
+      - ".github/workflows/validate-grade11-u05-descriptive-deeplinks-v107.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit5-individual-question-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate JavaScript syntax
+        run: |
+          node --check scripts/test_grade11_u05_question_deeplinks_v107.cjs
+          node --check portal/unit-05-descriptive-student.js
+      - name: Install pinned Chromium browser test runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Verify nine Unit 5 question-only source labels and real async question links
+        run: node scripts/test_grade11_u05_question_deeplinks_v107.cjs
+      - name: Ensure V104 original 64 solved answers and section links remain unchanged
+        run: node scripts/test_grade11_descriptive_finder_v104.cjs
+      - name: Ensure V106 study and derivation finder remains unchanged
+        run: node scripts/test_grade11_slo_study_finder_v106.cjs
+      - name: Upload synthetic/public evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-u05-original-question-deeplinks-v107
+          path: |
+            qa-artifacts/u05-question-deeplinks-v107/
+            qa-artifacts/descriptive-finder-v104/
+            qa-artifacts/slo-study-finder-v106/
+          retention-days: 10
+          if-no-files-found: warn
