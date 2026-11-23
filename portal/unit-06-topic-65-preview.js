@@ -41,7 +41,7 @@ function showQuestion(){
  $('position').textContent='Question '+(position+1)+' of '+test.length;
  $('answered').textContent=responses.size+' of '+test.length+' answered';
  $('bar').style.width=String(100*(position+1)/test.length)+'%';
- $('source-number').textContent=(q.practiceOverlayVersion==='V114'?'V114 clarified provisional variant of prepared-source Q':'Original provisional prepared-source Q')+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · NBF topic context pp. 99–101';
+ $('source-number').textContent=(q.practiceOverlayVersion==='V116'?'V116 clarified provisional variant of prepared-source Q':q.practiceOverlayVersion==='V114'?'V114 clarified provisional variant of prepared-source Q':'Original provisional prepared-source Q')+q.sourceQuestionNumber+' · '+labels[q.sourceSection]+' · NBF topic context pp. 99–101';
  $('stem').textContent=q.stem;
  const grid=$('option-grid');grid.replaceChildren();
  q.options.forEach(o=>{
@@ -64,14 +64,14 @@ function submit(){
  const review=$('review');review.replaceChildren();
  test.forEach((q,i)=>{
   const row=make('article'),good=responses.get(q.id)===q.correctOptionId;
-  row.append(make('strong',good?'ok':'wrong','Q'+(i+1)+' · '+(good?'Correct':'Review needed')+' · '+(q.practiceOverlayVersion==='V114'?'V114 clarified variant of source Q':'original Q')+q.sourceQuestionNumber));
+  row.append(make('strong',good?'ok':'wrong','Q'+(i+1)+' · '+(good?'Correct':'Review needed')+' · '+(q.practiceOverlayVersion==='V116'?'V116 clarified variant of source Q':q.practiceOverlayVersion==='V114'?'V114 clarified variant of source Q':'original Q')+q.sourceQuestionNumber));
   row.append(make('p','',q.stem));
   const selected=responses.get(q.id)||'Unanswered';
   const right=q.options.find(x=>x.id===q.correctOptionId);
   const user=q.options.find(x=>x.id===selected);
   row.append(make('p','answer-summary','Your choice: '+selected+(user?' — '+user.text:'')+' | Answer: '+right.id+' — '+right.text));
   row.append(make('p','',q.explanation));
-  row.append(make('small','subtle','Prepared-master source PDF p. '+q.sourcePdfPage+' · '+(q.practiceOverlayVersion==='V114'?'V114 teacher-approved clarified practice variant':'original provisional prepared-source item')+' · not individually FBISE-certified'));
+  row.append(make('small','subtle','Prepared-master source PDF p. '+q.sourcePdfPage+' · '+(q.practiceOverlayVersion==='V116'?'V116 teacher-approved clarified stagnation/reservoir practice variant':q.practiceOverlayVersion==='V114'?'V114 teacher-approved clarified practice variant':'original provisional prepared-source item')+' · not individually FBISE-certified'));
   review.append(row);
  });
  $('results').scrollIntoView({block:'start'});
@@ -86,16 +86,20 @@ $('try-again').addEventListener('click',()=>{$('results').hidden=true;$('setup')
 $('print-review').addEventListener('click',()=>window.print());
 Promise.all([
  fetch('../question-bank/grade-11/unit-06-topic-65-v84-80-source.json',{cache:'no-store'}),
- fetch('../question-bank/grade-11/unit-06-topic65-v114-approved-practice-overlay.json',{cache:'no-store'})
+ fetch('../question-bank/grade-11/unit-06-topic65-v114-approved-practice-overlay.json',{cache:'no-store'}),
+ fetch('../question-bank/grade-11/unit-06-topic65-v116-approved-stagnation-practice-overlay.json',{cache:'no-store'})
 ])
- .then(async ([sourceResponse,overlayResponse])=>{
-  if(!sourceResponse.ok||!overlayResponse.ok)throw Error('V114 original/overlay unavailable');
-  return [await sourceResponse.json(),await overlayResponse.json()];
+ .then(async ([sourceResponse,v114Response,v116Response])=>{
+  if(!sourceResponse.ok||!v114Response.ok||!v116Response.ok)throw Error('V84 source or V114/V116 approved practice overlay unavailable');
+  return [await sourceResponse.json(),await v114Response.json(),await v116Response.json()];
  })
- .then(([bank,overlay])=>{
+ .then(([bank,v114,v116])=>{
   if(!safeBank(bank))throw Error('V84 original source validation failed');
-  if(!window.PSNPracticeBankV55?.applyUnit6Topic65PracticeOverlay)throw Error('V114 approved safety transform unavailable');
-  const practice=window.PSNPracticeBankV55.applyUnit6Topic65PracticeOverlay(bank.questions,overlay);
+  const adapter=window.PSNPracticeBankV55;
+  if(!adapter?.applyUnit6Topic65PracticeOverlay||!adapter?.applyUnit6Topic65StagnationPracticeOverlay)
+    throw Error('V114/V116 approved safety transforms missing');
+  const prior=adapter.applyUnit6Topic65PracticeOverlay(bank.questions,v114);
+  const practice=adapter.applyUnit6Topic65StagnationPracticeOverlay(prior,v116);
   source={...bank,questions:practice};
   pool=practice;
   $('question-count').textContent=String(pool.length);

@@ -65,7 +65,7 @@ async function sourceChecks(){
  pass('exact student-facing Q28 option and three separately identified equal-flow variants; no ambiguous originals or fake SLO approval');
  const unit=JSON.parse(JSON.stringify(await x.PSNPracticeBankV55.loadBank(6,'question-bank/grade-11/')));
  assert.equal(unit.questions.length,560);
- assert.equal(unit.bankVersion,'v114-topic64-v111-and-topic65-three-clarified-560-provisional');
+ assert.equal(unit.bankVersion,'v116-topic64-v111-and-topic65-five-clarified-560-provisional');
  assert.equal(unit.questions.filter(q=>q.situationBased).length,136);
  assert.equal(unit.questions.filter(q=>q.practiceOverlayVersion==='V111').length,4);
  for(const id of blocked)assert.equal(unit.questions.some(q=>q.id===id),false);
@@ -100,7 +100,7 @@ async function sourceChecks(){
   assert.ok(read(p).includes('applyUnit6Topic64PracticeOverlay'),'Missing safety application at '+p);
  }
  for(const p of ['portal/unit-06-topic-64-preview.html','portal/unit-06-balanced-mcq-v95c1.html','practice-engine/index.html','build-your-physics-test.html'])
-  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v='+(p.includes('topic-64-preview')?'111':'114')),
+  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v='+(p.includes('topic-64-preview')?'111':'116')),
     'Missing cache-busted versioned safety adapter at '+p);
  pass('all original academic signoffs and release locks remain pending; all four practice entrypoints use V111');
 }
@@ -150,7 +150,8 @@ async function browserChecks(){
   try{
    const response=await balanced.goto(base+'/portal/unit-06-balanced-mcq-v95c1.html',{waitUntil:'load'});assert.equal(response.status(),200);
    await balanced.waitForFunction(()=>document.getElementById('start')?.disabled===false,null,{timeout:20000});
-   assert.ok((await balanced.locator('#status').innerText()).includes('V111 Topic 6.4 practice corrections'));
+   assert.ok((await balanced.locator('#status').innerText()).includes('V111/V114/V116 approved practice clarifications'),
+    'Balanced quiz must declare all current approved provisional practice overlays');
    await balanced.locator('#per-topic').selectOption('4');
    await balanced.locator('#start').click();
    assert.equal(await balanced.locator('#quiz-panel').isVisible(),true);

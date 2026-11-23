@@ -1,0 +1,103 @@
+name: Grade XI Unit 6 V116 Stagnation Q55 Q56 Safe Practice and PDF QA
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-06-topic65-v116-approved-stagnation-practice-overlay.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/unit-06-topic-65-preview.*"
+      - "portal/unit-06-balanced-mcq-v95c1.*"
+      - "practice-engine/index.html"
+      - "build-your-physics-test.html"
+      - "scripts/test_grade11_u06_v116_stagnation_reservoir_practice_overlay.cjs"
+      - "scripts/test_grade11_u06_v114_approved_bernoulli_practice_overlay.cjs"
+      - "scripts/test_grade11_u06_v111_approved_practice_overlay.cjs"
+      - "scripts/test_grade11_unit06_central_v*.cjs"
+      - "scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-u06-v116-stagnation-safe-practice.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-06-topic65-v116-approved-stagnation-practice-overlay.json"
+      - "shared/practice-bank-adapter-v55.js"
+      - "portal/unit-06-topic-65-preview.*"
+      - "portal/unit-06-balanced-mcq-v95c1.*"
+      - "practice-engine/index.html"
+      - "build-your-physics-test.html"
+      - "scripts/test_grade11_u06_v116_stagnation_reservoir_practice_overlay.cjs"
+      - "scripts/test_grade11_u06_v114_approved_bernoulli_practice_overlay.cjs"
+      - "scripts/test_grade11_u06_v111_approved_practice_overlay.cjs"
+      - "scripts/test_grade11_unit06_central_v*.cjs"
+      - "scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs"
+      - "server/approved-practice-catalog-v99g.cjs"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - ".github/workflows/validate-grade11-u06-v116-stagnation-safe-practice.yml"
+  workflow_dispatch:
+jobs:
+  source-provenance-browser-and-all-page-pdf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate JS syntax across central and direct student routes
+        run: |
+          node --check shared/practice-bank-adapter-v55.js
+          node --check portal/unit-06-topic-65-preview.js
+          node --check portal/unit-06-balanced-mcq-v95c1.js
+          node --check scripts/test_grade11_u06_v116_stagnation_reservoir_practice_overlay.cjs
+          node --check scripts/test_grade11_u06_v114_approved_bernoulli_practice_overlay.cjs
+          node --check scripts/test_grade11_u06_v111_approved_practice_overlay.cjs
+      - name: Install pinned Chromium and real PDF page-text inspection
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          pdfinfo -v
+          pdftotext -v
+      - name: V116 exact archived original source, B/B keys, approved new variants, 560 central and 2250 reporting IDs
+        run: node scripts/test_grade11_u06_v116_stagnation_reservoir_practice_overlay.cjs
+      - name: Retain V114 Q61 Q67 Q78 correct D/C/C provisional variants and all PDF watermark pages
+        run: node scripts/test_grade11_u06_v114_approved_bernoulli_practice_overlay.cjs
+      - name: Retain V111 Topic6.4 four corrected practice items and original immutable sources
+        run: node scripts/test_grade11_u06_v111_approved_practice_overlay.cjs
+      - name: Original V115 teacher proposal and Bernoulli numerical science source fidelity
+        run: |
+          node scripts/test_grade11_unit6_v115_topic65_stagnation_teacher_proposals.cjs
+          node scripts/test_grade11_unit06_v95c2s_topic65_num41_60_academic.cjs
+      - name: Retain seven-topic balanced 28-item scoring and 390px layout
+        run: node scripts/test_grade11_unit06_v95c1_balanced_assessment.cjs
+      - name: Preserve six legacy immutable-original-versus-approved-practice comparisons
+        run: |
+          node scripts/test_grade11_unit06_central_v79.cjs
+          node scripts/test_grade11_unit06_central_v81.cjs
+          node scripts/test_grade11_unit06_central_v83.cjs
+          node scripts/test_grade11_unit06_central_v85.cjs
+          node scripts/test_grade11_unit06_central_v87.cjs
+          node scripts/test_grade11_unit06_central_v89.cjs
+      - name: Verify exactly 2250 answer-free signed public report references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Retain actual V112 native exponents and all-route printed-PDF watermark
+        run: node scripts/test_grade11_v112_universal_science_print.cjs
+      - name: Preserve all academic teacher nonrelease and formal-exam holds
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Retain whole-site six-unit mixed quiz answer scoring under nested superscripts
+        run: node scripts/audit_grade11_mixed_practice_completion_v98q.cjs
+      - name: Upload public synthetic QA screenshots and stamped PDF samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-u06-v116-stagnation-provisional-practice-and-pdf
+          path: |
+            qa-artifacts/unit6-v116-stagnation/
+            qa-artifacts/unit6-v114-bernoulli-overlay/
+            qa-artifacts/unit6-v111-practice-overlay/
+            qa-artifacts/v112-universal-science-print/
+          if-no-files-found: warn
+          retention-days: 10

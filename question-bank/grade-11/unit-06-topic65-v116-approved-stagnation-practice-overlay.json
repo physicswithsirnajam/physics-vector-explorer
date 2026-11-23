@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "version": "V116",
+  "grade": 11,
+  "unit": 6,
+  "topic": "6.5",
+  "purpose": "teacher-approved-stagnation-reservoir-provisional-practice-only-not-fbise-exam",
+  "sourceBankFile": "unit-06-topic-65-v84-80-source.json",
+  "sourceBankBlobSha": "f5a7dd0a29d5e90842c0ef557071aebc10a70baf",
+  "prerequisiteOverlayFile": "unit-06-topic65-v114-approved-practice-overlay.json",
+  "prerequisiteOverlayVersion": "V114",
+  "prerequisiteOverlayBlobSha": "701ac8e6daa4c2d7fdfc60671c3d8219626dd061",
+  "sourceQuestionCount": 80,
+  "practiceQuestionCount": 80,
+  "overlayQuestionCount": 2,
+  "approvalScope": "Teacher explicitly approved Q55 local stagnation-point and Q56 large-reservoir negligible-speed separate self-practice variants and B/B original answer letters on 2026-11-23, withholding all individual formal scientific/SLO/cognitive/exam certification.",
+  "releaseState": "provisional-self-practice-only",
+  "sourceArchivedUnchanged": true,
+  "blockedOriginalIds": [
+    "XI-U06-T65-MCQ-0055",
+    "XI-U06-T65-MCQ-0056"
+  ],
+  "previouslyApprovedV114PracticeIds": [
+    "XI-U06-T65-MCQ-0061-V114",
+    "XI-U06-T65-MCQ-0067-V114",
+    "XI-U06-T65-MCQ-0078-V114"
+  ],
+  "replacements": [
+    {
+      "originalId": "XI-U06-T65-MCQ-0055",
+      "sourceQuestionNumber": 55,
+      "practiceId": "XI-U06-T65-MCQ-0055-V116",
+      "changeType": "teacher-approved-stagnation-reservoir-practice-variant",
+      "originalStem": "If ideal horizontal water slows from 4 m/s to 0 m/s, by how much does static pressure increase?",
+      "originalOptionTexts": [
+        "16 kPa",
+        "8 kPa",
+        "4 kPa",
+        "2 kPa"
+      ],
+      "proposedStem": "In steady ideal horizontal flow, water of density 1000 kg/m³ moves at 4 m/s at point X and reaches a stagnation point Y (local speed 0 m/s) along the same streamline. Neglect viscous losses. By how much is the static pressure at Y greater than at X?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "16 kPa"
+        },
+        {
+          "id": "B",
+          "text": "8 kPa"
+        },
+        {
+          "id": "C",
+          "text": "4 kPa"
+        },
+        {
+          "id": "D",
+          "text": "2 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Along a horizontal, lossless streamline ending at a stagnation point, P_Y − P_X = ½ρ(v_X² − v_Y²) = ½(1000)(4² − 0²) = 8000 Pa = 8 kPa. The original answer B is correct when the zero-speed condition is local stagnation, not zero discharge everywhere.",
+      "sourceSection": "numericals",
+      "sourcePdfPage": 189,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "teacherApprovedPracticeWording": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "fullExamCertificationApproved": false,
+      "sourceArchivedUnchanged": true,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-topic65-Q55-Q56-practice-approval-2026-11-23",
+      "sourceProvenance": "Teacher-prepared original from compiled master pp.189-190; revised stem is teacher-approved pedagogical adaptation, not a verbatim NBF question.",
+      "scientificModelWarning": "Local stagnation point only; no claim all flow in a finite pipe stops"
+    },
+    {
+      "originalId": "XI-U06-T65-MCQ-0056",
+      "sourceQuestionNumber": 56,
+      "practiceId": "XI-U06-T65-MCQ-0056-V116",
+      "changeType": "teacher-approved-stagnation-reservoir-practice-variant",
+      "originalStem": "Ideal horizontal water accelerates from rest to 10 m/s. If upstream pressure is 100 kPa, the downstream pressure is:",
+      "originalOptionTexts": [
+        "100 kPa",
+        "50 kPa",
+        "150 kPa",
+        "75 kPa"
+      ],
+      "proposedStem": "Water of density 1000 kg/m³ flows steadily from a very large reservoir into a horizontal duct. At point X in the reservoir, its speed is negligible and its static pressure is 100 kPa. At point Y downstream on the same elevation and streamline, the water speed is 10 m/s. Neglect viscous losses and pumps. What is the static pressure at Y?",
+      "proposedOptions": [
+        {
+          "id": "A",
+          "text": "100 kPa"
+        },
+        {
+          "id": "B",
+          "text": "50 kPa"
+        },
+        {
+          "id": "C",
+          "text": "150 kPa"
+        },
+        {
+          "id": "D",
+          "text": "75 kPa"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Apply ideal horizontal Bernoulli between a near-stagnant point in a very large reservoir and a downstream point on the same streamline. P_Y = P_X + ½ρ(v_X² − v_Y²) ≈ 100000 + ½(1000)(0 − 10²) Pa = 50000 Pa = 50 kPa. The original letter B is retained. No downstream atmospheric discharge is assumed.",
+      "sourceSection": "numericals",
+      "sourcePdfPage": 190,
+      "originalSourceKeyUnchanged": true,
+      "appliedPracticeOnly": true,
+      "teacherApprovedPracticeWording": true,
+      "boardEligible": false,
+      "individualSloCertified": false,
+      "individualCognitiveCertified": false,
+      "fullExamCertificationApproved": false,
+      "sourceArchivedUnchanged": true,
+      "academicStatus": "provisional-self-practice",
+      "teacherAuthorization": "explicit-topic65-Q55-Q56-practice-approval-2026-11-23",
+      "sourceProvenance": "Teacher-prepared original from compiled master pp.189-190; revised stem is teacher-approved pedagogical adaptation, not a verbatim NBF question.",
+      "scientificModelWarning": "Nearly stagnant water in a very large reservoir; downstream point not asserted to be a free atmospheric outlet"
+    }
+  ]
+}

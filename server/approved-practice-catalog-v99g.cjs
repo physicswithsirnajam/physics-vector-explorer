@@ -37,6 +37,7 @@ const ALLOWED_FILES=new Set([
  'unit-06-topic-63-v80-80-source.json','unit-06-topic-64-v82-80-source.json',
  'unit-06-topic64-v111-approved-practice-overlay.json',
  'unit-06-topic65-v114-approved-practice-overlay.json',
+ 'unit-06-topic65-v116-approved-stagnation-practice-overlay.json',
  'unit-06-topic-65-v84-80-source.json','unit-06-topic-66-v86-80-source.json',
  'unit-06-topic-67-v88-80-source.json'
 ]);

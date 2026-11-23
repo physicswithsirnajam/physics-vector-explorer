@@ -16,7 +16,7 @@ const v111File='question-bank/grade-11/unit-06-topic64-v111-approved-practice-ov
 const sourceRaw=read(sourceFile),src=JSON.parse(sourceRaw),overlay=json(overlayFile);
 const numbers=[61,67,78],blocked=numbers.map(n=>'XI-U06-T65-MCQ-'+String(n).padStart(4,'0'));
 const blocked64=[51,52,67].map(n=>'XI-U06-T64-MCQ-'+String(n).padStart(4,'0'));
-const version='v114-topic64-v111-and-topic65-three-clarified-560-provisional';
+const version='v116-topic64-v111-and-topic65-five-clarified-560-provisional';
 let gates=0;const pass=s=>{gates++;console.log('V114 PASS:',s)};
 const gitSha=s=>crypto.createHash('sha1').update('blob '+Buffer.byteLength(s)+'\0').update(s).digest('hex');
 const approx=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,'Expected '+b+' got '+a);
@@ -90,6 +90,7 @@ async function auditStatic(){
  assert.equal(bank.questions.filter(x=>x.situationBased).length,136);
  assert.equal(bank.questions.filter(x=>x.practiceOverlayVersion==='V111').length,4);
  assert.equal(bank.questions.filter(x=>x.practiceOverlayVersion==='V114').length,3);
+ assert.equal(bank.questions.filter(x=>x.practiceOverlayVersion==='V116').length,2);
  assert.equal(bank.questions.every(x=>x.boardEligible===false),true);
  assert.equal(new Set(bank.questions.map(q=>q.id)).size,560);
  for(const id of [...blocked,...blocked64])assert.equal(bank.questions.some(q=>q.id===id),false,'Central bank serves disallowed source: '+id);
@@ -153,7 +154,7 @@ async function auditStatic(){
   assert.ok(read(p).includes('applyUnit6Topic65PracticeOverlay'),'New safety transform not linked at '+p);
  }
  for(const p of ['portal/unit-06-topic-65-preview.html','portal/unit-06-balanced-mcq-v95c1.html','practice-engine/index.html','build-your-physics-test.html']){
-  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v=114'),'V114 safety adapter stale on '+p);
+  assert.ok(read(p).includes('practice-bank-adapter-v55.js?v=116'),'V114+V116 combined safety adapter stale on '+p);
  }
  assert.ok(read('portal/unit-06-topic-65-preview.html').includes('sitewide-science-print-v112.js'));
  assert.ok(read('portal/unit-06-balanced-mcq-v95c1.html').includes('sitewide-science-print-v112.js'));
@@ -247,7 +248,7 @@ async function browserAudit(){
    await balanced.goto(base+'/portal/unit-06-balanced-mcq-v95c1.html',{waitUntil:'load'});
    await balanced.waitForFunction(()=>document.getElementById('start')?.disabled===false,null,{timeout:25000});
    const status=await balanced.locator('#status').innerText();
-   assert.ok(status.includes('V111 Topic 6.4 practice corrections')&&status.includes('V114 Topic 6.5 clarified variants'));
+   assert.ok(status.includes('V111/V114/V116 approved practice clarifications verified'));
    await balanced.locator('#per-topic').selectOption('4');
    await balanced.locator('#start').click();
    assert.equal(await balanced.locator('#quiz-panel').isVisible(),true);
@@ -265,6 +266,7 @@ async function browserAudit(){
    });
    assert.equal(audit.count,560);assert.equal(audit.v111,4);assert.equal(audit.v114.length,3);assert.equal(audit.originals,0);
    assert.ok(audit.v114.every(x=>x.id.endsWith('-V114')&&x.eligible===false));
+   // V116 adds two prior-source-preserving stagnation variants without changing three V114 results.
   }finally{await central.close()}
   pass('real central Practice Engine uses 560 source-preserving MCQs with no original Q61/Q67/Q78');
   const disabled=await browser.newPage({viewport:{width:390,height:840}});
