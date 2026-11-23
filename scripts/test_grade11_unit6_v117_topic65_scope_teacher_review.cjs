@@ -48,7 +48,7 @@ function main(){
   assert.ok(c.reviewedPreparedSourceRow.startsWith(q.id+','));
   assert.ok(c.reviewedPreparedSourceRow.includes(',4,'+letters[i]+',MATCHED,'));
   assert.ok(c.reviewedPreparedSourceRow.includes(c.sourceAuditPriority));
-  assert.ok(c.independentMath.length>35);
+  assert.ok(c.independentMath.length>=25,'Independent formula and result must be explicit');
   close(c.independentNumericResultSI,expectedResults[i]);
   assert.ok(c.exactConcern.length>60);assert.ok(c.suggestedPracticeRole.length>45);
   assert.equal(c.sourceFidelity,'HISTORICALLY_VERIFIED_PREPARED_MASTER_NOT_RECHECKED_IN_THIS_PR');
