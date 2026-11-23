@@ -216,7 +216,21 @@ async function browserAudit(){
      for(const id of numbers)assert.ok(rows.includes('V114 clarified variant of source Q'+id),'Missing clarified MCQ '+id);
      for(const phrase of ['negligible viscous losses','without leaks','incompressible fluid flows steadily'])assert.ok(rows.toLowerCase().includes(phrase.toLowerCase()),'Not displaying approved model '+phrase);
      assert.ok(rows.includes('Answer: D')&&rows.includes('Answer: C'),'Lost intended D/C/C answer explanation');
-     await page.waitForFunction(()=>document.querySelector('#review sup')!==null);
+     // Existing teacher questions may already use true Unicode powers such as ²;
+     // requiring a generated <sup> in those records would be an invalid QA condition.
+     // Inject ONLY a clearly marked synthetic string into this headless test page.
+     const synthetic='QA notation sample: 3 m3 s-1, 4 cm2, 1000 kg m-3, v^2 and 10^-3.';
+     await page.evaluate(value=>{
+      const p=document.createElement('p');p.id='v114-synthetic-notation';
+      p.textContent=value;document.querySelector('#review').appendChild(p);
+     },synthetic);
+     await page.waitForFunction(()=>document.querySelectorAll('#v114-synthetic-notation sup').length>=6);
+     const typesetting=await page.evaluate(()=>{
+      const p=document.querySelector('#v114-synthetic-notation');
+      return {source:p.textContent,raised:[...p.querySelectorAll('sup')].map(s=>({value:s.textContent,align:getComputedStyle(s).verticalAlign}))};
+     });
+     assert.equal(typesetting.source,synthetic,'V112 renderer altered original QA test text');
+     assert.ok(typesetting.raised.every(s=>s.align==='super'),'V112 scientific superscripts were not visually raised');
      const pdf=path.join(out,'topic65-v114-all-80-print-review.pdf');
      await page.emulateMedia({media:'print'});
      fs.writeFileSync(pdf,await page.pdf({format:'A4',printBackground:false,preferCSSPageSize:true}));
