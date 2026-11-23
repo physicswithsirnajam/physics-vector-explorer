@@ -1,0 +1,68 @@
+name: Grade XI Accessible Vector-Arrow Rendering and PDF QA (V105)
+on:
+  pull_request:
+    paths:
+      - "shared/vector-notation-v105.css"
+      - "shared/vector-notation-v105.js"
+      - "portal/unit-02-descriptive.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/unit-02-formula-sheet.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/descriptive-answer-finder.html"
+      - "scripts/test_vector_notation_v105.cjs"
+      - ".github/workflows/validate-vector-notation-v105.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/vector-notation-v105.css"
+      - "shared/vector-notation-v105.js"
+      - "portal/unit-02-descriptive.html"
+      - "portal/unit-02-numericals.html"
+      - "portal/unit-02-formula-sheet.html"
+      - "portal/unit-03-collision-study.html"
+      - "portal/unit-04-angular-momentum-study.html"
+      - "portal/descriptive-answer-finder.html"
+      - "scripts/test_vector_notation_v105.cjs"
+      - ".github/workflows/validate-vector-notation-v105.yml"
+  workflow_dispatch:
+jobs:
+  font-independent-public-vector-formula-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: JavaScript syntax and source-scope checks
+        run: |
+          node --check shared/vector-notation-v105.js
+          node --check scripts/test_vector_notation_v105.cjs
+      - name: Install pinned browser and PDF page inspection utilities
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+      - name: Check all 433 static source symbols and actual Chromium/phone/PDF fallback
+        run: node scripts/test_vector_notation_v105.cjs
+      - name: Preserve Unit 2 original academic resource tests
+        run: python3 scripts/validate_unit2_learning_resources.py
+      - name: Preserve V104 descriptive finder and question deep links
+        run: node scripts/test_grade11_descriptive_finder_v104.cjs
+      - name: Preserve previous V102 global Print to PDF watermark
+        run: node scripts/test_grade11_sitewide_print_watermark_v102.cjs
+      - name: Upload only public synthetic source screenshots/PDF evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-vector-notation-v105-public-evidence
+          path: |
+            qa-artifacts/vector-notation-v105/
+            qa-artifacts/descriptive-finder-v104/
+            qa-artifacts/print-watermark-v102/
+          retention-days: 10
+          if-no-files-found: warn
