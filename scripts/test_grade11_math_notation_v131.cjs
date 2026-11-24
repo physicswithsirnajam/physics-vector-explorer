@@ -60,7 +60,9 @@ async function main(){
   assert.deepEqual(Object.keys(f).sort(),['code','id','location','sourceQuestionNumber','unit'].sort());
  }
  const json=JSON.stringify(report);
- assert.ok(!/"correctOptionId"|"stem"|"explanation"|"options"|"answer"/.test(json),
+ // Only property keys containing source content are disallowed; a location *value*
+ // such as "stem" or "explanation" is safe and required for targeted teacher review.
+ assert.ok(!/"(?:correctOptionId|stem|explanation|options|answer)"\s*:/.test(json),
   'Review artifact must never export source stems, keys, options, explanations or answers');
  const after=Object.fromEntries(protectedSource.map(p=>[p,hash(p)]));
  assert.deepEqual(after,before,'Read-only V131 audit changed protected scientific sources');
