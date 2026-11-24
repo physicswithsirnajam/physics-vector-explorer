@@ -112,6 +112,16 @@ async function browserAudit(){
     assert.ok(await unit6MCQ.locator('a[href="./unit-06-learning-desk-v95a.html#choose-topic"]').isVisible());
     assert.ok((await page.locator('#filter-status').innerText()).includes('3 available links'));
     await page.screenshot({path:path.join(out,'unit6-provisional-mcq-phone.png'),fullPage:true});
+    await page.locator('#unit-filter').selectOption('5');
+    const unit5MCQ=page.locator('.unit[data-unit="5"] .resource-group[data-kind="mcq"]');
+    assert.equal(await unit5MCQ.locator('a').count(),5,'Unit 5 must show Test Builder, two question-only practice sets and two after-practice keys');
+    for(const link of ['./unit-05-mcq-practice.html','./unit-05-mcq-set-b.html','./unit-05-mcq-key.html','./unit-05-mcq-set-b-key.html'])
+     assert.ok(await unit5MCQ.locator('a[href="'+link+'"]').isVisible(),'Missing visible Unit 5 practice/review link '+link);
+    assert.ok((await page.locator('#filter-status').innerText()).includes('5 available links'));
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit 5 MCQ list overflow');
+    await page.screenshot({path:path.join(out,'unit5-mcq-sets-post-practice-phone.png'),fullPage:true});
+    await unit5MCQ.locator('a[href="./unit-05-mcq-practice.html"]').click();
+    assert.ok((await page.locator('h1').first().innerText()).includes('16 MCQs'),'Unit 5 Set A practice landing failed');
    }
    await page.close();
   }
