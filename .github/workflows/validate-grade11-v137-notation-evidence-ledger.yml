@@ -1,0 +1,53 @@
+name: Grade XI V137 Notation Evidence Disposition and Teacher QC Ledger
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_notation_disposition_v137.cjs"
+      - "scripts/test_grade11_notation_disposition_v137.cjs"
+      - "quality/grade11-v137-notation-candidate-evidence-and-teacher-review-register.md"
+      - ".github/workflows/validate-grade11-v137-notation-evidence-ledger.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_notation_disposition_v137.cjs"
+      - "scripts/test_grade11_notation_disposition_v137.cjs"
+      - "quality/grade11-v137-notation-candidate-evidence-and-teacher-review-register.md"
+      - ".github/workflows/validate-grade11-v137-notation-evidence-ledger.yml"
+  workflow_dispatch:
+jobs:
+  reconcile-all-304-original-candidates-with-real-teacher-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original-source disposition report and QC test
+        run: |
+          node --check scripts/audit_grade11_notation_disposition_v137.cjs
+          node --check scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Verify 304 source notation candidate IDs and identify 27 technically sampled and 277 not-yet-targeted
+        run: node scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Preserve trusted V131 original 2250 public source notation candidate scan
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve original public bank structural safety across all 2250 questions
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve frozen original answer-free question reference IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 PENDING individual signoffs and formal exam release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit readiness and Copy-only student issue reporting
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Upload source-ID-only teacher review ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v137-notation-teacher-review-ledger
+          path: |
+            qa-artifacts/grade11-v137-notation-evidence-disposition/
+            qa-artifacts/grade11-v131-math-notation-triage/
+          if-no-files-found: warn
+          retention-days: 14
