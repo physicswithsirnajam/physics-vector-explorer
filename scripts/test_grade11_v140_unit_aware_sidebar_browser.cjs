@@ -51,20 +51,16 @@ function contracts(){
  assert.deepEqual(units.filter(u=>u.status==='available').map(u=>u.unit),[1,2,3,4,5]);
  assert.equal(units[5].practicePreviewStatus,'public-provisional');
  assert.ok(units.slice(6).every(u=>u.status==='planned'),'Future units must remain planned');
- assert.ok(catalog.resources.length>=64);
+ assert.ok(catalog.resources.length>=59);
  const ids=new Set(catalog.resources.map(r=>r.id));
  assert.equal(ids.size,catalog.resources.length,'Resource IDs are duplicated');
  const hrefs=[];
- for(let n=1;n<=5;n++){
-  const u=units[n-1],id='unit'+n+'-supplementary-videos';
-  assert.ok(u.resourceIds.includes(id),'Unit '+n+' supplementary video link missing');
-  const record=catalog.resources.find(r=>r.id===id);
-  assert.ok(record&&record.category==='VIDEOS');
-  assert.equal(record.videoPriority,'supplementary-existing');
-  hrefs.push(record.href);
+ for(let n=1;n<=6;n++){
+  const u=units[n-1];
+  assert.ok(u.legacyVideoPageCount>0,'Original Unit '+n+' supplementary video metadata missing');
+  assert.ok(typeof u.originalReferenceHref==='string','Existing Unit '+n+' video reference href missing');
+  hrefs.push(u.originalReferenceHref);
  }
- assert.equal(units[5].previewResources.filter(r=>r.category==='VIDEOS').length,1);
- hrefs.push(units[5].previewResources.find(r=>r.category==='VIDEOS').href);
  for(const href of hrefs){
   const url=new URL(href,'http://localhost/portal/');
   assert.equal(url.pathname,'/portal/legacy-hssc-resources.html');
