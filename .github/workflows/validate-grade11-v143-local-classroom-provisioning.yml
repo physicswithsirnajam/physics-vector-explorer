@@ -1,0 +1,87 @@
+name: Grade XI V143 Local Admin Teacher and Classroom Provisioning Rehearsal
+on:
+  pull_request:
+    paths:
+      - "server/local-classroom-provisioner-v143.cjs"
+      - "scripts/test_grade11_v143_local_classroom_provisioning.cjs"
+      - "quality/grade11-v143-admin-provisioned-teachers-classrooms-rehearsal.md"
+      - ".github/workflows/validate-grade11-v143-local-classroom-provisioning.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/local-classroom-provisioner-v143.cjs"
+      - "scripts/test_grade11_v143_local_classroom_provisioning.cjs"
+      - "quality/grade11-v143-admin-provisioned-teachers-classrooms-rehearsal.md"
+      - ".github/workflows/validate-grade11-v143-local-classroom-provisioning.yml"
+  workflow_dispatch:
+jobs:
+  verified-administrator-only-synthetic-teacher-and-classroom-provisioning:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      GCLOUD_PROJECT: demo-psn-v143-classrooms
+      FIREBASE_AUTH_EMULATOR_HOST: 127.0.0.1:9099
+      FIRESTORE_EMULATOR_HOST: 127.0.0.1:8089
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Syntax-check local-only teacher service and adversarial integration tests
+        run: |
+          node --check server/local-classroom-provisioner-v143.cjs
+          node --check scripts/test_grade11_v143_local_classroom_provisioning.cjs
+      - name: Preserve all 2250 Grade XI original MCQ public-source identity references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 pending Unit6 academic teacher decisions and formal exam hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve prior owner-authorized published rules snapshot comparison safety
+        run: node scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Require original 227-line private Rules baseline for independent full-policy compatibility
+        env:
+          PSN_FIRESTORE_BASELINE_RULES: ${{ secrets.PSN_FIRESTORE_BASELINE_RULES }}
+        run: |
+          if [ -z "$PSN_FIRESTORE_BASELINE_RULES" ]; then
+            echo "::error::Owner private rules baseline unavailable; halt without substitute or live action."
+            exit 1
+          fi
+          echo "Encrypted owner policy configured; contents never printed."
+      - name: Install pinned Firebase Admin client Rules emulator and local CLI
+        run: >
+          npm install --no-save --no-package-lock --ignore-scripts
+          firebase-admin@14.3.0 firebase@13.4.0
+          @firebase/rules-unit-testing@6.0.0 firebase-tools@15.37.0
+      - name: Exercise real local Firebase Auth and Firestore administrator teacher classroom service
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v143_local_classroom_provisioning.cjs"
+      - name: Preserve original private 227-line policy with six denied classroom paths
+        env:
+          GCLOUD_PROJECT: demo-psn-v142-classroom
+          PSN_FIRESTORE_BASELINE_RULES: ${{ secrets.PSN_FIRESTORE_BASELINE_RULES }}
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99c/emulator-only.json
+          --only firestore
+          --project demo-psn-v142-classroom
+          "node scripts/test_grade11_v142_classroom_private_rules_emulator.cjs"
+      - name: Upload synthetic counts only no user records or Auth secrets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v143-trusted-classroom-provisioning-local-evidence
+          path: |
+            qa-artifacts/grade11-v143-admin-classroom-provisioning/summary.json
+            qa-artifacts/grade11-v142-classroom-security/summary.json
+          if-no-files-found: warn
+          retention-days: 14
