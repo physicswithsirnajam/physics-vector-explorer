@@ -46,7 +46,7 @@ jobs:
           PSN_FIRESTORE_BASELINE_RULES: ${{ secrets.PSN_FIRESTORE_BASELINE_RULES }}
         run: |
           if [ -z "$PSN_FIRESTORE_BASELINE_RULES" ]; then
-            echo "::error::Owner private Firestore rules baseline is unavailable; no fallback, no Firebase deploy."
+            echo "::error::Owner private Firestore rules baseline is unavailable; no substitute and no production action."
             exit 1
           fi
           echo "Encrypted owner rules baseline configured; exact fingerprint will be verified without printing rules."
