@@ -1,0 +1,56 @@
+name: Grade XI V129 Unit 6 Truthful Provisional SLO Quiz Display
+on:
+  pull_request:
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v129_unit6_provisional_slo_browser.cjs"
+      - "quality/grade11-v129-unit6-provisional-slo-display-browser-audit.md"
+      - ".github/workflows/validate-grade11-v129-unit6-provisional-slo-ui.yml"
+  push:
+    branches: [main]
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v129_unit6_provisional_slo_browser.cjs"
+      - "quality/grade11-v129-unit6-provisional-slo-display-browser-audit.md"
+      - ".github/workflows/validate-grade11-v129-unit6-provisional-slo-ui.yml"
+  workflow_dispatch:
+jobs:
+  public-practice-ui-and-academic-release-safeguards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check Unit 6 honest topic-level badges and browser test
+        run: node --check scripts/test_grade11_v129_unit6_provisional_slo_browser.cjs
+      - name: Preserve V128 full 2250 item structural and advisory source scan
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve V99i answer-free 2250 question report references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve V94D 560 pending teacher item signoffs and formal release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V118 source readiness and copy-only issue reporting safeguards
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve V121 public worked-key and source audit file integrity
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Install pinned Playwright Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 9 real source quiz renders at 1280 390 and 320px and honest Unit6 provisional badges
+        run: node scripts/test_grade11_v129_unit6_provisional_slo_browser.cjs
+      - name: Upload source-safe teacher technical QC and original readiness reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v129-unit6-provisional-slo-quiz-display
+          path: |
+            qa-artifacts/grade11-v129-quiz-display/
+            qa-artifacts/grade11-v128-mcq-triage/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
