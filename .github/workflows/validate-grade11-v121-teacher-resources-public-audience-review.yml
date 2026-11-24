@@ -1,0 +1,39 @@
+name: Grade XI V121 Public Worked Answers and Teacher-Audit Audience Review
+on:
+  pull_request:
+    paths:
+      - "quality/grade11-v121-eight-public-teacher-resources-audience-review.json"
+      - "quality/grade11-v121-eight-public-teacher-resources-audience-review.md"
+      - "scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs"
+      - ".github/workflows/validate-grade11-v121-teacher-resources-public-audience-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/grade11-v121-eight-public-teacher-resources-audience-review.json"
+      - "quality/grade11-v121-eight-public-teacher-resources-audience-review.md"
+      - "scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs"
+      - ".github/workflows/validate-grade11-v121-teacher-resources-public-audience-review.yml"
+  workflow_dispatch:
+jobs:
+  source-fingerprints-and-no-unauthorized-visibility-changes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check new teacher audience source review
+        run: node --check scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Fingerprint all eight public page routes and ten companion JS JSON files
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve latest source-grounded December 7 six-unit exam-readiness and original content inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve original V117 Unit 6 individual FBISE scope decision nonrelease
+        run: node scripts/test_grade11_unit6_v117_topic65_scope_teacher_review.cjs
+      - name: Preserve 560 pending individual approvals and Unit 6 unreleased official exam gates
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve answer-free pinned 2250 Grade XI report references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
