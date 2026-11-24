@@ -1,0 +1,57 @@
+name: Grade XI V125 Unit 4 80-Mark Student Paper and Public Practice Pack Links
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v125-unit4-combined-80mark-paper-practice-pack-links.md"
+      - ".github/workflows/validate-grade11-v125-unit4-80mark-paper-pack.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v125-unit4-combined-80mark-paper-practice-pack-links.md"
+      - ".github/workflows/validate-grade11-v125-unit4-80mark-paper-pack.yml"
+  workflow_dispatch:
+jobs:
+  unit4-student-first-revision-and-source-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check exact source and browser link regression
+        run: node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve three exact Unit 6 provisional MCQ quick access routes
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve V122 public Unit 5 descriptive worked solution label
+        run: node scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Preserve V121 original public worked keys and academic audit resource fingerprints
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve V118 six-unit source and catalog inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve Unit 6 560 pending academic approvals and formal exam release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve 2250 signed answer-free MCQ reporting references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Playwright Chromium for actual navigation testing
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 52 existing links, public 80-mark pack cautions and mobile question-first sequence
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Upload source-only and real browser QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v125-unit4-80mark-question-first-revision
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
