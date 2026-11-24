@@ -140,6 +140,48 @@
 #psn-resource-drawer .psn-drawer-category-links a{
   padding:10px;background:#203d60;
 }
+/* V140: one consistently ordered, accessible unit-aware learning journey. */
+#psn-resource-drawer .psn-drawer-unit-notice{
+  margin:8px 0 10px;padding:10px;border-left:3px solid #e1bc71;
+  background:#203950;color:#f2e5cb;font-size:11px;line-height:1.55;
+}
+#psn-resource-drawer .psn-drawer-stage{
+  border:1px solid #456482;border-radius:9px;background:#152e4b;
+  margin:8px 0;overflow:hidden;
+}
+#psn-resource-drawer .psn-drawer-stage-summary{
+  cursor:pointer;list-style:none;padding:12px 11px;
+  color:#f3d58c;font-weight:800;font-size:13px;min-height:44px;
+}
+#psn-resource-drawer .psn-drawer-stage-summary::before{
+  content:"▸";display:inline-block;margin-right:9px;color:#ddbd76;
+}
+#psn-resource-drawer .psn-drawer-stage[open] .psn-drawer-stage-summary::before{content:"▾"}
+#psn-resource-drawer .psn-drawer-stage-links{
+  padding:4px 9px 12px;border-top:1px solid #345573;
+}
+#psn-resource-drawer .psn-drawer-topic-label{
+  color:#b8c9dd;font-size:10px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;line-height:1.5;margin:10px 2px 4px;
+}
+#psn-resource-drawer .psn-drawer-stage-empty,
+#psn-resource-drawer .psn-drawer-video-upcoming{
+  padding:9px 8px;margin:5px 0 2px;color:#c5d4e6;
+  font-size:11px;line-height:1.6;border-left:2px solid #4e6a8e;
+}
+#psn-resource-drawer .psn-drawer-video-upcoming{border-left-color:#c5a65b;color:#e7d9b9}
+#psn-resource-drawer .psn-drawer-future{
+  border:1px dashed #607590;border-radius:10px;padding:0;
+  margin:13px 0;color:#dae5f4;background:#11283f;
+}
+#psn-resource-drawer .psn-drawer-future summary{
+  cursor:pointer;list-style:none;padding:12px 11px;
+  color:#ebcd90;font-weight:750;font-size:12px;min-height:44px;
+}
+#psn-resource-drawer .psn-drawer-future-rows{padding:5px 12px 12px}
+#psn-resource-drawer .psn-drawer-future-rows p{
+  margin:8px 0;color:#c9d8e8;font-size:11px;line-height:1.55;
+}
 #psn-resource-drawer .psn-drawer-access{
   margin:15px 2px 0;padding:12px;border:1px solid #57718c;
   border-radius:9px;color:#d3e0ef;font-size:11px;line-height:1.7;
