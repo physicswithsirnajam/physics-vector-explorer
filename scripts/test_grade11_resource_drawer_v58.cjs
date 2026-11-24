@@ -64,11 +64,12 @@ async function main(){
   assert.equal(await trigger.getAttribute('aria-expanded'),'true');
   assert.equal(await page.locator('#psn-resource-drawer').isVisible(),true);
   assert.equal(await page.locator('#psn-nav-backdrop').isVisible(),true);
-  assert.equal(await page.locator('#psn-resource-drawer .psn-drawer-category-links a').count(),62,'all 62 catalogue resources must be in the drawer');
-  assert.match(await page.locator('#psn-resource-drawer .psn-drawer-loading').textContent(),/6 unit menus with resources/);
+  assert.ok((await page.locator('#psn-resource-drawer .psn-drawer-stage-links a').count())>=62,'all original catalogue resources plus existing video and unit links must remain in drawer');
+  assert.match(await page.locator('#psn-resource-drawer .psn-drawer-loading').textContent(),/6 available or provisional Grade XI unit menus/);
   await page.locator('[data-psn-unit="4"] > summary').click();
   assert.equal(await page.locator('[data-psn-unit="4"]').evaluate(x=>x.open),true);
-  const labs=page.locator('[data-psn-unit="4"] [data-psn-category="SIMULATIONS"]');
+  assert.deepEqual(await page.locator('[data-psn-unit="4"] [data-psn-stage]').evaluateAll(els=>els.map(e=>e.dataset.psnStage)),['LEARN','EXPLORE','PRACTISE','PREPARE','TRACK'],'five-stage sidebar order must be consistent');
+  const labs=page.locator('[data-psn-unit="4"] [data-psn-stage="EXPLORE"]');
   assert.equal(await labs.count(),1);
   await labs.locator('summary').click();
   assert.ok(await labs.locator('a').count()>=4,'Unit 4 simulation links present');
@@ -93,7 +94,7 @@ async function main(){
   const inDrawer=await page.evaluate(()=>document.getElementById('psn-resource-drawer').contains(document.activeElement));
   assert.equal(inDrawer,true,'keyboard focus must stay inside the open modal');
   await page.keyboard.press('Escape');
-  console.log('PASS V58 desktop: 62 available/provisional resources in collapsible categories; accessible open, ESC, backdrop and keyboard focus.');
+  console.log('PASS V58+V140 desktop: original catalog resources retained in five ordered collapsible learning stages; accessible open, ESC, backdrop and keyboard focus.');
 
   await page.setViewportSize({width:390,height:844});
   await trigger.click();
