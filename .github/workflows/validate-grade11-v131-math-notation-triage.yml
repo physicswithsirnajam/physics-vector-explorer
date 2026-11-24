@@ -1,0 +1,51 @@
+name: Grade XI V131 Read-Only Mathematical and Vector Notation Triage
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_math_notation_v131.cjs"
+      - "scripts/test_grade11_math_notation_v131.cjs"
+      - "quality/grade11-v131-math-vector-notation-visual-qc-register.md"
+      - ".github/workflows/validate-grade11-v131-math-notation-triage.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_math_notation_v131.cjs"
+      - "scripts/test_grade11_math_notation_v131.cjs"
+      - "quality/grade11-v131-math-vector-notation-visual-qc-register.md"
+      - ".github/workflows/validate-grade11-v131-math-notation-triage.yml"
+  workflow_dispatch:
+jobs:
+  review-original-2250-mcq-notation-candidates-without-answer-export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check read-only notation candidate scan and synthetic tests
+        run: |
+          node --check scripts/audit_grade11_math_notation_v131.cjs
+          node --check scripts/test_grade11_math_notation_v131.cjs
+      - name: Verify original 2250 public MCQs and generate source-ID-only scientific-notation candidate register
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve V128 all-bank source structural and text integrity safeguards
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve 2250 pinned answer-free original question references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 pending Unit6 item signoffs and nonreleased full course and graded exam
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V118 six-unit exam-readiness and copy-only issue-report limits
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Upload source-ID-only teacher visual-QC notation register
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v131-vector-and-math-notation-candidates
+          path: |
+            qa-artifacts/grade11-v131-math-notation-triage/
+            qa-artifacts/grade11-v128-mcq-triage/
+          if-no-files-found: warn
+          retention-days: 14
