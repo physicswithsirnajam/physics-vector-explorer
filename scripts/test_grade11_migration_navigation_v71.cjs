@@ -77,7 +77,7 @@ async function main(){
   await unit.locator(':scope > summary').click();
   const study=unit.locator('[data-psn-stage="LEARN"]');
   await study.locator('summary').click();
-  const link=study.locator('a').filter({hasText:'Start Studying'});
+  const link=study.locator('a').filter({hasText:'Learning Desk / Overview'});
   assert.equal(await link.count(),1);
   assert.equal(await link.getAttribute('href'),base+'portal/unit-01.html');
   const explore=unit.locator('[data-psn-stage="EXPLORE"]');
