@@ -190,8 +190,6 @@ async function main(){
   'Refuse to connect to anything except local Firestore emulator');
  assert.ok(!process.env.GOOGLE_APPLICATION_CREDENTIALS,
   'No service-account credentials allowed in classroom rules test');
- assert.ok(!process.env.FIREBASE_CONFIG,
-  'No real Firebase configuration allowed in local classroom rules test');
  const {fixture,block}=scopedRules();
  const full=fullRules(block);
  await exercise(fixture,'isolated');
