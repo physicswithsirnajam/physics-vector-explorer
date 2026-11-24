@@ -26,7 +26,8 @@ footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var
 <div><label for="search">Search by name or topic</label><input id="search" type="search" placeholder="e.g., vectors, waves, energy" autocomplete="off"></div>
 <div><label for="topic">Physics topic</label><select id="topic"><option value="">All topics</option></select></div>
 <div><label for="unit">Grade XI unit</label><select id="unit"><option value="">All units (31)</option></select></div>
-</div><p id="results" role="status" aria-live="polite">Loading available simulations…</p><div class="cards" id="cards"></div></section>
+</div><p id="results" role="status" aria-live="polite">Loading available simulations…</p><div class="cards" id="cards"></div>
+<div id="unit1-next-steps" class="notice" hidden aria-label="Unit 1 study alternatives"><strong>Unit 1 study alternatives:</strong> No original interactive simulation or enhanced learning lab is currently mapped to Unit 1. <a href="./unit-01.html">Open the Unit 1 Learning Desk</a> for study resources, or <a href="./simulations.html">browse simulations across other units</a>. This directory does not certify a Unit 1 simulation.</div></section>
 <section class="lab-section" aria-label="Unit-specific interactive learning laboratories">
   <h2>Enhanced Unit Learning Labs</h2>
   <p class="lab-note">Nine additional interactive labs already exist in our lesson desks for Units 2–5. These are separate from the 31 original standalone simulations. They follow the same unit and topic filters.</p>
@@ -36,7 +37,7 @@ footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var
 </main><footer>Physics with Sir Najam · From Fundamentals to Frontiers · Public interactive resource directory</footer>
 <script>
 'use strict';
-const cards=document.getElementById('cards'),specializedLabs=document.getElementById('specialized-labs'),labResults=document.getElementById('lab-results'),search=document.getElementById('search'),topic=document.getElementById('topic'),unit=document.getElementById('unit'),results=document.getElementById('results');
+const cards=document.getElementById('cards'),specializedLabs=document.getElementById('specialized-labs'),labResults=document.getElementById('lab-results'),search=document.getElementById('search'),topic=document.getElementById('topic'),unit=document.getElementById('unit'),results=document.getElementById('results'),unit1NextSteps=document.getElementById('unit1-next-steps');
 let simulations=[],labs=[],unitLabels={};
 function render(){
  const q=search.value.trim().toLowerCase(), t=topic.value, u=unit.value;
@@ -71,6 +72,7 @@ function render(){
   item.append(badge,unitName,title,note,link);specializedLabs.append(item);
  }
  if(!matchingLabs.length)labResults.textContent='No unit-specific labs match these filters.';
+ unit1NextSteps.hidden=!(u==='1'&&!filtered.length&&!matchingLabs.length);
 }
 Promise.resolve().then(async()=>{
  const responses=await Promise.all([
