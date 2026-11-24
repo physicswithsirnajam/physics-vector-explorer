@@ -1,0 +1,56 @@
+name: Grade XI V130 Honest Unit 6 SLO Completed-Test Review
+on:
+  pull_request:
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v130_unit6_results_review_browser.cjs"
+      - "quality/grade11-v130-unit6-postsubmission-provisional-slo-review.md"
+      - ".github/workflows/validate-grade11-v130-unit6-results-slo-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v130_unit6_results_review_browser.cjs"
+      - "quality/grade11-v130-unit6-postsubmission-provisional-slo-review.md"
+      - ".github/workflows/validate-grade11-v130-unit6-results-slo-review.yml"
+  workflow_dispatch:
+jobs:
+  truthful-unit6-results-and-existing-academic-release-guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate submitted-test browser QA syntax
+        run: node --check scripts/test_grade11_v130_unit6_results_review_browser.cjs
+      - name: Preserve V128 structural source check across all 2250 provisional original MCQs
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve 2250 signed answer-free report reference IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 pending academic signoffs and no official graded release
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve report Copy-only and six-unit read-only exam readiness
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium browser for actual public practice tests
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Preserve V129 nine real student pre-submit SLO badge journeys
+        run: node scripts/test_grade11_v129_unit6_provisional_slo_browser.cjs
+      - name: Verify honest Unit6 and unchanged Unit2 real submitted result pages at 1280 and 390px
+        run: node scripts/test_grade11_v130_unit6_results_review_browser.cjs
+      - name: Upload source-safe browser audit metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v130-unit6-postsubmission-provisional-review
+          path: |
+            qa-artifacts/grade11-v130-unit6-results-review/
+            qa-artifacts/grade11-v129-quiz-display/
+            qa-artifacts/grade11-v128-mcq-triage/
+          if-no-files-found: warn
+          retention-days: 10
