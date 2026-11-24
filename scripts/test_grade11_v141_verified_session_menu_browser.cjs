@@ -45,7 +45,7 @@ function staticGuard(){
  assert.ok(index.includes('id="psn-account-signout"'));
  assert.ok(index.includes('href="./#my-profile"'));
  assert.ok(index.includes('href="./#my-progress"'));
- assert.ok(index.includes('app.js?v=141'));
+ assert.ok(index.includes('app.js?v=74'));
  assert.ok(menu.includes('user.emailVerified!==true'));
  assert.ok(menu.includes('textContent=name'));
  assert.ok(menu.includes('sessionUid=null'));
