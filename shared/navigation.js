@@ -287,6 +287,14 @@
     const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
       ...(preview&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
     records.forEach(add);
+    // The existing catalogue already stores a source directory for each unit's
+    // public historic concept videos. Reuse it instead of duplicating entries
+    // and disturbing frozen resource-count contracts.
+    if(unit.legacyVideoPageCount>0 && unit.originalReferenceHref)
+      add({id:'v140-supplementary-videos-'+unit.unit,
+        title:'Unit '+unit.unit+' · Additional Existing Concept Videos & Original References',
+        category:'VIDEOS',videoPriority:'supplementary-existing',
+        href:unit.originalReferenceHref,access:'public-link'});
     // These verified same-site library routes are navigable from the unit menu,
     // but are never represented as original source videos or graded assignments.
     if(unit.simulationCount>0 && unit.simulationHref)
