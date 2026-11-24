@@ -9,6 +9,15 @@
   if(!script || document.getElementById('psn-global-nav'))return;
   const root=new URL('../',script.src);
   const here=location.pathname;
+  // V140: unit awareness from explicit unit filters, then physical learning pages.
+  // Do not guess a unit for mixed-unit tests or unfiltered libraries.
+  function activeUnitNumber(){
+    const chosen=new URLSearchParams(location.search).get('unit');
+    if(/^(?:[1-9]|1[0-4])$/.test(chosen||''))return Number(chosen);
+    const match=here.match(/\/unit-0?([1-9]|1[0-4])(?=[.\/-])/);
+    return match?Number(match[1]):null;
+  }
+  const activeUnit=activeUnitNumber();
   const e=(tag,className,text)=>{
     const node=document.createElement(tag);
     if(className)node.className=className;
@@ -140,7 +149,16 @@
   drawer.append(header,quick,info,live,content,access);
   document.body.append(backdrop,drawer);
   let opened=false,loaded=false,loading=false,previousFocus=null,previousOverflow='';
-  const isCurrent=(url)=>{try{return new URL(url).pathname===here;}catch{return false;}};
+  const isCurrent=(url)=>{
+    try{
+      const target=new URL(url),page=new URL(location.href);
+      if(target.pathname!==page.pathname)return false;
+      if(target.searchParams.has('unit') &&
+        target.searchParams.get('unit')!==page.searchParams.get('unit'))return false;
+      if(target.hash && target.hash!==page.hash)return false;
+      return true;
+    }catch{return false;}
+  };
   const setCurrent=(a)=>{
     if(isCurrent(a.href))a.setAttribute('aria-current','page');
     a.addEventListener('click',event=>{
@@ -179,6 +197,7 @@
     trigger.setAttribute('aria-label','Close unit resources menu');
     close.focus();
     if(!loaded&&!loading)loadResources();
+    else if(loaded)syncActiveUnit();
   }
   trigger.addEventListener('click',()=>opened?closeDrawer():openDrawer());
   close.addEventListener('click',()=>closeDrawer());
@@ -206,57 +225,156 @@
     }
     return setCurrent(a);
   }
+  // V140: five permanent stages; resource classification is based only on
+  // public catalogue metadata, never user identity, SLO certification or marks.
+  const stageDefs=[
+    {key:'LEARN',label:'01 · Learn',empty:'Notes, official lessons and formulas will appear here as they are verified.'},
+    {key:'EXPLORE',label:'02 · Explore',empty:'No unit-specific interactive activity is mapped yet.'},
+    {key:'PRACTISE',label:'03 · Practise',empty:'No extra worked examples or self-practice links have been mapped yet.'},
+    {key:'PREPARE',label:'04 · Prepare',empty:'Additional exercises and assignments will appear when verified.'},
+    {key:'TRACK',label:'05 · Track',empty:'Personal progress and classroom assignments require the appropriate account access.'}
+  ];
+  function learningStage(record){
+    const cat=String(record.category||'').toUpperCase();
+    const id=String(record.id||'').toLowerCase();
+    const title=String(record.title||'').toLowerCase();
+    const label=id+' '+title;
+    if(record.access==='account-private'||record.access==='enrolled-protected' ||
+      cat==='REVIEW'||cat==='REGISTERED LEARNERS')return ['TRACK','Progress & enrolled lessons'];
+    if(cat==='VIDEOS')return ['LEARN',
+      record.videoPriority==='official-psn'?'Physics with Sir Najam videos':'Additional videos & source references'];
+    if(cat==='SIMULATIONS'||cat==='EXPLORE'||/\b(lab|interactive|explorer|simulation)\b/.test(label))
+      return ['EXPLORE','Simulations & learning activities'];
+    if(/formula\s+sheet/.test(label)||cat==='REVISION')
+      return ['LEARN','Formula sheets & revision notes'];
+    if(/worked\s+numerical|numericals|worked\s+example/.test(label))
+      return ['PRACTISE','Examples & numerical problems'];
+    if(/descriptive|comprehensive|short\s+response|extended|assessment\s+pack|projector|discussion\s+slide|worked\s+key|marking\s+scheme|exam|blueprint|slo.*audit/.test(label)
+      ||cat==='EXAM PREPARATION')
+      return ['PREPARE','Exam questions, exercises & assignments'];
+    if(cat==='PRACTISE'||/mcq|practice|test\b/.test(label))
+      return ['PRACTISE','MCQs & independent practice'];
+    return ['LEARN','SLO notes & concept study'];
+  }
   function renderUnit(unit,byId,portalBase){
     const panel=e('details','psn-drawer-unit');
     panel.dataset.psnUnit=String(unit.unit);
     const summary=e('summary','psn-drawer-unit-summary');
-    const name=e('strong',null,'Unit '+unit.unit+' — '+unit.title+(unit.practicePreviewStatus==='public-provisional'?' · Practice preview':''));
-    const indicator=e('span',null,'Expand');indicator.className='psn-drawer-chevron';
+    const preview=unit.practicePreviewStatus==='public-provisional';
+    const name=e('strong',null,'Unit '+unit.unit+' — '+unit.title+(preview?' · Practice preview':''));
+    const indicator=e('span','psn-drawer-chevron','Expand');
     summary.append(name,indicator);panel.append(summary);
     const body=e('div','psn-drawer-unit-body');
-    const deskUrl=safeHref(unit.landingHref,portalBase);
-    if(deskUrl)body.append(makeLink(deskUrl,'Open Unit '+unit.unit+' Learning Desk','public-link'));
-    const practiceUrl=safeHref('../build-your-physics-test.html?unit='+unit.unit,portalBase);
-    if(practiceUrl)body.append(makeLink(practiceUrl,'Practise Unit '+unit.unit+' MCQs','public-link'));
-    const categories=new Map();
-    const seen=new Set();
-    const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
-      ...(unit.practicePreviewStatus==='public-provisional'&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
-    for(const record of records){
-      if(!record?.id||seen.has(record.id))continue;
-      seen.add(record.id);
+    if(preview)body.append(e('p','psn-drawer-unit-notice',
+      'Provisional self-practice only · Unit 6 individual teacher signoffs and formal graded assessment remain pending.'));
+    const groups=new Map(stageDefs.map(s=>[s.key,[]]));
+    const seenIds=new Set(),seenHref=new Set();
+    function add(record){
+      if(!record?.id||seenIds.has(record.id)||record.id==='protected-lesson')return;
       const href=safeHref(record.href,portalBase);
-      if(!href)continue;
-      const category=record.category||'OTHER RESOURCES';
-      if(!categories.has(category))categories.set(category,[]);
-      categories.get(category).push({href,record});
+      if(!href||seenHref.has(href))return;
+      seenIds.add(record.id);seenHref.add(href);
+      const [stage,subgroup]=learningStage(record);
+      groups.get(stage).push({href,record,subgroup});
     }
-    const names={
-      'STUDY':'Study & Worked Answers','EXPLORE':'Explore',
-      'SIMULATIONS':'Simulations & Labs','PRACTISE':'MCQ & Practice',
-      'EXAM PREPARATION':'Exam Preparation','REVISION':'Revision',
-      'REVIEW':'My Progress','REGISTERED LEARNERS':'Enrolled Lessons'
-    };
-    for(const [cat,items] of categories){
-      const group=e('details','psn-drawer-category');
-      group.dataset.psnCategory=cat;
-      const summary=e('summary',null,(names[cat]||cat)+' ('+items.length+')');
-      const linksBox=e('div','psn-drawer-category-links');
+    // Always keep the original, source-grounded landing desk and unit-filtered
+    // test link; dedupe any matching public catalogue entries.
+    if(unit.landingHref)add({id:'v140-desk-'+unit.unit,
+      title:'Unit '+unit.unit+' · Learning Desk / Overview',
+      category:'STUDY',href:unit.landingHref,access:'public-link'});
+    add({id:'v140-practise-'+unit.unit,title:'Unit '+unit.unit+' · Build an MCQ Practice Test',
+      category:'PRACTISE',href:'../build-your-physics-test.html?unit='+unit.unit,access:'public-link'});
+    const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
+      ...(preview&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
+    records.forEach(add);
+    // The existing catalogue already stores a source directory for each unit's
+    // public historic concept videos. Reuse it instead of duplicating entries
+    // and disturbing frozen resource-count contracts.
+    if(unit.legacyVideoPageCount>0 && unit.originalReferenceHref)
+      add({id:'v140-supplementary-videos-'+unit.unit,
+        title:'Unit '+unit.unit+' · Additional Existing Concept Videos & Original References',
+        category:'VIDEOS',videoPriority:'supplementary-existing',
+        href:unit.originalReferenceHref,access:'public-link'});
+    // These verified same-site library routes are navigable from the unit menu,
+    // but are never represented as original source videos or graded assignments.
+    if(unit.simulationCount>0 && unit.simulationHref)
+      add({id:'v140-simulations-'+unit.unit,category:'SIMULATIONS',
+        title:'Unit '+unit.unit+' · Existing Simulations',
+        href:unit.simulationHref,access:'public-link'});
+    for(const stage of stageDefs){
+      const items=groups.get(stage.key);
+      const group=e('details','psn-drawer-stage');
+      group.dataset.psnStage=stage.key;
+      const stageSummary=e('summary','psn-drawer-stage-summary',
+        stage.label+' ('+items.length+')');
+      group.append(stageSummary);
+      const linksBox=e('div','psn-drawer-stage-links');
+      if(!items.length)linksBox.append(e('p','psn-drawer-stage-empty',stage.empty));
+      let lastSubgroup='';
       for(const item of items){
+        if(item.subgroup!==lastSubgroup){
+          const sub=e('p','psn-drawer-topic-label',item.subgroup);
+          linksBox.append(sub);lastSubgroup=item.subgroup;
+        }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
       }
-      group.append(summary,linksBox);body.append(group);
+      if(stage.key==='LEARN' && !items.some(item=>item.record.videoPriority==='official-psn')){
+        linksBox.append(e('p','psn-drawer-video-upcoming',
+          'Physics with Sir Najam original video lessons · coming after upload and review. Existing videos are supplementary.'));
+      }
+      group.append(linksBox);body.append(group);
+      if(unit.unit===activeUnit && items.some(item=>isCurrent(item.href)))group.open=true;
     }
     panel.append(body);
-    const activeUnit=here.match(/\/unit-0([1-6])(?:[.-]|\/)/);
-    panel.open=Boolean(activeUnit&&Number(activeUnit[1])===unit.unit);
-    if(panel.open){
-      const active=[...body.querySelectorAll('.psn-drawer-category')];
-      for(const group of active){
-        if([...group.querySelectorAll('a')].some(a=>isCurrent(a.href)))group.open=true;
-      }
+    panel.open=unit.unit===activeUnit;
+    if(panel.open && !body.querySelector('.psn-drawer-stage[open]')){
+      const first=body.querySelector('.psn-drawer-stage');
+      if(first)first.open=true;
     }
     return panel;
+  }
+  function comingSoon(units,label){
+    const group=e('details','psn-drawer-future');
+    const summary=e('summary',null,label+' ('+units.length+')');
+    group.append(summary);
+    const rows=e('div','psn-drawer-future-rows');
+    for(const unit of units){
+      const item=e('p',null,'Unit '+unit.unit+' · '+unit.title+' · Coming soon');
+      rows.append(item);
+      // Existing enrichment simulations for future units may already be public.
+      // This link does NOT publish the unit, its notes, MCQ bank or exams.
+      const sim=safeHref(unit.simulationHref,new URL('portal/',root));
+      if(unit.simulationCount>0 && sim){
+        rows.append(makeLink(sim,'Explore '+unit.simulationCount+
+          ' existing simulation'+(unit.simulationCount===1?'':'s')+' · Unit still planned','public-link'));
+      }
+    }
+    group.append(rows);
+    return group;
+  }
+  // Simulation-unit filters can change location.search with replaceState().
+  // Re-read the current URL every time the drawer opens, not only on first load.
+  function syncActiveUnit(){
+    const selected=activeUnitNumber();
+    for(const unit of content.querySelectorAll('.psn-drawer-unit')){
+      const match=Number(unit.dataset.psnUnit)===selected;
+      unit.open=match;
+      if(!match)continue;
+      let chosen=false;
+      for(const stage of unit.querySelectorAll('.psn-drawer-stage')){
+        const current=[...stage.querySelectorAll('a[href]')].some(a=>isCurrent(a.href));
+        stage.open=current;
+        if(current)chosen=true;
+      }
+      if(!chosen){
+        const first=unit.querySelector('.psn-drawer-stage');
+        if(first)first.open=true;
+      }
+    }
+    for(const link of content.querySelectorAll('a[href]')){
+      if(isCurrent(link.href))link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    }
   }
   async function loadResources(){
     loading=true;live.textContent='Loading available Grade XI unit resources and provisional practice previews…';
@@ -273,8 +391,14 @@
       const portalBase=new URL('portal/',root);
       const fragment=document.createDocumentFragment();
       for(const unit of active)fragment.append(renderUnit(unit,map,portalBase));
+      const coming=grade.units.filter(u=>u.status==='planned' && u.practicePreviewStatus!=='public-provisional' &&
+        Number.isInteger(u.unit) && u.unit>=7 && u.unit<=14);
+      const next=coming.filter(u=>u.unit<=10),later=coming.filter(u=>u.unit>=11);
+      if(next.length)fragment.append(comingSoon(next,'Next units · 7–10'));
+      if(later.length)fragment.append(comingSoon(later,'Future units · 11–14'));
       content.replaceChildren(fragment);
-      live.textContent=active.length+' unit menus with resources, including the provisional Unit 6 practice preview. The full Unit 6 course and graded examinations are not released.';
+      syncActiveUnit();
+      live.textContent=active.length+' available or provisional Grade XI unit menus, in five learning stages. Planned units are labelled Coming soon; Unit 6 remains a provisional preview.';
       loaded=true;
     }catch(error){
       // Five original published desks plus the Unit 6 public study preview remain reachable if catalogue fetch fails.
