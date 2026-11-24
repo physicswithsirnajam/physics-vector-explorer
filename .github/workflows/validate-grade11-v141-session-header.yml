@@ -1,0 +1,62 @@
+name: Grade XI V141 Verified Session Header and Teacher Boundary
+on:
+  pull_request:
+    paths:
+      - "portal/session-menu-v141.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/app.js"
+      - "scripts/test_grade11_v141_verified_session_menu_browser.cjs"
+      - "quality/grade11-v141-session-header-and-teacher-role-security-baseline.md"
+      - ".github/workflows/validate-grade11-v141-session-header.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/session-menu-v141.js"
+      - "portal/index.html"
+      - "portal/styles.css"
+      - "portal/app.js"
+      - "scripts/test_grade11_v141_verified_session_menu_browser.cjs"
+      - "quality/grade11-v141-session-header-and-teacher-role-security-baseline.md"
+      - ".github/workflows/validate-grade11-v141-session-header.yml"
+  workflow_dispatch:
+jobs:
+  safe-verified-account-menu-no-teacher-rights-granted:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check portal auth menu and real-browser test
+        run: |
+          node --check portal/app.js
+          node --check portal/session-menu-v141.js
+          node --check scripts/test_grade11_v141_verified_session_menu_browser.cjs
+      - name: Preserve all 2250 original source IDs and public practice integrity
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 pending Unit6 teacher approvals and graded release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve read-only public exam readiness and backend reporting locks
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve original MCQ teacher QC disposition
+        run: node scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Install pinned Chromium for isolated auth-header UI contract
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify real portal menu at 1280 390 320px without Firebase or fake teacher privileges
+        run: node scripts/test_grade11_v141_verified_session_menu_browser.cjs
+      - name: Upload private-data-free account-menu QA summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v141-account-header-ui-qa
+          path: |
+            qa-artifacts/grade11-v141-session-header/
+            qa-artifacts/grade11-v137-notation-evidence-disposition/
+          if-no-files-found: warn
+          retention-days: 14
