@@ -4,6 +4,7 @@
    Teacher/class/payments management remains DISABLED. Self-practice results are student-owned, not trusted grades.
    Public GitHub Pages resources are not protected by this login. */
 import {firebaseConfig} from './firebase-config.js';
+import {createSessionMenu} from './session-menu-v141.js';
 import {initializeAppCheckBeforeServices} from './recaptcha-enterprise-v100m.mjs';
 import {analyzeAttempts,SLO_TOPICS,targetedPracticeUrl} from './learning-analytics.js';
 import {openProgressPdfReport} from './pdf-report.js';
@@ -24,6 +25,8 @@ let auth=null, db=null, navigationToken=0, adminSessionUid=null, progressRequest
 const PROGRESS_PAGE=25;
 let progressRecords=[], progressCursor=null, progressHasOlder=true, progressLoading=false, progressOwnerUid=null;
 const ready=Object.values(firebaseConfig).every(v=>typeof v==='string' && v.trim() && !v.includes('REPLACE_'));
+// The menu never grants access. Only successfully verified Auth views may show it.
+const sessionMenu=createSessionMenu({onSignOut:()=>logout()});
 
 function status(message='',kind='error'){
  notice.textContent=message;
@@ -44,7 +47,10 @@ function screen(name){
  $('dashboard-screen').hidden=name!=='dashboard';
  $('admin-screen').hidden=name!=='admin';
  // If a previously opened resource drawer exists, close it during sign-out.
- if(name==='auth')document.dispatchEvent(new Event('psn-portal-shell-closed'));
+ if(name==='auth'){
+  sessionMenu.hide();
+  document.dispatchEvent(new Event('psn-portal-shell-closed'));
+ }
 }
 function adminStatus(message='',kind='error'){
  const el=$('admin-notice');
@@ -69,6 +75,7 @@ async function showLearner(user,profile){
  $('enrollment-gate').hidden=false;
  enrollmentNotice('Checking your academic enrollment…');
  screen('dashboard');
+ sessionMenu.show(user,displayName);
  // Privacy and old personal progress records remain available even for
  // accounts created before V10; access to learning resources is gated.
  loadProgress(user);
@@ -294,6 +301,7 @@ function showAdmin(user){
  $('admin-directory-empty').hidden=false;
  adminStatus('');
  screen('admin');
+ sessionMenu.show(user,user.displayName||user.email||'Administrator');
 }
 function readableDate(timestamp){
  try{const date=timestamp?.toDate?.();return date?date.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'Not recorded';}
@@ -590,7 +598,7 @@ $('admin-open-learning').addEventListener('click',async()=>{
 // If the sole administrator chooses a learner anchor from the shared navigation,
 // show the learner dashboard while keeping role authority server-controlled.
 window.addEventListener('hashchange',()=>{
- if(adminSessionUid && ['#learning-hub','#my-progress'].includes(location.hash) && auth?.currentUser){
+ if(adminSessionUid && ['#student-top','#learning-hub','#my-progress','#my-profile','#privacy-centre'].includes(location.hash) && auth?.currentUser){
   refreshView(auth.currentUser);
  }
 });

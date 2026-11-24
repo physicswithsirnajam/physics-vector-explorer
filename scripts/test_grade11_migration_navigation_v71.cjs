@@ -75,12 +75,12 @@ async function main(){
   await page.waitForFunction(()=>document.querySelectorAll('#psn-resource-drawer .psn-drawer-unit').length===6);
   const unit=page.locator('[data-psn-unit="1"]');
   await unit.locator(':scope > summary').click();
-  const study=unit.locator('[data-psn-category="STUDY"]');
+  const study=unit.locator('[data-psn-stage="LEARN"]');
   await study.locator('summary').click();
-  const link=study.locator('a').filter({hasText:'Start Studying'});
+  const link=study.locator('a').filter({hasText:'Learning Desk / Overview'});
   assert.equal(await link.count(),1);
   assert.equal(await link.getAttribute('href'),base+'portal/unit-01.html');
-  const explore=unit.locator('[data-psn-category="EXPLORE"]');
+  const explore=unit.locator('[data-psn-stage="EXPLORE"]');
   await explore.locator('summary').click();
   const simulation=explore.locator('a').filter({hasText:'Simulation Library'});
   assert.equal(await simulation.count(),1);
@@ -107,7 +107,7 @@ async function main(){
   assert.match(style.family,/Times New Roman/);
   assert.equal(style.visible,'flex');assert.equal(style.position,'fixed');
   assert.deepEqual(errors,[]);
-  console.log('PASS V71 Chromium: actual Unit1 native Study/Explore drawer URLs, 31 models, 390px mobile, print-only Times serif watermark');
+  console.log('PASS V71+V140 Chromium: actual Unit1 native Learn/Explore drawer URLs, 31 models, 390px mobile, print-only Times serif watermark');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 main().catch(err=>{console.error('FAIL V71 navigation/type QA',err);server.close();process.exitCode=1;});

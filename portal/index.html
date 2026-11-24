@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101e37">
   <meta name="description" content="Physics with Sir Najam — your personalized Physics learning portal.">
   <title>Learning Portal | Physics with Sir Najam</title>
-  <link rel="stylesheet" href="./styles.css?v=73">
+  <link rel="stylesheet" href="./styles.css?v=141">
   <link rel="stylesheet" href="./workspace-tabs.css?v=68">
   <link rel="stylesheet" href="../shared/navigation.css?v=69">
 </head>
@@ -19,6 +19,23 @@
     <div class="header-right">
       <span class="stage-label">LEARNING PORTAL · V71 PILOT</span>
       <a class="header-link" href="./simulations.html">Simulation Library <span aria-hidden="true">↗</span></a>
+      <!-- V141 account display is shown only after app.js verifies current Auth session. -->
+      <div id="psn-account-holder" class="psn-account-holder" hidden>
+        <details id="psn-account-popover" class="psn-account-popover">
+          <summary id="psn-account-trigger" class="psn-account-trigger" aria-label="Account options">
+            <span id="psn-account-avatar" class="psn-account-avatar" aria-hidden="true">?</span>
+            <span id="psn-account-name" class="psn-account-name">Account</span>
+            <span class="psn-account-caret" aria-hidden="true">▾</span>
+          </summary>
+          <div class="psn-account-panel" aria-label="Signed-in account actions">
+            <span class="psn-account-eyebrow">Signed in as</span>
+            <span id="psn-account-email" class="psn-account-email"></span>
+            <a href="./#my-profile" class="psn-account-option">My Profile</a>
+            <a href="./#my-progress" class="psn-account-option">My Progress</a>
+            <button type="button" id="psn-account-signout" class="psn-account-option psn-account-signout">Sign Out</button>
+          </div>
+        </details>
+      </div>
     </div>
   </header>
 
