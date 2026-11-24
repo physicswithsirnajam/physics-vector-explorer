@@ -97,14 +97,13 @@ function contracts(){
  assert.equal(matrix.studentCourseStatus,'planned');
 }
 async function openMenu(page){
- await page.locator('#psn-nav-menu-button').count().catch(()=>0);
  await page.getByRole('button',{name:'Open unit resources menu'}).click();
- await page.locator('#psn-drawer-loading').waitFor({state:'visible',timeout:12000});
+ await page.locator('.psn-drawer-loading').waitFor({state:'visible',timeout:12000});
  await page.waitForFunction(()=>{
-  const p=document.querySelector('#psn-drawer-loading')?.textContent||'';
+  const p=document.querySelector('.psn-drawer-loading')?.textContent||'';
   return p.includes('unit menus')||p.includes('Unable to load');
  },null,{timeout:18000});
- const label=await page.locator('#psn-drawer-loading').innerText();
+ const label=await page.locator('.psn-drawer-loading').innerText();
  assert.ok(label.includes('unit menus'),'Catalog failed to load: '+label);
  assert.equal(await page.locator('#psn-resource-drawer .psn-drawer-unit').count(),6);
  assert.equal(await page.locator('#psn-resource-drawer .psn-drawer-future').count(),2);
