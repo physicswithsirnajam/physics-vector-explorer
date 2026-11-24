@@ -84,7 +84,12 @@ async function main(){
      const q=bank.questions.find(x=>x.id===id);
      if(!q||q.unit!==3||q.assessmentClassification!=='formative'||!selectedIds.has(id))
       throw Error('Original formative item missing from actual complete practice: '+id);
-     originals.push({id,hasSeconds:typeof q.explanation==='string'&&q.explanation.includes('s^-1')});
+     originals.push({id,
+      hasSeconds:typeof q.explanation==='string'&&q.explanation.includes('s^-1'),
+      bracedSeconds:typeof q.explanation==='string'&&q.explanation.includes('s^{-1}'),
+      unicodeSeconds:typeof q.explanation==='string'&&q.explanation.includes('s⁻¹'),
+      firstPowerToken:(String(q.explanation).match(/[A-Za-z0-9]\^(?:\{?-?\d{1,4}\}?|[xyz])/u)||[])[0]||null
+     });
     }
     if(!originals.find(x=>x.id==='g11-u03-master-t33-q036')?.hasSeconds||
        !originals.find(x=>x.id==='g11-u03-master-t33-q060')?.hasSeconds)
