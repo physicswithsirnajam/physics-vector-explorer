@@ -108,7 +108,7 @@ async function main(){
     // Narrow test-only navigation to this exact loaded ORIGINAL source record.
     test=[{...q,displayOptions:q.options.slice()}];index=0;answers={};checked={};render();
     return {id:q.id,unit:q.unit,sourceNumber:q.sourceQuestionNumber,
-     figure:q.referenceFigureId,sourceStem:q.stem,options:q.displayOptions.map(o=>o.text)};
+     figure:q.referenceFigureId,sourceStem:q.stem,options:test[0].displayOptions.map(o=>o.text)};
    },originalFigureId);
    assert.equal(stable.id,originalFigureId);
    assert.equal(await page.locator('#question-reference').innerText(),'Question reference: '+originalFigureId);
