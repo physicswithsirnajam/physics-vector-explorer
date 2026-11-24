@@ -1,0 +1,53 @@
+name: Grade XI V134 Unit 5 Summative Stimulus HTML Entity Rendering
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_v134_unit5_entity_rendering.cjs"
+      - "quality/grade11-v134-unit5-html-entity-scenario-visual-qc.md"
+      - ".github/workflows/validate-grade11-v134-unit5-stimulus-entity.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_v134_unit5_entity_rendering.cjs"
+      - "quality/grade11-v134-unit5-html-entity-scenario-visual-qc.md"
+      - ".github/workflows/validate-grade11-v134-unit5-stimulus-entity.yml"
+  workflow_dispatch:
+jobs:
+  source-backed-unit5-encoded-apostrophe-real-browser-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V134 original source and real browser QA
+        run: node --check scripts/test_grade11_v134_unit5_entity_rendering.cjs
+      - name: Preserve V131 all 2250 source notation warning candidates
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve V128 original 2250 MCQ structural and rendering-text scan
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve signed answer-free original report references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 pending Unit6 signoffs and formal graded release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit exam readiness and Copy-only issue report controls
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium for real encoded-stimulus display QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify two original Unit5 summative scenario passages decode entities at 1280 390 320px
+        run: node scripts/test_grade11_v134_unit5_entity_rendering.cjs
+      - name: Upload public scenario-only visual evidence and source-ID-only QA metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v134-unit5-encoded-stimulus-browser-evidence
+          path: |
+            qa-artifacts/grade11-v134-unit5-entity-rendering/
+            qa-artifacts/grade11-v131-math-notation-triage/
+          if-no-files-found: warn
+          retention-days: 14
