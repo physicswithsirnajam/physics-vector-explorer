@@ -88,7 +88,7 @@ async function main(){
     }
     if(!originals.find(x=>x.id==='g11-u03-master-t33-q036')?.hasSeconds||
        !originals.find(x=>x.id==='g11-u03-master-t33-q060')?.hasSeconds)
-      throw Error('Two original source-verified seconds-inverse examples changed');
+      throw Error('Original seconds-inverse source token flags: '+JSON.stringify(originals.filter(x=>x.id==='g11-u03-master-t33-q036'||x.id==='g11-u03-master-t33-q060')));
     const summative=bank.questions.find(q=>q.id==='XI-U03-MCQ-0031');
     if(!summative||summative.assessmentClassification!=='summative-theory')
       throw Error('Original summative average-velocity example changed');
