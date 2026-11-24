@@ -1,0 +1,51 @@
+name: Grade XI V128 Read-Only MCQ Completeness and Glyph Triage
+on:
+  pull_request:
+    paths:
+      - "scripts/audit_grade11_mcq_triage_v128.cjs"
+      - "scripts/test_grade11_mcq_triage_v128.cjs"
+      - "quality/grade11-v128-pre-exam-mcq-academic-triage.md"
+      - ".github/workflows/validate-grade11-v128-mcq-triage.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_grade11_mcq_triage_v128.cjs"
+      - "scripts/test_grade11_mcq_triage_v128.cjs"
+      - "quality/grade11-v128-pre-exam-mcq-academic-triage.md"
+      - ".github/workflows/validate-grade11-v128-mcq-triage.yml"
+  workflow_dispatch:
+jobs:
+  offline-2250-mcq-source-completeness-and-teacher-triage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate audit and synthetic regression syntax
+        run: |
+          node --check scripts/audit_grade11_mcq_triage_v128.cjs
+          node --check scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Verify full 2250 checked-in source bank and safely report suspicious text without question/answer leakage
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve frozen original answer-free 2250-report-ID parity
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 pending Unit6 academic signoffs and no graded release
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit readiness and Copy-only reports
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve eight reviewed publicly hosted teacher-style resources
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Upload question-ID-only teacher QC triage report and baseline evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v128-2250-mcq-teacher-qc-triage
+          path: |
+            qa-artifacts/grade11-v128-mcq-triage/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 14
