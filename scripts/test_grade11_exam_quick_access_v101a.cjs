@@ -123,6 +123,8 @@ async function browserAudit(){
     assert.ok((await page.locator('#filter-status').innerText()).includes('3 available links'));
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit 3 MCQ list overflow');
     await page.screenshot({path:path.join(out,'unit3-summative-40-80-mcq-phone.png'),fullPage:true});
+    // Restore numericals before checking Unit 6's deliberately empty numerical-resources category.
+    await page.locator('#kind-filter').selectOption('numericals');
     await page.locator('#unit-filter').selectOption('6');
     assert.ok((await page.locator('.unit[data-unit="6"] .empty').innerText()).includes('No separately verified page'));
     assert.equal(await page.locator('.unit[data-unit="6"] .empty').isVisible(),true);
