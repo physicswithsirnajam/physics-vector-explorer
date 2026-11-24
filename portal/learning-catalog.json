@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "pilot-v140-unit-aware-five-stage-resource-navigation",
+  "catalogVersion": "pilot-v96-unit06-provisional-public-practice-discovery",
   "accessNote": "Course catalogue is public metadata only, NOT access authorization. Current Grade XI Units 1–5 retain 1,690 provisional MCQs and partial Unit 6 Topics 6.1–6.7 contribute 560 more, giving 2,250 public Test Builder items, and 31 public simulations. Individual public study pages and answer keys remain readable by direct URL; private progress and enrolled courseLessons use Firebase Security Rules. Protected notes migration is planned, not active. Existing Grade XI pilot enrollment is currently self-enrolled, not admin-approved.",
   "grades": [
     {
@@ -27,8 +27,7 @@
             "simulation-library",
             "practice",
             "blueprint",
-            "progress",
-            "unit1-supplementary-videos"
+            "progress"
           ],
           "qualityStatus": "academic-audit-pending",
           "resourceAccess": "mixed-public-and-pilot-protected",
@@ -60,8 +59,7 @@
             "unit2-numericals",
             "unit2-descriptive",
             "unit2-formula-sheet",
-            "unit2-concept-lab",
-            "unit2-supplementary-videos"
+            "unit2-concept-lab"
           ],
           "qualityStatus": "source-based teacher materials; digital structure QC passed; independent scientific and page-level review ongoing",
           "resourceAccess": "public-learning-materials-plus-enrolled-protected-lessons",
@@ -95,8 +93,7 @@
             "unit3-mcq-full80",
             "unit3-textbook-numericals",
             "unit3-descriptive-practice",
-            "unit3-assessment-pack",
-            "unit3-supplementary-videos"
+            "unit3-assessment-pack"
           ],
           "qualityStatus": "Provisional public Unit 3 practice: original 80 summative MCQs plus 80 master collision summative and 60 master momentum formative MCQs (17 intact 4-question scenarios), 40 descriptive marks in separate original papers. Later Topic 3.1/3.2 revised keys disagree with earlier saved student edition and are withheld; independent teacher scientific QC remains pending.",
           "resourceAccess": "public-learning-resources",
@@ -138,8 +135,7 @@
             "unit4-assessment-pack",
             "unit4-projector-practice",
             "unit4-discussion-slides",
-            "unit4-slo-focus",
-            "unit4-supplementary-videos"
+            "unit4-slo-focus"
           ],
           "qualityStatus": "Public provisional Unit 4-only assessment practice: 80 MCQs, 40 descriptive marks, manual practice OMR sheets, explained teacher key and source-calculated SLO/marks distributions. Teacher content and browser/print sign-off still pending. Not an official FBISE key, scannable OMR or recorded exam. The public timed projector mode shows only questions and options; no assessment login, official answer release or grade capture. Public, separate V46 discussion page reveals the provisional answer and reasoning only on explicit teacher command; this is not secured or examiner certified. V47 per-SLO subset counts and cognitive-level mix are calculated live from the provisional original bank, not hand-certified as official exam distributions. V61 supplements central MCQ bank from corrected 8 October source with 160 original 4.1/4.2 items; the 12 new groups and all keys are source-checked structurally. Item-level SLO and independent scientific review remain pending. Original separate classroom80 unchanged. V62 supplemented 155 source-key-matched MCQs from corrected topics 4.3 and 4.4, preserving Word superscript formatting. Five figure-referencing topic 4.3 questions held. Public ungraded practice only; independent academic sign-off pending. V63 added 80 Word source-matched Topic4.5 items and six full scenarios to PUBLIC central practice; independent item-level Physics and FBISE validation remain pending. V64 added original corrected Topic4.6 80 source-key-matched MCQs with six intact scenarios and Word superscripts to PUBLIC ungraded central practice; subject-level review remains pending. V65 completed corrected seven-topic master import except five Figure4.13-dependent Topic4.3 original MCQs. 80 original corrected Topic4.7 Artificial Gravity MCQs added from the source with six intact scenarios. Public practice only, no protected assessment or academic certification. V66 recovered NBF Grade XI textbook Fig4.13 (printed p64), confirmed rectangular-plate perpendicular centre/corner formulas, imported five matching source-key/option items as one independent and one complete 4-item stimulus group, and displays an accessible original figure reference. Complete source inventory 560/560, not independently teacher/FBISE certified.",
           "resourceAccess": "public-learning-resources",
@@ -174,8 +170,7 @@
             "unit5-mcq-set-b-key",
             "unit5-descriptive-student",
             "unit5-descriptive-worked-key",
-            "unit5-projector-discussion",
-            "unit5-supplementary-videos"
+            "unit5-projector-discussion"
           ],
           "qualityStatus": "V59 master-topic import source counts, options, explanation keys and scenario grouping verified structurally; independent item-by-item scientific and book figure audit pending",
           "resourceAccess": "public-learning-resources",
@@ -262,15 +257,6 @@
               "access": "public-link",
               "contentStatus": "public-five-mapped-simulations-standalone-pages-not-private",
               "accessDescription": "Public educational models: they do not require sign-in or store certified assessment grades."
-            },
-            {
-              "id": "unit6-preview-supplementary-videos",
-              "category": "VIDEOS",
-              "title": "Unit 6 — Additional Existing Concept Videos & Original References",
-              "href": "./legacy-hssc-resources.html?unit=6",
-              "access": "public-link",
-              "videoPriority": "supplementary-existing",
-              "verificationNote": "Existing references. Official Physics with Sir Najam videos have not been uploaded or verified."
             }
           ]
         },
@@ -1204,51 +1190,6 @@
       "access": "public-link",
       "contentStatus": "v53-public-unit5-descriptive-teacher-led-stepwise-provisional-discussion",
       "accessDescription": "Public post-practice classroom display (NOT authenticated teacher access). Public key requested only on explicit Reveal. No student responses or grading, and not an official FBISE examination."
-    },
-    {
-      "id": "unit1-supplementary-videos",
-      "category": "VIDEOS",
-      "title": "Unit 1 — Additional Existing Concept Videos & Original References",
-      "href": "./legacy-hssc-resources.html?unit=1",
-      "access": "public-link",
-      "videoPriority": "supplementary-existing",
-      "verificationNote": "Existing public source-linked references; hosted videos are not verified as official Physics with Sir Najam uploads."
-    },
-    {
-      "id": "unit2-supplementary-videos",
-      "category": "VIDEOS",
-      "title": "Unit 2 — Additional Existing Concept Videos & Original References",
-      "href": "./legacy-hssc-resources.html?unit=2",
-      "access": "public-link",
-      "videoPriority": "supplementary-existing",
-      "verificationNote": "Existing public source-linked references; hosted videos are not verified as official Physics with Sir Najam uploads."
-    },
-    {
-      "id": "unit3-supplementary-videos",
-      "category": "VIDEOS",
-      "title": "Unit 3 — Additional Existing Concept Videos & Original References",
-      "href": "./legacy-hssc-resources.html?unit=3",
-      "access": "public-link",
-      "videoPriority": "supplementary-existing",
-      "verificationNote": "Existing public source-linked references; hosted videos are not verified as official Physics with Sir Najam uploads."
-    },
-    {
-      "id": "unit4-supplementary-videos",
-      "category": "VIDEOS",
-      "title": "Unit 4 — Additional Existing Concept Videos & Original References",
-      "href": "./legacy-hssc-resources.html?unit=4",
-      "access": "public-link",
-      "videoPriority": "supplementary-existing",
-      "verificationNote": "Existing public source-linked references; hosted videos are not verified as official Physics with Sir Najam uploads."
-    },
-    {
-      "id": "unit5-supplementary-videos",
-      "category": "VIDEOS",
-      "title": "Unit 5 — Additional Existing Concept Videos & Original References",
-      "href": "./legacy-hssc-resources.html?unit=5",
-      "access": "public-link",
-      "videoPriority": "supplementary-existing",
-      "verificationNote": "Existing public source-linked references; hosted videos are not verified as official Physics with Sir Najam uploads."
     }
   ],
   "originalSourcesNote": "Original Google Sites PDF link annotation inventory verified 2026-11-17: 31 original standalone simulation titles correspond to existing 31 local simulations, 15 unit concept video page links, 2 additional general pages, 1 Unit7 external reading. 17 existing Drive public-link PDFs were separately read-only verified. These are NOT secure paywalled downloads, not hosted videos, and not evidence full text/teacher source rights have been audited. V74 adds 27 direct teacher-curated YouTube entries across Units1–14 (26 distinct IDs), with source links unchanged and Unit10/11 identical bHIhgxav9LY explicitly flagged for correction. Original 17 Google Sites video page URLs and 17 public-link Google Drive notes remain unchanged. Videos play only after a learner clicks a YouTube privacy-enhanced iframe; these links are publicly accessible and are NOT private Firebase teaching resources."
