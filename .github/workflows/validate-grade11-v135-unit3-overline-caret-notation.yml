@@ -1,0 +1,53 @@
+name: Grade XI V135 Unit 3 Explanation Overline and Caret Notation Browser Evidence
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_v135_unit3_notation_browser.cjs"
+      - "quality/grade11-v135-unit3-original-math-overline-explanation-review.md"
+      - ".github/workflows/validate-grade11-v135-unit3-overline-caret-notation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_v135_unit3_notation_browser.cjs"
+      - "quality/grade11-v135-unit3-original-math-overline-explanation-review.md"
+      - ".github/workflows/validate-grade11-v135-unit3-overline-caret-notation.yml"
+  workflow_dispatch:
+jobs:
+  unit3-overline-and-formative-caret-visual-source-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check source-backed Unit3 notation browser review
+        run: node --check scripts/test_grade11_v135_unit3_notation_browser.cjs
+      - name: Preserve V131 source-ID-only 2250 Grade XI notation candidate register
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve V128 original MCQ source structural integrity
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve V99i exact 2250 original answer-free MCQ source IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve V94D all 560 pending Unit6 item approvals and formal nonrelease
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V118 six-unit readiness and Copy-only issue report
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium for original 1280px 390px and 320px student rendering
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 12 original Unit3 candidate IDs and save 9 answer-free notation previews
+        run: node scripts/test_grade11_v135_unit3_notation_browser.cjs
+      - name: Upload Unit3 source-ID-only review report and notation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v135-unit3-caret-overline-notation-evidence
+          path: |
+            qa-artifacts/grade11-v135-unit3-notation-browser/
+            qa-artifacts/grade11-v131-math-notation-triage/
+          if-no-files-found: warn
+          retention-days: 14
