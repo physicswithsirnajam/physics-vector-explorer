@@ -1,0 +1,57 @@
+name: Grade XI V126 Unit 3 Summative 40 and 80 MCQ Revision Links
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v126-unit3-summative-40-80-mcq-quick-links.md"
+      - ".github/workflows/validate-grade11-v126-unit3-summative-mcq-quick-links.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v126-unit3-summative-40-80-mcq-quick-links.md"
+      - ".github/workflows/validate-grade11-v126-unit3-summative-mcq-quick-links.yml"
+  workflow_dispatch:
+jobs:
+  source-verified-unit3-summative-and-unchanged-exam-gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check inherited quick-link source and browser regression
+        run: node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve prior Unit 6 direct topical and balanced MCQ links
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve Unit 5 public worked descriptive key practice-only label
+        run: node scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Preserve original eight public worked-answer and academic-audit source fingerprints
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve six-unit original readiness report and 2250-question inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve all 560 Unit 6 per-item teacher signoffs pending and unreleased formal assessment
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve exactly 2250 pinned answer-free public report references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Playwright Chromium for real multi-viewport checks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 54 direct source routes including Unit 3 40 and 80 summative MCQs at 1280 390 320px
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Upload source-only and real browser QA snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v126-unit3-summative-40-80-quick-access
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
