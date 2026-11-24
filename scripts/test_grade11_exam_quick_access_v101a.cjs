@@ -29,7 +29,7 @@ function audit(){
  pass('unit and study-type dropdowns are labelled and announce filtered results');
  const groups=[...html.matchAll(/<section class="resource-group" data-kind="([^"]+)">([\s\S]*?)<\/section>/g)];
  const resourceLinks=groups.flatMap(g=>[...g[2].matchAll(/<a href="([^"]+)">([^<]+)</g)].map(m=>({category:g[1],href:m[1],label:m[2]})));
- assert.equal(resourceLinks.length,50,'Source-grounded revision link inventory unexpectedly changed');
+ assert.equal(resourceLinks.length,52,'Source-grounded revision link inventory unexpectedly changed');
  for(const link of resourceLinks){
   const target=local(link.href).split('?')[0];
   let file=path.resolve(root,target);
@@ -40,6 +40,10 @@ function audit(){
  }
  assert.ok(resourceLinks.some(x=>x.href==='./unit-03-numericals.html'));
  assert.ok(resourceLinks.some(x=>x.href==='./unit-05-descriptive-student.html'));
+ for(const target of ['./unit-04-combined-student-paper.html','./unit-04-assessment-pack.html'])
+  assert.ok(resourceLinks.some(x=>x.href===target&&x.category==='answers'),'Missing existing Unit 4 integrated 80-mark practice link '+target);
+ assert.ok(fs.readFileSync(path.join(root,'portal/unit-04-combined-student-paper.html'),'utf8').includes('not an official full-syllabus examination'),'Question-only paper must remain transparent');
+ assert.ok(fs.readFileSync(path.join(root,'portal/unit-04-assessment-pack.html'),'utf8').includes('provisional pending teacher academic and print review'),'Worked practice pack must remain provisional');
  for(const target of ['./unit-04-mcq-full80.html','./unit-04-projector-practice.html','./unit-04-discussion-slides.html'])
   assert.ok(resourceLinks.some(x=>x.href===target&&x.category==='mcq'),'Missing existing Unit 4 80-MCQ revision shortcut '+target);
  for(const target of ['./unit-05-mcq-practice.html','./unit-05-mcq-set-b.html','./unit-05-mcq-key.html','./unit-05-mcq-set-b-key.html'])
@@ -52,7 +56,7 @@ function audit(){
   'Existing topic chooser anchor must not be invented');
  assert.ok(fs.readFileSync(path.join(root,'portal/unit-06-balanced-mcq-v95c1.html'),'utf8').includes('Seven-Topic Balanced MCQ Practice'),
   'Balanced destination must remain honest provisional self-practice');
- pass('all 50 existing public learning links resolve locally, including Unit 3 numericals and both focused Unit 6 revision routes');
+ pass('all 52 existing public learning links resolve locally, including Unit 3 numericals and both focused Unit 6 revision routes');
  assert.ok(nav.includes("link('portal/exam-quick-access.html','Exam Quick Access','revision')"));
  assert.ok(nav.includes('permitNavigation(event)')||nav.includes('permitNavigation'));
  assert.ok(html.includes('shared/navigation.js?v=68')&&html.includes('shared/navigation.css?v=58'));
@@ -126,6 +130,18 @@ async function browserAudit(){
     assert.ok((await page.locator('#filter-status').innerText()).includes('4 available links'));
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit4 MCQ menu overflow');
     await page.screenshot({path:path.join(out,'unit4-80mcq-practice-projector-discussion-phone.png'),fullPage:true});
+    await page.locator('#kind-filter').selectOption('answers');
+    const unit4Answers=page.locator('.unit[data-unit="4"] .resource-group[data-kind="answers"]');
+    const answerHrefs=await unit4Answers.locator('a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href')));
+    assert.deepEqual(answerHrefs,[
+     './unit-04-descriptive-practice.html',
+     './unit-04-combined-student-paper.html',
+     './unit-04-assessment-pack.html'
+    ],'Unit 4 answers category must put question-only practice before public worked pack');
+    assert.ok((await page.locator('#filter-status').innerText()).includes('3 available links'));
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit 4 paper/pack links overflow');
+    await page.screenshot({path:path.join(out,'unit4-80mark-question-first-practice-pack-phone.png'),fullPage:true});
+    await page.locator('#kind-filter').selectOption('mcq');
     await page.locator('#unit-filter').selectOption('5');
     const unit5MCQ=page.locator('.unit[data-unit="5"] .resource-group[data-kind="mcq"]');
     assert.equal(await unit5MCQ.locator('a').count(),5,'Unit 5 must show Test Builder, two question-only practice sets and two after-practice keys');
@@ -147,6 +163,6 @@ async function main(){
  await browserAudit();
  console.log('V101-A COMPLETE:',checks,'groups passed; independent academic answer-key signoff not claimed; all data remains unmodified.');
  fs.mkdirSync(out,{recursive:true});
- fs.writeFileSync(path.join(out,'audit.json'),JSON.stringify({version:'V101-A',checks,units:6,resourceLinks:50,approvedSource:'existing portal catalogue/public pages',firebaseWrites:false,firestoreRulesModified:false,appCheckEnforcementModified:false,studentReportSendEnabled:false,academicCertification:false},null,2)+'\n');
+ fs.writeFileSync(path.join(out,'audit.json'),JSON.stringify({version:'V101-A',checks,units:6,resourceLinks:52,approvedSource:'existing portal catalogue/public pages',firebaseWrites:false,firestoreRulesModified:false,appCheckEnforcementModified:false,studentReportSendEnabled:false,academicCertification:false},null,2)+'\n');
 }
 main().catch(e=>{console.error('V101-A FAILED:',e?.stack||String(e));process.exitCode=1;try{server.close()}catch{}});
