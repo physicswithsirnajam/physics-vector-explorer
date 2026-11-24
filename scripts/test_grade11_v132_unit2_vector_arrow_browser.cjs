@@ -54,6 +54,7 @@ async function listen(){
 }
 async function main(){
  sourceContract();
+ fs.mkdirSync(out,{recursive:true}); // Save question-only public screenshots before submission.
  const base=await listen();
  let browser;
  const results=[];
