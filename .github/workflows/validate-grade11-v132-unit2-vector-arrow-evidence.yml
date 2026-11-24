@@ -1,0 +1,53 @@
+name: Grade XI V132 Original Unit 2 Vector Arrow Browser Evidence
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_v132_unit2_vector_arrow_browser.cjs"
+      - "quality/grade11-v132-unit2-real-browser-vector-arrow-visual-review.md"
+      - ".github/workflows/validate-grade11-v132-unit2-vector-arrow-evidence.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_v132_unit2_vector_arrow_browser.cjs"
+      - "quality/grade11-v132-unit2-real-browser-vector-arrow-visual-review.md"
+      - ".github/workflows/validate-grade11-v132-unit2-vector-arrow-evidence.yml"
+  workflow_dispatch:
+jobs:
+  vector-combining-arrow-public-quiz-visual-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check original source-backed V132 browser evidence audit
+        run: node --check scripts/test_grade11_v132_unit2_vector_arrow_browser.cjs
+      - name: Preserve V131 2250-source vector/math notation candidate audit
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve V128 original MCQ completeness and safe text-signals
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve frozen 2250 original answer-free report IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 pending Unit6 signoffs and official graded assessment hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit readiness and Copy-only issue-report limits
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium for real 1280 390 320px visual QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Capture six public question-only vector-arrow views without revealing source keys
+        run: node scripts/test_grade11_v132_unit2_vector_arrow_browser.cjs
+      - name: Upload public question-only screenshot evidence and source-ID-only summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v132-unit2-vector-arrow-browser-evidence
+          path: |
+            qa-artifacts/grade11-v132-unit2-vector-arrow-browser/
+            qa-artifacts/grade11-v131-math-notation-triage/
+          if-no-files-found: warn
+          retention-days: 14
