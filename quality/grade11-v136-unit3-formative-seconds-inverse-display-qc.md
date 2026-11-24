@@ -1,38 +1,35 @@
-# V136 — Preserve original Unit 3 formative explanations while typesetting seconds-inverse
+# V136 — Confirm existing V112 typesets original Unit 3 formative seconds exponents correctly
 
-## Source evidence and prerequisite
+## Corrected source finding
 
-PR **#235/V135** is merged into `main` (24 November 2026, **both GitHub workflows successful**). The V135 source-backed audit inspected **12 original Unit 3 worked-explanation notation candidates** through the unchanged production renderer. Its technical source check passed at 1280px/390px/320px and screenshots demonstrated: (a) the summative average-velocity overline `v̅` appeared legible in sampled Chromium; (b) original **formative** Topic 3.3 momentum explanations for `g11-u03-master-t33-q036` and `q060` contained legible but plain ASCII `s^-1` rather than the typographic scientific unit `s⁻¹`.
+PR **#235/V135** merged with two successful GitHub Actions checks. Its answer-free screenshot evidence showed an overlined velocity symbol and two Unit 3 formative examples that initially appeared to contain raw `s^-1` text. Before considering a display fix, V136 inspected the **actual loaded original V55 question-bank strings** for `g11-u03-master-t33-q036` and `g11-u03-master-t33-q060`.
 
-This is a **narrow mathematical display consistency improvement**. There is **no evidence that any specific answer, calculation or official SLO mapping is wrong**, and the original source must remain unchanged.
+The original text is actually **`s^{-1}`** (with braces), **not** `s^-1`. This distinction matters. The existing `shared/navigation.js` loads the **V112 sitewide scientific-notation renderer**, which recognizes `s^{-1}` and presents a real HTML superscript `s` + `<sup>-1</sup>` while preserving the exact original raw characters in `.textContent` through visually hidden source spans. The CSS ensures the superscript remains readable on-screen and in print. This explains why the V135 screenshots looked typographically correct.
 
-## The strictly limited presentation change
+**The initial proposed extra V136 formatting wrapper was therefore unnecessary. It was completely reverted before review.** The original `practice-engine/index.html` on this PR branch has the **same Git blob SHA as `main`**, so merging V136 does not modify the student quiz, any original questions, formatting scripts, source keys or scores.
 
-The actual current quiz's `practice-engine/index.html` already calls `setRich(node,q.explanationHtml,q.explanation)` when displaying (1) the optional checked-answer feedback and (2) question-by-question solutions after submission. V136 adds a small source-ID-allowlisted `setPracticeExplanation(node,q)` wrapper at *these two display sites only*. The original rich-text `setRich` sanitization still runs first.
+## What the new V136 regression really tests
 
-For exactly **11 original Unit 3 formative Topic 3.3 candidate IDs** — `g11-u03-master-t33-q036`, `q042`, `q045`, `q047`, `q050`, `q053`, `q055`, `q057`, `q058`, `q059`, and `q060` — the wrapper changes visible text-node occurrences of the literal original `s^-1` to `s⁻¹`. It preserves MathML, preformatted code blocks, all other characters and any other original exponent strings. A listed source ID that does not contain the exact token stays unchanged. These are **formative** materials, not newly summative-exam eligible.
+The corrected `scripts/test_grade11_v136_unit3_seconds_display_browser.cjs` is a **read-only, real-browser guard** for this existing behavior. On an ephemeral local server it:
 
-**No question-bank JSON/B64 or explanation text is edited.** All questions, correct letters, option choices, calculations, source metadata, SLO labels, cognitive levels, stimulus groups, print links, scores and saved records remain exactly as before. This is deliberately **not a global regex** on the entire Grade XI bank.
+1. Opens the actual source-backed Unit 3 practice engine with **all 60 original formative** items from the 220-item public bank at **1280px, 390px and 320px**.
+2. Submits a real 60-item formative practice in Chromium and checks that all **11 source-identified Topic 3.3 review candidates** retain original immutable IDs and **Formative** classification. Where original explanation content includes `s^{-1}`, the completed-test review must contain **a real visible `<sup>-1</sup>`**, the V112 source-preserving full text `s^{-1}`, and hidden source caret/braces. No unit-specific replacement is performed.
+3. Uses the actual optional **Check Answer** feedback UI on original formative `q036` to confirm that the same existing V112 typesetter works before final submission, without screenshotting answer keys.
+4. Confirms that an unrelated **summative** overlined velocity original `XI-U03-MCQ-0031` remains unaltered. The original Unit 3 formative 60 are still excluded when a student selects `scope=summative` for theory-exam practice.
+5. Saves **six small isolated source notation screenshots** for `q036` and `q060` at the three widths; no worked-answer strings, correct choices, questions, private NBF PDF scans, student data or credentials are exported. Checks original file SHA-256 values before and after the run, source counts, basic no-overflow/JavaScript-error conditions and the original academic-release safeguards.
 
-## End-to-end original student behavior
+The test is designed to **fail if the existing V112 renderer or its source-preservation/print-oriented contract is broken**. It does not turn any question into a certified FBISE summative item or independently verify answer correctness.
 
-New `scripts/test_grade11_v136_unit3_seconds_display_browser.cjs` uses the **actual checked-in 220-item Unit 3 bank and live Practice Engine** over an ephemeral local read-only HTTP server. At **1280px desktop, 390px mobile and 320px narrow phone**, it:
+## Scope, academic preservation and roadmap
 
-1. Opens an actual Unit3 **formative-only practice containing all 60 original formative items** and submits the real test unanswered in the browser; verifies all 60 source references, all 11 original candidate IDs, and that every original `s^-1` among them displays `s⁻¹` in the genuine completed-test explanation, with no raw `s^-1` left at that location.
-2. Exercises the actual checked-answer feedback UI using original formative `q036` (test-only selected from the real loaded bank); checks that it uses the same science-preserving `s⁻¹` display.
-3. Verifies the original **summative** average-velocity overline from `XI-U03-MCQ-0031` is still present; an out-of-scope synthetic Unit2 string remains untouched; the original 11 items remain formative.
-4. Generates **six isolated symbol-only screenshot previews**, from original `q036` and `q060` at the three widths, plus an answer-free status report. No entire solution, original key, teacher-only PDF, login or student record is exported.
-5. Hash-compares the current original source files and academic release matrix before/after the test. Checks for viewport overflow and JavaScript errors. The test has no authority to certify scientific answer correctness.
-
-## Academic/nonrelease boundaries
-
-- **All 2,250 provisional Grade XI public question references** remain **275 / 206 / 220 / 640 / 349 / 560**. Unit3's original 60 formative items are *still excluded* by the theory-exam `scope=summative` filter.
-- Unit6 **all 560 item-level academic signoffs remain PENDING**, full course `planned`, official graded assessment `not-published`. Its corrected V129/V130 provisional SLO badges/results remain unchanged.
-- No Firebase, App Check, Auth, student data saving, report sending (the button stays **Copy only**), school exam security, logo, original illustrations or printed watermark changes.
-- A rendered superscript in these source-identified formative explanations is a limited visual improvement, **not** blanket approval of the 11 explanations, the remaining V131 source flags or all 2,250 answers.
+- **Exactly three nonproduction files changed** in the final PR: this teacher quality report, the revised V136 browser regression, and its GitHub Actions workflow. No runtime files or original question/source keys are changed.
+- The prior V131 source audit found 12 Unit 3 notation candidates (one summative overline, 11 formative caret). V136 proves that the selected braced seconds-unit cases are **already handled** by V112, avoiding a redundant rendering implementation. Remaining independently identified notation candidates still require source-specific visual QC.
+- Original public provisional Grade XI MCQ count remains **2,250** (275/206/220/640/349/560). Unit 6's 560 individual academic signoffs remain **PENDING**, full course `planned`, graded examination `not-published`.
+- Original Firebase/Auth/App Check behavior, account data, score persistence, Copy-only teacher issue reports, original V112 watermark, and current completed-review labels are unchanged.
+- CI executes this complete original-bank browser regression and existing V131/V128/V99i/V94D/V118 source/release checks. Screenshot passing is **representative browser evidence**, not a guarantee across every browser or a full scientific-content audit.
 
 ## Owner acceptance
 
-PR **#236 / V136** should contain exactly **four files**: one short Practice Engine rendering wrapper change, the new original 60-formative-result Chromium test, this quality rationale and a dedicated Actions workflow. Keep it **Draft** until every latest-head check is green; if red, do not merge, and amend *the same branch*. Once green, **Ready for review → Merge pull request → Confirm merge**.
+Review draft **PR #236** as a **QA-only proposal**, not the original suggested formatting change. In Files changed, expect **only three nonproduction files** and **no `practice-engine/index.html`**. Do **not** merge if any latest-head check is red. After all green, use **Ready for review → Merge pull request → Confirm merge**. Review the six V136 source-notation screenshots if useful; they should display superscript `s⁻¹` while retaining source `s^{-1}` in DOM text.
 
-After GitHub Pages deployment, take any Unit 3 **formative** Topic 3.3 question whose explanation contains `s^-1`, use `Check Answer` or submit, and confirm the displayed unit is **s⁻¹**, while the original answer, its formative label, and optional result printing are unchanged. Review the six source-ID-only screenshots if desired.
+**Quality lesson:** do not "fix" source notation that the existing safe typesetting layer already renders correctly. Protect original source fidelity first, then invest in genuine remaining student-visible or academic defects.
