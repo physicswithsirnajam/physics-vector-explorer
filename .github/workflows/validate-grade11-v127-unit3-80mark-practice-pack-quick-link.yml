@@ -1,0 +1,57 @@
+name: Grade XI V127 Unit 3 Public 80-Mark Practice Pack Quick Link
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v127-unit3-80mark-public-practice-pack-quick-link.md"
+      - ".github/workflows/validate-grade11-v127-unit3-80mark-practice-pack-quick-link.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v127-unit3-80mark-public-practice-pack-quick-link.md"
+      - ".github/workflows/validate-grade11-v127-unit3-80mark-practice-pack-quick-link.yml"
+  workflow_dispatch:
+jobs:
+  unit3-public-after-practice-pack-and-unchanged-academic-guards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check quick-access source and responsive browser regression
+        run: node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve Unit 6 public practice routes
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve Unit 5 post-practice worked-key label
+        run: node scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Preserve eight public teacher resource source fingerprints
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve six unit readiness source inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve 560 pending Unit6 academic approvals and formal assessment nonrelease
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve 2250 answer-free report IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium browser runtime
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 55 existing routes and question-before-public-key Unit3 phone navigation
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Upload source and browser QA artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v127-unit3-80mark-public-pack
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
