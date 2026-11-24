@@ -289,7 +289,7 @@
     records.forEach(add);
     // These verified same-site library routes are navigable from the unit menu,
     // but are never represented as original source videos or graded assignments.
-    if(!groups.get('EXPLORE').length && unit.simulationCount>0 && unit.simulationHref)
+    if(unit.simulationCount>0 && unit.simulationHref)
       add({id:'v140-simulations-'+unit.unit,category:'SIMULATIONS',
         title:'Unit '+unit.unit+' · Existing Simulations',
         href:unit.simulationHref,access:'public-link'});
@@ -333,6 +333,13 @@
     for(const unit of units){
       const item=e('p',null,'Unit '+unit.unit+' · '+unit.title+' · Coming soon');
       rows.append(item);
+      // Existing enrichment simulations for future units may already be public.
+      // This link does NOT publish the unit, its notes, MCQ bank or exams.
+      const sim=safeHref(unit.simulationHref,new URL('portal/',root));
+      if(unit.simulationCount>0 && sim){
+        rows.append(makeLink(sim,'Explore '+unit.simulationCount+
+          ' existing simulation'+(unit.simulationCount===1?'':'s')+' · Unit still planned','public-link'));
+      }
     }
     group.append(rows);
     return group;
