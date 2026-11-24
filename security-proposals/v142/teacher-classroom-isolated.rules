@@ -1,0 +1,35 @@
+// V142 — ISOLATED FIRESTORE EMULATOR FIXTURE ONLY; NEVER DEPLOY THIS FILE.
+// This deliberately omits 227 owner-provided private production baseline rules,
+// profiles, enrollment, attempts, privacy and lessons. It is NOT a replacement.
+// Future client teacher views require independently verified authorization rules.
+// This version intentionally denies all browser SDK access to class data.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // BEGIN V142 scoped classroom block — additive to private rules only when tested.
+    match /teacherDirectory/{teacherUid} {
+      allow read, write: if false;
+    }
+    match /classes/{classId} {
+      allow read, write: if false;
+      match /members/{studentUid} {
+        allow read, write: if false;
+      }
+      match /assignments/{assignmentId} {
+        allow read, write: if false;
+      }
+      match /submissions/{submissionId} {
+        allow read, write: if false;
+      }
+    }
+    match /teacherClassAudit/{entryId} {
+      allow read, write: if false;
+    }
+    // END V142 scoped classroom block.
+
+    // Emulator fixture only: all other paths denied here. NEVER deploy.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
