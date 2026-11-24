@@ -127,8 +127,8 @@ async function main(){
    },'<img src=x onerror=alert(1)>'));
    assert.equal(await page.locator('#psn-account-name').innerText(),'<img src=x onerror=alert(1)>');
    assert.equal(await page.locator('#psn-account-holder img').count(),0,'name was interpreted as untrusted markup');
-   assert.equal(await page.locator('#psn-account-email').innerText(),'second@example.invalid');
    await page.locator('#psn-account-trigger').click();
+   assert.equal(await page.locator('#psn-account-email').innerText(),'second@example.invalid');
    await page.locator('#psn-account-signout').click();
    assert.equal(await holder.isVisible(),false);
    assert.equal(await page.evaluate(()=>window.fakeLogoutCount),1);
