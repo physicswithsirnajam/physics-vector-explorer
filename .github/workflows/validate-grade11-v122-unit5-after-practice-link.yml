@@ -1,0 +1,39 @@
+name: Grade XI V122 Unit 5 Public After-Practice Link Clarity
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_v122_unit5_public_after_practice_label.cjs"
+      - "quality/grade11-v122-unit5-public-after-practice-link-clarity.md"
+      - ".github/workflows/validate-grade11-v122-unit5-after-practice-link.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_v122_unit5_public_after_practice_label.cjs"
+      - "quality/grade11-v122-unit5-public-after-practice-link-clarity.md"
+      - ".github/workflows/validate-grade11-v122-unit5-after-practice-link.yml"
+  workflow_dispatch:
+jobs:
+  source-and-academic-safety:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check student-facing V122 label regression
+        run: node --check scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Verify honest public after-practice label and original practice-first destination
+        run: node scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Preserve original eight publicly hosted worked-answer and academic-audit resources
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve six-unit exam readiness source and public resource inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve 560 pending Unit 6 reviews and unpublished formal assessment
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve answer-free 2250 public MCQ reporting references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
