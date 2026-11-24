@@ -4,7 +4,6 @@ on:
     paths:
       - "shared/navigation.js"
       - "shared/navigation.css"
-      - "portal/learning-catalog.json"
       - "scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs"
       - "quality/grade11-v140-unified-unit-aware-navigation-teacher-qc.md"
       - ".github/workflows/validate-grade11-v140-unit-aware-sidebar.yml"
@@ -13,7 +12,6 @@ on:
     paths:
       - "shared/navigation.js"
       - "shared/navigation.css"
-      - "portal/learning-catalog.json"
       - "scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs"
       - "quality/grade11-v140-unified-unit-aware-navigation-teacher-qc.md"
       - ".github/workflows/validate-grade11-v140-unit-aware-sidebar.yml"
