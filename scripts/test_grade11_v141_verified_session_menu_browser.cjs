@@ -115,7 +115,7 @@ async function main(){
    assert.equal(await page.locator('#psn-account-popover').getAttribute('open'),null);
    assert.equal(await page.evaluate(()=>document.activeElement?.id),'psn-account-trigger');
    await page.locator('#psn-account-trigger').click();
-   await page.locator('.topbar .brand-logo').click({force:true,modifiers:[]}).catch(()=>{});
+   // Exercise outside click without navigating away from the mounted module.
    // Opening again and clicking outside never signs out.
    await page.locator('#psn-account-trigger').click();
    await page.evaluate(()=>document.body.dispatchEvent(new MouseEvent('click',{bubbles:true})));
