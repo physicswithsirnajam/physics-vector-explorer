@@ -1,0 +1,57 @@
+name: Grade XI V124 Unit 4 80-MCQ Self-Practice and Projector Revision Paths
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v124-unit4-80mcq-exam-quick-pathways.md"
+      - ".github/workflows/validate-grade11-v124-unit4-80mcq-exam-quick.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_exam_quick_access_v101a.cjs"
+      - "quality/grade11-v124-unit4-80mcq-exam-quick-pathways.md"
+      - ".github/workflows/validate-grade11-v124-unit4-80mcq-exam-quick.yml"
+  workflow_dispatch:
+jobs:
+  source-backed-unit4-practice-and-unchanged-academic-safeguards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check revised Grade XI quick-access regression
+        run: node --check scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve existing Unit 6 three provisional MCQ revision routes
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve V122 Unit 5 public post-practice descriptive key distinction
+        run: node scripts/test_grade11_v122_unit5_public_after_practice_label.cjs
+      - name: Preserve V121 original eight public worked-key and academic-audit route fingerprints
+        run: node scripts/test_grade11_v121_public_teacher_resources_audience_review.cjs
+      - name: Preserve six-unit source-grounded exam-readiness inventory
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve 560 pending Unit 6 individual approvals and formal nonrelease
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve 2250 answer-free pinned MCQ public report IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium for real responsive navigation
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 50 exact resource links and Unit 4 practice-first sequence at 1280 390 320px
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Upload synthetic browser screenshots and audit output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v124-unit4-mcq-exam-quick-links
+          path: |
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
