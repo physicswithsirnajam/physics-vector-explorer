@@ -123,6 +123,11 @@ async function main(){
    assert.ok((await page.locator('#mcq-report-status').innerText()).includes('nothing was sent automatically'));
    // Existing copy action remains available after a download.
    await page.locator('#copy-mcq-report').click();
+   // Clipboard write is async; wait for the existing copy/fallback path to settle.
+   await page.waitForFunction(()=>{
+    const status=document.querySelector('#mcq-report-status')?.textContent||'';
+    return status.startsWith('Copied.')||status.startsWith('Automatic copying was blocked.');
+   },null,{timeout:8000});
    const copyStatus=await page.locator('#mcq-report-status').innerText();
    assert.ok(copyStatus.includes('no report has been sent automatically')||
       copyStatus.includes('Automatic copying was blocked'),
