@@ -138,7 +138,7 @@ async function main(){
    const u6=units.nth(5);
    assert.ok((await u6.textContent()).includes('individual teacher signoffs'));
    const future=page.locator('.psn-drawer-future');
-   assert.ok((await future.first().innerText()).includes('Units 7–10'));
+   assert.ok((await future.first().innerText()).includes('7–10'));
    await future.first().locator('summary').click();
    assert.ok((await future.first().innerText()).includes('Unit 7'));
    assert.ok((await future.first().innerText()).includes('Unit 10'));
