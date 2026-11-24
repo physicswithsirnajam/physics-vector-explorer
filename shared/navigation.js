@@ -197,6 +197,7 @@
     trigger.setAttribute('aria-label','Close unit resources menu');
     close.focus();
     if(!loaded&&!loading)loadResources();
+    else if(loaded)syncActiveUnit();
   }
   trigger.addEventListener('click',()=>opened?closeDrawer():openDrawer());
   close.addEventListener('click',()=>closeDrawer());
@@ -336,6 +337,30 @@
     group.append(rows);
     return group;
   }
+  // Simulation-unit filters can change location.search with replaceState().
+  // Re-read the current URL every time the drawer opens, not only on first load.
+  function syncActiveUnit(){
+    const selected=activeUnitNumber();
+    for(const unit of content.querySelectorAll('.psn-drawer-unit')){
+      const match=Number(unit.dataset.psnUnit)===selected;
+      unit.open=match;
+      if(!match)continue;
+      let chosen=false;
+      for(const stage of unit.querySelectorAll('.psn-drawer-stage')){
+        const current=[...stage.querySelectorAll('a[href]')].some(a=>isCurrent(a.href));
+        stage.open=current;
+        if(current)chosen=true;
+      }
+      if(!chosen){
+        const first=unit.querySelector('.psn-drawer-stage');
+        if(first)first.open=true;
+      }
+    }
+    for(const link of content.querySelectorAll('a[href]')){
+      if(isCurrent(link.href))link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    }
+  }
   async function loadResources(){
     loading=true;live.textContent='Loading available Grade XI unit resources and provisional practice previews…';
     try{
@@ -357,6 +382,7 @@
       if(next.length)fragment.append(comingSoon(next,'Next units · 7–10'));
       if(later.length)fragment.append(comingSoon(later,'Future units · 11–14'));
       content.replaceChildren(fragment);
+      syncActiveUnit();
       live.textContent=active.length+' available or provisional Grade XI unit menus, in five learning stages. Planned units are labelled Coming soon; Unit 6 remains a provisional preview.';
       loaded=true;
     }catch(error){
