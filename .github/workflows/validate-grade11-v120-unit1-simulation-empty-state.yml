@@ -1,0 +1,60 @@
+name: Grade XI V120 Honest Unit 1 Simulation Availability and Study Alternatives
+on:
+  pull_request:
+    paths:
+      - "portal/exam-quick-access.html"
+      - "portal/simulations.html"
+      - "quality/grade11-v120-unit1-zero-simulation-student-navigation.md"
+      - "scripts/test_grade11_unit1_simulation_empty_state_v120.cjs"
+      - ".github/workflows/validate-grade11-v120-unit1-simulation-empty-state.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/exam-quick-access.html"
+      - "portal/simulations.html"
+      - "quality/grade11-v120-unit1-zero-simulation-student-navigation.md"
+      - "scripts/test_grade11_unit1_simulation_empty_state_v120.cjs"
+      - ".github/workflows/validate-grade11-v120-unit1-simulation-empty-state.yml"
+  workflow_dispatch:
+jobs:
+  honest-student-navigation-and-unchanged-science:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate V120 audit script syntax
+        run: node --check scripts/test_grade11_unit1_simulation_empty_state_v120.cjs
+      - name: Install pinned Chromium for actual desktop/mobile and full-directory navigation
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify actionable honest zero-simulation Unit1 state and no changed banks or exams
+        run: node scripts/test_grade11_unit1_simulation_empty_state_v120.cjs
+      - name: Preserve original 31 models, nine enhanced labs, all unit assignments and deep links
+        run: node scripts/test_grade11_simulation_migration_v72.cjs
+      - name: Preserve all 43 Exam Quick Access source-backed links and 1280/390/320 six-unit filters
+        run: node scripts/test_grade11_exam_quick_access_v101a.cjs
+      - name: Preserve V119 Unit6 balanced and topic shortcuts
+        run: node scripts/test_grade11_unit6_exam_quick_paths_v119.cjs
+      - name: Preserve V118 six-unit exam source readiness and public teacher-material classification register
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve original Units1–6 module counts, pending Unit6 teacher exam review locks
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve signed answer-free 2250 public report reference catalog
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Upload only synthetic public-page screenshots and no student data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v120-honest-unit1-simulation-navigation
+          path: |
+            qa-artifacts/grade11-v120-unit1-simulation-availability/
+            qa-artifacts/grade11-exam-quick-access-v101a/
+            qa-artifacts/grade11-v118-exam-readiness/
+          if-no-files-found: warn
+          retention-days: 10
