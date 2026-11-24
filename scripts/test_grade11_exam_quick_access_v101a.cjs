@@ -29,7 +29,7 @@ function audit(){
  pass('unit and study-type dropdowns are labelled and announce filtered results');
  const groups=[...html.matchAll(/<section class="resource-group" data-kind="([^"]+)">([\s\S]*?)<\/section>/g)];
  const resourceLinks=groups.flatMap(g=>[...g[2].matchAll(/<a href="([^"]+)">([^<]+)</g)].map(m=>({category:g[1],href:m[1],label:m[2]})));
- assert.equal(resourceLinks.length,54,'Source-grounded revision link inventory unexpectedly changed');
+ assert.equal(resourceLinks.length,55,'Source-grounded revision link inventory unexpectedly changed');
  for(const link of resourceLinks){
   const target=local(link.href).split('?')[0];
   let file=path.resolve(root,target);
@@ -39,6 +39,11 @@ function audit(){
   assert.ok(!/^https?:\/\/(?!physicswithsirnajam\.github\.io)/i.test(link.href));
  }
  assert.ok(resourceLinks.some(x=>x.href==='./unit-03-numericals.html'));
+ assert.ok(resourceLinks.some(x=>x.href==='./unit-03-assessment-pack.html'&&x.category==='answers'),'Missing original public Unit3 80-mark practice pack shortcut');
+ const unit3Pack=fs.readFileSync(path.join(root,'portal/unit-03-assessment-pack.html'),'utf8');
+ assert.ok(unit3Pack.includes('not an official FBISE full-syllabus paper'),'Pack must warn it is not an official exam');
+ assert.ok(unit3Pack.includes('provisional pending final teacher review'),'Unit3 worked material remains academically provisional');
+ assert.ok(unit3Pack.includes('manual practice and marking'),'OMR must remain manual, never claimed scannable');
  for(const target of ['./unit-03-mcq-practice.html','./unit-03-mcq-full80.html'])
   assert.ok(resourceLinks.some(x=>x.href===target&&x.category==='mcq'),'Missing source-backed Unit 3 summative-only MCQ edition: '+target);
  for(const target of ['portal/unit-03-mcq-practice.html','portal/unit-03-mcq-full80.html']){
@@ -63,7 +68,7 @@ function audit(){
   'Existing topic chooser anchor must not be invented');
  assert.ok(fs.readFileSync(path.join(root,'portal/unit-06-balanced-mcq-v95c1.html'),'utf8').includes('Seven-Topic Balanced MCQ Practice'),
   'Balanced destination must remain honest provisional self-practice');
- pass('all 54 existing public learning links resolve locally, including Unit 3 numericals and both focused Unit 6 revision routes');
+ pass('all 55 existing public learning links resolve locally, including Unit 3 numericals and both focused Unit 6 revision routes');
  assert.ok(nav.includes("link('portal/exam-quick-access.html','Exam Quick Access','revision')"));
  assert.ok(nav.includes('permitNavigation(event)')||nav.includes('permitNavigation'));
  assert.ok(html.includes('shared/navigation.js?v=68')&&html.includes('shared/navigation.css?v=58'));
@@ -123,6 +128,15 @@ async function browserAudit(){
     assert.ok((await page.locator('#filter-status').innerText()).includes('3 available links'));
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit 3 MCQ list overflow');
     await page.screenshot({path:path.join(out,'unit3-summative-40-80-mcq-phone.png'),fullPage:true});
+    await page.locator('#kind-filter').selectOption('answers');
+    const unit3Answers=page.locator('.unit[data-unit="3"] .resource-group[data-kind="answers"]');
+    assert.deepEqual(await unit3Answers.locator('a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href'))),[
+     './unit-03-descriptive-practice.html',
+     './unit-03-assessment-pack.html'
+    ],'Unit3 question practice must precede the public post-practice worked pack');
+    assert.ok((await page.locator('#filter-status').innerText()).includes('2 available links'));
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),false,'Unit3 practice pack links overflow phone viewport');
+    await page.screenshot({path:path.join(out,'unit3-80mark-public-practice-pack-phone.png'),fullPage:true});
     // Restore numericals before checking Unit 6's deliberately empty numerical-resources category.
     await page.locator('#kind-filter').selectOption('numericals');
     await page.locator('#unit-filter').selectOption('6');
@@ -183,6 +197,6 @@ async function main(){
  await browserAudit();
  console.log('V101-A COMPLETE:',checks,'groups passed; independent academic answer-key signoff not claimed; all data remains unmodified.');
  fs.mkdirSync(out,{recursive:true});
- fs.writeFileSync(path.join(out,'audit.json'),JSON.stringify({version:'V101-A',checks,units:6,resourceLinks:54,approvedSource:'existing portal catalogue/public pages',firebaseWrites:false,firestoreRulesModified:false,appCheckEnforcementModified:false,studentReportSendEnabled:false,academicCertification:false},null,2)+'\n');
+ fs.writeFileSync(path.join(out,'audit.json'),JSON.stringify({version:'V101-A',checks,units:6,resourceLinks:55,approvedSource:'existing portal catalogue/public pages',firebaseWrites:false,firestoreRulesModified:false,appCheckEnforcementModified:false,studentReportSendEnabled:false,academicCertification:false},null,2)+'\n');
 }
 main().catch(e=>{console.error('V101-A FAILED:',e?.stack||String(e));process.exitCode=1;try{server.close()}catch{}});
