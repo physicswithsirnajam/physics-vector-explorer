@@ -1,0 +1,53 @@
+name: Grade XI V133 Unit 1 MathML and Superscript Browser Visual Evidence
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_v133_unit1_mathml_browser.cjs"
+      - "quality/grade11-v133-unit1-rich-mathml-browser-visual-review.md"
+      - ".github/workflows/validate-grade11-v133-unit1-mathml-visual.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_v133_unit1_mathml_browser.cjs"
+      - "quality/grade11-v133-unit1-rich-mathml-browser-visual-review.md"
+      - ".github/workflows/validate-grade11-v133-unit1-mathml-visual.yml"
+  workflow_dispatch:
+jobs:
+  original-mathml-rendering-evidence-with-source-academic-safeguards:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original Unit1 browser visual QA
+        run: node --check scripts/test_grade11_v133_unit1_mathml_browser.cjs
+      - name: Preserve source-based V131 vector and formula notation candidate queue
+        run: node scripts/test_grade11_math_notation_v131.cjs
+      - name: Preserve all 2250 provisional original bank structural and character integrity
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve frozen answer-free 2250 public source IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 Unit6 signoffs pending and formal graded nonrelease
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit original readiness and Copy-only issue report
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium for original-question desktop and mobile screenshot QA
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Inspect 4 source-backed Unit1 Greek and MathML superscript questions at 1280 390 320px
+        run: node scripts/test_grade11_v133_unit1_mathml_browser.cjs
+      - name: Upload 12 public question-only visual screenshots and source-ID-only teacher review log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v133-unit1-mathml-browser-evidence
+          path: |
+            qa-artifacts/grade11-v133-unit1-mathml-visual/
+            qa-artifacts/grade11-v131-math-notation-triage/
+          if-no-files-found: warn
+          retention-days: 14
