@@ -67,7 +67,8 @@ async function browserAudit(){
     await page.locator('#submit').click();
     await page.locator('#result').waitFor({state:'visible',timeout:10000});
     assert.equal(await page.locator('#review .review-item').count(),4);
-    const refs=await page.locator('#review .review-item > p.muted').allInnerTexts();
+    // Each review card also contains a muted issue-report status paragraph; count only source metadata.
+    const refs=await page.locator('#review .review-item > p.muted:not(.no-print)').allInnerTexts();
     assert.equal(refs.length,4);
     assert.ok(refs.every(s=>/Ref: \S+/.test(s)),'Original question IDs missing');
     if(unit===6){
