@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "version": "V121",
+  "scope": "TEACHER_REVIEW_ONLY_NO_PUBLIC_VISIBILITY_CHANGES",
+  "ownerDecision": "PENDING",
+  "reviewDate": "2026-11-24",
+  "examDate": "2026-12-07",
+  "context": "Owner confirmed PR #220 merged; review the eight already public answer, projector and academic audit routes without removing revision resources.",
+  "examinedPublicRoutes": 8,
+  "keyAndWorkedAnswerRoutes": 3,
+  "projectorDiscussionRoutes": 2,
+  "academicMappingRoutes": 2,
+  "figureReviewRoutes": 1,
+  "recommendation": "Retain current access pending explicit owner decisions. Reveal controls, hidden markup, omitted menus and a client-only login prompt do not secure static answer data. Genuine teacher-only access needs backend authorization and content relocation.",
+  "limitations": [
+    "Repository source/file inspection; not an independent live CDN access test",
+    "No NBF scans or original FBISE PDF re-evaluated for academic key correctness",
+    "No individual question board/exam signoff added",
+    "No live Firebase, account data or student submissions accessed"
+  ],
+  "itemReviews": [
+    {
+      "reviewId": "V121-01",
+      "publicRoute": "portal/unit-05-descriptive-teacher.html",
+      "originalBlobSha": "9b89cde5b8510998f778fb5627f2fc48da6d6b33",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-05-descriptive-teacher.js",
+          "originalBlobSha": "f9442b8401bf1fe94729c717a50efe5e365c3334"
+        },
+        {
+          "path": "question-bank/grade-11/unit-05-v52-descriptive-teacher-key.json",
+          "originalBlobSha": "a51ffcfa17443dd837e7b298a40e352dadecbb49"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-after-practice-descriptive-marking",
+      "priority": "P1",
+      "sourceSupportedDescription": "Unit 5 provisional post-practice worked Section B/C answers; 18 A/B alternatives with point-based marking",
+      "verbatimPageEvidence": [
+        "Public, not access-restricted.",
+        "Teacher academic approval remains pending."
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_AS_AFTER_PRACTICE_GUIDANCE_OR_MOVE_FULL_KEY_TO_AUTHENTICATED_STORAGE_IF_RESTRICTION_REQUIRED",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-02",
+      "publicRoute": "portal/unit-05-mcq-key.html",
+      "originalBlobSha": "64d949bf1f8f78456b2cb3af893cf7520cb3daaa",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-05-mcq-key.js",
+          "originalBlobSha": "d69bd80b9ef501256e02ccbcc6fe789c60fcf71c"
+        },
+        {
+          "path": "question-bank/grade-11/unit-05-v50-16-teacher-key.json",
+          "originalBlobSha": "7cf3c01ff6dc6d9b4900c655efa5f81433ba5538"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-after-practice-mcq-key-A",
+      "priority": "P1",
+      "sourceSupportedDescription": "Unit 5 Set A, 16 practice MCQs with correct options and explanations on deliberate reveal",
+      "verbatimPageEvidence": [
+        "Public post-practice resource",
+        "Subject accuracy and wording still require teacher review."
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_AS_AFTER_PRACTICE_GUIDANCE_OR_MOVE_FULL_KEY_TO_AUTHENTICATED_STORAGE_IF_RESTRICTION_REQUIRED",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-03",
+      "publicRoute": "portal/unit-05-mcq-set-b-key.html",
+      "originalBlobSha": "112e6fa7e6ecc7b7b70ff8fd2a66bd31251244cf",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-05-mcq-set-b-key.js",
+          "originalBlobSha": "fb692ed96baa35dfae05593020eb0984d99492a6"
+        },
+        {
+          "path": "question-bank/grade-11/unit-05-v51-16-teacher-key-b.json",
+          "originalBlobSha": "3ae1185eb4860231be2fc23c8917cd2656792d05"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-after-practice-mcq-key-B",
+      "priority": "P1",
+      "sourceSupportedDescription": "Unit 5 Set B, 16 practice MCQs with correct options and explanations on deliberate reveal",
+      "verbatimPageEvidence": [
+        "Public post-practice resource",
+        "Subject accuracy and wording still require teacher review."
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_AS_AFTER_PRACTICE_GUIDANCE_OR_MOVE_FULL_KEY_TO_AUTHENTICATED_STORAGE_IF_RESTRICTION_REQUIRED",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-04",
+      "publicRoute": "portal/unit-04-discussion-slides.html",
+      "originalBlobSha": "01f2431bbdb1262feab90bbe1604981d48c24834",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-04-discussion-slides.js",
+          "originalBlobSha": "4e437f9753e894f9eb01fc70b555c7b275510c2e"
+        },
+        {
+          "path": "question-bank/grade-11/unit-04-v39-80-practice.json",
+          "originalBlobSha": "94c2bebb5fb477e8c822c901a8586963ba3f5d80"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-projector-question-then-key",
+      "priority": "P2",
+      "sourceSupportedDescription": "Unit 4 teacher-led discussion slides, 80-question sequence with deliberate solution reveal",
+      "verbatimPageEvidence": [
+        "public teaching resource, not access-restricted",
+        "after students finish"
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_FOR_AFTER_PRACTICE_DISCUSSION_OR_RESTRICT_SOURCE_KEY_IF_FORMAL_ASSESSMENT_REUSE",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-05",
+      "publicRoute": "portal/unit-05-projector-discussion.html",
+      "originalBlobSha": "863e99e4384f7648792e52b1d6f339ac59f48986",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-05-projector-discussion-v53.js",
+          "originalBlobSha": "4b0ca194a1037c429fc5d2fd0f9d2ddec89b01af"
+        },
+        {
+          "path": "question-bank/grade-11/unit-05-v52-descriptive-teacher-key.json",
+          "originalBlobSha": "a51ffcfa17443dd837e7b298a40e352dadecbb49"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-projector-step-reveal",
+      "priority": "P2",
+      "sourceSupportedDescription": "Unit 5 descriptive/numerical question-first projector discussion with worked steps",
+      "verbatimPageEvidence": [
+        "Public teacher-discussion resource",
+        "not a secure test"
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_FOR_AFTER_PRACTICE_DISCUSSION_OR_RESTRICT_SOURCE_KEY_IF_FORMAL_ASSESSMENT_REUSE",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-06",
+      "publicRoute": "portal/unit-04-slo-audit.html",
+      "originalBlobSha": "efd0469d719d7d571f1724f07a07d221c26c16a5",
+      "companionPublicFiles": [],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-curriculum-scope-audit",
+      "priority": "P2",
+      "sourceSupportedDescription": "Unit 4 summative SLO coverage, provisional MCQ/descriptive materials and noncertification cautions",
+      "verbatimPageEvidence": [
+        "STUDY COVERAGE DOES NOT EQUAL ASSESSMENT APPROVAL",
+        "Teacher-certified exam/OMR coverage"
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_AS_PROVISIONAL_STUDY_SCOPE_OR_SEPARATE_TEACHER_TECHNICAL_QA_AFTER_APPROVAL",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-07",
+      "publicRoute": "portal/unit-05-fbise-audit.html",
+      "originalBlobSha": "1f33b81e9b5dd3875c578f5c8a3354103ab96f39",
+      "companionPublicFiles": [],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-framework-and-marking-audit",
+      "priority": "P2",
+      "sourceSupportedDescription": "Unit 5 framework-based SLO mapping, public keys and academic release boundaries",
+      "verbatimPageEvidence": [
+        "Official SLO classification verified",
+        "Current publication status:"
+      ],
+      "ownerDecisionRequested": "RETAIN_PUBLIC_AS_FRAMEWORK_GUIDANCE_WITH_CAREFUL_OFFICIAL_VS_PROVISIONAL_LABELS_OR_SEPARATE_INTERNAL_QA",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    },
+    {
+      "reviewId": "V121-08",
+      "publicRoute": "portal/unit-06-figure-verification-v91.html",
+      "originalBlobSha": "2b25df730bf7b3e279d94c34eab0b3b7d58d2c27",
+      "companionPublicFiles": [
+        {
+          "path": "portal/unit-06-figure-verification-v91.js",
+          "originalBlobSha": "16c9a60b3c4aca2e2a501fba83bd58b8a6158d81"
+        }
+      ],
+      "routeAudience": "PUBLIC_GITHUB_PAGES_ROUTE_NOT_AUTHENTICATED",
+      "classification": "public-figure-teacher-QA-worksheet",
+      "priority": "P2",
+      "sourceSupportedDescription": "Unit 6 figure-source MCQ review worksheet with local-image comparison and copy-only observations",
+      "verbatimPageEvidence": [
+        "ephemeral local browser worksheet",
+        "No automatic code edits or official certification."
+      ],
+      "ownerDecisionRequested": "KEEP_PUBLIC_WITH_EXPLICIT_LOCAL_NONCERTIFICATION_WARNING_OR_MOVE_TRUE_STAFF_APPROVAL_TOOL_BEHIND_AUTHENTICATED_BACKEND",
+      "ownerDecision": "PENDING",
+      "keepExistingPublicPageUnchanged": true,
+      "perItemFBISECertificationApproved": false,
+      "requiresAuthenticatedBackendIfRestricted": true
+    }
+  ]
+}
