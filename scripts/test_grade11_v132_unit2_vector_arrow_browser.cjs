@@ -14,8 +14,8 @@ const gradeTwo=JSON.parse(fs.readFileSync(path.join(root,'question-bank/grade-11
 const rows=gradeTwo.questions;
 const VECTOR='\u20d7';
 const targets=[
- {id:'XI-U02-TEXT-0006',location:'stem',sourceIndex:5,displayIndex:11,slug:'textbook-q6-stem'},
- {id:'XI-U02-MCQ-0035',location:'option-D',sourceIndex:40,displayIndex:40,slug:'bank-q35-option-d'}
+ {id:'XI-U02-TEXT-0006',location:'stem',sourceIndex:5,slug:'textbook-q6-stem'},
+ {id:'XI-U02-MCQ-0035',location:'option-D',sourceIndex:40,slug:'bank-q35-option-d'}
 ];
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8',
  '.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8',
@@ -71,13 +71,15 @@ async function main(){
    await page.locator('#question').waitFor({state:'visible',timeout:10000});
    let position=0;
    for(const target of targets){
-    // The quiz sorts first by original source question number, stably interleaving textbook and bank items.
-    while(position<target.displayIndex){
+    // Follow the *actual* student navigation by immutable ID rather than assuming
+    // the displayed index equals the JSON row index (or relying on tie-order).
+    let ref=await page.locator('#question-reference').innerText();
+    while(!ref.includes(target.id)&&position<40){
      await page.locator('#next').click();
      position++;
+     ref=await page.locator('#question-reference').innerText();
     }
-    const ref=await page.locator('#question-reference').innerText();
-    assert.ok(ref.includes(target.id),'Question display order mismatch: expected '+target.id+' at position '+target.displayIndex+'; observed '+ref);
+    assert.ok(ref.includes(target.id),'Original public question '+target.id+' not found in the first 41 rendered questions; last observed '+ref);
     const targetNode=target.location==='stem'?page.locator('#question'):page.locator('#choices .option-txt').nth(3);
     const visibleText=await targetNode.innerText();
     assert.ok(visibleText.includes(VECTOR),'Original combining arrow lost before reaching browser DOM');
@@ -105,8 +107,8 @@ async function main(){
    page.once('dialog',dialog=>dialog.accept());
    await page.locator('#submit').click();
    await page.locator('#result').waitFor({state:'visible',timeout:10000});
-   const review=page.locator('#review .review-item').nth(24);
-   assert.ok((await review.innerText()).includes('XI-U02-MCQ-0019'),'Source ID changed in Unit2 review');
+   const review=page.locator('#review .review-item').filter({hasText:'XI-U02-MCQ-0019'});
+   assert.equal(await review.count(),1,'Original Unit2 #19 not uniquely found in completed-test review');
    assert.ok((await review.textContent()).includes(VECTOR),'Combining arrow missing in original position-vector explanation');
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2),false,
      'Solved result page overflows at '+width+'px');
