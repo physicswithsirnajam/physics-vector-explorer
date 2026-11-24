@@ -14,8 +14,8 @@ const gradeTwo=JSON.parse(fs.readFileSync(path.join(root,'question-bank/grade-11
 const rows=gradeTwo.questions;
 const VECTOR='\u20d7';
 const targets=[
- {id:'XI-U02-TEXT-0006',location:'stem',index:5,slug:'textbook-q6-stem'},
- {id:'XI-U02-MCQ-0035',location:'option-D',index:40,slug:'bank-q35-option-d'}
+ {id:'XI-U02-TEXT-0006',location:'stem',sourceIndex:5,displayIndex:11,slug:'textbook-q6-stem'},
+ {id:'XI-U02-MCQ-0035',location:'option-D',sourceIndex:40,displayIndex:40,slug:'bank-q35-option-d'}
 ];
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8',
  '.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8',
@@ -34,10 +34,10 @@ const server=http.createServer((req,res)=>{
 });
 function sourceContract(){
  assert.equal(rows.length,206,'Unit2 original source count must stay 206');
- assert.deepEqual(targets.map(t=>rows[t.index].id),targets.map(t=>t.id),
+ assert.deepEqual(targets.map(t=>rows[t.sourceIndex].id),targets.map(t=>t.id),
   'Question sample identity/order changed; choose a new reviewed sample, not a fabricated source.');
  for(const t of targets){
-  const q=rows[t.index];
+  const q=rows[t.sourceIndex];
   const text=t.location==='stem'?q.stem:q.options.find(o=>o.id==='D').text;
   assert.ok(text.includes(VECTOR),'Original Unit2 sample must actually include U+20D7');
   assert.equal(q.sourceQuestionNumber,t.id==='XI-U02-TEXT-0006'?6:35);
@@ -71,12 +71,13 @@ async function main(){
    await page.locator('#question').waitFor({state:'visible',timeout:10000});
    let position=0;
    for(const target of targets){
-    while(position<target.index){
+    // The quiz sorts first by original source question number, stably interleaving textbook and bank items.
+    while(position<target.displayIndex){
      await page.locator('#next').click();
      position++;
     }
     const ref=await page.locator('#question-reference').innerText();
-    assert.ok(ref.includes(target.id),'Question ordering/id failed for '+target.id);
+    assert.ok(ref.includes(target.id),'Question display order mismatch: expected '+target.id+' at position '+target.displayIndex+'; observed '+ref);
     const targetNode=target.location==='stem'?page.locator('#question'):page.locator('#choices .option-txt').nth(3);
     const visibleText=await targetNode.innerText();
     assert.ok(visibleText.includes(VECTOR),'Original combining arrow lost before reaching browser DOM');
