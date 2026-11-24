@@ -61,6 +61,6 @@ Before provisioning a real teacher or assigning a real student's records, implem
 
 ### Files and merge conditions
 
-**Seven files total:** `portal/session-menu-v141.js`, `portal/index.html`, `portal/styles.css`, `portal/app.js`, the new browser test, this note and one GitHub workflow. No original NBF question, correct answer, SLO, student attempt database, Firebase role, backend rule or teacher assignment changes.
+**Eight files total:** `portal/session-menu-v141.js`, `portal/index.html`, `portal/styles.css`, `portal/app.js`, the new browser test, the updated *existing V71* drawer/print regression, this note and one GitHub workflow. The existing `app.js?v=74` entrypoint is deliberately preserved to respect established V71/V73/V74/V100-M compatibility checks; the new V141 menu is loaded through the app's own module import. No original NBF question, correct answer, SLO, student attempt database, Firebase role, backend rule or teacher assignment changes.
 
 Keep PR **#241/V141 Draft** until **every latest-head CI check is green**. If red, do not merge; fix the same PR branch. Once green, select **Ready for review → Merge pull request → Confirm merge** and manually check the header under a real verified **test account** on the deployed portal. On sign-out, the header name/email must disappear. Do not create teacher credentials or enroll college learners until the independent backend security tests for the class permission matrix pass.
