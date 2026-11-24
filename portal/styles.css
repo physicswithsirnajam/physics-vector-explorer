@@ -245,3 +245,37 @@
 .hub-unit6-topic-contents>.hub-focus p{max-width:none}
 .hub-unit6-topic-contents>.hub-focus .btn{display:inline-block;margin:5px 6px 8px 0;max-width:100%;white-space:normal}
 @media(max-width:700px){.hub-unit6-topic-contents>.hub-focus{padding:14px 12px;margin:0 10px 12px}}
+
+/* V141: top-right session indicator — presentational only; Auth and Rules enforce access. */
+#psn-account-holder[hidden]{display:none!important}
+.psn-account-holder{flex:none;position:relative}
+.psn-account-popover{position:relative}
+.psn-account-trigger{
+ display:flex;align-items:center;gap:8px;max-width:min(245px,45vw);
+ padding:5px 10px 5px 5px;border:1px solid #627997;border-radius:999px;
+ background:#203451;color:#fff;cursor:pointer;list-style:none;
+ font:700 12px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.psn-account-trigger::-webkit-details-marker{display:none}
+.psn-account-trigger:hover,.psn-account-popover[open] .psn-account-trigger{background:#345073;border-color:#d9be85}
+.psn-account-trigger:focus-visible,.psn-account-option:focus-visible{outline:3px solid #f3d693;outline-offset:3px}
+.psn-account-avatar{height:29px;width:29px;flex:none;display:grid;place-items:center;
+ border-radius:50%;background:#ead099;color:#172840;font-weight:900;font-size:15px}
+.psn-account-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.psn-account-caret{color:#e5c790}
+.psn-account-panel{
+ position:absolute;right:0;top:calc(100% + 8px);width:min(290px,calc(100vw - 24px));
+ z-index:350;display:flex;flex-direction:column;gap:3px;padding:12px;
+ border:1px solid #597391;border-radius:13px;background:#11243e;color:#f5f7fb;
+ box-shadow:0 16px 38px #040e20a8;
+}
+.psn-account-eyebrow{font-size:10px;color:#d8c28e;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.psn-account-email{font-size:11px;line-height:1.5;overflow-wrap:anywhere;color:#e0e7f1;padding:2px 0 9px}
+.psn-account-option{display:block;min-height:41px;width:100%;padding:11px 12px;
+ border:0;border-radius:8px;background:transparent;color:#fff;text-align:left;
+ text-decoration:none;font:700 12px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;cursor:pointer}
+.psn-account-option:hover{background:#2d4665}
+.psn-account-signout{border-top:1px solid #47627e;border-radius:0 0 8px 8px;color:#f6dfbc}
+@media(max-width:700px){.psn-account-name{max-width:95px}.psn-account-trigger{gap:5px;padding-right:7px}.psn-account-avatar{width:27px;height:27px}}
+@media(max-width:410px){.psn-account-name{max-width:70px;font-size:11px}}
+@media print{.psn-account-holder{display:none!important}}
