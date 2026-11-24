@@ -15,10 +15,10 @@ const hash=crypto.createHash('sha256').update(bankBytes).digest('hex');
 const bank=JSON.parse(bankBytes.toString('utf8'));
 const out=path.join(root,'qa-artifacts/grade11-v133-unit1-mathml-visual');
 const SAMPLE=[
- {id:'XI-U01-MCQ-0003',number:3,kind:'stem-inline-mathml-greek',area:'stem',selector:'#question math',minMathRoots:2,requiresSup:false},
- {id:'XI-U01-MCQ-0005',number:5,kind:'option-block-mathml-superscript',area:'option-D',selector:'#choices .option-txt:nth-child(1)',minMathRoots:1,requiresSup:true},
- {id:'XI-U01-MCQ-0019',number:19,kind:'stem-inline-mathml-negative-powers',area:'stem',selector:'#question math',minMathRoots:1,requiresSup:true},
- {id:'XI-U01-MCQ-0024',number:24,kind:'option-block-mathml-dimensions',area:'option-B',selector:'#choices .option-txt',minMathRoots:1,requiresSup:true}
+ {id:'XI-U01-MCQ-0003',number:3,kind:'stem-inline-mathml-greek',classification:'formative',area:'stem',selector:'#question math',minMathRoots:2,requiresSup:false},
+ {id:'XI-U01-MCQ-0005',number:5,kind:'option-block-mathml-superscript',classification:'formative',area:'option-D',selector:'#choices .option-txt:nth-child(1)',minMathRoots:1,requiresSup:true},
+ {id:'XI-U01-MCQ-0019',number:19,kind:'stem-inline-mathml-negative-powers',classification:'summative-theory',area:'stem',selector:'#question math',minMathRoots:1,requiresSup:true},
+ {id:'XI-U01-MCQ-0024',number:24,kind:'option-block-mathml-dimensions',classification:'summative-theory',area:'option-B',selector:'#choices .option-txt',minMathRoots:1,requiresSup:true}
 ];
 const types={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8',
  '.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8',
@@ -46,7 +46,7 @@ function sourceContract(){
   assert.ok(q,'Missing original Unit 1 source ID '+t.id);
   assert.equal(q.sourceQuestionNumber,t.number);
   assert.equal(q.active,true);
-  assert.equal(q.assessmentClassification,'summative-theory');
+  assert.equal(q.assessmentClassification,t.classification,'Original formative/summative category must not change');
   assert.equal(q.options.length,4);
   assert.ok(q.options.every(x=>typeof x.text==='string'&&x.text.trim()));
   const source=t.area==='stem'?q.stemHtml:q.options.find(o=>o.id===t.area.slice(-1)).html;
@@ -73,7 +73,7 @@ async function main(){
   for(const width of [1280,390,320]){
    const page=await browser.newPage({viewport:{width,height:850},deviceScaleFactor:1});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
-   const response=await page.goto(base+'practice-engine/index.html?unit=1&scope=summative&count=24&arrangement=random&selection=random&unseen=false&shuffle=false',{waitUntil:'domcontentloaded'});
+   const response=await page.goto(base+'practice-engine/index.html?unit=1&scope=all&count=24&arrangement=random&selection=random&unseen=false&shuffle=false',{waitUntil:'domcontentloaded'});
    assert.equal(response.status(),200);
    await page.locator('#begin').waitFor({state:'visible',timeout:25000});
    await page.locator('#begin').click();
