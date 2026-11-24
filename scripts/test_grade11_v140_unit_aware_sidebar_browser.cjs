@@ -71,6 +71,25 @@ function contracts(){
   assert.ok(fs.existsSync(path.join(root,url.pathname.slice(1))),
    'Existing supplementary video directory is missing: '+href);
  }
+ // Every displayed public unit link must resolve to an existing local route;
+ // a missing file should be fixed or removed before making the sidebar live.
+ const visibleRecords=[];
+ for(const unit of units.slice(0,6)){
+  for(const id of unit.resourceIds||[]){
+   if(id==='protected-lesson')continue; // Internal access-test entry never shown.
+   const record=catalog.resources.find(r=>r.id===id);
+   assert.ok(record,'Missing catalogue resource reference '+id);
+   visibleRecords.push(record);
+  }
+  visibleRecords.push(...(unit.previewResources||[]));
+ }
+ for(const record of visibleRecords){
+  const url=new URL(record.href,'http://localhost/portal/');
+  assert.equal(url.origin,'http://localhost','Unexpected external navigation '+record.id);
+  const local=path.resolve(root,'.'+decodeURIComponent(url.pathname));
+  assert.ok(local.startsWith(root+path.sep)&&fs.existsSync(local),
+   'Broken published unit resource link: '+record.id+' -> '+url.pathname);
+ }
  assert.ok(!JSON.stringify(catalog).includes('youtube.com/@physicswithsirnajam'),
   'Do not invent the unpublished official YouTube channel address');
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'question-bank/manifest.json'),'utf8'));
