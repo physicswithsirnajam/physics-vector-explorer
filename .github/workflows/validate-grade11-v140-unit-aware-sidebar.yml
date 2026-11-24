@@ -1,0 +1,62 @@
+name: Grade XI V140 Unit-Aware Five-Stage Resource Sidebar
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/learning-catalog.json"
+      - "scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs"
+      - "quality/grade11-v140-unified-unit-aware-navigation-teacher-qc.md"
+      - ".github/workflows/validate-grade11-v140-unit-aware-sidebar.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "shared/navigation.css"
+      - "portal/learning-catalog.json"
+      - "scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs"
+      - "quality/grade11-v140-unified-unit-aware-navigation-teacher-qc.md"
+      - ".github/workflows/validate-grade11-v140-unit-aware-sidebar.yml"
+  workflow_dispatch:
+jobs:
+  five-stage-unit-aware-student-drawer-source-and-browser-qc:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate current student drawer and V140 browser script syntax
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve all 2250 original public Grade XI source ID contracts
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 pending individual Unit6 approvals and official graded nonrelease
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve Grade XI exam-readiness navigation and public-link source audit
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve teacher notation register and unverified Physics source flags
+        run: node scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Preserve original Grade XI 2250 MCQ structural audit
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Install pinned Chromium for source-driven five-stage drawer at three widths
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify unit-aware sidebar and all published routes at 1280 390 320px
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Upload public sidebar screenshots and nonacademic QA summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v140-unified-unit-sidebar-evidence
+          path: |
+            qa-artifacts/grade11-v140-unit-sidebar/
+            qa-artifacts/grade11-v137-notation-evidence-disposition/
+          if-no-files-found: warn
+          retention-days: 14
