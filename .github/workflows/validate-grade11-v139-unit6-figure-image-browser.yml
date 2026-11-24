@@ -1,0 +1,53 @@
+name: Grade XI V139 Six Original Unit 6 Figure Images Browser Integrity
+on:
+  pull_request:
+    paths:
+      - "scripts/test_grade11_v139_unit6_figure_browser_integrity.cjs"
+      - "quality/grade11-v139-six-unit6-figure-real-browser-source-integrity.md"
+      - ".github/workflows/validate-grade11-v139-unit6-figure-image-browser.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/test_grade11_v139_unit6_figure_browser_integrity.cjs"
+      - "quality/grade11-v139-six-unit6-figure-real-browser-source-integrity.md"
+      - ".github/workflows/validate-grade11-v139-unit6-figure-image-browser.yml"
+  workflow_dispatch:
+jobs:
+  six-figure-mcqs-four-original-svg-assets-real-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V139 original source figure image loading browser regression
+        run: node --check scripts/test_grade11_v139_unit6_figure_browser_integrity.cjs
+      - name: Preserve all 2250 frozen Grade XI provisional original MCQ source IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 pending Unit6 teacher item approvals and graded release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve six-unit readiness and Copy/Download-only reporting rules
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Preserve V137 complete teacher notation issue evidence register
+        run: node scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Preserve V128 full 2250-item public source structural safety
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Install pinned Chromium for original source-backed figure imagery
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Check 6 original figure-dependent Unit6 MCQs in question and result views at 1280 390 320px
+        run: node scripts/test_grade11_v139_unit6_figure_browser_integrity.cjs
+      - name: Upload 12 public question-only figure screenshots and source-ID-only QC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v139-six-unit6-figure-browser-evidence
+          path: |
+            qa-artifacts/grade11-v139-unit6-figure-browser/
+            qa-artifacts/grade11-v137-notation-evidence-disposition/
+          if-no-files-found: warn
+          retention-days: 14
