@@ -1,0 +1,55 @@
+name: Grade XI V138 Local MCQ Issue Download and Source Figure References
+on:
+  pull_request:
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v138_issue_report_local_download.cjs"
+      - "quality/grade11-v138-local-mcq-issue-download-and-figure-context.md"
+      - ".github/workflows/validate-grade11-v138-local-report-download.yml"
+  push:
+    branches: [main]
+    paths:
+      - "practice-engine/index.html"
+      - "scripts/test_grade11_v138_issue_report_local_download.cjs"
+      - "quality/grade11-v138-local-mcq-issue-download-and-figure-context.md"
+      - ".github/workflows/validate-grade11-v138-local-report-download.yml"
+  workflow_dispatch:
+jobs:
+  local-issue-exports-without-cloud-sender-or-answer-leakage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original figure-backed local report download QA
+        run: node --check scripts/test_grade11_v138_issue_report_local_download.cjs
+      - name: Preserve V137 original 304 notation candidate teacher review and pending academic QC
+        run: node scripts/test_grade11_notation_disposition_v137.cjs
+      - name: Preserve V128 all-source 2250 public Grade XI MCQs and answer-free triage
+        run: node scripts/test_grade11_mcq_triage_v128.cjs
+      - name: Preserve original public source reference parity for all 2250 provisional MCQs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve all 560 pending Unit6 academic item approvals and no graded assessment release
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V118 six-unit practice-readiness and no enabled report sender
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium for local public MCQ report download and result checks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify real original Unit6 figure question TXT downloads before and after practice at 1280 390 320px
+        run: node scripts/test_grade11_v138_issue_report_local_download.cjs
+      - name: Upload source-ID-only browser quality results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v138-local-report-download-qa
+          path: |
+            qa-artifacts/grade11-v138-mcq-report-download/
+            qa-artifacts/grade11-v137-notation-evidence-disposition/
+          if-no-files-found: warn
+          retention-days: 14
