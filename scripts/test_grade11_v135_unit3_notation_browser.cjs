@@ -84,7 +84,7 @@ async function main(){
    assert.equal(await page.locator('#feedbackBox').isVisible(),false,'QA must not expose a revealed key');
    // Actual original V55-bank values and actual unchanged production setRich().
    const checks=await page.evaluate(({allIDs,overlineId})=>{
-    if(typeof setRich!=='function'||!bank||bank.unit!==3||bank.questions.length!==220)
+    if(typeof setRich!=='function'||!bank||bank.questions.length!==220||bank.questions.some(q=>q.unit!==3))
      throw Error('Original Unit 3 220-item adapter or student renderer not loaded');
     const result=[];
     const mathPower=/(?:[A-Za-z0-9])\^(?:\{?-?\d{1,4}\}?|[xyz])/u;
