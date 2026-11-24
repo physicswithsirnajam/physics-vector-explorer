@@ -106,7 +106,7 @@ async function main(){
      throw Error('Exact original Grade XI Unit6 figure candidate missing');
     if(!q.active||q.options.length!==4)throw Error('Source question inactive or missing A–D');
     // Narrow test-only navigation to this exact loaded ORIGINAL source record.
-    test=[q];index=0;answers={};checked={};render();
+    test=[{...q,displayOptions:q.options.slice()}];index=0;answers={};checked={};render();
     return {id:q.id,unit:q.unit,sourceNumber:q.sourceQuestionNumber,
      figure:q.referenceFigureId,sourceStem:q.stem,options:q.displayOptions.map(o=>o.text)};
    },originalFigureId);
