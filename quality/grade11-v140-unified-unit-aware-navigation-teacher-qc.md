@@ -29,13 +29,13 @@ Each stage shows its **actual mapped link count** and either its safe published 
 
 ### Video precedence: official first, supplementary second
 
-The catalogue gains explicit **six supplementary-video source directory links**, one per currently accessible Unit 1–6, to the existing same-site `legacy-hssc-resources.html?unit=N` directory. The new `category: VIDEOS` and `videoPriority: supplementary-existing` avoid implying that the historic linked videos belong to Physics with Sir Najam.
+The original catalog **already** has `originalReferenceHref` and `legacyVideoPageCount` for Units 1–6. V140 reuses those six existing, same-site `legacy-hssc-resources.html?unit=N` source-directory links as **additional videos**, without adding duplicate resource records or changing frozen resource-count contracts. They are not identified as Physics with Sir Najam recordings.
 
 The **primary** video section belongs to verified future **Physics with Sir Najam** YouTube uploads, placed ahead of additional links when they exist. **No official channel ID, video ID or published URL has been provided or verified**, so the sidebar currently displays an honest non-clickable note about forthcoming official uploads instead of fake embeds. Video creation, upload, copyright checks and embedding are a later PR.
 
 ### Safe source and security boundaries
 
-- V140 changes **only** `shared/navigation.js`, `shared/navigation.css`, `portal/learning-catalog.json`, a new real-browser regression, this QA note and the workflow. No original public or protected MCQ bank, answer, SLO/cognitive status, video file, source textbook, private student data, scoring, results, Firebase/Auth/App Check rules, classroom assignment or backend setting is changed.
+- V140 changes **only** `shared/navigation.js`, `shared/navigation.css`, a new real-browser regression, this QA note and the workflow. The original `portal/learning-catalog.json` is **bit-for-bit identical to `main`**. No original public or protected MCQ bank, answer, SLO/cognitive status, video file, source textbook, private student data, scoring, results, Firebase/Auth/App Check rules, classroom assignment or backend setting is changed.
 - The public resource catalogue **is not an access-control system**. The navigation currently shows public study links without sign-in; a browser popup alone cannot protect static assets on GitHub Pages. Teacher/student permissions, role-scoped class membership and protected saved assessments require authenticated backend security and must be separately implemented and tested.
 - The request for top-right session dropdown (**My Profile / Sign Out**), mandatory authentication for personalized Test Builder activity, students seeing only their enrolled classes, secure admin-provisioned teachers, automatic saving of *combined-unit* attempts, SLO recommendations, streaks, stars, badges and celebrations belongs to subsequent PRs. None is represented as already implemented here.
 - All **560 individual Unit6 academic teacher signoffs remain PENDING**; full Unit6 course planned and formal graded assessment unpublished.
@@ -49,6 +49,6 @@ It also validates that every catalog-mapped student menu resource resolves to a 
 
 The workflow reruns existing V99i 2,250 source identity checks, V94D Unit6 release gates, V118 readiness, V137 original notation teacher ledger and V138 student report download tests. A real signed-in teacher/student backend security test is deliberately **not** part of this navigation-only PR.
 
-**Owner steps:** PR **#240** must remain Draft until all latest-head checks pass; expect **six files** and no student account or academic source changes. If a check is red, keep it unmerged and amend the same PR. If green, choose **Ready for review → Merge pull request → Confirm merge** and inspect the public sidebar on student guide, `?unit=3` Test Builder and `?unit=6` Simulations.
+**Owner steps:** PR **#240** must remain Draft until all latest-head checks pass; expect **five files**, no learning-catalog diff, and no student account or academic source changes. If a check is red, keep it unmerged and amend the same PR. If green, choose **Ready for review → Merge pull request → Confirm merge** and inspect the public sidebar on student guide, `?unit=3` Test Builder and `?unit=6` Simulations.
 
 **Next milestone:** PR #241 should inspect **auth state and role/claims/rules** first, then prepare the smallest secure teacher-portal foundation. Do not introduce mere CSS/JS gatekeeping as a substitute for server-enforced access.
