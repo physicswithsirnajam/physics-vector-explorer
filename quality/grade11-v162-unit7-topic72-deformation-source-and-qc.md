@@ -50,7 +50,19 @@ The calculator independently checks nonfinite/nonpositive inputs and refuses the
 - **NBF chapter exercises:** pp.125–126 contain **10 original textbook MCQs, 11 short questions, 8 comprehensive questions and 5 numerical problems**, besides earlier three worked examples and assignments. These must be independently solved and verified before providing students an authoritative answer key.
 - **Known textbook QC flag for future numerical stage:** On printed p.126, numerical **7.5** visibly states a steel rod diameter of **50 cm** but lists answer **2.5×10⁵ N m⁻²** for **500 N**. That listed answer matches roughly a **5 cm** rod, not **50 cm** (`σ≈2.55×10³ Pa` if diameter is 50 cm). **Do not silently fix the textbook**; flag to the teacher and create an explicit source-correction decision before keyed publication. Similarly p.124 Example 7.3 inconsistently labels `r=0.004 m` while its area calculation correctly uses radius `0.002 m` from diameter `0.004 m`. The source should be taught with a transparent caveat, never imported without QC.
 
-The chapter-cover SLOs on printed p.112 were inspected. **Exact official FBISE assessment-framework SLO codes / cognitive levels for 7.2 and 7.3 are deliberately NOT assigned** here without the official source; the board pattern cannot be inferred from textbook sections alone.
+The NBF chapter-cover SLOs on printed p.112 were inspected, and the owner's previously uploaded official **FBISE Assessment Framework for Physics Grade-XI, Curriculum 2022–23 / Scheme of Studies 2024** was independently retrieved from the file library (PDF page 10, internally labelled *Page 4 of 21*; P-11-B-28 continues on PDF p.11). The relevant official theory classification is:
+
+| Official SLO | Assessment form | Cognitive level | Lesson placement |
+|---|---|---|---|
+| **P-11-B-22** — structures of crystalline/glassy/amorphous/polymeric solids | Summative | Understanding | Existing Section 7.1 |
+| **P-11-B-23** — one-dimensional deformation under force (tension/compression) | Summative | Understanding | **V162 Section 7.2** |
+| **P-11-B-24** — define and use stress, strain and Young's modulus | Summative | Application | **V162 Section 7.2** |
+| **P-11-B-25** — experiment to determine Young's modulus of a wire | Summative | Understanding | **V163 metal-wire experiment**, NBF Section 7.3.1 p.122 |
+| **P-11-B-26** — elastic/plastic deformation and elastic limit | Summative | Understanding | **V162 Section 7.2** |
+| **P-11-B-27** — justify and use force–extension graph area as work | Summative | Application | **V163 Section 7.3** |
+| **P-11-B-28** — elastic potential energy from force–extension area; E=½Fx=½kx² | Summative | Application | **V163 Section 7.3** |
+
+This source confirms *topic-level framework alignment*, **not** that any individual future MCQ or marking key is teacher-approved. The textbook's additional bulk/shear-modulus treatment is included as chapter learning, but **P-11-B-24 specifically names Young's modulus**; do not uncritically classify all bulk/shear numerical items as summative exam items without further SLO scope justification.
 
 ## Automated quality gates, release protection and limits
 
