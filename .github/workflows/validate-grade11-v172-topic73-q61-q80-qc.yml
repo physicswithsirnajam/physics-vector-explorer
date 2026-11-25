@@ -1,0 +1,60 @@
+name: Grade XI V172 Unit7.3 Original MCQs Q61-80 Source/SLO QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic73-v172-q61-q80-source-bound-science-slo-review-no-keys.json"
+      - "quality/grade11-v172-topic73-q61-q80-science-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch4_v172.cjs"
+      - ".github/workflows/validate-grade11-v172-topic73-q61-q80-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic73-v172-q61-q80-source-bound-science-slo-review-no-keys.json"
+      - "quality/grade11-v172-topic73-q61-q80-science-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch4_v172.cjs"
+      - ".github/workflows/validate-grade11-v172-topic73-q61-q80-qc.yml"
+  workflow_dispatch:
+jobs:
+  verify-final-source-batch-and-all-academic-holds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V172 original source-bound academic audit
+        run: node --check scripts/audit_grade11_unit7_topic73_batch4_v172.cjs
+      - name: Verify Q61-80 source fingerprint, 80/80 completion, SLO/level and 20 release mutations
+        run: node scripts/audit_grade11_unit7_topic73_batch4_v172.cjs
+      - name: Retain original Topic7.3 first 60 keyless reviews, teacher pending
+        run: |
+          node scripts/audit_grade11_unit7_topic73_batch1_v169.cjs
+          node scripts/audit_grade11_unit7_topic73_batch2_v170.cjs
+          node scripts/audit_grade11_unit7_topic73_batch3_v171.cjs
+      - name: Preserve Topic7.2 original all-80 teacher pending HOLD
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve Topic7.1 original 80 teacher science/cognitive pending HOLD
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve original 2250 Grade XI provisional MCQ source identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 original 560 academic teacher pending HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production/staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only source provenance, never private keys
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v172-topic73-original-80-first-pass-source-qc
+          path: qa-artifacts/grade11-v172-topic73-q61-q80-source-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
