@@ -74,11 +74,7 @@ function checkSourceIntegrity(){
   'Proportional limit','Ultimate tensile strength',
   'Fracture','NBF equation 7.1','NBF equations 7.3–7.4',
   'No Unit 7 MCQs, correct-option keys or grades are released or saved here.',
-  'no SI unit','linear elastic range','Figure 7.12',
-  '11','200','Q10']){
-  // Assertions of '11', '200', 'Q10' are intentionally omitted below:
-  // the lesson is not a reproduction of the private 80-item MCQ source.
-  if(['11','200','Q10'].includes(phrase))continue;
+  'no SI unit','linear elastic range','Figure 7.12']){
   assert.ok(html.includes(phrase),'Missing source-relevant teaching element: '+phrase);
  }
  assert.ok(html.includes('physics-with-sir-najam-official-logo.png'));
