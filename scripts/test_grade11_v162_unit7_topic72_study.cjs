@@ -74,7 +74,12 @@ function checkSourceIntegrity(){
   'Proportional limit','Ultimate tensile strength',
   'Fracture','NBF equation 7.1','NBF equations 7.3–7.4',
   'No Unit 7 MCQs, correct-option keys or grades are released or saved here.',
-  'no SI unit','linear elastic range','Figure 7.12']){
+  'no SI unit','linear elastic range','Figure 7.12',
+  'P-11-B-23 · Summative / Understanding',
+  'P-11-B-24 · Summative / Application',
+  'P-11-B-26 · Summative / Understanding',
+  'P-11-B-25 · Summative / Understanding',
+  'FBISE scope:']){
   assert.ok(html.includes(phrase),'Missing source-relevant teaching element: '+phrase);
  }
  assert.ok(html.includes('physics-with-sir-najam-official-logo.png'));
@@ -98,7 +103,14 @@ async function run(){
  const result={version:'V162',topic:'NBF Unit7.2 Deformation in Solids',
   basis:'NBF owner source printed pp116-121; local manual source review',
   publicStudyOnly:true,teacherAcademicSignoffPending:true,
-  officialFrameworkMappingPending:true,unit7ScoredReleased:0,
+  officialFrameworkMappingVerified:true,
+  sourceFramework:"FBISE HSSC-I Physics Framework Curriculum 2022–23, Scheme of Studies 2024, PDF p.10",
+  summativeSloTags:[
+   {code:"P-11-B-23",cognition:"Understanding"},
+   {code:"P-11-B-24",cognition:"Application"},
+   {code:"P-11-B-26",cognition:"Understanding"}
+  ],
+  unit7ScoredReleased:0,
   calculatorDefault:{stressMPa:2,strain:0.00001,youngGPa:200},
   viewports:[],quizPrompts:5,
   sourceSections:['7.2.1','7.2.2','7.2.3'],
