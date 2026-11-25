@@ -264,12 +264,12 @@
           "unit": 7,
           "title": "Physics of Solids",
           "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "summary": "A source-anchored introductory public lesson for Topic 7.1 is available. The complete Unit 7 course, its MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed",
-          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "qualityStatus": "introductory-topic-7.1-source-anchored; full unit and MCQ academic QC pending",
+          "studentNotice": "First-topic concept orientation only: NBF printed pp.113–116, summative SLO P-11-B-22. Original and SLO-based Unit 7 question banks are not yet enabled in the Test Builder; course and graded assessment remain planned.",
           "simulationCount": 2,
           "simulationHref": "./simulations.html?unit=7",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -279,7 +279,9 @@
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=7",
           "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
           "directYouTubeCount": 2,
-          "directVideoReviewRequired": false
+          "directVideoReviewRequired": false,
+          "learningPreviewHref": "./unit-07-learning-intro-v145.html",
+          "learningPreviewStatus": "public-topic-7.1-introduction-only"
         },
         {
           "unit": 8,

@@ -335,12 +335,22 @@
   }
   function comingSoon(units,label){
     const group=e('details','psn-drawer-future');
+    group.dataset.psnFutureUnits=units.map(unit=>unit.unit).join(',');
     const summary=e('summary',null,label+' ('+units.length+')');
     group.append(summary);
     const rows=e('div','psn-drawer-future-rows');
     for(const unit of units){
       const item=e('p',null,'Unit '+unit.unit+' · '+unit.title+' · Coming soon');
       rows.append(item);
+      // V145: a separately verified introductory topic may be offered while
+      // the rest of this NBF unit, original MCQ bank and graded exam remain
+      // explicitly planned. Never expose a non-source-backed route.
+      const introduction=unit.learningPreviewStatus==='public-topic-7.1-introduction-only'
+        ?safeHref(unit.learningPreviewHref,new URL('portal/',root)):null;
+      if(unit.unit===7&&introduction)
+        rows.append(makeLink(introduction,
+          'Unit 7 · Topic 7.1 Learning Introduction · Full course still planned',
+          'public-link'));
       // Existing enrichment simulations for future units may already be public.
       // This link does NOT publish the unit, its notes, MCQ bank or exams.
       const sim=safeHref(unit.simulationHref,new URL('portal/',root));
@@ -370,6 +380,9 @@
         const first=unit.querySelector('.psn-drawer-stage');
         if(first)first.open=true;
       }
+    }
+    for(const future of content.querySelectorAll('.psn-drawer-future[data-psn-future-units]')){
+      future.open=future.dataset.psnFutureUnits.split(',').map(Number).includes(selected);
     }
     for(const link of content.querySelectorAll('a[href]')){
       if(isCurrent(link.href))link.setAttribute('aria-current','page');

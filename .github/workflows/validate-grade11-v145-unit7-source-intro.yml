@@ -1,0 +1,60 @@
+name: Grade XI V145 Unit 7 Source-Anchored Intro and Planned Release Guard
+on:
+  pull_request:
+    paths:
+      - "portal/unit-07-learning-intro-v145.html"
+      - "portal/learning-catalog.json"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v145_unit7_source_intro_browser.cjs"
+      - "quality/grade11-v145-unit7-source-intake-first-lesson-and-release-boundary.md"
+      - ".github/workflows/validate-grade11-v145-unit7-source-intro.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-07-learning-intro-v145.html"
+      - "portal/learning-catalog.json"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v145_unit7_source_intro_browser.cjs"
+      - "quality/grade11-v145-unit7-source-intake-first-lesson-and-release-boundary.md"
+      - ".github/workflows/validate-grade11-v145-unit7-source-intro.yml"
+  workflow_dispatch:
+jobs:
+  original-unit7-study-intro-with-zero-published-assessment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check global drawer and V145 Unit7 browser test
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v145_unit7_source_intro_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve all 2250 original Grade XI public bank IDs and counts
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 pending Unit 6 teacher item approvals and blocked graded exams
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve original Grade XI public readiness and resource link safety
+        run: node scripts/test_grade11_exam_readiness_v118.cjs
+      - name: Install pinned Chromium to test original public Grade XI drawer and Unit7 intro
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Preserve V140 original five-stage sidebar and published link behavior
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Verify source-labelled Unit7 Topic7.1 public intro and unreleased Test Builder across 3 widths
+        run: node scripts/test_grade11_v145_unit7_source_intro_browser.cjs
+      - name: Upload public concept-orientation screenshots and metadata-only QC
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v145-unit7-source-intro-evidence
+          path: |
+            qa-artifacts/grade11-v145-unit7-first-topic-preview/
+            qa-artifacts/grade11-v140-unit-sidebar/
+          if-no-files-found: warn
+          retention-days: 14
