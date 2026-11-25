@@ -127,7 +127,10 @@ async function main(){
     const destination=path.join(ROOT,target.pathname.slice(1));
     assert.ok(fs.existsSync(destination),'Destination missing for '+label);
    }
-   assert.equal(await page.getByRole('link',{name:/Unit 7 MCQ|Build.*Test/}).count(),0);
+   // The global portal navigation has a generic Build My Test link.
+   // Check only the newly published Unit7 learning article for premature tests.
+   assert.equal(await page.locator('main#content').getByRole('link',
+    {name:/Unit 7 MCQ|Build.*Test/}).count(),0);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+2),
     false,'Unit7 learning intro overflow at '+width);
    const img='unit7-introduction-'+width+'px.png';
