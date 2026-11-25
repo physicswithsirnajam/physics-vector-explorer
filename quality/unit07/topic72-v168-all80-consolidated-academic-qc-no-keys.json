@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": 1,
+  "version": "V168",
+  "subject": "Grade XI NBF Unit 7.2 Deformation in Solids",
+  "reviewType": "FULL_ORIGINAL_80_FIRST_PASS_CONSOLIDATED_BLUEPRINT_AND_CROSS_BANK_QC",
+  "decision": "ACADEMIC_TEACHER_APPROVAL_PENDING_NO_STUDENT_SCORED_RELEASE",
+  "sourceOriginalPrivateDocxName": "Grade11_Unit7_Topic7.2_PartA_80MCQs_Study_With_Answers.docx",
+  "sourceOriginalPrivateDocxSha256": "a721a7bbe5eecadcee17cb36e256a842795e586b74087fb6ced94c2b07683ada",
+  "sourceNbfTextbookSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "verifiedNbfPrintedPages": [
+    116,
+    117,
+    118,
+    119,
+    120,
+    121
+  ],
+  "officialFramework": "FBISE Physics Grade-XI Assessment Framework, Curriculum 2022-23, Scheme of Studies 2024 (PDF p.10, internally Page 4 of 21)",
+  "officialSummativeSloLevels": {
+    "P-11-B-23": "Understanding",
+    "P-11-B-24": "Application",
+    "P-11-B-26": "Understanding"
+  },
+  "priorBatchPaths": [
+    "quality/unit07/topic72-v164-first20-source-bound-teacher-review-no-keys.json",
+    "quality/unit07/topic72-v165-q21-q40-source-bound-review-no-keys.json",
+    "quality/unit07/topic72-v166-q41-q60-source-bound-numerical-review-no-keys.json",
+    "quality/unit07/topic72-v167-q61-q80-source-bound-scenario-review-no-keys.json"
+  ],
+  "canonicalHashRecipeId": "V165_EXPLICIT_JSON_SOURCE_ROW_V1",
+  "canonicalHashRecipeText": "SHA-256 of UTF-8 Python json.dumps({'stem':stem,'options':[A,B,C,D],'keyLetter':key,'correctOptionText':selectedText,'oneLineExplanation':explanation,'slo':slo,'level':sourceItemLevel},ensure_ascii=False,sort_keys=True,separators=(',',':')) with all source cell strings .strip(); no question number in digest.",
+  "all80CanonicalRowHashesJoinNewlineSha256": "bfcba8b53f22093f481ce9c5ba6ca5c62512d4ebb5a697bcc3609f7563a069cf",
+  "q1To20CanonicalRowHashesJoinNewlineSha256": "5a2feb48d5c6a8dc7b7236c45dfd1cc38641a994b59ba66b59846127106e7a4f",
+  "priorV164RowFingerprintRecipeCompatible": false,
+  "sourceProvenanceCorrection": "The original V164 first20 fingerprints were produced under an earlier inadequately specified digest recipe. V168 independently recomputed canonical Q1–20 from the same private Word file with V165's explicit field layout. Prior V164 source review conclusions are preserved; old fingerprints are NOT silently treated as the new canonical values.",
+  "fullOriginalQuestionRows": 80,
+  "firstPassSourceRowsReviewed": 80,
+  "sourceAnswerLettersMatchSelectedOptionText": 80,
+  "sourceWrongKeyLettersDetectedFirstPass": 0,
+  "correctAnswerLetterAggregateCounts": {
+    "A": 20,
+    "B": 20,
+    "C": 20,
+    "D": 20
+  },
+  "questionRowsWithDuplicateFourOptionTexts": 0,
+  "sourceSloCounts": {
+    "P-11-B-23": {
+      "count": 11,
+      "core": 6,
+      "supporting": 5,
+      "K": 4,
+      "U": 7,
+      "A": 0,
+      "coreApplication": 0
+    },
+    "P-11-B-24": {
+      "count": 48,
+      "core": 31,
+      "supporting": 17,
+      "K": 9,
+      "U": 11,
+      "A": 28,
+      "coreApplication": 20
+    },
+    "P-11-B-26": {
+      "count": 21,
+      "core": 15,
+      "supporting": 6,
+      "K": 7,
+      "U": 14,
+      "A": 0,
+      "coreApplication": 0
+    }
+  },
+  "sourceOriginalCognitiveCounts": {
+    "K": 20,
+    "U": 32,
+    "A": 28
+  },
+  "firstPassCompulsoryQuestionNumbers": [
+    7,
+    8,
+    9,
+    15,
+    17,
+    18,
+    19,
+    26,
+    33,
+    34,
+    38,
+    39,
+    46,
+    47,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    62,
+    63,
+    72,
+    76,
+    80
+  ],
+  "firstPassOptionalQuestionNumbers": [
+    12,
+    13,
+    25,
+    27,
+    36,
+    57,
+    74,
+    75
+  ],
+  "firstPassCompulsoryFlagCount": 25,
+  "firstPassOptionalFlagCount": 8,
+  "strictSourceTopicDirectCandidates": 52,
+  "supplementaryTextbookCandidates": 28,
+  "sourceStandaloneContextReferenceNumbers": [
+    9,
+    20,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    39,
+    40,
+    57,
+    59,
+    76,
+    79,
+    80
+  ],
+  "hardStandAloneStimulusOrRewriteBeforeScoredNumbers": [
+    9,
+    20,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    39,
+    40,
+    57,
+    79,
+    80
+  ],
+  "sourceContextReferenceIsSelfContainedNumbers": [
+    59,
+    76
+  ],
+  "newCrossBatchCriticalIssue": {
+    "id": "CROSS-01",
+    "questionNumber": 57,
+    "priority": "COMPULSORY_BEFORE_STANDALONE_SCORED_USE",
+    "reason": "The question explicitly relies on NBF Example 7.2 numerical values but does not supply the load, bone length, radius/area or Young modulus. Keyed result is correct for the book example; a standalone student would lack the required inputs.",
+    "remedy": "Include a self-contained verified data stem or an approved accessible stimulus that supplies the full numerical inputs and formula context. Keep the original private source row and existing correct keyed choice unchanged until teacher review.",
+    "separateFromV166OptionalRounding": true,
+    "teacherDecision": "PENDING"
+  },
+  "visualReferenceRequirement": {
+    "id": "CROSS-02",
+    "priority": "COMPULSORY_PRESENTATION_GATE_BEFORE_PORTAL_RELEASE",
+    "mustAttachAccessibleStimulusOrRewrite": 13,
+    "sourceReferencesIncludingSelfContained": 15,
+    "imageAccessibilityRequirement": "Provide original/permission-cleared annotated figure/table with equivalent text, responsive mobile display and printable accessible alt/description or a scientifically equivalent self-contained text description.",
+    "scoringHold": true,
+    "teacherDecision": "PENDING"
+  },
+  "duplicateReviewCandidates": [
+    {
+      "ids": [
+        33,
+        80
+      ],
+      "kind": "probable-redundant-point-D-answer",
+      "priority": "HIGH",
+      "recommendedAction": "Retain both privately; compare stimulus/learning demand and publish one or a meaningfully different reasoning item after signoff.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        37,
+        74
+      ],
+      "kind": "ductility-wire-drawing-near-duplicate",
+      "priority": "HIGH",
+      "recommendedAction": "Retain originals; prioritize distinct plastic-deformation reasoning or alternate application, not two nearly identical wire-drawing prompts.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        36,
+        75
+      ],
+      "kind": "brittle-glass-concept-near-duplicate",
+      "priority": "HIGH",
+      "recommendedAction": "Keep one factual example and consider a contrasting plasticity/strain response for the other if final summative bank needs variety.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        5,
+        66
+      ],
+      "kind": "axial-tension-definition-v-scenario",
+      "priority": "MEDIUM",
+      "recommendedAction": "Both may remain if the second scenario genuinely requires transfer rather than mere word matching.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        6,
+        61
+      ],
+      "kind": "axial-compression-definition-v-scenario",
+      "priority": "MEDIUM",
+      "recommendedAction": "Both can be useful as Recall and Understanding; verify context genuinely changes required reasoning.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        14,
+        64,
+        67
+      ],
+      "kind": "recoverable-elastic-state-multi-context",
+      "priority": "MEDIUM",
+      "recommendedAction": "Check repeated recoverability cues; keep differentiated elastic-limit scenarios, revise excessive repetitions.",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "ids": [
+        50,
+        60
+      ],
+      "kind": "same-wire-extension-formula-with-distinct-values",
+      "priority": "LOW",
+      "recommendedAction": "Different numerical inputs and unit handling can justify both; prefer distractors that reveal distinct calculation errors.",
+      "teacherDecision": "PENDING"
+    }
+  ],
+  "distinctTextbookFigurePointQuestions": [
+    9,
+    20,
+    28,
+    29,
+    30,
+    31,
+    33,
+    34,
+    79,
+    80
+  ],
+  "distractorAudit": {
+    "exactOptionDuplicationCount": 0,
+    "firstPassCorrectOptionTextMismatchCount": 0,
+    "followupQualityCandidates": [
+      31,
+      39,
+      40,
+      68
+    ],
+    "reason": "A few choices have markedly unequal length, awkward comparative form or implausibly nonphysical distractors. Not incorrect keys; re-evaluate discrimination before graded item selection.",
+    "teacherReview": "PENDING"
+  },
+  "wholeBankIssueStatus": {
+    "headerNbfPageRange": "COMPULSORY_CORRECT_IN_FUTURE_PRIVATE_WORKING_EDITION_116_TO_121",
+    "sourceProvenanceV164Normalization": "CANONICAL_SHA_RECOMPUTED_WITH_V165_RECIPE",
+    "duplicateAndStemOverlap": "TEACHER_DECISIONS_PENDING",
+    "standaloneStimulusReadiness": "BLOCKED_FOR_13_SOURCE_REFERENCES",
+    "sloBlueprintTeacherCertification": "PENDING",
+    "keyAndDistractorIndependentTeacherSignoff": "PENDING",
+    "studentScoredRelease": "HOLD"
+  },
+  "individualTeacherScienceSignoffs": 0,
+  "individualTeacherCognitiveSignoffs": 0,
+  "unit7ScoredQuestionCount": 0,
+  "existingLegacyGradeXIProvisionalItems": 2250,
+  "existingUnit6TeacherPending": 560,
+  "ownerPrivateWordEdited": false,
+  "privateKeyedQuestionsAddedToGitHub": false,
+  "firebaseConsoleChanged": false,
+  "scoredTestBuilderChanged": false,
+  "canonicalSourceRows": [
+    {
+      "sourceNumber": 1,
+      "sha256": "460bedc1eb3ba160fdef565bb693185d0f6ea5c60e28254ed786e612a616e36e",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 2,
+      "sha256": "12d3e675979f8ad3483b3bcab15612b4d25ec4ab9c5dc69e794ffed9192dca68",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 3,
+      "sha256": "cf264fd63310fdc313df7110d152279a4aa18037bb13f6b0147b1fa8b87f8593",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 4,
+      "sha256": "1f74eee514c7bc11d266e119ce177d92f50ff0199c5e89177c3edbf5efd19728",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 5,
+      "sha256": "dba70662c4666cc0c86696387fc57a19bdaa7d81dc5aca54c09fa0672471849a",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 6,
+      "sha256": "bcdd5fe5bb86d5229cb53f271fc644645c7afab41fc55123f373d907b4ff7caa",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 7,
+      "sha256": "8d9288166ca377f976776e8bf86f1e5d369e26002ef71df674d62440556247e8",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 8,
+      "sha256": "5227bdd18c82e32a5d177ee12d24b497119d68f89a0c553a4a435475271d90b4",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 9,
+      "sha256": "117b30a1ae56b8df419cf6cb30723dc43f5965c339f151aa97cc53877235aa39",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 10,
+      "sha256": "aa90000d69d7bdda6aa17179cda6abd7a70b45d2f839d6cd15e432317266d54c",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 11,
+      "sha256": "35652b5951ccc3b55eb1b784af9b8e7c1f8356806e2b9639c339de3766c0e27b",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 12,
+      "sha256": "d65649cd0dae7de60235ae38817c8d740bb1db8bd02b795c7e6da7d64bbc4b2f",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 13,
+      "sha256": "e5f735f12ffa4c22afa59fbef2598a86a6677eaf1fd405fa549145892ec22964",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 14,
+      "sha256": "8928444fdcabcbc76a8d05c6d89a9df08eab231d7c23a1fcbb9b86f9a9aa67ee",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 15,
+      "sha256": "4b15a719d59c38720649be4fe1715b93755a82b709fbbf297be89a1e0553ad31",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "compulsory-physics-precision",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 16,
+      "sha256": "aa3e0c677dba50c83f4fedbdccd846fe98fcfeb0dc867e2223e32e27bebd09a8",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 17,
+      "sha256": "4a02b63fc5b1fb45a6977d0561505c9169675a131111d6fc4f0244463ba2d6d9",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 18,
+      "sha256": "def338ed11582ca3a55771ef7735cfcda44b99e46d442feb5d835ca8f9c3dc41",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 19,
+      "sha256": "7e3331aff7bf472ed23fc8a951799f1aadd14d9b0ae7ab4477770baadf5f44c2",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-clarity-and-slo-scope",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 20,
+      "sha256": "4c8114dbe7a117468069794e33e7393ad08f628fb6d47edfe2b683c922cd8e17",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 21,
+      "sha256": "7067d10a693d175bcfd45505e468657f47b49d977eeb5ceb82884acabc1ffd7f",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 22,
+      "sha256": "19fd96649ff522ad4c48bf4459e761f8dba9c2f64f6f27db290470208a93330d",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 23,
+      "sha256": "0d16759ea98dd8f484b2e7f9b77e12783f7b0c5e722bda330b2aea5a891f8eba",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 24,
+      "sha256": "9fdafdc681cd90ec54481186c9c948622631ffb3692984e42ee180a9914fe09b",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 25,
+      "sha256": "8b34d18c1cd3604ceb948c30d0fa151fcbdda01f44d95c771e7513bd22c39da2",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 26,
+      "sha256": "8090a87fe9eceb4c79809d9933b33d18f51e88536449ef674f48d04624c4e6ff",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 27,
+      "sha256": "ea36ccf5ab2d672c7ee466ffbdafb526d8c2c5aadd54e434c65a2b429152e136",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 28,
+      "sha256": "b397fc1da745e9745ff3a9b408f216351f24445ab786aac21110c84d179d4d38",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 29,
+      "sha256": "0c92a85fcacb7970327be3732c25b11760ddc2958c62acb0dac3538716ba7300",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 30,
+      "sha256": "a862ecbfdfa48284682af43fb203dabd2be61342f8a0dfbcf4afe5e461b4f791",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 31,
+      "sha256": "7f496f324ac7d704ae9f68d6cd07ef01cf477a682cdf544af43b7230d2499f51",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 32,
+      "sha256": "19da75566a89912c0375b5d8fa7cad1d6004a3a2630f59dc3d57b36f5528ad74",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 33,
+      "sha256": "a88957c9f7c2d008ef3765148ff40ab8c17d84699bb2b4d333fc35c90bc4c0ca",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 34,
+      "sha256": "643372ec74a7ee859887956eaac100727d8562251800ada9a34628ffbd4602c5",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 35,
+      "sha256": "7eb82f36190b6f5be51697571fc3d3c9b315738d74c1db8131b858384f9dadb1",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 36,
+      "sha256": "21231d3887d41b9ac267a7e71c85af62dc49d24f044f27b63d50a3a83e233b66",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "K",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 37,
+      "sha256": "a816171f30b91734bd91dc760a519ed6d9bdc3f56483721275d4cbb1ed36bb38",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 38,
+      "sha256": "14cd15774accd9ee5c31482cffc8890fa06156cde0defd44a0f6d5a79e0e01a8",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 39,
+      "sha256": "fd7367fddb80a8de86b4935981e1f5e021b8a7ab79144c4d621ab32314d5fdf8",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 40,
+      "sha256": "37d26f0c65ad75e94d203e9640d802ab6f1f01193c706442683348e450e93176",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 41,
+      "sha256": "abd9edcd994be251082a56c758cecdcdcb57f4fbd2d068461416285cf81687e6",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 42,
+      "sha256": "ec4c036486504df51afda33bd3292a7c696092fa49745856133ce050d4a25f14",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 43,
+      "sha256": "40fda3b1b72ed775f885a30d7f4569781e42c31b86fc9d4a28746d046f70fd29",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 44,
+      "sha256": "bfb93279db266636c64a6380f9155852d0b28b5258a16f5da21d20154e4f28ff",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 45,
+      "sha256": "e2a1179813367f52669727c0b747c079006c7d9ea570cfed4b1c68d3301b886a",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 46,
+      "sha256": "f7199e27e3be6cdd3cb5756946dae74dcbc42874aaf94c8dfcc39e0152326dcc",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 47,
+      "sha256": "2c659efa1f8b1768cea02d72ff980f84e2213f3aa45d48f54e18e3922f29a5da",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 48,
+      "sha256": "3d5308d59aa4ff1f4493a87ff4ec89ba79e266332903e98110a5a4d1873f3ed3",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 49,
+      "sha256": "8e4ecdcd0b02edfbea6053402d05d4b1800e04a07b4b438deba3f561648439a8",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 50,
+      "sha256": "4fe4c3c2dfb194d863bf9df36fb0aedf63ad5728be201510c25a28a62cd130fd",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 51,
+      "sha256": "ce0789a695901518aeaed718453d72ff43e06f5047a7740d37e7eebe60f86ffb",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 52,
+      "sha256": "601f9b9e60fba3e5a53ca711ad1017a822e6a20924145d63b2059f3691429d07",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 53,
+      "sha256": "a36f79bcbf507a847e3d99a07bf341bf89e1122fc44d36d0e87fc8821db2f668",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 54,
+      "sha256": "a25ffa83c759710d1c4d3d1d209b882b9a94fa3ce517abe1e9d8cf4f99606bd8",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 55,
+      "sha256": "3ab7c5b0d09fae1977b9b00d923b94b606593cab631fb1675194a1ee04c120ad",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 56,
+      "sha256": "f906fe6eee5653136c9cbb93c3a6a47f90b520b94dca84ad4abfdea297be0ddc",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 57,
+      "sha256": "6c287704fb883ddce1f842672138cd60f536fc0e295367a76596b95ebd011596",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 58,
+      "sha256": "87d4b017a704bdd70445cd6d4ab53818603b31f64824728f6ae9291550eeee48",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 59,
+      "sha256": "61a1c3501921d90849b1348863224372b63faa34591245d0eb9f3e4b93c31eee",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 60,
+      "sha256": "9a3724b52866bd15a948ea681e99633076dc3b1df731b0e730987f51a57c899b",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 61,
+      "sha256": "80dc119b795da00a3f0ee99bf0c5e34a5d74e4c2bbcf8c45d1b6836d9716f87a",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 62,
+      "sha256": "a28bd0c5be0dce10837562afbc42e383ded1a31e861b3f58f5c7f40efa1c8c08",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 63,
+      "sha256": "493306575bf97dc9f25ffb5eb2b19afd9d85e07db074a7a89ffc3841222bc8f9",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 64,
+      "sha256": "c486e5f9762ad7d9591a94f5d2867a6b37f02ac1ce462061c963ccdd6e75cbfd",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 65,
+      "sha256": "b870f79dc4b301813d8e34c18e4c54139db74628fdc951c78c2bc2f23389b416",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 66,
+      "sha256": "a2dbbe91d08422fb00663acb8d624572c974b6f17d898fc176a35e76b2689c96",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 67,
+      "sha256": "db8f7900cf639467fa401b6b49ef10b0b2fea9066697b6223b13287569fd8b49",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 68,
+      "sha256": "e72d86c78e925782e75703f0e16fcf61889b49e08a0c1d5547e6443ae001fc4b",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 69,
+      "sha256": "b6c3e70f0c39cd03a83751c14f77f98de75a078ec59f8d0d908e2c795ac1de07",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 70,
+      "sha256": "cc72f6223952fd0abdc196dd25c13725aab1e19414433ee6c94521b182817f48",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 71,
+      "sha256": "fab5d4a2bc8d12f05b023348dc5321200f9c764751ecb4bf937e0b8bffe3c22d",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 72,
+      "sha256": "8333e370a369482791982ec0d69c23ee6bd5972d3ff8e97700ec6a0ca0ed373a",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 73,
+      "sha256": "7b2b938af669944793b36f3d78bdbcac0f9e751dc8303a6acbcdd17389ff9b55",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 74,
+      "sha256": "8fb40b023f1f25e3a5f6c5e9d743c39f96d65e395896de1cd479611986ab1553",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 75,
+      "sha256": "fe6dd3a07788977e11012e75a40798c175cafc37c4478022b3f2fc173ede8d5a",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "optional",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 76,
+      "sha256": "55b20247acfef4369efd1ccb8eecd30f75c728e5daa8ee1a4d28a936c128a861",
+      "originalMappedSlo": "P-11-B-23",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 77,
+      "sha256": "267d9df6b8db207caa4f7cc7335ca0a7ff0df215cbd82a67b5e0732d8bcee3ac",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 78,
+      "sha256": "ded660f5695db84b016568215787931fda990b4e46efe833fe107db9d8b7f210",
+      "originalMappedSlo": "P-11-B-24",
+      "originalCognitiveCode": "A",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 79,
+      "sha256": "5e7662819e72d38d0a5b0c99304545a67c085177c8e83bc672c6732c0b27ef7a",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "direct-topic-core",
+      "firstPassIssue": "none",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "sourceNumber": 80,
+      "sha256": "e78975f06be972ba6cdce36e7d539998d9f5e551b9e01f0acc6c342e74f78bec",
+      "originalMappedSlo": "P-11-B-26",
+      "originalCognitiveCode": "U",
+      "sourceSummativeScope": "supplementary-textbook-support",
+      "firstPassIssue": "compulsory-before-summative-use",
+      "academicTeacherReview": "PENDING",
+      "scoredRelease": "HOLD"
+    }
+  ],
+  "nextMilestone": "V169_OWNER_DECISIONS_AND_PRIVATE_REVISED_CANDIDATE_PLAN_OR_TOPIC73_SOURCE_AUDIT_AFTER_TEACHER_REVIEW"
+}
