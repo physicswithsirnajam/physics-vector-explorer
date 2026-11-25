@@ -1,0 +1,59 @@
+name: Grade XI V154 Unit7 Topic7.1 80-item Teacher Decision Queue (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v154-80-source-bound-teacher-decision-queue.json"
+      - "quality/grade11-v154-unit7-topic71-consolidated-teacher-review-worklist.md"
+      - "scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs"
+      - ".github/workflows/validate-grade11-v154-unit7-teacher-queue.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v154-80-source-bound-teacher-decision-queue.json"
+      - "quality/grade11-v154-unit7-topic71-consolidated-teacher-review-worklist.md"
+      - "scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs"
+      - ".github/workflows/validate-grade11-v154-unit7-teacher-queue.yml"
+  workflow_dispatch:
+jobs:
+  audit-all-80-provenance-pending-approvals-and-student-release-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check V154 consolidation
+        run: node --check scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Check all 80 source-fingerprint-linked items and keep unapproved
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve V153 scenario batch and original explanation hold
+        run: node scripts/audit_grade11_unit7_topic71_batch4_v153.cjs
+      - name: Preserve V152 cubic unit-cell teaching notes
+        run: node scripts/audit_grade11_unit7_topic71_batch3_v152.cjs
+      - name: Preserve V151 Q21–40 source/SLO checks
+        run: node scripts/audit_grade11_unit7_topic71_batch2_v151.cjs
+      - name: Preserve V150 Q1–20 source/SLO checks
+        run: node scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Preserve V149 question-only source correction proposals
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 provisional source keys and SLO report
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 80-choice question-only candidate
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 original source full-row fingerprints
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve original 2250 Grade XI provisional items
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 individual approvals pending
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload metadata-only consolidation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v154-unit7-80-merged-reviews-zero-approvals
+          path: qa-artifacts/grade11-v154-unit7-topic71-decision-queue/summary.json
+          if-no-files-found: warn
+          retention-days: 14
