@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "version": "V161",
+  "dateAsOf": "2026-11-25",
+  "title": "Grade XI Unit7 Topic7.1 teacher advisory callable STAGING CONTRACT (DESIGN ONLY)",
+  "decision": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "deploymentState": "SOURCE_ONLY_UNDEPLOYABLE",
+  "callableFunctionSourceCreated": false,
+  "firebaseConfigCreatedOrChanged": false,
+  "firebaseProductionProjectId": "physics-with-sir-najam-portal",
+  "stagingFirebaseProjectId": null,
+  "ownerAuthorizedStagingDeploy": false,
+  "ownerSelectedDeploymentArchitecture": false,
+  "preferredEvaluationOption": "A_KEEP_GITHUB_PAGES_WITH_PROTECTED_CALLABLE",
+  "ownerApprovedBlazeBilling": false,
+  "productionAppCheckEnforcementProven": false,
+  "publishedProductionFirestoreRulesVerified": false,
+  "actualTeacherRoleProvisioningApproved": false,
+  "sourceTeacherApprovals": 0,
+  "unit7ScoredReleased": 0,
+  "sourceInputPaths": {
+    "ownerPrivateWordSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
+    "questionOnlyCandidate": "quality/unit07/topic71-v149-80-source-aligned-question-only-candidate.tsv",
+    "pendingTeacherQueue": "quality/unit07/topic71-v154-80-source-bound-teacher-decision-queue.json",
+    "previouslyVerifiedNoGo": "quality/unit07/topic71-v160-production-readiness-no-go.json"
+  },
+  "conceptualTransport": {
+    "mechanism": "Firebase Functions v2 https.onCall (DESIGN CANDIDATE NOT IMPLEMENTED)",
+    "appFacingSdk": "Firebase client httpsCallable",
+    "requireHTTPS": true,
+    "nativeRequestDataOnly": true,
+    "verifiedAuthAndAppCheckContextFromFirebaseFramework": true,
+    "browserCannotSupplyVerifiedContext": true,
+    "originPolicy": "FIXED_EXACT_ALLOWLIST_NOT_WILDCARD",
+    "productionCandidateOrigins": [
+      "https://physicswithsirnajam.github.io"
+    ],
+    "stagingApprovedOrigins": [],
+    "originDoesNotContainRepositoryPath": true,
+    "corsProductionNotEnabledBeforeOwnerApproval": true,
+    "callableFunctionsDefaultCORSCannotRemainUnrestricted": true,
+    "futureOptions": {
+      "enforceAppCheck": true,
+      "consumeAppCheckToken": "EVALUATE_FOR_SENSITIVE_WRITES"
+    },
+    "validateRolesServerSideBeyondSDKClaims": true,
+    "serverApiDeploymentAllowed": false,
+    "requiredRuntimeBeforeActivation": [
+      "Dedicated owner-approved staging project, function identity and region",
+      "Explicit Cloud Billing/Blaze owner consent and budget alerts",
+      "Staging App Check registration and genuine token verification",
+      "Admin-controlled teacher role issuance with live revocation checks",
+      "Complete private published Rules snapshot comparison",
+      "Exact CORS origin and separate staging origin selection",
+      "Rate and concurrency limits, deny-all default and monitoring"
+    ]
+  },
+  "apiOperations": [
+    {
+      "id": "listTopic71ReviewCandidatesV1",
+      "kind": "READ_ONLY_TEACHER_PREVIEW",
+      "requestFields": [],
+      "responseEnvelope": "FIREBASE_CALLABLE_RESULT_DATA",
+      "responseFields": [
+        "ok",
+        "count",
+        "items"
+      ],
+      "fixedItemCount": 4,
+      "fixedSourceNumbers": [
+        10,
+        15,
+        62,
+        76
+      ],
+      "itemResponseFields": [
+        "questionId",
+        "sourceNumber",
+        "stem",
+        "options",
+        "originalSha256",
+        "candidateSha256",
+        "issue",
+        "explanationRepairStillRequired",
+        "recommendation",
+        "teacherAcademicSignoff",
+        "studentScoredRelease"
+      ],
+      "maxResponseBytes": 16384,
+      "mayReturnAnswerKey": false,
+      "mayReturnOtherTeacherRecords": false,
+      "ownerAllowsScoredPractice": false
+    },
+    {
+      "id": "recordTopic71WordingRecommendationV1",
+      "kind": "IMMUTABLE_ADVISORY_WRITE",
+      "requestFields": [
+        "questionId",
+        "originalSha256",
+        "candidateSha256",
+        "recommendation"
+      ],
+      "allowedQuestionIds": [
+        "XI-U07-T071-Q010",
+        "XI-U07-T071-Q015",
+        "XI-U07-T071-Q062",
+        "XI-U07-T071-Q076"
+      ],
+      "sha256Fields": [
+        "originalSha256",
+        "candidateSha256"
+      ],
+      "sha256Pattern": "^[a-f0-9]{64}$",
+      "recommendationValues": [
+        "supports-candidate-wording",
+        "needs-revision"
+      ],
+      "maxEncodedRequestBytes": 512,
+      "responseEnvelope": "FIREBASE_CALLABLE_RESULT_DATA",
+      "responseFields": [
+        "ok",
+        "questionId",
+        "status",
+        "alreadyRecorded",
+        "academicSignoff",
+        "scoredRelease"
+      ],
+      "successFixedValues": {
+        "ok": true,
+        "status": "advisory-only",
+        "academicSignoff": "PENDING",
+        "scoredRelease": "HOLD"
+      },
+      "immutablePerReviewerPerSourceRevision": true,
+      "atomicAuditWriteRequired": true,
+      "retryIdenticalIdempotent": true,
+      "conflictingExistingRecommendationDenied": true,
+      "staleOriginalOrCandidateRejected": true,
+      "serverSideRevisionLookupRequired": true,
+      "privateOriginalKeyRead": false,
+      "eligibleForScoredRelease": false,
+      "requiresSeparateOwnerKeyApproval": true
+    }
+  ],
+  "authzRequirements": {
+    "verificationLayer": "TRUSTED_FUTURE_BACKEND_ONLY_NOT_BROWSER_JSON",
+    "requireFirebaseAuthValidatedByCallable": true,
+    "requireAppCheckContextValidatedByCallable": true,
+    "requireCurrentAuthUserRefresh": true,
+    "requireVerifiedEmail": true,
+    "requireEnabledAccount": true,
+    "requireTrustedTeacherRole": true,
+    "disallowAdminAsTeacherByDefault": true,
+    "requireAdminManagedActiveTeacherDirectory": true,
+    "requireServerOwnedReviewerAllowlist": true,
+    "requireIndependentTenantClassMembershipForFutureGeneralReview": true,
+    "requireSourceRevisionFingerprintServerLookup": true,
+    "forceServerRuntimeSwitchDefaultOff": true,
+    "failClosedOnCurrentAccountDirectoryOrAppCheckErrors": true,
+    "noCookieBasedAuthInCandidate": true,
+    "rejectCallerProvidedUidRoleEmailApprovalFlags": true,
+    "doNotExposePrivateKeyedContent": true
+  },
+  "dataIsolation": {
+    "writer": "TRUSTED_SERVER_ONLY",
+    "reviewCollection": "unit07Topic71TeacherReviewPilot",
+    "auditCollection": "unit07Topic71TeacherReviewPilotAudit",
+    "firebaseWebClientDirectRead": false,
+    "firebaseWebClientDirectWrite": false,
+    "privateAnswerKeyNeverInThisContract": true,
+    "studentAccessToReviewRecords": false,
+    "studentEnrollmentAndAttemptsUntouched": true,
+    "auditAppendOnly": true,
+    "fullRevisionHashBound": true,
+    "immutableAuditIdempotencyKey": "sha256(questionId+sourceHash+candidateHash+reviewerUid)",
+    "auditRetentionPeriod": "OWNER_APPROVAL_REQUIRED",
+    "keyCorrectionAndAcademicApprovalSeparate": true
+  },
+  "failureCodeContract": [
+    "unauthenticated",
+    "permission-denied",
+    "failed-precondition",
+    "already-exists",
+    "invalid-argument",
+    "resource-exhausted",
+    "unavailable",
+    "internal"
+  ],
+  "threats": [
+    {
+      "id": "T01",
+      "case": "Anonymous request",
+      "expected": "unauthenticated"
+    },
+    {
+      "id": "T02",
+      "case": "Forged or expired Firebase Auth context",
+      "expected": "unauthenticated"
+    },
+    {
+      "id": "T03",
+      "case": "Missing/invalid server-verified App Check context",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T04",
+      "case": "Student or unapproved teacher role",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T05",
+      "case": "Admin cannot act as teacher without independently authorized reviewer role",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T06",
+      "case": "Disabled user/revoked role or inactive directory",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T07",
+      "case": "Cross-origin disallowed browser request",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T08",
+      "case": "Client-supplied uid, role, answer key or extra fields",
+      "expected": "invalid-argument"
+    },
+    {
+      "id": "T09",
+      "case": "Out-of-scope question number",
+      "expected": "invalid-argument"
+    },
+    {
+      "id": "T10",
+      "case": "Stale source or candidate fingerprint",
+      "expected": "failed-precondition"
+    },
+    {
+      "id": "T11",
+      "case": "Conflicting second recommendation",
+      "expected": "already-exists"
+    },
+    {
+      "id": "T12",
+      "case": "Rate/concurrency threshold exceeded",
+      "expected": "resource-exhausted"
+    },
+    {
+      "id": "T13",
+      "case": "Backend disabled or owner staging consent absent",
+      "expected": "unavailable"
+    },
+    {
+      "id": "T14",
+      "case": "Unauthorized access to original answer key or student data",
+      "expected": "permission-denied"
+    },
+    {
+      "id": "T15",
+      "case": "Attempt to publish/score/approve academic answer in advisory endpoint",
+      "expected": "invalid-argument"
+    },
+    {
+      "id": "T16",
+      "case": "Trusted directory or Firestore dependency outage",
+      "expected": "unavailable"
+    }
+  ],
+  "productionGateIdsStillBlocked": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12"
+  ],
+  "confirmationNotes": [
+    "V161 is a data contract, not executable Cloud Functions source.",
+    "Cloud Functions onCall context must be produced by the verified SDK, not accepted as client JSON.",
+    "Reject extra request fields; never accept client UID, roles, approval or source content as authority.",
+    "App Check registration and monitoring do not prove enforcement; current live state is unverified.",
+    "Cloud Functions may require Blaze billing; owner has not approved.",
+    "No private source explanation/key, teacher role provisioning or Student Test Builder changes."
+  ]
+}
