@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam NBF Grade XI Unit 7 Topic 7.3: Young's modulus wire experiment, force-extension graph, work and elastic potential energy, with an original unscored interactive demonstration.">
+<title>7.3 Elastic Potential Energy | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--navy:#0b192c;--panel:#192e4b;--line:#49627d;--gold:#eace90;--fg:#f6f8fd;--soft:#c5d8eb}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+body{margin:0;color:var(--fg);background:linear-gradient(140deg,#091629,#172f50 70%,#111e33);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--gold)}a:focus-visible,summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #ffe3aa;outline-offset:3px}
+.skip{position:absolute;left:12px;top:-70px;padding:10px;background:white;color:#132a46;z-index:100}.skip:focus{top:8px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#091729;border-bottom:1px solid var(--line);padding:12px max(18px,calc((100% - 1100px)/2))}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;font-weight:900}.brand img{width:56px;height:56px;object-fit:contain}.brand small{display:block;color:var(--soft);font-size:11px;font-weight:600}
+header nav{display:flex;flex-wrap:wrap;gap:9px}header nav a{padding:8px 11px;text-decoration:none;border:1px solid var(--line);border-radius:8px;font-size:12px;font-weight:800}
+main{max-width:1100px;margin:auto;padding:28px 18px 72px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.09em;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.18;margin:8px 0}h2{font-size:clamp(22px,3.2vw,29px);line-height:1.3;margin:34px 0 14px}h3{font-size:19px;color:var(--gold);margin:0 0 9px}
+.lead{font-size:18px;color:var(--soft);max-width:840px}.notice{border-left:4px solid var(--gold);background:#203b5d;border-radius:10px;padding:16px;margin:17px 0 22px}.note-warning{border-left-color:#f3b46b;background:#3a302b}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 25px}.jump a{font-size:12px;font-weight:850;padding:8px 12px;border-radius:999px;border:1px solid #849bb3;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,275px),1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:19px;min-width:0}.card p{margin:8px 0;color:var(--soft)}
+.formula{border:1px solid #7996b7;border-radius:9px;background:#0f2541;text-align:center;padding:14px;font-size:clamp(17px,2.4vw,24px);font-weight:760;overflow-wrap:anywhere}.formula small{display:block;font-size:12px;font-weight:550;color:var(--soft)}
+figure{margin:16px 0;padding:18px;background:#edf3fa;border-radius:13px;color:#172e4b}figure svg{display:block;width:100%;height:auto}figcaption{font-size:13px;margin-top:8px;color:#304c6b}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid var(--line)}th{color:var(--gold);background:#203955}.small{font-size:13px;color:var(--soft)}
+.demo{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:13px}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:13px}
+.fields label{font-weight:800}.fields input{margin-top:5px;display:block;width:100%;border-radius:7px;border:1px solid #a9bfd7;padding:11px;font:inherit;color:#152b45;background:white}
+.demo button{margin-top:13px;background:#edc780;color:#132943;border:1px solid #f5e7c9;border-radius:7px;padding:11px 17px;font-weight:850;font:inherit;cursor:pointer}
+.demo button:hover{background:#ffe0a8}.slider-row{margin:15px 0 7px}.slider-row input{display:block;width:100%;accent-color:#f1c673}.slider-row label{font-weight:800;display:block}
+.live-values{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,155px),1fr));gap:11px;margin-top:13px}.live-values div{padding:11px;background:#102641;border:1px solid var(--line);border-radius:9px}.live-values strong{display:block;color:#fbe0a2;font-size:20px}.live-values span{font-size:12px;color:var(--soft)}.error{color:#ffb8ad}
+details.quiz{border:1px solid var(--line);background:var(--panel);border-radius:10px;margin:9px 0}details.quiz summary{cursor:pointer;min-height:48px;padding:13px 15px;font-weight:800}details.quiz p{margin:0;padding:0 15px 15px;color:var(--soft)}
+footer{border-top:1px solid var(--line);padding:19px;color:var(--soft);text-align:center;font-size:12px}
+@media(max-width:620px){main{padding:21px 13px 60px}.lead{font-size:16px}.card,.demo{padding:15px}th,td{font-size:12px;padding:8px}.formula{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white;color:black}.skip,header nav,.jump,.demo button,.slider-row{display:none}.card,.notice,.demo,details.quiz{background:white;color:black;border:1px solid #666}.card p,.lead,.small,details.quiz p{color:#333}.formula,.live-values div{background:white;color:#111}.live-values strong,h3,a{color:#111}figure{break-inside:avoid}details.quiz:not([open]){display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to elastic potential energy lesson</a>
+<header>
+ <a class="brand" href="./" aria-label="Physics with Sir Najam student portal home">
+  <img src="./assets/physics-with-sir-najam-official-logo.png" width="56" height="56" alt="Official Physics with Sir Najam logo">
+  <span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span>
+ </a>
+ <nav aria-label="Unit 7 lessons">
+  <a href="./unit-07-learning-intro-v145.html">7.1 Classification</a>
+  <a href="./unit-07-topic72-deformation-v162.html">7.2 Deformation</a>
+  <a href="./#learning-hub">Learning Hub</a>
+ </nav>
+</header>
+<main id="content">
+ <p class="eyebrow">Grade XI · NBF Physics · Unit 7 · Printed pp. 122–124</p>
+ <h1>7.3 <span style="color:var(--gold)">Elastic Potential Energy</span></h1>
+ <p class="lead">Learn how to measure the stiffness of a metal wire, why the area under a force–extension graph represents work, and how an elastic material stores recoverable energy while it stays in the proportional region.</p>
+ <div class="notice" role="note"><strong>Public source-checked lesson, not a scored exam.</strong> Based on NBF Grade XI Physics, Section 7.3, pp. 122–124, and the official FBISE Grade XI framework: <strong>P-11-B-25 — Summative / Understanding</strong> (metal-wire Young's modulus experiment); <strong>P-11-B-27 — Summative / Application</strong> (work from the force–extension graph); <strong>P-11-B-28 — Summative / Application</strong> (elastic potential energy). These are topic-level mappings, not approvals of individual MCQs. <strong>Unit 7 exam questions and official scoring remain on HOLD.</strong></div>
+ <nav class="jump" aria-label="Lesson sections"><a href="#experiment">01 · Wire experiment</a><a href="#graph">02 · Force–extension</a><a href="#derive">03 · Derivation</a><a href="#try">04 · Interactive model</a><a href="#source">Source corrections</a><a href="#check">Self-check</a></nav>
+
+ <section id="experiment" aria-labelledby="experiment-h">
+  <p class="eyebrow">7.3.1 · NBF printed p. 122 · P-11-B-25</p><h2 id="experiment-h">Measuring Young's modulus of a metal wire</h2>
+  <p>Measure a test wire's original length <strong>L</strong> and diameter at several positions, then calculate its cross-sectional area <strong>A = πd²/4</strong>. Hang small increasing loads on the wire, measure each additional extension <strong>x</strong> against a parallel reference wire and vernier scale, and record the corresponding applied tensile force <strong>F</strong>. Keep loads within the wire's linear elastic range.</p>
+  <figure>
+   <svg viewBox="0 0 750 360" role="img" aria-labelledby="apparatusTitle apparatusDesc">
+    <title id="apparatusTitle">Original simplified two-wire Young's modulus experiment arrangement</title>
+    <desc id="apparatusDesc">A rigid support holds a left reference wire and a right test wire. The right wire has a variable hanging load and a vernier reading scale to compare small extensions against the reference wire. The arrangement illustrates a method, not an actual experimental measurement.</desc>
+    <rect x="128" y="35" width="486" height="22" rx="5" fill="#1a385a"/>
+    <g stroke="#24587a" stroke-width="4"><line x1="257" y1="57" x2="257" y2="254"/><line x1="473" y1="57" x2="473" y2="270"/></g>
+    <g fill="#b0becb" stroke="#375673" stroke-width="3"><rect x="240" y="243" width="34" height="28" rx="3"/><rect x="450" y="260" width="46" height="40" rx="4"/></g>
+    <rect x="321" y="137" width="84" height="91" rx="5" fill="#d7e4f1" stroke="#355678" stroke-width="3"/>
+    <g stroke="#567393" stroke-width="2"><line x1="344" y1="145" x2="344" y2="218"/><line x1="336" y1="150" x2="352" y2="150"/><line x1="338" y1="164" x2="352" y2="164"/><line x1="336" y1="178" x2="352" y2="178"/><line x1="338" y1="192" x2="352" y2="192"/><line x1="336" y1="207" x2="352" y2="207"/></g>
+    <path d="M275 179 L321 179 M405 179 L449 179" stroke="#b26823" stroke-width="4" fill="none"/>
+    <g fill="#173858" font-family="system-ui,sans-serif" font-size="18" font-weight="750">
+     <text x="180" y="103">Reference wire</text><text x="439" y="103">Test wire</text>
+     <text x="306" y="263">Vernier comparison</text><text x="508" y="288">Variable load</text>
+     <text x="370" y="26" text-anchor="middle">Rigid support</text>
+    </g>
+   </svg>
+   <figcaption>Original teaching schematic adapted conceptually from NBF Figure 7.13. Use the reference wire and a measurement scale to minimize errors from support movement.</figcaption>
+  </figure>
+  <div class="formula">Y = FL / (Ax)<small>F: applied force (N) · L: original length (m) · A: wire area (m²) · x: measured extension (m) · Y: Pa</small></div>
+  <div class="grid">
+   <article class="card"><h3>Observe and calculate</h3><p>Plot <strong>force F</strong> against <strong>extension x</strong> in the proportional range. Its slope <strong>F/x = k</strong> gives wire stiffness. Hence <strong>Y = (L/A)k</strong>.</p></article>
+   <article class="card"><h3>Control experimental error</h3><p>Take several readings, average the measured diameter carefully, avoid parallax, allow the wire to settle and check that unloading restores the original length. Repeat loads to identify the linear region.</p></article>
+  </div>
+  <div class="notice"><strong>Important distinction:</strong> Use the measured applied force and its corresponding extension when determining <strong>Young's modulus</strong>. The <em>average force</em> F/2 is used to calculate the work of stretching from zero to F when the force rises linearly—not to replace F in the Young's modulus formula.</div>
+ </section>
+
+ <section id="graph" aria-labelledby="graph-h">
+  <p class="eyebrow">7.3.2 · NBF printed pp. 122–123 · P-11-B-27</p><h2 id="graph-h">Work from the force–extension graph</h2>
+  <p>For a gradually stretched wire, the force changes with extension. The small work done during an additional extension dx is <strong>dW = F(x) dx</strong>. Therefore, total work equals the <strong>area under the F-versus-x curve</strong>, with extension on the horizontal axis and force on the vertical axis.</p>
+  <div class="formula">W = ∫ F(x) dx<small>Area under force (N) versus extension (m) · Unit: N m = J</small></div>
+  <p>If the wire obeys <strong>Hooke's law, F = kx</strong>, while being stretched from zero to a final extension x, the graph is a straight line through the origin. Its triangular area gives work <strong>W = ½Fx</strong>. This triangular rule should not be applied automatically to a nonlinear force–extension curve.</p>
+  <div class="notice note-warning"><strong>Textbook diagram clarification:</strong> NBF Figure 7.14 places weight on the horizontal axis and extension vertically. That orientation is not the conventional graph for finding work as the area under <strong>force versus extension</strong>. The original graph below uses force vertically and extension horizontally. In the special straight-line case, the textbook's triangle happens to give the same number, but the integral for work is ∫F dx.</div>
+ </section>
+
+ <section id="derive" aria-labelledby="derive-h">
+  <p class="eyebrow">7.3.3 · NBF printed pp. 123–124 · P-11-B-28</p><h2 id="derive-h">Derivation of elastic potential energy</h2>
+  <p>While the material stays in its <strong>limit of proportionality</strong> and returns elastically, work done against its restoring force is stored as <strong>elastic potential energy U</strong>. Starting from Hooke's law, we obtain:</p>
+  <div class="grid">
+   <article class="card"><h3>1 · Area under the graph</h3><div class="formula">U = ½Fx<small>F is the final force, x is the final extension</small></div><p>For linear loading from rest, the average force is F/2, so work = (F/2)x.</p></article>
+   <article class="card"><h3>2 · Introduce Hooke's law</h3><div class="formula">U = ½kx²<small>Since F = kx; k is in N/m</small></div><p>Doubling extension within the same linear range makes the stored energy four times as large.</p></article>
+   <article class="card"><h3>3 · Express in terms of Young's modulus</h3><div class="formula">U = YA x² / (2L)<small>Since k = YA/L; Y in Pa, A in m², L and x in m</small></div><p>This is the strain energy in a uniform wire, assuming small linear-elastic extension.</p></article>
+  </div>
+  <div class="notice"><strong>Stress–strain area nuance:</strong> The area under a stress (Pa) versus strain (dimensionless) graph represents <strong>strain energy per unit volume (J/m³)</strong>, not total energy in joules. For a uniformly strained wire, multiply by volume AL to obtain total stored energy.</div>
+  <div class="card">
+   <h3>Source-audited NBF Example 7.3</h3>
+   <p>The book's steel-wire example uses <strong>F = 980 N</strong>, <strong>L = 1 m</strong>, <strong>diameter d = 0.004 m</strong>, and <strong>Y = 2.0 × 10¹¹ Pa</strong>. The correct radius is <strong>r = d/2 = 0.002 m</strong>, so area <strong>A ≈ 1.257 × 10⁻⁵ m²</strong>, extension <strong>x ≈ 3.90 × 10⁻⁴ m</strong>, and stored energy <strong>U ≈ 0.191 J</strong>.</p>
+   <p class="small">NBF printed p. 123 incorrectly labels the radius as 0.004 m in its Given section; the p. 124 area calculation correctly uses 0.002 m. This is a documented textbook notation inconsistency, not a change to the original problem data.</p>
+  </div>
+ </section>
+
+ <section id="try" aria-labelledby="try-h">
+  <p class="eyebrow">Original interactive demonstration · No scores stored</p><h2 id="try-h">Explore force, extension and stored energy</h2>
+  <p>Enter a positive final force, final extension, wire length and cross-sectional area. The model assumes the wire has a straight-line force–extension relationship up to those final values. Move the fraction slider to examine loading from 0% to 100% of that endpoint.</p>
+  <div class="demo">
+   <form id="energy-form">
+    <div class="fields">
+     <label for="load">Final force F (N)<input id="load" name="load" type="number" min="0.000000001" step="any" value="200" required></label>
+     <label for="end-extension">Final extension x (mm)<input id="end-extension" name="end-extension" type="number" min="0.000000001" step="any" value="1" required></label>
+     <label for="wire-length">Wire length L (m)<input id="wire-length" name="wire-length" type="number" min="0.000000001" step="any" value="2" required></label>
+     <label for="wire-area">Area A (mm²)<input id="wire-area" name="wire-area" type="number" min="0.000000001" step="any" value="2" required></label>
+    </div>
+    <button type="submit">Update force–extension model</button>
+   </form>
+   <p id="energy-status" role="status" aria-live="polite" class="small">Default original example: the linear-elastic model predicts U = 0.100 J at full extension.</p>
+   <div id="energy-results">
+    <div class="slider-row"><label for="fraction">Loading fraction: <output id="fraction-value" for="fraction">100%</output></label><input id="fraction" type="range" min="0" max="100" step="5" value="100" aria-describedby="fraction-help"><p id="fraction-help" class="small">At 50% of the extension, stored energy is 25% of its full-extension value.</p></div>
+    <figure>
+     <svg id="energy-graph" viewBox="0 0 760 380" role="img" aria-labelledby="graphTitle graphDesc">
+      <title id="graphTitle">Linear force versus extension graph with shaded strain-energy triangle</title>
+      <desc id="graphDesc">Extension is on the horizontal axis and force on the vertical axis. The line rises from the origin to the selected full-extension point. A shaded triangle shows work and stored energy up to the adjustable loading fraction.</desc>
+      <path d="M90 320 L705 320 M90 320 L90 28" fill="none" stroke="#18395b" stroke-width="3"/>
+      <path d="M700 314 L711 320 L700 326 M84 37 L90 26 L96 37" fill="none" stroke="#18395b" stroke-width="3"/>
+      <path d="M90 320 L665 70" stroke="#acc6d6" stroke-width="5" stroke-linecap="round"/>
+      <polygon id="energy-triangle" points="90,320 665,320 665,70" fill="#e8b34c" opacity=".55"/>
+      <path id="energy-applied-line" d="M90 320 L665 70" stroke="#126c9b" stroke-width="5" stroke-linecap="round"/>
+      <circle id="energy-current-point" cx="665" cy="70" r="9" fill="#1375a7" stroke="white" stroke-width="3"/>
+      <g fill="#173756" font-size="19" font-weight="750" font-family="system-ui,sans-serif">
+       <text x="690" y="348" text-anchor="end">Extension x (m) →</text>
+       <text x="29" y="190" transform="rotate(-90 29 190)" text-anchor="middle">Force F (N) →</text>
+       <text x="116" y="94">Shaded area = U</text>
+       <text id="energy-force-label" x="570" y="49">F = 200 N</text>
+       <text id="energy-extension-label" x="474" y="368">x = 0.001 m</text>
+      </g>
+     </svg>
+     <figcaption>Original interactive force–extension model: the shaded triangular area is in joules (N × m). The grey line is the assumed linear law to your chosen final force and extension; the blue segment shows the current loading fraction.</figcaption>
+    </figure>
+    <div class="live-values" aria-label="Calculated values for the current loading fraction">
+     <div><strong id="result-current-extension">1.000 mm</strong><span>Current extension</span></div>
+     <div><strong id="result-current-force">200.000 N</strong><span>Current force</span></div>
+     <div><strong id="result-energy">0.100 J</strong><span>Current stored energy</span></div>
+     <div><strong id="result-stiffness">200000 N/m</strong><span>Constant wire stiffness k</span></div>
+     <div><strong id="result-young">200.000 GPa</strong><span>Implied Young's modulus Y</span></div>
+    </div>
+   </div>
+  </div>
+  <p class="small"><strong>Calculation assumptions:</strong> area and original length remain constant to the needed approximation; loading starts at zero; response is linear and recoverable. This model cannot determine an actual wire's yield stress, certify its material or validate a real experiment. Changing the force and extension inputs creates a mathematical scenario only.</p>
+ </section>
+
+ <section id="source" aria-labelledby="source-h">
+  <p class="eyebrow">Scientific source literacy</p><h2 id="source-h">Two important textbook clarifications</h2>
+  <div class="grid">
+   <article class="card"><h3>Figure 7.14 axis choice · p. 122</h3><p>NBF sketches extension against weight. For calculating work by integrating the loading force, place <strong>extension horizontally</strong> and <strong>force vertically</strong>. For a proportional (straight-line) load the triangular product happens to match either orientation numerically, but that is not true for arbitrary nonlinear curves.</p></article>
+   <article class="card"><h3>Example 7.3 diameter/radius · pp. 123–124</h3><p>A <strong>0.004 m diameter</strong> means <strong>0.002 m radius</strong>. Use A = π(0.002 m)². The original Given line calls 0.004 m the radius, while the subsequent area computation uses the correct radius.</p></article>
+  </div>
+  <p class="small">A further distinction from NBF p. 124 summary: total strain energy for a uniform sample equals <em>volume</em> multiplied by the area under a stress–strain curve; the graph's area alone is energy <em>density</em>.</p>
+ </section>
+
+ <section id="check" aria-labelledby="check-h">
+  <p class="eyebrow">Self-check · Concept review, not an official MCQ bank</p><h2 id="check-h">Test your understanding</h2>
+  <details class="quiz"><summary>1. Which quantities belong on the axes when the area under the graph gives work?</summary><p>Plot force F on the vertical axis against extension x on the horizontal axis. Work is the integral ∫F dx.</p></details>
+  <details class="quiz"><summary>2. Why is the area triangular for a Hooke's-law wire?</summary><p>Force increases linearly from 0 to F while extension increases from 0 to x, so the area is ½Fx.</p></details>
+  <details class="quiz"><summary>3. What happens to elastic potential energy if extension is doubled, with the same k?</summary><p>U = ½kx², so energy is four times as large, provided the wire remains within the proportional range.</p></details>
+  <details class="quiz"><summary>4. What is the correct radius if a wire's diameter is 4.0 mm?</summary><p>2.0 mm = 0.002 m; calculate area using this radius, not the diameter.</p></details>
+  <details class="quiz"><summary>5. Is average force F/2 used to find Young's modulus?</summary><p>No. Young's modulus uses the actual load F and its measured extension x: Y = FL/(Ax). The average F/2 is used for the work ½Fx when loading is linear from zero.</p></details>
+  <details class="quiz"><summary>6. What does the area under a stress–strain curve represent?</summary><p>Energy per unit volume (J/m³) in the elastic portion; multiply by specimen volume to find total energy, if the strain is uniform.</p></details>
+ </section>
+
+ <section aria-labelledby="next-h">
+  <h2 id="next-h">Continue Unit 7</h2>
+  <div class="grid">
+   <article class="card"><h3>Review 7.2 Deformation</h3><p>Recall stress, tensile strain, elastic moduli, and the stress–strain curve before working with stored elastic energy.</p><p><a href="./unit-07-topic72-deformation-v162.html">Back to the deformation lesson</a></p></article>
+   <article class="card"><h3>End-of-unit textbook practice</h3><p>The NBF exercises on pp. 125–126 and existing teacher-prepared MCQ and worked-question sets are being audited separately. The official exam practice and scored Test Builder remain on HOLD until answer and SLO verification.</p><p><a href="./unit-07-learning-intro-v145.html">Return to Unit 7 learning introduction</a></p></article>
+  </div>
+ </section>
+ <p class="small" style="margin-top:27px"><strong>Source and standards:</strong> NBF Grade XI Physics Unit 7, Section 7.3, pp.122–124, Figures 7.13–7.14, Example 7.3 and Equations 7.5–7.7; official FBISE Assessment Framework for Physics Grade XI (Curriculum 2022–23, Scheme 2024), SLOs P-11-B-25/27/28. Original text, SVGs and interactive model prepared for Physics with Sir Najam. Original boxed MCQ answer keys and original textbook scans are not reproduced. Individual exam-item release and official assessment compliance require separate teacher signoff.</p>
+</main>
+<footer>Physics with Sir Najam · Grade XI · Unit 7.3 · Unscored lesson · No progress or grades stored</footer>
+<script>
+(() => {
+ "use strict";
+ const form=document.getElementById("energy-form");
+ const status=document.getElementById("energy-status");
+ const panel=document.getElementById("energy-results");
+ const range=document.getElementById("fraction");
+ const outputs={
+  fraction:document.getElementById("fraction-value"),
+  x:document.getElementById("result-current-extension"),
+  F:document.getElementById("result-current-force"),
+  U:document.getElementById("result-energy"),
+  k:document.getElementById("result-stiffness"),
+  Y:document.getElementById("result-young"),
+  graphF:document.getElementById("energy-force-label"),
+  graphX:document.getElementById("energy-extension-label"),
+  triangle:document.getElementById("energy-triangle"),
+  line:document.getElementById("energy-applied-line"),
+  point:document.getElementById("energy-current-point")
+ };
+ const num=id=>Number(document.getElementById(id).value);
+ let endpoint={F:200,x:0.001,L:2,A:2e-6,k:200000,Y:2e11,U:0.1};
+ const format=(n,unit,d=3)=>n.toFixed(d)+" "+unit;
+ function update(){
+  if(panel.hidden)return;
+  const portion=Number(range.value)/100;
+  const px=endpoint.x*portion;
+  const force=endpoint.F*portion;
+  const U=0.5*force*px;
+  const xDraw=90+575*portion;
+  const yDraw=320-250*portion;
+  outputs.fraction.textContent=Math.round(portion*100)+"%";
+  outputs.x.textContent=format(px*1000,"mm");
+  outputs.F.textContent=format(force,"N");
+  outputs.U.textContent=format(U,"J");
+  outputs.k.textContent=endpoint.k.toFixed(0)+" N/m";
+  outputs.Y.textContent=(endpoint.Y/1e9).toFixed(3)+" GPa";
+  outputs.graphF.textContent="F = "+endpoint.F.toPrecision(4)+" N";
+  outputs.graphX.textContent="x = "+endpoint.x.toPrecision(4)+" m";
+  outputs.triangle.setAttribute("points","90,320 "+xDraw+",320 "+xDraw+","+yDraw);
+  outputs.line.setAttribute("d","M90 320 L"+xDraw+" "+yDraw);
+  outputs.point.setAttribute("cx",String(xDraw));
+  outputs.point.setAttribute("cy",String(yDraw));
+ }
+ function invalid(message){
+  panel.hidden=true;
+  status.textContent=message;
+  status.classList.add("error");
+ }
+ form.addEventListener("submit",event=>{
+  event.preventDefault();
+  const F=num("load"),xMm=num("end-extension"),L=num("wire-length"),aMm2=num("wire-area");
+  if(![F,xMm,L,aMm2].every(v=>Number.isFinite(v)&&v>0)){
+   invalid("Enter a positive, finite number for all four quantities.");
+   return;
+  }
+  const x=xMm*1e-3,A=aMm2*1e-6;
+  const k=F/x,Y=F*L/(A*x),U=0.5*F*x;
+  if(![k,Y,U,x,A].every(Number.isFinite)||x>=L||Y>1e15||k>1e18){
+   invalid("The measurements are outside the safe numerical range of this simple linear-elastic demonstration.");
+   return;
+  }
+  endpoint={F,x,L,A,k,Y,U};
+  panel.hidden=false;
+  status.classList.remove("error");
+  status.textContent="Linear-elastic model updated. Energy is the shaded area under the force–extension line; no answer or grade is stored.";
+  update();
+ });
+ range.addEventListener("input",update);
+ update();
+})();
+</script>
+</body>
+</html>
