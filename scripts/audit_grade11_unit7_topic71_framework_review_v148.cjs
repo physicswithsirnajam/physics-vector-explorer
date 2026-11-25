@@ -97,7 +97,7 @@ function main(){
  for(const marker of [
   'Q15','Q62','Understanding','Summative','32','48','80',
   'Compulsory','Optional','not automatically',
-  'not approved','textbook','113–116','seven crystal systems'
+  'not teacher-approved','textbook','113–116','seven crystal systems'
  ]){
   assert.ok(review.toLowerCase().includes(marker.toLowerCase()),
    'Missing required source/teacher decision discussion: '+marker);
