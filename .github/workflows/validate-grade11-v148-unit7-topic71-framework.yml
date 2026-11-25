@@ -1,0 +1,49 @@
+name: Grade XI V148 Unit7 Topic7.1 Source Answers and FBISE Understanding Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v148-80-source-answer-and-framework-review-register.json"
+      - "quality/grade11-v148-topic71-answer-key-and-understanding-level-audit.md"
+      - "scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs"
+      - ".github/workflows/validate-grade11-v148-unit7-topic71-framework.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v148-80-source-answer-and-framework-review-register.json"
+      - "quality/grade11-v148-topic71-answer-key-and-understanding-level-audit.md"
+      - "scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs"
+      - ".github/workflows/validate-grade11-v148-unit7-topic71-framework.yml"
+  workflow_dispatch:
+jobs:
+  preserve-original-answer-review-cognitive-scope-and-nonrelease:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check 80-item framework review and original source metadata
+        run: |
+          node --check scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+          node -e "JSON.parse(require('node:fs').readFileSync('quality/unit07/topic71-v148-80-source-answer-and-framework-review-register.json','utf8'))"
+      - name: Audit original source-answer existence and provisional B-22 Understanding-level mapping
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 original 80 unscored source-derived questions and four options
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 80 original full-source answer-row fingerprints and teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve Grade XI original 2250 public provisional MCQ references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 pending 560 individual teacher decisions and exam release hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload aggregate-only metadata, not teacher answer letters or Word source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v148-unit7-80-academic-framework-review-evidence
+          path: qa-artifacts/grade11-v148-unit7-topic71-framework-review/summary.json
+          if-no-files-found: warn
+          retention-days: 14
