@@ -1,1 +1,347 @@
-{}
+{
+  "schemaVersion": 1,
+  "version": "V170",
+  "topic": "Grade XI Physics Unit7.3 Elastic Potential Energy",
+  "batch": "original Q21-Q40 of 80",
+  "prior": "V169 Q1-Q20",
+  "originalWordFile": "Grade11_Unit7_Topic7.3_PartA_80MCQs_Study_With_Answers.docx",
+  "originalWordSha256": "f92ca26d3fd794b07ee4b5bc94b8418575c3c36076b9b0805f8e209e0aa4b279",
+  "nbfPdfSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "officialSummativeLevels": {
+    "P-11-B-25": "Understanding",
+    "P-11-B-27": "Application",
+    "P-11-B-28": "Application"
+  },
+  "fingerprintRecipe": "TOPIC73_V169_EXPLICIT_PRIVATE_SOURCE_JSON_V1",
+  "batchJoinedSha256": "e07ff80e4218fd8f1f439836985cda7bfbaa81b74cb42adc1e1ac45e0beb151c",
+  "first40JoinedSha256": "c0b3483ceaadc3578c89b3bf2d87cd7fdecb1e55ce9561354a4fa034b42f3c4b",
+  "firstPassReviewed": 20,
+  "cumulativeReviewed": 40,
+  "originalWholeBankRows": 80,
+  "incorrectKeysFirstPass": 0,
+  "sourceKeyLettersMatchOptions": true,
+  "originalCognitive": {
+    "K": 0,
+    "U": 13,
+    "A": 7
+  },
+  "cumulativeCognitive": {
+    "K": 11,
+    "U": 20,
+    "A": 9
+  },
+  "originalSloCounts": {
+    "P-11-B-25": {
+      "U": 4,
+      "A": 2,
+      "total": 6
+    },
+    "P-11-B-27": {
+      "U": 7,
+      "A": 2,
+      "total": 9
+    },
+    "P-11-B-28": {
+      "U": 2,
+      "A": 3,
+      "total": 5
+    }
+  },
+  "compulsory": [
+    24,
+    31,
+    35
+  ],
+  "optional": [
+    23,
+    32,
+    33,
+    34,
+    36
+  ],
+  "duplicateWatch": [
+    [
+      22,
+      23
+    ],
+    [
+      28,
+      36
+    ],
+    [
+      21,
+      28,
+      36
+    ]
+  ],
+  "sourceDataAttestedOffline": true,
+  "privateKeyOrQuestionTextPublished": false,
+  "ownerWordChanged": false,
+  "teacherApprovals": 0,
+  "unit7ScoredItems": 0,
+  "firebaseBackendChanged": false,
+  "topic72TeacherHoldPreserved": true,
+  "items": [
+    {
+      "sourceNumber": 21,
+      "fullSourceRowSha256": "c2a7b2d600b3284bb5d227cf48e203172d9b092604659885d8eb81cc02dbc694",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 22,
+      "fullSourceRowSha256": "b645a28c160a1a5bb42421bc38c2e8ddd246e641220eef524f6a2d347ac4d243",
+      "sourceMappedSlo": "P-11-B-28",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 23,
+      "fullSourceRowSha256": "d43280151c9dbdd521b80d4ee4c52d0fdffc3cce125089d4043205dcc6330f0f",
+      "sourceMappedSlo": "P-11-B-28",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "optional",
+      "issueSummary": "Near-duplicate of Q22 energy scaling",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 24,
+      "fullSourceRowSha256": "be8a0fdb12d7b178a0ef9892d8931d787679cc4aae477b5c4fd62a4c4e1ebbb6",
+      "sourceMappedSlo": "P-11-B-28",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "compulsory",
+      "issueSummary": "Ideal elastic not necessarily linear Hooke response",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 25,
+      "fullSourceRowSha256": "4d33237618966e918851139084b9159f9d1017b46108e370ead47ac62af399d4",
+      "sourceMappedSlo": "P-11-B-28",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 26,
+      "fullSourceRowSha256": "a188f6e2984bd16e02ca76a254f85c6d014231d4c3358f7f4da7c4c04b226353",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 27,
+      "fullSourceRowSha256": "663d2597c860e2d8844ef030c23170e6a2307ea979aad83f73568ca1c9d955f1",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 28,
+      "fullSourceRowSha256": "67e609f5133485ddd7b7e2f13770dafe6fbc0fcfdd958708420d6221dd8ec259",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 29,
+      "fullSourceRowSha256": "cbfc248c51151b9294be327dc824f669a2a0d569953bfc4eb737a9c08ebcd337",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 30,
+      "fullSourceRowSha256": "471bb886e1765941b3afc0c9aeff527616071d108bba5f1082c5ba4a2f5a710c",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 31,
+      "fullSourceRowSha256": "771c80561706358a4570e80a94e24fe9dae2ef4137f9011397cdd054f8cb25b2",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 122,
+      "scope": "teacher-cross-slo-review",
+      "issuePriority": "compulsory",
+      "issueSummary": "Inverse-area extension needs proportional range",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 32,
+      "fullSourceRowSha256": "5380aeb829c1742677f6dc518ea64cb5edebba17d112ddf9acc627d764ab9be5",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 122,
+      "scope": "teacher-cross-slo-review",
+      "issuePriority": "optional",
+      "issueSummary": "Check experiment-vs-Young-modulus SLO mapping",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 33,
+      "fullSourceRowSha256": "f62ac984e5ca2c7d862395866cc7ab2687d679d462646fc0a60c458c9a69bb2e",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "teacher-cross-slo-review",
+      "issuePriority": "optional",
+      "issueSummary": "Young-modulus comparison better aligned to B-24",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 34,
+      "fullSourceRowSha256": "43aa98cfbcafde0bea5e6540db7f9f700142c6fbc6851a6283f05aa491ab6058",
+      "sourceMappedSlo": "P-11-B-25",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "optional",
+      "issueSummary": "F-versus-x slope axes conflict with NBF Figure 7.14",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 35,
+      "fullSourceRowSha256": "b581f04efcc3815f8ad1a34145c62c9af20bb6460f74c021a54ecc24b49d1b34",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "compulsory",
+      "issueSummary": "Equal endpoint force/extension does not fix work for nonlinear paths",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 36,
+      "fullSourceRowSha256": "510fae2e80cdfb137c9dcb02b76485fd6b7db9a68d399868a414b272eedc366d",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "optional",
+      "issueSummary": "Mean force/triangle repeats Q21/Q28 concepts",
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 37,
+      "fullSourceRowSha256": "770f5b962e706f41de843bfd131d84bfb70c964682c986e5fb46bb491b798c12",
+      "sourceMappedSlo": "P-11-B-28",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 38,
+      "fullSourceRowSha256": "d20aa361debd95548e17cd910caa9494661408a165fd04ec1853e8daf1a91d67",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 39,
+      "fullSourceRowSha256": "78f50ab42af34aa80dcfe97cce40bab638c40f7d2c03f4b03ffc56737a792fbd",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "A",
+      "sourcePrintedPage": 122,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    },
+    {
+      "sourceNumber": 40,
+      "fullSourceRowSha256": "1650c86de6ab0a2823b00f7cf6757ef09b6d571e5b8b92e0273e1ff4a9b2cfac",
+      "sourceMappedSlo": "P-11-B-27",
+      "authorItemLevel": "U",
+      "sourcePrintedPage": 123,
+      "scope": "direct-topic-candidate",
+      "issuePriority": "none",
+      "issueSummary": null,
+      "scienceSignoff": "PENDING",
+      "cognitiveSignoff": "PENDING",
+      "studentScore": "HOLD"
+    }
+  ],
+  "next": "V171 original Q41-Q60 science and SLO audit"
+}
