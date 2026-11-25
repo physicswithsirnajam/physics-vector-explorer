@@ -1,0 +1,63 @@
+name: Grade XI V163 Unit7.3 NBF Elastic Potential Energy (UNSCORED)
+on:
+  pull_request:
+    paths:
+      - "portal/unit-07-topic73-elastic-energy-v163.html"
+      - "portal/unit-07-topic72-deformation-v162.html"
+      - "portal/unit-07-learning-intro-v145.html"
+      - "scripts/test_grade11_v163_unit7_topic73_study.cjs"
+      - "quality/grade11-v163-unit7-topic73-elastic-energy-source-qc.md"
+      - ".github/workflows/validate-grade11-v163-unit7-topic73-study.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-07-topic73-elastic-energy-v163.html"
+      - "portal/unit-07-topic72-deformation-v162.html"
+      - "portal/unit-07-learning-intro-v145.html"
+      - "scripts/test_grade11_v163_unit7_topic73_study.cjs"
+      - "quality/grade11-v163-unit7-topic73-elastic-energy-source-qc.md"
+      - ".github/workflows/validate-grade11-v163-unit7-topic73-study.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit7-elastic-energy-formulas-browser-and-scored-release-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate V163 standalone native browser and source mathematics syntax
+        run: node --check scripts/test_grade11_v163_unit7_topic73_study.cjs
+      - name: Preserve 80 original NBF 7.1 teacher-academic pending item decisions
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 existing Grade XI MCQ identities and Unit7 zero-release
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 teacher-pending item signoffs
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve owner teacher backend staging and production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve exact protected production App Check browser initializer inventory
+        run: node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Install native Chromium to validate real force-extension interaction
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify original 7.3 lesson and actual Chromium fractional-area/quarter-energy model
+        run: node scripts/test_grade11_v163_unit7_topic73_study.cjs
+      - name: Preserve V162 source-safe deformation lesson and scientific calculator
+        run: node scripts/test_grade11_v162_unit7_topic72_study.cjs
+      - name: Preserve V145 source introduction and planned Unit7 release navigation
+        run: node scripts/test_grade11_v145_unit7_source_intro_browser.cjs
+      - name: Upload public synthetic student lesson screenshots and counts-only QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v163-unit7-topic73-public-unscored-study-qc
+          path: qa-artifacts/grade11-v163-unit7-topic73-study/
+          if-no-files-found: warn
+          retention-days: 14
