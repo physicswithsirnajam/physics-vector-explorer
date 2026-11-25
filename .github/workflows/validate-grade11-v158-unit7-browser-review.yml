@@ -1,0 +1,99 @@
+name: Grade XI V158 Local Teacher Browser Review Shell (AUTH / HOLD)
+on:
+  pull_request:
+    paths:
+      - "server/local-topic71-browser-review-v158.cjs"
+      - "portal/local-topic71-teacher-review-v158.js"
+      - "scripts/test_grade11_v158_local_browser_review.cjs"
+      - "quality/grade11-v158-unit7-local-teacher-browser-review.md"
+      - ".github/workflows/validate-grade11-v158-unit7-browser-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/local-topic71-browser-review-v158.cjs"
+      - "portal/local-topic71-teacher-review-v158.js"
+      - "scripts/test_grade11_v158_local_browser_review.cjs"
+      - "quality/grade11-v158-unit7-local-teacher-browser-review.md"
+      - ".github/workflows/validate-grade11-v158-unit7-browser-review.yml"
+  workflow_dispatch:
+jobs:
+  verify-local-authenticated-browser-review-and-release-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      GCLOUD_PROJECT: demo-psn-v143-classrooms
+      FIREBASE_AUTH_EMULATOR_HOST: 127.0.0.1:9099
+      FIRESTORE_EMULATOR_HOST: 127.0.0.1:8089
+      PSN_LOCAL_TOPIC71_BROWSER_REVIEW: enabled-local-test-only
+      PSN_LOCAL_TOPIC71_TEACHER_PREVIEW: enabled-local-test-only
+      PSN_LOCAL_TOPIC71_TEACHER_ACTION_HTTP: enabled-local-test-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Syntax-check trusted local browser server, frontend and integration
+        run: |
+          node --check server/local-topic71-browser-review-v158.cjs
+          node --check portal/local-topic71-teacher-review-v158.js
+          node --check scripts/test_grade11_v158_local_browser_review.cjs
+      - name: Preserve 80 source-bound Unit7 teacher-review decisions and score HOLD
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 original Grade XI provisional MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 unapproved teacher item decisions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve owner original published-rules snapshot attestation safety
+        run: node scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Install pinned LOCAL Firebase SDKs and emulators
+        run: >
+          npm install --no-save --no-package-lock --ignore-scripts
+          firebase-admin@14.3.0 firebase@13.4.0
+          @firebase/rules-unit-testing@6.0.0 firebase-tools@15.37.0
+      - name: Validate V158 signed browser-interface HTTP and emulator review operations
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v158_local_browser_review.cjs"
+      - name: Preserve V157 previous four-item local recommendation POST and conflicts
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v157_local_teacher_http.cjs"
+      - name: Preserve V156 authenticated read-only preview and revocations
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v156_local_teacher_readonly_preview.cjs"
+      - name: Preserve V155 direct Firestore Client SDK denials and immutable audit
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v155_local_topic71_teacher_review.cjs"
+      - name: Upload counts-only local security evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v158-unit7-local-browser-review-security
+          path: |
+            qa-artifacts/grade11-v158-local-browser-review/summary.json
+            qa-artifacts/grade11-v157-unit7-local-teacher-http/summary.json
+            qa-artifacts/grade11-v156-topic71-authenticated-readonly-preview/summary.json
+            qa-artifacts/grade11-v155-unit7-local-teacher-review/summary.json
+          if-no-files-found: warn
+          retention-days: 14
