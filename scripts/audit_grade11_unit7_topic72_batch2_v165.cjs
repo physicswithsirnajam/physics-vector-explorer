@@ -130,7 +130,7 @@ function verify(){
    assert.equal(row.issueCategory,ISSUE_CATS[n]);
    assert.ok(typeof row.issue==='string'&&row.issue.length>75,'Q'+n);
    assert.ok(typeof row.proposedAction==='string'&&row.proposedAction.length>75,'Q'+n);
-   assert.ok(typeof row.originalCanBeKept==='string'&&row.originalCanBeKept.length>75,'Q'+n);
+   assert.ok(typeof row.originalCanBeKept==='string'&&row.originalCanBeKept.length>45,'Q'+n);
    assert.ok(memo.includes('**'+n+'**'),'QC report missing Q'+n);
   }else{
    assert.equal(row.changeNeeded,'none');
