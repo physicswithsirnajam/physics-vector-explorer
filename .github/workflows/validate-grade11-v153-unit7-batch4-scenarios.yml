@@ -1,0 +1,57 @@
+name: Grade XI V153 Unit7 Topic7.1 Q61-80 scenario QC (KEYLESS HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v153-batch4-61-80-keyless-scenario-review.json"
+      - "quality/grade11-v153-batch4-61-80-scenario-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch4_v153.cjs"
+      - ".github/workflows/validate-grade11-v153-unit7-batch4-scenarios.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v153-batch4-61-80-keyless-scenario-review.json"
+      - "quality/grade11-v153-batch4-61-80-scenario-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch4_v153.cjs"
+      - ".github/workflows/validate-grade11-v153-unit7-batch4-scenarios.yml"
+  workflow_dispatch:
+jobs:
+  preserve-all-80-first-pass-reviews-and-scenario-key-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check V153 JS syntax
+        run: node --check scripts/audit_grade11_unit7_topic71_batch4_v153.cjs
+      - name: Validate 20 Q61–80 keyless source reviews and hold all 80
+        run: node scripts/audit_grade11_unit7_topic71_batch4_v153.cjs
+      - name: Preserve V152 Q41–60 scientific/cognitive review
+        run: node scripts/audit_grade11_unit7_topic71_batch3_v152.cjs
+      - name: Preserve V151 Q21–40 teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch2_v151.cjs
+      - name: Preserve V150 Q1–20 teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Preserve V149 80 revised source-faithful question-only candidates
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 original key/SLO first-pass source review
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 question-only data fingerprint
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 owner Word keyed-source fingerprint HOLD
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve original 2250 Grade XI provisional MCQ references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 pending teacher approvals
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload metadata-only first-pass completion counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v153-unit7-topic71-80-first-pass-review-keyless
+          path: qa-artifacts/grade11-v153-unit7-q61-80-keyless-scenario/summary.json
+          if-no-files-found: warn
+          retention-days: 14
