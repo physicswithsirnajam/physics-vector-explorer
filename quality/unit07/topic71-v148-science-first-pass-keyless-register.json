@@ -1,0 +1,1008 @@
+{
+  "schemaVersion": "1.0",
+  "version": "V148",
+  "topic": "Grade XI Unit 7 Topic 7.1 Classification of Solids",
+  "basis": {
+    "teacherSource": "Grade11_Unit7_Topic7.1_FBISE_Boxed_Study_With_Answers.docx",
+    "sourceSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
+    "textbook": "NBF Grade XI Physics Unit 7, printed pages 113–116",
+    "sourceSloCandidate": "P-11-B-22",
+    "officialFrameworkMapping": "PENDING_AUTHORITY_RECHECK"
+  },
+  "reviewScope": "AI-assisted first-pass against scanned original textbook and authored Word answer table; NOT teacher certification",
+  "counts": {
+    "originalQuestions": 80,
+    "answerTableRowsInspected": 80,
+    "completeAnswerTableEntries": 80,
+    "structuralKeyAlignmentErrors": 0,
+    "sourceConsistentChoiceFirstPass": 79,
+    "blockedForTextbookFalseAssertion": 1,
+    "compulsoryTeacherDecisionItems": 4,
+    "optionalPrecisionReviewItems": 3,
+    "teacherAcademicSignoffs": 0,
+    "studentPublishedScoredQuestions": 0
+  },
+  "compulsoryItems": [
+    10,
+    15,
+    62,
+    76
+  ],
+  "optionalItems": [
+    8,
+    9,
+    31
+  ],
+  "answerLettersIncluded": false,
+  "explanationsIncluded": false,
+  "studentScoringEnabled": false,
+  "items": [
+    {
+      "id": "XI-U07-T071-Q001",
+      "number": 1,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q002",
+      "number": 2,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q003",
+      "number": 3,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q004",
+      "number": 4,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q005",
+      "number": 5,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q006",
+      "number": 6,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q007",
+      "number": 7,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q008",
+      "number": 8,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "OPTIONAL_TEXTBOOK_PRECISION_REVIEW",
+      "issueCode": "MONOMER_TERM_NOT_EXPLICITLY_NAMED_IN_NBF_P114",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q009",
+      "number": 9,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "OPTIONAL_TEXTBOOK_PRECISION_REVIEW",
+      "issueCode": "REPHRASE_EXPLANATION_TO_NBF_SMALL_MOLECULES",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q010",
+      "number": 10,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "REQUIRES_COMPULSORY_TEACHER_DECISION",
+      "issueCode": "SOURCE_EXPLANATION_AND_DISTRACTOR_REVISION",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q011",
+      "number": 11,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q012",
+      "number": 12,
+      "primaryNbfPrintedPages": [
+        113,
+        114,
+        115,
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q013",
+      "number": 13,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q014",
+      "number": 14,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q015",
+      "number": 15,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "REQUIRES_COMPULSORY_TEACHER_DECISION",
+      "issueCode": "APPROVE_V147_TEXTBOOK_SCOPING_STEM",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q016",
+      "number": 16,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q017",
+      "number": 17,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q018",
+      "number": 18,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q019",
+      "number": 19,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q020",
+      "number": 20,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q021",
+      "number": 21,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q022",
+      "number": 22,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q023",
+      "number": 23,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q024",
+      "number": 24,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q025",
+      "number": 25,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q026",
+      "number": 26,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q027",
+      "number": 27,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q028",
+      "number": 28,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q029",
+      "number": 29,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q030",
+      "number": 30,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q031",
+      "number": 31,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "OPTIONAL_TEXTBOOK_PRECISION_REVIEW",
+      "issueCode": "REPHRASE_EXPLANATION_TO_NBF_SMALL_MOLECULES",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q032",
+      "number": 32,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q033",
+      "number": 33,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q034",
+      "number": 34,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q035",
+      "number": 35,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q036",
+      "number": 36,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q037",
+      "number": 37,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q038",
+      "number": 38,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q039",
+      "number": 39,
+      "primaryNbfPrintedPages": [
+        113,
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q040",
+      "number": 40,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q041",
+      "number": 41,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q042",
+      "number": 42,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q043",
+      "number": 43,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q044",
+      "number": 44,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q045",
+      "number": 45,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q046",
+      "number": 46,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q047",
+      "number": 47,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q048",
+      "number": 48,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q049",
+      "number": 49,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q050",
+      "number": 50,
+      "primaryNbfPrintedPages": [
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q051",
+      "number": 51,
+      "primaryNbfPrintedPages": [
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q052",
+      "number": 52,
+      "primaryNbfPrintedPages": [
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q053",
+      "number": 53,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q054",
+      "number": 54,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q055",
+      "number": 55,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q056",
+      "number": 56,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q057",
+      "number": 57,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q058",
+      "number": 58,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q059",
+      "number": 59,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q060",
+      "number": 60,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q061",
+      "number": 61,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q062",
+      "number": 62,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "REQUIRES_COMPULSORY_TEACHER_DECISION",
+      "issueCode": "APPROVE_V147_LONG_RANGE_ORDER_STEM",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q063",
+      "number": 63,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q064",
+      "number": 64,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q065",
+      "number": 65,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q066",
+      "number": 66,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q067",
+      "number": 67,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q068",
+      "number": 68,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q069",
+      "number": 69,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q070",
+      "number": 70,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q071",
+      "number": 71,
+      "primaryNbfPrintedPages": [
+        115,
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q072",
+      "number": 72,
+      "primaryNbfPrintedPages": [
+        113,
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q073",
+      "number": 73,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q074",
+      "number": 74,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q075",
+      "number": 75,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q076",
+      "number": 76,
+      "primaryNbfPrintedPages": [
+        114
+      ],
+      "provisionalFirstPass": "BLOCKED_SOURCE_ASSERTION",
+      "academicDisposition": "REQUIRES_COMPULSORY_TEACHER_DECISION",
+      "issueCode": "BLOCKING_SOURCE_FALSE_ASSERTION_REPLACE_NYLON",
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q077",
+      "number": 77,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q078",
+      "number": 78,
+      "primaryNbfPrintedPages": [
+        113
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q079",
+      "number": 79,
+      "primaryNbfPrintedPages": [
+        115
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    },
+    {
+      "id": "XI-U07-T071-Q080",
+      "number": 80,
+      "primaryNbfPrintedPages": [
+        113,
+        116
+      ],
+      "provisionalFirstPass": "SOURCE_CONSISTENT_OPTION_IDENTIFIED",
+      "academicDisposition": "NO_SPECIFIC_TEXTBOOK_CONFLICT_IDENTIFIED",
+      "issueCode": null,
+      "teacherAcademicSignoff": "PENDING",
+      "studentPracticeRelease": "HOLD"
+    }
+  ]
+}
