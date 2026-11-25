@@ -15,13 +15,15 @@ I directly reopened and inspected the user's exact original `Grade11_Unit7_Topic
 
 The full context matters: mentioning cubic geometry or X-ray diffraction in an NBF chapter does not, by itself, establish that every definition-only question assesses the **Understanding** demand of this official outcome.
 
+**Additional independent source-scope check before release:** The NBF p.114 synthetic-polymer examples are *polythene, polystyrene and PVC*; nylon is not named there. The source Word question/answer table uses nylon in two places. This yields one **Q76 scoring blocker** and one **Q10 explanation attribution error** that earlier V148 first-pass coverage missed. Both are now explicitly tracked without changing source options or publishing the source key.
+
 ## First-pass review results — carefully separated levels of confidence
 
 | Evidence level | Result | What it does **not** prove |
 |---|---|---|
 | Original source-key table integrity | 80 of 80 keyed letters select a present A/B/C/D choice; 80 of 80 one-line explanations nonblank | Correct option and scientific explanation approved independently by an authorized teacher |
-| NBF chapter concept check | The choices' intended concepts are broadly consistent with original printed pp. 113–116; two specific attribution/wording concerns remain | Every item can be used as-is in an official graded FBISE exam |
-| First-pass source/Physics content concerns | **Q15**, **Q62** only identified as specific mandatory-text/source-scope review items in this first pass | No other ambiguity can ever be found in subsequent teacher review |
+| NBF chapter concept check | The choices' intended concepts are broadly consistent with original printed pp. 113–116; four compulsory source-attribution/wording decisions and three optional textbook-vocabulary concerns remain | Every item can be used as-is in an official graded FBISE exam |
+| First-pass source/Physics content concerns | **Q10**, **Q15**, **Q62**, **Q76** require compulsory teacher decisions; **Q8**, **Q9**, **Q31** have optional precision/scope issues | No other ambiguity can ever be found in subsequent teacher review |
 | Official SLO classification | P-11-B-22 = Summative **Understanding**, directly confirmed against framework | All 80 existing teacher questions individually satisfy this level |
 | Provisional per-item cognitive tagging | **32** mainly recognition/recollection and **48** candidate Understanding items | These provisional judgements are official per-MCQ classifications or final cognitive endorsements |
 | Primary SLO-content split | **44** grouped as core structural distinction/polymers/anisotropy concepts; **36** as supporting chapter detail | The 36 supplementary rows are scientifically invalid or necessarily unsuitable for informal practice |
@@ -29,7 +31,14 @@ The full context matters: mentioning cubic geometry or X-ray diffraction in an N
 
 These 32/48 and 44/36 partitions are explicitly **first-pass study-bank review indicators**. They are based on the question function and original topic-cluster mapping; neither should be misreported as an official FBISE per-item decision. Q41–49, for example, repeatedly require recalling or identifying cubic cell features. That can help students learn vocabulary, but does not necessarily demonstrate **distinguishing different solid structures** at an Understanding level.
 
-### Targeted amendments — precisely two original questions
+### Compulsory source-faithfulness decisions — four original questions
+
+**Q10 · source-explanation attribution and distractor**
+
+- **Correct intended answer remains natural rubber** (listed as a natural polymer on NBF p.114).
+- **Compulsory explanation correction:** the original one-line explanation asserts nylon is *listed* as synthetic. NBF p.114 actually names **polythene, polystyrene and PVC**, not nylon; nylon is a correct synthetic-polymer example generally, but the exact book-attribution is not accurate.
+- **Strict-source option improvement:** replace distractor “Nylon” with “Polythene,” a synthetic polymer explicitly named on p.114; keep original option ordering and intended answer intact. Since that changes an owner's option, obtain teacher approval and preserve source-change history.
+- **Approval:** PENDING.
 
 **Q15 · NBF-only source attribution**
 
@@ -47,6 +56,17 @@ These 32/48 and 44/36 partitions are explicitly **first-pass study-bank review i
 - **Keep-and-add?** **No.** Don't duplicate a misleading original wording in the standard student bank.
 - **Approval:** Still **PENDING**; source Word untouched.
 
+**Q76 · textbook-false assertion: BLOCK scoring until amended**
+
+- The original intended answer statement claims **“Nylon is listed as a synthetic polymer”**, but NBF p.114 does not list nylon. The idea *nylon is a synthetic polymer* is scientifically true, yet this **specific source-attribution statement is false**.
+- **Compulsory correction:** use the NBF-listed material **polythene** in the question's scenario and its relevant choices; change the intended statement to “Polythene is listed as a synthetic polymer.” Verify the other distractors remain false. This item must remain in HOLD until the teacher approves a new, fingerprinted revision.
+- **Keep/add recommendation:** amend the original candidate in place after approval; do not retain an uncorrected scored duplicate.
+- **Approval:** PENDING. Item is **NOT safe to auto-score** as originally written.
+
+### Optional textbook vocabulary precision (not a claim of wrong Physics)
+- **Q8:** “monomer” is valid scientific terminology and identifies the intended choice, but the NBF excerpt describes **repeating small molecules** without explicitly using that term. For strictly source-only practice, consider a textbook-phrase rewrite or label this terminology as supplementary.
+- **Q9/Q31:** one-line explanations use “monomers” although the source passage uses *repeating small molecules*. Rephrasing to the textbook's language is optional. Their intended concepts remain sound.
+
 ### Important optional quality decisions before a *board-pattern* release
 
 - **Cognitive uplift of recall items — optional for daily learning, necessary for a claimed exactly FBISE Understanding-level assessment.** Retain recall-only questions as supplementary learning/retrieval practice; separately author and verify true comparison, classification-reasoning, evidence-analysis and material-structure inference items to assess **P-11-B-22** at Understanding. Do not automatically relabel the 32 flagged first-pass recall questions as official Understanding merely because their source section says B-22.
@@ -60,7 +80,7 @@ The new `quality/unit07/topic71-v148-80-source-answer-and-framework-review-regis
 
 - original source row ID and page-range/topic evidence;
 - confirmation that original source answer choice exists and explanation is nonempty;
-- one of `NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL`, `TEXTBOOK_SCOPE_REVIEW_Q15`, or `ORIGINAL_STEM_PRECISION_REVIEW_Q62`;
+- a first-pass evidence flag: no specific conflict, one of four compulsory teacher decisions (Q10/Q15/Q62/Q76), or one of three optional source-terminology notes (Q8/Q9/Q31);
 - official SLO code **P-11-B-22**, **Summative**, **Understanding**;
 - **provisional** question demand (Recall/Knowledge vs Understanding candidate) and broad scope (core structure distinction vs supporting chapter detail);
 - `teacherScientificSignoff=PENDING`, `publicScoredPracticeApproved=false`, `secureGradedExamApproved=false`.
@@ -69,7 +89,7 @@ The new `quality/unit07/topic71-v148-80-source-answer-and-framework-review-regis
 
 ## Subsequent release criteria
 
-1. Obtain explicit teacher approval of Q15 and Q62 in their staged context; verify the other **78 correct-option/explanation decisions** and resolve any newly discovered issues. The current first-pass check is **not** that teacher approval.
+1. Obtain explicit teacher decisions on **Q10/Q15/Q62/Q76**, including the Q76 source-based scoring blocker. Decide how to handle optional Q8/Q9/Q31 terminology, then secure individual academic signoff on **all 80** question/answer/explanation entries. The current first-pass check is **not** that teacher approval.
 2. Certify which items genuinely match B-22's official **Understanding** requirement and which remain supporting recall practice; document all item-level decisions and original source pages.
 3. Only then create a **provisional public self-practice** bank with original keys in a tightly scoped future PR, with boxed option/OMR rendering, mixed-unit selection, auto-scoring, mobile/projector/print and issue-report test coverage. **Separate it clearly from secure school exams**.
 4. Continue existing Topic 7.2 MCQs, Topic 7.3 and end-of-unit resources in small source-backed chunks, then Units 8–10 for the owner's 7 December examination priority.
