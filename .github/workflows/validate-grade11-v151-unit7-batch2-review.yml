@@ -1,0 +1,53 @@
+name: Grade XI V151 Unit7 Topic7.1 Q21-40 academic QC (KEYLESS HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v151-batch2-21-40-keyless-science-review.json"
+      - "quality/grade11-v151-batch2-21-40-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch2_v151.cjs"
+      - ".github/workflows/validate-grade11-v151-unit7-batch2-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v151-batch2-21-40-keyless-science-review.json"
+      - "quality/grade11-v151-batch2-21-40-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch2_v151.cjs"
+      - ".github/workflows/validate-grade11-v151-unit7-batch2-review.yml"
+  workflow_dispatch:
+jobs:
+  verify-20-keyless-academic-review-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V151 source-bound audit
+        run: node --check scripts/audit_grade11_unit7_topic71_batch2_v151.cjs
+      - name: Verify all 20 Q21-40 review records and preserve Unit7 HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch2_v151.cjs
+      - name: Preserve V150 Q1-20 teacher review and HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Preserve V149 source-aligned 80 question-only candidate
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 FBISE B22 scientific/cognitive first pass
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 original 80 questions with full choices
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 original answer-row provenance and HOLD
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve existing 2250 Grade XI provisional MCQ IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 pending teacher item approvals
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload counts-only review QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v151-unit7-q21-40-keyless-academic-hold
+          path: qa-artifacts/grade11-v151-unit07-batch2-21-40-keyless-review/summary.json
+          if-no-files-found: warn
+          retention-days: 14
