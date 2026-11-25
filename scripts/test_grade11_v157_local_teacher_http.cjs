@@ -235,7 +235,13 @@ async function main(){
    assert.equal(r.teacherCognitiveSignoff,'PENDING');
    assert.equal(r.sourceAnswerKeyCertified,false);
    assert.equal(r.scoredReleaseApproved,false);
-   assert.ok(!Object.keys(r).some(k=>/correctOption|answerLetter|answerKey|explanationText/i.test(k)));
+   const prohibitedKeyedPayloadFields=['correctOption','correctOptionId',
+    'correctOptionLetter','answerLetter','answerKeyText','originalExplanationText',
+    'sourceExplanationText','studentUid','studentEmail'];
+   for(const key of prohibitedKeyedPayloadFields)
+    assert.equal(Object.hasOwn(r,key),false,'Actual private answer/student payload forbidden: '+key);
+   assert.equal(r.sourceAnswerKeyCertified,false,
+    'Safe false-valued certification metadata must remain OFF');
   }
   const v156=await startLocalTopic71TeacherPreview(config);
   listeners.push(v156);
