@@ -1,0 +1,59 @@
+name: Grade XI V171 Unit7.3 Original MCQs Q41-60 Numeric/SLO Review (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic73-v171-q41-q60-source-bound-numerical-review-no-keys.json"
+      - "quality/grade11-v171-topic73-q41-q60-numerical-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch3_v171.cjs"
+      - ".github/workflows/validate-grade11-v171-topic73-q41-q60-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic73-v171-q41-q60-source-bound-numerical-review-no-keys.json"
+      - "quality/grade11-v171-topic73-q41-q60-numerical-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch3_v171.cjs"
+      - ".github/workflows/validate-grade11-v171-topic73-q41-q60-qc.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-bound-20-answers-and-student-scoring-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Source and academic review audit syntax
+        run: node --check scripts/audit_grade11_unit7_topic73_batch3_v171.cjs
+      - name: Original Q41–60 SHA, official SLO and release HOLD
+        run: node scripts/audit_grade11_unit7_topic73_batch3_v171.cjs
+      - name: Preserve Topic7.3 Q1–20 and Q21–40 pending reviews
+        run: |
+          node scripts/audit_grade11_unit7_topic73_batch1_v169.cjs
+          node scripts/audit_grade11_unit7_topic73_batch2_v170.cjs
+      - name: Preserve Topic7.2 full original 80 review and teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve Topic7.1 original 80 pending signoffs
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve all 2250 provisional Grade XI MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 teacher pending and scoring hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve staging and production teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve production App Check and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload private-key-free numeric QC summary only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v171-topic73-q41-q60-original-keyless-qc
+          path: qa-artifacts/grade11-v171-topic73-q41-q60-source-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
