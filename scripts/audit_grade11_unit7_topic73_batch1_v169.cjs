@@ -157,8 +157,6 @@ function checkLedger(d){
  }
  assert.deepEqual(count,{K:11,U:7,A:2});
  assert.deepEqual(per,d.authorSloCounts);
- for(const [key,val] of Object.entries(REQUIRED))
-  assert.deepEqual({...per[key],total:undefined}.total,undefined);
  assert.equal(d.compulsoryIssueNumbers.length,6);
  assert.equal(d.optionalIssueNumbers.length,3);
  assert.equal(d.sourceDirectTopicCandidates+d.supportingPrerequisiteCandidates,20);
@@ -196,8 +194,11 @@ function main(){
  const d=json(LEDGER),memo=read(MEMO);
  checkLedger(d);
  const mutations=mutationTests(d);
+ for(const q of [3,5,6,7,12,13,14,18,19]){
+  assert.ok(memo.includes('**'+q+'**'),
+   'Missing original flagged Q'+q+' in the QC table');
+ }
  for(const marker of ['Q1–20','20/20','6','3',
-  'Q3','Q5','Q6','Q7','Q12','Q13','Q14','Q18','Q19',
   'P-11-B-25','P-11-B-27','P-11-B-28','Figure 7.14',
   '11','7','2','scored','HOLD','PENDING']){
   assert.ok(memo.toLowerCase().includes(marker.toLowerCase()),
