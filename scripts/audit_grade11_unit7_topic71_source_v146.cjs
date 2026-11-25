@@ -103,7 +103,7 @@ function main(){
  }
  const note=read('quality/grade11-v146-topic71-mcq-source-review-and-teacher-decision.md');
  for(const x of ['Q15','Q62','Compulsory','Optional',
-   'source-only','standalone','PENDING','80','20','NBF pp. 113–116']){
+   'source-faithful','stand-alone','PENDING','80','20','113–116']){
   assert.ok(note.includes(x),'Missing teacher review explanation: '+x);
  }
  assert.ok(!fs.existsSync(path.join(ROOT,'question-bank/grade-11/unit-07.json')),
