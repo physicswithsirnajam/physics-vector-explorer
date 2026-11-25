@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - "server/local-topic71-browser-review-v158.cjs"
-      - "portal/local-topic71-teacher-review-v158.js"
+      - "local-dev/topic71-teacher-review-v158.js"
       - "scripts/test_grade11_v158_local_browser_review.cjs"
       - "quality/grade11-v158-unit7-local-teacher-browser-review.md"
       - ".github/workflows/validate-grade11-v158-unit7-browser-review.yml"
@@ -11,7 +11,7 @@ on:
     branches: [main]
     paths:
       - "server/local-topic71-browser-review-v158.cjs"
-      - "portal/local-topic71-teacher-review-v158.js"
+      - "local-dev/topic71-teacher-review-v158.js"
       - "scripts/test_grade11_v158_local_browser_review.cjs"
       - "quality/grade11-v158-unit7-local-teacher-browser-review.md"
       - ".github/workflows/validate-grade11-v158-unit7-browser-review.yml"
@@ -42,7 +42,7 @@ jobs:
       - name: Syntax-check trusted local browser server, frontend and integration
         run: |
           node --check server/local-topic71-browser-review-v158.cjs
-          node --check portal/local-topic71-teacher-review-v158.js
+          node --check local-dev/topic71-teacher-review-v158.js
           node --check scripts/test_grade11_v158_local_browser_review.cjs
       - name: Preserve 80 source-bound Unit7 teacher-review decisions and score HOLD
         run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
