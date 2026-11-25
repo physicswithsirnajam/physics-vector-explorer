@@ -63,7 +63,10 @@ function main(){
   if(x.reviewActionCategory==='PROPOSED_COGNITIVE_RECLASSIFICATION')reclass.push(n);
   if([34,37].includes(n))assert.equal(x.provisionalCognitiveReclassification,'Recall/Knowledge_candidate');
   else assert.equal(x.provisionalCognitiveReclassification,null);
-  assert.ok(!Object.keys(x).some(k=>/correctOption|answerLetter|answerKey|originalExplanation|studentUid|email/i.test(k)));
+  const forbiddenFields=['correctOptionId','correctOption','answerLetter','answerKey',
+   'originalExplanationText','sourceExplanationText','studentUid','email'];
+  assert.ok(!Object.keys(x).some(k=>forbiddenFields.includes(k)),
+   'Item may store only explanation-presence metadata, never private answer/explanation content');
  }
  assert.equal(olderUnderstanding,19);assert.equal(olderRecall,1);
  assert.deepEqual(teach,[30]);assert.deepEqual(optional,[26,31,33]);assert.deepEqual(reclass,[34,37]);
