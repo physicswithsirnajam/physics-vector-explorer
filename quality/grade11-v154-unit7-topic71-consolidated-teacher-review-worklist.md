@@ -2,7 +2,7 @@
 
 This is an **actionable review queue, not a list of approved MCQs**. It gathers the four merged first-pass batches **V150–V153** into a single 80-item index with original V146 source fingerprints, V148 provisional SLO/cognitive tags, V149 question-only candidate references, specific first-pass notes and pending teacher decisions. GitHub CI verifies structural integrity, **not** the private Word answers or teacher identities.
 
-**Inputs:** original owner Word `Grade11_Unit7_Topic7.1_FBISE_Boxed_Study_With_Answers.docx` SHA-256 `930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58`; original NBF Grade XI printed pp.113–116; official FBISE **P-11-B-22 = Summative / Understanding**. This public repository contains neither the original answer letters nor the original keyed explanation sentences in the V154 queue.
+**Inputs:** original owner Word `Grade11_Unit7_Topic7.1_FBISE_Boxed_Study_With_Answers.docx` SHA-256 `930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58`; original NBF Grade XI printed pp.113–116; official FBISE **P-11-B-22 = Summative / Understanding**. This public repository contains neither the original answer letters nor the original keyed explanation sentences in the V154 queue. In particular the consolidated register includes **no answer letters**, no source-keyed explanations, and no student identities.
 
 ## Overall progress and important limitations
 
