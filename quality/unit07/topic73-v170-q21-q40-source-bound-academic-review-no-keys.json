@@ -343,5 +343,11 @@
       "studentScore": "HOLD"
     }
   ],
-  "next": "V171 original Q41-Q60 science and SLO audit"
+  "next": "V171 original Q41-Q60 science and SLO audit",
+  "originalKeyLetterCounts": {
+    "A": 6,
+    "B": 7,
+    "C": 3,
+    "D": 4
+  }
 }
