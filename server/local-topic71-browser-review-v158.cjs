@@ -200,7 +200,7 @@ async function startLocalTopic71BrowserReview({
  });
  const source=getCandidate();
  const client=fs.readFileSync(path.join(ROOT,
-  'portal/local-topic71-teacher-review-v158.js'),'utf8');
+  'local-dev/topic71-teacher-review-v158.js'),'utf8');
  const server=http.createServer({
   maxHeaderSize:MAX_HEADERS,requestTimeout:5000,
   headersTimeout:5000,keepAliveTimeout:1000
