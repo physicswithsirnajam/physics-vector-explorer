@@ -1,0 +1,59 @@
+name: Grade XI V161 Teacher Staging Callable Contract (NO DEPLOY / HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v161-staging-callable-contract-no-deploy.json"
+      - "quality/grade11-v161-teacher-staging-callable-architecture.md"
+      - "scripts/audit_grade11_v161_staging_callable_contract.cjs"
+      - "scripts/test_grade11_v161_staging_callable_contract.cjs"
+      - ".github/workflows/validate-grade11-v161-teacher-staging-callable.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v161-staging-callable-contract-no-deploy.json"
+      - "quality/grade11-v161-teacher-staging-callable-architecture.md"
+      - "scripts/audit_grade11_v161_staging_callable_contract.cjs"
+      - "scripts/test_grade11_v161_staging_callable_contract.cjs"
+      - ".github/workflows/validate-grade11-v161-teacher-staging-callable.yml"
+  workflow_dispatch:
+jobs:
+  ensure-callable-contract-design-only-with-all-live-gates-blocked:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V161 offline contract and threat mutation harness
+        run: |
+          node --check scripts/audit_grade11_v161_staging_callable_contract.cjs
+          node --check scripts/test_grade11_v161_staging_callable_contract.cjs
+      - name: Validate source-only staging callable design against all teacher and source HOLD records
+        run: node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Reject 55+ security regressions by controlled contract mutations
+        run: node scripts/test_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve original V160 12-blocker NO-GO deployment gate
+        run: node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+      - name: Preserve all 80 source-bound Unit7 teacher academic PENDING records
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 Grade XI original provisional question identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 unapproved teacher academic decisions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve live student reporting App Check launch lock
+        run: node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Preserve registered four production App Check browser entrypoint inventory
+        run: node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+      - name: Preserve owner private Firestore Rules published-snapshot self-test
+        run: node scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Upload source-only design and hold summary (no identities or keys)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v161-topic71-callable-design-no-deploy
+          path: qa-artifacts/grade11-v161-staging-callable-contract/summary.json
+          if-no-files-found: warn
+          retention-days: 14
