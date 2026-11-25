@@ -72,7 +72,11 @@ async function secureRequest(target,method='GET',body){
 }
 function showItem(item){
  const card=el('article');
- card.append(el('h2','Question '+item.sourceNumber));
+ card.dataset.questionId=item.questionId;
+ const heading=el('h3','Question '+item.sourceNumber);
+ heading.id='question-heading-'+item.sourceNumber;
+ card.setAttribute('aria-labelledby',heading.id);
+ card.append(heading);
  card.append(el('p',item.stem,'stem'));
  const choices=el('ol',undefined,'choices');
  item.options.forEach((choice,index)=>{
@@ -93,7 +97,7 @@ function showItem(item){
    item.recommendation.replaceAll('-',' ')+' (immutable for this source revision).'));
   return card;
  }
- const group=el('fieldset'),legend=el('legend','Recommendation (not approval)');
+ const group=el('fieldset'),legend=el('legend','Recommendation for Question '+item.sourceNumber+' (not approval)');
  group.append(legend);
  const choicesSpec=[
   ['supports-candidate-wording','Supports candidate wording'],
@@ -102,6 +106,7 @@ function showItem(item){
  let selected=null;
  const submit=el('button','Submit advisory recommendation');
  submit.type='button';submit.disabled=true;
+ submit.setAttribute('aria-label','Submit advisory recommendation for Question '+item.sourceNumber);
  choicesSpec.forEach(([value,title])=>{
   const label=el('label');
   const radio=el('input');radio.type='radio';
@@ -117,6 +122,7 @@ function showItem(item){
   if(!selected||submit.disabled)return;
   submit.disabled=true;
   status(actionStatus,'Submitting recommendation for Q'+item.sourceNumber+'…');
+  let stored=false;
   try{
    const receipt=await secureRequest('/recommendation','POST',{
     questionId:item.questionId,
@@ -127,12 +133,15 @@ function showItem(item){
    if(receipt.academicSignoff!=='PENDING'||receipt.scoredRelease!=='HOLD'||
       receipt.status!=='advisory-only')
     throw Error('Unexpected review status');
+   stored=true;
    status(actionStatus,'Q'+item.sourceNumber+
     ': recommendation recorded; academic approval remains PENDING.');
-   await refresh();
+   try{await refresh();}
+   catch{status(actionStatus,'Recommendation stored, but the updated list could not be loaded. Sign out and sign in to refresh.',true);}
   }catch(e){
-   status(actionStatus,'Recommendation not recorded: '+e.message,true);
-   submit.disabled=false;
+   status(actionStatus,stored?'Recommendation stored but response validation failed.':
+    'Recommendation was not confirmed: '+e.message,true);
+   if(!stored)submit.disabled=false;
   }
  });
  return card;
@@ -159,11 +168,13 @@ form.addEventListener('submit',async event=>{
   await refresh(); // Server rechecks role, allowlist and active teacher directory.
   form.hidden=true;logout.hidden=false;
   status(authStatus,'Verified local teacher session · Advisory-only.');
+  qs('review-heading').focus();
  }catch{
   viewer=null;panel.hidden=true;questionRoot.replaceChildren();
   qs('password').value='';
   await signOut(auth).catch(()=>{});
   status(authStatus,'Access denied or local emulator unavailable.',true);
+  qs('email').focus();
  }finally{busyMode(false);}
 });
 logout.addEventListener('click',async()=>{
@@ -175,8 +186,12 @@ logout.addEventListener('click',async()=>{
  status(actionStatus,'');
  status(authStatus,'Signed out of the local emulator.');
  busyMode(false);
+ qs('email').focus();
 });
 window.addEventListener('pagehide',()=>{
  // No persistent Firebase Auth session or bearer token in storage.
  viewer=null;
 });
+
+// Native Chromium QA can detect a loaded, event-bound module; no credential data.
+document.documentElement.dataset.localReviewReady='true';
