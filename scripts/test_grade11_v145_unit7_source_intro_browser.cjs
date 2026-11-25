@@ -163,6 +163,9 @@ async function main(){
    {waitUntil:'domcontentloaded'})).status(),200);
   await menu(guide);
   const future=guide.locator('.psn-drawer-future').first();
+  // On a general guide the planned-units accordion starts collapsed by
+  // design; expand it before asserting an accessible learner link.
+  await future.locator('summary').click();
   assert.equal(await future.getByRole('link',{name:/Unit 7 · Topic 7.1 Learning Introduction/}).count(),1);
   assert.equal(await guide.locator('.psn-drawer-unit').count(),6);
   await guide.close();
