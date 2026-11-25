@@ -1,0 +1,57 @@
+name: Grade XI V166 Unit7.2 Q41-60 Private Numeric/SLO Review (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic72-v166-q41-q60-source-bound-numerical-review-no-keys.json"
+      - "quality/grade11-v166-topic72-q41-q60-numerical-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch3_v166.cjs"
+      - ".github/workflows/validate-grade11-v166-topic72-q41-q60-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic72-v166-q41-q60-source-bound-numerical-review-no-keys.json"
+      - "quality/grade11-v166-topic72-q41-q60-numerical-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch3_v166.cjs"
+      - ".github/workflows/validate-grade11-v166-topic72-q41-q60-qc.yml"
+  workflow_dispatch:
+jobs:
+  preserve-private-original-keys-and-numerical-academic-holds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check private-source-bound V166 numerical metadata audit
+        run: node --check scripts/audit_grade11_unit7_topic72_batch3_v166.cjs
+      - name: Verify Q41-60 source fingerprint, arithmetic-attestation and 8+1 flags
+        run: node scripts/audit_grade11_unit7_topic72_batch3_v166.cjs
+      - name: Retain exact original V164/V165 source-bound first two review batches
+        run: |
+          node scripts/audit_grade11_unit7_topic72_batch1_v164.cjs
+          node scripts/audit_grade11_unit7_topic72_batch2_v165.cjs
+      - name: Retain original Unit 7.1 source-bound 80 teacher-pending decisions
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 existing provisional MCQ source identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 original teacher-science approval HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production/staging teacher backend deployment NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and student reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload aggregate original-source attestation metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v166-topic72-q41-q60-keyless-numeric-qc
+          path: qa-artifacts/grade11-v166-unit7-topic72-q41-q60/summary.json
+          if-no-files-found: warn
+          retention-days: 14
