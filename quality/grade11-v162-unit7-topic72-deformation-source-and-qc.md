@@ -4,7 +4,7 @@
 
 PR #262/V161 merged. After the lengthy teacher-security/backend prototypes, this PR deliberately returns to completing the **NBF Physics of Solids unit**. The user's already available, complete NBF Grade XI Physics textbook PDF was consulted **visually**: printed Unit 7 pp. **112–126**, including the full Section **7.2** on pp. **116–121**. The file's SHA-256 in the existing local workspace was `00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe`. The copyrighted textbook PDF/scan itself **is not committed to GitHub**.
 
-We already have the user's original **Topic 7.1** boxed 80-question Word bank (private) and source-bound V154 teacher review register; no textbook pages need to be requested from the user for Sections 7.2 or 7.3 right now. If the user has also prepared separate **7.2/7.3 MCQ, answer-key or subjective notes**, request those for an eventual exact-source import; do not claim they have been uploaded. A text-only lesson does not replace a per-question verified bank.
+We already have the user's original **Topic 7.1** boxed 80-question Word bank (private) and source-bound V154 teacher review register; no textbook pages need to be requested for Sections 7.2 or 7.3 right now. A library search on **25 November 2026** also confirmed that the user's earlier source materials are already available for reuse: **Topic 7.2 Part A (80 MCQs, solved DOCX/PDF); Topic 7.2 Part B (56 comprehensive SLO Q&A, solved DOCX/PDF); Topic 7.3 Part A (80 MCQs, solved DOCX/PDF); Topic 7.3 Part B (solved Q&A DOCX/PDF); and end-of-unit five numerical problems (solved DOCX plus student PDF)**. These source files remain in the user's private library, not in the public GitHub repository. They should be individually reconciled with the NBF book and official framework **before any student MCQ/question-key import**. A public text-only lesson does not replace the owner's source bank or its academic verification.
 
 ## This PR: one accessible, public, unscored lesson
 
@@ -76,9 +76,9 @@ Existing GitHub CI checks preserve the 80-unit7 review HOLD, 2,250 existing prov
 
 **V163:** create the equally source-checked **7.3 Elastic Potential Energy** lesson, with careful force–extension graph explanation, `U=½Fx=½kx²=YAx²/(2L)` within the proportional range, independent calculation QC and a public study link.
 
-**V164–V166:** original NBF exercise source checks in small batches: 10 textbook MCQs (scientific answer verification), 11 short plus 8 comprehensive responses, then all 5 numericals with explicit p.126 text/answer discrepancies. Ask the owner for existing 7.2/7.3 teacher-authored question banks if available; do not invent what was originally keyed.
+**V164–V166:** original NBF exercise source checks in small batches: 10 textbook MCQs (scientific answer verification), 11 short plus 8 comprehensive responses, then all 5 numericals with explicit p.126 text/answer discrepancies. Reuse the existing private 7.2/7.3 teacher-authored 80-MCQ study banks and original solved question documents found in the user's library; do not invent, reconstruct or publish keyed answer records before full review.
 
-**Later:** full teacher approval and official framework alignment; scored Unit7 Test Builder activation remains a separate gated owner decision.
+**Later:** full teacher approval and **item-level** official framework alignment (topic-level SLO codes were verified above); scored Unit7 Test Builder activation remains a separate gated owner decision.
 
 ### Owner merge steps
 
