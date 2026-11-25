@@ -349,5 +349,9 @@
     "B": 7,
     "C": 3,
     "D": 4
-  }
+  },
+  "strictFirstPassDirectTopicCandidates": 17,
+  "crossSloTeacherDecisions": 3,
+  "physicsDecision": "Elastic reversibility alone does not imply linear loading. Q24/Q35 need Hooke-law conditions; Q31 needs stress in the proportional range.",
+  "rowFingerprintOrigin": "PRIVATE_ORIGINAL_WORD_SOURCE_RECALCULATED_OFF_REPO_WITH_V169_JSON_RECIPE"
 }
