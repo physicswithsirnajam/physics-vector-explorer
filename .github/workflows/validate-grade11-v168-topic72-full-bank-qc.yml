@@ -1,0 +1,59 @@
+name: Grade XI V168 Unit7.2 Original 80-Item Blueprint and Stimulus QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic72-v168-all80-consolidated-academic-qc-no-keys.json"
+      - "quality/grade11-v168-topic72-all80-consolidated-academic-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_bank_v168.cjs"
+      - ".github/workflows/validate-grade11-v168-topic72-full-bank-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic72-v168-all80-consolidated-academic-qc-no-keys.json"
+      - "quality/grade11-v168-topic72-all80-consolidated-academic-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_bank_v168.cjs"
+      - ".github/workflows/validate-grade11-v168-topic72-full-bank-qc.yml"
+  workflow_dispatch:
+jobs:
+  enforce-original-eighty-private-provenance-and-academic-no-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original 80-row source and summative-SLO blueprint auditor
+        run: node --check scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Validate all 80 canonical fingerprints, stimulus blockers, source scope and 18 security mutations
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve original V164 V165 V166 V167 individual 20-item first-pass review holds
+        run: |
+          node scripts/audit_grade11_unit7_topic72_batch1_v164.cjs
+          node scripts/audit_grade11_unit7_topic72_batch2_v165.cjs
+          node scripts/audit_grade11_unit7_topic72_batch3_v166.cjs
+          node scripts/audit_grade11_unit7_topic72_batch4_v167.cjs
+      - name: Preserve original Unit7.1 80 teacher pending science/cognitive decisions
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 Grade XI original provisional question bank identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 original 560 teacher-pending no-release decisions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend staging and production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check registered browser entrypoints and reporting lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload safe aggregate source and scientific QC metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v168-topic72-80item-consolidated-no-scoring-qc
+          path: qa-artifacts/grade11-v168-topic72-80item-blueprint/summary.json
+          if-no-files-found: warn
+          retention-days: 14
