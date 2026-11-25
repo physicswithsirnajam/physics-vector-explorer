@@ -1,0 +1,55 @@
+name: Grade XI V169 Unit7.3 Original MCQs Q1-20 Science and SLO QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic73-v169-q01-q20-source-bound-academic-review-no-keys.json"
+      - "quality/grade11-v169-topic73-q01-q20-science-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch1_v169.cjs"
+      - ".github/workflows/validate-grade11-v169-topic73-q01-q20-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic73-v169-q01-q20-source-bound-academic-review-no-keys.json"
+      - "quality/grade11-v169-topic73-q01-q20-science-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_batch1_v169.cjs"
+      - ".github/workflows/validate-grade11-v169-topic73-q01-q20-qc.yml"
+  workflow_dispatch:
+jobs:
+  validate-original-topic73-q1-to-q20-with-scoring-held:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V169 private-source review and adversarial metadata tests
+        run: node --check scripts/audit_grade11_unit7_topic73_batch1_v169.cjs
+      - name: Verify Q1-20 source-bound academic review and reject 16 tampering mutations
+        run: node scripts/audit_grade11_unit7_topic73_batch1_v169.cjs
+      - name: Preserve original Unit7.2 canonical 80-item blueprint and student-score HOLD
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve original Unit7.1 80 teacher-pending science/cognitive approvals
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 original Grade XI provisional question identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 pending owner teacher academic decisions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher staging and production deployment NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve exact production App Check entrypoints and reporting lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only source-safe evidence; never original question or key text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v169-topic73-original-first20-keyless-qc
+          path: qa-artifacts/grade11-v169-topic73-q01-q20-source-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
