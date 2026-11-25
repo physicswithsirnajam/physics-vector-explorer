@@ -1,0 +1,55 @@
+name: Grade XI V165 Unit7.2 Q21-40 Keyless Source/FBISE Science Audit (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic72-v165-q21-q40-source-bound-review-no-keys.json"
+      - "quality/grade11-v165-topic72-q21-q40-answer-science-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch2_v165.cjs"
+      - ".github/workflows/validate-grade11-v165-topic72-q21-q40-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic72-v165-q21-q40-source-bound-review-no-keys.json"
+      - "quality/grade11-v165-topic72-q21-q40-answer-science-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch2_v165.cjs"
+      - ".github/workflows/validate-grade11-v165-topic72-q21-q40-qc.yml"
+  workflow_dispatch:
+jobs:
+  require-owner-keyed-source-remain-private-and-all-academic-releases-held:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check private-source-bound V165 keyless audit
+        run: node --check scripts/audit_grade11_unit7_topic72_batch2_v165.cjs
+      - name: Verify V165 Q21-40 source fingerprints, 5 compulsory and 3 optional flags
+        run: node scripts/audit_grade11_unit7_topic72_batch2_v165.cjs
+      - name: Retain original V164 source-bound first 20 keyless review
+        run: node scripts/audit_grade11_unit7_topic72_batch1_v164.cjs
+      - name: Preserve original 7.1 80 teacher-pending academic source review
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 original source identities, 0 new scored MCQs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 owner teacher-academic approvals pending
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production and staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve existing production App Check and reporting locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts/fingerprints only; no private owner keyed content
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v165-unit7-topic72-q21-q40-keyless-qc
+          path: qa-artifacts/grade11-v165-unit7-topic72-q21-q40/summary.json
+          if-no-files-found: warn
+          retention-days: 14
