@@ -1,0 +1,49 @@
+name: Grade XI V149 Topic 7.1 Textbook-Corrected Candidate (Teacher HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v149-80-source-aligned-question-only-candidate.tsv"
+      - "quality/grade11-v149-topic71-textbook-proposed-corrections-teacher-hold.md"
+      - "scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs"
+      - ".github/workflows/validate-grade11-v149-unit7-textbook-candidate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v149-80-source-aligned-question-only-candidate.tsv"
+      - "quality/grade11-v149-topic71-textbook-proposed-corrections-teacher-hold.md"
+      - "scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs"
+      - ".github/workflows/validate-grade11-v149-unit7-textbook-candidate.yml"
+  workflow_dispatch:
+jobs:
+  verify-only-approved-proposed-change-scope-no-student-scoring:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check candidate source-only audit
+        run: node --check scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Verify exactly 2 source-bound revisions and preserve student HOLD
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 source answer and FBISE framework review
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 original question-only source and four options
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 source fingerprint ledger and item HOLD
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve existing 2250 Grade XI provisional MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 Unit6 teacher academic signoffs pending
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload counts/fingerprint metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v149-unit7-2-source-aligned-proposed-edits-no-keys
+          path: qa-artifacts/grade11-v149-unit7-topic71-source-correction/summary.json
+          if-no-files-found: warn
+          retention-days: 14
