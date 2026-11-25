@@ -265,7 +265,7 @@
     },
     {
       "sourceNumber": 10,
-      "originalFullKeyedRowSha256": "6d17744e9771e4e008e6701a4116dc2ee32519dfef88b669f060eeb9eb9f25841",
+      "originalFullKeyedRowSha256": "6d17744e9771e4e008e6701a4116dc2ee32519dfef88b669f060eeb9ebf25841",
       "originalMappedSlo": "P-11-B-28",
       "originalAuthorItemDemand": "K",
       "originalKeyMatchesSelectedOptionText": true,
