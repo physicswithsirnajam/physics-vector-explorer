@@ -67,8 +67,8 @@ function validateContract(c){
   'callableFunctionsDefaultCORSCannotRemainUnrestricted',
   'validateRolesServerSideBeyondSDKClaims'])
   yes(t,p);
- for(const p of ['corsProductionNotEnabledBeforeOwnerApproval',
-  'serverApiDeploymentAllowed'])no(t,p);
+ yes(t,'corsProductionNotEnabledBeforeOwnerApproval');
+ no(t,'serverApiDeploymentAllowed');
  eq(t.originPolicy,'FIXED_EXACT_ALLOWLIST_NOT_WILDCARD');
  eq(t.productionCandidateOrigins,['https://physicswithsirnajam.github.io']);
  eq(t.stagingApprovedOrigins,[]);
