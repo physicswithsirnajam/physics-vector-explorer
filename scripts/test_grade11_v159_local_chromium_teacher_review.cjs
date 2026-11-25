@@ -138,14 +138,12 @@ async function main(){
   // A real browser executes the sign-in, obtains a synthetic local Firebase
   // session, and the trusted server denies students and other teachers.
   await login(page,'studentOne');
-  await page.locator('#auth-status').getByText(
-   'Access denied or local emulator unavailable.').waitFor({timeout:25000});
+  await page.locator('#auth-status').filter({hasText:'Access denied or local emulator unavailable.'}).waitFor({timeout:25000});
   assert.equal(await page.locator('#questions article').count(),0);
   assert.equal((await db.collection(COLLECTION).get()).size,0);
   stats.unauthorizedSigninsDenied++;
   await login(page,'teacherOther');
-  await page.locator('#auth-status').getByText(
-   'Access denied or local emulator unavailable.').waitFor({timeout:25000});
+  await page.locator('#auth-status').filter({hasText:'Access denied or local emulator unavailable.'}).waitFor({timeout:25000});
   assert.equal(await page.locator('#questions article').count(),0);
   stats.unauthorizedSigninsDenied++;
   reportPass('student and unrelated teacher denied by backend despite valid browser Auth sign-in');
@@ -188,8 +186,7 @@ async function main(){
   assert.equal(await submit10.isEnabled(),true);
   stats.keyboardSelections++;
   await submit10.click();
-  await page.locator('#action-status').getByText(
-   /Q10: recommendation recorded/).waitFor({timeout:20000});
+  await page.locator('#action-status').filter({hasText:/Q10: recommendation recorded/}).waitFor({timeout:20000});
   await card10.getByText(/Your recorded advisory recommendation:/).waitFor({timeout:20000});
   assert.equal(await card10.locator('button').count(),0);
   stats.successfulBrowserRecommendations++;
@@ -237,8 +234,7 @@ async function main(){
   const card15=page.locator('[data-question-id="XI-U07-T071-Q015"]');
   await card15.getByText('Needs further revision').click();
   await card15.getByRole('button',{name:'Submit advisory recommendation for Question 15'}).click();
-  await page.locator('#action-status').getByText(
-   /Recommendation was not confirmed: teacher-access-required/).waitFor({timeout:20000});
+  await page.locator('#action-status').filter({hasText:/Recommendation was not confirmed: teacher-access-required/}).waitFor({timeout:20000});
   assert.equal((await db.collection(COLLECTION).get()).size,2);
   assert.equal((await db.collection(AUDIT).get()).size,2);
   stats.revokedTeacherWritesDenied++;
