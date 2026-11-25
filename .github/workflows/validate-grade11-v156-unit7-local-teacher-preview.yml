@@ -1,0 +1,79 @@
+name: Grade XI V156 Local Authenticated Teacher Preview (NO LIVE RELEASE)
+on:
+  pull_request:
+    paths:
+      - "server/local-topic71-teacher-preview-v156.cjs"
+      - "scripts/test_grade11_v156_local_teacher_readonly_preview.cjs"
+      - "quality/grade11-v156-unit7-readonly-teacher-preview-security.md"
+      - ".github/workflows/validate-grade11-v156-unit7-local-teacher-preview.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/local-topic71-teacher-preview-v156.cjs"
+      - "scripts/test_grade11_v156_local_teacher_readonly_preview.cjs"
+      - "quality/grade11-v156-unit7-readonly-teacher-preview-security.md"
+      - ".github/workflows/validate-grade11-v156-unit7-local-teacher-preview.yml"
+  workflow_dispatch:
+jobs:
+  verify-authenticated-readonly-preview-in-local-firebase-emulators:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      GCLOUD_PROJECT: demo-psn-v143-classrooms
+      FIREBASE_AUTH_EMULATOR_HOST: 127.0.0.1:9099
+      FIRESTORE_EMULATOR_HOST: 127.0.0.1:8089
+      PSN_LOCAL_TOPIC71_TEACHER_PREVIEW: enabled-local-test-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Syntax-check V156 local view, tester and V155 service
+        run: |
+          node --check server/local-topic71-teacher-preview-v156.cjs
+          node --check scripts/test_grade11_v156_local_teacher_readonly_preview.cjs
+          node --check server/local-topic71-teacher-review-pilot-v155.cjs
+      - name: Retain original 80 Unit 7 teacher approval HOLD
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Retain 2250 original Grade XI provisional item references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Retain Unit 6 560 pending teacher signatures
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Retain original published Firestore Rules snapshot safety
+        run: node scripts/test_grade11_published_rules_snapshot_v99t.cjs
+      - name: Install pinned emulator-only Firebase SDKs and tools
+        run: >
+          npm install --no-save --no-package-lock --ignore-scripts
+          firebase-admin@14.3.0 firebase@13.4.0
+          @firebase/rules-unit-testing@6.0.0 firebase-tools@15.37.0
+      - name: Test authenticated loopback-only read-only preview against real LOCAL emulators
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v156_local_teacher_readonly_preview.cjs"
+      - name: Revalidate V155 server teacher recommendation, audit and browser client DENY tests
+        run: >
+          npx firebase emulators:exec
+          --config security-proposals/v99j/combined-local-emulators.json
+          --only auth,firestore
+          --project demo-psn-v143-classrooms
+          "node scripts/test_grade11_v155_local_topic71_teacher_review.cjs"
+      - name: Upload synthetic counts only without source keys or identities
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v156-local-authenticated-readonly-teacher-preview
+          path: |
+            qa-artifacts/grade11-v156-topic71-authenticated-readonly-preview/summary.json
+            qa-artifacts/grade11-v155-unit7-local-teacher-review/summary.json
+          if-no-files-found: warn
+          retention-days: 14
