@@ -1,0 +1,58 @@
+name: Grade XI V167 Unit7.2 Q61-80 Original Scenario Answer/SLO Audit (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic72-v167-q61-q80-source-bound-scenario-review-no-keys.json"
+      - "quality/grade11-v167-topic72-q61-q80-scenario-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch4_v167.cjs"
+      - ".github/workflows/validate-grade11-v167-topic72-q61-q80-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic72-v167-q61-q80-source-bound-scenario-review-no-keys.json"
+      - "quality/grade11-v167-topic72-q61-q80-scenario-answer-slo-qc.md"
+      - "scripts/audit_grade11_unit7_topic72_batch4_v167.cjs"
+      - ".github/workflows/validate-grade11-v167-topic72-q61-q80-qc.yml"
+  workflow_dispatch:
+jobs:
+  check-eighty-keyless-original-items-and-zero-student-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check V167 source-safe 80-item academic review audit
+        run: node --check scripts/audit_grade11_unit7_topic72_batch4_v167.cjs
+      - name: Verify original Q61–80 scenario QC and cumulative 80/80 source fingerprints
+        run: node scripts/audit_grade11_unit7_topic72_batch4_v167.cjs
+      - name: Preserve preceding V164 V165 V166 original academic source batch gates
+        run: |
+          node scripts/audit_grade11_unit7_topic72_batch1_v164.cjs
+          node scripts/audit_grade11_unit7_topic72_batch2_v165.cjs
+          node scripts/audit_grade11_unit7_topic72_batch3_v166.cjs
+      - name: Preserve Topic7.1 80 pending science and cognitive signoffs
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 original provisional source MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 original 560 teacher academic signoffs pending
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher production and staging backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check published browser entrypoint and student reporting lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload anonymized counts-only QC; never source keys or question payloads
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v167-unit7-topic72-q61-q80-keyless-review
+          path: qa-artifacts/grade11-v167-unit7-topic72-q61-q80/summary.json
+          if-no-files-found: warn
+          retention-days: 14
