@@ -1,6 +1,6 @@
 # V167 — Grade XI Unit 7.2: original Q61–Q80 scenario, answer and FBISE SLO review
 
-**Academic state: first-pass SOURCE CHECK COMPLETE (80/80) — teacher approval remains PENDING.** This milestone covers the final twenty original questions of the owner's private `Grade11_Unit7_Topic7.2_PartA_80MCQs_Study_With_Answers.docx`. Its original source and answer tables, keyed explanations, option letters and author item-level cognition tags were examined privately, without editing or reproducing them in GitHub.
+**Academic state: first-pass SOURCE CHECK COMPLETE (80/80) — teacher approval remains PENDING; scored Test Builder release remains HOLD.** This milestone covers the final twenty original questions of the owner's private `Grade11_Unit7_Topic7.2_PartA_80MCQs_Study_With_Answers.docx`. Its original source and answer tables, keyed explanations, option letters and author item-level cognition tags were examined privately, without editing or reproducing them in GitHub.
 
 ## Sources and verification method
 
