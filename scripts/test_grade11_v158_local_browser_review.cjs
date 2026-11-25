@@ -141,7 +141,7 @@ async function main(){
   assert.ok(shell.text.includes('Synthetic local teacher sign-in'));
   assert.ok(shell.text.includes('id="review-panel"'));
   assert.ok(shell.text.includes('id="questions"'));
-  assert.ok(shell.text.includes('local-topic71'));
+  assert.ok(shell.text.includes(ROUTES.client));
   assert.ok(!shell.text.includes('A glass pane has no regular'));
   assert.ok(!shell.text.includes('XI-U07-T071-Q010'));
   assert.ok(!shell.text.includes('correctOption'));
