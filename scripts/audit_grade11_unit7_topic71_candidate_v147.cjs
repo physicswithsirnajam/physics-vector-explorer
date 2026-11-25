@@ -97,7 +97,7 @@ function main(){
  assert.equal(fs.existsSync(path.join(root,'question-bank/grade-11/unit-07-topic71.json')),false);
  const note=txt('quality/grade11-v147-topic71-question-only-staging-teacher-review.md');
  for(const required of ['Q15','Q62','80','Compulsory','source-exact',
-  'pending','not student-released','Word','03','20','correct keys']){
+  'pending','not student-released','Word','03','20','answer letters']){
   assert.ok(note.toLowerCase().includes(required.toLowerCase()),
    'Missing teacher release caveat: '+required);
  }
