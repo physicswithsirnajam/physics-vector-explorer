@@ -45,7 +45,11 @@ function main(){
  assert.equal(reg.firstPassCounts.supportingChapterDetail,36);
  assert.equal(reg.firstPassCounts.provisionalRecall,32);
  assert.equal(reg.firstPassCounts.provisionalUnderstanding,48);
- assert.deepEqual(reg.firstPassCounts.flagged,[15,62]);
+ assert.deepEqual(reg.firstPassCounts.flagged,[8,9,10,15,31,62,76]);
+ assert.deepEqual(reg.firstPassCounts.compulsory,[10,15,62,76]);
+ assert.deepEqual(reg.firstPassCounts.optional,[8,9,31]);
+ assert.deepEqual(reg.firstPassCounts.blocked,[76]);
+ assert.equal(reg.firstPassCounts.provisionalChoiceSourceConsistent,79);
  const n={core:0,support:0,recall:0,understand:0,flagged:[],approved:0};
  const knownPages=new Set(['113–115','114, 116','115','113','115–116','116','113, 116']);
  const permissibleFields=[
@@ -81,9 +85,16 @@ function main(){
   assert.equal(x.secureGradedExamApproved,false);
   assert.equal(y.studentPracticeRelease,'HOLD');
   assert.equal(x.plannedCandidateStemChange,[15,62].includes(i+1));
-  const reviewStatus=i+1===15?'TEXTBOOK_SCOPE_REVIEW_Q15':
-   i+1===62?'ORIGINAL_STEM_PRECISION_REVIEW_Q62':
-   'NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL';
+  const reviewStatuses={
+   8:'OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q8',
+   9:'OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q9',
+   10:'SOURCE_EXPLANATION_ATTRIBUTION_ERROR_Q10',
+   15:'TEXTBOOK_SCOPE_REVIEW_Q15',
+   31:'OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q31',
+   62:'ORIGINAL_STEM_PRECISION_REVIEW_Q62',
+   76:'BLOCKING_SOURCE_LISTING_ERROR_Q76'
+  };
+  const reviewStatus=reviewStatuses[i+1]||'NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL';
   assert.equal(x.sourceKeyExplanationFirstPass,reviewStatus);
   if(x.sourceKeyExplanationFirstPass!=='NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL')
    n.flagged.push(i+1);
@@ -93,9 +104,9 @@ function main(){
   else{assert.equal(x.itemCognitiveFirstPass,'Understanding_candidate');n.understand++}
   if(x.teacherScientificSignoff!=='PENDING')n.approved++;
  }
- assert.deepEqual(n,{core:44,support:36,recall:32,understand:48,flagged:[15,62],approved:0});
+ assert.deepEqual(n,{core:44,support:36,recall:32,understand:48,flagged:[8,9,10,15,31,62,76],approved:0});
  for(const marker of [
-  'Q15','Q62','Understanding','Summative','32','48','80',
+  'Q8','Q9','Q10','Q15','Q31','Q62','Q76','Nylon','Polythene','Understanding','Summative','32','48','80',
   'Compulsory','Optional','not automatically',
   'not teacher-approved','textbook','113–116','seven crystal systems'
  ]){
@@ -125,7 +136,11 @@ function main(){
   version:'V148',sourceOwnerWordSha256:reg.sourceOwnerDocxSha256,
   sourceRefPages:'NBF pp. 113–116',frameworkRef:'P-11-B-22 / Summative / Understanding',
   externalSourceKeyOptionChecksReported:80,sourceExplanationsPresentReported:80,
-  firstPassScientificContradictionFlags:[15,62],
+  firstPassScientificReviewFlags:[8,9,10,15,31,62,76],
+  compulsoryTeacherDecisionItems:[10,15,62,76],
+  optionalTermPrecisionItems:[8,9,31],
+  provisionalChoiceSourceConsistent:79,
+  blockingFalseTextbookListingItem:76,
   officialLevelUnderstanding:true,provisionalRecallCount:32,
   provisionalUnderstandingCandidateCount:48,
   directStructureConceptRows:44,supportingChapterDetailRows:36,
@@ -137,6 +152,6 @@ function main(){
   originalOwnerDocumentReopenedInsideGithubCI:false,
   FirebaseOrUserDataChanged:false
  },null,2)+'\n');
- console.log('V148 PASS: 80 source-answer/explanation observations reconciled to original V146 fingerprints; B-22 summative Understanding, 32 provisional recall cases, 2 targeted wording/source reviews; all 80 teacher approvals pending, 0 live Unit7 scored items.');
+ console.log('V148 PASS: 80 source-answer/explanation observations reconciled to original V146 fingerprints; B-22 summative Understanding, 32 provisional recall cases, 4 compulsory teacher decisions (Q10/15/62/76), 3 optional terminology flags; all 80 teacher approvals pending, 0 live Unit7 scored items.');
 }
 try{main()}catch(e){console.error('V148 FAILED:',e.stack||e);process.exitCode=1}
