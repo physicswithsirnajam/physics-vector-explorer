@@ -1,0 +1,51 @@
+name: Grade XI V150 Unit7 Topic7.1 20-item teacher review (KEYLESS HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v150-batch1-20-teacher-review-no-keys.json"
+      - "quality/grade11-v150-batch1-20-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch1_v150.cjs"
+      - ".github/workflows/validate-grade11-v150-unit7-first20-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v150-batch1-20-teacher-review-no-keys.json"
+      - "quality/grade11-v150-batch1-20-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch1_v150.cjs"
+      - ".github/workflows/validate-grade11-v150-unit7-first20-review.yml"
+  workflow_dispatch:
+jobs:
+  preserve-20-item-textbook-review-and-hold-original-keys:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V150
+        run: node --check scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Review 20 item metadata and preserve question/answer HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Preserve V149 source-faithful Q10 and Q76 staging
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 scientific and B22 framework review
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 80 original source-derived questions
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 original full-row provenance and teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve original 2250 provisional Grade XI question references
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve 560 Unit6 pending teacher review decisions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload source metadata counts only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v150-unit7-first20-keyless-teacher-hold
+          path: qa-artifacts/grade11-v150-unit07-first20-teacher-hold/summary.json
+          if-no-files-found: warn
+          retention-days: 14
