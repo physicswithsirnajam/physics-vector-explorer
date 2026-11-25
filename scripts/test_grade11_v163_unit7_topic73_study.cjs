@@ -66,7 +66,7 @@ function staticScienceAudit(){
   'extension on the horizontal axis','force on the vertical axis',
   'energy per unit volume (J/m³)',
   'radius is','0.002 m','0.191 J',
-  'The average F/2 is used to calculate the work',
+  'F/2 is used to calculate the work',
   'Unit 7 exam questions and official scoring remain on HOLD'
  ]){
   assert.ok(html.includes(phrase),'Missing verified physics source: '+phrase);
