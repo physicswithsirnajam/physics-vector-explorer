@@ -4,7 +4,7 @@
 
 PR #258/V157 merged. The project already has: **V155** server-side review recommendations and private immutable audit, **V156** protected read-only HTML preview, **V157** a strict local authenticated POST action. V158 adds the first **browser-facing sign-in/review/recommendation shell** using those exact four critical NBF Grade XI Topic 7.1 source items **Q10, Q15, Q62 and Q76**.
 
-**This is an emulator-only development build, not a live teacher dashboard.** The new Node server listens on a disposable **127.0.0.1** port only when `PSN_LOCAL_TOPIC71_BROWSER_REVIEW=enabled-local-test-only` and the exact synthetic `demo-psn-v143-classrooms` Firebase Auth/Firestore emulators are configured. It refuses production credentials and has no Cloud Function, Firebase production rule update, GitHub Pages route or persistent service.
+**This is an emulator-only development build, not a live teacher dashboard.** The local browser Firebase initializer is deliberately stored under **local-dev/topic71-teacher-review-v158.js**, outside the production **portal/** tree. The local Node test server serves it explicitly, and no production HTML imports it. Existing App Check entrypoint scans remain unchanged. The new Node server listens on a disposable **127.0.0.1** port only when `PSN_LOCAL_TOPIC71_BROWSER_REVIEW=enabled-local-test-only` and the exact synthetic `demo-psn-v143-classrooms` Firebase Auth/Firestore emulators are configured. It refuses production credentials and has no Cloud Function, Firebase production rule update, GitHub Pages route or persistent service.
 
 ## Interactive user journey — local development only
 
