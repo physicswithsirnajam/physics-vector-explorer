@@ -1,0 +1,55 @@
+name: Grade XI V152 Unit7 Topic7.1 Q41-60 academic review (KEYLESS HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic71-v152-batch3-41-60-keyless-science-review.json"
+      - "quality/grade11-v152-batch3-41-60-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch3_v152.cjs"
+      - ".github/workflows/validate-grade11-v152-unit7-batch3-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic71-v152-batch3-41-60-keyless-science-review.json"
+      - "quality/grade11-v152-batch3-41-60-academic-teacher-review.md"
+      - "scripts/audit_grade11_unit7_topic71_batch3_v152.cjs"
+      - ".github/workflows/validate-grade11-v152-unit7-batch3-review.yml"
+  workflow_dispatch:
+jobs:
+  verify-20-keyless-review-and-preserve-no-scored-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check new V152 review audit
+        run: node --check scripts/audit_grade11_unit7_topic71_batch3_v152.cjs
+      - name: Check 20 provenance-bound Q41–60 notes with teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch3_v152.cjs
+      - name: Preserve V151 Q21–40 teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch2_v151.cjs
+      - name: Preserve V150 Q1–20 teacher HOLD
+        run: node scripts/audit_grade11_unit7_topic71_batch1_v150.cjs
+      - name: Preserve V149 source-aligned question-only 80 bank
+        run: node scripts/audit_grade11_unit7_topic71_textbook_candidate_v149.cjs
+      - name: Preserve V148 per-item source/FBISE first pass
+        run: node scripts/audit_grade11_unit7_topic71_framework_review_v148.cjs
+      - name: Preserve V147 question-only source fingerprint
+        run: node scripts/audit_grade11_unit7_topic71_candidate_v147.cjs
+      - name: Preserve V146 original source keyed row fingerprints
+        run: node scripts/audit_grade11_unit7_topic71_source_v146.cjs
+      - name: Preserve prior 2250 Grade XI provisional MCQ IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 teacher decisions pending
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Upload metadata-only count and fingerprint QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v152-unit7-q41-60-keyless-qc
+          path: qa-artifacts/grade11-v152-unit07-batch3-41-60-keyless-review/summary.json
+          if-no-files-found: warn
+          retention-days: 14
