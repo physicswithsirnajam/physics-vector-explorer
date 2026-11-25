@@ -14,7 +14,7 @@
   "officialSloClassification": "Summative",
   "officialSloCognitiveLevel": "Understanding",
   "sourceAnswerOptionAndExplanationIntegrityCheck": "80 of 80 original keyed letters select a nonblank, existing A/B/C/D option and have one nonblank teacher explanation; no answer keys copied into public repository",
-  "scientificContentCheck": "First-pass human editorial comparison of all 80 intended keyed-option concepts and explanations against NBF printed pages 113–116 and official SLO. Not a teacher-approved, formally signed item-by-item publication audit.",
+  "scientificContentCheck": "First-pass human editorial comparison of all 80 intended keyed-option concepts and explanations against NBF pp.113–116 and official SLO. 4 compulsory teacher decisions (10,15,62,76), 3 optional term-precision items (8,9,31), Q76 blocked for a false assertion about what the textbook lists; not teacher approved.",
   "itemLevelCognitiveClassification": "Provisional educational first-pass estimate; 32 recall-focused items should NOT automatically be counted as evidence of official Understanding-level SLO mastery.",
   "finalAcademicSignoffsCompleted": 0,
   "publicUnit7ScoredReleaseApproved": false,
@@ -24,10 +24,30 @@
     "provisionalRecall": 32,
     "provisionalUnderstanding": 48,
     "flagged": [
+      8,
+      9,
+      10,
       15,
-      62
+      31,
+      62,
+      76
     ],
-    "allWithOriginalSourceOption": true
+    "allWithOriginalSourceOption": true,
+    "compulsory": [
+      10,
+      15,
+      62,
+      76
+    ],
+    "optional": [
+      8,
+      9,
+      31
+    ],
+    "blocked": [
+      76
+    ],
+    "provisionalChoiceSourceConsistent": 79
   },
   "records": [
     {
@@ -169,7 +189,7 @@
       "sourceOriginalFullRowSha256": "7ca05d64f06bfc485b3d3877dc1b14ad870ec7595088996ae306c5adddeb382e",
       "sourceAnswerOptionPresentAndSelectable": true,
       "sourceExplanationNonblank": true,
-      "sourceKeyExplanationFirstPass": "NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL",
+      "sourceKeyExplanationFirstPass": "OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q8",
       "plannedCandidateStemChange": false,
       "evidenceChapterPages": "114, 116",
       "originalTopicCluster": "polymers",
@@ -188,7 +208,7 @@
       "sourceOriginalFullRowSha256": "152045357ae0274860396c77fd042379df7544c816843e53210ef4f3f9fb2cf2",
       "sourceAnswerOptionPresentAndSelectable": true,
       "sourceExplanationNonblank": true,
-      "sourceKeyExplanationFirstPass": "NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL",
+      "sourceKeyExplanationFirstPass": "OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q9",
       "plannedCandidateStemChange": false,
       "evidenceChapterPages": "114, 116",
       "originalTopicCluster": "polymers",
@@ -207,7 +227,7 @@
       "sourceOriginalFullRowSha256": "0c327a12d6d0e70a73cc37e83674ef22a23e94b9c4ec2e04a305af57522d4fa3",
       "sourceAnswerOptionPresentAndSelectable": true,
       "sourceExplanationNonblank": true,
-      "sourceKeyExplanationFirstPass": "NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL",
+      "sourceKeyExplanationFirstPass": "SOURCE_EXPLANATION_ATTRIBUTION_ERROR_Q10",
       "plannedCandidateStemChange": false,
       "evidenceChapterPages": "114, 116",
       "originalTopicCluster": "polymers",
@@ -606,7 +626,7 @@
       "sourceOriginalFullRowSha256": "eda857ddad5242250485745ee124d8fd644757e49237edfc4b065cf8a6aa6e78",
       "sourceAnswerOptionPresentAndSelectable": true,
       "sourceExplanationNonblank": true,
-      "sourceKeyExplanationFirstPass": "NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL",
+      "sourceKeyExplanationFirstPass": "OPTIONAL_TEXTBOOK_TERMINOLOGY_REVIEW_Q31",
       "plannedCandidateStemChange": false,
       "evidenceChapterPages": "114, 116",
       "originalTopicCluster": "polymers",
@@ -1461,7 +1481,7 @@
       "sourceOriginalFullRowSha256": "623b1d40e694a64ef25560f4daafb0dcb172f12371483074ca8caa981dbcc373",
       "sourceAnswerOptionPresentAndSelectable": true,
       "sourceExplanationNonblank": true,
-      "sourceKeyExplanationFirstPass": "NO_SPECIFIC_CONTRADICTION_IDENTIFIED_PROVISIONAL",
+      "sourceKeyExplanationFirstPass": "BLOCKING_SOURCE_LISTING_ERROR_Q76",
       "plannedCandidateStemChange": false,
       "evidenceChapterPages": "114, 116",
       "originalTopicCluster": "polymers",
