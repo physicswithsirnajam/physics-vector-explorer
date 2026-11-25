@@ -473,5 +473,6 @@
       "studentScoredRelease": "HOLD"
     }
   ],
-  "nextBatch": "V170 Unit 7.3 original MCQs Q21-Q40 source, answer and summative SLO audit"
+  "nextBatch": "V170 Unit 7.3 original MCQs Q21-Q40 source, answer and summative SLO audit",
+  "canonicalFirst20RowHashesJoinNewlineSha256": "42eaefced7c315a6a2aeec4eff43516e984192c6549bb384b41646a4987bb674"
 }
