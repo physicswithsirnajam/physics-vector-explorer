@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "version": "V160",
+  "dateAsOf": "2026-11-25",
+  "scope": "Grade XI Unit 7 Topic 7.1 teacher review pilot production deployment readiness",
+  "reviewType": "REPOSITORY_SOURCE_ONLY_NO_CONSOLE_CREDENTIALS",
+  "environment": "PRODUCTION_DEPLOYMENT_NOT_AUTHORIZED",
+  "decision": "NO_GO_DEPLOYMENT_BLOCKED",
+  "ownerDeploymentConsent": false,
+  "goLiveApproved": false,
+  "productionBackendPresentInRepo": false,
+  "productionBackendDeployedEvidence": false,
+  "firebaseProductionRulesIndependentlyVerified": false,
+  "productionAppCheckCurrentEnforcementConfirmed": false,
+  "productionTeacherRoleIssuanceEnabled": false,
+  "teacherScientificApprovals": 0,
+  "teacherCognitiveApprovals": 0,
+  "unit7StudentScoredMcqCount": 0,
+  "originalPrivateKeysInPublicRepo": false,
+  "sourceWordSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
+  "currentWorkingCandidates": "quality/unit07/topic71-v149-80-source-aligned-question-only-candidate.tsv",
+  "teacherDecisionQueue": "quality/unit07/topic71-v154-80-source-bound-teacher-decision-queue.json",
+  "lastVerifiedLocalMilestone": "V159",
+  "lastVerifiedLocalPr": 260,
+  "originalStudentBankCounts": [
+    275,
+    206,
+    220,
+    640,
+    349,
+    560
+  ],
+  "unit6PendingTeacherDecisions": 560,
+  "sensitiveSourceReleaseBlockers": [
+    10,
+    15,
+    62,
+    76
+  ],
+  "candidateKeyExplanationBlockingCorrections": [
+    10,
+    76
+  ],
+  "previewQuestions": [
+    10,
+    15,
+    62,
+    76
+  ],
+  "originalPilotMode": "LOCAL_EMULATOR_ONLY",
+  "knownPublicWebsiteContext": "GitHub Pages static website: https://physicswithsirnajam.github.io/physics-vector-explorer/ (owner-observed V100-K; no live runtime verification here)",
+  "knownFirebasePublicProjectContext": "physics-with-sir-najam-portal (from checked-in public web config; not a live Console access)",
+  "citableExternalDesignReferences": [
+    "https://firebase.google.com/docs/hosting/functions",
+    "https://firebase.google.com/docs/app-check/cloud-functions",
+    "https://firebase.google.com/docs/firestore/security/get-started",
+    "https://firebase.google.com/docs/hosting/full-config"
+  ],
+  "architectureOptions": [
+    {
+      "id": "A",
+      "title": "Keep existing GitHub Pages + separately protected callable/server API",
+      "decision": "CANDIDATE_NOT_SELECTED",
+      "risk": "cross-origin CORS and production App Check must be independently designed and verified",
+      "exposesFirebaseAdminToBrowser": false
+    },
+    {
+      "id": "B",
+      "title": "Firebase Hosting + serverless rewrite to protected backend",
+      "decision": "CANDIDATE_NOT_SELECTED",
+      "risk": "requires explicit owner-approved hosting/origin transition and auth/App Check revalidation",
+      "exposesFirebaseAdminToBrowser": false
+    }
+  ],
+  "verifiedLocalEvidence": [
+    {
+      "id": "LOCAL-155",
+      "status": "PASSED_IN_CI",
+      "evidence": "Real Firebase Emulator Auth/Firestore teacher recommendation, audit and browser Client SDK denials"
+    },
+    {
+      "id": "LOCAL-156",
+      "status": "PASSED_IN_CI",
+      "evidence": "Read-only authenticated loopback HTML preview and revocation"
+    },
+    {
+      "id": "LOCAL-157",
+      "status": "PASSED_IN_CI",
+      "evidence": "Strict loopback POST source-bound recommendation and conflict/idempotency"
+    },
+    {
+      "id": "LOCAL-158",
+      "status": "PASSED_IN_CI",
+      "evidence": "Browser shell HTTP and Firestore emulator tests"
+    },
+    {
+      "id": "LOCAL-159",
+      "status": "PASSED_IN_CI",
+      "evidence": "Real Chromium synthetic teacher login, keyboard, desktop/mobile 390/320, WCAG automated checks, revocation"
+    }
+  ],
+  "blockingGates": [
+    {
+      "id": "G01",
+      "slug": "owner-deployment-consent",
+      "status": "BLOCKED",
+      "requirement": "Owner must explicitly choose target hosting/backend, staging budget and deployment window; merging an audit is not deployment consent.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G02",
+      "slug": "production-backend-runtime",
+      "status": "BLOCKED",
+      "requirement": "No production Cloud Function/Cloud Run runtime or protected API is deployed; local Node service refuses real Firebase credentials/project.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G03",
+      "slug": "auth-role-provisioning",
+      "status": "BLOCKED",
+      "requirement": "Create owner-controlled live teacher role issuance/revocation, allowlist, email verification and least-privilege isolation; no self-service privilege.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G04",
+      "slug": "private-firestore-rules-compatibility",
+      "status": "BLOCKED",
+      "requirement": "Independently verify live published Rules snapshot, test additive server-only review/audit collection denials against complete owner private baseline; V142 NEVER DEPLOY fixture is incomplete.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G05",
+      "slug": "app-check-real-browser-attestation",
+      "status": "BLOCKED",
+      "requirement": "Review current production App Check telemetry for exact live origin; monitor-only registration is not verified token enforcement nor new API protection.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G06",
+      "slug": "cross-origin-auth-csrf",
+      "status": "BLOCKED",
+      "requirement": "Select GitHub Pages cross-origin callable/API versus hosted same-origin routing; design trusted CORS/Origin, token verification, CSRF if cookie auth adopted; reject wildcard CORS.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G07",
+      "slug": "source-content-provenance",
+      "status": "BLOCKED",
+      "requirement": "Define immutable private approved source/key storage and candidate revision/invalidation; V149 public question-only TSV is not a private keyed answer source.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G08",
+      "slug": "teacher-academic-signoff",
+      "status": "BLOCKED",
+      "requirement": "Implement separate authenticated, audited science/cognitive teacher approval; Q10/Q76 explanation correction and Q15/Q62 revised stems verified with original Word/NBF.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G09",
+      "slug": "publication-scored-release",
+      "status": "BLOCKED",
+      "requirement": "Define an independent two-phase owner-approved scored-bank publication control with rollback, deduplication and SLO restrictions; 0 Unit7 currently released.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G10",
+      "slug": "staging-browser-abuse-qa",
+      "status": "BLOCKED",
+      "requirement": "Conduct isolated staging rollout with real registered production-like App Check, admin/non-admin cross-access tests, replay/ratelimits, logs, retention, accessibility and rollback.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G11",
+      "slug": "operations-cost-data-governance",
+      "status": "BLOCKED",
+      "requirement": "Agree resource budget, hosting/callable quotas, logging and data retention, backup/restore, consent, monitoring, incident handling, on-call and disable switch.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    },
+    {
+      "id": "G12",
+      "slug": "teacher-student-scope",
+      "status": "BLOCKED",
+      "requirement": "Design teacher-to-class and student enrollment isolation for later use; local 4-question reviewer pilot is not a general classroom or live teacher portal.",
+      "evidence": "NOT_ESTABLISHED_FOR_PRODUCTION",
+      "ownerDecision": "PENDING",
+      "deploymentAllowed": false
+    }
+  ],
+  "doNotDeploy": [
+    "security-proposals/v142/teacher-classroom-isolated.rules",
+    "server/local-topic71-teacher-review-pilot-v155.cjs",
+    "server/local-topic71-browser-review-v158.cjs",
+    "local-dev/topic71-teacher-review-v158.js"
+  ],
+  "changesLiveConfiguration": false,
+  "changesStudentScoring": false,
+  "changesFirebaseConsole": false,
+  "changesSecurityRules": false,
+  "containsCredentials": false,
+  "containsPrivateKeyedAnswers": false,
+  "nextMilestone": "V161_STAGING_TEACHER_AUTH_AND_BACKEND_CONTRACT_DESIGN_WITHOUT_RELEASE"
+}
