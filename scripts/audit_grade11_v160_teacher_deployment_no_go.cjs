@@ -135,7 +135,7 @@ function check(){
  for(const phrase of [
   'NO-GO','GitHub Pages','Hosting','Cloud Functions',
   'App Check','Admin SDK','CSRF','NEVER','teacher',
-  'Q10','Q15','Q62','Q76','80/80','0 Unit7',
+  'Q10','Q15','Q62','Q76','80/80','Unit7 MCQs',
   'not academic signoff','No Firebase Console action']){
   assert.ok(note.toLowerCase().includes(phrase.toLowerCase()),
    notePath+' lacks '+phrase);
