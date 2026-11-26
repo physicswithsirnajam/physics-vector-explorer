@@ -1,0 +1,84 @@
+name: Grade XI V186 Unit7 Synthetic Revision/Teacher Protocol (NO DEPLOY)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v186-offline-protocol-design-no-deploy.json"
+      - "quality/grade11-v186-unit07-offline-immutable-revision-review-qc.md"
+      - "scripts/unit07_offline_revision_protocol_v186.cjs"
+      - "scripts/test_grade11_unit07_offline_protocol_v186.cjs"
+      - ".github/workflows/validate-grade11-v186-unit07-offline-review-protocol.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v186-offline-protocol-design-no-deploy.json"
+      - "quality/grade11-v186-unit07-offline-immutable-revision-review-qc.md"
+      - "scripts/unit07_offline_revision_protocol_v186.cjs"
+      - "scripts/test_grade11_unit07_offline_protocol_v186.cjs"
+      - ".github/workflows/validate-grade11-v186-unit07-offline-review-protocol.yml"
+  workflow_dispatch:
+jobs:
+  synthetic-offline-revision-with-real-source-metadata-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check isolated synthetic protocol helper and no-score tests
+        run: |
+          node --check scripts/unit07_offline_revision_protocol_v186.cjs
+          node --check scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Run invented-only candidate revision, role/revocation and audit tests
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 all 72 source identities pending individual digest/signoff
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve V184 original compulsory candidate selection and no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+      - name: Preserve V183 original private candidate no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+      - name: Preserve V182 original private candidate no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+      - name: Preserve V181 original private candidate no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Preserve V180 original private candidate no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 original private candidate no-score
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 original 274 Unit7 first-pass teacher review index
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 original numerical hint discrepancies and no scores
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 original comprehensive question audit
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original short-response audit
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 original textbook MCQ audit
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve three owner-authored 80 MCQ source registries
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve original 2250 Grade XI source-pinned practice identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 original 560 individual teacher signoff HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve staging and production teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and reporting release locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only synthetic tests, never teacher or owner source text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v186-unit7-synthetic-only-revision-no-deploy
+          path: qa-artifacts/grade11-v186-offline-teacher-protocol/summary.json
+          if-no-files-found: warn
+          retention-days: 14
