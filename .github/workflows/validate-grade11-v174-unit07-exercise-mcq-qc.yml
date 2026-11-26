@@ -1,0 +1,57 @@
+name: Grade XI V174 NBF Unit7 Exercise Original 10 MCQs Science/SLO QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v174-end-exercise-mcq01-10-fig-bound-no-keys.json"
+      - "quality/grade11-v174-unit07-textbook-exercise-mcq01-10-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_exercise_mcq_v174.cjs"
+      - ".github/workflows/validate-grade11-v174-unit07-exercise-mcq-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v174-end-exercise-mcq01-10-fig-bound-no-keys.json"
+      - "quality/grade11-v174-unit07-textbook-exercise-mcq01-10-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_exercise_mcq_v174.cjs"
+      - ".github/workflows/validate-grade11-v174-unit07-exercise-mcq-qc.yml"
+  workflow_dispatch:
+jobs:
+  original-textbook-ten-mcqs-keyless-science-review-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check source-scan fingerprint and official SLO audit
+        run: node --check scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Validate 10 source-region hashes, 3 ambiguities and 21 release-mutation denials
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve original 80 Topic7.3 whole-bank academic HOLD
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve original 80 Topic7.2 whole-bank academic HOLD
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve original 80 Topic7.1 teacher science/cognitive signoffs pending
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 original provisional MCQ source identity checks
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 original teacher academic hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend staging/production deployment NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve production App Check exact entrypoints and reporting lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload anonymized counts-only review evidence, never source scans or answer keys
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v174-unit7-original-book-mcq1-10-keyless-qc
+          path: qa-artifacts/grade11-v174-unit7-book-exercise-mcq/summary.json
+          if-no-files-found: warn
+          retention-days: 14
