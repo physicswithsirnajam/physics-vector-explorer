@@ -14,7 +14,7 @@ The official **FBISE HSSC-I Physics 2025 framework**, P-11-B-22, specifies a **S
 
 | Assessment issue | Finding from private exact wording | Disposition |
 |---|---|---|
-| Local nearest-neighbour organization versus extended crystal periodicity | An amorphous solid can have local order without a periodically repeating lattice over extended regions. The described scenario best supports that structural conclusion. | **Scientifically defensible model pre-screen**, independent teacher confirmation required |
+| Local nearest-neighbour organization versus extended crystal periodicity | An amorphous solid can have **short-range** local order without a periodically repeating lattice over extended regions. The described scenario best supports that structural conclusion. | **Scientifically defensible model pre-screen**, independent teacher confirmation required |
 | Single-crystal distractor | Does not fit the absence of long-range periodic lattice; however the option's word “necessarily” sounds somewhat absolute. | **Optional** improvement for fair phrasing; not an established wrong key |
 | Polycrystalline distractor | A polycrystal has crystalline order within individual grains; the candidate scenario excludes extended ordered domains within the observed material. | Retain provisionally; check whether the scenario's “extended region” wording is sufficiently precise |
 | Polymeric distractor | Lack of long-range periodic structure alone does not establish long molecular chains. The word “proves” may make this alternative conspicuously weak. | **Optional** distractor-quality refinement, teacher decides |
