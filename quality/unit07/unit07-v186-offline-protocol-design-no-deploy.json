@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "version": "V186",
+  "title": "Isolated synthetic per-item revision identification and local teacher decision state machine (no Firebase, no live authentication, no grading)",
+  "prerequisite": {
+    "prNumber": 289,
+    "merged": true,
+    "mergeSha": "e71c46919aa571c08bc38e9a1802c341808b9cc7"
+  },
+  "status": "LOCAL_SYNTHETIC_TEST_PROTOCOL_ONLY",
+  "originalUnit7Items": 274,
+  "privateCandidateSourceItems": 72,
+  "unreviewedSourceCandidateItems": 202,
+  "actualIndividualCandidateDigestsStored": 0,
+  "realTeacherScienceApprovals": 0,
+  "realTeacherCognitiveApprovals": 0,
+  "realOwnerScoringPermissions": 0,
+  "scoredUnit7Releases": 0,
+  "syntheticExperiment": {
+    "candidateSchemaVersion": "PWSN-U07-CANDIDATE-V1",
+    "sourceIdentityRule": "source ID + exact original row SHA-256, never question number alone",
+    "canonicalCandidateIncludes": [
+      "sourceId",
+      "sourceSha256",
+      "stem",
+      "A/B/C/D options",
+      "correctOption",
+      "explanation",
+      "slo",
+      "cognitive",
+      "diagram content/alt/license-evidence hashes or null"
+    ],
+    "candidateDigestMethod": "SHA-256 over UTF-8 domain-separated JSON in fixed field order, NFC text and LF newlines; strict exact field allowlist",
+    "testPayloads": "SYNTHETIC_INVENTED_TEXT_ONLY",
+    "validatedAuthOrAppCheck": false,
+    "liveReviewerDirectoryUsed": false,
+    "syntheticRoles": [
+      "science",
+      "cognitive",
+      "owner"
+    ],
+    "syntheticStateSequence": [
+      "source-check",
+      "science-approve",
+      "cognitive-approve",
+      "owner-authorize",
+      "revoke",
+      "supersede"
+    ],
+    "requiresExactCurrentRevision": true,
+    "rejectsRoleFromCommand": true,
+    "rejectsInactiveSyntheticActors": true,
+    "rejectsStaleRevision": true,
+    "resetsPriorDecisionsOnRevisionChange": true,
+    "revocationBlocksExistingRevision": true,
+    "syntheticAuditHashChain": true,
+    "auditChainIsServerSigned": false,
+    "studentScoreFunctionAlwaysHold": true
+  },
+  "externalEvidenceHolds": {
+    "p114": "NBF original polymer examples not reverified in this stage",
+    "p115": "NBF conventional cubic unit-cell figures not reverified in this stage",
+    "example72": "NBF original bone-shortening numerical values not reverified in this stage",
+    "apparatus713": "Private accessible, appropriately licensed wire diagram not independently approved"
+  },
+  "deployGates": {
+    "v160": "NO_GO_DEPLOYMENT_BLOCKED",
+    "v161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+    "ownerAuthorizationToDeploy": false,
+    "productionRulesVerified": false,
+    "productionAppCheckEnforcedVerified": false,
+    "realTeacherRoleVerificationEnabled": false,
+    "privateCandidateCanonicalHashImported": false
+  },
+  "safetyBoundary": {
+    "syntheticRoleDirectoryCannotAuthorizeRealTeacher": "LOCAL_TEST_FIXTURE_ONLY",
+    "syntheticEvidenceHashesNotIndependentProof": true,
+    "syntheticHashChainedAuditNotTamperproofWithoutTrustedServer": true,
+    "notAReviewBackend": true,
+    "notCallableFunction": true,
+    "noProductionStudentScoring": true,
+    "actualQuestionCandidateRevisionHashesRemainUnpopulated": true,
+    "requiresProtectedAuditStoreAndRoleRevocationBeforeStaging": true
+  },
+  "firebaseEdited": false,
+  "productionOrStagingRuntimeAdded": false,
+  "liveScoredBankEdited": false,
+  "realTeacherAccountsProvisioned": false,
+  "originalQuestionsOrKeysIncludedInPublicRepo": false,
+  "filesAdded": [
+    "quality/unit07/unit07-v186-offline-protocol-design-no-deploy.json",
+    "quality/grade11-v186-unit07-offline-immutable-revision-review-qc.md",
+    "scripts/unit07_offline_revision_protocol_v186.cjs",
+    "scripts/test_grade11_unit07_offline_protocol_v186.cjs",
+    ".github/workflows/validate-grade11-v186-unit07-offline-review-protocol.yml"
+  ],
+  "nextMilestone": "V187 separate secure private per-item candidate manifest preparation and real teacher decision intake planning with owner approval; no real credentials, Firebase deploy or scored release without independently verified gates"
+}
