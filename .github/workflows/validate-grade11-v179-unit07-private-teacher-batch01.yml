@@ -1,0 +1,67 @@
+name: Grade XI V179 Unit7 Original 12 Private Teacher Candidate Reviews (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v179-batch01-twelve-source-authenticated-keyless-candidates.json"
+      - "quality/grade11-v179-unit07-batch01-12-originals-private-candidate-teacher-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch01_v179.cjs"
+      - ".github/workflows/validate-grade11-v179-unit07-private-teacher-batch01.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v179-batch01-twelve-source-authenticated-keyless-candidates.json"
+      - "quality/grade11-v179-unit07-batch01-12-originals-private-candidate-teacher-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch01_v179.cjs"
+      - ".github/workflows/validate-grade11-v179-unit07-private-teacher-batch01.yml"
+  workflow_dispatch:
+jobs:
+  verify-v179-private-candidates-source-identity-no-live-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V179 source-matched 12-original private-candidate index
+        run: node --check scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Check 12 original exact-source SHA references and 36 fail-closed mutations
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 274-original teacher review queue and score HOLD
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 original 5 numerical hint caveats and no score
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 original 8 comprehensive questions
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original 11 short-response questions
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 original 10 textbook MCQs
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve V173 original Topic7.3 80 owner authored MCQs
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve V168 original Topic7.2 80 owner authored MCQs
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve V154 original Topic7.1 80 owner authored MCQs
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 previously pinned XI original question identities and Unit6 560 teacher hold
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve authenticated teacher backend staging and production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only private source-safe QA metadata without original questions and answers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v179-unit7-original-12-private-candidates-keyless-qc
+          path: qa-artifacts/grade11-v179-unit7-private-candidates-batch01/summary.json
+          if-no-files-found: warn
+          retention-days: 14
