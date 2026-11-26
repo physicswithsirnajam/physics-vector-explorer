@@ -10,7 +10,7 @@ const load=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
 const near=(got,want)=>A.ok(Math.abs(got-want)<1e-11,got+' != '+want);
 const privateFree=load('quality/unit07/unit07-v197-topic73-twelve-originals-source-slo-secondpass-no-keys.json');
 const q=Object.fromEntries(privateFree.items.map(x=>[x.sourceNumber,x]));
-for(const n of [51,56,59,60]){
+for(const n of [50,51,59,60]){
  A.equal(q[n].originalMappedSlo,'P-11-B-28');
  A.equal(q[n].originalAuthorCognitive,'A');
  A.equal(q[n].officialSummativeCognitive,'Application');
@@ -20,10 +20,10 @@ for(const n of [51,56,59,60]){
 // Q51 original numerical: Y=2e11 Pa, A=1e-6 m², L=2m, x=1mm.
 const U51=.5*(2e11*1e-6/2)*(.001)**2;
 near(U51,.05);
-// Q56 derived energy density: stress=2e6Pa, strain=.001.
-const density=.5*2e6*.001;
-near(density,1000);
-A.equal(q[56].v197ReviewDisposition,'SUPPLEMENTARY_STRAIN_ENERGY_DENSITY_ENRICHMENT');
+// Q50 original energy scaling under the same stiffness: U is quadratic in x.
+const U50AtDoubleX=4*.90;
+near(U50AtDoubleX,3.6);
+A.equal(q[50].v197ReviewDisposition,'PROMISING_DIRECT_APPLICATION_SCALING_OVERLAP');
 // Q59 NBF Example7.3: 980 N final force and 3.90e-4 m elongation.
 const U59=.5*980*3.90e-4;
 near(U59,.1911);
@@ -56,4 +56,4 @@ const unit=cat.grades.find(g=>g.grade===11).units.find(u=>u.unit===7);
 A.equal(unit.assessmentStatus,'not-published');
 A.equal(unit.questionBankCount,0);
 A.equal(fs.existsSync(path.join(ROOT,'question-bank/grade-11/unit-07.json')),false);
-console.log('V197 MATH PASS: source Q51/Q56/Q59/Q60, Q72 SI slope, Q38/Q80 graph warning, zero scored releases.');
+console.log('V197 MATH PASS: source Q50/Q51/Q59/Q60, Q72 SI slope, Q38/Q80 graph warning, zero scored releases.');
