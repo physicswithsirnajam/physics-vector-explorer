@@ -2,9 +2,10 @@
 'use strict';
 /**
  * V176: keyless NBF Grade XI Unit7 original Comprehensive Questions 7.1-7.8.
- * The original scanned page was NOT available to rerender this pass. The prior
- * book SHA is inherited provenance; public study/transcription review is not a
- * new source-image attestation. Protect score HOLD and private answer/source.
+ * Original textbook printed p126 was visually verified using the owner's two
+ * newly uploaded page images. Eight question-region RGB fingerprints refer to
+ * the newly uploaded PNG; historic original full-book PDF SHA is carried only,
+ * NOT recomputed. Protect teacher HOLD, privacy, and no scored release.
  */
 const A=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
@@ -16,6 +17,23 @@ const MEMO='quality/grade11-v176-unit07-comprehensive01-08-science-slo-qc.md';
 const BOOK='00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe';
 const STUDENT='d398324caaaf3bd8ce4025df5722631da85ee723421f8872f730c5ad641f6531';
 const SOLVED='f8b6496c8ad6e7ef086caacc07d1bf52eb39e5de12d92428f4617cdd51a5a524';
+const UPLOADED_PAGE_SHA='c927129db10d9a4ea36be7f0cf4e036a69b9e720590310446fd2a00230ae393b';
+const UPLOADED_PHOTO_SHA='bc4886d03754d1b3b7e4ac6b23295ee9f27aaf03de68b08e1230ebb6cb6fc637';
+const PAGE_CROPS=[
+ [52,251,752,270],[52,271,752,289],[52,290,752,308],[52,310,752,327],
+ [52,329,752,347],[52,348,752,366],[52,367,752,385],[52,387,752,404]
+];
+const PAGE_RGB=[
+ '3f6d720887186bad4da36504303723024b310773d873eb4286a4a8934139e651',
+ 'ec909e263c3e40afde4e4d6f2cc0f03eb9cc71cc6b8b99589fc362eab02114f1',
+ '2cba2bb090e8f2168c36b3bb160339d4556e70387d255c2a5bcf08f10023bb3a',
+ 'afeb6c05c7d9f999781ec2d5b168f10b44ef276529d8a57420633dd506d91a0c',
+ '1555ee2ecbaaf42a4ffcb144dd285d62532a28fd494ded9734693b061360eb83',
+ 'e6f1925331dfbe19312289cc40f40ff81c00d0be1a07a909e1021400fb94d35a',
+ 'd85b66b0bae1df4e8525a24798d7b0f6d6ae21723e809ff78291e3f0f060d656',
+ '84eabde22c574a7a99c5cb8314b236ae25510b0f1c796027984ffd234d65d593'
+];
+const CROPS_JOIN_SHA='0dedfadbdbab61c804553aa14c8a68314f25b88a037fb408c5db3f32f8906930';
 const SLO=[22,22,24,26,26,27,28,25];
 const DEMAND=['U','U','U','U','U','A','A','U'];
 const SUPPORT=[2,3],COMP=[2,4,6,7,8],OPT=[1,3,5];
@@ -48,8 +66,19 @@ function validate(d){
  A.equal(d.sourceOriginalBookSha256CarriedFromV175,BOOK);
  A.equal(d.originalBookReopenedAndShaRecomputedThisPass,false);
  A.equal(d.sourcePrintedPage,126);A.equal(d.sourcePdfPageZeroIndex,125);
- A.equal(d.sourceVisualPageCropVerificationThisPass,'PENDING_ORIGINAL_SCAN');
- A.equal(d.originalQuestionRegionHashesClaimed,false);
+ A.equal(d.sourceVisualPageCropVerificationThisPass,'VERIFIED_USER_UPLOADED_PRINTED_PAGE_IMAGE');
+ A.equal(d.originalQuestionRegionHashesClaimed,true);
+ const src=d.uploadedPrintedPageImageSource;
+ A.equal(src.primaryFilename,'image(20261126-011636).png');
+ A.equal(src.primaryFileSha256,UPLOADED_PAGE_SHA);
+ A.deepEqual(src.primaryImageDimensionsPixels,[826,1030]);
+ A.equal(src.confirmationPhotoFilename,'Unit 7 (Page 126).jpeg');
+ A.equal(src.confirmationPhotoSha256,UPLOADED_PHOTO_SHA);
+ A.ok(src.cropRecipe.includes('USER UPLOADED ORIGINAL PAGE PNG'));
+ A.equal(src.orderedEightCropHashesJoinedWithNewlineSha256,CROPS_JOIN_SHA);
+ A.equal(src.cropHashesAttestUserUploadedPageOnly,true);
+ A.equal(src.originalFullTextbookPdfRerendered,false);
+ A.ok(d.sourceImageVerificationInterpretation.includes('NOT pixel hashes'));
  A.equal(d.derivativeStudentPracticeFile,
   'Grade11_Unit7_EndOfUnit_8Comprehensive_Student_Practice.pdf');
  A.equal(d.derivativeStudentPracticeSha256,STUDENT);
@@ -104,8 +133,10 @@ function validate(d){
   A.ok(r.academicConcern.length>90,'Missing science caveat for 7.'+n);
   A.ok(r.reviewAction.length>85,'Missing retain/review action for 7.'+n);
   A.equal(r.originalSourceRetained,true);
-  A.equal(r.firstPassPhysicsStatus,'DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY');
-  A.equal(r.originalScannedPageCropVerifiedThisPass,false);
+  A.equal(r.firstPassPhysicsStatus,'UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS');
+  A.equal(r.originalScannedPageCropVerifiedThisPass,true);
+  A.deepEqual(r.sourceUploadedPagePixelCropBox,PAGE_CROPS[i]);
+  A.equal(r.sourceUploadedPageCropRgbSha256,PAGE_RGB[i]);
   A.equal(r.teacherScienceSignoff,'PENDING');
   A.equal(r.teacherCognitiveSignoff,'PENDING');
   A.equal(r.scoredPortalRelease,'HOLD');
@@ -124,12 +155,18 @@ const mutants=[
  x=>x.schemaVersion=2,
  x=>x.sourceOriginalBookSha256CarriedFromV175='0'.repeat(64),
  x=>x.originalBookReopenedAndShaRecomputedThisPass=true,
- x=>x.sourceVisualPageCropVerificationThisPass='VERIFIED',
- x=>x.originalQuestionRegionHashesClaimed=true,
+ x=>x.sourceVisualPageCropVerificationThisPass='UNVERIFIED',
+ x=>x.originalQuestionRegionHashesClaimed=false,
+ x=>x.uploadedPrintedPageImageSource.primaryFileSha256='0'.repeat(64),
+ x=>x.uploadedPrintedPageImageSource.confirmationPhotoSha256='0'.repeat(64),
+ x=>x.uploadedPrintedPageImageSource.orderedEightCropHashesJoinedWithNewlineSha256='0'.repeat(64),
+ x=>x.items[0].sourceUploadedPageCropRgbSha256='0'.repeat(64),
+ x=>x.items[2].sourceUploadedPagePixelCropBox=[0,0,0,0],
  x=>x.derivativeStudentPracticeSha256='0'.repeat(64),
  x=>x.derivativeSolvedStudySha256='0'.repeat(64),
  x=>x.originalComprehensiveQuestionsCount=7,
  x=>x.items.pop(),
+ x=>x.items[0].originalScannedPageCropVerifiedThisPass=false,
  x=>x.items[0].sourceQuestionNumber=2,
  x=>x.items[1].sourcePrintedPage=125,
  x=>x.items[2].nearestOfficialTheorySlo='P-11-B-28',
@@ -193,11 +230,12 @@ A.equal(load('quality/unit07/topic71-v161-staging-callable-contract-no-deploy.js
 const art=path.join(ROOT,'qa-artifacts/grade11-v176-unit7-comprehensive8');
 fs.mkdirSync(art,{recursive:true});
 fs.writeFileSync(path.join(art,'summary.json'),JSON.stringify({
- version:'V176',questionsReviewed:8,originalSourceImageVerifiedThisPass:0,
+ version:'V176',questionsReviewed:8,originalUploadedPageRegionsVisuallyVerifiedThisPass:8,
+ historicFullBookPdfRerendered:false,
  requiredTeacherDecisions:COMP,optionalTeacherImprovements:OPT,
  preliminaryItemDemand:{K:0,U:6,A:2},provisionalTopicAligned:6,
  provisionalSupportingOrCrossSlo:2,scoredReleaseMutationDenials:mutants.length,
  teacherScienceSignoffs:0,teacherCognitiveSignoffs:0,unit7Scored:0,
  next:'V177 printed numerical problems 7.1–7.5'
 },null,2)+'\n');
-console.log('V176 PASS: 8 keyless comprehensive review records, 5 compulsory/3 optional; '+mutants.length+' intentional HOLD violations denied; 0 scored Unit7 items.');
+console.log('V176 PASS: 8 original NBF page-126 question-image regions verified from uploaded printed page; 5 compulsory/3 optional; '+mutants.length+' intentional HOLD violations denied; 0 scored Unit7 items.');
