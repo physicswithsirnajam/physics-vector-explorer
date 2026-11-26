@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "version": "V194",
+  "title": "Grade XI Unit7 page126 five worked numerical teacher draft and page122 graph-axis explanation; review holds remain",
+  "prerequisite": {
+    "prNumber": 297,
+    "merged": true,
+    "mergeSha": "5adb13dece9e9ce5e4a5cacc631397f6b10aafc1"
+  },
+  "status": "SIX_PAGE_PRIVATE_TEACHER_SOLUTIONS_DRAFT_VISUALLY_QC_HUMAN_SIGNOFF_PENDING_NO_SCORES",
+  "sourcePdfNames": [
+    "Unit 7.pdf",
+    "unit 7 - Physics 11.pdf"
+  ],
+  "sourcePdfSha256": [
+    "0f6f5d63c26e44d49ada6eef730ea73e99e3bd2331324701953683644125b8d9",
+    "08e20e2e3768134cf2eecd5379aa175f9777d1f0efcf18ea984cd8ad2c80d892"
+  ],
+  "sourcePdfPageCountPerCopy": 15,
+  "sourcePrintedPagesUsed": [
+    119,
+    121,
+    122,
+    123,
+    126
+  ],
+  "artifact": {
+    "privateDocx": "Unit7_V194_Teacher_Solutions_Source_Audit_DRAFT.docx",
+    "docxSha256": "216b6418afd362a95ebdb3a385bf18f61fb9e091bc44820117c4e37547a1c477",
+    "privatePdf": "Unit7_V194_Teacher_Solutions_Source_Audit_DRAFT.pdf",
+    "pdfSha256": "6571c53dc33d20d4e9ff39ad15d30cc8e0a03eac1e4dc508b633f1d41bd1cb14",
+    "renderedPages": 6,
+    "paperSize": "A4",
+    "everyRenderedPageVisuallyInspected": true,
+    "equationsTypesetAsFractionsSuperscriptsAndSubscripts": true,
+    "originalPrintedHintsAndCalculatedResultsSeparatelyLabeled": true,
+    "authorNameOrSourceImagesPublishedInRepository": false,
+    "answerKeyOrFullWorkedSolutionPublishedInRepository": false,
+    "originalNbfPagesCopiedIntoRepository": false,
+    "independentTeacherFieldsPreFilled": false,
+    "includesSourceSpecificGraphComparison": true
+  },
+  "problemDecisions": [
+    {
+      "problem": "7.1",
+      "disposition": "COMPULSORY_REVIEW",
+      "cause": "stated Young modulus cannot directly serve as shear modulus; 5.2 kg conditional using book steel G=8e10 Pa",
+      "printedHintStatus": "conditional-only",
+      "scoring": "HOLD"
+    },
+    {
+      "problem": "7.2",
+      "disposition": "NO_COMPULSORY_AMENDMENT",
+      "cause": "copper diameter 2.291 mm agrees with printed 2.29 mm",
+      "printedHintStatus": "consistent",
+      "scoring": "HOLD"
+    },
+    {
+      "problem": "7.3",
+      "disposition": "COMPULSORY_REVIEW",
+      "cause": "serial steel carries 10 kg, brass 6 kg; book brass Young Y=1.0e10 Pa yields 1.348e-3 m and 42.55 mJ; printed key inconsistent",
+      "printedHintStatus": "inconsistent",
+      "scoring": "HOLD"
+    },
+    {
+      "problem": "7.4",
+      "disposition": "COMPULSORY_REVIEW",
+      "cause": "U=AL sigma²/(2Y)=60.75 J not published 12.15 J",
+      "printedHintStatus": "inconsistent",
+      "scoring": "HOLD"
+    },
+    {
+      "problem": "7.5",
+      "disposition": "COMPULSORY_REVIEW",
+      "cause": "500 N, printed diameter 50 cm gives 2.546e3 Pa; 5 cm is hypothetical and agrees approximately with printed hint",
+      "printedHintStatus": "inconsistent",
+      "scoring": "HOLD"
+    }
+  ],
+  "graphTeaching": {
+    "printedPage": 122,
+    "graphName": "Figure 7.14",
+    "originalAxisHorizontal": "WEIGHT_OR_FORCE",
+    "originalAxisVertical": "EXTENSION",
+    "standardWorkAreaGraphHorizontal": "EXTENSION",
+    "standardWorkAreaGraphVertical": "FORCE",
+    "reversedAxesAreaEqualsWorkGenerally": false,
+    "hookeanLinearZeroStartTriangleException": true,
+    "requireExplicitTeacherAxesExplanation": true,
+    "scoredRelease": "HOLD"
+  },
+  "previousV177NumericalDispositionsRetained": true,
+  "originalBookUnmodified": true,
+  "originalOwnerQuestionBanksUnmodified": true,
+  "priorV193SourceEvidenceUnmodified": true,
+  "existingUnit7OriginalItemUniverse": 274,
+  "existing72ItemDetailedCandidateQueueUnmodified": true,
+  "individualAuthenticatedTeacherScienceApprovals": 0,
+  "individualAuthenticatedCognitiveApprovals": 0,
+  "ownerScoringPermissions": 0,
+  "scoredUnit7StudentItems": 0,
+  "publicTeacherBackendGateV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "publicTeacherBackendGateV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "firebaseAuthRulesOrAppCheckChanged": false,
+  "productionOrStagingDeployed": false,
+  "liveStudentTestBuilderChanged": false,
+  "ciAssuranceLimit": "Public CI verifies numeric formulas/conditional classifications, document SHA claims and all existing no-score invariants, but cannot inspect private Word/PDF files or authenticate teacher scientific signoff.",
+  "nextMilestone": "V195 owner-guided independent subject-teacher confirmation of four numerical corrections and graph-axis teaching guidance, then optional amendments to teacher-facing notes only; original publisher and scored Unit7 question bank remain unchanged pending authorization."
+}
