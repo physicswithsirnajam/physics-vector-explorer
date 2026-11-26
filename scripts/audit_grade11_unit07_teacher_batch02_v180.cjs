@@ -89,6 +89,20 @@ function validate(d){
   A.ok(Object.hasOwn(SLOS,t));A.ok(Object.hasOwn(SLOS[t],n));
   A.equal(r.originalPublicRegistryVersion,t==='7.1'?'V154':t==='7.2'?'V168':'V173');
   A.ok(hasSHA(r.originalSourceRowFingerprint));
+  // Source-identity validation also belongs INSIDE validate(), so adversarial
+  // full-SHA substitutions are rejected, not merely well-formed 64-char strings.
+  const provenance=Object.values(SRC).find(z=>z.topic===t);
+  A.ok(provenance);
+  const sourceLedger=load(provenance.path);
+  const sourceRows=t==='7.1'?sourceLedger.entries:
+   t==='7.2'?sourceLedger.canonicalSourceRows:sourceLedger.originalRowSourceRegistry;
+  const originalRow=sourceRows.find(x=>(x.sourceNumber??x.number)===n);
+  A.ok(originalRow,'Source original row missing from earlier source ledger');
+  const exactSourceRowSha=originalRow.originalFullRowSha256??originalRow.sha256??originalRow.originalPrivateFullRowSha256;
+  A.equal(r.originalSourceRowFingerprint,exactSourceRowSha);
+  A.equal(r.originalSourceSlo,
+   originalRow.officialSlo??originalRow.originalMappedSlo??originalRow.sourceMappedSlo);
+  A.ok(typeof r.sourceAnswerAssessment==='string' && r.sourceAnswerAssessment.length>12);
   A.equal(r.teacherQueuePriority,'COMPULSORY_SOURCE_PRECISION_OR_SLO_REVIEW');
   A.equal(r.scienceFindingCategory,TAGS[t][nByTopic[t]++]);
   A.ok(r.privateCandidateDesignTag.length>15);
