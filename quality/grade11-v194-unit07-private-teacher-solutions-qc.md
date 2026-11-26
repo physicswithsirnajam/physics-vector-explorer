@@ -33,7 +33,7 @@ NBF Figure **7.14**, printed p122, places **weight/force horizontally and extens
 
 ## Academic signoff and release boundary
 
-**No independent subject teacher has submitted or authenticated a decision.** The private draft's checkbox and signature lines remain blank. Even if a paper is later signed, separate technically authenticated reviewer decisions, exact revision binding, verified backend Rules/App Check, owner permission and scored-release authorization would still be required for live scored Test Builder questions.
+**Independent subject teacher science and cognitive decisions remain PENDING; no subject teacher has submitted or authenticated a decision.** The private draft's checkbox and signature lines remain blank. Even if a paper is later signed, separate technically authenticated reviewer decisions, exact revision binding, verified backend Rules/App Check, owner permission and scored-release authorization would still be required for live scored Test Builder questions.
 
 Current counts: **274** original Unit 7 items inventoried, **72** detailed private review candidates, **0** authenticated science/cognitive decisions, **0** owner scored-release decisions, **0** scored Unit 7 MCQs. Earlier source-backed Q25 V189/V192 private draft is preserved, not changed. V160 production and V161 production/staging teacher-backend gates remain **NO-GO**. Neither Firebase, security rules, teacher roles, student data, App Check, original books, existing question bank nor live lessons have changed.
 
