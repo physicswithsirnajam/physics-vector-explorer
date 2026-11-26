@@ -1,0 +1,68 @@
+name: Grade XI V180 Unit7 Private Source 12-MCQ Teacher Batch02 (NO SCORED RELEASE)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v180-batch02-twelve-high-priority-source-bound-no-keys.json"
+      - "quality/grade11-v180-unit07-batch02-12-originals-private-candidate-teacher-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch02_v180.cjs"
+      - ".github/workflows/validate-grade11-v180-unit07-private-teacher-batch02.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v180-batch02-twelve-high-priority-source-bound-no-keys.json"
+      - "quality/grade11-v180-unit07-batch02-12-originals-private-candidate-teacher-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch02_v180.cjs"
+      - ".github/workflows/validate-grade11-v180-unit07-private-teacher-batch02.yml"
+  workflow_dispatch:
+jobs:
+  verify-private-batch02-original-sources-and-teacher-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check exact source Batch02 keyless audit
+        run: node --check scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Validate 12 distinct source-original MCQs, candidate metadata and no-score mutations
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 first 12 original candidate source row checks and teacher pending
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 all 274 original source-prefixed identities and release hold
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 five original NBF numerical source and hint checks
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 original eight comprehensive questions and no scored release
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 11 original short answers and source-science hold
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 10 textbook MCQs and scoring hold
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve V173 and V168 and V154 original topic source banks
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 legacy original pinned source item identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 original questions pending teacher signoff
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V160 and V161 authenticated teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and reporting launch locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only QA summary without private candidate or owner question text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v180-unit7-teacher-batch02-keyless-qa
+          path: qa-artifacts/grade11-v180-unit7-teacher-batch02/summary.json
+          if-no-files-found: warn
+          retention-days: 14
