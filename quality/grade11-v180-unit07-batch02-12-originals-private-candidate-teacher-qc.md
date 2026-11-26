@@ -37,7 +37,7 @@ Each source item is referenced in the keyless public JSON by its **unique sectio
 
 The three **private author DOCX files** were directly opened in V180; the **full original NBF scanned textbook was not independently reopened in this pass**. Prior NBF p115 Fig7.5 source evidence in V154 can guide preliminary physics checking, but the requested **owner-supplied p115 image** is needed before finalizing textbook-specific attribution in Q41/Q43. The earlier V179 source requests remain open: printed **p114** for polymer example provenance, and NBF **Example 7.2** for actual bone-shortening data (Q57). **Do not silently mark any prior source dependency resolved here.**
 
-Source-origin story, factual physics and official SLO placement are different validations. Fibonacci or other unmentioned topics are not imported. Candidate SLO and actual cognitive demand are provisional until the teacher reviews the final exact stem and its complete stimulus. For formulae, clearly distinguish *necessary assumptions*, *units* and *direct official outcome* from supplementary good-enrichment material.
+Source-origin story, factual physics and official SLO placement are different validations. Candidate SLO and actual cognitive demand are provisional until the teacher reviews the final exact stem and its complete stimulus. For formulae, clearly distinguish *necessary assumptions*, *units* and the *direct official outcome* from supplementary enrichment.
 
 ## Artifacts, security, and following step
 
