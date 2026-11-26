@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "version": "V193",
+  "title": "Grade XI NBF Physics of Solids: first direct full-unit two-PDF source verification and page-126 arithmetic reconciliation",
+  "prerequisite": {
+    "prNumber": 296,
+    "merged": true,
+    "mergeSha": "8e6c300199753ba56cd925d83aa082754867913b"
+  },
+  "status": "DIRECT_ORIGINAL_TEXTBOOK_PAGES_NOW_VERIFIED_FOUR_NUMERICAL_TEACHER_HOLDS_NO_RELEASE",
+  "uploadedOriginalSources": [
+    {
+      "filename": "Unit 7.pdf",
+      "sha256": "0f6f5d63c26e44d49ada6eef730ea73e99e3bd2331324701953683644125b8d9",
+      "pageCount": 15,
+      "layout": "upright grayscale page scan, watermark",
+      "originalPagesCommittedToPublicRepo": false
+    },
+    {
+      "filename": "unit 7 - Physics 11.pdf",
+      "sha256": "08e20e2e3768134cf2eecd5379aa175f9777d1f0efcf18ea984cd8ad2c80d892",
+      "pageCount": 15,
+      "layout": "highlighted photographic colour page scan, rotated in original PDF",
+      "originalPagesCommittedToPublicRepo": false
+    }
+  ],
+  "mapping": {
+    "pdfPage1": "Unit7 opening and SLO list",
+    "pdfPage2": "printed NBF page 113",
+    "pdfPage3": "printed NBF page 114",
+    "pdfPage4": "printed NBF page 115",
+    "pdfPage5": "printed NBF page 116",
+    "pdfPage10": "printed NBF page 121",
+    "pdfPage11": "printed NBF page 122",
+    "pdfPage12": "printed NBF page 123",
+    "pdfPage15": "printed NBF page 126"
+  },
+  "visuallyInspectedCorrespondingPageOrder": true,
+  "sourceResolved": [
+    {
+      "code": "P114_POLYMER_EXAMPLES",
+      "printedPage": 114,
+      "sourceEvidence": "ORIGINAL_PAGE_VERIFIED",
+      "academicDecision": "polymer natural/synthetic classification is described; chemical origin is not proof of crystalline/amorphous structure",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "code": "P114_AMORPHOUS_SHORT_RANGE",
+      "printedPage": 114,
+      "sourceEvidence": "ORIGINAL_PAGE_VERIFIED",
+      "academicDecision": "short-range order without repeating large-scale lattice is explicitly supported; Q25 concept source-grounded, teacher still PENDING",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "code": "P115_CUBIC_CELL_FIGURE",
+      "printedPage": 115,
+      "sourceEvidence": "ORIGINAL_PAGE_VERIFIED",
+      "academicDecision": "SC, BCC and FCC drawings and effective unit-cell counts 1,2,4 respectively verified; sharing fractions are explanatory science, not independent teacher SLO approval",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "code": "EXAMPLE_7_2_BONE",
+      "printedPage": 121,
+      "sourceEvidence": "ORIGINAL_PAGE_VERIFIED",
+      "academicDecision": "70 kg player with supported bone load 62 kg; F=607.6N, L=0.400m, r=0.020m, Y=9e9Pa; printed approximately 2e-5m agrees with 2.15e-5m",
+      "scoredRelease": "HOLD"
+    },
+    {
+      "code": "FIG7_13_WIRE",
+      "printedPage": 122,
+      "sourceEvidence": "ORIGINAL_DIAGRAM_VERIFIED_ONLY",
+      "academicDecision": "reference wire, test wire, vernier scale, variable load pictured; permissions and self-contained accessible reproduction still NOT cleared",
+      "scoredRelease": "HOLD"
+    }
+  ],
+  "sourceCautions": [
+    {
+      "code": "P113_POLYCRYSTALLINE_ISOTROPY",
+      "printedPage": 113,
+      "note": "Textbook describes polycrystalline isotropy generally; direct science needs random/untextured grains and property/scale qualifications; Q22 remains supporting-only for P-11-B-22"
+    },
+    {
+      "code": "P122_P123_FORCE_EXTENSION_AXES",
+      "printedPage": 122,
+      "note": "Fig 7.14 labels weight as x-axis and extension as y-axis; unrestricted area-under-curve = elastic work rule requires force vertical vs extension horizontal. For linear zero-start Hookean case only, the figure's triangular area also numerically equals Fx/2; keep both axes and scope explicit"
+    }
+  ],
+  "originalNumericalReview": {
+    "sourcePrintedPage": 126,
+    "provisionalStatus": "ORIGINAL_QUESTION_TEXT_PRESERVED_TEACHER_REVIEW_REQUIRED",
+    "mathAssumptions": "g=9.8m/s², pi conventional, circular cross-sections, linear elastic small strain",
+    "questions": [
+      {
+        "n": 1,
+        "sourceStatus": "CONDITIONAL_SHEAR_MODULUS_NOT_PRINTED_YOUNG_MODULUS",
+        "printedHintClass": "conditional-only",
+        "publishedHintNumeric": 5.2,
+        "printedHintUnit": "kg",
+        "computedFromBookTableShear": 5.19324499879129,
+        "computedFromStatedYoung": 12.983112496978224,
+        "teacherPriority": "COMPULSORY",
+        "scienceBasis": "steel shear modulus Table 7.1 =8.0e10 Pa while nail problem prints Y_s=20e10 Pa; note cantilever model"
+      },
+      {
+        "n": 2,
+        "sourceStatus": "CONSISTENT",
+        "printedHintClass": "consistent",
+        "publishedHintNumeric": 2.29,
+        "printedHintUnit": "mm",
+        "computedFromGiven": 2.29128784747792,
+        "teacherPriority": "NONE",
+        "scienceBasis": "same extension L and F means new diameter 3mm*sqrt(7/12)"
+      },
+      {
+        "n": 3,
+        "sourceStatus": "PRINTED_BRASS_MODULUS_VERSUS_HINT_MISMATCH",
+        "printedHintClass": "inconsistent",
+        "publishedHintNumeric": [
+          0.000279,
+          0.01102
+        ],
+        "printedHintUnit": [
+          "m",
+          "J"
+        ],
+        "computedFromGiven": [
+          0.0013475967341476964,
+          0.042554110204975036
+        ],
+        "teacherPriority": "COMPULSORY",
+        "scienceBasis": "problem and Table7.1 print brass Y=1.0e10Pa; book hints approximately resemble using 1.0e11Pa, still not exact"
+      },
+      {
+        "n": 4,
+        "sourceStatus": "PRINTED_ENERGY_HINT_FACTOR_FIVE_MISMATCH",
+        "printedHintClass": "inconsistent",
+        "publishedHintNumeric": 12.15,
+        "printedHintUnit": "J",
+        "computedFromGiven": 60.75,
+        "teacherPriority": "COMPULSORY",
+        "scienceBasis": "A=90mm², L=3m, stress=300MPa, Young=200GPa; U=AL stress²/(2Y)"
+      },
+      {
+        "n": 5,
+        "sourceStatus": "PRINTED_DIAMETER_AND_STRESS_HINT_MISMATCH",
+        "printedHintClass": "inconsistent",
+        "publishedHintNumeric": 250000,
+        "printedHintUnit": "Pa",
+        "computedFromGiven": 2546.4790894703256,
+        "teacherPriority": "COMPULSORY",
+        "scienceBasis": "500N and diameter 50cm gives 2.55e3Pa; 5cm would give 2.55e5Pa and match printed hint"
+      }
+    ]
+  },
+  "existingV177NumericalClassificationRetained": true,
+  "existingV18572CandidateSourceRowsMutated": false,
+  "existingV192Q25RevisionMutated": false,
+  "questionOnlyStudentPortalChanged": false,
+  "sourceImagesOrFullTextCommitted": false,
+  "ownerOriginalBooksEdited": false,
+  "individualTeacherScienceApprovals": 0,
+  "individualTeacherCognitiveApprovals": 0,
+  "ownerScoringApprovals": 0,
+  "unit7ScoredStudentReleases": 0,
+  "publicTeacherBackendStatus": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "firebaseAuthOrRulesChanged": false,
+  "teacherRoleOrAppCheckChanged": false,
+  "productionOrStagingDeployed": false,
+  "ciLimit": "Source authenticity and arithmetic were inspected locally from attached original PDFs; public CI can recompute mathematics and validate metadata, but does not include the copyrighted scans and cannot authorize academic signoff.",
+  "nextMilestone": "V194 obtain independent teacher signoff for corrected teaching guidance on four problematic numericals and graph-axis warning, then carefully amend teacher solutions without altering original textbook or publishing scored Unit7 questions"
+}
