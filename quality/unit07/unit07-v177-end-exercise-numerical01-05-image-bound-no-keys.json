@@ -26,7 +26,7 @@
       1266
     ],
     "fingerprintMethod": "For the user-uploaded original-page PNG ONLY, PIL Image.open(path).convert('RGB'); crop with uploadedPagePixelCropBox [left,top,right,bottom]; SHA-256 of crop.tobytes(). These are NOT image hashes of the unavailable full NBF textbook PDF, and source image bytes are NOT published.",
-    "fiveSourceQuestionCropSha256JoinNewlineSha256": "ef4af4b58db5da6bca1b44e71fc04ba2af377c26853aa85fd63f01851d679f53",
+    "fiveSourceQuestionCropSha256JoinNewlineSha256": "8d7029b13367e13c018b5001a856ce2a7adffa22b174e5104aff5fb40a4f4238",
     "diagramSourceCropBox": [
       594,
       438,
