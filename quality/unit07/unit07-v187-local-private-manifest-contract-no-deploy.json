@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "version": "V187",
+  "title": "Private offline candidate JSON to keyless local manifest with exact V185 source binding; never import or deploy",
+  "prerequisite": {
+    "prNumber": 290,
+    "merged": true,
+    "mergeSha": "680f831a5df2fb918242ae1a91fff8a2c6418f50"
+  },
+  "status": "LOCAL_ONLY_PRIVATE_INPUT_UNPROCESSED_SYNTHETIC_QA_NO_DEPLOY",
+  "sourceIndex": "quality/unit07/unit07-v185-first-72-teacher-approval-readiness-only-no-keys.json",
+  "sourceIndexItemCount": 72,
+  "totalOriginalUnit7Items": 274,
+  "sourceCandidatesWithoutIndividualDrafts": 202,
+  "maximumItemsPerPrivateInput": 12,
+  "acceptedInput": {
+    "format": "JSON private V187 schemaVersion 1 unit 7 candidates[] each using exact V186 PWSN-U07-CANDIDATE-V1 fields",
+    "requiredCandidateFields": [
+      "sourceId",
+      "sourceSha256",
+      "stem",
+      "options",
+      "correctOption",
+      "explanation",
+      "slo",
+      "cognitive",
+      "diagram"
+    ],
+    "sourceBinding": "existing sourceId and 64 hex sourceSha256 MUST match V185 original row fingerprint; only those 72 source IDs",
+    "privateInputsMustRemainOutsideRepository": true,
+    "outputPathMustRemainOutsideRepository": true,
+    "outputMustNotOverwrite": true,
+    "outputFilePermissionsUnix": "0600",
+    "sourceScannedNbfTextNotAutomaticallyParsed": true,
+    "originalV179ToV184PrivateDocxNotAutomaticallyParsed": true,
+    "optionalImage": {
+      "contentSha256": true,
+      "altText": true,
+      "permissionEvidenceSha256": true
+    },
+    "canonicalizerVersion": "PWSN-U07-CANDIDATE-V1"
+  },
+  "manifestOutcome": {
+    "individualRevisionSha256CreatedOnlyFromActualProvidedCandidateText": true,
+    "questionTextAndCorrectOptionExcludedFromOutput": true,
+    "originalSourceRowShaIncluded": true,
+    "confidentialPrivatePackShaIncluded": true,
+    "sourceEvidenceClearance": "NOT_ATTESTED",
+    "academicScienceApproval": "PENDING",
+    "academicCognitiveApproval": "PENDING",
+    "ownerScoringPermission": "PENDING",
+    "authenticatedReview": false,
+    "eligibleForStudentScoring": false,
+    "studentScoredRelease": "HOLD",
+    "outputStillPrivateDueToContentDerivedDigests": true
+  },
+  "tests": {
+    "fixtures": "SYNTHETIC_INVENTED_PRIVATE_JSON_ONLY",
+    "noRealPrivatePackImported": true,
+    "invalidSchemaAndSourceShaRejected": true,
+    "duplicateOrNotInQueueRejected": true,
+    "sourceEvidenceAndReviewHoldsPreserved": true,
+    "repositoryInputOrOutputRejected": true,
+    "printOnlySafeCounts": true,
+    "noFirebaseNetworkUsed": true
+  },
+  "realState": {
+    "actualPrivateCandidateManifestsProcessed": 0,
+    "individualActualPrivateRevisionDigestsPersisted": 0,
+    "actualTeacherScienceApprovals": 0,
+    "actualTeacherCognitiveApprovals": 0,
+    "actualOwnerScoringApprovals": 0,
+    "studentScoredUnit7Releases": 0
+  },
+  "openSourceEvidence": [
+    "NBF printed p114 polymer examples",
+    "NBF printed p115 conventional cubic-cell diagrams",
+    "NBF original Example 7.2 bone-shortening data",
+    "accessible original/permission-cleared wire apparatus stimulus"
+  ],
+  "liveFirebaseModified": false,
+  "deployedBackendCreated": false,
+  "productionOrStagingTeacherRolesChanged": false,
+  "originalOrCandidateQuestionTextCommitted": false,
+  "privateManifestCommitted": false,
+  "liveQuestionBankModified": false,
+  "productionOrStagingBackendGateStatus": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "nextMilestone": "V188 owner-provided protected private candidate input review in an isolated local environment, 1-12 exact items only; verify source/SLO and candidate content without uploading keys publicly; no real teacher approval or scored release"
+}
