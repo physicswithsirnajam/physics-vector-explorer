@@ -11,13 +11,13 @@ const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 const load=p=>JSON.parse(read(p));
 const REG='quality/unit07/unit07-v197-topic73-twelve-originals-source-slo-secondpass-no-keys.json';
 const DOC='quality/grade11-v197-topic73-12-original-mcq-source-slo-secondpass-qc.md';
-const selected=[2,8,21,27,38,40,51,56,59,60,72,80];
-const supporting=[2,8,21,27,38,40,56,72],direct=[51,59,60,80];
+const selected=[2,8,21,27,38,40,50,51,59,60,72,80];
+const supporting=[2,8,21,27,38,40,72],direct=[50,51,59,60,80];
 const scopes=[
  'SUPPORTING_ONLY_COGNITIVE_U_B28_A','SUPPORTING_ONLY_COGNITIVE_K_B27_A',
  'SUPPORTING_ONLY_COGNITIVE_U_B27_A','SUPPORTING_ONLY_NONLINEAR_WORK_CONCEPT',
  'SUPPORTING_ONLY_REVERSED_GRAPH_AXIS_CONCEPT','SUPPORTING_ONLY_ELASTIC_STRAIN_ENERGY_EXPLANATION',
- 'PROMISING_DIRECT_APPLICATION_CANDIDATE','SUPPLEMENTARY_STRAIN_ENERGY_DENSITY_ENRICHMENT',
+ 'PROMISING_DIRECT_APPLICATION_SCALING_OVERLAP','PROMISING_DIRECT_APPLICATION_CANDIDATE',
  'PROMISING_DIRECT_NBF_EXAMPLE_7_3','PROMISING_DIRECT_NBF_ASSIGNMENT_7_3',
  'SUPPLEMENTARY_GRAPH_LOAD_MASS_TO_FORCE_CONVERSION',
  'PROMISING_DIRECT_GRAPH_AXES_WITH_DUPLICATE_WATCH'
@@ -27,8 +27,8 @@ const actions=[
  'COMPULSORY_SCOPE_BEFORE_DIRECT_SCORING','COMPULSORY_DEMAND_REVIEW_BEFORE_DIRECT_SCORING',
  'COMPULSORY_AXIS_QUALIFICATION_AND_DEMAND_REVIEW',
  'COMPULSORY_DEMAND_REVIEW_OPTIONAL_QUALIFIER',
+ 'NO_COMPULSORY_ANSWER_CORRECTION_SELECT_OVERLAP',
  'NO_COMPULSORY_ANSWER_CORRECTION_TEACHER_PENDING',
- 'COMPULSORY_SOURCE_SCOPE_REVIEW_BEFORE_SCORING',
  'NO_COMPULSORY_ANSWER_CORRECTION_TEACHER_PENDING',
  'NO_COMPULSORY_ANSWER_CORRECTION_TEACHER_PENDING',
  'COMPULSORY_SLO_SUITABILITY_BEFORE_SCORING_OPTIONAL_REMAP',
@@ -72,18 +72,19 @@ function check(d){
  for(const k of ['topic73OriginalWordModified','v173OriginalSourceRegistryModified','v185PreviouslyReviewedQueueModified'])A.equal(d[k],false);
  const p=d.privateArtifacts;
  A.equal(p.privateDocxFilename,'Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.docx');
- A.equal(p.privateDocxSha256,'180cb0549009d1449b46a6f213133cb9603c4e664325f8d8151b60c0426b3b61');
+ A.equal(p.privateDocxSha256,'f485bde41fb6074d2bcf4b6084bb8fe89b26ed5c613004b54d3d8e510039af1a');
  A.equal(p.privatePdfFilename,'Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.pdf');
- A.equal(p.privatePdfSha256,'60ddc4317b3cfa16f02d2d2827c9152cb56693fa371e7d0c7f10471348af7090');
+ A.equal(p.privatePdfSha256,'ae6e46048291a8e3bab445b7fbe000badaf057455d5d4661a5651aaf243730e0');
  A.equal(p.privateOriginalItemJsonFilename,'Unit7_V197_PRIVATE_12_Original_Items_Source_Review.json');
- A.equal(p.privateOriginalItemJsonSha256,'93b865f22083a60ebdf0c0daa7545fa7d2ca8479a3fee0abf59cc28543edf7bb');
+ A.equal(p.privateOriginalItemJsonSha256,'92078c483ab925536c95456d8f649d76257859b6c85b65ffc7f6a3522ffed981');
  A.equal(p.renderedPages,8);A.equal(p.visuallyChecked,true);
  A.equal(p.privateFilesPublishedToGitHub,false);
  A.equal(p.originalQuestionOptionsAndKeysPublic,false);
  const src=d.sourceSpecificChecks;
  A.deepEqual(src.figure714ReversedAxesWarningApplies,[38,80]);
  A.equal(src.question38And80PreviousDuplicateWatch,true);
- A.equal(src.question56EnergyDensityWasExplicitSupplementary,true);
+ A.equal(src.question50EnergyScalingFollowsSquareLaw,true);
+ A.equal(src.priorQ56AlreadyInV185QueueExcludedFromFreshSelection,true);
  A.equal(src.question59Example73FromTextbookPp123To124,true);
  A.equal(src.question60Assignment73FromTextbookP124,true);
  A.equal(src.question72SourceScopeOriginallyOptionalRemap,true);
@@ -105,7 +106,7 @@ function check(d){
   A.equal(r.authenticatedTeacherScienceApproval,'PENDING');
   A.equal(r.authenticatedTeacherCognitiveApproval,'PENDING');
   A.equal(r.officialSummativeCognitive,d.officialSummativeSloCognition[r.originalMappedSlo]);
-  A.equal(r.textbookPrintedPage,([2,8,21,27,38,40,51,56,59,60,72,80].indexOf(n)===0||n===40||n===51||n===56)?123:(n===59||n===60?124:122));
+  A.equal(r.textbookPrintedPage,(n===2||n===40||n===50||n===51)?123:(n===59||n===60?124:122));
   if(direct.includes(n)){A.equal(r.originalAuthorCognitive,'A');}
  }
  for(const k of ['realTeacherScienceApprovals','realTeacherCognitiveApprovals',
@@ -145,6 +146,8 @@ for(const item of d.items){
 A.equal(v173.sourceReferencesToExamplesWithAllNumericalInputs.includes(59),true);
 A.equal(v173.sourceReferencesToExamplesWithAllNumericalInputs.includes(60),true);
 A.equal(v173.sourceEnergyDensityEnrichmentNumbers.includes(56),true);
+A.equal(reviewed.has('XI-U07-T073-Q056'),true);
+A.equal(d.items.some(x=>x.sourceNumber===56),false);
 A.equal(v173.duplicateWatchGroups.some(x=>x.ids.includes(38)&&x.ids.includes(80)),true);
 for(const r of v185.candidateRegistry){
  A.equal(r.candidateIndividualRevisionSha256,null);
