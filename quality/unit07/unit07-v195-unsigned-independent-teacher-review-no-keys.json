@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "version": "V195",
+  "title": "Grade XI Unit7: 2-page unsigned independent teacher decision pack for p126 problems and p122 graph",
+  "prerequisite": {
+    "prNumber": 298,
+    "merged": true,
+    "mergeSha": "646cdef9fc269a1f638f5ae9a6d0b3039a80c4c3"
+  },
+  "status": "PRIVATE_UNSIGNED_REVIEW_MATRIX_NOT_TEACHER_APPROVAL_STUDENT_SCORE_HOLD",
+  "privateArtifact": {
+    "docx": "Unit7_V195_Independent_Teacher_Decision_Pack_UNAPPROVED.docx",
+    "docxSha256": "0d207e5a02b888c942dc171438d96266b74b6f3809e0e9658d2e266e2c1b8ff5",
+    "pdf": "Unit7_V195_Independent_Teacher_Decision_Pack_UNAPPROVED.pdf",
+    "pdfSha256": "03e18c10306c3936ca6804bd7303e851c07bca95caa048f88ae05b06a63a42d9",
+    "renderedPages": 2,
+    "pageSize": "A4 landscape",
+    "visuallyReviewed": true,
+    "allDecisionBoxesBlank": true,
+    "originalTextbookImagesIncluded": false,
+    "teacherFullAnswersPublishedToGithub": false,
+    "committedToPublicRepository": false,
+    "realTeacherSigned": false
+  },
+  "sourceEvidence": {
+    "textbookUnit": "NBF Grade XI Physics Unit 7",
+    "sourcePdfHashes": [
+      "0f6f5d63c26e44d49ada6eef730ea73e99e3bd2331324701953683644125b8d9",
+      "08e20e2e3768134cf2eecd5379aa175f9777d1f0efcf18ea984cd8ad2c80d892"
+    ],
+    "originalPrintedPages": [
+      119,
+      122,
+      123,
+      126
+    ],
+    "v193SourceAuditUnchanged": true,
+    "v194DetailedTeacherGuideSha256": "216b6418afd362a95ebdb3a385bf18f61fb9e091bc44820117c4e37547a1c477"
+  },
+  "numericalReview": [
+    {
+      "n": 1,
+      "printedHint": "5.2 kg",
+      "recalculated": "5.19 kg conditional shear G; 12.98 kg if misusing stated Young Y",
+      "disposition": "COMPULSORY_REVIEW",
+      "teacherDecision": "PENDING",
+      "scoredStatus": "HOLD"
+    },
+    {
+      "n": 2,
+      "printedHint": "2.29 mm",
+      "recalculated": "2.291 mm",
+      "disposition": "CONSISTENT",
+      "teacherDecision": "PENDING",
+      "scoredStatus": "HOLD"
+    },
+    {
+      "n": 3,
+      "printedHint": "2.79e-4 m and 11.02 mJ",
+      "recalculated": "1.3476e-3 m and 42.55 mJ",
+      "disposition": "COMPULSORY_REVIEW",
+      "teacherDecision": "PENDING",
+      "scoredStatus": "HOLD"
+    },
+    {
+      "n": 4,
+      "printedHint": "12.15 J",
+      "recalculated": "60.75 J",
+      "disposition": "COMPULSORY_REVIEW",
+      "teacherDecision": "PENDING",
+      "scoredStatus": "HOLD"
+    },
+    {
+      "n": 5,
+      "printedHint": "2.5e5 Pa",
+      "recalculated": "2.546e3 Pa for printed 50 cm diameter",
+      "disposition": "COMPULSORY_REVIEW",
+      "teacherDecision": "PENDING",
+      "scoredStatus": "HOLD"
+    }
+  ],
+  "graphReview": {
+    "figure": "NBF 7.14",
+    "originalPrintedPage": 122,
+    "originalHorizontalAxis": "FORCE",
+    "originalVerticalAxis": "EXTENSION",
+    "generalWorkAreaHorizontalAxis": "EXTENSION",
+    "generalWorkAreaVerticalAxis": "FORCE",
+    "reversedAreaIsGenerallyWork": false,
+    "linearOriginHookeanTriangleBothYieldHalfFx": true,
+    "teacherDecision": "PENDING",
+    "scoredStatus": "HOLD"
+  },
+  "reviewProtocol": {
+    "itemsRequiringIndependentReview": [
+      "7.1",
+      "7.2",
+      "7.3",
+      "7.4",
+      "7.5",
+      "Fig. 7.14"
+    ],
+    "perItemChoices": [
+      "ACCEPT_FOR_OWNER_CONSIDERATION",
+      "REVISE_EXPLANATION",
+      "HOLD_FOR_EVIDENCE"
+    ],
+    "allChoicesUnselected": true,
+    "reviewerAndDateFieldsEmpty": true,
+    "paperMarkIsNotAuthenticatedDecision": true,
+    "noMarkingPolicyApproved": true,
+    "sourceBasedAlternativeResultsAreNotAutoGradingKeys": true,
+    "ownerMayConsiderOnlyAfterHumanReview": true
+  },
+  "originalSourceQuestionBankModified": false,
+  "existing72CandidateQueueModified": false,
+  "originalUnit7SourceCount": 274,
+  "originalPrivateDetailedCandidateCount": 72,
+  "realAuthenticatedTeacherScienceApprovals": 0,
+  "realAuthenticatedTeacherCognitiveApprovals": 0,
+  "ownerStudentScoringApprovals": 0,
+  "unit7StudentScoredQuestions": 0,
+  "productionTeacherBackendV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "stagingTeacherBackendV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "firebaseAuthFirestoreOrAppCheckChanged": false,
+  "productionOrStagingDeploymentChanged": false,
+  "studentTestBuilderChanged": false,
+  "ciLimit": "Public CI validates source/arithmetic metadata and review-HOLD gates; private Word/PDF and a real teacher signature cannot be independently inspected or authenticated there.",
+  "nextMilestone": "V196 obtain real independent human review decisions on the private pack and reconcile any requested amendments; no teacher or scored approval claimed until independently evidenced and deployed authenticated controls are verified."
+}
