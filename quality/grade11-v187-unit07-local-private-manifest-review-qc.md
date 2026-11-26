@@ -17,7 +17,7 @@ A private input file must contain exactly `schemaVersion`, `version`, `unit`, an
 
 `sourceId`, `sourceSha256`, `stem`, `options` (four A–D strings), `correctOption`, `explanation`, `slo`, `cognitive`, and `diagram` (null, or SHA-256 of actual image content, alt text, and permission-evidence SHA-256).
 
-**These fields include the actual keyed answer and are PRIVATE.** Do not create such a JSON inside public GitHub; do not paste actual keyed text into a pull request or Actions log. Filling the private JSON is **not** automatic extraction from the previous six Word packs. Any later actual input must be explicitly inspected and transcribed/converted in a protected environment, with a human checking that all candidate choices and calculations match the intended revision.
+**These fields include the actual keyed answer and are PRIVATE.** **Never upload the private JSON input or its derived keyless manifest to a public GitHub repository, pull request, Actions log, or classroom portal.** Do not create such a JSON inside public GitHub; do not paste actual keyed text into a pull request or Actions log. Filling the private JSON is **not** automatic extraction from the previous six Word packs. Any later actual input must be explicitly inspected and transcribed/converted in a protected environment, with a human checking that all candidate choices and calculations match the intended revision.
 
 For a private machine with Node available, the intended invocation (after the private candidate JSON actually exists) is:
 
