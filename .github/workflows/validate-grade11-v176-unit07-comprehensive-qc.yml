@@ -27,7 +27,7 @@ jobs:
           node-version: '24'
       - name: Syntax-check V176 original comprehensive8 audit
         run: node --check scripts/audit_grade11_unit07_comprehensive_v176.cjs
-      - name: Verify 8 source-linked questions, 5 compulsory/3 optional and 26 no-score mutations
+      - name: Verify 8 original printed-page crop hashes, 5 compulsory/3 optional and 32 no-score mutations
         run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
       - name: Preserve V175 11 original textbook short-question science checks
         run: node scripts/audit_grade11_unit07_short_v175.cjs
