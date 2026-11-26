@@ -1,0 +1,63 @@
+name: Grade XI V177 NBF Unit7 Original Numericals 7.1-7.5 Source/Hint QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v177-end-exercise-numerical01-05-image-bound-no-keys.json"
+      - "quality/grade11-v177-unit07-textbook-numerical01-05-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_numericals_v177.cjs"
+      - ".github/workflows/validate-grade11-v177-unit07-numerical-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v177-end-exercise-numerical01-05-image-bound-no-keys.json"
+      - "quality/grade11-v177-unit07-textbook-numerical01-05-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_numericals_v177.cjs"
+      - ".github/workflows/validate-grade11-v177-unit07-numerical-qc.yml"
+  workflow_dispatch:
+jobs:
+  verify-five-original-numericals-and-no-scored-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original NBF source-bound five-numerical audit
+        run: node --check scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Check uploaded page/diagram hashes, 1 matching 1 conditional 3 conflicting hint decisions, adversarial no-release tests
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 eight comprehensive-question original-source, SLO and no-score controls
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original 11 short-response first-pass teacher PENDING
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 original 10 textbook MCQ analysis and no-score protections
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve 80 original Topic7.3 MCQs pending teacher signoff
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve 80 original Topic7.2 MCQs pending teacher signoff
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve 80 original Topic7.1 MCQs pending teacher signoff
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve original Grade XI Units1-6 provisional 2250 source identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve original Unit6 560 source-item science/cognitive release gates
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend deployment NO-GO in staging and production
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check entrypoint and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only numerical academic QC metadata (never original questions or answers)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v177-unit7-original-numerical5-keyless-qc
+          path: qa-artifacts/grade11-v177-unit7-nbf-numericals/summary.json
+          if-no-files-found: warn
+          retention-days: 14

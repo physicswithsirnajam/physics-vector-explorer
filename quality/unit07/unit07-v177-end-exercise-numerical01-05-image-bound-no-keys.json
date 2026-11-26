@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "version": "V177",
+  "title": "NBF Grade XI Unit7 original Numericals 7.1–7.5: page-image, independent physics, conditional hint and FBISE source-safe audit",
+  "prerequisites": {
+    "previousPR": 280,
+    "previousVersion": "V176",
+    "previousVersionMerged": true
+  },
+  "historicFullNbfBookName": "11 Physics Book(6).pdf",
+  "historicFullNbfBookSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "historicFullBookReopenedOrRehashedThisPass": false,
+  "sourcePrintedPage": 126,
+  "sourcePdfZeroIndex": 125,
+  "sourceEvidence": {
+    "primaryOriginalPageFilename": "image(20261126-011636).png",
+    "primaryOriginalPageSha256": "c927129db10d9a4ea36be7f0cf4e036a69b9e720590310446fd2a00230ae393b",
+    "primarySizePixels": [
+      826,
+      1030
+    ],
+    "confirmingOriginalPagePhotoFilename": "Unit 7 (Page 126).jpeg",
+    "confirmingOriginalPagePhotoSha256": "bc4886d03754d1b3b7e4ac6b23295ee9f27aaf03de68b08e1230ebb6cb6fc637",
+    "confirmingSizePixels": [
+      900,
+      1266
+    ],
+    "fingerprintMethod": "For the user-uploaded original-page PNG ONLY, PIL Image.open(path).convert('RGB'); crop with uploadedPagePixelCropBox [left,top,right,bottom]; SHA-256 of crop.tobytes(). These are NOT image hashes of the unavailable full NBF textbook PDF, and source image bytes are NOT published.",
+    "fiveSourceQuestionCropSha256JoinNewlineSha256": "8d7029b13367e13c018b5001a856ce2a7adffa22b174e5104aff5fb40a4f4238",
+    "diagramSourceCropBox": [
+      594,
+      438,
+      784,
+      660
+    ],
+    "diagramSourceCropRgbSha256": "31bd4508d5e405b1a53c2b163d33622002b4e294f13ceaf365cf723173b6f381"
+  },
+  "originalNumericalQuestionCount": 5,
+  "questionsImageBoundAndVisuallyReviewed": 5,
+  "originalQuestionTextAndFigurePublished": false,
+  "printedAnswerHintsPresent": true,
+  "publisherWorkedSolutionsOnPagePresent": false,
+  "privateTeacherWorkedResultsPublished": false,
+  "independentlyCalculatedAllFive": true,
+  "printedHintsFullyConsistentNumbers": [
+    2
+  ],
+  "printedHintConditionallyReproducibleNumbers": [
+    1
+  ],
+  "printedHintsInconsistentWithGivenDataNumbers": [
+    3,
+    4,
+    5
+  ],
+  "compulsoryTeacherReviewNumbers": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "optionalTeacherReviewNumbers": [],
+  "firstPassNoAmendmentNumbers": [
+    2
+  ],
+  "provisionalPrimarySloCounts": {
+    "P-11-B-24": 4,
+    "P-11-B-28": 1
+  },
+  "officialSummativeSloLevels": {
+    "P-11-B-24": "Application",
+    "P-11-B-28": "Application"
+  },
+  "provisionalActualItemDemand": {
+    "K": 0,
+    "U": 0,
+    "A": 5
+  },
+  "provisionalDirectOutcomeCandidates": 4,
+  "provisionalSupportingOrCrossSloCandidates": 1,
+  "priorOriginalExerciseReviews": {
+    "mcq": "V174",
+    "short": "V175",
+    "comprehensive": "V176"
+  },
+  "originalUserStudyEditionPreserved": true,
+  "existingStudentPortalQuestionBankEdited": false,
+  "sourceTextbookRewritten": false,
+  "firebaseTeacherBackendEdited": false,
+  "sourceScansOrCompleteAnswersCommitted": false,
+  "teacherIndividualScienceSignoffs": 0,
+  "teacherIndividualCognitiveSignoffs": 0,
+  "unit7ScoredPortalQuestionCount": 0,
+  "academicDecision": "FIRST_PASS_IMAGE_BOUND_NUMERICAL_REVIEW_DONE_FOUR_TEACHER_DECISIONS_PENDING_NO_SCORED_RELEASE",
+  "nextMilestone": "V178 consolidate Unit7 textbook and owner-authored 240 MCQs teacher approvals, corrected candidates and safe release gating, after V177 merged",
+  "items": [
+    {
+      "sourceQuestionNumber": 1,
+      "sourceExerciseNumber": "7.1",
+      "sourcePrintedPage": 126,
+      "sourcePdfZeroIndex": 125,
+      "uploadedPagePixelCropBox": [
+        56,
+        436,
+        782,
+        590
+      ],
+      "uploadedPageCropRgbSha256": "b2e0b870507e28dfd15447b9500a92a66c61c2a109cc3f0080696284e61aea74",
+      "nearestOfficialSummativeSlo": "P-11-B-24",
+      "secondaryRelatedSummativeSlos": [],
+      "provisionalActualCognitive": "A",
+      "provisionalSloCoverage": "supporting-cross-slo",
+      "teacherReviewPriority": "compulsory",
+      "originalPrintedAnswerHintStatus": "conditional-only",
+      "issueCategory": "young-vs-shear-modulus-and-cantilever-model",
+      "academicConcern": "The printed parameter is the axial Young modulus, whereas this transverse shear-strain calculation requires shear modulus G, not numerically equal to E. The hinted result is reproducible only with an added shear modulus or Poisson-ratio assumption; realistic projecting-nail bending is another distinct model.",
+      "teacherAction": "Keep the exact original and illustration. In the teacher solution name the simple-shear approximation, state an extra illustrative G or Poisson ratio assumption, and explain that the mass cannot be uniquely inferred from the printed E alone. Never grade a unique value without explicitly declaring the model.",
+      "sourceOriginalQuestionAndHintRetained": true,
+      "rawSourceQuestionAndAnswersInGithub": false,
+      "independentlySolvedFromSourceNumbers": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 2,
+      "sourceExerciseNumber": "7.2",
+      "sourcePrintedPage": 126,
+      "sourcePdfZeroIndex": 125,
+      "uploadedPagePixelCropBox": [
+        56,
+        570,
+        782,
+        698
+      ],
+      "uploadedPageCropRgbSha256": "5ffdb68cbc7e3245b1a4a7fc41f2625ec8326cefd6a867af9b497a223b09e6ef",
+      "nearestOfficialSummativeSlo": "P-11-B-24",
+      "secondaryRelatedSummativeSlos": [],
+      "provisionalActualCognitive": "A",
+      "provisionalSloCoverage": "direct-outcome-candidate",
+      "teacherReviewPriority": "none",
+      "originalPrintedAnswerHintStatus": "consistent",
+      "issueCategory": null,
+      "academicConcern": null,
+      "teacherAction": null,
+      "sourceOriginalQuestionAndHintRetained": true,
+      "rawSourceQuestionAndAnswersInGithub": false,
+      "independentlySolvedFromSourceNumbers": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 3,
+      "sourceExerciseNumber": "7.3",
+      "sourcePrintedPage": 126,
+      "sourcePdfZeroIndex": 125,
+      "uploadedPagePixelCropBox": [
+        56,
+        690,
+        782,
+        802
+      ],
+      "uploadedPageCropRgbSha256": "669a5c4ebef6b3cb86ace6988f80c2de609f2c2ceb1b7eb3ccf5e0858585e562",
+      "nearestOfficialSummativeSlo": "P-11-B-24",
+      "secondaryRelatedSummativeSlos": [
+        "P-11-B-28"
+      ],
+      "provisionalActualCognitive": "A",
+      "provisionalSloCoverage": "direct-outcome-candidate",
+      "teacherReviewPriority": "compulsory",
+      "originalPrintedAnswerHintStatus": "inconsistent",
+      "issueCategory": "serial-wires-modulus-and-answer-hints",
+      "academicConcern": "For a vertically connected steel-plus-brass system, the upper wire supports both hanging masses while the lower wire supports only its attached lower mass. Independent use of the explicitly printed brass-modulus exponent produces elongation and total stored energy that disagree with both printed answer hints. A one-order-of-magnitude change to the brass-modulus exponent produces closer, but not identical, hints and must not be silently imposed.",
+      "teacherAction": "Retain the original values, compute both tensions separately, use each matching Young modulus and a common cross-section, then sum the two elongations and two half-force-times-elongation energies. Flag both publisher hints as inconsistent with printed data; escalate for approved source erratum before any uniquely scored release.",
+      "sourceOriginalQuestionAndHintRetained": true,
+      "rawSourceQuestionAndAnswersInGithub": false,
+      "independentlySolvedFromSourceNumbers": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 4,
+      "sourceExerciseNumber": "7.4",
+      "sourcePrintedPage": 126,
+      "sourcePdfZeroIndex": 125,
+      "uploadedPagePixelCropBox": [
+        56,
+        795,
+        782,
+        858
+      ],
+      "uploadedPageCropRgbSha256": "cb5a22d87e70840b02140713126ee5ec97699c0c7c7875a125ebfeb97b66d18f",
+      "nearestOfficialSummativeSlo": "P-11-B-28",
+      "secondaryRelatedSummativeSlos": [
+        "P-11-B-24"
+      ],
+      "provisionalActualCognitive": "A",
+      "provisionalSloCoverage": "direct-outcome-candidate",
+      "teacherReviewPriority": "compulsory",
+      "originalPrintedAnswerHintStatus": "inconsistent",
+      "issueCategory": "stress-energy-area-length-hint-factor",
+      "academicConcern": "Using all printed area, length, tensile stress and Young-modulus quantities in the linear elastic strain-energy relation gives a result five times the printed publisher hint. The stated dimensions are explicit; no factor-of-five scaling assumption appears in the original problem.",
+      "teacherAction": "Keep the textbook question untouched. In the private teacher solution derive strain as stress divided by Young modulus, compute extension and load, then use one-half force times extension; cross-check using stress-squared times volume over twice the modulus. Do not grade against the printed hint without an approved erratum.",
+      "sourceOriginalQuestionAndHintRetained": true,
+      "rawSourceQuestionAndAnswersInGithub": false,
+      "independentlySolvedFromSourceNumbers": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 5,
+      "sourceExerciseNumber": "7.5",
+      "sourcePrintedPage": 126,
+      "sourcePdfZeroIndex": 125,
+      "uploadedPagePixelCropBox": [
+        56,
+        854,
+        782,
+        910
+      ],
+      "uploadedPageCropRgbSha256": "9d2eb0c8bcae933551729733994f73f4d1dfa7f1d68e15b78be35ed5364a93e0",
+      "nearestOfficialSummativeSlo": "P-11-B-24",
+      "secondaryRelatedSummativeSlos": [],
+      "provisionalActualCognitive": "A",
+      "provisionalSloCoverage": "direct-outcome-candidate",
+      "teacherReviewPriority": "compulsory",
+      "originalPrintedAnswerHintStatus": "inconsistent",
+      "issueCategory": "rod-diameter-tenfold-stress-hint",
+      "academicConcern": "The printed rod diameter is tenfold larger than the value that would approximately produce the textbook stress hint. Since circular area scales as diameter squared, that diameter difference changes tensile stress by a factor of one hundred. The given units and printed result cannot both be correct under the stated axial model.",
+      "teacherAction": "Preserve the original diameter as printed; convert it into SI and use tensile stress F divided by pi times diameter-squared over four. Present the printed answer as a suspected diameter-unit/source typo, not an authorized amended original.",
+      "sourceOriginalQuestionAndHintRetained": true,
+      "rawSourceQuestionAndAnswersInGithub": false,
+      "independentlySolvedFromSourceNumbers": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    }
+  ]
+}
