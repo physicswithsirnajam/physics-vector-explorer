@@ -34,6 +34,9 @@ const actions=[
  'COMPULSORY_SLO_SUITABILITY_BEFORE_SCORING_OPTIONAL_REMAP',
  'NO_COMPULSORY_SCIENCE_CORRECTION_DUPLICATE_SELECTION'
 ];
+const expectedOriginalShas=["30a24efef37382194ffa35ce4fcb275c00ea39cb41822ab36f4a1651656deaba","fa9ebb1b011ccf0cc4c17290c3d52fb92dc78d461a9876f104a9ec75eda59974","c2a7b2d600b3284bb5d227cf48e203172d9b092604659885d8eb81cc02dbc694","663d2597c860e2d8844ef030c23170e6a2307ea979aad83f73568ca1c9d955f1","d20aa361debd95548e17cd910caa9494661408a165fd04ec1853e8daf1a91d67","1650c86de6ab0a2823b00f7cf6757ef09b6d571e5b8b92e0273e1ff4a9b2cfac","90764b232fdf5c2dc8a141a9f0769597b2b7d79ece76b94286c8fee4e1643763","7f4289edd5e64ba359527980be9b503e811fd6f5d5abd46b1a70267c7c35e2d3","b9c59419d0c8b6b16e2f44f2942b854fb4ac82d376ee1cdc73e10c5e0c9cd9a1","28ad6fed4259b954e983ee836e1a59945ac665cea71bd86cf80095492fa443b2","17b9b776cce3daa5c2ed11325a50d45719379be2e721aa2e87b4a75198927822","fcb3d04a2417ed70f7265b6927cb6878d8540913e285cef324d9a38b12e00fea"];
+const expectedAuthorCognition=["U","K","U","U","U","U","A","A","A","A","A","A"];
+const expectedMappedSlo=["P-11-B-28","P-11-B-27","P-11-B-27","P-11-B-27","P-11-B-27","P-11-B-27","P-11-B-28","P-11-B-28","P-11-B-28","P-11-B-28","P-11-B-25","P-11-B-27"];
 const blockedKeys=[
  'stem','question','questionText','options','optionA','optionB','optionC','optionD',
  'correctOption','answer','answerKey','keyedExplanation','originalExplanation',
@@ -100,6 +103,9 @@ function check(d){
   const r=d.items[i],n=selected[i];
   A.equal(r.sourceId,'XI-U07-T073-Q'+String(n).padStart(3,'0'));
   A.match(r.originalPrivateFullRowSha256,/^[0-9a-f]{64}$/);
+  A.equal(r.originalPrivateFullRowSha256,expectedOriginalShas[i]);
+  A.equal(r.originalAuthorCognitive,expectedAuthorCognition[i]);
+  A.equal(r.originalMappedSlo,expectedMappedSlo[i]);
   A.equal(r.originalQuestionKeyOrExplanationEdited,false);
   A.equal(r.originalKeyFoundWrong,false);
   A.equal(r.studentScoredRelease,'HOLD');
