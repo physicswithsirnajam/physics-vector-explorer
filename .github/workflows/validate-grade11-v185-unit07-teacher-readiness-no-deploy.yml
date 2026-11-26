@@ -1,0 +1,78 @@
+name: Grade XI V185 Unit7 72 Source-Linked Teacher Approval Readiness (NO DEPLOY)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v185-first-72-teacher-approval-readiness-only-no-keys.json"
+      - "quality/grade11-v185-unit07-72-private-candidates-teacher-approval-readiness.md"
+      - "scripts/audit_grade11_unit07_teacher_readiness_v185.cjs"
+      - ".github/workflows/validate-grade11-v185-unit07-teacher-readiness-no-deploy.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v185-first-72-teacher-approval-readiness-only-no-keys.json"
+      - "quality/grade11-v185-unit07-72-private-candidates-teacher-approval-readiness.md"
+      - "scripts/audit_grade11_unit07_teacher_readiness_v185.cjs"
+      - ".github/workflows/validate-grade11-v185-unit07-teacher-readiness-no-deploy.yml"
+  workflow_dispatch:
+jobs:
+  verify-unapproved-72-private-candidates-and-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check V185 teacher approval readiness ledger validator
+        run: node --check scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Audit 72 distinct exact-source identities, missing immutable candidate revisions, 41 scored-release denials
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve V184 twelve selected originals and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+      - name: Preserve V183 twelve original private candidates and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+      - name: Preserve V182 twelve original private candidates and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+      - name: Preserve V181 twelve original private candidates and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Preserve V180 twelve original private candidates and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 twelve original private candidates and no scoring
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 all 274 first-pass source-identity HOLD
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 NBF original five numerical disagreements with published hints
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 NBF original eight comprehensive-question safety review
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 NBF original eleven short-answer review gates
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 NBF original ten MCQ review gates
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve all three owner original 80-MCQ source registries
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve existing Grade XI 2250 source-pinned original MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve original Unit6 560 teacher-pending signoff restrictions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve no-production and no-staging teacher backend
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only academic readiness proof without private source/answer data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v185-unit7-teacher-approval-readiness-no-score
+          path: qa-artifacts/grade11-v185-unit7-teacher-readiness-72/summary.json
+          if-no-files-found: warn
+          retention-days: 14
