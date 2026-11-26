@@ -1,0 +1,61 @@
+name: Grade XI V173 Unit7.3 Original 80-Item Academic Blueprint QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/topic73-v173-all80-consolidated-academic-qc-no-keys.json"
+      - "quality/grade11-v173-topic73-all80-consolidated-academic-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_bank_v173.cjs"
+      - ".github/workflows/validate-grade11-v173-topic73-full-bank-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/topic73-v173-all80-consolidated-academic-qc-no-keys.json"
+      - "quality/grade11-v173-topic73-all80-consolidated-academic-qc.md"
+      - "scripts/audit_grade11_unit7_topic73_bank_v173.cjs"
+      - ".github/workflows/validate-grade11-v173-topic73-full-bank-qc.yml"
+  workflow_dispatch:
+jobs:
+  protect-eighty-original-source-items-and-teacher-no-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original whole-bank academic source audit
+        run: node --check scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Verify 80 source fingerprints, original SLO/cognitive counts and 24 release mutations
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve source-bound original Topic7.3 first four 20-item review holds
+        run: |
+          node scripts/audit_grade11_unit7_topic73_batch1_v169.cjs
+          node scripts/audit_grade11_unit7_topic73_batch2_v170.cjs
+          node scripts/audit_grade11_unit7_topic73_batch3_v171.cjs
+          node scripts/audit_grade11_unit7_topic73_batch4_v172.cjs
+      - name: Preserve Topic7.2 original 80 consolidated academic teacher hold
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve Topic7.1 original 80 pending teacher science/cognitive decisions
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve original Grade XI 2250 provisional source question identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 original 560 teacher-pending decision gates
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher production/staging backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and student reporting lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload safe aggregate QC without private stems/options/answers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v173-topic73-original-80-keyless-academic-qc
+          path: qa-artifacts/grade11-v173-topic73-original-80-full-bank/summary.json
+          if-no-files-found: warn
+          retention-days: 14
