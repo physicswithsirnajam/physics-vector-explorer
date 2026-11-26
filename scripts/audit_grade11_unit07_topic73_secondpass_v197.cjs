@@ -194,7 +194,7 @@ const bad=[
  x=>x.privateArtifacts.privateDocxSha256='0'.repeat(64),
  x=>x.privateArtifacts.renderedPages=7,
  x=>x.sourceSpecificChecks.question38And80PreviousDuplicateWatch=false,
- x=>x.sourceSpecificChecks.question56EnergyDensityWasExplicitSupplementary=false,
+ x=>x.sourceSpecificChecks.priorQ56AlreadyInV185QueueExcludedFromFreshSelection=false,
  x=>x.topic73OriginalWordModified=true,
  x=>x.realTeacherScienceApprovals=1,
  x=>x.realTeacherCognitiveApprovals=1,
