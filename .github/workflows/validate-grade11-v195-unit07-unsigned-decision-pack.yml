@@ -1,0 +1,91 @@
+name: Grade XI V195 Unit7 Unsigned Teacher Decision Pack (NO SCORE)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v195-unsigned-independent-teacher-review-no-keys.json"
+      - "quality/grade11-v195-unit07-unsigned-teacher-review-decision-matrix.md"
+      - "scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs"
+      - ".github/workflows/validate-grade11-v195-unit07-unsigned-decision-pack.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v195-unsigned-independent-teacher-review-no-keys.json"
+      - "quality/grade11-v195-unit07-unsigned-teacher-review-decision-matrix.md"
+      - "scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs"
+      - ".github/workflows/validate-grade11-v195-unit07-unsigned-decision-pack.yml"
+  workflow_dispatch:
+jobs:
+  verify-teacher-human-review-is-pending-and-unit7-score-held:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check syntax of unsigned teacher review validator
+        run: node --check scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+      - name: Verify original p126 arithmetic, blank review decisions and forced no-score
+        run: node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+      - name: Preserve V194 private source-based teacher full solutions and holds
+        run: node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+      - name: Preserve V193 two original uploaded PDF source verification and math
+        run: node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve V192 Q25 academic disposition with human approval pending
+        run: node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+      - name: Preserve V191 offline evidence cannot become a real approval
+        run: node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+      - name: Preserve V190 synthetic role/decision/score hold
+        run: node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V189 source and summative SLO scope
+        run: node scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Preserve V188 source-bound original private candidate metadata
+        run: node scripts/audit_grade11_unit07_private_pilot_v188.cjs
+      - name: Preserve V187 offline private manifest input handling
+        run: node scripts/test_grade11_unit07_private_manifest_v187.cjs
+      - name: Preserve V186 synthetic content revision hash invariants
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 full 72 distinct candidate source review holds
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve six prior private candidate source batches V179–V184
+        run: |
+          node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+          node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+          node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+          node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+          node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+          node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve original 274 source identities and original NBF exercise source QC
+        run: |
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve all three 80-question original topic source banks
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve existing 2250 original pinned Grade XI questions
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Grade XI Unit6 560 separate teacher signoff hold
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production and staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check/reporting/score release locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only proof without real private answer keys or signed review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v195-unit7-unsigned-human-review-no-score
+          path: qa-artifacts/grade11-v195-unit07-unsigned-teacher-matrix/summary.json
+          if-no-files-found: warn
+          retention-days: 14
