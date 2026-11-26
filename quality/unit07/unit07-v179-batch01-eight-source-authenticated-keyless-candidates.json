@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "version": "V179",
-  "purpose": "Unit7 V179 Batch01 first eight private source-authenticated correction candidates, keyless public review metadata only",
+  "purpose": "Unit7 V179 Batch01 12 private exact-source-authenticated candidate reviews, keyless public metadata only",
   "prerequisitePR": 282,
   "pr282MergedSha": "d2bf9cc8b0583cca1d3a60bd194bd2d2707e026d",
   "sourceFullOriginalVerified": {
@@ -26,42 +26,165 @@
         35,
         64
       ]
+    },
+    "topic71": {
+      "sourceDocx": "Grade11_Unit7_Topic7.1_FBISE_Boxed_Study_With_Answers.docx",
+      "actualSourceDocxSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
+      "priorRegisterVersion": "V154",
+      "priorQuestionOnlyCandidateVersion": "V149",
+      "questionOnlyCandidatePath": "quality/unit07/topic71-v149-80-source-aligned-question-only-candidate.tsv",
+      "originalRowsSelected": [
+        10,
+        15,
+        62,
+        76
+      ],
+      "sourceMatchesV154Exactly": true
     }
   },
   "privateTeacherReviewArtifact": {
     "fileName": "Unit7_V179_Teacher_Review_Batch01_PRIVATE.docx",
-    "sha256": "cf49014ea28ccd96148e0d2fac08b88e02c15c703bf00fc69313fea688f588a3",
+    "sha256": "a62d795451e9ddc7e93be2e9080c9874ef25f0fbc5882f748f39d236201360c9",
     "containsOriginalRowsAndSeparateCandidateDrafts": true,
     "committedToPublicGitHub": false,
     "scoredQuestionBankImport": false
   },
-  "firstBatchOriginalQuestionCount": 8,
+  "firstBatchOriginalQuestionCount": 12,
   "firstBatchTeacherApprovedQuestionCount": 0,
-  "proposedCandidateDraftCount": 8,
+  "proposedCandidateDraftCount": 12,
   "noAnswerLettersPublished": true,
   "noOriginalOrRevisedStemsOrOptionsPublished": true,
-  "sourceIdentityReviewCount": 8,
-  "sourceOriginalAuthorAnswerLettersConditionallyDefensibleCount": 8,
+  "sourceIdentityReviewCount": 12,
+  "sourceOriginalAuthorAnswerLettersConditionallyDefensibleCount": 12,
   "scoredReadyQuestionCount": 0,
   "teacherScienceSignoffs": 0,
   "teacherCognitiveSignoffs": 0,
   "teacherScoringSignoffs": 0,
   "pendingSourceTasks": [
-    "P-11-B-24 example7.2 original book values confirmation before signing Topic7.2-Q57 candidate",
-    "Topic7.1 original keyed-source document mismatch for Q10/Q15/Q62/Q76: current alternative formatted edition is not source-authenticated to V154 original"
+    "Directly compare NBF Grade XI printed page 114 examples of natural and synthetic polymers against Topic7.1 Q10/Q76 revised explanations before final teacher approval",
+    "Directly inspect NBF Example 7.2 printed page for original bone dimensions and load before final approval of Topic7.2 Q57 candidate"
   ],
   "topic71Exception": {
+    "status": "RESOLVED_SOURCE_IDENTITY_ONLY",
+    "sourceMatchesV154Exactly": true,
     "originalV154Sha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
-    "currentLibraryTopic71AlternateFormatSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
-    "priorityOriginalNumbersDeferred": [
+    "action": "Four original Q10/Q15/Q62/Q76 rows and V149 question-only revision candidates inspected; scientific content and teacher release signoffs remain pending. Source p114 not freshly reopened.",
+    "sourceExplanationBlockerStillUnresolved": [
+      10,
+      76
+    ],
+    "teacherApprovalPending": [
       10,
       15,
       62,
       76
-    ],
-    "reason": "Do not silently equate an alternate version of a file with the exact hashed original keyed Word source of V154. Need exact original or auditable canonical row match."
+    ]
   },
   "itemRows": [
+    {
+      "id": "XI-U07-T071-Q010",
+      "originalTopic": "7.1",
+      "originalNumber": 10,
+      "originalKeylessFullRowFingerprint": "0c327a12d6d0e70a73cc37e83674ef22a23e94b9c4ec2e04a305af57522d4fa3",
+      "sourceOriginalSlo": "P-11-B-22",
+      "sourceOriginalCognitiveLabel": "K",
+      "proposedCandidateSlo": "P-11-B-22",
+      "proposedActualCognitive": "K",
+      "priority": "compulsory",
+      "scienceFindingCategory": "polymer-source-example-attribution",
+      "privateCandidateDesignTag": "existing-v149-natural-polymer-distractor-repair",
+      "teacherDecisionRequired": "SOURCE_EXPLANATION_REPAIR_AND_DISTRACTOR_REVIEW",
+      "originalAnswerScienceAssessment": "INTENDED_ORIGINAL_KEY_DEFENSIBLE_BUT_ORIGINAL_TEXT_OR_EXPLANATION_NEEDS_REVIEW",
+      "duplicateFamily": "U07-T71-POLYMER-ORIGIN",
+      "sourceOriginalQuestionAndKeyRemainPrivate": true,
+      "candidateQuestionAndOptionsRemainPrivate": true,
+      "privateTeacherPackCandidateNotImported": true,
+      "verifiedSourceFileShaMatchedPriorV168OrV173": false,
+      "independentlyVerifiedProposedCandidateAnswer": true,
+      "teacherScienceApproval": "PENDING",
+      "teacherCognitiveApproval": "PENDING",
+      "teacherScoredReleaseApproval": "PENDING",
+      "scoredRelease": "HOLD",
+      "verifiedSourceFileShaMatchedPriorV154": true
+    },
+    {
+      "id": "XI-U07-T071-Q015",
+      "originalTopic": "7.1",
+      "originalNumber": 15,
+      "originalKeylessFullRowFingerprint": "cb495239a8fa53da403d43e5b72baae7270e05eb1f3fb43753a7969dc41a0249",
+      "sourceOriginalSlo": "P-11-B-22",
+      "sourceOriginalCognitiveLabel": "K",
+      "proposedCandidateSlo": "P-11-B-22",
+      "proposedActualCognitive": "K",
+      "priority": "compulsory",
+      "scienceFindingCategory": "narrower-molecular-crystal-attribution-unverified",
+      "privateCandidateDesignTag": "existing-v149-crystalline-nonmetal-passage-wording",
+      "teacherDecisionRequired": "TEACHER_SOURCE_STEM_APPROVAL_REQUIRED",
+      "originalAnswerScienceAssessment": "INTENDED_ORIGINAL_KEY_DEFENSIBLE_BUT_ORIGINAL_TEXT_OR_EXPLANATION_NEEDS_REVIEW",
+      "duplicateFamily": null,
+      "sourceOriginalQuestionAndKeyRemainPrivate": true,
+      "candidateQuestionAndOptionsRemainPrivate": true,
+      "privateTeacherPackCandidateNotImported": true,
+      "verifiedSourceFileShaMatchedPriorV168OrV173": false,
+      "independentlyVerifiedProposedCandidateAnswer": true,
+      "teacherScienceApproval": "PENDING",
+      "teacherCognitiveApproval": "PENDING",
+      "teacherScoredReleaseApproval": "PENDING",
+      "scoredRelease": "HOLD",
+      "verifiedSourceFileShaMatchedPriorV154": true
+    },
+    {
+      "id": "XI-U07-T071-Q062",
+      "originalTopic": "7.1",
+      "originalNumber": 62,
+      "originalKeylessFullRowFingerprint": "2b7639796e64f33879d55d03e2f5039a9ffa6f2662374f088eb6a706ff3136e5",
+      "sourceOriginalSlo": "P-11-B-22",
+      "sourceOriginalCognitiveLabel": "U",
+      "proposedCandidateSlo": "P-11-B-22",
+      "proposedActualCognitive": "U",
+      "priority": "compulsory",
+      "scienceFindingCategory": "random-long-range-language-not-scientifically-precise",
+      "privateCandidateDesignTag": "existing-v149-absence-of-long-range-periodicity-wording",
+      "teacherDecisionRequired": "TEACHER_SOURCE_STEM_APPROVAL_REQUIRED",
+      "originalAnswerScienceAssessment": "INTENDED_ORIGINAL_KEY_DEFENSIBLE_BUT_ORIGINAL_TEXT_OR_EXPLANATION_NEEDS_REVIEW",
+      "duplicateFamily": null,
+      "sourceOriginalQuestionAndKeyRemainPrivate": true,
+      "candidateQuestionAndOptionsRemainPrivate": true,
+      "privateTeacherPackCandidateNotImported": true,
+      "verifiedSourceFileShaMatchedPriorV168OrV173": false,
+      "independentlyVerifiedProposedCandidateAnswer": true,
+      "teacherScienceApproval": "PENDING",
+      "teacherCognitiveApproval": "PENDING",
+      "teacherScoredReleaseApproval": "PENDING",
+      "scoredRelease": "HOLD",
+      "verifiedSourceFileShaMatchedPriorV154": true
+    },
+    {
+      "id": "XI-U07-T071-Q076",
+      "originalTopic": "7.1",
+      "originalNumber": 76,
+      "originalKeylessFullRowFingerprint": "623b1d40e694a64ef25560f4daafb0dcb172f12371483074ca8caa981dbcc373",
+      "sourceOriginalSlo": "P-11-B-22",
+      "sourceOriginalCognitiveLabel": "U",
+      "proposedCandidateSlo": "P-11-B-22",
+      "proposedActualCognitive": "U",
+      "priority": "compulsory",
+      "scienceFindingCategory": "original-nylon-example-attribution-false-in-source-passage",
+      "privateCandidateDesignTag": "existing-v149-polythene-source-aligned-replacement",
+      "teacherDecisionRequired": "BLOCKING_PRIVATE_EXPLANATION_REWRITE_REQUIRED",
+      "originalAnswerScienceAssessment": "INTENDED_ORIGINAL_KEY_DEFENSIBLE_BUT_ORIGINAL_TEXT_OR_EXPLANATION_NEEDS_REVIEW",
+      "duplicateFamily": "U07-T71-POLYMER-ORIGIN",
+      "sourceOriginalQuestionAndKeyRemainPrivate": true,
+      "candidateQuestionAndOptionsRemainPrivate": true,
+      "privateTeacherPackCandidateNotImported": true,
+      "verifiedSourceFileShaMatchedPriorV168OrV173": false,
+      "independentlyVerifiedProposedCandidateAnswer": true,
+      "teacherScienceApproval": "PENDING",
+      "teacherCognitiveApproval": "PENDING",
+      "teacherScoredReleaseApproval": "PENDING",
+      "scoredRelease": "HOLD",
+      "verifiedSourceFileShaMatchedPriorV154": true
+    },
     {
       "id": "XI-U07-T02-Q009",
       "originalTopic": "7.2",
@@ -274,6 +397,7 @@
     "existingUnit6ScienceApprovalsChanged": false,
     "previousUnit7OriginalSourceReviewPreserved": true
   },
-  "decision": "EIGHT_AUTHENTICATED_PRIVATE_CANDIDATE_DRAFTS_TEACHER_SIGNATURES_ZERO_STUDENT_SCORE_HOLD",
-  "next": "V180 teacher-reviewed source-candidate refinements and/or another at-most-20 source-authenticated batch, depending on approval and exact Topic7.1 original availability"
+  "decision": "TWELVE_AUTHENTICATED_PRIVATE_CANDIDATE_DRAFTS_TEACHER_SIGNATURES_ZERO_STUDENT_SCORE_HOLD",
+  "next": "V180 complete external textbook page verification and teacher-reviewed decisions in small tranches, no scored release until protected authenticated signoffs",
+  "topic71SourceVerification": "Exact raw Word SHA matches V154. The original keyed explanation is not necessarily correct: Q10/Q76 have mandatory source attribution repairs and Q76 remains blocked from any import."
 }
