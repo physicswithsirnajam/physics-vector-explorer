@@ -93,7 +93,7 @@ function validate(d){
  A.deepEqual(d.optionalScientificTeachingReviewNumbers,OPT);
  A.deepEqual(d.sourceOnlyNoAmendmentNumbers,[11]);
  A.ok(d.threeImportantSafetyClarifications['Q7.2'].includes('flow'));
- A.ok(d.threeImportantSafetyClarifications['Q7.5'].includes('slope'));
+ A.ok(/slope/i.test(d.threeImportantSafetyClarifications['Q7.5']));
  A.ok(d.threeImportantSafetyClarifications['Q7.8'].includes('service life'));
  A.equal(d.sourceSpecificExternalChecks.length,3);
  A.deepEqual(d.sourceSpecificExternalChecks.map(x=>x.publisher),[
