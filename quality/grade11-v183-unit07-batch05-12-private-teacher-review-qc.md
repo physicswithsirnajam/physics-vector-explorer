@@ -1,6 +1,6 @@
 # V183 — Grade XI Unit 7: original 12-question private teacher candidate review (Batch 05)
 
-**Decision:** twelve NEW owner-source MCQs directly reopened and original-source fingerprint matched; twelve separate private candidate drafts independently reasoned and laid out; **NO authenticated teacher science, cognitive, or scoring approvals**; **ZERO scored Unit7 question-bank releases**. This is an amendments-only, nondeployment quality review, not an official answer-key correction or publisher-authorized rewrite.
+**Decision:** twelve NEW owner-source MCQs directly reopened and original-source fingerprint matched; twelve separate private candidate drafts independently reasoned and laid out; **NO authenticated teacher science, cognitive, or scoring approvals**; **ZERO scored Unit7 question-bank releases**. This is an amendments-only, nondeployment quality review, not an official answer-key correction or publisher-authorized rewrite. **Formal decision: HOLD — all original and proposed Unit7 candidates are excluded from scored Test Builder until authenticated individual teacher signoff.**
 
 ## Source provenance and private artifact
 
