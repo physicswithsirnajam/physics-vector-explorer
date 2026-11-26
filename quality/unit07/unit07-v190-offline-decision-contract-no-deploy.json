@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "version": "V190",
+  "title": "Unit7 revision-bound, stage-separated teacher decision protocol — synthetic-only, not deployed",
+  "prerequisite": {
+    "prNumber": 293,
+    "merged": true,
+    "mergeSha": "b87a74e8fa7ca059ca6fcfa979c1b50c3a542df7"
+  },
+  "status": "SYNTHETIC_REVISION_BOUND_DECISION_CONTRACT_NO_REAL_AUTHENTICATED_APPROVAL_OR_SCORING",
+  "syntheticOnly": true,
+  "sourcePolicyIds": [
+    "XI-U07-T071-Q022",
+    "XI-U07-T071-Q025"
+  ],
+  "sourcePolicy": {
+    "XI-U07-T071-Q022": {
+      "originalRowSha256": "4632066b3e8eff54029b85cebfdebb823f9e3364e64cb9c15b0905691c1e0dd3",
+      "provisionalSlo": "P-11-B-22",
+      "academicScope": "SUPPORTING_ONLY_NOT_DIRECT_SUMMATIVE_B22",
+      "candidateRevisedInV189": false,
+      "eligibleForDirectSummative": false
+    },
+    "XI-U07-T071-Q025": {
+      "originalRowSha256": "27d9b15ebe860eca6b4788d6420db4230e6266295027ef01d28ca2383a7f5353",
+      "provisionalSlo": "P-11-B-22",
+      "academicScope": "PROMISING_DIRECT_B22_TEACHER_PENDING",
+      "candidateRevisedInV189": true,
+      "eligibleForDirectSummative": false
+    }
+  },
+  "originalUnit7SourceInventoryCount": 274,
+  "existingPrivateDetailedCandidateQueueCount": 72,
+  "perItemActualCandidateDigestsInPublicV185Index": 0,
+  "realCandidateRevisionDigestsCommitted": 0,
+  "realTeacherScienceApprovals": 0,
+  "realTeacherCognitiveApprovals": 0,
+  "realOwnerScoringApprovals": 0,
+  "liveUnit7ScoredReleases": 0,
+  "simulatedDecisionProtocol": {
+    "subjectBinding": "original source ID and original row SHA plus exact synthetic candidate revision digest",
+    "mockRoleSource": "in-memory synthetic actor directory only, not Firebase Auth custom claims or server-verified identities",
+    "roles": [
+      "science",
+      "cognitive",
+      "owner"
+    ],
+    "stages": [
+      "verify-source",
+      "approve-physics",
+      "approve-slo",
+      "acknowledge-owner"
+    ],
+    "stateChangeActions": [
+      "revoke",
+      "supersede",
+      "disable-mock-role"
+    ],
+    "expectedSequenceRequired": true,
+    "expectedRevisionRequired": true,
+    "sourcePolicyCannotBeElevatedByClientCommand": true,
+    "distinctReviewerAndOwnerRolesInSimulation": true,
+    "syntheticEvidenceDigestsAreNotRealEvidence": true,
+    "revokedOrSupersededApprovalCannotBeReused": true,
+    "disabledMockRoleInvalidatesEarlierSyntheticDecision": true,
+    "hashChainCannotProveTrustedServerOwnership": true,
+    "allLocalStagesCompletedStillNeverMakesRealScoringEligible": true
+  },
+  "sourceGapsFromEarlierReviews": [
+    "NBF printed page 114 polymer examples",
+    "NBF printed page 115 conventional cubic unit-cell figures",
+    "NBF printed original Example 7.2 bone-shortening numbers",
+    "permission-cleared accessible Young-modulus apparatus stimulus"
+  ],
+  "realAuthenticationImplemented": false,
+  "realAppCheckEnforced": false,
+  "realSignedServerSideDecisionAuditImplemented": false,
+  "privateCandidateStoreOrReferenceProofDeployed": false,
+  "productionOrStagingDeployed": false,
+  "firebaseRulesOrTeacherRoleChanged": false,
+  "originalOrRevisedPrivateQuestionTextCommitted": false,
+  "liveUnit7QuestionBankChanged": false,
+  "securityDeploymentGateV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "securityDeploymentGateV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "ciLimit": "CI checks synthetic state transitions and public keyless source references, not private V189 candidate hashes, teacher identity, scientific correctness, official source-page clearance, real Firebase rules or scoring authorization.",
+  "filesAdded": [
+    "scripts/unit07_revision_bound_review_v190.cjs",
+    "scripts/test_grade11_unit07_revision_bound_review_v190.cjs",
+    "quality/unit07/unit07-v190-offline-decision-contract-no-deploy.json",
+    "quality/grade11-v190-unit07-offline-revision-bound-decision-qc.md",
+    ".github/workflows/validate-grade11-v190-unit07-revision-bound-decision.yml"
+  ],
+  "nextMilestone": "V191 build safe private-owner review protocol for Q25 revised private candidate and record independent decisions only after source, official summative scope and real Auth/App Check/Rules are separately approved; no scored release"
+}
