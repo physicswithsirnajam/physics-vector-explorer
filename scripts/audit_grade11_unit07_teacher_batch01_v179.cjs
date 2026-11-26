@@ -10,7 +10,7 @@ const fs=require('node:fs'),path=require('node:path');
 const ROOT=path.resolve(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 const load=p=>JSON.parse(read(p));
-const INDEX='quality/unit07/unit07-v179-batch01-eight-source-authenticated-keyless-candidates.json';
+const INDEX='quality/unit07/unit07-v179-batch01-twelve-source-authenticated-keyless-candidates.json';
 const MEMO='quality/grade11-v179-unit07-batch01-12-originals-private-candidate-teacher-qc.md';
 const DOCS={
  '7.1':'930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58',
