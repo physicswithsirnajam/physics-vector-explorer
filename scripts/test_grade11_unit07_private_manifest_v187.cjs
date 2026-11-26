@@ -147,12 +147,12 @@ A.equal(v160.decision,'NO_GO_DEPLOYMENT_BLOCKED');
 A.equal(v161.decision,'NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT');
 const contract=JSON.parse(read('quality/unit07/unit07-v187-local-private-manifest-contract-no-deploy.json'));
 A.equal(contract.version,'V187');
-A.equal(contract.actualPrivateCandidateManifestsProcessed,0);
-A.equal(contract.individualActualPrivateRevisionDigestsPersisted,0);
-A.equal(contract.actualTeacherScienceApprovals,0);
-A.equal(contract.actualTeacherCognitiveApprovals,0);
-A.equal(contract.actualOwnerScoringApprovals,0);
-A.equal(contract.studentScoredUnit7Releases,0);
+A.equal(contract.realState.actualPrivateCandidateManifestsProcessed,0);
+A.equal(contract.realState.individualActualPrivateRevisionDigestsPersisted,0);
+A.equal(contract.realState.actualTeacherScienceApprovals,0);
+A.equal(contract.realState.actualTeacherCognitiveApprovals,0);
+A.equal(contract.realState.actualOwnerScoringApprovals,0);
+A.equal(contract.realState.studentScoredUnit7Releases,0);
 for(const key of ['liveFirebaseModified','deployedBackendCreated','productionOrStagingTeacherRolesChanged',
  'originalOrCandidateQuestionTextCommitted','privateManifestCommitted','liveQuestionBankModified'])
  A.equal(contract[key],false);
