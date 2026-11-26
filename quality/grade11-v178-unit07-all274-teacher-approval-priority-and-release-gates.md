@@ -1,6 +1,6 @@
 # V178 — Unit 7 Physics of Solids: consolidated 274-original-item teacher review queue and signoff gate
 
-**Decision: FIRST-PASS SOURCE/SCIENCE QC COMPLETE ACROSS 274 ORIGINAL ITEM IDENTITIES; TEACHER SCIENCE APPROVALS 0; TEACHER COGNITIVE APPROVALS 0; LIVE SCORED UNIT7 ITEMS 0.** All original private source banks, publisher exercise items and previously developed materials remain intact.
+**Decision: FIRST-PASS SOURCE/SCIENCE QC COMPLETE ACROSS 274 ORIGINAL ITEM IDENTITIES; TEACHER SCIENCE APPROVALS 0; TEACHER COGNITIVE APPROVALS 0; LIVE SCORED UNIT7 ITEMS 0.** All original private source banks, publisher exercise items and previously developed materials remain intact. The source census comprises **240 owner-authored MCQs (three banks of 80)** and **34 original NBF textbook exercises**.
 
 This is a **keyless nondeployment consolidation**, not a teacher grading rubric, source answer key, mass approval or student-ready item import. We have deliberately avoided copying textbook statements, source diagrams, publisher answer hints as keyed answers, privately authored MCQ wording or any identifying student/teacher details to public GitHub. The existing V154/V168/V173/V174/V175/V176/V177 reviews are **input ledgers**, and their previous conclusions remain preliminary until authenticated individual signoff.
 
