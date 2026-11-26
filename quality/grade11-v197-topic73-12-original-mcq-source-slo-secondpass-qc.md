@@ -45,7 +45,7 @@ The private pack contains original question stems, all four owner-authored optio
 
 - **No new private revised-candidate hashes generated**, no existing V185 72-source queue item modified and no original bank changed.
 - **Zero authenticated teacher science/cognitive approvals**, zero owner scoring authorizations, **zero scored Unit7 student questions**.
-- V160 teacher production `NO_GO_DEPLOYMENT_BLOCKED`; V161 staging/production `NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT`; no Firebase Auth/Rules/App Check or deployment changes.
+- The teacher backend remains **NO-GO** for staging and production. V160 teacher production `NO_GO_DEPLOYMENT_BLOCKED`; V161 staging/production `NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT`; no Firebase Auth/Rules/App Check or deployment changes.
 - Prior V195 signed human decision pack remains **NOT RETURNED / PENDING**. This V197 QC is independent of that missing review; it is not an excuse to invent approval.
 
 Exactly **five public nondeploying files**:
