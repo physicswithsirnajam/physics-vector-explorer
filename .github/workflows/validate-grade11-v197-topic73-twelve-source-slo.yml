@@ -1,0 +1,102 @@
+name: Grade XI V197 Unit7.3 Twelve Unqueued Original MCQ Source/SLO QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v197-topic73-twelve-originals-source-slo-secondpass-no-keys.json"
+      - "quality/grade11-v197-topic73-12-original-mcq-source-slo-secondpass-qc.md"
+      - "scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs"
+      - "scripts/test_grade11_unit07_topic73_math_v197.cjs"
+      - ".github/workflows/validate-grade11-v197-topic73-twelve-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v197-topic73-twelve-originals-source-slo-secondpass-no-keys.json"
+      - "quality/grade11-v197-topic73-12-original-mcq-source-slo-secondpass-qc.md"
+      - "scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs"
+      - "scripts/test_grade11_unit07_topic73_math_v197.cjs"
+      - ".github/workflows/validate-grade11-v197-topic73-twelve-source-slo.yml"
+  workflow_dispatch:
+jobs:
+  source-bound-original-twelve-and-summative-demand:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check source and arithmetic academic audits
+        run: |
+          node --check scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+          node --check scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Check twelve V173 original source row SHAs and V185 new unqueued identities and no-score
+        run: node scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+      - name: Recompute selected original source numericals, energy density and graph coordinates
+        run: node scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Preserve V196 source-based SI scaling and nonlinear work graph limits
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Preserve V195 unsigned teacher decisions and numerical holds
+        run: node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+      - name: Preserve V194 original page126 source based worked numerical guidance
+        run: node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+      - name: Preserve V193 direct original two-PDF source verification and math
+        run: node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve V192 Q25 academic science prescreen, no teacher signoff
+        run: node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+      - name: Preserve V191 offline review evidence never authenticated approval
+        run: node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+      - name: Preserve V190 synthetic revision-bound role and stale decision no-score
+        run: node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V189 two exact private candidate academic scope holds
+        run: node scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Preserve V188 two source-bound private pilot identities
+        run: node scripts/audit_grade11_unit07_private_pilot_v188.cjs
+      - name: Preserve V187 private-file-only intake and no-leak
+        run: node scripts/test_grade11_unit07_private_manifest_v187.cjs
+      - name: Preserve V186 synthetic revision and revocation gates
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 72 original candidate review HOLDS
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve prior six V179-V184 separate private candidate batches
+        run: |
+          node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+          node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+          node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+          node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+          node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+          node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve original 274 source identities, NBF short/long/numeric MCQ source audits
+        run: |
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve all 80 original Topic7.3 hashes and earlier academic flags
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve all 80 original Topic7.2 and 7.1 source fingerprints
+        run: |
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 prior Grade XI source-pinned original MCQ IDs and Unit6 560 hold
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production/staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check and reporting release locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload only non-keyed counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v197-unit7-topic73-12-original-source-no-score
+          path: qa-artifacts/grade11-v197-topic73-twelve-source-secondpass/summary.json
+          if-no-files-found: warn
+          retention-days: 14
