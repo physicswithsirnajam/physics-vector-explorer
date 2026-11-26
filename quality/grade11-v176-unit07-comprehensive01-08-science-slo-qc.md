@@ -1,13 +1,14 @@
 # V176 — NBF Grade XI Unit 7 Comprehensive Questions 7.1–7.8: science, derivation, diagram and FBISE SLO audit
 
-**Decision: 8/8 numbered comprehensive prompts accounted for in cross-checked text sources; conceptual science reviewed first-pass; original scanned image-region verification NOT completed in this pass; teacher review PENDING; ZERO Unit 7 scored release.**
+**Decision: 8/8 original comprehensive prompts visually verified against the USER-UPLOADED NBF printed page 126 (two images), source-region crop SHA-256s recorded; conceptual science reviewed first pass; teacher review PENDING; ZERO Unit7 scored release. The historical full-book PDF SHA-256 was NOT recomputed.**
 
 This is an **amendments-only quality report**, **not** a student question-bank import or a publisher-authenticated model-answer key. We retain all eight original source questions unchanged and identify where a teacher's marking rubric or supplementary standalone candidate needs precision. No prompt, scan, keyed solution, student details or book PDF is committed to public GitHub.
 
 ## Evidence and its limits
 
 - The original NBF Grade XI book was previously referenced in V174–V175 as `11 Physics Book(6).pdf`, SHA-256 `00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe`. **That hash is carried forward as historic metadata, not newly recomputed**, and no V176 question crop hash is claimed. The eight comprehensive questions occur on printed **p.126 / PDF zero-based index125**.
-- This pass checked **eight numbered source prompts** using two prior private source-referenced study editions (separate student and solved PDFs) and a public transcription of the same chapter: [NBF Unit 7 transcription](https://lms.pkpoint.com/stream-ebook.php?download=1&id=219). Both private derivative-file SHA-256 values are in the V176 ledger. These are **not substitutes for visual page/source authentication**. Original source-page crop integrity is explicitly **PENDING**; a later private-source visual pass may close it.
+- **New direct source evidence received from the owner:** `image(20261126-011636).png` (826×1030; SHA-256 `c927129db10d9a4ea36be7f0cf4e036a69b9e720590310446fd2a00230ae393b`) and `Unit 7 (Page 126).jpeg` (SHA-256 `bc4886d03754d1b3b7e4ac6b23295ee9f27aaf03de68b08e1230ebb6cb6fc637`). Both visibly show printed NBF p126. We **visually checked exactly all eight individual comprehensive prompts** and cross-compared wording, numbering, punctuation and ordering against the prior source-linked student and solved study editions. Eight distinct raw RGB image-region SHA-256 hashes, explicit pixel rectangles and their concatenated digest are in the V176 ledger, based on the **owner-uploaded PNG pixels only**. **Neither copyrighted photo, scan nor original question text has been uploaded to public GitHub.**
+- Independent corroboration: two prior private source-referenced study PDFs and an independent publicly accessible [Unit 7 textbook transcription](https://lms.pkpoint.com/stream-ebook.php?download=1&id=219). Prior study-edition SHA-256 values are in the ledger. **The source-upload review is now completed**, but the prior entire NBF PDF is still not available for rerendering and historic book hash was **not** recomputed; uploaded-image fingerprint provenance is not a direct hash of original full-book PDF pixels.
 - Official FBISE HSSC-I Physics Assessment Framework summative outcomes: **P-11-B-22 Understanding** (solid structures), **B-24 Application** (stress, strain, Young modulus), **B-25 Understanding** (wire experiment), **B-26 Understanding** (elastic/plastic and elastic limit), **B-27 Application** (area under force–extension graph as work), and **B-28 Application** (elastic potential energy). A source chapter heading or a source author cognitive label does not alone prove a question meets an official summative demand.
 - The previously prepared **solved study edition is a review input, not a teacher-approved reference key**. Its equations and schematic descriptions were assessed for physical qualifications; the source book's printed exercise does not supply a comprehensive worked-answer key in the material available here.
 
@@ -22,7 +23,8 @@ This is an **amendments-only quality report**, **not** a student question-bank i
 | Nearest provisional SLO totals | **B-22:2, B-24:1, B-25:1, B-26:2, B-27:1, B-28:1** |
 | Actual task cognitive estimate | **K0 / U6 / A2** |
 | Provisional topic-aligned vs supporting/cross-SLO | **6 / 2** (not scored authorization) |
-| Original scan image-region verification completed THIS PASS | **0 / 8** |
+| Owner-uploaded original printed page source regions verified THIS PASS | **8 / 8** (PNG crops; confirming JPEG) |
+| Original entire textbook PDF SHA independently recomputed THIS PASS | **No** (historic V175 metadata only) |
 | Teacher science/cognitive signoffs; scored Unit7 releases | **0 / 0 / 0** |
 
 ### Only questions needing an amendment or deliberate teacher decision
@@ -51,10 +53,10 @@ The **K0/U6/A2**, six core / two supporting allocation in the ledger is an initi
 
 ## Boundary and next V177
 
-This V176 PR adds **four nondeployment files only**: a keyless eight-item provenance-and-review ledger; this amendments-only memo; a deterministic audit that rejects accidental scoring, private source text and invalid metadata; and a CI workflow with earlier academic/source/bank/App Check/backend regressions.
+This V176 PR adds **four nondeployment files only**: a keyless eight-item provenance-and-review ledger with the new uploaded-page image-region fingerprints; this amendments-only memo; a deterministic audit that rejects altered uploaded-page hashes, accidental scoring, private source text and invalid metadata; and a CI workflow with earlier academic/source/bank/App Check/backend regressions.
 
-**Green CI certifies consistency of the public review ledger and HOLD guardrails; it cannot certify unavailable scanned-book pixels, original source exercises, private worked answers or teacher signoff.** Original book scan, public question-bank, Grade XI Units1–6 pinned 2250 items, Unit6 560 pending approvals, existing Topic7.1–7.3 240 teacher-pending questions, and production/staging NO-GO protections remain unchanged.
+**Green CI certifies consistency of the uploaded-page *reported* eight-region fingerprints, public review ledger and HOLD guardrails. GitHub cannot rerender the private uploaded source image or inspect its pixels, and it does not authenticate the historical full-book PDF SHA, private worked answers, or teacher science/cognitive signoff.** Original book scan, public question-bank, Grade XI Units1–6 pinned 2250 items, Unit6 560 pending approvals, existing Topic7.1–7.3 240 teacher-pending questions, and production/staging NO-GO protections remain unchanged.
 
-**Next V177 after V176 merge:** examine original printed **Numerical Problems 7.1–7.5**, checking every given value, unit, diagram interpretation and published answer hint. In particular, the printed diameter/hint combinations in the last few numericals need mathematical scrutiny, but do not pre-judge a publisher error without full independent calculation and original-page visual verification. Keep all original exercises, corrections and answers private until reviewed.
+**Next V177 after V176 merge:** examine original printed **Numerical Problems 7.1–7.5**, checking every given value, unit, diagram interpretation and published answer hint. In particular, the printed diameter/hint combinations in the last few numericals need mathematical scrutiny, and the original printed page is now visible; conduct all calculations independently before changing any student's answer or treating a printed hint as reliable. Keep all original exercises, corrections and answers private until reviewed.
 
 **Owner workflow:** keep draft until both latest-head checks GREEN; inspect four files → **Ready for review → Merge pull request → Confirm merge**. If a check fails, do not merge. No Firebase setup or student data change is requested.
