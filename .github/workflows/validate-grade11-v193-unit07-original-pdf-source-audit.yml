@@ -1,0 +1,89 @@
+name: Grade XI V193 Unit7 Direct Original Book PDF Source + Numerical QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v193-two-uploaded-original-pdfs-source-audit-no-keys.json"
+      - "quality/grade11-v193-unit07-original-two-pdf-source-verification-and-numerical-qc.md"
+      - "scripts/audit_grade11_unit07_original_pdf_source_v193.cjs"
+      - ".github/workflows/validate-grade11-v193-unit07-original-pdf-source-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v193-two-uploaded-original-pdfs-source-audit-no-keys.json"
+      - "quality/grade11-v193-unit07-original-two-pdf-source-verification-and-numerical-qc.md"
+      - "scripts/audit_grade11_unit07_original_pdf_source_v193.cjs"
+      - ".github/workflows/validate-grade11-v193-unit07-original-pdf-source-audit.yml"
+  workflow_dispatch:
+jobs:
+  source-bound-book-math-audit-with-scoring-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check source-bound scientific and textbook numerical validator
+        run: node --check scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Recompute five original p126 numerical problems, exact source metadata and no-score holds
+        run: node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve V192 private Q25 model QC and teacher-PENDING
+        run: node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+      - name: Preserve V191 Q25 offline note receipt cannot become approval
+        run: node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+      - name: Preserve V190 mock revision-bound review and no scoring
+        run: node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V189 B-22 source scope and Q25 distractor hold
+        run: node scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Preserve V188 private candidate source identities
+        run: node scripts/audit_grade11_unit07_private_pilot_v188.cjs
+      - name: Preserve V187 offline private manifest no-leak proof
+        run: node scripts/test_grade11_unit07_private_manifest_v187.cjs
+      - name: Preserve V186 synthetic revision SHA audit
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 original 72-item teacher approval readiness
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve V184 to V179 six original 12-item private reviewer batches
+        run: |
+          node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+          node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+          node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+          node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+          node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+          node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve original V178 source inventory and V177 page 126 teacher-HOLD classifications
+        run: |
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve original NBF comprehensive, short and textbook MCQ source review
+        run: |
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve three owner Topic7 source banks
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 existing Grade XI original source-pinned question IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 pending academic releases
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V160/V161 teacher backend production and staging NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check client and reporting release locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload only keyless computation counts, never textbook page images or private answer packs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v193-unit7-original-pdf-source-math-no-score
+          path: qa-artifacts/grade11-v193-original-unit07-source-math/summary.json
+          if-no-files-found: warn
+          retention-days: 14
