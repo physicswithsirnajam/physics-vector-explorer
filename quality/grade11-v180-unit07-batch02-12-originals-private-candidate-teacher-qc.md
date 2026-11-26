@@ -1,6 +1,6 @@
 # V180 — Unit 7 Batch 02: 12 high-priority original MCQs, separate private teacher candidates, and no scored release
 
-**Decision:** 12 *new* exact-owner-source rows inspected in the three previously SHA-pinned original Word files, with a separate privately rendered **13-page teacher candidate pack**; no overlap with V179's first 12. **Science signoffs 0, cognitive signoffs 0, scoring approvals 0 and Unit7 scored releases 0.** This PR is keyless and nondeploying.
+**Decision:** 12 *new* exact-owner-source rows inspected in the three previously SHA-pinned original Word files, with a separate privately rendered **13-page teacher candidate pack**; no overlap with V179's first 12. **Science signoffs 0, cognitive signoffs 0, scoring approvals 0 and Unit7 scored releases 0.** This PR is keyless and nondeploying. **Formal academic status: HOLD for all scored Unit7 items until authenticated individual teacher science, cognitive, and scoring approvals.**
 
 ## Source identity and provenance
 
