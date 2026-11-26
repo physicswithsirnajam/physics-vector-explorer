@@ -6,7 +6,7 @@
 
 ## What is different from V194
 
-The long V194 guide already contains detailed calculations. Rather than duplicate it, V195 creates a **two-page A4 landscape independent-teacher decision pack**, rendering and checking both pages:
+The V193 complete-textbook PDF source audit and V194 long-form worked guide established the printed page and arithmetic basis. The long V194 guide already contains detailed calculations. Rather than duplicate it, V195 creates a **two-page A4 landscape independent-teacher decision pack**, rendering and checking both pages:
 - Page 1: a compact **five-row side-by-side matrix** showing book printed hints, calculated source-based values, issue category and required review. It also states that `W=∫Fdx` applies as area when force is vertical versus extension horizontal; the original textbook Fig **7.14** reverses those axes, and `Fx/2` is valid in the linear, origin-starting case.
 - Page 2: **blank independent reviewer identity/date/source-edition fields**; decisions for five numericals and graph axis explanation; reviewer notes, outcome, and explicit warning that a signed paper is evidence of a human review but **not Firebase Auth / App Check / server-logged or scored-release authorization**.
 
