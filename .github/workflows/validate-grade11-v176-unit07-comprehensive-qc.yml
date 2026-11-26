@@ -1,0 +1,61 @@
+name: Grade XI V176 Unit7 Original Comprehensive Q7.1-Q7.8 Science/SLO Review (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v176-comprehensive01-08-source-linked-no-answers.json"
+      - "quality/grade11-v176-unit07-comprehensive01-08-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_comprehensive_v176.cjs"
+      - ".github/workflows/validate-grade11-v176-unit07-comprehensive-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v176-comprehensive01-08-source-linked-no-answers.json"
+      - "quality/grade11-v176-unit07-comprehensive01-08-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_comprehensive_v176.cjs"
+      - ".github/workflows/validate-grade11-v176-unit07-comprehensive-qc.yml"
+  workflow_dispatch:
+jobs:
+  verify-unit7-comprehensive8-science-slo-no-score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V176 original comprehensive8 audit
+        run: node --check scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Verify 8 source-linked questions, 5 compulsory/3 optional and 26 no-score mutations
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 11 original textbook short-question science checks
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 10 original textbook MCQs and unresolved choices
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve V173 Topic7.3 original 80 MCQs with teacher approval HOLD
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve V168 Topic7.2 original 80 MCQs with teacher approval HOLD
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve V154 Topic7.1 original 80 MCQs with teacher approval HOLD
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve 2250 Grade XI source identities and Unit6 560 release restrictions
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve staging/production teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and report-entry release gates
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload keyless QA counts only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v176-unit7-original-comprehensive8-no-score
+          path: qa-artifacts/grade11-v176-unit7-comprehensive8/summary.json
+          if-no-files-found: warn
+          retention-days: 14
