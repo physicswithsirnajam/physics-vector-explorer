@@ -1,0 +1,84 @@
+name: Grade XI V189 Unit7 Two Private Candidate Academic Scope QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v189-two-candidate-slo-distractor-qc-no-keys.json"
+      - "quality/grade11-v189-unit07-two-private-candidate-slo-distractor-review.md"
+      - "scripts/audit_grade11_unit07_two_candidate_review_v189.cjs"
+      - ".github/workflows/validate-grade11-v189-unit07-private-academic-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v189-two-candidate-slo-distractor-qc-no-keys.json"
+      - "quality/grade11-v189-unit07-two-private-candidate-slo-distractor-review.md"
+      - "scripts/audit_grade11_unit07_two_candidate_review_v189.cjs"
+      - ".github/workflows/validate-grade11-v189-unit07-private-academic-review.yml"
+  workflow_dispatch:
+jobs:
+  validate-original-source-b22-scope-and-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V189 metadata-only science and scoring gate
+        run: node --check scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Validate Q22 supporting scope, Q25 new private draft decision and fail-closed no-score
+        run: node scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Preserve V188 two original-source private candidate pilot no-score
+        run: node scripts/audit_grade11_unit07_private_pilot_v188.cjs
+      - name: Preserve V187 original source-bound private JSON path guard
+        run: node scripts/test_grade11_unit07_private_manifest_v187.cjs
+      - name: Preserve V186 synthetic revision, stale decision and revocation controls
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 72 original private candidate HOLD register
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve V184 last compulsory source candidate scope and HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+      - name: Preserve V183 source review candidate HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+      - name: Preserve V182 source review candidate HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+      - name: Preserve V181 source review candidate HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Preserve V180 source review candidate HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 source review candidate HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 all 274 original source identities
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve NBF numericals, comprehensive, short and textbook MCQ source gates
+        run: |
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve all three original owner Topic7.1-7.3 source registers
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 pinned original question IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Grade XI Unit6 560 item teacher release HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production and staging NO-GO teacher backend
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and reporting locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only public academic QA proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v189-unit7-two-source-academic-hold
+          path: qa-artifacts/grade11-v189-two-candidate-academic-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
