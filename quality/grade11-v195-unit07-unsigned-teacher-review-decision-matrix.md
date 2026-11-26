@@ -26,7 +26,7 @@ The newly prepared private files are:
 | 7.4 | 12.15 J | 60.75 J using `U=ALσ²/(2Y)` | **COMPULSORY** numerical correction guidance |
 | 7.5 | 2.5×10⁵ Pa | ≈2.546×10³ Pa with printed **50 cm diameter** | **COMPULSORY** note diameter vs hint |
 
-For **Fig 7.14** (p122), original axes put force horizontal, extension vertical. The general area for work requires force vertical against extension horizontal. The original linear right triangle gives the same numeric `Fx/2`; do not falsely label it universally correct for a nonlinear reversed-axis plot.
+For **Fig 7.14** (printed pages **122–123**), original axes put force horizontal, extension vertical. The general area for work requires force vertical against extension horizontal. The original linear right triangle gives the same numeric `Fx/2`; do not falsely label it universally correct for a nonlinear reversed-axis plot.
 
 All above results are **science/mathematics audit findings, not final examiner or marking policy**. If a student follows the uncorrected printed question, only an authorized teacher/examiner can decide how to award credit for alternate methods. The source data, original printed hint and hypothetical changes must always be clearly distinguished.
 
