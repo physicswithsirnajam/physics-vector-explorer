@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "version": "V196",
+  "title": "SI unit, load-path and nonlinear graph regression tests for five source-audited Unit7 numerical methods",
+  "prerequisite": {
+    "prNumber": 299,
+    "merged": true,
+    "mergeSha": "aed5f150a5dc5287e1da18769cebbbffdd200339"
+  },
+  "status": "SOURCE_BASED_SCALING_AND_GRAPH_INVARIANT_TESTS_ONLY_NO_TEACHER_SIGNOFF_NO_SCORE",
+  "originalNbfEvidenceVersion": "V193",
+  "previousTeacherFullSolutionsVersion": "V194",
+  "previousUnsignedIndependentHumanReviewVersion": "V195",
+  "sourceUniverseCount": 274,
+  "privateCandidateReviewQueueCount": 72,
+  "originalPrintedProblemsChecked": 5,
+  "compulsoryTeacherDecisionsOutstanding": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "consistentTextbookHints": [
+    2
+  ],
+  "checks": [
+    {
+      "sourceProblem": "7.1",
+      "rule": "idealized uniform shear mass ∝ G*d²*displacement/(depth*g); rejects ambiguous Young modulus property",
+      "conditionalShearProxyIsActualBending": false
+    },
+    {
+      "sourceProblem": "7.2",
+      "rule": "equal force/length/extension diameter ∝ sqrt(YoungFirst/YoungSecond); no unit assumption"
+    },
+    {
+      "sourceProblem": "7.3",
+      "rule": "upper steel tension equals both masses times g; lower brass tension only lower mass times g; energy and elongation add separately"
+    },
+    {
+      "sourceProblem": "7.4",
+      "rule": "stress-form elastic energy ∝ area*length*stress²/Young; doubling stress quadruples energy"
+    },
+    {
+      "sourceProblem": "7.5",
+      "rule": "circular tensile stress ∝ F/diameter²; 50cm versus 5cm changes stress by factor 100"
+    },
+    {
+      "sourceProblem": "FIG7.14",
+      "rule": "general work ∫F dx; reversed-coordinate geometric area ∫x dF; equal only for displayed linear zero-origin Hookean example"
+    }
+  ],
+  "originalNbfSourceScanRepublished": false,
+  "conditionalShearProxyIsTrueNailBendingModel": false,
+  "reversedAxesGraphIsGeneralWorkArea": false,
+  "linearOriginHookeanGraphIsValidTriangleException": true,
+  "independentHumanTeacherReviewFormReturned": false,
+  "realTeacherScienceApprovals": 0,
+  "realTeacherCognitiveApprovals": 0,
+  "realOwnerScoringApprovals": 0,
+  "unit7StudentScoredReleases": 0,
+  "noFirebaseOrStagingOrProductionChanges": true,
+  "noLiveQuestionBankChanges": true,
+  "noRealPrivateCandidateKeysInThisPR": true,
+  "noAuthenticationOrGradingCapabilityInHelper": true,
+  "deploymentGateV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "deploymentGateV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "ciScope": "Check SI-only physics helper with source-fixed and counterfactual tests; check original V193/V195 teacher-PENDING metadata and all no-score regression gates. Cannot authenticate reviewer or certify publisher errata.",
+  "nextMilestone": "V197 evaluate independent teacher review evidence when received; meanwhile proceed to the next substantive Unit7 source-based question-bank QC batch without treating any question as approved or scored"
+}
