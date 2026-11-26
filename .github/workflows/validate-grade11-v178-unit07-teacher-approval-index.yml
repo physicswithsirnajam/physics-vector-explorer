@@ -1,0 +1,65 @@
+name: Grade XI V178 Unit7 274 Original Teacher Approval Queue Source/Release QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v178-consolidated-274-teacher-approval-index-no-keys.json"
+      - "quality/grade11-v178-unit07-all274-teacher-approval-priority-and-release-gates.md"
+      - "scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs"
+      - ".github/workflows/validate-grade11-v178-unit07-teacher-approval-index.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v178-consolidated-274-teacher-approval-index-no-keys.json"
+      - "quality/grade11-v178-unit07-all274-teacher-approval-priority-and-release-gates.md"
+      - "scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs"
+      - ".github/workflows/validate-grade11-v178-unit07-teacher-approval-index.yml"
+  workflow_dispatch:
+jobs:
+  verify-all-original-274-and-zero-teacher-approval:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check keyless original Unit7 274 teacher source queue
+        run: node --check scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Verify all 274 unique source identities, seven ledgers, source priority flags and 36 fail-closed mutations
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 5 source-bound numericals and teacher pending
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 8 original comprehensives and source-bound scored HOLD
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 11 original short response questions with science decisions PENDING
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 10 original textbook MCQ source/science and scored HOLD
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve original Topic7.3 80 MCQ source academic record
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve original Topic7.2 80 MCQ source academic record
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve original Topic7.1 80 MCQ pending teacher review
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI Units1-6 original pinned 2250 source identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve original Unit6 560 teacher pending scored-release restrictions
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend staging/production deployment NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check entrypoint/reporting release lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only keyless teacher QA report without question/source text
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v178-unit7-original-274-teacher-queue-keyless-qc
+          path: qa-artifacts/grade11-v178-unit7-teacher-274/summary.json
+          if-no-files-found: warn
+          retention-days: 14

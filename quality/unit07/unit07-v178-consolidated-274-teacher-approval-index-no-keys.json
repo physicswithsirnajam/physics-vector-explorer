@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "version": "V178",
+  "purpose": "Unit 7 single-source-index teacher review worklist, keyless and strictly nondeploying",
+  "prerequisite": {
+    "prNumber": 281,
+    "version": "V177",
+    "merged": true,
+    "mergeSha": "97b90cda99cac7d4ab2f6c9921fae0ece145f6c3"
+  },
+  "sourceSlices": [
+    {
+      "id": "topic71",
+      "kind": "owner-original-topic-mcqs",
+      "path": "quality/unit07/topic71-v154-80-source-bound-teacher-decision-queue.json",
+      "count": 80,
+      "firstPassVersion": "V154",
+      "compulsoryPriorityCount": 15,
+      "optionalPriorityCount": 10,
+      "cognitiveReclassificationPriorityCount": 7,
+      "ordinaryPriorityCount": 48,
+      "hardSourceDecisionNumbers": [
+        10,
+        15,
+        62,
+        76
+      ],
+      "criticalNotes": "Q76 original explanation must be repaired before any answer-key import; teacher approvals for all 80 pending"
+    },
+    {
+      "id": "topic72",
+      "kind": "owner-original-topic-mcqs",
+      "path": "quality/unit07/topic72-v168-all80-consolidated-academic-qc-no-keys.json",
+      "count": 80,
+      "firstPassVersion": "V168",
+      "compulsoryPriorityCount": 25,
+      "optionalPriorityCount": 8,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 47,
+      "standaloneStimulusBlockers": [
+        9,
+        20,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        39,
+        40,
+        57,
+        79,
+        80
+      ],
+      "crossBatchOverrideCompulsory": [
+        57
+      ],
+      "criticalNotes": "Q57 self-contained example data or approved stimulus is compulsory despite earlier optional rounding flag; source keys stay private"
+    },
+    {
+      "id": "topic73",
+      "kind": "owner-original-topic-mcqs",
+      "path": "quality/unit07/topic73-v173-all80-consolidated-academic-qc-no-keys.json",
+      "count": 80,
+      "firstPassVersion": "V173",
+      "compulsoryPriorityCount": 23,
+      "optionalPriorityCount": 18,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 39,
+      "missingFigureBlockers": [
+        3
+      ],
+      "conditionalLinearLoadingNumbers": [
+        12,
+        24,
+        35,
+        42,
+        45,
+        46,
+        49,
+        78
+      ],
+      "blueprintRecheckNumbers": [
+        7,
+        14,
+        26
+      ],
+      "criticalNotes": "Q3 needs a teacher-authorized accessible apparatus stimulus; isolate ideal linear assumptions and B-27 work-vs-slope candidates"
+    },
+    {
+      "id": "exerciseMcq",
+      "kind": "original-textbook-exercise-mcqs",
+      "path": "quality/unit07/unit07-v174-end-exercise-mcq01-10-fig-bound-no-keys.json",
+      "count": 10,
+      "firstPassVersion": "V174",
+      "compulsoryPriorityCount": 5,
+      "optionalPriorityCount": 1,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 4,
+      "standaloneAmbiguousNumbers": [
+        3,
+        5,
+        10
+      ],
+      "criticalNotes": "Printed page has no publisher answer key; independently assess proposed unique selection after wording clarification"
+    },
+    {
+      "id": "exerciseShort",
+      "kind": "original-textbook-short-answers",
+      "path": "quality/unit07/unit07-v175-end-exercise-short01-11-image-bound-no-answers.json",
+      "count": 11,
+      "firstPassVersion": "V175",
+      "compulsoryPriorityCount": 5,
+      "optionalPriorityCount": 5,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 1,
+      "criticalNotes": "Preserve glass weathering, stress-strain causality, force-extension axes and bridge-service-life context"
+    },
+    {
+      "id": "exerciseComprehensive",
+      "kind": "original-textbook-comprehensive-responses",
+      "path": "quality/unit07/unit07-v176-end-exercise-comprehensive01-08-image-bound-no-answers.json",
+      "count": 8,
+      "firstPassVersion": "V176",
+      "compulsoryPriorityCount": 6,
+      "optionalPriorityCount": 2,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 0,
+      "criticalNotes": "Figures and response rubrics need source-faithful proof; B-27 force-extension axes must distinguish work-area from slope"
+    },
+    {
+      "id": "exerciseNumerical",
+      "kind": "original-textbook-numerical-problems",
+      "path": "quality/unit07/unit07-v177-end-exercise-numerical01-05-image-bound-no-keys.json",
+      "count": 5,
+      "firstPassVersion": "V177",
+      "compulsoryPriorityCount": 4,
+      "optionalPriorityCount": 0,
+      "cognitiveReclassificationPriorityCount": 0,
+      "ordinaryPriorityCount": 1,
+      "printedHintFullyConsistentNumbers": [
+        2
+      ],
+      "printedHintConditionalNumbers": [
+        1
+      ],
+      "printedHintMismatchNumbers": [
+        3,
+        4,
+        5
+      ],
+      "criticalNotes": "Only original Q7.2 hint fully matches; Q7.1 needs shear-model input; Q7.3–7.5 conflict with numbers as printed"
+    }
+  ],
+  "totalOriginalItems": 274,
+  "firstPassReviewedItemCount": 274,
+  "ownerAuthoredMcqItems": 240,
+  "originalTextbookExerciseItems": 34,
+  "originalTextbookBreakdown": {
+    "mcq": 10,
+    "short": 11,
+    "comprehensive": 8,
+    "numerical": 5
+  },
+  "disjointFirstPassPriorityCensus": {
+    "compulsory": 83,
+    "optional": 44,
+    "additionalCognitiveQueueOnly": 7,
+    "ordinary": 140
+  },
+  "priorityInterpretation": "Counts are first-pass review priorities, NOT counts of wrong answers, final approval decisions or actual graded eligibility. One original item may have multiple concerns; use source row and unique source section + item number.",
+  "teacherApprovalDataPolicy": {
+    "sourceOriginalQuestionAnswerPayload": "private-originals-retained-no-upload",
+    "sourceFingerprintReference": "public-original-row-or-image-hash-as-source-metadata-only",
+    "individualReviewScience": "PENDING",
+    "individualReviewCognitive": "PENDING",
+    "uniqueAnswerAndDistractors": "PRIVATE_INDEPENDENT_CHECK_REQUIRED",
+    "teacherIdentity": "AUTHENTICATED_BACKEND_ONLY_NOT_PUBLIC_GITHUB",
+    "teacherApprovalAuditTimestamp": "SERVER_SIDE_ONLY",
+    "sourceCorrectionCandidate": "SEPARATE_REVIEWED_RECORD_NO_OVERWRITE",
+    "perItemRelease": "HOLD",
+    "allowedCurrentOperations": [
+      "compare prior ledgers",
+      "prepare private approval forms",
+      "prepare self-contained correction candidates",
+      "propose SLO and cognitive mapping",
+      "create keyless QA reports"
+    ],
+    "disallowedCurrentOperations": [
+      "bulk approve original source",
+      "write teacher signoffs into GitHub",
+      "publish original questions or answer key",
+      "import Unit7 into scored Test Builder",
+      "create Firebase roles or deploy teacher backend",
+      "alter Unit6 or Units1-6 question bank"
+    ]
+  },
+  "requiredTeacherDecisionSequence": [
+    "confirm_original_private_row_and_unique_identity",
+    "verify_science_math_and_correct_single_answer_if_mcq",
+    "resolve_compulsory_source_or_stimulus_blocker",
+    "verify_distractors_diagram_accessibility_and_standalone_context",
+    "map_exact_summative_SLO_and_actual_cognitive_demand",
+    "approve_source_preserving_corrected_candidate_not_original_overwrite",
+    "record_authenticated_individual_science_cognitive_and_scoring_signoffs",
+    "release_only_if_backend_security_and_appcheck_gates_are_authorized"
+  ],
+  "teacherScienceApprovals": 0,
+  "teacherCognitiveApprovals": 0,
+  "teacherScoredReleaseApprovals": 0,
+  "scoredUnit7PortalQuestions": 0,
+  "originalKeyedSourceFilesModified": false,
+  "sourceBookImagesOrQuestionsPublished": false,
+  "existingScoredBankChanged": false,
+  "firebaseConfigOrTeacherRoleChanged": false,
+  "stagingOrProductionTeacherBackendDeployed": false,
+  "academicDecision": "FIRST_PASS_274_REGISTERED_TEACHER_REVIEW_QUEUE_ONLY_ZERO_SIGNOFFS_ZERO_SCORED_RELEASE",
+  "nextMilestone": "V179 begin private item-level corrected candidate and teacher review batches (20 or fewer), high priority first; no scored deployment until authenticated approvals"
+}
