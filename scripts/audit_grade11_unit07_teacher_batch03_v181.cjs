@@ -86,6 +86,15 @@ function validate(d){
    A.equal(r.id,mkId(t,n));A.equal(r.topic,t);A.equal(r.originalNumber,n);
    A.equal(r.priorOriginalRegistryVersion,SRC[t].registry);
    A.ok(isSHA(r.priorOriginalRowSha256));
+   // Exact prior source verification is inside validate so SHA-substitution,
+   // wrong-SLO and wrong-cognitive mutation tests cannot pass by format only.
+   const baseline=load(SRC[t].file);
+   const baselineRow=baseline[SRC[t].rows].find(x=>x[SRC[t].n]===n);
+   A.ok(baselineRow);
+   A.equal(r.priorOriginalRowSha256,baselineRow[SRC[t].sha]);
+   A.equal(r.originalMappedSlo,baselineRow[SRC[t].slo]);
+   A.equal(r.originalCognitiveTag,baselineRow[SRC[t].level]);
+   A.equal(r.originalFirstPassPriority,baselineRow[SRC[t].priority]);
    A.ok(/^P-11-B-\d+$/.test(r.originalMappedSlo));
    A.ok(['K','U','A'].includes(r.originalCognitiveTag));
    A.ok(r.originalFirstPassPriority.startsWith('compulsory'));
