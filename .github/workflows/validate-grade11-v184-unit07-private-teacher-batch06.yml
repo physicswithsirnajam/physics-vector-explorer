@@ -1,0 +1,76 @@
+name: Grade XI V184 Unit7 Private Teacher Batch06 Final Compulsory Selection (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v184-batch06-twelve-originals-last-compulsory-private-review-no-keys.json"
+      - "quality/grade11-v184-unit07-batch06-12-private-teacher-source-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch06_v184.cjs"
+      - ".github/workflows/validate-grade11-v184-unit07-private-teacher-batch06.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v184-batch06-twelve-originals-last-compulsory-private-review-no-keys.json"
+      - "quality/grade11-v184-unit07-batch06-12-private-teacher-source-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch06_v184.cjs"
+      - ".github/workflows/validate-grade11-v184-unit07-private-teacher-batch06.yml"
+  workflow_dispatch:
+jobs:
+  review-exact-owner-rows-no-score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify V184 source-index validator syntax
+        run: node --check scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+      - name: Verify 12 new original source fingerprints, remaining 4 compulsory selections, 72 cumulative, 41 negative HOLD tests
+        run: node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+      - name: Preserve V183 original private teacher candidate and no-score checks
+        run: node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+      - name: Preserve V182 original private teacher candidate and no-score checks
+        run: node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+      - name: Preserve V181 original private teacher candidate and no-score checks
+        run: node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Preserve V180 original private teacher candidate and no-score checks
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 original private teacher candidate and no-score checks
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 all original 274 first-pass source identities
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 original numerical hint uncertainties
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 original eight comprehensive and candidate HOLD
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original eleven short-question and candidate HOLD
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 original ten textbook MCQ quality gates
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve original owner Topic7.1 to Topic7.3 80-by-three source registers
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve original Grade XI 2250 pinned question identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve original Unit6 560 waiting for teacher approvals
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend staging and production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and reporting release gate
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload original-source-safe counts-only QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v184-unit7-teacher-batch06-keyless-qc
+          path: qa-artifacts/grade11-v184-unit7-private-teacher-batch06/summary.json
+          if-no-files-found: warn
+          retention-days: 14
