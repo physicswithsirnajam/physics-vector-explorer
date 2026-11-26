@@ -115,7 +115,7 @@ function verify(d){
     'AMBIGUOUS_WITHOUT_EXTRA_CONDITION':'SINGLE_PHYSICS_INTENDED_RESULT');
   A.equal(row.sourceExerciseHasProvidedPublisherKey,false);
   A.equal(row.changeNeeded,COMP.includes(n)?
-   'compulsory-before-scored-use':
+   (n===7||n===8?'compulsory-teacher-slo-placement':'compulsory-before-scored-use'):
    OPT.includes(n)?'optional-teacher-slo-placement':'none');
   const flagged=COMP.includes(n)||OPT.includes(n);
   A.equal(row.issue===null,!flagged);
