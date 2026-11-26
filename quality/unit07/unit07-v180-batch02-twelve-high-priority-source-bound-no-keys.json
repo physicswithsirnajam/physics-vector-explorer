@@ -160,7 +160,7 @@
       "proposedCandidateSlo": "P-11-B-22",
       "proposedCandidateActualCognitive": "U",
       "provisionalSummativePlacement": "supporting-crystallography-detail",
-      "sourceAnswerAssessment": "count 8 corners shared eightways and six face positions shared twoways; sum four effective sites; avoid clustering with Q41",
+      "sourceAnswerAssessment": "original-key-defensible",
       "sourceFullOriginalDocxShaMatchedPriorLedger": true,
       "originalQuestionAndKeyRetainedPrivate": true,
       "proposedCandidateAndFullExplanationRetainedPrivate": true,
@@ -168,7 +168,8 @@
       "teacherScienceApproval": "PENDING",
       "teacherCognitiveApproval": "PENDING",
       "teacherScoredReleaseApproval": "PENDING",
-      "scoredTestBuilderRelease": "HOLD"
+      "scoredTestBuilderRelease": "HOLD",
+      "teacherDecisionRequired": "Explicitly distinguish eight shared corner sites and six shared face sites; compute four effective lattice points and retain the source original for comparison with the separate counting candidate."
     },
     {
       "id": "XI-U07-T072-Q007",
