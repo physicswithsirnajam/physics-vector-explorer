@@ -7,14 +7,14 @@
   "originalBookReopenedAndShaRecomputedThisPass": false,
   "sourcePrintedPage": 126,
   "sourcePdfPageZeroIndex": 125,
-  "sourceVisualPageCropVerificationThisPass": "PENDING_ORIGINAL_SCAN",
-  "originalQuestionRegionHashesClaimed": false,
+  "sourceVisualPageCropVerificationThisPass": "VERIFIED_USER_UPLOADED_PRINTED_PAGE_IMAGE",
+  "originalQuestionRegionHashesClaimed": true,
   "derivativeStudentPracticeFile": "Grade11_Unit7_EndOfUnit_8Comprehensive_Student_Practice.pdf",
   "derivativeStudentPracticeSha256": "d398324caaaf3bd8ce4025df5722631da85ee723421f8872f730c5ad641f6531",
   "derivativeSolvedStudyFile": "Grade11_Unit7_EndOfUnit_8Comprehensive_Solved.pdf",
   "derivativeSolvedStudySha256": "f8b6496c8ad6e7ef086caacc07d1bf52eb39e5de12d92428f4617cdd51a5a524",
   "publicSourceTranscriptionUrl": "https://lms.pkpoint.com/stream-ebook.php?download=1&id=219",
-  "evidenceBoundary": "Eight question numbers/prompts cross-checked between a prior private student-practice edition, a prior solved draft, and a public chapter transcription; original scanned page pixels not available for fresh image-bound audit. Prior book SHA is provenance carried forward, NOT recomputed. Derivative explanations are candidates requiring independent teacher approval.",
+  "evidenceBoundary": "All eight questions visually verified against two user-uploaded photographs/scans of printed NBF p126, with 8 raw-RGB crop digests anchored to primary uploaded PNG; previously prepared practice/solved PDFs independently cross-referenced. Original full-book PDF was not reobtained; its historic SHA is NOT recomputed. No publisher worked answer key is provided; numerical answer hints require separate verification.",
   "originalComprehensiveQuestionsCount": 8,
   "firstPassPhysicsConceptsReviewed": 8,
   "originalQuestionTextOrScansUploaded": false,
@@ -76,11 +76,18 @@
       "academicConcern": "Distinguish single-crystal order, many oriented crystalline grains, and absence of long-range periodicity in amorphous solids; avoid implying polycrystalline solids are noncrystalline.",
       "reviewAction": "Retain the original; teacher response should explicitly distinguish single crystals from polycrystalline aggregates and label polymer classification a different axis.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        251,
+        752,
+        270
+      ],
+      "sourceUploadedPageCropRgbSha256": "3f6d720887186bad4da36504303723024b310773d873eb4286a4a8934139e651"
     },
     {
       "sourceQuestionNumber": 2,
@@ -95,11 +102,18 @@
       "academicConcern": "A unit cell tiles the lattice by translation; the common SC/BCC/FCC cells are conventional cubic descriptions, but BCC/FCC conventional cells are not the primitive cells. The seven crystal systems categorize geometry, not the three cubic centering arrangements.",
       "reviewAction": "Retain the original; distinguish primitive/conventional cells, SC/BCC/FCC, lattice points versus atoms in a basis, and seven geometric crystal systems; no misleading smallest-cell rule.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        271,
+        752,
+        289
+      ],
+      "sourceUploadedPageCropRgbSha256": "ec909e263c3e40afde4e4d6f2cc0f03eb9cc71cc6b8b99589fc362eab02114f1"
     },
     {
       "sourceQuestionNumber": 3,
@@ -114,11 +128,18 @@
       "academicConcern": "Stress/strain are mode-dependent pairs; modulus as a constant stress-to-strain ratio presumes the appropriate proportional/linear elastic regime. A definition-only question is Understanding, not automatically B-24 Application.",
       "reviewAction": "Retain the original; give units and matching strain type, state the linear-regime assumption, and use separate applied questions if direct B-24 Application evidence is needed.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        290,
+        752,
+        308
+      ],
+      "sourceUploadedPageCropRgbSha256": "2cba2bb090e8f2168c36b3bb160339d4556e70387d255c2a5bcf08f10023bb3a"
     },
     {
       "sourceQuestionNumber": 4,
@@ -133,11 +154,18 @@
       "academicConcern": "A ductile tensile curve is typically engineering stress vertically versus engineering strain horizontally; yield plateau and upper/lower yield points are material-dependent. Proportional limit, elastic limit, ultimate engineering stress and fracture must not be conflated.",
       "reviewAction": "Retain the original; require a clearly labelled qualitative curve and correct region definitions; no inference of universal point letters or a specific steel-only plateau.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        310,
+        752,
+        327
+      ],
+      "sourceUploadedPageCropRgbSha256": "afeb6c05c7d9f999781ec2d5b168f10b44ef276529d8a57420633dd506d91a0c"
     },
     {
       "sourceQuestionNumber": 5,
@@ -152,11 +180,18 @@
       "academicConcern": "Elastic recovery can occur beyond strict linear proportionality before the elastic limit; plastic deformation creates residual strain, but does not necessarily imply fracture. Unloading path is distinct from initial loading.",
       "reviewAction": "Retain the original; explain unloading and permanent set on a labelled stress-strain diagram, separating the elastic limit from the proportional limit.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        329,
+        752,
+        347
+      ],
+      "sourceUploadedPageCropRgbSha256": "1555ee2ecbaaf42a4ffcb144dd285d62532a28fd494ded9734693b061360eb83"
     },
     {
       "sourceQuestionNumber": 6,
@@ -171,11 +206,18 @@
       "academicConcern": "Physical work is integral of force with respect to extension, not graph slope or a generic shaded area with reversed axes. NBF Fig.7.14 prints extension vertically and weight horizontally; the standard under-curve area argument needs force vertical and extension horizontal, especially for nonlinear behavior.",
       "reviewAction": "Retain the original; explicitly define F vertical and x horizontal, derive W=integral(F dx), and restrict W=Fx/2 to straight-line zero-start Hooke behavior.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        348,
+        752,
+        366
+      ],
+      "sourceUploadedPageCropRgbSha256": "e6f1925331dfbe19312289cc40f40ff81c00d0be1a07a909e1021400fb94d35a"
     },
     {
       "sourceQuestionNumber": 7,
@@ -190,11 +232,18 @@
       "academicConcern": "U=Fx/2=kx^2/2=YA(DeltaL)^2/(2L) presumes quasistatic loading from zero in the linear elastic range. A stress-strain integral is energy per unit volume, not automatically the total joules stored; plastic hysteresis changes recoverability.",
       "reviewAction": "Retain the original; show force-extension assumptions, distinguish joules from J/m3, and label any energy-density derivation supplementary.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        367,
+        752,
+        385
+      ],
+      "sourceUploadedPageCropRgbSha256": "d85b66b0bae1df4e8525a24798d7b0f6d6ae21723e809ff78291e3f0f060d656"
     },
     {
       "sourceQuestionNumber": 8,
@@ -209,11 +258,33 @@
       "academicConcern": "A wire Young-modulus measurement needs original effective gauge length, diameter-based area, applied force change and corresponding extension; force-extension measurements should share a consistent initial reading and remain within the elastic range. Optional reference wire is not compulsory from the source figure.",
       "reviewAction": "Retain the original; require a source-faithful apparatus description, F=mg with consistent load baseline, Y=FL/(A DeltaL), labels, SI units, and measurement precautions without misattributing enrichment to Fig7.13.",
       "originalSourceRetained": true,
-      "firstPassPhysicsStatus": "DERIVATIVE_AND_PUBLIC_TRANSCRIPTION_CROSSCHECK_ONLY",
-      "originalScannedPageCropVerifiedThisPass": false,
+      "firstPassPhysicsStatus": "UPLOADED_PRINTED_PAGE_VISUALLY_VERIFIED_AND_CONCEPT_SCIENCE_FIRST_PASS",
+      "originalScannedPageCropVerifiedThisPass": true,
       "teacherScienceSignoff": "PENDING",
       "teacherCognitiveSignoff": "PENDING",
-      "scoredPortalRelease": "HOLD"
+      "scoredPortalRelease": "HOLD",
+      "sourceUploadedPagePixelCropBox": [
+        52,
+        387,
+        752,
+        404
+      ],
+      "sourceUploadedPageCropRgbSha256": "84eabde22c574a7a99c5cb8314b236ae25510b0f1c796027984ffd234d65d593"
     }
-  ]
+  ],
+  "uploadedPrintedPageImageSource": {
+    "primaryFilename": "image(20261126-011636).png",
+    "primaryFileSha256": "c927129db10d9a4ea36be7f0cf4e036a69b9e720590310446fd2a00230ae393b",
+    "primaryImageDimensionsPixels": [
+      826,
+      1030
+    ],
+    "confirmationPhotoFilename": "Unit 7 (Page 126).jpeg",
+    "confirmationPhotoSha256": "bc4886d03754d1b3b7e4ac6b23295ee9f27aaf03de68b08e1230ebb6cb6fc637",
+    "cropRecipe": "Use the USER UPLOADED ORIGINAL PAGE PNG (not the historical PDF), PIL RGB pixels, region Image.crop([left,top,right,bottom]); SHA256(crop.tobytes()) for each of eight visually reviewed comprehensive-question lines. Photo visually confirms printed page, wording and numbering. Images private, not committed.",
+    "orderedEightCropHashesJoinedWithNewlineSha256": "0dedfadbdbab61c804553aa14c8a68314f25b88a037fb408c5db3f32f8906930",
+    "cropHashesAttestUserUploadedPageOnly": true,
+    "originalFullTextbookPdfRerendered": false
+  },
+  "sourceImageVerificationInterpretation": "Uploaded primary original textbook page image plus confirming photo verified for eight printed prompts; these page-image crop SHA-256s are NOT pixel hashes derived from the private historical original book PDF."
 }
