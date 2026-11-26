@@ -21,13 +21,13 @@ The original complete Topic7.3 80-item first-pass register is at `quality/unit07
 | **38** | B-27 / U | Correctly warns that NBF Fig. **7.14** has **force horizontal and extension vertical**, so its general geometric under-curve area is **not** `∫Fdx`. **Compulsory axis/linearity qualification** and demand review |
 | **40** | B-27 / U | Elastic strain energy is work stored **when recoverable elastic loading** applies. Concept sound but question tests conceptual recognition. **Compulsory direct demand review**; clarifying wording optional |
 | **51** | B-28 / A | Correct worked calculation `U=YAx²/(2L)` gives **0.050 J**, with unit conversion. **Promising direct Application candidate**; no answer amendment detected |
-| **56** | B-28 / A | Correct `U/V=½(stress)(strain)` gives **1000 J/m³**, but source author labeled **Supplementary** and V173 already gave compulsory before-scoring source-scope review. **Retain as enrichment pending human decision** |
+| **50** | B-28 / A | At fixed elastic stiffness, `U∝x²`; doubling extension from a **0.90 J** state gives **3.6 J**. Original key is correct. **Promising direct Application candidate**; select carefully against conceptually overlapping scaling items |
 | **59** | B-28 / A | Original **NBF Example 7.3** pp. **123–124** uses **980 N** and extension ≈**3.90×10⁻⁴ m**; **0.191 J** is reproduced correctly. **Promising direct Application candidate** |
 | **60** | B-28 / A | Original p. **124 Assignment 7.3** uses `Y=2×10¹¹ Pa`, `A=1 mm²`, `L=5 m`, `x=1 mm`; derived work **0.020 J** is correct. **Promising direct Application candidate** |
 | **72** | B-25 / A | Load-mass/extension slope in kg/m must be multiplied by `g` to yield stiffness N/m. Key is correct, but this is **supplementary graph-data conversion** rather than directly describing the experiment at official **B-25 Understanding**. **Teacher scope decision compulsory before scoring**; alternate remapping optional and not automatic |
 | **80** | B-27 / A | Correct procedure to reinterpret the textbook's reversed axes to compute work, with force vertical versus extension horizontal. **Promising direct Application candidate**; high overlap with **Q38** (already flagged by V173), so do not automatically include both in one short scored test |
 
-**Accounting:** Four promising direct A-level candidates: **51, 59, 60, 80**. Eight supporting, supplementary, or scope-sensitive originals: **2, 8, 21, 27, 38, 40, 56, 72**. **Zero wrong original answer letters were detected in this twelve-item pass**, but this does not certify independent teacher approval, all 80 items, or the exact final summative question selection. Original V173 flag for Q56 remains compulsory, for Q72 optional remapping; V197 tightens **direct scoring eligibility** without overwriting those earlier judgments.
+**Accounting:** Five promising direct A-level candidates: **50, 51, 59, 60, 80**. Seven supporting or scope-sensitive originals: **2, 8, 21, 27, 38, 40, 72**. **Zero wrong original answer letters were detected in this twelve-item pass**, but this does not certify independent teacher approval, all 80 items, or the exact final summative question selection. **Source-overlap fix before merge:** the first V197 draft mistakenly selected Q56, which was already in the existing V185 72-item detailed queue. The source-integrity CI caught this, and Q56 was replaced with previously unqueued **Q50**. The earlier V173 finding on Q56 remains separately preserved, and Q72's prior optional remap is not overwritten. The final twelve-source audit is wholly outside the 72-item queue.
 
 ## Important graph and source nuances
 
@@ -37,7 +37,7 @@ Source **Example 7.3** pp123–124 is distinct from **Assignment 7.3** on printe
 
 ## Private teacher-review pack and public privacy boundary
 
-A new **eight-page** Word academic review, `Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.docx` (SHA-256 `180cb0549009d1449b46a6f213133cb9603c4e664325f8d8151b60c0426b3b61`) and accompanying PDF (SHA-256 `60ddc4317b3cfa16f02d2d2827c9152cb56693fa371e7d0c7f10471348af7090`) were rendered and visually checked. The private working JSON SHA is `93b865f22083a60ebdf0c0daa7545fa7d2ca8479a3fee0abf59cc28543edf7bb`.
+A new **eight-page** Word academic review, `Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.docx` (SHA-256 `f485bde41fb6074d2bcf4b6084bb8fe89b26ed5c613004b54d3d8e510039af1a`) and accompanying PDF (SHA-256 `ae6e46048291a8e3bab445b7fbe000badaf057455d5d4661a5651aaf243730e0`) were rendered and visually checked. The private working JSON SHA is `92078c483ab925536c95456d8f649d76257859b6c85b65ffc7f6a3522ffed981`.
 
 The private pack contains original question stems, all four owner-authored options, correct letters, explanations, independent physics and demand analysis, and **blank teacher decision fields**. **Do NOT upload the Word, PDF, private JSON or actual question/key text to public GitHub, Actions logs or a scored student portal.** V197 records only existing V173 source-row SHA identities, non-keyed review classifications and private whole-file checksum metadata.
 
@@ -52,7 +52,7 @@ Exactly **five public nondeploying files**:
 1. `quality/unit07/unit07-v197-topic73-twelve-originals-source-slo-secondpass-no-keys.json` — original source hashes, verified p122–124, cognitive-level classification and all scoring HOLDS.
 2. `quality/grade11-v197-topic73-12-original-mcq-source-slo-secondpass-qc.md` — this amendments-only academic report.
 3. `scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs` — exact V173 original row fingerprints, absence from prior V185 72, source and scope invariants, fail-closed tampering tests.
-4. `scripts/test_grade11_unit07_topic73_math_v197.cjs` — original Q51/Q56/Q59/Q60 mathematical checks plus graph/units sanity, no student scoring capability.
+4. `scripts/test_grade11_unit07_topic73_math_v197.cjs` — original Q50/Q51/Q59/Q60 mathematical checks plus graph/units sanity, no student scoring capability.
 5. `.github/workflows/validate-grade11-v197-topic73-twelve-source-slo.yml` — V197 checks and existing academic, original-source, student bank, teacher backend/App Check safety regressions.
 
 **V198:** privately obtain an independent teacher assessment of these original 12. If none has arrived, continue a fresh small original NBF-source MCQ QC batch; only propose new private revision variants where an actual key, distractor or direct-SLO problem warrants a changed item, without auto-importing or scoring.
