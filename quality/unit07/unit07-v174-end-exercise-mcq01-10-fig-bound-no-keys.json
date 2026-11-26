@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "version": "V174",
+  "title": "Grade XI NBF Unit7 Physics of Solids — End-of-Unit Textbook MCQs 1–10 first-pass science, source and SLO audit",
+  "originalNbfTextbookSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "originalPrintedPage": 125,
+  "sourcePdfPageZeroIndexed": 124,
+  "sourcePageRenderWidthPixels": 1370,
+  "sourcePageRenderHeightPixels": 1725,
+  "sourcePageRenderPngSha256": "ba14d65b02c65846566b7692b221cec336dd6cfc2f38e6e8292061f05c716ded",
+  "sourceFingerprintMethod": "Render source scanned PDF page index124 with PyMuPDF fitz Matrix(2.3,2.3) RGB alpha=False; then PIL Image.open(png).convert('RGB'); sha256 of RGB raw pixel bytes of each PIL crop using sourcePagePixelCropBox (left,top,right,bottom). Crops can include neighboring line context; no OCR, original stems, choices or keyed answers committed.",
+  "sourceIsScannedPdf": true,
+  "sourceOriginalBookPageUploadedToGithub": false,
+  "publisherAnswerKeyAvailableOnPage": false,
+  "independentPhysicsReviewOfQuestions": 10,
+  "preliminarilyUnambiguousQuestionsCount": 7,
+  "conditionalOrAmbiguousOriginalQuestions": [
+    3,
+    5,
+    10
+  ],
+  "numericalAndPhysicalQuantitiesIndependentlyVerified": [
+    4,
+    6,
+    8
+  ],
+  "correctedOrChangedTextbookContent": false,
+  "candidateCognitiveCounts": {
+    "K": 1,
+    "U": 6,
+    "A": 3
+  },
+  "nearestSloCount": {
+    "P-11-B-22": 3,
+    "P-11-B-24": 4,
+    "P-11-B-27": 1,
+    "P-11-B-28": 2
+  },
+  "officialFBISESummativeSloLevels": {
+    "P-11-B-22": "Understanding",
+    "P-11-B-24": "Application",
+    "P-11-B-27": "Application",
+    "P-11-B-28": "Application"
+  },
+  "preliminaryDirectOutcomeCandidates": 5,
+  "preliminarySupportingCandidates": 5,
+  "compulsoryIssueQuestionNumbers": [
+    3,
+    5,
+    7,
+    8,
+    10
+  ],
+  "optionalIssueQuestionNumbers": [
+    9
+  ],
+  "supplementaryContentIsNotAutomaticallyUnexamined": true,
+  "sourceBookNumericalChecks": {
+    "q4": "Uniform hanging wire: stress at section must include total suspended load plus weight of wire segment below that section, with correct 3/4-length fraction.",
+    "q6": "Force computed from original Young modulus, 0.1 percent strain and circular area of 4 millimeter diameter; physics and SI conversions independently verified.",
+    "q8": "Bulk modulus computed using 100 atmospheres and 0.01 percent volume contraction; dynes/cm2 and percentage conversions checked. Material realism and summative SLO scope require teacher judgement."
+  },
+  "externalPhysicsCrosscheck": {
+    "siliconDiamondCubicLattice": "Independent university/engineering references confirm covalent network bonding and FCC Bravais lattice with two-atom basis; this explains Q3 classification ambiguity, without rewriting the NBF original.",
+    "siliconReferenceUrl": "https://cmp.df.unipi.it/roddaro/SSPnotes/ch01-bravais.html",
+    "rubberBulkModulusNote": "Typical vulcanized rubber bulk modulus commonly order 1–2 GPa, whereas given pressure/strain values imply a much higher modulus; arithmetic still follows the printed numbers.",
+    "rubberReferenceUrl": "https://www.sciencedirect.com/science/article/pii/0032386194903042"
+  },
+  "priorOriginalTopic71Status": "80 author questions reviewed; teacher signoffs PENDING",
+  "priorOriginalTopic72Status": "80 author questions reviewed; teacher signoffs PENDING",
+  "priorOriginalTopic73Status": "80 author questions reviewed; teacher signoffs PENDING",
+  "unit7ScoredPortalQuestions": 0,
+  "unit7TeacherApprovals": 0,
+  "liveGithubQuestionBankChanged": false,
+  "productionFirebaseChanged": false,
+  "privateAnswerLettersCommitted": false,
+  "sourceBookTextOrScansCommitted": false,
+  "sourceBoundItems": [
+    {
+      "sourceQuestionNumber": 1,
+      "sourcePagePixelCropBox": [
+        135,
+        265,
+        1338,
+        340
+      ],
+      "renderedQuestionRgbPixelSha256": "a01575f9562a5a181e74fcd61ed4246233258c14f07589c081ee11bd90f49c58",
+      "nearestFBISETheorySlo": "P-11-B-22",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "direct-outcome-candidate",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "none",
+      "issueCategory": null,
+      "issue": null,
+      "proposedAction": null,
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 2,
+      "sourcePagePixelCropBox": [
+        135,
+        340,
+        1338,
+        415
+      ],
+      "renderedQuestionRgbPixelSha256": "406665aeb086282e5bd1fa95bc0fdedfaabf867921e5a9c3ef8413fdbc8c82e4",
+      "nearestFBISETheorySlo": "P-11-B-22",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "direct-outcome-candidate",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "none",
+      "issueCategory": null,
+      "issue": null,
+      "proposedAction": null,
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 3,
+      "sourcePagePixelCropBox": [
+        135,
+        415,
+        1338,
+        482
+      ],
+      "renderedQuestionRgbPixelSha256": "2221dad3078149c5584456e7bc7aca2b73bc4b9b737e041ecf6f800270ce53f7",
+      "nearestFBISETheorySlo": "P-11-B-22",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "supporting-or-outcome-crosscheck",
+      "independentAnswerReviewStatus": "AMBIGUOUS_WITHOUT_EXTRA_CONDITION",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "compulsory-before-scored-use",
+      "issueCategory": "two-descriptions-potentially-correct",
+      "issue": "Crystalline silicon is a covalent network solid with diamond-cubic structure; its Bravais lattice is face-centered cubic with a two-atom basis. The original choices mix bond-network classification with lattice type, creating two scientifically defensible descriptions.",
+      "proposedAction": "Keep the original for textbook-linked discussion; replace the scored candidate with a question that explicitly asks either for bonding/network classification or for diamond-cubic Bravais-lattice-plus-basis structure. Verify a unique correct option after rewriting.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 4,
+      "sourcePagePixelCropBox": [
+        135,
+        482,
+        1338,
+        666
+      ],
+      "renderedQuestionRgbPixelSha256": "0dfc7e31d83bc8a1820749c2a3c4397e15ad67b7d95c5e4bfdcbd413a8e0f728",
+      "nearestFBISETheorySlo": "P-11-B-24",
+      "candidateItemDemand": "A",
+      "preliminarySummativeScope": "direct-outcome-candidate",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "none",
+      "issueCategory": null,
+      "issue": null,
+      "proposedAction": null,
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 5,
+      "sourcePagePixelCropBox": [
+        135,
+        664,
+        1338,
+        800
+      ],
+      "renderedQuestionRgbPixelSha256": "89798f09008380ea7aa66caa73488dfb2b0b98f649acc2e2066a63eadda1a2a3",
+      "nearestFBISETheorySlo": "P-11-B-24",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "direct-outcome-candidate",
+      "independentAnswerReviewStatus": "AMBIGUOUS_WITHOUT_EXTRA_CONDITION",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "compulsory-before-scored-use",
+      "issueCategory": "stress-definition-and-large-strain-ambiguity",
+      "issue": "The question invokes instantaneous stress and a wire extended to twice original length without saying whether specified cross-sectional area is original (engineering stress) or deformed (true stress). A 100-percent extension also needs a material-model validity qualifier.",
+      "proposedAction": "Retain the original source as an instructional critique. For a scored question specify nominal-versus-true stress and the area at which it is measured; avoid doubling length as an implicit linear-elastic metal-wire scenario.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 6,
+      "sourcePagePixelCropBox": [
+        135,
+        798,
+        1338,
+        932
+      ],
+      "renderedQuestionRgbPixelSha256": "74585109d7e81ae47f1b7bbb733b1d38a92f0090540037322c84558e99ed1064",
+      "nearestFBISETheorySlo": "P-11-B-24",
+      "candidateItemDemand": "A",
+      "preliminarySummativeScope": "direct-outcome-candidate",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "none",
+      "issueCategory": null,
+      "issue": null,
+      "proposedAction": null,
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 7,
+      "sourcePagePixelCropBox": [
+        135,
+        932,
+        1338,
+        1004
+      ],
+      "renderedQuestionRgbPixelSha256": "802d1fbf3f89d2ba3c259083f6d065ae125f2b6001241adfaa947b30e58fa478",
+      "nearestFBISETheorySlo": "P-11-B-28",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "supporting-or-outcome-crosscheck",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "compulsory-teacher-slo-placement",
+      "issueCategory": "beam-bending-enrichment-not-direct-b28",
+      "issue": "Cantilever bending is a valid deformation energy mechanism, but identifying the source of strain energy in a beam is not the named B-28 Application task of determining elastic potential energy from the force-extension relationship.",
+      "proposedAction": "Keep as broader NBF exercise review or enrichment; teacher must decide its non-summative placement, or add a directly calculated linear-elastic energy item for B-28 evidence.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 8,
+      "sourcePagePixelCropBox": [
+        135,
+        1001,
+        1338,
+        1117
+      ],
+      "renderedQuestionRgbPixelSha256": "e68d56fe86261b9456e4511ae33a3636ad3e0ac7846b505ae953390f9cec2856",
+      "nearestFBISETheorySlo": "P-11-B-24",
+      "candidateItemDemand": "A",
+      "preliminarySummativeScope": "supporting-or-outcome-crosscheck",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "compulsory-teacher-slo-placement",
+      "issueCategory": "bulk-modulus-not-named-young-modulus-outcome",
+      "issue": "The bulk-modulus arithmetic and conversion from atmospheres and fractional volume reduction to dynes per square centimeter are consistent. However, the named B-24 outcome calls for stress, strain and Young modulus; isolated bulk modulus is supplementary, and the implied modulus for rubber is physically atypical.",
+      "proposedAction": "Retain the original as a textbook-only advanced/cgs unit-conversion problem, not automatic direct B-24 evidence. If adapted, add a physically plausible material specification and retain independently checked SI-to-cgs calculations.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 9,
+      "sourcePagePixelCropBox": [
+        135,
+        1110,
+        1338,
+        1179
+      ],
+      "renderedQuestionRgbPixelSha256": "7c6dace2c83cf2ac48d356f2ae7bbd5e2629656fd0309e160e13ff48c389801b",
+      "nearestFBISETheorySlo": "P-11-B-28",
+      "candidateItemDemand": "K",
+      "preliminarySummativeScope": "supporting-or-outcome-crosscheck",
+      "independentAnswerReviewStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "optional-teacher-slo-placement",
+      "issueCategory": "resilience-vocabulary-not-energy-application",
+      "issue": "Recognizing the elastic energy-storage property is legitimate foundation vocabulary, but the B-28 summative outcome asks students to determine energy quantitatively, not merely name the property.",
+      "proposedAction": "Retain the original for foundational study; count as supplementary Knowledge rather than an independent scored B-28 Application item until teacher reviews demand.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 10,
+      "sourcePagePixelCropBox": [
+        135,
+        1173,
+        1338,
+        1245
+      ],
+      "renderedQuestionRgbPixelSha256": "2280ead4d384f65adfca3171cdec4e91d623d818088be12688a083688093b40f",
+      "nearestFBISETheorySlo": "P-11-B-27",
+      "candidateItemDemand": "U",
+      "preliminarySummativeScope": "supporting-or-outcome-crosscheck",
+      "independentAnswerReviewStatus": "AMBIGUOUS_WITHOUT_EXTRA_CONDITION",
+      "sourceExerciseHasProvidedPublisherKey": false,
+      "changeNeeded": "compulsory-before-scored-use",
+      "issueCategory": "unqualified-gradient-and-incorrect-slo-placement",
+      "issue": "A force-extension graph has constant slope only in the proportional/Hooke region; beyond proportionality the gradient may vary. No graph or loading interval is provided. The nearest B-27 outcome concerns area/work, not simply the gradient.",
+      "proposedAction": "Preserve the original with a textbook proportionality note. For an independently scored candidate specify a straight-line proportional force-extension graph and graph axes, or supply a nonlinear graph and explicitly ask how the slope varies; teacher should not count it as B-27 area/work Application.",
+      "preserveTextbookOriginal": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    }
+  ],
+  "nextMilestone": "V175 review original Unit7 Short Questions 7.1–7.11 in small source-bound academic batch, while academic approval remains HOLD"
+}
