@@ -98,7 +98,7 @@ function validate(d){
   const r=d.itemRows.filter(x=>x.originalTopic===topic);
   A.deepEqual(r.map(x=>x.originalNumber),nums);
   for(let i=0;i<r.length;i++){
-   const x=r[i],n=nums[i],id='XI-U07-T0'+topic.slice(-1)+'-Q'+String(n).padStart(3,'0');
+   const x=r[i],n=nums[i],id='XI-U07-T07'+topic.slice(-1)+'-Q'+String(n).padStart(3,'0');
    A.equal(x.id,id);A.equal(seen.has(id),false);seen.add(id);order.push(id);
    A.equal(x.originalKeylessFullRowFingerprint,ROWS[topic][i]);
    A.equal(x.sourceOriginalSlo,'P-11-B-'+SOURCE_SLO[topic][i]);
