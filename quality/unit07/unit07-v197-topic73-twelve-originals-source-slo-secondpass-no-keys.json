@@ -32,6 +32,7 @@
   "sourceSelectedNewPrivateCandidateRevisionsIssued": 0,
   "sourceOriginalAnswerLetterErrorsIdentified": 0,
   "promisingDirectApplicationNumbers": [
+    50,
     51,
     59,
     60,
@@ -44,7 +45,6 @@
     27,
     38,
     40,
-    56,
     72
   ],
   "originalUnit7InventoryCount": 274,
@@ -56,11 +56,11 @@
   "v185PreviouslyReviewedQueueModified": false,
   "privateArtifacts": {
     "privateDocxFilename": "Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.docx",
-    "privateDocxSha256": "180cb0549009d1449b46a6f213133cb9603c4e664325f8d8151b60c0426b3b61",
+    "privateDocxSha256": "f485bde41fb6074d2bcf4b6084bb8fe89b26ed5c613004b54d3d8e510039af1a",
     "privatePdfFilename": "Unit7_V197_PRIVATE_Topic73_Twelve_Item_Source_SLO_QC.pdf",
-    "privatePdfSha256": "60ddc4317b3cfa16f02d2d2827c9152cb56693fa371e7d0c7f10471348af7090",
+    "privatePdfSha256": "ae6e46048291a8e3bab445b7fbe000badaf057455d5d4661a5651aaf243730e0",
     "privateOriginalItemJsonFilename": "Unit7_V197_PRIVATE_12_Original_Items_Source_Review.json",
-    "privateOriginalItemJsonSha256": "93b865f22083a60ebdf0c0daa7545fa7d2ca8479a3fee0abf59cc28543edf7bb",
+    "privateOriginalItemJsonSha256": "92078c483ab925536c95456d8f649d76257859b6c85b65ffc7f6a3522ffed981",
     "renderedPages": 8,
     "visuallyChecked": true,
     "privateFilesPublishedToGitHub": false,
@@ -72,14 +72,15 @@
       80
     ],
     "question38And80PreviousDuplicateWatch": true,
-    "question56EnergyDensityWasExplicitSupplementary": true,
     "question59Example73FromTextbookPp123To124": true,
     "question60Assignment73FromTextbookP124": true,
     "question72SourceScopeOriginallyOptionalRemap": true,
     "sourceExactKeyedTextReopenedPrivately": true,
     "allTwelveOptionsAndExistingCorrectLettersCrossCheckedAgainstOwnerWord": true,
     "allMathematicalKeysModelChecked": true,
-    "officialCognitiveMismatchIsNotProofOfWrongPhysicsAnswer": true
+    "officialCognitiveMismatchIsNotProofOfWrongPhysicsAnswer": true,
+    "question50EnergyScalingFollowsSquareLaw": true,
+    "priorQ56AlreadyInV185QueueExcludedFromFreshSelection": true
   },
   "items": [
     {
@@ -185,6 +186,23 @@
       "authenticatedTeacherCognitiveApproval": "PENDING"
     },
     {
+      "sourceId": "XI-U07-T073-Q050",
+      "sourceNumber": 50,
+      "originalPrivateFullRowSha256": "90764b232fdf5c2dc8a141a9f0769597b2b7d79ece76b94286c8fee4e1643763",
+      "originalMappedSlo": "P-11-B-28",
+      "originalAuthorCognitive": "A",
+      "officialSummativeCognitive": "Application",
+      "v197ReviewDisposition": "PROMISING_DIRECT_APPLICATION_SCALING_OVERLAP",
+      "v197TeacherAction": "NO_COMPULSORY_ANSWER_CORRECTION_SELECT_OVERLAP",
+      "textbookPrintedPage": 123,
+      "priorV173Priority": "none",
+      "originalQuestionKeyOrExplanationEdited": false,
+      "originalKeyFoundWrong": false,
+      "studentScoredRelease": "HOLD",
+      "authenticatedTeacherScienceApproval": "PENDING",
+      "authenticatedTeacherCognitiveApproval": "PENDING"
+    },
+    {
       "sourceId": "XI-U07-T073-Q051",
       "sourceNumber": 51,
       "originalPrivateFullRowSha256": "7f4289edd5e64ba359527980be9b503e811fd6f5d5abd46b1a70267c7c35e2d3",
@@ -195,23 +213,6 @@
       "v197TeacherAction": "NO_COMPULSORY_ANSWER_CORRECTION_TEACHER_PENDING",
       "textbookPrintedPage": 123,
       "priorV173Priority": "none",
-      "originalQuestionKeyOrExplanationEdited": false,
-      "originalKeyFoundWrong": false,
-      "studentScoredRelease": "HOLD",
-      "authenticatedTeacherScienceApproval": "PENDING",
-      "authenticatedTeacherCognitiveApproval": "PENDING"
-    },
-    {
-      "sourceId": "XI-U07-T073-Q056",
-      "sourceNumber": 56,
-      "originalPrivateFullRowSha256": "728f7810729c23b219cf0b344a81b4c8abeca59ab18a00110bfce49533fde955",
-      "originalMappedSlo": "P-11-B-28",
-      "originalAuthorCognitive": "A",
-      "officialSummativeCognitive": "Application",
-      "v197ReviewDisposition": "SUPPLEMENTARY_STRAIN_ENERGY_DENSITY_ENRICHMENT",
-      "v197TeacherAction": "COMPULSORY_SOURCE_SCOPE_REVIEW_BEFORE_SCORING",
-      "textbookPrintedPage": 123,
-      "priorV173Priority": "compulsory-before-independent-scoring",
       "originalQuestionKeyOrExplanationEdited": false,
       "originalKeyFoundWrong": false,
       "studentScoredRelease": "HOLD",
