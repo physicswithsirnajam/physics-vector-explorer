@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "version": "V176",
+  "title": "NBF Grade XI Unit7 original eight Comprehensive Questions 7.1–7.8 source-bound science, response-rubric and FBISE SLO review",
+  "sourceNbfBookSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "sourceNbfBookName": "11 Physics Book(6).pdf",
+  "sourcePrintedPage": 126,
+  "sourcePdfIndexZeroBased": 125,
+  "sourceRenderedPagePixelDimensions": [
+    1370,
+    1707
+  ],
+  "sourceRenderedPngSha256": "ce52c45baa2cc02c46a4d8e7d809093ecfab6024b12f49a38ec094f784950929",
+  "sourceFingerprintRecipe": "Original scanned book PDF zero-index page125 / printed page126 rendered with PyMuPDF fitz.Matrix(2.3,2.3), RGB alpha=false. PIL Image.open(page_png).convert('RGB'), crop box [left,top,right,bottom], SHA-256 over crop.tobytes(). Each region can include a small amount of adjacent line context. No OCR; no images, question text or answer keys uploaded.",
+  "orderedEightSourceCropHashesJoinNewlineSha256": "7b2bbe719750385f55ad9c2d5ad77044581a2495caf2478018a32efc5c176485",
+  "originalPrintedComprehensiveQuestionCount": 8,
+  "sourcePublisherAnswerKeyOnPage": false,
+  "sourceOriginalQuestionTextsPublished": false,
+  "sourceOriginalPageImagePublished": false,
+  "modelAnswerPayloadPublished": false,
+  "scientificExpectedAnswerConceptsFirstPassReviewed": 8,
+  "officialFBISEFramework": "Physics Grade XI NCP Assessment Framework 2022–23; Scheme of Studies 2024; summative theory SLOs P-11-B-22,24,25,26,27,28",
+  "officialSummativeSloCognitive": {
+    "P-11-B-22": "Understanding",
+    "P-11-B-24": "Application",
+    "P-11-B-25": "Understanding",
+    "P-11-B-26": "Understanding",
+    "P-11-B-27": "Application",
+    "P-11-B-28": "Application"
+  },
+  "originalNearestSloCounts": {
+    "P-11-B-22": 2,
+    "P-11-B-24": 1,
+    "P-11-B-25": 1,
+    "P-11-B-26": 2,
+    "P-11-B-27": 1,
+    "P-11-B-28": 1
+  },
+  "preliminaryActualCognitiveCounts": {
+    "K": 0,
+    "U": 6,
+    "A": 2
+  },
+  "preliminaryStrictDirectOutcomeCandidates": 5,
+  "preliminarySupportingOrPartialOutcomeCandidates": 3,
+  "compulsoryTeacherAcademicDecisionNumbers": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "optionalTeacherEditorialDecisionNumbers": [
+    1,
+    3
+  ],
+  "sourceQuestionMissingProvidedStimulusNumbers": [],
+  "teacherAnswerFigureRequirements": [
+    4,
+    5,
+    6,
+    8
+  ],
+  "sourceBookFig712StressStrainAxes": "Source textbook Figure7.12 uses stress vertically versus strain horizontally. Proportional limit is not automatically the elastic limit; residual strain marks plastic behavior after unloading.",
+  "sourceBookFig714WorkAxesDiscrepancy": "Source textbook Figure7.14 uses extension vertically against horizontal weight. General area-work relation W=integral F dx requires force vertically against extension horizontally, or the integral using correct axes.",
+  "sourceExperimentReferencePage": 122,
+  "sourceEnergyDerivationPages": [
+    123,
+    124
+  ],
+  "potentialOverlapGroups": [
+    {
+      "sourceQuestionNumbers": [
+        4,
+        5
+      ],
+      "concept": "Stress–strain diagram and elastic/plastic boundary",
+      "treatment": "retain originals; avoid double-counting same graph evidence in one short summative paper"
+    },
+    {
+      "sourceQuestionNumbers": [
+        6,
+        7
+      ],
+      "concept": "Work by area under force–extension and energy relation",
+      "treatment": "retain: independent graph justification versus explicit linear-elastic energy derivation"
+    }
+  ],
+  "currentSourceHasNoOfficialPrintedComprehensiveAnswerKey": true,
+  "priorUnit07OriginalTextbookMcqsReview": "V174 original ten end-of-unit MCQs source reviewed; teacher approvals pending",
+  "priorUnit07OriginalTextbookShortsReview": "V175 original eleven end-of-unit short responses source reviewed; teacher approvals pending",
+  "priorOwnerTopic71OriginalMcqsReview": "80 first-pass reviewed, teacher approvals pending",
+  "priorOwnerTopic72OriginalMcqsReview": "80 first-pass reviewed, teacher approvals pending",
+  "priorOwnerTopic73OriginalMcqsReview": "80 first-pass reviewed, teacher approvals pending",
+  "teacherIndividualScienceApprovals": 0,
+  "teacherIndividualCognitiveApprovals": 0,
+  "unit7ScoredPortalQuestionCount": 0,
+  "existingGithubQuestionBankChanged": false,
+  "originalScannedTextbookModified": false,
+  "firebaseTeacherBackendChanged": false,
+  "privateBookContentOrAnswerKeysCommitted": false,
+  "academicReleaseVerdict": "FIRST_PASS_SOURCE_AND_SCIENCE_REVIEW_COMPLETE_TEACHER_APPROVAL_PENDING_NO_SCORED_RELEASE",
+  "items": [
+    {
+      "sourceQuestionNumber": 1,
+      "sourceExerciseNumber": "7.1",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        416,
+        1310,
+        450
+      ],
+      "renderedSourceCropRgbSha256": "d54471dea9cacefc46125fab095976a20abec7b015dc465016b526bf1ced2e33",
+      "closestSummativeTheorySlo": "P-11-B-22",
+      "officialParentOutcomeCognitive": "Understanding",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        113,
+        116
+      ],
+      "preliminaryScoredSloCoverage": "partial-or-supporting-slo-coverage",
+      "changeNeeded": "optional",
+      "issueCategory": "three-categories-not-an-exhaustive-classification",
+      "academicConcern": "The source asks for crystalline, polycrystalline and amorphous solids; correct explanations distinguish long-range ordered crystals, multiple crystalline grains/grain boundaries and disordered materials. The official B-22 summative SLO also names glassy and polymeric structures, so this original response alone is not comprehensive evidence of the full SLO.",
+      "proposedTeacherTreatment": "Preserve original as a valid comparison. Add short examples and acknowledge that polymers may be partly crystalline or amorphous and glassy state is another descriptor. Assess named B-22 categories elsewhere.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": false,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 2,
+      "sourceExerciseNumber": "7.2",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        449,
+        1310,
+        483
+      ],
+      "renderedSourceCropRgbSha256": "12c9d9d660254f9261eeca59df956d20cf1d9d9ccd238fce9a57fe1930be76b4",
+      "closestSummativeTheorySlo": "P-11-B-22",
+      "officialParentOutcomeCognitive": "Understanding",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        115,
+        116
+      ],
+      "preliminaryScoredSloCoverage": "partial-or-supporting-slo-coverage",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "two-distinct-unit-cell-classifications",
+      "academicConcern": "The source chapter gives three cubic cell centerings (SC, BCC, FCC) on printed p115 and seven crystal systems based on lengths/angles on printed p116. 'Types' is underspecified if the model answer confuses these taxonomies. Neither should be silently presented as the only possible classification.",
+      "proposedTeacherTreatment": "Retain original textbook question. Provide two separately labelled tables or diagrams in the teacher rubric, and identify cubic cell-centering separately from seven crystal systems. Note the named B-22 SLO covers distinguishing solid structures rather than requiring every lattice derivation.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": false,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 3,
+      "sourceExerciseNumber": "7.3",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        483,
+        1310,
+        517
+      ],
+      "renderedSourceCropRgbSha256": "6f637eef00bcbb76a4d610c6e440aac20acb5463dbb5b5a1439db58f9c63f5c9",
+      "closestSummativeTheorySlo": "P-11-B-24",
+      "officialParentOutcomeCognitive": "Application",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        117,
+        119
+      ],
+      "preliminaryScoredSloCoverage": "partial-or-supporting-slo-coverage",
+      "changeNeeded": "optional",
+      "issueCategory": "modulus-of-elasticity-versus-youngs-modulus-and-level",
+      "academicConcern": "Stress is force per relevant area and axial strain is fractional change in length; Young's modulus is tensile stress divided by tensile strain in the proportional region. 'Modulus of elasticity' can also name a broader family of moduli; the source focus is Young's modulus. Defining terms is Understanding, whereas official B-24 is Application.",
+      "proposedTeacherTreatment": "Keep original as foundational theory. Scope the marking scheme explicitly to Young's modulus and units while teaching the generic term carefully; add a distinct applied calculation if using this response to certify B-24 Application.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": false,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 4,
+      "sourceExerciseNumber": "7.4",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        517,
+        1310,
+        551
+      ],
+      "renderedSourceCropRgbSha256": "870f2798f5728bb03a4046fb338f8e59b6863dfe73efa83c2cbae9f9fb30fe71",
+      "closestSummativeTheorySlo": "P-11-B-26",
+      "officialParentOutcomeCognitive": "Understanding",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        120,
+        121
+      ],
+      "preliminaryScoredSloCoverage": "direct-outcome-candidate",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "ductile-curve-regions-and-graph-labels",
+      "academicConcern": "A defensible ductile stress–strain diagram must label stress on the vertical axis and strain horizontally; distinguish proportional limit, elastic limit/yield, plastic deformation, ultimate tensile strength and fracture. Do not equate proportional limit with elastic limit.",
+      "proposedTeacherTreatment": "Retain the original long question; mark a teacher-approved, accessible originally drawn schematic with correct axis labels and the main regions. Check that source Figure7.12's schematic labels are explained without universalizing their exact locations to all alloys.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": true,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 5,
+      "sourceExerciseNumber": "7.5",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        550,
+        1310,
+        584
+      ],
+      "renderedSourceCropRgbSha256": "947b645a80ce2e7081fa791b6aba2b57dd005c8c213fa441e4d54634800d6380",
+      "closestSummativeTheorySlo": "P-11-B-26",
+      "officialParentOutcomeCognitive": "Understanding",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        120,
+        121
+      ],
+      "preliminaryScoredSloCoverage": "direct-outcome-candidate",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "plastic-elastic-boundaries-and-overlap",
+      "academicConcern": "Elastic deformation can remain recoverable beyond the strictly proportional (Hookean) range; plastic deformation leaves permanent strain after unloading. A source curve with plastic and elastic regions must not label every nonlinear segment as plastic. This original question substantially overlaps Q7.4.",
+      "proposedTeacherTreatment": "Keep original for separate teaching. Require correct proportional-vs-elastic/yield boundary and residual deformation in a teacher rubric; rotate Q7.4/Q7.5 in a short summative paper rather than double-counting identical diagram content.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": true,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 6,
+      "sourceExerciseNumber": "7.6",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        583,
+        1310,
+        617
+      ],
+      "renderedSourceCropRgbSha256": "b62d1a5b7003b48a5de9dee78e8dbc064262e8e13c2032c50973aa3a341e9843",
+      "closestSummativeTheorySlo": "P-11-B-27",
+      "officialParentOutcomeCognitive": "Application",
+      "preliminaryActualItemCognitive": "A",
+      "relevantTextbookPrintedPages": [
+        122,
+        122
+      ],
+      "preliminaryScoredSloCoverage": "direct-outcome-candidate",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "work-graph-reversed-source-axes",
+      "academicConcern": "Work done by a variable tensile force is the integral of force with respect to extension. The source NBF Figure7.14 (printed p122) plots weight horizontally and extension vertically; its 'area under curve' claim is not generally valid for that orientation. The correct area-work graph has extension horizontally and force vertically.",
+      "proposedTeacherTreatment": "Retain the original and its justified physics. In a source-linked scored long response require W=integral F dx and an accessible, correctly oriented teacher-drawn force-versus-extension graph; for a linear ramp from zero show the triangular half-F-x area.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": true,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 7,
+      "sourceExerciseNumber": "7.7",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        617,
+        1310,
+        648
+      ],
+      "renderedSourceCropRgbSha256": "9bbc1b94f3e2738724bb1f7951893fe44bfc4096211e31d753a5faeea4a83ba1",
+      "closestSummativeTheorySlo": "P-11-B-28",
+      "officialParentOutcomeCognitive": "Application",
+      "preliminaryActualItemCognitive": "A",
+      "relevantTextbookPrintedPages": [
+        123,
+        124
+      ],
+      "preliminaryScoredSloCoverage": "direct-outcome-candidate",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "hooke-law-energy-derivation-and-dimensional-scope",
+      "academicConcern": "A full energy derivation must start from zero-to-final linear elastic loading: W=integral_0^x F(s) ds with F=kx. Under this proportional assumption U=half k x^2=half F x=Y A x^2/(2L). For nonlinear response the general integral remains, and stress–strain area gives energy per unit volume rather than total joules.",
+      "proposedTeacherTreatment": "Keep original. The approved response must state proportional-range assumptions, intermediate force/extension steps and energy units joules; distinguish total stored potential energy from strain-energy density J/m^3.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": false,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 8,
+      "sourceExerciseNumber": "7.8",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        88,
+        648,
+        1310,
+        673
+      ],
+      "renderedSourceCropRgbSha256": "93154e3bc68a1de4cd4ba0b48cadd453732b8ae585722859463a992047bc2b83",
+      "closestSummativeTheorySlo": "P-11-B-25",
+      "officialParentOutcomeCognitive": "Understanding",
+      "preliminaryActualItemCognitive": "U",
+      "relevantTextbookPrintedPages": [
+        122,
+        122
+      ],
+      "preliminaryScoredSloCoverage": "direct-outcome-candidate",
+      "changeNeeded": "compulsory-before-teacher-approved-scoring",
+      "issueCategory": "two-wire-apparatus-measurement-and-uncertainty",
+      "academicConcern": "The text on NBF p122 describes reference and test metallic wires with a vernier readout and variable loading on the test wire. A complete reproducible experimental answer should identify both wires, initial length L, diameter or area A, incremental force F, extension x, and the relation Y=FL/(Ax), with readings in the proportional range. Simply quoting the formula is not a description of the experiment.",
+      "proposedTeacherTreatment": "Keep original. Approve a correctly labelled original/permission-cleared two-wire vernier apparatus diagram or accessible stepwise explanation with measured quantities and loading range; do not publish a cropped textbook diagram to the public repository.",
+      "originalPrintedQuestionRetained": true,
+      "referenceFigureRequiredInTeacherAnswer": true,
+      "studentStandaloneStimulusMissing": false,
+      "fullPublisherOfficialAnswerKeyProvided": false,
+      "firstPassScienceContentReviewed": true,
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "studentScoredRelease": "HOLD"
+    }
+  ],
+  "next": "V177 source-bound original NBF Unit7 Numerical Problems 7.1–7.5 printed p126; verify all printed hints and units before any student use"
+}
