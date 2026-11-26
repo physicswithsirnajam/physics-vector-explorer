@@ -1,0 +1,70 @@
+name: Grade XI V181 Unit7 Private Teacher Batch03 12 MCQs (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v181-batch03-twelve-originals-private-candidates-keyless.json"
+      - "quality/grade11-v181-unit07-batch03-12-private-teacher-review-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch03_v181.cjs"
+      - ".github/workflows/validate-grade11-v181-unit07-private-teacher-batch03.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v181-batch03-twelve-originals-private-candidates-keyless.json"
+      - "quality/grade11-v181-unit07-batch03-12-private-teacher-review-qc.md"
+      - "scripts/audit_grade11_unit07_teacher_batch03_v181.cjs"
+      - ".github/workflows/validate-grade11-v181-unit07-private-teacher-batch03.yml"
+  workflow_dispatch:
+jobs:
+  verify-private-teacher-candidate-original-source-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check V181 private teacher keyless validator
+        run: node --check scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Verify twelve unique source-bound original MCQs and academic score HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+      - name: Preserve V180 second private twelve-item review HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+      - name: Preserve V179 first private twelve-item review HOLD
+        run: node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 complete original 274-question source approval queue
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve V177 original five numerical question source/hint controls
+        run: node scripts/audit_grade11_unit07_numericals_v177.cjs
+      - name: Preserve V176 original comprehensive answer-rubric score hold
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original eleven short questions source score hold
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 textbook ten multiple-choice science review hold
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve owner original 80-by-three topic source ledgers
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve Grade XI 2250 pinned original question identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 individual teacher signoff pending safeguards
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve staging and production teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only public source-safe QA summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v181-unit7-private-teacher-batch03-keyless-qc
+          path: qa-artifacts/grade11-v181-unit7-private-teacher-batch03/summary.json
+          if-no-files-found: warn
+          retention-days: 14
