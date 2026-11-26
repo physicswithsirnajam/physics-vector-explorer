@@ -72,7 +72,7 @@
   "teacherScoringSignoffs": 0,
   "itemRows": [
     {
-      "id": "XI-U07-T01-Q001",
+      "id": "XI-U07-T071-Q001",
       "topic": "7.1",
       "originalNumber": 1,
       "originalPublicRegistryVersion": "V154",
@@ -97,7 +97,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T01-Q030",
+      "id": "XI-U07-T071-Q030",
       "topic": "7.1",
       "originalNumber": 30,
       "originalPublicRegistryVersion": "V154",
@@ -122,7 +122,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T01-Q041",
+      "id": "XI-U07-T071-Q041",
       "topic": "7.1",
       "originalNumber": 41,
       "originalPublicRegistryVersion": "V154",
@@ -147,7 +147,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T01-Q043",
+      "id": "XI-U07-T071-Q043",
       "topic": "7.1",
       "originalNumber": 43,
       "originalPublicRegistryVersion": "V154",
@@ -171,7 +171,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T02-Q007",
+      "id": "XI-U07-T072-Q007",
       "topic": "7.2",
       "originalNumber": 7,
       "originalPublicRegistryVersion": "V168",
@@ -196,7 +196,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T02-Q008",
+      "id": "XI-U07-T072-Q008",
       "topic": "7.2",
       "originalNumber": 8,
       "originalPublicRegistryVersion": "V168",
@@ -221,7 +221,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T02-Q015",
+      "id": "XI-U07-T072-Q015",
       "topic": "7.2",
       "originalNumber": 15,
       "originalPublicRegistryVersion": "V168",
@@ -246,7 +246,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T02-Q019",
+      "id": "XI-U07-T072-Q019",
       "topic": "7.2",
       "originalNumber": 19,
       "originalPublicRegistryVersion": "V168",
@@ -271,7 +271,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T03-Q012",
+      "id": "XI-U07-T073-Q012",
       "topic": "7.3",
       "originalNumber": 12,
       "originalPublicRegistryVersion": "V173",
@@ -296,7 +296,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T03-Q024",
+      "id": "XI-U07-T073-Q024",
       "topic": "7.3",
       "originalNumber": 24,
       "originalPublicRegistryVersion": "V173",
@@ -321,7 +321,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T03-Q031",
+      "id": "XI-U07-T073-Q031",
       "topic": "7.3",
       "originalNumber": 31,
       "originalPublicRegistryVersion": "V173",
@@ -346,7 +346,7 @@
       "scoredTestBuilderRelease": "HOLD"
     },
     {
-      "id": "XI-U07-T03-Q042",
+      "id": "XI-U07-T073-Q042",
       "topic": "7.3",
       "originalNumber": 42,
       "originalPublicRegistryVersion": "V173",
