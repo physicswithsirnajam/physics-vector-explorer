@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "version": "V191",
+  "title": "Q25 private academic review worksheet plus offline evidence-note receipt protocol, not teacher authorization",
+  "prerequisite": {
+    "pr": 294,
+    "merged": true,
+    "mergeSha": "53712aa0e269a73de4597be9884cdfc872c28773"
+  },
+  "status": "OWNER_PRIVATE_REVIEW_WORKSHEET_READY_TEACHER_DECISIONS_NOT_AUTHENTICATED_HOLD",
+  "sourceId": "XI-U07-T071-Q025",
+  "originalRowSha256": "27d9b15ebe860eca6b4788d6420db4230e6266295027ef01d28ca2383a7f5353",
+  "previousV189CandidateRevisionExistsPrivately": true,
+  "privateV189RevisionDigestPublished": false,
+  "actualPrivateQuestionOrKeyCommitted": false,
+  "sourceProvenance": {
+    "originalSourceDocx": "Grade11_Unit7_Topic7.1_FBISE_Boxed_Study_With_Answers.docx",
+    "originalSourceFileSha256": "930f6f18bed3f61ad4fb6b7c4da294d9880b0ca1723aef092c1979390cbe1d58",
+    "v189CandidatePrivateInput": "V189_PRIVATE_2_Candidate_Revision_Proposal.json",
+    "v189CandidatePrivateManifest": "V189_PRIVATE_2_Candidate_Revision_Manifest.json",
+    "officialFrameworkReference": "FBISE HSSC-I Physics 2025 P-11-B-22 / Summative / Understanding",
+    "sourceTextbookTeachingPages113To116ReopenedThisStage": false
+  },
+  "privateWorksheet": {
+    "filename": "Unit7_V191_PRIVATE_Q25_Teacher_Review_And_Decision_Worksheet.docx",
+    "sha256": "eabfeb97e1fe702922abadd3fd4301f85c7a6ede512fedda8d640750a9a7a7f9",
+    "pageCount": 3,
+    "existsInConversation": true,
+    "originalAndRevisedKeyedQuestionIncluded": true,
+    "v189ExactPrivateCandidateDigestIncluded": true,
+    "teacherDecisionFieldsPreFilled": false,
+    "publicGithubArtifact": false
+  },
+  "academicScope": {
+    "provisionalSlo": "P-11-B-22",
+    "provisionalActualCognitive": "Understanding",
+    "directSummativeStatus": "PROMISING_BUT_PENDING_INDEPENDENT_TEACHER_SLO_REVIEW",
+    "originalQuestionPreserved": true,
+    "proposedNewCandidatePreviouslyCreatedInV189": true,
+    "q22SupportingOnlyGuardUnchanged": true,
+    "oneBestAnswerAndDistractorAudit": "PENDING_HUMAN",
+    "glassyCategoryCoverage": "NOT_EXPLICITLY_IN_CURRENT_FOUR_OPTIONS_TEACHER_REVIEW",
+    "NbfSourceAttribution": "NOT_INDEPENDENTLY_ATTESTED"
+  },
+  "offlineEvidenceProtocol": {
+    "status": "UNTRUSTED_OFFLINE_NOTES_ONLY",
+    "checks": [
+      "sourceFidelity",
+      "science",
+      "distractors",
+      "summativeSlo",
+      "accessibility",
+      "rights"
+    ],
+    "permittedFindings": [
+      "NOT_ASSESSED",
+      "ISSUE_IDENTIFIED",
+      "NOTES_CAPTURED_OFFLINE"
+    ],
+    "disallowedDecisionStatus": "APPROVED",
+    "evidenceHashesNotVerified": true,
+    "actualTeacherIdentityNotAuthenticated": true,
+    "localReceiptHashNotServerSignature": true,
+    "offlinePaperCheckmarkCannotAuthorizeScore": true,
+    "academicReleaseHardBlocked": true
+  },
+  "sourceUniverseItems": 274,
+  "previouslyDetailedPrivateCandidates": 72,
+  "realTeacherScienceApprovals": 0,
+  "realTeacherCognitiveApprovals": 0,
+  "ownerScoringPermissions": 0,
+  "liveUnit7ScoredReleases": 0,
+  "firebaseChanged": false,
+  "firestoreRulesChanged": false,
+  "realTeacherRolesCreated": false,
+  "productionOrStagingBackendDeployed": false,
+  "studentScoredBankChanged": false,
+  "deploymentGateV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "deploymentGateV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "outputFiles": [
+    "scripts/unit07_offline_review_evidence_v191.cjs",
+    "scripts/test_grade11_unit07_offline_review_evidence_v191.cjs",
+    "quality/unit07/unit07-v191-q25-private-review-readiness-no-keys.json",
+    "quality/grade11-v191-unit07-q25-owner-teacher-offline-review-qc.md",
+    ".github/workflows/validate-grade11-v191-unit07-q25-offline-review.yml"
+  ],
+  "nextMilestone": "V192 owner-guided human review of the private Q25 worksheet, then protected server-side authenticated teacher decision architecture only after explicit security and deployment authorization; student scoring stays HOLD"
+}
