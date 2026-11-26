@@ -99,7 +99,8 @@ function check(d){
  for(const key of ['firebaseChanged','stagingOrProductionBackendChanged','publicKeyedContentChanged',
   'publicStudentQuestionBankChanged','actualTeacherDirectoryChanged'])A.equal(d[key],false);
  A.ok(d.ciAssuranceLimit.includes('cannot independently rederive withheld private candidate hashes'));
- A.ok(d.nextMilestone.startsWith('V189'));
+ A.equal(d.nextMilestone,
+  'V189 owner review of two privately pinned candidate revisions and source/SLO evidence, then protected authenticated approval intake design. Do not score until individual approvals and backend security gates.');
  noSecrets(d,'index');
 }
 const d=load(IDX);check(d);
