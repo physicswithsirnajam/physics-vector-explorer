@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 1,
+  "version": "V175",
+  "title": "NBF Grade XI Unit 7 textbook end-of-unit original Short Questions 7.1–7.11 source-bound science, answer-concept and FBISE SLO review",
+  "sourceOriginalBookName": "11 Physics Book(6).pdf",
+  "sourceOriginalBookSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+  "sourcePrintedPages": [
+    125,
+    126
+  ],
+  "sourcePdfPageZeroIndices": [
+    124,
+    125
+  ],
+  "sourceRenderedPagePngSha256": {
+    "124": "ba14d65b02c65846566b7692b221cec336dd6cfc2f38e6e8292061f05c716ded",
+    "125": "ce52c45baa2cc02c46a4d8e7d809093ecfab6024b12f49a38ec094f784950929"
+  },
+  "sourceRenderPixelSize": {
+    "124": [
+      1370,
+      1725
+    ],
+    "125": [
+      1370,
+      1707
+    ]
+  },
+  "imageFingerprintRecipe": "Render original PDF printed pp125-126 via PyMuPDF fitz.Matrix(2.3,2.3), PNG RGB alpha=false; PIL Image.open(...).convert('RGB'); crop sourcePixelCropBox [left,top,right,bottom]; SHA-256 of crop.tobytes() RGB pixel bytes. These image crops and original source are private, not pushed.",
+  "all11CropHashesJoinNewlineSha256": "3ca48a04fbc38b72d2f067552e2330ed1a8d5af813b1ba5f51a8c2aff21bc681",
+  "sourceOriginalShortQuestions": 11,
+  "firstPassScientificAnswerConceptsReviewed": 11,
+  "printedPublisherShortAnswerKeyPresent": false,
+  "sourceQuestionTextAndImagesUploaded": false,
+  "modelAnswersUploaded": false,
+  "officialSummativeSloLevels": {
+    "P-11-B-22": "Understanding",
+    "P-11-B-24": "Application",
+    "P-11-B-26": "Understanding",
+    "P-11-B-27": "Application",
+    "P-11-B-28": "Application"
+  },
+  "provisionalSloCounts": {
+    "P-11-B-22": 3,
+    "P-11-B-24": 3,
+    "P-11-B-26": 2,
+    "P-11-B-27": 1,
+    "P-11-B-28": 2
+  },
+  "provisionalActualItemDemand": {
+    "K": 1,
+    "U": 10,
+    "A": 0
+  },
+  "preliminaryTopicAligned": 5,
+  "preliminarySupportingOrCrossSlo": 6,
+  "compulsoryAcademicDecisionNumbers": [
+    2,
+    3,
+    5,
+    6,
+    8
+  ],
+  "optionalScientificTeachingReviewNumbers": [
+    1,
+    4,
+    7,
+    9,
+    10
+  ],
+  "sourceOnlyNoAmendmentNumbers": [
+    11
+  ],
+  "threeImportantSafetyClarifications": {
+    "Q7.2": "Glass does not flow perceptibly at ambient temperature; historical haze needs a material weathering explanation, not a universal flow assumption.",
+    "Q7.5": "Slope must specify force-vs-extension axis order and proportional region; NBF Fig7.14 axes are reversed relative to work-area convention.",
+    "Q7.8": "Nominal service life is not a single-point safety verdict for a real bridge; load rating, maintenance and competent structural inspections govern."
+  },
+  "sourceSpecificExternalChecks": [
+    {
+      "topic": "historical glass corrosion versus flow",
+      "url": "https://info.cmog.org/node/631",
+      "publisher": "Corning Museum of Glass"
+    },
+    {
+      "topic": "glass surface corrosion/clouding",
+      "url": "https://blog.cmog.org/2011/glass-corrosion-weathering",
+      "publisher": "Corning Museum of Glass"
+    },
+    {
+      "topic": "bridge inspection load condition and fatigue corrosion",
+      "url": "https://www.law.cornell.edu/cfr/text/23/650.311",
+      "publisher": "US Federal bridge inspection rules (as engineering example, not local Pakistan law)"
+    }
+  ],
+  "previousOriginalTextbookMCQReview": "V174 all 10 original textbook MCQs reviewed, three standalone ambiguities, zero scored",
+  "previousTopic71Review": "80 original Topic7.1 MCQs source-reviewed, teacher science/cognition signoffs pending",
+  "previousTopic72Review": "80 original Topic7.2 MCQs source-reviewed, teacher science/cognition signoffs pending",
+  "previousTopic73Review": "80 original Topic7.3 MCQs source-reviewed, teacher science/cognition signoffs pending",
+  "teacherIndividualScienceApprovals": 0,
+  "teacherIndividualCognitiveApprovals": 0,
+  "unit7ScoredPortalQuestions": 0,
+  "existingPortalQuestionBankEdited": false,
+  "productionFirebaseOrBackendEdited": false,
+  "sourceTextbookChanged": false,
+  "sourceScansOrQuestionWordingInPublicGitHub": false,
+  "academicDecision": "ORIGINAL_11_FIRST_PASS_SCIENCE_REVIEW_COMPLETE_TEACHER_SIGNOFF_PENDING_STUDENT_SCORE_HOLD",
+  "items": [
+    {
+      "sourceQuestionNumber": 1,
+      "sourceExerciseNumber": "7.1",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1342,
+        1295,
+        1400
+      ],
+      "renderedSourceCropRgbSha256": "75549db9b7989cdfb308a5c02f317685908591336099dc1e05307f77eca86fa6",
+      "nearestOfficialTheorySlo": "P-11-B-22",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "topic-aligned",
+      "reviewFlag": "optional",
+      "reviewCategory": "thermodynamic-and-glass-transition-qualifiers",
+      "academicConcern": "Crystalline ordering often minimizes free energy under appropriate conditions; amorphous glass can be kinetically trapped. Glass transition is a temperature-dependent softening range and not identical to sharp crystal melting.",
+      "reviewAction": "Retain original two-part question; a model answer should include the free-energy-versus-kinetics caveat and distinguish glass transition from first-order melting.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 2,
+      "sourceExerciseNumber": "7.2",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1403,
+        1295,
+        1436
+      ],
+      "renderedSourceCropRgbSha256": "b1c7a9709b8c0813862a7216776d8633f0c39178d8cf9849b49d33589db88ae6",
+      "nearestOfficialTheorySlo": "P-11-B-22",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "compulsory",
+      "reviewCategory": "historical-glass-cloudiness-cause",
+      "academicConcern": "Cloudy/milky surfaces on some old window glasses can arise from weathering, leaching, surface corrosion or environmental deposits. It is not evidence of bulk glass flowing at room temperature, nor a universal consequence of aging.",
+      "reviewAction": "Keep original as a prompt, but approve only a model answer grounded in glass deterioration; avoid teaching that old glass flowed or universally devitrified.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 3,
+      "sourceExerciseNumber": "7.3",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1436,
+        1295,
+        1465
+      ],
+      "renderedSourceCropRgbSha256": "db347f86342cdd05f6dc553ba6aff7760e6d84c9f3a00c4526107fbf35e42c74",
+      "nearestOfficialTheorySlo": "P-11-B-24",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "topic-aligned",
+      "reviewFlag": "compulsory",
+      "reviewCategory": "causality-not-absolute-fundamental-order",
+      "academicConcern": "For a common externally loaded elastic specimen, imposed stress and resulting strain are related through constitutive behavior. Asking which is intrinsically more fundamental is not universally meaningful: strain may also be imposed or arise thermally, and stress may then develop.",
+      "reviewAction": "Preserve the original source; write a conditional model answer contrasting stress-controlled and strain-controlled loading rather than marking one as an absolute universal cause.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 4,
+      "sourceExerciseNumber": "7.4",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1468,
+        1295,
+        1496
+      ],
+      "renderedSourceCropRgbSha256": "890826bcfcc906bd63cb6e9ea2552759fb39f74195b231b1849ebf4bcc5295ae",
+      "nearestOfficialTheorySlo": "P-11-B-24",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "optional",
+      "reviewCategory": "lateral-strain-and-volume-change-qualifier",
+      "academicConcern": "A tensile stress usually produces longitudinal extension and lateral contraction, so volumetric strain can be nonzero; a nearly incompressible material may have negligible volume change. Poisson ratio is a useful optional extension, not a compulsory extra topic from NBF.",
+      "reviewAction": "Retain original and explain volume change qualitatively. If using the small-strain Poisson relation, label that material-science extension supplementary.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 5,
+      "sourceExerciseNumber": "7.5",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1498,
+        1295,
+        1530
+      ],
+      "renderedSourceCropRgbSha256": "d7bafa9b8c7d1faba053d9215616bc59251bdad3cf6f47c3cfff155c4c378a8c",
+      "nearestOfficialTheorySlo": "P-11-B-27",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "compulsory",
+      "reviewCategory": "force-extension-axis-and-region-dependence",
+      "academicConcern": "For force plotted vertically against extension horizontally, the slope represents stiffness dF/dx (constant k in a straight Hooke-law region). The source textbook Figure 7.14 reverses axes, for which the slope represents compliance dx/dF. The question lacks graph axes and interval.",
+      "reviewAction": "Keep the original for textbook explanation; a scored/teacher model answer must explicitly state axes and proportional region. Do not confuse slope with the work represented by force-extension area.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 6,
+      "sourceExerciseNumber": "7.6",
+      "sourcePrintedPage": 125,
+      "sourcePdfPageZeroIndex": 124,
+      "sourcePixelCropBox": [
+        165,
+        1531,
+        1295,
+        1565
+      ],
+      "renderedSourceCropRgbSha256": "7aae910248e76ba3f8cb452f4f423da4280bfad276994612f721ea54f1c8c843",
+      "nearestOfficialTheorySlo": "P-11-B-28",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "topic-aligned",
+      "reviewFlag": "compulsory",
+      "reviewCategory": "stored-energy-versus-signed-work",
+      "academicConcern": "Stored recoverable elastic strain energy is nonnegative relative to the undeformed zero-energy reference for a stable elastic material. The external force's work during unloading or the change in strain energy may be negative; asking whether 'strain energy' itself can be negative without an energy reference conflates these concepts.",
+      "reviewAction": "Keep the original; use a model answer distinguishing stored energy, its change, and signed external work during loading/unloading, with a clearly stated reference state.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 7,
+      "sourceExerciseNumber": "7.7",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        90,
+        122,
+        1295,
+        153
+      ],
+      "renderedSourceCropRgbSha256": "dc47da1f7bc4dd8f090875a3ff5e9682ca81cac6f673096e6155be556145419e",
+      "nearestOfficialTheorySlo": "P-11-B-28",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "optional",
+      "reviewCategory": "loading-mode-and-material-dependence",
+      "academicConcern": "Stored strain energy depends on the full force-deformation path, load magnitude, geometry and material response. Axial tension/compression, shear, bending and torsion illustrate possible modes, but independent shear/torsion theory exceeds the named B-28 force-extension energy outcome.",
+      "reviewAction": "Preserve original; explain common loading modes at a student-appropriate level and mark advanced distributed-load or torsion calculations supplementary unless teacher-approved.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 8,
+      "sourceExerciseNumber": "7.8",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        90,
+        156,
+        1295,
+        211
+      ],
+      "renderedSourceCropRgbSha256": "1361c85df33b5a5f1010b6476297659bfe21e44f4002ac179aa3734164423212",
+      "nearestOfficialTheorySlo": "P-11-B-26",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "compulsory",
+      "reviewCategory": "bridge-design-life-versus-automatic-danger",
+      "academicConcern": "A specified bridge service/design life is a planning and maintenance benchmark, not a sudden automatic expiry of safety. Traffic-cycle fatigue, corrosion, damage, inspection and professional evaluation of load capacity determine continued serviceability.",
+      "reviewAction": "Keep the original question but approve a condition-based answer: continued use can be safe after inspection/repair; unsafe condition may arise before nominal service life too. Never imply a date alone diagnoses structural safety.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 9,
+      "sourceExerciseNumber": "7.9",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        90,
+        216,
+        1295,
+        244
+      ],
+      "renderedSourceCropRgbSha256": "89eae962f452fc0396773a7679007fc968e13ecf8b6aa5e163df08e8cac5991a",
+      "nearestOfficialTheorySlo": "P-11-B-26",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "supplementary-cross-slo",
+      "reviewFlag": "optional",
+      "reviewCategory": "metal-fatigue-and-safe-explanation",
+      "academicConcern": "Repeated bending causes cyclic localized strain, damage accumulation, fatigue crack initiation and growth; work-hardening may contribute depending on material but is not a universal or sufficient explanation. The exercise asks about wire-breaking mechanism, not a direct definition of elastic/plastic limit.",
+      "reviewAction": "Keep original as supplementary real-world deformation/fatigue practice; use a safe scientific explanation rather than suggesting precise fatigue life or a universal work-hardening-only mechanism.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 10,
+      "sourceExerciseNumber": "7.10",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        90,
+        248,
+        1295,
+        275
+      ],
+      "renderedSourceCropRgbSha256": "22fadf27ca2811dc275cd5e909b2b94848749d16eb3bf6d8a580f4898350b1b5",
+      "nearestOfficialTheorySlo": "P-11-B-24",
+      "provisionalItemDemand": "U",
+      "preliminaryScope": "topic-aligned",
+      "reviewFlag": "optional",
+      "reviewCategory": "stiffness-versus-strength",
+      "academicConcern": "Young's modulus quantifies stress-to-strain resistance in the proportional linear elastic range. Larger Y means smaller elastic strain under equal stress; it does not by itself imply greater tensile strength, fracture toughness or ductility.",
+      "reviewAction": "Preserve original; emphasize stiffness and elastic slope, distinguish from yield/ultimate strength, and keep item-level Understanding separate from official B-24 Application.",
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    },
+    {
+      "sourceQuestionNumber": 11,
+      "sourceExerciseNumber": "7.11",
+      "sourcePrintedPage": 126,
+      "sourcePdfPageZeroIndex": 125,
+      "sourcePixelCropBox": [
+        90,
+        280,
+        1295,
+        308
+      ],
+      "renderedSourceCropRgbSha256": "42ab39d0d496c92f80df5495d322fe1bf60c98e7e24587eee786a0af239fdb34",
+      "nearestOfficialTheorySlo": "P-11-B-22",
+      "provisionalItemDemand": "K",
+      "preliminaryScope": "topic-aligned",
+      "reviewFlag": "none",
+      "reviewCategory": null,
+      "academicConcern": null,
+      "reviewAction": null,
+      "originalSourceRetained": true,
+      "independentAnswerScienceStatus": "FIRST_PASS_CHECKED_CONDITIONALLY",
+      "teacherScienceSignoff": "PENDING",
+      "teacherCognitiveSignoff": "PENDING",
+      "scoredPortalRelease": "HOLD"
+    }
+  ],
+  "nextMilestone": "V176 source-bound original NBF Unit7 Comprehensive Questions 7.1–7.8 scientific and summative SLO review"
+}
