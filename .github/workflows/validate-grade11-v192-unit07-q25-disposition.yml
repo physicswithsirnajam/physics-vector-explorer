@@ -1,0 +1,85 @@
+name: Grade XI V192 Unit7 Q25 Academic Disposition (Private Teacher HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v192-q25-science-disposition-private-hold-no-keys.json"
+      - "quality/grade11-v192-unit07-q25-model-science-adjudication-qc.md"
+      - "scripts/audit_grade11_unit07_q25_disposition_v192.cjs"
+      - ".github/workflows/validate-grade11-v192-unit07-q25-disposition.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v192-q25-science-disposition-private-hold-no-keys.json"
+      - "quality/grade11-v192-unit07-q25-model-science-adjudication-qc.md"
+      - "scripts/audit_grade11_unit07_q25_disposition_v192.cjs"
+      - ".github/workflows/validate-grade11-v192-unit07-q25-disposition.yml"
+  workflow_dispatch:
+jobs:
+  verify-source-bound-academic-qc-and-human-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check academic disposition metadata validator
+        run: node --check scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+      - name: Validate Q25 original-source, optional distractor wording, 35 fail-closed and student hold
+        run: node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+      - name: Preserve V191 Q25 offline evidence can never become authenticated approval
+        run: node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+      - name: Preserve V190 revision-bound mock roles, replay and revocation denials
+        run: node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V189 Q22 supporting only and Q25 independent distractor review
+        run: node scripts/audit_grade11_unit07_two_candidate_review_v189.cjs
+      - name: Preserve V188 first two privately verified source candidate identities
+        run: node scripts/audit_grade11_unit07_private_pilot_v188.cjs
+      - name: Preserve V187 local input no-leak and exact-source binding
+        run: node scripts/test_grade11_unit07_private_manifest_v187.cjs
+      - name: Preserve V186 synthetic immutable revision and zero score
+        run: node scripts/test_grade11_unit07_offline_protocol_v186.cjs
+      - name: Preserve V185 original 72 private candidate approval readiness no release
+        run: node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve V184–V179 six private teacher candidate batches
+        run: |
+          node scripts/audit_grade11_unit07_teacher_batch06_v184.cjs
+          node scripts/audit_grade11_unit07_teacher_batch05_v183.cjs
+          node scripts/audit_grade11_unit07_teacher_batch04_v182.cjs
+          node scripts/audit_grade11_unit07_teacher_batch03_v181.cjs
+          node scripts/audit_grade11_unit07_teacher_batch02_v180.cjs
+          node scripts/audit_grade11_unit07_teacher_batch01_v179.cjs
+      - name: Preserve V178 original 274 Unit7 inventory and textbook exercises
+        run: |
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve source fingerprints for all three original 80-question topic banks
+        run: |
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve existing Grade XI 2250 original pinned MCQ identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Grade XI Unit6 560 individual teacher signoff HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V160 and V161 production/staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser enforcement and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only, source-safe QC summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v192-unit7-q25-model-qc-human-hold
+          path: qa-artifacts/grade11-v192-unit7-q25-adjudication/summary.json
+          if-no-files-found: warn
+          retention-days: 14
