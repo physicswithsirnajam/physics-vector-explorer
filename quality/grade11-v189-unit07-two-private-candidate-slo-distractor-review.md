@@ -1,6 +1,6 @@
 # V189 — Unit 7 private two-item academic review: exact B-22 scope, distractors, and HOLD
 
-**Decision: TWO MODEL-PRESCREENED PRIVATE CANDIDATES; ZERO AUTHENTICATED TEACHER APPROVALS; ZERO SCORED UNIT 7 QUESTIONS.** This is an academic revision review, not an automatic teacher signoff or a deployment. The predecessor PR #292 (V188) is confirmed merged to `main` at `e61222adfc433a6fd0d455374789c1ace3ba040e`.
+**Decision: TWO MODEL-PRESCREENED PRIVATE CANDIDATES; NOT APPROVED; ZERO AUTHENTICATED TEACHER APPROVALS; ZERO SCORED UNIT 7 QUESTIONS.** This is an academic revision review, not an automatic teacher signoff or a deployment. The predecessor PR #292 (V188) is confirmed merged to `main` at `e61222adfc433a6fd0d455374789c1ace3ba040e`.
 
 ## Sources and exact limits
 
