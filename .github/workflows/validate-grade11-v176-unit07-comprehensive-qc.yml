@@ -1,0 +1,61 @@
+name: Grade XI V176 NBF Unit7 Comprehensive 7.1-7.8 Science/SLO Review (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v176-end-exercise-comprehensive01-08-image-bound-no-answers.json"
+      - "quality/grade11-v176-unit07-textbook-comprehensive01-08-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_comprehensive_v176.cjs"
+      - ".github/workflows/validate-grade11-v176-unit07-comprehensive-qc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v176-end-exercise-comprehensive01-08-image-bound-no-answers.json"
+      - "quality/grade11-v176-unit07-textbook-comprehensive01-08-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_comprehensive_v176.cjs"
+      - ".github/workflows/validate-grade11-v176-unit07-comprehensive-qc.yml"
+  workflow_dispatch:
+jobs:
+  verify-original-comprehensive-eight-source-science-slo-and-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original Unit7 eight-comprehensive source audit
+        run: node --check scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Verify all 8 source crops, SLO and 28 no-release mutations
+        run: node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+      - name: Preserve V175 original 11 short-response academic source and scoring HOLD
+        run: node scripts/audit_grade11_unit07_short_v175.cjs
+      - name: Preserve V174 original 10 textbook MCQ academic source and scoring HOLD
+        run: node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve Topic7.3 original 80 teacher pending and no-score release
+        run: node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve Topic7.2 original 80 teacher pending and no-score release
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve Topic7.1 original 80 pending academic teacher decisions
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve pinned original 2250 Grade XI provisional source IDs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve original Unit6 560 teacher-pending science/cognitive gates
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve production and staging teacher backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser entrypoints and reporting launch locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only source-safe evidence, never original text or scanned images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v176-unit7-original-comprehensive8-keyless-qc
+          path: qa-artifacts/grade11-v176-unit7-original-comprehensive8/summary.json
+          if-no-files-found: warn
+          retention-days: 14
