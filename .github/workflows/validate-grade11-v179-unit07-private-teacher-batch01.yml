@@ -2,14 +2,14 @@ name: Grade XI V179 Unit7 Original 12 Private Teacher Candidate Reviews (HOLD)
 on:
   pull_request:
     paths:
-      - "quality/unit07/unit07-v179-batch01-eight-source-authenticated-keyless-candidates.json"
+      - "quality/unit07/unit07-v179-batch01-twelve-source-authenticated-keyless-candidates.json"
       - "quality/grade11-v179-unit07-batch01-12-originals-private-candidate-teacher-qc.md"
       - "scripts/audit_grade11_unit07_teacher_batch01_v179.cjs"
       - ".github/workflows/validate-grade11-v179-unit07-private-teacher-batch01.yml"
   push:
     branches: [main]
     paths:
-      - "quality/unit07/unit07-v179-batch01-eight-source-authenticated-keyless-candidates.json"
+      - "quality/unit07/unit07-v179-batch01-twelve-source-authenticated-keyless-candidates.json"
       - "quality/grade11-v179-unit07-batch01-12-originals-private-candidate-teacher-qc.md"
       - "scripts/audit_grade11_unit07_teacher_batch01_v179.cjs"
       - ".github/workflows/validate-grade11-v179-unit07-private-teacher-batch01.yml"
