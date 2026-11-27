@@ -1,0 +1,54 @@
+name: Grade XI V216 Units 1-7 Original Exercise Status & Navigation
+on:
+  pull_request:
+    paths:
+      - "portal/textbook-exercise-status-v216.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v216_exercise_status_directory.cjs"
+      - "quality/grade11-v216-units1-7-original-exercise-coverage.md"
+      - ".github/workflows/validate-grade11-v216-exercise-status.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/textbook-exercise-status-v216.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v216_exercise_status_directory.cjs"
+      - ".github/workflows/validate-grade11-v216-exercise-status.yml"
+jobs:
+  source-separated-exercises-and-student-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: JavaScript and source catalog audit
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v216_exercise_status_directory.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve original 2250 MCQ IDs, options and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Check 7 unit filters and read-only original exercise holds in real browser
+        run: node scripts/test_grade11_v216_exercise_status_directory.cjs
+      - name: Preserve unit-aware 5-stage menu
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Preserve Unit7 unscored learning discoverability
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve Unit6 provisional worked-topic finder
+        run: node scripts/test_grade11_v215_unit6_worked_topic_nav.cjs
+      - name: Archive non-sensitive source-status evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v216-unit1-7-exercise-availability
+          path: qa-artifacts/grade11-v216-exercise-availability-directory/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
