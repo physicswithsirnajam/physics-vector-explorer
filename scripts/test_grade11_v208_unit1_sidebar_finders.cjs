@@ -89,7 +89,16 @@ async function checkJourney(browser,base,width,stage,target,expected,expectedCou
   if(stage!=='PREPARE')await unit.locator('.psn-drawer-stage[data-psn-stage="'+stage+'"] > summary').click();
   const group=unit.locator('.psn-drawer-stage[data-psn-stage="'+stage+'"]');
   const a=group.locator('a[href$="'+target+'"]');
-  assert.equal(await a.count(),1,'Source finder navigation link must be unique');
+  const found=await a.count();
+  if(found!==1){
+   const staged=await unit.locator('.psn-drawer-stage').evaluateAll(nodes=>nodes.map(n=>({
+    stage:n.dataset.psnStage,
+    links:[...n.querySelectorAll('a[href]')].map(x=>({label:x.textContent.trim(),href:x.href}))
+   })));
+   console.error('V208 DIAGNOSTIC expected '+target+' in '+stage+'; found='+found+
+     '; rendered Unit 1 stages: '+JSON.stringify(staged));
+  }
+  assert.equal(found,1,'Source finder navigation link must be unique');
   await a.click();
   await page.waitForURL(url=>url.pathname.endsWith(expected.path)&&url.searchParams.get('unit')==='1',{timeout:12000});
   assert.equal(await page.locator('#unit').inputValue(),'1');
