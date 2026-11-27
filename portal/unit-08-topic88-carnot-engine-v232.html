@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI NBF Unit 8 Topic 8.8 Carnot's Engine: four reversible processes, efficiency and theorem, original-source Example 8.4 and Assignment 8.4, two unscored calculators.">
+<title>Topic 8.8 · Carnot's Engine | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}.flow-diagram{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:center;margin:19px 0}.flow-node{background:#203c5e;padding:14px;border:1px solid #8aa3bf;border-radius:11px;text-align:center;min-width:0}.flow-node strong{display:block;color:var(--gold)}.flow-connect{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:center;color:var(--muted)}.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stage-buttons button{margin:0;background:#1c3656;border:1px solid #8fa4ba;color:white;font-size:.88rem;padding:10px 8px}.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}.stage-panel{margin-top:14px;background:#0d223b;border:1px solid var(--edge);border-radius:10px;padding:17px;min-height:115px}#stage-panel-title{margin:0;color:var(--gold)}@media(max-width:650px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-diagram{grid-template-columns:1fr}.flow-connect{font-size:.86rem}}@media print{.stage-buttons button{color:#000;border-color:#555;background:#fff}.stage-panel,.flow-node{background:#fff;color:#000}} 
+.case-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.case-buttons button{margin:0;text-align:left;border:1px solid #8fa4ba;background:#1b3756;color:#fff;font-size:.89rem;line-height:1.45;padding:12px}
+.case-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}
+.case-output{background:#0d223b;border:1px solid #8096b4;border-radius:11px;padding:17px;margin-top:14px;min-height:126px}
+.case-output h3{margin:0 0 7px}
+.flow-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:10px;margin:18px 0}
+.flow-pair .flow-node{font-size:1rem}.flow-pair .flow-connect{font-weight:800}
+.formula-small{font-size:clamp(1rem,2.1vw,1.25rem)}
+@media(max-width:650px){.case-buttons{grid-template-columns:1fr}.flow-pair{grid-template-columns:1fr}.flow-pair .flow-connect{line-height:1.3}}
+@media print{.case-output{background:white;color:black}.case-buttons button{background:white;color:black;border-color:#555}}
+
+.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.stage-buttons button{margin:0;padding:11px 9px;line-height:1.4;font-size:.85rem;background:#1d3655;color:#fff;border:1px solid #8fa4ba}
+.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0c1c32}
+.stage-output{border:1px solid var(--edge);border-radius:10px;padding:15px;background:#0d223b;margin-top:14px;min-height:135px}
+.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}
+.given strong{color:var(--gold)}.steps{padding-left:25px}.steps li{margin:9px 0}
+.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+input{display:block;width:100%;background:#fff;color:#122740;border:1px solid #acbed2;border-radius:8px;font:inherit;padding:11px 10px;margin-top:7px;min-width:0}
+output{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
+.formula{overflow-wrap:anywhere}
+@media(max-width:760px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.calc-grid{grid-template-columns:1fr}.stage-buttons{grid-template-columns:1fr 1fr}}
+@media print{.stage-buttons button,.stage-output,.given,output{background:white;color:black;border-color:#666}form button{display:none}}
+</style></head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic87-second-law-v231.html">Topic 8.7</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main"><span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.8 · Original printed pages 143–145</span>
+<h1>Carnot's Engine and Its Efficiency</h1>
+<p class="lead">Investigate the four reversible processes in an ideal Carnot cycle. Calculate its maximum theoretical efficiency, then apply the First Law to heat received, mechanical work and rejected heat.</p>
+<div class="notice" id="lesson-status" role="note" data-academic-review="pending" data-scored-release="false">
+<strong>Public unscored learning preview — independent academic review pending.</strong> This original teaching adaptation is grounded in NBF Grade XI Physics pp.143–145 and exact FBISE outcomes P-11-C-16 and P-11-C-23. Example 8.4 and Assignment 8.4 below use source figures but independently written workings, not publisher marking keys. Original publisher diagrams (8.16 and 8.17) and scans are not copied. There is no graded assessment, user-account connection or saved result.</div>
+<nav class="jump" aria-label="Jump to sections"><a href="#principle">Principle</a><a href="#stages">Four processes</a><a href="#efficiency">Efficiency</a><a href="#theorem">Carnot's theorem</a><a href="#example84">Example 8.4</a><a href="#assignment84">Assignment 8.4</a><a href="#calculator">Investigate</a><a href="#self-check">Self-check</a></nav>
+<section id="principle" aria-labelledby="principle-title"><h2 id="principle-title">8.8 · The ideal Carnot engine</h2>
+<p>A Carnot engine is a theoretical heat engine operating in an <strong>entirely reversible cycle</strong> between a hot reservoir at T<sub>H</sub> and a cold reservoir at T<sub>C</sub>. Its working substance returns to its starting thermodynamic state after a complete cycle.</p>
+<p>The textbook describes the Carnot cycle using <strong>two isothermal</strong> and <strong>two adiabatic</strong> reversible processes. The net work delivered by the cycle equals the area enclosed by its pressure–volume loop in the ideal model.</p>
+<div class="note"><strong>Keep the concepts separate:</strong> A four-stroke petrol engine (Topic 8.5) is not a Carnot cycle. Carnot's model is an ideal maximum-efficiency benchmark for engines between two specified temperatures.</div>
+<p class="source">Original NBF printed p.143, Section 8.8 and Figures 8.16–8.17, interpreted in original words rather than reproduced graphics.</p></section>
+<section id="stages" aria-labelledby="stages-title"><h2 id="stages-title">The four reversible Carnot-cycle processes</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Step</th><th scope="col">Process</th><th scope="col">Heat transfer and temperature</th><th scope="col">Volume/work direction</th></tr></thead><tbody>
+<tr><td>A → B</td><td>Isothermal expansion</td><td>T<sub>H</sub> constant; working gas receives heat Q<sub>H</sub>.</td><td>Gas expands and does positive work.</td></tr>
+<tr><td>B → C</td><td>Adiabatic expansion</td><td>Q = 0; temperature falls from T<sub>H</sub> to T<sub>C</sub>.</td><td>Gas expands further and does positive work.</td></tr>
+<tr><td>C → D</td><td>Isothermal compression</td><td>T<sub>C</sub> constant; gas rejects heat Q<sub>C</sub>.</td><td>Surroundings perform work on gas.</td></tr>
+<tr><td>D → A</td><td>Adiabatic compression</td><td>Q = 0; temperature rises from T<sub>C</sub> to T<sub>H</sub>.</td><td>Surroundings compress gas and restore its starting state.</td></tr>
+</tbody></table></div>
+<div class="card" id="cycle-explorer"><h3>Explore each stage · Original unscored interaction</h3><p>Choose one process and observe the ideal energy transfer and temperature change.</p>
+<div class="stage-buttons" role="group" aria-label="Choose one of the four Carnot-cycle processes">
+<button type="button" data-stage="0" aria-pressed="true">1 · Isothermal expansion</button>
+<button type="button" data-stage="1" aria-pressed="false">2 · Adiabatic expansion</button>
+<button type="button" data-stage="2" aria-pressed="false">3 · Isothermal compression</button>
+<button type="button" data-stage="3" aria-pressed="false">4 · Adiabatic compression</button></div>
+<div class="stage-output" id="stage-output" role="status" aria-live="polite"><h3 id="stage-title">Isothermal expansion at T<sub>H</sub></h3><p id="stage-description">The gas absorbs heat QH from the hot reservoir and expands reversibly at constant high temperature, doing work on its surroundings.</p></div></div>
+<p class="source">Source sequence p.143–144. The stage explorer is an independently programmed aid, not the original publisher's p–V diagram.</p>
+</section>
+<section id="efficiency" aria-labelledby="efficiency-title"><h2 id="efficiency-title">8.8.1 · Efficiency of a Carnot engine</h2>
+<p>A heat engine receives a positive amount of heat Q<sub>H</sub> from the hot source and rejects a positive amount Q<sub>C</sub> to a cooler sink. For its complete cycle, ΔU = 0, so net work is the difference:</p>
+<div class="formula" id="work-equation">W<sub>net,out</sub> = Q<sub>H</sub> − Q<sub>C</sub><small>Heat amounts Q<sub>H</sub>, Q<sub>C</sub> are positive magnitudes in joules.</small></div>
+<div class="formula" id="heat-efficiency-equation">η = W<sub>net,out</sub> / Q<sub>H</sub> = 1 − Q<sub>C</sub> / Q<sub>H</sub><small>Energy-efficiency relationship for a cyclic heat engine with these heat transfers.</small></div>
+<p>For the <strong>ideal reversible Carnot cycle</strong>, the heat-transfer ratio is fixed by its two reservoir temperatures, measured on the absolute kelvin scale:</p>
+<div class="formula" id="carnot-equation">η<sub>Carnot</sub> = 1 − T<sub>C</sub> / T<sub>H</sub><small>T<sub>H</sub> and T<sub>C</sub> are positive absolute temperatures (K); T<sub>H</sub> &gt; T<sub>C</sub>.</small></div>
+<p>Multiply by 100 to express the efficiency as a percentage. Use <strong>kelvin</strong>, not raw Celsius numbers, in the temperature ratio. When T<sub>H</sub> and T<sub>C</sub> get closer, the maximum possible efficiency decreases.</p>
+<div class="note" id="absolute-zero-caution"><strong>Ideal limit:</strong> The formula would give 100% if T<sub>C</sub> = 0 K, but absolute zero is not a physically attainable cold reservoir. A real engine also has irreversible losses, so it falls below the Carnot benchmark for the same reservoir temperatures.</div>
+<p class="source">Original NBF pp.144–145, textbook equations 8.8–8.9 and percentage-efficiency form.</p></section>
+<section id="theorem" aria-labelledby="theorem-title"><h2 id="theorem-title">8.8.2 · Carnot's theorem</h2>
+<p><strong>No heat engine operating between the same two reservoir temperatures can be more efficient than a reversible Carnot engine.</strong> Every reversible engine operating between the same two ideal reservoirs has the same theoretical efficiency, independent of its particular working substance.</p>
+<p>To compare two engines fairly, first check that their hot and cold reservoir temperatures are the same. The Carnot efficiency is an <em>upper bound</em>, not a promise of achievable practical performance.</p>
+<p class="source">Original NBF printed p.145, Carnot's theorem and following discussion.</p></section>
+<section id="example84" aria-labelledby="example-title"><h2 id="example-title">Textbook Example 8.4 · Independently solved adaptation</h2>
+<div class="given"><strong>Source data:</strong> Hot reservoir at <strong>400 °C</strong>; cold reservoir at <strong>30 °C</strong>. Calculate the maximum theoretical Carnot efficiency.</div>
+<details id="example84-solution"><summary>Reveal conversion and mathematical steps</summary><div class="details-body"><ol class="steps">
+<li>Convert both temperatures to absolute units using the textbook's rounded conversion: T<sub>H</sub> = 400 + 273 = <strong>673 K</strong>; T<sub>C</sub> = 30 + 273 = <strong>303 K</strong>.</li>
+<li>For a reversible Carnot cycle, η = 1 − T<sub>C</sub>/T<sub>H</sub> = 1 − 303/673.</li>
+<li>Compute η ≈ 0.5498, so η × 100 ≈ <strong>55%</strong> to the textbook's reported precision.</li></ol><p id="example84-result"><strong>Answer: approximately 55%.</strong> This is a maximum ideal efficiency between the specified reservoir temperatures, not a measured real-engine result.</p></div></details>
+<p class="source">Original Example 8.4 appears on NBF printed p.145; independent prose and calculations, textbook rounded kelvin convention retained.</p></section>
+<section id="assignment84" aria-labelledby="assignment-title"><h2 id="assignment-title">Textbook Assignment 8.4 · Independently solved adaptation</h2>
+<div class="given"><strong>Source data:</strong> A heat engine has thermal efficiency <strong>40%</strong> and receives <strong>4 kJ</strong> of heat from its heat source. Find the magnitude of the waste heat rejected.</div>
+<details id="assignment84-solution"><summary>Reveal heat balance and solution</summary><div class="details-body"><ol class="steps">
+<li>η = 40/100 = <strong>0.40</strong>; heat input Q<sub>H</sub> = <strong>4 kJ</strong>.</li>
+<li>W<sub>net,out</sub> = ηQ<sub>H</sub> = 0.40 × 4 kJ = <strong>1.6 kJ</strong>.</li>
+<li>For the cyclic engine, Q<sub>C</sub> = Q<sub>H</sub> − W<sub>net,out</sub> = 4.0 − 1.6 = <strong>2.4 kJ</strong>.</li></ol>
+<p id="assignment84-result"><strong>Answer: the engine rejects 2.4 kJ of waste heat.</strong> This heat amount is a positive magnitude directed toward the sink.</p></div></details>
+<p class="source">Original Assignment 8.4 on printed p.145. Unlike Example 8.4, this problem states general heat-engine efficiency; no reservoir temperatures or Carnot assumption are required.</p></section>
+<section id="calculator" aria-labelledby="calculator-title"><h2 id="calculator-title">Two interactive investigations · No marks</h2>
+<div class="grid">
+<form class="card" id="temperature-calculator" onsubmit="return false" aria-labelledby="temp-title"><h3 id="temp-title">A · Carnot maximum from temperatures</h3>
+<p>Enter two reservoir temperatures in °C. The calculator converts to kelvin before dividing.</p>
+<div class="calc-grid">
+<label for="temp-hot">Hot T<sub>H</sub> (°C)<input id="temp-hot" type="number" inputmode="decimal" step="any" value="400"></label>
+<label for="temp-cold">Cold T<sub>C</sub> (°C)<input id="temp-cold" type="number" inputmode="decimal" step="any" value="30"></label>
+</div><button type="button" id="temperature-calculate">Calculate Carnot efficiency</button>
+<output id="temperature-result" aria-live="polite">T hot ≈ 673.15 K; T cold ≈ 303.15 K; Carnot maximum ≈ 54.97% (about 55%).</output><p class="source">Uses precise conversion T(K) = t(°C) + 273.15; the textbook rounds 273.15 to 273 for Example 8.4.</p></form>
+<form class="card" id="heat-calculator" onsubmit="return false" aria-labelledby="heat-title"><h3 id="heat-title">B · Work and waste heat</h3>
+<p>For any cyclic heat engine with a specified efficiency, calculate useful work and heat rejected. This does not assume Carnot reversibility.</p>
+<div class="calc-grid">
+<label for="heat-input">Heat input Q<sub>H</sub> (kJ)<input id="heat-input" type="number" inputmode="decimal" step="any" value="4"></label>
+<label for="heat-percent">Engine efficiency (%)<input id="heat-percent" type="number" inputmode="decimal" step="any" value="40"></label>
+</div><button type="button" id="heat-calculate">Calculate cycle energy</button>
+<output id="heat-result" aria-live="polite">Work output = 1.6 kJ; waste heat rejected = 2.4 kJ.</output><p class="source">Q<sub>C</sub> = Q<sub>H</sub> − W<sub>net,out</sub>; η = W<sub>net,out</sub>/Q<sub>H</sub>. Uses positive heat magnitudes.</p></form>
+</div>
+<div class="note"><strong>Boundary checks:</strong> For the Carnot calculation, absolute temperatures must be greater than 0 K and the hot reservoir must be hotter than the cold. For engine efficiency, enter a value strictly between 0% and 100% with positive heat input; real cyclic heat engines cannot convert every joule into net work.</div>
+</section>
+<section id="self-check" aria-labelledby="checks-title"><h2 id="checks-title">Five concept checks · Answers on demand</h2>
+<details><summary>1. Which two processes exchange heat with reservoirs in the Carnot cycle?</summary><div class="details-body">The two isothermal processes: expansion at the high temperature absorbs heat, and compression at the low temperature rejects heat. The two adiabatic steps have no heat transfer.</div></details>
+<details><summary>2. Does an engine with 80% efficiency always violate Carnot's theorem?</summary><div class="details-body">Not necessarily. Compare it with the Carnot limit for its actual reservoir temperatures. An 80% engine is impossible between reservoirs whose Carnot efficiency is below 80%.</div></details>
+<details><summary>3. Can 400 °C and 30 °C be substituted directly into the Carnot temperature ratio?</summary><div class="details-body">No. Convert to kelvin first. The textbook gives T<sub>H</sub> ≈ 673 K and T<sub>C</sub> ≈ 303 K; η ≈ 55%.</div></details>
+<details><summary>4. A cycle receives 4 kJ and converts 40% to net work. What happens to the rest?</summary><div class="details-body">Work = 1.6 kJ. The remaining <strong>2.4 kJ</strong> is rejected to the lower-temperature sink.</div></details>
+<details><summary>5. Why is the Carnot engine considered an ideal benchmark?</summary><div class="details-body">It follows entirely reversible processes. No engine operating between the same two reservoirs can exceed its theoretical efficiency; real dissipative processes reduce achievable performance.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-title"><h2 id="continue-title">Continue learning</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.7</h3><p>The Second Law explains the direction of heat flow and restrictions on cyclic engines.</p><p><a href="./unit-08-topic87-second-law-v231.html">Study Topic 8.7</a></p></div>
+<div class="card"><h3>Existing Unit 8 simulations</h3><p>Supplementary thermodynamics labs are available separately; their availability is not academic certification of graded material.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next: Topic 8.9 · Refrigerator</h3><p>Refrigerators begin on original p.145 and are reserved for separate source-verified coverage, including their energy balance.</p><p><a href="./exam-quick-access.html">See published learning links</a></p></div>
+</div></section>
+</main><footer>Physics with Sir Najam · Unit 8 Topic 8.8 · Original NBF source-anchored unscored preview · Independent academic review pending</footer>
+<script>
+(function(){'use strict';
+const stages=[
+ ['Isothermal expansion at T\u2095','The gas absorbs heat QH from the hot reservoir and expands reversibly at constant high temperature, doing work on its surroundings.'],
+ ['Adiabatic expansion from hot to cold','No heat enters or leaves the gas. It expands and performs work, lowering its temperature from TH to TC.'],
+ ['Isothermal compression at TC','The surroundings do work on the gas at constant low temperature; the gas rejects heat QC to the cold sink.'],
+ ['Adiabatic compression from cold to hot','No heat enters or leaves. External work compresses the gas, increasing its temperature from TC to TH and restoring the initial state.']
+];
+for(const button of document.querySelectorAll('[data-stage]'))button.addEventListener('click',function(){
+ const n=Number(button.dataset.stage);if(!Number.isInteger(n)||n<0||n>=stages.length)return;
+ for(const x of document.querySelectorAll('[data-stage]'))x.setAttribute('aria-pressed',x===button?'true':'false');
+ document.getElementById('stage-title').textContent=stages[n][0];
+ document.getElementById('stage-description').textContent=stages[n][1];
+});
+function val(id){const s=document.getElementById(id).value.trim();return s!==''&&Number.isFinite(Number(s))?Number(s):NaN}
+function neat(n){return Number(n.toPrecision(8)).toString()}
+document.getElementById('temperature-calculate').addEventListener('click',function(){
+ const th=val('temp-hot')+273.15,tc=val('temp-cold')+273.15,out=document.getElementById('temperature-result');
+ if(!Number.isFinite(th)||!Number.isFinite(tc)||th<=0||tc<=0||th<=tc){
+  out.textContent='Enter finite temperatures above absolute zero, with hot temperature strictly greater than cold.';return;
+ }
+ const eta=100*(1-tc/th);
+ if(!Number.isFinite(eta)||eta<=0||eta>=100){out.textContent='Result is outside the supported physical and numerical range.';return}
+ out.textContent='T hot = '+neat(th)+' K; T cold = '+neat(tc)+' K; maximum Carnot efficiency = '+neat(eta)+'%.';
+});
+document.getElementById('heat-calculate').addEventListener('click',function(){
+ const q=val('heat-input'),percent=val('heat-percent'),out=document.getElementById('heat-result');
+ if(!Number.isFinite(q)||!Number.isFinite(percent)||q<=0||percent<=0||percent>=100){
+  out.textContent='Enter finite, positive heat input and engine efficiency strictly between 0% and 100%.';return;
+ }
+ const w=q*percent/100,waste=q-w;
+ if(!Number.isFinite(w)||!Number.isFinite(waste)||w<=0||waste<=0){out.textContent='Result outside supported numerical range.';return}
+ out.textContent='Net work output = '+neat(w)+' kJ; waste heat rejected = '+neat(waste)+' kJ.';
+});
+})();
+</script></body></html>
