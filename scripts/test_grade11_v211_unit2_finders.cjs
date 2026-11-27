@@ -85,7 +85,7 @@ async function journey(browser,base,width,stage,query,count,type){
   const section=unit.locator('.psn-drawer-stage[data-psn-stage="'+stage+'"]');
   const link=section.locator('a[href$="'+query+'"]');
   assert.equal(await link.count(),1,'Missing or incorrectly categorized link: '+query+' in '+stage);
-  if(!(await section.getAttribute('open')))await section.locator('summary').click();
+  if((await section.getAttribute('open'))===null)await section.locator('summary').click();
   await link.click();
   const target=type==='textbook-numerical'?'textbook-resource-finder.html':'descriptive-answer-finder.html';
   await page.waitForURL(u=>u.pathname.endsWith('/portal/'+target)&&u.searchParams.get('unit')==='2',
