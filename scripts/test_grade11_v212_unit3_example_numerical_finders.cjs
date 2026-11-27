@@ -123,4 +123,4 @@ async function browse(browser,base,width,kind,amount){
   },null,2)+'\n');
   console.log('V212 PASS: 3 source-adapted numbered examples and 8 source-labelled worked numerical links, desktop/mobile, no graded/science release');
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok))}
-})().catch(err=>{console.error('V212 FAILED:',err.stack||err);process.exitCode=1;try{server.close()}});
+})().catch(err=>{console.error('V212 FAILED:',err.stack||err);process.exitCode=1;try{server.close()}catch{}});
