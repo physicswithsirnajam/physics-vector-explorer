@@ -36,7 +36,7 @@ function checkSource(){
  assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.equal(u8.additionalLearningPreviews.length,7);
+ assert.equal(u8.additionalLearningPreviews.length,8);
  assert.equal(u8.additionalLearningPreviews[0].topic,'8.2');
  assert.deepEqual(u8.additionalLearningPreviews[1],{
   topic:'8.3',title:'The Gas Laws: Boyle, Charles and Gay-Lussac',
@@ -67,7 +67,12 @@ function checkSource(){
   href:'./unit-08-topic88-carnot-engine-v232.html',sourcePages:[143,145],
   access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Eight source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[7],{
+  topic:'8.9',title:'Refrigerator: Heat Transfer and Cooling/Heating COP',
+  href:'./unit-08-topic89-refrigerator-v233.html',sourcePages:[145,147],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Nine source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/no Unit8 scored bank/i);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -78,9 +83,9 @@ function checkSource(){
  assert.equal(quick.split('href="'+href+'"').length-1,1);
  assert.ok(quick.includes('Study Topic 8.1'));
  assert.ok(quick.includes('Study Topic 8.2'));
- assert.ok(quick.includes('Topic 8.9 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.10 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6','8.7','8.8'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6','8.7','8.8','8.9'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law'));
@@ -88,6 +93,7 @@ function checkSource(){
  assert.ok(nav.includes('Unit 8 · Topic 8.6 Reversible, Irreversible and Cyclic Processes'));
  assert.ok(nav.includes('Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius)'));
  assert.ok(nav.includes('Unit 8 · Topic 8.8 Carnot Engine and Efficiency'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.9 Refrigerator and Cooling/Heating COP'));
  assert.ok(prev.includes('href="'+href+'"'));
  for(const id of ['lesson-status','three-laws','boyle','charles','gay-lussac','graphs','investigations',
  'boyle-tool','charles-tool','gay-tool','calc-boyle','calc-charles','calc-gay',
