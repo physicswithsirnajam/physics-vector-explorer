@@ -36,13 +36,18 @@ function checkSource(){
  assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.equal(u8.additionalLearningPreviews.length,2);
+ assert.equal(u8.additionalLearningPreviews.length,3);
  assert.equal(u8.additionalLearningPreviews[0].topic,'8.2');
  assert.deepEqual(u8.additionalLearningPreviews[1],{
   topic:'8.3',title:'The Gas Laws: Boyle, Charles and Gay-Lussac',
   href,sourcePages:[134,135],access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Three source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[2],{
+  topic:'8.4',title:'First Law of Thermodynamics and Four Processes',
+  href:'./unit-08-topic84-first-law-v228.html',sourcePages:[135,140],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Four source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/no Unit8 scored bank/);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -53,11 +58,12 @@ function checkSource(){
  assert.equal(quick.split('href="'+href+'"').length-1,1);
  assert.ok(quick.includes('Study Topic 8.1'));
  assert.ok(quick.includes('Study Topic 8.2'));
- assert.ok(quick.includes('Topic 8.4 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.5 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law'));
  assert.ok(prev.includes('href="'+href+'"'));
  for(const id of ['lesson-status','three-laws','boyle','charles','gay-lussac','graphs','investigations',
  'boyle-tool','charles-tool','gay-tool','calc-boyle','calc-charles','calc-gay',
