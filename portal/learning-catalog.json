@@ -306,7 +306,7 @@
           "assessmentStatus": "not-published",
           "resourceIds": [],
           "qualityStatus": "topics-8.1-and-8.2-source-anchored-original-textbook-pp128-134-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored learning includes Topic 8.1 thermal equilibrium, internal energy, ideal gas and Example/Assignment 8.1; Topic 8.2 kinetic theory, work by/on gas and Example/Assignment 8.2. Both are study adaptations with individual teacher reviews pending; no Unit8 scored bank, approved original end exercises or graded tests are available.",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview now includes Topic 8.1 thermal equilibrium, internal energy, ideal gas and Example/Assignment 8.1; Topic 8.2 kinetic theory, work by/on gas and Example/Assignment 8.2. Both are study adaptations with individual teacher reviews pending; no Unit8 scored bank, approved original end exercises or graded tests are available.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
