@@ -1,0 +1,53 @@
+name: Grade XI V218 Unit 7 Keyless Original Exercise Review Worklist
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v218-34-original-exercises-teacher-worklist-no-keys.json"
+      - "portal/unit-07-original-exercise-teacher-worklist-v218.html"
+      - "portal/textbook-exercise-status-v216.html"
+      - "scripts/test_grade11_v218_unit7_exercise_teacher_worklist.cjs"
+      - "quality/grade11-v218-unit7-34-original-exercises-teacher-review.md"
+      - ".github/workflows/validate-grade11-v218-unit7-original-exercises.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v218-34-original-exercises-teacher-worklist-no-keys.json"
+      - "portal/unit-07-original-exercise-teacher-worklist-v218.html"
+      - "portal/textbook-exercise-status-v216.html"
+      - "scripts/test_grade11_v218_unit7_exercise_teacher_worklist.cjs"
+      - ".github/workflows/validate-grade11-v218-unit7-original-exercises.yml"
+jobs:
+  immutable-34-item-source-and-approval-hold-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source JSON schema, current statuses and test syntax
+        run: |
+          node --check scripts/test_grade11_v218_unit7_exercise_teacher_worklist.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit07/unit07-v218-34-original-exercises-teacher-worklist-no-keys.json','utf8'))"
+      - name: Preserve original MCQ bank ID/key integrity and release hold
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install real pinned Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 34 item identities, priorities, 0 approvals and browser filtering
+        run: node scripts/test_grade11_v218_unit7_exercise_teacher_worklist.cjs
+      - name: Retain V217 exact 274-item academic checkpoint and original teacher holds
+        run: node scripts/test_grade11_v217_unit7_review_checkpoint.cjs
+      - name: Retain V216 seven-unit exercise status directory and mobile routes
+        run: node scripts/test_grade11_v216_exercise_status_directory.cjs
+      - name: Archive read-only source review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v218-unit7-34-item-review-priorities
+          path: qa-artifacts/grade11-v218-unit07-exercise-teacher-worklist/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
