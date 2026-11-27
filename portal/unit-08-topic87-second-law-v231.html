@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 8 Topic 8.7 Second Law of Thermodynamics: Kelvin and Clausius statements, heat-flow direction, a cyclic heat engine and six original unscored scenarios.">
+<title>Topic 8.7 · Second Law of Thermodynamics | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}.flow-diagram{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:center;margin:19px 0}.flow-node{background:#203c5e;padding:14px;border:1px solid #8aa3bf;border-radius:11px;text-align:center;min-width:0}.flow-node strong{display:block;color:var(--gold)}.flow-connect{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:center;color:var(--muted)}.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stage-buttons button{margin:0;background:#1c3656;border:1px solid #8fa4ba;color:white;font-size:.88rem;padding:10px 8px}.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}.stage-panel{margin-top:14px;background:#0d223b;border:1px solid var(--edge);border-radius:10px;padding:17px;min-height:115px}#stage-panel-title{margin:0;color:var(--gold)}@media(max-width:650px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-diagram{grid-template-columns:1fr}.flow-connect{font-size:.86rem}}@media print{.stage-buttons button{color:#000;border-color:#555;background:#fff}.stage-panel,.flow-node{background:#fff;color:#000}} 
+.case-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.case-buttons button{margin:0;text-align:left;border:1px solid #8fa4ba;background:#1b3756;color:#fff;font-size:.89rem;line-height:1.45;padding:12px}
+.case-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}
+.case-output{background:#0d223b;border:1px solid #8096b4;border-radius:11px;padding:17px;margin-top:14px;min-height:126px}
+.case-output h3{margin:0 0 7px}
+.flow-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:10px;margin:18px 0}
+.flow-pair .flow-node{font-size:1rem}.flow-pair .flow-connect{font-weight:800}
+.formula-small{font-size:clamp(1rem,2.1vw,1.25rem)}
+@media(max-width:650px){.case-buttons{grid-template-columns:1fr}.flow-pair{grid-template-columns:1fr}.flow-pair .flow-connect{line-height:1.3}}
+@media print{.case-output{background:white;color:black}.case-buttons button{background:white;color:black;border-color:#555}}
+</style></head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic86-reversible-processes-v230.html">Topic 8.6</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.7 · Original printed pages 142–143</span>
+<h1>Second Law of Thermodynamics</h1>
+<p class="lead">Energy is conserved, but not every energy transfer that satisfies conservation is physically possible. The Second Law specifies the limits on cyclic heat engines and on spontaneous heat flow.</p>
+<div class="notice" id="lesson-status" role="note" data-academic-review="pending" data-scored-release="false"><strong>Unscored study preview — independent teacher academic review pending.</strong> Original teaching adaptation based on the owner's NBF Grade XI Physics textbook, printed pp.142–143 and FBISE outcome P-11-C-15. Kelvin and Clausius statements are paraphrased, not reproduced as publisher text. Original textbook pages, pictures, original exercise questions and teacher-approved answer keys are not included. There are no grades, student records or saved answers.</div>
+<nav class="jump" aria-label="Jump to sections"><a href="#first-versus-second">First vs Second</a><a href="#kelvin">Kelvin statement</a><a href="#clausius">Clausius statement</a><a href="#flow">Heat and work</a><a href="#scenarios">Scenario explorer</a><a href="#self-check">Self-check</a></nav>
+<section id="first-versus-second" aria-labelledby="first-title"><h2 id="first-title">8.7 · What does the Second Law add?</h2>
+<div class="grid">
+<article class="card"><h3>First Law · Energy balance</h3><p>Energy cannot simply appear or disappear. For the sign convention used in Unit 8, <strong>Q = ΔU + W<sub>by</sub></strong>.</p><p>For a complete cycle the working substance returns to its initial state: ΔU<sub>cycle</sub> = 0.</p></article>
+<article class="card"><h3>Second Law · Direction and limits</h3><p>The First Law does not specify which energy transfers can occur naturally or the limitations on producing useful work from a thermal source.</p><p>The Second Law explains why a cyclic heat engine needs more than one thermal reservoir, and why spontaneous heat flow has a preferred direction.</p></article>
+</div>
+<div class="note" id="limitation-note"><strong>Important:</strong> The First Law is necessary, but conservation of energy <em>alone</em> cannot prove a proposed heat engine or refrigerator possible. The Second Law imposes additional restrictions.</div>
+<p class="source">Grounded in original NBF printed p.142 (start of Section 8.7). This comparison is an independently written explanation, not source page text.</p></section>
+<section id="kelvin" aria-labelledby="kelvin-title"><h2 id="kelvin-title">Kelvin–Planck statement · The limit on cyclic heat engines</h2>
+<p>A device completing a thermodynamic cycle cannot produce net work by drawing heat from <strong>only one thermal reservoir</strong> as its sole effect. A continuously operating heat engine must transfer some energy to a colder sink.</p>
+<div class="formula" id="engine-relation">W<sub>net,out</sub> = Q<sub>H</sub> − Q<sub>C</sub><small>Positive magnitudes: Q<sub>H</sub> = heat supplied from hot reservoir; Q<sub>C</sub> = heat rejected to cold sink.</small></div>
+<p>Since ΔU<sub>cycle</sub> = 0, the energy balance is satisfied. However, a proposed cyclic engine that takes heat from one reservoir and delivers exactly the same amount as work, with <strong>no other effect</strong>, is ruled out by the Second Law.</p>
+<div class="note"><strong>Do not overgeneralize:</strong> A finite amount of heat can be converted to work in other processes. Kelvin–Planck rules out <em>complete conversion as the sole effect of a cyclic engine</em>, not every individual heat-to-work transfer.</div>
+<p class="source">Kelvin statement introduced on original NBF printed p.142; the cycle balance follows original Topic 8.5 and First Law.</p></section>
+<section id="clausius" aria-labelledby="clausius-title"><h2 id="clausius-title">Clausius statement · Heat does not spontaneously travel cold → hot</h2>
+<p>Heat cannot flow from a colder body to a hotter body <strong>as the sole result</strong> of a process. Heat naturally passes from hot to cold when the bodies exchange energy because of a temperature difference.</p>
+<p>Moving energy from a colder region to a hotter one <strong>is possible</strong> when an external input (for example, work in a refrigerator) produces an additional effect. Therefore the statement is not that cold-to-hot heat transfer is absolutely impossible.</p>
+<div class="note" id="fridge-note"><strong>Example:</strong> A refrigerator removes heat from the cold interior, receives electrical work, and rejects energy to the warmer room. This does not violate the Clausius statement because it is <em>not</em> a heat-transfer process with no other effect.</div>
+<p class="source">Original NBF printed p.142, Clausius statement and example-level heat-flow discussion continuing onto p.143; refrigerator explanation is an independent teaching illustration.</p></section>
+<section id="flow" aria-labelledby="flow-title"><h2 id="flow-title">Compare three energy-transfer situations</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Situation</th><th scope="col">What happens?</th><th scope="col">Second-Law interpretation</th></tr></thead><tbody>
+<tr><td>Heat flows hot → cold</td><td>Thermal energy transfers spontaneously when there is a temperature difference.</td><td>Consistent with the natural direction of heat transfer.</td></tr>
+<tr><td>Heat moves cold → hot with work input</td><td>A heat pump or refrigerator consumes external work while moving energy uphill in temperature.</td><td>Possible; it does not occur as the process's only effect.</td></tr>
+<tr><td>Cyclic engine produces net mechanical work</td><td>Receives heat from a hot source and rejects part to a cooler sink.</td><td>A single-reservoir, 100%-heat-to-work cyclic engine with no other effect is forbidden.</td></tr>
+</tbody></table></div>
+<p class="source">The comparison is an original study aid grounded in the source's two Second Law statements; it is not a reproduction of the subsequent Carnot engine figures.</p></section>
+<section id="scenarios" aria-labelledby="scenario-title"><h2 id="scenario-title">Six scenario explanations · No marks or saved answers</h2>
+<p>Select a case to compare it with the Kelvin–Planck or Clausius statement. Each case is independently prepared, not an original numbered textbook question.</p>
+<div class="card">
+<div class="case-buttons" role="group" aria-label="Choose a Second Law scenario">
+<button type="button" data-case="0" aria-pressed="true">1 · Heat from hot pan to cool air</button>
+<button type="button" data-case="1" aria-pressed="false">2 · One-reservoir engine turns all its heat into work</button>
+<button type="button" data-case="2" aria-pressed="false">3 · Refrigerator uses electric power</button>
+<button type="button" data-case="3" aria-pressed="false">4 · Heat travels cold → hot with no other change</button>
+<button type="button" data-case="4" aria-pressed="false">5 · Heat engine rejects some heat to a sink</button>
+<button type="button" data-case="5" aria-pressed="false">6 · A gas does work while cooling during expansion</button>
+</div>
+<div class="case-output" role="status" aria-live="polite" id="case-output"><h3 id="case-answer">Consistent with the Second Law</h3><p id="case-explanation">Heat naturally flows from a hotter pan to cooler surroundings when a temperature difference exists. That is the expected spontaneous direction.</p></div>
+</div>
+</section>
+<section id="self-check" aria-labelledby="checks-title"><h2 id="checks-title">Five concept checks · Reveal reasoning</h2>
+<details><summary>1. How do the First Law and Second Law answer different questions?</summary><div class="details-body">The First Law enforces energy conservation. The Second Law additionally places restrictions on the direction of heat transfer and on the output of cyclic heat engines.</div></details>
+<details><summary>2. Can a cyclic heat engine take 600 J from only one heat reservoir, deliver 600 J of net work, and change nothing else?</summary><div class="details-body">No. Such a single-reservoir cyclic device would violate the Kelvin–Planck statement, even though its proposed energy balance is arithmetically correct.</div></details>
+<details><summary>3. Does a refrigerator violate the Clausius statement by moving heat from colder to hotter surroundings?</summary><div class="details-body">No. It requires additional external work and therefore does not transfer heat from cold to hot as the sole effect.</div></details>
+<details><summary>4. In a cyclic engine Q<sub>H</sub> = 900 J and Q<sub>C</sub> = 500 J. Find net work.</summary><div class="details-body">W<sub>net,out</sub> = Q<sub>H</sub> − Q<sub>C</sub> = 900 J − 500 J = <strong>400 J</strong>. This is an energy-balance example; the Second Law also requires that proposed engines meet the physical restrictions described above.</div></details>
+<details><summary>5. Is every individual conversion of heat energy into work prohibited?</summary><div class="details-body">No. The Kelvin–Planck restriction concerns a <em>cyclic</em> device with a single thermal reservoir and complete conversion as the only effect. It does not prohibit all heat-to-work processes.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-title"><h2 id="continue-title">Continue learning</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.6</h3><p>Distinguish reversible, irreversible and cyclic processes, including the role of friction.</p><p><a href="./unit-08-topic86-reversible-processes-v230.html">Study Topic 8.6</a></p></div>
+<div class="card"><h3>Existing Unit 8 simulations</h3><p>Use simulations for enrichment while distinguishing a published lab from an independently reviewed source-based lesson.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next: Topic 8.8 · Carnot's Engine</h3><p>The original textbook introduces Carnot's Engine on printed p.143. It remains a separate future source-review stage and is not published by this lesson.</p><p><a href="./exam-quick-access.html">See current study links</a></p></div>
+</div></section>
+</main><footer>Physics with Sir Najam · Topic 8.7 · Original NBF XI source-grounded unscored preview · Human academic review pending</footer>
+<script>
+(function(){'use strict';
+const cases=[
+ ['Consistent with the Second Law','Heat naturally flows from a hotter pan to cooler surroundings when a temperature difference exists. That is the expected spontaneous direction.'],
+ ['Not possible as stated · Kelvin–Planck','The proposed single-reservoir device completes a cycle and converts all the received heat into net work as its only effect. The Second Law prohibits this idealized engine, even though energy could be balanced mathematically.'],
+ ['Possible with external work · Clausius','Electrical power drives the refrigerator. Heat moves from the cooler interior to the warmer room but the work input is an additional effect, so the Clausius statement is not violated.'],
+ ['Not possible as stated · Clausius','Cold-to-hot heat transfer cannot occur as the sole effect of a process; an external input or another accompanying change would be required.'],
+ ['Consistent in principle · Kelvin–Planck','An engine can use heat supplied from a hot source, produce net work, and reject some heat to a cooler sink. Actual performance depends on details studied later.'],
+ ['Possible: this is not a single-reservoir cyclic engine','Gas expansion can do work while its internal energy decreases. The Kelvin–Planck statement does not forbid individual non-cyclic transfers of heat and work.']
+];
+for(const b of document.querySelectorAll('[data-case]'))b.addEventListener('click',function(){
+ const index=Number(b.dataset.case);
+ if(!Number.isInteger(index)||index<0||index>=cases.length)return;
+ for(const candidate of document.querySelectorAll('[data-case]'))candidate.setAttribute('aria-pressed',candidate===b?'true':'false');
+ document.getElementById('case-answer').textContent=cases[index][0];
+ document.getElementById('case-explanation').textContent=cases[index][1];
+});
+})();
+</script>
+</body></html>

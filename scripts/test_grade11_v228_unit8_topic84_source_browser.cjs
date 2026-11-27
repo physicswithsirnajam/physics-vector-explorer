@@ -40,8 +40,8 @@ function checkSourceScience(){
  assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.equal(u8.additionalLearningPreviews.length,5);
- assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5','8.6']);
+ assert.equal(u8.additionalLearningPreviews.length,6);
+ assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5','8.6','8.7']);
  assert.deepEqual(u8.additionalLearningPreviews[2],{
   topic:'8.4',title:'First Law of Thermodynamics and Four Processes',
   href,sourcePages:[135,140],access:'public-unscored-study-teacher-review'
@@ -56,7 +56,12 @@ function checkSourceScience(){
   href:'./unit-08-topic86-reversible-processes-v230.html',sourcePages:[141,142],
   access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Six source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[5],{
+  topic:'8.7',title:'Second Law of Thermodynamics: Kelvin and Clausius',
+  href:'./unit-08-topic87-second-law-v231.html',sourcePages:[142,143],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Seven source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/No Unit8 scored bank/);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -68,14 +73,15 @@ function checkSourceScience(){
  assert.ok(quick.includes('Study Topic 8.1'));
  assert.ok(quick.includes('Study Topic 8.2'));
  assert.ok(quick.includes('Study Topic 8.3'));
- assert.ok(quick.includes('Topic 8.7 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.8 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6','8.7'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law and Four Thermodynamic Processes'));
  assert.ok(nav.includes('Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle'));
  assert.ok(nav.includes('Unit 8 · Topic 8.6 Reversible, Irreversible and Cyclic Processes'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius)'));
  assert.ok(prev.includes('href="'+href+'"'));
  for(const id of ['lesson-status','first-law','first-law-equation','sign-warning','processes',
   'isothermal','adiabatic','isochoric','isobaric','example83','example83-solution','example83-result',

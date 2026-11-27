@@ -32,12 +32,17 @@ function sourceScience(){
  assert.equal(u8.assessmentStatus,'not-published');assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5','8.6']);
+ assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5','8.6','8.7']);
  assert.deepEqual(u8.additionalLearningPreviews[4],{
   topic:'8.6',title:'Reversible and Irreversible Processes; Cyclic Processes',
   href:target,sourcePages:[141,142],access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Six source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[5],{
+  topic:'8.7',title:'Second Law of Thermodynamics: Kelvin and Clausius',
+  href:'./unit-08-topic87-second-law-v231.html',sourcePages:[142,143],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Seven source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/No Unit8 scored bank/i);
  assert.equal(u7.questionBankCount,0);assert.equal(u7.assessmentStatus,'not-published');
  assert.equal(catalog.resources.length,59);
@@ -46,10 +51,11 @@ function sourceScience(){
  assert.equal(quick.split('id="unit8-unscored-study-preview"').length-1,1);
  assert.equal(quick.split('href="'+target+'"').length-1,1);
  for(const topic of ['8.1','8.2','8.3','8.4','8.5'])assert.ok(quick.includes('Study Topic '+topic));
- assert.ok(quick.includes('Topic 8.7 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.8 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6','8.7'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.6 Reversible, Irreversible and Cyclic Processes'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius)'));
  assert.ok(prev.includes('href="'+target+'"'));
  for(const id of ['lesson-status','meaning','reversible','irreversible','criteria','slow-caution','examples',
   'cycles','cycle-equation','cycle-caution','explorer','case-output','case-answer','case-explanation','self-check','continue']){
