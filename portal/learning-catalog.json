@@ -264,12 +264,12 @@
           "unit": 7,
           "title": "Physics of Solids",
           "status": "planned",
-          "summary": "A source-anchored introductory public lesson for Topic 7.1 is available. The complete Unit 7 course, its MCQ bank and graded assessments remain unpublished.",
+          "summary": "Three public unscored study lessons are available for Topics 7.1, 7.2 and 7.3. The complete Unit 7 question bank, textbook exercise editions and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "introductory-topic-7.1-source-anchored; full unit and MCQ academic QC pending",
-          "studentNotice": "First-topic concept orientation only: NBF printed pp.113–116, summative SLO P-11-B-22. Original and SLO-based Unit 7 question banks are not yet enabled in the Test Builder; course and graded assessment remain planned.",
+          "qualityStatus": "topics-7.1-to-7.3-public-unscored-study; source-MCQ-answer-and-exercise-teacher-approval-pending",
+          "studentNotice": "NBF Unit 7 public unscored learning: Topic 7.1 introductory pp.113–116 (P-11-B-22), Topic 7.2 deformation in solids and Topic 7.3 elastic potential energy. These are study aids only. Original MCQ banks, official end-of-unit exercises and graded assessment are not available as approved student tests.",
           "simulationCount": 2,
           "simulationHref": "./simulations.html?unit=7",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -281,7 +281,21 @@
           "directYouTubeCount": 2,
           "directVideoReviewRequired": false,
           "learningPreviewHref": "./unit-07-learning-intro-v145.html",
-          "learningPreviewStatus": "public-topic-7.1-introduction-only"
+          "learningPreviewStatus": "public-topic-7.1-introduction-only",
+          "additionalLearningPreviews": [
+            {
+              "topic": "7.2",
+              "title": "Deformation in Solids",
+              "href": "./unit-07-topic72-deformation-v162.html",
+              "access": "public-unscored-study-teacher-review"
+            },
+            {
+              "topic": "7.3",
+              "title": "Elastic Potential Energy",
+              "href": "./unit-07-topic73-elastic-energy-v163.html",
+              "access": "public-unscored-study-teacher-review"
+            }
+          ]
         },
         {
           "unit": 8,
