@@ -33,9 +33,9 @@
           "scenarioGroupCount": 15,
           "status": "pilot",
           "exactFbiseModeReady": false,
-          "bankVersion": "v19-dependent-question-context-review-2026-11-14",
-          "importNote": "V19 adds standalone source-adjacent context to four dependent MCQs (additional #4, #13, #15, #153) for randomized practice. The 206 original stems, options, answer keys, explanations and all 15 complete stimulus sets remain unchanged. Browser-graded self-practice only; not secure examination items.",
-          "sha256": "04ca0256cfa1ad3739f883aad5fbbdda249a12f25592158411dac86e9aa69203"
+          "bankVersion": "v207-q119-source-context-patch-2026-11-27",
+          "importNote": "V207 adds the exact source-Q116 vector data as a standalone context for Q119, following a student report. Five source-dependent additional MCQs (#4, #13, #15, #119, #153) now have self-contained context. All 206 original stems, four-choice options, answer keys and explanations are unchanged. Fifteen complete four-item stimulus groups remain intact. Browser self-practice only, not official board certification.",
+          "sha256": "908d42fd3cde20f745d45e14d9542b05114a81d35fa4514db894592934628aee"
         },
         {
           "unit": 3,
