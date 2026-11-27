@@ -306,7 +306,7 @@
           "assessmentStatus": "not-published",
           "resourceIds": [],
           "qualityStatus": "topics-8.1-to-8.6-source-anchored-original-textbook-pp128-142-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored previews include Topic 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic gas theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine and four-stroke cycle; and 8.6 reversible/irreversible/cyclic processes with six unscored scenarios. All are teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topic 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic gas theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine and four-stroke cycle; and 8.6 reversible/irreversible/cyclic processes with six unscored scenarios. All are teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
