@@ -1,0 +1,94 @@
+name: Grade XI V202 Unit7.2 Next 12 Original Stress/Strain QC (HOLD)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v202-topic72-next12-stress-strain-slo-no-keys.json"
+      - "quality/grade11-v202-unit07-topic72-next12-stress-strain-science-qc.md"
+      - "scripts/audit_grade11_unit07_topic72_next12_v202.cjs"
+      - "scripts/test_grade11_unit07_topic72_physics_v202.cjs"
+      - ".github/workflows/validate-grade11-v202-topic72-next12-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v202-topic72-next12-stress-strain-slo-no-keys.json"
+      - "quality/grade11-v202-unit07-topic72-next12-stress-strain-science-qc.md"
+      - "scripts/audit_grade11_unit07_topic72_next12_v202.cjs"
+      - "scripts/test_grade11_unit07_topic72_physics_v202.cjs"
+      - ".github/workflows/validate-grade11-v202-topic72-next12-source-slo.yml"
+  workflow_dispatch:
+jobs:
+  validate-twelve-original-deformation-questions-and-teacher-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check source and SI math validators
+        run: |
+          node --check scripts/audit_grade11_unit07_topic72_next12_v202.cjs
+          node --check scripts/test_grade11_unit07_topic72_physics_v202.cjs
+      - name: Verify twelve exact V168 source hashes, V185/V198 disjointness and scoring HOLD
+        run: node scripts/audit_grade11_unit07_topic72_next12_v202.cjs
+      - name: Check stress, strain, moduli and Fig7.12 elastic region science
+        run: node scripts/test_grade11_unit07_topic72_physics_v202.cjs
+      - name: Preserve V201 12 distinct original Topic7.3 and elastic energy physics
+        run: |
+          node scripts/audit_grade11_unit07_topic73_next12_v201.cjs
+          node scripts/test_grade11_unit07_topic73_energy_math_v201.cjs
+      - name: Preserve V200 and V199 original Topic7.1 source/SLO QC
+        run: |
+          node scripts/audit_grade11_unit07_topic71_next12_v200.cjs
+          node scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs
+      - name: Preserve V198 previous 12 original Topic7.2 source items
+        run: |
+          node scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs
+          node scripts/test_grade11_unit07_topic72_math_v198.cjs
+      - name: Preserve V197 original Topic7.3 source and math
+        run: |
+          node scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+          node scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Preserve all three 80-item original Unit7 source registries
+        run: |
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve V196 original numerical SI scaling graph-coordinate safety
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Preserve V195 unsigned teacher sheet and V194/V193 book numerical checks
+        run: |
+          node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+          node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+          node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve V192 Q25 scientific prescreen, V191 and V190 human signoff denial
+        run: |
+          node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+          node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+          node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V185 original 72-item teacher queue and 274-source inventory
+        run: |
+          node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve original 2250 Grade XI pinned source items and Unit6 560 teacher holds
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V160/V161 teacher backend production and staging NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check client and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts-only verification summary, not private answer keys
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v202-unit7-topic72-12-original-source-no-score
+          path: qa-artifacts/grade11-v202-topic72-next12-original-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
