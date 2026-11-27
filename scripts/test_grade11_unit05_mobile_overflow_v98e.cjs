@@ -20,7 +20,7 @@ function staticAudit(){
   * original V98-E page-source fingerprint. No new baseline fingerprint,
   * weakened science assertion or broad HTML normalization is permitted. */
  const begin='<h2>Find worked examples and descriptive practice by section</h2>';
- const end='<div class="grid">\\n<article class="card"><span class="tag">V48 · Source-Mapped Notes</span>';
+ const end='<div class="grid">\n<article class="card"><span class="tag">V48 · Source-Mapped Notes</span>';
  const start=source.indexOf(begin), stop=source.indexOf(end,start+begin.length);
  assert.ok(start>0&&stop>start,'V214 navigation boundaries must be present and uniquely ordered');
  assert.equal(source.indexOf(begin,start+begin.length),-1,'V214 navigation block must not be duplicated');
@@ -38,11 +38,11 @@ function staticAudit(){
  assert.ok(added.includes('id="unit5-exercise-mapping-status"'));
  assert.ok(added.includes('Original NBF exercise mapping:'));
  assert.ok(added.includes('349 central Unit 5 practice MCQs remain provisional'));
- assert.ok(!/<script\\b|<form\\b|<input\\b|onclick=|data-user-id=/i.test(added),
+ assert.ok(!/<script\b|<form\b|<input\b|onclick=|data-user-id=/i.test(added),
   'V214 source map must not introduce scripts, forms or user-data collection');
  const restored=(
   source.slice(0,start)+source.slice(stop)
- ).replace('\\n'+allowedCssPatch,'');
+ ).replace('\n'+allowedCssPatch,'');
  assert.equal(fnv(restored),originalFingerprint,
   'Unit 5 science, instructions, assessment and original markup must match exactly after removing only the approved V214 finder block and V98-E CSS patch');
  const logo=path.join(root,'portal/assets/physics-with-sir-najam-official-logo.png');
