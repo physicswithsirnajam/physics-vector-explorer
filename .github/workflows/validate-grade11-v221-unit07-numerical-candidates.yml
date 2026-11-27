@@ -1,0 +1,39 @@
+name: Grade XI V221 Unit7 Numericals Source Hold and Four New Candidates
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v221-numerical-source-issues-four-independent-candidates-no-keys.json"
+      - "quality/grade11-v221-unit07-four-numerical-remediation-candidates.md"
+      - "scripts/test_grade11_v221_four_numerical_remediation_candidates.cjs"
+      - ".github/workflows/validate-grade11-v221-unit07-numerical-candidates.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v221-numerical-source-issues-four-independent-candidates-no-keys.json"
+      - "scripts/test_grade11_v221_four_numerical_remediation_candidates.cjs"
+      - ".github/workflows/validate-grade11-v221-unit07-numerical-candidates.yml"
+jobs:
+  original-five-numerical-invariants-and-new-unscored-questions:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate V221 JS and immutable source status JSON
+        run: |
+          node --check scripts/test_grade11_v221_four_numerical_remediation_candidates.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit07/unit07-v221-numerical-source-issues-four-independent-candidates-no-keys.json','utf8'))"
+      - name: Audit four independent SI exercises and the unchanged original five source issues
+        run: node scripts/test_grade11_v221_four_numerical_remediation_candidates.cjs
+      - name: Retain the V193 original PDF source arithmetic and caveats
+        run: node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Retain the V196 scaling and inverted-axes counterexample
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Retain the unsigned V195 teacher decision pack and hold
+        run: node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+      - name: Preserve original 2250 pinned source MCQ identities and answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
