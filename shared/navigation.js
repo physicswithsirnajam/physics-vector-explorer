@@ -530,10 +530,10 @@
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
         }
-        // V226–V231: only these six source-indexed, unscored Unit 8
+        // V226–V232: only these seven source-indexed, unscored Unit 8
         // follow-up lessons may appear. Never promote a scored bank here.
         for(const study of unit.additionalLearningPreviews||[]){
-          if(!['8.2','8.3','8.4','8.5','8.6','8.7'].includes(study.topic)||
+          if(!['8.2','8.3','8.4','8.5','8.6','8.7','8.8'].includes(study.topic)||
             study.access!=='public-unscored-study-teacher-review')continue;
           const preview=safeHref(study.href,new URL('portal/',root));
           if(!preview)continue;
@@ -547,7 +547,9 @@
             ? 'Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle · Unscored source-based lesson'
             : study.topic==='8.6'
             ? 'Unit 8 · Topic 8.6 Reversible, Irreversible and Cyclic Processes · Unscored source-based lesson'
-            : 'Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius) · Unscored source-based lesson';
+            : study.topic==='8.7'
+            ? 'Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius) · Unscored source-based lesson'
+            : 'Unit 8 · Topic 8.8 Carnot Engine and Efficiency · Unscored source-based lesson';
           rows.append(makeLink(preview,label,'public-link'));
         }
       }
