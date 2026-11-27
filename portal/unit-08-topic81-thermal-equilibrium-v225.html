@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 8 Topic 8.1: thermal equilibrium, internal energy, ideal gas equation, original NBF Example 8.1 and Assignment 8.1. Unscored learning preview.">
+<title>Unit 8 Topic 8.1 · Thermal Equilibrium and Ideal Gas | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--navy:#0b1b32;--panel:#192e4b;--edge:#506985;--gold:#f0d49c;--ink:#f5f9ff;--muted:#d4e0ed;--good:#c0eed5}
+*{box-sizing:border-box}html{scroll-padding-top:18px;scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(140deg,#0a1729,#132d4e 68%,#11253f);color:var(--ink);font:16px/1.64 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-80px;padding:8px;background:white;color:#122943;z-index:99}.skip:focus{top:10px}
+header{padding:14px max(15px,calc((100% - 1110px)/2));background:#091729;border-bottom:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:850;letter-spacing:.02em}
+.brand img{width:57px;height:57px;object-fit:contain}.brand small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:10px;flex-wrap:wrap}header nav a{padding:8px 11px;border:1px solid var(--edge);border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:750}
+main{max-width:1110px;padding:25px 18px 72px;margin:auto}.eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:800}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.13;margin:7px 0 12px}h2{font-size:clamp(1.45rem,3vw,1.95rem);line-height:1.27;margin:29px 0 12px}h3{font-size:1.1rem;color:#f9dda4;margin:0 0 9px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.13rem;max-width:850px;color:var(--muted)}
+.notice{border-left:5px solid var(--gold);background:#203b5e;border-radius:9px;padding:16px 18px;margin:19px 0}
+.notice strong{color:white}.jump{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 25px}.jump a{padding:9px 12px;border:1px solid #92a6bf;border-radius:999px;text-decoration:none;font-size:.83rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.card{background:var(--panel);border:1px solid var(--edge);border-radius:13px;padding:19px;min-width:0}
+.card p,.card li{color:var(--muted)}.card ul{padding-left:23px}
+.formula{background:#0d223d;border:1px solid #8ca0ba;padding:16px;margin:13px 0;border-radius:10px;text-align:center;font-size:clamp(1.08rem,2.5vw,1.45rem);font-weight:800;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.formula small{font-size:.75rem;color:var(--muted);font-weight:500;display:block;margin-top:5px}
+.steps{padding-left:26px}.steps li{margin:9px 0;padding-left:3px}
+.given{margin:12px 0;padding:13px;background:#112642;border-radius:9px;border:1px solid #6c86a4}
+.given strong{color:var(--gold)}.muted{color:var(--muted)}.source{font-size:.85rem;color:var(--muted)}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:12px;margin:14px 0;padding:0}
+details summary{cursor:pointer;min-height:48px;padding:13px 17px;font-weight:820;color:var(--gold)}
+details .details-body{padding:0 17px 15px}.result{font-size:1.28rem;color:var(--good);font-weight:850}
+.tool{background:var(--panel);border:1px solid var(--edge);padding:18px;border-radius:13px}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tool label{font-weight:800;font-size:.87rem}.tool input{display:block;width:100%;margin-top:6px;padding:11px;font:inherit;border-radius:8px;border:1px solid #a5bbd0;background:#fff;color:#112741;min-width:0}
+.tool button{padding:11px 19px;cursor:pointer;background:#f0d49c;color:#101f37;border:1px solid #f0d49c;border-radius:7px;font:inherit;font-weight:900;margin-top:14px}
+.tool output{display:block;min-height:52px;margin-top:13px;background:#0d223d;border:1px solid var(--edge);border-radius:8px;padding:13px;font-variant-numeric:tabular-nums}
+.science-note{border:1px solid #809ab1;background:#123252;padding:13px 16px;border-radius:10px;margin:14px 0}
+.table-scroll{overflow-x:auto;border:1px solid var(--edge);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:530px;font-size:.9rem}td,th{padding:12px;text-align:left;border-bottom:1px solid var(--edge)}th{background:#25405f;color:var(--gold)}tr:last-child td{border-bottom:0}
+footer{padding:20px;border-top:1px solid var(--edge);font-size:.8rem;text-align:center;color:var(--muted)}
+@media(max-width:650px){.grid,.tool-grid{grid-template-columns:1fr}main{padding:21px 13px 56px}header{padding:13px}.brand img{width:48px;height:48px}.lead{font-size:1rem}.card{padding:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white;color:black}header nav,.jump,.skip,.tool button{display:none!important}.card,.notice,details,.tool{background:white;color:black;border:1px solid #888;break-inside:avoid}details .details-body{display:block}.muted,.card p,.card li{color:#333}.formula{background:white;color:black}.source{color:#333}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a href="./" class="brand"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo" width="57" height="57"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning links"><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Exam Quick Access</a><a href="./#learning-hub">Learning Hub</a></nav></header>
+<main id="main">
+<span class="eyebrow">HSSC-I / Grade XI · Unit 8 · Topic 8.1 · NBF printed pp.128–131</span>
+<h1>Thermal Equilibrium, Internal Energy &amp; Ideal Gases</h1>
+<p class="lead">Start with the meaning of equal temperature, connect temperature to molecular energy, and use the ideal-gas equation to count particles.</p>
+<div class="notice" role="note" id="lesson-status" data-scored-release="false" data-academic-review="pending">
+<strong>Unscored source-based study preview · Teacher academic review pending.</strong>
+This is a paraphrased, independently calculated teaching guide based on NBF Grade XI Physics pp.128–131. It includes a worked adaptation of <strong>Example 8.1</strong> and a practice treatment of <strong>Assignment 8.1</strong>; it does not reproduce the original page scans or claim to be an approved marking key. <strong>Unit 8's MCQ bank, end-of-unit answers and graded tests are not published.</strong>
+</div>
+<nav class="jump" aria-label="Topic 8.1 sections">
+<a href="#equilibrium">Thermal equilibrium</a><a href="#internal-energy">Internal energy</a><a href="#gas-equation">Ideal gas</a><a href="#example81">Example 8.1</a><a href="#assignment81">Assignment 8.1</a><a href="#explore">Explore values</a><a href="#self-check">Self-check</a>
+</nav>
+<section id="equilibrium" aria-labelledby="equilibrium-h">
+<h2 id="equilibrium-h">8.1 · Thermal equilibrium</h2>
+<div class="grid">
+<article class="card"><h3>When do two bodies reach equilibrium?</h3>
+<p>Place two bodies at different temperatures in thermal contact through a heat-conducting material. Energy moves spontaneously from the hotter body to the cooler one until they reach the same temperature. At that point there is <strong>no net heat transfer</strong> between the bodies.</p>
+<p><strong>Key distinction:</strong> equal temperatures mean no <em>net</em> heat flow; they do not imply that molecules stop moving.</p>
+</article>
+<article class="card"><h3>System, surroundings and boundary</h3>
+<ul><li><strong>System:</strong> the chosen matter or region being studied.</li><li><strong>Surroundings:</strong> everything outside that system.</li><li><strong>Open:</strong> matter and energy may cross the boundary.</li><li><strong>Closed:</strong> energy may cross, but matter does not.</li><li><strong>Isolated (idealization):</strong> neither matter nor energy crosses.</li></ul>
+<p class="source">Textbook orientation: printed p.128, Figure 8.1(a) and system-types note. No publisher artwork has been copied.</p>
+</article>
+</div>
+<div class="science-note" role="note"><strong>Scientific wording note.</strong> The book introduces heat in simplified language. In precise thermodynamics, <em>heat is energy transferred because of a temperature difference</em>, while internal energy is a property of the system. Heat is not a quantity stored inside an object.</div>
+</section>
+<section id="internal-energy" aria-labelledby="internal-h">
+<h2 id="internal-h">8.1.1 · Internal energy</h2>
+<div class="grid">
+<article class="card"><h3>Molecular meaning</h3>
+<p>Internal energy includes microscopic kinetic and interaction potential energies. The ideal-gas model neglects intermolecular interaction potential energy (apart from collisions), so its internal energy depends on temperature. For a real gas, internal energy can also depend on volume.</p>
+<div class="formula" aria-label="Average translational kinetic energy equals three halves Boltzmann constant times absolute temperature">
+⟨E<sub>tr</sub>⟩ = ½(3) k<sub>B</sub>T = 3⁄2 k<sub>B</sub>T
+<small>Average translational energy per ideal-gas molecule · T in kelvin</small>
+</div>
+</article>
+<article class="card"><h3>State function and energy change</h3>
+<p>The system's internal-energy change depends on its initial and final states, not the intermediate path:</p>
+<div class="formula">ΔU = U<sub>final</sub> − U<sub>initial</sub></div>
+<p>For an <strong>ideal gas</strong>, temperature rise implies ΔU &gt; 0 and unchanged temperature implies ΔU = 0. Heat transfer and work can both change internal energy. Work and heat individually depend on the process path.</p>
+<p class="source">NBF pp.129–130; original Figure 8.1(b) traces different paths between the same states.</p>
+</article>
+</div>
+</section>
+<section id="gas-equation" aria-labelledby="gas-h">
+<h2 id="gas-h">8.1.2 · Ideal gas equation and applications</h2>
+<p>The textbook presents two equivalent ideal-gas forms. Use the number of <em>moles</em> for the first or the number of <em>molecules</em> for the second.</p>
+<div class="grid">
+<div class="card"><h3>Macroscopic form</h3><div class="formula">pV = nRT</div><p>p: absolute pressure (Pa) · V: volume (m³) · n: amount in moles (mol) · R ≈ 8.314 J mol<sup>−1</sup> K<sup>−1</sup> · T: kelvin (K).</p></div>
+<div class="card"><h3>Molecular form</h3><div class="formula">pV = Nk<sub>B</sub>T</div><p>N: number of molecules (dimensionless). Since n = N/N<sub>A</sub>, the Boltzmann constant is k<sub>B</sub> = R/N<sub>A</sub> ≈ 1.380649 × 10<sup>−23</sup> J K<sup>−1</sup>.</p></div>
+</div>
+<div class="science-note"><strong>Remember:</strong> pressure must be absolute; all temperatures must be in kelvin. We use the ideal-gas approximation, which is most reliable when intermolecular effects and molecular sizes are negligible in the gas state under consideration.</div>
+</section>
+<section id="example81" aria-labelledby="example-h">
+<h2 id="example-h">Original textbook Example 8.1 · Teacher-worked adaptation</h2>
+<p class="source">Source: NBF printed pp.130–131. Problem theme: average translational kinetic energy at room temperature. Original text is paraphrased; solution independently recalculated.</p>
+<div class="given"><strong>Given:</strong> room temperature of 25 °C ≈ 298 K and k<sub>B</sub> ≈ 1.38 × 10<sup>−23</sup> J K<sup>−1</sup>. <strong>Find:</strong> mean translational kinetic energy of one molecule.</div>
+<ol class="steps">
+<li>Convert temperature to kelvin: T ≈ 25 + 273 = <strong>298 K</strong>.</li>
+<li>Use ⟨E<sub>tr</sub>⟩ = (3/2)k<sub>B</sub>T.</li>
+<li>Substitute: (3/2)(1.38 × 10<sup>−23</sup> J K<sup>−1</sup>)(298 K).</li>
+<li>The K units cancel. The average translational kinetic energy is:</li>
+</ol>
+<div class="formula" id="example-result">⟨E<sub>tr</sub>⟩ ≈ 6.17 × 10<sup>−21</sup> J</div>
+<p class="muted">This is the average <em>translational</em> kinetic energy per molecule, not the total internal energy of a mole of a polyatomic gas.</p>
+</section>
+<section id="assignment81" aria-labelledby="assignment-h">
+<h2 id="assignment-h">Original textbook Assignment 8.1 · Independent practice walkthrough</h2>
+<p class="source">Source: NBF printed p.131. Original data are preserved: room volume 20.0 m³, temperature 27 °C, pressure 1 atm. The statement is paraphrased; original publisher answer is not presumed verified.</p>
+<div class="given"><strong>Task:</strong> Estimate the total number of air molecules in a 20.0 m³ room at 27 °C and 1 atm, treating the room air as an ideal-gas mixture.</div>
+<details id="assignment-solution">
+<summary>Show the step-by-step teacher-review solution</summary>
+<div class="details-body">
+<ol class="steps">
+<li><strong>Convert pressure:</strong> p ≈ 1.01325 × 10<sup>5</sup> Pa.</li>
+<li><strong>Convert temperature:</strong> T ≈ 27 + 273 = 300 K.</li>
+<li><strong>Choose the molecular form:</strong> N = pV/(k<sub>B</sub>T).</li>
+<li><strong>Substitute:</strong> N = [(1.01325 × 10<sup>5</sup> Pa)(20.0 m³)] / [(1.380649 × 10<sup>−23</sup> J K<sup>−1</sup>)(300 K)].</li>
+<li><strong>Evaluate:</strong> N ≈ 4.89 × 10<sup>26</sup> molecules.</li>
+</ol>
+<p class="result" id="assignment-result">N ≈ 4.89 × 10<sup>26</sup> molecules</p>
+<p>The count includes all species making up the air mixture; no separate nitrogen/oxygen fractions are required to estimate the total at known p, V and T. This is an ideal-gas estimate.</p>
+</div></details>
+</section>
+<section id="explore" aria-labelledby="explore-h">
+<h2 id="explore-h">Explore the ideal-gas equation</h2>
+<p>Change one input to see how molecular count changes. This is an <strong>unscored, on-page calculator</strong>; no account or result is saved.</p>
+<div class="tool"><div class="tool-grid">
+<label for="gas-p">Absolute pressure (kPa)<input id="gas-p" type="number" min="0.001" max="1000000" step="any" value="101.325" inputmode="decimal"></label>
+<label for="gas-v">Volume (m³)<input id="gas-v" type="number" min="0.001" max="1000000" step="any" value="20.0" inputmode="decimal"></label>
+<label for="gas-t">Absolute temperature (K)<input id="gas-t" type="number" min="0.001" max="1000000" step="any" value="300" inputmode="decimal"></label>
+</div><button id="calculate" type="button">Calculate molecules</button>
+<output id="gas-output" aria-live="polite">For 101.325 kPa, 20.0 m³ and 300 K: N ≈ 4.893 × 10²⁶ molecules.</output>
+<p class="source">Uses k<sub>B</sub> = 1.380649 × 10<sup>−23</sup> J K<sup>−1</sup>; numbers and output stay in this browser page only.</p>
+</div>
+</section>
+<section id="self-check" aria-labelledby="check-h">
+<h2 id="check-h">Quick self-check · No grade recorded</h2>
+<details><summary>1. Two bodies are at the same temperature and in thermal contact. Must net heat flow between them?</summary><div class="details-body">No. At thermal equilibrium there is no <em>net</em> heat flow between the bodies, even though microscopic motion continues.</div></details>
+<details><summary>2. Why is internal energy called a state function?</summary><div class="details-body">ΔU depends on the initial and final states. Different paths between the same states can have different heat and work transfers but the same ΔU.</div></details>
+<details><summary>3. Which ideal-gas expression would you choose if you know the number of molecules instead of moles?</summary><div class="details-body">Use pV = Nk<sub>B</sub>T, where k<sub>B</sub> = R/N<sub>A</sub>. Always use absolute pressure and kelvin temperature.</div></details>
+<details><summary>4. If absolute temperature rises from 300 K to 600 K for an ideal-gas sample, what happens to average translational kinetic energy per molecule?</summary><div class="details-body">It doubles, since ⟨E<sub>tr</sub>⟩ = (3/2)k<sub>B</sub>T is directly proportional to absolute temperature.</div></details>
+</section>
+<section aria-labelledby="next-h"><h2 id="next-h">Continue learning</h2>
+<div class="grid"><div class="card"><h3>Interactive exploration</h3><p>Explore the portal's existing Unit 8 simulation links. These are separate supplementary resources, not graded exercises.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next textbook topic</h3><p>Topic 8.2 begins on printed p.131 and develops kinetic-theory assumptions and thermodynamic work. It is not yet published as a verified learning lesson.</p><p><a href="./exam-quick-access.html">Return to Exam Quick Access</a></p></div></div></section>
+</main>
+<footer>Physics with Sir Najam · NBF original-source-based Topic 8.1 study adaptation · Teacher academic review pending · No scored assessment</footer>
+<script>
+(function(){'use strict';
+const p=document.getElementById('gas-p'),v=document.getElementById('gas-v'),t=document.getElementById('gas-t');
+const output=document.getElementById('gas-output'),button=document.getElementById('calculate');
+button.addEventListener('click',()=>{
+ const pressure=Number(p.value),volume=Number(v.value),temperature=Number(t.value);
+ if([pressure,volume,temperature].some(x=>!Number.isFinite(x)||x<=0)||!p.value||!v.value||!t.value){
+  output.textContent='Use positive, finite absolute pressure, volume and kelvin temperature.';
+  return;
+ }
+ const count=pressure*1000*volume/(1.380649e-23*temperature);
+ if(!Number.isFinite(count)||count<=0){
+  output.textContent='These inputs are outside the supported numerical range.';return;
+ }
+ output.textContent='Estimated number of molecules: N ≈ '+count.toExponential(3)+' (ideal-gas model).';
+});
+})();
+</script>
+</body>
+</html>
