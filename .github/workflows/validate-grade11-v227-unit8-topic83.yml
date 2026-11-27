@@ -1,0 +1,67 @@
+name: Grade XI V227 Unit 8 Topic 8.3 Gas Laws
+on:
+  pull_request:
+    paths:
+      - "portal/unit-08-topic83-gas-laws-v227.html"
+      - "portal/unit-08-topic82-kinetic-gases-work-v226.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - "quality/grade11-v227-unit8-topic83-gas-laws-science.md"
+      - ".github/workflows/validate-grade11-v227-unit8-topic83.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-08-topic83-gas-laws-v227.html"
+      - "portal/unit-08-topic82-kinetic-gases-work-v226.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - ".github/workflows/validate-grade11-v227-unit8-topic83.yml"
+jobs:
+  source-gas-law-si-browser-and-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check source test, navigation JS and canonical JSON
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+          node --check scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'));JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Preserve 2250 pinned original Units 1–6 student MCQ IDs choices and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned headless Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V227 printed pp134-135 science, routes and 1280/390/320 browser calculations
+        run: node scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+      - name: Preserve V226 Topic 8.2 source, Example, Assignment, signed work and new future-topic link
+        run: node scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+      - name: Preserve V225 Topic 8.1 source and worked example
+        run: node scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+      - name: Preserve V224 original 27-page source and FBISE SLO inventory
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve V209 Unit 7 public learning source and holds
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve V140 unit-aware global navigation and future-unit boundaries
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive anonymous source and real-browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v227-unit08-topic83-gas-law-browser
+          path: qa-artifacts/grade11-v227-unit08-topic83-gas-laws-browser/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
