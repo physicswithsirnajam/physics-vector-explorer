@@ -41,7 +41,7 @@ function sourceAndScience(){
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
  assert.equal(u8.learningPreviewHref,'./unit-08-topic81-thermal-equilibrium-v225.html');
- assert.equal(u8.additionalLearningPreviews.length,3);
+ assert.equal(u8.additionalLearningPreviews.length,4);
  assert.deepEqual(u8.additionalLearningPreviews[0],{
   topic:'8.2',title:'Kinetic Theory of Gases and Thermodynamic Work',
   href:target,sourcePages:[131,134],access:'public-unscored-study-teacher-review'
@@ -56,7 +56,12 @@ function sourceAndScience(){
   href:'./unit-08-topic84-first-law-v228.html',sourcePages:[135,140],
   access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Four source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[3],{
+  topic:'8.5',title:'Heat Engine and Petrol Four-Stroke Cycle',
+  href:'./unit-08-topic85-heat-engine-v229.html',sourcePages:[140,141],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Five source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/no Unit8 scored bank/i);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -99,11 +104,12 @@ function sourceAndScience(){
  assert.ok(quick.includes('Study Topic 8.3 · The Gas Laws'));
  assert.ok(quick.includes('No graded Unit 8 test or original end-of-unit exercise answer edition'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5'].includes(study.topic)"));
  assert.ok(nav.includes("study.access!=='public-unscored-study-teacher-review'"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle'));
  assert.ok(nav.includes('Unit 7 · Topic'));
  // Independent algebra: Example 8.2, 2 kg argon, 0.040 kg/mol,
  // r=1 m h=2 m, T=303 K, R=8.314 SI.
