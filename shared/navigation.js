@@ -530,10 +530,10 @@
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
         }
-        // V226–V233: only these eight source-indexed, unscored Unit 8
+        // V226–V234: only these nine source-indexed, unscored Unit 8
         // follow-up lessons may appear. Never promote a scored bank here.
         for(const study of unit.additionalLearningPreviews||[]){
-          if(!['8.2','8.3','8.4','8.5','8.6','8.7','8.8','8.9'].includes(study.topic)||
+          if(!['8.2','8.3','8.4','8.5','8.6','8.7','8.8','8.9','8.10'].includes(study.topic)||
             study.access!=='public-unscored-study-teacher-review')continue;
           const preview=safeHref(study.href,new URL('portal/',root));
           if(!preview)continue;
@@ -551,7 +551,9 @@
             ? 'Unit 8 · Topic 8.7 Second Law (Kelvin and Clausius) · Unscored source-based lesson'
             : study.topic==='8.8'
             ? 'Unit 8 · Topic 8.8 Carnot Engine and Efficiency · Unscored source-based lesson'
-            : 'Unit 8 · Topic 8.9 Refrigerator and Cooling/Heating COP · Unscored source-based lesson';
+            : study.topic==='8.9'
+            ? 'Unit 8 · Topic 8.9 Refrigerator and Cooling/Heating COP · Unscored source-based lesson'
+            : 'Unit 8 · Topic 8.10 Entropy, Sign Convention and Energy · Unscored source-based lesson';
           rows.append(makeLink(preview,label,'public-link'));
         }
       }
