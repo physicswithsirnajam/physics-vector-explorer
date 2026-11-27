@@ -307,6 +307,23 @@
          href:'./descriptive-answer-finder.html?unit=1&type=comprehensive-response',access:'public-link'}
       ].forEach(add);
     }
+    /* V211 — source-indexed Unit 2 finder shortcuts. The five numerical,
+     * 35 short and 15 extended responses are already published as
+     * teacher-source model answers; no original NBF question claim, bank
+     * approval or new quiz item is made by linking these filters. */
+    if(unit.unit===2){
+      [
+        {id:'v211-u02-numerical-finder',category:'PRACTISE',
+         title:'Unit 2 · Find 5 textbook-labelled worked numerical problems',
+         href:'./textbook-resource-finder.html?unit=2&kind=textbook-numerical',access:'public-link'},
+        {id:'v211-u02-short-finder',category:'EXAM PREPARATION',
+         title:'Unit 2 · Find 35 teacher-prepared short responses',
+         href:'./descriptive-answer-finder.html?unit=2&type=short-response',access:'public-link'},
+        {id:'v211-u02-comprehensive-finder',category:'EXAM PREPARATION',
+         title:'Unit 2 · Find 15 teacher-prepared comprehensive responses',
+         href:'./descriptive-answer-finder.html?unit=2&type=comprehensive-response',access:'public-link'}
+      ].forEach(add);
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -337,6 +354,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===2 && stage.key==='PREPARE'){
+        const note=e('p','psn-drawer-stage-empty',
+          'These finders point to existing teacher-prepared question and solution banks. Five numerical, nine short and four comprehensive items carry textbook labels in the teacher source; independent original NBF page-image correspondence and any omitted in-chapter assignments or end-exercise MCQs are not established by the links.');
+        note.dataset.psnSourceStatus='unit2-teacher-source-original-image-pending';
+        linksBox.append(note);
       }
       if(unit.unit===1 && stage.key==='PREPARE'){
         const status=e('p','psn-drawer-stage-empty',
