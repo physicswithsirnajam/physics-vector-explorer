@@ -1,0 +1,77 @@
+name: Grade XI V229 Unit 8 Topic 8.5 Heat Engine
+on:
+  pull_request:
+    paths:
+      - "portal/unit-08-topic85-heat-engine-v229.html"
+      - "portal/unit-08-topic84-first-law-v228.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - "quality/grade11-v229-unit8-topic85-heat-engine-science.md"
+      - ".github/workflows/validate-grade11-v229-unit8-topic85-heat-engine.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-08-topic85-heat-engine-v229.html"
+      - "portal/unit-08-topic84-first-law-v228.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - ".github/workflows/validate-grade11-v229-unit8-topic85-heat-engine.yml"
+jobs:
+  original-heat-engine-source-science-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check student JS and original source JSON for topic 8.5
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+          node --check scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+          node --check scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+          node --check scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'));JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Preserve 2250 original Units 1–6 MCQ IDs answer options and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned headless Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V229 Heat Engine pp140-141 source, energy and 1280 390 320 real browser
+        run: node scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+      - name: Preserve V228 First Law signs and source examples
+        run: node scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+      - name: Preserve V227 gas laws and browser calculations
+        run: node scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+      - name: Preserve V226 gas work signs and original assignment
+        run: node scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+      - name: Preserve V225 first Unit8 public preview and example
+        run: node scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+      - name: Preserve V224 source and original FBISE outcome inventory
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve V209 Unit7 unscored learning and release hold
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve V140 global unit-aware sidebar
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive unscored science and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v229-unit08-topic85-heat-engine-browser
+          path: qa-artifacts/grade11-v229-unit08-topic85-heat-engine-browser/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
