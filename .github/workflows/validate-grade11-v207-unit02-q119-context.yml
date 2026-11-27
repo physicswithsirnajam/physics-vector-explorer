@@ -1,0 +1,61 @@
+name: Grade XI V207 Student Report Unit2 Q119 Source Context (Provisional)
+on:
+  pull_request:
+    paths:
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/manifest.json"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "scripts/validate_unit02_bank.py"
+      - "scripts/test_grade11_unit02_q119_source_context_v207.cjs"
+      - "quality/grade11-v207-student-q119-source-context-and-portal-readiness.md"
+      - ".github/workflows/validate-grade11-v207-unit02-q119-context.yml"
+  push:
+    branches: [main]
+    paths:
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/manifest.json"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
+      - "scripts/validate_unit02_bank.py"
+      - "scripts/test_grade11_unit02_q119_source_context_v207.cjs"
+      - "quality/grade11-v207-student-q119-source-context-and-portal-readiness.md"
+      - ".github/workflows/validate-grade11-v207-unit02-q119-context.yml"
+  workflow_dispatch:
+jobs:
+  verify-student-issue-fixed-without-changing-original-answer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check V207 source-dependent math and options shuffling
+        run: node scripts/test_grade11_unit02_q119_source_context_v207.cjs
+      - name: Validate complete Unit2 bank including new exact Q116 companion
+        run: python3 scripts/validate_unit02_bank.py
+      - name: Verify all published Grade XI scenario groups and dependency context
+        run: python3 scripts/check_grade11_mcq_context.py
+      - name: Preserve exact source-pinned Grade XI review catalog parity
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install real Chromium for source-context visibility regression
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test multi-unit browser selection, option shuffling and original scenarios
+        run: node scripts/test_builder_multiunit_v56.cjs
+      - name: Preserve privacy-safe local MCQ report copy/download behavior
+        run: python3 scripts/test_grade11_mcq_issue_report.py
+      - name: Preserve Unit7 pending teacher decisions, 274 original sources and zero scored release
+        run: |
+          node scripts/audit_grade11_unit07_topic73_final6_coverage_v206.cjs
+          node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+      - name: Preserve teacher role and staging/production backend NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve browser App Check and reporting launch locks
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs

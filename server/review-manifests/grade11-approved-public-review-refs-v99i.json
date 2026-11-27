@@ -13,7 +13,7 @@
   },
   "bankVersions": {
     "1": "pilot-v6.2-residual-slo-and-topic-corrections-2026-10-29",
-    "2": "v19-dependent-question-context-review-2026-11-14",
+    "2": "v207-q119-source-context-patch-2026-11-27",
     "3": "v60-original-80-plus-formative-60-and-collisions-80",
     "4": "v66-original80-plus-corrected-topics41-47-560-figure413",
     "5": "v59-original-v50-v51-plus-source-master-317",
@@ -2271,5 +2271,5 @@
     ["XI-U06-T67-MCQ-0079",6,79],
     ["XI-U06-T67-MCQ-0080",6,80]
   ],
-  "contentSha256": "f8c9a4546eb04f99942c4b35f00520de704ac94f62b2d37d1b3e2752fa22f18f"
+  "contentSha256": "8840dfa9b68fec7a8c4d7cba61e16ea8064072384b988e76e197d16efbeb241c"
 }

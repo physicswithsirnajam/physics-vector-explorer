@@ -104,6 +104,24 @@ def main():
             and isinstance(q.get("stimulusHtml"), str) and q["stimulusHtml"].strip()
         ):
             fail("Possible dependent MCQ without its scenario: " + qid)
+    # V207 source-specific regression: source Q119 must remain answerable even
+    # when shuffled before Q116, and must not get a fabricated answer key.
+    by_source={q.get("sourceQuestionNumber"):q for q in questions if q.get("source",{}).get("section")=="ADDITIONAL SLO-BASED MCQ BANK"}
+    src116=by_source.get(116)
+    src119=by_source.get(119)
+    if src116 is None or src119 is None or src119.get("contextSourceQuestionNumber") != 116:
+        fail("Unit2 Q119 requires explicit source Question116 companion context")
+    if "5î + ĵ" not in src116.get("stem","") or "2î + 4ĵ" not in src116.get("stem",""):
+        fail("The Q116 source vectors have changed; independent physics review is required")
+    for field in ("stimulusText","stimulusHtml"):
+        value=src119.get(field,"")
+        if not isinstance(value,str) or "5î + ĵ" not in value or "2î + 4ĵ" not in value:
+            fail("Q119 companion context must show BOTH exact original Q116 vectors")
+    if (src119.get("stem")!="The scalar projection of A on B for Q116 is:"
+        or src119.get("correctOptionId")!="A"
+        or [o.get("text") for o in src119.get("options",[])]
+        != ["14/√20","14/√26","14/20","14/26"]):
+        fail("Q119 original source stem, option order or correct source key was altered")
     print("PASS — Source-dependent MCQ context present; %d companion references checked." % contextual_count)
     if source_counts != {"textbook": 6, "additional": 200}:
         fail("Unexpected source split: " + repr(source_counts))
