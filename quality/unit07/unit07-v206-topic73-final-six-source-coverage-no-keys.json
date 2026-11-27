@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "version": "V206",
+  "title": "Full 80/80 Topic7.3 original-source coverage: final six genuinely unselected items and cross-topic Q25 correction, keyless teacher HOLD",
+  "prerequisite": {
+    "mergedPr": 309,
+    "merged": true,
+    "mergeSha": "db653254e895d79c630f7000287a93a1c4a8b70b"
+  },
+  "status": "COMPLETE_80_ORIGINAL_SOURCE_SELECTION_NOT_AUTHENTICATED_ACADEMIC_APPROVAL_NO_STUDENT_SCORING",
+  "originalOwnerWord": "Grade11_Unit7_Topic7.3_PartA_80MCQs_Study_With_Answers.docx",
+  "originalOwnerWordSha256": "f92ca26d3fd794b07ee4b5bc94b8418575c3c36076b9b0805f8e209e0aa4b279",
+  "originalSourceLedger": "quality/unit07/topic73-v173-all80-consolidated-academic-qc-no-keys.json",
+  "primaryNbfScansSha256": [
+    "0f6f5d63c26e44d49ada6eef730ea73e99e3bd2331324701953683644125b8d9",
+    "08e20e2e3768134cf2eecd5379aa175f9777d1f0efcf18ea984cd8ad2c80d892"
+  ],
+  "bookPrintedPagesActuallyChecked": [
+    120,
+    121,
+    122,
+    123
+  ],
+  "framework": "FBISE HSSC-I Physics 2025",
+  "officialSummativeCognition": {
+    "P-11-B-25": "Understanding",
+    "P-11-B-28": "Application"
+  },
+  "finalPreviouslyUnreviewedSourceNumbers": [
+    1,
+    10,
+    16,
+    25,
+    67,
+    76
+  ],
+  "finalSourceCount": 6,
+  "alreadySelectedInV185DetailedQueue": 0,
+  "alreadySelectedInV197V201V204V205SourceQC": 0,
+  "promisingConditionalApplicationNumbers": [
+    76
+  ],
+  "borderlineApplicationDemandNumbers": [
+    25
+  ],
+  "experimentSourceScopeSensitiveNumbers": [
+    67
+  ],
+  "supportingKnowledgeRecallNumbers": [
+    1,
+    10,
+    16
+  ],
+  "originalSourceAnswerLetterErrorsFoundInSix": 0,
+  "originalQuestionOrKeyEdited": false,
+  "newPrivateRevisedCandidatesCreated": 0,
+  "sourceIdentityCorrection": {
+    "v192ActuallyReviewed": "XI-U07-T071-Q025",
+    "v206GenuinelyNewTopic73": "XI-U07-T073-Q025",
+    "sourceIdentifiersDistinct": true,
+    "topic71V192CandidateNotEquivalentToTopic73Q25": true,
+    "v205PublicJsonAndMemoCorrectedInThisPr": true,
+    "v205SourceQCOriginalTotalsUnchanged": true,
+    "topic73Q25HadNoEarlierDetailedReview": true
+  },
+  "specificScientificCautions": {
+    "q1EnergyStoredByElasticDeformationDefinitionCorrect": true,
+    "q10KStiffnessNPerMetreForLinearHooke": true,
+    "q16XExtensionNotOriginalLength": true,
+    "q25IdealElasticUnloadingRecoversStoredWork": true,
+    "q25RealWorldHysteresisNotIdenticalToIdealRecovery": true,
+    "q67AveragingScatterValidGeneralMethodButNotExplicitOnNbfP122": true,
+    "q67AveragingDoesNotRemoveSystematicMeasurementError": true,
+    "q76PastYieldSimpleTriangularWorkFormulaNotGeneral": true,
+    "q76ActualWorkIntegralFdxAndPlasticWorkNotFullyRecoverable": true,
+    "q76YieldDoesNotNecessarilyMeanFracture": true,
+    "sourceFig714ReversedAxesNotUniversalWorkArea": true
+  },
+  "privateReview": {
+    "docx": "Unit7_V206_PRIVATE_Topic73_FinalSix_Source_SLO_QC.docx",
+    "docxSha256": "c3f320a2059ebe7464d705de92d0237ddb1df9c1f66d878695bbcc4ebfc906d9",
+    "pdf": "Unit7_V206_PRIVATE_Topic73_FinalSix_Source_SLO_QC.pdf",
+    "pdfSha256": "48b868b2930f147f51f8cff3f52a7ae4a85cb95dea234680221f244b4cde81a1",
+    "privateOriginalKeyedJsonSha256": "0819bf4e9b3b7eb9c76b37ec84ea64cfdcf49dfb1f5238978a69cb33ca4520b8",
+    "renderedPages": 4,
+    "visuallyChecked": true,
+    "humanTeacherVerdictsBlank": true,
+    "originalStemOptionsAndAnswerKeysExcludedFromGitHub": true
+  },
+  "items": [
+    {
+      "sourceId": "XI-U07-T073-Q001",
+      "sourceNumber": 1,
+      "originalFullRowSha256": "07e6f32425360c22021c07dd26c0dccde21d93ccb090ccdb894885c6db16cacb",
+      "originalSlo": "P-11-B-28",
+      "originalAuthorDemand": "K",
+      "priorV173Scope": "direct-topic-candidate",
+      "priorV173Priority": "none",
+      "officialCognitiveDemand": "Application",
+      "sourcePrintedPages": "123",
+      "modelAcademicCategory": "SUPPORTING_B28_KNOWLEDGE_ELASTIC_ENERGY_TERM",
+      "teacherFollowup": "COMPULSORY_DIRECT_B28_APPLICATION_DEMAND_REVIEW",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    },
+    {
+      "sourceId": "XI-U07-T073-Q010",
+      "sourceNumber": 10,
+      "originalFullRowSha256": "6d17744e9771e4e008e6701a4116dc2ee32519dfef88b669f060eeb9ebf25841",
+      "originalSlo": "P-11-B-28",
+      "originalAuthorDemand": "K",
+      "priorV173Scope": "direct-topic-candidate",
+      "priorV173Priority": "none",
+      "officialCognitiveDemand": "Application",
+      "sourcePrintedPages": "123",
+      "modelAcademicCategory": "SUPPORTING_B28_KNOWLEDGE_STIFFNESS_SYMBOL",
+      "teacherFollowup": "COMPULSORY_DIRECT_B28_APPLICATION_DEMAND_REVIEW",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    },
+    {
+      "sourceId": "XI-U07-T073-Q016",
+      "sourceNumber": 16,
+      "originalFullRowSha256": "574bac585ea6c7f0ad8dee6b4741cc5d108d0789063220920fd6e8314838b44d",
+      "originalSlo": "P-11-B-28",
+      "originalAuthorDemand": "K",
+      "priorV173Scope": "direct-topic-candidate",
+      "priorV173Priority": "none",
+      "officialCognitiveDemand": "Application",
+      "sourcePrintedPages": "123",
+      "modelAcademicCategory": "SUPPORTING_B28_KNOWLEDGE_EXTENSION_SYMBOL",
+      "teacherFollowup": "COMPULSORY_DIRECT_B28_APPLICATION_DEMAND_REVIEW",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    },
+    {
+      "sourceId": "XI-U07-T073-Q025",
+      "sourceNumber": 25,
+      "originalFullRowSha256": "4d33237618966e918851139084b9159f9d1017b46108e370ead47ac62af399d4",
+      "originalSlo": "P-11-B-28",
+      "originalAuthorDemand": "U",
+      "priorV173Scope": "direct-topic-candidate",
+      "priorV173Priority": "none",
+      "officialCognitiveDemand": "Application",
+      "sourcePrintedPages": "123",
+      "modelAcademicCategory": "BORDERLINE_B28_IDEAL_ELASTIC_UNLOADING_VS_APPLICATION_DEMAND",
+      "teacherFollowup": "COMPULSORY_B28_APPLICATION_VS_UNDERSTANDING_REVIEW_NO_V192_CROSS_TOPIC_CREDIT",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    },
+    {
+      "sourceId": "XI-U07-T073-Q067",
+      "sourceNumber": 67,
+      "originalFullRowSha256": "fb484edd61c650d114a2edeec51b1a043711cb44eb05b5e27e6b513d376420dc",
+      "originalSlo": "P-11-B-25",
+      "originalAuthorDemand": "U",
+      "priorV173Scope": "supplementary-or-teacher-remap",
+      "priorV173Priority": "optional",
+      "officialCognitiveDemand": "Understanding",
+      "sourcePrintedPages": "122",
+      "modelAcademicCategory": "SUPPORTING_B25_EXPERIMENT_REPEATS_GENERAL_METHOD_SOURCE_CAVEAT",
+      "teacherFollowup": "COMPULSORY_B25_SOURCE_SCOPE_AND_MEASUREMENT_UNCERTAINTY_REVIEW",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    },
+    {
+      "sourceId": "XI-U07-T073-Q076",
+      "sourceNumber": 76,
+      "originalFullRowSha256": "f0511fe2ed576aa60059ee5a2242b15a5bfed3fc47f864e526a90e04bd94a60f",
+      "originalSlo": "P-11-B-28",
+      "originalAuthorDemand": "U",
+      "priorV173Scope": "direct-topic-candidate",
+      "priorV173Priority": "none",
+      "officialCognitiveDemand": "Application",
+      "sourcePrintedPages": "120-123",
+      "modelAcademicCategory": "PROMISING_CONDITIONAL_B28_APPLICATION_FORMULA_FAILURE_BEYOND_YIELD",
+      "teacherFollowup": "COMPULSORY_TEACHER_CONFIRM_B28_APPLICATION_COGNITION_AND_YIELD_ASSUMPTIONS",
+      "sourceStemOptionsAnswerExplanationEdited": false,
+      "newPrivateCandidateRevisionIssued": false,
+      "independentTeacherScienceDecision": "PENDING",
+      "independentTeacherCognitiveDecision": "PENDING",
+      "studentScoring": "HOLD"
+    }
+  ],
+  "topic73Coverage": {
+    "originalSourceCount": 80,
+    "priorV185DetailedCandidateSourceCount": 26,
+    "sourceOnlyV197Count": 12,
+    "sourceOnlyV201Count": 12,
+    "sourceOnlyV204Count": 12,
+    "sourceOnlyV205Count": 12,
+    "sourceOnlyV206NewCount": 6,
+    "sourceIdentityOverlapCount": 0,
+    "sourceIdentitiesAccountedFor": 80,
+    "sourceIdentitiesUnaccountedFor": 0,
+    "authenticatedHumanSourceSignoffs": 0,
+    "scoredItemsReleased": 0
+  },
+  "remainingTopicalReview": {
+    "topic71": {
+      "original80": 80,
+      "v185Detailed17": 17,
+      "secondPassModelReviewed": 24,
+      "unselectedSourceItems": 39
+    },
+    "topic72": {
+      "original80": 80,
+      "v185Detailed29": 29,
+      "secondPassModelReviewed": 36,
+      "unselectedSourceItems": 15
+    },
+    "topic73": {
+      "original80": 80,
+      "v185Detailed26": 26,
+      "secondPassModelReviewed": 54,
+      "unselectedSourceItems": 0
+    },
+    "endOfUnitExercisesNotIncludedInThree80ItemBanks": 34,
+    "unit7TotalOriginalSourceInventory": 274
+  },
+  "authenticatedTeacherScienceApprovals": 0,
+  "authenticatedTeacherCognitiveApprovals": 0,
+  "ownerStudentScoringAuthorizations": 0,
+  "scoredUnit7StudentQuestionCount": 0,
+  "teacherBackendV160": "NO_GO_DEPLOYMENT_BLOCKED",
+  "teacherBackendV161": "NO_GO_PRODUCTION_AND_STAGING_DEPLOYMENT",
+  "firebaseAuthFirestoreRulesAppCheckChanged": false,
+  "studentScoredBankTestBuilderOrUserDataChanged": false,
+  "productionOrStagingDeployment": false,
+  "ciLimit": "Public CI verifies exact V173 original row hashes, disjoint 80-source coverage, prior topic-id Q25 correction, and HOLD. It cannot inspect original keyed Word/PDF or authenticate real subject teacher decisions.",
+  "nextMilestone": "V207 prioritize 15 untouched Topic7.2 original source rows or real independent academic review of existing 72 private candidates; no automatic graded release."
+}
