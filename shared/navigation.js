@@ -132,6 +132,7 @@
   quick.setAttribute('aria-label','Quick physics learning links');
   const quickLinks=[
     link('portal/exam-quick-access.html','Exam Quick Access','revision'),
+    link('portal/textbook-exercise-status-v216.html','Textbook Exercises & Assignments · Status','exercise-status'),
     link('student-guide.html','Start Here','guide'),
     link('build-your-physics-test.html','Build a Physics Test','builder'),
     link('portal/','Student Dashboard','portal'),
@@ -388,6 +389,15 @@
         href:'./textbook-resource-finder.html?unit=6&kind=provisional-worked-topic-section',
         access:'public-link'});
     }
+    /* V216 — one honest per-unit original textbook exercise status route.
+     * Source categories are visibly separate from teacher-prepared practice,
+     * never a source-certified MCQ bank or a scored assignment release. */
+    if(unit.unit>=1 && unit.unit<=6){
+      add({id:'v216-u'+unit.unit+'-exercise-status',category:'EXAM PREPARATION',
+        title:'Unit '+unit.unit+' · Original NBF exercise and assignment status · Find available practice',
+        href:'./textbook-exercise-status-v216.html?unit='+unit.unit+'#unit-'+unit.unit,
+        access:'public-link'});
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -501,6 +511,12 @@
           rows.append(makeLink(href,'Unit 7 · Topic '+lesson.topic+' '+lesson.title+
             ' · Unscored study · Academic review pending','public-link'));
         }
+        // V216 is an informational status guide only. This link does not
+        // publish Unit7 MCQs, exercise answers or the complete course.
+        rows.append(makeLink(
+          new URL('portal/textbook-exercise-status-v216.html?unit=7#unit-7',root).href,
+          'Unit 7 · Original textbook exercise and assignment status · No scored release',
+          'public-link'));
       }
       // Existing enrichment simulations for future units may already be public.
       // This link does NOT publish the unit, its notes, MCQ bank or exams.
