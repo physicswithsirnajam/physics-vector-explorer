@@ -1,0 +1,54 @@
+name: Grade XI V213 Unit 4 Source-Adapted Examples and Assignment Links
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-04.html"
+      - "scripts/test_grade11_v213_unit4_examples_assignment.cjs"
+      - "quality/grade11-v213-unit4-example-assignment-navigation.md"
+      - ".github/workflows/validate-grade11-v213-unit4-examples.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-04.html"
+      - "scripts/test_grade11_v213_unit4_examples_assignment.cjs"
+      - ".github/workflows/validate-grade11-v213-unit4-examples.yml"
+jobs:
+  unit4-in-chapter-source-link-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate JS and existing NBF source metadata index
+        run: |
+          node --check scripts/test_grade11_v213_unit4_examples_assignment.cjs
+          node --check shared/navigation.js
+          node -e "JSON.parse(require('fs').readFileSync('portal/verified-textbook-index-v103.json','utf8'))"
+      - name: Preserve 2250 original published MCQ source identities and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium for five real student clicks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Confirm four source-adapted examples and Assignment 4.4 with desktop/mobile browsing
+        run: node scripts/test_grade11_v213_unit4_examples_assignment.cjs
+      - name: Retain existing V103 textbook finder
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Retain V212 Unit 3 example/numerical finder
+        run: node scripts/test_grade11_v212_unit3_example_numerical_finders.cjs
+      - name: Retain V140 five-stage sidebar behavior
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive anonymized source-link and browser QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v213-unit4-source-anchored-links
+          path: qa-artifacts/grade11-v213-unit4-examples-assignments/audit.json
+          if-no-files-found: warn
+          retention-days: 14

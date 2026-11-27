@@ -338,6 +338,24 @@
          href:'./textbook-resource-finder.html?unit=3&kind=textbook-numerical',access:'public-link'}
       ].forEach(add);
     }
+    /* V213 — Unit 4 in-chapter source-numbered examples and assignment.
+     * Each destination is an already published stable study-guide anchor.
+     * These teacher-source adaptations do not certify original NBF
+     * end-of-unit exercise coverage, or scored student answer keys. */
+    if(unit.unit===4){
+      [
+        {id:'v213-u04-example-41',category:'PRACTISE',
+         title:'Unit 4 · Worked Example 4.1 · Bicycle tyre',href:'./unit-04-rotation-study.html#example',access:'public-link'},
+        {id:'v213-u04-example-42',category:'PRACTISE',
+         title:'Unit 4 · Worked Example 4.2 · Car turn radius',href:'./unit-04-centripetal-study.html#example42',access:'public-link'},
+        {id:'v213-u04-example-43',category:'PRACTISE',
+         title:'Unit 4 · Worked Example 4.3 · Grinding wheel',href:'./unit-04-angular-momentum-study.html#example43',access:'public-link'},
+        {id:'v213-u04-example-44',category:'PRACTISE',
+         title:'Unit 4 · Worked Example 4.4 · Rotating space station',href:'./unit-04-artificial-gravity-study.html#example44',access:'public-link'},
+        {id:'v213-u04-assignment-44',category:'EXAM PREPARATION',
+         title:'Unit 4 · In-chapter Assignment 4.4 · Artificial gravity practice',href:'./unit-04-artificial-gravity-study.html#assignment44',access:'public-link'}
+      ].forEach(add);
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -368,6 +386,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===4 && stage.key==='PREPARE'){
+        const note=e('p','psn-drawer-stage-empty',
+          'Four existing source-adapted numbered worked examples (4.1–4.4) appear under Practise, and in-chapter Assignment 4.4 is separately linked here. They are not proof that all NBF examples or assignments have been verified. The 40-mark Sections B/C practice is teacher-prepared; original NBF end-of-unit MCQs, short/extended questions and numbered numerical exercises on printed pp.74–76 still require individual source and answer mapping. Academic teacher approval of the current practice bank remains pending.');
+        note.dataset.psnSourceStatus='unit4-original-end-exercises-pending';
+        linksBox.append(note);
       }
       if(unit.unit===3 && stage.key==='PREPARE'){
         const note=e('p','psn-drawer-stage-empty',
