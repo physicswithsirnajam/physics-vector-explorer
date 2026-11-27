@@ -32,7 +32,7 @@ function sourceAndMath(){
    'not a certified verbatim textbook exercise','10<sup>−17</sup>',
    '8.64 × 10<sup>21</sup>','10<sup>22</sup>',
    'v<sup>2</sup>/x','LT<sup>−2</sup>',
-   '346.2 ± 13.2','65.94 ± 1.26','question-bank']){
+   '346.2 ± 13.2','65.94 ± 1.26','275 Unit 1 practice questions']){
   assert.ok(html.includes(token),'Missing source-bounded science/status: '+token);
  }
  const operations=86400/1e-17;
@@ -45,7 +45,6 @@ function sourceAndMath(){
  assert.equal(Math.round(circumference*100)/100,65.94);
  assert.equal(Math.round(errCirc*100)/100,1.26);
  assert.equal(2-1,1,'Dimensional v²/x length exponent');
- assert.equal(-2,'-2'==="-2"?-2:0);
  assert.ok(html.includes('B · v/x<sup>2</sup>')&&html.includes('C · v<sup>2</sup>/t'));
  assert.ok(nav.includes("id:'v210-u01-inchapter-assignments'"));
  assert.ok(nav.includes("href:'./unit-01-assignments-v210.html'"));
