@@ -1,0 +1,82 @@
+name: Grade XI V200 Unit7.1 Next 12 Original Source/SLO QC (NO SCORE)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v200-topic71-next12-structure-source-slo-no-keys.json"
+      - "quality/grade11-v200-unit07-topic71-next12-structure-source-slo-qc.md"
+      - "scripts/audit_grade11_unit07_topic71_next12_v200.cjs"
+      - ".github/workflows/validate-grade11-v200-topic71-next12-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v200-topic71-next12-structure-source-slo-no-keys.json"
+      - "quality/grade11-v200-unit07-topic71-next12-structure-source-slo-qc.md"
+      - "scripts/audit_grade11_unit07_topic71_next12_v200.cjs"
+      - ".github/workflows/validate-grade11-v200-topic71-next12-source-slo.yml"
+  workflow_dispatch:
+jobs:
+  verify-original-next-twelve-b22-no-score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check original source and no-scoring validator
+        run: node --check scripts/audit_grade11_unit07_topic71_next12_v200.cjs
+      - name: Verify 12 truly new Topic7.1 original row SHA and academic HOLD
+        run: node scripts/audit_grade11_unit07_topic71_next12_v200.cjs
+      - name: Preserve V199 12 original Topic7.1 science/SLO source identities
+        run: node scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs
+      - name: Preserve V198 12 original Topic7.2 science and mechanics regression
+        run: |
+          node scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs
+          node scripts/test_grade11_unit07_topic72_math_v198.cjs
+      - name: Preserve V197 original Topic7.3 12 source-hash and energy-QC
+        run: |
+          node scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+          node scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Preserve original 80 items for all three Unit7 topic banks
+        run: |
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve V196 SI scaling and graph coordinates
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Preserve V195 unsigned teacher decisions and NBF page126 numerical source verification
+        run: |
+          node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+          node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+          node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve V192 prior private Q25 B22 science review and human HOLD
+        run: |
+          node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+          node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+          node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve V185 full 72 private candidate source holds and original NBF inventory
+        run: |
+          node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve 2250 original Grade XI source pinned bank and Unit6 560 teacher HOLD
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve backend teacher approval staging and production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check browser and report launch safety
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload counts only, no private MCQ stems/options/keys or teacher identity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v200-unit7-topic71-next12-original-source-no-score
+          path: qa-artifacts/grade11-v200-topic71-next12-original-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
