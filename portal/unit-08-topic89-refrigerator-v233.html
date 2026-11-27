@@ -55,7 +55,7 @@ footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);pad
 .given strong{color:var(--gold)}.steps{padding-left:25px}.steps li{margin:9px 0}
 .calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 input{display:block;width:100%;background:#fff;color:#122740;border:1px solid #acbed2;border-radius:8px;font:inherit;padding:11px 10px;margin-top:7px;min-width:0}
-output{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+output,.calc-result{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
 .formula{overflow-wrap:anywhere}
 .calc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -123,23 +123,23 @@ form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form butto
 <p class="source">Printed p.147. Unlike Example 8.5, Assignment 8.5 is deliberately symbolic. No temperature values have been invented.</p></section>
 <section id="calculator" aria-labelledby="calculator-title"><h2 id="calculator-title">Two browser-only investigations · No marks</h2>
 <div class="grid calc-cards">
-<form class="card" id="temperatures-tool" aria-labelledby="temp-title" onsubmit="return false"><h3 id="temp-title">A · Ideal refrigerator at chosen temperatures</h3>
+<section class="card" id="temperatures-tool" aria-labelledby="temp-title"><h3 id="temp-title">A · Ideal refrigerator at chosen temperatures</h3>
 <p>Enter hot-room and cold-compartment temperatures in °C, plus work supplied in joules. We convert to kelvin before calculating both ideal COPs.</p>
 <div class="calc-grid">
 <label for="hot-c">Room / hot t<sub>1</sub> (°C)<input id="hot-c" type="number" inputmode="decimal" step="any" value="37"></label>
 <label for="cold-c">Inside / cold t<sub>2</sub> (°C)<input id="cold-c" type="number" inputmode="decimal" step="any" value="6"></label>
 <label for="work-j">Work W<sub>in</sub> (J)<input id="work-j" type="number" inputmode="decimal" step="any" value="1"></label>
 </div><button type="button" id="calculate-ideal">Calculate ideal COP and heats</button>
-<output id="ideal-result" aria-live="polite">For 37 °C and 6 °C: ideal cooling COP ≈ 9.0048, heating COP ≈ 10.0048. For 1 J work: Q cold ≈ 9.0048 J; Q hot ≈ 10.0048 J.</output>
-<p class="source">This calculator uses the more precise 273.15 K offset. The textbook's Example 8.5 uses rounded 273 K and reports exactly 9 J and 10 J.</p></form>
-<form class="card" id="energy-tool" aria-labelledby="energy-title-tool" onsubmit="return false"><h3 id="energy-title-tool">B · Energy transfer for any cyclic refrigerator</h3>
+<div class="calc-result" id="ideal-result" role="status" aria-live="polite">For 37 °C and 6 °C: ideal cooling COP ≈ 9.0048, heating COP ≈ 10.0048. For 1 J work: Q cold ≈ 9.0048 J; Q hot ≈ 10.0048 J.</div>
+<p class="source">This calculator uses the more precise 273.15 K offset. The textbook's Example 8.5 uses rounded 273 K and reports exactly 9 J and 10 J.</p></section>
+<section class="card" id="energy-tool" aria-labelledby="energy-title-tool"><h3 id="energy-title-tool">B · Energy transfer for any cyclic refrigerator</h3>
 <p>Specify heat removed from the compartment and work supplied. This balance does <em>not</em> assume the refrigerator is ideal.</p>
 <div class="calc-grid">
 <label for="cold-heat">Heat removed Q<sub>C</sub> (J)<input id="cold-heat" type="number" inputmode="decimal" step="any" value="9"></label>
 <label for="work-heat">Work input W<sub>in</sub> (J)<input id="work-heat" type="number" inputmode="decimal" step="any" value="1"></label>
 </div><button type="button" id="calculate-energy">Calculate heating, cooling and COP</button>
-<output id="energy-result" aria-live="polite">Heat delivered to room = 10 J; cooling COP = 9; heating COP = 10.</output>
-<p class="source">Q<sub>H</sub> = Q<sub>C</sub> + W<sub>in</sub>. Work must be positive; heat magnitudes are nonnegative.</p></form></div>
+<div class="calc-result" id="energy-result" role="status" aria-live="polite">Heat delivered to room = 10 J; cooling COP = 9; heating COP = 10.</div>
+<p class="source">Q<sub>H</sub> = Q<sub>C</sub> + W<sub>in</sub>. Work must be positive; heat magnitudes are nonnegative.</p></section></div>
 <div class="note"><strong>Input limitations:</strong> Both reservoir temperatures must be above absolute zero, and t<sub>1</sub> must exceed t<sub>2</sub>. Ideal COP approaches very large values as the temperature difference approaches zero. Do not mistake an ideal calculation for actual refrigerator performance.</div></section>
 <section id="self-check" aria-labelledby="checks-title"><h2 id="checks-title">Five conceptual checks · Reveal independent explanations</h2>
 <details><summary>1. Why does a refrigerator not contradict the Clausius statement?</summary><div class="details-body">A refrigerator transports heat from cold to hot with an external work input; it does not do so with no other effect.</div></details>
