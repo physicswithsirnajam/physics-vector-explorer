@@ -1,0 +1,58 @@
+name: Grade XI V225 Unit 8 Topic 8.1 Source-Based Unscored Lesson
+on:
+  pull_request:
+    paths:
+      - "portal/unit-08-topic81-thermal-equilibrium-v225.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v225_unit8_topic81_source_browser.cjs"
+      - "quality/grade11-v225-unit8-topic81-science-lesson-and-preview.md"
+      - ".github/workflows/validate-grade11-v225-unit8-topic81.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-08-topic81-thermal-equilibrium-v225.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v225_unit8_topic81_source_browser.cjs"
+      - ".github/workflows/validate-grade11-v225-unit8-topic81.yml"
+jobs:
+  source-anchored-topic81-unscored-browser-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 27
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate source and navigation JavaScript
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8')); JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Preserve original Units 1-6 2250 pinned MCQs and answer keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V225 real desktop/mobile source-backed student learning, calculator and unscored links
+        run: node scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+      - name: V224 existing original NBF Unit8 source & framework register
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: V209 original Unit7 future unscored lesson navigation
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: V140 original unit-aware sidebar and planned-unit safeguards
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Attach anonymous source and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v225-unit8-topic81-source-browser
+          path: qa-artifacts/grade11-v225-unit8-topic81-unscored/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
