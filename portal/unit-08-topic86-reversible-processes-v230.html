@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI NBF Unit 8 Topic 8.6 reversible and irreversible processes, ideal limit, friction, thermal transfer and cyclic processes; public unscored lesson.">
+<title>Topic 8.6 · Reversible & Irreversible Processes | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}.flow-diagram{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:center;margin:19px 0}.flow-node{background:#203c5e;padding:14px;border:1px solid #8aa3bf;border-radius:11px;text-align:center;min-width:0}.flow-node strong{display:block;color:var(--gold)}.flow-connect{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:center;color:var(--muted)}.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stage-buttons button{margin:0;background:#1c3656;border:1px solid #8fa4ba;color:white;font-size:.88rem;padding:10px 8px}.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}.stage-panel{margin-top:14px;background:#0d223b;border:1px solid var(--edge);border-radius:10px;padding:17px;min-height:115px}#stage-panel-title{margin:0;color:var(--gold)}@media(max-width:650px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-diagram{grid-template-columns:1fr}.flow-connect{font-size:.86rem}}@media print{.stage-buttons button{color:#000;border-color:#555;background:#fff}.stage-panel,.flow-node{background:#fff;color:#000}} 
+.case-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.case-buttons button{margin:0;text-align:left;border:1px solid #8fa4ba;background:#1b3756;color:#fff;font-size:.89rem;line-height:1.45;padding:12px}
+.case-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}
+.case-output{background:#0d223b;border:1px solid #8096b4;border-radius:11px;padding:17px;margin-top:14px;min-height:126px}
+.case-output h3{margin:0 0 7px}
+.flow-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:10px;margin:18px 0}
+.flow-pair .flow-node{font-size:1rem}.flow-pair .flow-connect{font-weight:800}
+.formula-small{font-size:clamp(1rem,2.1vw,1.25rem)}
+@media(max-width:650px){.case-buttons{grid-template-columns:1fr}.flow-pair{grid-template-columns:1fr}.flow-pair .flow-connect{line-height:1.3}}
+@media print{.case-output{background:white;color:black}.case-buttons button{background:white;color:black;border-color:#555}}
+</style>
+</head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic85-heat-engine-v229.html">Topic 8.5</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.6 · Original printed pages 141–142</span>
+<h1>Reversible and Irreversible Processes</h1>
+<p class="lead">Can a thermodynamic change be undone so that <strong>both the system and its surroundings</strong> return to their original states? The distinction explains why ideal thermodynamic paths are useful models, while real processes often cannot be exactly reversed.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false">
+<strong>Public unscored learning preview — independent teacher review pending.</strong> This is an independently authored study adaptation grounded in the owner's original NBF Grade XI Physics textbook printed pp.141–142 and framework outcome P-11-C-14. Original publisher figure 8.15, page scans, example wording and textbook exercise answers are not reproduced. The scenario explorer and self-checks are unscored, save no student records and give no teacher-certified answer key.</div>
+<nav class="jump" aria-label="Jump to lesson sections"><a href="#meaning">Meanings</a><a href="#criteria">Reversibility conditions</a><a href="#examples">Physical examples</a><a href="#cycles">Cyclic process</a><a href="#explorer">Scenario explorer</a><a href="#self-check">Concept checks</a></nav>
+<section id="meaning" aria-labelledby="meaning-title"><h2 id="meaning-title">8.6 · What makes a process reversible?</h2>
+<div class="grid">
+<article class="card" id="reversible"><h3>Reversible process · Ideal limit</h3>
+<p>A process is thermodynamically <strong>reversible</strong> if it can be retraced in reverse while restoring <em>both</em> the system <em>and</em> the surroundings to their original states, with no net change left anywhere.</p>
+<p>In the ideal limit, the system passes through states arbitrarily close to equilibrium, and tiny changes of an external condition can reverse the direction without dissipative losses.</p>
+<p class="source">Source: original NBF printed p.141, concept of retracing a process without leaving changes to its surroundings.</p></article>
+<article class="card" id="irreversible"><h3>Irreversible process · Real-world tendency</h3>
+<p>An <strong>irreversible</strong> process cannot be exactly retraced so that the system and environment are both restored with no other changes. Friction, unrestrained expansion, mixing and heat transfer across a finite temperature difference are common sources of irreversibility.</p>
+<p>Some parts of a system may return to their earlier conditions, but this is not enough to establish reversibility.</p>
+<p class="source">Source: original NBF printed p.142, dissipative phenomena and examples.</p></article>
+</div>
+<div class="note" id="slow-caution"><strong>Key distinction:</strong> A process being <em>slow</em> or <em>quasi-static</em> is <strong>not sufficient</strong> for reversibility. A very slow piston moving with friction still dissipates energy and is irreversible. Reversibility requires absence of dissipative effects and appropriately infinitesimal driving differences.</div>
+</section>
+<section id="criteria" aria-labelledby="criteria-title"><h2 id="criteria-title">Conditions for the ideal reversible limit</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Condition</th><th scope="col">Why it matters</th><th scope="col">When it fails</th></tr></thead>
+<tbody>
+<tr><td>Near-equilibrium progression</td><td>Intermediate states can be specified and the direction changed through a tiny adjustment.</td><td>Rapid expansion into vacuum is not an equilibrium sequence.</td></tr>
+<tr><td>No friction or dissipative loss</td><td>Mechanical energy need not be degraded through rubbing, viscosity or turbulence.</td><td>A piston sliding against substantial friction is irreversible even if very slow.</td></tr>
+<tr><td>Infinitesimal driving difference</td><td>Heat or mechanical transfer can be reversed without a finite gradient.</td><td>Heat flowing spontaneously from a distinctly hot object to a cold one is irreversible.</td></tr>
+<tr><td>No net lasting change in surroundings on reversal</td><td>Reversal must restore the environment as well as the system.</td><td>Restoring the gas by a second unrelated operation can leave heat or other changes elsewhere.</td></tr>
+</tbody></table></div>
+<p class="source">Teacher explanation extends the textbook's qualitative definition using standard ideal thermodynamic assumptions; it is not copied from publisher marking material.</p></section>
+<section id="examples" aria-labelledby="examples-title"><h2 id="examples-title">Examples: physical interpretation matters</h2>
+<div class="grid">
+<article class="card"><h3>Idealized near-equilibrium phase change</h3>
+<p>Melting and freezing, or evaporation and condensation, <em>can approximate reversible paths</em> if the material and thermal surroundings remain in equilibrium and the change is driven by arbitrarily small temperature differences.</p>
+<p><strong>Do not generalize:</strong> ordinary boiling with a large heater–liquid temperature difference or rapid evaporation is not automatically reversible.</p></article>
+<article class="card"><h3>Friction or dissipative motion</h3>
+<p>Friction converts organized mechanical energy into thermal energy. It is not possible to reverse the motion alone and recover the original conditions of both the body and its surroundings without other changes.</p></article>
+<article class="card"><h3>Heat flow across a finite difference</h3>
+<p>When a hot body is brought into contact with a substantially colder one, heat flows spontaneously to the cooler body. A naive reversal of that flow cannot restore everything without additional changes elsewhere.</p></article>
+</div>
+<div class="note"><strong>Textbook qualification:</strong> The source mentions phase changes as reversible examples. These are understood as idealized, near-equilibrium cases, not a blanket claim that every real melting or boiling event is fully reversible.</div>
+</section>
+<section id="cycles" aria-labelledby="cycles-title"><h2 id="cycles-title">Cyclic process ≠ reversible process</h2>
+<p>The original textbook also introduces a <strong>cyclic process</strong>: after a sequence of changes, the <em>system</em> returns to its initial thermodynamic state. For example, it may follow one path from state 1 to state 2 and another path from state 2 back to state 1.</p>
+<div class="flow-pair" role="img" aria-label="Text-based cycle: thermodynamic state 1 follows a forward path to state 2 and a different return path back to state 1.">
+<div class="flow-node"><strong>State 1</strong>Initial system state</div>
+<div class="flow-connect">Forward 1 → 2 · Return 2 → 1</div>
+<div class="flow-node"><strong>State 2</strong>Intermediate system state</div>
+</div>
+<div class="formula formula-small" id="cycle-equation">ΔU<sub>cycle</sub> = 0 <small>After a complete cycle: Q<sub>net,cycle</sub> = W<sub>by,net,cycle</sub> using signed heat and work.</small></div>
+<p>Internal energy is a <em>state function</em>. Its net change over a complete cycle is zero, even when heat and work cross the system boundary along the path. <strong>Net heat and net work need not individually be zero.</strong></p>
+<div class="note" id="cycle-caution"><strong>Do not confuse these ideas:</strong> A cycle requires the <em>system</em> to return to its starting state. Reversibility additionally requires the <em>surroundings</em> to be restorable with no net change. A real heat-engine cycle with friction is cyclic but irreversible.</div>
+<p class="source">Original NBF printed p.142, cyclic-process paragraph and Figure 8.15 (not reproduced). The independent text flow above represents the concept without copying the textbook image.</p>
+</section>
+<section id="explorer" aria-labelledby="explorer-title"><h2 id="explorer-title">Scenario explorer · No marks or saved answers</h2>
+<p>Select a process to reveal whether it could be reversible in an ideal limit or is inherently irreversible under the stated conditions. This is original, teacher-review-pending practice rather than a textbook exercise edition.</p>
+<div class="card">
+<div class="case-buttons" role="group" aria-label="Choose a physical process scenario">
+<button type="button" data-case="0" aria-pressed="true">1 · Frictionless piston, tiny pressure differences</button>
+<button type="button" data-case="1" aria-pressed="false">2 · Very slow piston with friction</button>
+<button type="button" data-case="2" aria-pressed="false">3 · Hot object touches much cooler object</button>
+<button type="button" data-case="3" aria-pressed="false">4 · Melting at equilibrium under tiny changes</button>
+<button type="button" data-case="4" aria-pressed="false">5 · Gas freely expands into vacuum</button>
+<button type="button" data-case="5" aria-pressed="false">6 · Frictional engine returns to its starting state</button>
+</div>
+<div class="case-output" id="case-output" role="status" aria-live="polite">
+<h3 id="case-answer">Reversible in the ideal limit</h3>
+<p id="case-explanation">A frictionless piston kept near mechanical equilibrium and moved by arbitrarily small changes of external pressure can, in the ideal limit, retrace its path without losses. Heat transfer, if any, must also avoid finite dissipative gradients.</p>
+</div>
+</div></section>
+<section id="self-check" aria-labelledby="checks-title"><h2 id="checks-title">Five self-checks · Reveal answers on demand</h2>
+<details><summary>1. If a piston moves extremely slowly, is its motion necessarily reversible?</summary><div class="details-body">No. Friction or other dissipative effects can remain even at very low speed. Slow motion by itself does not establish reversibility.</div></details>
+<details><summary>2. What must be restored to prove thermodynamic reversibility?</summary><div class="details-body">Both the system and its surroundings must be restorable to their original states with no net changes remaining.</div></details>
+<details><summary>3. Can a gas return to its initial state after an irreversible process?</summary><div class="details-body">Yes. A complete cycle can return the gas to its initial state even though its surroundings have undergone irreversible changes. Cyclic and reversible are not synonyms.</div></details>
+<details><summary>4. In a complete cycle, if the net heat transferred to the system is +400 J, what net work has it done?</summary><div class="details-body">The system returns to the same internal energy, so ΔU<sub>cycle</sub> = 0 and Q<sub>net</sub> = W<sub>by,net</sub> = <strong>+400 J</strong>. This does not prove the cycle reversible.</div></details>
+<details><summary>5. Are melting and boiling automatically reversible as they happen in daily life?</summary><div class="details-body">No. These processes can approximate reversibility in an ideal near-equilibrium limit with infinitesimal driving gradients. Finite temperature differences, mixing or rapid events make ordinary real processes irreversible.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-title"><h2 id="continue-title">Continue learning</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.5</h3><p>Heat-engine energy flow, work output and the four-stroke petrol engine.</p><p><a href="./unit-08-topic85-heat-engine-v229.html">Study Topic 8.5</a></p></div>
+<div class="card"><h3>Explore Unit 8 labs</h3><p>Use existing thermodynamics simulations for enrichment while preserving their original topic and release status.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next: Topic 8.7</h3><p>Second Law of Thermodynamics starts on original printed page 142. It requires its own source check before a separate unscored lesson.</p><p><a href="./exam-quick-access.html">See existing study links</a></p></div>
+</div></section>
+</main><footer>Physics with Sir Najam · Unit 8 Topic 8.6 · Source-based unscored study preview · Independent teacher review pending</footer>
+<script>
+(function(){'use strict';
+const cases=[
+ ['Reversible in the ideal limit','A frictionless piston kept near mechanical equilibrium and moved by arbitrarily small changes of external pressure can, in the ideal limit, retrace its path without losses. Heat transfer, if any, must also avoid finite dissipative gradients.'],
+ ['Irreversible','Even if very slow, a piston rubbing against a surface produces frictional dissipation. Slow motion alone cannot make it reversible.'],
+ ['Irreversible','Heat transfer across a finite temperature difference is spontaneous and dissipative. Simply reversing the observed heat flow does not restore both surroundings and objects without other changes.'],
+ ['Reversible in the ideal limit','An equilibrium phase change driven by an arbitrarily small difference of temperature or pressure can be reversed with the surroundings restored in the ideal limit. Everyday heating or cooling need not satisfy these conditions.'],
+ ['Irreversible','Free expansion into a vacuum is not an equilibrium-state path. The gas may later be compressed, but restoring it requires other changes to the surroundings.'],
+ ['Irreversible even though cyclic','The working substance may complete a cycle and return to its initial state, but piston friction and other dissipative processes can leave net changes outside the system. A cycle is not automatically reversible.']
+];
+for(const b of document.querySelectorAll('[data-case]'))b.addEventListener('click',function(){
+ const n=Number(b.dataset.case);
+ if(!Number.isInteger(n)||n<0||n>=cases.length)return;
+ for(const other of document.querySelectorAll('[data-case]'))other.setAttribute('aria-pressed',other===b?'true':'false');
+ document.getElementById('case-answer').textContent=cases[n][0];
+ document.getElementById('case-explanation').textContent=cases[n][1];
+});
+})();
+</script>
+</body></html>
