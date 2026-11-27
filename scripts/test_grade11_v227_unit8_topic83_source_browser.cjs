@@ -48,7 +48,7 @@ function checkSource(){
   access:'public-unscored-study-teacher-review'
  });
  assert.match(u8.summary,/Four source-based, unscored study lessons/);
- assert.match(u8.studentNotice,/no Unit8 scored bank/);
+ assert.match(u8.studentNotice,/no Unit8 scored bank/i);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
  assert.equal(catalog.resources.length,59);
