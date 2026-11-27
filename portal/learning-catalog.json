@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "Eight source-based, unscored study lessons are available for Topics 8.1–8.8. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
+          "summary": "Nine source-based, unscored study lessons are available for Topics 8.1–8.9. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "topics-8.1-to-8.8-source-anchored-original-textbook-pp128-145-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topics 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine/four strokes; 8.6 reversible/irreversible and cyclic processes; 8.7 Second Law (Kelvin and Clausius); and 8.8 Carnot's Engine, four reversible processes, efficiency, theorem, and independently worked Example/Assignment 8.4. All remain teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
+          "qualityStatus": "topics-8.1-to-8.9-source-anchored-original-textbook-pp128-147-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law and independently worked Example/Assignment 8.3; 8.5 Heat Engine; 8.6 reversible and cyclic processes; 8.7 Second Law; 8.8 Carnot engine, efficiency and independently worked Example/Assignment 8.4; and 8.9 Refrigerator, cooling/heating COP, Example 8.5 and the original symbolic Assignment 8.5. All are teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -391,6 +391,16 @@
               "sourcePages": [
                 143,
                 145
+              ],
+              "access": "public-unscored-study-teacher-review"
+            },
+            {
+              "topic": "8.9",
+              "title": "Refrigerator: Heat Transfer and Cooling/Heating COP",
+              "href": "./unit-08-topic89-refrigerator-v233.html",
+              "sourcePages": [
+                145,
+                147
               ],
               "access": "public-unscored-study-teacher-review"
             }
