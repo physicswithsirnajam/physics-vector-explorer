@@ -324,6 +324,20 @@
          href:'./descriptive-answer-finder.html?unit=2&type=comprehensive-response',access:'public-link'}
       ].forEach(add);
     }
+    /* V212: exactly 3 already indexed Unit 3 teacher-adapted worked examples,
+     * and 8 existing source-numbered numerical solutions, kept distinct from
+     * original textbook exercise MCQs/short/long questions and assignments.
+     * Do not infer a teacher approval from providing an index shortcut. */
+    if(unit.unit===3){
+      [
+        {id:'v212-u03-worked-examples-finder',category:'PRACTISE',
+         title:'Unit 3 · Find 3 numbered worked examples · Source adaptations',
+         href:'./textbook-resource-finder.html?unit=3&kind=textbook-example',access:'public-link'},
+        {id:'v212-u03-numericals-finder',category:'PRACTISE',
+         title:'Unit 3 · Find 8 numbered worked numerical exercises · Teacher review pending',
+         href:'./textbook-resource-finder.html?unit=3&kind=textbook-numerical',access:'public-link'}
+      ].forEach(add);
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -354,6 +368,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===3 && stage.key==='PREPARE'){
+        const note=e('p','psn-drawer-stage-empty',
+          'Three numbered worked-example adaptations and eight textbook-number-labelled worked numericals are linked separately under Practise. The existing 40-mark Sections B/C paper is teacher-prepared practice, not an individually indexed original end-of-unit short/extended exercise. Original NBF end-of-unit MCQs, short/long questions and in-chapter assignments still require individual source-page review. The numerical solutions retain pending scientific teacher sign-off.');
+        note.dataset.psnSourceStatus='unit3-original-end-exercises-pending';
+        linksBox.append(note);
       }
       if(unit.unit===2 && stage.key==='PREPARE'){
         const note=e('p','psn-drawer-stage-empty',
