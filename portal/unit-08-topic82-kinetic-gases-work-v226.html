@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI Physics Unit 8 Topic 8.2: kinetic theory, work done by and on gas, original NBF Example 8.2 and Assignment 8.2 worked adaptations, unscored.">
+<title>Topic 8.2 · Kinetic Theory of Gases and Work | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.64 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;padding:10px;background:white;color:#0d2340;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}
+.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:30px 0 12px}
+h3{color:var(--gold);font-size:1.08rem;margin:0 0 9px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:830px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}.card ul{padding-left:23px}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:15px;margin:14px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.05rem,2.5vw,1.45rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{font-size:.73rem;display:block;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.source{font-size:.86rem;color:var(--muted)}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}
+details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}
+.details-body{padding:0 17px 17px}.answer{color:var(--positive);font-size:1.15rem;font-weight:850}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}
+table{border-collapse:collapse;min-width:570px;width:100%;font-size:.89rem}
+th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}
+.tool{padding:17px;border-radius:11px;background:var(--panel);border:1px solid var(--edge)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tool label{font-size:.87rem;font-weight:800}.tool input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+.tool button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+.tool output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:650px){.grid,.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white;color:black}header nav,.jump,.skip,.tool button{display:none}.card,.note,.notice,details,.tool{break-inside:avoid;background:white;border-color:#666;color:black}.formula{background:white;color:black}.card p,.card li,.source{color:#333}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header>
+<a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" alt="Physics with Sir Najam official logo" width="55" height="55"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic81-thermal-equilibrium-v225.html">Topic 8.1</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav>
+</header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.2 · Original printed pages 131–134</span>
+<h1>Kinetic Theory of Gases &amp; Thermodynamic Work</h1>
+<p class="lead">Learn why an ideal gas produces pressure, calculate pressure from a specified gas sample, and distinguish the signs of work done <em>by</em> and <em>on</em> a gas.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false">
+<strong>Public unscored learning preview — independent teacher review pending.</strong>
+The material below is an original teaching adaptation grounded in NBF Grade XI pp.131–134. The original <strong>Example 8.2</strong> and <strong>Assignment 8.2</strong> are independently worked, not copied from publisher marking material. The original Unit 8 question bank, source figures, end-of-unit solutions and graded assessments remain unpublished. No marks, sign-in or saved student data are used here.
+</div>
+<nav class="jump" aria-label="Jump to lesson sections">
+<a href="#kinetic">Gas-particle assumptions</a><a href="#density">Pressure and density</a><a href="#work">Work and signs</a><a href="#example82">Example 8.2</a><a href="#assignment82">Assignment 8.2</a><a href="#calculator">Work calculator</a><a href="#self-check">Self-check</a>
+</nav>
+<section id="kinetic" aria-labelledby="kinetic-h">
+<h2 id="kinetic-h">8.2 · Kinetic Theory of Gases</h2>
+<div class="grid">
+<article class="card"><h3>Model assumptions</h3><ul>
+<li>A sample contains a huge number of particles.</li>
+<li>The particles are much smaller than their typical separation, so their own occupied volume can be neglected in this idealization.</li>
+<li>Particles move randomly and continually; collisions with walls and other molecules are treated as perfectly elastic.</li>
+<li>Except during collisions, the ideal model neglects intermolecular attractive and repulsive forces.</li>
+</ul>
+<p class="source">Source orientation: original NBF printed p.131; the textbook's Figure 8.2 is not reproduced.</p>
+</article>
+<article class="card"><h3>What creates gas pressure?</h3>
+<p>Gas molecules continually collide with the container walls, changing their momentum. The combined force from those collisions produces pressure. Higher temperature at fixed volume generally increases pressure because molecular motion becomes more energetic.</p>
+<p><strong>Limits of the model:</strong> At sufficiently high gas density or low temperature, molecular volume and intermolecular attraction become important, and an ideal-gas prediction may be inaccurate.</p>
+<p class="source">NBF pp.131–132. This is a model description, not a claim that real-gas particles have zero size.</p></article>
+</div>
+</section>
+<section id="density" aria-labelledby="density-h">
+<h2 id="density-h">Linking pressure to density</h2>
+<p>We can combine the ideal-gas law, <strong>pV = nRT</strong>, with the molar mass of a sample. If the gas has mass <em>m</em> and molar mass <em>M</em>, then n = m/M and mass density ρ = m/V.</p>
+<div class="grid">
+<div class="card"><h3>Number of moles</h3><div class="formula">n = m/M</div><p>Use kilograms for sample mass and kilograms per mole for molar mass, or a consistent equivalent pair of mass units.</p></div>
+<div class="card"><h3>Ideal-gas density</h3><div class="formula">ρ = pM/(RT)<small>Equivalently: p = ρRT/M</small></div><p>ρ: kg m<sup>−3</sup>; p: Pa; M: kg mol<sup>−1</sup>; R: J mol<sup>−1</sup> K<sup>−1</sup>; T: kelvin.</p></div>
+</div>
+<div class="note"><strong>Interpretation:</strong> at constant gas pressure and composition, increasing absolute temperature lowers density. At fixed temperature, increasing pressure raises density within the ideal-gas approximation.</div>
+</section>
+<section id="work" aria-labelledby="work-h">
+<h2 id="work-h">8.2.1–8.2.2 · Work done by and on a gas</h2>
+<p>Imagine a cylinder with a freely moving piston. The gas pushes against a fixed external pressure while the piston moves. During a <strong>constant-pressure</strong> expansion, the work done by the gas equals the pressure multiplied by the volume change.</p>
+<div class="formula" id="work-equation">W<sub>by</sub> = pΔV = p(V<sub>f</sub> − V<sub>i</sub>)<small>Constant external pressure p · Work in joules when p is Pa and volume is m³</small></div>
+<div class="formula" id="work-on-equation">W<sub>on</sub> = −pΔV = −W<sub>by</sub><small>For the same boundary movement, work on the gas has the opposite sign</small></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Change</th><th scope="col">ΔV</th><th scope="col">Work done by gas</th><th scope="col">Work done on gas</th></tr></thead><tbody>
+<tr><td>Expansion</td><td>Positive</td><td>Positive</td><td>Negative</td></tr>
+<tr><td>Compression</td><td>Negative</td><td>Negative</td><td>Positive</td></tr>
+<tr><td>Constant volume</td><td>Zero</td><td>Zero</td><td>Zero</td></tr></tbody></table></div>
+<div class="note"><strong>Graph interpretation:</strong> for a constant-pressure process, the magnitude of the work is the area of a rectangle under the pressure–volume graph. For a quasi-static process with varying pressure, the signed work done by the gas is <span style="white-space:nowrap">W<sub>by</sub> = ∫p dV</span>. Area depends on correct axes and the direction of the process. A mere point on the graph is not a work value.</div>
+<p class="source">Book figures 8.3–8.6 (pp.132–133) depict the piston, constant-pressure area and expansion/compression cases. These source figures remain in the original textbook; none is copied here.</p>
+</section>
+<section id="example82" aria-labelledby="example-h">
+<h2 id="example-h">NBF Worked Example 8.2 · Source-data adaptation</h2>
+<p class="source">Original printed p.133. Original data and physical task retained; the solution and wording here are independently prepared rather than copied from the publisher.</p>
+<div class="given"><strong>Given:</strong> argon gas mass m = 2 kg, cylinder radius r = 1 m and height h = 2 m, gas temperature 30 °C ≈ 303 K, argon molar mass M ≈ 0.040 kg mol<sup>−1</sup>. <strong>Find:</strong> the absolute gas pressure using ideal-gas assumptions.</div>
+<ol class="steps">
+<li>Convert to moles: n = m/M = (2 kg)/(0.040 kg mol<sup>−1</sup>) = <strong>50 mol</strong>.</li>
+<li>Calculate cylinder volume: V = πr<sup>2</sup>h = π(1 m)<sup>2</sup>(2 m) ≈ <strong>6.283 m³</strong>.</li>
+<li>Use the ideal-gas equation: p = nRT/V, with R ≈ 8.314 J mol<sup>−1</sup> K<sup>−1</sup>.</li>
+<li>Substitute: p = [(50 mol)(8.314 J mol<sup>−1</sup> K<sup>−1</sup>)(303 K)]/(6.283 m³).</li>
+</ol>
+<div class="formula" id="example82-result">p ≈ 2.00 × 10<sup>4</sup> Pa<small>Approximately 20.0 kPa; independently calculated value is 20,047 Pa with the stated rounded constants.</small></div>
+<p class="source">This is an ideal-gas estimate. The 2 kg sample is treated as pure argon, with no real-gas interaction correction.</p>
+</section>
+<section id="assignment82" aria-labelledby="assignment-h">
+<h2 id="assignment-h">NBF Assignment 8.2 · Compression and the work sign</h2>
+<p class="source">Original printed p.133. Source data preserved: a gas compressed to one-third its initial volume, p = 2.25 × 10<sup>5</sup> Pa, with 200 J work done <strong>on</strong> the gas. The walkthrough is a teacher-review adaptation.</p>
+<div class="given"><strong>Task:</strong> Find the final volume when V<sub>f</sub> = V<sub>i</sub>/3 and W<sub>on</sub> = +200 J at constant pressure.</div>
+<details id="assignment82-solution"><summary>Reveal the independent step-by-step calculation</summary><div class="details-body">
+<ol class="steps">
+<li>Let initial volume be V<sub>i</sub>. Final volume V<sub>f</sub> = V<sub>i</sub>/3.</li>
+<li>Hence ΔV = V<sub>f</sub> − V<sub>i</sub> = −(2/3)V<sub>i</sub>, a negative change because the gas is compressed.</li>
+<li>Work done <strong>on</strong> the gas is positive in compression: W<sub>on</sub> = −pΔV = p(2/3)V<sub>i</sub>.</li>
+<li>Rearrange: V<sub>i</sub> = (3W<sub>on</sub>)/(2p) = (3 × 200 J)/(2 × 2.25 × 10<sup>5</sup> Pa) ≈ 1.333 × 10<sup>−3</sup> m³.</li>
+<li>V<sub>f</sub> = V<sub>i</sub>/3 ≈ 4.444 × 10<sup>−4</sup> m³.</li>
+<li>Check: ΔV ≈ −8.889 × 10<sup>−4</sup> m³; W<sub>by</sub> = pΔV ≈ −200 J; W<sub>on</sub> ≈ +200 J.</li>
+</ol>
+<p class="answer" id="assignment82-result">V<sub>f</sub> ≈ 4.44 × 10<sup>−4</sup> m³ = 0.444 L</p>
+<p>The distinct signs for work by versus work on the gas are essential. Both are not positive for the same compression.</p>
+</div></details>
+</section>
+<section id="calculator" aria-labelledby="calculator-h">
+<h2 id="calculator-h">Try the constant-pressure piston calculator</h2>
+<p>Explore the sign of work as gas volume changes. Input pressure in kPa and volumes in litres. This is <strong>unscored, on-page calculation only</strong>—no student data is saved.</p>
+<div class="tool">
+<div class="tool-grid">
+<label for="p-kpa">External pressure (kPa)<input id="p-kpa" type="number" value="225" min="0.001" max="100000" step="any" inputmode="decimal"></label>
+<label for="vi-litres">Initial volume (L)<input id="vi-litres" type="number" value="1.333333333" min="0.001" max="100000" step="any" inputmode="decimal"></label>
+<label for="vf-litres">Final volume (L)<input id="vf-litres" type="number" value="0.444444444" min="0.001" max="100000" step="any" inputmode="decimal"></label>
+</div>
+<button id="calculate-work" type="button">Calculate signed work</button>
+<output id="work-result" aria-live="polite">At 225 kPa, compression from 1.3333 L to 0.4444 L gives W by gas ≈ −200 J; W on gas ≈ +200 J.</output>
+<p class="source">For constant external pressure only: 1 kPa × 1 L = 1 J. Use physically positive pressure and volume inputs; direction is determined by final minus initial volume.</p>
+</div>
+</section>
+<section id="self-check" aria-labelledby="self-check-h">
+<h2 id="self-check-h">Four conceptual self-checks · No grade</h2>
+<details><summary>1. Why do gas molecules exert pressure on a container wall?</summary><div class="details-body">Their collisions change momentum and exert forces on the walls. The total force per unit area is pressure.</div></details>
+<details><summary>2. Why does the ideal-gas model become less reliable at high density or very low temperature?</summary><div class="details-body">Finite molecular size and intermolecular forces become important; the assumptions of negligible size and negligible forces may fail.</div></details>
+<details><summary>3. A gas at 100 kPa expands by 2 L against constant pressure. What are the signs and values of work?</summary><div class="details-body">W<sub>by</sub> = +(100 kPa)(2 L) = +200 J; W<sub>on</sub> = −200 J.</div></details>
+<details><summary>4. The gas is compressed at constant pressure. Can work by the gas and work on the gas both be positive?</summary><div class="details-body">No. For the same boundary movement, W<sub>by</sub> = pΔV and W<sub>on</sub> = −pΔV. During compression ΔV &lt; 0, so work by the gas is negative and work on it is positive.</div></details>
+</section>
+<section aria-labelledby="continue-h"><h2 id="continue-h">Continue learning</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.1</h3><p>Revisit thermal equilibrium, internal energy, the ideal-gas equation, Example 8.1 and Assignment 8.1.</p><p><a href="./unit-08-topic81-thermal-equilibrium-v225.html">Go to Topic 8.1</a></p></div>
+<div class="card"><h3>Explore and prepare for 8.3</h3><p>Unit 8's existing simulations are supplementary. Topic 8.3 Gas Laws starts on original p.134 and remains planned for a future source review.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+</div>
+</section>
+</main>
+<footer>Physics with Sir Najam · Unit 8 Topic 8.2 source-based learning adaptation · Academic review pending · No graded questions</footer>
+<script>
+(function(){'use strict';
+const p=document.getElementById('p-kpa'),vi=document.getElementById('vi-litres'),
+vf=document.getElementById('vf-litres'),out=document.getElementById('work-result');
+document.getElementById('calculate-work').addEventListener('click',()=>{
+ const a=Number(p.value),b=Number(vi.value),c=Number(vf.value);
+ if(!p.value||!vi.value||!vf.value||[a,b,c].some(x=>!Number.isFinite(x)||x<=0)){
+  out.textContent='Use finite, positive pressure and initial/final volumes.';return;
+ }
+ const wBy=a*(c-b),wOn=-wBy; // kPa × litre = joule
+ if(!Number.isFinite(wBy)||!Number.isFinite(wOn)){
+  out.textContent='Inputs are outside the supported numerical range.';return;
+ }
+ const direction=c>b?'Expansion':c<b?'Compression':'Constant volume';
+ const fmt=x=>(x>=0?'+':'−')+Math.abs(x).toPrecision(5);
+ out.textContent=direction+' · W by gas = '+fmt(wBy)+' J; W on gas = '+fmt(wOn)+' J (constant external pressure).';
+});
+})();
+</script>
+</body>
+</html>
