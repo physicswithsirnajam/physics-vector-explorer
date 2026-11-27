@@ -16,9 +16,20 @@ const approvedCss='@media screen and (max-width:560px){main>p.muted{overflow-wra
 function fnv(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;return h;}
 function checkSource(){
  const source=fs.readFileSync(path.join(root,'portal/unit-05-work-study.html'),'utf8');
- const withoutApprovedCss=source.replace('\n'+approvedCss,'');
+ /* V214 adds one and only one stable jump anchor to the already-authored
+  * NBF Example 5.1 adaptation. The original numerical values, explanation,
+  * answer, and all unrelated markup must remain byte-for-byte identical.
+  * Preserve the original V98-K constant, rather than rebasing the guard. */
+ const exampleAnchor='<p id="example51"><strong>Worked example based on NBF Example 5.1 (p.80):</strong>';
+ const originalExample='<p><strong>Worked example based on NBF Example 5.1 (p.80):</strong>';
+ assert.equal(source.split(exampleAnchor).length-1,1,
+  'Exactly one V214 Example 5.1 anchor may appear in its original context');
+ assert.equal(source.split('id="example51"').length-1,1,
+  'No duplicate or relocated Example 5.1 anchor is allowed');
+ const withoutV214Anchor=source.replace(exampleAnchor,originalExample);
+ const withoutApprovedCss=withoutV214Anchor.replace('\n'+approvedCss,'');
  assert.equal(fnv(withoutApprovedCss),originalFNV,
-  'The original study-guide content and source markup must be unchanged (apart from the single approved mobile CSS rule)');
+  'Original Unit 5 study-guide science, values, answers and markup must remain byte-identical after removing only the one V214 anchor and the approved mobile CSS rule');
  assert.ok(source.includes('./assets/physics-with-sir-najam-official-logo.png'),'original official logo reference retained');
  assert.ok(source.includes('Work and Energy — Source-Mapped Study Guide')&&source.includes('P-11-B-32'),'original student physics explanation and SLO mapping retained');
  console.log('V98-K SOURCE PASS: every original byte preserved apart from an optional scoped CSS rule.');
