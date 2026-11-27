@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 8 Topic 8.3: Boyle, Charles and Gay-Lussac gas laws, graph interpretation and three interactive, unscored worked investigations.">
+<title>Topic 8.3 · The Gas Laws | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+</style></head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic82-kinetic-gases-work-v226.html">Topic 8.2</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.3 · Original printed pages 134–135</span>
+<h1>The Gas Laws</h1>
+<p class="lead">Study three relationships between pressure, volume and absolute temperature for a <strong>fixed amount of gas</strong>. Then predict and calculate changes with independent, unscored investigations.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false"><strong>Public unscored learning preview — independent teacher review pending.</strong> This original teaching adaptation follows the owner's NBF Grade XI Physics Unit 8 printed pp.134–135, with SLO alignment P-11-C-09 and P-11-C-10. Original publisher figures and question wording are not reproduced. This page has no graded questions, user accounts, tracking or saved results. The complete Unit 8 and its official exercise solutions remain unreleased.</div>
+<nav class="jump" aria-label="Jump to lesson sections"><a href="#three-laws">Three gas laws</a><a href="#graphs">Graph interpretations</a><a href="#investigations">Try calculations</a><a href="#self-check">Concept checks</a><a href="#continue">Continue learning</a></nav>
+<section id="three-laws" aria-labelledby="laws-heading"><h2 id="laws-heading">8.3 · Compare the three gas laws</h2>
+<div class="grid">
+<article class="card" id="boyle"><h3>8.3.1 · Boyle's Law</h3><p><strong>Keep temperature and amount of gas constant.</strong> Pressure is inversely proportional to volume: compressing a gas raises its pressure.</p><div class="formula">p ∝ 1/V<small>pV = constant</small></div><div class="formula">p<sub>1</sub>V<sub>1</sub> = p<sub>2</sub>V<sub>2</sub></div><p>As volume doubles, pressure halves, provided temperature and gas amount remain unchanged.</p><p class="source">NBF printed p.134; Figure 8.7 is not reproduced.</p></article>
+<article class="card" id="charles"><h3>8.3.2 · Charles's Law</h3><p><strong>Keep pressure and amount of gas constant.</strong> Gas volume increases in direct proportion to its absolute temperature.</p><div class="formula">V ∝ T<small>V/T = constant</small></div><div class="formula">V<sub>1</sub>/T<sub>1</sub> = V<sub>2</sub>/T<sub>2</sub></div><p>Use <strong>kelvin</strong>, never Celsius values directly in the temperature ratios. A rise from 300 K to 600 K doubles the ideal-gas volume at constant pressure.</p><p class="source">NBF printed pp.134–135; Figure 8.8 is not reproduced.</p></article>
+<article class="card" id="gay-lussac"><h3>8.3.3 · Gay-Lussac's Law</h3><p><strong>Keep volume and amount of gas constant.</strong> Gas pressure increases in direct proportion to its absolute temperature.</p><div class="formula">p ∝ T<small>p/T = constant</small></div><div class="formula">p<sub>1</sub>/T<sub>1</sub> = p<sub>2</sub>/T<sub>2</sub></div><p>In a rigid vessel, increasing temperature increases ideal-gas pressure if the amount of gas is unchanged.</p><p class="source">NBF printed p.135; Figure 8.9 is not reproduced.</p></article></div>
+<div class="note" id="kelvin-note"><strong>Always use absolute temperature:</strong> T(K) ≈ t(°C) + 273.15. The textbook's Charles-law line, when extrapolated, reaches zero volume near −273 °C. That is a mathematical ideal-gas extrapolation, <strong>not</strong> a physical claim that a real gas can be cooled continuously to zero volume.</div>
+</section>
+<section id="graphs" aria-labelledby="graphs-heading"><h2 id="graphs-heading">Read the graphs correctly</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Relationship</th><th scope="col">Axes and fixed quantities</th><th scope="col">Expected ideal-gas shape</th><th scope="col">Physical interpretation</th></tr></thead><tbody>
+<tr><td>Boyle</td><td>Vertical p, horizontal V. T and gas amount constant.</td><td>Downward-curving rectangular hyperbola; pV constant.</td><td>Higher volume corresponds to lower pressure.</td></tr>
+<tr><td>Charles</td><td>Vertical V, horizontal T (kelvin). p and gas amount constant.</td><td>Straight increasing line through the kelvin origin in the ideal model.</td><td>Higher T corresponds to higher V.</td></tr>
+<tr><td>Gay-Lussac</td><td>Vertical p, horizontal T (kelvin). V and gas amount constant.</td><td>Straight increasing line through the kelvin origin in the ideal model.</td><td>Higher T corresponds to higher p.</td></tr>
+</tbody></table></div><p class="source">Graph descriptions independently prepared from the original textbook's Figures 8.7–8.9. No textbook figure is embedded or redrawn.</p>
+</section>
+<section id="investigations" aria-labelledby="investigations-heading"><h2 id="investigations-heading">Interactive gas-law investigations · Unscored</h2>
+<p>Choose an investigation and vary one independent quantity while holding the stated variables constant. These are <strong>original practice scenarios</strong>, not original numbered textbook examples or assignments. Inputs are calculated in the browser only.</p>
+<div class="grid">
+<section class="card" id="boyle-tool" aria-labelledby="boyle-tool-heading"><h3 id="boyle-tool-heading">A · Predict final pressure at constant T</h3><div class="tool-grid">
+<label for="b-p1">Initial p (kPa)<input id="b-p1" type="number" inputmode="decimal" min="0.000001" step="any" value="200"></label>
+<label for="b-v1">Initial V (L)<input id="b-v1" type="number" inputmode="decimal" min="0.000001" step="any" value="10"></label>
+<label for="b-v2">Final V (L)<input id="b-v2" type="number" inputmode="decimal" min="0.000001" step="any" value="25"></label>
+</div><button id="calc-boyle" type="button">Calculate Boyle's law</button>
+<output id="boyle-result" aria-live="polite">At constant temperature, p₂ = (200 × 10)/25 = 80 kPa.</output><p class="source">p₂ = p₁V₁/V₂; 200 kPa × 10 L / 25 L = 80 kPa. Consistent volume units cancel.</p></section>
+<section class="card" id="charles-tool" aria-labelledby="charles-tool-heading"><h3 id="charles-tool-heading">B · Predict volume at constant p</h3><div class="tool-grid">
+<label for="c-v1">Initial V (L)<input id="c-v1" type="number" inputmode="decimal" min="0.000001" step="any" value="18"></label>
+<label for="c-t1">Initial T (K)<input id="c-t1" type="number" inputmode="decimal" min="0.000001" step="any" value="270"></label>
+<label for="c-t2">Final T (K)<input id="c-t2" type="number" inputmode="decimal" min="0.000001" step="any" value="360"></label>
+</div><button id="calc-charles" type="button">Calculate Charles's law</button>
+<output id="charles-result" aria-live="polite">At constant pressure, V₂ = (18 × 360)/270 = 24 L.</output><p class="source">V₂ = V₁T₂/T₁. Both temperatures must be expressed in kelvin.</p></section>
+<section class="card" id="gay-tool" aria-labelledby="gay-tool-heading"><h3 id="gay-tool-heading">C · Predict pressure at constant V</h3><div class="tool-grid">
+<label for="g-p1">Initial p (kPa)<input id="g-p1" type="number" inputmode="decimal" min="0.000001" step="any" value="100"></label>
+<label for="g-t1">Initial T (K)<input id="g-t1" type="number" inputmode="decimal" min="0.000001" step="any" value="300"></label>
+<label for="g-t2">Final T (K)<input id="g-t2" type="number" inputmode="decimal" min="0.000001" step="any" value="450"></label>
+</div><button id="calc-gay" type="button">Calculate Gay-Lussac's law</button>
+<output id="gay-result" aria-live="polite">At constant volume, p₂ = (100 × 450)/300 = 150 kPa.</output><p class="source">p₂ = p₁T₂/T₁. This is an ideal-gas prediction for a fixed gas amount.</p></section>
+</div>
+<div class="note"><strong>Units and limitations:</strong> These calculators use positive absolute gas pressures (kPa), positive volumes (L), and positive temperatures (K). They do not model gas leaks, changing gas amount, liquefaction, strong real-gas effects or non-constant constraints.</div>
+</section>
+<section id="self-check" aria-labelledby="checks-heading"><h2 id="checks-heading">Four conceptual self-checks · No scores</h2>
+<details><summary>1. A fixed gas sample occupies 6 L at 100 kPa. At constant temperature, what pressure corresponds to 3 L?</summary><div class="details-body">By Boyle's law, p₂ = (100 kPa)(6 L)/(3 L) = <strong>200 kPa</strong>. Halving volume doubles pressure.</div></details>
+<details><summary>2. Why is 30 °C not inserted directly into Charles's law as T = 30?</summary><div class="details-body">Because gas-law temperature ratios require an absolute scale. 30 °C is approximately 303.15 K, not 30 K.</div></details>
+<details><summary>3. A closed rigid vessel is warmed from 300 K to 450 K. What happens to pressure in the ideal model?</summary><div class="details-body">At fixed volume and gas amount, p₂/p₁ = 450/300 = 1.5. The absolute pressure rises by 50%.</div></details>
+<details><summary>4. What is the shape of a pressure–volume graph at constant temperature, and what must stay fixed?</summary><div class="details-body">Pressure decreases hyperbolically as volume increases, with pV constant. Both the absolute temperature and amount of gas stay fixed.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-heading"><h2 id="continue-heading">Continue learning</h2>
+<div class="grid"><div class="card"><h3>Review 8.2</h3><p>Kinetic theory and work done by/on gases, including original Example 8.2 and Assignment 8.2 adaptations.</p><p><a href="./unit-08-topic82-kinetic-gases-work-v226.html">Study Topic 8.2</a></p></div>
+<div class="card"><h3>Try Unit 8 labs</h3><p>Explore the existing Ideal Gas &amp; Kinetic Theory simulation and the other Unit 8 learning labs.</p><p><a href="./simulations.html?unit=8">Explore existing simulations</a></p></div>
+<div class="card"><h3>Topic 8.4 · First Law</h3><p>The original textbook starts Topic 8.4 on p.135. A separate source-checked lesson is planned; this page does not teach or release it.</p><p><a href="./exam-quick-access.html">See currently available resources</a></p></div></div>
+</section>
+</main><footer>Physics with Sir Najam · Source-based Unit 8 Topic 8.3 lesson · Unscored preview · Independent teacher academic review pending</footer>
+<script>
+(function(){'use strict';
+function value(id){var el=document.getElementById(id),raw=el.value.trim(),x=Number(raw);return raw!==''&&Number.isFinite(x)&&x>0?x:NaN}
+function compute(ids,target,units,fn,reason){document.getElementById(ids.button).addEventListener('click',function(){
+var a=value(ids.a),b=value(ids.b),c=value(ids.c),out=document.getElementById(target);
+if(!Number.isFinite(a)||!Number.isFinite(b)||!Number.isFinite(c)){out.textContent='Enter three finite, strictly positive quantities. Temperatures must be in kelvin.';return}
+var result=fn(a,b,c);
+if(!Number.isFinite(result)||result<=0){out.textContent='Result is outside the supported range; choose smaller positive inputs.';return}
+out.textContent=reason+' = '+Number(result.toPrecision(7)).toString()+' '+units+'.';
+})}
+compute({button:'calc-boyle',a:'b-p1',b:'b-v1',c:'b-v2'},'boyle-result','kPa',function(a,b,c){return a*b/c},'At fixed T and gas amount, final pressure');
+compute({button:'calc-charles',a:'c-v1',b:'c-t1',c:'c-t2'},'charles-result','L',function(a,b,c){return a*c/b},'At fixed p and gas amount, final volume');
+compute({button:'calc-gay',a:'g-p1',b:'g-t1',c:'g-t2'},'gay-result','kPa',function(a,b,c){return a*c/b},'At fixed V and gas amount, final pressure');
+})();
+</script>
+</body></html>

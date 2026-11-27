@@ -530,16 +530,17 @@
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
         }
-        // V226: specifically source-indexed Topic 8.2, not a full-course release.
-        // Never promote arbitrary planned-unit links into scored Test Builder routes.
+        // V226/V227: allow only two explicitly source-indexed, unscored
+        // Unit 8 follow-up lessons. Never unlock an MCQ bank here.
         for(const study of unit.additionalLearningPreviews||[]){
-          if(study.topic!=='8.2'||
+          if(!['8.2','8.3'].includes(study.topic)||
             study.access!=='public-unscored-study-teacher-review')continue;
           const preview=safeHref(study.href,new URL('portal/',root));
           if(!preview)continue;
-          rows.append(makeLink(preview,
-            'Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas · Unscored source-based lesson',
-            'public-link'));
+          const label=study.topic==='8.2'
+            ? 'Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas · Unscored source-based lesson'
+            : 'Unit 8 · Topic 8.3 The Gas Laws (Boyle, Charles, Gay-Lussac) · Unscored source-based lesson';
+          rows.append(makeLink(preview,label,'public-link'));
         }
       }
       // Existing enrichment simulations for future units may already be public.
