@@ -4,6 +4,7 @@ on:
     paths:
       - "question-bank/grade-11/unit-02.json"
       - "question-bank/manifest.json"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
       - "scripts/validate_unit02_bank.py"
       - "scripts/test_grade11_unit02_q119_source_context_v207.cjs"
       - "quality/grade11-v207-student-q119-source-context-and-portal-readiness.md"
@@ -13,6 +14,7 @@ on:
     paths:
       - "question-bank/grade-11/unit-02.json"
       - "question-bank/manifest.json"
+      - "server/review-manifests/grade11-approved-public-review-refs-v99i.json"
       - "scripts/validate_unit02_bank.py"
       - "scripts/test_grade11_unit02_q119_source_context_v207.cjs"
       - "quality/grade11-v207-student-q119-source-context-and-portal-readiness.md"
