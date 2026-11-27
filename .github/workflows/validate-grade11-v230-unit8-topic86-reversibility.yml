@@ -1,0 +1,82 @@
+name: Grade XI V230 Unit 8 Topic 8.6 Reversibility and Cycles
+on:
+  pull_request:
+    paths:
+      - "portal/unit-08-topic86-reversible-processes-v230.html"
+      - "portal/unit-08-topic85-heat-engine-v229.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v230_unit8_topic86_source_browser.cjs"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - "quality/grade11-v230-unit8-topic86-reversibility-science.md"
+      - ".github/workflows/validate-grade11-v230-unit8-topic86-reversibility.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-08-topic86-reversible-processes-v230.html"
+      - "portal/unit-08-topic85-heat-engine-v229.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v230_unit8_topic86_source_browser.cjs"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - ".github/workflows/validate-grade11-v230-unit8-topic86-reversibility.yml"
+jobs:
+  source-reversibility-cycle-science-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 31
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check navigation JS and original source JSON
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v230_unit8_topic86_source_browser.cjs
+          node --check scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+          node --check scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+          node --check scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+          node --check scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'));JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Preserve 2250 pinned Units1-6 original MCQ IDs options and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned headless Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V230 original Topic 8.6 source and actual responsive six-scenario browser tests
+        run: node scripts/test_grade11_v230_unit8_topic86_source_browser.cjs
+      - name: Preserve V229 Heat Engine work and four-stroke explorer
+        run: node scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+      - name: Preserve V228 First Law and signed original exercise adaptations
+        run: node scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+      - name: Preserve V227 source gas laws and browser calculations
+        run: node scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+      - name: Preserve V226 kinetic theory and compression work sign
+        run: node scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+      - name: Preserve V225 thermal equilibrium topic
+        run: node scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+      - name: Preserve V224 original Unit 8 source and SLO inventory
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve V209 Unit 7 release hold
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve V140 global unit-aware future-unit sidebar
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive real-browser unscored academic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v230-unit08-topic86-reversibility-browser
+          path: qa-artifacts/grade11-v230-unit08-topic86-reversibility-browser/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
