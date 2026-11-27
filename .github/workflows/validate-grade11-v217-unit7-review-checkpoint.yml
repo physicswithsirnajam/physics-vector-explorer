@@ -1,0 +1,49 @@
+name: Grade XI V217 Unit 7 Academic Review Status Integrity
+on:
+  pull_request:
+    paths:
+      - "portal/textbook-exercise-status-v216.html"
+      - "scripts/test_grade11_v217_unit7_review_checkpoint.cjs"
+      - "quality/grade11-v217-unit7-keyless-review-checkpoint.md"
+      - ".github/workflows/validate-grade11-v217-unit7-review-checkpoint.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/textbook-exercise-status-v216.html"
+      - "scripts/test_grade11_v217_unit7_review_checkpoint.cjs"
+      - ".github/workflows/validate-grade11-v217-unit7-review-checkpoint.yml"
+jobs:
+  check-unit7-review-evidence-no-scored-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Parse immutable keyless Unit 7 review ledgers and check script
+        run: |
+          node --check scripts/test_grade11_v217_unit7_review_checkpoint.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit07/unit07-v178-consolidated-274-teacher-approval-index-no-keys.json','utf8'));JSON.parse(require('fs').readFileSync('quality/unit07/unit07-v195-unsigned-independent-teacher-review-no-keys.json','utf8'))"
+      - name: Preserve original 2250 student-practice MCQ identities and answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Unit7 keyless status fidelity, 0 approvals, browser and narrow mobile navigation
+        run: node scripts/test_grade11_v217_unit7_review_checkpoint.cjs
+      - name: Preserve V216 exercise status filters and all 28 original review notices
+        run: node scripts/test_grade11_v216_exercise_status_directory.cjs
+      - name: Preserve V209 Unit7 unscored lesson discovery
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Store privacy-safe status validation summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v217-unit7-review-status-keyless
+          path: qa-artifacts/grade11-v217-unit7-review-checkpoint/evidence.json
+          if-no-files-found: warn
+          retention-days: 14
