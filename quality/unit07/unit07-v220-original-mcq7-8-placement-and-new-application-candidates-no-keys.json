@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "version": "V220",
+  "snapshotDate": "2026-11-27",
+  "status": "DRAFT-TEACHER-REVIEW-ONLY-NOT-APPROVED",
+  "sourceProvenance": {
+    "originalTextbook": "NBF Grade XI Physics, Unit 7 Physics of Solids, printed p.125 (reopened from user's source PDF)",
+    "originalReviewLedger": "quality/unit07/unit07-v174-end-exercise-mcq01-10-fig-bound-no-keys.json",
+    "officialAssessmentFramework": "FBISE Grade XI Physics Assessment Framework, Curriculum 2022-23 / Scheme of Studies 2024, source PDF p.10-11",
+    "originalTextbookMcqStemsCopied": false,
+    "originalTextbookAnswerChoicesCopied": false,
+    "originalPublisherKeyCopied": false
+  },
+  "issues": [
+    {
+      "originalTextbookMcq": 7,
+      "originalStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "reviewFlag": "compulsory-teacher-slo-placement",
+      "issueCategory": "beam-bending-enrichment-not-direct-b28",
+      "originalRetainedUnchanged": true,
+      "reviewFinding": "Bending is a scientifically valid strain-energy mechanism; a qualitative mechanism item is not direct evidence for the official B-28 elastic potential energy calculation requirement.",
+      "proposedDisposition": "Retain original for supplementary concept practice; use independent direct B-28 quantitative candidate for any eventually approved summative bank.",
+      "newCandidateId": "U07-V220-B28-ELASTIC-ENERGY-A",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "originalTextbookMcq": 8,
+      "originalStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "reviewFlag": "compulsory-teacher-slo-placement",
+      "issueCategory": "bulk-modulus-not-named-young-modulus-outcome",
+      "originalRetainedUnchanged": true,
+      "reviewFinding": "Original bulk-modulus calculation/unit conversion can be valid; rubber context is physically atypical and bulk modulus is not direct evidence for B-24 stress/strain/Young modulus as named in the official framework.",
+      "proposedDisposition": "Keep original for clearly labelled supplementary advanced cgs-conversion discussion; use a separate B-24 Young-modulus calculation for direct Application evidence.",
+      "newCandidateId": "U07-V220-B24-YOUNG-MODULUS-A",
+      "teacherDecision": "PENDING"
+    },
+    {
+      "originalTextbookMcq": 9,
+      "originalStatus": "SINGLE_PHYSICS_INTENDED_RESULT",
+      "reviewFlag": "optional-teacher-slo-placement",
+      "issueCategory": "resilience-vocabulary-not-energy-application",
+      "originalRetainedUnchanged": true,
+      "reviewFinding": "Recognizing the term resilience is foundational conceptual vocabulary; it does not itself determine elastic potential energy as B-28 Application.",
+      "proposedDisposition": "Retain original for foundation vocabulary, independently review its formative/summative placement; no forced rewriting or extra near-duplicate question.",
+      "newCandidateId": null,
+      "teacherDecision": "PENDING"
+    }
+  ],
+  "candidates": [
+    {
+      "candidateId": "U07-V220-B28-ELASTIC-ENERGY-A",
+      "independentFromOriginalMcq": 7,
+      "sourceOriginalReplacement": false,
+      "originallyAuthored": true,
+      "subject": "Elastic potential energy under proportional loading",
+      "officialSummativeSlo": "P-11-B-28",
+      "frameworkCognitiveDemand": "Application",
+      "provisionalItemDemand": "Application",
+      "stem": "A linearly elastic wire is stretched gradually from zero tension. When its extension reaches 2.0 mm, the tension is 80 N. The force–extension graph is a straight line through the origin throughout the stretch. What elastic potential energy is stored in the wire?",
+      "options": [
+        "0.080 J",
+        "0.160 J",
+        "0.040 J",
+        "80 J"
+      ],
+      "constraints": [
+        "Load is proportional to extension throughout",
+        "Zero-start force-extension graph",
+        "Extension 2.0 mm = 0.0020 m",
+        "Elastic energy is triangular area under the force-extension graph"
+      ],
+      "teacherReviewFocus": "Independently verify J units, the zero-start triangular graph, distinction between final force×extension and stored energy, outcome scope and one-best-answer options.",
+      "scienceApproval": "PENDING",
+      "cognitiveApproval": "PENDING",
+      "ownerRelease": "HOLD"
+    },
+    {
+      "candidateId": "U07-V220-B24-YOUNG-MODULUS-A",
+      "independentFromOriginalMcq": 8,
+      "sourceOriginalReplacement": false,
+      "originallyAuthored": true,
+      "subject": "Determination of Young modulus from stress and tensile strain",
+      "officialSummativeSlo": "P-11-B-24",
+      "frameworkCognitiveDemand": "Application",
+      "provisionalItemDemand": "Application",
+      "stem": "A metal wire has original length 1.5 m and cross-sectional area 2.0 mm². An axial tension of 80 N extends the wire by 0.40 mm within its proportional limit. What is the Young modulus of the wire?",
+      "options": [
+        "1.5 × 10^11 Pa",
+        "1.5 × 10^10 Pa",
+        "3.0 × 10^11 Pa",
+        "6.0 × 10^11 Pa"
+      ],
+      "constraints": [
+        "Young modulus is axial stress divided by axial tensile strain",
+        "Use original area and length",
+        "2.0 mm² = 2.0×10^-6 m²",
+        "0.40 mm = 4.0×10^-4 m",
+        "Proportional elastic regime explicitly specified"
+      ],
+      "teacherReviewFocus": "Independently verify dimensions and SI conversion, Y = FL/(A ΔL), candidate numerical distractors, and actual B-24 Application alignment.",
+      "scienceApproval": "PENDING",
+      "cognitiveApproval": "PENDING",
+      "ownerRelease": "HOLD"
+    }
+  ],
+  "candidateCount": 2,
+  "originalTextbookQuestionCountModified": 0,
+  "originalSloPlacementReviewNotes": 3,
+  "correctOptionKeysStored": false,
+  "publicUnit7ScoredMcqsAdded": 0,
+  "publicQuestionBankImportAllowed": false,
+  "teacherReviewNotAuthenticated": true,
+  "officialFrameworkOutcomeTitlesMatched": true
+}
