@@ -21,3 +21,7 @@
 
 ## Owner
 Keep PR Draft until **every current-head check passes**. Then inspect six changed files → Ready for review → Merge → Confirm. On published portal: Unit5 Learning Desk → “Find worked examples and descriptive practice by section” and Units & Resources → Unit5 → PRACTISE (two cases) / PREPARE (B/C and source-hold message). Afterwards continue Unit6 and source-exercise inventory.
+
+
+## Legacy V98-E exact-source-fingerprint safeguard preserved
+The original Unit5 mobile visual regression V98-E did exactly what it was designed to do: it flagged the additive V214 page section as source-body drift. We did **not** replace its hardcoded original `770261505` FNV fingerprint or relax its original scientific-content checks. Its read-only test now tightly identifies a unique V214 navigation region by exact start/end markers, verifies exactly four approved public anchors, academic-status text, and no scripts/forms/user-data inputs within that block, removes only this new navigation region for fingerprint comparison, and still verifies the **exact original Unit5 HTML body** after stripping the independently approved V98-E mobile CSS patch. Its real-browser mobile overflow/logo/lab checks remain unchanged. A future unrelated alteration to scientific, assessment or instructional content outside the explicitly whitelisted finder will still fail.
