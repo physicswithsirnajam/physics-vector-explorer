@@ -56,4 +56,4 @@ Link **only to existing tested anchors**. For missing content, show “Not yet i
 
 **Schedule clarification:** 7 December 2026 is **Monday**; 10 December 2026 is **Thursday**. The timetable should be checked with the school rather than guessing the intended paper date. Keep any public launch deadline tied to the verified calendar.
 
-**This V207 PR modifies only Unit2 context data, manifest SHA/version and automated safeguards plus this review note. No source MCQ answer, Unit7 bank, Firebase/Auth/App Check, teacher role, staging/production or scored-release gate is changed.**
+**This V207 PR changes Unit2 standalone context data, its verified bank manifest, and the checksummed static reporting-reference snapshot for the same unchanged 2250 original IDs, plus validators/workflow and this review note. The static snapshot contains only ID, unit, original source number and version; its checksum is regenerated rather than bypassed. No source MCQ answer, Unit7 bank, Firebase/Auth/App Check, teacher role, staging/production or scored-release gate is changed.**
