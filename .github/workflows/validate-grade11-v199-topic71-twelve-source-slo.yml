@@ -1,0 +1,85 @@
+name: Grade XI V199 Unit7.1 Twelve New Original Source/SLO Academic QC (NO SCORE)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v199-topic71-twelve-original-structure-slo-no-keys.json"
+      - "quality/grade11-v199-unit7-topic71-twelve-original-structure-science-qc.md"
+      - "scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs"
+      - ".github/workflows/validate-grade11-v199-topic71-twelve-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v199-topic71-twelve-original-structure-slo-no-keys.json"
+      - "quality/grade11-v199-unit7-topic71-twelve-original-structure-science-qc.md"
+      - "scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs"
+      - ".github/workflows/validate-grade11-v199-topic71-twelve-source-slo.yml"
+  workflow_dispatch:
+jobs:
+  verify-original-twelve-b22-and-no-score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax check V199 source integrity and academic no-score validator
+        run: node --check scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs
+      - name: Verify 12 original Topic7.1 source hashes and science scope with teacher HOLD
+        run: node scripts/audit_grade11_unit07_topic71_secondpass_v199.cjs
+      - name: Preserve V198 twelve new Topic7.2 source IDs and stress-strain accuracy
+        run: |
+          node scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs
+          node scripts/test_grade11_unit07_topic72_math_v198.cjs
+      - name: Preserve V197 twelve distinct Topic7.3 source IDs, energy/graph accuracy
+        run: |
+          node scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+          node scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Preserve original eighty Topic7.1 source fingerprints and B22 draft controls
+        run: node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+      - name: Preserve eighty original Topic7.2 and Topic7.3 source registers
+        run: |
+          node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+      - name: Preserve V196 SI and force-extension regression checks
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Preserve V195 human decisions unsigned and original book source math
+        run: |
+          node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+          node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+          node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve Q25 exact source science and never permit synthetic teacher approval
+        run: |
+          node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+          node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+          node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve sixty-plus earlier private source review and original text exercise holds
+        run: |
+          node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+          node scripts/audit_grade11_unit07_numericals_v177.cjs
+          node scripts/audit_grade11_unit07_comprehensive_v176.cjs
+          node scripts/audit_grade11_unit07_short_v175.cjs
+          node scripts/audit_grade11_unit07_exercise_mcq_v174.cjs
+      - name: Preserve 2250 existing Grade XI original pinned sources and Unit6 560 review gates
+        run: |
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+          node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve teacher backend production and staging NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve browser App Check and report submission release lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload keyless counts only, never original owner MCQ answer keys
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v199-unit7-topic71-original12-source-no-score
+          path: qa-artifacts/grade11-v199-topic71-twelve-source-qc/summary.json
+          if-no-files-found: warn
+          retention-days: 14
