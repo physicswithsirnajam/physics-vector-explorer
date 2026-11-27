@@ -249,7 +249,7 @@
       return ['LEARN','Formula sheets & revision notes'];
     if(/worked\s+numerical|numericals|worked\s+example/.test(label))
       return ['PRACTISE','Examples & numerical problems'];
-    if(/descriptive|comprehensive|short\s+response|extended|assessment\s+pack|projector|discussion\s+slide|worked\s+key|marking\s+scheme|exam|blueprint|slo.*audit/.test(label)
+    if(/descriptive|comprehensive|short\s+response|extended|assessment\s+pack|projector|discussion\s+slide|worked\s+key|marking\s+scheme|\bexam\b|blueprint|slo.*audit/.test(label)
       ||cat==='EXAM PREPARATION')
       return ['PREPARE','Exam questions, exercises & assignments'];
     if(cat==='PRACTISE'||/mcq|practice|test\b/.test(label))
