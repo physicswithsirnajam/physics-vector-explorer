@@ -530,10 +530,10 @@
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
         }
-        // V226–V228: only these three source-indexed, unscored Unit 8
+        // V226–V229: only these four source-indexed, unscored Unit 8
         // follow-up lessons may appear. Never promote a scored bank here.
         for(const study of unit.additionalLearningPreviews||[]){
-          if(!['8.2','8.3','8.4'].includes(study.topic)||
+          if(!['8.2','8.3','8.4','8.5'].includes(study.topic)||
             study.access!=='public-unscored-study-teacher-review')continue;
           const preview=safeHref(study.href,new URL('portal/',root));
           if(!preview)continue;
@@ -541,7 +541,9 @@
             ? 'Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas · Unscored source-based lesson'
             : study.topic==='8.3'
             ? 'Unit 8 · Topic 8.3 The Gas Laws (Boyle, Charles, Gay-Lussac) · Unscored source-based lesson'
-            : 'Unit 8 · Topic 8.4 First Law and Four Thermodynamic Processes · Unscored source-based lesson';
+            : study.topic==='8.4'
+            ? 'Unit 8 · Topic 8.4 First Law and Four Thermodynamic Processes · Unscored source-based lesson'
+            : 'Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle · Unscored source-based lesson';
           rows.append(makeLink(preview,label,'public-link'));
         }
       }
