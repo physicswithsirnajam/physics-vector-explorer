@@ -44,7 +44,7 @@ assert.ok(adapter&&typeof adapter.loadBank==='function');
   assert.equal(q.presentationContextRevision,'v207-unit2-q119-standalone');
   assert.ok(q.stimulusHtml.includes('A = (5, 1)')&&q.stimulusHtml.includes('B = (2, 4)'));
   assert.ok(q.stimulusText.includes('perpendicular unit axes'));
-  assert.doesNotMatch(q.stem,/Q116/i,'student stem no longer relies on unseen question');
+  assert.equal(q.stem,raw.stem,'original stem retained; visible context now supplies Q116 data');
   assert.equal(q.correctOptionId,raw.correctOptionId);
   assert.equal(JSON.stringify(q.options),JSON.stringify(raw.options));
   assert.equal(q.explanation,raw.explanation);
