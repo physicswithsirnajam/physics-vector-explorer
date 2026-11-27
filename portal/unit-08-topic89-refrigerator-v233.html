@@ -171,7 +171,7 @@ get('calculate-energy').addEventListener('click',function(){
  const qc=num('cold-heat'),w=num('work-heat'),out=get('energy-result');
  if(!Number.isFinite(qc)||!Number.isFinite(w)||qc<0||w<=0){out.textContent='Enter finite nonnegative heat removed and strictly positive work input.';return}
  const qh=qc+w,cooling=qc/w,heating=qh/w;
- if(![qh,cooling,heating].every(Number.is)){out.textContent='Result outside supported numerical range.';return}
+ if(![qh,cooling,heating].every(Number.isFinite)){out.textContent='Result outside supported numerical range.';return}
  out.textContent='Heat delivered to room = '+nice(qh)+' J; cooling COP = '+nice(cooling)+'; heating COP = '+nice(heating)+'.';
 });
 // Keep on-demand calculate buttons, and immediately refresh results when inputs change.
