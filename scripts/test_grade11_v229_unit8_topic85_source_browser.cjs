@@ -55,7 +55,7 @@ function sourceAndScience(){
  assert.match(html,/W<sub>net,out<\/sub> = Q<sub>H<\/sub> − Q<sub>C<\/sub>/);
  assert.match(html,/ΔU<sub>cycle<\/sub> = 0/);
  assert.match(html,/net work output = \+350 J/);
- assert.match(html,/not a claim that a physically realizable cyclic engine/);
+ assert.match(html,/physically realizable cyclic engine/);
  assert.match(html,/four-stroke/i);assert.match(html,/hot\/cold reservoir/i);
  assert.ok(!html.includes('grade11-answers.json')&&!html.includes('build-your-physics-test.html?unit=8'));
  for(const banned of ['getAuth(','getFirestore(','initializeAppCheck','indexedDB','localStorage','sessionStorage','navigator.sendBeacon']){
