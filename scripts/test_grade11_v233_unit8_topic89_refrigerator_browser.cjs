@@ -157,7 +157,14 @@ async function browserCase(browser,base,width,entry){
   await page.locator('#work-heat').fill('2');
   await page.locator('#calculate-energy').click();
   result=await page.locator('#energy-result').innerText();
-  assert.match(result,/room = 11 J/);
+  const diagnostic=await page.evaluate(()=>({
+    work:document.getElementById('work-heat')?.value,
+    heat:document.getElementById('cold-heat')?.value,
+    displayed:document.getElementById('energy-result')?.textContent,
+    button:document.getElementById('calculate-energy')?.outerHTML,
+    scriptCount:document.querySelectorAll('script').length
+  }));
+  assert.match(result,/room = 11 J/,'Calculated heat did not update; browser state: '+JSON.stringify(diagnostic)+'; errors: '+JSON.stringify(errors));
   assert.match(result,/cooling COP = 4\.5/);
   assert.match(result,/heating COP = 5\.5/);
   await page.locator('#cold-heat').fill('-1');
