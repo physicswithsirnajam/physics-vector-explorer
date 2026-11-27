@@ -70,4 +70,4 @@ The source/coverage validator pins all 80 original row identities from V173, che
 
 **V207:** continue source-driven review of the 15 remaining Topic7.2 originals (prefer a small, nonduplicating first batch), or reconcile genuinely completed independent teacher approvals. No scored release until securely approved.
 
-**Owner merge:** retain Draft until both latest-head GitHub Actions checks pass; inspect all seven Files changed, then **Ready for review → Merge pull request → Confirm merge**.
+**Owner merge:** retain Draft until every triggered latest-head GitHub Actions check passes (the initial source-correction commit triggered three workflows); inspect all seven Files changed, then **Ready for review → Merge pull request → Confirm merge**.
