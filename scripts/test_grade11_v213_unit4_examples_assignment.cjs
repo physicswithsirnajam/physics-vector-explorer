@@ -95,14 +95,14 @@ async function studentJourney(browser,base,width,selectedIndexes){
   assert.ok((await prepare.textContent()).includes('40-mark Sections B/C practice is teacher-prepared'));
   for(let i=0;i<destinations.length;i++){
    const x=destinations[i],stage=x.section==='PRACTISE'?practise:prepare;
-   const link=stage.locator('a[href$="'+links[i]+'"]');
+   const link=stage.locator('a[href$="'+links[i].slice(2)+'"]');
    assert.equal(await link.count(),1,'Must be exactly one '+x.label+' in '+x.section);
    if(x.kind==='example')evidence.foundExamples++;else evidence.foundAssignment++;
   }
   for(const i of selectedIndexes){
    const x=destinations[i],stage=x.section==='PRACTISE'?practise:prepare;
    if((await stage.getAttribute('open'))===null)await stage.locator('summary').click();
-   const link=stage.locator('a[href$="'+links[i]+'"]');
+   const link=stage.locator('a[href$="'+links[i].slice(2)+'"]');
    await link.click();
    await page.waitForURL(url=>url.pathname==='/portal/'+x.file&&url.hash==='#'+x.anchor,
     {timeout:12000});
