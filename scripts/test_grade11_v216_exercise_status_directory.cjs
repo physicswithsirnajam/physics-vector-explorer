@@ -52,6 +52,9 @@ function sourceIntegrity(){
    'Original NBF end-of-unit section cannot be marked published before academic approval');
  }
  assert.equal((pageSource.match(/data-kind="lesson-preview"/g)||[]).length,1);
+ const unit7Markup=pageSource.slice(pageSource.indexOf('id="unit-7"'));
+ assert.ok(unit7Markup.includes('data-kind="mcq-practice" data-state="pending"'),
+  'Unit7 has no public MCQ bank and must not be tagged as provisional practice');
  for(const text of ['Three public topic studies','11-question set held','eight-question set held',
   'five-problem set held','No public scored or provisional Unit 7 MCQ bank is released',
   'not a complete independently certified','Teacher material','Source check pending',
@@ -120,7 +123,11 @@ async function testView(browser,base,width,unitValue){
   assert.ok((await section.textContent()).includes('Original end-of-unit MCQs'));
   assert.ok((await section.textContent()).includes('Original end-of-unit numerical problems'));
   if(unitValue==='7'){
-   assert.equal(await section.locator('[data-kind="mcq-practice"] a').count(),0);
+   const unit7Mcq=section.locator('[data-kind="mcq-practice"]');
+   assert.equal(await unit7Mcq.getAttribute('data-state'),'pending',
+    'Unit7 unreleased MCQ row cannot be labelled as a public preview');
+   assert.equal(await unit7Mcq.locator('a').count(),0);
+   assert.ok((await unit7Mcq.innerText()).includes('Not released'));
    assert.equal(await section.locator('[data-kind="lesson-preview"] a').count(),3);
    assert.ok((await section.textContent()).includes('not yet approved for release'));
   }
