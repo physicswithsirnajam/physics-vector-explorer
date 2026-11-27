@@ -1,0 +1,48 @@
+name: Grade XI V208 Unit 1 Honest Question-Finder Sidebar
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-01.html"
+      - "scripts/test_grade11_v208_unit1_sidebar_finders.cjs"
+      - "quality/grade11-v208-unit1-exercise-navigation-audit.md"
+      - ".github/workflows/validate-grade11-v208-unit1-exercise-finders.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-01.html"
+      - "scripts/test_grade11_v208_unit1_sidebar_finders.cjs"
+      - ".github/workflows/validate-grade11-v208-unit1-exercise-finders.yml"
+jobs:
+  unit1-navigation-source-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source and script syntax
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v208_unit1_sidebar_finders.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/verified-textbook-index-v103.json','utf8'));JSON.parse(require('fs').readFileSync('portal/verified-descriptive-index-v104.json','utf8'))"
+      - name: Preserve public source bank identities and original answer keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium for real student clicks
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Verify 1280 390 320 desktop/mobile Unit 1 finder navigation
+        run: node scripts/test_grade11_v208_unit1_sidebar_finders.cjs
+      - name: Upload metadata-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v208-unit1-finders-qc
+          path: qa-artifacts/grade11-v208-unit1-exercise-navigation/navigation-audit.json
+          if-no-files-found: warn
+          retention-days: 14
