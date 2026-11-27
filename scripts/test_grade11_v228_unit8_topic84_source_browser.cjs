@@ -40,13 +40,18 @@ function checkSourceScience(){
  assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.equal(u8.additionalLearningPreviews.length,3);
- assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4']);
+ assert.equal(u8.additionalLearningPreviews.length,4);
+ assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5']);
  assert.deepEqual(u8.additionalLearningPreviews[2],{
   topic:'8.4',title:'First Law of Thermodynamics and Four Processes',
   href,sourcePages:[135,140],access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Four source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[3],{
+  topic:'8.5',title:'Heat Engine and Petrol Four-Stroke Cycle',
+  href:'./unit-08-topic85-heat-engine-v229.html',sourcePages:[140,141],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Five source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/No Unit8 scored bank/);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -58,12 +63,13 @@ function checkSourceScience(){
  assert.ok(quick.includes('Study Topic 8.1'));
  assert.ok(quick.includes('Study Topic 8.2'));
  assert.ok(quick.includes('Study Topic 8.3'));
- assert.ok(quick.includes('Topic 8.5 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.6 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law and Four Thermodynamic Processes'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle'));
  assert.ok(prev.includes('href="'+href+'"'));
  for(const id of ['lesson-status','first-law','first-law-equation','sign-warning','processes',
   'isothermal','adiabatic','isochoric','isobaric','example83','example83-solution','example83-result',
