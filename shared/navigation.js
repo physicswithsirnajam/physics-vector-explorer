@@ -518,6 +518,19 @@
           'Unit 7 · Original textbook exercise and assignment status · No scored release',
           'public-link'));
       }
+      // V225: one independently source-indexed, unscored Topic 8.1 study
+      // preview for a still-planned Unit 8. Do not unlock any scored bank.
+      if(unit.unit===8 &&
+        unit.learningPreviewStatus==='public-topic-8.1-unscored-study-teacher-review'){
+        const lesson=safeHref(unit.learningPreviewHref,new URL('portal/',root));
+        if(lesson){
+          rows.append(e('p','psn-drawer-unit-notice',
+            'Topic 8.1 is available as unscored learning only. Original NBF pp.128–131; worked Example 8.1 and Assignment 8.1 adaptations. Teacher science review pending, no Unit 8 scored MCQs.'));
+          rows.append(makeLink(lesson,
+            'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
+            'public-link'));
+        }
+      }
       // Existing enrichment simulations for future units may already be public.
       // This link does NOT publish the unit, its notes, MCQ bank or exams.
       const sim=safeHref(unit.simulationHref,new URL('portal/',root));
