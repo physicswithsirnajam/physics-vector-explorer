@@ -1,0 +1,32 @@
+name: Grade XI V207 Unit 2 reported Q119 standalone context
+on:
+  pull_request:
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "scripts/test_grade11_unit2_q119_standalone_v207.cjs"
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/manifest.json"
+      - ".github/workflows/validate-grade11-v207-unit2-q119-context.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/practice-bank-adapter-v55.js"
+      - "scripts/test_grade11_unit2_q119_standalone_v207.cjs"
+      - "question-bank/grade-11/unit-02.json"
+      - "question-bank/manifest.json"
+jobs:
+  standalone-context:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: V207 standalone presentation and preserved source regression
+        run: node scripts/test_grade11_unit2_q119_standalone_v207.cjs
+      - name: Validate pinned Unit 2 original source and hash
+        run: python3 scripts/validate_unit02_bank.py
+      - name: Verify 2250 original source review IDs and bank versions
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
