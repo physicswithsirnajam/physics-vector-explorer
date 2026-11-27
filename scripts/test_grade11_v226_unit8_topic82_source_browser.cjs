@@ -41,12 +41,17 @@ function sourceAndScience(){
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
  assert.equal(u8.learningPreviewHref,'./unit-08-topic81-thermal-equilibrium-v225.html');
- assert.equal(u8.additionalLearningPreviews.length,1);
+ assert.equal(u8.additionalLearningPreviews.length,2);
  assert.deepEqual(u8.additionalLearningPreviews[0],{
   topic:'8.2',title:'Kinetic Theory of Gases and Thermodynamic Work',
   href:target,sourcePages:[131,134],access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Two source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[1],{
+  topic:'8.3',title:'The Gas Laws: Boyle, Charles and Gay-Lussac',
+  href:'./unit-08-topic83-gas-laws-v227.html',sourcePages:[134,135],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Three source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/no Unit8 scored bank/);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -86,11 +91,13 @@ function sourceAndScience(){
  assert.equal(quick.split('id="unit8-unscored-study-preview"').length-1,1);
  assert.equal(quick.split('href="'+target+'"').length-1,1);
  assert.ok(quick.includes('Study Topic 8.1'));
+ assert.ok(quick.includes('Study Topic 8.3 · The Gas Laws'));
  assert.ok(quick.includes('No graded Unit 8 test or original end-of-unit exercise answer edition'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("study.topic!=='8.2'"));
+ assert.ok(nav.includes("['8.2','8.3'].includes(study.topic)"));
  assert.ok(nav.includes("study.access!=='public-unscored-study-teacher-review'"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 7 · Topic'));
  // Independent algebra: Example 8.2, 2 kg argon, 0.040 kg/mol,
  // r=1 m h=2 m, T=303 K, R=8.314 SI.
