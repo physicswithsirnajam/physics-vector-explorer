@@ -1,0 +1,35 @@
+name: Grade XI V224 Unit 8 Original NBF Source and FBISE SLO Baseline
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json"
+      - "quality/grade11-v224-unit08-original-nbf-source-slo-baseline.md"
+      - "scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs"
+      - ".github/workflows/validate-grade11-v224-unit8-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json"
+      - "scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs"
+      - ".github/workflows/validate-grade11-v224-unit8-source-slo.yml"
+jobs:
+  source-manifest-and-existing-scoring-hold:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate structured inventory and JavaScript
+        run: |
+          node --check scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Verify original Grade XI Unit8 source scope, SLO anomaly and zero scored release
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve pinned Units1–6 MCQ IDs and answer options
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve prior Unit7 274-item source approval and scoring hold
+        run: node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs

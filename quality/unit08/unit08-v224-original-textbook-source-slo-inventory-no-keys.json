@@ -1,0 +1,854 @@
+{
+  "schemaVersion": 1,
+  "version": "V224",
+  "auditDate": "2026-11-27",
+  "unit": 8,
+  "grade": 11,
+  "title": "Heat and Thermodynamics",
+  "purpose": "Stage 1 verified source-scope and FBISE theory SLO manifest; zero student-scored publication",
+  "originalTextbook": {
+    "name": "11 Physics Book(20261125-065940).pdf",
+    "publisher": "National Book Foundation / Federal Textbook Board",
+    "printedPages": [
+      127,
+      153
+    ],
+    "pdfPages": [
+      127,
+      153
+    ],
+    "pdfTotalPages": 292,
+    "sha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "originalPdfInGitHub": false,
+    "originalChapterPageImagesInGitHub": false,
+    "visuallyInspectedPdfPages": [
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153
+    ],
+    "sourceChapterSloPage": 127,
+    "summaryPrintedPage": 150,
+    "exercisePrintedPages": [
+      150,
+      153
+    ]
+  },
+  "officialFramework": {
+    "document": "11_Physics_HSSC_I_model_paper_50_percent(10).pdf",
+    "frameworkPrintedPages": [
+      6,
+      8
+    ],
+    "pdfPages": [
+      12,
+      14
+    ],
+    "domain": "C: Heat and Thermodynamics",
+    "periodAllocation": 30,
+    "sourceSloRows": 23,
+    "summativeRows": 23,
+    "formativeRowsInThisDomain": 0,
+    "issues": [
+      {
+        "issue": "P12_C01_MISCODE",
+        "exactPrintedCode": "P-12-C-01",
+        "likelyIntendedCode": "P-11-C-01",
+        "resolution": "PENDING_OFFICIAL_SOURCE_VERIFICATION; do not normalize silently."
+      },
+      {
+        "issue": "INTERNAL_ENERGY_DUPLICATION",
+        "codes": [
+          "P-11-C-02",
+          "P-11-C-12"
+        ],
+        "resolution": "Keep both official rows in source manifest; mapping/assessment overlap requires deliberate QC."
+      }
+    ],
+    "slos": [
+      {
+        "printedCode": "P-12-C-01",
+        "codeIndex": 1,
+        "displayShortDescription": "Thermal equilibrium at equal temperatures",
+        "assessment": "Summative",
+        "cognitive": "Knowledge",
+        "frameworkPdfPage": 12,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "As printed, P-12-C-01 in a Grade XI domain; candidate correction P-11-C-01 is NOT authenticated."
+      },
+      {
+        "printedCode": "P-11-C-02",
+        "codeIndex": 2,
+        "displayShortDescription": "Temperature and internal energy",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 12,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-03",
+        "codeIndex": 3,
+        "displayShortDescription": "Ideal gas equation in molar and molecular forms",
+        "assessment": "Summative",
+        "cognitive": "Application",
+        "frameworkPdfPage": 12,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-04",
+        "codeIndex": 4,
+        "displayShortDescription": "Boltzmann constant as R/NA",
+        "assessment": "Summative",
+        "cognitive": "Knowledge",
+        "frameworkPdfPage": 12,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-05",
+        "codeIndex": 5,
+        "displayShortDescription": "Kinetic theory assumptions and ideal-gas limitations",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 12,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-06",
+        "codeIndex": 6,
+        "displayShortDescription": "Constant-pressure P delta V work",
+        "assessment": "Summative",
+        "cognitive": "Application",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-07",
+        "codeIndex": 7,
+        "displayShortDescription": "Work done by versus on a gas",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-08",
+        "codeIndex": 8,
+        "displayShortDescription": "First law Q, delta U and work sign usage",
+        "assessment": "Summative",
+        "cognitive": "Knowledge + Understanding + Application",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-09",
+        "codeIndex": 9,
+        "displayShortDescription": "Qualitative gas pressure/temperature/volume relationships",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-10",
+        "codeIndex": 10,
+        "displayShortDescription": "Constant-temperature pressure-volume graph",
+        "assessment": "Summative",
+        "cognitive": "Application",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-11",
+        "codeIndex": 11,
+        "displayShortDescription": "First law as conservation of energy",
+        "assessment": "Summative",
+        "cognitive": "Application",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-12",
+        "codeIndex": 12,
+        "displayShortDescription": "Temperature change versus internal energy",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-13",
+        "codeIndex": 13,
+        "displayShortDescription": "Operating principle of heat engine",
+        "assessment": "Summative",
+        "cognitive": "Knowledge",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-14",
+        "codeIndex": 14,
+        "displayShortDescription": "Reversible versus irreversible processes",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-15",
+        "codeIndex": 15,
+        "displayShortDescription": "Second law of thermodynamics",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-16",
+        "codeIndex": 16,
+        "displayShortDescription": "Carnot engine working principle",
+        "assessment": "Summative",
+        "cognitive": "Knowledge + Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-17",
+        "codeIndex": 17,
+        "displayShortDescription": "Refrigerator as reverse heat engine",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 13,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-18",
+        "codeIndex": 18,
+        "displayShortDescription": "Higher temperature and greater disorder",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-19",
+        "codeIndex": 19,
+        "displayShortDescription": "Entropy increase as energy degradation",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-20",
+        "codeIndex": 20,
+        "displayShortDescription": "Energy degradation in natural processes",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-21",
+        "codeIndex": 21,
+        "displayShortDescription": "Natural tendency toward disorder",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-22",
+        "codeIndex": 22,
+        "displayShortDescription": "Entropy as degree of particle disorder",
+        "assessment": "Summative",
+        "cognitive": "Understanding",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      },
+      {
+        "printedCode": "P-11-C-23",
+        "codeIndex": 23,
+        "displayShortDescription": "Carnot efficiency limit 1 - Tc/Th",
+        "assessment": "Summative",
+        "cognitive": "Knowledge",
+        "frameworkPdfPage": 14,
+        "verification": "original-framework-page-visually-referenced",
+        "codeAnomaly": "none"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "code": "8.1",
+      "title": "Thermal Equilibrium",
+      "pages": [
+        128,
+        131
+      ],
+      "subtopics": [
+        {
+          "code": "8.1.1",
+          "title": "Internal Energy",
+          "pages": [
+            129,
+            130
+          ]
+        },
+        {
+          "code": "8.1.2",
+          "title": "Ideal Gas Equation and its Applications",
+          "pages": [
+            130,
+            131
+          ]
+        }
+      ],
+      "slo": [
+        "P-12-C-01",
+        "P-11-C-02",
+        "P-11-C-03",
+        "P-11-C-04",
+        "P-11-C-12"
+      ]
+    },
+    {
+      "code": "8.2",
+      "title": "Kinetic Theory of Gases",
+      "pages": [
+        131,
+        134
+      ],
+      "subtopics": [
+        {
+          "code": "8.2.1",
+          "title": "Work in Thermodynamics",
+          "pages": [
+            132,
+            132
+          ]
+        },
+        {
+          "code": "8.2.2",
+          "title": "Difference between Work Done by the Gas and on the Gas",
+          "pages": [
+            133,
+            134
+          ]
+        }
+      ],
+      "slo": [
+        "P-11-C-05",
+        "P-11-C-06",
+        "P-11-C-07"
+      ]
+    },
+    {
+      "code": "8.3",
+      "title": "The Gas Laws",
+      "pages": [
+        134,
+        135
+      ],
+      "subtopics": [
+        {
+          "code": "8.3.1",
+          "title": "Boyle's Law",
+          "pages": [
+            134,
+            134
+          ]
+        },
+        {
+          "code": "8.3.2",
+          "title": "Charles's Law",
+          "pages": [
+            134,
+            135
+          ]
+        },
+        {
+          "code": "8.3.3",
+          "title": "Gay-Lussac's Law",
+          "pages": [
+            135,
+            135
+          ]
+        }
+      ],
+      "slo": [
+        "P-11-C-09",
+        "P-11-C-10"
+      ]
+    },
+    {
+      "code": "8.4",
+      "title": "First Law of Thermodynamics",
+      "pages": [
+        135,
+        140
+      ],
+      "subtopics": [
+        {
+          "code": "8.4.1",
+          "title": "Isothermal Process",
+          "pages": [
+            136,
+            137
+          ]
+        },
+        {
+          "code": "8.4.2",
+          "title": "Adiabatic Process",
+          "pages": [
+            137,
+            138
+          ]
+        },
+        {
+          "code": "8.4.3",
+          "title": "Isochoric Process",
+          "pages": [
+            138,
+            138
+          ]
+        },
+        {
+          "code": "8.4.4",
+          "title": "Isobaric Process",
+          "pages": [
+            138,
+            140
+          ]
+        }
+      ],
+      "slo": [
+        "P-11-C-08",
+        "P-11-C-11"
+      ]
+    },
+    {
+      "code": "8.5",
+      "title": "Heat Engine",
+      "pages": [
+        140,
+        141
+      ],
+      "subtopics": [],
+      "slo": [
+        "P-11-C-13"
+      ]
+    },
+    {
+      "code": "8.6",
+      "title": "Reversible and Irreversible Processes",
+      "pages": [
+        141,
+        142
+      ],
+      "subtopics": [],
+      "slo": [
+        "P-11-C-14"
+      ]
+    },
+    {
+      "code": "8.7",
+      "title": "Second Law of Thermodynamics",
+      "pages": [
+        142,
+        143
+      ],
+      "subtopics": [],
+      "slo": [
+        "P-11-C-15"
+      ]
+    },
+    {
+      "code": "8.8",
+      "title": "Carnot's Engine",
+      "pages": [
+        143,
+        145
+      ],
+      "subtopics": [
+        {
+          "code": "8.8.1",
+          "title": "Efficiency of Carnot Engine",
+          "pages": [
+            144,
+            145
+          ]
+        },
+        {
+          "code": "8.8.2",
+          "title": "Carnot's Theorem",
+          "pages": [
+            145,
+            145
+          ]
+        }
+      ],
+      "slo": [
+        "P-11-C-16",
+        "P-11-C-23"
+      ]
+    },
+    {
+      "code": "8.9",
+      "title": "Refrigerator",
+      "pages": [
+        145,
+        147
+      ],
+      "subtopics": [],
+      "slo": [
+        "P-11-C-17"
+      ]
+    },
+    {
+      "code": "8.10",
+      "title": "Entropy",
+      "pages": [
+        147,
+        149
+      ],
+      "subtopics": [
+        {
+          "code": "8.10.1",
+          "title": "Sign Convention for Entropy",
+          "pages": [
+            148,
+            148
+          ]
+        },
+        {
+          "code": "8.10.2",
+          "title": "Entropy and Energy",
+          "pages": [
+            149,
+            149
+          ]
+        }
+      ],
+      "slo": [
+        "P-11-C-18",
+        "P-11-C-19",
+        "P-11-C-20",
+        "P-11-C-21",
+        "P-11-C-22"
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "figure": "8.1",
+      "printedPage": 128,
+      "topic": "8.1",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.2",
+      "printedPage": 131,
+      "topic": "8.2",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.3",
+      "printedPage": 132,
+      "topic": "8.2",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.4",
+      "printedPage": 132,
+      "topic": "8.2",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.5",
+      "printedPage": 133,
+      "topic": "8.3",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.6",
+      "printedPage": 133,
+      "topic": "8.3",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.7",
+      "printedPage": 134,
+      "topic": "8.3",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.8",
+      "printedPage": 134,
+      "topic": "8.3",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.9",
+      "printedPage": 135,
+      "topic": "8.3",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.10",
+      "printedPage": 136,
+      "topic": "8.4",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.11",
+      "printedPage": 137,
+      "topic": "8.4",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.12",
+      "printedPage": 138,
+      "topic": "8.4",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.13",
+      "printedPage": 139,
+      "topic": "8.4",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.14",
+      "printedPage": 140,
+      "topic": "8.5",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.15",
+      "printedPage": 142,
+      "topic": "8.6",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.16",
+      "printedPage": 143,
+      "topic": "8.8",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.17",
+      "printedPage": 143,
+      "topic": "8.8",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.18",
+      "printedPage": 145,
+      "topic": "8.9",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.19",
+      "printedPage": 148,
+      "topic": "8.10",
+      "sourceImageNotPublished": true
+    },
+    {
+      "figure": "8.20",
+      "printedPage": 148,
+      "topic": "8.10",
+      "sourceImageNotPublished": true
+    }
+  ],
+  "examples": [
+    {
+      "id": "Example 8.1",
+      "printedPages": [
+        130,
+        131
+      ],
+      "shortTopic": "Average kinetic energy of a molecule at room temperature",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Example 8.2",
+      "printedPages": [
+        133,
+        133
+      ],
+      "shortTopic": "Pressure from ideal gas state and cylinder geometry",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Example 8.3",
+      "printedPages": [
+        139,
+        140
+      ],
+      "shortTopic": "First law and work/heat sign convention",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Example 8.4",
+      "printedPages": [
+        145,
+        145
+      ],
+      "shortTopic": "Carnot efficiency between hot and cold reservoirs",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Example 8.5",
+      "printedPages": [
+        146,
+        147
+      ],
+      "shortTopic": "Refrigerator coefficient of performance",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Example 8.6",
+      "printedPages": [
+        149,
+        149
+      ],
+      "shortTopic": "Entropy change during melting at fixed temperature",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "Assignment 8.1",
+      "printedPage": 131,
+      "shortTopic": "Molecules estimate at standard conditions",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Assignment 8.2",
+      "printedPage": 133,
+      "shortTopic": "Pressure-volume work under compression",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Assignment 8.3",
+      "printedPage": 140,
+      "shortTopic": "First-law problem with tea and stirring",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Assignment 8.4",
+      "printedPage": 145,
+      "shortTopic": "Heat-engine work/waste from efficiency",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Assignment 8.5",
+      "printedPage": 147,
+      "shortTopic": "Refrigerator COP for room temperature and cold cabinet",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    },
+    {
+      "id": "Assignment 8.6",
+      "printedPage": 149,
+      "shortTopic": "Entropy change for removed heat at fixed temperature",
+      "sourceStatus": "identifiable-original-textbook",
+      "scienceApproval": "PENDING"
+    }
+  ],
+  "exercise": {
+    "mcqs": {
+      "count": 18,
+      "printedPages": [
+        150,
+        152
+      ],
+      "sourceItemNumbers": "1-18"
+    },
+    "shortResponses": {
+      "count": 13,
+      "printedPage": 152,
+      "sourceItemNumbers": "8.1-8.13"
+    },
+    "comprehensiveResponses": {
+      "count": 11,
+      "printedPages": [
+        152,
+        153
+      ],
+      "sourceItemNumbers": "8.1-8.11"
+    },
+    "numericalProblems": {
+      "count": 9,
+      "printedPage": 153,
+      "sourceItemNumbers": "8.1-8.9"
+    }
+  },
+  "releaseGate": {
+    "sourceIndex": "manual-visual-source-enumeration-only",
+    "questionStemOCROrVerbatimCopyIncluded": false,
+    "independentAnswerQc": "PENDING",
+    "independentTeacherScienceApproval": "PENDING",
+    "independentTeacherCognitiveApproval": "PENDING",
+    "ownerScoredReleaseApproval": "HOLD",
+    "studentScoredUnit8Mcqs": 0,
+    "originalExercisesPublished": 0,
+    "portalUnit8Status": "planned",
+    "existingPublicSimulations": 4,
+    "originalLessonTextPublished": 0
+  }
+}
