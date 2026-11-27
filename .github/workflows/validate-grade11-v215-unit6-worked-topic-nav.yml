@@ -1,0 +1,54 @@
+name: Grade XI V215 Unit 6 Provisional Worked-Topic Navigation
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "scripts/test_grade11_v215_unit6_worked_topic_nav.cjs"
+      - "quality/grade11-v215-unit6-worked-topic-sidebar-audit.md"
+      - ".github/workflows/validate-grade11-v215-unit6-worked-topic-nav.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-06-learning-desk-v95a.html"
+      - "scripts/test_grade11_v215_unit6_worked_topic_nav.cjs"
+      - ".github/workflows/validate-grade11-v215-unit6-worked-topic-nav.yml"
+jobs:
+  unit6-unscored-worked-topics-browser-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source metadata and JavaScript syntax
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v215_unit6_worked_topic_nav.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/verified-unit6-worked-topic-index-v108.json','utf8'))"
+      - name: Preserve original 2250 question IDs and keyed original answer data
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V215 real Unit6 sidebar and desktop/mobile provisional worked finder
+        run: node scripts/test_grade11_v215_unit6_worked_topic_nav.cjs
+      - name: V108 original Unit6 provisional worked-topic source index and separate-finder safeguard
+        run: node scripts/test_grade11_unit6_worked_topic_finder_v108.cjs
+      - name: V95A original Unit6 public preview source and navigation contract
+        run: node scripts/test_grade11_unit06_v95a_learning_desk.cjs --browser
+      - name: V140 five-stage unit-aware resource drawer safeguard
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Attach anonymous test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v215-unit6-provisional-worked-source-audit
+          path: qa-artifacts/grade11-v215-unit6-worked-finder/navigation-audit.json
+          if-no-files-found: warn
+          retention-days: 14
