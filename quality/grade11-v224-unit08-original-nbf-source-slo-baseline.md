@@ -11,7 +11,7 @@
 
 | Printed heading | Original printed pages | Content scope (paraphrase; not a copy of the book) |
 |---|---|---|
-| 8.1 Thermal Equilibrium | 128–130 | Thermal equilibrium, internal energy, ideal gas equation |
+| 8.1 Thermal Equilibrium | 128–131 | Thermal equilibrium, internal energy, ideal gas equation |
 | 8.2 Kinetic Theory of Gases | 131–134 | Kinetic assumptions, ideal-gas conditions, work by/on gas |
 | 8.3 The Gas Laws | 134–135 | Boyle, Charles, Gay-Lussac relationships and graphs |
 | 8.4 First Law of Thermodynamics | 135–140 | Internal-energy balance, isothermal, adiabatic, isochoric, isobaric |
