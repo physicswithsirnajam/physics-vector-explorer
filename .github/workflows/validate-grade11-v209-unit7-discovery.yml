@@ -1,0 +1,55 @@
+name: Grade XI V209 Unit 7 Three Unscored Lesson Discovery
+on:
+  pull_request:
+    paths:
+      - "portal/learning-catalog.json"
+      - "shared/navigation.js"
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_v209_unit7_learning_discovery.cjs"
+      - "quality/grade11-v209-unit7-unscored-public-discovery.md"
+      - ".github/workflows/validate-grade11-v209-unit7-discovery.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/learning-catalog.json"
+      - "shared/navigation.js"
+      - "portal/exam-quick-access.html"
+      - "scripts/test_grade11_v209_unit7_learning_discovery.cjs"
+      - ".github/workflows/validate-grade11-v209-unit7-discovery.yml"
+jobs:
+  source-bounded-unscored-lesson-discovery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax and source-catalog validity
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v209_unit7_learning_discovery.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve original public MCQ counts and answer identities
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: New V209 source-and-student navigation QC
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve existing V145 Unit 7 intro and nonrelease regression
+        run: node scripts/test_grade11_v145_unit7_source_intro_browser.cjs
+      - name: Preserve V140 five-stage unit-aware sidebar
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive read-only browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v209-unit7-unscored-lessons-navigation
+          path: |
+            qa-artifacts/grade11-v209-unscored-unit7-discovery/audit.json
+          if-no-files-found: warn
+          retention-days: 14
