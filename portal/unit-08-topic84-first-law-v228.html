@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Physics with Sir Najam Grade XI Unit 8 Topic 8.4 First Law of Thermodynamics: heat/work signs, four processes, source-anchored Example 8.3 and Assignment 8.3, unscored energy-ledger calculators.">
+<title>Topic 8.4 · First Law of Thermodynamics | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}</style>
+</head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic83-gas-laws-v227.html">Topic 8.3</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.4 · Original printed pages 135–140</span>
+<h1>First Law of Thermodynamics</h1>
+<p class="lead">Follow the energy: heat transferred into a system may increase its internal energy, supply work done by the system, or both. The signs matter as much as the numbers.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false"><strong>Public unscored study preview — independent teacher review pending.</strong> This original teaching adaptation follows the owner's NBF Grade XI Physics printed pp.135–140 and official framework outcomes P-11-C-08 and P-11-C-11. The textbook figures and wording are not reproduced. Worked Example 8.3 and Assignment 8.3 below are independently solved <em>source-data adaptations</em>, not publisher-approved marking keys. No graded assessment, login, score or personal information is collected.</div>
+<nav class="jump" aria-label="Jump to lesson sections"><a href="#first-law">Energy signs</a><a href="#processes">Four processes</a><a href="#example83">Example 8.3</a><a href="#assignment83">Assignment 8.3</a><a href="#calculator">Energy ledger</a><a href="#isobaric-lab">Piston calculator</a><a href="#self-check">Self-check</a></nav>
+<section id="first-law" aria-labelledby="first-heading"><h2 id="first-heading">8.4 · Energy is conserved</h2>
+<p>Use the <strong>system</strong> as the reference. The textbook writes the First Law of Thermodynamics as heat supplied to the system, internal-energy change and work done <strong>by</strong> the system:</p>
+<div class="formula" id="first-law-equation">Q = ΔU + W<sub>by</sub><small>Equivalent: ΔU = Q − W<sub>by</sub> = Q + W<sub>on</sub></small></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Quantity</th><th scope="col">Positive sign</th><th scope="col">Negative sign</th></tr></thead><tbody>
+<tr><td>Heat Q</td><td>Energy enters the system as heat.</td><td>Energy leaves the system as heat.</td></tr>
+<tr><td>Work W<sub>by</sub></td><td>System does work on its surroundings (e.g., gas expansion).</td><td>Surroundings do net work on the system (e.g., gas compression or stirring).</td></tr>
+<tr><td>Internal-energy change ΔU</td><td>Internal energy increases.</td><td>Internal energy decreases.</td></tr>
+</tbody></table></div>
+<div class="note" id="sign-warning"><strong>Sign convention:</strong> W<sub>on</sub> = −W<sub>by</sub> for the same work transfer. If a question says <em>25 kJ of work is done on the system</em>, use W<sub>on</sub> = +25 kJ, or equivalently W<sub>by</sub> = −25 kJ. Never treat both as +25 kJ in the same equation. Heat and work are <em>energy transfers</em>; internal energy is a property of the state.</div>
+<p class="source">Source: original NBF printed p.135, textbook equation 8.7. Signs throughout this lesson are consistent with Q = ΔU + W<sub>by</sub>.</p>
+</section>
+<section id="processes" aria-labelledby="process-heading"><h2 id="process-heading">The four special thermodynamic processes</h2>
+<p>Each process keeps a different quantity fixed or imposes a different energy-transfer condition. Statements about temperature or internal energy below use the <strong>ideal-gas</strong> model where specified.</p>
+<div class="grid">
+<article class="card" id="isothermal"><h3>8.4.1 · Isothermal</h3><p><strong>Temperature constant:</strong> ΔT = 0. For a fixed amount of <em>ideal gas</em>, internal energy depends only on temperature, so ΔU = 0.</p>
+<div class="formula">ΔU = 0<small>Ideal gas, constant temperature</small></div><div class="formula">Q = W<sub>by</sub></div><p>For isothermal ideal-gas expansion, heat entering the system equals work done by the gas. Compression reverses the signs. A constant-temperature curve on a p–V plot is an <em>isotherm</em>.</p><p class="source">Original pp.136–137, Figure 8.10 (not copied).</p></article>
+<article class="card" id="adiabatic"><h3>8.4.2 · Adiabatic</h3><p><strong>No heat transfer:</strong> Q = 0. The system may still do work. Expansion lowers the internal energy of a fixed ideal gas; compression raises it.</p>
+<div class="formula">Q = 0<small>No heat enters or leaves</small></div><div class="formula">ΔU = −W<sub>by</sub></div><p><strong>Adiabatic does not mean constant temperature.</strong> Ideal-gas expansion doing positive work cools the gas when no heat enters.</p><p class="source">Original pp.137–138, Figure 8.11 (not copied).</p></article>
+<article class="card" id="isochoric"><h3>8.4.3 · Isochoric</h3><p><strong>Volume constant:</strong> ΔV = 0. With only pressure–volume boundary work, there is no expansion/compression work.</p>
+<div class="formula">W<sub>by</sub> = 0<small>Fixed-volume boundary; no other work modes</small></div><div class="formula">Q = ΔU</div><p>Heating a fixed-volume ideal-gas sample generally raises its temperature and pressure. Its p–V path is vertical.</p><p class="source">Original printed p.138, Figure 8.12 (not copied).</p></article>
+<article class="card" id="isobaric"><h3>8.4.4 · Isobaric</h3><p><strong>Pressure constant:</strong> p is unchanged through the process. The gas may expand or compress, performing pressure–volume work.</p>
+<div class="formula">W<sub>by</sub> = p(V<sub>f</sub> − V<sub>i</sub>)<small>Constant external pressure; p in Pa, V in m³</small></div><div class="formula">Q = ΔU + pΔV</div><p>A constant-pressure p–V path is horizontal. In expansion, work done <em>by</em> the gas is positive; during compression, it is negative.</p><p class="source">Original pp.138–139, Figure 8.13 (not copied).</p></article>
+</div>
+<div class="note"><strong>Distinguish conditions:</strong> Isothermal fixes temperature; adiabatic fixes heat transfer at zero; isochoric fixes volume; isobaric fixes pressure. An isothermal ideal-gas process can involve heat and work even though ΔU = 0. An adiabatic process can change temperature even though Q = 0.</div>
+</section>
+<section id="example83" aria-labelledby="example-heading"><h2 id="example-heading">Original NBF Example 8.3 · Independent worked adaptation</h2>
+<p class="source">Source data from printed pp.139–140. The following explanation is independently written, not quoted publisher marking material.</p>
+<div class="given"><strong>Given:</strong> The internal energy of a gas <strong>decreases by 200 J</strong>, while the gas does <strong>50 J of work</strong> on its surroundings. <strong>Find:</strong> whether heat enters or leaves, and by how much.</div>
+<details id="example83-solution"><summary>Reveal signed steps for Example 8.3</summary><div class="details-body"><ol class="steps">
+<li>Internal energy decreases: ΔU = <strong>−200 J</strong>.</li>
+<li>Work is done <strong>by</strong> the gas: W<sub>by</sub> = <strong>+50 J</strong>.</li>
+<li>Apply the textbook convention: Q = ΔU + W<sub>by</sub>.</li>
+<li>Substitute: Q = −200 J + 50 J = <strong>−150 J</strong>.</li></ol>
+<p id="example83-result"><strong>Answer: 150 J of heat leaves the gas.</strong> The negative Q indicates heat transfer out of the system.</p></div></details>
+</section>
+<section id="assignment83" aria-labelledby="assignment-heading"><h2 id="assignment-heading">Original NBF Assignment 8.3 · Tea and stirring</h2>
+<p class="source">Source data from printed p.140. Independently solved with signs shown for each energy transfer.</p>
+<div class="given"><strong>Given:</strong> A cup of tea initially has internal energy U<sub>i</sub> = <strong>200 kJ</strong>. As it cools, it loses <strong>150 kJ as heat</strong>. Stirring does <strong>25 kJ of work on the tea</strong>. <strong>Find:</strong> the internal-energy change and final internal energy.</div>
+<details id="assignment83-solution"><summary>Reveal independent solution to Assignment 8.3</summary><div class="details-body"><ol class="steps">
+<li>Heat is lost: Q = <strong>−150 kJ</strong>.</li>
+<li>Work done <strong>on</strong> the tea: W<sub>on</sub> = <strong>+25 kJ</strong>; in the textbook's <em>work-by</em> convention, W<sub>by</sub> = <strong>−25 kJ</strong>.</li>
+<li>Use ΔU = Q − W<sub>by</sub> = −150 kJ − (−25 kJ) = <strong>−125 kJ</strong>.</li>
+<li>Compute U<sub>f</sub> = U<sub>i</sub> + ΔU = 200 kJ − 125 kJ = <strong>75 kJ</strong>.</li></ol>
+<p id="assignment83-result"><strong>Answer: ΔU = −125 kJ; U<sub>f</sub> = 75 kJ.</strong> The stirring returns some energy to the tea, but heat loss is larger.</p></div></details>
+</section>
+<section id="calculator" aria-labelledby="ledger-heading"><h2 id="ledger-heading">Interactive First Law energy ledger · Unscored</h2>
+<p>Use signed heat and work values to calculate the change in internal energy. Choose J or kJ consistently; the unit selector only changes the label and preset values, <strong>not</strong> the underlying physics. Leave initial U blank when it is not given.</p>
+<div class="card"><div class="tool-grid">
+<label for="ledger-unit">Energy unit<select id="ledger-unit"><option value="J">J (joules)</option><option value="kJ">kJ (kilojoules)</option></select></label>
+<label for="ledger-q">Heat into system, Q (signed)<input id="ledger-q" type="number" inputmode="decimal" step="any" value="-150"></label>
+<label for="ledger-w">Work done BY system, W (signed)<input id="ledger-w" type="number" inputmode="decimal" step="any" value="50"></label>
+<label for="ledger-ui">Initial internal energy U<sub>i</sub> (optional)<input id="ledger-ui" type="number" inputmode="decimal" step="any" placeholder="Leave blank if unknown"></label>
+</div>
+<div class="button-row"><button id="ledger-calculate" type="button">Calculate ΔU</button><button id="preset-example83" type="button">Load Example 8.3</button><button id="preset-assignment83" type="button">Load Assignment 8.3</button></div>
+<output id="ledger-result" aria-live="polite">Q = −150 J and W by system = +50 J imply ΔU = −200 J. The initial internal energy is not given.</output>
+<p class="source">ΔU = Q − W<sub>by</sub>. All inputs are signed; heat out is negative Q; work on a system is negative W<sub>by</sub>. No student data is stored.</p></div>
+</section>
+<section id="isobaric-lab" aria-labelledby="piston-heading"><h2 id="piston-heading">Isobaric piston energy calculator · Unscored</h2>
+<p>At constant external pressure, calculate work done by the gas and the resulting energy change using matching units: <strong>1 kPa × 1 L = 1 J</strong>.</p>
+<div class="card"><div class="tool-grid">
+<label for="iso-p">Pressure (kPa)<input id="iso-p" type="number" min="0.000001" step="any" inputmode="decimal" value="200"></label>
+<label for="iso-vi">Initial volume (L)<input id="iso-vi" type="number" min="0.000001" step="any" inputmode="decimal" value="2"></label>
+<label for="iso-vf">Final volume (L)<input id="iso-vf" type="number" min="0.000001" step="any" inputmode="decimal" value="5"></label>
+<label for="iso-q">Heat transfer into gas (J, signed)<input id="iso-q" type="number" step="any" inputmode="decimal" value="1000"></label>
+</div><button id="iso-calculate" type="button">Calculate isobaric energy</button>
+<output id="iso-result" aria-live="polite">Expansion: W by gas = +600 J; ΔU = +400 J (Q = +1000 J).</output>
+<p class="source">Original practice scenario, not a numbered publisher exercise. Assumes constant positive external pressure and only p–V boundary work; work during compression is negative by this convention.</p></div>
+</section>
+<section id="self-check" aria-labelledby="checks-heading"><h2 id="checks-heading">Four concept checks · Answers revealed on demand</h2>
+<details><summary>1. Can heat enter a gas without increasing its internal energy?</summary><div class="details-body">Yes. For isothermal expansion of a fixed <em>ideal gas</em>, ΔU = 0 and the incoming heat is converted into work done by the gas: Q = W<sub>by</sub>.</div></details>
+<details><summary>2. An adiabatic ideal gas expands while doing +300 J of work. What is ΔU?</summary><div class="details-body">Q = 0; ΔU = −W<sub>by</sub> = <strong>−300 J</strong>. Its internal energy decreases.</div></details>
+<details><summary>3. A rigid closed vessel receives 500 J of heat and does no other work. How much does U change?</summary><div class="details-body">At constant volume without other work, W<sub>by</sub> = 0, so ΔU = Q = <strong>+500 J</strong>.</div></details>
+<details><summary>4. A gas is compressed. Should its work-by-system value be positive or negative?</summary><div class="details-body">Negative for compression against a positive external pressure, because ΔV &lt; 0 and W<sub>by</sub> = pΔV &lt; 0. Work done <em>on</em> it is positive.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-heading"><h2 id="continue-heading">Continue learning</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.3</h3><p>Boyle's, Charles's and Gay-Lussac's laws, with three unscored calculations.</p><p><a href="./unit-08-topic83-gas-laws-v227.html">Study Topic 8.3</a></p></div>
+<div class="card"><h3>Use existing Unit 8 labs</h3><p>The First Law and p–V Work simulation is supplementary to this source-based lesson.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Coming next: Topic 8.5</h3><p>Heat Engines begin on original p.140 and require a separate source and scientific review before their lesson is released.</p><p><a href="./exam-quick-access.html">See available Unit 8 resources</a></p></div>
+</div></section>
+</main>
+<footer>Physics with Sir Najam · Unit 8 Topic 8.4 · Source-anchored unscored study adaptation · Human academic review pending</footer>
+<script>
+(function(){'use strict';
+const el=id=>document.getElementById(id);
+function number(id,optional){const s=el(id).value.trim();if(s===''){return optional?null:NaN}const x=Number(s);return Number.isFinite(x)?x:NaN}
+function fmt(n){return (Object.is(n,-0)||n===0?'0':(n>0?'+':'−')+Math.abs(Number(n.toPrecision(8))).toString())}
+function ledger(){
+ const q=number('ledger-q'),w=number('ledger-w'),ui=number('ledger-ui',true),unit=el('ledger-unit').value,out=el('ledger-result');
+ if(!Number.isFinite(q)||!Number.isFinite(w)||(ui!==null&&!Number.isFinite(ui))){out.textContent='Enter finite numeric heat and work values; initial energy may be left blank.';return}
+ const du=q-w,uf=ui===null?null:ui+du;
+ if(!Number.isFinite(du)||(uf!==null&&!Number.isFinite(uf))){out.textContent='The arithmetic result is outside the supported numerical range.';return}
+ out.textContent='Q = '+fmt(q)+' '+unit+'; W by = '+fmt(w)+' '+unit+'; ΔU = '+fmt(du)+' '+unit+'. '+(uf===null?'Initial U unspecified, so final U cannot be determined.':'U final = '+fmt(uf)+' '+unit+'.');
+}
+el('ledger-calculate').addEventListener('click',ledger);
+el('preset-example83').addEventListener('click',()=>{el('ledger-unit').value='J';el('ledger-q').value='-150';el('ledger-w').value='50';el('ledger-ui').value='';ledger()});
+el('preset-assignment83').addEventListener('click',()=>{el('ledger-unit').value='kJ';el('ledger-q').value='-150';el('ledger-w').value='-25';el('ledger-ui').value='200';ledger()});
+el('iso-calculate').addEventListener('click',()=>{
+ const p=number('iso-p'),vi=number('iso-vi'),vf=number('iso-vf'),q=number('iso-q'),out=el('iso-result');
+ if(!Number.isFinite(p)||!Number.isFinite(vi)||!Number.isFinite(vf)||!Number.isFinite(q)||p<=0||vi<=0||vf<=0){out.textContent='Use finite, strictly positive pressure and volumes; signed heat may be positive, negative or zero.';return}
+ const w=p*(vf-vi),du=q-w;
+ if(!Number.isFinite(w)||!Number.isFinite(du)){out.textContent='Result is outside the supported numerical range.';return}
+ const direction=vf>vi?'Expansion':vf<vi?'Compression':'Constant volume';
+ out.textContent=direction+': W by gas = '+fmt(w)+' J; ΔU = '+fmt(du)+' J (Q = '+fmt(q)+' J).';
+});
+})();
+</script>
+</body></html>
