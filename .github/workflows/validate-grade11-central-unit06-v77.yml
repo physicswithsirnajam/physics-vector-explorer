@@ -50,7 +50,7 @@ jobs:
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
       - name: New V77 core bank, source and browser end-to-end checks
         run: node scripts/test_grade11_central_v77.cjs
       - name: Recheck V76 source integrity and original independent practice
