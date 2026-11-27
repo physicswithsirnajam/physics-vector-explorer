@@ -39,9 +39,22 @@ jobs:
       - name: Install pinned real Chromium and PDF page inspection tools
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
-          npx playwright install --with-deps chromium
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends poppler-utils
+          # Other green browser workflows confirm Ubuntu 24.04's Chromium
+          # runtime dependencies are already present on hosted runners.
+          # Avoid Playwright's apt update against an unrelated Microsoft
+          # runner repository that can intermittently return HTTP 403.
+          npx playwright install chromium
+          if ! command -v pdfinfo >/dev/null || ! command -v pdftotext >/dev/null; then
+            # Poppler is available from Ubuntu's own signed repos. Select
+            # Ubuntu's primary source explicitly, leaving unrelated third-
+            # party apt feeds out of this reproducible PDF test setup.
+            sudo apt-get update -qq \
+              -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources \
+              -o Dir::Etc::sourceparts=-
+            sudo apt-get install -y --no-install-recommends poppler-utils \
+              -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources \
+              -o Dir::Etc::sourceparts=-
+          fi
           pdfinfo -v
           pdftotext -v
       - name: Audit 114 public HTML routes, exponents, real printed pages and previous learner QA
