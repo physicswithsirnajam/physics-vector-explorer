@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "Two source-based, unscored study lessons are available for Topics 8.1 and 8.2. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
+          "summary": "Three source-based, unscored study lessons are available for Topics 8.1, 8.2 and 8.3. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "topics-8.1-and-8.2-source-anchored-original-textbook-pp128-134-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview now includes Topic 8.1 thermal equilibrium, internal energy, ideal gas and Example/Assignment 8.1; Topic 8.2 kinetic theory, work by/on gas and Example/Assignment 8.2. Both are study adaptations with individual teacher reviews pending; no Unit8 scored bank, approved original end exercises or graded tests are available.",
+          "qualityStatus": "topics-8.1-to-8.3-source-anchored-original-textbook-pp128-135-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview now includes Topic 8.1 thermal equilibrium, internal energy, ideal gas and Example/Assignment 8.1; Topic 8.2 kinetic theory, work by/on gas and Example/Assignment 8.2; Topic 8.3 Boyle, Charles and Gay-Lussac gas laws with independent, unscored investigations. All are teaching adaptations with individual teacher reviews pending; no Unit8 scored bank, approved original end exercises or graded tests are available.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -331,6 +331,16 @@
               "sourcePages": [
                 131,
                 134
+              ],
+              "access": "public-unscored-study-teacher-review"
+            },
+            {
+              "topic": "8.3",
+              "title": "The Gas Laws: Boyle, Charles and Gay-Lussac",
+              "href": "./unit-08-topic83-gas-laws-v227.html",
+              "sourcePages": [
+                134,
+                135
               ],
               "access": "public-unscored-study-teacher-review"
             }
