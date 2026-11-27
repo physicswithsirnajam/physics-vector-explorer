@@ -37,10 +37,14 @@ jobs:
         run: python3 scripts/validate_unit02_bank.py
       - name: Verify all published Grade XI scenario groups and dependency context
         run: python3 scripts/check_grade11_mcq_context.py
-      - name: Preserve source-pinned Grade XI bank and builder limits
+      - name: Preserve exact source-pinned Grade XI review catalog parity
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install real Chromium for source-context visibility regression
         run: |
-          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
-          node scripts/test_builder_multiunit_v56.cjs
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Test multi-unit browser selection, option shuffling and original scenarios
+        run: node scripts/test_builder_multiunit_v56.cjs
       - name: Preserve privacy-safe local MCQ report copy/download behavior
         run: python3 scripts/test_grade11_mcq_issue_report.py
       - name: Preserve Unit7 pending teacher decisions, 274 original sources and zero scored release
