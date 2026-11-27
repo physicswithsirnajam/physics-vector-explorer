@@ -19,3 +19,7 @@ Before making claims about exact textbook *exercise MCQs*, *end-of-unit short/ex
 
 ## Owner review
 Leave PR Draft until **all latest-head checks pass**. Then inspect 5 changed files → Ready for review → Merge → Confirm. Verify Unit 2 Learning Desk question-finders card, and sidebar Unit 2 PRACTISE numerical + PREPARE short/long links. Do not treat this as a release of an official marking scheme.
+
+
+## Unrelated sitewide CI dependency repair discovered in PR checks
+The existing V112 scientific-superscript/PDF watermark test was failing **before testing any page** because `npx playwright install --with-deps chromium` attempted an Ubuntu apt update through a Microsoft third-party runner source returning HTTP 403. V211 changes its GitHub Actions installer to use the already-proven `npx playwright install chromium` path used by successful other browser checks, and only installs Poppler from signed primary Ubuntu sources **if `pdfinfo` or `pdftotext` is absent**. All original V112 scientific/real-PDF test commands and expected gates remain unchanged. This does not suppress, skip, or convert a failure into success; it only prevents a nonessential external apt feed from blocking test execution.
