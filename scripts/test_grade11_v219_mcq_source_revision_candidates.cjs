@@ -42,7 +42,7 @@ for(const [i,c] of draft.candidates.entries()){
  assert.equal(c.options.length,4);
  assert.equal(new Set(c.options).size,4);
  assert.ok(c.stem.length>=65);
- assert.ok(c.options.every(x=>x.length>=5));
+ assert.ok(c.options.every(x=>typeof x==='string'&&x.trim().length>=3),'All four options must be valid nonempty answer choices, including short SI quantities such as 20 J');
  assert.equal(c.studentScoredRelease,'HOLD');
  assert.equal(c.teacherScience,'PENDING');
  assert.equal(c.teacherCognitive,'PENDING');
