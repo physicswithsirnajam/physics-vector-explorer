@@ -1,0 +1,56 @@
+name: Grade XI V214 Unit 5 Source-Bound Study and Descriptive Navigation
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-05.html"
+      - "portal/unit-05-work-study.html"
+      - "scripts/test_grade11_v214_unit5_source_practice_links.cjs"
+      - "quality/grade11-v214-unit5-study-descriptive-navigation.md"
+      - ".github/workflows/validate-grade11-v214-unit5-finders.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-05.html"
+      - "portal/unit-05-work-study.html"
+      - "scripts/test_grade11_v214_unit5_source_practice_links.cjs"
+      - ".github/workflows/validate-grade11-v214-unit5-finders.yml"
+jobs:
+  unit5-existing-learning-and-ungraded-papers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate syntax and original-source indexes
+        run: |
+          node --check scripts/test_grade11_v214_unit5_source_practice_links.cjs
+          node --check shared/navigation.js
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve existing source bank IDs and all answer letters
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Validate Unit5 real student example and Sections B/C links at three widths
+        run: node scripts/test_grade11_v214_unit5_source_practice_links.cjs
+      - name: Preserve Unit4 V213 and Unit3 V212 source navigation
+        run: |
+          node scripts/test_grade11_v213_unit4_examples_assignment.cjs
+          node scripts/test_grade11_v212_unit3_example_numerical_finders.cjs
+      - name: Preserve original five-stage unit drawer
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Save anonymous QA summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v214-unit5-navigation-QC
+          path: qa-artifacts/grade11-v214-unit5-source-practice-navigation/navigation-audit.json
+          if-no-files-found: warn
+          retention-days: 14
