@@ -58,7 +58,8 @@ input{display:block;width:100%;background:#fff;color:#122740;border:1px solid #a
 output{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
 .formula{overflow-wrap:anywhere}
-@media(max-width:760px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.calc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.calc-cards{grid-template-columns:1fr}}
 @media(max-width:540px){.calc-grid{grid-template-columns:1fr}.stage-buttons{grid-template-columns:1fr 1fr}}
 @media print{.stage-buttons button,.stage-output,.given,output{background:white;color:black;border-color:#666}form button{display:none}}
 </style></head><body>
@@ -121,7 +122,7 @@ form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form butto
 <p id="assignment84-result"><strong>Answer: the engine rejects 2.4 kJ of waste heat.</strong> This heat amount is a positive magnitude directed toward the sink.</p></div></details>
 <p class="source">Original Assignment 8.4 on printed p.145. Unlike Example 8.4, this problem states general heat-engine efficiency; no reservoir temperatures or Carnot assumption are required.</p></section>
 <section id="calculator" aria-labelledby="calculator-title"><h2 id="calculator-title">Two interactive investigations · No marks</h2>
-<div class="grid">
+<div class="grid calc-cards">
 <form class="card" id="temperature-calculator" onsubmit="return false" aria-labelledby="temp-title"><h3 id="temp-title">A · Carnot maximum from temperatures</h3>
 <p>Enter two reservoir temperatures in °C. The calculator converts to kelvin before dividing.</p>
 <div class="calc-grid">
