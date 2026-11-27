@@ -15,7 +15,7 @@
 The public `shared/practice-bank-adapter-v55.js` now overlays a **presentation-only** display context on one verified stable ID, `XI-U02-MCQ-0119`:
 
 1. It supplies the equivalent ordered component pairs A=(5,1), B=(2,4) along perpendicular x/y unit axes in both visible HTML and plain text.
-2. It gives a standalone display stem without the instruction to read invisible Q116.
+2. It preserves the original question stem referring to Q116, while the **visible local stimulus supplies the complete Q116 vectors** so random selection remains self-contained. This also preserves legacy source-fidelity regression expectations.
 3. It retains the original four option texts, keyed original option A, explanation, SLO, question ID, source Q119 and bank version.
 4. It records `contextSourceQuestionNumber:116` and `presentationContextRevision:v207-unit2-q119-standalone` in the adapted public view. It **does not** create a group scenario or expose hidden account data.
 5. It fails closed if the source Q119 stem, key or source option A changes unexpectedly.
