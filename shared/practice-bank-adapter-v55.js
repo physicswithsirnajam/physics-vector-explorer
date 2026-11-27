@@ -68,7 +68,6 @@ function adaptUnit2Q119DisplayContext(q){
   const given='Given A = (5, 1) and B = (2, 4), written as (x, y) components along perpendicular unit axes.';
   return {
     ...q,
-    stem:'For the given vectors A and B, the scalar projection of A along B is:',
     stimulusText:given,
     stimulusHtml:'<p><strong>Given vectors:</strong> A = (5, 1) and B = (2, 4), written as (x, y) components along perpendicular unit axes.</p>',
     contextSourceQuestionNumber:116,
