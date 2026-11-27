@@ -1,0 +1,102 @@
+name: Grade XI V234 Unit 8 Topic 8.10 Entropy
+on:
+  pull_request:
+    paths:
+      - "portal/unit-08-topic810-entropy-v234.html"
+      - "portal/unit-08-topic89-refrigerator-v233.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v234_unit8_topic810_entropy_browser.cjs"
+      - "scripts/test_grade11_v233_unit8_topic89_refrigerator_browser.cjs"
+      - "scripts/test_grade11_v232_unit8_topic88_carnot_browser.cjs"
+      - "scripts/test_grade11_v231_unit8_topic87_second_law_browser.cjs"
+      - "scripts/test_grade11_v230_unit8_topic86_source_browser.cjs"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - "quality/grade11-v234-unit8-topic810-entropy-source-science.md"
+      - ".github/workflows/validate-grade11-v234-unit8-topic810-entropy.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-08-topic810-entropy-v234.html"
+      - "portal/unit-08-topic89-refrigerator-v233.html"
+      - "portal/learning-catalog.json"
+      - "portal/exam-quick-access.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v234_unit8_topic810_entropy_browser.cjs"
+      - "scripts/test_grade11_v233_unit8_topic89_refrigerator_browser.cjs"
+      - "scripts/test_grade11_v232_unit8_topic88_carnot_browser.cjs"
+      - "scripts/test_grade11_v231_unit8_topic87_second_law_browser.cjs"
+      - "scripts/test_grade11_v230_unit8_topic86_source_browser.cjs"
+      - "scripts/test_grade11_v229_unit8_topic85_source_browser.cjs"
+      - "scripts/test_grade11_v228_unit8_topic84_source_browser.cjs"
+      - "scripts/test_grade11_v227_unit8_topic83_source_browser.cjs"
+      - "scripts/test_grade11_v226_unit8_topic82_source_browser.cjs"
+      - ".github/workflows/validate-grade11-v234-unit8-topic810-entropy.yml"
+jobs:
+  original-entropy-source-signed-heat-and-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 37
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check exact NBF source inventory, scripts and navigation
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v234_unit8_topic810_entropy_browser.cjs
+          node --check scripts/test_grade11_v233_unit8_topic89_refrigerator_browser.cjs
+          node --check scripts/test_grade11_v232_unit8_topic88_carnot_browser.cjs
+          node --check scripts/test_grade11_v231_unit8_topic87_second_law_browser.cjs
+          node --check scripts/test_grade11_v230_unit8_topic86_source_browser.cjs
+          node --check scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+          node --check scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+          node --check scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+          node --check scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'));JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v224-original-textbook-source-slo-inventory-no-keys.json','utf8'))"
+      - name: Preserve original pinned 2250 Units1-6 bank IDs options and answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned headless Chromium without failing external apt feed
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V234 entropy, original Example and Assignment 8.6, 1280 390 320 real browser
+        run: node scripts/test_grade11_v234_unit8_topic810_entropy_browser.cjs
+      - name: Preserve V233 refrigerator and symbolic original Assignment 8.5
+        run: node scripts/test_grade11_v233_unit8_topic89_refrigerator_browser.cjs
+      - name: Preserve V232 Carnot Example and Assignment 8.4
+        run: node scripts/test_grade11_v232_unit8_topic88_carnot_browser.cjs
+      - name: Preserve V231 Second Law Kelvin and Clausius
+        run: node scripts/test_grade11_v231_unit8_topic87_second_law_browser.cjs
+      - name: Preserve V230 reversible and cyclic processes
+        run: node scripts/test_grade11_v230_unit8_topic86_source_browser.cjs
+      - name: Preserve V229 heat engine and four strokes
+        run: node scripts/test_grade11_v229_unit8_topic85_source_browser.cjs
+      - name: Preserve V228 First Law signed heat and original assignment
+        run: node scripts/test_grade11_v228_unit8_topic84_source_browser.cjs
+      - name: Preserve V227 Kelvin gas laws
+        run: node scripts/test_grade11_v227_unit8_topic83_source_browser.cjs
+      - name: Preserve V226 kinetic theory and work
+        run: node scripts/test_grade11_v226_unit8_topic82_source_browser.cjs
+      - name: Preserve V225 original first Unit8 topic and examples
+        run: node scripts/test_grade11_v225_unit8_topic81_source_browser.cjs
+      - name: Preserve V224 original NBF and FBISE source manifest
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve V209 Unit7 scored release hold
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve V140 unit-aware sidebar access controls
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive original entropy source real-browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v234-unit08-topic810-entropy-browser
+          path: qa-artifacts/grade11-v234-unit08-topic810-entropy-browser/evidence.json
+          retention-days: 14
+          if-no-files-found: warn
