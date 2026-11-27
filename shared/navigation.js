@@ -370,10 +370,24 @@
       // explicitly planned. Never expose a non-source-backed route.
       const introduction=unit.learningPreviewStatus==='public-topic-7.1-introduction-only'
         ?safeHref(unit.learningPreviewHref,new URL('portal/',root)):null;
-      if(unit.unit===7&&introduction)
+      if(unit.unit===7&&introduction){
+        rows.append(e('p','psn-drawer-unit-notice',
+          'Three public unscored learning lessons · Teacher review in progress. Original textbook exercises and Unit 7 scored MCQs are not published.'));
         rows.append(makeLink(introduction,
-          'Unit 7 · Topic 7.1 Learning Introduction · Full course still planned',
+          'Unit 7 · Topic 7.1 Learning Introduction · Unscored study · Full course still planned',
           'public-link'));
+        // V209: only explicitly enumerated existing source-based public
+        // lessons; the legacy V145 introduction sentinel remains unchanged
+        // so an unapproved MCQ bank is never activated by adding routes.
+        for(const lesson of unit.additionalLearningPreviews||[]){
+          if(!['7.2','7.3'].includes(lesson.topic) ||
+            lesson.access!=='public-unscored-study-teacher-review')continue;
+          const href=safeHref(lesson.href,new URL('portal/',root));
+          if(!href)continue;
+          rows.append(makeLink(href,'Unit 7 · Topic '+lesson.topic+' '+lesson.title+
+            ' · Unscored study · Academic review pending','public-link'));
+        }
+      }
       // Existing enrichment simulations for future units may already be public.
       // This link does NOT publish the unit, its notes, MCQ bank or exams.
       const sim=safeHref(unit.simulationHref,new URL('portal/',root));
