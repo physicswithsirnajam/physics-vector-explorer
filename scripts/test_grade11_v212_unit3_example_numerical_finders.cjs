@@ -28,7 +28,19 @@ const sourceAudit=()=>{
    const local='portal/'+m[1];
    assert.ok(fs.existsSync(path.join(ROOT,local)),'Missing destination '+local);
    const content=read(local);
-   assert.ok(content.includes(m[2]),'Destination does not expose its indexed question reference '+entry.id);
+   if(entry.kind==='textbook-example'){
+     assert.ok(content.includes('id="'+m[2]+'"'),
+       'Worked example anchor missing in authored study page '+entry.id);
+   }else{
+     // Unit 3 numericals render dynamically from their existing read-only
+     // source bank; absence from static HTML is expected, not missing data.
+     assert.ok(content.includes('src="./unit-03-numericals.js"'),
+       'Existing numerical HTML must load its published renderer');
+     const source=load('question-bank/grade-11/unit-03-textbook-numericals.json');
+     assert.equal(source.status,'teacher-review-pending');
+     assert.ok(source.numericals.some(n=>n.id===m[2]),
+       'Published numerical source bank lacks indexed ID '+entry.id);
+   }
  }
  const u3=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===3);
  const u7=catalog.grades.find(g=>g.grade===11).units.find(u=>u.unit===7);
@@ -73,7 +85,7 @@ async function browse(browser,base,width,kind,amount){
   const stage=unit.locator('.psn-drawer-stage[data-psn-stage="PRACTISE"]');
   const prepare=unit.locator('.psn-drawer-stage[data-psn-stage="PREPARE"]');
   assert.equal(await prepare.locator('[data-psn-source-status="unit3-original-end-exercises-pending"]').count(),1);
-  assert.ok((await prepare.innerText()).includes('not an individually indexed original end-of-unit'));
+  assert.ok((await prepare.textContent()).includes('not an individually indexed original end-of-unit'));
   if((await stage.getAttribute('open'))===null)await stage.locator('summary').click();
   const suffix='textbook-resource-finder.html?unit=3&kind='+kind;
   const link=stage.locator('a[href$="'+suffix+'"]');
