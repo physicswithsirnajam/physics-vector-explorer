@@ -356,6 +356,27 @@
          title:'Unit 4 · In-chapter Assignment 4.4 · Artificial gravity practice',href:'./unit-04-artificial-gravity-study.html#assignment44',access:'public-link'}
       ].forEach(add);
     }
+    /* V214 — Unit 5 anchored learning: Example 5.1 is already authored
+     * inline in the study guide, and the resistive-medium calculation is a
+     * teacher-created illustration rather than a numbered NBF numerical.
+     * Section B/C anchors link to existing unscored teacher-prepared practice.
+     * They must not be advertised as source-verified end-of-unit exercises. */
+    if(unit.unit===5){
+      [
+        {id:'v214-u05-worked-example-51',category:'PRACTISE',
+         title:'Unit 5 · Worked Example 5.1 adaptation · Suitcase work',
+         href:'./unit-05-work-study.html#example51',access:'public-link'},
+        {id:'v214-u05-resistive-case',category:'PRACTISE',
+         title:'Unit 5 · Teacher-created resistive-medium calculation',
+         href:'./unit-05-work-study.html#resistance',access:'public-link'},
+        {id:'v214-u05-section-b',category:'EXAM PREPARATION',
+         title:'Unit 5 · Section B · 7 teacher-prepared short/numerical OR pairs',
+         href:'./unit-05-descriptive-student.html#shortTitle',access:'public-link'},
+        {id:'v214-u05-section-c',category:'EXAM PREPARATION',
+         title:'Unit 5 · Section C · 2 teacher-prepared extended/numerical OR pairs',
+         href:'./unit-05-descriptive-student.html#longTitle',access:'public-link'}
+      ].forEach(add);
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -386,6 +407,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===5 && stage.key==='PREPARE'){
+        const note=e('p','psn-drawer-stage-empty',
+          'The Section B and C shortcuts lead to an existing 40-mark, Unit-5-only teacher-created OR practice paper, not numbered original NBF end-of-unit short/extended questions. Example 5.1 is an existing source-based teaching adaptation; the resistive-medium numerical case is teacher-created. Numbered end-of-unit MCQs, textbook numerical exercises and in-chapter assignments have not yet been individually verified or mapped. Answer and SLO approvals remain provisional.');
+        note.dataset.psnSourceStatus='unit5-original-exercises-unmapped';
+        linksBox.append(note);
       }
       if(unit.unit===4 && stage.key==='PREPARE'){
         const note=e('p','psn-drawer-stage-empty',
