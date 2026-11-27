@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="Grade XI NBF Unit 8 Topic 8.5 Heat Engine: source-anchored hot reservoir, heat rejected, work, working substance, and petrol four-stroke process; public unscored interactive study.">
+<title>Topic 8.5 · Heat Engine | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69">
+<script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}.flow-diagram{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:center;margin:19px 0}.flow-node{background:#203c5e;padding:14px;border:1px solid #8aa3bf;border-radius:11px;text-align:center;min-width:0}.flow-node strong{display:block;color:var(--gold)}.flow-connect{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:center;color:var(--muted)}.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stage-buttons button{margin:0;background:#1c3656;border:1px solid #8fa4ba;color:white;font-size:.88rem;padding:10px 8px}.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}.stage-panel{margin-top:14px;background:#0d223b;border:1px solid var(--edge);border-radius:10px;padding:17px;min-height:115px}#stage-panel-title{margin:0;color:var(--gold)}@media(max-width:650px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-diagram{grid-template-columns:1fr}.flow-connect{font-size:.86rem}}@media print{.stage-buttons button{color:#000;border-color:#555;background:#fff}.stage-panel,.flow-node{background:#fff;color:#000}} </style>
+</head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a>
+<nav aria-label="Learning resources"><a href="./unit-08-topic84-first-law-v228.html">Topic 8.4</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main">
+<span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.5 · Original printed pages 140–141</span>
+<h1>Heat Engine</h1>
+<p class="lead">Follow the flow of thermal energy from a hot source, through a working substance, into useful mechanical work and a cooler sink. Then discover how the four strokes of a petrol engine produce motion.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false">
+<strong>Public unscored learning preview — independent teacher review pending.</strong>
+This independently written lesson is based on the owner's original NBF Grade XI Physics Unit 8 printed pages 140–141 and FBISE outcome P-11-C-13. It is not a scanned reproduction or an approved marking key. This topic has no original numbered textbook example or assignment to release. There are no scored questions, login requests, student records or saved results. The complete Unit 8 question bank and textbook exercise answers remain unpublished.</div>
+<nav class="jump" aria-label="Jump to lesson sections"><a href="#principle">Engine principle</a><a href="#flow">Heat-energy flow</a><a href="#parts">Three essential parts</a><a href="#petrol">Petrol engine</a><a href="#calculator">Cycle energy balance</a><a href="#strokes">Four-stroke explorer</a><a href="#self-check">Self-check</a></nav>
+<section id="principle" aria-labelledby="principle-title"><h2 id="principle-title">8.5 · What does a heat engine do?</h2>
+<p>A <strong>heat engine</strong> receives energy as heat from a hotter source, converts part of that energy to mechanical work, and rejects the remaining energy to a cooler sink. A heat engine working continuously in repeated cycles returns its working substance to the same initial thermodynamic state after each complete cycle.</p>
+<div class="formula" id="engine-energy-equation">W<sub>net,out</sub> = Q<sub>H</sub> − Q<sub>C</sub><small>Q<sub>H</sub> = positive magnitude of heat absorbed; Q<sub>C</sub> = positive magnitude of heat rejected; W<sub>net,out</sub> = net useful work delivered in one cycle</small></div>
+<p>Because a cycle returns to its initial state, the net change in internal energy over a complete cycle is zero: <strong>ΔU<sub>cycle</sub> = 0</strong>. The First Law therefore gives the net-work relation above. For an operating engine producing positive work, Q<sub>H</sub> must exceed Q<sub>C</sub>.</p>
+<div class="note"><strong>Keep the signs clear:</strong> Q<sub>H</sub> and Q<sub>C</sub> are defined here as <em>positive amounts</em>. The heat actually leaving the working substance is <strong>−Q<sub>C</sub></strong> in the signed First Law. Thus, Q<sub>net</sub> = Q<sub>H</sub> − Q<sub>C</sub>. Do not add two positive heat amounts as if both entered the engine.</div>
+<p class="source">Original NBF pp.140–141 introduces the heat engine, energy transfers and the net-work relation. The original Figure 8.14 remains only in the textbook.</p></section>
+<section id="flow" aria-labelledby="flow-title"><h2 id="flow-title">How heat passes through the engine</h2>
+<div class="flow-diagram" role="img" aria-label="Original learning flow diagram: hot source sends Q H into engine, which delivers W net out and rejects Q C to cold sink.">
+<div class="flow-node"><strong>Hot reservoir</strong>Higher temperature T<sub>H</sub><div>Heat supplied: Q<sub>H</sub></div></div>
+<div class="flow-node"><strong>Working substance and engine</strong>Receives Q<sub>H</sub>, produces W<sub>net,out</sub>, releases Q<sub>C</sub><div>Useful work output</div></div>
+<div class="flow-node"><strong>Cold reservoir</strong>Lower temperature T<sub>C</sub><div>Heat rejected: Q<sub>C</sub></div></div>
+</div><p class="source">This is an original text-based explanation, not a recreation of the publisher's Figure 8.14. It shows roles, not proportional energy quantities or a particular engine design.</p></section>
+<section id="parts" aria-labelledby="parts-title"><h2 id="parts-title">Three parts and their roles</h2>
+<div class="grid">
+<article class="card" id="hot-source"><h3>1 · Hot source</h3><p>Provides energy to the engine through heat transfer at a relatively high temperature. Examples include a combustion source in a practical engine or an idealized hot reservoir.</p></article>
+<article class="card" id="cold-sink"><h3>2 · Cold sink</h3><p>Receives rejected heat at a lower temperature. A continuously cycling heat engine transfers some energy away instead of converting all supplied heat into work.</p></article>
+<article class="card" id="working-substance"><h3>3 · Working substance</h3><p>A gas or vapour undergoes thermodynamic changes and transmits force to mechanical components. In a petrol engine, expanding combustion gases push the piston.</p></article>
+</div><p>Steam and petrol engines are familiar examples, but they are not mechanically identical. Steam engines commonly transfer heat into a working fluid, whereas a petrol engine produces hot gases through combustion inside a cylinder.</p>
+</section>
+<section id="petrol" aria-labelledby="petrol-title"><h2 id="petrol-title">A four-stroke petrol engine</h2>
+<p>The original textbook describes the <strong>suction, compression, power and exhaust</strong> strokes. In a conventional four-stroke spark-ignition engine, one complete working cycle takes four piston strokes, corresponding to two crankshaft revolutions.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Stroke</th><th scope="col">Piston movement</th><th scope="col">What happens?</th></tr></thead><tbody>
+<tr><td>1 · Suction / Intake</td><td>Down</td><td>Fresh air–fuel charge enters through the intake valve.</td></tr>
+<tr><td>2 · Compression</td><td>Up</td><td>Both valves are generally closed; the charge is compressed.</td></tr>
+<tr><td>3 · Power</td><td>Down</td><td>Ignition initiates combustion near the end of compression; expanding hot gases drive the piston down.</td></tr>
+<tr><td>4 · Exhaust</td><td>Up</td><td>The exhaust valve opens and the rising piston expels burnt gases.</td></tr>
+</tbody></table></div><div class="note"><strong>Model distinction:</strong> The hot/cold reservoir flow is a general thermodynamic representation. The four-stroke petrol engine is an <em>internal-combustion</em> implementation, not a claim that its temperature or pressure is constant during a stroke. This topic does not yet analyze reversible engines or Carnot efficiency.</div>
+<p class="source">Original NBF printed p.141, four-stroke descriptions and petrol-engine figure; source drawings are not copied.</p></section>
+<section id="calculator" aria-labelledby="calc-title"><h2 id="calc-title">Unscored cycle-energy calculator</h2>
+<p>Enter the <em>positive amounts</em> of heat absorbed and heat rejected per completed cycle. We calculate the net work produced. This is <strong>original practice</strong>, not a numbered textbook problem.</p>
+<div class="card"><div class="tool-grid">
+<label for="heat-in">Heat received from hot source Q<sub>H</sub> (J)<input id="heat-in" type="number" min="0.000001" step="any" inputmode="decimal" value="1000"></label>
+<label for="heat-out">Heat rejected to cold sink Q<sub>C</sub> (J)<input id="heat-out" type="number" min="0" step="any" inputmode="decimal" value="650"></label>
+</div><button id="calculate-engine" type="button">Calculate net work output</button>
+<output id="engine-result" aria-live="polite">For QH = 1000 J and QC = 650 J, net work output = +350 J, and ΔU over the complete cycle = 0 J.</output>
+<p class="source">Heat values here are positive magnitudes. Valid engine-output mode requires Q<sub>H</sub> &gt; Q<sub>C</sub> ≥ 0. An idealized Q<sub>C</sub> = 0 is accepted for arithmetic exploration, <em>not</em> as a claim that a physically realizable cyclic engine converts all heat into work.</p>
+</div></section>
+<section id="strokes" aria-labelledby="strokes-title"><h2 id="strokes-title">Explore the four strokes · No scores</h2>
+<p>Select a stroke to see what enters, what moves and how the cylinder contributes to the complete cycle.</p>
+<div class="card"><div class="stage-buttons" role="group" aria-label="Choose one of the four petrol engine strokes">
+<button type="button" data-stage="0" aria-pressed="true">1 · Intake</button>
+<button type="button" data-stage="1" aria-pressed="false">2 · Compression</button>
+<button type="button" data-stage="2" aria-pressed="false">3 · Power</button>
+<button type="button" data-stage="3" aria-pressed="false">4 · Exhaust</button>
+</div>
+<div class="stage-panel" id="stage-panel" role="status" aria-live="polite"><h3 id="stage-panel-title">Intake (suction) stroke</h3><p id="stage-panel-text">Piston travels down; intake valve open, exhaust valve closed. Air–fuel mixture enters the cylinder.</p></div>
+</div></section>
+<section id="self-check" aria-labelledby="check-title"><h2 id="check-title">Four concept checks · Reveal the explanation</h2>
+<details><summary>1. Why must an operating heat engine send some heat to a cold sink?</summary><div class="details-body">A continuously cyclic heat engine rejects some of the received thermal energy; it cannot convert every joule of supplied heat into net work. The detailed thermodynamic limit belongs to the later Second Law and Carnot lessons.</div></details>
+<details><summary>2. In one cycle, the engine absorbs 900 J and rejects 500 J. What net work does it deliver?</summary><div class="details-body">Net work = Q<sub>H</sub> − Q<sub>C</sub> = 900 J − 500 J = <strong>400 J</strong>. The substance returns to its initial internal energy after a complete cycle.</div></details>
+<details><summary>3. Which stroke supplies the main outward mechanical push in a four-stroke petrol engine?</summary><div class="details-body">The <strong>power stroke</strong>: hot combustion gases expand and push the piston downward.</div></details>
+<details><summary>4. Does Q<sub>C</sub> = 300 J mean +300 J enters the working substance?</summary><div class="details-body">No. Q<sub>C</sub> is defined as a <em>positive amount rejected</em>; in the signed First Law, that heat transfer is <strong>−300 J</strong> for the working substance.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-title"><h2 id="continue-title">Continue learning</h2>
+<div class="grid"><div class="card"><h3>Review First Law</h3><p>Revisit the energy signs and four processes in Topic 8.4.</p><p><a href="./unit-08-topic84-first-law-v228.html">Study Topic 8.4</a></p></div>
+<div class="card"><h3>Explore Unit 8 simulations</h3><p>Existing heat-engine and Carnot simulations may be useful enrichment, but they do not constitute the next textbook lesson.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next: Topic 8.6</h3><p>Reversible and irreversible processes start on original printed p.141 and are reserved for a separate source-review stage.</p><p><a href="./exam-quick-access.html">View published study links</a></p></div></div>
+</section>
+</main><footer>Physics with Sir Najam · Unit 8 Topic 8.5 · Source-based unscored preview · Independent academic review pending</footer>
+<script>
+(function(){'use strict';
+const a=document.getElementById('heat-in'),b=document.getElementById('heat-out'),output=document.getElementById('engine-result');
+function fmt(n){return Number(n.toPrecision(8)).toString()}
+document.getElementById('calculate-engine').addEventListener('click',function(){
+ const rawH=a.value.trim(),rawC=b.value.trim(),h=Number(rawH),c=Number(rawC);
+ if(!rawH||!rawC||!Number.isFinite(h)||!Number.isFinite(c)||h<=0||c<0){
+  output.textContent='Enter finite heat quantities: QH must be positive and QC cannot be negative.';return;
+ }
+ if(c>=h){output.textContent='These inputs do not describe a positive-work heat engine: rejected heat must be less than incoming heat. Choose QH > QC.';return}
+ const w=h-c;
+ if(!Number.isFinite(w)||w<=0){output.textContent='Result outside supported numerical range. Choose smaller finite input quantities.';return}
+ output.textContent='For QH = '+fmt(h)+' J and QC = '+fmt(c)+' J, net work output = +'+fmt(w)+' J; ΔU over a complete cycle = 0 J.';
+});
+const stages=[
+ ['Intake (suction) stroke','Piston travels down; intake valve open, exhaust valve closed. Air–fuel mixture enters the cylinder.'],
+ ['Compression stroke','Piston travels up; valves generally closed. The charge is compressed before ignition.'],
+ ['Power stroke','Spark and combustion near the end of compression heat the charge; expanding gases push the piston downward, delivering mechanical work.'],
+ ['Exhaust stroke','Piston travels upward; exhaust valve opens and burnt gases are expelled. The four-stroke cycle can then repeat.']
+];
+for(const btn of document.querySelectorAll('[data-stage]'))btn.addEventListener('click',function(){
+ const n=Number(btn.dataset.stage);if(!Number.isInteger(n)||n<0||n>=stages.length)return;
+ for(const x of document.querySelectorAll('[data-stage]'))x.setAttribute('aria-pressed',x===btn?'true':'false');
+ document.getElementById('stage-panel-title').textContent=stages[n][0];
+ document.getElementById('stage-panel-text').textContent=stages[n][1];
+});
+})();
+</script></body></html>
