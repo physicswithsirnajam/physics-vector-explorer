@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "One public source-based, unscored Topic 8.1 study lesson is available. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
+          "summary": "Two source-based, unscored study lessons are available for Topics 8.1 and 8.2. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "topic-8.1-source-anchored-original-textbook-pp128-131-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 Topic 8.1 public unscored learning preview covers thermal equilibrium, internal energy, ideal gases, Example 8.1 and Assignment 8.1. Original book figures are not reproduced. Independent teacher review is pending, and no Unit 8 MCQs or graded assessments are available.",
+          "qualityStatus": "topics-8.1-and-8.2-source-anchored-original-textbook-pp128-134-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview now includes Topic 8.1 thermal equilibrium, internal energy, ideal gas and Example/Assignment 8.1; Topic 8.2 kinetic theory, work by/on gas and Example/Assignment 8.2. Both are study adaptations with individual teacher reviews pending; no Unit8 scored bank, approved original end exercises or graded tests are available.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -322,6 +322,18 @@
           "learningPreviewSourcePages": [
             128,
             131
+          ],
+          "additionalLearningPreviews": [
+            {
+              "topic": "8.2",
+              "title": "Kinetic Theory of Gases and Thermodynamic Work",
+              "href": "./unit-08-topic82-kinetic-gases-work-v226.html",
+              "sourcePages": [
+                131,
+                134
+              ],
+              "access": "public-unscored-study-teacher-review"
+            }
           ]
         },
         {
