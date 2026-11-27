@@ -1,0 +1,52 @@
+name: Grade XI V210 Unit 1 Source-Pack Assignment Practice
+on:
+  pull_request:
+    paths:
+      - "portal/unit-01-assignments-v210.html"
+      - "portal/unit-01.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v210_unit1_assignments.cjs"
+      - "quality/grade11-v210-unit1-assignments-source-status.md"
+      - ".github/workflows/validate-grade11-v210-unit1-assignments.yml"
+  push:
+    branches: [main]
+    paths:
+      - "portal/unit-01-assignments-v210.html"
+      - "portal/unit-01.html"
+      - "shared/navigation.js"
+      - "scripts/test_grade11_v210_unit1_assignments.cjs"
+      - ".github/workflows/validate-grade11-v210-unit1-assignments.yml"
+jobs:
+  verify-unit1-unscored-source-pack-assignments:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate browser test and shared navigation
+        run: |
+          node --check scripts/test_grade11_v210_unit1_assignments.cjs
+          node --check shared/navigation.js
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'))"
+      - name: Preserve immutable original 2250 public MCQs
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Check source-based assignments, mathematics, real mobile navigation
+        run: node scripts/test_grade11_v210_unit1_assignments.cjs
+      - name: Preserve V208 finder and separate end-exercise status
+        run: node scripts/test_grade11_v208_unit1_sidebar_finders.cjs
+      - name: Attach read-only evidence summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v210-unit1-sourcepack-assignment-evidence
+          path: qa-artifacts/grade11-v210-unit1-assignment-preview/teacher-preview-audit.json
+          if-no-files-found: warn
+          retention-days: 14

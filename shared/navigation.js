@@ -296,6 +296,9 @@
         {id:'v208-u01-numerical-finder',category:'PRACTISE',
          title:'Unit 1 · Find 10 adapted numerical examples / problems',
          href:'./textbook-resource-finder.html?unit=1',access:'public-link'},
+        {id:'v210-u01-inchapter-assignments',category:'EXAM PREPARATION',
+         title:'Unit 1 · Three in-chapter assignments · Teacher-pack preview',
+         href:'./unit-01-assignments-v210.html',access:'public-link'},
         {id:'v208-u01-short-response-finder',category:'EXAM PREPARATION',
          title:'Unit 1 · Find 10 adapted/original short responses',
          href:'./descriptive-answer-finder.html?unit=1&type=short-response',access:'public-link'},
@@ -337,7 +340,7 @@
       }
       if(unit.unit===1 && stage.key==='PREPARE'){
         const status=e('p','psn-drawer-stage-empty',
-          'Textbook end-of-unit MCQs, short/extended questions, numbered numerical exercises, and assignments are not yet separately verified and indexed here. The links above lead to adapted or original practice, not a full NBF exercise reproduction.');
+          'Original NBF end-of-unit MCQs, short/extended questions and numbered numerical exercises are not yet separately verified and indexed here. Three in-chapter assignments from the teacher source pack are now available as unscored practice only; their original textbook images remain unverified. The other links lead to adapted or original practice, not a complete NBF exercise reproduction.');
         status.dataset.psnSourceStatus='unit1-original-end-exercises-pending';
         linksBox.append(status);
       }
