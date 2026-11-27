@@ -41,7 +41,7 @@ jobs:
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
       - name: Verify sign-in-only anonymous shell, signed-in navigation, logout cleanup, and direct-public-URL limitation
         run: node scripts/test_portal_signin_first_v69.cjs
       - name: Regression — V68 all 31 simulations and dashboard views

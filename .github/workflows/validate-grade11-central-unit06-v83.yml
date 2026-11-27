@@ -46,7 +46,7 @@ jobs:
       - name: Install Chromium for real student browser checks
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
       - name: V83 four source archives, 2,250 questions, tamper rejection and browser
         run: node scripts/test_grade11_unit06_central_v83.cjs
       - name: Regression — prior central source fidelity and four topic previews

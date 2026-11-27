@@ -48,7 +48,7 @@ jobs:
       - name: Install Chromium browser
         run: |
           npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
       - name: V85 original five-source QA, 80 Bernoulli keys, safeguards and browser
         run: node scripts/test_grade11_unit06_central_v85.cjs
       - name: Regression — earlier central adapter tests and all five standalone previews
