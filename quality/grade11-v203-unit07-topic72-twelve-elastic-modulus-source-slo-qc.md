@@ -55,6 +55,8 @@ The **seven-page A4** document includes all 12 complete originals, all 48 option
 4. `scripts/test_grade11_unit07_topic72_math_v203.cjs` — deterministic SI units, elastic proportionality, comparison ratios and duplicate-selection warnings, without original answer letters.
 5. `.github/workflows/validate-grade11-v203-topic72-next12-source-slo.yml` — new and prior regression checks including original Grade XI source bank and App Check.
 
+**Independent academic review status: PENDING.** None of these item-level judgments is a signed teacher science or cognitive decision.
+
 **Release status remains** original Unit 7 universe **274**, detailed private candidate review queue **72**, authenticated teacher science decisions **0**, cognitive decisions **0**, owner scored permissions **0**, scored Unit7 student items **0**. V160 teacher production and V161 staging/production backend remain **NO-GO**; no Firebase Auth, Firestore Rules, App Check, live student Test Builder, production/staging, billing or original source change.
 
 **Next V204:** continue a separate non-overlapping source-first original MCQ review or incorporate actual independently completed subject-teacher decisions. GitHub CI can verify source metadata and safeguards, **not** independently authenticate human academic or owner grading approvals.
