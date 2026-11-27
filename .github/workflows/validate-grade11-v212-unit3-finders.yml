@@ -1,0 +1,54 @@
+name: Grade XI V212 Unit 3 Numbered Worked Examples and Numericals
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-03.html"
+      - "scripts/test_grade11_v212_unit3_example_numerical_finders.cjs"
+      - "quality/grade11-v212-unit3-source-numbered-exercise-navigation.md"
+      - ".github/workflows/validate-grade11-v212-unit3-finders.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "portal/unit-03.html"
+      - "scripts/test_grade11_v212_unit3_example_numerical_finders.cjs"
+      - ".github/workflows/validate-grade11-v212-unit3-finders.yml"
+jobs:
+  unit3-source-numbered-readonly-navigation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate JavaScript syntax and source index JSON
+        run: |
+          node --check scripts/test_grade11_v212_unit3_example_numerical_finders.cjs
+          node --check shared/navigation.js
+          node -e "JSON.parse(require('fs').readFileSync('portal/verified-textbook-index-v103.json','utf8'))"
+      - name: Preserve original pinned question-bank identities and MCQ answer keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install pinned real Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: Unit 3 indexed 3/8 existing question links and desktop-mobile finder flows
+        run: node scripts/test_grade11_v212_unit3_example_numerical_finders.cjs
+      - name: Retain V103 textbook finder original source-index browser checks
+        run: node scripts/test_grade11_textbook_finder_v103.cjs
+      - name: Retain V211 Unit 2 source-indexed numerical and descriptive navigation
+        run: node scripts/test_grade11_v211_unit2_finders.cjs
+      - name: Retain V140 five-stage unit-aware drawer
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Archive non-sensitive navigation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v212-unit3-source-numbered-navigation
+          path: qa-artifacts/grade11-v212-unit3-finder-audit/source-and-navigation.json
+          if-no-files-found: warn
+          retention-days: 14
