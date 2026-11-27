@@ -324,5 +324,15 @@
   "studentBankOrTestBuilderEdited": false,
   "stagingOrProductionDeployment": false,
   "ciLimitation": "Public checks can validate pinned original source SHA metadata and scoring holds; they cannot inspect the private original Word/PDF keyed text or authenticate an independent human teacher decision.",
-  "nextMilestone": "V206 review six remaining non-overlapping Topic7.3 originals with explicit prior-Q25 adjudication exclusion, then extend other topics or receive independent human teacher verdicts."
+  "nextMilestone": "V206 review all six remaining, genuinely unselected Topic7.3 source items, including XI-U07-T073-Q025. V192 Q25 was XI-U07-T071-Q025 (Topic7.1), an entirely different original item. Keep scored HOLD.",
+  "crossTopicQ25Correction": {
+    "correctedIn": "V206",
+    "incorrectPriorInference": "V192 Q25 was assumed to cover remaining Topic7.3 Q25",
+    "v192ActualReviewedSourceId": "XI-U07-T071-Q025",
+    "remainingTopic73OriginalSourceId": "XI-U07-T073-Q025",
+    "distinctOriginalQuestions": true,
+    "topic73Q25CountsAsUnreviewedBeforeV206": true,
+    "impactsEarlierV205AcademicTotals": false,
+    "teacherScoringStillHeld": true
+  }
 }
