@@ -36,7 +36,8 @@ function sourceAndMath(){
   assert.ok(html.includes(token),'Missing source-bounded science/status: '+token);
  }
  const operations=86400/1e-17;
- assert.equal(operations,8.64e21);
+ assert.ok(Math.abs(operations-8.64e21)/8.64e21<1e-12,
+  'Floating-point ratio must match 8.64×10^21 within numerical precision');
  const radius=10.5,deltaRadius=0.2,pi=3.14;
  const area=pi*radius**2,circumference=2*pi*radius;
  const errArea=area*2*deltaRadius/radius,errCirc=circumference*deltaRadius/radius;
