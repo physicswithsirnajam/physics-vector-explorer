@@ -377,6 +377,17 @@
          href:'./unit-05-descriptive-student.html#longTitle',access:'public-link'}
       ].forEach(add);
     }
+    /* V215 — Unit 6 public provisional worked-topic finder (V108).
+     * This is exactly seven topic sections, not seven independently
+     * authenticated NBF textbook numerical or Example 6.x exercises.
+     * Catalog source IDs, current provisional MCQ bank, and teacher approval
+     * gates remain unchanged; the V108 finder is a read-only public route. */
+    if(unit.unit===6){
+      add({id:'v215-u06-seven-worked-topic-finder',category:'PRACTISE',
+        title:'Unit 6 · Find 7 provisional worked-topic sections · 6.1–6.7',
+        href:'./textbook-resource-finder.html?unit=6&kind=provisional-worked-topic-section',
+        access:'public-link'});
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -407,6 +418,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===6 && stage.key==='PREPARE'){
+        const note=e('p','psn-drawer-stage-empty',
+          'Seven existing Unit 6 worked-topic sections (Topics 6.1–6.7) are indexed under Practise. These mix prepared-master source-related work and supplementary teacher-created calculations; they are NOT seven original numbered NBF textbook exercises. Original end-of-unit MCQs, short/extended responses, numbered numerical problems and assignments still need exact source-page matching and individual teacher approval. The existing 560 MCQs remain provisional, and no formal Unit 6 scored examination is released.');
+        note.dataset.psnSourceStatus='unit6-worked-topic-not-original-exercises';
+        linksBox.append(note);
       }
       if(unit.unit===5 && stage.key==='PREPARE'){
         const note=e('p','psn-drawer-stage-empty',
