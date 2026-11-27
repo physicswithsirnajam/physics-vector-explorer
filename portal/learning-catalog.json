@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "Seven source-based, unscored study lessons are available for Topics 8.1–8.7. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
+          "summary": "Eight source-based, unscored study lessons are available for Topics 8.1–8.8. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "topics-8.1-to-8.7-source-anchored-original-textbook-pp128-143-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topics 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine/four strokes; 8.6 reversible, irreversible and cyclic processes; and 8.7 the Second Law with Kelvin and Clausius statements and six unscored scenarios. All remain teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
+          "qualityStatus": "topics-8.1-to-8.8-source-anchored-original-textbook-pp128-145-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topics 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine/four strokes; 8.6 reversible/irreversible and cyclic processes; 8.7 Second Law (Kelvin and Clausius); and 8.8 Carnot's Engine, four reversible processes, efficiency, theorem, and independently worked Example/Assignment 8.4. All remain teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -381,6 +381,16 @@
               "sourcePages": [
                 142,
                 143
+              ],
+              "access": "public-unscored-study-teacher-review"
+            },
+            {
+              "topic": "8.8",
+              "title": "Carnot's Engine: Cycle, Efficiency and Theorem",
+              "href": "./unit-08-topic88-carnot-engine-v232.html",
+              "sourcePages": [
+                143,
+                145
               ],
               "access": "public-unscored-study-teacher-review"
             }
