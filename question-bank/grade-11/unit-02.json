@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "bankId": "PSN-XI-UNIT-02",
-  "bankVersion": "v19-dependent-question-context-review-2026-11-14",
+  "bankVersion": "v207-q119-source-context-patch-2026-11-27",
   "title": "Grade XI Physics – Unit 2: Vectors",
   "status": "practice-pilot",
   "sourceDocument": "6_11th_Unit_2_STAGE_6_MCQs_FBISE_Format_Print_Ready.docx",
@@ -14,7 +14,7 @@
     "Cognitive/difficulty labels are provisional automated practice aids; do not treat them as official FBISE per-item classifications.",
     "All questions are summative-aligned by the verified Unit 2 B-01/B-02 source grouping; exact individual SLO mappings and textbook pages of additional questions still need review.",
     "All questions boardEligible=false; this is PUBLIC self-practice with answers, not a secure board examination or premium-only bank.",
-    "Four additional MCQs (#4, #13, #15 and #153) depend on a preceding question in the source; the required contextual data is now repeated as a standalone stimulus so random practice remains answerable. Original stems, choices, answers and explanations are unchanged."
+    "Five additional MCQs (#4, #13, #15, #119 and #153) depend on a preceding source item. V207 adds standalone Q116 vector data for Q119 after a student report. The original 206 stems, options, keyed answers and explanations, 15 complete scenario sets and assessment permissions remain unchanged."
   ],
   "questions": [
     {
@@ -5894,7 +5894,10 @@
       "pageStatus": "source-page-mapping-pending",
       "status": "unit-2-stage-6-source-QC",
       "active": true,
-      "boardEligible": false
+      "boardEligible": false,
+      "contextSourceQuestionNumber": 116,
+      "stimulusText": "For source Question 116, A⃗ = 5î + ĵ and B⃗ = 2î + 4ĵ. Use these same vectors to find the scalar projection of A⃗ on B⃗.",
+      "stimulusHtml": "<p><strong>Given vectors (from source Q116):</strong> A⃗ = 5î + ĵ; B⃗ = 2î + 4ĵ. Use these same vectors for the scalar projection of A⃗ on B⃗.</p>"
     },
     {
       "id": "XI-U02-MCQ-0120",
