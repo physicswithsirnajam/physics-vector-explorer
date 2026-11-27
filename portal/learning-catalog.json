@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "Six source-based, unscored study lessons are available for Topics 8.1–8.6. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
+          "summary": "Seven source-based, unscored study lessons are available for Topics 8.1–8.7. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "topics-8.1-to-8.6-source-anchored-original-textbook-pp128-142-teacher-review-pending",
-          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topic 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic gas theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine and four-stroke cycle; and 8.6 reversible/irreversible/cyclic processes with six unscored scenarios. All are teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
+          "qualityStatus": "topics-8.1-to-8.7-source-anchored-original-textbook-pp128-143-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 unscored learning preview includes Topics 8.1 thermal equilibrium/ideal gas and Example/Assignment 8.1; 8.2 kinetic theory/work and Example/Assignment 8.2; 8.3 gas laws; 8.4 First Law/four processes and independently worked Example/Assignment 8.3; 8.5 Heat Engine/four strokes; 8.6 reversible, irreversible and cyclic processes; and 8.7 the Second Law with Kelvin and Clausius statements and six unscored scenarios. All remain teacher-review-pending adaptations. No Unit8 scored bank, original end-exercise answer edition or graded assessments are published.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -371,6 +371,16 @@
               "sourcePages": [
                 141,
                 142
+              ],
+              "access": "public-unscored-study-teacher-review"
+            },
+            {
+              "topic": "8.7",
+              "title": "Second Law of Thermodynamics: Kelvin and Clausius",
+              "href": "./unit-08-topic87-second-law-v231.html",
+              "sourcePages": [
+                142,
+                143
               ],
               "access": "public-unscored-study-teacher-review"
             }
