@@ -159,6 +159,16 @@ async function studentAndTeacherJourney(browser,base,width){
   await section.selectOption('all');await priority.selectOption('all');
   assert.equal(await page.locator('tr[data-item]:visible').count(),34);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
+  if(overflow>3){
+   const offenders=await page.evaluate(()=>{
+    const viewport=document.documentElement.clientWidth;
+    return [...document.querySelectorAll('header, header *, main, main > *, .filters, .filters *, .counters, .counter, .section, .section-head, .table-scroll, table, #psn-global-nav')]
+     .map(el=>({tag:el.tagName,selector:el.id||el.className||'',right:Math.round(el.getBoundingClientRect().right),
+      left:Math.round(el.getBoundingClientRect().left),scroll:el.scrollWidth,client:el.clientWidth}))
+     .filter(x=>x.right>viewport+3||x.left< -3||x.scroll>x.client+5).slice(0,24);
+   });
+   console.error('V218 320px overflow offender report:',JSON.stringify(offenders));
+  }
   assert.ok(overflow<=3,'Outer page horizontal overflow width '+width+': '+overflow);
   assert.deepEqual(errors,[],'Browser JS errors');
   return {width,publicTeacherMetadataOnly:true,rows:34,compulsoryFilter:20,
