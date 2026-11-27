@@ -301,12 +301,12 @@
           "unit": 8,
           "title": "Heat and Thermodynamics",
           "status": "planned",
-          "summary": "No verified portal resources have been released for this unit.",
+          "summary": "One public source-based, unscored Topic 8.1 study lesson is available. The full Unit 8 course, independently approved original examples/exercises, MCQ bank and graded assessments remain unpublished.",
           "questionBankCount": 0,
           "assessmentStatus": "not-published",
           "resourceIds": [],
-          "qualityStatus": "not-reviewed",
-          "studentNotice": "Original interactive simulations are available for exploration. Formal unit lessons, notes and MCQ banks have not yet been published.",
+          "qualityStatus": "topic-8.1-source-anchored-original-textbook-pp128-131-teacher-review-pending",
+          "studentNotice": "NBF Grade XI Unit 8 Topic 8.1 public unscored learning preview covers thermal equilibrium, internal energy, ideal gases, Example 8.1 and Assignment 8.1. Original book figures are not reproduced. Independent teacher review is pending, and no Unit 8 MCQs or graded assessments are available.",
           "simulationCount": 4,
           "simulationHref": "./simulations.html?unit=8",
           "simulationMapStatus": "provisional-topic-navigation",
@@ -316,7 +316,13 @@
           "originalReferenceHref": "./legacy-hssc-resources.html?unit=8",
           "originalReferenceStatus": "External public links; original video hosts unverified; Drive sharing separate",
           "directYouTubeCount": 1,
-          "directVideoReviewRequired": false
+          "directVideoReviewRequired": false,
+          "learningPreviewHref": "./unit-08-topic81-thermal-equilibrium-v225.html",
+          "learningPreviewStatus": "public-topic-8.1-unscored-study-teacher-review",
+          "learningPreviewSourcePages": [
+            128,
+            131
+          ]
         },
         {
           "unit": 9,
