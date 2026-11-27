@@ -287,6 +287,23 @@
     const records=[...(unit.resourceIds||[]).map(id=>byId.get(id)),
       ...(preview&&Array.isArray(unit.previewResources)?unit.previewResources:[])];
     records.forEach(add);
+    /* V208 — source-verified Unit 1 finder shortcuts. These links only point
+     * to already published, independently indexed *adapted/original practice*.
+     * Do not relabel them as a complete verbatim NBF end-of-unit exercise.
+     * Keep the frozen source catalogue, MCQs and per-question answers intact. */
+    if(unit.unit===1){
+      [
+        {id:'v208-u01-numerical-finder',category:'PRACTISE',
+         title:'Unit 1 · Find 10 adapted numerical examples / problems',
+         href:'./textbook-resource-finder.html?unit=1',access:'public-link'},
+        {id:'v208-u01-short-response-finder',category:'EXAM PREPARATION',
+         title:'Unit 1 · Find 10 adapted/original short responses',
+         href:'./descriptive-answer-finder.html?unit=1&type=short-response',access:'public-link'},
+        {id:'v208-u01-comprehensive-response-finder',category:'EXAM PREPARATION',
+         title:'Unit 1 · Find 4 adapted comprehensive / extended responses',
+         href:'./descriptive-answer-finder.html?unit=1&type=comprehensive-response',access:'public-link'}
+      ].forEach(add);
+    }
     // The existing catalogue already stores a source directory for each unit's
     // public historic concept videos. Reuse it instead of duplicating entries
     // and disturbing frozen resource-count contracts.
@@ -317,6 +334,12 @@
           linksBox.append(sub);lastSubgroup=item.subgroup;
         }
         linksBox.append(makeLink(item.href,item.record.title,item.record.access));
+      }
+      if(unit.unit===1 && stage.key==='PREPARE'){
+        const status=e('p','psn-drawer-stage-empty',
+          'Textbook end-of-unit MCQs, short/extended questions, numbered numerical exercises, and assignments are not yet separately verified and indexed here. The links above lead to adapted or original practice, not a full NBF exercise reproduction.');
+        status.dataset.psnSourceStatus='unit1-original-end-exercises-pending';
+        linksBox.append(status);
       }
       if(stage.key==='LEARN' && !items.some(item=>item.record.videoPriority==='official-psn')){
         linksBox.append(e('p','psn-drawer-video-upcoming',
