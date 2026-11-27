@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "version": "V221",
+  "asOf": "2026-11-27",
+  "status": "UNSIGNED_TEACHER_CANDIDATES_ONLY_NO_SCORE_RELEASE",
+  "sourceBasis": {
+    "book": "NBF Grade XI Unit 7 Physics of Solids, directly inspected owner's original 15-page PDF on pp.119, 122 and 126",
+    "numericalLedger": "quality/unit07/unit07-v177-end-exercise-numerical01-05-image-bound-no-keys.json",
+    "decisionLedger": "quality/unit07/unit07-v195-unsigned-independent-teacher-review-no-keys.json",
+    "scienceAudit": "quality/grade11-v193-unit07-original-two-pdf-source-verification-and-numerical-qc.md",
+    "publisherScansOrWordingCopied": false
+  },
+  "originalFive": {
+    "identityCount": 5,
+    "compulsoryReviewCount": 4,
+    "ordinaryReviewCount": 1,
+    "allTeacherDecisionsPending": true,
+    "allStudentScoringOnHold": true,
+    "issues": [
+      {
+        "originalNumerical": 1,
+        "originalHintStatus": "conditional-only",
+        "issueCode": "young-vs-shear-modulus-and-cantilever-model",
+        "sourceVerdict": "Original printed Young modulus alone does not determine the displayed transverse-deformation mass under a uniquely specified shear or bending model.",
+        "independentAction": "Teacher must explicitly declare whether the task is ideal simple shear or actual cantilever bending; do not use Young modulus as shear modulus or accept the hinted 5.2 kg without an assumption.",
+        "alternativeId": "U07-V221-SIMPLE-SHEAR-SLAB",
+        "severity": "COMPULSORY",
+        "originalPreserved": true,
+        "teacherDecision": "PENDING"
+      },
+      {
+        "originalNumerical": 2,
+        "originalHintStatus": "consistent",
+        "issueCode": "none",
+        "sourceVerdict": "Printed 2.29 mm hint agrees with independent 2.291 mm evaluation to source precision.",
+        "independentAction": "Retain original unchanged pending ordinary independent teacher science, SLO and cognitive review; no extra alternative candidate is required.",
+        "alternativeId": null,
+        "severity": "ORDINARY",
+        "originalPreserved": true,
+        "teacherDecision": "PENDING"
+      },
+      {
+        "originalNumerical": 3,
+        "originalHintStatus": "inconsistent",
+        "issueCode": "serial-wires-modulus-and-answer-hints",
+        "sourceVerdict": "Printed brass modulus and separate upper/lower tensions give results inconsistent with printed elongation and energy hints.",
+        "independentAction": "Retain original figures and printed brass-modulus exponent. Teacher must check 10 kg upper and 6 kg lower loads and consider an explicit publisher erratum; do not silently change 10^10 to 10^11.",
+        "alternativeId": "U07-V221-TWO-WIRES-SERIES",
+        "severity": "COMPULSORY",
+        "originalPreserved": true,
+        "teacherDecision": "PENDING"
+      },
+      {
+        "originalNumerical": 4,
+        "originalHintStatus": "inconsistent",
+        "issueCode": "stress-energy-area-length-hint-factor",
+        "sourceVerdict": "Source-given area, length, tensile stress and Young modulus give strain energy five times the printed hint.",
+        "independentAction": "Keep printed dimensions unchanged; verify U=ALσ²/(2Y) independently and request a teacher-approved marking note before assigning any source score.",
+        "alternativeId": "U07-V221-STRESS-ENERGY",
+        "severity": "COMPULSORY",
+        "originalPreserved": true,
+        "teacherDecision": "PENDING"
+      },
+      {
+        "originalNumerical": 5,
+        "originalHintStatus": "inconsistent",
+        "issueCode": "rod-diameter-tenfold-stress-hint",
+        "sourceVerdict": "The printed 50 cm diameter gives tensile stress approximately 100 times smaller than the hint; a 5 cm diameter is a hypothetical explanation, not the written source.",
+        "independentAction": "Do not replace the printed diameter in the source. Treat a possible diameter-unit correction as unapproved until independently reviewed.",
+        "alternativeId": "U07-V221-AXIAL-STRESS",
+        "severity": "COMPULSORY",
+        "originalPreserved": true,
+        "teacherDecision": "PENDING"
+      }
+    ]
+  },
+  "newIndependentExercises": {
+    "count": 4,
+    "allOriginalAuthorCreated": true,
+    "allUnapproved": true,
+    "solutionsOrGradingKeysIncluded": false,
+    "studentTestBuilderImportAllowed": false,
+    "candidates": [
+      {
+        "candidateId": "U07-V221-SIMPLE-SHEAR-SLAB",
+        "relatedOriginalNumerical": 1,
+        "type": "supplementary_simple_shear_learning_not_source_replacement",
+        "officialOutcome": "P-11-B-24",
+        "outcomeScope": "SUPPLEMENTARY_ONLY_NOT_DIRECT_YOUNG_MODULUS_APPLICATION",
+        "provisionalCognitive": "Application",
+        "stem": "A homogeneous elastic layer, 5.0 mm thick, is fixed to a rigid base. A horizontal force of 1600 N is applied uniformly to its upper face of area 2.0 cm², causing simple shear without bending. If its shear modulus is G = 8.0 × 10¹⁰ Pa, determine the relative sideways displacement of the upper face in micrometres. State the simple-shear model used.",
+        "givens": {
+          "thickness_m": 0.005,
+          "shearArea_m2": 0.0002,
+          "shearForce_N": 1600,
+          "shearModulus_Pa": 80000000000
+        },
+        "sourceCare": "Explicit shear modulus G, an ideal sheared layer rather than a cantilever nail; do not claim the original textbook's stated Young modulus fixes its picture-frame mass.",
+        "teacherQC": "Check explicit ideal shear assumptions, units, ratio Δx/h and supplemental rather than direct B-24 categorisation.",
+        "scienceApproval": "PENDING",
+        "cognitiveApproval": "PENDING",
+        "studentRelease": "HOLD",
+        "originalPublisherQuestionCopied": false
+      },
+      {
+        "candidateId": "U07-V221-TWO-WIRES-SERIES",
+        "relatedOriginalNumerical": 3,
+        "type": "new_source_related_two_wire_candidate_not_original",
+        "officialOutcome": "P-11-B-28",
+        "secondaryOutcome": "P-11-B-24",
+        "outcomeScope": "DIRECT_ELASTIC_ENERGY_APPLICATION_CANDIDATE",
+        "provisionalCognitive": "Application",
+        "stem": "Two vertical elastic wires are joined end-to-end: an upper steel wire (length 1.0 m, Young modulus 2.0 × 10¹¹ Pa) and a lower brass wire (length 1.0 m, Young modulus 1.0 × 10¹¹ Pa). Both have an original cross-sectional area of 1.0 mm². A 3.0 kg mass hangs at the junction and a 2.0 kg mass hangs at the bottom. Using g = 10 m/s² and neglecting wire masses, determine (a) their combined elongation and (b) the total elastic strain energy. Assume both wires remain proportional and the loads are applied gradually.",
+        "givens": {
+          "upperLength_m": 1,
+          "lowerLength_m": 1,
+          "steelYoung_Pa": 200000000000,
+          "brassYoung_Pa": 100000000000,
+          "area_m2": 0.000001,
+          "junctionMass_kg": 3,
+          "lowerMass_kg": 2,
+          "g_m_s2": 10
+        },
+        "sourceCare": "Upper supports 5.0 kg, lower supports 2.0 kg. These values, brass modulus and masses are explicitly new and must never be substituted into the publisher's numerical 7.3.",
+        "teacherQC": "Evaluate distinct wire tensions and U_total=½F_steel ΔL_steel + ½F_brass ΔL_brass, then verify that the proportional-range assumption and summative B-28 application are appropriate.",
+        "scienceApproval": "PENDING",
+        "cognitiveApproval": "PENDING",
+        "studentRelease": "HOLD",
+        "originalPublisherQuestionCopied": false
+      },
+      {
+        "candidateId": "U07-V221-STRESS-ENERGY",
+        "relatedOriginalNumerical": 4,
+        "type": "new_stress_energy_candidate_not_source_erratum",
+        "officialOutcome": "P-11-B-28",
+        "secondaryOutcome": "P-11-B-24",
+        "outcomeScope": "DIRECT_ELASTIC_ENERGY_APPLICATION_CANDIDATE",
+        "provisionalCognitive": "Application",
+        "stem": "A metal rod of original length 2.0 m and cross-sectional area 100 mm² is gradually loaded in tension until its tensile stress reaches 100 MPa. Its Young modulus is 200 GPa, and the rod remains within the proportional elastic limit. Determine its stored elastic strain energy in joules. Verify your result by both the stress–volume formula and the half-force–extension formula.",
+        "givens": {
+          "length_m": 2,
+          "area_m2": 0.0001,
+          "stress_Pa": 100000000,
+          "young_Pa": 200000000000
+        },
+        "sourceCare": "Independent numbers and explicit elastic assumptions, not a claim that original numerical 7.4's printed answer hint has been corrected.",
+        "teacherQC": "Check U=ALσ²/(2Y), strain=σ/Y, ΔL=εL, F=σA, and equality U=½FΔL.",
+        "scienceApproval": "PENDING",
+        "cognitiveApproval": "PENDING",
+        "studentRelease": "HOLD",
+        "originalPublisherQuestionCopied": false
+      },
+      {
+        "candidateId": "U07-V221-AXIAL-STRESS",
+        "relatedOriginalNumerical": 5,
+        "type": "new_axial_stress_candidate_not_original_diameter_rewrite",
+        "officialOutcome": "P-11-B-24",
+        "outcomeScope": "DIRECT_STRESS_APPLICATION_CANDIDATE",
+        "provisionalCognitive": "Application",
+        "stem": "A straight, uniform cylindrical metal rod of diameter 2.0 cm carries an axial tensile force of 600 N. Treat its circular cross-section as unchanged. Calculate the engineering tensile stress in pascals and megapascals, showing the SI area conversion.",
+        "givens": {
+          "force_N": 600,
+          "diameter_m": 0.02
+        },
+        "sourceCare": "Uses independent 2.0 cm/600 N values, not the publisher's printed 50 cm diameter or its disputed numerical hint.",
+        "teacherQC": "Verify σ=4F/(πd²), cm-to-m conversion and correct Pa-to-MPa conversion.",
+        "scienceApproval": "PENDING",
+        "cognitiveApproval": "PENDING",
+        "studentRelease": "HOLD",
+        "originalPublisherQuestionCopied": false
+      }
+    ]
+  },
+  "decisionBoundary": {
+    "independentTeacherScienceApprovals": 0,
+    "independentTeacherCognitiveApprovals": 0,
+    "ownerReleasePermissions": 0,
+    "scoredUnit7Questions": 0,
+    "teacherBackendDeployment": "NO_GO"
+  },
+  "separateFromSource": true,
+  "originalTextbookValuesModified": false
+}
