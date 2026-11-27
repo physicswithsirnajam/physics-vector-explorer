@@ -374,7 +374,7 @@
         rows.append(e('p','psn-drawer-unit-notice',
           'Three public unscored learning lessons · Teacher review in progress. Original textbook exercises and Unit 7 scored MCQs are not published.'));
         rows.append(makeLink(introduction,
-          'Unit 7 · Topic 7.1 Learning Introduction · Unscored study',
+          'Unit 7 · Topic 7.1 Learning Introduction · Unscored study · Full course still planned',
           'public-link'));
         // V209: only explicitly enumerated existing source-based public
         // lessons; the legacy V145 introduction sentinel remains unchanged
