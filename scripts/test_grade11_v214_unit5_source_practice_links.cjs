@@ -125,7 +125,7 @@ async function scenario(browser,base,width,selected){
    await page.waitForURL(u=>u.pathname==='/portal/'+p&&u.hash==='#'+h,{timeout:12000});
    const section=page.locator('[id="'+h+'"]');
    await section.waitFor({state:'visible',timeout:12000});
-   assert.match(await section.textContent(),new RegExp(x.marker.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+   assert.ok((await section.textContent()).includes(x.marker),'Expected source/section heading on destination '+x.title);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert.ok(overflow<=3,'Horizontal overflow at '+width+' in '+x.title+': '+overflow);
    result.opened.push(x.title);
