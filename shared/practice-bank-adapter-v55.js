@@ -52,15 +52,41 @@ function checkQuestions(unit,items){
   }
   return items;
 }
+/* V207: Presentation-only repair for the student-reported dependent Unit 2
+ * Q119.  The owner-original keyed JSON and its pinned SHA-256 remain intact.
+ * Expose source Q116 vector values in this randomized standalone question,
+ * without changing source IDs, options, original keys, or scenario grouping.
+ * Display-only revision != independent academic certification.
+ */
+function adaptUnit2Q119DisplayContext(q){
+  if(q.id!=='XI-U02-MCQ-0119')return q;
+  need(q.sourceQuestionNumber===119&&
+    q.stem==='The scalar projection of A on B for Q116 is:'&&
+    q.correctOptionId==='A'&&
+    q.options.find(o=>o.id==='A')?.text==='14/√20',
+    'Unit 2 Q119 source changed: independently re-audit context overlay');
+  const given='Given A = (5, 1) and B = (2, 4), written as (x, y) components along perpendicular unit axes.';
+  return {
+    ...q,
+    stem:'For the given vectors A and B, the scalar projection of A along B is:',
+    stimulusText:given,
+    stimulusHtml:'<p><strong>Given vectors:</strong> A = (5, 1) and B = (2, 4), written as (x, y) components along perpendicular unit axes.</p>',
+    contextSourceQuestionNumber:116,
+    presentationContextRevision:'v207-unit2-q119-standalone'
+  };
+}
 function adaptLegacy(unit,data){
   need(data?.status==='practice-pilot'&&Array.isArray(data.questions),'invalid original Unit '+unit+' bank');
-  return data.questions.map(q=>({
-    ...q,
-    // Unit 3/4 source calls its original group 'scenarioSetId', while the central
-    // engine uses 'stimulusSetId'. Preserve both source fields without rewriting.
-    stimulusSetId:q.stimulusSetId||q.scenarioSetId||null,
-    stimulusHtml:q.stimulusHtml|| (q.stimulusText?'<p>'+escapeHTML(q.stimulusText)+'</p>':'')
-  }));
+  return data.questions.map(q=>{
+    const adapted={
+      ...q,
+      // Unit 3/4 source calls its original group 'scenarioSetId', while the central
+      // engine uses 'stimulusSetId'. Preserve both source fields without rewriting.
+      stimulusSetId:q.stimulusSetId||q.scenarioSetId||null,
+      stimulusHtml:q.stimulusHtml|| (q.stimulusText?'<p>'+escapeHTML(q.stimulusText)+'</p>':'')
+    };
+    return unit===2?adaptUnit2Q119DisplayContext(adapted):adapted;
+  });
 }
 /* The original U3 Topic 3.3/3.4 source is compactly stored as two audited
  * gzip+base64 text assets (140 MCQs) to avoid duplicating extracted
