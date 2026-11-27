@@ -56,7 +56,7 @@ footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);pad
 .calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 input{display:block;width:100%;background:#fff;color:#122740;border:1px solid #acbed2;border-radius:8px;font:inherit;padding:11px 10px;margin-top:7px;min-width:0}
 output,.calc-result{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
-form label{display:block;min-width:0;font-size:.89rem;font-weight:800}form button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
+.calc-cards label{display:block;min-width:0;font-size:.89rem;font-weight:800}.calc-cards button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
 .formula{overflow-wrap:anywhere}
 .calc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:760px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.calc-cards{grid-template-columns:1fr}}
@@ -174,5 +174,12 @@ get('calculate-energy').addEventListener('click',function(){
  if(![qh,cooling,heating].every(Number.is)){out.textContent='Result outside supported numerical range.';return}
  out.textContent='Heat delivered to room = '+nice(qh)+' J; cooling COP = '+nice(cooling)+'; heating COP = '+nice(heating)+'.';
 });
+// Keep on-demand calculate buttons, and immediately refresh results when inputs change.
+for(const id of ['hot-c','cold-c','work-j']){
+ get(id).addEventListener('input',()=>get('calculate-ideal').click());
+}
+for(const id of ['cold-heat','work-heat']){
+ get(id).addEventListener('input',()=>get('calculate-energy').click());
+}
 })();
 </script></body></html>
