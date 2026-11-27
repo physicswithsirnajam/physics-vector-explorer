@@ -36,7 +36,7 @@ function checkSource(){
  assert.deepEqual(u8.resourceIds,[]);
  assert.equal(u8.simulationCount,4);
  assert.equal(u8.learningPreviewStatus,'public-topic-8.1-unscored-study-teacher-review');
- assert.equal(u8.additionalLearningPreviews.length,4);
+ assert.equal(u8.additionalLearningPreviews.length,5);
  assert.equal(u8.additionalLearningPreviews[0].topic,'8.2');
  assert.deepEqual(u8.additionalLearningPreviews[1],{
   topic:'8.3',title:'The Gas Laws: Boyle, Charles and Gay-Lussac',
@@ -52,7 +52,12 @@ function checkSource(){
   href:'./unit-08-topic85-heat-engine-v229.html',sourcePages:[140,141],
   access:'public-unscored-study-teacher-review'
  });
- assert.match(u8.summary,/Five source-based, unscored study lessons/);
+ assert.deepEqual(u8.additionalLearningPreviews[4],{
+  topic:'8.6',title:'Reversible and Irreversible Processes; Cyclic Processes',
+  href:'./unit-08-topic86-reversible-processes-v230.html',sourcePages:[141,142],
+  access:'public-unscored-study-teacher-review'
+ });
+ assert.match(u8.summary,/Six source-based, unscored study lessons/);
  assert.match(u8.studentNotice,/no Unit8 scored bank/i);
  assert.equal(u7.questionBankCount,0);
  assert.equal(u7.assessmentStatus,'not-published');
@@ -63,13 +68,14 @@ function checkSource(){
  assert.equal(quick.split('href="'+href+'"').length-1,1);
  assert.ok(quick.includes('Study Topic 8.1'));
  assert.ok(quick.includes('Study Topic 8.2'));
- assert.ok(quick.includes('Topic 8.6 onward remain planned.'));
+ assert.ok(quick.includes('Topic 8.7 onward remain planned.'));
  assert.ok(!quick.includes('build-your-physics-test.html?unit=8'));
- assert.ok(nav.includes("['8.2','8.3','8.4','8.5'].includes(study.topic)"));
+ assert.ok(nav.includes("['8.2','8.3','8.4','8.5','8.6'].includes(study.topic)"));
  assert.ok(nav.includes('Unit 8 · Topic 8.2 Kinetic Theory and Work by/on Gas'));
  assert.ok(nav.includes('Unit 8 · Topic 8.3 The Gas Laws'));
  assert.ok(nav.includes('Unit 8 · Topic 8.4 First Law'));
  assert.ok(nav.includes('Unit 8 · Topic 8.5 Heat Engine and Petrol Four-Stroke Cycle'));
+ assert.ok(nav.includes('Unit 8 · Topic 8.6 Reversible, Irreversible and Cyclic Processes'));
  assert.ok(prev.includes('href="'+href+'"'));
  for(const id of ['lesson-status','three-laws','boyle','charles','gay-lussac','graphs','investigations',
  'boyle-tool','charles-tool','gay-tool','calc-boyle','calc-charles','calc-gay',
