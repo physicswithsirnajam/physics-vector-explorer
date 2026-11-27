@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "version": "V219",
+  "snapshotDate": "2026-11-27",
+  "academicStatus": "DRAFT-TEACHER-CANDIDATES-NOT-APPROVED-NOT-LIVE",
+  "description": "Four newly authored question candidates generated in response to the three source-flagged ambiguous original NBF Unit7 end MCQs 3/5/10; original book and all 274 historical source identities preserved.",
+  "sourceBasis": {
+    "book": "NBF Grade XI Physics of Solids, printed p.125 original scan, visually reopened 2026-11-27",
+    "sourceLedger": "quality/unit07/unit07-v174-end-exercise-mcq01-10-fig-bound-no-keys.json",
+    "originalQuestionNumbersFlagged": [
+      3,
+      5,
+      10
+    ],
+    "originalPublisherAnswerKeyProvided": false
+  },
+  "approval": {
+    "science": "PENDING",
+    "cognitive": "PENDING",
+    "itemUniqueness": "PENDING-INDEPENDENT",
+    "ownerScoredRelease": "HOLD",
+    "publicGradedItemsAdded": 0,
+    "requiresHumanReview": true
+  },
+  "notForDirectQuestionBankImport": true,
+  "sourceOriginalWordingUnchanged": true,
+  "sourceOriginalStemsOrOptionsCopied": false,
+  "correctOptionKeysExcluded": true,
+  "candidateCount": 4,
+  "candidates": [
+    {
+      "candidateId": "U07-REVIEW-MCQ03-BONDING-A",
+      "reviewOfOriginalMCQ": 3,
+      "sourcePrintedPage": 125,
+      "origin": "separate_teacher_candidate_not_original_textbook_reproduction",
+      "purpose": "resolve-double-description-network-vs-lattice",
+      "intendedFrameworkSlo": "P-11-B-22",
+      "provisionalCognitive": "Understanding",
+      "sourceExerciseClassification": "supporting-or-outcome-crosscheck",
+      "itemType": "standalone-conceptual",
+      "stem": "When solids are classified by their dominant bonding arrangement, how is crystalline silicon most appropriately described?",
+      "options": [
+        "A covalent-network solid",
+        "A molecular solid consisting of isolated Si molecules",
+        "An ionic solid formed from silicon cations and anions",
+        "A metallic solid with delocalized conduction electrons"
+      ],
+      "teacherReviewFocus": "Explicit bonding classification avoids confusing diamond-cubic lattice periodicity with the type of bonding; check that the item is appropriate to the B-22 scope.",
+      "teacherScience": "PENDING",
+      "teacherCognitive": "PENDING",
+      "studentScoredRelease": "HOLD",
+      "verifiedSourceItem": false
+    },
+    {
+      "candidateId": "U07-REVIEW-MCQ05-NOMINAL-STRESS-A",
+      "reviewOfOriginalMCQ": 5,
+      "sourcePrintedPage": 125,
+      "origin": "separate_teacher_candidate_not_original_textbook_reproduction",
+      "purpose": "specify-engineering-stress-and-cross-section",
+      "intendedFrameworkSlo": "P-11-B-24",
+      "provisionalCognitive": "Application",
+      "sourceExerciseClassification": "direct-outcome-candidate",
+      "itemType": "standalone-numerical",
+      "stem": "A wire with an initial cross-sectional area of 2.0 mm² carries a steady axial tensile force of 30 N. Taking engineering stress (force divided by the initial area), what is the tensile stress?",
+      "options": [
+        "1.5 MPa",
+        "15 MPa",
+        "60 MPa",
+        "0.067 MPa"
+      ],
+      "teacherReviewFocus": "Engineering stress uses the stated INITIAL area, not unknown true/deformed area. The wire is not claimed to have doubled its length or remained linearly elastic at large strain.",
+      "teacherScience": "PENDING",
+      "teacherCognitive": "PENDING",
+      "studentScoredRelease": "HOLD",
+      "verifiedSourceItem": false
+    },
+    {
+      "candidateId": "U07-REVIEW-MCQ10-GRADIENT-A",
+      "reviewOfOriginalMCQ": 10,
+      "sourcePrintedPage": 125,
+      "origin": "separate_teacher_candidate_not_original_textbook_reproduction",
+      "purpose": "qualify-constant-slope-to-hookean-region",
+      "intendedFrameworkSlo": "P-11-B-27",
+      "provisionalCognitive": "Understanding",
+      "sourceExerciseClassification": "supporting-graph-concept-NOT-direct-B27-area-work-assessment",
+      "itemType": "standalone-conceptual",
+      "stem": "During the proportional elastic range, an object obeys F = kx. On a graph with force F on the vertical axis and extension x on the horizontal axis, how does the gradient behave?",
+      "options": [
+        "It remains constant and equals the stiffness k",
+        "It increases in direct proportion to x",
+        "It equals the extension x at every point",
+        "It is always negative and equals −1/k"
+      ],
+      "teacherReviewFocus": "The gradient is constant ONLY in the stated proportional Hookean range; this item is supportive graph knowledge, not direct evidence for official B-27 area-under-graph work Application.",
+      "teacherScience": "PENDING",
+      "teacherCognitive": "PENDING",
+      "studentScoredRelease": "HOLD",
+      "verifiedSourceItem": false
+    },
+    {
+      "candidateId": "U07-REVIEW-B27-AREA-WORK-A",
+      "reviewOfOriginalMCQ": null,
+      "sourcePrintedPage": 125,
+      "origin": "separate_additional_B27_coverage_candidate_not_original_MCq10_rewrite",
+      "purpose": "cover-official-B27-area-work-application",
+      "intendedFrameworkSlo": "P-11-B-27",
+      "provisionalCognitive": "Application",
+      "sourceExerciseClassification": "direct-B27-application-candidate-ADDITIONAL",
+      "itemType": "standalone-numerical",
+      "stem": "A spring obeys F = kx with k = 200 N/m throughout the stretch from x = 0 to x = 0.10 m. Using the area under the force–extension graph, how much work is done in stretching the spring?",
+      "options": [
+        "0.50 J",
+        "1.0 J",
+        "2.0 J",
+        "20 J"
+      ],
+      "teacherReviewFocus": "The graph area is triangular, with the zero-extension origin, force vertical and extension horizontal; the question is a separate B-27 application candidate, not the source's original graph-gradient MCQ.",
+      "teacherScience": "PENDING",
+      "teacherCognitive": "PENDING",
+      "studentScoredRelease": "HOLD",
+      "verifiedSourceItem": false
+    }
+  ]
+}
