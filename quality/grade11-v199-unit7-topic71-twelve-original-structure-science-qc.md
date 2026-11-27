@@ -54,7 +54,7 @@ An original-keyed **seven-page** A4 Word and PDF review pack was created and vis
 
 No textbook edit, original question/answer alteration, new candidate revision, teacher role, Firestore Rules/Auth/App Check, staging/production, live scored test, student record, or billing change.
 
-The Unit7 source universe remains **274 original identities**, existing private candidate queue **72**, actual authenticated teacher science approvals **0**, cognitive approvals **0**, owner scoring authorizations **0**, scored Unit7 questions **0**. The earlier unsigned V195 independent teacher decision sheet remains not returned. Both V160/V161 backend and production/staging conditions remain **NO-GO**.
+**STUDENT SCORING HOLD:** All reviewed items remain teacher-PENDING, not authenticated or authorized for automatic scoring. The Unit7 source universe remains **274 original identities**, existing private candidate queue **72**, actual authenticated teacher science approvals **0**, cognitive approvals **0**, owner scoring authorizations **0**, scored Unit7 questions **0**. The earlier unsigned V195 independent teacher decision sheet remains not returned. Both V160/V161 backend and production/staging conditions remain **NO-GO**.
 
 **V200:** continue fresh source-based item QC or incorporate real completed independent teacher-review evidence if received. Do not mistake a green GitHub test for a scientific or examination-authority signoff.
 
