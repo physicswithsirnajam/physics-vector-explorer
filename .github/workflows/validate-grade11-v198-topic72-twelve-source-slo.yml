@@ -1,0 +1,82 @@
+name: Grade XI V198 Unit7.2 Twelve Unqueued Source/SLO QC (NO SCORE)
+on:
+  pull_request:
+    paths:
+      - "quality/unit07/unit07-v198-topic72-twelve-unreviewed-source-slo-no-keys.json"
+      - "quality/grade11-v198-unit07-topic72-twelve-original-mcq-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs"
+      - "scripts/test_grade11_unit07_topic72_math_v198.cjs"
+      - ".github/workflows/validate-grade11-v198-topic72-twelve-source-slo.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit07/unit07-v198-topic72-twelve-unreviewed-source-slo-no-keys.json"
+      - "quality/grade11-v198-unit07-topic72-twelve-original-mcq-science-slo-qc.md"
+      - "scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs"
+      - "scripts/test_grade11_unit07_topic72_math_v198.cjs"
+      - ".github/workflows/validate-grade11-v198-topic72-twelve-source-slo.yml"
+  workflow_dispatch:
+jobs:
+  source-bound-twelve-qc-no-student-scoring:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check V198 source and synthetic physics validators
+        run: |
+          node --check scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs
+          node --check scripts/test_grade11_unit07_topic72_math_v198.cjs
+      - name: Validate V198 exact original fingerprints, no overlap and no score
+        run: node scripts/audit_grade11_unit07_topic72_secondpass_v198.cjs
+      - name: Check synthetic source-independent stress, strain and Young modulus physics
+        run: node scripts/test_grade11_unit07_topic72_math_v198.cjs
+      - name: Preserve original 80 Topic7.2 source register and scientific flags
+        run: node scripts/audit_grade11_unit7_topic72_bank_v168.cjs
+      - name: Preserve V197 distinct unqueued Topic7.3 original question review
+        run: |
+          node scripts/audit_grade11_unit07_topic73_secondpass_v197.cjs
+          node scripts/test_grade11_unit07_topic73_math_v197.cjs
+      - name: Preserve V196 source-based stress/elasticity scaling and graph control
+        run: node scripts/test_grade11_unit07_numerical_scaling_v196.cjs
+      - name: Preserve V195 unsigned teacher decisions and prior textbook solutions
+        run: |
+          node scripts/audit_grade11_unit07_teacher_decision_pack_v195.cjs
+          node scripts/audit_grade11_unit07_teacher_solution_qc_v194.cjs
+          node scripts/audit_grade11_unit07_original_pdf_source_v193.cjs
+      - name: Preserve exact private Q25 scope/decision source controls
+        run: |
+          node scripts/audit_grade11_unit07_q25_disposition_v192.cjs
+          node scripts/test_grade11_unit07_offline_review_evidence_v191.cjs
+          node scripts/test_grade11_unit07_revision_bound_review_v190.cjs
+      - name: Preserve original 72 candidate teacher HOlDs and 274 source inventory
+        run: |
+          node scripts/audit_grade11_unit07_teacher_readiness_v185.cjs
+          node scripts/audit_grade11_unit07_teacher_approval_index_v178.cjs
+      - name: Preserve original Topic7.1 source, Topic7.3 source, and 2250 Grade XI pinned bank
+        run: |
+          node scripts/audit_grade11_unit7_topic71_teacher_queue_v154.cjs
+          node scripts/audit_grade11_unit7_topic73_bank_v173.cjs
+          node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Preserve Unit6 560 teacher signoff HOLD
+        run: node scripts/test_grade11_unit06_v94d_signoff_gates.cjs
+      - name: Preserve V160/V161 teacher backend staging/production NO-GO
+        run: |
+          node scripts/audit_grade11_v160_teacher_deployment_no_go.cjs
+          node scripts/audit_grade11_v161_staging_callable_contract.cjs
+      - name: Preserve App Check and reporting launch lock
+        run: |
+          node scripts/audit_grade11_appcheck_browser_entrypoints_v100l.cjs
+          node scripts/audit_grade11_reporting_launch_lock_v99u.cjs
+      - name: Upload only keyless counts and refusal tests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v198-unit7-topic72-original12-no-score
+          path: qa-artifacts/grade11-v198-topic72-12-unqueued/summary.json
+          if-no-files-found: warn
+          retention-days: 14
