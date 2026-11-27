@@ -213,22 +213,22 @@
   },
   "remainingTopicalReview": {
     "topic71": {
-      "original80": 80,
-      "v185Detailed17": 17,
-      "secondPassModelReviewed": 24,
-      "unselectedSourceItems": 39
+      "originalSourceCount": 80,
+      "v185DetailedCandidateCount": 17,
+      "sourceOnlySecondPassCount": 24,
+      "unselectedSourceCount": 39
     },
     "topic72": {
-      "original80": 80,
-      "v185Detailed29": 29,
-      "secondPassModelReviewed": 36,
-      "unselectedSourceItems": 15
+      "originalSourceCount": 80,
+      "v185DetailedCandidateCount": 29,
+      "sourceOnlySecondPassCount": 36,
+      "unselectedSourceCount": 15
     },
     "topic73": {
-      "original80": 80,
-      "v185Detailed26": 26,
-      "secondPassModelReviewed": 54,
-      "unselectedSourceItems": 0
+      "originalSourceCount": 80,
+      "v185DetailedCandidateCount": 26,
+      "sourceOnlySecondPassCount": 54,
+      "unselectedSourceCount": 0
     },
     "endOfUnitExercisesNotIncludedInThree80ItemBanks": 34,
     "unit7TotalOriginalSourceInventory": 274
