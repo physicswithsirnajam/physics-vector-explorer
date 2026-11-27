@@ -119,7 +119,7 @@ const previous=new Set([
  ...v201.items.map(x=>x.sourceId),
  ...v204.items.map(x=>x.sourceId)
 ]);
-A.equal(previous.size,74,'V185 has additional non-Topic7.3 candidate IDs; union must remain 74'); // repaired if source history differs
+A.equal(previous.size,108,'V185 72 + three disjoint previous twelve-item Topic7.3 batches must total 108 source identities');
 for(const x of d.items){
  const prev=v173.originalRowSourceRegistry[x.sourceNumber-1];
  A.equal(prev.number,x.sourceNumber);
