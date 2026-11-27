@@ -162,7 +162,7 @@ output,.calc-result{display:block;background:#0d223b;border:1px solid var(--edge
 (function(){'use strict';
 const get=id=>document.getElementById(id);
 function read(id){const s=get(id).value.trim();return s!==''&&Number.isFinite(Number(s))?Number(s):NaN}
-function fmt(x){return Number(x.toPrecision(8)).toString()}
+function fmt(x){return Number(x.toPrecision(8)).toString().replace('-', '−')}
 function fail(where,message){get(where).textContent=message}
 get('melt-calculate').addEventListener('click',function(){
  const m=read('melt-mass'),L=read('melt-latent'),Tc=read('melt-temp'),T=Tc+273.15;
