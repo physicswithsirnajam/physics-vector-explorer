@@ -1,0 +1,643 @@
+{
+  "schema": "psn-unit8-exercise-original-source-index-v235",
+  "version": "V235",
+  "source": {
+    "file": "11 Physics Book(20261125-065940).pdf",
+    "sha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "publisher": "National Book Foundation / Federal Textbook Board",
+    "printedPages": [
+      150,
+      153
+    ],
+    "sourceMode": "Original image-only book pages, visually re-inspected (not OCR)"
+  },
+  "scope": "review-only-inventory; no reproduction of source stems/answer options; no answers/solutions; zero public questions",
+  "sourceSections": [
+    {
+      "kind": "mcq",
+      "printedPages": [
+        150,
+        152
+      ],
+      "expectedPublishedCount": 18,
+      "visuallyObservedCount": 18,
+      "sourceNumbering": "1–18",
+      "items": [
+        {
+          "sourceNumber": "1",
+          "printedPages": [
+            150
+          ],
+          "focus": "ideal-gas approximation"
+        },
+        {
+          "sourceNumber": "2",
+          "printedPages": [
+            150
+          ],
+          "focus": "vigorous shaking and thermal-work process"
+        },
+        {
+          "sourceNumber": "3",
+          "printedPages": [
+            150
+          ],
+          "focus": "metabolic system process classification"
+        },
+        {
+          "sourceNumber": "4",
+          "printedPages": [
+            150
+          ],
+          "focus": "rigid-volume container and energy input"
+        },
+        {
+          "sourceNumber": "5",
+          "printedPages": [
+            151
+          ],
+          "focus": "isobaric gas-work calculation"
+        },
+        {
+          "sourceNumber": "6",
+          "printedPages": [
+            151
+          ],
+          "focus": "entropy change in phase transitions"
+        },
+        {
+          "sourceNumber": "7",
+          "printedPages": [
+            151
+          ],
+          "focus": "Carnot heat input from work output"
+        },
+        {
+          "sourceNumber": "8",
+          "printedPages": [
+            151
+          ],
+          "focus": "ratio of Carnot efficiencies at two temperature pairs"
+        },
+        {
+          "sourceNumber": "9",
+          "printedPages": [
+            151
+          ],
+          "focus": "maximum-work process conditions"
+        },
+        {
+          "sourceNumber": "10",
+          "printedPages": [
+            151
+          ],
+          "focus": "refrigerator COP from room and cabinet temperatures"
+        },
+        {
+          "sourceNumber": "11",
+          "printedPages": [
+            151
+          ],
+          "focus": "efficiency change after doubling heat-source temperature"
+        },
+        {
+          "sourceNumber": "12",
+          "printedPages": [
+            151
+          ],
+          "focus": "thermodynamics scope versus types of system"
+        },
+        {
+          "sourceNumber": "13",
+          "printedPages": [
+            151
+          ],
+          "focus": "thermal-equilibrium temperature criterion"
+        },
+        {
+          "sourceNumber": "14",
+          "printedPages": [
+            151
+          ],
+          "focus": "isothermal pressure–volume figure and internal energy"
+        },
+        {
+          "sourceNumber": "15",
+          "printedPages": [
+            151
+          ],
+          "focus": "internal energy as a path-independent state property"
+        },
+        {
+          "sourceNumber": "16",
+          "printedPages": [
+            151
+          ],
+          "focus": "Boltzmann constant relationship"
+        },
+        {
+          "sourceNumber": "17",
+          "printedPages": [
+            151,
+            152
+          ],
+          "focus": "thermal expansion of hollow and solid spheres"
+        },
+        {
+          "sourceNumber": "18",
+          "printedPages": [
+            152
+          ],
+          "focus": "different thermal expansion rates across materials"
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "printedPages": [
+        152,
+        152
+      ],
+      "expectedPublishedCount": 13,
+      "visuallyObservedCount": 13,
+      "sourceNumbering": "8.1–8.13",
+      "items": [
+        {
+          "sourceNumber": "8.1",
+          "printedPages": [
+            152
+          ],
+          "focus": "tire pressure increase after driving"
+        },
+        {
+          "sourceNumber": "8.2",
+          "printedPages": [
+            152
+          ],
+          "focus": "energy change at fixed temperature"
+        },
+        {
+          "sourceNumber": "8.3",
+          "printedPages": [
+            152
+          ],
+          "focus": "temperature change in an isolated system"
+        },
+        {
+          "sourceNumber": "8.4",
+          "printedPages": [
+            152
+          ],
+          "focus": "distinguishing heat transfer and work from internal-energy change"
+        },
+        {
+          "sourceNumber": "8.5",
+          "printedPages": [
+            152
+          ],
+          "focus": "double gas volume at fixed pressure"
+        },
+        {
+          "sourceNumber": "8.6",
+          "printedPages": [
+            152
+          ],
+          "focus": "whether heat input always raises internal energy"
+        },
+        {
+          "sourceNumber": "8.7",
+          "printedPages": [
+            152
+          ],
+          "focus": "adiabatic versus isothermal pressure–volume slopes"
+        },
+        {
+          "sourceNumber": "8.8",
+          "printedPages": [
+            152
+          ],
+          "focus": "typical rates of isothermal versus adiabatic processes"
+        },
+        {
+          "sourceNumber": "8.9",
+          "printedPages": [
+            152
+          ],
+          "focus": "whether a path can be adiabatic and isothermal"
+        },
+        {
+          "sourceNumber": "8.10",
+          "printedPages": [
+            152
+          ],
+          "focus": "entropy after a Carnot engine cycle"
+        },
+        {
+          "sourceNumber": "8.11",
+          "printedPages": [
+            152
+          ],
+          "focus": "entropy effects of friction"
+        },
+        {
+          "sourceNumber": "8.12",
+          "printedPages": [
+            152
+          ],
+          "focus": "refrigerator versus air conditioner"
+        },
+        {
+          "sourceNumber": "8.13",
+          "printedPages": [
+            152
+          ],
+          "focus": "four-part thermos shaking energy analysis",
+          "subparts": [
+            "i",
+            "ii",
+            "iii",
+            "iv"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "comprehensive",
+      "printedPages": [
+        152,
+        153
+      ],
+      "v224BaselineClaimedCount": 11,
+      "visuallyObservedCount": 10,
+      "sourceNumbering": "8.1–8.7, 8.9–8.11; 8.8 not visible",
+      "items": [
+        {
+          "sourceNumber": "8.1",
+          "printedPages": [
+            152
+          ],
+          "focus": "internal energy and absolute temperature"
+        },
+        {
+          "sourceNumber": "8.2",
+          "printedPages": [
+            152
+          ],
+          "focus": "gas laws"
+        },
+        {
+          "sourceNumber": "8.3",
+          "printedPages": [
+            152
+          ],
+          "focus": "First Law"
+        },
+        {
+          "sourceNumber": "8.4",
+          "printedPages": [
+            152
+          ],
+          "focus": "four thermodynamic processes",
+          "subparts": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "sourceNumber": "8.5",
+          "printedPages": [
+            152
+          ],
+          "focus": "heat engine"
+        },
+        {
+          "sourceNumber": "8.6",
+          "printedPages": [
+            152
+          ],
+          "focus": "Second Law"
+        },
+        {
+          "sourceNumber": "8.7",
+          "printedPages": [
+            152
+          ],
+          "focus": "Carnot engine and efficiency"
+        },
+        {
+          "sourceNumber": "8.9",
+          "printedPages": [
+            153
+          ],
+          "focus": "refrigerator"
+        },
+        {
+          "sourceNumber": "8.10",
+          "printedPages": [
+            153
+          ],
+          "focus": "entropy"
+        },
+        {
+          "sourceNumber": "8.11",
+          "printedPages": [
+            153
+          ],
+          "focus": "entropy and energy degradation"
+        }
+      ]
+    },
+    {
+      "kind": "numerical",
+      "printedPages": [
+        153,
+        153
+      ],
+      "expectedPublishedCount": 9,
+      "visuallyObservedCount": 9,
+      "sourceNumbering": "8.1–8.9",
+      "items": [
+        {
+          "sourceNumber": "8.1",
+          "printedPages": [
+            153
+          ],
+          "focus": "balloon ideal-gas mole count"
+        },
+        {
+          "sourceNumber": "8.2",
+          "printedPages": [
+            153
+          ],
+          "focus": "heat engine between water fixed points"
+        },
+        {
+          "sourceNumber": "8.3",
+          "printedPages": [
+            153
+          ],
+          "focus": "gas volume change after 1 K increase"
+        },
+        {
+          "sourceNumber": "8.4",
+          "printedPages": [
+            153
+          ],
+          "focus": "Carnot engine work and stated absorption temperature"
+        },
+        {
+          "sourceNumber": "8.5",
+          "printedPages": [
+            153
+          ],
+          "focus": "immersion-heater warming time"
+        },
+        {
+          "sourceNumber": "8.6",
+          "printedPages": [
+            153
+          ],
+          "focus": "Carnot source-temperature adjustment"
+        },
+        {
+          "sourceNumber": "8.7",
+          "printedPages": [
+            153
+          ],
+          "focus": "Carnot cycle heat rejection"
+        },
+        {
+          "sourceNumber": "8.8",
+          "printedPages": [
+            153
+          ],
+          "focus": "freezing and signed entropy change"
+        },
+        {
+          "sourceNumber": "8.9",
+          "printedPages": [
+            153
+          ],
+          "focus": "isobaric work and pressure–volume representation",
+          "subparts": [
+            "a",
+            "b"
+          ]
+        }
+      ]
+    }
+  ],
+  "observedTotal": 50,
+  "discrepancy": {
+    "id": "SOURCE-COMP-8.8",
+    "baseline": "V224 existing source manifest recorded 11 comprehensive questions",
+    "verified": "10 visible numbered questions; 8.8 skipped in original printed book",
+    "handling": "Non-destructive reconciliation: keep V224 historical baseline unchanged, document V235 corrected observed count; future source audit may formally reconcile baseline with reviewer approval."
+  },
+  "reviewFlags": [
+    {
+      "flagId": "SOURCE-COMP-8.8",
+      "kind": "comprehensive",
+      "sourceNumber": "8.8",
+      "priority": "blocking",
+      "reason": "Printed source skips from 8.7 on p.152 to 8.9 on p.153; prior V224 source manifest recorded 11 comprehensive questions but 10 are visible.",
+      "reviewInstruction": "Retain original numbering, flag missing 8.8; do not create a replacement or silently renumber.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-3",
+      "kind": "mcq",
+      "sourceNumber": "3",
+      "priority": "high",
+      "reason": "Metabolic system classification during fasting does not specify a clearly isolated physical process/constraints.",
+      "reviewInstruction": "Review intended curriculum context; preserve original with qualification or replace in an independently written practice bank only with approval.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-9",
+      "kind": "mcq",
+      "sourceNumber": "9",
+      "priority": "high",
+      "reason": "Asks which thermodynamic process produces maximum work without enough common initial/final-state conditions.",
+      "reviewInstruction": "Request teacher science ruling before selecting or publishing an answer.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-10",
+      "kind": "mcq",
+      "sourceNumber": "10",
+      "priority": "moderate",
+      "reason": "Room temperature is not numerically specified; a COP-derived cabinet temperature requires selecting an assumed absolute room temperature.",
+      "reviewInstruction": "Document assumed room temperature explicitly before validating options.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-11",
+      "kind": "mcq",
+      "sourceNumber": "11",
+      "priority": "blocking",
+      "reason": "Doubling heat-source temperature does not imply a unique multiplicative efficiency change without initial source/sink temperatures and an ideal-engine assumption.",
+      "reviewInstruction": "Do not assign an answer until conditions are supplied or item is formally flagged unanswerable.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-12",
+      "kind": "mcq",
+      "sourceNumber": "12",
+      "priority": "blocking",
+      "reason": "Question asks for definition of thermodynamics; available alternatives describe exchanges with surroundings or system categories, not the subject's definition.",
+      "reviewInstruction": "Possible no-correct-option item; require independent review; retain as documented original flaw.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-17",
+      "kind": "mcq",
+      "sourceNumber": "17",
+      "priority": "moderate",
+      "reason": "Same-material hollow/solid sphere comparison depends on uniform temperature and identical initial external dimensions; item is split over pp.151–152.",
+      "reviewInstruction": "Preserve page continuity and clarify physical assumptions when preparing a separate teaching note.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "SHORT-8.3",
+      "kind": "short",
+      "sourceNumber": "8.3",
+      "priority": "moderate",
+      "reason": "An isolated system need not have fixed temperature in all processes; energy can redistribute internally.",
+      "reviewInstruction": "Require careful conditions and examples; avoid blanket yes/no.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "SHORT-8.8",
+      "kind": "short",
+      "sourceNumber": "8.8",
+      "priority": "moderate",
+      "reason": "Slow versus fast is only a common instructional heuristic for isothermal/adiabatic approximations, not their defining criterion.",
+      "reviewInstruction": "Provide explicitly conditional treatment in later reviewed explanation.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.1",
+      "kind": "numerical",
+      "sourceNumber": "8.1",
+      "priority": "moderate",
+      "reason": "Room temperature is mentioned but no explicit numerical value supplied; printed numerical result assumes an approximation.",
+      "reviewInstruction": "Record chosen reference temperature before independently checking printed result.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.2",
+      "kind": "numerical",
+      "sourceNumber": "8.2",
+      "priority": "high",
+      "reason": "The printed question calls the device a heat engine, not explicitly a reversible/Carnot engine; two reservoir temperatures determine a theoretical maximum, not any real engine's exact efficiency.",
+      "reviewInstruction": "Treat as ideal Carnot assumption requiring a teacher note; do not silently generalize.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.3",
+      "kind": "numerical",
+      "sourceNumber": "8.3",
+      "priority": "blocking",
+      "reason": "Gas initial temperature is not stated, yet the requested increase in volume from a 1 K rise depends on it under the required gas constraint.",
+      "reviewInstruction": "Review source omissions before approving a unique numerical answer.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.4",
+      "kind": "numerical",
+      "sourceNumber": "8.4",
+      "priority": "blocking",
+      "reason": "The item places the absorbed 600 J at a stated low temperature of 400 K while the Carnot engine's hot reservoir is 600 K; wording conflicts with expected heat-engine input convention.",
+      "reviewInstruction": "Do not rewrite original stem; document contradiction and seek teacher-approved interpretation before a worked solution.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.6",
+      "kind": "numerical",
+      "sourceNumber": "8.6",
+      "priority": "high",
+      "reason": "Heat-source temperature change is requested from efficiency change, but the question requires a Carnot assumption and a fixed room-temperature sink value not fully spelled out.",
+      "reviewInstruction": "Record required assumptions and independently check printed value.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.8",
+      "kind": "numerical",
+      "sourceNumber": "8.8",
+      "priority": "moderate",
+      "reason": "The exercise supplies melting energy for 2 g as its own latent-heat basis, which may differ from the textbook's usual ice latent heat value.",
+      "reviewInstruction": "Use exercise-specific supplied energy for source fidelity; flag discrepancy for teacher guidance.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "NUM-8.9",
+      "kind": "numerical",
+      "sourceNumber": "8.9",
+      "priority": "moderate",
+      "reason": "Second subpart requires a pressure–volume diagram. Text-only numeric answers would be incomplete.",
+      "reviewInstruction": "Prepare an independent plotted diagram with labeled isobar and area under the curve for later review.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    },
+    {
+      "flagId": "MCQ-14",
+      "kind": "mcq",
+      "sourceNumber": "14",
+      "priority": "moderate",
+      "reason": "The source's pressure–volume figure is necessary to interpret the item; it must not be dropped in a digital bank.",
+      "reviewInstruction": "Hold until an independently drawn and validated equivalent diagram is approved.",
+      "sourceRetained": true,
+      "studentRelease": "HOLD",
+      "teacherApproval": "PENDING"
+    }
+  ],
+  "releaseGate": {
+    "humanScienceQc": "PENDING",
+    "cognitiveSloMapping": "PENDING",
+    "studentAnswerEdition": "NOT-PUBLISHED",
+    "ownerApproval": "HOLD",
+    "scoredMcqsUnit8": 0,
+    "sourceFigureReproduction": false,
+    "originalStemsReproduced": false
+  },
+  "notes": [
+    "Printed original already includes some parenthetical numerical results; this index intentionally stores no values or answer keys.",
+    "Source inventory metadata is not an adjudication of correct/incorrect answer options.",
+    "Original figure in MCQ 14 and required PV representation in Numerical 8.9 need explicit future diagram review.",
+    "Part counts do not increase the 50 top-level numbered exercise item count."
+  ]
+}
