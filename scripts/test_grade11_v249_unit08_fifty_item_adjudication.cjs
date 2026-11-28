@@ -160,9 +160,10 @@ for(let j=0;j<8;j++){
 assert.match(doc.triageDefinitions.SOURCE_LEVEL_ASSESSMENT_CONCERN,/separately authored/);
 assert.match(doc.triageDefinitions.SLO_ADJUDICATION,/not approval/);
 for(const term of ['50/50','10/10','18 / 13 / 10 / 9','P-12-C-01','Numerical 8.3',
- 'Numerical 8.4','COMPULSORY','2,250','NOT','8.8','P–V diagram']){
+ 'Numerical 8.4','2,250','NOT','8.8','P–V diagram']){
  assert.ok(notes.includes(term),'Teacher guide missing high priority item '+term);
 }
+assert.match(notes,/compulsory/i,'Teacher guide must distinguish compulsory corrections');
 for(const e of doc.entries){
  assert.ok(notes.includes(e.priorReviewVersion));
  assert.ok(notes.includes('| '+({mcq:'MCQ',short:'Short',comprehensive:'Comprehensive',numerical:'Numerical'}[e.category])+' '+e.sourceNumber+' |'),
