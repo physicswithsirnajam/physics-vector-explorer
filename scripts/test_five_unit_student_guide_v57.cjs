@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-/* V57: 5-unit student onboarding, source-catalog completeness and public browser smoke.
+/* V57 with V236: retain original five-unit checks and verify Unit6 provisional + Unit7–8 public-study discovery.
  * Does not access Firebase or require student login.
  */
 const assert=require('node:assert/strict');
@@ -90,16 +90,17 @@ async function verifyBrowser(){
   page.on('response',r=>{if(r.url().includes('127.0.0.1')&&r.status()>=400)missing.push(r.url()+' status '+r.status())});
   const base='http://127.0.0.1:'+server.address().port+'/';
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1690');
-  assert.equal(await page.locator('.unit').count(),5);
-  assert.equal(await page.locator('.unit .links a[href^="build-your-physics-test.html?unit="]').count(),5);
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='2250');
+  assert.equal(await page.locator('.unit').count(),8);
+  assert.equal(await page.locator('.unit .links a[href^="build-your-physics-test.html?unit="]').count(),6);
   assert.equal(await page.locator('#psn-global-nav').count(),1);
   assert.equal(await page.locator('.hero .brand img').evaluate(img=>img.complete&&img.naturalWidth>0),true,'unchanged official logo must load');
-  assert.equal(await page.locator('.unit .count').allTextContents().then(x=>x.join('|')),'275 MCQs|206 MCQs|220 MCQs|640 MCQs|349 MCQs');
+  assert.equal(await page.locator('.unit .count').allTextContents().then(x=>x.join('|')),'275 MCQs|206 MCQs|220 MCQs|640 MCQs|349 MCQs|560 provisional MCQs|3 unscored topic lessons|10 unscored topic lessons');
   await page.screenshot({path:path.join(qa,'01-student-guide-desktop.png'),fullPage:true});
   const expectedLinks=[
    'portal/unit-01.html','portal/unit-02.html','portal/unit-03.html',
-   'portal/unit-04.html','portal/unit-05.html',
+   'portal/unit-04.html','portal/unit-05.html','portal/unit-06-learning-desk-v95a.html',
+    'portal/exam-quick-access.html#unit7-unscored-study-preview','portal/exam-quick-access.html#unit8-unscored-study-preview',
    'build-your-physics-test.html','portal/#learning-hub',
    'build-your-physics-test.html?units=1,3,5'
   ];
@@ -117,11 +118,11 @@ async function verifyBrowser(){
    scroll:document.documentElement.scrollWidth
   }));
   assert.ok(dimensions.scroll<=dimensions.viewport+2,'student guide 390px horizontal scroll '+JSON.stringify(dimensions));
-  assert.equal(await page.locator('.unit').count(),5);
+  assert.equal(await page.locator('.unit').count(),8);
   await page.screenshot({path:path.join(qa,'03-student-guide-mobile.png'),fullPage:true});
   assert.deepEqual(errors,[],'new guide must not throw browser JS exceptions');
   assert.deepEqual(missing,[],'all local guide and Test Builder assets must load');
-  console.log('PASS V57 browser: five accurate unit links, dynamic manifest counts, guide -> mixed-unit Test Builder, original logo, 390px mobile, no missing assets.');
+  console.log('PASS V57+V236 browser: original five learning desks, Unit6 practice, Unit7–8 unscored study, 2250 available MCQs, mixed-unit Test Builder, official logo and 390px mobile.');
  }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}
 }
 (async()=>{validateCatalog();await verifyBrowser()})().catch(e=>{console.error('FAIL V57',e);server.close();process.exitCode=1});
