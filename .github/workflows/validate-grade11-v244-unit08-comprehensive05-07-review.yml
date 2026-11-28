@@ -1,0 +1,52 @@
+name: Grade XI V244 Unit 8 Original Comprehensive Q8.5-8.7 Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v244-comprehensive05-07-review-no-answers.json"
+      - "quality/unit08/unit08-v244-comprehensive05-07-academic-triage.md"
+      - "scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs"
+      - ".github/workflows/validate-grade11-v244-unit08-comprehensive05-07-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v244-comprehensive05-07-review-no-answers.json"
+      - "quality/unit08/unit08-v244-comprehensive05-07-academic-triage.md"
+      - "scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs"
+      - ".github/workflows/validate-grade11-v244-unit08-comprehensive05-07-review.yml"
+jobs:
+  original-comprehensive-source-review-no-answers-or-scored-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check original-source metadata and review test syntax
+        run: |
+          node --check scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v244-comprehensive05-07-review-no-answers.json','utf8'))"
+      - name: V244 heat-engine, Second-Law, reversible Carnot physics and original p152 SLO review
+        run: node scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs
+      - name: Preserve V243 first four original comprehensive source review items
+        run: node scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+      - name: Preserve V242 all 13 original short-response source audits
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 Q8.5-8.8 original short question review
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 Q8.1-8.4 original short question review
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 last six end-MCQ source reviews
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 middle six end-MCQ source reviews
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 first six end-MCQ source reviews
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 original end exercise numbering/source integrity
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 NBF textbook and official FBISE framework index
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve pinned Units1-6 2250 MCQ identities/options/keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
