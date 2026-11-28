@@ -1,0 +1,179 @@
+{
+  "schema": "psn-nbf-grade11-unit08-end-exercise-mcq-qc-v237",
+  "version": "V237",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      150,
+      151
+    ],
+    "exercise": "Unit 8 end-of-unit multiple-choice questions",
+    "batchNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "reviewMode": "visually checked original scanned pages; no OCR"
+  },
+  "officialFramework": "Existing original-source V224 inventory of official FBISE HSSC-I theory SLOs; mapping is reviewer-candidate, not endorsed by a teacher",
+  "priorInventory": "V235 original 18 MCQs, pp.150–152; no original answer keys or source stems published",
+  "scope": "review-only 6 items out of 18; source focus paraphrases only; no original stems/option text, answer letters or scored bank release",
+  "items": [
+    {
+      "sourceNumber": "1",
+      "printedPages": [
+        150
+      ],
+      "focus": "low-density condition for ideal-gas approximation",
+      "sourceTopic": "8.2",
+      "candidateSummativeSlo": "P-11-C-05",
+      "candidateCognitive": "Understanding",
+      "sloFit": "direct",
+      "scienceReview": "conditionally clear",
+      "amendment": "optional teaching note",
+      "reason": "The source supplies a physically appropriate approximation criterion, but ideal behaviour is also aided by sufficiently high temperature and weak intermolecular effects.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "2",
+      "printedPages": [
+        150
+      ],
+      "focus": "vigorous shaking of liquid in thermally insulated rigid flask",
+      "sourceTopic": "8.4",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateCognitive": "Understanding",
+      "sloFit": "indirect; original official outcome primarily addresses First Law heat/work and process sign",
+      "scienceReview": "potentially multiple valid process classifications",
+      "amendment": "compulsory for single-best-answer assessment",
+      "reason": "Ideal flask supports negligible heat transfer (adiabatic); nearly fixed volume of contained liquid and rigid container also supports isochoric classification. Those categories are not mutually exclusive, and 'due to' is underspecified.",
+      "keepOriginal": true,
+      "originalUse": "discussion-only with teacher note",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "Specify that classification is by heat flow across an insulated boundary, not by constancy of volume; independently authored practice item only after approval.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "3",
+      "printedPages": [
+        150
+      ],
+      "focus": "metabolic state while fasting in Ramadan",
+      "sourceTopic": "8.4",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateCognitive": "Understanding",
+      "sloFit": "weak / indirect; framework does not explicitly require classifying human metabolism as a simple ideal thermodynamic path",
+      "scienceReview": "no unique thermodynamic process specified",
+      "amendment": "compulsory for single-best-answer assessment",
+      "reason": "Fasting alone does not determine whether a selected metabolism/body system follows constant temperature, constant pressure, constant volume, or zero-heat-transfer conditions. The system boundary and constraints are unstated.",
+      "keepOriginal": true,
+      "originalUse": "discussion-only with explicit limitations",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "Use an independently written idealised physical system with specified thermal, volume or pressure constraint; seek separate teacher ruling on any physiological analogy.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "4",
+      "printedPages": [
+        150
+      ],
+      "focus": "rigid gas container and internal-energy change after heat input",
+      "sourceTopic": "8.4",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateCognitive": "Application",
+      "sloFit": "direct",
+      "scienceReview": "physics-consistent under standard heat-input interpretation",
+      "amendment": "not required",
+      "reason": "Rigid container eliminates boundary P-dV work; apply First Law with the usual heat-input interpretation of symbol Q. Other work modes are not specified.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "5",
+      "printedPages": [
+        151
+      ],
+      "focus": "work done by ideal gas during constant-pressure volume expansion",
+      "sourceTopic": "8.2",
+      "candidateSummativeSlo": "P-11-C-06",
+      "candidateCognitive": "Application",
+      "sloFit": "direct",
+      "scienceReview": "physics and dimensional arithmetic independently checked",
+      "amendment": "not required",
+      "reason": "The printed constant pressure and initial/final volumes define positive work done by gas using W=P(V_f−V_i), with SI pressure and volume units. Printed options include the consistent result.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "6",
+      "printedPages": [
+        151
+      ],
+      "focus": "entropy change in solid-to-gas phase transition",
+      "sourceTopic": "8.10",
+      "candidateSummativeSlo": "P-11-C-22",
+      "candidateCognitive": "Understanding",
+      "sloFit": "direct",
+      "scienceReview": "physics-consistent for the intended phase-change comparison",
+      "amendment": "not required",
+      "reason": "In the listed phase-change alternatives, transfer from solid to gas increases entropy of the material; freezing, crystallisation and condensation normally decrease its entropy.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    }
+  ],
+  "batchAudit": {
+    "observedCount": 6,
+    "clearOrConditional": 4,
+    "compulsoryReviewBeforeGradedUse": [
+      "2",
+      "3"
+    ],
+    "noAmendmentNeeded": [
+      "4",
+      "5",
+      "6"
+    ],
+    "optionalTeacherNote": [
+      "1"
+    ],
+    "newlyFlaggedComparedWithV235": [
+      "2"
+    ],
+    "existingV235RiskFlag": [
+      "3"
+    ],
+    "teacherIndependentApproval": "PENDING",
+    "cognitiveAudit": "PENDING",
+    "studentMcqBank": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "approvedAnswerEdition": false,
+    "sourceImagesCopied": false,
+    "sourceStemsCopied": false,
+    "optionLettersPublished": false,
+    "ownerApproval": "HOLD"
+  }
+}
