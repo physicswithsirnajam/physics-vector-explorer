@@ -38,7 +38,7 @@ assert.deepEqual(groups.short.items.map(i=>i.sourceNumber),Array.from({length:13
 assert.deepEqual(groups.comprehensive.items.map(i=>i.sourceNumber),['8.1','8.2','8.3','8.4','8.5','8.6','8.7','8.9','8.10','8.11']);
 assert.equal(groups.comprehensive.items.some(i=>i.sourceNumber==='8.8'),false,'Do not invent missing original 8.8');
 assert.deepEqual(groups.numerical.items.map(i=>i.sourceNumber),Array.from({length:9},(_,i)=>'8.'+(i+1)));
-assert.deepEqual(groups.short.items.find(i=>i.sourceNumber==='8.13').subparts,undefined);
+assert.deepEqual(groups.short.items.find(i=>i.sourceNumber==='8.13').subparts,['i','ii','iii','iv']);
 // Original multi-part responses stay one top-level exercise each.
 assert.deepEqual(groups.comprehensive.items.find(i=>i.sourceNumber==='8.4').subparts,['a','b','c','d']);
 assert.deepEqual(groups.numerical.items.find(i=>i.sourceNumber==='8.9').subparts,['a','b']);
@@ -85,7 +85,7 @@ assert.equal(inv.releaseGate.studentAnswerEdition,'NOT-PUBLISHED');
 assert.equal(inv.releaseGate.originalStemsReproduced,false);
 assert.equal(inv.releaseGate.sourceFigureReproduction,false);
 assert.match(audit,/10 printed numbered questions/);
-assert.match(audit,/Question/); // source numbering discrepancy is described with specific references in table
+assert.match(audit,/8\.7.*8\.9/); // source numbering discrepancy is described with page references
 assert.match(audit,/MCQ 11/);
 assert.match(audit,/Numerical 8\.4/);
 assert.match(audit,/NOT solved-answer certification/);
