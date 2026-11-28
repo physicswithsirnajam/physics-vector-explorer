@@ -27,7 +27,7 @@
       "printedPages": [
         151
       ],
-      "focus": "Carnot engine reservoir temperatures and required heat input for stated cyclic work",
+      "focus": "Carnot heat input from work output",
       "sourceTopic": "8.8",
       "candidateSummativeSlo": "P-11-C-23",
       "observedCognitive": "Application",
@@ -47,7 +47,7 @@
       "printedPages": [
         151
       ],
-      "focus": "ratio of Carnot efficiencies with one hot/cold pair crossing below zero Celsius",
+      "focus": "ratio of Carnot efficiencies at two temperature pairs",
       "sourceTopic": "8.8",
       "candidateSummativeSlo": "P-11-C-23",
       "observedCognitive": "Application",
@@ -67,7 +67,7 @@
       "printedPages": [
         151
       ],
-      "focus": "comparison of expansion-work maxima among named thermodynamic processes",
+      "focus": "maximum-work process conditions",
       "sourceTopic": "8.4",
       "candidateSummativeSlo": "P-11-C-06",
       "observedCognitive": "Understanding",
@@ -89,7 +89,7 @@
       "printedPages": [
         151
       ],
-      "focus": "refrigerator cooling coefficient of performance and unknown cold-space temperature",
+      "focus": "refrigerator COP from room and cabinet temperatures",
       "sourceTopic": "8.9",
       "candidateSummativeSlo": "P-11-C-17",
       "observedCognitive": "Application",
@@ -111,7 +111,7 @@
       "printedPages": [
         151
       ],
-      "focus": "factor change in engine efficiency after doubling source temperature",
+      "focus": "efficiency change after doubling heat-source temperature",
       "sourceTopic": "8.8",
       "candidateSummativeSlo": "P-11-C-23",
       "observedCognitive": "Application",
@@ -133,7 +133,7 @@
       "printedPages": [
         151
       ],
-      "focus": "definition of thermodynamics contrasted with options about system exchange boundaries",
+      "focus": "thermodynamics scope versus types of system",
       "sourceTopic": "8.1",
       "candidateSummativeSlo": null,
       "observedCognitive": "Knowledge",
