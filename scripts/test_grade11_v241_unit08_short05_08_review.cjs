@@ -68,7 +68,7 @@ assert.match(rev.items.find(x=>x.sourceNumber==='8.5').reason,/Celsius/);
 assert.match(rev.items.find(x=>x.sourceNumber==='8.6').scienceReview,/ΔU=Q−W_by/);
 assert.match(rev.items.find(x=>x.sourceNumber==='8.7').scienceReview,/γ=Cp\/Cv>1/);
 assert.match(rev.items.find(x=>x.sourceNumber==='8.7').scienceReview,/same positive P,V/);
-assert.match(rev.items.find(x=>x.sourceNumber==='8.8').scienceReview,/speed/);
+assert.match(rev.items.find(x=>x.sourceNumber==='8.8').scienceReview,/thermal coupling and timescales/);
 const audit=rev.audit;
 assert.equal(audit.sourceQuestionCount,4);
 assert.equal(audit.sourceTotalShortResponseQuestions,13);
