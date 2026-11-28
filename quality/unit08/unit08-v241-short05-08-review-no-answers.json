@@ -1,0 +1,153 @@
+{
+  "schema": "psn-nbf-grade11-unit08-short-response-qc-v241",
+  "version": "V241",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      152
+    ],
+    "questionIds": [
+      "8.5",
+      "8.6",
+      "8.7",
+      "8.8"
+    ],
+    "mode": "visually inspected original scanned NBF printed page 152, question stems and answers not reproduced"
+  },
+  "originalFramework": "V224 original-source inventory of printed FBISE HSSC-I summative theory outcomes; candidate item mapping not teacher-certified",
+  "parentInventory": "V235 original 13 end-of-unit short-response questions on p.152, preserved without changes",
+  "scope": "preliminary review of four original source numbers, teacher-facing science qualification and outcome candidate checks only; no source questions/approved answers/student scores",
+  "items": [
+    {
+      "sourceNumber": "8.5",
+      "printedPages": [
+        152
+      ],
+      "focus": "double gas volume at fixed pressure",
+      "sourceTopic": "8.3 Charles's Law",
+      "candidateSummativeSlo": "P-11-C-09",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "related gas-law concept, but the original numeric temperature calculation exceeds the Understanding level captured for the closest printed SLO",
+      "scienceReview": "For a fixed amount of ideal gas at constant absolute pressure, V is proportional to kelvin temperature. Doubling volume from an initial 0°C requires doubling initial absolute temperature, then converting back to °C.",
+      "amendment": "no textbook-stem amendment; compulsory temperature-scale explanation and cognitive-level mapping before assessed use",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "The question explicitly supplies an initial Celsius temperature, a doubled volume and constant pressure. Solving in Celsius without conversion incorrectly treats zero Celsius as absolute zero. The ideal-gas approximation, constant gas amount and kelvin conversion are implicit teaching assumptions. The calculation is numerically well defined but its Application demand is not automatically authorized by a printed Understanding-only candidate outcome.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.6",
+      "printedPages": [
+        152
+      ],
+      "focus": "whether heat input always raises internal energy",
+      "sourceTopic": "8.4 First Law of Thermodynamics",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct First Law reasoning, using the textbook's heat/work sign convention",
+      "scienceReview": "Heat entering a closed system is positive Q, but the change in internal energy is ΔU=Q−W_by. If the system performs enough work, ΔU may be zero or negative even though heat entered.",
+      "amendment": "compulsory worked-explanation precision; original source retained",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "The word 'necessarily' must not be misread as an always-positive state-variable change. For a closed system with negligible kinetic/potential energy variation and the textbook's work-by convention, the first-law balance allows positive, zero or negative ΔU depending on the work done by the system. Avoid implying a heat input is stored completely as internal energy.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.7",
+      "printedPages": [
+        152
+      ],
+      "focus": "adiabatic versus isothermal pressure–volume slopes",
+      "sourceTopic": "8.4.1/8.4.2 Isothermal and Adiabatic Processes",
+      "candidateSummativeSlo": "P-11-C-10",
+      "additionalCandidateSlo": "P-11-C-08",
+      "candidateFrameworkCognitive": "Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "closest isothermal P–V graph outcome, but a comparison with adiabatic slopes and gamma is not directly named in the brief printed framework descriptor",
+      "scienceReview": "At the same positive P,V for a quasistatic calorically perfect ideal gas, an isotherm has dP/dV=−P/V and a reversible adiabat dP/dV=−γP/V with γ=Cp/Cv>1. Hence the adiabatic tangent is steeper in magnitude at their common state.",
+      "amendment": "compulsory model and common-state qualification before graded explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "The original asks about a comparison that requires two curves evaluated at the same state, on the same P–V axes. The usual power laws rely on a reversible/quasistatic ideal-gas model (often constant heat capacities). Comparing slopes at unrelated points or asserting the result for arbitrary real fluids without conditions would be misleading. Cognitive and direct-SLO fit also need teacher sign-off.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.8",
+      "printedPages": [
+        152
+      ],
+      "focus": "typical rates of isothermal versus adiabatic processes",
+      "sourceTopic": "8.4.1/8.4.2 Isothermal and Adiabatic Processes",
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "observedCognitive": "Understanding",
+      "sloFit": "the recorded official Domain C outcomes do not directly assess slow-versus-fast process speed as an unconditional distinguishing criterion; authenticated theory SLO required",
+      "scienceReview": "In common laboratory approximations, a slow process allows more time for heat exchange to maintain temperature, while a rapid process leaves less time for thermal transfer. These are contingent on thermal coupling and timescales; an insulated slow change can be adiabatic and a well-controlled fast change can be isothermal.",
+      "amendment": "compulsory explanation qualification and direct summative-SLO verification before graded use",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "The original's 'typically' expresses a pedagogical heuristic, not a thermodynamic definition. Isothermal means constant temperature; adiabatic means no heat crosses the system boundary. The process rate alone does not establish either property, and the current source framework inventory has no confirmed direct SLO about rate as a definition.",
+      "keepOriginal": true,
+      "addIndependentItemOption": true,
+      "independentRevisionPrinciple": "If a distinct independently written scenario is approved, specify boundary insulation or thermal contact and the process time relative to thermal-equilibration time, rather than defining the process by speed.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 4,
+    "sourceTotalShortResponseQuestions": 13,
+    "requiresCompulsoryExplanationQualification": [
+      "8.5",
+      "8.6",
+      "8.7",
+      "8.8"
+    ],
+    "requiresCognitiveOrDirectSloReview": [
+      "8.5",
+      "8.7",
+      "8.8"
+    ],
+    "existingV235FlagExpanded": [
+      "8.8"
+    ],
+    "newSourceTextDefectsEstablished": [],
+    "noSourceStemRewrites": true,
+    "printedSourceNumberingPreserved": true,
+    "humanScienceReview": "PENDING",
+    "humanSloCognitiveReview": "PENDING",
+    "studentAnswerEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
