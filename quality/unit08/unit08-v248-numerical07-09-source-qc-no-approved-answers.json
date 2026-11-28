@@ -1,0 +1,243 @@
+{
+  "schema": "psn-nbf-grade11-unit08-numerical-source-qc-v248",
+  "version": "V248",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "problemPrintedPages": [
+      153
+    ],
+    "problemIds": [
+      "8.7",
+      "8.8",
+      "8.9"
+    ],
+    "chapterReferencePages": [
+      138,
+      139,
+      140,
+      143,
+      144,
+      145,
+      147,
+      148,
+      149
+    ],
+    "reviewMethod": "reopened owner original p153 scanned page and visually inspected all source numbers/parts/printed answers; no OCR, publisher stems, scans or diagrams copied"
+  },
+  "originalFramework": "V224 original FBISE HSSC-I theory Domain C summative outcome inventory; mapping and cognitive fit remain teacher candidates",
+  "parentInventory": "V235 nine original Unit8 numerical 8.1–8.9; V246–V247 first six source-numerical QC records preserved unchanged",
+  "scope": "final three original numerical source questions, conditional independently checked arithmetic and diagram specification only; no certified student solved edition",
+  "items": [
+    {
+      "sourceNumber": "8.7",
+      "printedPages": [
+        153
+      ],
+      "focus": "Carnot cycle heat rejection",
+      "printedAnswer": "Q/3",
+      "sourceTopic": "8.8 Carnot's Engine and Carnot Efficiency",
+      "sourceCoveragePages": [
+        143,
+        144,
+        145
+      ],
+      "printedGiven": {
+        "engineType": "Carnot engine",
+        "heatInputSymbol": "Q",
+        "hotReservoirTemperature": "T",
+        "coldReservoirTemperature": "T/3"
+      },
+      "candidateSummativeSlo": "P-11-C-23",
+      "candidateFrameworkCognitive": "Knowledge",
+      "secondaryCandidateSlo": "P-11-C-16",
+      "secondaryFrameworkCognitive": "Knowledge + Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "Carnot maximum-efficiency ratio outcome is relevant but printed Knowledge category does not automatically authorize a symbolic heat-ratio application",
+      "independentCheck": {
+        "type": "reversible-carnot-ratio",
+        "formula": "Q_C/Q_H=T_C/T_H",
+        "referenceHeatInputSymbol": "Q",
+        "hotTemperatureRatio": 1,
+        "coldTemperatureRatio": 0.3333333333333333,
+        "rejectedHeatSymbolic": "Q/3",
+        "inputHeatPositive": true,
+        "outputHeatRejectionPositiveMagnitude": true,
+        "sourceAnswerStatus": "publisher Q/3 matches reversible Carnot ratio exactly provided T is absolute and positive"
+      },
+      "reviewClassification": "original calculation scientifically consistent; compulsory reversible-ratio/cognitive-level explanation",
+      "reviewReason": "The original question explicitly identifies a Carnot engine, names heat absorbed Q at temperature T, and gives a cold reservoir T/3. The reversible Carnot relationship therefore implies Q_C/Q_H=(T/3)/T=1/3, reproducing the publisher's Q/3. Q_C denotes the POSITIVE MAGNITUDE of rejected heat; the signed heat transferred to the working substance on the cold isotherm is −Q/3. A general irreversible heat engine does not obey this exact heat ratio. The printed SLO P-11-C-23 is Knowledge but computing a symbolic heat ratio is an Application task, so teacher mapping remains pending.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.8",
+      "printedPages": [
+        153
+      ],
+      "focus": "freezing and signed entropy change",
+      "printedAnswer": "-64 J K^-1",
+      "sourceTopic": "8.10 Entropy and reversible phase-change entropy",
+      "sourceCoveragePages": [
+        147,
+        148,
+        149
+      ],
+      "printedGiven": {
+        "energyToMeltJoules": 500,
+        "referenceIceMassGrams": 2,
+        "waterToFreezeGrams": 70,
+        "initialAndFinalCelsius": 0
+      },
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "contextCandidateSlo": "P-11-C-22",
+      "contextFrameworkCognitive": "Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "closest printed theory SLO concerns entropy as degree of disorder (Understanding); it does not directly authenticate quantitative phase-change entropy calculation for summative use",
+      "independentCheck": {
+        "type": "source-specific-freezing-entropy",
+        "formula": "Q_freeze=−(500 J/2 g)·70 g; ΔS_water=Q_rev/T",
+        "unitsSI": {
+          "referenceMassKg": 0.002,
+          "freezingMassKg": 0.07,
+          "sourceHeatOfFusionJPerKg": 250000,
+          "temperatureKelvin": 273.15
+        },
+        "heatReleasedByWaterJoules": -17500,
+        "waterEntropyChangeJPerKelvin": -64.06736225517116,
+        "roundedTextbookValue": "-64 J K^-1",
+        "usualIceLatentHeatCaveat": "The problem-implied latent heat 250 kJ/kg differs from usual tabulated ~334 kJ/kg; keep the supplied 500 J for 2 g as authoritative for this exercise.",
+        "scopeOfEntropy": "Negative entropy change belongs to the freezing 70 g of water, not to the refrigerator plus surroundings; refrigeration requires external work and the total isolated entropy balance cannot be inferred from this one ΔS."
+      },
+      "reviewClassification": "source answer and sign consistent using its own latent energy; compulsory material-specific input and subsystem/SLO qualifications",
+      "reviewReason": "Original p.153 supplies 500 J to melt 2 g at 0°C, then asks for the entropy change of 70 g of water at 0°C when it freezes in a refrigerator. This fixes a source-specific latent energy of 250 J/g, which should not be replaced with a standard tabulated fusion value. Freezing reverses melting, so heat Q for the water is negative, −500(70/2)=−17,500 J, and ΔS of the WATER is −17,500/273.15≈−64.07 J/K. The printed −64 J K⁻¹ is consistent after rounding. This does not establish the total refrigerator+room entropy balance; no direct summative entropy-numerical SLO has been authenticated in original V224 Domain C.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.9",
+      "printedPages": [
+        153
+      ],
+      "focus": "isobaric work and pressure–volume representation",
+      "subparts": [
+        "a",
+        "b"
+      ],
+      "printedAnswer": "1.013 × 10^5 J",
+      "sourceTopic": "8.4 First Law: isobaric process and P–V work",
+      "sourceCoveragePages": [
+        138,
+        139,
+        140
+      ],
+      "printedGiven": {
+        "initialVolumeCubicMetres": 1,
+        "finalVolumeCubicMetres": 2,
+        "pressureDescription": "constant atmospheric pressure",
+        "subpartA": "calculate work done by the gas",
+        "subpartB": "represent work done in a PV diagram"
+      },
+      "candidateSummativeSlo": "P-11-C-06",
+      "candidateFrameworkCognitive": "Application",
+      "secondaryCandidateSlo": "P-11-C-07",
+      "secondaryFrameworkCognitive": "Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "direct constant-pressure PΔV work; secondary work-by/on SLO helps sign interpretation",
+      "independentCheck": {
+        "type": "isobaric-pv-work",
+        "formula": "W_by=∫P dV=P(V_f−V_i) for quasistatic constant pressure",
+        "quantitiesSI": {
+          "standardAtmospherePascalsRounded": 101300,
+          "initialVolumeCubicMetres": 1,
+          "finalVolumeCubicMetres": 2,
+          "deltaVolumeCubicMetres": 1
+        },
+        "calculatedWorkByGasJoules": 101300,
+        "roundedTextbookValue": "1.013 × 10^5 J",
+        "usingExactStandardAtmospherePascals": 101325,
+        "usingExactAtmWorkJoules": 101325,
+        "signConvention": "Work done by expanding gas is positive; work done on the gas is negative of this value.",
+        "diagramSpec": {
+          "status": "teacher-review specification only; no source diagram copied or public student graphic generated",
+          "horizontalAxis": "V (m³)",
+          "verticalAxis": "P (Pa)",
+          "constantPressureLinePa": 101300,
+          "startVolumeM3": 1,
+          "endVolumeM3": 2,
+          "processArrowDirection": "rightward",
+          "areaRepresentation": "rectangle below horizontal isobar from V=1 m³ to V=2 m³ down to P=0; shaded area equals +1.013×10^5 J",
+          "labels": [
+            "P = 1.013×10^5 Pa",
+            "V₁ = 1 m³",
+            "V₂ = 2 m³",
+            "W_by = PΔV = 1.013×10^5 J"
+          ],
+          "graphicalCompletenessRequired": true
+        }
+      },
+      "reviewClassification": "source arithmetic correct; compulsory retain both calculation and pressure–volume diagram for completed question",
+      "reviewReason": "Printed original Numerical 8.9 has TWO explicit subparts: (a) calculate work done BY gas from 1 m³ to 2 m³ at constant atmospheric pressure, and (b) represent the work on a PV diagram. Using 1 atm≈1.013×10⁵ Pa, ΔV=+1 m³, W_by=PΔV=+1.013×10⁵ J matches the printed value. At the more exact 101325 Pa the answer is 101325 J, rounding consistently. A complete marking scheme needs a labeled P–V plot with a rightward horizontal isobar and area below it between the two volumes; a numerical answer alone fails the printed part (b). The pressure/volume model treats the gas expansion as quasistatic against the stated constant ambient pressure.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentVariantRequirement": "A separate independently drawn accessible P–V schematic can be proposed for teacher review before students see the answer; preserve original printed a/b question and do not invent a publisher diagram.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 3,
+    "sourceVisibleNumericalCount": 9,
+    "coverageAcrossV246V248": "9/9 visibly numbered original Unit8 numericals preliminarily reviewed",
+    "sourceExerciseTotal": "50 visually indexed original exercise items = 18 MCQs + 13 short + 10 visible comprehensives + 9 numericals",
+    "originalPrintedAnswers": [
+      "Q/3",
+      "-64 J K^-1",
+      "1.013 × 10^5 J"
+    ],
+    "printedAnswerConsistencyUnderExplicitModels": [
+      "8.7",
+      "8.8",
+      "8.9"
+    ],
+    "compulsorySloOrCognitiveReview": [
+      "8.7",
+      "8.8"
+    ],
+    "sourceSpecificLatentEnergyAndSubsystemSign": [
+      "8.8"
+    ],
+    "twoPartDiagramCompleteness": [
+      "8.9"
+    ],
+    "alreadyFlaggedInV235": [
+      "NUM-8.8",
+      "NUM-8.9"
+    ],
+    "newScientificallyProvenPublisherAnswerDefects": [],
+    "sourceStemsAndPrintedAnswersUnchanged": true,
+    "teacherIndependentScienceApproval": "PENDING",
+    "teacherCognitiveSloApproval": "PENDING",
+    "teacherSolvedNumericalEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "originalFigureFilesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
