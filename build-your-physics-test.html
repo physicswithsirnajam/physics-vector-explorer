@@ -389,8 +389,13 @@
 
     function setupUnits() {
       const params=new URLSearchParams(location.search),raw=params.get('units');
-      const selected=raw===null?[/^[1-6]$/.test(params.get('unit')||'')?Number(params.get('unit')):1]:
+      const requestedUnit=params.get('unit')||'';
+      const studyOnly=/^[78]$/.test(requestedUnit)?Number(requestedUnit):null;
+      const selected=raw===null?(studyOnly?[]:[/^[1-6]$/.test(requestedUnit)?Number(requestedUnit):1]):
         raw.split(',').map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=6);
+      if(studyOnly){
+        $('unit7-8-bank-hold').textContent='You requested Unit '+studyOnly+'. Its unscored lessons and simulations are available above, but its MCQ question bank is not approved or published. No unit was selected for Test Builder practice.';
+      }
       const checked=new Set(selected);
       $('units').innerHTML=unitNames.map((name,i)=>{
         const n=i+1,live=n<=6,note=n===6?'Topics 6.1–6.7 ONLY · 560 public provisional MCQs'
