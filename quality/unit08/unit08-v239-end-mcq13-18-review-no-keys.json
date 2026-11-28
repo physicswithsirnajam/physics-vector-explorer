@@ -1,0 +1,210 @@
+{
+  "schema": "psn-nbf-grade11-unit08-end-exercise-mcq-qc-v239",
+  "version": "V239",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      151,
+      152
+    ],
+    "exercise": "Original Unit 8 end MCQs 13–18",
+    "batchNumbers": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "reviewMode": "original scanned textbook pp151–152 and Figure in MCQ14 visually inspected; no OCR"
+  },
+  "officialFramework": "V224 original FBISE HSSC-I domain C inventory; exact printed P-12-C-01 anomaly retained; candidate item mapping NOT academic certification",
+  "priorInventory": "V235 full 18-item original MCQ source inventory; V237 originals 1–6 and V238 originals 7–12 preserved",
+  "scope": "review-only 6 records; no original question stems, options, printed figure, answer letters or scored content",
+  "items": [
+    {
+      "sourceNumber": "13",
+      "printedPages": [
+        151
+      ],
+      "focus": "thermal-equilibrium temperature criterion",
+      "sourceTopic": "8.1",
+      "candidateSummativeSlo": "P-12-C-01",
+      "candidateFrameworkCognitive": "Knowledge",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct concept; printed P-12-C-01 code anomaly must remain unchanged pending official ruling",
+      "scienceReview": "thermal equilibrium requires equal temperatures; relative motion, pressure differences and elastic collisions are not universally excluded",
+      "contentAmendment": "not required",
+      "academicHold": "official code anomaly and cognitive level need teacher confirmation before graded use",
+      "reason": "Equal temperature is the defining thermal-equilibrium criterion in the original source and the official outcome description. The framework prints P-12-C-01 within a Grade XI domain; never silently normalize to P-11-C-01.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "14",
+      "printedPages": [
+        151
+      ],
+      "focus": "isothermal pressure–volume figure and internal energy",
+      "sourceTopic": "8.1 / 8.3",
+      "candidateSummativeSlo": "P-11-C-12",
+      "additionalCandidateSlo": "P-11-C-10",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "conceptual internal energy plus graph interpretation; conditional on ideal-gas model and original diagram",
+      "scienceReview": "printed P–V curve is labelled constant T but does not state an ideal-gas model; constant T implies zero internal-energy change for an ideal gas, not for every real fluid",
+      "contentAmendment": "compulsory model qualification and figure preservation before graded use",
+      "academicHold": "do not choose or publish an answer until ideal-gas scope and a validated original-equivalent P–V figure are approved",
+      "reason": "The graph on p.151 is required evidence of an isothermal trajectory. A real substance can have internal-energy dependence on volume at constant temperature. The intended inference requires stating that the working substance behaves as an ideal gas; dropping the graph from a digital test also destroys necessary context.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentRevisionPrinciple": "Create an independently worded ideal-gas isothermal-curve question with a separately validated accessible pressure–volume diagram; keep the publisher figure in the source only.",
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "15",
+      "printedPages": [
+        151
+      ],
+      "focus": "internal energy as a path-independent state property",
+      "sourceTopic": "8.1 / 8.4",
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "observedCognitive": "Understanding",
+      "sloFit": "no directly authenticated outcome in the V224 Unit8 inventory that assesses this multiple-option analogy as worded",
+      "scienceReview": "changes in kinetic energy and gravitational potential energy can each depend only on final and initial states, making two printed analogies potentially correct",
+      "contentAmendment": "compulsory rewrite or exclude from single-key assessment",
+      "academicHold": "multiple physically defensible answer alternatives; do not publish a single correct-option letter",
+      "reason": "For a fixed-mass system, kinetic energy depends on speed and gravitational potential energy in a conservative gravitational field depends on position. Both changes are endpoint-dependent, as is internal-energy change. Without restricting the intended comparison, the source offers more than one viable analogy.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentRevisionPrinciple": "Write a distinct question directly testing that internal energy is a state function, with one unambiguously correct alternative and an authenticated theory outcome.",
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "16",
+      "printedPages": [
+        151
+      ],
+      "focus": "Boltzmann constant relationship",
+      "sourceTopic": "8.1",
+      "candidateSummativeSlo": "P-11-C-04",
+      "candidateFrameworkCognitive": "Knowledge",
+      "observedCognitive": "Knowledge",
+      "sloFit": "direct original framework relation k=R/N_A",
+      "scienceReview": "original textbook p.130 explicitly defines k=R/N_A; the printed options on p.151 distinguish N_A from an undefined N_o/zero-like symbol",
+      "contentAmendment": "optional notation legibility review",
+      "academicHold": "confirm the N_o-like denominator in one printed distractor is typographically distinguishable and not a second defined symbol for Avogadro constant",
+      "reason": "The primary chapter establishes Avogadro's number using N_A. Another printed option uses a symbol resembling N_o or N_0; it has not been defined as synonymous in the checked pages. The source appears to have an intended distinct answer, but a digital recreation must not blur the subscripts.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "17",
+      "printedPages": [
+        151,
+        152
+      ],
+      "focus": "thermal expansion of hollow and solid spheres",
+      "sourceTopic": "source end exercise: thermal expansion comparison",
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "observedCognitive": "Understanding",
+      "sloFit": "no direct thermal-expansion summative outcome among V224 Unit8 domain C outcomes; teacher must verify any other applicable official framework domain before assessed use",
+      "scienceReview": "same material, same initial external dimensions and equal uniform temperature rise imply the same fractional expansion of corresponding outer lengths, independent of hollowness",
+      "contentAmendment": "optional physical-assumptions note; compulsory summative SLO approval",
+      "academicHold": "retain complete item across printed pp.151–152; do not include in scored Unit8 bank without authenticated summative SLO match",
+      "reason": "The question's last option continues onto p.152, so one-page extraction leaves the original four choices incomplete. Under uniform expansion of identical material and external dimensions, outer linear expansion does not depend on whether the sphere is hollow. The present Unit8 official domain inventory has no direct thermal-expansion row.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentRevisionPrinciple": "If relevant curriculum coverage is authenticated, construct an original item explicitly stating equal initial external dimensions and uniform temperature change.",
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "18",
+      "printedPages": [
+        152
+      ],
+      "focus": "different thermal expansion rates across materials",
+      "sourceTopic": "source end exercise: material-specific thermal expansion",
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "observedCognitive": "Knowledge",
+      "sloFit": "no directly matched summative thermal-expansion row in the V224 Unit8 domain; independently authenticate assessment mapping",
+      "scienceReview": "different materials generally have different thermal-expansion coefficients; expansion does not generally increase mass/weight and usually lowers bulk density when mass is constant",
+      "contentAmendment": "no scientific amendment required; compulsory assessment-framework mapping before scored use",
+      "academicHold": "source concept is sound, but no direct V224 Unit8 summative outcome was established for this thermal-expansion item",
+      "reason": "The printed alternatives support a physically meaningful material-dependence principle. However, textbook placement alone does not establish the question as assessable under the confirmed Heat and Thermodynamics framework outcomes, which do not list thermal expansion separately.",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "candidateOptionPublished": false
+    }
+  ],
+  "batchAudit": {
+    "observedCount": 6,
+    "fullOriginalEndMcqInventoryCoveredThrough": "18 of 18 indexed in three preliminary QC batches (V237–V239)",
+    "compulsoryContentClarificationBeforeGradedUse": [
+      "14",
+      "15"
+    ],
+    "optionalContentTeachingNotes": [
+      "16",
+      "17"
+    ],
+    "scientificContentNoAmendment": [
+      "13",
+      "18"
+    ],
+    "compulsorySummativeFrameworkOrPrintedCodeResolution": [
+      "13",
+      "17",
+      "18"
+    ],
+    "figureOrSplitPageCompleteness": [
+      "14",
+      "17"
+    ],
+    "newV239ReviewFlagsBeyondV235": [
+      "15"
+    ],
+    "earlierV235ReviewFlagsExpanded": [
+      "14",
+      "17"
+    ],
+    "sourceSloCodeAnomaly": "P-12-C-01 retained as printed; P-11-C-01 not authenticated",
+    "humanScienceApproval": "PENDING",
+    "humanSloCognitiveApproval": "PENDING",
+    "studentBank": "NOT-PUBLISHED",
+    "approvedAnswerKeys": false
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "approvedAnswerEdition": false,
+    "sourceImagesCopied": false,
+    "sourceStemsCopied": false,
+    "optionLettersPublished": false,
+    "ownerApproval": "HOLD"
+  }
+}

@@ -1,0 +1,42 @@
+name: Grade XI V239 Unit 8 Original End MCQs 13-18 Academic Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v239-end-mcq13-18-review-no-keys.json"
+      - "quality/unit08/unit08-v239-end-mcq13-18-academic-triage.md"
+      - "scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs"
+      - ".github/workflows/validate-grade11-v239-unit08-mcq13-18-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v239-end-mcq13-18-review-no-keys.json"
+      - "quality/unit08/unit08-v239-end-mcq13-18-academic-triage.md"
+      - "scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs"
+      - ".github/workflows/validate-grade11-v239-unit08-mcq13-18-review.yml"
+jobs:
+  original-source-mcqs13-18-review-no-grade-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check source-linked QC records and test script syntax
+        run: |
+          node --check scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v239-end-mcq13-18-review-no-keys.json','utf8'))"
+      - name: V239 source MCQs 13-18 including Figure and split-page continuity, ambiguous answers and SLO holds
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original MCQs 7-12 academic source QC
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original MCQs 1-6 academic source QC
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 all 50 original end-exercise item source records
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 original textbook and official FBISE SLO baseline
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve exact pinned Units1-6 2250 MCQ IDs options and keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
