@@ -1,0 +1,36 @@
+name: Grade XI V235 Unit 8 Original Exercise Source Inventory
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v235-original-exercises-inventory-no-keys.json"
+      - "quality/unit08/unit08-v235-exercise-inventory-qc.md"
+      - "scripts/test_grade11_v235_unit08_exercise_inventory.cjs"
+      - ".github/workflows/validate-grade11-v235-unit8-exercise-source-inventory.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v235-original-exercises-inventory-no-keys.json"
+      - "quality/unit08/unit08-v235-exercise-inventory-qc.md"
+      - "scripts/test_grade11_v235_unit08_exercise_inventory.cjs"
+      - ".github/workflows/validate-grade11-v235-unit8-exercise-source-inventory.yml"
+jobs:
+  source-exercises-metadata-and-release-gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate source-index metadata and test code
+        run: |
+          node --check scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v235-original-exercises-inventory-no-keys.json','utf8'))"
+      - name: V235 original 50 exercise items and 17 flagged discrepancies; preserve holds
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve original V224 textbook and FBISE source baseline
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve 2250 original pinned Units1-6 MCQ IDs options keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
