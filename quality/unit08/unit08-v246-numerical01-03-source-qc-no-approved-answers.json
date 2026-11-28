@@ -1,0 +1,235 @@
+{
+  "schema": "psn-nbf-grade11-unit08-numerical-source-qc-v246",
+  "version": "V246",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "problemPrintedPages": [
+      153
+    ],
+    "problemIds": [
+      "8.1",
+      "8.2",
+      "8.3"
+    ],
+    "supportingPrintedPages": [
+      130,
+      131,
+      134,
+      135,
+      144,
+      145
+    ],
+    "reviewMethod": "original scanned numerical section printed p153 directly inspected; printed answer values recorded separately; no OCR, verbatim problem stems or source scans republished"
+  },
+  "originalFramework": "V224 original printed FBISE HSSC-I theory outcome inventory; candidate SLO/cognitive mapping unapproved",
+  "parentInventory": "V235 visually indexed all 9 source numerical problems 8.1–8.9, including existing flags for 8.1–8.3",
+  "scope": "internal teacher-facing source and conditional arithmetic QC for numerical problems 8.1–8.3, not published model solutions",
+  "items": [
+    {
+      "sourceNumber": "8.1",
+      "printedPages": [
+        153
+      ],
+      "focus": "balloon ideal-gas mole count",
+      "sourceTopic": "8.1.2 Ideal Gas Equation and its Applications",
+      "sourceCoveragePages": [
+        130,
+        131
+      ],
+      "printedAnswer": "0.3 moles",
+      "printedGiven": {
+        "radius": "10 cm",
+        "pressure": "180 kPa",
+        "temperature": "room temperature (not numerically fixed)"
+      },
+      "candidateSummativeSlo": "P-11-C-03",
+      "candidateFrameworkCognitive": "Application",
+      "observedCognitive": "Application",
+      "sloFit": "direct ideal-gas equation in molar form for a gas of known volume, pressure and temperature",
+      "independentCheck": {
+        "type": "conditional-numerical",
+        "formula": "V=(4/3)πr³; n=PV/(RT)",
+        "quantitiesSI": {
+          "radiusMetres": 0.1,
+          "pressurePascals": 180000,
+          "volumeCubicMetres": 0.004188790204786391,
+          "gasConstantJPerMolKelvin": 8.314462618,
+          "assumedTemperatureKelvin": 300
+        },
+        "resultMoles": 0.3022773976313083,
+        "roundedResult": "0.3 mol",
+        "printedAnswerConsistency": "consistent under 300 K room temperature and ABSOLUTE 180 kPa pressure",
+        "alternateTemperatureKelvin": 293.15,
+        "alternateMoles": 0.30934067640932117,
+        "gaugePressureCaveat": "If 180 kPa is gauge rather than absolute pressure, add ambient absolute pressure before using ideal gas; then result is not 0.3 mol."
+      },
+      "reviewClassification": "compulsory assumptions note, no compelled rewrite of original problem",
+      "compulsoryAssumptionsBeforeApprovedSolution": true,
+      "compulsorySloCognitiveReview": false,
+      "independentScience": "A spherical balloon of radius 0.10 m has volume (4π/3)(0.10 m)³≈4.18879×10⁻³ m³. With P_abs=1.80×10⁵ Pa, T≈300 K and R≈8.31446 J mol⁻¹ K⁻¹, n≈0.30228 mol, compatible with the source's rounded 0.3 mol. The printed source does not give a numerical room temperature and does not label its pressure as absolute versus gauge. Both interpretations matter for reliable classroom reasoning.",
+      "reviewReason": "A numerical result can be reproduced only after selecting a reference temperature for 'room temperature' and interpreting the stated 180 kPa as absolute. About 293–303 K yields approximately 0.309–0.299 mol and rounds to 0.3 mol at one decimal. Balloon pressure is often reported as gauge pressure outside this exercise; the ideal-gas formula needs absolute pressure. Preserve original radius 10 cm exactly and convert cubic centimetres to cubic metres implicitly by converting radius first.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.2",
+      "printedPages": [
+        153
+      ],
+      "focus": "heat engine between water fixed points",
+      "sourceTopic": "8.8.1 Efficiency of Carnot Engine",
+      "sourceCoveragePages": [
+        144,
+        145
+      ],
+      "printedAnswer": "27%",
+      "printedGiven": {
+        "coldReservoir": "freezing point of water",
+        "hotReservoir": "boiling point of water",
+        "engineType": "heat engine; Carnot/reversible NOT explicitly stated"
+      },
+      "candidateSummativeSlo": "P-11-C-23",
+      "secondaryCandidateSlo": "P-11-C-16",
+      "candidateFrameworkCognitive": "Knowledge",
+      "secondaryFrameworkCognitive": "Knowledge + Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "Carnot efficiency upper-bound concept; source computational task exceeds printed Knowledge classification and does not specify reversible engine",
+      "independentCheck": {
+        "type": "conditional-maximum-efficiency",
+        "formula": "η_C,max=1−T_C/T_H",
+        "quantitiesSI": {
+          "coldKelvin": 273.15,
+          "hotKelvin": 373.15
+        },
+        "resultFraction": 0.26798874447273213,
+        "resultPercent": 26.798874447273214,
+        "roundedResult": "27%",
+        "printedAnswerConsistency": "matches reversible/Carnot maximum; real heat engine efficiency cannot be inferred from reservoir temperatures alone"
+      },
+      "reviewClassification": "compulsory reversible-engine qualification and cognitive/SLO mapping review",
+      "compulsoryAssumptionsBeforeApprovedSolution": true,
+      "compulsorySloCognitiveReview": true,
+      "independentScience": "For reservoirs at the normal freezing and boiling temperatures of water, T_C≈273.15 K and T_H≈373.15 K. The reversible Carnot upper bound is 1−273.15/373.15≈0.26799 or 26.8%, hence the printed 27% to whole percent. The source asks for a heat engine rather than naming a reversible Carnot engine. Actual engine efficiency could be below this maximum, subject to irreversibilities and operating conditions.",
+      "reviewReason": "Temperature difference by itself is insufficient to determine actual efficiency of an arbitrary heat engine. The printed answer is the ideal Carnot upper bound. Both the implicit reversibility condition and the cognitive level matter: using the symbolic ideal-efficiency equation numerically is Application, while the closest official P-11-C-23 outcome is recorded as Knowledge. Keep the source question and printed answer unchanged, but do not promote the result as universal without explicitly stating the model.",
+      "keepOriginal": true,
+      "addIndependentItemOption": true,
+      "independentRevisionPrinciple": "If desired, prepare a separately authored numerical specifying an ideal reversible Carnot engine with the same reservoir temperatures; retain the printed original unchanged.",
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.3",
+      "printedPages": [
+        153
+      ],
+      "focus": "gas volume change after 1 K increase",
+      "sourceTopic": "8.3.2 Charles's Law and 8.1.2 ideal gas equation",
+      "sourceCoveragePages": [
+        130,
+        131,
+        134,
+        135
+      ],
+      "printedAnswer": "0.37 m³",
+      "printedGiven": {
+        "amount": "one mole",
+        "pressure": "P (symbol only)",
+        "volume": "V, initially 100 m³",
+        "temperature": "T (symbol only)",
+        "temperatureIncrease": "1 K",
+        "processConstraint": "no statement of constant P or another constraint"
+      },
+      "candidateSummativeSlo": "P-11-C-09",
+      "secondaryCandidateSlo": "P-11-C-03",
+      "candidateFrameworkCognitive": "Understanding",
+      "secondaryFrameworkCognitive": "Application",
+      "observedCognitive": "Application",
+      "sloFit": "Charles's-law application would require explicitly constant absolute pressure; original supplied data do not determine a unique numerical ΔV",
+      "independentCheck": {
+        "type": "underdetermined",
+        "conditionalFormula": "at constant P and fixed n, ΔV=V_initial(ΔT/T_initial)",
+        "givenSI": {
+          "amountMoles": 1,
+          "initialVolumeCubicMetres": 100,
+          "temperatureRiseKelvin": 1
+        },
+        "conditionalDeltaVExpression": "100 m³·K / T_initial (in K)",
+        "assumedTemperatureToMatchAnswerKelvin": 273.15,
+        "conditionalResultAt273_15K": 0.36609921288669234,
+        "roundedConditionalResult": "0.37 m³",
+        "conditionalResultAt300K": 0.3333333333333333,
+        "printedAnswerConsistency": "0.37 m³ is consistent with assumed constant pressure and an unstated initial temperature around 273 K; not uniquely implied by printed data",
+        "impliedTemperatureIf0_37ExactKelvin": 270.27027027027026,
+        "missingIndependentlyRequired": [
+          "initial numerical temperature T_i",
+          "constraint on pressure/process, e.g. P constant"
+        ]
+      },
+      "reviewClassification": "compulsory underdetermination hold before marking a unique numerical result",
+      "compulsoryAssumptionsBeforeApprovedSolution": true,
+      "compulsorySloCognitiveReview": true,
+      "independentScience": "With one mole and PV=nRT, an initial state can be described symbolically by P, V and T, but without numeric P or T no numeric temperature is fixed by V=100 m³. If a constant-pressure process is imposed, Charles's law yields ΔV=V_iΔT/T_i=100/T_i m³ for T_i measured in kelvin, which is 0.3661 m³ only if T_i≈273.15 K. At 300 K the equally valid constant-pressure result is 0.3333 m³. If pressure is not held constant, even this conditional expression does not apply.",
+      "reviewReason": "The printed source does not give an initial numerical temperature and does not state constant pressure. Its answer of 0.37 m³ appears to assume both constant pressure and approximately 273 K, yet neither condition is present in the question stem. These are two distinct missing inputs/assumptions and cannot be repaired by rounding or by treating 'pressure P' as 'pressure kept at P'. Do not publish a single teacher key or alter the publisher question; seek teacher endorsement of a separately authored, fully specified practice variant.",
+      "keepOriginal": true,
+      "addIndependentItemOption": true,
+      "independentRevisionPrinciple": "Independently authored item must explicitly give an initial absolute temperature and say P remains constant, then calculate using ΔV=V_iΔT/T_i, with a clearly specified gas amount if needed.",
+      "studentRelease": "HOLD",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "approvedSolutionPublished": false
+    }
+  ],
+  "audit": {
+    "reviewedCount": 3,
+    "originalVisibleNumericalCount": 9,
+    "sourcePrintedAnswers": [
+      "0.3 moles",
+      "27%",
+      "0.37 m³"
+    ],
+    "independentlyConsistentOnlyWithStatedAssumptions": [
+      "8.1",
+      "8.2"
+    ],
+    "cannotDeriveUniquePrintedAnswer": [
+      "8.3"
+    ],
+    "compulsoryAssumptionOrAnswerQualifications": [
+      "8.1",
+      "8.2",
+      "8.3"
+    ],
+    "compulsorySloOrCognitiveReview": [
+      "8.2",
+      "8.3"
+    ],
+    "missingInputsNumerical8_3": [
+      "initial numerical temperature",
+      "constant-pressure process or equivalent constraint"
+    ],
+    "originalV235IssueFlags": [
+      "NUM-8.1",
+      "NUM-8.2",
+      "NUM-8.3"
+    ],
+    "originalQuestionsAndPrintedAnswersRetained": true,
+    "humanIndependentScienceApproval": "PENDING",
+    "humanSloCognitiveApproval": "PENDING",
+    "studentSolvedNumericalEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
