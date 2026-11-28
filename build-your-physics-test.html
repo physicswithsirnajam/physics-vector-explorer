@@ -71,6 +71,12 @@
     .unit-option { display:flex; gap:8px; align-items:flex-start; min-width:0; border-radius:8px; padding:9px 6px; font-size:12px; cursor:pointer; }
     .unit-option:hover { background:#edf5fb; }
     .unit-option.is-unavailable {opacity:.72;cursor:not-allowed;background:#f3f6fa;}
+    .study-links-v236 {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 22px}
+    .study-links-v236 article {padding:18px;border:1px solid var(--border);border-radius:13px;background:#fff}
+    .study-links-v236 h3 {font-size:17px;margin:0 0 7px}
+    .study-links-v236 p {color:var(--muted);font-size:13px;margin:0 0 12px}
+    .study-links-v236 a {display:inline-block;color:#075f79;font-weight:750;font-size:13px;margin-right:12px;margin-bottom:5px}
+    .study-links-v236 a:focus-visible {outline:3px solid #49b3d1;outline-offset:3px}
     .unit-status {display:block;color:#596d86;font-size:11px;margin-top:4px;}
     .unit-option input { flex:0 0 auto; margin-top:3px; accent-color:var(--accent); }
     .unit-option span { min-width:0; }
@@ -121,7 +127,7 @@
     .footer { text-align:center; color:var(--muted); padding:35px 10px; font-size:12px; }
     .sr-only {position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
     @media(max-width:850px) { .layout {grid-template-columns:1fr;} .summary { position:static; } }
-    @media(max-width:600px) { .wrap{padding:0 13px;} .topbar-inner{padding:15px 13px;} .header-status{font-size:10px; white-space:normal;} .brand-title{font-size:13px;} .brand-sub{font-size:10px;} .brand-logo{height:42px;width:42px;} .hero{padding:27px 0 20px;} .panel{padding:17px;} .two-col,.options,.units{grid-template-columns:1fr;} .unit-toolbar{align-items:flex-start;} .choice label{min-height:auto;} }
+    @media(max-width:600px) { .study-links-v236{grid-template-columns:1fr} .wrap{padding:0 13px;} .topbar-inner{padding:15px 13px;} .header-status{font-size:10px; white-space:normal;} .brand-title{font-size:13px;} .brand-sub{font-size:10px;} .brand-logo{height:42px;width:42px;} .hero{padding:27px 0 20px;} .panel{padding:17px;} .two-col,.options,.units{grid-template-columns:1fr;} .unit-toolbar{align-items:flex-start;} .choice label{min-height:auto;} }
     @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto;} *{transition:none!important;} }
   </style>
   <link rel="stylesheet" href="shared/navigation.css?v=58">
@@ -130,7 +136,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand"><div class="brand-mark"><img class="brand-logo" src="assets/branding/physics-with-sir-najam-logo.png" alt="Physics with Sir Najam logo"></div><div><div class="brand-title-row"><div class="brand-title">Physics with Sir Najam</div></div><div class="brand-sub">Interactive Practice &amp; Assessment Centre</div></div></div>
-      <span class="header-status"><span class="dot" aria-hidden="true"></span>Unit 1–5 Mixed MCQ Practice · V56</span>
+      <span class="header-status"><span class="dot" aria-hidden="true"></span>Units 1–6 MCQ Practice · Units 7–8 Study</span>
     </div>
   </header>
   <div class="wrap">
@@ -139,10 +145,25 @@
       <h1 id="page-title">Build Your Physics Test</h1>
       <p>Build MCQ practice tests from <strong>any combination of released Units 1–5 or the partial Unit 6 Topics 6.1–6.7 bank</strong>, or select one unit. Every selected unit contributes questions, with complete scenarios kept together when requested.</p>
       <div class="tags"><span class="tag">NBF textbook aligned</span><span class="tag">SLO focused</span><span class="tag">FBISE assessment aware</span><span class="tag">Mobile friendly</span></div>
-      <p style="margin-top:16px"><a href="student-guide.html" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">New to the portal? Read our five-unit Student Start Guide →</a></p>
+      <p style="margin-top:16px"><a href="student-guide.html" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">New to the portal? Read our updated Student Start Guide →</a></p>
       <p style="margin-top:16px"><a href="assessment-blueprint/" style="display:inline-block;color:#0b5c77;font-weight:800;text-decoration:underline">Explore the official Grade XI FBISE Blueprint &amp; Bank Readiness →</a></p>
     </section>
     <div class="notice" role="note"><span class="notice-icon" aria-hidden="true">ⓘ</span><span><strong>Single-unit and mixed-unit MCQ practice are available.</strong> Select Units 1–5 and/or the 560 provisional Unit 6 Topics 6.1–6.7 questions, and choose a question count. The test automatically checks each selected unit and will not start if an eligible combination cannot be assembled.</span></div>
+    <section class="panel" id="unit7-8-study-access" aria-labelledby="unit7-8-study-title" style="margin-bottom:22px">
+      <div class="panel-heading"><div class="step">↗</div><div>
+        <h2 id="unit7-8-study-title">Study Units 7 and 8 — learning materials available</h2>
+        <p>These units have source-based public lessons and simulations, but their reviewed MCQ banks are not yet available for Test Builder practice. Choose a lesson below; no graded score is generated.</p>
+      </div></div>
+      <div class="study-links-v236">
+        <article><h3>Unit 7 · Physics of Solids</h3><p>Three unscored topic lessons (7.1–7.3) and two existing simulations. Teacher review is pending; no Unit 7 MCQ Test Builder bank is published.</p>
+          <a href="portal/exam-quick-access.html#unit7-unscored-study-preview">Browse Unit 7 lessons</a>
+          <a href="portal/simulations.html?unit=7">Explore simulations</a></article>
+        <article><h3>Unit 8 · Heat and Thermodynamics</h3><p>Ten unscored topic lessons (8.1–8.10), worked source-based examples, learning activities and four existing simulations. Exercise answer QC and MCQ-bank approval remain pending.</p>
+          <a href="portal/exam-quick-access.html#unit8-unscored-study-preview">Browse Unit 8 lessons</a>
+          <a href="portal/simulations.html?unit=8">Explore simulations</a></article>
+      </div>
+      <p class="help" id="unit7-8-bank-hold">Test Builder currently supports 2,250 provisional MCQs across Units 1–6. Units 7 and 8 are displayed below as study-only and cannot be selected for scored or unscored MCQ tests until their question banks pass source, answer and teacher approval.</p>
+    </section>
     <div class="layout">
       <form id="builderForm" class="stack" novalidate>
         <section class="panel" aria-labelledby="scope-title">
@@ -154,7 +175,7 @@
           <div class="field">
             <div class="unit-toolbar"><span class="label">Choose released units or the partial Unit 6 topic preview</span><div class="inline-actions"><button type="button" class="text-button" id="allUnits">Select all six</button><button type="button" class="text-button" id="clearUnits">Clear</button></div></div>
             <div id="units" class="units" role="group" aria-label="Grade XI Physics units"></div>
-            <small class="help">Select one, several or all six supported banks. Unit 6 currently provides Topics 6.1–6.7 only (560 selectable MCQs; all six textbook figure items now selectable with original diagrams), not full-unit coverage. Default balanced selection shares MCQs between selected units. Each selected unit must contribute an eligible question.</small>
+            <small class="help">Units 7 and 8 are visible but disabled for MCQ testing; use their public lesson links above. Select one, several or all six supported banks. Unit 6 currently provides Topics 6.1–6.7 only (560 selectable MCQs; all six textbook figure items now selectable with original diagrams), not full-unit coverage. Default balanced selection shares MCQs between selected units. Each selected unit must contribute an eligible question.</small>
           </div>
           <div class="field"><label class="label" for="slo">Specific SLO code (optional)</label><input type="text" id="slo" maxlength="40" placeholder="Example: P-11-B-05" spellcheck="false"><small class="help">Leave blank for all eligible SLOs. <strong>Unit 4 caution:</strong> the additional 560 corrected MCQs currently carry topic-level SLO candidates, NOT individually verified FBISE mappings. A specific SLO filter can include related questions from the wider topic. Scores are not certified individual-SLO mastery. <strong>Unit 6 caution:</strong> its topic-level B-33/B-34 and B-41/B-42 references are verified, but per-question SLO and cognitive mappings are NOT verified. Use All learning outcomes, no specific SLO, and Unclassified in source for this partial bank.</small></div>
         </section>
@@ -208,7 +229,7 @@
         <div class="plan-output" id="plan-output" aria-live="polite"><h3>✓ Test plan reviewed</h3><p id="plan-description"></p><p>Select any combination of Units 1–6. Unit 6 has no common-stimulus groups yet, so scenario-only tests including Unit 6 cannot start; grouped tests with other units may include its standalone questions.</p><div class="buttons" style="margin-top:13px"><button type="button" id="copy" class="secondary">Copy test plan</button><button type="button" id="download" class="secondary">Save plan (.json)</button></div><p id="copy-status" class="help" role="status" aria-live="polite"></p><div id="pilotLaunch" class="plan-output" style="display:block;margin-top:12px"><strong>Grade XI Single- and Mixed-Unit MCQ Practice</strong><p id="pilotAvailability">Pilot available for selected settings only.</p><a id="pilotStartLink" class="primary" style="display:none;text-decoration:none" href="practice-engine/index.html">Start My MCQ Practice →</a></div></div>
       </aside>
     </div>
-    <footer class="footer">Physics with Sir Najam • NBF Physics XI • FBISE-aligned learning • Test Builder V89 · Units 1–5 plus partial Unit 6 Topics 6.1–6.7 self-practice · Full official exam mode not yet active</footer>
+    <footer class="footer">Physics with Sir Najam • NBF Physics XI • Provisional MCQ Test Builder: Units 1–6 only (2,250 questions) • Unit 7–8 public unscored lessons available; MCQ banks held for academic approval • Official full exam mode not yet active</footer>
   </div>
   <script src="shared/practice-bank-adapter-v55.js?v=116"></script>
   <script src="shared/multi-unit-planner-v56.js?v=77"></script>
@@ -368,11 +389,20 @@
 
     function setupUnits() {
       const params=new URLSearchParams(location.search),raw=params.get('units');
-      const selected=raw===null?[/^[1-6]$/.test(params.get('unit')||'')?Number(params.get('unit')):1]:
+      const requestedUnit=params.get('unit')||'';
+      const studyOnly=/^[78]$/.test(requestedUnit)?Number(requestedUnit):null;
+      const selected=raw===null?(studyOnly?[]:[/^[1-6]$/.test(requestedUnit)?Number(requestedUnit):1]):
         raw.split(',').map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=6);
+      if(studyOnly){
+        $('unit7-8-bank-hold').textContent='You requested Unit '+studyOnly+'. Its unscored lessons and simulations are available above, but its MCQ question bank is not approved or published. No unit was selected for Test Builder practice.';
+      }
       const checked=new Set(selected);
       $('units').innerHTML=unitNames.map((name,i)=>{
-        const n=i+1,live=n<=6,note=n===6?'Topics 6.1–6.7 ONLY · 560 public provisional MCQs':live?'Available for MCQ tests':'Unit in preparation';
+        const n=i+1,live=n<=6,note=n===6?'Topics 6.1–6.7 ONLY · 560 public provisional MCQs'
+          :live?'Available for MCQ tests'
+          :n===7?'3 unscored lessons · MCQ bank pending approval'
+          :n===8?'10 unscored lessons · MCQ bank pending approval'
+          :'Unit in preparation';
         return '<label class="unit-option '+(live?'':'is-unavailable')+'"><input type="checkbox" name="unit" value="'+n+'" '+(live&&checked.has(n)?'checked':'')+' '+(live?'':'disabled')+'><span><span class="unit-n">Unit '+n+'</span> — '+name+'<small class="unit-status">'+note+'</small></span></label>';
       }).join('');
     }

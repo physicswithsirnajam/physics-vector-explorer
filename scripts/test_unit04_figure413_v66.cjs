@@ -166,7 +166,7 @@ async function browserCheck(){
   assert.match(await page.locator('#unitStats').textContent(),/Unit 4/);
   assert.equal(await page.locator('#save-result').isDisabled(),true);
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='1690');
+  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='2250');
   assert.match(await page.locator('[data-unit="4"] .count').textContent(),/640 MCQs/);
   assert.deepEqual(errors,[]);
   console.log('PASS V66 Chromium: exact source Q38, full Q69–72 figure scenario, loaded SVG, mobile, 640 U4, 860 mixed and 1690 guide; no saved scores');

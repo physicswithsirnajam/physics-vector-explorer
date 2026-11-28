@@ -134,7 +134,7 @@ async function browserTest(){
   await page.waitForFunction(()=>document.getElementById('availabilityCount')?.textContent.includes('844 eligible MCQ'));
   assert.equal(await page.locator('#quickStartLink').isVisible(),true);
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='1690');
+  await page.waitForFunction(()=>document.getElementById('question-total')?.textContent==='2250');
   await page.setViewportSize({width:390,height:844});
   const dim=await page.evaluate(()=>({view:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(dim.scroll<=dim.view+2,'390px horizontal overflow '+JSON.stringify(dim));

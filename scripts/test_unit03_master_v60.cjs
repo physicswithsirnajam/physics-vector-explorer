@@ -138,7 +138,7 @@ async function browserAudit(){
   await page.waitForFunction(()=>document.getElementById('availabilityCount').textContent.includes('844 eligible MCQ'));
   assert.equal(await page.locator('input[name="unit"]:checked').count(),3);
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1690');
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='2250');
   assert.match(await page.locator('[data-unit="3"] .count').textContent(),/220 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const width=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);

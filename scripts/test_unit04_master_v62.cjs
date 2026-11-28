@@ -168,7 +168,7 @@ async function testBrowser(){
   assert.equal(await page.locator('#save-result').isDisabled(),true);
   await page.screenshot({path:path.join(shots,'03-mixed-unit3-4-results.png')});
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1690');
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='2250');
   assert.match(await page.locator('[data-unit="4"] .count').textContent(),/640 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const size=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
