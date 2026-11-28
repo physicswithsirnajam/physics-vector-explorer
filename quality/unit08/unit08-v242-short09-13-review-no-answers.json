@@ -1,0 +1,190 @@
+{
+  "schema": "psn-nbf-grade11-unit08-short-response-qc-v242",
+  "version": "V242",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      152
+    ],
+    "questionIds": [
+      "8.9",
+      "8.10",
+      "8.11",
+      "8.12",
+      "8.13"
+    ],
+    "reviewMode": "owner original NBF printed p152 visually examined; all (i)-(iv) of Q8.13 checked; no source stems reproduced"
+  },
+  "originalFramework": "V224 original-source FBISE HSSC-I domain C summative SLO index; candidate item mapping not teacher-certified",
+  "parentInventory": "V235 original 13 short-response questions on printed page 152, unchanged",
+  "scope": "preliminary source-linked metadata and scientific explanation triage only; no publisher source stems, full solutions, keys or student assessments",
+  "items": [
+    {
+      "sourceNumber": "8.9",
+      "printedPages": [
+        152
+      ],
+      "focus": "whether a path can be adiabatic and isothermal",
+      "sourceTopic": "8.4 First Law; adiabatic versus isothermal",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "conditional First Law reasoning: simultaneous Q=0 and constant T; not a directly named combined-process outcome",
+      "scienceReview": "An adiabatic process has Q=0 while an isothermal process has constant temperature. Both conditions can coexist. For a fixed amount of ideal gas freely expanding into vacuum in a well-insulated chamber, Q=0, external work is zero, ΔU=0, and the equilibrium initial and final temperatures are equal; the intervening irreversible expansion is not a quasistatic isothermal P–V path.",
+      "amendment": "compulsory distinction between endpoint temperature and reversible isothermal trajectory in future explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "A categorical 'never' would be wrong, while a casual free-expansion example can also mislead by treating an irreversible non-equilibrium transient as a reversible isothermal curve. The explanation must state which temperatures and system boundaries are compared and make clear the limited assumptions of ideal-gas free expansion. Mapping to the printed First Law outcome is indirect.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.10",
+      "printedPages": [
+        152
+      ],
+      "focus": "entropy after a Carnot engine cycle",
+      "sourceTopic": "8.8 Carnot engine and 8.10 entropy",
+      "candidateSummativeSlo": "P-11-C-16",
+      "additionalCandidateSlo": "P-11-C-14",
+      "candidateFrameworkCognitive": "Knowledge + Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "Carnot cycle/reversibility principles, but the printed outcome descriptors do not directly specify cycle entropy accounting",
+      "scienceReview": "A working substance returning to its original state after a complete Carnot cycle has zero net entropy change, because entropy is a state function. For the ideal reversible Carnot engine, entropy removed from the hot reservoir is balanced by entropy delivered to the cold reservoir, so total entropy generation is zero. An irreversible cyclic device may generate entropy in the combined system and surroundings although the working substance still has zero net state change.",
+      "amendment": "compulsory system-boundary and reversible-cycle qualification in future explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "The wording asks whether entropy of a Carnot engine increases each cycle; a reply must distinguish the cyclic working fluid from the complete engine plus reservoirs, and must not equate individual reservoir entropy changes with total entropy generation. Reversible Carnot cycle and generic irreversible engine are different cases; the exact candidate SLO fit needs teacher review.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.11",
+      "printedPages": [
+        152
+      ],
+      "focus": "entropy effects of friction",
+      "sourceTopic": "8.10 Entropy and energy degradation",
+      "candidateSummativeSlo": "P-11-C-20",
+      "additionalCandidateSlo": "P-11-C-19",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct natural energy degradation and entropy production idea, with subsystem boundary caveat",
+      "scienceReview": "Friction is dissipative and generates non-negative entropy. For an isolated whole undergoing friction, total entropy increases. The entropy of a chosen non-isolated subsystem can change differently if it exchanges heat or matter with the surroundings; therefore positive entropy generation need not imply every subsystem has a positive net entropy change.",
+      "amendment": "compulsory entropy-generated versus subsystem-entropy-change distinction before assessed explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "The original asks whether the entropy of 'a system' increases or decreases due to friction. For an isolated system, friction produces entropy, but without defining the system boundary and heat exchanges, the net system entropy change cannot be inferred from friction alone. A qualified response should preserve the common isolated-whole result without making an unbounded absolute claim.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.12",
+      "printedPages": [
+        152
+      ],
+      "focus": "refrigerator versus air conditioner",
+      "sourceTopic": "8.9 Refrigerator and heat-pump applications",
+      "candidateSummativeSlo": "P-11-C-17",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct refrigerator as reversed heat engine and comparison with space cooling",
+      "scienceReview": "Both refrigerators and air conditioners use external work to transport heat from a cooler region to a warmer environment, typically with the same vapour-compression refrigeration principle. Refrigerators primarily cool a small insulated food compartment; air conditioners typically cool/dehumidify occupied rooms or buildings. Hardware, refrigerants, control approaches and environmental arrangements vary, so no single detailed hardware difference is universal.",
+      "amendment": "optional application-scope qualification; no original-source amendment recommended",
+      "compulsoryExplanationBeforeAssessedUse": false,
+      "compulsoryMappingReview": false,
+      "reason": "The question is answerable as a qualitative compare/contrast: the central reversed-heat-engine mechanism is common, while the target region, purpose and often moisture control differ. Avoid claiming that air conditioning and food refrigeration necessarily use fundamentally different cycles; implementations may be identical in principle.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.13",
+      "printedPages": [
+        152
+      ],
+      "focus": "four-part thermos shaking energy analysis",
+      "sourceTopic": "8.4 First Law and 8.1 temperature/internal energy",
+      "subparts": [
+        "i",
+        "ii",
+        "iii",
+        "iv"
+      ],
+      "candidateSummativeSlo": "P-11-C-08",
+      "additionalCandidateSlo": "P-11-C-12",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Application",
+      "sloFit": "First Law applied to a nearly insulated coffee system, with temperature-versus-internal-energy as a related secondary outcome",
+      "scienceReview": "Four linked parts must be assessed together: mechanical shaking can transfer work into coffee through fluid movement and viscous dissipation; after motion subsides, some work may raise coffee internal energy; its temperature can rise slightly for positive effective heat capacity without phase change; an ideal thermos exchanges negligible heat with outside, so work and heat must not be confused. Actual work and heating are shared with container and depend on filling, shaking, losses and observation interval.",
+      "amendment": "compulsory four-subpart source completeness and thermos idealisation in future marking explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "The original has (i) whether work is done on the coffee, (ii) whether coffee internal energy increases, (iii) whether its temperature rises and (iv) whether it receives outside heat. A digital or solved edition that drops a subpart or equates mechanical work with exterior heat is incomplete. The vessel is only approximately adiabatic and not all shaking work becomes coffee internal energy; a small rise may be below instrument resolution.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 5,
+    "sourceTotalShortResponseQuestions": 13,
+    "allOriginalShortQuestionsCovered": "13/13 across V240–V242",
+    "requiresCompulsoryExplanationQualification": [
+      "8.9",
+      "8.10",
+      "8.11",
+      "8.13"
+    ],
+    "optionalTeachingNote": [
+      "8.12"
+    ],
+    "requiresCognitiveOrDirectSloReview": [
+      "8.9",
+      "8.10",
+      "8.13"
+    ],
+    "fourPartSourceCompleteness": [
+      "8.13"
+    ],
+    "v235ExistingShortFlagsExpanded": [],
+    "newEstablishedPublisherStemErrors": [],
+    "noSourceStemRewrites": true,
+    "printedSourceNumberingPreserved": true,
+    "humanScienceReview": "PENDING",
+    "humanSloCognitiveReview": "PENDING",
+    "studentAnswerEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
