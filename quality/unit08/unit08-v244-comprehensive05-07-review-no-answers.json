@@ -1,0 +1,178 @@
+{
+  "schema": "psn-nbf-grade11-unit08-comprehensive-qc-v244",
+  "version": "V244",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "questionPrintedPages": [
+      152
+    ],
+    "chapterReferencePages": [
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "questionIds": [
+      "8.5",
+      "8.6",
+      "8.7"
+    ],
+    "figureReferences": [
+      "Figure 8.14 — Heat engine schematic (p.140)",
+      "Figure 8.16 — Carnot P–V cycle (p.143)",
+      "Figure 8.17 — Carnot steps (p.143)"
+    ],
+    "reviewMode": "original scanned p.152 question wording and printed chapter pp.140–145 re-rendered/re-read visually; no OCR, no publisher stems or source graphics republished"
+  },
+  "originalFramework": "V224 original printed FBISE HSSC-I summative Domain C outcomes; mapping/cognitive review is independent candidate, not certified",
+  "parentInventory": "V235 original 10 visible comprehensive source questions, with 8.8 skipped between 8.7 and 8.9; V243 Q8.1–8.4 remains unchanged",
+  "scope": "review-only metadata for three original comprehensive questions; no verbatim publisher prompts, figures, full answers, student MCQs or score changes",
+  "items": [
+    {
+      "sourceNumber": "8.5",
+      "printedPages": [
+        152
+      ],
+      "focus": "heat engine",
+      "sourceCoveragePages": [
+        140,
+        141
+      ],
+      "sourceTopic": "8.5 Heat Engine",
+      "candidateSummativeSlo": "P-11-C-13",
+      "candidateFrameworkCognitive": "Knowledge",
+      "observedCognitive": "Understanding",
+      "sloFit": "the printed outcome targets the operating principle (Knowledge), while the comprehensive source prompt 'explain the working' ordinarily demands a connected mechanism and energy balance",
+      "scienceReview": "The source's standard cyclic heat-engine model has a hot reservoir at T_H, a colder reservoir at T_C, and a working substance. During a complete cycle the engine absorbs heat Q_H, performs net work W_by and rejects heat Q_C with Q_H=W_by+Q_C for positive heat magnitudes. The cyclic working fluid has ΔU_cycle=0. Thermal efficiency is W_by/Q_H. Distinguish the idealized reservoir schematic from actual petrol engines, which are open systems and require careful cycle/energy accounting.",
+      "amendment": "compulsory cycle/work/heat magnitude and engine-model qualification in any future teacher answer",
+      "reason": "Original textbook pp.140–141 explains Figure 8.14 and writes W=Q1−Q2. A teacher answer must label heat input and heat rejected as positive magnitudes and must not treat W as the net result for any arbitrary noncyclic step, where ΔU may be nonzero. The source's 'every heat engine must have three parts' is a useful idealised schematic; a modern open-system internal-combustion engine should not be represented as literally identical to a closed working-fluid Carnot loop. The claimed historical priority of Carnot as 'first heat engine' is outside the requested physics mechanism and should not be repeated as independently verified history.",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.6",
+      "printedPages": [
+        152
+      ],
+      "focus": "Second Law",
+      "sourceCoveragePages": [
+        142,
+        143
+      ],
+      "sourceTopic": "8.7 Second Law of Thermodynamics",
+      "candidateSummativeSlo": "P-11-C-15",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct printed outcome on the second law, including the Kelvin–Planck and Clausius formulations and physical interpretation",
+      "scienceReview": "The Kelvin–Planck statement rules out a cyclic engine whose sole result is to absorb heat from one reservoir and convert all of it into net work. The Clausius statement rules out a cyclic device whose sole effect is to transfer heat from a colder body to a hotter body without any compensating effect (such as work input). Refrigerators move heat from cold to hot by using work. These statements concern the directional/possibility limits imposed by the Second Law; the First Law alone enforces energy conservation and is insufficient to enforce those limits.",
+      "amendment": "compulsory sole-effect/cyclic qualification and equivalence-aware explanation before teacher marking",
+      "reason": "The original source printed p.142 labels the statements as Lord Kelvin and Rudolf Clausius and phrases the first as single-reservoir heat fully converted to work while 'no change' remains in the working system. Without the essential cyclic-and-sole-result condition, students may wrongly conclude that no heat can ever be converted completely into work during a finite noncyclic transformation. Clausius likewise does not prohibit refrigerated cold-to-hot transfer when external work supplies a compensating effect. Preserve the publisher question and distinguish these as equivalent formulations of one Second Law rather than two independent principles.",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.7",
+      "printedPages": [
+        152
+      ],
+      "focus": "Carnot engine and efficiency",
+      "sourceCoveragePages": [
+        143,
+        144,
+        145
+      ],
+      "sourceTopic": "8.8 Carnot's Engine; 8.8.1 Efficiency; 8.8.2 Carnot Theorem",
+      "candidateSummativeSlo": "P-11-C-16",
+      "additionalCandidateSlo": "P-11-C-23",
+      "candidateFrameworkCognitive": "Knowledge + Understanding",
+      "secondaryFrameworkCognitive": "Knowledge",
+      "observedCognitive": "Understanding + Application",
+      "sloFit": "direct working-principle outcome, while explaining/deriving the efficiency relationship may demand more than the printed Knowledge-level efficiency-limit outcome",
+      "scienceReview": "The original Carnot-cycle model is reversible and runs between two absolute reservoir temperatures T_H>T_C>0, on a closed ideal-gas working substance. In source Figures 8.16–8.17, its four reversible legs are (1) isothermal expansion absorbing Q_H at T_H, (2) adiabatic expansion from T_H to T_C, (3) isothermal compression rejecting Q_C at T_C, (4) adiabatic compression back to T_H. For one complete cycle ΔU_cycle=0, so W_net=Q_H−Q_C and η=W_net/Q_H=1−Q_C/Q_H. Only for a reversible Carnot cycle is Q_C/Q_H=T_C/T_H, yielding η_C=1−T_C/T_H with kelvin temperatures. W_net is the oriented enclosed area on the P–V diagram. Carnot's theorem makes η_C the reversible upper bound for engines between those reservoirs; real engines are generally less efficient.",
+      "amendment": "compulsory reversible-ratio derivation, all four step/diagram continuity and Kelvin/model qualification; teacher review of observed cognitive demand",
+      "reason": "Original pp.143–145 give the four steps, original Figures 8.16 and 8.17, Eq. 8.8 for net cycle work and Eq. 8.9 for Carnot efficiency. The source says broadly 'heat Q is proportional to absolute temperature T' before substituting the temperature ratio; this must be read specifically as a ratio for the reversible heat exchanges of the Carnot cycle, not as universal Q∝T. The printed p.144 'Do You Know?' box distinguishes ideal- versus real-gas internal energy and cannot justify arbitrary real-gas isothermal ΔU=0. The original question requests defining/explaining Carnot's engine and its efficiency relation; an authentic derivation and labelled curve should be explained carefully, but no copied publisher figure or unapproved answer edition may be published. The secondary printed outcome P-11-C-23 is Knowledge while this derived calculation and step explanation can be Application-level.",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "keepOriginal": true,
+      "addIndependentItemOption": true,
+      "independentRevisionPrinciple": "An independently authored, accessible P–V schematic with correctly labelled reversible paths could be added as teaching support only after teacher science/diagram review; not a copy of Figures 8.16/8.17.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 3,
+    "sourceVisibleComprehensiveCount": 10,
+    "coverageAcrossV243V244": "7/10 visibly numbered original comprehensive questions preliminarily reviewed",
+    "sourceNumberingSeen": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4",
+      "8.5",
+      "8.6",
+      "8.7",
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "missingComprehensiveSourceNumber": "8.8",
+    "compulsoryExplanationQualification": [
+      "8.5",
+      "8.6",
+      "8.7"
+    ],
+    "cognitiveOrDirectSloReview": [
+      "8.5",
+      "8.7"
+    ],
+    "figureReferenceCompleteness": [
+      "8.5",
+      "8.7"
+    ],
+    "reversibleCarnotTemperatureRatioHold": [
+      "8.7"
+    ],
+    "heatEngineCycleBalanceHold": [
+      "8.5",
+      "8.7"
+    ],
+    "secondLawCyclicSoleEffectHold": [
+      "8.6"
+    ],
+    "noNewPublisherQuestionStemDefectsEstablished": true,
+    "sourceQuestionsRetainedUnchanged": true,
+    "teacherIndependentScienceApproval": "PENDING",
+    "teacherCognitiveSloApproval": "PENDING",
+    "teacherAnswerEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "originalFigureFilesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
