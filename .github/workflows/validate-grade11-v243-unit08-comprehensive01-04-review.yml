@@ -1,0 +1,50 @@
+name: Grade XI V243 Unit 8 Original Comprehensive Q8.1-8.4 Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v243-comprehensive01-04-review-no-answers.json"
+      - "quality/unit08/unit08-v243-comprehensive01-04-academic-triage.md"
+      - "scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs"
+      - ".github/workflows/validate-grade11-v243-unit08-comprehensive01-04-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v243-comprehensive01-04-review-no-answers.json"
+      - "quality/unit08/unit08-v243-comprehensive01-04-academic-triage.md"
+      - "scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs"
+      - ".github/workflows/validate-grade11-v243-unit08-comprehensive01-04-review.yml"
+jobs:
+  comprehensive-q1-4-original-science-review-and-no-student-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate original NBF exercise metadata and script
+        run: |
+          node --check scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v243-comprehensive01-04-review-no-answers.json','utf8'))"
+      - name: V243 original comprehensive Q8.1-8.4 ideal-gas/First-Law/process SLO and release safeguards
+        run: node scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+      - name: Preserve V242 completed short Q8.9-8.13 source QC
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 short Q8.5-8.8 source QC
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 short Q8.1-8.4 source QC
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 original MCQs13-18 source QC
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original MCQs7-12 source QC
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original MCQs1-6 source QC
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 original 50-item exercise inventory and numbering anomaly
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 original NBF source and FBISE framework baseline
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve exact pinned 2250 Unit1-6 MCQ IDs options and correct keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
