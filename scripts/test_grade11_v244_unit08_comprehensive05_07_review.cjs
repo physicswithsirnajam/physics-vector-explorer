@@ -104,7 +104,7 @@ assert.equal(audit.teacherCognitiveSloApproval,'PENDING');
 assert.equal(audit.teacherAnswerEdition,'NOT-PUBLISHED');
 for(const q of ['8.5','8.6','8.7'])
  assert.ok(notes.includes('**'+q+' —'),'Original question '+q+' must have a teacher-facing decision row');
-for(const phrase of ['Kelvin–Planck','Clausius','Figure 8.14','Fig. 8.16','8.8 is absent','2,250'])
+for(const phrase of ['Kelvin–Planck','Clausius','Fig. 8.14','Fig. 8.16','8.8 is absent','2,250'])
  assert.ok(notes.includes(phrase),'Source/QC note missing: '+phrase);
 assert.equal(v242.audit.allOriginalShortQuestionsCovered,'13/13 across V240–V242');
 const hold=review.releaseGate;
