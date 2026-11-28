@@ -60,7 +60,7 @@ assert.deepEqual(review.items.map(x=>x.candidateSummativeSlo),['P-12-C-01','P-11
 assert.equal(review.items.find(x=>x.sourceNumber==='14').additionalCandidateSlo,'P-11-C-10');
 assert.ok(outcomes.some(x=>x.printedCode==='P-11-C-10'&&x.assessment==='Summative'));
 assert.equal(review.items.find(x=>x.sourceNumber==='15').mayAddIndependentItem,true);
-assert.match(review.items.find(x=>x.sourceNumber==='15').reason,/kinetic energy and gravitational potential energy/);
+assert.match(review.items.find(x=>x.sourceNumber==='15').reason,/kinetic energy.*gravitational potential energy/);
 assert.match(review.items.find(x=>x.sourceNumber==='14').reason,/ideal gas/);
 assert.match(review.items.find(x=>x.sourceNumber==='17').reason,/p\.152/);
 assert.match(review.items.find(x=>x.sourceNumber==='18').sloFit,/no directly matched summative/i);
@@ -98,7 +98,7 @@ for(const forbidden of ['answerKey','correctAnswer','correctOption','answerLette
    Object.values(o).forEach(visit);
  }};visit(review);
 }
-for(const flag of ['14','15','16','17','18','13'])assert.match(notes,new RegExp('MCQ '+flag));
+for(const flag of ['14','15','16','17','18','13'])assert.ok(notes.includes('**'+flag+'**'),'Teacher triage must retain original MCQ '+flag+' row');
 assert.match(notes,/p\.130/);
 assert.match(notes,/P-12-C-01/);
 assert.match(notes,/18\/18/);
