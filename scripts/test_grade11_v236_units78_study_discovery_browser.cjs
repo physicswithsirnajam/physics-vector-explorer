@@ -27,7 +27,7 @@ function staticReview(){
  assert.match(nav,/Unit 7 · Study lessons \(unscored\)/);
  assert.match(nav,/Unit 8 · 10 study lessons \(unscored\)/);
  assert.match(nav,/data\.psnFutureUnits=units\.map\(unit=>unit\.unit\)\.join\(','\)/);
- assert.match(nav,/Units 7–8 · public study previews; Units 9–10 planned/);
+ assert.match(nav,/Units 7–10 · Study previews for 7–8; Units 9–10 planned/);
  assert.match(nav,/Ten unscored topic lessons \(8\.1–8\.10\)/);
  assert.match(guide,/Explore Grade XI Units 1–8/);
  assert.match(guide,/for\(let n=1;n<=6;n\+\+\)/);
