@@ -616,7 +616,7 @@
       const coming=grade.units.filter(u=>u.status==='planned' && u.practicePreviewStatus!=='public-provisional' &&
         Number.isInteger(u.unit) && u.unit>=7 && u.unit<=14);
       const next=coming.filter(u=>u.unit<=10),later=coming.filter(u=>u.unit>=11);
-      if(next.length)fragment.append(comingSoon(next,'Units 7–8 · public study previews; Units 9–10 planned'));
+      if(next.length)fragment.append(comingSoon(next,'Units 7–10 · Study previews for 7–8; Units 9–10 planned'));
       if(later.length)fragment.append(comingSoon(later,'Future units · 11–14'));
       content.replaceChildren(fragment);
       syncActiveUnit();
