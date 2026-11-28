@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1b32"><meta name="description" content="Physics with Sir Najam NBF Grade XI Unit 8 Topic 8.10 Entropy: qualitative interpretation, heat-flow sign convention, ΔS=Qrev/T, original Example and Assignment 8.6, interactive unscored practice.">
+<title>Topic 8.10 · Entropy | Physics with Sir Najam</title>
+<link rel="stylesheet" href="../shared/navigation.css?v=69"><script src="../shared/navigation.js?v=68" defer></script>
+<style>
+:root{color-scheme:dark;--bg:#0c1a2c;--panel:#192e4b;--edge:#5a718d;--gold:#f1d49a;--ink:#f6f9ff;--muted:#d7e3ef;--positive:#c0eacb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);background:linear-gradient(145deg,#0b192b,#142d4e 70%,#102540);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--gold);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:-90px;left:10px;background:#fff;color:#0d2340;padding:9px;z-index:11}.skip:focus{top:10px}
+header{background:#091729;border-bottom:1px solid var(--edge);padding:13px max(18px,calc((100% - 1110px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;letter-spacing:.02em}.brand img{width:55px;height:55px;object-fit:contain}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+header nav{display:flex;gap:9px;flex-wrap:wrap}header nav a{padding:8px 10px;border:1px solid var(--edge);border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none}
+main{max-width:1110px;padding:26px 18px 72px;margin:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--gold)}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;margin:8px 0}h2{font-size:clamp(1.4rem,3vw,1.95rem);line-height:1.3;margin:31px 0 12px}h3{color:var(--gold);font-size:1.13rem;margin:0 0 8px}
+p{margin:8px 0;overflow-wrap:anywhere}.lead{font-size:1.11rem;color:var(--muted);max-width:850px}
+.notice{margin:18px 0 20px;padding:16px 17px;border-radius:10px;background:#203c5e;border-left:5px solid var(--gold)}
+.jump{display:flex;flex-wrap:wrap;gap:9px;margin:19px 0 23px}.jump a{border:1px solid #849ab6;text-decoration:none;border-radius:999px;padding:8px 12px;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}.card p,.card li{color:var(--muted)}
+.formula{background:#0d223b;border:1px solid #849ab6;border-radius:10px;padding:14px 11px;margin:12px 0;overflow-wrap:anywhere;text-align:center;font-size:clamp(1.04rem,2.3vw,1.39rem);font-weight:850;font-variant-numeric:tabular-nums}
+.formula small{display:block;font-size:.74rem;margin-top:5px;color:var(--muted);font-weight:550}
+.note{border-radius:10px;background:#123352;border:1px solid #819bb3;padding:14px 16px;margin:16px 0}
+.table-wrap{overflow-x:auto;border:1px solid var(--edge);border-radius:11px}table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}th,td{border-bottom:1px solid var(--edge);padding:12px 13px;text-align:left;vertical-align:top}th{background:#223e5d;color:var(--gold)}
+tr:last-child td{border-bottom:none}.source{font-size:.84rem;color:var(--muted)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+label{font-size:.87rem;font-weight:800}input{display:block;width:100%;min-width:0;background:white;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}
+button{cursor:pointer;background:var(--gold);color:#0d2340;border:1px solid var(--gold);border-radius:7px;padding:11px 17px;font:inherit;font-weight:850;margin:14px 0 0}
+output{display:block;padding:12px 14px;background:#0d223b;border:1px solid var(--edge);border-radius:7px;margin-top:13px;min-height:56px;font-variant-numeric:tabular-nums}
+details{background:var(--panel);border:1px solid var(--edge);border-radius:10px;margin:13px 0}details summary{cursor:pointer;min-height:48px;padding:14px 17px;font-weight:800;color:var(--gold)}.details-body{padding:0 17px 17px}
+footer{color:var(--muted);text-align:center;border-top:1px solid var(--edge);padding:18px;font-size:.81rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.tool-grid{grid-template-columns:1fr}header{padding:12px}main{padding:20px 13px 60px}.brand img{width:47px;height:47px}.card{padding:15px}.lead{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#000}header nav,.jump,.skip,button{display:none}.card,.note,.notice,details{break-inside:avoid;background:#fff;border-color:#666;color:#000}.formula,output{background:#fff;color:#000}.card p,.card li,.source{color:#333}}
+.steps{padding-left:25px}.steps li{margin:9px 0;padding-left:3px}.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}.given strong{color:var(--gold)}select{display:block;width:100%;background:#fff;color:#10243e;border:1px solid #aac2d8;border-radius:7px;font:inherit;padding:10px;margin-top:5px}.button-row{display:flex;flex-wrap:wrap;gap:8px}.button-row button{margin-top:11px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.full{grid-column:1/-1}output{overflow-wrap:anywhere}.flow-diagram{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr);gap:12px;align-items:center;margin:19px 0}.flow-node{background:#203c5e;padding:14px;border:1px solid #8aa3bf;border-radius:11px;text-align:center;min-width:0}.flow-node strong{display:block;color:var(--gold)}.flow-connect{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:center;color:var(--muted)}.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stage-buttons button{margin:0;background:#1c3656;border:1px solid #8fa4ba;color:white;font-size:.88rem;padding:10px 8px}.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}.stage-panel{margin-top:14px;background:#0d223b;border:1px solid var(--edge);border-radius:10px;padding:17px;min-height:115px}#stage-panel-title{margin:0;color:var(--gold)}@media(max-width:650px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-diagram{grid-template-columns:1fr}.flow-connect{font-size:.86rem}}@media print{.stage-buttons button{color:#000;border-color:#555;background:#fff}.stage-panel,.flow-node{background:#fff;color:#000}} 
+.case-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.case-buttons button{margin:0;text-align:left;border:1px solid #8fa4ba;background:#1b3756;color:#fff;font-size:.89rem;line-height:1.45;padding:12px}
+.case-buttons button[aria-pressed=true]{background:var(--gold);color:#0d2340}
+.case-output{background:#0d223b;border:1px solid #8096b4;border-radius:11px;padding:17px;margin-top:14px;min-height:126px}
+.case-output h3{margin:0 0 7px}
+.flow-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:10px;margin:18px 0}
+.flow-pair .flow-node{font-size:1rem}.flow-pair .flow-connect{font-weight:800}
+.formula-small{font-size:clamp(1rem,2.1vw,1.25rem)}
+@media(max-width:650px){.case-buttons{grid-template-columns:1fr}.flow-pair{grid-template-columns:1fr}.flow-pair .flow-connect{line-height:1.3}}
+@media print{.case-output{background:white;color:black}.case-buttons button{background:white;color:black;border-color:#555}}
+
+.stage-buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.stage-buttons button{margin:0;padding:11px 9px;line-height:1.4;font-size:.85rem;background:#1d3655;color:#fff;border:1px solid #8fa4ba}
+.stage-buttons button[aria-pressed=true]{background:var(--gold);color:#0c1c32}
+.stage-output{border:1px solid var(--edge);border-radius:10px;padding:15px;background:#0d223b;margin-top:14px;min-height:135px}
+.given{background:#112641;border:1px solid #7189a6;border-radius:9px;padding:13px 15px;margin:12px 0}
+.given strong{color:var(--gold)}.steps{padding-left:25px}.steps li{margin:9px 0}
+.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+input{display:block;width:100%;background:#fff;color:#122740;border:1px solid #acbed2;border-radius:8px;font:inherit;padding:11px 10px;margin-top:7px;min-width:0}
+output,.calc-result{display:block;background:#0d223b;border:1px solid var(--edge);border-radius:9px;padding:14px;margin-top:15px;min-height:65px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.calc-cards label{display:block;min-width:0;font-size:.89rem;font-weight:800}.calc-cards button{cursor:pointer;background:var(--gold);color:#0e2037;border:1px solid var(--gold);border-radius:8px;font:inherit;font-weight:800;margin-top:14px;padding:11px 15px}
+.formula{overflow-wrap:anywhere}
+.calc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.calc-cards{grid-template-columns:1fr}}
+@media(max-width:540px){.calc-grid{grid-template-columns:1fr}.stage-buttons{grid-template-columns:1fr 1fr}}
+@media print{.stage-buttons button,.stage-output,.given,output{background:white;color:black;border-color:#666}form button{display:none}}
+.steps{padding-left:25px}.steps li{margin:9px 0}
+.energy-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.energy-steps .card{background:#173654}
+.energy-steps .card strong{color:var(--gold)}
+.formula{font-size:clamp(1.03rem,2.2vw,1.38rem)}
+@media(max-width:700px){.energy-steps{grid-template-columns:1fr}}
+
+.case-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.case-buttons button{margin:0;padding:12px;text-align:left;background:#193756;color:white;border:1px solid #8fa6bf;border-radius:9px;font-size:.92rem}.case-buttons button[aria-pressed=true]{background:var(--gold);color:#11233c}.case-result{padding:15px;background:#11263f;border-radius:9px;border:1px solid #8195af;margin-top:13px;min-height:110px}.case-result h3{margin:0 0 9px;color:var(--gold)}
+.calc-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.calc-cards .card{min-width:0}.calc-cards input{max-width:100%}.calc-cards label{display:block;font-weight:700;font-size:.93rem}
+.calc-cards button{cursor:pointer;border-radius:8px;background:var(--gold);color:#132b44;font-weight:800;padding:11px;border:0;margin-top:13px}
+.calc-result{display:block;background:#10263c;color:#fff;border:1px solid #728eaa;border-radius:8px;padding:12px;margin-top:13px;min-height:65px;overflow-wrap:anywhere}
+.mathnote{font-size:.93rem}.mathnote strong{color:var(--gold)}
+@media(max-width:690px){.calc-cards,.case-buttons{grid-template-columns:1fr}}
+@media print{.case-result,.calc-result{background:white;color:#111}.case-buttons button{background:white;color:#111}}
+</style>
+</head><body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="./"><img src="./assets/physics-with-sir-najam-official-logo.png" width="55" height="55" alt="Physics with Sir Najam official logo"><span>PHYSICS WITH SIR NAJAM<small>From Fundamentals to Frontiers.</small></span></a><nav aria-label="Learning resources"><a href="./unit-08-topic89-refrigerator-v233.html">Topic 8.9</a><a href="./simulations.html?unit=8">Unit 8 simulations</a><a href="./exam-quick-access.html">Quick Access</a></nav></header>
+<main id="main"><span class="eyebrow">Grade XI · NBF Unit 8 · Topic 8.10 · Original printed pages 147–149</span>
+<h1>Entropy: Energy, Direction and Disorder</h1>
+<p class="lead">Why does heat pass naturally from a hotter object to a colder one? Why can a system's entropy decrease while total entropy still increases? Explore these questions, heat-flow signs, and the entropy change for reversible transfers.</p>
+<div id="lesson-status" class="notice" role="note" data-academic-review="pending" data-scored-release="false"><strong>Public unscored study preview — independent academic review pending.</strong> This independently authored teaching adaptation is grounded in the owner's original NBF Grade XI Physics pages 147–149 and FBISE outcomes P-11-C-18 through P-11-C-22. Worked Example 8.6 and Assignment 8.6 use original numerical data with independently written solutions. No source diagrams (Figures 8.19 or 8.20), textbook page scans, exercise wording or publisher marking keys are copied. No student scores, saved answers or account access.</div>
+<nav class="jump" aria-label="Jump to sections"><a href="#meaning">Meaning</a><a href="#signs">Sign convention</a><a href="#energy">Entropy and energy</a><a href="#example86">Example 8.6</a><a href="#assignment86">Assignment 8.6</a><a href="#calculators">Calculators</a><a href="#scenarios">Scenarios</a><a href="#self-check">Concept checks</a></nav>
+<section id="meaning" aria-labelledby="meaning-title"><h2 id="meaning-title">8.10 · What does entropy describe?</h2>
+<p><strong>Entropy (S)</strong> is a thermodynamic state property associated with the dispersal of thermal energy and how energy is distributed among the possible microscopic arrangements of a system. The NBF textbook introduces it qualitatively through <strong>particle disorder/randomness</strong> and the reduction in energy available to do useful work.</p>
+<p>As ice melts, molecules become less constrained than in the solid; ordinary mixing and dispersal often increase entropy. These everyday examples help develop intuition, but <strong>entropy is not simply a visual count of messiness</strong>: its precise thermodynamic meaning comes from heat transfer along a reversible path and its state-function properties.</p>
+<div class="note" id="entropy-caution"><strong>Important distinction:</strong> The Second Law says entropy of an <em>isolated system</em> cannot decrease. In an irreversible process, the combined entropy of the <em>system and its surroundings</em> increases. A system exchanging heat with its environment can have <em>negative</em> entropy change without violating the Second Law.</div>
+<p class="source">Original NBF printed pp.147–148, introduction and melting/disorder examples; publisher Figures 8.19 and 8.20 are referenced but not recreated.</p></section>
+<section id="signs" aria-labelledby="sign-title"><h2 id="sign-title">8.10.1 · Sign convention for entropy change</h2>
+<p>For a reversible heat transfer that takes place at a constant absolute boundary temperature, the entropy change of the system is:</p>
+<div class="formula" id="entropy-equation">ΔS = Q<sub>rev</sub> / T<small>Q<sub>rev</sub> is signed reversible heat in joules (J); T is absolute temperature in kelvin (K); ΔS is measured in joules per kelvin (J/K).</small></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">Heat crossing system boundary</th><th scope="col">Q<sub>rev</sub> sign</th><th scope="col">ΔS for the system</th></tr></thead><tbody>
+<tr><td>Heat is absorbed</td><td>Positive (+)</td><td>Positive: entropy increases</td></tr>
+<tr><td>Heat is released or removed</td><td>Negative (−)</td><td>Negative: entropy decreases</td></tr>
+<tr><td>No reversible heat transfer</td><td>Zero</td><td>Zero for a reversible adiabatic process</td></tr>
+</tbody></table></div>
+<div class="note"><strong>Scope:</strong> ΔS = Q<sub>rev</sub>/T is used here for an <em>isothermal reversible</em> transfer. For changing temperature, the corresponding thermodynamic expression is an integral of δQ<sub>rev</sub>/T along a reversible path. Do not apply the simple quotient to an arbitrary irreversible process.</div>
+<p class="source">Textbook equations 8.12 (p.147) and sign-convention discussion p.148, with an explicit model limitation for scientific accuracy.</p></section>
+<section id="energy" aria-labelledby="energy-title"><h2 id="energy-title">8.10.2 · Entropy, energy quality and the arrow of time</h2>
+<p>The textbook connects entropy to the <strong>degradation of energy</strong>: total energy is conserved by the First Law, but in real processes energy often becomes more widely dispersed and less available for useful work. This is why a heat engine must reject some energy to its surroundings.</p>
+<p>Heat passes spontaneously from hotter to colder objects, not the reverse as the sole effect. Everyday dissipative processes such as friction and mixing help explain the <strong>arrow of time</strong>: naturally occurring changes have a preferred direction.</p>
+<div class="note" id="total-entropy"><strong>System versus total:</strong> For a reversible process, the <em>combined</em> entropy change of system plus surroundings is zero. For an irreversible process in an isolated whole, it is positive. Neither statement requires the entropy of the individual subsystem to increase every time.</div>
+<p class="source">Original NBF printed pp.148–149, Sections 8.10.1 and 8.10.2, natural energy degradation and time-direction discussion.</p></section>
+<section id="example86" aria-labelledby="example-title"><h2 id="example-title">Original Example 8.6 · Independently worked adaptation</h2>
+<div class="given"><strong>Source data:</strong> <strong>700 g</strong> of ice melts at <strong>0 °C</strong>. Latent heat of fusion of ice is <strong>3.36 × 10<sup>5</sup> J/kg</strong>. Calculate entropy change during the isothermal phase transition.</div>
+<details id="example86-solution"><summary>Reveal conversion, heat and entropy steps</summary><div class="details-body"><ol class="steps">
+<li>Convert mass: m = 700 g = <strong>0.700 kg</strong>.</li>
+<li>Use the source's rounded absolute temperature: T = 0 + 273 = <strong>273 K</strong>.</li>
+<li>Heat absorbed to melt ice: Q<sub>rev</sub> = mL<sub>f</sub> = 0.700 × 3.36 × 10<sup>5</sup> = <strong>235,200 J</strong>.</li>
+<li>Entropy change: ΔS = Q<sub>rev</sub>/T = 235,200/273 ≈ <strong>+861.5 J/K</strong>.</li>
+</ol><p id="example86-result"><strong>Answer: ΔS ≈ +861.5 J/K.</strong> Positive because the ice absorbs heat and its entropy increases during melting.</p></div></details>
+<p class="source">Example 8.6 appears on original printed p.149; data retained exactly, solution wording and layout independently prepared.</p></section>
+<section id="assignment86" aria-labelledby="assignment-title"><h2 id="assignment-title">Original Assignment 8.6 · Independently worked adaptation</h2>
+<div class="given"><strong>Source data:</strong> A body is at <strong>150 °C</strong> during a <strong>reversible isothermal</strong> process, and <strong>7,373 J</strong> of heat is removed. Find the entropy change of the body.</div>
+<details id="assignment86-solution"><summary>Reveal heat-flow sign and steps</summary><div class="details-body"><ol class="steps">
+<li>The body loses heat, so heat transferred <em>into</em> the body is Q<sub>rev</sub> = <strong>−7,373 J</strong>.</li>
+<li>Using rounded textbook kelvin conversion, T = 150 + 273 = <strong>423 K</strong>.</li>
+<li>ΔS = Q<sub>rev</sub>/T = −7,373/423 ≈ <strong>−17.43 J/K</strong>.</li></ol><p id="assignment86-result"><strong>Answer: ΔS ≈ −17.4 J/K.</strong> The body's entropy decreases because heat leaves it. This alone does not imply that the total entropy of the surroundings and body decreases.</p></div></details>
+<p class="source">Assignment 8.6 appears on original printed p.149. Its negative heat sign is critical.</p></section>
+<section id="calculators" aria-labelledby="calc-title"><h2 id="calc-title">Two original interactive investigations · No marks</h2>
+<div class="calc-cards">
+<section class="card" id="melting-calculator"><h3>A · Melting at constant temperature</h3><p>Investigate the positive entropy change when a phase change absorbs heat at constant temperature.</p>
+<label for="melt-mass">Ice mass (g)<input id="melt-mass" type="number" inputmode="decimal" step="any" value="700"></label>
+<label for="melt-latent">Latent heat (J/kg)<input id="melt-latent" type="number" inputmode="decimal" step="any" value="336000"></label>
+<label for="melt-temp">Melting temperature (°C)<input id="melt-temp" type="number" inputmode="decimal" step="any" value="0"></label>
+<button id="melt-calculate" type="button">Calculate entropy gained</button>
+<div class="calc-result" id="melt-result" role="status" aria-live="polite">Using 273.15 K: heat absorbed = 235200 J; entropy change ≈ +861.06 J/K (textbook rounding: +861.5 J/K).</div>
+<p class="source">Calculator uses T( K ) = t(°C)+273.15 for precision. The textbook's worked example uses 273 K.</p></section>
+<section class="card" id="heat-calculator"><h3>B · Signed reversible isothermal heat transfer</h3><p>Enter <strong>positive</strong> heat for absorption or <strong>negative</strong> heat for release.</p>
+<label for="signed-heat">Signed reversible heat Q<sub>rev</sub> (J)<input id="signed-heat" type="number" inputmode="decimal" step="any" value="-7373"></label>
+<label for="heat-temp">Constant process temperature (°C)<input id="heat-temp" type="number" inputmode="decimal" step="any" value="150"></label>
+<button id="heat-calculate" type="button">Calculate ΔS</button>
+<div class="calc-result" id="heat-result" role="status" aria-live="polite">At 423.15 K, heat = −7373 J, so ΔS ≈ −17.424 J/K (textbook 423 K: −17.43 J/K).</div>
+<p class="source">Model applies only to a reversible isothermal heat transfer. Negative ΔS means entropy decreases for this chosen system, not necessarily for the universe.</p></section>
+</div></section>
+<section id="scenarios" aria-labelledby="scenarios-title"><h2 id="scenarios-title">Four conceptual situations · Reveal the interpretation</h2>
+<div class="card"><div class="case-buttons" role="group" aria-label="Choose an entropy situation">
+<button type="button" data-case="0" aria-pressed="true">1 · Ice melts reversibly</button>
+<button type="button" data-case="1" aria-pressed="false">2 · Warm body loses heat reversibly</button>
+<button type="button" data-case="2" aria-pressed="false">3 · Heat flows across a finite temperature gap</button>
+<button type="button" data-case="3" aria-pressed="false">4 · Friction heats a closed isolated whole</button></div>
+<div class="case-result" id="case-result" role="status" aria-live="polite"><h3 id="case-title">The system's entropy increases</h3><p id="case-explanation">Reversible melting at a fixed temperature absorbs latent heat. The ice/water system gains entropy as the solid turns to liquid.</p></div>
+</div></section>
+<section id="self-check" aria-labelledby="checks-title"><h2 id="checks-title">Five self-checks · Open the explanation</h2>
+<details><summary>1. What are the SI units of entropy and entropy change?</summary><div class="details-body">J/K (joules per kelvin). For reversible isothermal heat transfer, ΔS=Q<sub>rev</sub>/T.</div></details>
+<details><summary>2. Why is entropy change positive during melting in Example 8.6?</summary><div class="details-body">The melting ice absorbs positive latent heat at fixed temperature, so its ΔS is positive: approximately +861.5 J/K with the textbook's numbers.</div></details>
+<details><summary>3. If heat is removed from a body reversibly at constant temperature, what is the sign of ΔS?</summary><div class="details-body">Negative for the body because Q<sub>rev</sub> is negative. Assignment 8.6 gives about −17.4 J/K.</div></details>
+<details><summary>4. Can the entropy of one system decrease while the Second Law still holds?</summary><div class="details-body">Yes. A body may lose heat and entropy to its environment. The nondecreasing entropy requirement applies to the combined isolated whole, not to every subsystem.</div></details>
+<details><summary>5. Does a reversible process always leave the system's own entropy unchanged?</summary><div class="details-body">No. Reversible heat transfer can change the system's entropy. For an ideal reversible process, it is the <em>combined</em> entropy of system plus surroundings that has zero net change.</div></details>
+</section>
+<section id="continue" aria-labelledby="continue-title"><h2 id="continue-title">Continue studying Unit 8</h2>
+<div class="grid">
+<div class="card"><h3>Review Topic 8.9</h3><p>Compare refrigerator cooling and heating COP and the signs of thermal energy transfers.</p><p><a href="./unit-08-topic89-refrigerator-v233.html">Study Topic 8.9</a></p></div>
+<div class="card"><h3>Explore Unit 8 simulations</h3><p>Supplementary laboratories remain separate from textbook source exercises and graded assessment approval.</p><p><a href="./simulations.html?unit=8">Explore Unit 8 simulations</a></p></div>
+<div class="card"><h3>Next · End-of-unit exercises</h3><p>The chapter summary and exercises begin on printed p.150. Their questions and solutions require separate source review and teacher approval.</p><p><a href="./exam-quick-access.html">See available resources</a></p></div>
+</div></section>
+</main>
+<footer>Physics with Sir Najam · Unit 8 Topic 8.10 · Original NBF source-based unscored preview · Independent teacher review pending</footer>
+<script>
+(function(){'use strict';
+const get=id=>document.getElementById(id);
+function read(id){const s=get(id).value.trim();return s!==''&&Number.isFinite(Number(s))?Number(s):NaN}
+function fmt(x){return Number(x.toPrecision(8)).toString().replace('-', '−')}
+function fail(where,message){get(where).textContent=message}
+get('melt-calculate').addEventListener('click',function(){
+ const m=read('melt-mass'),L=read('melt-latent'),Tc=read('melt-temp'),T=Tc+273.15;
+ if(![m,L,T].every(Number.isFinite)||m<=0||L<=0||T<=0){fail('melt-result','Enter finite positive mass and latent heat, and a temperature above absolute zero.');return}
+ const Q=m/1000*L,S=Q/T;
+ if(![Q,S].every(Number.isFinite)||Q<=0||S<=0){fail('melt-result','Calculation is outside supported numerical range.');return}
+ get('melt-result').textContent='Heat absorbed = '+fmt(Q)+' J; entropy change = +'+fmt(S)+' J/K at '+fmt(T)+' K.';
+});
+get('heat-calculate').addEventListener('click',function(){
+ const Q=read('signed-heat'),Tc=read('heat-temp'),T=Tc+273.15;
+ if(!Number.isFinite(Q)||!Number.isFinite(T)||T<=0){fail('heat-result','Enter finite signed heat and a temperature above absolute zero.');return}
+ const S=Q/T;
+ if(!Number.isFinite(S)){fail('heat-result','Calculation is outside supported numerical range.');return}
+ get('heat-result').textContent='Signed heat = '+fmt(Q)+' J; entropy change ΔS = '+(S>0?'+':'')+fmt(S)+' J/K at '+fmt(T)+' K.';
+});
+const situations=[
+ ['The system\'s entropy increases','Reversible melting at a fixed temperature absorbs latent heat. The ice/water system gains entropy as the solid turns to liquid.'],
+ ['The system\'s entropy decreases','Heat is removed from the chosen body, so its signed Q and ΔS are negative. This does not violate the Second Law for the combined environment.'],
+ ['Total entropy increases','Spontaneous heat flow across a finite temperature difference is irreversible. For the isolated pair of bodies together, entropy is generated.'],
+ ['Total entropy increases','Friction converts organized motion into more widely dispersed thermal energy; the isolated whole has a net entropy increase.']
+];
+for(const button of document.querySelectorAll('[data-case]'))button.addEventListener('click',function(){
+ const i=Number(button.dataset.case);if(!Number.isInteger(i)||i<0||i>=situations.length)return;
+ for(const b of document.querySelectorAll('[data-case]'))b.setAttribute('aria-pressed',b===button?'true':'false');
+ get('case-title').textContent=situations[i][0];get('case-explanation').textContent=situations[i][1];
+});
+})();
+</script></body></html>
