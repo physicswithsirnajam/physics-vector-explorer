@@ -121,4 +121,4 @@ async function runPage(browser,base,width,kind){
   fs.writeFileSync(path.join(outDir,'evidence.json'),JSON.stringify({version:'V236',unit7PublicUnscoredLessons:3,unit8PublicUnscoredLessons:10,liveMcqUnits:[1,2,3,4,5,6],liveMcqs:2250,unit7And8BankStatus:'NOT-PUBLISHED',teacherApproval:'PENDING',results},null,2)+'\n');
   console.log('V236 PASS: Unit7/8 discoverable from left nav, Student Guide and Test Builder; no question bank unlock.');
  }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok))}
-})().catch(e=>{console.error('V236 FAILED:',e.stack||e);process.exitCode=1;try{server.close()}});
+})().catch(e=>{console.error('V236 FAILED:',e.stack||e);process.exitCode=1;try{server.close()}catch{}});
