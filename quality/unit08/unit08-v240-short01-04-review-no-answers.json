@@ -1,0 +1,142 @@
+{
+  "schema": "psn-nbf-grade11-unit08-short-response-qc-v240",
+  "version": "V240",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      152
+    ],
+    "questionIds": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4"
+    ],
+    "mode": "visually inspected original scanned NBF printed page 152 (no OCR); question stems not reproduced"
+  },
+  "originalFramework": "V224 authenticated source inventory of printed FBISE HSSC-I theory Domain C outcomes and cognitive levels",
+  "parentInventory": "V235 original 13 end-of-unit short-response questions on printed page 152, unaltered",
+  "scope": "preliminary teacher-facing academic QC only: four source-numbered focus summaries and advice; no original question text or approved written answers",
+  "items": [
+    {
+      "sourceNumber": "8.1",
+      "printedPages": [
+        152
+      ],
+      "focus": "tire pressure increase after driving",
+      "sourceTopic": "8.3",
+      "candidateSummativeSlo": "P-11-C-09",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct qualitative gas pressure–temperature relation under approximately fixed tyre volume",
+      "scienceReview": "tyre flexing, road interaction and surrounding conditions can warm gas; near-fixed gas volume means absolute pressure generally increases as temperature rises",
+      "amendment": "optional explanatory condition",
+      "amendmentMandatoryBeforeGradedUse": false,
+      "reason": "The source asks why pressure rises after driving; this is common but not inevitable under all weather, inflation, heat-loss and driving conditions. A teacher note should say that air temperature generally rises owing to tyre deformation and dissipation, with volume approximately constant; qualitative pressure–temperature reasoning uses absolute pressure, not gauge pressure, if calculating.",
+      "keepOriginal": true,
+      "addNewItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.2",
+      "printedPages": [
+        152
+      ],
+      "focus": "energy change at fixed temperature",
+      "sourceTopic": "8.1",
+      "candidateSummativeSlo": "P-11-C-12",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct: internal energy can change without temperature change",
+      "scienceReview": "energy stored in intermolecular potential energy can rise during a phase change at constant temperature; internal energy of an ideal gas alone is a function of temperature",
+      "amendment": "no original stem amendment; optional ideal-gas contrast",
+      "amendmentMandatoryBeforeGradedUse": false,
+      "reason": "During isothermal melting or vaporisation, absorbed latent heat increases intermolecular potential-energy contribution to internal energy while the substance temperature remains constant. This should not be conflated with the ideal-gas result that U depends only on T for a fixed amount of ideal gas.",
+      "keepOriginal": true,
+      "addNewItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.3",
+      "printedPages": [
+        152
+      ],
+      "focus": "temperature change in an isolated system",
+      "sourceTopic": "8.1 / 8.4",
+      "candidateSummativeSlo": "P-11-C-12",
+      "additionalCandidateSlo": "P-11-C-11",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "temperature versus internal energy, with first-law conservation supporting the isolated-system distinction",
+      "scienceReview": "total energy of an isolated system is constant, but friction/internal work, chemical or phase processes, and heat flow between internal parts can change a component's or the whole system's measured temperature; uniform equilibrium state must be distinguished from a changing non-equilibrium state",
+      "amendment": "compulsory answer/model qualification before graded use",
+      "amendmentMandatoryBeforeGradedUse": true,
+      "reason": "A blanket claim that an isolated system always has constant temperature is invalid: isolation blocks net matter/energy exchange with the surroundings, not internal transformations. Internal mechanical energy may dissipate into thermal energy without external work/heat; a portion can warm as other portions cool. The answer must specify the boundary, redistribution and relevant equilibrium assumptions.",
+      "keepOriginal": true,
+      "addNewItemOption": true,
+      "independentRevisionPrinciple": "Optionally add an original conditional scenario about stirring a thermally insulated rigid container with a mechanism wholly inside the isolated boundary; explicitly track internal conversions without external energy exchange.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.4",
+      "printedPages": [
+        152
+      ],
+      "focus": "distinguishing heat transfer and work from internal-energy change",
+      "sourceTopic": "8.4",
+      "candidateSummativeSlo": "P-11-C-08",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct first-law distinction between work and heat; process observations needed to differentiate paths",
+      "scienceReview": "the net state-variable change ΔU alone does not reveal the energy-transfer pathway; transfer due to a temperature difference is heat, whereas force–displacement or shaft/stirring input is work; heat and work are not separately stored as forms of internal energy",
+      "amendment": "compulsory precision in worked explanation; original question retained",
+      "amendmentMandatoryBeforeGradedUse": true,
+      "reason": "The textbook's description of 'orderly macroscopic work' versus 'disorderly microscopic energy Q' is introductory language and may mislead if interpreted as distinct stored substances. Both Q and W are boundary energy transfers, and a measured ΔU does not uniquely reveal the split; independent information about a temperature-gradient transfer, force/displacement or other process mechanism is required. Apply the book's sign convention consistently.",
+      "keepOriginal": true,
+      "addNewItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 4,
+    "sourceTotalShortResponseQuestions": 13,
+    "requiresCompulsoryExplanationQualification": [
+      "8.3",
+      "8.4"
+    ],
+    "optionalTeachingNotes": [
+      "8.1",
+      "8.2"
+    ],
+    "noSourceStemRewrites": true,
+    "printedSourceNumberingPreserved": true,
+    "humanScienceReview": "PENDING",
+    "humanSloCognitiveReview": "PENDING",
+    "studentAnswerEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
