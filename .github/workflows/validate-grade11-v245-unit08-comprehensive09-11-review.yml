@@ -1,0 +1,54 @@
+name: Grade XI V245 Unit 8 Original Comprehensive Q8.9-8.11 Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v245-comprehensive09-11-review-no-answers.json"
+      - "quality/unit08/unit08-v245-comprehensive09-11-academic-triage.md"
+      - "scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs"
+      - ".github/workflows/validate-grade11-v245-unit08-comprehensive09-11-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v245-comprehensive09-11-review-no-answers.json"
+      - "quality/unit08/unit08-v245-comprehensive09-11-academic-triage.md"
+      - "scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs"
+      - ".github/workflows/validate-grade11-v245-unit08-comprehensive09-11-review.yml"
+jobs:
+  original-comprehensive-q9-11-entropy-science-no-student-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate source-review metadata and test script syntax
+        run: |
+          node --check scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v245-comprehensive09-11-review-no-answers.json','utf8'))"
+      - name: V245 final comprehensive Q8.9-8.11, entropy-source contradictions and authentic SLO review
+        run: node scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs
+      - name: Preserve V244 heat engine, Second Law and Carnot original comprehensive source QC
+        run: node scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs
+      - name: Preserve V243 original first four comprehensive source QC
+        run: node scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+      - name: Preserve V242 all 13 original short-question source QC
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 original short Q8.5-8.8 QC
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 original short Q8.1-8.4 QC
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 original last six end MCQ QC
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original middle six end MCQ QC
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original first six end MCQ QC
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 original source numbering and exercise audit
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 original NBF source and FBISE framework
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve exact pinned Units1-6 2250 original MCQ IDs options and answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
