@@ -1,0 +1,48 @@
+name: Grade XI V242 Unit 8 Original Short Questions 8.9-8.13 Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v242-short09-13-review-no-answers.json"
+      - "quality/unit08/unit08-v242-short09-13-academic-triage.md"
+      - "scripts/test_grade11_v242_unit08_short09_13_review.cjs"
+      - ".github/workflows/validate-grade11-v242-unit08-short09-13-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v242-short09-13-review-no-answers.json"
+      - "quality/unit08/unit08-v242-short09-13-academic-triage.md"
+      - "scripts/test_grade11_v242_unit08_short09_13_review.cjs"
+      - ".github/workflows/validate-grade11-v242-unit08-short09-13-review.yml"
+jobs:
+  complete-original-short-source-review-no-answers-or-scored-bank:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check review-only metadata and QA script syntax
+        run: |
+          node --check scripts/test_grade11_v242_unit08_short09_13_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v242-short09-13-review-no-answers.json','utf8'))"
+      - name: V242 original five short questions, four-part thermos, entropy and candidate-SLO checks
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 short Q8.5-8.8 source and science review
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 short Q8.1-8.4 source and science review
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 original end-MCQ13-18 source QC
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original end-MCQ7-12 source QC
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original end-MCQ1-6 source QC
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 50-item original Unit8 end-exercise inventory
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 original NBF textbook and FBISE framework baseline
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve pinned 2250 original Unit1-6 MCQ IDs options answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
