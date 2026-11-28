@@ -251,7 +251,13 @@
           "printedPages": [
             152
           ],
-          "focus": "four-part thermos shaking energy analysis"
+          "focus": "four-part thermos shaking energy analysis",
+          "subparts": [
+            "i",
+            "ii",
+            "iii",
+            "iv"
+          ]
         }
       ]
     },
