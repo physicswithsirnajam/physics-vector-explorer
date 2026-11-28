@@ -1,0 +1,244 @@
+{
+  "schema": "psn-nbf-grade11-unit08-comprehensive-qc-v245",
+  "version": "V245",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "questionPrintedPages": [
+      153
+    ],
+    "chapterReferencePages": [
+      145,
+      146,
+      147,
+      148,
+      149
+    ],
+    "questionIds": [
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "figureReferences": [
+      "Figure 8.18 — refrigerator/heat-pump arrangement (p.145)",
+      "Figure 8.19 — melting and molecular order (p.148)",
+      "Figure 8.20 — particle-randomness schematic (p.148)"
+    ],
+    "reviewMode": "original owner-provided scanned source p153 and printed pp145–149 inspected visually; no OCR, source text or figures reproduced"
+  },
+  "originalFramework": "V224 original FBISE HSSC-I theory Domain C summative SLO inventory, exact printed identifiers preserved; mapping candidate only",
+  "parentInventory": "V235 original comprehensive 10 visibly printed numbered items: 8.1–8.7 and 8.9–8.11; comprehensive 8.8 is absent and NOT supplied",
+  "scope": "final three comprehensive source questions, preliminary scientific and teacher explanation triage only; no publisher source stems/figures/answer editions/scored content",
+  "items": [
+    {
+      "sourceNumber": "8.9",
+      "printedPages": [
+        153
+      ],
+      "focus": "refrigerator",
+      "sourceCoveragePages": [
+        145,
+        146,
+        147
+      ],
+      "sourceTopic": "8.9 Refrigerator; Figure 8.18 and cooling/heating coefficient of performance",
+      "candidateSummativeSlo": "P-11-C-17",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct summative refrigerator-as-reversed-heat-engine working principle; temperature COP is an extra ideal-model relationship, not implied for arbitrary equipment",
+      "scienceReview": "A refrigerator uses external work W_in to remove heat Q_C from a cold region and reject Q_H=Q_C+W_in to a warmer region during a cycle. Both heat magnitudes are positive and the cooling coefficient of performance is COP_C=Q_C/W_in, which can exceed one without creating energy. Only an ideal reversible (Carnot) refrigerator between two fixed absolute reservoir temperatures has COP_C,rev=T_C/(T_H−T_C) and corresponding heating COP=T_H/(T_H−T_C). Real devices have lower COP under comparable idealized boundary conditions.",
+      "amendment": "compulsory reversible-model and heat-flow qualification if temperature COP expressions enter teacher solutions",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "The original textbook pp.145–147 describes a refrigerator as a reversed heat engine, illustrates Figure 8.18 and uses work input together with cold-side heat and hot-side rejected heat. Page 146 then introduces a temperature-based COP immediately after saying heat is proportional to absolute temperature; that proportionality is NOT a general refrigerator law. Temperature ratios can be used only for reversible Carnot heat exchanges, with kelvin temperatures; a real compressor has losses. An eventual response to 'explain working' should prioritize the physically correct heat/work flow rather than copying the generalization as universal. Do not conflate food refrigeration with the room-heating COP of a heat pump.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.10",
+      "printedPages": [
+        153
+      ],
+      "focus": "entropy",
+      "sourceCoveragePages": [
+        147,
+        148,
+        149
+      ],
+      "sourceTopic": "8.10 Entropy; 8.10.1 Sign Convention; Fig. 8.19–8.20",
+      "candidateSummativeSlo": "P-11-C-22",
+      "additionalCandidateSlo": "P-11-C-21",
+      "candidateFrameworkCognitive": "Understanding",
+      "secondaryFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "original entropy/disorder outcomes support introductory interpretation; a full thermodynamic definition goes beyond the disorder analogy",
+      "scienceReview": "Entropy S is a thermodynamic state function, measured in joules per kelvin. For a reversible infinitesimal heat exchange, dS=δQ_rev/T; for a reversible isothermal heat exchange at constant T, ΔS=Q_rev/T. For an irreversible process the entropy change between equilibrium endpoints can be calculated by a suitable reversible reference path; it does not generally equal the actual process heat divided by one temperature. Disorder is a simplified pedagogical analogy, not a general operational definition. Ice melting at its melting point absorbs latent heat and increases the ice/water entropy; a system may gain or lose entropy in a reversible heat transfer while the combined total has zero entropy generation.",
+      "amendment": "compulsory conceptual/equation scope and textbook-melting contradiction in the future teacher explanation",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "Textbook p.147 prints ΔS=ΔQ/T following a reversible-process assumption but risks making the formula look universal. Page 148 explicitly says melting ice releases heat and its entropy decreases, despite the same page's ice-to-water order/disorder figure and the source's worked Example 8.6 on p.149, which correctly gives a positive ΔS for melting. Page 149 further says entropy of the SYSTEM remains constant in all reversible processes, which is false for reversible heat transfer or phase change: it is total entropy generation of system plus surroundings that vanishes for a reversible overall process. Keep the original exercise question but explicitly flag these exact contradictory publisher passages before any teacher answer edition.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.11",
+      "printedPages": [
+        153
+      ],
+      "focus": "entropy and energy degradation",
+      "sourceCoveragePages": [
+        148,
+        149
+      ],
+      "sourceTopic": "8.10.2 Entropy and Energy; energy degradation in natural processes",
+      "candidateSummativeSlo": "P-11-C-19",
+      "additionalCandidateSlo": "P-11-C-20",
+      "candidateFrameworkCognitive": "Understanding",
+      "secondaryFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct summative entropy increase as natural energy degradation; scientific explanation requires explicit isolated combined system/availability conditions",
+      "scienceReview": "The First Law conserves energy, whereas the Second Law limits the useful work obtainable as energy becomes more dispersed through irreversible processes. Entropy generation in an isolated system (or the combined system plus surroundings) is nonnegative and positive for irreversible spontaneous transformations; the net entropy of an arbitrary nonisolated subsystem may increase, stay constant or decrease because entropy is transferred with heat or matter. Under a fixed environment, irreversible entropy generation destroys exergy, or work potential, rather than energy itself. An ideal reversible total process has zero net entropy generation; changes of subsystem entropy need not vanish.",
+      "amendment": "compulsory distinguish entropy generation from system change and energy conservation from lost work availability",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "Source p.149 writes that only processes with a nondecreasing system entropy are natural, that for all reversible processes system entropy stays constant, that entropy increases in any irreversible process, and that all heat of a car-engine process was available for work before degradation. These statements are too broad for subsystems, ideal reversibility and real thermal conversion constraints. Clarify the entropy balance of the ISOLATED total and the loss of useful-work potential (exergy), not disappearance of energy. Page 148's arrowed high-disorder-to-low-disorder sketch (Figure 8.20) should be independently checked before use in a student explanation; no publisher figure is copied into this review.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "sourcePassageRiskLedger": [
+    {
+      "issueId": "P146-REVERSIBLE-COP",
+      "printedPage": 146,
+      "kind": "model-scope",
+      "relatedOriginalQuestion": "8.9",
+      "priority": "compulsory",
+      "sourceIssue": "Refrigerator cooling and heating temperature COP expressions follow a broad statement that heat is proportional to absolute T.",
+      "independentScience": "Temperature-only COP holds as the reversible Carnot limit, not the actual COP of any refrigerator; cooling COP is Q_C/W_in for all cyclic refrigerator heat balances."
+    },
+    {
+      "issueId": "P147-ENTROPY-DELTAQ-OVER-T",
+      "printedPage": 147,
+      "kind": "equation-domain",
+      "relatedOriginalQuestion": "8.10",
+      "priority": "compulsory",
+      "sourceIssue": "Printed Eq. 8.12 ΔS=ΔQ/T may be read without the adjacent reversible-process and constant-temperature conditions.",
+      "independentScience": "The local differential definition is dS=δQ_rev/T; the finite quotient requires appropriate isothermal reversible exchange."
+    },
+    {
+      "issueId": "P148-MELTING-HEAT-SIGN",
+      "printedPage": 148,
+      "kind": "source-factual-contradiction",
+      "relatedOriginalQuestion": "8.10",
+      "priority": "compulsory",
+      "sourceIssue": "Melting ice is described as releasing heat, although melting at 0°C needs latent heat input.",
+      "independentScience": "Melting absorbs Q=mL_f under normal equilibrium melting, so the ice/water system entropy rises."
+    },
+    {
+      "issueId": "P148-MELTING-ENTROPY-SIGN",
+      "printedPage": 148,
+      "kind": "source-factual-contradiction",
+      "relatedOriginalQuestion": "8.10",
+      "priority": "compulsory",
+      "sourceIssue": "Same melting paragraph says entropy decreases, conflicting with p.149 Example 8.6's positive melting entropy and Fig. 8.19.",
+      "independentScience": "At 0°C, ΔS_melt=mL_f/T>0; the sign given in p.149 Example 8.6 is consistent with physics."
+    },
+    {
+      "issueId": "P149-REVERSIBLE-SYSTEM-ENTROPY",
+      "printedPage": 149,
+      "kind": "source-factual-overgeneralization",
+      "relatedOriginalQuestion": "8.10",
+      "priority": "compulsory",
+      "sourceIssue": "Reversible processes are said to keep the entropy of the system constant.",
+      "independentScience": "Only reversible adiabatic processes are isentropic for a closed simple system; reversible isothermal heat transfer/phase transition can change system entropy. Reversible combined whole has zero entropy generation."
+    },
+    {
+      "issueId": "P149-NATURAL-SYSTEM-ENTROPY",
+      "printedPage": 149,
+      "kind": "system-boundary",
+      "relatedOriginalQuestion": "8.11",
+      "priority": "compulsory",
+      "sourceIssue": "All naturally occurring processes are described as having system entropy increase or remain unchanged.",
+      "independentScience": "The nondecrease applies to an isolated total including environment; arbitrary open/nonisolated subsystems may export entropy."
+    },
+    {
+      "issueId": "P149-ENERGY-AVAILABILITY",
+      "printedPage": 149,
+      "kind": "thermodynamic-availability",
+      "relatedOriginalQuestion": "8.11",
+      "priority": "compulsory",
+      "sourceIssue": "Illustration implies all heat before an engine's entropy change was available for work and describes energy as lost into atmosphere.",
+      "independentScience": "Energy is conserved. Irreversibilities degrade potential useful work (exergy); even reversible engines between finite reservoirs need respect efficiency limits."
+    },
+    {
+      "issueId": "P148-FIGURE820-ORDER",
+      "printedPage": 148,
+      "kind": "figure-orientation-review",
+      "relatedOriginalQuestion": "8.11",
+      "priority": "optional",
+      "sourceIssue": "Figure 8.20 visually progresses high randomness toward low randomness; this needs careful explanation alongside the adjacent spontaneous-disorder narrative.",
+      "independentScience": "A local decrease in disorder is possible with compensating surroundings; a naive diagram is not evidence that isolated entropy naturally decreases."
+    }
+  ],
+  "audit": {
+    "reviewedCount": 3,
+    "sourceVisibleComprehensiveCount": 10,
+    "coverageAcrossV243V245": "10/10 visibly numbered original comprehensive questions preliminarily reviewed",
+    "originalPrintedSourceNumbers": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4",
+      "8.5",
+      "8.6",
+      "8.7",
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "missingOriginalNumber": "8.8",
+    "compulsoryExplanationQualification": [
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "cognitiveOrDirectSloReview": [
+      "8.10"
+    ],
+    "publisherSourcePassageConcernsCount": 8,
+    "compulsoryPublisherPassageConcernsCount": 7,
+    "diagramReferenceReview": [
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "sourceQuestionsRetainedUnchanged": true,
+    "teacherIndependentScienceApproval": "PENDING",
+    "teacherCognitiveSloApproval": "PENDING",
+    "teacherAnswerEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "originalFigureFilesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
