@@ -1,0 +1,194 @@
+{
+  "schema": "psn-nbf-grade11-unit08-end-exercise-mcq-qc-v238",
+  "version": "V238",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "printedPages": [
+      151
+    ],
+    "exercise": "Unit 8 original end-of-unit MCQs",
+    "batchNumbers": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "reviewMode": "original scanned textbook p151 visually reopened; no OCR or inferred answer letter"
+  },
+  "officialFramework": "V224 visually referenced original FBISE HSSC-I assessment-framework SLO inventory. Observed cognitive demand is compared to, not automatically equated with, the printed outcome level.",
+  "priorInventory": "V235 full 18-MCQ original source numbering and issue flags; V237 preliminary MCQs 1–6 triage",
+  "scope": "review-only 6 items; source focus is paraphrased; no original stems/options, selected answer letters, scores or graded bank release",
+  "items": [
+    {
+      "sourceNumber": "7",
+      "printedPages": [
+        151
+      ],
+      "focus": "Carnot heat input from work output",
+      "sourceTopic": "8.8",
+      "candidateSummativeSlo": "P-11-C-23",
+      "observedCognitive": "Application",
+      "officialOutcomeCognitive": "Knowledge",
+      "mappingStatus": "requires teacher ruling on calculation demand versus printed outcome level",
+      "scienceReview": "well-defined ideal Carnot calculation with appropriate absolute reservoir temperatures and heat/work balance",
+      "amendment": "no scientific amendment proposed",
+      "reason": "The original names a Carnot engine and gives both reservoir temperatures and work output, so the heat-input calculation is defined. However, applying the efficiency relation numerically may exceed the Knowledge-level classification of the closest printed SLO.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "8",
+      "printedPages": [
+        151
+      ],
+      "focus": "ratio of Carnot efficiencies at two temperature pairs",
+      "sourceTopic": "8.8",
+      "candidateSummativeSlo": "P-11-C-23",
+      "observedCognitive": "Application",
+      "officialOutcomeCognitive": "Knowledge",
+      "mappingStatus": "requires teacher ruling on two-calculation comparison versus printed outcome level",
+      "scienceReview": "calculable provided all Celsius reservoir temperatures are converted separately to kelvin",
+      "amendment": "no scientific amendment proposed",
+      "reason": "Both temperature pairs define physically ordered hot and cold reservoirs above absolute zero, and the efficiency ratio is calculable. Correct treatment converts all Celsius values, including the negative Celsius value, to positive Kelvin temperatures; applying the formula twice requires teacher confirmation of its cognitive-level fit.",
+      "keepOriginal": true,
+      "optionToAddIndependentQuestion": false,
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "9",
+      "printedPages": [
+        151
+      ],
+      "focus": "maximum-work process conditions",
+      "sourceTopic": "8.4",
+      "candidateSummativeSlo": "P-11-C-06",
+      "observedCognitive": "Understanding",
+      "officialOutcomeCognitive": "Application",
+      "mappingStatus": "weak / indirect; original SLO addresses constant-pressure work rather than unrestricted maximum-work ranking",
+      "scienceReview": "no unique process can be chosen without comparable initial/final constraints and a defined comparison basis",
+      "amendment": "compulsory clarification before graded use",
+      "reason": "Work is the pressure-volume path integral and can differ for the listed processes. Calling one process universally maximum is not valid without specifying the same initial state, an appropriate common final volume, gas model, allowed paths and any other comparison constraints.",
+      "keepOriginal": true,
+      "originalUse": "teacher-led discussion with explicit caveat only",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "Specify a common ideal-gas initial state, expansion to the same final volume and the allowable paths before asking which path has the largest area under its p–V curve.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "10",
+      "printedPages": [
+        151
+      ],
+      "focus": "refrigerator COP from room and cabinet temperatures",
+      "sourceTopic": "8.9",
+      "candidateSummativeSlo": "P-11-C-17",
+      "observedCognitive": "Application",
+      "officialOutcomeCognitive": "Understanding",
+      "mappingStatus": "indirect; refrigerator working-principle outcome does not independently certify ideal COP numerical inversion",
+      "scienceReview": "insufficient data to infer a unique temperature from COP without a numeric hot-reservoir value and reversible-model assumption",
+      "amendment": "compulsory clarification before graded use",
+      "reason": "The question says room temperature but gives no numerical hot-reservoir temperature. Furthermore a real refrigerator's COP does not equal the Carnot ideal by default; inferring cabinet temperature requires an explicit reversible Carnot assumption and hot temperature in kelvin.",
+      "keepOriginal": true,
+      "originalUse": "discussion-only pending source-preserving teaching note",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "Provide a numerical room/hot-reservoir temperature in kelvin and explicitly designate an ideal reversible refrigerator before requesting the cold-side temperature.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "11",
+      "printedPages": [
+        151
+      ],
+      "focus": "efficiency change after doubling heat-source temperature",
+      "sourceTopic": "8.8",
+      "candidateSummativeSlo": "P-11-C-23",
+      "observedCognitive": "Application",
+      "officialOutcomeCognitive": "Knowledge",
+      "mappingStatus": "unverified; missing quantities block unique calculation and cognitive fit",
+      "scienceReview": "no unique numerical efficiency multiplier is determined by doubling only the source temperature",
+      "amendment": "compulsory clarification before graded use",
+      "reason": "Even under a Carnot model with fixed cold reservoir, the new-to-old efficiency ratio depends on the original hot and cold temperatures. The question supplies neither initial temperatures nor a fixed cold-reservoir condition or instruction to double absolute kelvin temperature.",
+      "keepOriginal": true,
+      "originalUse": "source flaw diagnostic; no selected answer",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "State initial hot/cold absolute temperatures, that the cold reservoir stays constant and that the engine is ideal; then ask for the new efficiency or its ratio to the old efficiency.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    },
+    {
+      "sourceNumber": "12",
+      "printedPages": [
+        151
+      ],
+      "focus": "thermodynamics scope versus types of system",
+      "sourceTopic": "8.1",
+      "candidateSummativeSlo": null,
+      "observedCognitive": "Knowledge",
+      "officialOutcomeCognitive": null,
+      "mappingStatus": "no authenticated direct printed summative outcome for the mismatched source stem and alternatives",
+      "scienceReview": "none of the printed options defines thermodynamics; alternatives instead resemble adiabatic, isolated and closed-system conditions",
+      "amendment": "compulsory replacement or formally documented exclusion before graded use",
+      "reason": "The question requests what thermodynamics studies, but the printed response choices describe various conditions of heat/mass transfer or dissipation. No printed option answers the stated subject-definition question; selecting a letter would conceal this source mismatch.",
+      "keepOriginal": true,
+      "originalUse": "retain publisher item in source archive and discuss error, not grade it",
+      "optionToAddIndependentQuestion": true,
+      "independentRevisionPrinciple": "Prepare a separate original question whose stem and all four options address the same defined scientific concept, then obtain direct theory-SLO authorization.",
+      "teacherReview": "PENDING",
+      "studentRelease": "HOLD",
+      "candidateOptionPublished": false
+    }
+  ],
+  "batchAudit": {
+    "observedCount": 6,
+    "scientificallyWellDefinedWithSloLevelReview": [
+      "7",
+      "8"
+    ],
+    "compulsoryClarificationOrExclusionBeforeGradedUse": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "cognitiveMappingReviewRequired": [
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "noAcademicAnswerKeyApproved": true,
+    "v235FlagsAlreadyRecorded": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "newV238ContentFlawsNotPreviouslyFlagged": [],
+    "teacherIndependentScienceApproval": "PENDING",
+    "teacherCognitiveSloApproval": "PENDING",
+    "studentMcqBank": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "approvedAnswerEdition": false,
+    "sourceImagesCopied": false,
+    "sourceStemsCopied": false,
+    "optionLettersPublished": false,
+    "ownerApproval": "HOLD"
+  }
+}
