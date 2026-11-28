@@ -26,7 +26,7 @@ function staticReview(){
  assert.deepEqual(u8.additionalLearningPreviews.map(x=>x.topic),['8.2','8.3','8.4','8.5','8.6','8.7','8.8','8.9','8.10']);
  assert.match(nav,/Unit 7 · Study lessons \(unscored\)/);
  assert.match(nav,/Unit 8 · 10 study lessons \(unscored\)/);
- assert.match(nav,/data\.psnFutureUnits=units\.map\(unit=>unit\.unit\)\.join\(','\)/);
+ assert.ok(nav.includes("group.dataset.psnFutureUnits=units.map(unit=>unit.unit).join(',');"),'Original unit-group data attribute must be preserved');
  assert.match(nav,/Units 7–10 · Study previews for 7–8; Units 9–10 planned/);
  assert.match(nav,/Ten unscored topic lessons \(8\.1–8\.10\)/);
  assert.match(guide,/Explore Grade XI Units 1–8/);
