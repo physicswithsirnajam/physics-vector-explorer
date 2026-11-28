@@ -79,7 +79,7 @@ assert.match(review.items[0].scienceReview,/ideal reversible/);
 assert.match(review.items[1].scienceReview,/δQ_rev\/T/);
 assert.match(review.items[1].scienceReview,/melting/);
 assert.match(review.items[2].scienceReview,/exergy/);
-assert.match(review.items[2].scienceReview,/total energy/);
+assert.match(review.items[2].scienceReview,/First Law conserves energy/);
 
 assert.deepEqual(review.originalSource.figureReferences.map(x=>x.slice(0,11)),
  ['Figure 8.18','Figure 8.19','Figure 8.20']);
