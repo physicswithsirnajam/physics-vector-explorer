@@ -1,0 +1,58 @@
+name: Grade XI V247 Unit 8 Original Numericals 8.4-8.6 Academic Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v247-numerical04-06-source-qc-no-approved-answers.json"
+      - "quality/unit08/unit08-v247-numerical04-06-teacher-triage.md"
+      - "scripts/test_grade11_v247_unit08_numerical04_06_review.cjs"
+      - ".github/workflows/validate-grade11-v247-unit08-numerical04-06-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v247-numerical04-06-source-qc-no-approved-answers.json"
+      - "quality/unit08/unit08-v247-numerical04-06-teacher-triage.md"
+      - "scripts/test_grade11_v247_unit08_numerical04_06_review.cjs"
+      - ".github/workflows/validate-grade11-v247-unit08-numerical04-06-review.yml"
+jobs:
+  numerical-source-calculations-and-no-graded-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate metadata JSON and source-arithmetic test syntax
+        run: |
+          node --check scripts/test_grade11_v247_unit08_numerical04_06_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v247-numerical04-06-source-qc-no-approved-answers.json','utf8'))"
+      - name: V247 independently check Carnot heat-direction, water heating and room-temperature assumptions
+        run: node scripts/test_grade11_v247_unit08_numerical04_06_review.cjs
+      - name: Preserve V246 original numericals 8.1-8.3 and conditional arithmetic
+        run: node scripts/test_grade11_v246_unit08_numerical01_03_review.cjs
+      - name: Preserve V245 original final comprehensive questions and entropy-source corrections
+        run: node scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs
+      - name: Preserve V244 heat engine Second Law Carnot source review
+        run: node scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs
+      - name: Preserve V243 first four original comprehensive source questions
+        run: node scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+      - name: Preserve V242 final five original short source questions
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 original short questions 8.5-8.8
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 original short questions 8.1-8.4
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 original end MCQs 13-18
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original end MCQs 7-12
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original end MCQs 1-6
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 original 50-item exercise and 9-numerical inventory
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 authentic textbook and official theory SLO inventory
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve exact 2250 pinned Units1-6 MCQs IDs options and answer keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs

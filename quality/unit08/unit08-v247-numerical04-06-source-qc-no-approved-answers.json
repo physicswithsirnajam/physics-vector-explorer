@@ -1,0 +1,213 @@
+{
+  "schema": "psn-nbf-grade11-unit08-numerical-source-qc-v247",
+  "version": "V247",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "problemPrintedPages": [
+      153
+    ],
+    "problemIds": [
+      "8.4",
+      "8.5",
+      "8.6"
+    ],
+    "reviewMethod": "original scanned p.153 visually examined including stems, numerical values and printed answers; no OCR or publisher stems copied"
+  },
+  "originalFramework": "V224 original printed FBISE HSSC-I Domain C summative outcomes, candidate item mapping not teacher-approved",
+  "parentInventory": "V235 original 9 numerical IDs 8.1–8.9, existing flags 8.4 and 8.6; V246 original 8.1–8.3 preliminary review remains unchanged",
+  "scope": "teacher-only original numerical source consistency, independently recalculated conditional results, no approved worked solutions or student bank",
+  "items": [
+    {
+      "sourceNumber": "8.4",
+      "printedPages": [
+        153
+      ],
+      "focus": "Carnot engine work and stated absorption temperature",
+      "printedAnswer": "200 J",
+      "printedGiven": {
+        "hotTemperatureKelvin": 600,
+        "coldTemperatureKelvin": 400,
+        "heatAbsorbedJoules": 600,
+        "printedHeatAbsorptionReservoir": "low temperature of 400 K"
+      },
+      "candidateSummativeSlo": "P-11-C-23",
+      "candidateFrameworkCognitive": "Knowledge",
+      "secondaryCandidateSlo": "P-11-C-16",
+      "secondaryFrameworkCognitive": "Knowledge + Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "Carnot reversible-cycle efficiency is relevant but publisher statement about absorption from cold reservoir is incompatible with engine producing positive cycle work",
+      "independentCheck": {
+        "type": "source-contradiction",
+        "idealHeatEngineFormula": "W_by=Q_H(1−T_C/T_H)",
+        "hotHeatInputInterpretation": {
+          "assumeHeat600JAbsorbedAt": "hot 600 K reservoir",
+          "computedWorkByJoules": 200
+        },
+        "coldHeatRejectedInterpretation": {
+          "assumeHeat600JRejectedAt": "cold 400 K reservoir",
+          "computedWorkByJoules": 300
+        },
+        "coldHeatAbsorbedInterpretation": {
+          "assumeHeat600JAbsorbedAt": "cold 400 K reservoir",
+          "reversibleRefrigeratorWorkInputJoules": 300
+        },
+        "printedAnswerStatus": "200 J follows only from reinterpretation of the specified low-temperature absorption as 600 J absorbed at the hot reservoir; NOT derivable as stated for a positive-work Carnot engine"
+      },
+      "reviewReason": "Original printed p.153 explicitly says the Carnot engine absorbs 600 J of heat at the low temperature of 400 K, although the high-temperature reservoir is 600 K. Using 600 J as high-side input changes the source meaning and gives 200 J, the publisher answer. In a reversed Carnot refrigerator absorbing 600 J from 400 K, the input work would instead be 300 J. If 600 J were heat rejected to 400 K from an engine, its reversible work would also be 300 J. These are distinct devices and transfers; preserve the publisher conflict rather than relabel the source as correct.",
+      "classification": "compulsory source contradiction; block unique assessed answer",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentVariantRequirement": "Explicitly say reversible Carnot engine absorbs 600 J from the 600 K hot reservoir and rejects heat to the 400 K sink; retain publisher original unchanged.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.5",
+      "printedPages": [
+        153
+      ],
+      "focus": "immersion-heater warming time",
+      "printedAnswer": "198 s",
+      "printedGiven": {
+        "heaterPowerWatts": 220,
+        "waterMassGrams": 136,
+        "initialCelsius": 23.5,
+        "finalCelsius": "boiling point of water",
+        "heatLoss": "ignored",
+        "waterSpecificHeat": "not specified numerically"
+      },
+      "candidateSummativeSlo": null,
+      "candidateFrameworkCognitive": null,
+      "secondaryCandidateSlo": "P-11-C-11",
+      "secondaryFrameworkCognitive": "Application",
+      "observedCognitive": "Application",
+      "sloFit": "energy-conservation outcome provides an indirect context, but no direct specific-heat/time calculation summative SLO appears in the original Unit8 Domain C inventory",
+      "independentCheck": {
+        "type": "calculation-with-constant-choice",
+        "formula": "t=mc(T_final−T_initial)/P",
+        "quantitiesSI": {
+          "massKilograms": 0.136,
+          "heaterPowerWatts": 220,
+          "temperatureChangeKelvin": 76.5,
+          "finalCelsiusAssumption": 100
+        },
+        "withSpecificHeat4186": {
+          "specificHeatJPerKgK": 4186,
+          "computedTimeSeconds": 197.95974545454547,
+          "roundedSeconds": 198
+        },
+        "withSpecificHeat4200": {
+          "specificHeatJPerKgK": 4200,
+          "computedTimeSeconds": 198.62181818181818,
+          "nearestWholeSecond": 199
+        },
+        "printedAnswerStatus": "198 s is reproduced using c≈4186 J/(kg·K); standard rounded c=4200 gives 198.6 s (about 199 s to nearest whole second), a minor constant/rounding difference"
+      },
+      "reviewReason": "Original p.153 gives 220 W, 136 g water, initial 23.5 °C, and asks time to bring it to the boiling point while ignoring heat loss. It does not supply the numerical value of specific heat capacity. Assuming ordinary water boils at 100 °C at standard atmospheric pressure gives ΔT=76.5 K; with c=4186 J/(kg K), t≈197.96 s and printed 198 s. With c=4200, t≈198.62 s, a one-second rounded difference. Do not confuse bringing water to its boiling point with vaporizing it, which would require latent heat.",
+      "classification": "optional numerical constant/boiling-pressure assumptions; compulsory direct SLO eligibility check before scored use",
+      "keepOriginal": true,
+      "mayAddIndependentItem": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    },
+    {
+      "sourceNumber": "8.6",
+      "printedPages": [
+        153
+      ],
+      "focus": "Carnot source-temperature adjustment",
+      "printedAnswer": "397 K",
+      "printedGiven": {
+        "initialEngineEfficiencyPercent": 50,
+        "targetEngineEfficiencyPercent": 70,
+        "referenceTemperature": "room temperature (numeric value not given)",
+        "heatSourceAltered": true,
+        "coldReservoirHeldFixed": "not explicitly stated",
+        "carnotReversible": "not explicitly stated"
+      },
+      "candidateSummativeSlo": "P-11-C-23",
+      "candidateFrameworkCognitive": "Knowledge",
+      "secondaryCandidateSlo": "P-11-C-16",
+      "secondaryFrameworkCognitive": "Knowledge + Understanding",
+      "observedCognitive": "Application",
+      "sloFit": "temperature change calculation by Carnot ideal-efficiency relation is Application beyond printed Knowledge outcome and requires fixed numerical room-temperature sink",
+      "independentCheck": {
+        "type": "conditional-carnot-temperatures",
+        "formula": "T_H=T_C/(1−η); ΔT_H=T_C[(1/(1−η2))−(1/(1−η1))]=(4/3)T_C",
+        "conditions": [
+          "reversible Carnot engine at both efficiencies",
+          "room temperature used as fixed cold-reservoir temperature",
+          "room temperature numerically chosen"
+        ],
+        "initialEfficiency": 0.5,
+        "targetEfficiency": 0.7,
+        "roomTemperatureAssumedKelvin": 298,
+        "initialHotTemperatureKelvin": 596,
+        "finalHotTemperatureKelvin": 993.3333333333334,
+        "computedSourceTemperatureIncreaseKelvin": 397.3333333333333,
+        "roundedConditionalIncrease": "397 K",
+        "alternativeRoomTemperatureKelvin": 300,
+        "alternativeSourceTemperatureIncreaseKelvin": 400,
+        "printedAnswerStatus": "397 K agrees under Carnot, fixed sink and room temperature 298 K; 300 K would give 400 K, so source alone does not uniquely fix the printed numeric answer"
+      },
+      "reviewReason": "The source says 'a heat engine at room temperature' has 50% efficiency and asks the difference between two heat source temperatures after efficiency becomes 70%. It does not numerically define room temperature and does not explicitly name an ideal reversible Carnot engine with a fixed cold reservoir. The Carnot formula η=1−T_C/T_H at the same cold temperature implies ΔT_H=(4/3)T_C, yielding ≈397.33 K if T_C=298 K, consistent with its 397 K printed result. At T_C=300 K the same formula gives 400 K, so the printed answer is assumption-specific, not an unqualified general result.",
+      "classification": "compulsory Carnot/fixed sink/room temperature assumptions; compulsory SLO cognitive review",
+      "keepOriginal": true,
+      "mayAddIndependentItem": true,
+      "independentVariantRequirement": "Write a separate fully conditioned ideal reversible engine scenario with fixed T_C=298 K and both efficiencies; preserve original publisher wording.",
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "approvedSolutionPublished": false
+    }
+  ],
+  "audit": {
+    "sourceQuestionCount": 3,
+    "sourceVisibleNumericalCount": 9,
+    "coverageAcrossV246V247": "6/9 original numericals preliminarily reviewed",
+    "printedAnswers": [
+      "200 J",
+      "198 s",
+      "397 K"
+    ],
+    "compulsorySourceContradiction": [
+      "8.4"
+    ],
+    "constantAndRoundingQualification": [
+      "8.5"
+    ],
+    "compulsoryModelAssumptions": [
+      "8.4",
+      "8.6"
+    ],
+    "compulsoryDirectSloOrCognitiveMapping": [
+      "8.4",
+      "8.5",
+      "8.6"
+    ],
+    "previousV235FlagsExpanded": [
+      "NUM-8.4",
+      "NUM-8.6"
+    ],
+    "newScientificallyProvenSourceStemDefect": [
+      "8.4"
+    ],
+    "publisherStemsAndPrintedAnswersUnchanged": true,
+    "humanScienceApproval": "PENDING",
+    "humanSloCognitiveApproval": "PENDING",
+    "studentSolvedNumericalEdition": "NOT-PUBLISHED"
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
