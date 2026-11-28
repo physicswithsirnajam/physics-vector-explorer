@@ -528,7 +528,7 @@
         const lesson=safeHref(unit.learningPreviewHref,new URL('portal/',root));
         if(lesson){
           rows.append(e('p','psn-drawer-unit-notice',
-            'Ten unscored topic lessons (8.1–8.10) are available with source-based examples, assignments and learning activities. Independent teacher science review is pending. Original end-of-unit exercise solutions and scored Unit 8 MCQs are not published.'));
+            'Ten unscored topic lessons (8.1–8.10) are available with source-based examples, assignments and learning activities. Independent teacher science review is pending. Original end-of-unit exercise solutions are not published; no Unit 8 scored MCQs are available.'));
           rows.append(makeLink(lesson,
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
@@ -620,7 +620,7 @@
       if(later.length)fragment.append(comingSoon(later,'Future units · 11–14'));
       content.replaceChildren(fragment);
       syncActiveUnit();
-      live.textContent=active.length+' available or provisional MCQ unit menus. Units 7–8 have separate public unscored study links below and in Quick Links; their scored banks remain unpublished.';
+      live.textContent=active.length+' available or provisional Grade XI unit menus, in five learning stages. Unit 6 remains a provisional preview. Units 7–8 have separate public unscored study links below and in Quick Links; their scored banks remain unpublished.';
       loaded=true;
     }catch(error){
       // Five original published desks plus the Unit 6 public study preview remain reachable if catalogue fetch fails.
