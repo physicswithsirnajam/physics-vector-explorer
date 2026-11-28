@@ -1,0 +1,58 @@
+name: Grade XI V236 Units 7-8 Student Study Discovery
+on:
+  pull_request:
+    paths:
+      - "shared/navigation.js"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "quality/grade11-v236-units78-student-discovery-review.md"
+      - "scripts/test_grade11_v236_units78_study_discovery_browser.cjs"
+      - ".github/workflows/validate-grade11-v236-unit78-discovery.yml"
+  push:
+    branches: [main]
+    paths:
+      - "shared/navigation.js"
+      - "student-guide.html"
+      - "build-your-physics-test.html"
+      - "scripts/test_grade11_v236_units78_study_discovery_browser.cjs"
+      - ".github/workflows/validate-grade11-v236-unit78-discovery.yml"
+jobs:
+  unit78-visible-study-links-and-mcq-release-holds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 34
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check navigation source and QA script syntax
+        run: |
+          node --check shared/navigation.js
+          node --check scripts/test_grade11_v236_units78_study_discovery_browser.cjs
+          node -e "JSON.parse(require('fs').readFileSync('portal/learning-catalog.json','utf8'));JSON.parse(require('fs').readFileSync('question-bank/manifest.json','utf8'))"
+      - name: Preserve the exact 2250 pinned MCQs, options and solutions for Units1-6
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
+      - name: Install Chromium without broken external apt feeds
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts playwright@1.56.0
+          npx playwright install chromium
+      - name: V236 real 1280 and 390 browser study routes and blocked Unit7-8 bank
+        run: node scripts/test_grade11_v236_units78_study_discovery_browser.cjs
+      - name: Preserve V140 original unit-aware sidebar behavior
+        run: node scripts/test_grade11_v140_unit_aware_sidebar_browser.cjs
+      - name: Preserve V234 Unit8 Entropy and all previous lesson routing
+        run: node scripts/test_grade11_v234_unit8_topic810_entropy_browser.cjs
+      - name: Preserve V209 Unit7 source-based unscored discovery
+        run: node scripts/test_grade11_v209_unit7_learning_discovery.cjs
+      - name: Preserve V235 Unit8 original exercise inventory without keys
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Archive anonymous browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade11-v236-unit78-study-discovery
+          path: qa-artifacts/grade11-v236-units78-student-navigation/evidence.json
+          retention-days: 14
+          if-no-files-found: warn
