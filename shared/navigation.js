@@ -132,6 +132,8 @@
   quick.setAttribute('aria-label','Quick physics learning links');
   const quickLinks=[
     link('portal/exam-quick-access.html','Exam Quick Access','revision'),
+    link('portal/exam-quick-access.html#unit7-unscored-study-preview','Unit 7 · Study lessons (unscored)','unit7-study'),
+    link('portal/exam-quick-access.html#unit8-unscored-study-preview','Unit 8 · 10 study lessons (unscored)','unit8-study'),
     link('portal/textbook-exercise-status-v216.html','Textbook Exercises & Assignments · Status','exercise-status'),
     link('student-guide.html','Start Here','guide'),
     link('build-your-physics-test.html','Build a Physics Test','builder'),
@@ -141,7 +143,7 @@
     link('portal/simulations.html','Simulation Library','simulations'),
     link('portal/legacy-hssc-resources.html','Notes & Concept Videos','videos')
   ];
-  const info=e('p','psn-drawer-hint','Choose a unit to explore study, simulations and practice. Unit 6 is a provisional practice preview, not an approved full course.');
+  const info=e('p','psn-drawer-hint','Units 1–6 have provisional MCQ practice; Units 7 and 8 offer public unscored lessons and simulations. Scored question banks for Units 7 and 8 are not published.');
   const content=e('nav','psn-drawer-content');content.setAttribute('aria-label','Grade XI unit-by-unit resources');
   const live=e('p','psn-drawer-loading','Open the menu to browse available resources.');
   live.setAttribute('role','status');live.setAttribute('aria-live','polite');
@@ -487,7 +489,8 @@
     group.append(summary);
     const rows=e('div','psn-drawer-future-rows');
     for(const unit of units){
-      const item=e('p',null,'Unit '+unit.unit+' · '+unit.title+' · Coming soon');
+      const item=e('p',null,'Unit '+unit.unit+' · '+unit.title+' · '+
+        (unit.unit===7?'3 unscored lessons available':unit.unit===8?'10 unscored lessons available':'Coming soon'));
       rows.append(item);
       // V145: a separately verified introductory topic may be offered while
       // the rest of this NBF unit, original MCQ bank and graded exam remain
@@ -525,7 +528,7 @@
         const lesson=safeHref(unit.learningPreviewHref,new URL('portal/',root));
         if(lesson){
           rows.append(e('p','psn-drawer-unit-notice',
-            'Topic 8.1 is available as unscored learning only. Original NBF pp.128–131; worked Example 8.1 and Assignment 8.1 adaptations. Teacher science review pending, no Unit 8 scored MCQs.'));
+            'Ten unscored topic lessons (8.1–8.10) are available with source-based examples, assignments and learning activities. Independent teacher science review is pending. Original end-of-unit exercise solutions and scored Unit 8 MCQs are not published.'));
           rows.append(makeLink(lesson,
             'Unit 8 · Topic 8.1 Thermal Equilibrium, Internal Energy and Ideal Gas · Unscored source-based lesson',
             'public-link'));
@@ -613,11 +616,11 @@
       const coming=grade.units.filter(u=>u.status==='planned' && u.practicePreviewStatus!=='public-provisional' &&
         Number.isInteger(u.unit) && u.unit>=7 && u.unit<=14);
       const next=coming.filter(u=>u.unit<=10),later=coming.filter(u=>u.unit>=11);
-      if(next.length)fragment.append(comingSoon(next,'Next units · 7–10'));
+      if(next.length)fragment.append(comingSoon(next,'Units 7–8 · public study previews; Units 9–10 planned'));
       if(later.length)fragment.append(comingSoon(later,'Future units · 11–14'));
       content.replaceChildren(fragment);
       syncActiveUnit();
-      live.textContent=active.length+' available or provisional Grade XI unit menus, in five learning stages. Planned units are labelled Coming soon; Unit 6 remains a provisional preview.';
+      live.textContent=active.length+' available or provisional MCQ unit menus. Units 7–8 have separate public unscored study links below and in Quick Links; their scored banks remain unpublished.';
       loaded=true;
     }catch(error){
       // Five original published desks plus the Unit 6 public study preview remain reachable if catalogue fetch fails.
