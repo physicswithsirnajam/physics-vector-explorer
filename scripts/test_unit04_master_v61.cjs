@@ -199,7 +199,7 @@ async function browser(){
   await page.screenshot({path:path.join(shots,'03-mixed-units-2-4-report.png'),fullPage:false});
 
   await page.goto(base+'student-guide.html',{waitUntil:'networkidle'});
-  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='1690');
+  await page.waitForFunction(()=>document.getElementById('question-total').textContent==='2250');
   assert.match(await page.locator('[data-unit="4"] .count').textContent(),/640 MCQs/);
   await page.setViewportSize({width:390,height:844});
   const dim=await page.evaluate(()=>[document.documentElement.clientWidth,document.documentElement.scrollWidth]);
