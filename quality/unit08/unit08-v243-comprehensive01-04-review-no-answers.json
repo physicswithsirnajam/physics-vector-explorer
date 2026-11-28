@@ -1,0 +1,213 @@
+{
+  "schema": "psn-nbf-grade11-unit08-comprehensive-qc-v243",
+  "version": "V243",
+  "originalSource": {
+    "file": "11 Physics Book(10).pdf",
+    "sourceSha256": "00cb6a4ac522ee1819d1b6d2384a152d3bd5b1035e2eb8fe8976e7453070f1fe",
+    "questionPrintedPages": [
+      152
+    ],
+    "chapterReferencePages": [
+      129,
+      130,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140
+    ],
+    "questionIds": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4"
+    ],
+    "reviewMode": "visually re-inspected scanned original comprehensive exercise on p152 and textbook teaching sections pp129–140; no OCR; no publisher stems reproduced"
+  },
+  "originalFramework": "V224 authentic original FBISE HSSC-I theory Domain C summative SLO inventory; reviewer mapping not independently certified",
+  "parentInventory": "V235 visually observed 10 numbered original comprehensive questions; original 8.8 omitted between 8.7 and 8.9 and NOT invented",
+  "scope": "first four comprehensive source questions; preliminary teacher-facing QC metadata only without published answers",
+  "items": [
+    {
+      "sourceNumber": "8.1",
+      "printedPages": [
+        152
+      ],
+      "focus": "internal energy and absolute temperature",
+      "sourceCoveragePages": [
+        129,
+        130
+      ],
+      "sourceTopic": "8.1.1 Internal Energy",
+      "candidateSummativeSlo": "P-11-C-02",
+      "additionalCandidateSlo": "P-11-C-12",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct temperature and internal energy relation, with substantial physical-model qualification",
+      "scienceReview": "Internal energy is the sum of the microscopic kinetic and interaction-potential energies of a system. Temperature relates to average random molecular kinetic energy. For a fixed amount of ideal gas U is a function of absolute temperature alone; for a monatomic ideal gas U=(3/2)nRT, while generally ΔU=nC_VΔT for an ideal gas with constant C_V. In real matter U can also depend on volume, phase and intermolecular configurations, so a universal U proportional to absolute T cannot be claimed.",
+      "amendment": "compulsory model qualification in eventual teacher explanation; original stem retained",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "Original text p.129 states that temperature is directly proportional to gas-molecule mean kinetic energy and broadly says internal energy follows T, and p.130 says U does not change whenever temperature is constant. The blanket constant-T claim is not universal for real matter and phase changes, as the other original short question 8.2 itself illustrates. Keep the source framing, flag its ideal-gas/domain assumptions explicitly, and avoid deriving U=(3/2)nRT for all gases or all substances.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.2",
+      "printedPages": [
+        152
+      ],
+      "focus": "gas laws",
+      "sourceCoveragePages": [
+        134,
+        135
+      ],
+      "sourceTopic": "8.3 The Gas Laws",
+      "candidateSummativeSlo": "P-11-C-09",
+      "additionalCandidateSlo": "P-11-C-10",
+      "candidateFrameworkCognitive": "Understanding",
+      "observedCognitive": "Understanding",
+      "sloFit": "qualitative gas P,V,T relationships; secondary graph outcome is specific to an isotherm and does not automatically authorize all graph derivations",
+      "scienceReview": "The original section 8.3 presents Boyle's law for fixed temperature and quantity of gas (PV constant), Charles's law for fixed pressure and quantity (V/T constant), and Gay-Lussac's law for fixed volume and quantity (P/T constant). Ratios involving temperature require kelvin, not a bare Celsius value. These empirical relations approximate dilute ideal-gas behavior; the ideal gas equation PV=nRT connects them for fixed n.",
+      "amendment": "optional definition, constant-quantity and kelvin-scale teaching checklist; no publisher-stem change",
+      "compulsoryExplanationBeforeAssessedUse": false,
+      "compulsoryMappingReview": true,
+      "reason": "The short source prompt requests the gas laws generally, while the original chapter specifically organizes the topic under three named subsections on pp.134–135: Boyle, Charles and Gay-Lussac. An approved solution should follow these three first rather than import additional named laws as if printed in this section. Include which P,V,T variable is constant and any graph limits, and ensure any optional calculation or extended derivation is separately checked against printed SLO/cognitive demands.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.3",
+      "printedPages": [
+        152
+      ],
+      "focus": "First Law",
+      "sourceCoveragePages": [
+        135,
+        136,
+        139,
+        140
+      ],
+      "sourceTopic": "8.4 First Law of Thermodynamics",
+      "candidateSummativeSlo": "P-11-C-08",
+      "additionalCandidateSlo": "P-11-C-11",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "direct First Law heat/work signs and conservation; the original P-11-C-11 focuses on energy conservation at Application level",
+      "scienceReview": "For the closed-system model used in the textbook, first-law energy conservation reads ΔU=Q−W_by when Q is heat entering and W_by is work done by the system; equivalently Q=ΔU+W_by. Using work on the gas W_on=−W_by gives ΔU=Q+W_on. Internal energy is a state function; Q and W are process-dependent energy-transfer quantities. The simple balance assumes negligible changes in bulk kinetic and potential energy, with other work modes separately accounted for if present.",
+      "amendment": "compulsory work-by versus work-on sign consistency and process/state distinction before teacher-solution publication",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": false,
+      "reason": "The source on printed p.135 writes heat supplied to the system and work done by the system; switching mid-solution to work done on the gas flips the work sign. The requested explanation must preserve conservation and correctly distinguish internal-energy change from heat/work transfer. A general open-system energy balance cannot be silently treated as identical to the closed-system formula.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    },
+    {
+      "sourceNumber": "8.4",
+      "printedPages": [
+        152
+      ],
+      "focus": "four thermodynamic processes",
+      "subparts": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "partLabels": [
+        "Isothermal process",
+        "Isobaric process",
+        "Adiabatic process",
+        "Isochoric process"
+      ],
+      "sourceCoveragePages": [
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "sourceTopic": "8.4.1–8.4.4 First-Law processes",
+      "candidateSummativeSlo": "P-11-C-08",
+      "additionalCandidateSlo": "P-11-C-10",
+      "candidateFrameworkCognitive": "Knowledge + Understanding + Application",
+      "observedCognitive": "Understanding",
+      "sloFit": "partial/direct First Law effects of processes; secondary P-11-C-10 covers isothermal P–V plots only, not all four definitions",
+      "scienceReview": "The four original requested parts, in their printed question order, are (a) isothermal: T constant, ideal-gas ΔU=0; (b) isobaric: P constant, boundary work W_by=PΔV for a quasistatic constant-pressure step; (c) adiabatic: Q=0 regardless of whether a process is fast or slow; (d) isochoric: V constant, pressure–volume boundary work zero, although non-pV work might occur. These constraints describe different properties and can overlap in special circumstances; pressure–volume plots need consistent axes and model limits.",
+      "amendment": "compulsory four-part completeness and model/symbol qualifications before approved answers",
+      "compulsoryExplanationBeforeAssessedUse": true,
+      "compulsoryMappingReview": true,
+      "reason": "Printed source Question 8.4 lists (a) isothermal, (b) isobaric, (c) adiabatic, (d) isochoric. The chapter's own teaching sequence is isothermal, adiabatic, isochoric, isobaric, so a careless extraction may reorder or omit a question part. The textbook's claim that ΔU=0 for an isothermal step must be scoped to an ideal gas; an isochoric process eliminates only PΔV boundary work; adiabatic does not mean 'necessarily rapid' or 'necessarily reversible.' Official outcome P-11-C-08 is broad, requiring further teacher scrutiny of this four-part coverage.",
+      "keepOriginal": true,
+      "addIndependentItemOption": false,
+      "teacherScienceApproval": "PENDING",
+      "teacherSloApproval": "PENDING",
+      "studentRelease": "HOLD",
+      "answersPublished": false,
+      "approvedTeacherMarkingScheme": false
+    }
+  ],
+  "audit": {
+    "reviewedCount": 4,
+    "sourceVisibleComprehensiveCount": 10,
+    "originalPrintedComprehensiveNumbering": [
+      "8.1",
+      "8.2",
+      "8.3",
+      "8.4",
+      "8.5",
+      "8.6",
+      "8.7",
+      "8.9",
+      "8.10",
+      "8.11"
+    ],
+    "originalMissingNumber": "8.8",
+    "compulsoryExplanationQualification": [
+      "8.1",
+      "8.3",
+      "8.4"
+    ],
+    "optionalTeachingNote": [
+      "8.2"
+    ],
+    "compulsoryCognitiveOrDirectSloReview": [
+      "8.2",
+      "8.4"
+    ],
+    "fourPartSourceCompleteness": [
+      "8.4"
+    ],
+    "newEstablishedPublisherQuestionStemDefects": [],
+    "modelScopeFlag": "Original textbook's general constant-T/internal-energy claim must be restricted to appropriate material models",
+    "scienceTeacherApproval": "PENDING",
+    "cognitiveSloTeacherApproval": "PENDING",
+    "studentSolutionEdition": "NOT-PUBLISHED",
+    "sourceStemsRemainUnchanged": true
+  },
+  "releaseGate": {
+    "unit8ScoredQuestionCount": 0,
+    "unit8TestBuilderBankEnabled": false,
+    "teacherAnswerEditionApproved": false,
+    "originalStemsCopied": false,
+    "sourcePageImagesCopied": false,
+    "ownerApproval": "HOLD"
+  }
+}
