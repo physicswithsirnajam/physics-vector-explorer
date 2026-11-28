@@ -164,7 +164,7 @@
       "kind": "source-factual-overgeneralization",
       "relatedOriginalQuestion": "8.10",
       "priority": "compulsory",
-      "sourceIssue": "Reversible processes are said to keep the entropy of the system constant.",
+      "sourceIssue": "On printed p.149, reversible processes are said to keep the entropy of the system constant, even when that system exchanges heat with its surroundings.",
       "independentScience": "Only reversible adiabatic processes are isentropic for a closed simple system; reversible isothermal heat transfer/phase transition can change system entropy. Reversible combined whole has zero entropy generation."
     },
     {
