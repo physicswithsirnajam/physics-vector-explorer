@@ -1,0 +1,62 @@
+name: Grade XI V249 Unit 8 50-Item Original Exercise Adjudication
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v249-50-item-teacher-adjudication-no-approved-keys.json"
+      - "quality/unit08/unit08-v249-50-item-teacher-adjudication-guide.md"
+      - "scripts/test_grade11_v249_unit08_fifty_item_adjudication.cjs"
+      - ".github/workflows/validate-grade11-v249-unit08-fifty-item-adjudication.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v249-50-item-teacher-adjudication-no-approved-keys.json"
+      - "quality/unit08/unit08-v249-50-item-teacher-adjudication-guide.md"
+      - "scripts/test_grade11_v249_unit08_fifty_item_adjudication.cjs"
+      - ".github/workflows/validate-grade11-v249-unit08-fifty-item-adjudication.yml"
+jobs:
+  all-fifty-original-exercises-review-only-not-graded:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate original ledger JSON and cross-review script syntax
+        run: |
+          node --check scripts/test_grade11_v249_unit08_fifty_item_adjudication.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v249-50-item-teacher-adjudication-no-approved-keys.json','utf8'))"
+      - name: V249 reconcile 50 source items, 12 reviews, original FBISE outcomes, overlapping holds and 2250 pinned MCQs
+        run: node scripts/test_grade11_v249_unit08_fifty_item_adjudication.cjs
+      - name: Preserve V248 numericals 8.7-8.9 and final 50 item inventory
+        run: node scripts/test_grade11_v248_unit08_numerical07_09_review.cjs
+      - name: Preserve V247 numericals 8.4-8.6 contradictory heat flow
+        run: node scripts/test_grade11_v247_unit08_numerical04_06_review.cjs
+      - name: Preserve V246 numericals 8.1-8.3 missing initial temperature
+        run: node scripts/test_grade11_v246_unit08_numerical01_03_review.cjs
+      - name: Preserve V245 final comprehensive entropy/COP source issues
+        run: node scripts/test_grade11_v245_unit08_comprehensive09_11_review.cjs
+      - name: Preserve V244 comprehensive heat-engine Second Law Carnot source QC
+        run: node scripts/test_grade11_v244_unit08_comprehensive05_07_review.cjs
+      - name: Preserve V243 original comprehensive 8.1-8.4 review
+        run: node scripts/test_grade11_v243_unit08_comprehensive01_04_review.cjs
+      - name: Preserve V242 original short 8.9-8.13
+        run: node scripts/test_grade11_v242_unit08_short09_13_review.cjs
+      - name: Preserve V241 original short 8.5-8.8
+        run: node scripts/test_grade11_v241_unit08_short05_08_review.cjs
+      - name: Preserve V240 original short 8.1-8.4
+        run: node scripts/test_grade11_v240_unit08_short01_04_review.cjs
+      - name: Preserve V239 original MCQs 13-18
+        run: node scripts/test_grade11_v239_unit08_end_mcq13_18_review.cjs
+      - name: Preserve V238 original MCQs 7-12
+        run: node scripts/test_grade11_v238_unit08_end_mcq07_12_review.cjs
+      - name: Preserve V237 original MCQs 1-6
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve V235 original source nine numericals and 50-item exercise index
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 source textbook and authentic original summative SLO framework
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve all 2250 original Unit1-6 MCQ IDs options and answer keys
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
