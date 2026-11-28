@@ -81,7 +81,9 @@ function sourceAndScience(){
   assert.ok(!html.includes(bad),'Unscored resource must not access accounts or storage '+bad);
  // Independent exact original-source arithmetic, separate from lesson implementation.
  const meltMass=.7,meltLatent=336000,sourceKelvin=273,sourceHeat=meltMass*meltLatent;
- assert.equal(sourceHeat,235200);
+ // IEEE-754 binary floating point gives 0.7 * 336000 = 235199.99999999997.
+ // Preserve the source's 235200 J result with a tight absolute tolerance.
+ assert.ok(Math.abs(sourceHeat-235200)<1e-8,'Melting latent heat must equal 235200 J within floating-point tolerance');
  assert.ok(Math.abs(sourceHeat/sourceKelvin-861.5384615)<.001);
  assert.ok(Math.abs(sourceHeat/273.15-861.066)<.01);
  const heatOut=-7373,bookT=150+273;
