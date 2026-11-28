@@ -4,6 +4,8 @@
 
 This is a **source-audited, teacher-facing decision register**, not a correction of the NBF textbook, a published answer edition or evidence of independent human academic approval. It is compiled from **merged V235 + V237–V248 review ledgers**, which in turn refer to the owner's original NBF Grade XI Physics scan and the separately verified official FBISE HSSC-I theory outcomes in V224. **V249 does not claim a fresh visual reinspection of every source page**; the previous batch inventories are the traceable basis, with full cross-references in the companion JSON.
 
+Review coverage is **18/18 MCQs, 13/13 short responses, 10/10 visibly numbered comprehensives and 9/9 numericals**, for 50/50 preliminary source-QC records.
+
 The original publisher exercise has **50 visibly indexed items**: **18 MCQs, 13 short questions, 10 visibly numbered comprehensive questions and 9 numericals**. The source jumps from comprehensive **8.7 to 8.9**: comprehensive **8.8 is absent**, although **numerical 8.8 is present**. Never fabricate comprehensive 8.8 or silently change the earlier V224 11-question claim; see V235 for the discrepancy. Source questions are retained exactly in the original book and not reproduced here.
 
 **This is pre-approval triage.** Every item remains `teacherScienceDecision=PENDING`, `teacherFrameworkDecision=PENDING` and `studentRelease=HOLD`.
