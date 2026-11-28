@@ -202,7 +202,7 @@ assert.equal(units.find(x=>x.unit===8).additionalLearningPreviews.length,9);
 assert.equal(units.find(x=>x.unit===7).simulationCount,2);
 assert.equal(units.find(x=>x.unit===8).simulationCount,4);
 assert.equal(cat.resources.length,59);
-const pinned=banks.grades.find(g=>g.grade===11).units.map(u=>u.liveMcqCount);
+const pinned=bank.grades.find(g=>g.grade===11).units.map(u=>u.liveMcqCount);
 assert.deepEqual(pinned,[275,206,220,640,349,560]);
 assert.equal(pinned.reduce((a,b)=>a+b,0),2250);
 assert.equal(v224.releaseGate.studentScoredUnit8Mcqs,0);
