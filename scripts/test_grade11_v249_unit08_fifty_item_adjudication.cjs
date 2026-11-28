@@ -78,8 +78,9 @@ for(let index=0;index<50;index++){
  assert.deepEqual(e.priorSourceFlags,
   inv.reviewFlags.filter(x=>x.kind===e.category&&x.sourceNumber===e.sourceNumber).map(x=>x.flagId));
  assert.equal(e.candidateOfficialPrintedSlo,p.item.candidateSummativeSlo||null);
- assert.equal(e.officialPrintedCognitive,p.item.candidateFrameworkCognitive||p.item.candidateCognitive||null);
- assert.equal(e.observedCognitive,p.item.observedCognitive||null);
+ const originalPrintedOutcome=p.item.candidateSummativeSlo&&originalSlo.find(x=>x.printedCode===p.item.candidateSummativeSlo);
+ assert.equal(e.officialPrintedCognitive,originalPrintedOutcome?originalPrintedOutcome.cognitive:null);
+ assert.equal(e.observedCognitive,p.item.observedCognitive||(p.version==='V237'?p.item.candidateCognitive:null)||null);
  const originalReason=p.item.reason||p.item.reviewReason||'Reviewed in referenced QC JSON';
  assert.equal(e.sourceReasonReference,originalReason,'Reason must be traceable to unchanged earlier review');
  assert.ok(e.sourceReasonReference.length>40);
