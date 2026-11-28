@@ -79,7 +79,7 @@ assert.equal(audit.studentAnswerEdition,'NOT-PUBLISHED');
 assert.ok(inventory.reviewFlags.some(f=>f.kind==='short'&&f.sourceNumber==='8.3'&&f.flagId==='SHORT-8.3'));
 assert.equal(v239.items.length,6);
 assert.deepEqual(v239.items.map(x=>x.sourceNumber),['13','14','15','16','17','18']);
-for(const expected of ['8.1','8.2','8.3','8.4'])assert.ok(notes.includes('**'+expected+'**'),'Retain explicit teacher triage for '+expected);
+for(const expected of ['8.1','8.2','8.3','8.4'])assert.ok(notes.includes('**'+expected+' —'),'Retain the exact numbered review-table row for '+expected);
 assert.match(notes,/COMPULSORY nuanced answer/);
 assert.match(notes,/COMPULSORY precise transfer\/path explanation/);
 assert.match(notes,/OPTIONAL explanatory qualification/);
