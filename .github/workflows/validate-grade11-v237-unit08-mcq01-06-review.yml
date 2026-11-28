@@ -1,0 +1,38 @@
+name: Grade XI V237 Unit 8 Original End MCQs 1-6 Academic Review
+on:
+  pull_request:
+    paths:
+      - "quality/unit08/unit08-v237-end-mcq01-06-review-no-keys.json"
+      - "quality/unit08/unit08-v237-end-mcq01-06-academic-triage.md"
+      - "scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs"
+      - ".github/workflows/validate-grade11-v237-unit08-mcq01-06-review.yml"
+  push:
+    branches: [main]
+    paths:
+      - "quality/unit08/unit08-v237-end-mcq01-06-review-no-keys.json"
+      - "quality/unit08/unit08-v237-end-mcq01-06-academic-triage.md"
+      - "scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs"
+      - ".github/workflows/validate-grade11-v237-unit08-mcq01-06-review.yml"
+jobs:
+  source-based-review-without-student-answer-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check original NBF and FBISE source inventory and QC script
+        run: |
+          node --check scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+          node -e "JSON.parse(require('fs').readFileSync('quality/unit08/unit08-v237-end-mcq01-06-review-no-keys.json','utf8'))"
+      - name: V237 original six MCQs, unresolved ambiguity, summative candidate SLOs and release hold
+        run: node scripts/test_grade11_v237_unit08_end_mcq01_06_review.cjs
+      - name: Preserve full V235 original 50-item exercise source inventory
+        run: node scripts/test_grade11_v235_unit08_exercise_inventory.cjs
+      - name: Preserve V224 textbook and official FBISE theory outcome baseline
+        run: node scripts/test_grade11_v224_unit8_original_source_slo_manifest.cjs
+      - name: Preserve exact 2250 pinned Unit 1-6 MCQ IDs, options and answers
+        run: node scripts/test_grade11_pinned_review_catalog_v99i.cjs
