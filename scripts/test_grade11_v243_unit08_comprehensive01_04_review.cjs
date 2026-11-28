@@ -77,7 +77,7 @@ assert.match(review.items[1].scienceReview,/Charles's law/);
 assert.match(review.items[1].scienceReview,/Gay-Lussac's law/);
 assert.match(review.items[2].scienceReview,/ΔU=Q−W_by/);
 assert.match(review.items[3].scienceReview,/Isochoric/i);
-assert.match(review.items[3].reason,/source's chapter teaching sequence/);
+assert.match(review.items[3].reason,/chapter's own teaching sequence/);
 assert.equal(review.audit.reviewedCount,4);
 assert.equal(review.audit.sourceVisibleComprehensiveCount,10);
 assert.deepEqual(review.audit.compulsoryExplanationQualification,['8.1','8.3','8.4']);
