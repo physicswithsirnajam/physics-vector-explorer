@@ -143,7 +143,7 @@
     link('portal/simulations.html','Simulation Library','simulations'),
     link('portal/legacy-hssc-resources.html','Notes & Concept Videos','videos')
   ];
-  const info=e('p','psn-drawer-hint','Units 1–6 have provisional MCQ practice; Units 7 and 8 offer public unscored lessons and simulations. Scored question banks for Units 7 and 8 are not published.');
+  const info=e('p','psn-drawer-hint','Unit 6 is a provisional practice preview, not an approved full course. Units 1–6 offer provisional MCQ practice. Units 7 and 8 have public unscored lessons and simulations; their scored question banks are not published.');
   const content=e('nav','psn-drawer-content');content.setAttribute('aria-label','Grade XI unit-by-unit resources');
   const live=e('p','psn-drawer-loading','Open the menu to browse available resources.');
   live.setAttribute('role','status');live.setAttribute('aria-live','polite');
